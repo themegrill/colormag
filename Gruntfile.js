@@ -16,36 +16,29 @@ module.exports = function( grunt ){
 				jshintrc: '.jshintrc'
 			},
 			all: [
-				'Gruntfile.js',
-				'<%= dirs.js %>/*.js',
-				'!<%= dirs.js %>/*.min.js',
+            'Gruntfile.js',
+            '<%= dirs.js %>/*.js',
+            '!<%= dirs.js %>/*.min.js',
             '!<%= dirs.js %>/fitvids/jquery.fitvids.js',
             '!<%= dirs.js %>/magnific-popup/jquery.magnific-popup.js',
             '!<%= dirs.js %>/news-ticker/jquery.newsTicker.js',
             '!<%= dirs.js %>/sticky/jquery.sticky.js',
             '!<%= dirs.js %>/html5shiv.js',
-            '!<%= dirs.js %>/image-uploader.js',
-            '!<%= dirs.js %>/jquery.bxslider.js',
-            '!<%= dirs.js %>/navigation.js'
+            '!<%= dirs.js %>/jquery.bxslider.js'
 			]
 		},
 
 		// Generate POT files.
 		makepot: {
-			options: {
-				type: 'wp-theme',
-				domainPath: 'languages',
-				potHeaders: {
-					'report-msgid-bugs-to': 'themegrill@gmail.com',
-					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
-				}
-			},
 			dist: {
 				options: {
+					type: 'wp-theme',
+					domainPath: 'languages',
 					potFilename: 'colormag.pot',
-					exclude: [
-						'deploy/.*' // Exclude deploy directory
-					]
+					potHeaders: {
+						'report-msgid-bugs-to': 'themegrill@gmail.com',
+						'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
+					}
 				}
 			}
 		},
@@ -78,13 +71,34 @@ module.exports = function( grunt ){
 				],
 				expand: true
 			}
-		}
+		},
 
+		// Compress files and folders.
+		compress: {
+			options: {
+				archive: 'colormag.zip'
+			},
+			files: {
+				src: [
+					'**',
+					'!.*',
+					'!*.md',
+					'!*.zip',
+					'!.*/**',
+					'!Gruntfile.js',
+					'!package.json',
+					'!node_modules/**'
+				],
+				dest: 'colormag',
+				expand: true
+			}
+		}
 	});
 
 	// Load NPM tasks to be used here
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-checktextdomain' );
+	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 
 	// Register tasks
@@ -95,5 +109,10 @@ module.exports = function( grunt ){
 	grunt.registerTask( 'dev', [
 		'default',
 		'makepot'
+	]);
+
+	grunt.registerTask( 'zip', [
+		'dev',
+		'compress'
 	]);
 };
