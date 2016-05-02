@@ -1,7 +1,7 @@
 /**
  * Theme Customizer related js
  */
-
+/* global colormag_customizer_obj */
 jQuery(document).ready(function() {
 
 	jQuery('#customize-info .preview-notice').append(
