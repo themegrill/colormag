@@ -7,12 +7,14 @@
 	var container, button, menu;
 
 	container = document.getElementById( 'site-navigation' );
-	if ( ! container )
+	if ( ! container ) {
 		return;
+	}
 
 	button = container.getElementsByTagName( 'h4' )[0];
-	if ( 'undefined' === typeof button )
+	if ( 'undefined' === typeof button ) {
 		return;
+	}
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 
@@ -22,14 +24,16 @@
 		return;
 	}
 
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
+	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += 'nav-menu';
+	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'main-small-navigation' ) )
+		if ( -1 !== container.className.indexOf( 'main-small-navigation' ) ) {
 			container.className = container.className.replace( 'main-small-navigation', 'main-navigation' );
-		else
+		} else {
 			container.className = container.className.replace( 'main-navigation', 'main-small-navigation' );
+		}
 	};
 } )();
 
@@ -37,12 +41,14 @@
 	var container, button, menu;
 
 	container = document.getElementById( 'top-site-navigation' );
-	if ( ! container )
+	if ( ! container ) {
 		return;
+	}
 
 	button = container.getElementsByTagName( 'h3' )[0];
-	if ( 'undefined' === typeof button )
+	if ( 'undefined' === typeof button ) {
 		return;
+	}
 
 	menu = container.getElementsByTagName( 'ul' )[0];
 
@@ -52,13 +58,15 @@
 		return;
 	}
 
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
+	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += 'nav-menu';
+	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'mobile-small-menu' ) )
+		if ( -1 !== container.className.indexOf( 'mobile-small-menu' ) ) {
 			container.className = container.className.replace( 'mobile-small-menu', 'small-menu' );
-		else
+		} else {
 			container.className = container.className.replace( 'small-menu', 'mobile-small-menu' );
+		}
 	};
 } )();

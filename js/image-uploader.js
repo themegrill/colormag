@@ -16,18 +16,18 @@ jQuery(document).ready(function ($) {
                _custom_media = true;
                wp.media.editor.send.attachment = function (props, attachment) {
                   if (_custom_media) {
-                     $("#" + widget_id_string + 'attachment_id').val(attachment.id);
-                     $("#" + widget_id_string).val(attachment.url);
-                     $("#" + widget_id_string + 'preview').attr('src', attachment.url).css('display', 'block');
+                     $('#' + widget_id_string + 'attachment_id').val(attachment.id);
+                     $('#' + widget_id_string).val(attachment.url);
+                     $('#' + widget_id_string + 'preview').attr('src', attachment.url).css('display', 'block');
                   } else {
                      return _orig_send_attachment.apply(button_id, [props, attachment]);
                   }
-               }
+               };
                wp.media.editor.open(button);
                return false;
             });
          }
          media_upload('.custom_media_button.button');
       }
-   }
+   };
 });

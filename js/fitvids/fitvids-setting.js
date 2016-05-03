@@ -2,5 +2,5 @@
  * FitVids Setting
  */
 jQuery(document).ready(function () {
-   jQuery(".fitvids-video").fitVids();
+   jQuery('.fitvids-video').fitVids();
 });
