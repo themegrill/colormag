@@ -82,18 +82,22 @@ input.s:focus {
 
 .fa.search-top {
     left: 44px;
+    right: auto;
 }
 
 .search-wrap button {
     left: 0;
+    right: auto;
 }
 
 .search-form-top {
     left: 0;
+    right: auto;
 }
 
 .not-found .search-wrap button {
     left: 175px;
+    right: auto;
 }
 
 #secondary .search-wrap button {
@@ -103,6 +107,7 @@ input.s:focus {
 
 .random-post {
     left: 0;
+    right: auto;
 }
 
 .home-icon {
@@ -123,6 +128,7 @@ input.s:focus {
 .main-navigation li li.menu-item-has-children > a:after,
 .main-navigation li li.page_item_has_children > a:after {
     left: 8px;
+    right: auto;
 }
 
 .main-navigation ul li ul li a,
@@ -136,6 +142,7 @@ input.s:focus {
 
 .main-navigation ul li ul li ul {
     right: 200px;
+    left: auto;
 }
 
 .main-small-navigation ul ul a {
@@ -384,8 +391,9 @@ a#scroll-up {
 .tg-two-column-post-right {
     float: left;
 }
+
 .bx-wrapper {
-  direction: ltr;
+    direction: ltr;
 }
 
 .widget_slider_area {
