@@ -212,7 +212,7 @@ class ColorMag_Admin {
 		<?php
 	}
 
-	/**
+		/**
 	 * Output the changelog screen.
 	 */
 	public function changelog_screen() {
@@ -226,27 +226,46 @@ class ColorMag_Admin {
 			<p class="about-description"><?php esc_html_e( 'View changelog below.', 'colormag' ); ?></p>
 
 			<?php
-				$changelog_file = apply_filters( 'colormag_changelog_file', get_template_directory() . '/changelog.txt' );
+				$changelog_file = apply_filters( 'colormag_changelog_file', get_template_directory() . '/readme.txt' );
 
 				// Check if the changelog file exists and is readable.
 				if ( $changelog_file && is_readable( $changelog_file ) ) {
 					WP_Filesystem();
 					$changelog = $wp_filesystem->get_contents( $changelog_file );
-					$changelog_lines = explode( PHP_EOL, $changelog );
+					$changelog_list = $this->parse_changelog( $changelog );
 
-					echo '<pre class="changelog">';
-
-					foreach( $changelog_lines as $changelog_line ) {
-						echo esc_html( $changelog_line );
-					}
-
-					echo '</pre>';
+					echo wp_kses_post( $changelog_list );
 				}
 			?>
-
 		</div>
 		<?php
 	}
+
+	/**
+	 * Parse changelog from readme file.
+	 * @param  string $content
+	 * @return string
+	 */
+	private function parse_changelog( $content ) {
+		$matches   = null;
+		$regexp    = '~==\s*Changelog\s*==(.*)($)~Uis';
+		$changelog = '';
+
+		if ( preg_match( $regexp, $content, $matches ) ) {
+			$changes = explode( '\r\n', trim( $matches[1] ) );
+
+			$changelog .= '<pre class="changelog">';
+
+			foreach ( $changes as $index => $line ) {
+				$changelog .= wp_kses_post( preg_replace( '~(=\s*Version\s*(\d+(?:\.\d+)+)\s*=|$)~Uis', '<span class="title">${1}</span>', $line ) );
+			}
+
+			$changelog .= '</pre>';
+		}
+
+		return wp_kses_post( $changelog );
+	}
+
 
 	/**
 	 * Output the supported plugins screen.

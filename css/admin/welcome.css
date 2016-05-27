@@ -54,6 +54,10 @@ pre.changelog {
   font-weight: 600;
 }
 
+pre.changelog span {
+    font-weight: 700;
+}
+
 .welcome-description-wrap {
   display: inline-block;
   width: 100%;
