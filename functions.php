@@ -149,7 +149,7 @@ require_once( COLORMAG_WIDGETS_DIR . '/widgets.php' );
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
- * Assign the Spacious version to a variable.
+ * Assign the ColorMag version to a variable.
  */
 $theme            = wp_get_theme( 'colormag' );
 $colormag_version = $theme['Version'];

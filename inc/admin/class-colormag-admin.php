@@ -327,17 +327,17 @@ class ColorMag_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Primary color option', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Font Size Options', 'colormag'); ?></h3></td>
 						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Google Fonts Options', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
 						<td><?php esc_html_e('600+', 'colormag'); ?></td>
 					</tr>
 					<tr>
@@ -352,8 +352,8 @@ class ColorMag_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Social Sharing', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Custom Menu', 'colormag'); ?></h3></td>
@@ -367,138 +367,138 @@ class ColorMag_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Site Layout Option', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Options in Breaking News', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Unique Post System', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Change Read More Text', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Related Posts', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Author Biography', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Author Biography with Social Icons', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Footer Copyright Editor', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: 125x125 Advertisement', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: 300x250 Advertisement', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: 728x90 Advertisement', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Category Slider', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Highligted Posts', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Random Posts Widget', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Tabbed Widget', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Videos', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 1)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 2)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 3)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 4)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 5)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 6)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('TG: Featured Posts (Style 7)', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Category Color Options', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('WPML Compatible', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Polylang Compatible', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-no"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('WooCommerce Compatible', 'colormag'); ?></h3></td>
-						<td><span class="dashicons dashicons-yes"></td>
-						<td><span class="dashicons dashicons-yes"></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 				</tbody>
 			</table>
