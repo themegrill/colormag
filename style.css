@@ -2047,8 +2047,6 @@ a#scroll-up:hover {
    width: 100%;
 }
 
-/* =FRONT PAGE MAIN CONTENT SECTION
------------------------------------------------ */
 .main-content-section {
    padding-top: 20px;
 }
@@ -2647,3 +2645,44 @@ WooCommerce CSS
     margin-right: 10px;
 }
 
+
+/* WooCommerce CSS
+----------------------------------------------- */
+.woocommerce ul.products li.product a img:hover,.woocommerce div.product div.images img:hover{
+   opacity: 1;
+}
+.woocommerce ul.products li.product .price del{
+   display: inline-block;
+   margin-right: 10px;
+}
+.woocommerce ul.products li.product .price .amount,.entry-summary .price .amount,.woocommerce .woocommerce-message::before{
+	color: #289DCC;
+}
+.woocommerce ul.products li.product .price ins{
+   text-decoration: none;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+background-color: #289DCC;
+  color: #fff;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  background-color: #0176a5;
+  color: #fff;
+}
+.woocommerce .star-rating span,.woocommerce p.stars a::before {
+  color: #FFD700;
+}
+.woocommerce ul.products li.product .price del{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.woocommerce span.onsale {
+  background-color: #289DCC;
+  color: #fff;
+}
+.woocommerce .woocommerce-message {
+  border-top-color: #289DCC;
+}
