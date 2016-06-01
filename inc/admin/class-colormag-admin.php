@@ -84,7 +84,7 @@ class ColorMag_Admin {
 				<h1>
 					<?php esc_html_e('About', 'colormag'); ?>
 					<?php echo $theme->display( 'Name' ); ?>
-					<?php printf( esc_html__( '%s', 'colormag' ), $major_version ); ?>
+					<?php printf( '%s', $major_version ); ?>
 				</h1>
 
 			<div class="welcome-description-wrap">
@@ -103,7 +103,7 @@ class ColorMag_Admin {
 
 			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/colormag?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/colormag?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
@@ -203,10 +203,10 @@ class ColorMag_Admin {
 			<div class="return-to-dashboard colormag">
 				<?php if ( current_user_can( 'update_core' ) && isset( $_GET['updated'] ) ) : ?>
 					<a href="<?php echo esc_url( self_admin_url( 'update-core.php' ) ); ?>">
-						<?php is_multisite() ? esc_html_e( 'Return to Updates' ) : esc_html_e( 'Return to Dashboard &rarr; Updates' ); ?>
+						<?php is_multisite() ? esc_html_e( 'Return to Updates', 'colormag' ) : esc_html_e( 'Return to Dashboard &rarr; Updates', 'colormag' ); ?>
 					</a> |
 				<?php endif; ?>
-				<a href="<?php echo esc_url( self_admin_url() ); ?>"><?php is_blog_admin() ? esc_html_e( 'Go to Dashboard &rarr; Home' ) : esc_html_e( 'Go to Dashboard' ); ?></a>
+				<a href="<?php echo esc_url( self_admin_url() ); ?>"><?php is_blog_admin() ? esc_html_e( 'Go to Dashboard &rarr; Home', 'colormag' ) : esc_html_e( 'Go to Dashboard', 'colormag' ); ?></a>
 			</div>
 		</div>
 		<?php
@@ -223,7 +223,7 @@ class ColorMag_Admin {
 
 			<?php $this->intro(); ?>
 
-			<p class="about-description"><?php esc_html_e( 'View changelog below.', 'colormag' ); ?></p>
+			<p class="about-description"><?php esc_html_e( 'View changelog below:', 'colormag' ); ?></p>
 
 			<?php
 				$changelog_file = apply_filters( 'colormag_changelog_file', get_template_directory() . '/readme.txt' );
@@ -276,8 +276,14 @@ class ColorMag_Admin {
 
 			<?php $this->intro(); ?>
 
-			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins.', 'colormag' ); ?></p>
+			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins:', 'colormag' ); ?></p>
 			<ol>
+				<li><?php printf(__('<a href="%s" target="_blank">Social Icons</a>', 'colormag'), esc_url('https://wordpress.org/plugins/social-icons/')); ?>
+					<?php esc_html_e(' by ThemeGrill', 'colormag'); ?>
+				</li>
+				<li><?php printf(__('<a href="%s" target="_blank">Easy Social Sharing</a>', 'colormag'), esc_url('https://wordpress.org/plugins/easy-social-sharing/')); ?>
+					<?php esc_html_e(' by ThemeGrill', 'colormag'); ?>
+				</li>
 				<li><?php printf(__('<a href="%s" target="_blank">Contact Form 7</a>', 'colormag'), esc_url('https://wordpress.org/plugins/contact-form-7/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">WP-PageNavi</a>', 'colormag'), esc_url('https://wordpress.org/plugins/wp-pagenavi/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">WooCommerce</a>', 'colormag'), esc_url('https://wordpress.org/plugins/woocommerce/')); ?></li>
@@ -499,6 +505,13 @@ class ColorMag_Admin {
 						<td><h3><?php esc_html_e('WooCommerce Compatible', 'colormag'); ?></h3></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td class="btn-wrapper">
+							<a href="<?php echo esc_url( apply_filters( 'spacious_pro_theme_url', 'http://themegrill.com/themes/spacious-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php _e( 'View Pro', 'spacious' ); ?></a>
+						</td>
 					</tr>
 				</tbody>
 			</table>
