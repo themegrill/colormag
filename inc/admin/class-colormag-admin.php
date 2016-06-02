@@ -23,6 +23,7 @@ class ColorMag_Admin {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 		add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
 	}
 
@@ -49,10 +50,36 @@ class ColorMag_Admin {
 	 * Add admin notice.
 	 */
 	public function admin_notice() {
-		global $pagenow;
+		global $colormag_version, $pagenow;
 
+		wp_enqueue_style( 'colormag-message', get_template_directory_uri() . '/css/admin/message.css', array(), $colormag_version );
+
+		// Let's bail on theme activation.
 		if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
+			update_option( 'colormag_admin_notice_welcome', 1 );
+
+		// No option? Let run the notice wizard again..
+		} elseif( ! get_option( 'colormag_admin_notice_welcome' ) ) {
+			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
+		}
+	}
+
+	/**
+	 * Hide a notice if the GET variable is set.
+	 */
+	public static function hide_notices() {
+		if ( isset( $_GET['colormag-hide-notice'] ) && isset( $_GET['_colormag_notice_nonce'] ) ) {
+			if ( ! wp_verify_nonce( $_GET['_colormag_notice_nonce'], 'colormag_hide_notices_nonce' ) ) {
+				wp_die( __( 'Action failed. Please refresh the page and retry.', 'colormag' ) );
+			}
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die( __( 'Cheatin&#8217; huh?', 'colormag' ) );
+			}
+
+			$hide_notice = sanitize_text_field( $_GET['colormag-hide-notice'] );
+			update_option( 'colormag_admin_notice_' . $hide_notice, 1 );
 		}
 	}
 
@@ -61,9 +88,12 @@ class ColorMag_Admin {
 	 */
 	public function welcome_notice() {
 		?>
-		<div class="updated notice is-dismissible">
-			<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?></p>
-			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a></p>
+		<div id="message" class="updated colormag-message">
+			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'colormag' ); ?></a>
+			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing colormag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p class="submit">
+				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ); ?>"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a>
+			</p>
 		</div>
 		<?php
 	}
@@ -151,31 +181,31 @@ class ColorMag_Admin {
 			<div class="changelog point-releases">
 				<div class="under-the-hood two-col">
 					<div class="col">
-						<h3><?php echo esc_html_e( 'Theme Customizer', 'colormag' ); ?></h3>
+						<h3><?php esc_html_e( 'Theme Customizer', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'colormag' ) ?></p>
 						<p><a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
-						<h3><?php echo esc_html_e( 'Documentation', 'colormag' ); ?></h3>
+						<h3><?php esc_html_e( 'Documentation', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'colormag' ) ?></p>
 						<p><a href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/colormag/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
-						<h3><?php echo esc_html_e( 'Got theme support question?', 'colormag' ); ?></h3>
+						<h3><?php esc_html_e( 'Got theme support question?', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'colormag' ) ?></p>
 						<p><a href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
-						<h3><?php echo esc_html_e( 'Need more features?', 'colormag' ); ?></h3>
+						<h3><?php esc_html_e( 'Need more features?', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'colormag' ) ?></p>
 						<p><a href="<?php echo esc_url( 'http://themegrill.com/themes/colormag-pro/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
-						<h3><?php echo esc_html_e( 'Got sales related question?', 'colormag' ); ?></h3>
+						<h3><?php esc_html_e( 'Got sales related question?', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Please send it via our sales contact page.', 'colormag' ) ?></p>
 						<p><a href="<?php echo esc_url( 'http://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a></p>
 					</div>
@@ -183,7 +213,7 @@ class ColorMag_Admin {
 					<div class="col">
 						<h3>
 							<?php
-							echo esc_html_e( 'Translate', 'colormag' );
+							esc_html_e( 'Translate', 'colormag' );
 							echo ' ' . $theme->display( 'Name' );
 							?>
 						</h3>
@@ -278,21 +308,21 @@ class ColorMag_Admin {
 
 			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins:', 'colormag' ); ?></p>
 			<ol>
-				<li><?php printf(__('<a href="%s" target="_blank">Social Icons</a>', 'colormag'), esc_url('https://wordpress.org/plugins/social-icons/')); ?>
+				<li><a href="<?php echo esc_url('https://wordpress.org/plugins/social-icons/'); ?>" target="_blank"><?php esc_html_e('Social Icons', 'colormag'); ?></a>
 					<?php esc_html_e(' by ThemeGrill', 'colormag'); ?>
 				</li>
-				<li><?php printf(__('<a href="%s" target="_blank">Easy Social Sharing</a>', 'colormag'), esc_url('https://wordpress.org/plugins/easy-social-sharing/')); ?>
+				<li><a href="<?php echo esc_url('https://wordpress.org/plugins/easy-social-sharing/'); ?>" target="_blank"><?php esc_html_e('Easy Social Sharing', 'colormag' ); ?></a>
 					<?php esc_html_e(' by ThemeGrill', 'colormag'); ?>
 				</li>
-				<li><?php printf(__('<a href="%s" target="_blank">Contact Form 7</a>', 'colormag'), esc_url('https://wordpress.org/plugins/contact-form-7/')); ?></li>
-				<li><?php printf(__('<a href="%s" target="_blank">WP-PageNavi</a>', 'colormag'), esc_url('https://wordpress.org/plugins/wp-pagenavi/')); ?></li>
-				<li><?php printf(__('<a href="%s" target="_blank">WooCommerce</a>', 'colormag'), esc_url('https://wordpress.org/plugins/woocommerce/')); ?></li>
+				<li><a href="<?php echo esc_url('https://wordpress.org/plugins/contact-form-7/'); ?>" target="_blank"><?php esc_html_e('Contact Form 7', 'colormag'); ?></a></li>
+				<li><a href="<?php echo esc_url('https://wordpress.org/plugins/wp-pagenavi/'); ?>" target="_blank"><?php esc_html_e('WP-PageNavi', 'colormag'); ?></a></li>
+				<li><a href="<?php echo esc_url('https://wordpress.org/plugins/woocommerce/'); ?>" target="_blank"><?php esc_html_e('WooCommerce', 'colormag'); ?></a></li>
 				<li>
-					<?php printf(__('<a href="%s" target="_blank">Polylang</a>', 'colormag'), esc_url('https://wordpress.org/plugins/polylang/')); ?>
+					<a href="<?php echo esc_url('https://wordpress.org/plugins/polylang/'); ?>" target="_blank"><?php esc_html_e('Polylang', 'colormag'); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'colormag'); ?>
 				</li>
 				<li>
-					<?php printf(__('<a href="%s" target="_blank">WMPL</a>', 'colormag'), esc_url('https://wpml.org/')); ?>
+					<a href="<?php echo esc_url('https://wpml.org/'); ?>" target="_blank"><?php esc_html_e('WMPL', 'colormag'); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'colormag'); ?>
 				</li>
 			</ol>
@@ -510,7 +540,7 @@ class ColorMag_Admin {
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'spacious_pro_theme_url', 'http://themegrill.com/themes/spacious-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php _e( 'View Pro', 'spacious' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'colormag' ); ?></a>
 						</td>
 					</tr>
 				</tbody>
