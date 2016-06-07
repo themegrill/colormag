@@ -94,7 +94,7 @@ function colormag_setup() {
    add_theme_support('html5', array(
        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
    ));
-   
+
    // adding the WooCommerce plugin support
    add_theme_support( 'woocommerce' );
 }
@@ -147,4 +147,15 @@ require_once( COLORMAG_WIDGETS_DIR . '/widgets.php' );
  * Detect plugin. For use on Front End only.
  */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+/**
+ * Assign the ColorMag version to a variable.
+ */
+$theme            = wp_get_theme( 'colormag' );
+$colormag_version = $theme['Version'];
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
+}
 ?>
