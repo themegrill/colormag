@@ -322,7 +322,7 @@ class ColorMag_Admin {
 					<?php esc_html_e('Fully Compatible in Pro Version', 'colormag'); ?>
 				</li>
 				<li>
-					<a href="<?php echo esc_url('https://wpml.org/'); ?>" target="_blank"><?php esc_html_e('WMPL', 'colormag'); ?></a>
+					<a href="<?php echo esc_url('https://wpml.org/'); ?>" target="_blank"><?php esc_html_e('WPML', 'colormag'); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'colormag'); ?>
 				</li>
 			</ol>
