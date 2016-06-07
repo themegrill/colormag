@@ -49,6 +49,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version TBD =
+* Fix: Google-Plus translation for the Brazilian Portuguese language (Pull request #2). Thanks to @rafaelmartir.
+
 = Version 1.1.3 =
 * Theme information is properly organized in Customize panel.
 * Theme is now compatible with WooCommerce.
