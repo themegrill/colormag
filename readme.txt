@@ -52,7 +52,6 @@ and we will include it within the theme from next version update.
 = Version 1.1.4 =
 * Tweaks - Updated theme tags as per new introduced tags.
 * Tweaks - Introduced welcome page for theme.
-* Fix: Google-Plus translation for the Brazilian Portuguese language (Pull request #2). Thanks to @rafaelmartir.
 
 = Version 1.1.3 =
 * Theme information is properly organized in Customize panel.
