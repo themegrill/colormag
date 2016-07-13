@@ -24,8 +24,7 @@ module.exports = function( grunt ){
 				'!<%= dirs.js %>/news-ticker/jquery.newsTicker.js',
 				'!<%= dirs.js %>/sticky/jquery.sticky.js',
 				'!<%= dirs.js %>/html5shiv.js',
-				'!<%= dirs.js %>/jquery.bxslider.js',
-				'!<%= dirs.js %>/image-uploader.js'
+				'!<%= dirs.js %>/jquery.bxslider.js'
 			]
 		},
 

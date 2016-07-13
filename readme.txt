@@ -49,6 +49,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Tweaks - Enhancement for the media uploader scripts used in widgets.
+
 = Version 1.1.4 =
 * Tweaks - Updated theme tags as per new introduced tags.
 * Tweaks - Introduced welcome page for theme.
