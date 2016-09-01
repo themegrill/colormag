@@ -341,7 +341,7 @@ class colormag_highlighted_posts_widget extends WP_Widget {
    function __construct() {
       $widget_ops = array( 'classname' => 'widget_highlighted_posts widget_featured_meta', 'description' => __( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag') );
       $control_ops = array( 'width' => 200, 'height' =>250 );
-      parent::__construct( false,$name= __( 'TG: Highligted Posts', 'colormag' ),$widget_ops);
+      parent::__construct( false,$name= __( 'TG: Highlighted Posts', 'colormag' ),$widget_ops);
    }
 
    function form( $instance ) {
