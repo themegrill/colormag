@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.1.3\n"
+"Project-Id-Version: ColorMag 1.1.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2016-06-07 09:37:02+00:00\n"
+"POT-Creation-Date: 2016-09-01 07:26:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -393,7 +393,7 @@ msgstr ""
 msgid "Footer Copyright Editor"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:445 inc/widgets/widgets.php:991
+#: inc/admin/class-colormag-admin.php:445 inc/widgets/widgets.php:989
 msgid "TG: 125x125 Advertisement"
 msgstr ""
 
@@ -401,7 +401,7 @@ msgstr ""
 msgid "TG: 300x250 Advertisement"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:455 inc/widgets/widgets.php:889
+#: inc/admin/class-colormag-admin.php:455 inc/widgets/widgets.php:888
 msgid "TG: 728x90 Advertisement"
 msgstr ""
 
@@ -410,7 +410,7 @@ msgid "TG: Featured Category Slider"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:465 inc/widgets/widgets.php:344
-msgid "TG: Highligted Posts"
+msgid "TG: Highlighted Posts"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:470
@@ -1049,8 +1049,8 @@ msgid "Layout will be as below:"
 msgstr ""
 
 #: inc/widgets/widgets.php:489 inc/widgets/widgets.php:647
-#: inc/widgets/widgets.php:804 inc/widgets/widgets.php:905
-#: inc/widgets/widgets.php:1007
+#: inc/widgets/widgets.php:804 inc/widgets/widgets.php:904
+#: inc/widgets/widgets.php:1005
 msgid "Title:"
 msgstr ""
 
@@ -1066,34 +1066,44 @@ msgstr ""
 msgid "Add your Advertisement 300x250 Images Here"
 msgstr ""
 
-#: inc/widgets/widgets.php:809 inc/widgets/widgets.php:910
-#: inc/widgets/widgets.php:1017
+#: inc/widgets/widgets.php:809 inc/widgets/widgets.php:909
+#: inc/widgets/widgets.php:1015
 msgid "Advertisement Image Link "
 msgstr ""
 
-#: inc/widgets/widgets.php:813 inc/widgets/widgets.php:914
-#: inc/widgets/widgets.php:1021
+#: inc/widgets/widgets.php:813 inc/widgets/widgets.php:913
+#: inc/widgets/widgets.php:1019
 msgid "Advertisement Image "
 msgstr ""
 
-#: inc/widgets/widgets.php:823 inc/widgets/widgets.php:924
-#: inc/widgets/widgets.php:1031
-msgid "Upload Image"
+#: inc/widgets/widgets.php:821 inc/widgets/widgets.php:921
+#: inc/widgets/widgets.php:1027
+msgid "Choose an image"
 msgstr ""
 
-#: inc/widgets/widgets.php:887
+#: inc/widgets/widgets.php:821 inc/widgets/widgets.php:921
+#: inc/widgets/widgets.php:1027
+msgid "Use image"
+msgstr ""
+
+#: inc/widgets/widgets.php:821 inc/widgets/widgets.php:921
+#: inc/widgets/widgets.php:1027
+msgid "Select an Image"
+msgstr ""
+
+#: inc/widgets/widgets.php:886
 msgid "Add your 728x90 Advertisement here"
 msgstr ""
 
-#: inc/widgets/widgets.php:908
+#: inc/widgets/widgets.php:907
 msgid "Add your Advertisement 728x90 Images Here"
 msgstr ""
 
-#: inc/widgets/widgets.php:989
+#: inc/widgets/widgets.php:987
 msgid "Add your 125x125 Advertisement here"
 msgstr ""
 
-#: inc/widgets/widgets.php:1010
+#: inc/widgets/widgets.php:1008
 msgid "Add your Advertisement 125x125 Images Here"
 msgstr ""
 
