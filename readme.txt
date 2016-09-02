@@ -49,7 +49,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.1.5 - 2016-09-02 =
 * Tweaks - Removed Portugese (Brazil) language file as 100% translation now available at wordpress.org
 * Tweaks - Removed Russian language file as 100% translation now available at wordpress.org
 * Tweaks - Enhancement for the media uploader scripts used in widgets.

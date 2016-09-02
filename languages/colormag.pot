@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 1.1.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2016-09-02 09:55:09+00:00\n"
+"POT-Creation-Date: 2016-09-02 10:27:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -689,7 +689,7 @@ msgid "Custom CSS"
 msgstr ""
 
 #: inc/customizer.php:512
-msgid "Write your custom css"
+msgid "Write your Custom CSS"
 msgstr ""
 
 #: inc/customizer.php:521
@@ -697,7 +697,7 @@ msgid "Social Options"
 msgstr ""
 
 #: inc/customizer.php:522
-msgid "Change the Social Links Settings from here as you want"
+msgid "Change the Social Links settings from here as you want"
 msgstr ""
 
 #: inc/customizer.php:528
@@ -733,7 +733,7 @@ msgid "YouTube"
 msgstr ""
 
 #: inc/customizer.php:603
-msgid "Check to show in new tab"
+msgid "Check to open in new tab"
 msgstr ""
 
 #: inc/customizer.php:617
@@ -909,7 +909,7 @@ msgid "Front Page: Slider Area"
 msgstr ""
 
 #: inc/widgets/widgets.php:56
-msgid "Show widget just below menu. Suitable for TG: Featured Cat Slider."
+msgid "Show widget just below menu. Suitable for TG: Featured Category Slider."
 msgstr ""
 
 #: inc/widgets/widgets.php:65
@@ -949,7 +949,7 @@ msgid "Front Page: Content Bottom Section"
 msgstr ""
 
 #: inc/widgets/widgets.php:111
-msgid "Content Middle Bottom Section"
+msgid "Content Bottom Section"
 msgstr ""
 
 #: inc/widgets/widgets.php:120
@@ -973,7 +973,9 @@ msgid "Advertisement Above The Footer"
 msgstr ""
 
 #: inc/widgets/widgets.php:144
-msgid "Shows widgets Just Above The Footer, suitable for TG: 728x90 widget."
+msgid ""
+"Shows widgets just above the footer, suitable for TG: 728x90 Advertisement "
+"widget."
 msgstr ""
 
 #: inc/widgets/widgets.php:153
