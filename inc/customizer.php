@@ -849,20 +849,6 @@ add_action('customize_register', 'colormag_customize_register');
 
 /*****************************************************************************************/
 
-/**
- * Enqueue scripts for customizer
- */
-function colormag_customizer_js() {
-   wp_enqueue_script( 'colormag_customizer_script', get_template_directory_uri() . '/js/colormag_customizer.js', array("jquery"), 'false', true  );
-
-   wp_localize_script( 'colormag_customizer_script', 'colormag_customizer_obj', array(
-
-      'pro' => __('View PRO version','colormag')
-
-   ) );
-}
-add_action( 'customize_controls_enqueue_scripts', 'colormag_customizer_js' );
-
 /*
  * Custom Scripts
  */
