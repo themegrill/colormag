@@ -18,9 +18,9 @@ function colormag_widgets_init() {
     */
    // Registering main right sidebar
    register_sidebar( array(
-      'name'            => __( 'Right Sidebar', 'colormag' ),
+      'name'            => esc_html__( 'Right Sidebar', 'colormag' ),
       'id'              => 'colormag_right_sidebar',
-      'description'     => __( 'Shows widgets at Right side.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets at Right side.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -29,9 +29,9 @@ function colormag_widgets_init() {
 
    // Registering main left sidebar
    register_sidebar( array(
-      'name'            => __( 'Left Sidebar', 'colormag' ),
+      'name'            => esc_html__( 'Left Sidebar', 'colormag' ),
       'id'              => 'colormag_left_sidebar',
-      'description'     => __( 'Shows widgets at Left side.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets at Left side.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -40,9 +40,9 @@ function colormag_widgets_init() {
 
    // Registering Header sidebar
    register_sidebar( array(
-      'name'            => __( 'Header Sidebar', 'colormag' ),
+      'name'            => esc_html__( 'Header Sidebar', 'colormag' ),
       'id'              => 'colormag_header_sidebar',
-      'description'     => __( 'Shows widgets in header section just above the main navigation menu.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets in header section just above the main navigation menu.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title">',
@@ -51,9 +51,9 @@ function colormag_widgets_init() {
 
    // registering the Front Page: Slider Area Sidebar
    register_sidebar( array(
-      'name'            => __( 'Front Page: Slider Area', 'colormag' ),
+      'name'            => esc_html__( 'Front Page: Slider Area', 'colormag' ),
       'id'              => 'colormag_front_page_slider_area',
-      'description'     => __( 'Show widget just below menu. Suitable for TG: Featured Cat Slider.', 'colormag' ),
+      'description'     => esc_html__( 'Show widget just below menu. Suitable for TG: Featured Category Slider.', 'colormag' ),
       'before_widget'   => '<section id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</section>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -62,9 +62,9 @@ function colormag_widgets_init() {
 
    // registering the Front Page: Area beside slider Sidebar
    register_sidebar( array(
-      'name'            => __( 'Front Page: Area beside slider', 'colormag' ),
+      'name'            => esc_html__( 'Front Page: Area beside slider', 'colormag' ),
       'id'              => 'colormag_front_page_area_beside_slider',
-      'description'     => __( 'Show widget beside the slider. Suitable for TG: Highlighted Posts.', 'colormag' ),
+      'description'     => esc_html__( 'Show widget beside the slider. Suitable for TG: Highlighted Posts.', 'colormag' ),
       'before_widget'   => '<section id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</section>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -73,9 +73,9 @@ function colormag_widgets_init() {
 
    // registering the Front Page: Content Top Section Sidebar
    register_sidebar( array(
-      'name'            => __( 'Front Page: Content Top Section', 'colormag' ),
+      'name'            => esc_html__( 'Front Page: Content Top Section', 'colormag' ),
       'id'              => 'colormag_front_page_content_top_section',
-      'description'     => __( 'Content Top Section', 'colormag' ),
+      'description'     => esc_html__( 'Content Top Section', 'colormag' ),
       'before_widget'   => '<section id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</section>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -84,9 +84,9 @@ function colormag_widgets_init() {
 
    // registering the Front Page: Content Middle Left Section Sidebar
    register_sidebar( array(
-      'name'            => __( 'Front Page: Content Middle Left Section', 'colormag' ),
+      'name'            => esc_html__( 'Front Page: Content Middle Left Section', 'colormag' ),
       'id'              => 'colormag_front_page_content_middle_left_section',
-      'description'     => __( 'Content Middle Left Section', 'colormag' ),
+      'description'     => esc_html__( 'Content Middle Left Section', 'colormag' ),
       'before_widget'   => '<section id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</section>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -95,9 +95,9 @@ function colormag_widgets_init() {
 
    // registering the Front Page: Content Middle Right Section Sidebar
    register_sidebar( array(
-      'name'            => __( 'Front Page: Content Middle Right Section', 'colormag' ),
+      'name'            => esc_html__( 'Front Page: Content Middle Right Section', 'colormag' ),
       'id'              => 'colormag_front_page_content_middle_right_section',
-      'description'     => __( 'Content Middle Right Section', 'colormag' ),
+      'description'     => esc_html__( 'Content Middle Right Section', 'colormag' ),
       'before_widget'   => '<section id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</section>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -106,9 +106,9 @@ function colormag_widgets_init() {
 
    // registering the Front Page: Content Bottom Section Sidebar
    register_sidebar( array(
-      'name'            => __( 'Front Page: Content Bottom Section', 'colormag' ),
+      'name'            => esc_html__( 'Front Page: Content Bottom Section', 'colormag' ),
       'id'              => 'colormag_front_page_content_bottom_section',
-      'description'     => __( 'Content Middle Bottom Section', 'colormag' ),
+      'description'     => esc_html__( 'Content Bottom Section', 'colormag' ),
       'before_widget'   => '<section id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</section>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -117,9 +117,9 @@ function colormag_widgets_init() {
 
    // Registering contact Page sidebar
    register_sidebar( array(
-      'name'            => __( 'Contact Page Sidebar', 'colormag' ),
+      'name'            => esc_html__( 'Contact Page Sidebar', 'colormag' ),
       'id'              => 'colormag_contact_page_sidebar',
-      'description'     => __( 'Shows widgets on Contact Page Template.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets on Contact Page Template.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -128,9 +128,9 @@ function colormag_widgets_init() {
 
    // Registering Error 404 Page sidebar
    register_sidebar( array(
-      'name'            => __( 'Error 404 Page Sidebar', 'colormag' ),
+      'name'            => esc_html__( 'Error 404 Page Sidebar', 'colormag' ),
       'id'              => 'colormag_error_404_page_sidebar',
-      'description'     => __( 'Shows widgets on Error 404 page.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets on Error 404 page.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -139,9 +139,9 @@ function colormag_widgets_init() {
 
    // Registering advertisement above footer sidebar
    register_sidebar( array(
-      'name'            => __( 'Advertisement Above The Footer', 'colormag' ),
+      'name'            => esc_html__( 'Advertisement Above The Footer', 'colormag' ),
       'id'              => 'colormag_advertisement_above_the_footer_sidebar',
-      'description'     => __( 'Shows widgets Just Above The Footer, suitable for TG: 728x90 widget.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets just above the footer, suitable for TG: 728x90 Advertisement widget.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -150,9 +150,9 @@ function colormag_widgets_init() {
 
 	// Registering footer sidebar one
 	register_sidebar( array(
-		'name' 				=> __( 'Footer Sidebar One', 'colormag' ),
+		'name' 				=> esc_html__( 'Footer Sidebar One', 'colormag' ),
 		'id' 					=> 'colormag_footer_sidebar_one',
-		'description'   	=> __( 'Shows widgets at footer sidebar one.', 'colormag' ),
+		'description'   	=> esc_html__( 'Shows widgets at footer sidebar one.', 'colormag' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -161,9 +161,9 @@ function colormag_widgets_init() {
 
 	// Registering footer sidebar two
 	register_sidebar( array(
-		'name' 				=> __( 'Footer Sidebar Two', 'colormag' ),
+		'name' 				=> esc_html__( 'Footer Sidebar Two', 'colormag' ),
 		'id' 					=> 'colormag_footer_sidebar_two',
-		'description'   	=> __( 'Shows widgets at footer sidebar two.', 'colormag' ),
+		'description'   	=> esc_html__( 'Shows widgets at footer sidebar two.', 'colormag' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -172,9 +172,9 @@ function colormag_widgets_init() {
 
    // Registering footer sidebar three
    register_sidebar( array(
-      'name'            => __( 'Footer Sidebar Three', 'colormag' ),
+      'name'            => esc_html__( 'Footer Sidebar Three', 'colormag' ),
       'id'              => 'colormag_footer_sidebar_three',
-      'description'     => __( 'Shows widgets at footer sidebar three.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets at footer sidebar three.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',
@@ -183,9 +183,9 @@ function colormag_widgets_init() {
 
    // Registering footer sidebar four
    register_sidebar( array(
-      'name'            => __( 'Footer Sidebar Four', 'colormag' ),
+      'name'            => esc_html__( 'Footer Sidebar Four', 'colormag' ),
       'id'              => 'colormag_footer_sidebar_four',
-      'description'     => __( 'Shows widgets at footer sidebar four.', 'colormag' ),
+      'description'     => esc_html__( 'Shows widgets at footer sidebar four.', 'colormag' ),
       'before_widget'   => '<aside id="%1$s" class="widget %2$s clearfix">',
       'after_widget'    => '</aside>',
       'before_title'    => '<h3 class="widget-title"><span>',

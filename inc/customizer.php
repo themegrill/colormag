@@ -509,7 +509,7 @@ function colormag_customize_register($wp_customize) {
    ));
 
    $wp_customize->add_control(new COLORMAG_Custom_CSS_Control($wp_customize, 'colormag_custom_css', array(
-      'label' => __('Write your custom css', 'colormag'),
+      'label' => __('Write your Custom CSS', 'colormag'),
       'section' => 'colormag_custom_css_setting',
       'settings' => 'colormag_custom_css'
    )));
@@ -519,7 +519,7 @@ function colormag_customize_register($wp_customize) {
    $wp_customize->add_panel('colormag_social_links_options', array(
    	'priority' => 510,
    	'title' => __('Social Options', 'colormag'),
-   	'description'=> __('Change the Social Links Settings from here as you want', 'colormag'),
+   	'description'=> __('Change the Social Links settings from here as you want', 'colormag'),
    	'capability' => 'edit_theme_options',
 	));
 
@@ -600,7 +600,7 @@ function colormag_customize_register($wp_customize) {
 
 		$wp_customize->add_control($colormag_social_link['id'].'_checkbox', array(
 			'type' => 'checkbox',
-			'label' => __('Check to show in new tab', 'colormag'),
+			'label' => __('Check to open in new tab', 'colormag'),
 			'section'=> 'colormag_social_link_activate_settings',
 			'settings'=> $colormag_social_link['id'].'_checkbox',
 			'priority' => $i
