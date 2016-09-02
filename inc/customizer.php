@@ -17,25 +17,29 @@ function colormag_customize_register($wp_customize) {
       public function render_content() {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
+            'view-pro' => array(
+               'link' => esc_url('http://themegrill.com/themes/colormag-pro/'),
+               'text' => esc_html__('View Pro', 'colormag'),
+            ),
             'theme-info' => array(
                'link' => esc_url('http://themegrill.com/themes/colormag/'),
-               'text' => __('Theme Info', 'colormag'),
+               'text' => esc_html__('Theme Info', 'colormag'),
             ),
             'support' => array(
                'link' => esc_url('http://themegrill.com/support-forum/'),
-               'text' => __('Support', 'colormag'),
+               'text' => esc_html__('Support', 'colormag'),
             ),
             'documentation' => array(
-               'link' => esc_url('http://themegrill.com/theme-instruction/colormag/'),
-               'text' => __('Documentation', 'colormag'),
+               'link' => esc_url('http://docs.themegrill.com/colormag/'),
+               'text' => esc_html__('Documentation', 'colormag'),
             ),
             'demo' => array(
                'link' => esc_url('http://demo.themegrill.com/colormag/'),
-               'text' => __('View Demo', 'colormag'),
+               'text' => esc_html__('View Demo', 'colormag'),
             ),
             'rating' => array(
                'link' => esc_url('http://wordpress.org/support/view/theme-reviews/colormag?filter=5'),
-               'text' => __('Rate this theme', 'colormag'),
+               'text' => esc_html__('Rate this theme', 'colormag'),
             ),
          );
          foreach ($important_links as $important_link) {
