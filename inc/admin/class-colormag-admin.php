@@ -33,7 +33,15 @@ class ColorMag_Admin {
 	public function admin_menu() {
 		$theme = wp_get_theme( get_template() );
 
-		$page = add_theme_page( esc_html__( 'About', 'colormag' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'colormag' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'colormag-welcome', array( $this, 'welcome_screen' ) );
+		$page = add_theme_page(
+			/* translators: %s is theme name. */
+			sprintf( esc_html__('About %s', 'colormag'), $theme->display( 'Name' ) ),
+			/* translators: %s is theme name. */
+			sprintf( esc_html__('About %s', 'colormag'), $theme->display( 'Name' ) ),
+			'activate_plugins',
+			'colormag-welcome',
+			array( $this, 'welcome_screen' )
+		);
 		add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
 	}
 
@@ -112,9 +120,13 @@ class ColorMag_Admin {
 		?>
 		<div class="colormag-theme-info">
 				<h1>
-					<?php esc_html_e('About', 'colormag'); ?>
-					<?php echo $theme->display( 'Name' ); ?>
-					<?php printf( '%s', $major_version ); ?>
+					<?php
+								printf( /* translators: %s is theme name. */
+									esc_html__('About %s', 'colormag'),
+										$theme->display( 'Name' )
+										.' '
+										. sprintf( '%s', $major_version )
+								); ?>
 				</h1>
 
 			<div class="welcome-description-wrap">
@@ -213,16 +225,22 @@ class ColorMag_Admin {
 					<div class="col">
 						<h3>
 							<?php
-							esc_html_e( 'Translate', 'colormag' );
-							echo ' ' . $theme->display( 'Name' );
+							printf(
+							 /* translators: %s is theme name. */
+								esc_html__('Translate %s', 'colormag'),
+								$theme->display( 'Name' )
+							)
 							?>
 						</h3>
 						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'colormag' ) ?></p>
 						<p>
 							<a href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/colormag' ); ?>" class="button button-secondary">
 								<?php
-								esc_html_e( 'Translate', 'colormag' );
-								echo ' ' . $theme->display( 'Name' );
+								printf(
+								 /* translators: %s is theme name. */
+									esc_html__('Translate %s', 'colormag'),
+									$theme->display( 'Name' )
+								)
 								?>
 							</a>
 						</p>
