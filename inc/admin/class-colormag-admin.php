@@ -121,11 +121,10 @@ class ColorMag_Admin {
 		<div class="colormag-theme-info">
 				<h1>
 					<?php
-								printf( /* translators: %s is theme name. */
-									esc_html__('About %s', 'colormag'),
-										$theme->display( 'Name' )
-										.' '
-										. sprintf( '%s', $major_version )
+					printf( /* translators: %1$s is theme name. / %2$s is major version number of theme. */
+						esc_html__('About %1$s %2$s', 'colormag'),
+							$theme->display( 'Name' ),
+							sprintf( '%s', $major_version )
 								); ?>
 				</h1>
 
