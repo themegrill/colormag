@@ -52,11 +52,16 @@ wp_head();
 				<div id="header-text-nav-wrap" class="clearfix">
 					<div id="header-left-section">
 						<?php
-						if((get_theme_mod('colormag_header_logo_placement', 'header_text_only') == 'show_both' || get_theme_mod('colormag_header_logo_placement', 'header_text_only') == 'header_logo_only') && get_theme_mod('colormag_logo', '') != '') {
+						if((get_theme_mod('colormag_header_logo_placement', 'header_text_only') == 'show_both' || get_theme_mod('colormag_header_logo_placement', 'header_text_only') == 'header_logo_only')) {
 						?>
 							<div id="header-logo-image">
+								<?php if (get_theme_mod('colormag_logo', '') != '') { ?>
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod('colormag_logo')); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+								<?php } ?>
 
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod('colormag_logo')); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+								<?php if (function_exists('the_custom_logo') && has_custom_logo( $blog_id = 0 )) {
+									colormag_the_custom_logo();
+								} ?>
 							</div><!-- #header-logo-image -->
 						<?php
 						}

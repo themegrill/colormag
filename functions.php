@@ -87,16 +87,32 @@ function colormag_setup() {
 	// Adding excerpt option box for pages as well
 	add_post_type_support( 'page', 'excerpt' );
 
-   /*
-    * Switch default core markup for search form, comment form, and comments
-    * to output valid HTML5.
-    */
-   add_theme_support('html5', array(
-       'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-   ));
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support('html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+	));
 
-   // adding the WooCommerce plugin support
-   add_theme_support( 'woocommerce' );
+	// adding the WooCommerce plugin support
+	add_theme_support( 'woocommerce' );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support('html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+	));
+
+	// Adds the support for the Custom Logo introduced in WordPress 4.5
+	add_theme_support( 'custom-logo',
+		array(
+			'flex-width' => true,
+			'flex-height' => true,
+		)
+	);
 }
 endif;
 
