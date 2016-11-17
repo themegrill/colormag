@@ -282,7 +282,7 @@ function colormag_favicon() {
 	if ( get_theme_mod( 'colormag_favicon_show', '0' ) == '1' ) {
 		$colormag_favicon = get_theme_mod( 'colormag_favicon_upload', '' );
 		$colormag_favicon_output = '';
-		if ( !empty( $colormag_favicon ) ) {
+		if ( !empty( $colormag_favicon ) && !has_site_icon() ) {
 			$colormag_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $colormag_favicon ).'" type="image/x-icon" />';
 		}
 		echo $colormag_favicon_output;
@@ -691,4 +691,26 @@ if ( ! function_exists( 'colormag_the_custom_logo' ) ) {
 		}
 	}
 }
+
+/**
+ * Function to transfer the favicon added in Customizer Options of theme to Site Icon in Site Identity section
+ */
+function colormag_site_icon_migrate() {
+	if ( get_option( 'colormag_site_icon_transfer' ) ) {
+		return;
+	}
+
+	$image_url = get_theme_mod( 'colormag_favicon_upload', '' );
+
+	if ( ! has_site_icon() && ! empty( $image_url ) ) {
+		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
+		update_option( 'site_icon', $customizer_site_icon_id );
+		// Set the transfer as complete.
+		update_option( 'colormag_site_icon_transfer', 1 );
+		// Delete the old favicon theme_mod option.
+		delete_option( 'theme_mods_colormag-pro', 'colormag_favicon_upload' );
+	}
+}
+
+add_action( 'after_setup_theme', 'colormag_site_icon_migrate' );
 ?>
