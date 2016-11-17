@@ -708,7 +708,7 @@ function colormag_site_icon_migrate() {
 		// Set the transfer as complete.
 		update_option( 'colormag_site_icon_transfer', 1 );
 		// Delete the old favicon theme_mod option.
-		delete_option( 'theme_mods_colormag-pro', 'colormag_favicon_upload' );
+		delete_option( 'theme_mods_colormag', 'colormag_favicon_upload' );
 	}
 }
 
