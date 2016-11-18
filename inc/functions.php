@@ -700,9 +700,10 @@ function colormag_site_icon_migrate() {
 		return;
 	}
 
+	global $wp_version;
 	$image_url = get_theme_mod( 'colormag_favicon_upload', '' );
 
-	if ( ! function_exists( 'has_site_icon' ) || ( ! has_site_icon() && ! empty( $image_url ) ) ) {
+	if ( ( $wp_version >= 4.3 ) || ( ! has_site_icon() && ! empty( $image_url ) ) ) {
 		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
 		update_option( 'site_icon', $customizer_site_icon_id );
 		// Set the transfer as complete.
