@@ -621,7 +621,7 @@ function colormag_customize_register($wp_customize) {
    	'title' => __('Additional Options', 'colormag')
 	));
 
-	if ( !has_site_icon() && ( get_theme_mod( 'colormag_favicon_upload', '' ) != '' ) ) {
+	if ( ! function_exists( 'has_site_icon' ) || ( ! has_site_icon() && ( get_theme_mod( 'colormag_favicon_upload', '' ) != '' ) ) ) {
 		// favicon options
 		$wp_customize->add_section('colormag_favicon_show_setting', array(
 			'priority' => 1,

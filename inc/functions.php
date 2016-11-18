@@ -282,7 +282,7 @@ function colormag_favicon() {
 	if ( get_theme_mod( 'colormag_favicon_show', '0' ) == '1' ) {
 		$colormag_favicon = get_theme_mod( 'colormag_favicon_upload', '' );
 		$colormag_favicon_output = '';
-		if ( !empty( $colormag_favicon ) && !has_site_icon() ) {
+		if ( ! function_exists( 'has_site_icon' ) || ( ! empty( $colormag_favicon ) && ! has_site_icon() ) ) {
 			$colormag_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $colormag_favicon ).'" type="image/x-icon" />';
 		}
 		echo $colormag_favicon_output;
@@ -702,13 +702,14 @@ function colormag_site_icon_migrate() {
 
 	$image_url = get_theme_mod( 'colormag_favicon_upload', '' );
 
-	if ( ! has_site_icon() && ! empty( $image_url ) ) {
+	if ( ! function_exists( 'has_site_icon' ) || ( ! has_site_icon() && ! empty( $image_url ) ) ) {
 		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
 		update_option( 'site_icon', $customizer_site_icon_id );
 		// Set the transfer as complete.
 		update_option( 'colormag_site_icon_transfer', 1 );
 		// Delete the old favicon theme_mod option.
-		delete_option( 'theme_mods_colormag', 'colormag_favicon_upload' );
+		remove_theme_mod( 'colormag_favicon_upload' );
+		remove_theme_mod( 'colormag_favicon_show' );
 	}
 }
 

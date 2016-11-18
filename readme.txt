@@ -51,7 +51,8 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Feature - Added the Custom Site Logo feature introduced in WordPress 4.5
-* Feature - Added backward compatibility for Site Icon introduced in WordPress 4.3
+* Feature - Added support for Site Icon introduced in WordPress 4.3
+* Feature - Added compatibility for ThemeGrill Demo Importer plugin
 
 = Version 1.1.5 - 2016-09-02 =
 * Tweaks - Removed Portugese (Brazil) language file as 100% translation now available at wordpress.org
