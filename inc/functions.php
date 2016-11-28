@@ -309,7 +309,7 @@ function colormag_custom_css() {
 	}
 
 	$colormag_custom_css = get_theme_mod( 'colormag_custom_css', '' );
-	if( !empty( $colormag_custom_css ) ) {
+	if( ! empty( $colormag_custom_css ) && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		echo '<!-- '.get_bloginfo('name').' Custom Styles -->';
 		?><style type="text/css"><?php echo $colormag_custom_css; ?></style><?php
 	}
