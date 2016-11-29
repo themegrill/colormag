@@ -720,7 +720,6 @@ add_action( 'after_setup_theme', 'colormag_site_icon_migrate' );
  * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
  */
 function colormag_custom_css_migrate() {
-
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
 		$custom_css = get_theme_mod( 'colormag_custom_css' );
 		if ( $custom_css ) {
@@ -732,7 +731,6 @@ function colormag_custom_css_migrate() {
 			}
 		}
 	}
-
 }
 
 add_action( 'after_setup_theme', 'colormag_customm_css_migrate' );
