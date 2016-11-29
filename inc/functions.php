@@ -733,5 +733,5 @@ function colormag_custom_css_migrate() {
 	}
 }
 
-add_action( 'after_setup_theme', 'colormag_customm_css_migrate' );
+add_action( 'after_setup_theme', 'colormag_custom_css_migrate' );
 ?>
