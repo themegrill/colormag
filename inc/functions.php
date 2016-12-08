@@ -75,10 +75,8 @@ function colormag_scripts_styles_method() {
       wp_enqueue_script( 'colormag-postformat-setting', COLORMAG_JS_URL. '/post-format.js', array( 'jquery' ), '20150422', true );
    }
 
-   $colormag_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-8]/',$colormag_user_agent)) {
-		wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv.min.js', true );
-	}
+	wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv.min.js', true );
+	wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
 }
 
