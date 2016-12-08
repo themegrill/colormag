@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.1.4\n"
+"Project-Id-Version: ColorMag 1.1.6\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2016-09-02 10:27:00+00:00\n"
+"POT-Creation-Date: 2016-11-18 07:38:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -325,7 +325,7 @@ msgstr ""
 msgid "Color Options"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:365 inc/customizer.php:466
+#: inc/admin/class-colormag-admin.php:365 inc/customizer.php:468
 msgid "Primary color option"
 msgstr ""
 
@@ -377,7 +377,7 @@ msgstr ""
 msgid "Change Read More Text"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:425 inc/customizer.php:657
+#: inc/admin/class-colormag-admin.php:425 inc/customizer.php:661
 msgid "Related Posts"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr ""
 msgid "TG: Featured Posts (Style 7)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:520 inc/customizer.php:715
+#: inc/admin/class-colormag-admin.php:520 inc/customizer.php:719
 msgid "Category Color Options"
 msgstr ""
 
@@ -565,230 +565,230 @@ msgstr ""
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:214
+#: inc/customizer.php:215
 msgid "Upload logo for your header"
 msgstr ""
 
-#: inc/customizer.php:227
+#: inc/customizer.php:229
 msgid "Choose the option that you want"
 msgstr ""
 
-#: inc/customizer.php:230 inc/customizer.php:768
+#: inc/customizer.php:232 inc/customizer.php:772
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/customizer.php:231 inc/customizer.php:769
+#: inc/customizer.php:233 inc/customizer.php:773
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/customizer.php:232 inc/customizer.php:770
+#: inc/customizer.php:234 inc/customizer.php:774
 msgid "Show Both"
 msgstr ""
 
-#: inc/customizer.php:233 inc/customizer.php:771
+#: inc/customizer.php:235 inc/customizer.php:775
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:242
 msgid "Header Image Position"
 msgstr ""
 
-#: inc/customizer.php:252
+#: inc/customizer.php:254
 msgid "Header image display position"
 msgstr ""
 
-#: inc/customizer.php:255 inc/customizer.php:782
+#: inc/customizer.php:257 inc/customizer.php:786
 msgid "Display the Header image just above the site title/text."
 msgstr ""
 
-#: inc/customizer.php:256 inc/customizer.php:783
+#: inc/customizer.php:258 inc/customizer.php:787
 msgid ""
 "Default: Display the Header image between site title/text and the "
 "main/primary menu."
 msgstr ""
 
-#: inc/customizer.php:257 inc/customizer.php:784
+#: inc/customizer.php:259 inc/customizer.php:788
 msgid "Display the Header image below main/primary menu."
 msgstr ""
 
-#: inc/customizer.php:269
+#: inc/customizer.php:271
 msgid "Check to make header image link back to home page"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:278
 msgid "Change the Design Settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:278
+#: inc/customizer.php:280
 msgid "Design Options"
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:286
 msgid "Front Page Settings"
 msgstr ""
 
-#: inc/customizer.php:295
+#: inc/customizer.php:297
 msgid "Check to hide blog posts/static page on front page"
 msgstr ""
 
-#: inc/customizer.php:302
+#: inc/customizer.php:304
 msgid "Site Layout"
 msgstr ""
 
-#: inc/customizer.php:314
+#: inc/customizer.php:316
 msgid "Choose your site layout. The change is reflected in whole site"
 msgstr ""
 
-#: inc/customizer.php:316 inc/customizer.php:795
+#: inc/customizer.php:318 inc/customizer.php:799
 msgid "Boxed Layout"
 msgstr ""
 
-#: inc/customizer.php:317 inc/customizer.php:796
+#: inc/customizer.php:319 inc/customizer.php:800
 msgid "Wide Layout"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:389
 msgid "Default layout"
 msgstr ""
 
-#: inc/customizer.php:399
+#: inc/customizer.php:401
 msgid ""
 "Select default layout. This layout will be reflected in whole site "
 "archives, categories, search page etc. The layout for a single post and "
 "page can be controlled from below options"
 msgstr ""
 
-#: inc/customizer.php:413
+#: inc/customizer.php:415
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer.php:425
+#: inc/customizer.php:427
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is set for specific page"
 msgstr ""
 
-#: inc/customizer.php:439
+#: inc/customizer.php:441
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer.php:451
+#: inc/customizer.php:453
 msgid ""
 "Select default layout for single posts. This layout will be reflected in "
 "all single posts unless unique layout is set for specific post"
 msgstr ""
 
-#: inc/customizer.php:477
+#: inc/customizer.php:479
 msgid ""
 "This will reflect in links, buttons and many others. Choose a color to "
 "match your site"
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:502
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:512
+#: inc/customizer.php:514
 msgid "Write your Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:521
+#: inc/customizer.php:523
 msgid "Social Options"
 msgstr ""
 
-#: inc/customizer.php:522
+#: inc/customizer.php:524
 msgid "Change the Social Links settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:528
+#: inc/customizer.php:530
 msgid "Activate social links area"
 msgstr ""
 
-#: inc/customizer.php:540
+#: inc/customizer.php:542
 msgid "Check to activate social links area"
 msgstr ""
 
-#: inc/customizer.php:548 inc/header-functions.php:20
+#: inc/customizer.php:550 inc/header-functions.php:20
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:553 inc/header-functions.php:21
+#: inc/customizer.php:555 inc/header-functions.php:21
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:558 inc/header-functions.php:22
+#: inc/customizer.php:560 inc/header-functions.php:22
 msgid "Google-Plus"
 msgstr ""
 
-#: inc/customizer.php:563 inc/header-functions.php:23
+#: inc/customizer.php:565 inc/header-functions.php:23
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:568 inc/header-functions.php:24
+#: inc/customizer.php:570 inc/header-functions.php:24
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:573 inc/header-functions.php:25
+#: inc/customizer.php:575 inc/header-functions.php:25
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:603
+#: inc/customizer.php:605
 msgid "Check to open in new tab"
 msgstr ""
 
-#: inc/customizer.php:617
+#: inc/customizer.php:619
 msgid "Change the Additional Settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:619
+#: inc/customizer.php:621
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:625
+#: inc/customizer.php:628
 msgid "Activate favicon"
 msgstr ""
 
-#: inc/customizer.php:637
+#: inc/customizer.php:640
 msgid "Check to activate favicon. Upload favicon from below option"
 msgstr ""
 
-#: inc/customizer.php:649
+#: inc/customizer.php:652
 msgid "Upload favicon for your site"
 msgstr ""
 
-#: inc/customizer.php:669
+#: inc/customizer.php:673
 msgid "Check to activate the related posts"
 msgstr ""
 
-#: inc/customizer.php:682
+#: inc/customizer.php:686
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: inc/customizer.php:686 inc/customizer.php:756
+#: inc/customizer.php:690 inc/customizer.php:760
 msgid "Related Posts By Categories"
 msgstr ""
 
-#: inc/customizer.php:687 inc/customizer.php:757
+#: inc/customizer.php:691 inc/customizer.php:761
 msgid "Related Posts By Tags"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:698
 msgid "Image Lightbox"
 msgstr ""
 
-#: inc/customizer.php:706
+#: inc/customizer.php:710
 msgid "Check to enable the lightbox for the featured images in single post"
 msgstr ""
 
-#: inc/customizer.php:717
+#: inc/customizer.php:721
 msgid "Change the color of each category items as you want."
 msgstr ""
 
-#: inc/customizer.php:722
+#: inc/customizer.php:726
 msgid "Category Color Settings"
 msgstr ""
 
-#: inc/customizer.php:744
+#: inc/customizer.php:748
 msgid "%s"
 msgstr ""
 

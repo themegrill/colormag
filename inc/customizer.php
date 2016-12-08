@@ -481,41 +481,43 @@ function colormag_customize_register($wp_customize) {
       'settings' => 'colormag_primary_color'
    )));
 
-   // custom CSS setting
-   class COLORMAG_Custom_CSS_Control extends WP_Customize_Control {
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+		// Custom CSS setting
+		class COLORMAG_Custom_CSS_Control extends WP_Customize_Control {
 
-      public $type = 'custom_css';
+			public $type = 'custom_css';
 
-      public function render_content() {
-      ?>
-         <label>
-            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-         </label>
-      <?php
-      }
+			public function render_content() {
+			?>
+				<label>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+				</label>
+			<?php
+			}
 
-   }
+		}
 
-   $wp_customize->add_section('colormag_custom_css_setting', array(
-      'priority' => 9,
-      'title' => __('Custom CSS', 'colormag'),
-      'panel' => 'colormag_design_options'
-   ));
+		$wp_customize->add_section('colormag_custom_css_setting', array(
+			'priority' => 9,
+			'title' => __('Custom CSS', 'colormag'),
+			'panel' => 'colormag_design_options'
+		));
 
-   $wp_customize->add_setting('colormag_custom_css', array(
-      'default' => '',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'wp_filter_nohtml_kses',
-      'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-   ));
+		$wp_customize->add_setting('colormag_custom_css', array(
+			'default' => '',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
+		));
 
-   $wp_customize->add_control(new COLORMAG_Custom_CSS_Control($wp_customize, 'colormag_custom_css', array(
-      'label' => __('Write your Custom CSS', 'colormag'),
-      'section' => 'colormag_custom_css_setting',
-      'settings' => 'colormag_custom_css'
-   )));
-   // End of the Design Options
+		$wp_customize->add_control(new COLORMAG_Custom_CSS_Control($wp_customize, 'colormag_custom_css', array(
+			'label' => __('Write your Custom CSS', 'colormag'),
+			'section' => 'colormag_custom_css_setting',
+			'settings' => 'colormag_custom_css'
+		)));
+	}
+	// End of the Design Options
 
    // Start of the Social Link Options
    $wp_customize->add_panel('colormag_social_links_options', array(

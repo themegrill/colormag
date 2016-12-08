@@ -306,8 +306,8 @@ function colormag_custom_css() {
 <?php
 	}
 
-	$colormag_custom_css = get_theme_mod( 'colormag_custom_css', '' );
-	if( !empty( $colormag_custom_css ) ) {
+	$colormag_custom_css = get_theme_mod( 'colormag_custom_css' );
+	if ( $colormag_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		echo '<!-- '.get_bloginfo('name').' Custom Styles -->';
 		?><style type="text/css"><?php echo $colormag_custom_css; ?></style><?php
 	}
@@ -701,7 +701,7 @@ function colormag_site_icon_migrate() {
 	global $wp_version;
 	$image_url = get_theme_mod( 'colormag_favicon_upload', '' );
 
-	if ( ( $wp_version >= 4.3 ) || ( ! has_site_icon() && ! empty( $image_url ) ) ) {
+	if ( ( $wp_version >= 4.3 ) && ( ! has_site_icon() && ! empty( $image_url ) ) ) {
 		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
 		update_option( 'site_icon', $customizer_site_icon_id );
 		// Set the transfer as complete.
@@ -713,4 +713,23 @@ function colormag_site_icon_migrate() {
 }
 
 add_action( 'after_setup_theme', 'colormag_site_icon_migrate' );
+
+/**
+ * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
+ */
+function colormag_custom_css_migrate() {
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		$custom_css = get_theme_mod( 'colormag_custom_css' );
+		if ( $custom_css ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return = wp_update_custom_css_post( $core_css . $custom_css );
+			if ( ! is_wp_error( $return ) ) {
+				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+				remove_theme_mod( 'colormag_custom_css' );
+			}
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'colormag_custom_css_migrate' );
 ?>
