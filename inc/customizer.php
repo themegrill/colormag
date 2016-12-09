@@ -204,7 +204,7 @@ function colormag_customize_register($wp_customize) {
       'panel' => 'colormag_header_options'
    ));
 
-	if ( !function_exists('the_custom_logo') || ( get_theme_mod('colormag_logo', '') != '' ) ) {
+	if ( ! function_exists('the_custom_logo') ) {
 		$wp_customize->add_setting('colormag_logo', array(
 			'default' => '',
 			'capability' => 'edit_theme_options',

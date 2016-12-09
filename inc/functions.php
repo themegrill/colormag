@@ -732,4 +732,23 @@ function colormag_custom_css_migrate() {
 }
 
 add_action( 'after_setup_theme', 'colormag_custom_css_migrate' );
+
+/**
+ * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
+ */
+function colormag_site_logo_migrate() {
+	if ( function_exists( 'the_custom_logo' ) && ! has_custom_logo( $blog_id = 0 ) ) {
+		$logo_url = get_theme_mod( 'colormag_logo' );
+
+		if ( $logo_url ) {
+			$customizer_site_logo_id = attachment_url_to_postid( $logo_url );
+			set_theme_mod( 'custom_logo', $customizer_site_logo_id );
+
+			// Delete the old Site Logo theme_mod option.
+			remove_theme_mod( 'colormag_logo' );
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'colormag_site_logo_migrate' );
 ?>

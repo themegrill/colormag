@@ -49,6 +49,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Feature - Migrated the Custom Logo from theme options to the Site Logo in Site Identity section
+
 = Version 1.1.6 - 2016-12-08 =
 * Feature - Added the Custom Site Logo feature introduced in WordPress 4.5
 * Feature - Added support for Site Icon introduced in WordPress 4.3
