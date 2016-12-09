@@ -49,7 +49,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.1.7 - 2016-12-09 =
 * Feature - Migrated the Custom Logo from theme options to the Site Logo in Site Identity section
 
 = Version 1.1.6 - 2016-12-08 =
