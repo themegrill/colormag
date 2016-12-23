@@ -763,7 +763,9 @@ li.default-menu {
    position: absolute;
    right: 8px;
 }
-
+.sub-toggle{
+	display: none;
+}
 /* =DROP DOWN
 ----------------------------------------------- */
 .main-navigation .sub-menu,
@@ -2491,7 +2493,24 @@ Responsive Structure
       float: none;
       width: 100%;
    }
+   .better-responsive-menu .sub-menu {
+	  display: none;
+	}
+   .main-small-navigation li{
+      position: relative;
+   }
+   .sub-toggle {
+	  position: absolute;
+	  right: 20px;
+	  cursor: pointer;
+	  display: block;
+	  top: 6px;
+	  color: #fff;
+	  padding: 0 7px;
+	  background-color: #1b7aa0;
+	}
 }
+
 @media screen and (max-width:767px) {
 
 }
