@@ -197,6 +197,26 @@ function colormag_customize_register($wp_customize) {
       'settings' => 'colormag_random_post_in_menu'
    ));
 
+   // Responsive new menu enable/disable
+   $wp_customize->add_section('colormag_responsive_menu_section', array(
+      'title' => esc_html__('Responsive Menu Style', 'colormag'),
+      'panel' => 'colormag_header_options'
+   ));
+
+   $wp_customize->add_setting('colormag_responsive_menu', array(
+      'priority' => 7,
+      'default' => 0,
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'colormag_checkbox_sanitize'
+   ));
+
+   $wp_customize->add_control('colormag_responsive_menu', array(
+      'type' => 'checkbox',
+      'label' => esc_html__('Check to switch to new responsive menu.', 'colormag'),
+      'section' => 'colormag_responsive_menu_section',
+      'settings' => 'colormag_responsive_menu'
+   ));
+
    // logo upload options
    $wp_customize->add_section('colormag_header_logo', array(
       'priority' => 1,
