@@ -294,20 +294,6 @@ function colormag_favicon() {
 /****************************************************************************************/
 
 /**
- * Change hex code to RGB
- * Source: https://css-tricks.com/snippets/php/convert-hex-to-rgb/#comment-1052011
- */
-function colormag_hex2rgb( $hexstr ) {
-    $int = hexdec( $hexstr );
-    $rgb = array( "red" => 0xFF & ( $int >> 0x10 ), "green" => 0xFF & ( $int >> 0x8 ), "blue" => 0xFF & $int );
-    $r = $rgb[ 'red' ];
-    $g = $rgb[ 'green' ];
-    $b = $rgb[ 'blue' ];
-
-    return "rgba( $r, $g, $b, 0.85 )";
-}
-
-/**
  * Generate darker color
  * Source: http://stackoverflow.com/questions/3512311/how-to-generate-lighter-darker-color-with-php
  */
@@ -343,7 +329,6 @@ add_action('wp_head', 'colormag_custom_css');
 function colormag_custom_css() {
 	$colormag_internal_css = '';
 	$primary_color = get_theme_mod( 'colormag_primary_color', '#289dcc' );
-	$primary_opacity = colormag_hex2rgb( $primary_color );
 	$primary_dark    = colormag_darkcolor( $primary_color, -30 );
 	if( $primary_color != '#289dcc' ) {
 		$colormag_internal_css .= ' .colormag-button,blockquote,button,input[type=reset],input[type=button],input[type=submit]{background-color:'.$primary_color.'}#site-title a,.next a:hover,.previous a:hover,.social-links i.fa:hover,a{color:'.$primary_color.'}.fa.search-top:hover{background-color:'.$primary_color.'}#site-navigation{border-top:4px solid '.$primary_color.'}.home-icon.front_page_on,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor>a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current-menu-item>a,.main-navigation ul li.current_page_ancestor>a,.main-navigation ul li.current_page_item>a,.main-navigation ul li:hover>a,.main-small-navigation li a:hover,.site-header .menu-toggle:hover{background-color:'.$primary_color.'}.main-small-navigation .current-menu-item>a,.main-small-navigation .current_page_item>a{background:'.$primary_color.'}.promo-button-area a:hover{border:2px solid '.$primary_color.';background-color:'.$primary_color.'}#content .wp-pagenavi .current,#content .wp-pagenavi a:hover,.format-link .entry-content a,.pagination span{background-color:'.$primary_color.'}.pagination a span:hover{color:'.$primary_color.';border-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:'.$primary_color.'}.comments-area .comment-author-link span{background-color:'.$primary_color.'}.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:'.$primary_color.'}#secondary .widget-title{border-bottom:2px solid '.$primary_color.'}#secondary .widget-title span{background-color:'.$primary_color.'}.footer-widgets-area .widget-title{border-bottom:2px solid '.$primary_color.'}.footer-widgets-area .widget-title span{background-color:'.$primary_color.'}.footer-widgets-area a:hover{color:'.$primary_color.'}.advertisement_above_footer .widget-title{border-bottom:2px solid '.$primary_color.'}.advertisement_above_footer .widget-title span{background-color:'.$primary_color.'}a#scroll-up i{color:'.$primary_color.'}.page-header .page-title{border-bottom:2px solid '.$primary_color.'}#content .post .article-content .above-entry-meta .cat-links a,.page-header .page-title span{background-color:'.$primary_color.'}#content .post .article-content .entry-title a:hover,.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.post .entry-title a:hover,.search .entry-title a:hover{color:'.$primary_color.'}.entry-meta .post-format i{background-color:'.$primary_color.'}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.entry-meta .tag-links a:hover,.single #content .tags a:hover{color:'.$primary_color.'}.more-link,.no-post-thumbnail{background-color:'.$primary_color.'}.post-box .entry-meta .cat-links a:hover,.post-box .entry-meta .posted-on a:hover,.post.post-box .entry-title a:hover{color:'.$primary_color.'}.widget_featured_slider .slide-content .above-entry-meta .cat-links a{background-color:'.$primary_color.'}.widget_featured_slider .slide-content .below-entry-meta .byline a:hover,.widget_featured_slider .slide-content .below-entry-meta .comments a:hover,.widget_featured_slider .slide-content .below-entry-meta .posted-on a:hover,.widget_featured_slider .slide-content .entry-title a:hover{color:'.$primary_color.'}.widget_highlighted_posts .article-content .above-entry-meta .cat-links a{background-color:'.$primary_color.'}.byline a:hover,.comments a:hover,.edit-link a:hover,.posted-on a:hover,.tag-links a:hover,.widget_highlighted_posts .article-content .below-entry-meta .byline a:hover,.widget_highlighted_posts .article-content .below-entry-meta .comments a:hover,.widget_highlighted_posts .article-content .below-entry-meta .posted-on a:hover,.widget_highlighted_posts .article-content .entry-title a:hover{color:'.$primary_color.'}.widget_featured_posts .article-content .above-entry-meta .cat-links a{background-color:'.$primary_color.'}.widget_featured_posts .article-content .entry-title a:hover{color:'.$primary_color.'}.widget_featured_posts .widget-title{border-bottom:2px solid '.$primary_color.'}.widget_featured_posts .widget-title span{background-color:'.$primary_color.'}.related-posts-main-title .fa,.single-related-posts .article-content .entry-title a:hover{color:'.$primary_color.'}@media (max-width: 768px) {.better-responsive-menu .sub-toggle{background-color:'.$primary_dark.'}}';
