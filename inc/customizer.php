@@ -212,7 +212,7 @@ function colormag_customize_register($wp_customize) {
 
    $wp_customize->add_control('colormag_responsive_menu', array(
       'type' => 'checkbox',
-      'label' => esc_html__('Check to switch new responsive menu', 'colormag'),
+      'label' => esc_html__('Check to switch to new responsive menu.', 'colormag'),
       'section' => 'colormag_responsive_menu_section',
       'settings' => 'colormag_responsive_menu'
    ));
