@@ -52,6 +52,7 @@ and we will include it within the theme from next version update.
 
 = Version 1.1.8 - TBD =
 * Feature - Added new responsive menu design.
+* Added - RTL Language support.
 
 = Version 1.1.7 - 2016-12-09 =
 * Feature - Migrated the Custom Logo from theme options to the Site Logo in Site Identity section
