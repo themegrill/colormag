@@ -69,7 +69,11 @@ function colormag_header_image_markup( $html, $header, $attr ) {
 	return $output;
 }
 
-add_filter( 'get_header_image_tag', 'colormag_header_image_markup', 10, 3 );
+function colormag_header_image_markup_filter() {
+	add_filter( 'get_header_image_tag', 'colormag_header_image_markup', 10, 3 );
+}
+
+add_action( 'colormag_header_image_markup_render','colormag_header_image_markup_filter' );
 
 /****************************************************************************************/
 
@@ -79,7 +83,8 @@ if ( ! function_exists( 'colormag_render_header_image' ) ) :
  */
 function colormag_render_header_image() {
 	if ( function_exists( 'the_custom_header_markup' ) ) {
-			the_custom_header_markup();
+		do_action( 'colormag_header_image_markup_render' );
+		the_custom_header_markup();
 	} else {
 		$header_image = get_header_image();
 		if( ! empty( $header_image ) ) {
