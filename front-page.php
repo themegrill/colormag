@@ -6,9 +6,7 @@
  * @subpackage ColorMag
  * @since ColorMag 1.0
  */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 
    <div class="front-page-top-section clearfix">
       <div class="widget_slider_area">
