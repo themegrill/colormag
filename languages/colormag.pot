@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.1.7\n"
+"Project-Id-Version: ColorMag 1.1.8\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2017-01-16 08:38:03+00:00\n"
+"POT-Creation-Date: 2017-01-16 10:51:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,33 +13,33 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: inc/admin/class-colormag-admin.php:361
-#: inc/admin/class-colormag-admin.php:396
+#: inc/admin/class-colormag-admin.php:367
+#: inc/admin/class-colormag-admin.php:402
 msgid "1"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:397
+#: inc/admin/class-colormag-admin.php:403
 msgid "2"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:401
+#: inc/admin/class-colormag-admin.php:407
 msgid "4"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:386
+#: inc/admin/class-colormag-admin.php:392
 msgid "6"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:381
-#: inc/admin/class-colormag-admin.php:402
+#: inc/admin/class-colormag-admin.php:387
+#: inc/admin/class-colormag-admin.php:408
 msgid "7"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:382
+#: inc/admin/class-colormag-admin.php:388
 msgid "16"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:362
+#: inc/admin/class-colormag-admin.php:368
 msgid "22"
 msgstr ""
 
@@ -154,7 +154,7 @@ msgid "View Demo"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:134
-#: inc/admin/class-colormag-admin.php:204
+#: inc/admin/class-colormag-admin.php:210
 msgid "View PRO version"
 msgstr ""
 
@@ -175,133 +175,145 @@ msgid "Changelog"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:184
-msgid "Theme Customizer"
+msgid "Import Demo"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:185
-msgid "All Theme Options are available via Customize screen."
+msgid "Needs ThemeGrill Demo Importer plugin."
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:186
-msgid "Customize"
+msgid "Install"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:190
-#: inc/admin/class-colormag-admin.php:192 inc/customizer.php:34
-msgid "Documentation"
+msgid "Theme Customizer"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:191
-msgid "Please view our documentation page to setup the theme."
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: inc/admin/class-colormag-admin.php:192
+msgid "Customize"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:196
-msgid "Got theme support question?"
+#: inc/admin/class-colormag-admin.php:198 inc/customizer.php:34
+msgid "Documentation"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:197
-msgid "Please put it in our dedicated support forum."
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:198
-#: inc/admin/class-colormag-admin.php:355 inc/customizer.php:30
-msgid "Support"
+msgid "Please view our documentation page to setup the theme."
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:202
-msgid "Need more features?"
+msgid "Got theme support question?"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:203
-#: inc/admin/class-colormag-admin.php:343
-msgid "Upgrade to PRO version for more exciting features."
+msgid "Please put it in our dedicated support forum."
+msgstr ""
+
+#: inc/admin/class-colormag-admin.php:204
+#: inc/admin/class-colormag-admin.php:361 inc/customizer.php:30
+msgid "Support"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:208
-msgid "Got sales related question?"
+msgid "Need more features?"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:209
+#: inc/admin/class-colormag-admin.php:349
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: inc/admin/class-colormag-admin.php:214
+msgid "Got sales related question?"
+msgstr ""
+
+#: inc/admin/class-colormag-admin.php:215
 msgid "Please send it via our sales contact page."
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:210 sidebar-left.php:24 sidebar.php:24
+#: inc/admin/class-colormag-admin.php:216 sidebar-left.php:24 sidebar.php:24
 msgid "Contact Page"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:216
-#: inc/admin/class-colormag-admin.php:224
+#: inc/admin/class-colormag-admin.php:222
+#: inc/admin/class-colormag-admin.php:230
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:220
+#: inc/admin/class-colormag-admin.php:226
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:236
+#: inc/admin/class-colormag-admin.php:242
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:236
+#: inc/admin/class-colormag-admin.php:242
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:239
+#: inc/admin/class-colormag-admin.php:245
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:239
+#: inc/admin/class-colormag-admin.php:245
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:256
+#: inc/admin/class-colormag-admin.php:262
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:309
+#: inc/admin/class-colormag-admin.php:315
 msgid "This theme recommends following plugins:"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:311
-#: inc/admin/class-colormag-admin.php:385
+#: inc/admin/class-colormag-admin.php:317
+#: inc/admin/class-colormag-admin.php:391
 msgid "Social Icons"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:312
-#: inc/admin/class-colormag-admin.php:315
+#: inc/admin/class-colormag-admin.php:318
+#: inc/admin/class-colormag-admin.php:321
 msgid " by ThemeGrill"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:314
+#: inc/admin/class-colormag-admin.php:320
 msgid "Easy Social Sharing"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:317
+#: inc/admin/class-colormag-admin.php:323
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:318
+#: inc/admin/class-colormag-admin.php:324
 msgid "WP-PageNavi"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:319
+#: inc/admin/class-colormag-admin.php:325
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:321
+#: inc/admin/class-colormag-admin.php:327
 msgid "Polylang"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:322
-#: inc/admin/class-colormag-admin.php:326
+#: inc/admin/class-colormag-admin.php:328
+#: inc/admin/class-colormag-admin.php:332
 msgid "Fully Compatible in Pro Version"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:325
+#: inc/admin/class-colormag-admin.php:331
 msgid "WPML"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:348
+#: inc/admin/class-colormag-admin.php:354
 msgid "Features"
 msgstr ""
 
@@ -309,167 +321,167 @@ msgstr ""
 msgid "ColorMag"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:350
+#: inc/admin/class-colormag-admin.php:356
 msgid "ColorMag Pro"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:356
+#: inc/admin/class-colormag-admin.php:362
 msgid "Forum"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:357
+#: inc/admin/class-colormag-admin.php:363
 msgid "Forum + Emails/Support Ticket"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:360
+#: inc/admin/class-colormag-admin.php:366
 msgid "Color Options"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:365 inc/customizer.php:488
+#: inc/admin/class-colormag-admin.php:371 inc/customizer.php:488
 msgid "Primary color option"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:370
+#: inc/admin/class-colormag-admin.php:376
 msgid "Font Size Options"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:375
+#: inc/admin/class-colormag-admin.php:381
 msgid "Google Fonts Options"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:377
+#: inc/admin/class-colormag-admin.php:383
 msgid "600+"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:380
+#: inc/admin/class-colormag-admin.php:386
 msgid "Custom Widgets"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:387
+#: inc/admin/class-colormag-admin.php:393
 msgid "18 + 6 Custom"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:390
+#: inc/admin/class-colormag-admin.php:396
 msgid "Social Sharing"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:395
+#: inc/admin/class-colormag-admin.php:401
 msgid "Custom Menu"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:400
+#: inc/admin/class-colormag-admin.php:406
 msgid "Footer Sidebar"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:405
+#: inc/admin/class-colormag-admin.php:411
 msgid "Site Layout Option"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:410
+#: inc/admin/class-colormag-admin.php:416
 msgid "Options in Breaking News"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:415
+#: inc/admin/class-colormag-admin.php:421
 msgid "Unique Post System"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:420
+#: inc/admin/class-colormag-admin.php:426
 msgid "Change Read More Text"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:425 inc/customizer.php:683
+#: inc/admin/class-colormag-admin.php:431 inc/customizer.php:683
 msgid "Related Posts"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:430
+#: inc/admin/class-colormag-admin.php:436
 msgid "Author Biography"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:435
+#: inc/admin/class-colormag-admin.php:441
 msgid "Author Biography with Social Icons"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:440
+#: inc/admin/class-colormag-admin.php:446
 msgid "Footer Copyright Editor"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:445 inc/widgets/widgets.php:989
+#: inc/admin/class-colormag-admin.php:451 inc/widgets/widgets.php:989
 msgid "TG: 125x125 Advertisement"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:450 inc/widgets/widgets.php:788
+#: inc/admin/class-colormag-admin.php:456 inc/widgets/widgets.php:788
 msgid "TG: 300x250 Advertisement"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:455 inc/widgets/widgets.php:888
+#: inc/admin/class-colormag-admin.php:461 inc/widgets/widgets.php:888
 msgid "TG: 728x90 Advertisement"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:460 inc/widgets/widgets.php:214
+#: inc/admin/class-colormag-admin.php:466 inc/widgets/widgets.php:214
 msgid "TG: Featured Category Slider"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:465 inc/widgets/widgets.php:344
+#: inc/admin/class-colormag-admin.php:471 inc/widgets/widgets.php:344
 msgid "TG: Highlighted Posts"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:470
+#: inc/admin/class-colormag-admin.php:476
 msgid "TG: Random Posts Widget"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:475
+#: inc/admin/class-colormag-admin.php:481
 msgid "TG: Tabbed Widget"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:480
+#: inc/admin/class-colormag-admin.php:486
 msgid "TG: Videos"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:485 inc/widgets/widgets.php:470
+#: inc/admin/class-colormag-admin.php:491 inc/widgets/widgets.php:470
 msgid "TG: Featured Posts (Style 1)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:490 inc/widgets/widgets.php:628
+#: inc/admin/class-colormag-admin.php:496 inc/widgets/widgets.php:628
 msgid "TG: Featured Posts (Style 2)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:495
+#: inc/admin/class-colormag-admin.php:501
 msgid "TG: Featured Posts (Style 3)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:500
+#: inc/admin/class-colormag-admin.php:506
 msgid "TG: Featured Posts (Style 4)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:505
+#: inc/admin/class-colormag-admin.php:511
 msgid "TG: Featured Posts (Style 5)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:510
+#: inc/admin/class-colormag-admin.php:516
 msgid "TG: Featured Posts (Style 6)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:515
+#: inc/admin/class-colormag-admin.php:521
 msgid "TG: Featured Posts (Style 7)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:520 inc/customizer.php:741
+#: inc/admin/class-colormag-admin.php:526 inc/customizer.php:741
 msgid "Category Color Options"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:525
+#: inc/admin/class-colormag-admin.php:531
 msgid "WPML Compatible"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:530
+#: inc/admin/class-colormag-admin.php:536
 msgid "Polylang Compatible"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:535
+#: inc/admin/class-colormag-admin.php:541
 msgid "WooCommerce Compatible"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:543 inc/customizer.php:22
+#: inc/admin/class-colormag-admin.php:549 inc/customizer.php:22
 msgid "View Pro"
 msgstr ""
 
