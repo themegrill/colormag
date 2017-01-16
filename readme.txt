@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 
-= Version 1.1.8 - TBD =
+= Version 1.1.8 - 2017-01-16 =
 * Feature - Added new responsive menu design.
 * Added - RTL Language support.
 * Added - Support for Video Headers introduced in WordPress 4.7.

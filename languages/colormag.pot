@@ -1,14 +1,14 @@
-# Copyright (C) 2016 ThemeGrill
+# Copyright (C) 2017 ThemeGrill
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 1.1.7\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2016-12-28 05:46:08+00:00\n"
+"POT-Creation-Date: 2017-01-16 08:38:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -716,27 +716,27 @@ msgstr ""
 msgid "Check to activate social links area"
 msgstr ""
 
-#: inc/customizer.php:572 inc/header-functions.php:20
+#: inc/customizer.php:572 inc/header-functions.php:21
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:577 inc/header-functions.php:21
+#: inc/customizer.php:577 inc/header-functions.php:22
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:582 inc/header-functions.php:22
+#: inc/customizer.php:582 inc/header-functions.php:23
 msgid "Google-Plus"
 msgstr ""
 
-#: inc/customizer.php:587 inc/header-functions.php:23
+#: inc/customizer.php:587 inc/header-functions.php:24
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:592 inc/header-functions.php:24
+#: inc/customizer.php:592 inc/header-functions.php:25
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:597 inc/header-functions.php:25
+#: inc/customizer.php:597 inc/header-functions.php:26
 msgid "YouTube"
 msgstr ""
 
@@ -828,43 +828,43 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/functions.php:408
+#: inc/functions.php:393
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:418
+#: inc/functions.php:403
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:422
+#: inc/functions.php:407
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:448
+#: inc/functions.php:433
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:448
+#: inc/functions.php:433
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:463
+#: inc/functions.php:448
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:466
+#: inc/functions.php:451
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:474
+#: inc/functions.php:459
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:479
+#: inc/functions.php:464
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:499
+#: inc/functions.php:484
 msgid "WordPress"
 msgstr ""
 
@@ -872,23 +872,23 @@ msgstr ""
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:503
+#: inc/functions.php:488
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: inc/functions.php:503
+#: inc/functions.php:488
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/functions.php:503
+#: inc/functions.php:488
 msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:543
+#: inc/functions.php:528
 msgid "Latest:"
 msgstr ""
 
-#: inc/functions.php:588
+#: inc/functions.php:573
 msgid "View a random post"
 msgstr ""
 
@@ -1195,12 +1195,12 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/functions.php:412 navigation.php:44
+#: inc/functions.php:397 navigation.php:44
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:413 navigation.php:45
+#: inc/functions.php:398 navigation.php:45
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
