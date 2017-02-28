@@ -32,3 +32,14 @@ jQuery(document).ready(function() {
         jQuery(this).toggleClass('active');
     });
 });
+
+jQuery(document).on('click', '#site-navigation .menunav-menu li.menu-item-has-children > a', function(event) {
+    var menuClass = jQuery(this).parent('.menu-item-has-children');
+    if (! menuClass.hasClass('focus')){
+        menuClass.addClass('focus');
+        event.preventDefault();
+        menuClass.children('.sub-menu').css({
+           'display': 'block'
+        });
+    }
+  });
