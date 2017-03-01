@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = TBD =
 * Tweaks - Updated BxSlider to version 4.2.10
+* Tweaks - Add support for customize selective refresh widgets
 
 = Version 1.1.8 - 2017-01-16 =
 * Feature - Added new responsive menu design.

@@ -16,25 +16,24 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-   $content_width = 800;
+	$content_width = 800;
 
 /**
  * $content_width global variable adjustment as per layout option.
  */
 function colormag_content_width() {
-   global $post;
-   global $content_width;
+	global $post;
+	global $content_width;
 
-   if( $post ) { $layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true ); }
-   if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
-   $colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
+	if( $post ) { $layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true ); }
+	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
+	$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
 
-   if( $layout_meta == 'default_layout' ) {
-      if ( $colormag_default_layout == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
-      else { $content_width = 800; /* pixels */ }
-   }
-   elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
-   else { $content_width = 800; /* pixels */ }
+	if( $layout_meta == 'default_layout' ) {
+		if ( $colormag_default_layout == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
+		else { $content_width = 800; /* pixels */ }
+	elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
+	else { $content_width = 800; /* pixels */ }
 }
 add_action( 'template_redirect', 'colormag_content_width' );
 
@@ -60,13 +59,13 @@ function colormag_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Registering navigation menu.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'colormag' ) );
+	register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'colormag' ) );
 
 	// Cropping the images to different sizes to be used in the theme
-   add_image_size( 'colormag-highlighted-post', 392, 272, true );
-   add_image_size( 'colormag-featured-post-medium', 390, 205, true );
-   add_image_size( 'colormag-featured-post-small', 130, 90, true );
-   add_image_size( 'colormag-featured-image', 800, 445, true );
+	add_image_size( 'colormag-highlighted-post', 392, 272, true );
+	add_image_size( 'colormag-featured-post-medium', 390, 205, true );
+	add_image_size( 'colormag-featured-post-small', 130, 90, true );
+	add_image_size( 'colormag-featured-image', 800, 445, true );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'colormag_custom_background_args', array(
@@ -74,12 +73,12 @@ function colormag_setup() {
 	) ) );
 
 	/*
-    * Let WordPress manage the document title.
-    * By adding theme support, we declare that this theme does not use a
-    * hard-coded <title> tag in the document head, and expect WordPress to
-    * provide it for us.
-    */
-   add_theme_support('title-tag');
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support('title-tag');
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'chat', 'audio', 'status' ) );
@@ -113,7 +112,9 @@ function colormag_setup() {
 			'flex-height' => true,
 		)
 	);
-}
+
+	// Support for selective refresh widgets in Customizer
+	add_theme_support( 'customize-selective-refresh-widgets' );
 endif;
 
 /**
