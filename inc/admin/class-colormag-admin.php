@@ -127,13 +127,13 @@ class ColorMag_Admin {
 		</div>
 
 		<p class="colormag-actions">
-			<a href="<?php echo esc_url( 'http://themegrill.com/themes/colormag/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'colormag' ); ?></a>
+			<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'colormag' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://demo.themegrill.com/colormag/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'colormag' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://demo.themegrill.com/colormag/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'colormag' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/colormag?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://wordpress.org/support/view/theme-reviews/colormag?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
@@ -195,25 +195,25 @@ class ColorMag_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Documentation', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'colormag' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/colormag/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/theme-instruction/colormag/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php esc_html_e( 'Got theme support question?', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'colormag' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support', 'colormag' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php esc_html_e( 'Need more features?', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'colormag' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/themes/colormag-pro/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag-pro/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php esc_html_e( 'Got sales related question?', 'colormag' ); ?></h3>
 						<p><?php esc_html_e( 'Please send it via our sales contact page.', 'colormag' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -225,7 +225,7 @@ class ColorMag_Admin {
 						</h3>
 						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'colormag' ) ?></p>
 						<p>
-							<a href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/colormag' ); ?>" class="button button-secondary">
+							<a href="<?php echo esc_url( 'https://translate.wordpress.org/projects/wp-themes/colormag' ); ?>" class="button button-secondary">
 								<?php
 								esc_html_e( 'Translate', 'colormag' );
 								echo ' ' . $theme->display( 'Name' );
@@ -546,7 +546,7 @@ class ColorMag_Admin {
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'http://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'colormag' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'colormag' ); ?></a>
 						</td>
 					</tr>
 				</tbody>

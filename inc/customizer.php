@@ -18,27 +18,27 @@ function colormag_customize_register($wp_customize) {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
             'view-pro' => array(
-               'link' => esc_url('http://themegrill.com/themes/colormag-pro/'),
+               'link' => esc_url('https://themegrill.com/themes/colormag-pro/'),
                'text' => esc_html__('View Pro', 'colormag'),
             ),
             'theme-info' => array(
-               'link' => esc_url('http://themegrill.com/themes/colormag/'),
+               'link' => esc_url('https://themegrill.com/themes/colormag/'),
                'text' => esc_html__('Theme Info', 'colormag'),
             ),
             'support' => array(
-               'link' => esc_url('http://themegrill.com/support-forum/'),
+               'link' => esc_url('https://themegrill.com/support-forum/'),
                'text' => esc_html__('Support', 'colormag'),
             ),
             'documentation' => array(
-               'link' => esc_url('http://docs.themegrill.com/colormag/'),
+               'link' => esc_url('https://docs.themegrill.com/colormag/'),
                'text' => esc_html__('Documentation', 'colormag'),
             ),
             'demo' => array(
-               'link' => esc_url('http://demo.themegrill.com/colormag/'),
+               'link' => esc_url('https://demo.themegrill.com/colormag/'),
                'text' => esc_html__('View Demo', 'colormag'),
             ),
             'rating' => array(
-               'link' => esc_url('http://wordpress.org/support/view/theme-reviews/colormag?filter=5'),
+               'link' => esc_url('https://wordpress.org/support/view/theme-reviews/colormag?filter=5'),
                'text' => esc_html__('Rate this theme', 'colormag'),
             ),
          );
