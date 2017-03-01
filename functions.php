@@ -32,6 +32,7 @@ function colormag_content_width() {
 	if( $layout_meta == 'default_layout' ) {
 		if ( $colormag_default_layout == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
 		else { $content_width = 800; /* pixels */ }
+	}
 	elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
 	else { $content_width = 800; /* pixels */ }
 }
@@ -115,6 +116,7 @@ function colormag_setup() {
 
 	// Support for selective refresh widgets in Customizer
 	add_theme_support( 'customize-selective-refresh-widgets' );
+}
 endif;
 
 /**
