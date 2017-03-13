@@ -547,9 +547,15 @@ endif;
  */
 if ( ! function_exists( 'colormag_date_display' ) ) :
 function colormag_date_display() { ?>
-   <div class="date-in-header">
-      <?php echo date_i18n('l, F j, Y'); ?>
-   </div>
+	<div class="date-in-header">
+		<?php
+		if (get_theme_mod('colormag_date_display_type', 'theme_default') == 'theme_default') {
+			echo date_i18n('l, F j, Y');
+		} elseif (get_theme_mod('colormag_date_display_type', 'theme_default') == 'wordpress_date_setting') {
+			echo date_i18n(get_option('date_format'));
+		}
+		?>
+	</div>
 <?php
 }
 endif;
