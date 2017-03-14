@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Feature -  Added option to display the date in header set via WordPress date setting
+
 = Version 1.1.9 - 2017-03-03 =
 * Tweaks - Updated BxSlider to version 4.2.10
 * Tweaks - Add support for customize selective refresh widgets

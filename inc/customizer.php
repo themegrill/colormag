@@ -117,6 +117,24 @@ function colormag_customize_register($wp_customize) {
       'settings' => 'colormag_date_display'
    ));
 
+	// date in header display type
+	$wp_customize->add_setting('colormag_date_display_type', array(
+		'default' => 'theme_default',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_radio_select_sanitize'
+	));
+
+	$wp_customize->add_control('colormag_date_display_type', array(
+		'type' => 'radio',
+		'label' => esc_html__('Date in header display type:', 'colormag'),
+		'choices' => array(
+			'theme_default' => esc_html__('Theme Default Setting', 'colormag'),
+			'wordpress_date_setting' => esc_html__('From WordPress Date Setting', 'colormag'),
+		),
+		'section' => 'colormag_date_display_section',
+		'settings' => 'colormag_date_display_type'
+	));
+
    // home icon enable/disable in primary menu
    $wp_customize->add_section('colormag_home_icon_display_section', array(
       'title' => __('Show Home Icon', 'colormag'),
@@ -775,7 +793,17 @@ function colormag_customize_register($wp_customize) {
       $i++;
    }
 
-   // sanitization works
+	// sanitization works
+	// radio/select buttons sanitization
+	function colormag_radio_select_sanitize( $input, $setting ) {
+		// Ensuring that the input is a slug.
+		$input = sanitize_key( $input );
+		// Get the list of choices from the control associated with the setting.
+		$choices = $setting->manager->get_control( $setting->id )->choices;
+		// If the input is a valid key, return it, else, return the default.
+		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	}
+
    // radio button sanitization
    function colormag_related_posts_sanitize($input) {
       $valid_keys = array(
