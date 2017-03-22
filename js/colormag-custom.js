@@ -33,9 +33,9 @@ jQuery(document).ready(function() {
     });
 });
 
-jQuery(document).on('click', '#site-navigation .menunav-menu li.menu-item-has-children > a', function(event) {
+jQuery(document).on('click', '#site-navigation ul li.menu-item-has-children > a', function(event) {
     var menuClass = jQuery(this).parent('.menu-item-has-children');
-    if (! menuClass.hasClass('focus')){
+    if (! menuClass.hasClass('focus') && jQuery(window).width() <= 768 ){
         menuClass.addClass('focus');
         event.preventDefault();
         menuClass.children('.sub-menu').css({
