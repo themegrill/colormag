@@ -51,7 +51,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Feature -  Added option to display the date in header set via WordPress date setting
+* Feature - Added option to display the date in header set via WordPress date setting
+* Tweaks - Add theme support for WooCommerce 3.0's new gallery feature
 
 = Version 1.1.9 - 2017-03-03 =
 * Tweaks - Updated BxSlider to version 4.2.10
