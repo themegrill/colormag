@@ -1493,6 +1493,7 @@ a#scroll-up:hover {
    color: #ffffff;
    font-size: 12px;
    padding: 3px 10px;
+   display: inline-block;
 }
 .widget_featured_posts .article-content .entry-title {
    padding: 10px 0 0;
@@ -2195,7 +2196,9 @@ a#scroll-up:hover {
 .news-bar {
    background-color: #ffffff;
    padding: 8px 0 4px;
-   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+   -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+   -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1); 0.1);
    font-size: 14px;
 }
 .breaking-news {
