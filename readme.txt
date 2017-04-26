@@ -54,6 +54,7 @@ and we will include it within the theme from next version update.
 * Feature - Added option to display the date in header set via WordPress date setting
 * Tweaks - Add theme support for WooCommerce 3.0's new gallery feature
 * Tweaks - Updated FontAwesome icons to version 4.7.0
+* Fix - Search results page design
 
 = Version 1.1.9 - 2017-03-03 =
 * Tweaks - Updated BxSlider to version 4.2.10
