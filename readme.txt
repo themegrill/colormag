@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Tweaks - Updated BxSlider to version 4.2.12
+
 = Version 1.2.0 - 2017-04-27 =
 * Feature - Added option to display the date in header set via WordPress date setting
 * Tweaks - Add theme support for WooCommerce 3.0's new gallery feature
