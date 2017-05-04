@@ -249,7 +249,10 @@ blockquote cite {
 	letter-spacing: 0.05em;
 	float: right;
 }
-
+blockquote a {
+    color: #ffffff;
+    text-decoration: underline;
+}
 /* =FORMS
 ----------------------------------------------- */
 input, textarea {
@@ -2037,7 +2040,7 @@ a#scroll-up:hover {
 }
 /* Search Page */
 .search .status-publish{
-	margin-bottom:20px;
+	margin-bottom:30px;
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
