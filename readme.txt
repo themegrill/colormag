@@ -52,7 +52,6 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Tweaks - Updated BxSlider to version 4.2.12
-* Tweaks - Updated Sticky to version 1.0.4
 * Tweaks - Updated Magnific Popup to version 1.1.0
 * Tweaks - Updated Fitvids to version 1.2.0
 

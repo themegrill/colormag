@@ -56,7 +56,7 @@ function colormag_scripts_styles_method() {
    }
 
    if (get_theme_mod('colormag_primary_sticky_menu', 0) == 1) {
-      wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL. '/sticky/jquery.sticky.js', array( 'jquery' ), '1.0.4', true );
+      wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL. '/sticky/jquery.sticky.js', array( 'jquery' ), '1.0.2', true );
 
       wp_enqueue_script( 'colormag-sticky-menu-setting', COLORMAG_JS_URL. '/sticky/sticky-setting.js', array( 'colormag-sticky-menu' ), '20150309', true );
    }
