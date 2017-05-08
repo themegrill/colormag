@@ -54,6 +54,7 @@ and we will include it within the theme from next version update.
 * Tweaks - Updated BxSlider to version 4.2.12
 * Tweaks - Updated Sticky to version 1.0.4
 * Tweaks - Updated Magnific Popup to version 1.1.0
+* Tweaks - Updated Fitvids to version 1.2.0
 
 = Version 1.2.0 - 2017-04-27 =
 * Feature - Added option to display the date in header set via WordPress date setting
