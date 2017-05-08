@@ -53,6 +53,7 @@ and we will include it within the theme from next version update.
 = Version TBD =
 * Tweaks - Updated BxSlider to version 4.2.12
 * Tweaks - WooCommerce sidebar layout now utilizes the same sidebar area provided via the theme by default
+* Tweaks - Image alt text added to the advertisement widgets provided via this theme
 
 = Version 1.2.0 - 2017-04-27 =
 * Feature - Added option to display the date in header set via WordPress date setting
