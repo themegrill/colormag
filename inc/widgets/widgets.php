@@ -286,10 +286,15 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
                <?php
                if( has_post_thumbnail() ) {
                   $image = '';
+                  $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                  $image_alt_text = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
                   $title_attribute = get_the_title( $post->ID );
+                  if( empty( $image_alt_text ) ) {
+                     $image_alt_text = $title_attribute;
+                  }
                   $image .= '<figure class="slider-featured-image">';
                   $image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-                  $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+                  $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ).'</a>';
                   $image .= '</figure>';
                   echo $image;
                } else { ?>
@@ -412,10 +417,15 @@ class colormag_highlighted_posts_widget extends WP_Widget {
                <?php
                if( has_post_thumbnail() ) {
                   $image = '';
+                  $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                  $image_alt_text = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
                   $title_attribute = get_the_title( $post->ID );
+                  if( empty( $image_alt_text ) ) {
+                     $image_alt_text = $title_attribute;
+                  }
                   $image .= '<figure class="highlights-featured-image">';
                   $image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-                  $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+                  $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ).'</a>';
                   $image .= '</figure>';
                   echo $image;
                } else { ?>
@@ -567,10 +577,13 @@ class colormag_featured_posts_widget extends WP_Widget {
                   <?php
                   if( has_post_thumbnail() ) {
                      $image = '';
+                     $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                     $image_alt_text = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
                      $title_attribute = get_the_title( $post->ID );
+                     if( $image_alt_text == "" ) $image_alt_text = $title_attribute;
                      $image .= '<figure>';
                      $image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-                     $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+                     $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ).'</a>';
                      $image .= '</figure>';
                      echo $image;
                   }
@@ -725,10 +738,15 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
                   <?php
                   if( has_post_thumbnail() ) {
                      $image = '';
+                     $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                     $image_alt_text = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true);
                      $title_attribute = get_the_title( $post->ID );
+                     if( empty( $image_alt_text ) ) {
+                        $image_alt_text = $title_attribute;
+                     }
                      $image .= '<figure>';
                      $image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-                     $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+                     $image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ).'</a>';
                      $image .= '</figure>';
                      echo $image;
                   }
