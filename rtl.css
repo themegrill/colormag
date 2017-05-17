@@ -396,6 +396,10 @@ a#scroll-up {
     direction: ltr;
 }
 
+.widget_featured_slider .slide-content {
+  text-align: right;
+}
+
 .widget_slider_area {
     float: right;
 }
