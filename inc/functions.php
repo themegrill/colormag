@@ -518,10 +518,16 @@ endif;
  */
 if ( ! function_exists( 'colormag_breaking_news' ) ) :
 function colormag_breaking_news() {
+   $post_status = 'publish';
+   if( get_option( 'fresh_site') == 1 ){
+  		$post_status = array( 'auto-draft', 'publish' );
+   }
+
    $get_featured_posts = new WP_Query( array(
       'posts_per_page'        => 5,
       'post_type'             => 'post',
-      'ignore_sticky_posts'   => true
+      'ignore_sticky_posts'   => true,
+      'post_status'   => $post_status
    ) );
 ?>
    <div class="breaking-news">
