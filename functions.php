@@ -381,10 +381,6 @@ function colormag_setup() {
 				'post_title' 	=> _x( 'Featured image mosquito', 'Starter content', 'colormag' ),
 				'file' 			=> 'img/mosquito.jpg',
 			),
-			'featured-image-solar-eclipse' => array(
-				'post_title' 	=> _x( 'Featured image solar eclipse', 'Starter content', 'colormag' ),
-				'file' 			=> 'img/solar-eclipse.png',
-			),
 			'featured-image-yummy' => array(
 				'post_title' 	=> _x( 'Featured image yummy', 'Starter content', 'colormag' ),
 				'file' 			=> 'img/yummy.jpg',
