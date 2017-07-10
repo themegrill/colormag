@@ -126,8 +126,7 @@ function colormag_setup() {
 				'ad_banner_header'	=> array(
 					'colormag_728x90_advertisement_widget',
 					array(
-						'title'  			=> '',
-						'728x90_image_link' => 'http://demo.themegrill.com/colormag-pro/',
+						'728x90_image_link' => 'https://demo.themegrill.com/colormag-pro/',
 						'728x90_image_url' 	=> get_template_directory_uri() . '/img/ad-large.jpg',
 					),
 				),
@@ -136,7 +135,6 @@ function colormag_setup() {
 				'featured_posts_slider'	=> array(
 					'colormag_featured_posts_slider_widget',
 					array(
-						'type'  	=> 'latest',
 						'number' 	=> 2,
 					),
 				),
@@ -145,7 +143,6 @@ function colormag_setup() {
 				'featured_posts_slider'	=> array(
 					'colormag_highlighted_posts_widget',
 					array(
-						'type'  	=> 'latest',
 						'number' 	=> 4,
 					),
 				),
@@ -154,8 +151,7 @@ function colormag_setup() {
 				'featured_posts_right_sidebar'	=> array(
 					'colormag_featured_posts_vertical_widget',
 					array(
-						'title' 	=> 'News',
-						'type' 		=> 'latest',
+						'title' 	=> 'NEWS',
 						'number' 	=> 2,
 					),
 				),
@@ -164,14 +160,14 @@ function colormag_setup() {
 					array(
 						'title'	=> 'Premium Themes',
 						'text'	=> '<ul>
-									 	<li><a href="http://themegrill.com/themes/spacious-pro/">Spacious Pro</a></li>
-									 	<li><a href="http://themegrill.com/themes/foodhunt-pro/">FoodHunt Pro</a></li>
-									 	<li><a href="http://themegrill.com/themes/colornews-pro/">ColorNews Pro</a></li>
-									 	<li><a href="http://themegrill.com/themes/accelerate-pro/">Accelerate Pro</a></li>
-									 	<li><a href="http://themegrill.com/themes/esteem-pro/">Esteem Pro</a></li>
-									 	<li><a href="http://http://themegrill.com/themes/radiate-pro/">Radiate Pro</a></li>
-									 	<li><a href="http://themegrill.com/themes/fitclub-pro/">Fitclub Pro</a></li>
-									 	<li><a href="http://themegrill.com/themes/himalayas-pro/">Himalayas Pro</a></li>
+										<li><a href="https://themegrill.com/themes/spacious-pro/">Spacious Pro</a></li>
+										<li><a href="https://themegrill.com/themes/foodhunt-pro/">FoodHunt Pro</a></li>
+										<li><a href="https://themegrill.com/themes/colornews-pro/">ColorNews Pro</a></li>
+										<li><a href="https://themegrill.com/themes/accelerate-pro/">Accelerate Pro</a></li>
+										<li><a href="https://themegrill.com/themes/esteem-pro/">Esteem Pro</a></li>
+										<li><a href="https://http://themegrill.com/themes/radiate-pro/">Radiate Pro</a></li>
+										<li><a href="https://themegrill.com/themes/fitclub-pro/">Fitclub Pro</a></li>
+										<li><a href="https://themegrill.com/themes/himalayas-pro/">Himalayas Pro</a></li>
 									</ul>',
 					),
 				),
@@ -179,13 +175,13 @@ function colormag_setup() {
 					'colormag_125x125_advertisement_widget',
 					array(
 						'title'  => 'TG: 125x125 Ads',
-						'125x125_image_link_1' 	=> 'http://themegrill.com/',
+						'125x125_image_link_1' 	=> 'https://themegrill.com/',
 						'125x125_image_url_1' 	=> get_template_directory_uri() . '/img/ad-small.jpg',
-						'125x125_image_link_2' 	=> 'http://themegrill.com/',
+						'125x125_image_link_2' 	=> 'https://themegrill.com/',
 						'125x125_image_url_2' 	=> get_template_directory_uri() . '/img/ad-small.jpg',
-						'125x125_image_link_3' 	=> 'http://themegrill.com/',
+						'125x125_image_link_3' 	=> 'https://themegrill.com/',
 						'125x125_image_url_3' 	=> get_template_directory_uri() . '/img/ad-small.jpg',
-						'125x125_image_link_4' 	=> 'http://themegrill.com/',
+						'125x125_image_link_4' 	=> 'https://themegrill.com/',
 						'125x125_image_url_4' 	=> get_template_directory_uri() . '/img/ad-small.jpg',
 					),
 				),
@@ -194,9 +190,7 @@ function colormag_setup() {
 				'featured_posts_style_1'	=> array(
 					'colormag_featured_posts_widget',
 					array(
-						'title'		=> 'Health',
-						'text'		=> '',
-						'type'  	=> 'latest',
+						'title'		=> 'HEALTH',
 						'number' 	=> 5,
 					),
 				),
@@ -206,8 +200,6 @@ function colormag_setup() {
 					'colormag_featured_posts_vertical_widget',
 					array(
 						'title'		=> 'FASHION',
-						'text'		=> '',
-						'type'  	=> 'latest',
 						'number' 	=> 4,
 					),
 				),
@@ -217,8 +209,6 @@ function colormag_setup() {
 					'colormag_featured_posts_vertical_widget',
 					array(
 						'title'		=> 'SPORTS',
-						'text'		=> '',
-						'type'  	=> 'latest',
 						'number' 	=> 4,
 					),
 				),
@@ -229,7 +219,6 @@ function colormag_setup() {
 					array(
 						'title'		=> 'Technology',
 						'text'		=> 'Check out technology changing the life.',
-						'type'  	=> 'latest',
 						'number' 	=> 4,
 					),
 				),
@@ -249,14 +238,14 @@ function colormag_setup() {
 					array(
 						'title'	=> 'Useful Links',
 						'text'	=> '<ul>
-									 	<li><a href="http://themegrill.com/">ThemeGrill</a></li>
-									 	<li><a href="http://themegrill.com/support-forum/">Support</a></li>
-									 	<li><a href="http://themegrill.com/theme-instruction/colormag/">Documentation</a></li>
-									 	<li><a href="http://themegrill.com/frequently-asked-questions/">FAQ</a></li>
-									 	<li><a href="http://themegrill.com/themes/">Themes</a></li>
-									 	<li><a href="http://themegrill.com/plugins/">Plugins</a></li>
-									 	<li><a href="http://themegrill.com/blog/">Blog</a></li>
-									 	<li><a href="http://themegrill.com/plans-pricing/">Plans &amp; Pricing</a></li>
+										<li><a href="https://themegrill.com/">ThemeGrill</a></li>
+										<li><a href="https://themegrill.com/support-forum/">Support</a></li>
+										<li><a href="https://themegrill.com/theme-instruction/colormag/">Documentation</a></li>
+										<li><a href="https://themegrill.com/frequently-asked-questions/">FAQ</a></li>
+										<li><a href="https://themegrill.com/themes/">Themes</a></li>
+										<li><a href="https://themegrill.com/plugins/">Plugins</a></li>
+										<li><a href="https://themegrill.com/blog/">Blog</a></li>
+										<li><a href="https://themegrill.com/plans-pricing/">Plans &amp; Pricing</a></li>
 									</ul>',
 					),
 				),
@@ -267,15 +256,15 @@ function colormag_setup() {
 					array(
 						'title'	=> 'Other Themes',
 						'text'	=> '<ul>
-									 	<li><a href="http://themegrill.com/themes/envince/">Envince</a></li>
-									 	<li><a href="http://themegrill.com/themes/estore/">eStore</a></li>
-									 	<li><a href="http://themegrill.com/themes/ample/">Ample</a></li>
-									 	<li><a href="http://themegrill.com/themes/spacious/">Spacious</a></li>
-									 	<li><a href="http://themegrill.com/themes/accelerate/">Accelerate</a></li>
-									 	<li><a href="http://themegrill.com/themes/radiate/">Radiate</a></li>
-									 	<li><a href="http://themegrill.com/themes/esteem/">Esteem</a></li>
-									 	<li><a href="http://themegrill.com/themes/himalayas/">Himalayas</a></li>
-									 	<li><a href="http://themegrill.com/themes/colornews/">ColorNews</a></li>
+										<li><a href="https://themegrill.com/themes/envince/">Envince</a></li>
+										<li><a href="https://themegrill.com/themes/estore/">eStore</a></li>
+										<li><a href="https://themegrill.com/themes/ample/">Ample</a></li>
+										<li><a href="https://themegrill.com/themes/spacious/">Spacious</a></li>
+										<li><a href="https://themegrill.com/themes/accelerate/">Accelerate</a></li>
+										<li><a href="https://themegrill.com/themes/radiate/">Radiate</a></li>
+										<li><a href="https://themegrill.com/themes/esteem/">Esteem</a></li>
+										<li><a href="https://themegrill.com/themes/himalayas/">Himalayas</a></li>
+										<li><a href="https://themegrill.com/themes/colornews/">ColorNews</a></li>
 									</ul>',
 					),
 				),
@@ -285,14 +274,13 @@ function colormag_setup() {
 					'colormag_300x250_advertisement_widget',
 					array(
 						'title'  => 'ColorMag Pro',
-						'300x250_image_link' => 'http://demo.themegrill.com/colormag-pro/',
+						'300x250_image_link' => 'https://demo.themegrill.com/colormag-pro/',
 						'300x250_image_url' => get_template_directory_uri() . '/img/ad-medium.jpg',
 					),
 				),
 				'text_footer_colormag_pro'	=> array(
 					'text',
 					array(
-						'title'	=> '',
 						'text'	=> 'Contains all features of free version and many new additional features.',
 					),
 				),
