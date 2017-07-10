@@ -336,35 +336,35 @@ function colormag_setup() {
 
 			// Create posts
 			'coffee-is-health-food-myth-or-fact' => array(
-	            'post_type' 	=> 'post',
-	            'post_title' 	=> 'Coffee is health food: Myth or fact?',
-	            'post_content' 	=> 'Vivamus vestibulum ut magna vitae facilisis. Maecenas laoreet lobortis tristique. Aenean accumsan malesuada convallis. Suspendisse egestas luctus nisl, sit amet',
-	            'thumbnail' 	=> '{{featured-image-coffee}}',
-	        ),
-	        'mosquito-borne-diseases-has-threaten-world' => array(
-	            'post_type' 	=> 'post',
-	            'post_title' 	=> 'Mosquito-borne diseases has threaten World',
-	            'post_content' 	=> 'Donec a suscipit erat, ac venenatis velit. Sed vitae tortor pellentesque, dictum quam ut, porttitor ligula. Aliquam sit amet mattis mauris. Donec non dui sodales, tincidunt ante id, ullamcorper ex. Curabitur nec ullamcorper justo. Cras ut massa faucibus, tincidunt urna ut, lobortis mauris. Vestibulum sodales rutrum suscipit.',
-	            'thumbnail' 	=> '{{featured-image-mosquito}}',
-	        ),
-	        'get-more-nutrition-in-every-bite' => array(
-	            'post_type' 	=> 'post',
-	            'post_title' 	=> 'Get more nutrition in every bite',
-	            'post_content' 	=> 'Fusce non nunc mi. Integer placerat nulla id quam varius dapibus. Nulla sit amet tellus et purus lobortis efficitur. Vivamus tempus posuere ipsum in suscipit. Quisque pulvinar fringilla cursus. Morbi malesuada laoreet dui, vitae consequat arcu vehicula vel. Fusce vel turpis non ante mollis bibendum a ac risus. Morbi ornare ipsum sit amet enim rhoncus, sed eleifend felis tristique. Mauris sed sollicitudin libero. In nec lacus quis erat rhoncus molestie.',
-	            'thumbnail' 	=> '{{featured-image-yummy}}',
-	        ),
-	        'womens-relay-competition' => array(
-	            'post_type' 	=> 'post',
-	            'post_title' 	=> 'Women’s Relay Competition',
-	            'post_content' 	=> 'The young team of Franziska Hildebrand, Franziska Preuss, Vanessa Hinz and Dahlmeier clocked 1 hour, 11 minutes, 54.6 seconds to beat France by just over 1 minute. Italy took bronze, 1:06.1 behind. Germany missed six targets overall, avoiding any laps around the penalty loop. Maria Dorin Habert of France, who has two individual gold medals at these worlds, passed Russia and France on the last leg and to take her team from fourth to second.',
-	            'thumbnail' 	=> '{{featured-image-relay-race}}',
-	        ),
-	        'destruction-in-montania' => array(
-	            'post_type' 	=> 'post',
-	            'post_title' 	=> 'Destruction in Montania',
-	            'post_content' 	=> 'Nunc consectetur ipsum nisi, ut pellentesque felis tempus vitae. Integer eget lacinia nunc. Vestibulum consectetur convallis augue id egestas. Nullam rhoncus, arcu in tincidunt ultricies, velit diam imperdiet lacus, sed faucibus mi massa vel nunc. In ac viverra augue, a luctus nisl. Donec interdum enim tempus, aliquet metus maximus, euismod quam. Sed pretium finibus rhoncus. Phasellus libero diam, rutrum non ipsum ut, ultricies sodales sapien. Duis viverra purus lorem.',
-	            'thumbnail' 	=> '{{featured-image-fireman}}',
-	        ),
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Coffee is health food: Myth or fact?',
+				'post_content' 	=> 'Vivamus vestibulum ut magna vitae facilisis. Maecenas laoreet lobortis tristique. Aenean accumsan malesuada convallis. Suspendisse egestas luctus nisl, sit amet',
+				'thumbnail' 	=> '{{featured-image-coffee}}',
+			),
+			'mosquito-borne-diseases-has-threaten-world' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Mosquito-borne diseases has threaten World',
+				'post_content' 	=> 'Donec a suscipit erat, ac venenatis velit. Sed vitae tortor pellentesque, dictum quam ut, porttitor ligula. Aliquam sit amet mattis mauris. Donec non dui sodales, tincidunt ante id, ullamcorper ex. Curabitur nec ullamcorper justo. Cras ut massa faucibus, tincidunt urna ut, lobortis mauris. Vestibulum sodales rutrum suscipit.',
+				'thumbnail' 	=> '{{featured-image-mosquito}}',
+			),
+			'get-more-nutrition-in-every-bite' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Get more nutrition in every bite',
+				'post_content' 	=> 'Fusce non nunc mi. Integer placerat nulla id quam varius dapibus. Nulla sit amet tellus et purus lobortis efficitur. Vivamus tempus posuere ipsum in suscipit. Quisque pulvinar fringilla cursus. Morbi malesuada laoreet dui, vitae consequat arcu vehicula vel. Fusce vel turpis non ante mollis bibendum a ac risus. Morbi ornare ipsum sit amet enim rhoncus, sed eleifend felis tristique. Mauris sed sollicitudin libero. In nec lacus quis erat rhoncus molestie.',
+				'thumbnail' 	=> '{{featured-image-yummy}}',
+			),
+			'womens-relay-competition' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Women’s Relay Competition',
+				'post_content' 	=> 'The young team of Franziska Hildebrand, Franziska Preuss, Vanessa Hinz and Dahlmeier clocked 1 hour, 11 minutes, 54.6 seconds to beat France by just over 1 minute. Italy took bronze, 1:06.1 behind. Germany missed six targets overall, avoiding any laps around the penalty loop. Maria Dorin Habert of France, who has two individual gold medals at these worlds, passed Russia and France on the last leg and to take her team from fourth to second.',
+				'thumbnail' 	=> '{{featured-image-relay-race}}',
+			),
+			'destruction-in-montania' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Destruction in Montania',
+				'post_content' 	=> 'Nunc consectetur ipsum nisi, ut pellentesque felis tempus vitae. Integer eget lacinia nunc. Vestibulum consectetur convallis augue id egestas. Nullam rhoncus, arcu in tincidunt ultricies, velit diam imperdiet lacus, sed faucibus mi massa vel nunc. In ac viverra augue, a luctus nisl. Donec interdum enim tempus, aliquet metus maximus, euismod quam. Sed pretium finibus rhoncus. Phasellus libero diam, rutrum non ipsum ut, ultricies sodales sapien. Duis viverra purus lorem.',
+				'thumbnail' 	=> '{{featured-image-fireman}}',
+			),
 		),
 
 		// Create the custom image attachments used as post thumbnails for pages.
@@ -404,11 +404,8 @@ function colormag_setup() {
 		),
 
 		'options' => array(
-			'show_on_front' 	=> 'page',
-			'page_on_front' 	=> '{{home}}',
-			'page_for_posts' 	=> '{{blog}}',
-			'blogname' 			=> 'ColorMag',
-			'blogdescription' 	=> 'ColorMag Demo site',
+			'blogname'			=> 'ColorMag',
+			'blogdescription'	=> 'ColorMag Demo site',
 		),
 
 		// Set the front page section theme mods to the IDs of the core-registered pages.
@@ -416,7 +413,7 @@ function colormag_setup() {
 			'custom_logo'						 	=> '{{colormag-logo}}',
 			'colormag_breaking_news' 				=> 1,
 			'colormag_date_display' 				=> 1,
-			'colormag_date_display_type' 				=> 'theme_default',
+			'colormag_date_display_type' 			=> 'theme_default',
 			'colormag_header_logo_placement' 		=> 'header_logo_only',
 			'colormag_hide_blog_front' 				=> 1,
 			'colormag_search_icon_in_menu' 			=> 1,
