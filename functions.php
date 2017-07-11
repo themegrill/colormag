@@ -289,33 +289,10 @@ function colormag_setup() {
 
 		// Specify the core-defined pages to create and add custom thumbnails to some of them.
 		'posts' => array(
-			'home' => array(
-				'post_title'   	=> esc_html_x( 'Home', 'Theme starter content', 'colormag' ),
-			),
-			'download' => array(
-				'post_type' 	=> 'page',
-				'post_title' 	=> 'Download',
-				'post_content' 	=> 'ColorMag download',
-			),
 			'layout' => array(
 				'post_type' 	=> 'page',
 				'post_title' 	=> 'Layout',
 				'post_content' 	=> 'ThemeGrill layout content',
-			),
-			'theme-info' => array(
-				'post_type' 	=> 'page',
-				'post_title' 	=> 'Theme Info',
-				'post_content' 	=> 'ColorMag theme info',
-			),
-			'view-pro' => array(
-				'post_type' 	=> 'page',
-				'post_title' 	=> 'View Pro',
-				'post_content' 	=> 'ColorMag view pro',
-			),
-			'video-tutorial' 	=> array(
-				'post_type' 	=> 'page',
-				'post_title' 	=> 'Video Tutorial',
-				'post_content' 	=> 'ColorMag view tutorial',
 			),
 			'contact'			=> array(
 				'template'		=> 'page-templates/contact.php',
@@ -422,25 +399,25 @@ function colormag_setup() {
 			'primary' => array(
 				'name' => _x( 'Primary', 'Starter content primary menu', 'colormag' ),
 				'items' => array(
+					'link_download' => array(
+						'type' 		=> 'custom',
+						'title' => _x( 'Download', 'Theme starter content', 'colormag' ),
+						'url' => 'https://downloads.wordpress.org/theme/colormag.zip',
+					),
+					'link_theme-info' => array(
+						'type' 		=> 'custom',
+						'title' => _x( 'Theme Info', 'Theme starter content', 'colormag' ),
+						'url' => 'https://themegrill.com/themes/colormag/',
+					),
+					'link_view-pro' => array(
+						'type' 		=> 'custom',
+						'title' => _x( 'View pro', 'Theme starter content', 'colormag' ),
+						'url' => 'https://themegrill.com/themes/colormag/',
+					),
 					'page_layout' 	=> array(
 						'type' 		=> 'post_type',
 						'object' 	=> 'page',
 						'object_id' => '{{layout}}',
-					),
-					'page_theme-info' => array(
-						'type' 		=> 'post_type',
-						'object' 	=> 'page',
-						'object_id' => '{{theme-info}}',
-					),
-					'page_view-pro' => array(
-						'type' 		=> 'post_type',
-						'object' 	=> 'page',
-						'object_id' => '{{view-pro}}',
-					),
-					'page_video-tutorial' => array(
-						'type' 		=> 'post_type',
-						'object' 	=> 'page',
-						'object_id' => '{{video-tutorial}}',
 					),
 					'page_contact',
 				),
