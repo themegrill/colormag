@@ -217,7 +217,7 @@ function colormag_setup() {
 				'featured_posts_style_1_bottom'	=> array(
 					'colormag_featured_posts_widget',
 					array(
-						'title'		=> 'Technology',
+						'title'		=> 'TECHNOLOGY',
 						'text'		=> 'Check out technology changing the life.',
 						'number' 	=> 4,
 					),
@@ -297,7 +297,6 @@ function colormag_setup() {
 				'post_title' 	=> 'Download',
 				'post_content' 	=> 'ColorMag download',
 			),
-			'blog',
 			'layout' => array(
 				'post_type' 	=> 'page',
 				'post_title' 	=> 'Layout',
@@ -401,12 +400,14 @@ function colormag_setup() {
 			'custom_logo'						 	=> '{{colormag-logo}}',
 			'colormag_breaking_news' 				=> 1,
 			'colormag_date_display' 				=> 1,
-			'colormag_date_display_type' 			=> 'theme_default',
 			'colormag_header_logo_placement' 		=> 'header_logo_only',
 			'colormag_hide_blog_front' 				=> 1,
 			'colormag_search_icon_in_menu' 			=> 1,
 			'colormag_random_post_in_menu' 			=> 1,
 			'colormag_social_link_activate' 		=> 1,
+			'colormag_home_icon_display' 			=> 1,
+			'colormag_primary_sticky_menu'			=> 1,
+			'colormag_related_posts_activate'		=> 1,
 			'colormag_social_facebook' 				=> '#',
 			'colormag_social_twitter' 				=> '#',
 			'colormag_social_googleplus' 			=> '#',
@@ -421,12 +422,6 @@ function colormag_setup() {
 			'primary' => array(
 				'name' => _x( 'Primary', 'Starter content primary menu', 'colormag' ),
 				'items' => array(
-					'link_home',
-					'page_layout' 	=> array(
-						'type' 		=> 'post_type',
-						'object' 	=> 'page',
-						'object_id' => '{{layout}}',
-					),
 					'page_layout' 	=> array(
 						'type' 		=> 'post_type',
 						'object' 	=> 'page',
@@ -436,12 +431,6 @@ function colormag_setup() {
 						'type' 		=> 'post_type',
 						'object' 	=> 'page',
 						'object_id' => '{{theme-info}}',
-					),
-					'page_blog',
-					'page_layout' => array(
-						'type' 		=> 'post_type',
-						'object' 	=> 'page',
-						'object_id' => '{{layout}}',
 					),
 					'page_view-pro' => array(
 						'type' 		=> 'post_type',
