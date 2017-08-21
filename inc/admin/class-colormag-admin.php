@@ -133,7 +133,7 @@ class ColorMag_Admin {
 
 			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://wordpress.org/support/view/theme-reviews/colormag?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
+			<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://wordpress.org/support/theme/colormag/reviews/?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
