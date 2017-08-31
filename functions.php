@@ -299,12 +299,6 @@ function colormag_setup() {
 			),
 
 			// Create posts
-			'destruction-in-montania' => array(
-				'post_type' 	=> 'post',
-				'post_title' 	=> 'Destruction in Montania',
-				'post_content' 	=> 'Nunc consectetur ipsum nisi, ut pellentesque felis tempus vitae. Integer eget lacinia nunc. Vestibulum consectetur convallis augue id egestas. Nullam rhoncus, arcu in tincidunt ultricies, velit diam imperdiet lacus, sed faucibus mi massa vel nunc. In ac viverra augue, a luctus nisl. Donec interdum enim tempus, aliquet metus maximus, euismod quam. Sed pretium finibus rhoncus. Phasellus libero diam, rutrum non ipsum ut, ultricies sodales sapien. Duis viverra purus lorem.',
-				'thumbnail' 	=> '{{featured-image-fireman}}',
-			),
 			'coffee-is-health-food-myth-or-fact' => array(
 				'post_type' 	=> 'post',
 				'post_title' 	=> 'Coffee is health food: Myth or fact?',
@@ -322,6 +316,18 @@ function colormag_setup() {
 				'post_title' 	=> 'Women’s Relay Competition',
 				'post_content' 	=> 'The young team of Franziska Hildebrand, Franziska Preuss, Vanessa Hinz and Dahlmeier clocked 1 hour, 11 minutes, 54.6 seconds to beat France by just over 1 minute. Italy took bronze, 1:06.1 behind. Germany missed six targets overall, avoiding any laps around the penalty loop. Maria Dorin Habert of France, who has two individual gold medals at these worlds, passed Russia and France on the last leg and to take her team from fourth to second.',
 				'thumbnail' 	=> '{{featured-image-relay-race}}',
+			),
+			'a-paradise-for-holiday' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'A Paradise for Holiday',
+				'post_content' 	=> 'Chocolate bar marzipan sweet marzipan. Danish tart bear claw donut cake bonbon biscuit powder croissant. Liquorice cake cookie. Dessert cotton candy macaroon gummies sweet gingerbread sugar plum. Biscuit tart cake. Candy jelly ice cream halvah jelly-o jelly beans brownie pastry sweet. Candy sweet roll dessert. Lemon drops jelly-o fruitcake topping. Soufflé jelly beans bonbon.',
+				'thumbnail' 	=> '{{featured-image-paradise-for-holiday}}',
+			),
+			'destruction-in-montania' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Destruction in Montania',
+				'post_content' 	=> 'Nunc consectetur ipsum nisi, ut pellentesque felis tempus vitae. Integer eget lacinia nunc. Vestibulum consectetur convallis augue id egestas. Nullam rhoncus, arcu in tincidunt ultricies, velit diam imperdiet lacus, sed faucibus mi massa vel nunc. In ac viverra augue, a luctus nisl. Donec interdum enim tempus, aliquet metus maximus, euismod quam. Sed pretium finibus rhoncus. Phasellus libero diam, rutrum non ipsum ut, ultricies sodales sapien. Duis viverra purus lorem.',
+				'thumbnail' 	=> '{{featured-image-fireman}}',
 			),
 		),
 
@@ -346,6 +352,10 @@ function colormag_setup() {
 			'featured-image-relay-race' => array(
 				'post_title' 	=> 'Featured image relay race',
 				'file' 			=> 'img/relay-race.jpg',
+			),
+			'featured-image-paradise-for-holiday' => array(
+				'post_title' 	=> 'Featured image paradise for holiday',
+				'file' 			=> 'img/sea.jpg',
 			),
 			'featured-image-ad-medium' => array(
 				'post_title' 	=> 'Featured image ad medium',
