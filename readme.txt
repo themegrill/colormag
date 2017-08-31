@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.2.1 - 2017-08-31 =
 * Tweaks - Updated BxSlider to version 4.2.12
 * Tweaks - WooCommerce sidebar layout now utilizes the same sidebar area provided via the theme by default
 * Tweaks - Image alt text added to the advertisement widgets provided via this theme
