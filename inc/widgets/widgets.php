@@ -257,11 +257,17 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
       $type = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest' ;
       $category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
 
+      $post_status = 'publish';
+      if( get_option( 'fresh_site') == 1 ){
+      	$post_status = array( 'auto-draft', 'publish' );
+      }
+
       if( $type == 'latest' ) {
          $get_featured_posts = new WP_Query( array(
             'posts_per_page'        => $number,
             'post_type'             => 'post',
-            'ignore_sticky_posts'   => true
+            'ignore_sticky_posts'   => true,
+            'post_status'           => $post_status,
          ) );
       }
       else {
@@ -391,11 +397,17 @@ class colormag_highlighted_posts_widget extends WP_Widget {
       $type = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest' ;
       $category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
 
+  	  $post_status = 'publish';
+      if( get_option( 'fresh_site') == 1 ){
+      	$post_status = array( 'auto-draft', 'publish' );
+      }
+
       if( $type == 'latest' ) {
          $get_featured_posts = new WP_Query( array(
             'posts_per_page'        => $number,
             'post_type'             => 'post',
-            'ignore_sticky_posts'   => true
+            'ignore_sticky_posts'   => true,
+            'post_status'           => $post_status,
          ) );
       }
       else {
@@ -541,11 +553,17 @@ class colormag_featured_posts_widget extends WP_Widget {
       $type = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest' ;
       $category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
 
+      $post_status = 'publish';
+      if( get_option( 'fresh_site') == 1 ){
+      	$post_status = array( 'auto-draft', 'publish' );
+      }
+
       if( $type == 'latest' ) {
          $get_featured_posts = new WP_Query( array(
             'posts_per_page'        => $number,
             'post_type'             => 'post',
-            'ignore_sticky_posts'   => true
+            'ignore_sticky_posts'   => true,
+            'post_status'           => $post_status,
          ) );
       }
       else {
@@ -555,6 +573,7 @@ class colormag_featured_posts_widget extends WP_Widget {
             'category__in'          => $category
          ) );
       }
+
       echo $before_widget;
       ?>
       <?php
@@ -704,11 +723,17 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
       $type = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest' ;
       $category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
 
+      $post_status = 'publish';
+      if( get_option( 'fresh_site') == 1 ){
+      	$post_status = array( 'auto-draft', 'publish' );
+      }
+
       if( $type == 'latest' ) {
          $get_featured_posts = new WP_Query( array(
             'posts_per_page'        => $number,
             'post_type'             => 'post',
-            'ignore_sticky_posts'   => true
+            'ignore_sticky_posts'   => true,
+            'post_status' 			=> $post_status
          ) );
       }
       else {
