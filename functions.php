@@ -299,17 +299,17 @@ function colormag_setup() {
 			),
 
 			// Create posts
+			'destruction-in-montania' => array(
+				'post_type' 	=> 'post',
+				'post_title' 	=> 'Destruction in Montania',
+				'post_content' 	=> 'Nunc consectetur ipsum nisi, ut pellentesque felis tempus vitae. Integer eget lacinia nunc. Vestibulum consectetur convallis augue id egestas. Nullam rhoncus, arcu in tincidunt ultricies, velit diam imperdiet lacus, sed faucibus mi massa vel nunc. In ac viverra augue, a luctus nisl. Donec interdum enim tempus, aliquet metus maximus, euismod quam. Sed pretium finibus rhoncus. Phasellus libero diam, rutrum non ipsum ut, ultricies sodales sapien. Duis viverra purus lorem.',
+				'thumbnail' 	=> '{{featured-image-fireman}}',
+			),
 			'coffee-is-health-food-myth-or-fact' => array(
 				'post_type' 	=> 'post',
 				'post_title' 	=> 'Coffee is health food: Myth or fact?',
 				'post_content' 	=> 'Vivamus vestibulum ut magna vitae facilisis. Maecenas laoreet lobortis tristique. Aenean accumsan malesuada convallis. Suspendisse egestas luctus nisl, sit amet',
 				'thumbnail' 	=> '{{featured-image-coffee}}',
-			),
-			'mosquito-borne-diseases-has-threaten-world' => array(
-				'post_type' 	=> 'post',
-				'post_title' 	=> 'Mosquito-borne diseases has threaten World',
-				'post_content' 	=> 'Donec a suscipit erat, ac venenatis velit. Sed vitae tortor pellentesque, dictum quam ut, porttitor ligula. Aliquam sit amet mattis mauris. Donec non dui sodales, tincidunt ante id, ullamcorper ex. Curabitur nec ullamcorper justo. Cras ut massa faucibus, tincidunt urna ut, lobortis mauris. Vestibulum sodales rutrum suscipit.',
-				'thumbnail' 	=> '{{featured-image-mosquito}}',
 			),
 			'get-more-nutrition-in-every-bite' => array(
 				'post_type' 	=> 'post',
@@ -323,47 +323,37 @@ function colormag_setup() {
 				'post_content' 	=> 'The young team of Franziska Hildebrand, Franziska Preuss, Vanessa Hinz and Dahlmeier clocked 1 hour, 11 minutes, 54.6 seconds to beat France by just over 1 minute. Italy took bronze, 1:06.1 behind. Germany missed six targets overall, avoiding any laps around the penalty loop. Maria Dorin Habert of France, who has two individual gold medals at these worlds, passed Russia and France on the last leg and to take her team from fourth to second.',
 				'thumbnail' 	=> '{{featured-image-relay-race}}',
 			),
-			'destruction-in-montania' => array(
-				'post_type' 	=> 'post',
-				'post_title' 	=> 'Destruction in Montania',
-				'post_content' 	=> 'Nunc consectetur ipsum nisi, ut pellentesque felis tempus vitae. Integer eget lacinia nunc. Vestibulum consectetur convallis augue id egestas. Nullam rhoncus, arcu in tincidunt ultricies, velit diam imperdiet lacus, sed faucibus mi massa vel nunc. In ac viverra augue, a luctus nisl. Donec interdum enim tempus, aliquet metus maximus, euismod quam. Sed pretium finibus rhoncus. Phasellus libero diam, rutrum non ipsum ut, ultricies sodales sapien. Duis viverra purus lorem.',
-				'thumbnail' 	=> '{{featured-image-fireman}}',
-			),
 		),
 
 		// Create the custom image attachments used as post thumbnails for pages.
 		'attachments' => array(
 			'colormag-logo' => array(
-				'post_title' 	=> _x( 'ColorMag Logo', 'Starter content', 'colormag' ),
+				'post_title' 	=> 'ColorMag Logo',
 				'file' 			=> 'img/colormag-logo.png',
 			),
+			'featured-image-fireman' => array(
+				'post_title' 	=> 'Featured image fireman',
+				'file' 			=> 'img/fireman.jpg',
+			),
 			'featured-image-coffee' => array(
-				'post_title' 	=> _x( 'Featured image coffee', 'Starter content', 'colormag' ),
+				'post_title' 	=> 'Featured image coffee',
 				'file' 			=> 'img/coffee.jpg',
 			),
-			'featured-image-mosquito' => array(
-				'post_title' 	=> _x( 'Featured image mosquito', 'Starter content', 'colormag' ),
-				'file' 			=> 'img/mosquito.jpg',
-			),
 			'featured-image-yummy' => array(
-				'post_title' 	=> _x( 'Featured image yummy', 'Starter content', 'colormag' ),
+				'post_title' 	=> 'Featured image yummy',
 				'file' 			=> 'img/yummy.jpg',
 			),
 			'featured-image-relay-race' => array(
-				'post_title' 	=> _x( 'Featured image relay race', 'Starter content', 'colormag' ),
+				'post_title' 	=> 'Featured image relay race',
 				'file' 			=> 'img/relay-race.jpg',
 			),
 			'featured-image-ad-medium' => array(
-				'post_title' 	=> _x( 'Featured image ad medium', 'Starter content', 'colormag' ),
+				'post_title' 	=> 'Featured image ad medium',
 				'file' 			=> 'img/ad-medium.jpg',
 			),
 			'featured-image-ad-large' => array(
-				'post_title' 	=> _x( 'Featured image ad large', 'Starter content', 'colormag' ),
+				'post_title' 	=> 'Featured image ad large',
 				'file' 			=> 'img/ad-large.jpg',
-			),
-			'featured-image-fireman' => array(
-				'post_title' 	=> _x( 'Featured image fireman', 'Starter content', 'colormag' ),
-				'file' 			=> 'img/fireman.jpg',
 			),
 		),
 
@@ -397,21 +387,21 @@ function colormag_setup() {
 		'nav_menus' => array(
 			// Assign a menu to the "primary" location.
 			'primary' => array(
-				'name' => _x( 'Primary', 'Starter content primary menu', 'colormag' ),
+				'name' => 'Primary',
 				'items' => array(
 					'link_download' => array(
 						'type' 		=> 'custom',
-						'title' => _x( 'Download', 'Theme starter content', 'colormag' ),
+						'title' => 'Download',
 						'url' => 'https://downloads.wordpress.org/theme/colormag.zip',
 					),
 					'link_theme-info' => array(
 						'type' 		=> 'custom',
-						'title' => _x( 'Theme Info', 'Theme starter content', 'colormag' ),
+						'title' => 'Theme Info',
 						'url' => 'https://themegrill.com/themes/colormag/',
 					),
 					'link_view-pro' => array(
 						'type' 		=> 'custom',
-						'title' => _x( 'View pro', 'Theme starter content', 'colormag' ),
+						'title' => 'View pro',
 						'url' => 'https://themegrill.com/themes/colormag/',
 					),
 					'page_layout' 	=> array(
