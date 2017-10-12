@@ -46,41 +46,7 @@
 					}
 					?>
 
-					<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
-						<div class="inner-wrap clearfix">
-							<?php
-							if ( get_theme_mod( 'colormag_home_icon_display', 0 ) == 1 ) {
-								if ( is_front_page() ) {
-									$home_icon_class = 'home-icon front_page_on';
-								} else {
-									$home_icon_class = 'home-icon';
-								}
-								?>
-								<div class="<?php echo $home_icon_class; ?>">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><i class="fa fa-home"></i></a>
-								</div>
-								<?php
-							}
-							?>
-							<h4 class="menu-toggle"></h4>
-							<?php
-							if ( has_nav_menu( 'primary' ) ) {
-								wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-primary-container', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) );
-							} else {
-								wp_page_menu();
-							}
-							?>
-							<?php if ( get_theme_mod( 'colormag_random_post_in_menu', 0 ) == 1 ) { ?>
-								<?php colormag_random_post(); ?>
-							<?php } ?>
-							<?php if ( get_theme_mod( 'colormag_search_icon_in_menu', 0 ) == 1 ) { ?>
-								<i class="fa fa-search search-top"></i>
-								<div class="search-form-top">
-									<?php get_search_form(); ?>
-								</div>
-							<?php } ?>
-						</div>
-					</nav>
+					<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
 
 				</div><!-- #header-text-nav-container -->
 
