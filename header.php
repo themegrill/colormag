@@ -27,9 +27,22 @@
 		<?php do_action( 'colormag_before' ); ?>
 		<div id="page" class="hfeed site">
 			<?php do_action( 'colormag_before_header' ); ?>
-			<header id="masthead" class="site-header clearfix">
+
+			<?php
+			// Add the main total header area display type dynamic class
+			$main_total_header_option_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
+
+			$class_name = '';
+			if ( $main_total_header_option_layout_class == 'type_two' ) {
+				$class_name = 'colormag-header-clean';
+			} elseif ( $main_total_header_option_layout_class == 'type_three' ) {
+				$class_name = 'colormag-header-classic';
+			}
+			?>
+
+			<header id="masthead" class="site-header clearfix <?php echo esc_attr( $class_name ); ?>">
 				<div id="header-text-nav-container" class="clearfix">
-					
+
 					<?php colormag_top_header_bar_display(); // Display the top header bar ?>
 
 					<?php
