@@ -1,0 +1,89 @@
+/*
+Theme Name: ColorMag Pro
+Theme URI: https://themegrill.com/themes/colormag/
+Author: ThemeGrill
+Author URI: https://themegrill.com/wordpress-themes/
+Description: ColorMag Pro is the pro version of ColorMag free theme.
+Version: 2.2.0
+License: GNU General Public License, version 3 (GPLv3)
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats, footer-widgets, blog, e-commerce, news, rtl-language-support
+Text Domain: colormag
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Reset
+2.0 Typography
+2.1 Headings
+2.2 Others
+3.0 Elements
+3.1 Superscript and Subscript
+3.2 Table
+3.3 Lists
+3.4 Blockquote
+3.5 Others
+4.0 Forms
+5.0 Navigation
+5.1 Links
+5.2 Primary Menu
+5.3 Primary Menu Dropdown
+5.4 Responsive Menu
+6.0 Images
+7.0 Alignments
+8.0 Clearings
+9.0 Media
+9.1 Captions
+9.2 WordPress Gallery Support
+10.0 Extras
+10.1 Search Design
+10.2 Header Top Bar
+10.3 Social Links
+10.4 Random Post Icon
+11.0 Widgets
+11.1 Front Page Widget Areas
+11.2 All Related to Featured Posts Widget
+11.3 Category Slider Widget
+11.4 Highlighted posts widget
+11.5 Widget News in Pictures
+11.6 Default News Widget
+11.7 Tabbed Widget
+11.8 Random Posts Widget
+11.9 Big Image and Thumbnails Slider Widget
+11.10 Breadking News Widget
+11.11 Ticket News Widget
+11.12 Advertisement Widget
+11.13 Small Thumbnails widget
+11.14 Widgets General CSS
+12.0 Plugins Support
+12.1 WP-PageNavi
+13.0 Content
+13.1 Body
+13.2 Header
+13.3 Primary & Secondary Content Area
+13.4 Content Columns
+13.5 Posts and Pages
+13.6 Pagination
+13.7 Comments
+13.8 Footer
+13.8.a Footer General CSS
+13.8.b Footer Widget Area
+13.8.c Footer Socket Area
+13.8.d Footer menu
+13.8.e Scroll to Top
+13.8.f Footer Advertisement Area
+14.0 Responsive Structure
+15.0 JetPack Infinite Scroll
+16.0 single post pagination
+17.0 heaader media css
+18.0 Headroom CSS
+--------------------------------------------------------------*/
+@import 'variables/colors';
+@import 'theme/theme-style';
+@import 'header/header';
