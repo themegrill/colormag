@@ -14,7 +14,7 @@
 			}
 		}
 	}
-
+	
 	/*--------------------------------------------------------------
 	Clean Layout
 	--------------------------------------------------------------*/
@@ -29,7 +29,6 @@
 		}
 		
 		.breaking-news {
-			width: 100%;
 			.breaking-news-latest {
 				background: $news-background;
 				padding: 0 10px;
@@ -175,8 +174,6 @@
 		}
 		
 		.breaking-news {
-			width: 100%;
-			
 			.breaking-news-latest {
 				background: $news-background;
 				padding: 0 10px;
