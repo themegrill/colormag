@@ -323,7 +323,7 @@ function colormag_customize_register( $wp_customize ) {
 					$class = ($this->value() == $value) ? 'colormag-radio-img-selected colormag-radio-img-img' : 'colormag-radio-img-img';
 					?>
 					<li style="display: inline;">
-						<label>
+						<label style="margin-left: 0">
 							<input <?php $this->link(); ?>style = 'display:none' type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php
 							$this->link();
 							checked( $this->value(), $value );
