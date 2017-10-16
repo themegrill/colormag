@@ -1,11 +1,11 @@
 {
-  "name": "colormag-pro",
-  "title": "Colormag Pro",
-  "version": "2.2.0",
+  "name": "colormag",
+  "title": "ColorMag",
+  "version": "1.2.2",
   "homepage": "https://themegrill.com/themes/colormag",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:ThemeGrill/colormag-pro.git"
+    "url": "git@github.com:themegrill/colormag.git"
   },
   "license": "GPL-3.0+",
   "main": "Gruntfile.js",

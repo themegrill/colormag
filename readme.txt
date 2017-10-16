@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.2.2 - 2017-10-16 =
 * Feature - Added header variation options
 * Feature - Added footer variation options
 
