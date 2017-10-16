@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Feature - Added header variation options
+* Feature - Added footer variation options
+
 = Version 1.2.1 - 2017-08-31 =
 * Tweaks - Updated BxSlider to version 4.2.12
 * Tweaks - WooCommerce sidebar layout now utilizes the same sidebar area provided via the theme by default
