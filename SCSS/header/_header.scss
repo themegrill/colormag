@@ -60,7 +60,7 @@
 				font-size: 16px;
 				padding: 0 6px;
 			}
-
+			
 			li {
 				&:hover {
 					i.fa {
@@ -268,7 +268,7 @@
 				}
 				
 			}
-
+			
 			.menu-toggle {
 				line-height: 26px;
 				border: 1px solid $menu-link-color;
@@ -412,10 +412,24 @@
 				}
 				
 				.random-post {
-					line-height: 26px;
+					bottom: 0;
 					
 					a {
-						padding: 20px;
+						font-size: 14px;
+						padding: 12px 15px;
+						color: $menu-link-color;
+						
+						.fa-random {
+							color: $menu-link-color;
+						}
+						
+						&:hover {
+							background: transparent;
+							
+							.fa-random {
+								color: $primary;
+							}
+						}
 					}
 				}
 				
@@ -485,12 +499,28 @@
 			}
 			
 			#site-navigation {
+				.random-post {
+					a {
+						padding: 15px;
+					}
+				}
+				.menu-toggle::before,
+				.fa.search-top {
+					padding: 15px;
+				}
+				
 				&.main-small-navigation {
 					.menu-toggle {
 						background-color: $primary;
 					}
+					.random-post {
+						a {
+							padding: 15px;
+						}
+					}
 				}
 				
+							
 			}
 		}
 		&.colormag-header-classic {
@@ -518,6 +548,24 @@
 				.menu-toggle {
 					background-color: $primary;
 					border-color: $primary;
+				}
+				
+				.random-post {
+					a {
+						padding: 15px;
+					}
+				}
+			}
+			
+			#site-navigation {
+				.random-post {
+					a {
+						padding: 15px;
+					}
+				}
+				.menu-toggle::before,
+				.fa.search-top {
+					padding: 15px;
 				}
 			}
 		}

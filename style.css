@@ -3472,11 +3472,25 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post {
-	line-height: 26px;
+	bottom: 0;
 }
 
 #masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a {
-	padding: 20px;
+	font-size: 14px;
+	padding: 12px 15px;
+	color: #343a40;
+}
+
+#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a .fa-random {
+	color: #343a40;
+}
+
+#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a:hover {
+	background: transparent;
+}
+
+#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a:hover .fa-random {
+	color: #289dcc;
 }
 
 #masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle {
@@ -3521,8 +3535,18 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	#masthead.colormag-header-clean #header-logo-image {
 		margin-bottom: 0;
 	}
+	#masthead.colormag-header-clean #site-navigation .random-post a {
+		padding: 15px;
+	}
+	#masthead.colormag-header-clean #site-navigation .menu-toggle::before,
+	#masthead.colormag-header-clean #site-navigation .fa.search-top {
+		padding: 15px;
+	}
 	#masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-toggle {
 		background-color: #289dcc;
+	}
+	#masthead.colormag-header-clean #site-navigation.main-small-navigation .random-post a {
+		padding: 15px;
 	}
 	#masthead.colormag-header-classic #menu-primary {
 		background-color: #ffffff;
@@ -3544,6 +3568,16 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	#masthead.colormag-header-classic .main-small-navigation .menu-toggle {
 		background-color: #289dcc;
 		border-color: #289dcc;
+	}
+	#masthead.colormag-header-classic .main-small-navigation .random-post a {
+		padding: 15px;
+	}
+	#masthead.colormag-header-classic #site-navigation .random-post a {
+		padding: 15px;
+	}
+	#masthead.colormag-header-classic #site-navigation .menu-toggle::before,
+	#masthead.colormag-header-classic #site-navigation .fa.search-top {
+		padding: 15px;
 	}
 	.breaking-news {
 		height: auto;
