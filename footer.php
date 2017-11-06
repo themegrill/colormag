@@ -45,7 +45,7 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 					}
 					?>
 				</div>
-				<div class="footer-socket-left-sectoin">
+				<div class="footer-socket-left-section">
 					<?php do_action( 'colormag_footer_copyright' ); ?>
 				</div>
 			</div>
