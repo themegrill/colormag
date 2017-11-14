@@ -952,6 +952,10 @@ li.default-menu {
 
 /* =DROP DOWN
 ----------------------------------------------- */
+.main-navigation ul li.focus > ul {
+	display: block;
+}
+
 .main-navigation .sub-menu,
 .main-navigation .children {
 	background-color: #232323;
