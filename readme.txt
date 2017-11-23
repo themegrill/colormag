@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Fix - Scroll fixed menu issue.
 * Tweaks - Touch screen accessible submenu
 
 = Version 1.2.2 - 2017-10-16 =

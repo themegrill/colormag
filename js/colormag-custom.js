@@ -46,4 +46,14 @@ jQuery( document ).ready( function() {
     }
   });
 
+  /**
+   * Scrollbar on fixed responsive menu
+   *
+   */
+  var screenHeight = jQuery( window ).height();
+
+  var menu = jQuery( '.better-responsive-menu #site-navigation' ).find( 'ul' ).first();
+  var availableMenuHeight = screenHeight - 43;
+  menu.height( availableMenuHeight ).css( 'overflow-y', 'scroll' );
+
 });
