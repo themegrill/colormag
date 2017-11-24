@@ -50,14 +50,12 @@ jQuery( document ).ready( function() {
    * Scrollbar on fixed responsive menu
    *
    */
-
-
   jQuery( window ).load( function() {
-    if ( window.matchMedia( "(max-width: 768px)" ).matches && jQuery( '.better-responsive-menu #masthead .sticky-wrapper' ).length >= 1 ) {
+    if ( window.matchMedia( "(max-width: 768px)" ).matches && jQuery( '#masthead .sticky-wrapper' ).length >= 1 ) {
 
         var screenHeight = jQuery( window ).height();
         var availableMenuHeight = screenHeight - 43;
-        var menu = jQuery( '.better-responsive-menu #site-navigation' ).find( 'ul' ).first();
+        var menu = jQuery( '#site-navigation' ).find( 'ul' ).first();
 
         menu.css( 'max-height', availableMenuHeight )
         menu.addClass( 'menu-scrollbar' );
