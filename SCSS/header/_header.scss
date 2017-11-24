@@ -1,5 +1,10 @@
 #masthead {
 	.main-small-navigation {
+		ul {
+			&.menu-scrollbar {
+				overflow-y: scroll;
+			}
+		}
 		
 		li {
 			&:hover,

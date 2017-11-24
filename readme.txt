@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Added - Scrollbar for fixed better responsive menu if overflow.
 * Tweaks - Touch screen accessible submenu
 
 = Version 1.2.2 - 2017-10-16 =

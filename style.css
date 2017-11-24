@@ -3137,6 +3137,10 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	--------------------------------------------------------------*/
 }
 
+#masthead .main-small-navigation ul.menu-scrollbar {
+	overflow-y: scroll;
+}
+
 #masthead .main-small-navigation li:hover > a, #masthead .main-small-navigation li.current-page-ancestor > a, #masthead .main-small-navigation li.current-menu-ancestor > a, #masthead .main-small-navigation li.current-page-item > a, #masthead .main-small-navigation li.current-menu-item > a {
 	color: #fff;
 	background-color: #289dcc;
