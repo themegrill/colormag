@@ -52,13 +52,17 @@ jQuery( document ).ready( function() {
    */
 
 
-  if ( window.matchMedia( "(max-width: 768px)" ).matches ) {
-    var screenHeight = jQuery( window ).height();
-    var availableMenuHeight = screenHeight - 43;
-    var menu = jQuery( '.better-responsive-menu #site-navigation' ).find( 'ul' ).first();
+  jQuery( window ).load( function() {
+    if ( window.matchMedia( "(max-width: 768px)" ).matches && jQuery( '.better-responsive-menu #masthead .sticky-wrapper' ).length >= 1 ) {
 
-    menu.css( 'max-height', availableMenuHeight )
-    menu.addClass( 'menu-scrollbar' );
-  }
+        var screenHeight = jQuery( window ).height();
+        var availableMenuHeight = screenHeight - 43;
+        var menu = jQuery( '.better-responsive-menu #site-navigation' ).find( 'ul' ).first();
+
+        menu.css( 'max-height', availableMenuHeight )
+        menu.addClass( 'menu-scrollbar' );
+      
+    }
+  });
 
 });
