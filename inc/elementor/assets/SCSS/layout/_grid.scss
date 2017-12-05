@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+# Grid	
+--------------------------------------------------------------*/
+* {
+	box-sizing: border-box;
+}
+
+.elementor-page {
+
+	.entry-header {
+		display: none;
+	}
+}
+
+.tg-container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.tg-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	.tg-col-control {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	&.thinner {
+		margin-left: -2px;
+		margin-right: -2px;
+
+		.tg-col-control {
+			padding-right: 2px;
+			padding-left: 2px;
+		}
+	}
+}
