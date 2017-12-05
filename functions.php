@@ -456,6 +456,8 @@ define( 'COLORMAG_LANGUAGES_DIR', COLORMAG_PARENT_DIR . '/languages' );
 
 define( 'COLORMAG_ADMIN_DIR', COLORMAG_INCLUDES_DIR . '/admin' );
 define( 'COLORMAG_WIDGETS_DIR', COLORMAG_INCLUDES_DIR . '/widgets' );
+define( 'COLORMAG_ELEMENTOR_DIR', COLORMAG_INCLUDES_DIR . '/elementor' );
+define( 'COLORMAG_ELEMENTOR_WIDGETS_DIR', COLORMAG_ELEMENTOR_DIR . '/widgets' );
 
 define( 'COLORMAG_ADMIN_IMAGES_DIR', COLORMAG_ADMIN_DIR . '/images' );
 
@@ -472,6 +474,8 @@ define( 'COLORMAG_LANGUAGES_URL', COLORMAG_PARENT_URL . '/languages' );
 
 define( 'COLORMAG_ADMIN_URL', COLORMAG_INCLUDES_URL . '/admin' );
 define( 'COLORMAG_WIDGETS_URL', COLORMAG_INCLUDES_URL . '/widgets' );
+define( 'COLORMAG_ELEMENTOR_URL', COLORMAG_INCLUDES_URL . '/elementor' );
+define( 'COLORMAG_ELEMENTOR_WIDGETS_URL', COLORMAG_ELEMENTOR_URL . '/widgets' );
 
 define( 'COLORMAG_ADMIN_IMAGES_URL', COLORMAG_ADMIN_URL . '/images' );
 
@@ -480,6 +484,12 @@ require_once( COLORMAG_INCLUDES_DIR . '/custom-header.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/header-functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/customizer.php' );
+
+/** Add the Elementor compatibility file */
+if ( defined( 'ELEMENTOR_VERSION' ) ) {
+	require_once( COLORMAG_ELEMENTOR_DIR . '/elementor.php' );
+	require_once( COLORMAG_ELEMENTOR_DIR . '/elementor-functions.php' );
+}
 
 require_once( COLORMAG_ADMIN_DIR . '/meta-boxes.php' );
 
