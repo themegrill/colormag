@@ -2898,6 +2898,13 @@ a#scroll-up:hover {
 }
 
 /* Gallery Post Format */
+/* = Page Template CSS
+----------------------------------------------- */
+.page-template-page-builder #primary {
+	float: none;
+	width: 100%;
+}
+
 /*--------------------------------------------------------------
 Responsive Structure
 --------------------------------------------------------------*/
