@@ -104,6 +104,74 @@ if ( ! function_exists( 'colormag_widgets_classes' ) ) :
 
 endif;
 
+/**
+ * Load the ColorMag Elementor widgets file and registers it
+ */
+if ( ! function_exists( 'colormag_elementor_widgets_registered' ) ) :
+
+	/**
+	 * Load and register the required Elementor widgets file
+	 *
+	 * @param $widgets_manager
+	 *
+	 * @since ColorMag 1.2.3
+	 */
+	function colormag_elementor_widgets_registered( $widgets_manager ) {
+
+		// Require the files
+		// 1. Block Widgets
+		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-block-1.php';
+
+		// 2. Grid Widgets
+		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-grid-2.php';
+
+		// 3. Global Widgets
+		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-global-widgets-title.php';
+
+		// Register the widgets
+		// 1. Block Widgets
+		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_1() );
+
+		// 2. Grid Widgets
+		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Grid_2() );
+
+		// 3. Global Widgets
+		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Global_Widgets_Title() );
+	}
+
+endif;
+
+add_action( 'elementor/widgets/widgets_registered', 'colormag_elementor_widgets_registered' );
+
+if ( ! function_exists( 'colormag_elementor_category' ) ) :
+
+	/**
+	 * Add the Elementor category for use in ColorMag widgets as seperator
+	 *
+	 * @since ColorMag 1.2.3
+	 */
+	function colormag_elementor_category() {
+
+		// Register widget block category for Elementor section
+		\Elementor\Plugin::instance()->elements_manager->add_category( 'colormag-widget-blocks', array(
+			'title' => esc_html__( 'ColorMag Widget Blocks', 'colormag' ),
+		), 1 );
+
+		// Register widget grid category for Elementor section
+		\Elementor\Plugin::instance()->elements_manager->add_category( 'colormag-widget-grid', array(
+			'title' => esc_html__( 'ColorMag Widget Grid', 'colormag' ),
+		), 1 );
+
+		// Register widget global category for Elementor section
+		\Elementor\Plugin::instance()->elements_manager->add_category( 'colormag-widget-global', array(
+			'title' => esc_html__( 'ColorMag Global Widgets', 'colormag' ),
+		), 1 );
+	}
+
+endif;
+
+add_action( 'elementor/init', 'colormag_elementor_category' );
+
 if ( ! function_exists( 'colormag_elementor_enqueue_style' ) ) :
 
 	/**
