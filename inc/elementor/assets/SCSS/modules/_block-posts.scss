@@ -91,7 +91,6 @@
 
 		&.tg-module-block--style-1,
 		&.tg-module-block--style-2,
-		&.tg-module-block--style-3,
 		&.tg-module-block--style-6,
 		&.tg-module-block--style-9 {
 			.tg-col-control {
@@ -100,7 +99,6 @@
 		}
 
 		&.tg-module-block--style-2,
-		&.tg-module-block--style-3,
 		&.tg-module-block--style-4 {
 			.tg-col-control {
 				margin-bottom: 30px;
@@ -114,90 +112,6 @@
 
 			.tg-module-info {
 				flex-basis: $column-8;
-			}
-		}
-
-		&.tg-module-block--style-5 {
-			.tg_module_block {
-				margin-bottom: 45px;
-
-				.tg-module-thumb {
-					margin-bottom: 0;
-				}
-				
-				.tg-module-title {
-					background-color: $white;
-					padding-top:20px;
-					padding-left: 25px;
-					padding-right: 25px;
-					position: absolute;
-					bottom: 0;
-					margin: 0 auto;
-					width: auto;
-					left: 45px;
-					right: 45px;
-					font-size: 30px;
-					box-shadow: 0 -5px 3px 0 rgba(0, 0, 0, 0.03)
-				}
-				
-				.block-content {
-					padding: 5px 70px 20px;
-					background-color: $white;
-				}
-				
-				.read-more {
-					background-color: $primary;
-					color: $white;
-					margin-top: 10px;
-					display: inline-block;
-					padding: 7px 12px;
-					
-				}
-			}
-		}
-
-		&.tg-module-block--style-7 {
-			.tg_module_block--white {
-				position: relative;
-				margin-bottom: 30px;
-				
-				.tg-module-title {
-					margin-top: 10px;
-					
-					a {
-						color: $white;
-					}
-				}
-				
-				.tg-post-auther-name,
-				.tg-post-date,
-				.tg-module-comments {
-					span {
-						color: $white;
-					}
-					a {
-						color: $white;
-						
-						&:hover {
-							color: $primary;
-						}
-					}
-				}
-				
-				.tg-module-info {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					width: 100%;
-					padding: 20px;
-				}
-			}
-		}
-
-		&.tg-module-block--style-8 {
-			.tg-col-control {
-				flex-basis: $column-4;
-				margin-bottom: 30px;
 			}
 		}
 	}
