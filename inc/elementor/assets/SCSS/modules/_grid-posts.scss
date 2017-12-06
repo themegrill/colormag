@@ -102,10 +102,8 @@
 				}
 			}
 
-			&.tg-module-grid--style-1,
 			&.tg-module-grid--style-2,
-			&.tg-module-grid--style-3,
-			&.tg-module-grid--style-6 {
+			&.tg-module-grid--style-3 {
 				.tg-col-control {
 					flex-basis: $column-6;
 				}
@@ -120,39 +118,6 @@
 			&.tg-module-grid--style-5 {
 				.tg-col-control {
 					flex-basis: $column-3;
-				}
-			}
-
-			&.tg-module-grid--style-7 {
-				.swiper-container {
-
-					&:hover {
-						.swiper-button-next {
-							right: 45px;
-						}
-	
-						.swiper-button-prev {
-							left: 45px;
-						}
-					}
-
-					.swiper-button-next,
-					.swiper-button-prev {
-						height: 40px;
-						width: 17px;
-						margin-top: -20px;
-						transition: left 0.35s ease-in-out, right 0.35s ease-in-out;
-					}
-
-					.swiper-button-next {
-						background-image: url('../img/next.svg');
-						right: -45px;
-					}
-
-					.swiper-button-prev {
-						background-image: url('../img/prev.svg');
-						left: -45px;
-					}
 				}
 			}
 		}
