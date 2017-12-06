@@ -124,11 +124,13 @@ if ( ! function_exists( 'colormag_elementor_widgets_registered' ) ) :
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-block-2.php';
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-block-4.php';
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-block-6.php';
+		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-block-9.php';
 
 		// 2. Grid Widgets
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-grid-2.php';
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-grid-3.php';
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-grid-4.php';
+		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-grid-5.php';
 
 		// 3. Global Widgets
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-global-widgets-title.php';
@@ -139,11 +141,13 @@ if ( ! function_exists( 'colormag_elementor_widgets_registered' ) ) :
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_2() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_4() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_6() );
+		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_9() );
 
 		// 2. Grid Widgets
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Grid_2() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Grid_3() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Grid_4() );
+		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Grid_5() );
 
 		// 3. Global Widgets
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Global_Widgets_Title() );
