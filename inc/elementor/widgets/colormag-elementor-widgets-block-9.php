@@ -188,7 +188,6 @@ class ColorMag_Elementor_Widgets_Block_9 extends Widget_Base {
 				'label'     => esc_html__( 'Select categories:', 'colormag' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => colormag_elementor_categories(),
-				'multiple'  => true,
 				'condition' => array(
 					'display_type' => 'categories',
 				),
