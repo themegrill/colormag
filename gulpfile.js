@@ -25,7 +25,7 @@ var paths = {
 // Start browserSync
 function browserSyncStart( cb ) {
     browserSync.init({
-        proxy:'localhost/colormag-pro'
+        proxy:'localhost/colormag'
     }, cb);
 }
 
