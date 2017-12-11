@@ -36,8 +36,13 @@ function colormag_elementor_categories() {
 function colormag_elementor_setup() {
 
 	// Cropping the images to different sizes to be used in the theme for Elementor
+	// For the block widgets
+	add_image_size( 'colormag-elementor-block-extra-large-thumbnail', 1155, 480, true );
+	
+	// Cropping the images to different sizes to be used in the theme for Elementor
 	// For the grid widgets
-	add_image_size( 'colormag-elementor-grid-large-thumbnail', 560, 388, true );
+	add_image_size( 'colormag-elementor-grid-large-thumbnail', 600, 428, true );
+	add_image_size( 'colormag-elementor-grid-small-thumbnail', 285, 450, true );
 	add_image_size( 'colormag-elementor-grid-medium-large-thumbnail', 575, 198, true );
 }
 

@@ -341,6 +341,10 @@
 	flex-basis: 50%;
 }
 
+.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-3 .tg-col-control {
+	margin-bottom: 4px;
+}
+
 .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-4 .tg-col-control {
 	-ms-flex-preferred-size: 33.33333%;
 	flex-basis: 33.33333%;
