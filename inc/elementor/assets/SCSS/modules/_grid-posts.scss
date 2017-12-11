@@ -109,6 +109,12 @@
 				}
 			}
 
+			&.tg-module-grid--style-3 {
+				.tg-col-control {
+					margin-bottom: 4px;
+				}
+			}
+
 			&.tg-module-grid--style-4 {
 				.tg-col-control {
 					flex-basis: $column-4;
