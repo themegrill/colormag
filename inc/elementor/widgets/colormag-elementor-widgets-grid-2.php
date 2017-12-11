@@ -251,12 +251,12 @@ class ColorMag_Elementor_Widgets_Grid_2 extends Widget_Base {
 					$get_featured_posts->the_post(); ?>
 
 					<?php
-					$thumbnail_image_size        = 'colormag-elementor-grid-extra-small-thumbnail';
+					$thumbnail_image_size        = 'colormag-highlighted-post';
 					$main_div_loop_wrapper_class = 'tg_module_grid tg_module_grid--small tg_module_grid--half tg-col-control';
 
 					if ( $count == 1 ) {
 
-						$thumbnail_image_size        = 'colormag-elementor-block-large-thumbnail';
+						$thumbnail_image_size        = 'colormag-elementor-grid-large-thumbnail';
 						$main_div_loop_wrapper_class = 'tg_module_grid tg_module_grid--full';
 
 					} else if ( $count == 2 ) {

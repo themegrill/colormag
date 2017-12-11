@@ -251,7 +251,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Widget_Base {
 				$get_featured_posts->the_post(); ?>
 
 			<?php
-			$featured_image_size = ( $count == 1 ) ? 'colormag-elementor-block-large-thumbnail' : 'colormag-elementor-block-small-thumbnail';
+			$featured_image_size = ( $count == 1 ) ? 'colormag-featured-image' : 'colormag-featured-post-small';
 			?>
 			<?php if ( $count == 1 ) : // on first post. ?>
 				<div class="tg-col-control">

@@ -251,7 +251,7 @@ class ColorMag_Elementor_Widgets_Block_4 extends Widget_Base {
 					if ( has_post_thumbnail() ) : ?>
 						<figure class="tg-module-thumb tg-col-control">
 							<a href="<?php the_permalink(); ?>" class="tg-thumb-link">
-								<?php the_post_thumbnail( 'colormag-elementor-block-medium-thumbnail' ); ?>
+								<?php the_post_thumbnail( 'colormag-highlighted-post' ); ?>
 							</a>
 						</figure>
 					<?php endif;

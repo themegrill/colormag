@@ -36,17 +36,9 @@ function colormag_elementor_categories() {
 function colormag_elementor_setup() {
 
 	// Cropping the images to different sizes to be used in the theme for Elementor
-	// For the block widgets
-	add_image_size( 'colormag-elementor-block-large-thumbnail', 575, 450, true );
-	add_image_size( 'colormag-elementor-block-medium-thumbnail', 390, 260, true );
-	add_image_size( 'colormag-elementor-block-medium-large-thumbnail', 360, 240, true );
-	add_image_size( 'colormag-elementor-block-small-thumbnail', 150, 110, true );
-
 	// For the grid widgets
-	add_image_size( 'colormag-elementor-grid-medium-thumbnail', 385, 450, true );
-	add_image_size( 'colormag-elementor-grid-small-thumbnail', 285, 450, true );
-	add_image_size( 'colormag-elementor-grid-extra-small-thumbnail', 285, 225, true );
-	add_image_size( 'colormag-elementor-grid-medium-large-thumbnail', 575, 225, true );
+	add_image_size( 'colormag-elementor-grid-large-thumbnail', 560, 388, true );
+	add_image_size( 'colormag-elementor-grid-medium-large-thumbnail', 575, 198, true );
 }
 
 add_action( 'after_setup_theme', 'colormag_elementor_setup' );
@@ -104,8 +96,9 @@ if ( ! function_exists( 'colormag_elementor_styles' ) ) {
 		wp_enqueue_style( 'colormag-econs', get_template_directory_uri() . '/inc/elementor/assets/css/colormag-econs.css', false, '1.0' );
 	}
 
-	add_action( 'elementor/editor/after_enqueue_styles', 'colormag_elementor_styles' );
 }
+
+add_action( 'elementor/editor/after_enqueue_styles', 'colormag_elementor_styles' );
 
 
 if ( ! function_exists( 'colormag_elementor_colored_category' ) ) :
