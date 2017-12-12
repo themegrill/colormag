@@ -146,6 +146,10 @@
 	color: inherit;
 }
 
+.elementor .tg-module-wrapper .tg-module-title:hover a {
+	color: #289dcc;
+}
+
 .elementor .tg-module-wrapper .tg-module-meta .tg-post-date .updated:not(.published) {
 	display: none;
 }

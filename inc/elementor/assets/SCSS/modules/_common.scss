@@ -49,6 +49,12 @@
 			a {
 				color: inherit;
 			}
+
+			&:hover {
+				a {
+					color: $primary;
+				}
+			}
 		}
 		
 		.tg-module-meta {
