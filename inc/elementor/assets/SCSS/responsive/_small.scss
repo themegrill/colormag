@@ -9,7 +9,7 @@
 				&.tg-module-block--style-6,
 				&.tg-module-block--style-9 {
 					.tg-col-control {
-						flex-basis: $column-12 !important;
+						flex-basis: $column-12;
 					}
 				}
 			}
@@ -21,26 +21,26 @@
 				&.tg-module-grid--style-4,
 				&.tg-module-grid--style-5 {
 					.tg-col-control {
-						flex-basis: $column-12 !important;
+						flex-basis: $column-12;
 					}
 				}
 
 				&.tg-module-grid--style-1,
 				&.tg-module-grid--style-2 {
 					.tg_module_grid--small {
-						flex-basis: $column-6 !important;
+						flex-basis: $column-6;
 					}
 				}
 
 				&.tg-module-grid--style-2 {
 					.tg_module_grid--full {
-						flex-basis: $column-12 !important;
+						flex-basis: $column-12;
 					}
 				}
 
 				&.tg-module-grid--style-5 {
 					.tg-col-control {
-						flex-basis: $column-6 !important;
+						flex-basis: $column-6;
 						margin-bottom: 4px;
 					}
 				}
@@ -50,6 +50,27 @@
 				&.tg-module-grid--style-5 {
 					.tg-col-control {
 						margin-bottom: 4px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.elementor {
+		.tg-module-wrapper {
+			&.tg-module-grid {
+				&.tg-module-grid--style-1,
+				&.tg-module-grid--style-2 {
+					.tg_module_grid--half {
+						flex-basis: $column-12;
+					}
+				}
+
+				&.tg-module-grid--style-5 {
+					.tg-col-control {
+						flex-basis: $column-12;
 					}
 				}
 			}

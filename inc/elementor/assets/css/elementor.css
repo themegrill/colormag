@@ -226,21 +226,21 @@
 	top: auto;
 }
 
-.elementor .tg-module-wrapper.tg-module-block--style-1 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block--style-6 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block--style-9 .tg-col-control {
+.elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-1 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control {
 	-ms-flex-preferred-size: 50%;
 	flex-basis: 50%;
 }
 
-.elementor .tg-module-wrapper.tg-module-block--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block--style-4 .tg-col-control {
+.elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-4 .tg-col-control {
 	margin-bottom: 30px;
 }
 
-.elementor .tg-module-wrapper.tg-module-block--style-4 .tg-module-thumb {
+.elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-4 .tg-module-thumb {
 	-ms-flex-preferred-size: 33.33333%;
 	flex-basis: 33.33333%;
 }
 
-.elementor .tg-module-wrapper.tg-module-block--style-4 .tg-module-info {
+.elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-4 .tg-module-info {
 	-ms-flex-preferred-size: 66.66667%;
 	flex-basis: 66.66667%;
 }
@@ -313,32 +313,37 @@
 }
 
 .elementor .tg-module-wrapper.tg-module-grid .tg_module_grid.tg_module_grid--half {
-	-ms-flex-preferred-size: 50% !important;
-	flex-basis: 50% !important;
+	-ms-flex-preferred-size: 50%;
+	flex-basis: 50%;
 	margin-bottom: 3px;
 }
 
 .elementor .tg-module-wrapper.tg-module-grid .tg_module_grid.tg_module_grid--one-fourth {
-	-ms-flex-preferred-size: 25% !important;
-	flex-basis: 25% !important;
+	-ms-flex-preferred-size: 25%;
+	flex-basis: 25%;
 	margin-bottom: 3px;
 }
 
 .elementor .tg-module-wrapper.tg-module-grid .tg_module_grid.tg_module_grid--one-third {
-	-ms-flex-preferred-size: 33.33333% !important;
-	flex-basis: 33.33333% !important;
+	-ms-flex-preferred-size: 33.33333%;
+	flex-basis: 33.33333%;
 	margin-bottom: 3px;
 }
 
 .elementor .tg-module-wrapper.tg-module-grid .tg_module_grid.tg_module_grid--full {
-	-ms-flex-preferred-size: 100% !important;
-	flex-basis: 100% !important;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
 	margin-bottom: 3px;
 }
 
-.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-3 .tg-col-control {
+.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-3 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-6 .tg-col-control {
 	-ms-flex-preferred-size: 50%;
 	flex-basis: 50%;
+}
+
+.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg_module_grid--full {
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
 }
 
 .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-3 .tg-col-control {
@@ -357,24 +362,24 @@
 
 @media only screen and (max-width: 768px) {
 	.elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-1 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control, .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control {
-		-ms-flex-preferred-size: 100% !important;
-		flex-basis: 100% !important;
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
 	}
 	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-3 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-4 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-5 .tg-col-control {
-		-ms-flex-preferred-size: 100% !important;
-		flex-basis: 100% !important;
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
 	}
 	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1 .tg_module_grid--small, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg_module_grid--small {
-		-ms-flex-preferred-size: 50% !important;
-		flex-basis: 50% !important;
+		-ms-flex-preferred-size: 50%;
+		flex-basis: 50%;
 	}
 	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg_module_grid--full {
-		-ms-flex-preferred-size: 100% !important;
-		flex-basis: 100% !important;
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
 	}
 	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-5 .tg-col-control {
-		-ms-flex-preferred-size: 50% !important;
-		flex-basis: 50% !important;
+		-ms-flex-preferred-size: 50%;
+		flex-basis: 50%;
 		margin-bottom: 4px;
 	}
 	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-3 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-4 .tg-col-control, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-5 .tg-col-control {
@@ -382,32 +387,44 @@
 	}
 }
 
-.elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
-.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
-.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
-.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
-.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
-.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control {
-	-ms-flex-preferred-size: 33.33333%;
-	flex-basis: 33.33333%;
+@media only screen and (max-width: 480px) {
+	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1 .tg_module_grid--half, .elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-2 .tg_module_grid--half {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+	}
+	.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-5 .tg-col-control {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+	}
 }
 
-.elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
-.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
-.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
-.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
-.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
-.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
-.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
-.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
-.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
-.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
-.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
-.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
-.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
-.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
-.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
-.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control {
-	-ms-flex-preferred-size: 100%;
-	flex-basis: 100%;
+@media only screen and (min-width: 768px) {
+	.elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control, .elementor .elementor-col-100 .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
+	.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
+	.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
+	.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
+	.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
+	.elementor .elementor-column[data-col="100"] .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control {
+		-ms-flex-preferred-size: 33.33333%;
+		flex-basis: 33.33333%;
+	}
+	.elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control, .elementor .elementor-col-25 .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
+	.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
+	.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
+	.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
+	.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
+	.elementor .elementor-column[data-col="25"] .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
+	.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
+	.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
+	.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
+	.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
+	.elementor .elementor-col-33 .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control,
+	.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-2 .tg-col-control,
+	.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-3 .tg-col-control,
+	.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-6 .tg-col-control,
+	.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-8 .tg-col-control,
+	.elementor .elementor-column[data-col="33"] .tg-module-wrapper.tg-module-block.tg-module-block--style-9 .tg-col-control {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+	}
 }

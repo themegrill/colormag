@@ -41,7 +41,7 @@ function colormag_elementor_setup() {
 	
 	// Cropping the images to different sizes to be used in the theme for Elementor
 	// For the grid widgets
-	add_image_size( 'colormag-elementor-grid-large-thumbnail', 600, 428, true );
+	add_image_size( 'colormag-elementor-grid-large-thumbnail', 600, 417, true );
 	add_image_size( 'colormag-elementor-grid-small-thumbnail', 285, 450, true );
 	add_image_size( 'colormag-elementor-grid-medium-large-thumbnail', 575, 198, true );
 }

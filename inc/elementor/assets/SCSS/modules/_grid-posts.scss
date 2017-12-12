@@ -82,30 +82,37 @@
 				}
 
 				&.tg_module_grid--half {
-					flex-basis: $column-6 !important;
+					flex-basis: $column-6;
 					margin-bottom: 3px;
 				}
 
 				&.tg_module_grid--one-fourth {
-					flex-basis: $column-3 !important;
+					flex-basis: $column-3;
 					margin-bottom: 3px;
 				}
 
 				&.tg_module_grid--one-third {
-					flex-basis: $column-4 !important;
+					flex-basis: $column-4;
 					margin-bottom: 3px;
 				}
 
 				&.tg_module_grid--full {
-					flex-basis: $column-12 !important;
+					flex-basis: $column-12;
 					margin-bottom: 3px;
 				}
 			}
 
 			&.tg-module-grid--style-2,
-			&.tg-module-grid--style-3 {
+			&.tg-module-grid--style-3,
+			&.tg-module-grid--style-6 {
 				.tg-col-control {
 					flex-basis: $column-6;
+				}
+			}
+
+			&.tg-module-grid--style-2 {
+				.tg_module_grid--full {
+					flex-basis: $column-12;
 				}
 			}
 
