@@ -16,6 +16,7 @@
  * @since ColorMag 1.2.3
  */
 function colormag_elementor_categories() {
+	$output     = array();
 	$categories = get_categories();
 
 	foreach ( $categories as $category ) {
