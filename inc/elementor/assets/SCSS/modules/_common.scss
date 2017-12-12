@@ -1,4 +1,15 @@
 .elementor {
+
+	.elementor-image {
+		.wp-caption {
+			border: none;
+
+			img {
+				margin: 0;
+			}
+		}
+	}
+		
 	.tg-module-wrapper {
 		color: $color_gray_five;
 		font-size: 14px;
