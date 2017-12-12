@@ -202,22 +202,3 @@ if ( ! function_exists( 'colormag_elementor_enqueue_style' ) ) :
 endif;
 
 add_action( 'elementor/frontend/after_enqueue_styles', 'colormag_elementor_enqueue_style' );
-
-if ( ! function_exists( 'colormag_elementor_enqueue_scripts' ) ) :
-
-	/**
-	 * Enqueue the scripts for use within Elementor only
-	 *
-	 * @since ColorMag 1.2.3
-	 */
-	function colormag_elementor_enqueue_scripts() {
-
-		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
-		// Enqueue the main JS file for Elementor plugin
-		wp_enqueue_script( 'colormag-elementor', COLORMAG_ELEMENTOR_URL . '/assets/js/colormag-elementor.js', array( 'jquery' ), false, true );
-	}
-
-endif;
-
-add_action( 'elementor/frontend/before_enqueue_scripts', 'colormag_elementor_enqueue_scripts' );
