@@ -38,7 +38,7 @@ function colormag_elementor_setup() {
 	// Cropping the images to different sizes to be used in the theme for Elementor
 	// For the block widgets
 	add_image_size( 'colormag-elementor-block-extra-large-thumbnail', 1155, 480, true );
-	
+
 	// Cropping the images to different sizes to be used in the theme for Elementor
 	// For the grid widgets
 	add_image_size( 'colormag-elementor-grid-large-thumbnail', 600, 417, true );
@@ -145,3 +145,32 @@ if ( ! function_exists( 'colormag_elementor_colored_category' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'colormag_elementor_custom_css' ) ) :
+
+	/**
+	 * Custom CSS code to be rendered for the Elementor plugin
+	 *
+	 * Hooks in the wp_head hook with priority of 100
+	 *
+	 * @since ColorMag 2.2.3
+	 */
+	function colormag_elementor_custom_css() {
+		$colormag_internal_elementor_css = '';
+		$primary_color                   = esc_html( get_theme_mod( 'colormag_primary_color', '#289dcc' ) );
+
+		if ( $primary_color != '#289dcc' ) {
+			$colormag_internal_elementor_css .= '.elementor .tg-module-wrapper .module-title span,.elementor .tg-module-wrapper .tg-post-category,.elementor .tg-module-wrapper.tg-module-block-pushed-up .read-more{background-color:' . $primary_color . '}.elementor .tg-module-wrapper .tg-module-meta .tg-module-comments a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-auther-name a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-date a:hover,.elementor .tg-module-wrapper .tg-module-title:hover a,.elementor .tg-module-wrapper.tg-module-block--grid-2 .tg_module_three .tg-module-comments a:hover,.elementor .tg-module-wrapper.tg-module-block--grid-2 .tg_module_three .tg-post-auther-name a:hover,.elementor .tg-module-wrapper.tg-module-block--grid-2 .tg_module_three .tg-post-date a:hover,.elementor .tg-module-wrapper.tg-module-grid .tg-module-meta .tg-module-comments a:hover,.elementor .tg-module-wrapper.tg-module-grid .tg-module-meta .tg-post-auther-name a:hover,.elementor .tg-module-wrapper.tg-module-grid .tg-module-meta .tg-post-date a:hover,.elementor .tg-module-wrapper.tg-module-grid .tg-module-title:hover a,.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1-5 .swiper-container:hover{color:' . $primary_color . '}.elementor .tg-module-wrapper .module-title{border-bottom:1px solid ' . $primary_color . '}.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1-5 .swiper-button-next:hover .cls-1,.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1-5 .swiper-button-prev:hover .cls-1,.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1-5 .swiper-container-rtl .swiper-button-next:hover .cls-1,.elementor .tg-module-wrapper.tg-module-grid.tg-module-grid--style-1-5 .swiper-container-rtl .swiper-button-prev:hover .cls-1{stroke:' . $primary_color . '}';
+		}
+
+		if ( ! empty( $colormag_internal_elementor_css ) ) {
+			echo '<!-- ' . get_bloginfo( 'name' ) . ' Elementor Internal Styles -->';
+			?>
+			<style type="text/css"><?php echo esc_html( $colormag_internal_elementor_css ); ?></style>
+			<?php
+		}
+	}
+
+endif;
+
+add_action( 'wp_head', 'colormag_elementor_custom_css', 100 );
