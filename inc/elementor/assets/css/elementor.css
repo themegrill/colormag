@@ -140,6 +140,7 @@
 .elementor .tg-module-wrapper .tg-module-thumb img {
 	display: block;
 	margin-bottom: 0;
+	width: 100%;
 }
 
 .elementor .tg-module-wrapper .tg-module-title {
