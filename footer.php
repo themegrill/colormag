@@ -4,9 +4,9 @@
  *
  * Displays all of the footer section and closing of the #main div.
  *
- * @package ThemeGrill
+ * @package    ThemeGrill
  * @subpackage ColorMag
- * @since ColorMag 1.0
+ * @since      ColorMag 1.0
  */
 ?>
 
@@ -45,6 +45,7 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 					}
 					?>
 				</div>
+
 				<div class="footer-socket-left-section">
 					<?php do_action( 'colormag_footer_copyright' ); ?>
 				</div>
@@ -54,6 +55,7 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 </footer>
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

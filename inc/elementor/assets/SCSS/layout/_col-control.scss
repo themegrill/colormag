@@ -1,0 +1,42 @@
+@media only screen and (min-width : 768px) {
+	.elementor {
+		
+		//full width
+		.elementor-col-100,
+		.elementor-column[data-col="100"] {
+			.tg-module-wrapper {
+				&.tg-module-block {
+					&.tg-module-block--style-2,
+					&.tg-module-block--style-3,
+					&.tg-module-block--style-6,
+					&.tg-module-block--style-8,
+					&.tg-module-block--style-9 {
+						.tg-col-control {
+							flex-basis: $column-4;
+						}
+					}
+				}
+			}
+		}
+		
+		//sidebar
+		.elementor-col-25,
+		.elementor-column[data-col="25"],
+		.elementor-col-33,
+		.elementor-column[data-col="33"] {
+			.tg-module-wrapper {
+				&.tg-module-block {
+					&.tg-module-block--style-2,
+					&.tg-module-block--style-3,
+					&.tg-module-block--style-6,
+					&.tg-module-block--style-8,
+					&.tg-module-block--style-9 {
+						.tg-col-control {
+							flex-basis: $column-12;
+						}
+					}
+				}
+			}
+		}
+	}
+}

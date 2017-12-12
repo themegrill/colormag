@@ -1,0 +1,18 @@
+/*=====  Light colors  ======*/
+$white:#fff;
+$color_gray_eleven: darken($white, 2.5% ); // #f9f9f9
+$color_gray_ten: darken($white, 2.6% ); // #f8f8f8
+$color_gray_nine: darken($white, 5% ); //#f2f2f2
+$color_gray_eight: darken($white, 8.4% ); // #eaeaea
+$color_gray_seven: darken($white, 20% ); // #cccccc
+$color_meta: #969696;
+
+$black: #000000;
+$color_gray_one: lighten($black, 13.6%); // #232323 
+$color_gray_two: lighten($black, 20%); // #333333
+$color_gray_three: lighten($black, 26.5%); // #444444
+$color_gray_four:  lighten($black, 33.5%); // #555555
+$color_gray_five: lighten($black, 46.5%); // #777777
+$color_gray_six: lighten($black, 53.5%); // #888888
+
+$primary:#289dcc;

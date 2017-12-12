@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6016.586 884.793 17.121 31.414">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: #fff;
+                stroke-width: 2px;
+            }
+        </style>
+    </defs>
+    <path id="prev" class="cls-1" d="M7068,885l15,15-15,15" transform="translate(13101 1800.5) rotate(180)"/>
+</svg>
