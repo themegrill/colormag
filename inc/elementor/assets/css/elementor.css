@@ -92,6 +92,14 @@
 	clear: both;
 }
 
+.elementor .elementor-image .wp-caption {
+	border: none;
+}
+
+.elementor .elementor-image .wp-caption img {
+	margin: 0;
+}
+
 .elementor .tg-module-wrapper {
 	color: #777777;
 	font-size: 14px;
