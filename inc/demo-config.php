@@ -33,6 +33,36 @@ function colormag_demo_importer_packages( $packages ) {
 			'name'    => __( 'ColorMag Business Magazine', 'colormag' ),
 			'preview' => 'https://demo.themegrill.com/colormag-business-magazine/',
 		),
+		'colormag-pro'               => array(
+			'name'     => __( 'ColorMag Pro', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
+		'colormag-pro-fashion'       => array(
+			'name'     => __( 'ColorMag Pro Fashion', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro-fashion/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
+		'colormag-pro-technology'    => array(
+			'name'     => __( 'ColorMag Pro Technology', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro-technology/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
+		'colormag-pro-sports'        => array(
+			'name'     => __( 'ColorMag Pro Sports', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro-sports/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
+		'colormag-pro-recipes'       => array(
+			'name'     => __( 'ColorMag Food Recipe', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro-recipes/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
+		'colormag-pro-health-blog'   => array(
+			'name'     => __( 'ColorMag Health Blog', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro-health-blog/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
 	);
 
 	return array_merge( $new_packages, $packages );
