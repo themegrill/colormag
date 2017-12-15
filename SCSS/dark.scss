@@ -12,11 +12,12 @@ h5,
 h6 {
 	color: $white;
 }
+body {
+	background-color: $dark-background;
+	color: $color_gray_seven;
+}
+
 .dark-skin{
-	body {
-		background-color: $dark-background;
-		color: $color_gray_seven;
-	}
 	#site-description {
 		color: $white;
 	}
@@ -267,6 +268,8 @@ h6 {
 	}
 	.elementor {
 		.tg-module-wrapper {
+			color: $color_gray_seven;
+			
 			.tg-module-title {
 				color: $white;
 			}

@@ -14,15 +14,15 @@ h6 {
 	color: #fff;
 }
 
+body {
+	background-color: #151515;
+	color: #cccccc;
+}
+
 .dark-skin {
 	/*--------------------------------------------------------------
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
-}
-
-.dark-skin body {
-	background-color: #151515;
-	color: #cccccc;
 }
 
 .dark-skin #site-description {
@@ -216,6 +216,10 @@ h6 {
 
 .dark-skin .colormag-footer--classic .footer-socket-wrapper {
 	background-color: #121212;
+}
+
+.dark-skin .elementor .tg-module-wrapper {
+	color: #cccccc;
 }
 
 .dark-skin .elementor .tg-module-wrapper .tg-module-title {
