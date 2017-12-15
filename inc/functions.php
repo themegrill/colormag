@@ -28,6 +28,13 @@ function colormag_scripts_styles_method() {
 	wp_enqueue_style( 'colormag_style', get_stylesheet_uri() );
 
 	/**
+	 * Load the dark color skin via theme options
+	 */
+	if ( get_theme_mod( 'colormag_color_skin_setting', 'white' ) == 'dark' ) {
+		wp_enqueue_style( 'colormag_dark_style', get_template_directory_uri() . '/dark.css' );
+	}
+
+	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
 	 */

@@ -562,6 +562,29 @@ function colormag_customize_register( $wp_customize ) {
 		'settings' => 'colormag_primary_color',
 	) ) );
 
+	// Color Skin
+	$wp_customize->add_section( 'colormag_color_skin_setting_section', array(
+		'priority' => 6,
+		'title'    => esc_html__( 'Skin Color', 'colormag' ),
+		'panel'    => 'colormag_design_options',
+	) );
+
+	$wp_customize->add_setting( 'colormag_color_skin_setting', array(
+		'default'           => 'white',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_radio_select_sanitize',
+	) );
+
+	$wp_customize->add_control( 'colormag_color_skin_setting', array(
+		'type'    => 'radio',
+		'label'   => esc_html__( 'Choose the color skin for your site.', 'colormag' ),
+		'choices' => array(
+			'white' => esc_html__( 'White Skin', 'colormag' ),
+			'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
+		),
+		'section' => 'colormag_color_skin_setting_section',
+	) );
+
 	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 
 		// Custom CSS setting
