@@ -17,7 +17,9 @@ h6 {
 		background-color: $dark-background;
 		color: $color_gray_seven;
 	}
-	
+	#site-description {
+		color: $white;
+	}
 	#page,
 	#header-text-nav-container,
 	.news-bar,
@@ -189,7 +191,6 @@ h6 {
 	/*--------------------------------------------------------------
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
-	
 	#masthead {
 		&.colormag-header-clean {
 			.main-navigation {
@@ -206,8 +207,7 @@ h6 {
 		}
 		
 		&.colormag-header-clean,
-		&.colormag-header-classic,
-		&.colormag-header-clean--full-width {
+		&.colormag-header-classic {
 			.breaking-news .newsticker a,
 			.social-links i.fa {
 				color: $color_gray_seven;
@@ -256,11 +256,6 @@ h6 {
 				}
 			}
 		}
-		&.colormag-header-clean--full-width {
-			.news-bar {
-				background-color: $dark-news-background;
-			}
-		}
 	}
 	.colormag-footer--classic {
 		.footer-widgets-wrapper {
@@ -268,6 +263,23 @@ h6 {
 		}
 		.footer-socket-wrapper {
 			background-color: $dark-footer-socket;
+		}
+	}
+	.elementor {
+		.tg-module-wrapper {
+			.tg-module-title {
+				color: $white;
+			}
+			.tg-module-meta {
+				.tg-post-auther-name,
+				.tg-post-date,
+				.tg-module-comments {
+					a,
+					span {
+						color: $light-content;
+					}
+				}
+			}
 		}
 	}
 }
