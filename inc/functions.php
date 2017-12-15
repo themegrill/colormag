@@ -216,6 +216,11 @@ function colormag_body_class( $classes ) {
 		$classes[] = 'better-responsive-menu';
 	}
 
+	// Add body class for body skin type
+	if ( get_theme_mod( 'colormag_color_skin_setting', 'white' ) == 'dark' ) {
+		$classes[] = 'dark-skin';
+	}
+
 	return $classes;
 }
 
