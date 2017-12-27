@@ -1,0 +1,236 @@
+/*==========  Gray colors  ==========*/
+/*=====  Light colors  ======*/
+/*==========  Brand-colors  ==========*/
+/*==========  social links colors  ==========*/
+/*--------------------------------------------------------------
+Dark CSS
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #fff;
+}
+
+body {
+	background-color: #151515;
+	color: #cccccc;
+}
+
+.dark-skin {
+	/*--------------------------------------------------------------
+	Header Clean layout CSS
+	--------------------------------------------------------------*/
+}
+
+.dark-skin #site-description {
+	color: #fff;
+}
+
+.dark-skin #page,
+.dark-skin #header-text-nav-container,
+.dark-skin .news-bar,
+.dark-skin #main,
+.dark-skin #secondary .widget {
+	background-color: #1A1A1A;
+}
+
+.dark-skin .news-bar {
+	background-color: #1e1e1e;
+}
+
+.dark-skin .main-small-navigation li {
+	background-color: #232323;
+}
+
+.dark-skin .main-small-navigation a {
+	color: #fff;
+}
+
+.dark-skin .date-in-header {
+	color: #cccccc;
+}
+
+.dark-skin .breaking-news-latest {
+	color: #fff;
+}
+
+.dark-skin .search-form-top {
+	background-color: #121212;
+	border: 0 none;
+}
+
+.dark-skin .widget_featured_posts .single-article {
+	box-shadow: 0 0 0 0 transparent;
+}
+
+.dark-skin .widget_featured_posts .article-content .entry-title a {
+	color: #fff;
+}
+
+.dark-skin .widget_featured_posts .article-content .below-entry-meta .posted-on .fa,
+.dark-skin .widget_featured_posts .article-content .below-entry-meta .byline .fa,
+.dark-skin .widget_featured_posts .article-content .below-entry-meta .comments .fa {
+	color: #a6a6a6;
+}
+
+.dark-skin .posted-on a,
+.dark-skin .byline a,
+.dark-skin .comments a {
+	color: #a6a6a6;
+}
+
+.dark-skin .comments span {
+	color: #a6a6a6;
+}
+
+.dark-skin .thumbnail-slider {
+	border-color: #1A1A1A;
+}
+
+.dark-skin #comments {
+	border-color: #444444;
+}
+
+.dark-skin #content .post .article-content .entry-title a {
+	color: #fff;
+}
+
+.dark-skin #content .post .article-content .below-entry-meta .byline .fa,
+.dark-skin #content .post .article-content .below-entry-meta .comments .fa,
+.dark-skin #content .post .article-content .below-entry-meta .tag-links .fa,
+.dark-skin #content .post .article-content .below-entry-meta .edit-link .fa,
+.dark-skin #content .post .article-content .below-entry-meta .posted-on .fa,
+.dark-skin #content .post .article-content .below-entry-meta .post-views .fa {
+	color: #a6a6a6;
+}
+
+.dark-skin #content .post .article-content .below-entry-meta .post-views span {
+	color: #a6a6a6;
+}
+
+.dark-skin #content .post .article-content .below-entry-meta .edit-link a {
+	color: #a6a6a6;
+}
+
+.dark-skin .single-related-posts .article-content .entry-title a {
+	color: #fff;
+}
+
+.dark-skin .single-related-posts .article-content .below-entry-meta .posted-on .fa,
+.dark-skin .single-related-posts .article-content .below-entry-meta .comments .fa {
+	color: #a6a6a6;
+}
+
+.dark-skin .post .entry-title a,
+.dark-skin .search .entry-title a {
+	color: #fff;
+}
+
+.dark-skin .random_posts_widget_inner_wrap,
+.dark-skin .single-related-posts {
+	box-shadow: 0 0 0 0 transparent;
+}
+
+.dark-skin .footer-widgets-wrapper,
+.dark-skin .footer-socket-wrapper {
+	border-top: 0 none;
+	background-color: #121212;
+}
+
+.dark-skin #colophon .tg-upper-footer-widgets .widget {
+	border: 0 none;
+}
+
+.dark-skin input[type="text"],
+.dark-skin input[type="email"],
+.dark-skin input[type="password"],
+.dark-skin textarea,
+.dark-skin .comment-content {
+	background-color: #1A1A1A;
+	color: #cccccc;
+	border-color: #777777;
+}
+
+.dark-skin .view-all-link {
+	background: #1A1A1A;
+}
+
+.dark-skin #masthead.colormag-header-clean .main-navigation .sub-menu,
+.dark-skin #masthead.colormag-header-clean .main-navigation .children {
+	background-color: #212529;
+}
+
+.dark-skin #masthead.colormag-header-clean .main-small-navigation li {
+	background-color: #212529;
+}
+
+.dark-skin #masthead.colormag-header-clean .breaking-news .newsticker a,
+.dark-skin #masthead.colormag-header-clean .social-links i.fa, .dark-skin #masthead.colormag-header-classic .breaking-news .newsticker a,
+.dark-skin #masthead.colormag-header-classic .social-links i.fa {
+	color: #cccccc;
+}
+
+.dark-skin #masthead.colormag-header-classic .is-sticky #site-navigation {
+	background-color: #212529;
+}
+
+.dark-skin #masthead.colormag-header-classic .is-sticky .main-small-navigation li {
+	background-color: #212529;
+}
+
+.dark-skin #masthead.colormag-header-classic #site-navigation .menu-toggle {
+	border-color: #cccccc;
+}
+
+.dark-skin #masthead.colormag-header-classic #site-navigation .menu-toggle::before {
+	color: #cccccc;
+}
+
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu,
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary .children {
+	background-color: #212529;
+	border-color: #444444;
+}
+
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li,
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary .children li {
+	border-color: #444444;
+}
+
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation a,
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .random-post a .fa-random {
+	color: #fff;
+}
+
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a .fa-random,
+.dark-skin #masthead.colormag-header-classic #site-navigation .fa.search-top {
+	color: #fff;
+}
+
+.dark-skin .colormag-footer--classic .footer-widgets-wrapper {
+	background-color: #161616;
+}
+
+.dark-skin .colormag-footer--classic .footer-socket-wrapper {
+	background-color: #121212;
+}
+
+.dark-skin .elementor .tg-module-wrapper {
+	color: #cccccc;
+}
+
+.dark-skin .elementor .tg-module-wrapper .tg-module-title {
+	color: #fff;
+}
+
+.dark-skin .elementor .tg-module-wrapper .tg-module-meta .tg-post-auther-name a,
+.dark-skin .elementor .tg-module-wrapper .tg-module-meta .tg-post-auther-name span,
+.dark-skin .elementor .tg-module-wrapper .tg-module-meta .tg-post-date a,
+.dark-skin .elementor .tg-module-wrapper .tg-module-meta .tg-post-date span,
+.dark-skin .elementor .tg-module-wrapper .tg-module-meta .tg-module-comments a,
+.dark-skin .elementor .tg-module-wrapper .tg-module-meta .tg-module-comments span {
+	color: #a6a6a6;
+}
