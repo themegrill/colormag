@@ -36,4 +36,18 @@
 		);
 	} );
 
+	// Footer Main Area Display Type
+	wp.customize( 'colormag_main_footer_layout_display_type', function ( value ) {
+		value.bind( function ( layout ) {
+				var display_type = layout;
+
+				if ( display_type === 'type_two' ) {
+					$( '#colophon' ).removeClass( 'colormag-footer--classic-bordered' ).addClass( 'colormag-footer--classic' );
+				} else if ( display_type === 'type_one' ) {
+					$( '#colophon' ).removeClass( 'colormag-footer--classic colormag-footer--classic-bordered' );
+				}
+			}
+		);
+	} );
+
 } )( jQuery );

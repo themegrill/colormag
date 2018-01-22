@@ -786,6 +786,7 @@ function colormag_customize_register( $wp_customize ) {
 		'default'           => 'type_one',
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'colormag_radio_select_sanitize',
+		'transport'         => 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'colormag_main_footer_layout_display_type', array(
