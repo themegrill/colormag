@@ -551,7 +551,11 @@ endif;
  * Display the date in the header
  */
 if ( ! function_exists( 'colormag_date_display' ) ) :
-	function colormag_date_display() { ?>
+	function colormag_date_display() {
+		if ( get_theme_mod( 'colormag_date_display', 0 ) == 0 ) {
+			return;
+		} ?>
+
 		<div class="date-in-header">
 			<?php
 			if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'theme_default' ) {
@@ -561,6 +565,7 @@ if ( ! function_exists( 'colormag_date_display' ) ) :
 			}
 			?>
 		</div>
+
 		<?php
 	}
 endif;

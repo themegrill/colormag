@@ -125,6 +125,7 @@ function colormag_customize_register( $wp_customize ) {
 		'default'           => 0,
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'colormag_checkbox_sanitize',
+		'transport'         => $customizer_selective_refresh,
 	) );
 
 	$wp_customize->add_control( 'colormag_date_display', array(
@@ -134,11 +135,20 @@ function colormag_customize_register( $wp_customize ) {
 		'settings' => 'colormag_date_display',
 	) );
 
+	// Selective refresh for date display
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'colormag_date_display', array(
+			'selector'        => '.date-in-header',
+			'render_callback' => 'colormag_date_display',
+		) );
+	}
+
 	// date in header display type
 	$wp_customize->add_setting( 'colormag_date_display_type', array(
 		'default'           => 'theme_default',
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'colormag_radio_select_sanitize',
+		'transport'         => $customizer_selective_refresh,
 	) );
 
 	$wp_customize->add_control( 'colormag_date_display_type', array(
@@ -151,6 +161,14 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_date_display_section',
 		'settings' => 'colormag_date_display_type',
 	) );
+
+	// Selective refresh for date display type
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'colormag_date_display_type', array(
+			'selector'        => '.date-in-header',
+			'render_callback' => 'colormag_date_display_type',
+		) );
+	}
 
 	// home icon enable/disable in primary menu
 	$wp_customize->add_section( 'colormag_home_icon_display_section', array(
@@ -1032,6 +1050,24 @@ function colormag_customize_partial_blogname() {
  */
 function colormag_customize_partial_blogdescription() {
 	bloginfo( 'description' );
+}
+
+/**
+ * Render the breaking news display type for selective refresh partial
+ *
+ * @return void
+ */
+function colormag_date_display_type() {
+	// Return if date display option is not enabled
+	if ( get_theme_mod( 'colormag_date_display', 0 ) == 0 ) {
+		return;
+	}
+
+	if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'theme_default' ) {
+		echo date_i18n( 'l, F j, Y' );
+	} else if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'wordpress_date_setting' ) {
+		echo date_i18n( get_option( 'date_format' ) );
+	}
 }
 
 /* * ************************************************************************************** */
