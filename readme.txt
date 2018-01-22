@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Tweaks - Introduce customizer live preview and selective refresh feature.
+
 = Version 1.2.3 - 2017-12-12 =
 * Added - Scrollbar for fixed better responsive menu if overflow.
 * Tweaks - Touch screen accessible submenu
