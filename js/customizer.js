@@ -22,4 +22,18 @@
 		} );
 	} );
 
+	// Site Layout Option
+	wp.customize( 'colormag_site_layout', function ( value ) {
+		value.bind( function ( layout ) {
+				var site_layout = layout;
+
+				if ( site_layout === 'wide_layout' ) {
+					$( 'body' ).addClass( 'wide' );
+				} else if ( site_layout === 'boxed_layout' ) {
+					$( 'body' ).removeClass( 'wide' );
+				}
+			}
+		);
+	} );
+
 } )( jQuery );
