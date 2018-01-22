@@ -16,6 +16,10 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 	 * Get links through Theme Options
 	 */
 	function colormag_social_links() {
+		// Bail out if social links is not activated
+		if ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 0 ) {
+			return;
+		}
 
 		$colormag_social_links = array(
 			'colormag_social_facebook'   => __( 'Facebook', 'colormag' ),

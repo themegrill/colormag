@@ -663,6 +663,7 @@ function colormag_customize_register( $wp_customize ) {
 		'default'           => 0,
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'colormag_checkbox_sanitize',
+		'transport'         => $customizer_selective_refresh,
 	) );
 
 	$wp_customize->add_control( 'colormag_social_link_activate', array(
@@ -671,6 +672,14 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_social_link_activate_settings',
 		'settings' => 'colormag_social_link_activate',
 	) );
+
+	// Selective refresh for displaying social icons/links
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'colormag_social_link_activate', array(
+			'selector'        => '.social-links',
+			'render_callback' => '',
+		) );
+	}
 
 	$colormag_social_links = array(
 		'colormag_social_facebook'   => array(
