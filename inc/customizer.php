@@ -57,7 +57,7 @@ function colormag_customize_register( $wp_customize ) {
 				),
 			);
 			foreach ( $important_links as $important_link ) {
-				echo '<p><a target="_blank" href="' . $important_link[ 'link' ] . '" >' . esc_attr( $important_link[ 'text' ] ) . ' </a></p>';
+				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( $important_link['text'] ) . ' </a></p>';
 			}
 		}
 
@@ -331,10 +331,10 @@ function colormag_customize_register( $wp_customize ) {
 							$this->link();
 							checked( $this->value(), $value );
 							?> />
-							<img src='<?php echo esc_html( $label ); ?>' class='<?php echo $class; ?>'/>
+							<img src='<?php echo esc_html( $label ); ?>' class='<?php echo $class; ?>' />
 						</label>
 					</li>
-					<?php
+				<?php
 				endforeach;
 				?>
 			</ul>
@@ -687,30 +687,30 @@ function colormag_customize_register( $wp_customize ) {
 
 	foreach ( $colormag_social_links as $colormag_social_link ) {
 
-		$wp_customize->add_setting( $colormag_social_link[ 'id' ], array(
-			'default'           => $colormag_social_link[ 'default' ],
+		$wp_customize->add_setting( $colormag_social_link['id'], array(
+			'default'           => $colormag_social_link['default'],
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'esc_url_raw',
 		) );
 
-		$wp_customize->add_control( $colormag_social_link[ 'id' ], array(
-			'label'    => $colormag_social_link[ 'title' ],
+		$wp_customize->add_control( $colormag_social_link['id'], array(
+			'label'    => $colormag_social_link['title'],
 			'section'  => 'colormag_social_link_activate_settings',
-			'settings' => $colormag_social_link[ 'id' ],
+			'settings' => $colormag_social_link['id'],
 			'priority' => $i,
 		) );
 
-		$wp_customize->add_setting( $colormag_social_link[ 'id' ] . '_checkbox', array(
+		$wp_customize->add_setting( $colormag_social_link['id'] . '_checkbox', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'colormag_checkbox_sanitize',
 		) );
 
-		$wp_customize->add_control( $colormag_social_link[ 'id' ] . '_checkbox', array(
+		$wp_customize->add_control( $colormag_social_link['id'] . '_checkbox', array(
 			'type'     => 'checkbox',
 			'label'    => __( 'Check to open in new tab', 'colormag' ),
 			'section'  => 'colormag_social_link_activate_settings',
-			'settings' => $colormag_social_link[ 'id' ] . '_checkbox',
+			'settings' => $colormag_social_link['id'] . '_checkbox',
 			'priority' => $i,
 		) );
 

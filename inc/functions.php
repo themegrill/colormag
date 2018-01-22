@@ -131,7 +131,7 @@ function colormag_gallery_atts( $out, $pairs, $atts ) {
 		'size' => 'colormag-featured-image',
 	), $atts );
 
-	$out[ 'size' ] = $atts[ 'size' ];
+	$out['size'] = $atts['size'];
 
 	return $out;
 
@@ -617,10 +617,10 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) {
 			$cats = get_post_meta( $post->ID, 'related-posts', true );
 
 			if ( ! $cats ) {
-				$cats                   = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
-				$args[ 'category__in' ] = $cats;
+				$cats                 = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
+				$args['category__in'] = $cats;
 			} else {
-				$args[ 'cat' ] = $cats;
+				$args['cat'] = $cats;
 			}
 		}
 		// Related by tags
@@ -629,17 +629,17 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) {
 			$tags = get_post_meta( $post->ID, 'related-posts', true );
 
 			if ( ! $tags ) {
-				$tags              = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
-				$args[ 'tag__in' ] = $tags;
+				$tags            = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
+				$args['tag__in'] = $tags;
 			} else {
-				$args[ 'tag_slug__in' ] = explode( ',', $tags );
+				$args['tag_slug__in'] = explode( ',', $tags );
 			}
 			if ( ! $tags ) {
 				$break = true;
 			}
 		}
 
-		$query = ! isset( $break ) ? new WP_Query( $args ) : new WP_Query;
+		$query = ! isset( $break ) ? new WP_Query( $args ) : new WP_Query();
 
 		return $query;
 	}
@@ -815,7 +815,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
 function colormag_comment( $comment, $args, $depth ) {
-$GLOBALS[ 'comment' ] = $comment;
+$GLOBALS['comment'] = $comment;
 switch ( $comment->comment_type ) :
 case 'pingback' :
 case 'trackback' :
@@ -853,7 +853,12 @@ case 'trackback' :
 
 		<section class="comment-content comment">
 			<?php comment_text(); ?>
-			<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'colormag' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args[ 'max_depth' ] ) ) ); ?>
+			<?php comment_reply_link( array_merge( $args, array(
+				'reply_text' => __( 'Reply', 'colormag' ),
+				'after'      => '',
+				'depth'      => $depth,
+				'max_depth'  => $args['max_depth'],
+			) ) ); ?>
 		</section><!-- .comment-content -->
 
 	</article><!-- #comment-## -->

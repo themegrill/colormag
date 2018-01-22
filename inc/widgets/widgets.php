@@ -209,45 +209,52 @@ function colormag_widgets_init() {
 class colormag_featured_posts_slider_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_featured_slider widget_featured_meta', 'description' => __( 'Display latest posts or posts of specific category, which will be used as the slider.', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_featured_slider widget_featured_meta',
+			'description' => __( 'Display latest posts or posts of specific category, which will be used as the slider.', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Featured Category Slider', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$tg_defaults[ 'number' ]   = 4;
-		$tg_defaults[ 'type' ]     = 'latest';
-		$tg_defaults[ 'category' ] = '';
-		$instance                  = wp_parse_args( ( array ) $instance, $tg_defaults );
-		$number                    = $instance[ 'number' ];
-		$type                      = $instance[ 'type' ];
-		$category                  = $instance[ 'category' ];
+		$tg_defaults['number']   = 4;
+		$tg_defaults['type']     = 'latest';
+		$tg_defaults['category'] = '';
+		$instance                = wp_parse_args( ( array ) $instance, $tg_defaults );
+		$number                  = $instance['number'];
+		$type                    = $instance['type'];
+		$category                = $instance['category'];
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to display:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3"/>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 		</p>
 
 		<p>
-			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest"/><?php _e( 'Show latest Posts', 'colormag' ); ?>
-			<br/>
-			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category"/><?php _e( 'Show posts from a category', 'colormag' ); ?>
-			<br/></p>
+			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest" /><?php _e( 'Show latest Posts', 'colormag' ); ?>
+			<br />
+			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category" /><?php _e( 'Show posts from a category', 'colormag' ); ?>
+			<br /></p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'colormag' ); ?>
 				:</label>
-			<?php wp_dropdown_categories( array( 'show_option_none' => ' ', 'name' => $this->get_field_name( 'category' ), 'selected' => $category ) ); ?>
+			<?php wp_dropdown_categories( array(
+				'show_option_none' => ' ',
+				'name'             => $this->get_field_name( 'category' ),
+				'selected'         => $category,
+			) ); ?>
 		</p>
 
 		<?php
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance               = $old_instance;
-		$instance[ 'number' ]   = absint( $new_instance[ 'number' ] );
-		$instance[ 'type' ]     = $new_instance[ 'type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance             = $old_instance;
+		$instance['number']   = absint( $new_instance['number'] );
+		$instance['type']     = $new_instance['type'];
+		$instance['category'] = $new_instance['category'];
 
 		return $instance;
 	}
@@ -257,9 +264,9 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
 		extract( $instance );
 
 		global $post;
-		$number   = empty( $instance[ 'number' ] ) ? 4 : $instance[ 'number' ];
-		$type     = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest';
-		$category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
+		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
+		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
+		$category = isset( $instance['category'] ) ? $instance['category'] : '';
 
 		$post_status = 'publish';
 		if ( get_option( 'fresh_site' ) == 1 ) {
@@ -306,7 +313,10 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
 						}
 						$image .= '<figure class="slider-featured-image">';
 						$image .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
-						$image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ) . '</a>';
+						$image .= get_the_post_thumbnail( $post->ID, $featured, array(
+								'title' => esc_attr( $title_attribute ),
+								'alt'   => esc_attr( $image_alt_text ),
+							) ) . '</a>';
 						$image .= '</figure>';
 						echo $image;
 					} else {
@@ -354,44 +364,51 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
 class colormag_highlighted_posts_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_highlighted_posts widget_featured_meta', 'description' => __( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_highlighted_posts widget_featured_meta',
+			'description' => __( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Highlighted Posts', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$tg_defaults[ 'number' ]   = 4;
-		$tg_defaults[ 'type' ]     = 'latest';
-		$tg_defaults[ 'category' ] = '';
-		$instance                  = wp_parse_args( ( array ) $instance, $tg_defaults );
-		$number                    = $instance[ 'number' ];
-		$type                      = $instance[ 'type' ];
-		$category                  = $instance[ 'category' ];
+		$tg_defaults['number']   = 4;
+		$tg_defaults['type']     = 'latest';
+		$tg_defaults['category'] = '';
+		$instance                = wp_parse_args( ( array ) $instance, $tg_defaults );
+		$number                  = $instance['number'];
+		$type                    = $instance['type'];
+		$category                = $instance['category'];
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to display:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3"/>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 		</p>
 
 		<p>
-			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest"/><?php _e( 'Show latest Posts', 'colormag' ); ?>
-			<br/>
-			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category"/><?php _e( 'Show posts from a category', 'colormag' ); ?>
-			<br/></p>
+			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest" /><?php _e( 'Show latest Posts', 'colormag' ); ?>
+			<br />
+			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category" /><?php _e( 'Show posts from a category', 'colormag' ); ?>
+			<br /></p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'colormag' ); ?>
 				:</label>
-			<?php wp_dropdown_categories( array( 'show_option_none' => ' ', 'name' => $this->get_field_name( 'category' ), 'selected' => $category ) ); ?>
+			<?php wp_dropdown_categories( array(
+				'show_option_none' => ' ',
+				'name'             => $this->get_field_name( 'category' ),
+				'selected'         => $category,
+			) ); ?>
 		</p>
 		<?php
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance               = $old_instance;
-		$instance[ 'number' ]   = absint( $new_instance[ 'number' ] );
-		$instance[ 'type' ]     = $new_instance[ 'type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance             = $old_instance;
+		$instance['number']   = absint( $new_instance['number'] );
+		$instance['type']     = $new_instance['type'];
+		$instance['category'] = $new_instance['category'];
 
 		return $instance;
 	}
@@ -401,9 +418,9 @@ class colormag_highlighted_posts_widget extends WP_Widget {
 		extract( $instance );
 
 		global $post;
-		$number   = empty( $instance[ 'number' ] ) ? 4 : $instance[ 'number' ];
-		$type     = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest';
-		$category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
+		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
+		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
+		$category = isset( $instance['category'] ) ? $instance['category'] : '';
 
 		$post_status = 'publish';
 		if ( get_option( 'fresh_site' ) == 1 ) {
@@ -444,7 +461,10 @@ class colormag_highlighted_posts_widget extends WP_Widget {
 						}
 						$image .= '<figure class="highlights-featured-image">';
 						$image .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
-						$image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ) . '</a>';
+						$image .= get_the_post_thumbnail( $post->ID, $featured, array(
+								'title' => esc_attr( $title_attribute ),
+								'alt'   => esc_attr( $image_alt_text ),
+							) ) . '</a>';
 						$image .= '</figure>';
 						echo $image;
 					} else {
@@ -492,63 +512,70 @@ class colormag_highlighted_posts_widget extends WP_Widget {
 class colormag_featured_posts_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_featured_posts widget_featured_meta', 'description' => __( 'Display latest posts or posts of specific category.', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_featured_posts widget_featured_meta',
+			'description' => __( 'Display latest posts or posts of specific category.', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Featured Posts (Style 1)', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$tg_defaults[ 'title' ]    = '';
-		$tg_defaults[ 'text' ]     = '';
-		$tg_defaults[ 'number' ]   = 4;
-		$tg_defaults[ 'type' ]     = 'latest';
-		$tg_defaults[ 'category' ] = '';
-		$instance                  = wp_parse_args( ( array ) $instance, $tg_defaults );
-		$title                     = esc_attr( $instance[ 'title' ] );
-		$text                      = esc_textarea( $instance[ 'text' ] );
-		$number                    = $instance[ 'number' ];
-		$type                      = $instance[ 'type' ];
-		$category                  = $instance[ 'category' ];
+		$tg_defaults['title']    = '';
+		$tg_defaults['text']     = '';
+		$tg_defaults['number']   = 4;
+		$tg_defaults['type']     = 'latest';
+		$tg_defaults['category'] = '';
+		$instance                = wp_parse_args( ( array ) $instance, $tg_defaults );
+		$title                   = esc_attr( $instance['title'] );
+		$text                    = esc_textarea( $instance['text'] );
+		$number                  = $instance['number'];
+		$type                    = $instance['type'];
+		$category                = $instance['category'];
 		?>
 		<p><?php _e( 'Layout will be as below:', 'colormag' ) ?></p>
 		<div style="text-align: center;"><img src="<?php echo get_template_directory_uri() . '/img/style-1.jpg' ?>">
 		</div>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 		</p>
 		<?php _e( 'Description', 'colormag' ); ?>
 		<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo $text; ?></textarea>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to display:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3"/>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 		</p>
 
 		<p>
-			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest"/><?php _e( 'Show latest Posts', 'colormag' ); ?>
-			<br/>
-			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category"/><?php _e( 'Show posts from a category', 'colormag' ); ?>
-			<br/></p>
+			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest" /><?php _e( 'Show latest Posts', 'colormag' ); ?>
+			<br />
+			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category" /><?php _e( 'Show posts from a category', 'colormag' ); ?>
+			<br /></p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'colormag' ); ?>
 				:</label>
-			<?php wp_dropdown_categories( array( 'show_option_none' => ' ', 'name' => $this->get_field_name( 'category' ), 'selected' => $category ) ); ?>
+			<?php wp_dropdown_categories( array(
+				'show_option_none' => ' ',
+				'name'             => $this->get_field_name( 'category' ),
+				'selected'         => $category,
+			) ); ?>
 		</p>
 		<?php
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance            = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
+		$instance          = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
 		if ( current_user_can( 'unfiltered_html' ) ) {
-			$instance[ 'text' ] = $new_instance[ 'text' ];
+			$instance['text'] = $new_instance['text'];
 		} else {
-			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) );
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) );
 		}
-		$instance[ 'number' ]   = absint( $new_instance[ 'number' ] );
-		$instance[ 'type' ]     = $new_instance[ 'type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance['number']   = absint( $new_instance['number'] );
+		$instance['type']     = $new_instance['type'];
+		$instance['category'] = $new_instance['category'];
 
 		return $instance;
 	}
@@ -558,11 +585,11 @@ class colormag_featured_posts_widget extends WP_Widget {
 		extract( $instance );
 
 		global $post;
-		$title    = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
-		$text     = isset( $instance[ 'text' ] ) ? $instance[ 'text' ] : '';
-		$number   = empty( $instance[ 'number' ] ) ? 4 : $instance[ 'number' ];
-		$type     = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest';
-		$category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
+		$title    = isset( $instance['title'] ) ? $instance['title'] : '';
+		$text     = isset( $instance['text'] ) ? $instance['text'] : '';
+		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
+		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
+		$category = isset( $instance['category'] ) ? $instance['category'] : '';
 
 		$post_status = 'publish';
 		if ( get_option( 'fresh_site' ) == 1 ) {
@@ -625,7 +652,10 @@ class colormag_featured_posts_widget extends WP_Widget {
 					}
 					$image .= '<figure>';
 					$image .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
-					$image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ) . '</a>';
+					$image .= get_the_post_thumbnail( $post->ID, $featured, array(
+							'title' => esc_attr( $title_attribute ),
+							'alt'   => esc_attr( $image_alt_text ),
+						) ) . '</a>';
 					$image .= '</figure>';
 					echo $image;
 				}
@@ -679,63 +709,70 @@ class colormag_featured_posts_widget extends WP_Widget {
 class colormag_featured_posts_vertical_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_featured_posts widget_featured_posts_vertical widget_featured_meta', 'description' => __( 'Display latest posts or posts of specific category.', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_featured_posts widget_featured_posts_vertical widget_featured_meta',
+			'description' => __( 'Display latest posts or posts of specific category.', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Featured Posts (Style 2)', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$tg_defaults[ 'title' ]    = '';
-		$tg_defaults[ 'text' ]     = '';
-		$tg_defaults[ 'number' ]   = 4;
-		$tg_defaults[ 'type' ]     = 'latest';
-		$tg_defaults[ 'category' ] = '';
-		$instance                  = wp_parse_args( ( array ) $instance, $tg_defaults );
-		$title                     = esc_attr( $instance[ 'title' ] );
-		$text                      = esc_textarea( $instance[ 'text' ] );
-		$number                    = $instance[ 'number' ];
-		$type                      = $instance[ 'type' ];
-		$category                  = $instance[ 'category' ];
+		$tg_defaults['title']    = '';
+		$tg_defaults['text']     = '';
+		$tg_defaults['number']   = 4;
+		$tg_defaults['type']     = 'latest';
+		$tg_defaults['category'] = '';
+		$instance                = wp_parse_args( ( array ) $instance, $tg_defaults );
+		$title                   = esc_attr( $instance['title'] );
+		$text                    = esc_textarea( $instance['text'] );
+		$number                  = $instance['number'];
+		$type                    = $instance['type'];
+		$category                = $instance['category'];
 		?>
 		<p><?php _e( 'Layout will be as below:', 'colormag' ) ?></p>
 		<div style="text-align: center;"><img src="<?php echo get_template_directory_uri() . '/img/style-2.jpg' ?>">
 		</div>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 		</p>
 		<?php _e( 'Description', 'colormag' ); ?>
 		<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo $text; ?></textarea>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to display:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3"/>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 		</p>
 
 		<p>
-			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest"/><?php _e( 'Show latest Posts', 'colormag' ); ?>
-			<br/>
-			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category"/><?php _e( 'Show posts from a category', 'colormag' ); ?>
-			<br/></p>
+			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest" /><?php _e( 'Show latest Posts', 'colormag' ); ?>
+			<br />
+			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category" /><?php _e( 'Show posts from a category', 'colormag' ); ?>
+			<br /></p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'colormag' ); ?>
 				:</label>
-			<?php wp_dropdown_categories( array( 'show_option_none' => ' ', 'name' => $this->get_field_name( 'category' ), 'selected' => $category ) ); ?>
+			<?php wp_dropdown_categories( array(
+				'show_option_none' => ' ',
+				'name'             => $this->get_field_name( 'category' ),
+				'selected'         => $category,
+			) ); ?>
 		</p>
 		<?php
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance            = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
+		$instance          = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
 		if ( current_user_can( 'unfiltered_html' ) ) {
-			$instance[ 'text' ] = $new_instance[ 'text' ];
+			$instance['text'] = $new_instance['text'];
 		} else {
-			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) );
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) );
 		}
-		$instance[ 'number' ]   = absint( $new_instance[ 'number' ] );
-		$instance[ 'type' ]     = $new_instance[ 'type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance['number']   = absint( $new_instance['number'] );
+		$instance['type']     = $new_instance['type'];
+		$instance['category'] = $new_instance['category'];
 
 		return $instance;
 	}
@@ -745,11 +782,11 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 		extract( $instance );
 
 		global $post;
-		$title    = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
-		$text     = isset( $instance[ 'text' ] ) ? $instance[ 'text' ] : '';
-		$number   = empty( $instance[ 'number' ] ) ? 4 : $instance[ 'number' ];
-		$type     = isset( $instance[ 'type' ] ) ? $instance[ 'type' ] : 'latest';
-		$category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
+		$title    = isset( $instance['title'] ) ? $instance['title'] : '';
+		$text     = isset( $instance['text'] ) ? $instance['text'] : '';
+		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
+		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
+		$category = isset( $instance['category'] ) ? $instance['category'] : '';
 
 		$post_status = 'publish';
 		if ( get_option( 'fresh_site' ) == 1 ) {
@@ -811,7 +848,10 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 					}
 					$image .= '<figure>';
 					$image .= '<a href="' . get_permalink() . '" title="' . the_title( '', '', false ) . '">';
-					$image .= get_the_post_thumbnail( $post->ID, $featured, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $image_alt_text ) ) ) . '</a>';
+					$image .= get_the_post_thumbnail( $post->ID, $featured, array(
+							'title' => esc_attr( $title_attribute ),
+							'alt'   => esc_attr( $image_alt_text ),
+						) ) . '</a>';
 					$image .= '</figure>';
 					echo $image;
 				}
@@ -866,14 +906,21 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 class colormag_300x250_advertisement_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_300x250_advertisement', 'description' => __( 'Add your 300x250 Advertisement here', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_300x250_advertisement',
+			'description' => __( 'Add your 300x250 Advertisement here', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: 300x250 Advertisement', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( ( array ) $instance, array( 'title' => '', '300x250_image_url' => '', '300x250_image_link' => '' ) );
-		$title    = esc_attr( $instance[ 'title' ] );
+		$instance = wp_parse_args( ( array ) $instance, array(
+			'title'              => '',
+			'300x250_image_url'  => '',
+			'300x250_image_link' => '',
+		) );
+		$title    = esc_attr( $instance['title'] );
 
 		$image_link = '300x250_image_link';
 		$image_url  = '300x250_image_url';
@@ -884,22 +931,22 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 		</p>
 		<label><?php _e( 'Add your Advertisement 300x250 Images Here', 'colormag' ); ?></label>
 		<p>
 			<label for="<?php echo $this->get_field_id( $image_link ); ?>"> <?php _e( 'Advertisement Image Link ', 'colormag' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>"/>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( $image_url ); ?>"> <?php _e( 'Advertisement Image ', 'colormag' ); ?></label>
 		<div class="media-uploader" id="<?php echo $this->get_field_id( $image_url ); ?>">
 			<div class="custom_media_preview">
 				<?php if ( $instance[ $image_url ] != '' ) : ?>
-					<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;"/>
+					<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;" />
 				<?php endif; ?>
 			</div>
-			<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;"/>
+			<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;" />
 			<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( $image_url ); ?>" data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>" data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php esc_html_e( 'Select an Image', 'colormag' ); ?></button>
 		</div>
 		</p>
@@ -908,8 +955,8 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance            = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
+		$instance          = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
 
 		$image_link = '300x250_image_link';
 		$image_url  = '300x250_image_url';
@@ -924,7 +971,7 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
-		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 
 		$image_link = '300x250_image_link';
 		$image_url  = '300x250_image_url';
@@ -973,14 +1020,21 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 class colormag_728x90_advertisement_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_728x90_advertisement', 'description' => __( 'Add your 728x90 Advertisement here', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_728x90_advertisement',
+			'description' => __( 'Add your 728x90 Advertisement here', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: 728x90 Advertisement', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( ( array ) $instance, array( 'title' => '', '728x90_image_url' => '', '728x90_image_link' => '' ) );
-		$title    = esc_attr( $instance[ 'title' ] );
+		$instance = wp_parse_args( ( array ) $instance, array(
+			'title'             => '',
+			'728x90_image_url'  => '',
+			'728x90_image_link' => '',
+		) );
+		$title    = esc_attr( $instance['title'] );
 
 		$image_link = '728x90_image_link';
 		$image_url  = '728x90_image_url';
@@ -991,22 +1045,22 @@ class colormag_728x90_advertisement_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 		</p>
 		<label><?php _e( 'Add your Advertisement 728x90 Images Here', 'colormag' ); ?></label>
 		<p>
 			<label for="<?php echo $this->get_field_id( $image_link ); ?>"> <?php _e( 'Advertisement Image Link ', 'colormag' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>"/>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( $image_url ); ?>"> <?php _e( 'Advertisement Image ', 'colormag' ); ?></label>
 		<div class="media-uploader" id="<?php echo $this->get_field_id( $image_url ); ?>">
 			<div class="custom_media_preview">
 				<?php if ( $instance[ $image_url ] != '' ) : ?>
-					<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;"/>
+					<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;" />
 				<?php endif; ?>
 			</div>
-			<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;"/>
+			<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;" />
 			<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( $image_url ); ?>" data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>" data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php esc_html_e( 'Select an Image', 'colormag' ); ?></button>
 		</div>
 		</p>
@@ -1015,8 +1069,8 @@ class colormag_728x90_advertisement_widget extends WP_Widget {
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance            = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
+		$instance          = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
 
 		$image_link = '728x90_image_link';
 		$image_url  = '728x90_image_url';
@@ -1031,7 +1085,7 @@ class colormag_728x90_advertisement_widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
-		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 
 
 		$image_link = '728x90_image_link';
@@ -1083,14 +1137,31 @@ class colormag_728x90_advertisement_widget extends WP_Widget {
 class colormag_125x125_advertisement_widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops  = array( 'classname' => 'widget_125x125_advertisement', 'description' => __( 'Add your 125x125 Advertisement here', 'colormag' ) );
+		$widget_ops  = array(
+			'classname'   => 'widget_125x125_advertisement',
+			'description' => __( 'Add your 125x125 Advertisement here', 'colormag' ),
+		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: 125x125 Advertisement', 'colormag' ), $widget_ops );
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( ( array ) $instance, array( 'title' => '', '125x125_image_url_1' => '', '125x125_image_url_2' => '', '125x125_image_url_3' => '', '125x125_image_url_4' => '', '125x125_image_url_5' => '', '125x125_image_url_6' => '', '125x125_image_link_1' => '', '125x125_image_link_2' => '', '125x125_image_link_3' => '', '125x125_image_link_4' => '', '125x125_image_link_5' => '', '125x125_image_link_6' => '' ) );
-		$title    = esc_attr( $instance[ 'title' ] );
+		$instance = wp_parse_args( ( array ) $instance, array(
+			'title'                => '',
+			'125x125_image_url_1'  => '',
+			'125x125_image_url_2'  => '',
+			'125x125_image_url_3'  => '',
+			'125x125_image_url_4'  => '',
+			'125x125_image_url_5'  => '',
+			'125x125_image_url_6'  => '',
+			'125x125_image_link_1' => '',
+			'125x125_image_link_2' => '',
+			'125x125_image_link_3' => '',
+			'125x125_image_link_4' => '',
+			'125x125_image_link_5' => '',
+			'125x125_image_link_6' => '',
+		) );
+		$title    = esc_attr( $instance['title'] );
 		for ( $i = 1; $i < 7; $i ++ ) {
 			$image_link = '125x125_image_link_' . $i;
 			$image_url  = '125x125_image_url_' . $i;
@@ -1102,7 +1173,7 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 		</p>
 		<label><?php _e( 'Add your Advertisement 125x125 Images Here', 'colormag' ); ?></label>
 		<?php
@@ -1113,7 +1184,7 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
 			<p>
 				<label for="<?php echo $this->get_field_id( $image_link ); ?>"> <?php _e( 'Advertisement Image Link ', 'colormag' );
 					echo $i; ?></label>
-				<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>"/>
+				<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>" />
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( $image_url ); ?>"> <?php _e( 'Advertisement Image ', 'colormag' );
@@ -1121,10 +1192,10 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
 			<div class="media-uploader" id="<?php echo $this->get_field_id( $image_url ); ?>">
 				<div class="custom_media_preview">
 					<?php if ( $instance[ $image_url ] != '' ) : ?>
-						<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;"/>
+						<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;" />
 					<?php endif; ?>
 				</div>
-				<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;"/>
+				<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;" />
 				<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( $image_url ); ?>" data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>" data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php esc_html_e( 'Select an Image', 'colormag' ); ?></button>
 			</div>
 			</p>
@@ -1134,8 +1205,8 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
 	}
 
 	function update( $new_instance, $old_instance ) {
-		$instance            = $old_instance;
-		$instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
+		$instance          = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
 		for ( $i = 1; $i < 7; $i ++ ) {
 			$image_link = '125x125_image_link_' . $i;
 			$image_url  = '125x125_image_url_' . $i;
@@ -1151,7 +1222,7 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
-		$title       = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
+		$title       = isset( $instance['title'] ) ? $instance['title'] : '';
 		$image_array = array();
 		$link_array  = array();
 
