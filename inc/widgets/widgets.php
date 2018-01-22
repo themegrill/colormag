@@ -365,8 +365,9 @@ class colormag_highlighted_posts_widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops  = array(
-			'classname'   => 'widget_highlighted_posts widget_featured_meta',
-			'description' => __( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' ),
+			'classname'                   => 'widget_highlighted_posts widget_featured_meta',
+			'description'                 => __( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' ),
+			'customize_selective_refresh' => true,
 		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Highlighted Posts', 'colormag' ), $widget_ops );
@@ -513,8 +514,9 @@ class colormag_featured_posts_widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops  = array(
-			'classname'   => 'widget_featured_posts widget_featured_meta',
-			'description' => __( 'Display latest posts or posts of specific category.', 'colormag' ),
+			'classname'                   => 'widget_featured_posts widget_featured_meta',
+			'description'                 => __( 'Display latest posts or posts of specific category.', 'colormag' ),
+			'customize_selective_refresh' => true,
 		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Featured Posts (Style 1)', 'colormag' ), $widget_ops );
@@ -710,8 +712,9 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops  = array(
-			'classname'   => 'widget_featured_posts widget_featured_posts_vertical widget_featured_meta',
-			'description' => __( 'Display latest posts or posts of specific category.', 'colormag' ),
+			'classname'                   => 'widget_featured_posts widget_featured_posts_vertical widget_featured_meta',
+			'description'                 => __( 'Display latest posts or posts of specific category.', 'colormag' ),
+			'customize_selective_refresh' => true,
 		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: Featured Posts (Style 2)', 'colormag' ), $widget_ops );
@@ -907,8 +910,9 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops  = array(
-			'classname'   => 'widget_300x250_advertisement',
-			'description' => __( 'Add your 300x250 Advertisement here', 'colormag' ),
+			'classname'                   => 'widget_300x250_advertisement',
+			'description'                 => __( 'Add your 300x250 Advertisement here', 'colormag' ),
+			'customize_selective_refresh' => true,
 		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: 300x250 Advertisement', 'colormag' ), $widget_ops );
@@ -1021,8 +1025,9 @@ class colormag_728x90_advertisement_widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops  = array(
-			'classname'   => 'widget_728x90_advertisement',
-			'description' => __( 'Add your 728x90 Advertisement here', 'colormag' ),
+			'classname'                   => 'widget_728x90_advertisement',
+			'description'                 => __( 'Add your 728x90 Advertisement here', 'colormag' ),
+			'customize_selective_refresh' => true,
 		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: 728x90 Advertisement', 'colormag' ), $widget_ops );
@@ -1138,8 +1143,9 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
 
 	function __construct() {
 		$widget_ops  = array(
-			'classname'   => 'widget_125x125_advertisement',
-			'description' => __( 'Add your 125x125 Advertisement here', 'colormag' ),
+			'classname'                   => 'widget_125x125_advertisement',
+			'description'                 => __( 'Add your 125x125 Advertisement here', 'colormag' ),
+			'customize_selective_refresh' => true,
 		);
 		$control_ops = array( 'width' => 200, 'height' => 250 );
 		parent::__construct( false, $name = __( 'TG: 125x125 Advertisement', 'colormag' ), $widget_ops );
