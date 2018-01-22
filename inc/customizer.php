@@ -595,6 +595,7 @@ function colormag_customize_register( $wp_customize ) {
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
 		'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
+		'transport'            => 'postMessage',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_primary_color', array(
