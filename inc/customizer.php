@@ -181,6 +181,7 @@ function colormag_customize_register( $wp_customize ) {
 		'default'           => 0,
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'colormag_checkbox_sanitize',
+		'transport'         => $customizer_selective_refresh,
 	) );
 
 	$wp_customize->add_control( 'colormag_home_icon_display', array(
@@ -189,6 +190,14 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_home_icon_display_section',
 		'settings' => 'colormag_home_icon_display',
 	) );
+
+	// Selective refresh for displaying home icon
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'colormag_home_icon_display', array(
+			'selector'        => '.home-icon',
+			'render_callback' => '',
+		) );
+	}
 
 	// primary sticky menu enable/disable
 	$wp_customize->add_section( 'colormag_primary_sticky_menu_section', array(
@@ -241,6 +250,7 @@ function colormag_customize_register( $wp_customize ) {
 		'default'           => 0,
 		'capability'        => 'edit_theme_options',
 		'sanitize_callback' => 'colormag_checkbox_sanitize',
+		'transport'         => $customizer_selective_refresh,
 	) );
 
 	$wp_customize->add_control( 'colormag_random_post_in_menu', array(
@@ -249,6 +259,14 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_random_post_in_menu_section',
 		'settings' => 'colormag_random_post_in_menu',
 	) );
+
+	// Selective refresh for displaying random post icon
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'colormag_random_post_in_menu', array(
+			'selector'        => '.random-post',
+			'render_callback' => 'colormag_random_post',
+		) );
+	}
 
 	// Responsive new menu enable/disable
 	$wp_customize->add_section( 'colormag_responsive_menu_section', array(

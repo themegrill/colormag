@@ -577,6 +577,11 @@ endif;
  */
 if ( ! function_exists( 'colormag_random_post' ) ) :
 	function colormag_random_post() {
+		// Bail out if random post in menu is not activated
+		if ( get_theme_mod( 'colormag_random_post_in_menu', 0 ) == 0 ) {
+			return;
+		}
+
 		$get_random_post = new WP_Query( array(
 			'posts_per_page'      => 1,
 			'post_type'           => 'post',
