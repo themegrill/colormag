@@ -33,6 +33,10 @@ function colormag_demo_importer_packages( $packages ) {
 			'name'    => __( 'ColorMag Business Magazine', 'colormag' ),
 			'preview' => 'https://demo.themegrill.com/colormag-business-magazine/',
 		),
+		'colormag-dark'              => array(
+			'name'    => __( 'ColorMag Dark', 'colormag' ),
+			'preview' => 'https://demo.themegrill.com/colormag-dark/',
+		),
 		'colormag-pro'               => array(
 			'name'     => __( 'ColorMag Pro', 'colormag' ),
 			'preview'  => 'https://demo.themegrill.com/colormag-pro/',
@@ -61,6 +65,11 @@ function colormag_demo_importer_packages( $packages ) {
 		'colormag-pro-health-blog'   => array(
 			'name'     => __( 'ColorMag Health Blog', 'colormag' ),
 			'preview'  => 'https://demo.themegrill.com/colormag-pro-health-blog/',
+			'pro_link' => 'https://themegrill.com/themes/colormag/',
+		),
+		'colormag-pro-music'         => array(
+			'name'     => __( 'ColorMag Pro Music', 'colormag' ),
+			'preview'  => 'https://demo.themegrill.com/colormag-pro-music/',
 			'pro_link' => 'https://themegrill.com/themes/colormag/',
 		),
 	);
