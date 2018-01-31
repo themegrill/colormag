@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Fix - Touchscreen submenu double click issue in small devices
 * Tweaks - Introduce customizer live preview and selective refresh feature.
 
 = Version 1.2.3 - 2017-12-12 =
