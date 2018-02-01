@@ -309,75 +309,74 @@
 				}
 				
 				ul {
-					&#menu-primary {
-						> li {
-							padding-left: 15px;
-							padding-right: 15px;
-							float: none;
-							display: inline-block;
-							vertical-align: top;
-							
+					> li {
+						padding-left: 15px;
+						padding-right: 15px;
+						float: none;
+						display: inline-block;
+						vertical-align: top;
+
+						> a {
+							border-bottom: 2px solid transparent;
+							transition: border 0.5s ease;
+						}
+
+						&:hover,
+						&.current-menu-item,
+						&.current-menu-ancestor {
 							> a {
-								border-bottom: 2px solid transparent;
-								transition: border 0.5s ease;
+								background-color: transparent;
+								border-bottom: 2px solid $primary;
 							}
-							
-							&:hover,
-							&.current-menu-item,
-							&.current-menu-ancestor {
-								> a {
-									background-color: transparent;
-									border-bottom: 2px solid $primary;
-								}
-								
-							}
+
 						}
-						
-						ul.sub-menu {
-							top: 100%;
-							background-color: $color_gray_ten;
-							transition: all 0.3s ease;
+					}
+
+					ul.sub-menu {
+						top: 100%;
+						background-color: $color_gray_ten;
+						transition: all 0.3s ease;
+						display: block;
+						opacity: 0;
+						visibility: hidden;
+						border: 1px solid  $color_gray_eight;
+
+						li {
+							border-bottom:1px solid  $color_gray_eight;
 							display: block;
-							opacity: 0;
-							visibility: hidden;
-							border: 1px solid  $color_gray_eight;
-							
-							li {
-								border-bottom:1px solid  $color_gray_eight;
-								
-								a {
-									width: auto;
-									padding: 10px 15px;
-									transition: all 0.5s ease;
-								}
-								
-								&:hover,
-								&.current-menu-ancestor,
-								&.current-menu-item {
-									border-color: $primary;
-									
-									> a {
-										background-color: $primary;
-										color: $white;
-									}
-								}
-								
-								&:last-child {
-									border-bottom: none transparent;
-								}
-								
-								ul {
-									top: 0;
+
+							a {
+								width: auto;
+								padding: 10px 15px;
+								transition: all 0.5s ease;
+							}
+
+							&:hover,
+							&.current-menu-ancestor,
+							&.current-menu-item {
+								border-color: $primary;
+
+								> a {
+									background-color: $primary;
+									color: $white;
 								}
 							}
+
+							&:last-child {
+								border-bottom: none transparent;
+							}
+
+							ul {
+								top: 0;
+							}
 						}
-						
-						li.menu-item-has-children {
-							&:hover {
-								> ul.sub-menu {
-									opacity: 1;
-									visibility: visible;
-								}
+					}
+
+					li.menu-item-has-children {
+						&:hover {
+							> ul.sub-menu {
+								opacity: 1;
+								visibility: visible;
 							}
 						}
 					}

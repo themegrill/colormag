@@ -762,6 +762,11 @@ li.default-menu {
 		}
 	}
 }
+#masthead.colormag-header-classic #site-navigation.main-navigation ul li.focus > ul {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
 
 .main-navigation .sub-menu,
 .main-navigation .children {

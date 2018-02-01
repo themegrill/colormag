@@ -956,6 +956,12 @@ li.default-menu {
 	display: block;
 }
 
+#masthead.colormag-header-classic #site-navigation.main-navigation ul li.focus > ul {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+}
+
 .main-navigation .sub-menu,
 .main-navigation .children {
 	background-color: #232323;
@@ -3405,7 +3411,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	background-color: transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary > li {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul > li {
 	padding-left: 15px;
 	padding-right: 15px;
 	float: none;
@@ -3413,17 +3419,17 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	vertical-align: top;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary > li > a {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul > li > a {
 	border-bottom: 2px solid transparent;
 	transition: border 0.5s ease;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary > li.current-menu-ancestor > a {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-ancestor > a {
 	background-color: transparent;
 	border-bottom: 2px solid #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu {
 	top: 100%;
 	background-color: #f8f8f8;
 	transition: all 0.3s ease;
@@ -3433,34 +3439,35 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	border: 1px solid #eaeaea;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li {
 	border-bottom: 1px solid #eaeaea;
+	display: block;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li a {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li a {
 	width: auto;
 	padding: 10px 15px;
 	transition: all 0.5s ease;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li:hover, #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li.current-menu-item {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item {
 	border-color: #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li.current-menu-item > a {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item > a {
 	background-color: #289dcc;
 	color: #fff;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li:last-child {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:last-child {
 	border-bottom: none transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li ul {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li ul {
 	top: 0;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary li.menu-item-has-children:hover > ul.sub-menu {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul li.menu-item-has-children:hover > ul.sub-menu {
 	opacity: 1;
 	visibility: visible;
 }
