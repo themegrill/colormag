@@ -722,7 +722,8 @@ li.default-menu {
 .main-navigation ul li.current_page_ancestor > a,
 .main-navigation ul li.current-menu-ancestor > a,
 .main-navigation ul li.current_page_item > a,
-.main-navigation ul li:hover > a {
+.main-navigation ul li:hover > a,
+.main-navigation ul li.focus {
    background-color: #289dcc;
 }
 .main-navigation li.menu-item-has-children > a:after,

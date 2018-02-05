@@ -916,7 +916,8 @@ li.default-menu {
 .main-navigation ul li.current_page_ancestor > a,
 .main-navigation ul li.current-menu-ancestor > a,
 .main-navigation ul li.current_page_item > a,
-.main-navigation ul li:hover > a {
+.main-navigation ul li:hover > a,
+.main-navigation ul li.focus {
 	background-color: #289dcc;
 }
 
@@ -3398,7 +3399,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic #site-navigation.main-navigation a {
 	font-weight: 700;
-	padding: 10px 0;
+	padding: 10px 15px;
 	line-height: 26px;
 	color: #343a40;
 }
@@ -3411,9 +3412,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	background-color: transparent;
 }
 
+#masthead.colormag-header-classic #site-navigation.main-navigation ul li {
+	background-color: transparent;
+}
+
 #masthead.colormag-header-classic #site-navigation.main-navigation ul > li {
-	padding-left: 15px;
-	padding-right: 15px;
 	float: none;
 	display: inline-block;
 	vertical-align: top;
@@ -3424,7 +3427,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	transition: border 0.5s ease;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-ancestor > a {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.focus > a {
 	background-color: transparent;
 	border-bottom: 2px solid #289dcc;
 }
@@ -3450,12 +3453,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	transition: all 0.5s ease;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.focus {
 	border-color: #289dcc;
+	background-color: #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item > a {
-	background-color: #289dcc;
+#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.focus > a {
 	color: #fff;
 }
 
@@ -3537,6 +3540,9 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 @media screen and (max-width: 768px) {
+	.better-responsive-menu #site-navigation {
+		padding-bottom: 20px;
+	}
 	#masthead .main-small-navigation li:hover > .sub-toggle, #masthead .main-small-navigation li.current-page-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-menu-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-page-item > .sub-toggle, #masthead .main-small-navigation li.current-menu-item > .sub-toggle {
 		background-color: #fff;
 	}
@@ -3614,6 +3620,9 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 @media screen and (max-width: 480px) {
+	.better-responsive-menu #site-navigation {
+		padding-bottom: 15px;
+	}
 	#masthead.colormag-header-classic .date-in-header, #masthead.colormag-header-clean .date-in-header {
 		display: none;
 	}
