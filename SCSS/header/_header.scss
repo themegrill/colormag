@@ -142,6 +142,11 @@
 								}
 							}
 						}
+						&.focus > ul {
+							display: block;
+							visibility: visible;
+							opacity: 1;
+						}
 					}
 				}
 			}
@@ -324,8 +329,7 @@
 						
 						&:hover,
 						&.current-menu-item,
-						&.current-menu-ancestor,
-						&.focus {
+						&.current-menu-ancestor {
 							> a {
 								background-color: transparent;
 								border-bottom: 2px solid $primary;
@@ -358,10 +362,10 @@
 							&.current-menu-item,
 							&.focus {
 								border-color: $primary;
-								background-color: $primary;
 								
 								> a {
 									color: $white;
+									background-color: $primary;
 								}
 							}
 							

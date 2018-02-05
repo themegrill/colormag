@@ -917,7 +917,7 @@ li.default-menu {
 .main-navigation ul li.current-menu-ancestor > a,
 .main-navigation ul li.current_page_item > a,
 .main-navigation ul li:hover > a,
-.main-navigation ul li.focus {
+.main-navigation ul li.focus > a {
 	background-color: #289dcc;
 }
 
@@ -955,12 +955,6 @@ li.default-menu {
 ----------------------------------------------- */
 .main-navigation ul li.focus > ul {
 	display: block;
-}
-
-#masthead.colormag-header-classic #site-navigation.main-navigation ul li.focus > ul {
-	display: block;
-	visibility: visible;
-	opacity: 1;
 }
 
 .main-navigation .sub-menu,
@@ -3269,6 +3263,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	top: 0;
 }
 
+#masthead.colormag-header-clean #site-navigation.main-navigation ul li.focus > ul {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+}
+
 #masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-primary-container,
 #masthead.colormag-header-clean #site-navigation.main-small-navigation .nav-menu {
 	padding-top: 0;
@@ -3427,7 +3427,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	transition: border 0.5s ease;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.focus > a {
+#masthead.colormag-header-classic #site-navigation.main-navigation ul > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-ancestor > a {
 	background-color: transparent;
 	border-bottom: 2px solid #289dcc;
 }
@@ -3455,11 +3455,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.focus {
 	border-color: #289dcc;
-	background-color: #289dcc;
 }
 
 #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.focus > a {
 	color: #fff;
+	background-color: #289dcc;
 }
 
 #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:last-child {

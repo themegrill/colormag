@@ -723,7 +723,7 @@ li.default-menu {
 .main-navigation ul li.current-menu-ancestor > a,
 .main-navigation ul li.current_page_item > a,
 .main-navigation ul li:hover > a,
-.main-navigation ul li.focus {
+.main-navigation ul li.focus > a {
    background-color: #289dcc;
 }
 .main-navigation li.menu-item-has-children > a:after,
@@ -763,12 +763,6 @@ li.default-menu {
 		}
 	}
 }
-#masthead.colormag-header-classic #site-navigation.main-navigation ul li.focus > ul {
-  display: block;
-  visibility: visible;
-  opacity: 1;
-}
-
 .main-navigation .sub-menu,
 .main-navigation .children {
    background-color: #232323;
