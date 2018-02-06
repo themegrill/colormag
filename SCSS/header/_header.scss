@@ -478,7 +478,7 @@
 
 @media screen and (max-width: 768px) {
 	.better-responsive-menu{
-		#site-navigation {
+		.main-small-navigation .menu-primary-container {
 			padding-bottom: 20px;
 		}
 	}
@@ -612,7 +612,7 @@
 
 @media screen and (max-width: 480px) {
 	.better-responsive-menu {
-		#site-navigation {
+		.main-small-navigation .menu-primary-container {
 			padding-bottom: 15px;
 		}
 	}

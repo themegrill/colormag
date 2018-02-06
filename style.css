@@ -3556,7 +3556,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 @media screen and (max-width: 768px) {
-	.better-responsive-menu #site-navigation {
+	.better-responsive-menu .main-small-navigation .menu-primary-container {
 		padding-bottom: 20px;
 	}
 	#masthead .main-small-navigation li:hover > .sub-toggle, #masthead .main-small-navigation li.current-page-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-menu-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-page-item > .sub-toggle, #masthead .main-small-navigation li.current-menu-item > .sub-toggle {
@@ -3636,7 +3636,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 @media screen and (max-width: 480px) {
-	.better-responsive-menu #site-navigation {
+	.better-responsive-menu .main-small-navigation .menu-primary-container {
 		padding-bottom: 15px;
 	}
 	#masthead.colormag-header-classic .date-in-header, #masthead.colormag-header-clean .date-in-header {
