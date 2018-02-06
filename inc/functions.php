@@ -393,7 +393,9 @@ function colormag_custom_css() {
 		#masthead.colormag-header-classic #site-navigation .fa.search-top:hover,
 		#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a:hover .fa-random {color:' . $primary_color . '}
 		.fa.search-top:hover,
-		#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle {background-color:' . $primary_color . '}
+		#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle,
+		.main-navigation ul li.focus > a,
+        #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.focus > a {background-color:' . $primary_color . '}
 		#site-navigation{border-top:4px solid ' . $primary_color . '}
 		.home-icon.front_page_on,.main-navigation a:hover,.main-navigation ul li ul li a:hover,
 		.main-navigation ul li ul li:hover>a,
@@ -421,10 +423,14 @@ function colormag_custom_css() {
 		#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor,
 		#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item,
 		#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle,
-		#masthead.colormag-header-classic #site-navigation .menu-toggle:hover{border-color:' . $primary_color . '}
+		#masthead.colormag-header-classic #site-navigation .menu-toggle:hover,
+		#masthead.colormag-header-classic .main-navigation ul > li:hover > a, 
+        #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a, 
+        #masthead.colormag-header-classic .main-navigation ul > li.current-menu-ancestor > a,
+        #masthead.colormag-header-classic .main-navigation ul li.focus > a{ border-color:' . $primary_color . '}
 		.promo-button-area a:hover{border:2px solid ' . $primary_color . ';background-color:' . $primary_color . '}
 		#content .wp-pagenavi .current,
-		#content .wp-pagenavi a:hover,.format-link .entry-content a,.pagination span{background-color:' . $primary_color . '}
+		#content .wp-pagenavi a:hover,.format-link .entry-content a,.pagination span{ background-color:' . $primary_color . '}
 		.pagination a span:hover{color:' . $primary_color . ';border-color:' . $primary_color . '}
 		#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,
 		#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:' . $primary_color . '}
