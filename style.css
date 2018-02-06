@@ -3244,33 +3244,33 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	padding: 20px;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-navigation a {
+#masthead.colormag-header-clean .main-navigation a {
 	font-weight: 500;
 	padding: 20px;
 	line-height: 26px;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-navigation ul li ul {
+#masthead.colormag-header-clean .main-navigation ul li ul {
 	top: 100%;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-navigation ul li ul li a {
+#masthead.colormag-header-clean .main-navigation ul li ul li a {
 	width: auto;
 	padding: 10px 15px;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-navigation ul li ul li ul {
+#masthead.colormag-header-clean .main-navigation ul li ul li ul {
 	top: 0;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-navigation ul li.focus > ul {
+#masthead.colormag-header-clean .main-navigation ul li.focus > ul {
 	display: block;
 	visibility: visible;
 	opacity: 1;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-primary-container,
-#masthead.colormag-header-clean #site-navigation.main-small-navigation .nav-menu {
+#masthead.colormag-header-clean .main-small-navigation .menu-primary-container,
+#masthead.colormag-header-clean .main-small-navigation .nav-menu {
 	padding-top: 0;
 	padding-top: 0;
 	position: absolute;
@@ -3278,11 +3278,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	width: 100%;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-small-navigation .random-post {
+#masthead.colormag-header-clean .main-small-navigation .random-post {
 	line-height: 26px;
 }
 
-#masthead.colormag-header-clean #site-navigation.main-small-navigation .random-post a {
+#masthead.colormag-header-clean .main-small-navigation .random-post a {
 	padding: 20px;
 }
 
@@ -3397,42 +3397,42 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	color: #fff;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation a {
+#masthead.colormag-header-classic .main-navigation a {
 	font-weight: 700;
 	padding: 10px 15px;
 	line-height: 26px;
 	color: #343a40;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation a::after {
+#masthead.colormag-header-classic .main-navigation a::after {
 	color: inherit;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation a:hover {
+#masthead.colormag-header-classic .main-navigation a:hover {
 	background-color: transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul li {
+#masthead.colormag-header-classic .main-navigation ul li a {
 	background-color: transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul > li {
+#masthead.colormag-header-classic .main-navigation ul > li {
 	float: none;
 	display: inline-block;
 	vertical-align: top;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul > li > a {
+#masthead.colormag-header-classic .main-navigation ul > li > a {
 	border-bottom: 2px solid transparent;
 	transition: border 0.5s ease;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul > li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul > li.current-menu-ancestor > a {
+#masthead.colormag-header-classic .main-navigation ul > li:hover > a, #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a, #masthead.colormag-header-classic .main-navigation ul > li.current-menu-ancestor > a {
 	background-color: transparent;
 	border-bottom: 2px solid #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu {
 	top: 100%;
 	background-color: #f8f8f8;
 	transition: all 0.3s ease;
@@ -3442,59 +3442,61 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	border: 1px solid #eaeaea;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li {
 	border-bottom: 1px solid #eaeaea;
 	display: block;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li a {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li a {
 	width: auto;
 	padding: 10px 15px;
 	transition: all 0.5s ease;
+	border-bottom: none transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.focus {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.focus {
 	border-color: #289dcc;
+	background-color: transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.current-menu-item > a, #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li.focus > a {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.focus > a {
 	color: #fff;
 	background-color: #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li:last-child {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:last-child {
 	border-bottom: none transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li ul {
+#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li ul {
 	top: 0;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation ul li.menu-item-has-children:hover > ul.sub-menu {
+#masthead.colormag-header-classic .main-navigation ul li.menu-item-has-children:hover > ul.sub-menu {
 	opacity: 1;
 	visibility: visible;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a {
+#masthead.colormag-header-classic .main-navigation .random-post a {
 	font-size: 14px;
 	padding: 10px 15px;
 	color: #343a40;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a:hover {
+#masthead.colormag-header-classic .main-navigation .random-post a:hover {
 	background: transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a:hover .fa-random {
+#masthead.colormag-header-classic .main-navigation .random-post a:hover .fa-random {
 	color: #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a .fa-random {
+#masthead.colormag-header-classic .main-navigation .random-post a .fa-random {
 	color: #343a40;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-primary-container,
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .nav-menu {
+#masthead.colormag-header-classic .main-small-navigation .menu-primary-container,
+#masthead.colormag-header-classic .main-small-navigation .nav-menu {
 	padding-top: 0;
 	padding-top: 0;
 	position: absolute;
@@ -3503,34 +3505,34 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.2);
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post {
+#masthead.colormag-header-classic .main-small-navigation .random-post {
 	bottom: 0;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a {
+#masthead.colormag-header-classic .main-small-navigation .random-post a {
 	font-size: 14px;
 	padding: 12px 15px;
 	color: #343a40;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a .fa-random {
+#masthead.colormag-header-classic .main-small-navigation .random-post a .fa-random {
 	color: #343a40;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a:hover {
+#masthead.colormag-header-classic .main-small-navigation .random-post a:hover {
 	background: transparent;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a:hover .fa-random {
+#masthead.colormag-header-classic .main-small-navigation .random-post a:hover .fa-random {
 	color: #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle {
+#masthead.colormag-header-classic .main-small-navigation .menu-toggle {
 	background-color: #289dcc;
 	border-color: #289dcc;
 }
 
-#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle::before {
+#masthead.colormag-header-classic .main-small-navigation .menu-toggle::before {
 	color: #fff;
 }
 
