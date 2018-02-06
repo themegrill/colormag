@@ -3432,6 +3432,15 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	border-bottom: 2px solid #289dcc;
 }
 
+#masthead.colormag-header-classic .main-navigation ul li.focus > a {
+	border-color: #289dcc;
+}
+
+#masthead.colormag-header-classic .main-navigation ul li.focus > ul {
+	opacity: 1;
+	visibility: visible;
+}
+
 #masthead.colormag-header-classic .main-navigation ul ul.sub-menu {
 	top: 100%;
 	background-color: #f8f8f8;
@@ -3579,10 +3588,10 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	#masthead.colormag-header-clean #site-navigation .fa.search-top {
 		padding: 15px;
 	}
-	#masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-toggle {
+	#masthead.colormag-header-clean .main-small-navigation .menu-toggle {
 		background-color: #289dcc;
 	}
-	#masthead.colormag-header-clean #site-navigation.main-small-navigation .random-post a {
+	#masthead.colormag-header-clean .main-small-navigation .random-post a {
 		padding: 15px;
 	}
 	#masthead.colormag-header-classic #menu-primary {
