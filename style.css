@@ -2978,9 +2978,14 @@ Responsive Structure
 		cursor: pointer;
 		display: block;
 		top: 6px;
-		color: #fff;
 		padding: 0 7px;
 		background-color: #1b7aa0;
+	}
+	.sub-toggle .fa {
+		color: #fff;
+	}
+	.sub-toggle.active .fa {
+		color: #1b7aa0;
 	}
 }
 
