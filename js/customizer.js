@@ -41,16 +41,40 @@
 		value.bind( function ( primaryColor ) {
 			// Store internal style for primary color
 			var primaryColorStyle = '<style id="colormag-internal-primary-color">' +
-			                        '.colormag-button,blockquote,button,input[type=reset],input[type=button],input[type=submit],#masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-toggle{background-color:' + primaryColor + '}' +
-			                        '#site-title a,.next a:hover,.previous a:hover,.social-links i.fa:hover,a,#masthead.colormag-header-clean .social-links li:hover i.fa,#masthead.colormag-header-classic .social-links li:hover i.fa,#masthead.colormag-header-clean .breaking-news .newsticker a:hover,#masthead.colormag-header-classic .breaking-news .newsticker a:hover,#masthead.colormag-header-classic #site-navigation .fa.search-top:hover,#masthead.colormag-header-classic #site-navigation .random-post a:hover .fa-random, #masthead .main-small-navigation li:hover > .sub-toggle i, .better-responsive-menu #masthead .main-small-navigation .sub-toggle.active .fa {color:' + primaryColor + '}' +
-			                        '.fa.search-top:hover,#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle{background-color:' + primaryColor + '}' +
+									'.colormag-button,blockquote,button,input[type=reset],input[type=button],input[type=submit], ' +
+									'#masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-toggle{background-color:' + primaryColor + '}' +
+									'#site-title a,.next a:hover,.previous a:hover,.social-links i.fa:hover,a, ' +
+									'#masthead.colormag-header-clean .social-links li:hover i.fa, ' +
+									'#masthead.colormag-header-classic .social-links li:hover i.fa, ' +
+									'#masthead.colormag-header-clean .breaking-news .newsticker a:hover, ' +
+									'#masthead.colormag-header-classic .breaking-news .newsticker a:hover, ' +
+									'#masthead.colormag-header-classic #site-navigation .fa.search-top:hover, ' +
+									'#masthead.colormag-header-classic #site-navigation .random-post a:hover .fa-random, ' +
+									'.better-responsive-menu #masthead .main-small-navigation li:hover > .sub-toggle i, ' +
+									'.better-responsive-menu #masthead .main-small-navigation .sub-toggle.active .fa {color:' + primaryColor + '}' +
+									'.fa.search-top:hover, '+
+									'#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle {background-color:' + primaryColor + '}' +
 			                        '#site-navigation{border-top:4px solid ' + primaryColor + '}' +
-			                        '.home-icon.front_page_on,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor>a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current-menu-item>a,.main-navigation ul li.current_page_ancestor>a,.main-navigation ul li.current_page_item>a,.main-navigation ul li:hover>a,.main-small-navigation li a:hover,.site-header .menu-toggle:hover,#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item > a,#masthead .main-small-navigation li:hover > a, #masthead .main-small-navigation li.current-page-ancestor > a, #masthead .main-small-navigation li.current-menu-ancestor > a, #masthead .main-small-navigation li.current-page-item > a, #masthead .main-small-navigation li.current-menu-item > a{background-color:' + primaryColor + '}' +
-			                        '.main-small-navigation .current-menu-item>a,.main-small-navigation .current_page_item>a{background:' + primaryColor + '}' +
+									'.home-icon.front_page_on,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a, ' +
+									'.main-navigation ul li.current-menu-ancestor>a,.main-navigation ul li.current-menu-item ul li a:hover, ' +
+									'.main-navigation ul li.current-menu-item>a,.main-navigation ul li.current_page_ancestor>a,.main-navigation ul li.current_page_item>a, ' +
+									'.main-navigation ul li:hover>a,.main-small-navigation li a:hover,.site-header .menu-toggle:hover,' +
+									'#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover > a, ' +
+									'#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor > a, ' +
+									'#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item > a, ' +
+									'#masthead .main-small-navigation li:hover > a, #masthead .main-small-navigation li.current-page-ancestor > a, ' +
+									'#masthead .main-small-navigation li.current-menu-ancestor > a, #masthead .main-small-navigation li.current-page-item > a, ' +
+									'#masthead .main-small-navigation li.current-menu-item > a {background-color:' + primaryColor + '}' +
+			                        '.main-small-navigation .current-menu-item>a,.main-small-navigation .current_page_item>a {background:' + primaryColor + '}' +
 			                        '#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover, ' +
 									'#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor, ' +
-									'#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item,#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle,#masthead.colormag-header-classic #site-navigation .menu-toggle:hover' +
-									'#masthead.colormag-header-classic .main-navigation ul > li.current-menu-ancestor > a {border-color:' + primaryColor + '; }' +
+									'#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item, ' +
+									'#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle, ' +
+									'#masthead.colormag-header-classic #site-navigation .menu-toggle:hover, ' +
+									'#masthead.colormag-header-classic .main-navigation ul > li:hover > a, '+
+									'#masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a, ' +
+									'#masthead.colormag-header-classic .main-navigation ul > li.current-menu-ancestor > a ' +
+									'#masthead.colormag-header-classic .main-navigation ul li.focus > a {border-color:red; }' +
 			                        '.promo-button-area a:hover{border:2px solid ' + primaryColor + ';' + 'background-color:' + primaryColor + '}' +
 			                        '#content .wp-pagenavi .current,#content .wp-pagenavi a:hover,.format-link .entry-content a,.pagination span{background-color:' + primaryColor + '}' +
 			                        '.pagination a span:hover{color:' + primaryColor + ';' + 'border-color:' + primaryColor + '}' +

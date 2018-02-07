@@ -421,7 +421,7 @@ function colormag_custom_css() {
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover,
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor,
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item,
-		#masthead.colormag-header-classic .main-small-navigation .menu-toggle,
+		#masthead.colormag-header-classic #site-navigation .menu-toggle,
 		#masthead.colormag-header-classic #site-navigation .menu-toggle:hover,
 		#masthead.colormag-header-classic .main-navigation ul > li:hover > a, 
         #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a, 
