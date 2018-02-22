@@ -50,7 +50,8 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.2.4 - 2018-02-22 =
+* Fix - Header layout ( Main Header Area Display ) design issue
 * Fix - Touchscreen submenu double click issue in small devices
 * Tweaks - Introduce customizer live preview and selective refresh feature.
 
