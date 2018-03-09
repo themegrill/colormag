@@ -49,6 +49,11 @@ html {
 	/* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 article,
 aside,
 details,
@@ -113,6 +118,7 @@ a img {
 embed, iframe, object {
 	max-width: 100%;
 }
+
 
 /* =GLOBAL
 ----------------------------------------------- */
