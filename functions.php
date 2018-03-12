@@ -14,6 +14,13 @@
  */
 
 /**
+ * Define Elementor Partner ID
+ */
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+	define( 'ELEMENTOR_PARTNER_ID', 2125 );
+}
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
@@ -41,7 +48,7 @@ function colormag_content_width() {
 		} else {
 			$content_width = 800; /* pixels */
 		}
-	} else if ( $layout_meta == 'no_sidebar_full_width' ) {
+	} elseif ( $layout_meta == 'no_sidebar_full_width' ) {
 		$content_width = 1140; /* pixels */
 	} else {
 		$content_width = 800; /* pixels */
@@ -94,7 +101,17 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		// Enable support for Post Formats.
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'chat', 'audio', 'status' ) );
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+			'gallery',
+			'chat',
+			'audio',
+			'status',
+		) );
 
 		// Adding excerpt option box for pages as well
 		add_post_type_support( 'page', 'excerpt' );
@@ -104,7 +121,11 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
 		) );
 
 		// adding the WooCommerce plugin support
@@ -118,7 +139,11 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
 		) );
 
 		// Adds the support for the Custom Logo introduced in WordPress 4.5
@@ -512,7 +537,7 @@ if ( class_exists( 'TG_Demo_Importer' ) ) {
  * Assign the ColorMag version to a variable.
  */
 $theme            = wp_get_theme( 'colormag' );
-$colormag_version = $theme[ 'Version' ];
+$colormag_version = $theme['Version'];
 
 /* Calling in the admin area for the Welcome Page */
 if ( is_admin() ) {
