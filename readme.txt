@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Fix - Flex issue on safari
+
 = Version 1.2.4 - 2018-02-27 =
 * Fix - Header layout ( Main Header Area Display ) design issue
 * Fix - Touchscreen submenu double click issue in small devices
