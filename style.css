@@ -50,9 +50,10 @@ html {
 }
 
 * {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 article,
 aside,
@@ -118,7 +119,6 @@ a img {
 embed, iframe, object {
 	max-width: 100%;
 }
-
 
 /* =GLOBAL
 ----------------------------------------------- */
@@ -369,9 +369,9 @@ textarea:focus {
 }
 
 input.s {
-	width: 60%;
+	width: 85%;
 	padding: 4px 54px 4px 10px;
-	height: 36px;
+	height: 46px;
 	color: #777777;
 	background-color: #FFFFFF;
 	margin: 0;
@@ -786,9 +786,8 @@ body {
 	line-height: 45px;
 	margin-bottom: 0;
 	padding: 0 15px;
-	position: absolute;
-	top: 0;
-	right: 0;
+	margin-left: -5px;
+	margin-top: 1px;
 }
 
 .search-icon:before {
