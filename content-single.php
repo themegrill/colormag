@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying single post content in single.php
  *
  * @package ThemeGrill
  * @subpackage ColorMag
