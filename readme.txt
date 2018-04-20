@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.2.7 - 2018-4-20 =
 * Tweaks - Remove translations from social icons display
 
 = Version 1.2.6 - 2018-03-20 =
