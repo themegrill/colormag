@@ -35,5 +35,9 @@
 		?>
 	</div>
 
+	<div class="entry-footer">
+		<?php edit_post_link( __( 'Edit', 'colormag' ), '<span class="edit-link"><i class="fa fa-edit"></i>', '</span>' ); ?>
+	</div>
+
 	<?php do_action( 'colormag_after_post_content' ); ?>
 </article>
