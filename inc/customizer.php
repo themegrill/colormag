@@ -907,6 +907,26 @@ function colormag_customize_register( $wp_customize ) {
 		'section'  => 'colormag_featured_image_popup_setting',
 		'settings' => 'colormag_featured_image_popup',
 	) );
+
+	// Feature Image dispaly/hide option
+	$wp_customize->add_section( 'colormag_featured_image_show_setting', array(
+		'priority' => 6,
+		'title'    => esc_html__( 'Featured Image', 'colormag' ),
+		'panel'    => 'colormag_additional_options',
+	) );
+
+	$wp_customize->add_setting( 'colormag_featured_image_show', array(
+		'default'           => 0,
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_checkbox_sanitize',
+	) );
+
+	$wp_customize->add_control( 'colormag_featured_image_show', array(
+		'type'     => 'checkbox',
+		'label'    => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
+		'section'  => 'colormag_featured_image_show_setting',
+		'settings' => 'colormag_featured_image_show',
+	) );
 	// End of the Additional Options
 	// Category Color Options
 	$wp_customize->add_panel( 'colormag_category_color_panel', array(
