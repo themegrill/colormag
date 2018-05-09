@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Feature - Added featured image disable option for single post page
+* Feature - Added featured image display option for single page
+
 = Version 1.2.7 - 2018-4-20 =
 * Tweaks - Remove translations from social icons display
 
