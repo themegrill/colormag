@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.2.8 - 2018-05-09 =
 * Feature - Added featured image disable option for single post page
 * Feature - Added featured image display option for single page
 

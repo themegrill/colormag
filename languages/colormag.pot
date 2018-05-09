@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 1.2.7\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2018-04-20 05:40:00+00:00\n"
+"POT-Creation-Date: 2018-05-09 05:11:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,8 +107,12 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:30 content-single.php:48
+#: content-page.php:36 content-single.php:48
 msgid "Pages:"
+msgstr ""
+
+#: content-page.php:45 inc/functions.php:321
+msgid "Edit"
 msgstr ""
 
 #: content.php:38
@@ -470,7 +474,7 @@ msgstr ""
 msgid "TG: Featured Posts (Style 7)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:568 inc/customizer.php:914
+#: inc/admin/class-colormag-admin.php:568 inc/customizer.php:954
 msgid "Category Color Options"
 msgstr ""
 
@@ -610,19 +614,19 @@ msgstr ""
 msgid "Choose the option that you want"
 msgstr ""
 
-#: inc/customizer.php:323 inc/customizer.php:978
+#: inc/customizer.php:323 inc/customizer.php:1018
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/customizer.php:324 inc/customizer.php:979
+#: inc/customizer.php:324 inc/customizer.php:1019
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/customizer.php:325 inc/customizer.php:980
+#: inc/customizer.php:325 inc/customizer.php:1020
 msgid "Show Both"
 msgstr ""
 
-#: inc/customizer.php:326 inc/customizer.php:981
+#: inc/customizer.php:326 inc/customizer.php:1021
 msgid "Disable"
 msgstr ""
 
@@ -642,17 +646,17 @@ msgstr ""
 msgid "Header image display position"
 msgstr ""
 
-#: inc/customizer.php:440 inc/customizer.php:992
+#: inc/customizer.php:440 inc/customizer.php:1032
 msgid "Display the Header image just above the site title/text."
 msgstr ""
 
-#: inc/customizer.php:441 inc/customizer.php:993
+#: inc/customizer.php:441 inc/customizer.php:1033
 msgid ""
 "Default: Display the Header image between site title/text and the "
 "main/primary menu."
 msgstr ""
 
-#: inc/customizer.php:442 inc/customizer.php:994
+#: inc/customizer.php:442 inc/customizer.php:1034
 msgid "Display the Header image below main/primary menu."
 msgstr ""
 
@@ -684,11 +688,11 @@ msgstr ""
 msgid "Choose your site layout. The change is reflected in whole site"
 msgstr ""
 
-#: inc/customizer.php:502 inc/customizer.php:1005
+#: inc/customizer.php:502 inc/customizer.php:1045
 msgid "Boxed Layout"
 msgstr ""
 
-#: inc/customizer.php:503 inc/customizer.php:1006
+#: inc/customizer.php:503 inc/customizer.php:1046
 msgid "Wide Layout"
 msgstr ""
 
@@ -849,11 +853,11 @@ msgstr ""
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: inc/customizer.php:886 inc/customizer.php:966
+#: inc/customizer.php:886 inc/customizer.php:1006
 msgid "Related Posts By Categories"
 msgstr ""
 
-#: inc/customizer.php:887 inc/customizer.php:967
+#: inc/customizer.php:887 inc/customizer.php:1007
 msgid "Related Posts By Tags"
 msgstr ""
 
@@ -865,15 +869,31 @@ msgstr ""
 msgid "Check to enable the lightbox for the featured images in single post"
 msgstr ""
 
-#: inc/customizer.php:916
+#: inc/customizer.php:914
+msgid "Featured Image"
+msgstr ""
+
+#: inc/customizer.php:926
+msgid "Check to hide the featured image in single post page."
+msgstr ""
+
+#: inc/customizer.php:934
+msgid "Featured Image In Single Page"
+msgstr ""
+
+#: inc/customizer.php:946
+msgid "Check to display the featured image in single page."
+msgstr ""
+
+#: inc/customizer.php:956
 msgid "Change the color of each category items as you want."
 msgstr ""
 
-#: inc/customizer.php:921
+#: inc/customizer.php:961
 msgid "Category Color Settings"
 msgstr ""
 
-#: inc/customizer.php:943
+#: inc/customizer.php:983
 msgid "%s"
 msgstr ""
 
@@ -1166,10 +1186,6 @@ msgstr ""
 
 #: inc/functions.php:316
 msgid ", "
-msgstr ""
-
-#: inc/functions.php:321
-msgid "Edit"
 msgstr ""
 
 #: inc/functions.php:539
