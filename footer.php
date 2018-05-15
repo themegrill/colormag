@@ -40,7 +40,7 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 			<div class="footer-socket-area">
 				<div class="footer-socket-right-section">
 					<?php
-					if ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) {
+					if ( ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) && ( ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'both' ) || ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'footer' ) ) ) {
 						colormag_social_links();
 					}
 					?>
