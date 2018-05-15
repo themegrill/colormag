@@ -142,7 +142,7 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 					?>
 
 					<?php
-					if ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) {
+					if ( ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) && ( ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'both' ) || ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'header' ) ) ) {
 						colormag_social_links();
 					}
 					?>

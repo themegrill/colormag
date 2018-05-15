@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Feature - Added option to display social link in header, footer or both header and footer location
+
 = Version 1.2.8 - 2018-05-09 =
 * Feature - Added featured image disable option for single post page
 * Feature - Added featured image display option for single page

@@ -693,6 +693,25 @@ function colormag_customize_register( $wp_customize ) {
 		'settings' => 'colormag_social_link_activate',
 	) );
 
+	// Social link location option.
+	$wp_customize->add_setting( 'colormag_social_link_location_option', array(
+		'default'           => 'both',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'colormag_radio_select_sanitize',
+	) );
+
+	$wp_customize->add_control( 'colormag_social_link_location_option', array(
+		'type'     => 'radio',
+		'label'    => esc_html__( 'Social links to display on:', 'colormag' ),
+		'section'  => 'colormag_social_link_activate_settings',
+		'settings' => 'colormag_social_link_location_option',
+		'choices'  => array(
+			'header' => esc_html__( 'Header only', 'colormag' ),
+			'footer' => esc_html__( 'Footer only', 'colormag' ),
+			'both'   => esc_html__( 'Both header and footer', 'colormag' ),
+		),
+	) );
+
 	// Selective refresh for displaying social icons/links
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'colormag_social_link_activate', array(
