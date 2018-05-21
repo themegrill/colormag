@@ -72,7 +72,7 @@ class ColorMag_Elementor_Global_Widgets_Title extends Widget_Base {
 
 		// Widget title section
 		$this->start_controls_section(
-			'section_colormag_featured_posts_block_1_title_manage',
+			'section_colormag_global_widgets_title_title_manage',
 			array(
 				'label' => esc_html__( 'Block Title', 'colormag' ),
 			)
@@ -92,7 +92,7 @@ class ColorMag_Elementor_Global_Widgets_Title extends Widget_Base {
 
 		// Widget design section
 		$this->start_controls_section(
-			'section_colormag_featured_posts_block_1_design_manage',
+			'section_colormag_global_widgets_title_design_manage',
 			array(
 				'label' => esc_html__( 'Widget Title', 'colormag' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
