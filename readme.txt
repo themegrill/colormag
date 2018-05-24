@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.2.9 - 2018-05-24 =
 * Feature - Added option to display social link in header, footer or both header and footer location
 
 = Version 1.2.8 - 2018-05-09 =
