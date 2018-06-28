@@ -52,6 +52,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = TBD =
 * Fix - Menu out of viewport.
+* Fix - Image upload issue in advertisement widgets for customizer option
 
 = Version 1.2.9 - 2018-05-24 =
 * Feature - Added option to display social link in header, footer or both header and footer location
