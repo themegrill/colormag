@@ -210,6 +210,8 @@ require COLORMAG_WIDGETS_DIR . '/colormag-highlighted-posts-widget.php';
 // Require file for TG: Featured Posts (Style 1).
 require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-widget.php';
 
+// Require file for TG: Featured Posts (Style 2).
+require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-vertical-widget.php';
 
 /**
  * Featured Posts widget
