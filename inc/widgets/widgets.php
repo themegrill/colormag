@@ -600,20 +600,35 @@ class colormag_featured_posts_widget extends WP_Widget {
 			$post_status = array( 'auto-draft', 'publish' );
 		}
 
-		if ( $type == 'latest' ) {
-			$get_featured_posts = new WP_Query( array(
-				'posts_per_page'      => $number,
-				'post_type'           => 'post',
-				'ignore_sticky_posts' => true,
-				'post_status'         => $post_status,
-			) );
-		} else {
-			$get_featured_posts = new WP_Query( array(
-				'posts_per_page' => $number,
-				'post_type'      => 'post',
-				'category__in'   => $category,
-			) );
+		$args = array(
+			'posts_per_page'      => $number,
+			'post_type'           => 'post',
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
+			'post_status'         => $post_status,
+		);
+
+		// Display from category chosen.
+		if ( $type == 'category' ) {
+			$args['category__in'] = $category;
 		}
+
+		$get_featured_posts = new WP_Query( $args );
+
+//		if ( $type == 'latest' ) {
+//			$get_featured_posts = new WP_Query( array(
+//				'posts_per_page'      => $number,
+//				'post_type'           => 'post',
+//				'ignore_sticky_posts' => true,
+//				'post_status'         => $post_status,
+//			) );
+//		} else {
+//			$get_featured_posts = new WP_Query( array(
+//				'posts_per_page' => $number,
+//				'post_type'      => 'post',
+//				'category__in'   => $category,
+//			) );
+//		}
 
 		echo $before_widget;
 		?>
