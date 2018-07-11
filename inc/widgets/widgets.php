@@ -282,7 +282,7 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
 		);
 
 		// Display posts from category.
-		if ( $type == 'category') {
+		if ( $type == 'category' ) {
 			$args['category__in'] = $category;
 		}
 
@@ -438,7 +438,7 @@ class colormag_highlighted_posts_widget extends WP_Widget {
 		);
 
 		// Display from category chosen.
-		if ( $type == 'category'){
+		if ( $type == 'category' ) {
 			$args['category__in'] = $category;
 		}
 
@@ -641,7 +641,7 @@ class colormag_featured_posts_widget extends WP_Widget {
 			} ?>
 			<?php if ( $i == 1 ) {
 				echo '<div class="first-post">';
-			} else if ( $i == 2 ) {
+			} elseif ( $i == 2 ) {
 				echo '<div class="following-post">';
 			} ?>
 			<div class="single-article clearfix">
@@ -813,20 +813,6 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 
 		$get_featured_posts = new WP_Query( $args );
 
-//		if ( $type == 'latest' ) {
-//			$get_featured_posts = new WP_Query( array(
-//				'posts_per_page'      => $number,
-//				'post_type'           => 'post',
-//				'ignore_sticky_posts' => true,
-//				'post_status'         => $post_status,
-//			) );
-//		} else {
-//			$get_featured_posts = new WP_Query( array(
-//				'posts_per_page' => $number,
-//				'post_type'      => 'post',
-//				'category__in'   => $category,
-//			) );
-//		}
 		echo $before_widget;
 		?>
 		<?php
@@ -853,7 +839,7 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 			} ?>
 			<?php if ( $i == 1 ) {
 				echo '<div class="first-post">';
-			} else if ( $i == 2 ) {
+			} elseif ( $i == 2 ) {
 				echo '<div class="following-post">';
 			} ?>
 			<div class="single-article clearfix">
