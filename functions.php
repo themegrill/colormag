@@ -457,7 +457,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 endif;
 
 /**
- * Load ColorMag Pro Demo Importer compatibility file.
+ * Load ColorMag Demo Importer compatibility file.
  */
 require get_template_directory() . '/inc/demo-importer/class-demo-importer.php';
 
