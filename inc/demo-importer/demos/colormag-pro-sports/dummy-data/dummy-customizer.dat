@@ -1,0 +1,19 @@
+a:4:{s:8:"template";s:12:"colormag-pro";s:4:"mods";a:60:{i:0;b:0;s:22:"colormag_breaking_news";i:1;s:21:"colormag_date_display";i:1;s:26:"colormag_home_icon_display";i:1;s:28:"colormag_primary_sticky_menu";i:1;s:28:"colormag_search_icon_in_menu";i:1;s:28:"colormag_random_post_in_menu";i:1;s:24:"colormag_hide_blog_front";i:1;s:29:"colormag_social_link_activate";i:1;s:24:"colormag_social_facebook";s:1:"#";s:23:"colormag_social_twitter";s:1:"#";s:26:"colormag_social_googleplus";s:1:"#";s:25:"colormag_social_instagram";s:1:"#";s:25:"colormag_social_pinterest";s:1:"#";s:23:"colormag_social_youtube";s:1:"#";s:24:"colormag_social_linkedin";s:1:"#";s:22:"colormag_social_flickr";s:1:"#";s:31:"colormag_related_posts_activate";i:1;s:29:"colormag_featured_image_popup";i:1;s:25:"colormag_author_bio_links";i:1;s:27:"colormag_unique_post_system";s:0:"";s:25:"colormag_category_color_2";s:7:"#9a619b";s:25:"colormag_category_color_4";s:7:"#42d6a0";s:25:"colormag_category_color_5";s:7:"#c1a91d";s:25:"colormag_category_color_7";s:7:"#a3a526";s:25:"colormag_category_color_8";s:7:"#33366d";s:25:"colormag_category_color_9";s:7:"#dd9933";s:26:"colormag_category_color_11";s:7:"#1e6adb";s:26:"colormag_category_color_12";s:7:"#50721a";s:26:"colormag_category_color_13";s:7:"#83b519";s:26:"colormag_category_color_14";s:7:"#0e5270";s:26:"colormag_category_color_15";s:7:"#bf5d2b";s:26:"colormag_category_color_16";s:7:"#230f60";s:26:"colormag_category_color_17";s:7:"#0c4f29";s:26:"colormag_category_color_18";s:7:"#3575ad";s:26:"colormag_category_color_19";s:7:"#aaaaaa";s:26:"colormag_category_color_20";s:7:"#ad6127";s:26:"colormag_category_color_21";s:7:"#40d170";s:26:"colormag_category_color_22";s:7:"#c94e22";s:18:"nav_menu_locations";a:1:{s:7:"primary";i:27;}s:30:"colormag_header_logo_placement";s:16:"header_logo_only";s:20:"colormag_site_layout";s:12:"boxed_layout";s:17:"background_repeat";s:9:"no-repeat";s:21:"background_position_x";s:6:"center";s:21:"background_attachment";s:5:"fixed";s:16:"background_image";s:96:"http://demo.themegrill.com/colormag-pro-sports/wp-content/uploads/sites/78/2016/08/stadium-1.jpg";s:24:"colormag_site_title_font";s:9:"Open Sans";s:26:"colormag_primary_menu_font";s:7:"PT Sans";s:24:"colormag_all_titles_font";s:15:"Source Sans Pro";s:21:"colormag_content_font";s:15:"Source Sans Pro";s:29:"colormag_heading_h3_font_size";s:2:"34";s:39:"colormag_footer_widget_background_color";s:7:"#005b7f";s:47:"colormag_footer_copyright_part_background_color";s:7:"#093a51";s:41:"colormag_content_section_background_color";s:7:"#ffffff";s:32:"colormag_header_background_color";s:7:"#ffffff";s:18:"custom_css_post_id";i:248;s:11:"custom_logo";i:225;s:31:"colormag_sticky_content_sidebar";i:1;s:44:"colormag_main_total_header_area_display_type";s:8:"type_two";s:42:"colormag_primary_sub_menu_background_color";s:7:"#232323";}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:415:".main-navigation .sub-menu, .main-navigation .children {
+  background-color: #093a51;
+}
+#site-navigation {
+  background-color: #093a51;
+}
+#colophon .tg-upper-footer-widgets .widget {
+  background-color: #093a51;
+}
+.widget_featured_posts .single-article {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+#colophon .widget ul li {
+  border-bottom: 1px solid #929292;
+}
+#site-navigation {
+  background-color: #093A51;
+}";}

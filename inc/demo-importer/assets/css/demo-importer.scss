@@ -1,0 +1,60 @@
+/**
+ * demo-importer.scss
+ * General Demo Importer admin styles.
+ */
+
+/**
+ * Imports
+ */
+@import 'bourbon';
+@import 'mixins';
+
+/**
+ * Styling begins
+ */
+.demo-importer-BlankState {
+	padding: 7.5em 0;
+	margin-top: 10px;
+	text-align: center;
+	background: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+
+	.demo-importer-BlankState-message {
+		color: #aaa;
+		margin: 0 auto 1.5em;
+		line-height: 1.5em;
+		font-size: 1.2em;
+		max-width: 500px;
+
+		&::before {
+			color: #ddd;
+			text-shadow: 0 -1px 1px rgba(0, 0, 0, .2), 0 1px 0 rgba(255, 255, 255, .8);
+			font-size: 8em;
+			display: block;
+			position: relative!important;
+			top: auto;
+			left: auto;
+			line-height: 1em;
+			margin: 0 0 .1875em;
+		}
+	}
+
+	a.demo-importer-BlankState-cta {
+	    display: inline-block;
+
+		&.installed::before,
+		&.installing::before,
+		&.updating-message::before {
+			margin-right: 6px;
+			vertical-align: text-bottom;
+		}
+	}
+}
+
+.appearance_page_demo-importer {
+	.demo-importer-BlankState-message::before {
+		@include icon_dashicons( '\f488' );
+	}
+}

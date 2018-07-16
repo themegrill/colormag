@@ -457,6 +457,11 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 endif;
 
 /**
+ * Load ColorMag Pro Demo Importer compatibility file.
+ */
+require get_template_directory() . '/inc/demo-importer/class-demo-importer.php';
+
+/**
  * Define Directory Location Constants
  */
 define( 'COLORMAG_PARENT_DIR', get_template_directory() );
