@@ -12,8 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_filter( 'themegrill_demo_importer_config', 'tg_demo_importer_config' );
-
 /**
  * Setup demo importer config.
  *
@@ -483,3 +481,5 @@ function tg_demo_importer_config( $demo_config ) {
 
 	return array_merge( $new_demo_config, $demo_config );
 }
+
+add_filter( 'themegrill_demo_importer_config', 'tg_demo_importer_config' );
