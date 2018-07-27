@@ -30,13 +30,15 @@ if ( file_exists( WP_PLUGIN_DIR . '/' . $this->plugin_data['slug'] ) ) {
 ?>
 <div class="wrap demo-importer">
 	<h1><?php esc_html_e( 'Demo Importer', 'colormag' ); ?></h1>
-	<div class="demo-importer-BlankState">
-		<h2 class="demo-importer-BlankState-message"><?php printf( __( '%s available demos can be imported with just a single click. They will appear here once the plugin is active.', 'colormag' ), $theme->Name ); ?></h2>
+	<div class="themegrill-demo-importer-BlankState">
+		<svg aria-hidden="true" class="octicon octicon-desktop-download themegrill-demo-importer-BlankState-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"></path></svg>
+		<h2 class="themegrill-demo-importer-BlankState-message"><?php printf( __( 'Ready to start importing %s demos with just a single click?', 'colormag' ), $theme->Name ); ?></h2>
 		<?php if ( ! $is_plugin_installed ) : ?>
-			<a class="demo-importer-BlankState-cta button button-primary button-hero install-now" href="<?php echo esc_url( $url ); ?>" aria-label="<?php esc_attr_e( sprintf( __( 'Install %s now', 'colormag' ), $this->plugin_data['name'] ) ); ?>" data-slug="<?php echo esc_attr( $this->plugin_data['slug'] ); ?>" data-name="<?php echo esc_attr( $this->plugin_data['name'] ); ?>"><?php _e( sprintf( __( 'Install %s', 'colormag' ), $this->plugin_data['name'] ) ); ?></a>
+			<a class="themegrill-demo-importer-BlankState-cta button button-primary install-now" href="<?php echo esc_url( $url ); ?>" aria-label="<?php esc_attr_e( sprintf( __( 'Install %s now', 'colormag' ), $this->plugin_data['name'] ) ); ?>" data-slug="<?php echo esc_attr( $this->plugin_data['slug'] ); ?>" data-name="<?php echo esc_attr( $this->plugin_data['name'] ); ?>"><?php _e( sprintf( __( 'Install %s', 'colormag' ), $this->plugin_data['name'] ) ); ?></a>
 		<?php else : ?>
-			<a class="demo-importer-BlankState-cta button button-primary button-hero activate-now" href="<?php echo esc_url( $url ); ?>" aria-label="<?php esc_attr_e( sprintf( __( 'Activate %s now', 'colormag' ), $this->plugin_data['name'] ) ); ?>"><?php _e( sprintf( __( 'Activate %s', 'colormag' ), $this->plugin_data['name'] ) ); ?></a>
+			<a class="themegrill-demo-importer-BlankState-cta button button-primary activate-now" href="<?php echo esc_url( $url ); ?>" aria-label="<?php esc_attr_e( sprintf( __( 'Activate %s now', 'colormag' ), $this->plugin_data['name'] ) ); ?>"><?php _e( sprintf( __( 'Activate %s', 'colormag' ), $this->plugin_data['name'] ) ); ?></a>
 		<?php endif; ?>
+		<a class="themegrill-demo-importer-BlankState-cta button" target="_blank" href="https://docs.themegrill.com/knowledgebase/importing-demo-content/"><?php esc_html_e( 'Learn more about demo importer!', 'colormag' ); ?></a>
 	</div>
 </div>
 <?php
