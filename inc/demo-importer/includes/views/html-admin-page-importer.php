@@ -1,11 +1,11 @@
 <?php
 /**
  * Admin View: Page - Importer
+ *
+ * @package Importer
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 $is_plugin_installed = false;
 
@@ -39,7 +39,6 @@ if ( file_exists( WP_PLUGIN_DIR . '/' . $this->plugin_data['slug'] ) ) {
 		<?php endif; ?>
 	</div>
 </div>
-
 <?php
 wp_print_request_filesystem_credentials_modal();
 wp_print_admin_notice_templates();

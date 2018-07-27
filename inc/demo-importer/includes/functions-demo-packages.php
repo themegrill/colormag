@@ -8,15 +8,12 @@
  * @version  1.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Setup demo importer packages.
  *
- * @param  array $packages
- *
+ * @param  array $packages Demo packages.
  * @return array
  */
 function colormag_demo_importer_packages( $packages ) {

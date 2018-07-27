@@ -51,8 +51,7 @@ class ColorMag_Demo_Importer {
 	 * Include required core files.
 	 */
 	public function includes() {
-		include_once( dirname( __FILE__ ) . '/demos/functions-demo-config.php' );
-		include_once( dirname( __FILE__ ) . '/includes/functions-demo-importer.php' );
+		include_once dirname( __FILE__ ) . '/includes/functions-demo-packages.php';
 	}
 
 	/**
@@ -98,13 +97,13 @@ class ColorMag_Demo_Importer {
 	}
 
 	/**
-	 * Demo Importer page output.
+	 * Output Demo Importer page.
 	 */
 	public function demo_importer() {
 		$theme = wp_get_theme();
 
 		// Demo Views.
-		include_once( dirname( __FILE__ ) . '/includes/views/html-admin-page-importer.php' );
+		include_once dirname( __FILE__ ) . '/includes/views/html-admin-page-importer.php';
 	}
 }
 
