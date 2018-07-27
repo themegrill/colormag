@@ -2,10 +2,8 @@
 /**
  * Functions for configuring demo importer.
  *
- * @author   ThemeGrill
- * @category Admin
- * @package  Importer/Functions
- * @version  1.0.0
+ * @package Importer/Functions
+ * @version 1.0.0
  */
 
 defined( 'ABSPATH' ) || exit;

@@ -100,9 +100,6 @@ class ColorMag_Demo_Importer {
 	 * Output Demo Importer page.
 	 */
 	public function demo_importer() {
-		$theme = wp_get_theme();
-
-		// Demo Views.
 		include_once dirname( __FILE__ ) . '/includes/views/html-admin-page-importer.php';
 	}
 }
