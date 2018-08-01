@@ -18,11 +18,11 @@ defined( 'ABSPATH' ) || exit;
  */
 function colormag_demo_importer_filter_links( $filter_links ) {
 	$new_filter_links = array(
-		'blog'     => __( 'Blog', 'themegrill-demo-importer' ),
-		'news'     => __( 'News', 'themegrill-demo-importer' ),
-		'business' => __( 'Business', 'themegrill-demo-importer' ),
-		'free'     => __( 'Free', 'themegrill-demo-importer' ),
-		'others'   => __( 'Others', 'themegrill-demo-importer' ),
+		'blog'     => __( 'Blog', 'colormag' ),
+		'news'     => __( 'News', 'colormag' ),
+		'business' => __( 'Business', 'colormag' ),
+		'free'     => __( 'Free', 'colormag' ),
+		'others'   => __( 'Others', 'colormag' ),
 	);
 
 	return array_merge( $filter_links, $new_filter_links );
