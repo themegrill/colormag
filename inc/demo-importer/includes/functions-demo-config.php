@@ -9,27 +9,6 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Setup demo filter links.
- *
- * @since 1.5.0
- *
- * @param  array $filter_links Filter links.
- * @return array
- */
-function colormag_demo_importer_filter_links( $filter_links ) {
-	$new_filter_links = array(
-		'blog'     => __( 'Blog', 'colormag' ),
-		'news'     => __( 'News', 'colormag' ),
-		'business' => __( 'Business', 'colormag' ),
-		'free'     => __( 'Free', 'colormag' ),
-		'others'   => __( 'Others', 'colormag' ),
-	);
-
-	return array_merge( $filter_links, $new_filter_links );
-}
-add_filter( 'themegrill_demo_importer_filter_links', 'colormag_demo_importer_filter_links' );
-
-/**
  * Setup demo importer packages.
  *
  * @deprecated 1.5.0
