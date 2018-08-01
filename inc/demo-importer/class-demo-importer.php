@@ -51,7 +51,7 @@ class ColorMag_Demo_Importer {
 	 * Include required core files.
 	 */
 	public function includes() {
-		include_once dirname( __FILE__ ) . '/includes/functions-demo-packages.php';
+		include_once dirname( __FILE__ ) . '/includes/functions-demo-config.php';
 	}
 
 	/**

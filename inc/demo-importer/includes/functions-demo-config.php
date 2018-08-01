@@ -9,7 +9,30 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Setup demo filter links.
+ *
+ * @since 1.5.0
+ *
+ * @param  array $filter_links Filter links.
+ * @return array
+ */
+function colormag_demo_importer_filter_links( $filter_links ) {
+	$new_filter_links = array(
+		'blog'     => __( 'Blog', 'themegrill-demo-importer' ),
+		'news'     => __( 'News', 'themegrill-demo-importer' ),
+		'business' => __( 'Business', 'themegrill-demo-importer' ),
+		'free'     => __( 'Free', 'themegrill-demo-importer' ),
+		'others'   => __( 'Others', 'themegrill-demo-importer' ),
+	);
+
+	return array_merge( $filter_links, $new_filter_links );
+}
+add_filter( 'themegrill_demo_importer_filter_links', 'colormag_demo_importer_filter_links' );
+
+/**
  * Setup demo importer packages.
+ *
+ * @deprecated 1.5.0
  *
  * @param  array $packages Demo packages.
  * @return array
@@ -71,5 +94,4 @@ function colormag_demo_importer_packages( $packages ) {
 
 	return array_merge( $new_packages, $packages );
 }
-
 add_filter( 'themegrill_demo_importer_packages', 'colormag_demo_importer_packages' );
