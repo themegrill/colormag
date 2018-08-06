@@ -261,7 +261,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 				}
 				?>
 
-				<h4 class="menu-toggle"></h4>
+				<p class="menu-toggle"></p>
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu( array(
