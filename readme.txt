@@ -51,7 +51,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Fix - Menu out of viewport.
+* Fix - Menu out of viewport
+* Fix - Menu toggle tag
 * Fix - Image upload issue in advertisement widgets for customizer option
 
 = Version 1.2.9 - 2018-05-24 =

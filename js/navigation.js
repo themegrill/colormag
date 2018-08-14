@@ -11,7 +11,7 @@
 		return;
 	}
 
-	button = container.getElementsByTagName( 'h4' )[ 0 ];
+	button = container.getElementsByClassName( 'menu-toggle' )[ 0 ];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
