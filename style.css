@@ -1042,6 +1042,7 @@ li.default-menu {
 	text-align: center;
 	font-family: 'Open Sans', serif;
 	padding-bottom: 0;
+	line-height: 1.2;
 }
 
 .site-header .menu-toggle:hover {
