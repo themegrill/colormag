@@ -50,8 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
-* Fix - Menu out of viewport
+= Version 1.3.0 - 2018-08-29 =
 * Fix - Menu toggle tag
 * Fix - Image upload issue in advertisement widgets for customizer option
 
