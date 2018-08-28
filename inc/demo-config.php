@@ -80,13 +80,6 @@ function colormag_demo_importer_packages( $packages ) {
 add_filter( 'themegrill_demo_importer_packages', 'colormag_demo_importer_packages' );
 
 /**
- * After demo imported AJAX action.
- *
- * @see colormag_set_cat_colors()
- */
-add_filter( 'themegrill_customizer_demo_import_settings', 'colormag_set_cat_colors', 20, 3 );
-
-/**
  * Set categories color settings in theme customizer.
  *
  * Note: Used rarely, if theme_mod keys are based on term ID.
@@ -193,6 +186,8 @@ function colormag_set_cat_colors( $data, $demo_data, $demo_id ) {
 
 	return $data;
 }
+
+add_filter( 'themegrill_customizer_demo_import_settings', 'colormag_set_cat_colors', 20, 3 );
 
 /**
  * Delete the `Hello world!` post after successful demo import
