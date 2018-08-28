@@ -80,10 +80,6 @@
 			padding: 30px 0;
 		}
 
-		.home-icon {
-			display: none;
-		}
-
 		#site-navigation {
 			box-shadow: 0 0 0 rgba(0, 0, 0, 0 ) inset;
 			position: relative;
@@ -254,7 +250,11 @@
 		}
 
 		.home-icon {
-			display: none;
+			background: none;
+
+			.fa {
+				color: $primary;
+			}
 		}
 
 		#site-navigation {

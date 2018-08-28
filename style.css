@@ -3213,10 +3213,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	padding: 30px 0;
 }
 
-#masthead.colormag-header-clean .home-icon {
-	display: none;
-}
-
 #masthead.colormag-header-clean #site-navigation {
 	box-shadow: 0 0 0 transparent inset;
 	position: relative;
@@ -3363,7 +3359,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic .home-icon {
-	display: none;
+	background: none;
+}
+
+#masthead.colormag-header-classic .home-icon .fa {
+	color: #289dcc;
 }
 
 #masthead.colormag-header-classic #site-navigation {
