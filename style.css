@@ -3213,6 +3213,10 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	padding: 30px 0;
 }
 
+#masthead.colormag-header-clean .home-icon .fa {
+	font-size: 21px;
+}
+
 #masthead.colormag-header-clean #site-navigation {
 	box-shadow: 0 0 0 transparent inset;
 	position: relative;
