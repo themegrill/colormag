@@ -27,65 +27,6 @@ function colormag_customize_register( $wp_customize ) {
 		) );
 	}
 
-	// Theme important links started
-	class COLORMAG_Important_Links extends WP_Customize_Control {
-
-		public $type = "colormag-important-links";
-
-		public function render_content() {
-			//Add Theme instruction, Support Forum, Demo Link, Rating Link
-			$important_links = array(
-				'view-pro'      => array(
-					'link' => esc_url( 'https://themegrill.com/themes/colormag-pro/' ),
-					'text' => esc_html__( 'View Pro', 'colormag' ),
-				),
-				'theme-info'    => array(
-					'link' => esc_url( 'https://themegrill.com/themes/colormag/' ),
-					'text' => esc_html__( 'Theme Info', 'colormag' ),
-				),
-				'support'       => array(
-					'link' => esc_url( 'https://themegrill.com/support-forum/' ),
-					'text' => esc_html__( 'Support', 'colormag' ),
-				),
-				'documentation' => array(
-					'link' => esc_url( 'https://docs.themegrill.com/colormag/' ),
-					'text' => esc_html__( 'Documentation', 'colormag' ),
-				),
-				'demo'          => array(
-					'link' => esc_url( 'https://demo.themegrill.com/colormag/' ),
-					'text' => esc_html__( 'View Demo', 'colormag' ),
-				),
-				'rating'        => array(
-					'link' => esc_url( 'https://wordpress.org/support/view/theme-reviews/colormag?filter=5' ),
-					'text' => esc_html__( 'Rate this theme', 'colormag' ),
-				),
-			);
-			foreach ( $important_links as $important_link ) {
-				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( $important_link['text'] ) . ' </a></p>';
-			}
-		}
-
-	}
-
-	$wp_customize->add_section( 'colormag_important_links', array(
-		'priority' => 1,
-		'title'    => __( 'ColorMag Important Links', 'colormag' ),
-	) );
-
-	/**
-	 * This setting has the dummy Sanitizaition function as it contains no value to be sanitized
-	 */
-	$wp_customize->add_setting( 'colormag_important_links', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'colormag_links_sanitize',
-	) );
-
-	$wp_customize->add_control( new COLORMAG_Important_Links( $wp_customize, 'important_links', array(
-		'label'    => __( 'Important Links', 'colormag' ),
-		'section'  => 'colormag_important_links',
-		'settings' => 'colormag_important_links',
-	) ) );
-	// Theme Important Links Ended
 	// Start of the Header Options
 	$wp_customize->add_panel( 'colormag_header_options', array(
 		'capabitity'  => 'edit_theme_options',
