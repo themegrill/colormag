@@ -63,7 +63,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				update_option( 'colormag_admin_notice_welcome', 1 );
 
 				// No option? Let run the notice wizard again..
-			} else if ( ! get_option( 'colormag_admin_notice_welcome' ) ) {
+			} elseif ( ! get_option( 'colormag_admin_notice_welcome' ) ) {
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 			}
 		}
@@ -220,7 +220,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Documentation', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/theme-instruction/colormag/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
 							</p>
 						</div>
 
