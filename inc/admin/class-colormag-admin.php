@@ -236,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Need more features?', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag-pro/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=free-vs-pro-link&utm_campaign=free-vs-pro#free-vs-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 							</p>
 						</div>
 
