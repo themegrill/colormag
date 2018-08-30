@@ -220,7 +220,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Documentation', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/?utm_source=colormag-about&utm_medium=documentation-link&utm_campaign=documentation' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
 							</p>
 						</div>
 
