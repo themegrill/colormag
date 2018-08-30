@@ -134,7 +134,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 
 				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://demo.themegrill.com/colormag/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'colormag' ); ?></a>
 
-				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=free-vs-pro-link&utm_campaign=free-vs-pro#free-vs-pro' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
+				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 
 				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://wordpress.org/support/theme/colormag/reviews/?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
 			</p>
@@ -236,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Need more features?', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=free-vs-pro-link&utm_campaign=free-vs-pro#free-vs-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 							</p>
 						</div>
 
