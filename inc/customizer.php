@@ -1197,6 +1197,10 @@ function colormag_customizer_custom_scripts() {
 			text-decoration: none;
 		}
 
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title a:focus {
+			box-shadow: none;
+		}
+
 		li#accordion-section-colormag_upsell_section h3.accordion-section-title:hover {
 			background-color: #1f91bf !important;
 			border-left-color: #0073aa !important;
