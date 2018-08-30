@@ -1170,9 +1170,14 @@ function colormag_customizer_custom_scripts() {
 	?>
 	<style>
 		/* Theme Instructions Panel CSS */
-		li#accordion-section-colormag_important_links h3.accordion-section-title, li#accordion-section-colormag_important_links h3.accordion-section-title:focus {
+		li#accordion-section-colormag_important_links h3.accordion-section-title, li#accordion-section-colormag_important_links h3.accordion-section-title:focus, li#accordion-section-colormag_upsell_section h3.accordion-section-title {
 			background-color: #289DCC !important;
 			color: #fff !important;
+		}
+
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title a {
+			color: #fff;
+			text-decoration: none;
 		}
 
 		li#accordion-section-colormag_important_links h3.accordion-section-title:hover {
