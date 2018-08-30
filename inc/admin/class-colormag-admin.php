@@ -228,7 +228,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Got theme support question?', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/support-forum/?utm_source=colormag-about&utm_medium=support-forum-link&utm_campaign=support-forum' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Support', 'colormag' ); ?></a>
 							</p>
 						</div>
 
@@ -236,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Need more features?', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag-pro/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag-pro/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 							</p>
 						</div>
 
@@ -244,7 +244,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Got sales related question?', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Please send it via our sales contact page.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a>
 							</p>
 						</div>
 
@@ -257,7 +257,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							</h3>
 							<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://translate.wordpress.org/projects/wp-themes/colormag' ); ?>" class="button button-secondary">
+								<a href="<?php echo esc_url( 'https://translate.wordpress.org/projects/wp-themes/colormag' ); ?>" class="button button-secondary" target="_blank">
 									<?php
 									esc_html_e( 'Translate', 'colormag' );
 									echo ' ' . $theme->display( 'Name' );
