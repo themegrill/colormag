@@ -130,7 +130,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			</div>
 
 			<p class="colormag-actions">
-				<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'colormag' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=theme-info-link&utm_campaign=theme-info' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'colormag' ); ?></a>
 
 				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://demo.themegrill.com/colormag/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'colormag' ); ?></a>
 
