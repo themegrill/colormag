@@ -134,7 +134,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 
 				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://demo.themegrill.com/colormag/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'colormag' ); ?></a>
 
-				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://themegrill.com/themes/colormag-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
+				<a href="<?php echo esc_url( apply_filters( 'https://themegrill.com/themes/colormag/?utm_source=colormag-about&utm_medium=free-vs-pro-link&utm_campaign=free-vs-pro#free-vs-pro' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'colormag' ); ?></a>
 
 				<a href="<?php echo esc_url( apply_filters( 'colormag_pro_theme_url', 'https://wordpress.org/support/theme/colormag/reviews/?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'colormag' ); ?></a>
 			</p>
@@ -244,7 +244,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							<h3><?php esc_html_e( 'Got sales related question?', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Please send it via our sales contact page.', 'colormag' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/contact/?utm_source=colormag-about&utm_medium=contact-page-link&utm_campaign=contact-page' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Contact Page', 'colormag' ); ?></a>
 							</p>
 						</div>
 
