@@ -27,65 +27,56 @@ function colormag_customize_register( $wp_customize ) {
 		) );
 	}
 
-	// Theme important links started
-	class COLORMAG_Important_Links extends WP_Customize_Control {
+	/**
+	 * Class to include upsell link campaign for theme.
+	 *
+	 * Class COLORMAG_Upsell_Section
+	 */
+	class COLORMAG_Upsell_Section extends WP_Customize_Section {
+		public $type = 'colormag-upsell-section';
+		public $url  = '';
+		public $id   = '';
 
-		public $type = "colormag-important-links";
+		/**
+		 * Gather the parameters passed to client JavaScript via JSON.
+		 *
+		 * @return array The array to be exported to the client as JSON.
+		 */
+		public function json() {
+			$json        = parent::json();
+			$json['url'] = esc_url( $this->url );
+			$json['id']  = $this->id;
 
-		public function render_content() {
-			//Add Theme instruction, Support Forum, Demo Link, Rating Link
-			$important_links = array(
-				'view-pro'      => array(
-					'link' => esc_url( 'https://themegrill.com/themes/colormag-pro/' ),
-					'text' => esc_html__( 'View Pro', 'colormag' ),
-				),
-				'theme-info'    => array(
-					'link' => esc_url( 'https://themegrill.com/themes/colormag/' ),
-					'text' => esc_html__( 'Theme Info', 'colormag' ),
-				),
-				'support'       => array(
-					'link' => esc_url( 'https://themegrill.com/support-forum/' ),
-					'text' => esc_html__( 'Support', 'colormag' ),
-				),
-				'documentation' => array(
-					'link' => esc_url( 'https://docs.themegrill.com/colormag/' ),
-					'text' => esc_html__( 'Documentation', 'colormag' ),
-				),
-				'demo'          => array(
-					'link' => esc_url( 'https://demo.themegrill.com/colormag/' ),
-					'text' => esc_html__( 'View Demo', 'colormag' ),
-				),
-				'rating'        => array(
-					'link' => esc_url( 'https://wordpress.org/support/view/theme-reviews/colormag?filter=5' ),
-					'text' => esc_html__( 'Rate this theme', 'colormag' ),
-				),
-			);
-			foreach ( $important_links as $important_link ) {
-				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( $important_link['text'] ) . ' </a></p>';
-			}
+			return $json;
 		}
 
+		/**
+		 * An Underscore (JS) template for rendering this section.
+		 */
+		protected function render_template() {
+			?>
+			<li id="accordion-section-{{ data.id }}" class="colormag-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
+				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
+			</li>
+			<?php
+		}
 	}
 
-	$wp_customize->add_section( 'colormag_important_links', array(
-		'priority' => 1,
-		'title'    => __( 'ColorMag Important Links', 'colormag' ),
-	) );
+	// Register `COLORMAG_Upsell_Section` type section.
+	$wp_customize->register_section_type( 'COLORMAG_Upsell_Section' );
 
-	/**
-	 * This setting has the dummy Sanitizaition function as it contains no value to be sanitized
-	 */
-	$wp_customize->add_setting( 'colormag_important_links', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'colormag_links_sanitize',
-	) );
+	// Add `COLORMAG_Upsell_Section` to display pro link.
+	$wp_customize->add_section(
+		new COLORMAG_Upsell_Section( $wp_customize, 'colormag_upsell_section',
+			array(
+				'title'      => esc_html__( 'View PRO version', 'colormag' ),
+				'url'        => 'https://themegrill.com/themes/colormag/?utm_source=colormag-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
+				'capability' => 'edit_theme_options',
+				'priority'   => 1,
+			)
+		)
+	);
 
-	$wp_customize->add_control( new COLORMAG_Important_Links( $wp_customize, 'important_links', array(
-		'label'    => __( 'Important Links', 'colormag' ),
-		'section'  => 'colormag_important_links',
-		'settings' => 'colormag_important_links',
-	) ) );
-	// Theme Important Links Ended
 	// Start of the Header Options
 	$wp_customize->add_panel( 'colormag_header_options', array(
 		'capabitity'  => 'edit_theme_options',
@@ -1163,7 +1154,7 @@ function colormag_date_display_type() {
 
 	if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'theme_default' ) {
 		echo date_i18n( 'l, F j, Y' );
-	} else if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'wordpress_date_setting' ) {
+	} elseif ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'wordpress_date_setting' ) {
 		echo date_i18n( get_option( 'date_format' ) );
 	}
 }
@@ -1179,17 +1170,44 @@ function colormag_customizer_custom_scripts() {
 	?>
 	<style>
 		/* Theme Instructions Panel CSS */
-		li#accordion-section-colormag_important_links h3.accordion-section-title, li#accordion-section-colormag_important_links h3.accordion-section-title:focus {
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title {
 			background-color: #289DCC !important;
+			border-left-color: #0073aa;
 			color: #fff !important;
 		}
 
-		li#accordion-section-colormag_important_links h3.accordion-section-title:hover {
-			background-color: #289DCC !important;
+		#accordion-section-colormag_upsell_section h3 a:after {
+			content: '\f345';
+			color: #fff;
+			position: absolute;
+			top: 12px;
+			right: 10px;
+			z-index: 1;
+			font: 400 20px/1 dashicons;
+			speak: none;
+			display: block;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-decoration: none!important;
+		}
+
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title a {
+			color: #fff;
+			display: block;
+			text-decoration: none;
+		}
+
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title a:focus {
+			box-shadow: none;
+		}
+
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title:hover {
+			background-color: #1f91bf !important;
+			border-left-color: #0073aa !important;
 			color: #fff !important;
 		}
 
-		li#accordion-section-colormag_important_links h3.accordion-section-title:after {
+		li#accordion-section-colormag_upsell_section h3.accordion-section-title:after {
 			color: #fff !important;
 		}
 
@@ -1217,5 +1235,22 @@ function colormag_customizer_custom_scripts() {
 			background: #2380BA;
 		}
 	</style>
+
+	<script>
+		( function ( $, api ) {
+			api.sectionConstructor['colormag-upsell-section'] = api.Section.extend( {
+
+				// No events for this type of section.
+				attachEvents : function () {
+				},
+
+				// Always make the section active.
+				isContextuallyActive : function () {
+					return true;
+				}
+			} );
+		} )( jQuery, wp.customize );
+
+	</script>
 	<?php
 }
