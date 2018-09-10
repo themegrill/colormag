@@ -2539,6 +2539,9 @@ Responsive Structure
 
 }
 @media screen and (max-width: 600px) {
+	.logged-in #masthead #site-navigation {
+		top: 0 !important;
+	}
    .news-bar {
       text-align: center;
    }
