@@ -309,7 +309,7 @@ function colormag_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'colormag_header_logo_placement', array(
 		'type'    => 'radio',
 		'label'   => __( 'Choose the option that you want', 'colormag' ),
-		'section' => 'colormag_header_logo',
+		'section' => 'title_tagline',
 		'choices' => array(
 			'header_logo_only' => __( 'Header Logo Only', 'colormag' ),
 			'header_text_only' => __( 'Header Text Only', 'colormag' ),
