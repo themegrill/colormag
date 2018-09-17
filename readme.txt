@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Remove - Backward compatible for favicon
+* Remove - Backward compatible for header logo
+
 = Version 1.3.1 - 2018-08-31 =
 * Update - Upsell link
 
