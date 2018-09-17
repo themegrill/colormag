@@ -170,45 +170,45 @@ function colormag_body_class( $classes ) {
 		if ( is_page() ) {
 			if ( $colormag_default_page_layout == 'right_sidebar' ) {
 				$classes[] = '';
-			} else if ( $colormag_default_page_layout == 'left_sidebar' ) {
+			} elseif ( $colormag_default_page_layout == 'left_sidebar' ) {
 				$classes[] = 'left-sidebar';
-			} else if ( $colormag_default_page_layout == 'no_sidebar_full_width' ) {
+			} elseif ( $colormag_default_page_layout == 'no_sidebar_full_width' ) {
 				$classes[] = 'no-sidebar-full-width';
-			} else if ( $colormag_default_page_layout == 'no_sidebar_content_centered' ) {
+			} elseif ( $colormag_default_page_layout == 'no_sidebar_content_centered' ) {
 				$classes[] = 'no-sidebar';
 			}
-		} else if ( is_single() ) {
+		} elseif ( is_single() ) {
 			if ( $colormag_default_post_layout == 'right_sidebar' ) {
 				$classes[] = '';
-			} else if ( $colormag_default_post_layout == 'left_sidebar' ) {
+			} elseif ( $colormag_default_post_layout == 'left_sidebar' ) {
 				$classes[] = 'left-sidebar';
-			} else if ( $colormag_default_post_layout == 'no_sidebar_full_width' ) {
+			} elseif ( $colormag_default_post_layout == 'no_sidebar_full_width' ) {
 				$classes[] = 'no-sidebar-full-width';
-			} else if ( $colormag_default_post_layout == 'no_sidebar_content_centered' ) {
+			} elseif ( $colormag_default_post_layout == 'no_sidebar_content_centered' ) {
 				$classes[] = 'no-sidebar';
 			}
-		} else if ( $colormag_default_layout == 'right_sidebar' ) {
+		} elseif ( $colormag_default_layout == 'right_sidebar' ) {
 			$classes[] = '';
-		} else if ( $colormag_default_layout == 'left_sidebar' ) {
+		} elseif ( $colormag_default_layout == 'left_sidebar' ) {
 			$classes[] = 'left-sidebar';
-		} else if ( $colormag_default_layout == 'no_sidebar_full_width' ) {
+		} elseif ( $colormag_default_layout == 'no_sidebar_full_width' ) {
 			$classes[] = 'no-sidebar-full-width';
-		} else if ( $colormag_default_layout == 'no_sidebar_content_centered' ) {
+		} elseif ( $colormag_default_layout == 'no_sidebar_content_centered' ) {
 			$classes[] = 'no-sidebar';
 		}
-	} else if ( $layout_meta == 'right_sidebar' ) {
+	} elseif ( $layout_meta == 'right_sidebar' ) {
 		$classes[] = '';
-	} else if ( $layout_meta == 'left_sidebar' ) {
+	} elseif ( $layout_meta == 'left_sidebar' ) {
 		$classes[] = 'left-sidebar';
-	} else if ( $layout_meta == 'no_sidebar_full_width' ) {
+	} elseif ( $layout_meta == 'no_sidebar_full_width' ) {
 		$classes[] = 'no-sidebar-full-width';
-	} else if ( $layout_meta == 'no_sidebar_content_centered' ) {
+	} elseif ( $layout_meta == 'no_sidebar_content_centered' ) {
 		$classes[] = 'no-sidebar';
 	}
 
 	if ( get_theme_mod( 'colormag_site_layout', 'wide_layout' ) == 'wide_layout' ) {
 		$classes[] = 'wide';
-	} else if ( get_theme_mod( 'colormag_site_layout', 'wide_layout' ) == 'boxed_layout' ) {
+	} elseif ( get_theme_mod( 'colormag_site_layout', 'wide_layout' ) == 'boxed_layout' ) {
 		$classes[] = '';
 	}
 
@@ -254,24 +254,24 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 			if ( is_page() ) {
 				if ( $colormag_default_page_layout == 'right_sidebar' ) {
 					get_sidebar();
-				} else if ( $colormag_default_page_layout == 'left_sidebar' ) {
+				} elseif ( $colormag_default_page_layout == 'left_sidebar' ) {
 					get_sidebar( 'left' );
 				}
 			}
 			if ( is_single() ) {
 				if ( $colormag_default_post_layout == 'right_sidebar' ) {
 					get_sidebar();
-				} else if ( $colormag_default_post_layout == 'left_sidebar' ) {
+				} elseif ( $colormag_default_post_layout == 'left_sidebar' ) {
 					get_sidebar( 'left' );
 				}
-			} else if ( $colormag_default_layout == 'right_sidebar' ) {
+			} elseif ( $colormag_default_layout == 'right_sidebar' ) {
 				get_sidebar();
-			} else if ( $colormag_default_layout == 'left_sidebar' ) {
+			} elseif ( $colormag_default_layout == 'left_sidebar' ) {
 				get_sidebar( 'left' );
 			}
-		} else if ( $layout_meta == 'right_sidebar' ) {
+		} elseif ( $layout_meta == 'right_sidebar' ) {
 			get_sidebar();
-		} else if ( $layout_meta == 'left_sidebar' ) {
+		} elseif ( $layout_meta == 'left_sidebar' ) {
 			get_sidebar( 'left' );
 		}
 	}
@@ -305,13 +305,13 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 				$time_string
 			); ?>
 
-            <span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n"
-                                                                                         href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
-                                                                                         title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a></span></span>
+			<span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n"
+			                                                                             href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
+			                                                                             title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a></span></span>
 
 			<?php
 			if ( ! post_password_required() && comments_open() ) { ?>
-                <span class="comments"><?php comments_popup_link( __( '<i class="fa fa-comment"></i> 0 Comments', 'colormag' ), __( '<i class="fa fa-comment"></i> 1 Comment', 'colormag' ), __( '<i class="fa fa-comments"></i> % Comments', 'colormag' ) ); ?></span>
+				<span class="comments"><?php comments_popup_link( __( '<i class="fa fa-comment"></i> 0 Comments', 'colormag' ), __( '<i class="fa fa-comment"></i> 1 Comment', 'colormag' ), __( '<i class="fa fa-comments"></i> % Comments', 'colormag' ) ); ?></span>
 			<?php }
 			$tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
 			if ( $tags_list ) {
@@ -327,31 +327,13 @@ endif;
 
 /****************************************************************************************/
 
-add_action( 'admin_head', 'colormag_favicon' );
-add_action( 'wp_head', 'colormag_favicon' );
-/**
- * Favicon for the site
- */
-function colormag_favicon() {
-	if ( get_theme_mod( 'colormag_favicon_show', '0' ) == '1' ) {
-		$colormag_favicon        = get_theme_mod( 'colormag_favicon_upload', '' );
-		$colormag_favicon_output = '';
-		if ( ! function_exists( 'has_site_icon' ) || ( ! empty( $colormag_favicon ) && ! has_site_icon() ) ) {
-			$colormag_favicon_output .= '<link rel="shortcut icon" href="' . esc_url( $colormag_favicon ) . '" type="image/x-icon" />';
-		}
-		echo $colormag_favicon_output;
-	}
-}
-
-/****************************************************************************************/
-
 /**
  * Generate darker color
  * Source: http://stackoverflow.com/questions/3512311/how-to-generate-lighter-darker-color-with-php
  */
 function colormag_darkcolor( $hex, $steps ) {
 	// Steps should be between -255 and 255. Negative = darker, positive = lighter
-	$steps = max( -255, min( 255, $steps ) );
+	$steps = max( - 255, min( 255, $steps ) );
 
 	// Normalize into a six character long hex string
 	$hex = str_replace( '#', '', $hex );
@@ -381,7 +363,7 @@ add_action( 'wp_head', 'colormag_custom_css', 100 );
 function colormag_custom_css() {
 	$colormag_internal_css = '';
 	$primary_color         = get_theme_mod( 'colormag_primary_color', '#289dcc' );
-	$primary_dark          = colormag_darkcolor( $primary_color, -30 );
+	$primary_dark          = colormag_darkcolor( $primary_color, - 30 );
 	if ( $primary_color != '#289dcc' ) {
 		$colormag_internal_css .= ' .colormag-button,blockquote,button,input[type=reset],input[type=button],input[type=submit],
 		#masthead.colormag-header-clean #site-navigation.main-small-navigation .menu-toggle{background-color:' . $primary_color . '}
@@ -478,7 +460,7 @@ function colormag_custom_css() {
 	if ( ! empty( $colormag_internal_css ) ) {
 		echo '<!-- ' . get_bloginfo( 'name' ) . ' Internal Styles -->';
 		?>
-        <style type="text/css"><?php echo $colormag_internal_css; ?></style>
+		<style type="text/css"><?php echo $colormag_internal_css; ?></style>
 		<?php
 	}
 
@@ -486,7 +468,7 @@ function colormag_custom_css() {
 	if ( $colormag_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		echo '<!-- ' . get_bloginfo( 'name' ) . ' Custom Styles -->';
 		?>
-        <style type="text/css"><?php echo $colormag_custom_css; ?></style><?php
+		<style type="text/css"><?php echo $colormag_custom_css; ?></style><?php
 	}
 }
 
@@ -535,8 +517,8 @@ if ( ! function_exists( 'colormag_content_nav' ) ) :
 		$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 
 		?>
-        <nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-            <h3 class="screen-reader-text"><?php _e( 'Post navigation', 'colormag' ); ?></h3>
+		<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
+			<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'colormag' ); ?></h3>
 
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -546,16 +528,16 @@ if ( ! function_exists( 'colormag_content_nav' ) ) :
 			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 				<?php if ( get_next_posts_link() ) : ?>
-                    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'colormag' ) ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'colormag' ) ); ?></div>
 				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>
-                    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'colormag' ) ); ?></div>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'colormag' ) ); ?></div>
 				<?php endif; ?>
 
 			<?php endif; ?>
 
-        </nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
+		</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 		<?php
 	}
 endif; // colormag_content_nav
@@ -620,17 +602,17 @@ if ( ! function_exists( 'colormag_breaking_news' ) ) :
 			'post_status'         => $post_status,
 		) );
 		?>
-        <div class="breaking-news">
-            <strong class="breaking-news-latest"><?php _e( 'Latest:', 'colormag' ); ?></strong>
-            <ul class="newsticker">
+		<div class="breaking-news">
+			<strong class="breaking-news-latest"><?php _e( 'Latest:', 'colormag' ); ?></strong>
+			<ul class="newsticker">
 				<?php while ( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
-                    <li>
-                        <a href="<?php the_permalink(); ?>"
-                           title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                    </li>
+					<li>
+						<a href="<?php the_permalink(); ?>"
+						   title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+					</li>
 				<?php endwhile; ?>
-            </ul>
-        </div>
+			</ul>
+		</div>
 		<?php
 		// Reset Post Data
 		wp_reset_query();
@@ -648,15 +630,15 @@ if ( ! function_exists( 'colormag_date_display' ) ) :
 			return;
 		} ?>
 
-        <div class="date-in-header">
+		<div class="date-in-header">
 			<?php
 			if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'theme_default' ) {
 				echo date_i18n( 'l, F j, Y' );
-			} else if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'wordpress_date_setting' ) {
+			} elseif ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'wordpress_date_setting' ) {
 				echo date_i18n( get_option( 'date_format' ) );
 			}
 			?>
-        </div>
+		</div>
 
 		<?php
 	}
@@ -681,12 +663,12 @@ if ( ! function_exists( 'colormag_random_post' ) ) :
 			'orderby'             => 'rand',
 		) );
 		?>
-        <div class="random-post">
+		<div class="random-post">
 			<?php while ( $get_random_post->have_posts() ):$get_random_post->the_post(); ?>
-                <a href="<?php the_permalink(); ?>" title="<?php _e( 'View a random post', 'colormag' ); ?>"><i
-                            class="fa fa-random"></i></a>
+				<a href="<?php the_permalink(); ?>" title="<?php _e( 'View a random post', 'colormag' ); ?>"><i
+							class="fa fa-random"></i></a>
 			<?php endwhile; ?>
-        </div>
+		</div>
 		<?php
 		// Reset Post Data
 		wp_reset_query();
@@ -848,30 +830,6 @@ if ( ! function_exists( 'colormag_the_custom_logo' ) ) {
 }
 
 /**
- * Function to transfer the favicon added in Customizer Options of theme to Site Icon in Site Identity section
- */
-function colormag_site_icon_migrate() {
-	if ( get_option( 'colormag_site_icon_transfer' ) ) {
-		return;
-	}
-
-	global $wp_version;
-	$image_url = get_theme_mod( 'colormag_favicon_upload', '' );
-
-	if ( ( $wp_version >= 4.3 ) && ( ! has_site_icon() && ! empty( $image_url ) ) ) {
-		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
-		update_option( 'site_icon', $customizer_site_icon_id );
-		// Set the transfer as complete.
-		update_option( 'colormag_site_icon_transfer', 1 );
-		// Delete the old favicon theme_mod option.
-		remove_theme_mod( 'colormag_favicon_upload' );
-		remove_theme_mod( 'colormag_favicon_show' );
-	}
-}
-
-add_action( 'after_setup_theme', 'colormag_site_icon_migrate' );
-
-/**
  * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
  */
 function colormag_custom_css_migrate() {
@@ -925,7 +883,7 @@ case 'trackback' :
 // Display trackbacks differently than normal comments.
 ?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-    <p><?php _e( 'Pingback:', 'colormag' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'colormag' ), '<span class="edit-link">', '</span>' ); ?></p>
+	<p><?php _e( 'Pingback:', 'colormag' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'colormag' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 	break;
 	default :
@@ -933,8 +891,8 @@ case 'trackback' :
 	global $post;
 	?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-    <article id="comment-<?php comment_ID(); ?>" class="comment">
-        <header class="comment-meta comment-author vcard">
+	<article id="comment-<?php comment_ID(); ?>" class="comment">
+		<header class="comment-meta comment-author vcard">
 			<?php
 			echo get_avatar( $comment, 74 );
 			printf( '<div class="comment-author-link"><i class="fa fa-user"></i>%1$s%2$s</div>',
@@ -948,13 +906,13 @@ case 'trackback' :
 			printf( '<a class="comment-permalink" href="%1$s"><i class="fa fa-link"></i>Permalink</a>', esc_url( get_comment_link( $comment->comment_ID ) ) );
 			edit_comment_link();
 			?>
-        </header><!-- .comment-meta -->
+		</header><!-- .comment-meta -->
 
 		<?php if ( '0' == $comment->comment_approved ) : ?>
-            <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
+			<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
 		<?php endif; ?>
 
-        <section class="comment-content comment">
+		<section class="comment-content comment">
 			<?php comment_text(); ?>
 			<?php comment_reply_link( array_merge( $args, array(
 				'reply_text' => __( 'Reply', 'colormag' ),
@@ -962,9 +920,9 @@ case 'trackback' :
 				'depth'      => $depth,
 				'max_depth'  => $args['max_depth'],
 			) ) ); ?>
-        </section><!-- .comment-content -->
+		</section><!-- .comment-content -->
 
-    </article><!-- #comment-## -->
+	</article><!-- #comment-## -->
 	<?php
 	break;
 	endswitch; // end comment_type check

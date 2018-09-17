@@ -818,40 +818,6 @@ function colormag_customize_register( $wp_customize ) {
 		'title'       => __( 'Additional Options', 'colormag' ),
 	) );
 
-	if ( ! function_exists( 'has_site_icon' ) || ( ! has_site_icon() && ( get_theme_mod( 'colormag_favicon_upload', '' ) != '' ) ) ) {
-		// favicon options
-		$wp_customize->add_section( 'colormag_favicon_show_setting', array(
-			'priority' => 1,
-			'title'    => __( 'Activate favicon', 'colormag' ),
-			'panel'    => 'colormag_additional_options',
-		) );
-
-		$wp_customize->add_setting( 'colormag_favicon_show', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
-		) );
-
-		$wp_customize->add_control( 'colormag_favicon_show', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to activate favicon. Upload favicon from below option', 'colormag' ),
-			'section'  => 'colormag_favicon_show_setting',
-			'settings' => 'colormag_favicon_show',
-		) );
-
-		$wp_customize->add_setting( 'colormag_favicon_upload', array(
-			'default'           => '',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'colormag_favicon_upload', array(
-			'label'    => __( 'Upload favicon for your site', 'colormag' ),
-			'section'  => 'colormag_favicon_show_setting',
-			'settings' => 'colormag_favicon_upload',
-		) ) );
-	}
-
 	// related posts
 	$wp_customize->add_section( 'colormag_related_posts_section', array(
 		'priority' => 4,
@@ -1188,7 +1154,7 @@ function colormag_customizer_custom_scripts() {
 			display: block;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
-			text-decoration: none!important;
+			text-decoration: none !important;
 		}
 
 		li#accordion-section-colormag_upsell_section h3.accordion-section-title a {
