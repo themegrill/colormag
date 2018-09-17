@@ -172,10 +172,6 @@ if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 					if ( ( get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' ) == 'show_both' || get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' ) == 'header_logo_only' ) ) {
 						?>
 						<div id="header-logo-image">
-							<?php if ( get_theme_mod( 'colormag_logo', '' ) != '' ) { ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'colormag_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-							<?php } ?>
-
 							<?php
 							if ( function_exists( 'the_custom_logo' ) && has_custom_logo( $blog_id = 0 ) ) {
 								colormag_the_custom_logo();
