@@ -63,6 +63,7 @@ body {
 }
 
 .dark-skin .widget_featured_posts .single-article {
+	background: none;
 	box-shadow: 0 0 0 0 transparent;
 }
 
