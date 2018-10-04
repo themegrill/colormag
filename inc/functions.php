@@ -305,9 +305,15 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 				$time_string
 			); ?>
 
-			<span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n"
-			                                                                             href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
-			                                                                             title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a></span></span>
+			<span class="byline">
+				<span class="author vcard">
+					<i class="fa fa-user"></i>
+					<a class="url fn n"
+					   href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
+					   title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?>
+					</a>
+				</span>
+			</span>
 
 			<?php
 			if ( ! post_password_required() && comments_open() ) { ?>
@@ -405,8 +411,8 @@ function colormag_custom_css() {
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item,
 		#masthead.colormag-header-classic #site-navigation .menu-toggle,
 		#masthead.colormag-header-classic #site-navigation .menu-toggle:hover,
-		#masthead.colormag-header-classic .main-navigation ul > li:hover > a, 
-        #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a, 
+		#masthead.colormag-header-classic .main-navigation ul > li:hover > a,
+        #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a,
         #masthead.colormag-header-classic .main-navigation ul > li.current-menu-ancestor > a,
         #masthead.colormag-header-classic .main-navigation ul li.focus > a{ border-color:' . $primary_color . '}
 		.promo-button-area a:hover{border:2px solid ' . $primary_color . ';background-color:' . $primary_color . '}
