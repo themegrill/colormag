@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* * Added - Gutenberg compatibility
+
 = Version 1.3.2 - 2018-10-04 =
 * Remove - Backward compatible for favicon
 * Remove - Backward compatible for header logo
