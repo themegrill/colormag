@@ -145,6 +145,9 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		// Support for selective refresh widgets in Customizer
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Gutenberg layout support.
+		add_theme_support( 'align-wide' );
+
 		$starter_content = array(
 			'widgets'     => array(
 				'colormag_header_sidebar'                          => array(
