@@ -1823,6 +1823,40 @@ a#scroll-up:hover {
 	display: none;
 }
 
+.no-sidebar-full-width,
+.no-sidebar {
+	overflow: hidden;
+}
+
+.no-sidebar-full-width .alignfull,
+.no-sidebar .alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.no-sidebar-full-width .alignfull img,
+.no-sidebar .alignfull img {
+	max-width: unset;
+}
+
+.no-sidebar-full-width .alignwide,
+.no-sidebar .alignwide {
+	margin-left: -100px;
+	margin-right: -100px;
+	max-width: unset;
+}
+
+.no-sidebar-full-width.box-layout #main,
+.no-sidebar.box-layout #main {
+	overflow: hidden;
+}
+
+.no-sidebar-full-width.box-layout .alignwide,
+.no-sidebar.box-layout .alignwide {
+	margin-left: -100px;
+	margin-right: -100px;
+}
+
 .widget_featured_posts .article-content .above-entry-meta .cat-links a {
 	background-color: #289dcc;
 	border-radius: 3px;
@@ -2272,10 +2306,10 @@ a#scroll-up:hover {
 .widget_featured_slider .slide-content {
 	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-	background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-	background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+	background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.3));
+	background: -o-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.3));
+	background: -moz-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.3));
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
 	padding-bottom: 20px;
 	padding-left: 5%;
 	position: absolute;
@@ -2356,10 +2390,10 @@ a#scroll-up:hover {
 .widget_highlighted_posts .article-content {
 	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-	background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-	background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+	background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.8));
+	background: -o-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.8));
+	background: -moz-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.8));
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
 	padding-bottom: 10px;
 	padding-left: 5%;
 	position: absolute;
@@ -2913,6 +2947,13 @@ a#scroll-up:hover {
 /*--------------------------------------------------------------
 Responsive Structure
 --------------------------------------------------------------*/
+@media screen and (max-width: 1200px) {
+	.no-sidebar-full-width .alignwide {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+}
+
 @media screen and (max-width: 1190px) {
 	#page {
 		width: 97%;
@@ -2994,6 +3035,14 @@ Responsive Structure
 	}
 }
 
+@media screen and (max-width: 767px) {
+	.no-sidebar-full-width.box-layout .alignwide,
+	.no-sidebar.box-layout .alignwide {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.logged-in #masthead #site-navigation {
 		top: 0 !important;
@@ -3057,6 +3106,16 @@ Responsive Structure
 	.gallery-columns-8 .gallery-item,
 	.gallery-columns-9 .gallery-item {
 		width: 25%;
+	}
+	.no-sidebar-full-width .alignwide,
+	.no-sidebar .alignwide {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.no-sidebar-full-width.box-layout .alignwide,
+	.no-sidebar.box-layout .alignwide {
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
@@ -3221,7 +3280,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-clean #site-navigation {
-	box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
+	box-shadow: 0 0 0 transparent inset;
 	position: relative;
 	background-color: transparent;
 	border-top: 0 solid transparent;
@@ -3374,7 +3433,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic #site-navigation {
-	box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
+	box-shadow: 0 0 0 transparent inset;
 	position: relative;
 	background-color: transparent;
 	border-top: 0 solid transparent;
