@@ -85,9 +85,11 @@ module.exports = function( grunt ){
 					'!*.md',
 					'!*.zip',
 					'!.*/**',
+					'!gulpfile.js',
 					'!Gruntfile.js',
 					'!package.json',
-					'!node_modules/**'
+					'!node_modules/**',
+					'!package-lock.json'
 				],
 				dest: 'colormag',
 				expand: true
