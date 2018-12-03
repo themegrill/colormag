@@ -51,7 +51,7 @@ class ColorMag_New_Theme_Notice {
 			sprintf(
 				/* translators: Install Zakra link */
 				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
-				esc_url( admin_url( 'theme-install.php?theme=zakra' ) ),
+				esc_url( 'https://themegrill.com/themes/zakra/' ),
 				esc_html__( 'our newest theme', 'colormag' )
 			)
 		);
