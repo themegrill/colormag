@@ -24,6 +24,15 @@ class ColorMag_New_Theme_Notice {
 	 */
 	public function __construct() {
 
+		add_action( 'after_switch_theme', array( $this, 'colormag_theme_activated' ), 20 );
+
+	}
+
+	/**
+	 * Add `colormag_time_activated` option for checking theme activation time.
+	 */
+	public function colormag_theme_activated() {
+		update_option( 'colormag_time_activated', time() );
 	}
 
 }
