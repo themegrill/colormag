@@ -39,7 +39,7 @@ class ColorMag_New_Theme_Notice {
 	 */
 	public function colormag_theme_notice() {
 
-		set_transient( 'colormag_theme_switched', 'colormag_zakra_notice', 1 * MINUTE_IN_SECONDS );
+		set_transient( 'colormag_theme_switched', 'colormag_zakra_notice', 3 * DAY_IN_SECONDS );
 		add_action( 'admin_notices', array( $this, 'colormag_zakra_notice' ) );
 		add_action( 'admin_init', array( $this, 'colormag_ignore_zakra_notice' ) );
 
