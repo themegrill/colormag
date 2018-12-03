@@ -79,6 +79,23 @@ class ColorMag_New_Theme_Notice {
 			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
 			'?nag_ignore_zakra=0'
 		);
+
+		$message = sprintf(
+			/* translators: Install Zakra link */
+			esc_html__( 'Check out %1$s. Zakra is compatible with Elementor plugin and works perfectly with Gutenberg. You will love it!', 'colormag' ),
+			sprintf(
+				/* translators: Install Zakra link */
+				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+				esc_url( admin_url( 'theme-install.php?theme=zakra' ) ),
+				esc_html__( 'our newest theme', 'colormag' )
+			)
+		);
+
+		printf(
+			'<div class="notice updated" style="position:relative;">%1$s<p>%2$s</p></div>',
+			$dismiss_button,
+			$message
+		);
 	}
 
 	/**
