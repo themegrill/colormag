@@ -24,8 +24,22 @@ class ColorMag_New_Theme_Notice {
 	 */
 	public function __construct() {
 
-		add_action( 'admin_notices', array( $this, 'colormag_zakra_notice' ) );
-		add_action( 'admin_init', array( $this, 'colormag_ignore_zakra_notice' ) );
+		add_action( 'after_switch_theme', array( $this, 'colormag_theme_notice' ) );
+
+		// Display the new theme notice when transient is present.
+		if ( get_transient( 'colormag_theme_switched' ) ) {
+			add_action( 'admin_notices', array( $this, 'colormag_zakra_notice' ) );
+			add_action( 'admin_init', array( $this, 'colormag_ignore_zakra_notice' ) );
+		}
+
+	}
+
+	/**
+	 * Set the transient after switch theme..
+	 */
+	public function colormag_theme_notice() {
+
+		set_transient( 'colormag_theme_switched', 'colormag_zakra_notice', 3 * DAY_IN_SECONDS );
 
 	}
 
