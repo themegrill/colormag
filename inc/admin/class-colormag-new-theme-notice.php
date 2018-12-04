@@ -28,8 +28,8 @@ class ColorMag_New_Theme_Notice {
 
 		// Display the new theme notice when transient is present.
 		if ( get_transient( 'colormag_theme_switched' ) ) {
-			add_action( 'admin_notices', array( $this, 'colormag_zakra_notice' ) );
-			add_action( 'admin_init', array( $this, 'colormag_ignore_zakra_notice' ) );
+			add_action( 'admin_notices', array( $this, 'colormag_new_theme_notice' ) );
+			add_action( 'admin_init', array( $this, 'colormag_ignore_new_theme_notice' ) );
 		}
 
 	}
@@ -39,26 +39,26 @@ class ColorMag_New_Theme_Notice {
 	 */
 	public function colormag_theme_notice() {
 
-		set_transient( 'colormag_theme_switched', 'colormag_zakra_notice', 3 * DAY_IN_SECONDS );
-		add_action( 'admin_notices', array( $this, 'colormag_zakra_notice' ) );
-		add_action( 'admin_init', array( $this, 'colormag_ignore_zakra_notice' ) );
+		set_transient( 'colormag_theme_switched', 'colormag_new_theme_notice', 3 * DAY_IN_SECONDS );
+		add_action( 'admin_notices', array( $this, 'colormag_new_theme_notice' ) );
+		add_action( 'admin_init', array( $this, 'colormag_ignore_new_theme_notice' ) );
 
 	}
 
 	/**
-	 * Add a dismissible notice in the dashboard about Zakra.
+	 * Add a dismissible notice in the dashboard about new theme.
 	 */
-	public function colormag_zakra_notice() {
+	public function colormag_new_theme_notice() {
 		global $current_user;
 		$user_id        = $current_user->ID;
-		$ignored_notice = get_user_meta( $user_id, 'colormag_ignore_zakra_notice' );
+		$ignored_notice = get_user_meta( $user_id, 'colormag_ignore_new_theme_notice' );
 		if ( ! empty( $ignored_notice ) ) {
 			return;
 		}
 
 		$dismiss_button = sprintf(
 			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
-			'?nag_ignore_zakra=0'
+			'?nag_ignore_new_theme=0'
 		);
 
 		$message = sprintf(
@@ -80,15 +80,15 @@ class ColorMag_New_Theme_Notice {
 	}
 
 	/**
-	 * Update the colormag_ignore_zakra_notice option to true, to dismiss the notice from the dashboard
+	 * Update the colormag_ignore_new_theme_notice option to true, to dismiss the notice from the dashboard
 	 */
-	public function colormag_ignore_zakra_notice() {
+	public function colormag_ignore_new_theme_notice() {
 		global $current_user;
 		$user_id = $current_user->ID;
 
 		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET['nag_ignore_zakra'] ) && '0' == $_GET['nag_ignore_zakra'] ) {
-			add_user_meta( $user_id, 'colormag_ignore_zakra_notice', 'true', true );
+		if ( isset( $_GET['nag_ignore_new_theme'] ) && '0' == $_GET['nag_ignore_new_theme'] ) {
+			add_user_meta( $user_id, 'colormag_ignore_new_theme_notice', 'true', true );
 		}
 	}
 
