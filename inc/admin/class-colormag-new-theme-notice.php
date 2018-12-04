@@ -62,7 +62,7 @@ class ColorMag_New_Theme_Notice {
 		);
 
 		$message = sprintf(
-			/* translators: Install Zakra link */
+			/* translators: %1$s Zakra link %2$s Zakra demo links */
 			esc_html__( 'Zakra - our new most flexible free WordPress theme. %1$s Zakra is fully compatible with Gutenberg, Elementor and other major page builders. Comes with %2$s to quickly setup your new website.', 'colormag' ),
 			sprintf(
 				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
