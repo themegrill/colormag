@@ -63,12 +63,16 @@ class ColorMag_New_Theme_Notice {
 
 		$message = sprintf(
 			/* translators: Install Zakra link */
-			esc_html__( 'Check out %1$s. Zakra is compatible with Elementor plugin and works perfectly with Gutenberg. You will love it!', 'colormag' ),
+			esc_html__( 'Zakra - our new most flexible free WordPress theme. %1$s Zakra is fully compatible with Gutenberg, Elementor and other major page builders. Comes with %2$s to quickly setup your new website.', 'colormag' ),
 			sprintf(
-				/* translators: Install Zakra link */
 				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
-				esc_url( 'https://themegrill.com/themes/zakra/' ),
-				esc_html__( 'our newest theme', 'colormag' )
+				esc_url( 'https://themegrill.com/themes/zakra/?utm_source=colormag-dashboard&utm_medium=notice-link&utm_campaign=zakra-page' ),
+				esc_html__( 'Check it out!', 'colormag' )
+			),
+			sprintf(
+				'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+				esc_url( 'https://demo.themegrill.com/zakra-demos/?utm_source=colormag-dashboard&utm_medium=notice-link&utm_campaign=zakra-demo' ),
+				esc_html__( '10+ free starter sites', 'colormag' )
 			)
 		);
 
