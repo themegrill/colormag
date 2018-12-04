@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Fix - Gallery padding for Gutenberg
+
 = Version 1.3.3 - 2018-11-19 =
 * Added - Gutenberg compatibility
 
