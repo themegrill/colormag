@@ -2191,6 +2191,10 @@ a#scroll-up:hover {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
+ul.wp-block-gallery {
+	padding: 0;
+}
+
 /* =FEATURED BLOG
 ----------------------------------------------- */
 .no-post-thumbnail {
