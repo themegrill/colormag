@@ -59,8 +59,6 @@ function colormag_scripts_styles_method() {
 
 	if ( get_theme_mod( 'colormag_breaking_news', 0 ) == 1 ) {
 		wp_enqueue_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker.min.js', array( 'jquery' ), '1.0.0', true );
-
-		wp_enqueue_script( 'colormag-news-ticker-setting', COLORMAG_JS_URL . '/news-ticker/ticker-setting.js', array( 'colormag-news-ticker' ), '20150304', true );
 	}
 
 	if ( get_theme_mod( 'colormag_primary_sticky_menu', 0 ) == 1 ) {
@@ -71,6 +69,7 @@ function colormag_scripts_styles_method() {
 
 	if ( get_theme_mod( 'colormag_featured_image_popup', 0 ) == 1 ) {
 		wp_enqueue_script( 'colormag-featured-image-popup', COLORMAG_JS_URL . '/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '20150310', true );
+
 		wp_enqueue_style( 'colormag-featured-image-popup-css', COLORMAG_JS_URL . '/magnific-popup/magnific-popup.css', array(), '20150310' );
 	}
 
