@@ -43,9 +43,9 @@ function colormag_scripts_styles_method() {
 	}
 
 	/**
-	 * Register bxSlider js file for slider.
+	 * Enqueue bxSlider js file for slider.
 	 */
-	wp_register_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider.min.js', array( 'jquery' ), '4.2.10', true );
+	wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider.min.js', array( 'jquery' ), '4.2.10', true );
 
 	/**
 	 * Enqueue Slider setup js file.
