@@ -83,4 +83,14 @@ jQuery( document ).ready( function () {
 		} );
 	}
 
+	// Settings of the sticky menu.
+	if ( typeof jQuery.fn.sticky !== 'undefined' ) {
+		var wpAdminBar = jQuery( '#wpadminbar' );
+		if ( wpAdminBar.length ) {
+			jQuery( '#site-navigation' ).sticky( { topSpacing : wpAdminBar.height() } );
+		} else {
+			jQuery( '#site-navigation' ).sticky( { topSpacing : 0 } );
+		}
+	}
+
 } );
