@@ -47,11 +47,6 @@ function colormag_scripts_styles_method() {
 	 */
 	wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider.min.js', array( 'jquery' ), '4.2.10', true );
 
-	/**
-	 * Enqueue Slider setup js file.
-	 */
-	wp_enqueue_script( 'colormag_slider', COLORMAG_JS_URL . '/colormag-slider-setting.js', array( 'colormag-bxslider' ), false, true );
-
 	wp_enqueue_script( 'colormag-navigation', COLORMAG_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom.js', array( 'jquery' ) );
 
