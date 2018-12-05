@@ -2314,6 +2314,25 @@ ul.wp-block-gallery {
 	width: 43.85964912%;
 }
 
+
+.widget_slider_area,
+.widget_beside_slider {
+
+	.widget-title {
+		border-bottom: 2px solid $primary;
+		font-size: 18px;
+		margin-bottom: 15px;
+		padding-bottom: 0;
+
+		span {
+			background-color: $primary;
+			color: $white;
+			padding: 6px 12px;
+			display: inline-block;
+		}
+	}
+}
+
 /* Slider widget meta CSS */
 .widget_featured_slider .single-slide {
 	position: relative;
