@@ -108,6 +108,19 @@ jQuery( document ).ready( function () {
 			pager          : false,
 			tickerHover    : true
 		} );
+
+		jQuery( '.blog .gallery-images, .archive .gallery-images, .search .gallery-images, .single-post .gallery-images' ).bxSlider( {
+			mode           : 'fade',
+			speed          : 1500,
+			auto           : true,
+			pause          : 3000,
+			adaptiveHeight : true,
+			nextText       : '',
+			prevText       : '',
+			nextSelector   : '.slide-next',
+			prevSelector   : '.slide-prev',
+			pager          : false
+		} );
 	}
 
 } );

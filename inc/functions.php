@@ -68,10 +68,6 @@ function colormag_scripts_styles_method() {
 
 	wp_enqueue_script( 'colormag-fitvids', COLORMAG_JS_URL . '/fitvids/jquery.fitvids.js', array( 'jquery' ), '20150311', true );
 
-	if ( get_post_format() || is_archive() || is_search() ) {
-		wp_enqueue_script( 'colormag-postformat-setting', COLORMAG_JS_URL . '/post-format.js', array( 'jquery' ), '20150422', true );
-	}
-
 	wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv.min.js', true );
 	wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
