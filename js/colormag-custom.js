@@ -65,4 +65,9 @@ jQuery( document ).ready( function () {
 		jQuery( '.image-popup' ).magnificPopup( { type : 'image' } );
 	}
 
+	// Fitvids setting.
+	if ( typeof jQuery.fn.fitVids !== 'undefined' ) {
+		jQuery( '.fitvids-video' ).fitVids();
+	}
+
 } );
