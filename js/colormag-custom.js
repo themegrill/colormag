@@ -60,4 +60,9 @@ jQuery( document ).ready( function () {
 		}
 	} );
 
+	// Featured Image Popup Setting.
+	if ( typeof jQuery.fn.magnificPopup !== 'undefined' ) {
+		jQuery( '.image-popup' ).magnificPopup( { type : 'image' } );
+	}
+
 } );

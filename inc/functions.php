@@ -72,7 +72,6 @@ function colormag_scripts_styles_method() {
 	if ( get_theme_mod( 'colormag_featured_image_popup', 0 ) == 1 ) {
 		wp_enqueue_script( 'colormag-featured-image-popup', COLORMAG_JS_URL . '/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '20150310', true );
 		wp_enqueue_style( 'colormag-featured-image-popup-css', COLORMAG_JS_URL . '/magnific-popup/magnific-popup.css', array(), '20150310' );
-		wp_enqueue_script( 'colormag-featured-image-popup-setting', COLORMAG_JS_URL . '/magnific-popup/image-popup-setting.js', array( 'jquery' ), '20150310', true );
 	}
 
 	wp_enqueue_script( 'colormag-fitvids', COLORMAG_JS_URL . '/fitvids/jquery.fitvids.js', array( 'jquery' ), '20150311', true );
