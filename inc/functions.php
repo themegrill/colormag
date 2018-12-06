@@ -444,8 +444,8 @@ function colormag_custom_css() {
 		.widget_featured_posts .article-content .entry-title a:hover{color:' . $primary_color . '}
 		.widget_featured_posts .widget-title{border-bottom:2px solid ' . $primary_color . '}
 		.widget_featured_posts .widget-title span{background-color:' . $primary_color . '}
-		.related-posts-main-title .fa,.single-related-posts .article-content .entry-title a:hover{color:' . $primary_color . '}
-		@media (max-width: 768px) {.better-responsive-menu .sub-toggle{background-color:' . $primary_dark . '}}';
+		.related-posts-main-title .fa,.single-related-posts .article-content .entry-title a:hover{color:' . $primary_color . '} .widget_slider_area .widget-title,.widget_beside_slider .widget-title { border-bottom:2px solid ' . $primary_color . '} .widget_slider_area .widget-title span,.widget_beside_slider .widget-title span { background-color:' . $primary_color . '}
+		 @media (max-width: 768px) {.better-responsive-menu .sub-toggle{background-color:' . $primary_dark . '}}';
 	}
 
 	if ( ! empty( $colormag_internal_css ) ) {

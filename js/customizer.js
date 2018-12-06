@@ -115,7 +115,7 @@
 				'@media (max-width: 768px) {.better-responsive-menu .sub-toggle{background-color:' + primaryColor + '}}' +
 				'.elementor .tg-module-wrapper .module-title{border-bottom:1px solid ' + primaryColor + '}' +
 				'.elementor .tg-module-wrapper .module-title span,.elementor .tg-module-wrapper .tg-post-category{background-color:' + primaryColor + '}' +
-				'.elementor .tg-module-wrapper .tg-module-meta .tg-module-comments a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-auther-name a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-date a:hover,.elementor .tg-module-wrapper .tg-module-title:hover a,.elementor .tg-module-wrapper.tg-module-grid .tg_module_grid .tg-module-info .tg-module-meta a:hover{color:' + primaryColor + '}' +
+				'.elementor .tg-module-wrapper .tg-module-meta .tg-module-comments a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-auther-name a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-date a:hover,.elementor .tg-module-wrapper .tg-module-title:hover a,.elementor .tg-module-wrapper.tg-module-grid .tg_module_grid .tg-module-info .tg-module-meta a:hover{color:' + primaryColor + '}' + '.widget_slider_area .widget-title,.widget_beside_slider .widget-title { border-bottom:2px solid ' + primaryColor + '}' + '.widget_slider_area .widget-title span,.widget_beside_slider .widget-title span { background-color:' + primaryColor + '}' +
 				'</style>';
 
 			// Remove previously create internal style and add new one.
