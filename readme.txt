@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Recommend - Zakra Gutenberg ready theme
 * Fix - Gallery padding for Gutenberg
 * Tweak - Utilize single custom JS file for required theme JS settings.
 
