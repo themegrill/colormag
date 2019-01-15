@@ -89,12 +89,12 @@ jQuery( document ).ready( function () {
 		if ( wpAdminBar.length ) {
 			jQuery( '#site-navigation' ).sticky( {
 				topSpacing : wpAdminBar.height(),
-				zIndex     : 9999
+				zIndex     : 999
 			} );
 		} else {
 			jQuery( '#site-navigation' ).sticky( {
 				topSpacing : 0,
-				zIndex     : 9999
+				zIndex     : 999
 			} );
 		}
 	}
