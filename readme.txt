@@ -52,6 +52,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Update - StickyJS library to 1.0.4
+* Update - Magnific Popup library to 1.1.0
 
 = Version 1.3.4 - 2018-12-07 =
 * Recommend - Zakra Gutenberg ready theme
