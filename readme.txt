@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.3.5 - 2019-01-16 =
 * Update - StickyJS library to 1.0.4
 * Update - Magnific Popup library to 1.1.0
 
