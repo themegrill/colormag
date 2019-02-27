@@ -1,3 +1,15 @@
+.wp-badge.tg-welcome-logo {
+	background-color: #fff;
+	background-image: url(../../img/themegrill-logo.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 70%;
+}
+
+.header h1 {
+	font-size: 30px;
+}
+
 pre.changelog {
 	font-size: 12px;
 	background-color: #f5f5f5;
@@ -50,25 +62,10 @@ td {
 	max-width: 100%;
 }
 
-.about-wrap h1 {
-	display: block;
-	text-align: center;
-	width: 100%;
-	font-size: 38px;
-	font-weight: 600;
-}
-
 .welcome-description-wrap {
 	display: inline-block;
 	width: 100%;
 	margin: 20px 0;
-}
-
-.about-wrap .about-text,
-.colormag-screenshot {
-	margin: 20px 10px;
-	width: 47%;
-	float: left;
 }
 
 .about-wrap table td h3 {
