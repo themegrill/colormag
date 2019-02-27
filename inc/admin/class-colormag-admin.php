@@ -92,11 +92,23 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		public function welcome_notice() {
 			?>
 			<div id="message" class="updated colormag-message">
-				<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'colormag' ); ?></a>
-				<p><?php printf( esc_html__( 'Welcome! Thank you for choosing colormag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p class="submit">
-					<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ); ?>"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a>
-				</p>
+				<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) ); ?>">
+					<?php esc_html_e( 'Dismiss', 'colormag' ); ?>
+				</a>
+
+				<div class="colormag-message-wrapper">
+					<div class="colormag-logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/colormag-logo.png" alt="<?php esc_html_e( 'ColorMag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+					</div>
+
+					<p>
+						<?php printf( esc_html__( 'Welcome! Thank you for choosing colormag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?>
+					</p>
+
+					<div class="submit">
+						<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?>"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a>
+					</div>
+				</div>
 			</div>
 			<?php
 		}
