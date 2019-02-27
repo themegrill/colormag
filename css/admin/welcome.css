@@ -151,6 +151,7 @@ table tr .btn-wrapper .button:hover {
 	padding: 0;
 	border: none;
 	box-shadow: none;
+	background: transparent;
 }
 
 .tg-demo-showcase .theme-browser .theme .premium-demo-banner {
