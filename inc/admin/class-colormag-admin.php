@@ -24,7 +24,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 			add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
-			add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
+			add_action( 'wp_loaded', array( $this, 'admin_notice' ) );
 		}
 
 		/**
@@ -58,12 +58,8 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			wp_enqueue_style( 'colormag-message', get_template_directory_uri() . '/css/admin/message.css', array(), $colormag_version );
 
 			// Let's bail on theme activation.
-			if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
-				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-				update_option( 'colormag_admin_notice_welcome', 1 );
-
-				// No option? Let run the notice wizard again..
-			} elseif ( ! get_option( 'colormag_admin_notice_welcome' ) ) {
+			$notice_nag = get_option( 'colormag_admin_notice_welcome' );
+			if ( ! $notice_nag ) {
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 			}
 		}
@@ -83,6 +79,13 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 
 				$hide_notice = sanitize_text_field( $_GET['colormag-hide-notice'] );
 				update_option( 'colormag_admin_notice_' . $hide_notice, 1 );
+
+				// Hide.
+				if ( 'welcome' === $_GET['colormag-hide-notice'] ) {
+					update_option( 'colormag_admin_notice_' . $hide_notice, 1 );
+				} else { // Show.
+					delete_option( 'colormag_admin_notice_' . $hide_notice );
+				}
 			}
 		}
 
