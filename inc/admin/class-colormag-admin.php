@@ -212,10 +212,16 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		 * Render site library.
 		 */
 		public function sitelibrary_display_screen() {
-			$this->intro();
+			?>
+			<div class="wrap about-wrap">
+				<?php
+				$this->intro();
 
-			// Display site library.
-			echo ColorMag_Site_Library::colormag_site_library_page_content();
+				// Display site library.
+				echo ColorMag_Site_Library::colormag_site_library_page_content();
+				?>
+			</div>
+			<?php
 		}
 
 		/**
