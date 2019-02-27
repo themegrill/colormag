@@ -33,9 +33,9 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		public function admin_menu() {
 			$theme = wp_get_theme( get_template() );
 
-			$page = add_theme_page( esc_html__( 'About', 'colormag' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'colormag' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'colormag-welcome', array(
+			$page = add_theme_page( esc_html__( 'About', 'colormag' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'colormag' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'colormag-sitelibrary', array(
 				$this,
-				'welcome_screen',
+				'sitelibrary_screen',
 			) );
 			add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
 		}
@@ -152,15 +152,23 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			</p>
 
 			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'colormag-welcome' ) {
+				<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'colormag-sitelibrary' ) {
 					echo 'nav-tab-active';
-				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'colormag-welcome' ), 'themes.php' ) ) ); ?>">
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'colormag-sitelibrary' ), 'themes.php' ) ) ); ?>">
+					<?php esc_html_e( 'Site Library', 'colormag' ); ?>
+				</a>
+				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'welcome' ) {
+					echo 'nav-tab-active';
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+					'page' => 'colormag-sitelibrary',
+					'tab'  => 'welcome',
+				), 'themes.php' ) ) ); ?>">
 					<?php echo $theme->display( 'Name' ); ?>
 				</a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
 					echo 'nav-tab-active';
 				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
-					'page' => 'colormag-welcome',
+					'page' => 'colormag-sitelibrary',
 					'tab'  => 'supported_plugins',
 				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Supported Plugins', 'colormag' ); ?>
@@ -168,7 +176,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) {
 					echo 'nav-tab-active';
 				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
-					'page' => 'colormag-welcome',
+					'page' => 'colormag-sitelibrary',
 					'tab'  => 'free_vs_pro',
 				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Free Vs Pro', 'colormag' ); ?>
@@ -176,7 +184,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) {
 					echo 'nav-tab-active';
 				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
-					'page' => 'colormag-welcome',
+					'page' => 'colormag-sitelibrary',
 					'tab'  => 'changelog',
 				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Changelog', 'colormag' ); ?>
@@ -186,10 +194,10 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		}
 
 		/**
-		 * Welcome screen page.
+		 * Site library screen page.
 		 */
-		public function welcome_screen() {
-			$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( $_GET['tab'] );
+		public function sitelibrary_screen() {
+			$current_tab = empty( $_GET['tab'] ) ? 'library' : sanitize_title( $_GET['tab'] );
 
 			// Look for a {$current_tab}_screen method.
 			if ( is_callable( array( $this, $current_tab . '_screen' ) ) ) {
@@ -197,7 +205,24 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			}
 
 			// Fallback to about screen.
-			return $this->about_screen();
+			return $this->sitelibrary_display_screen();
+		}
+
+		/**
+		 * Render site library.
+		 */
+		public function sitelibrary_display_screen() {
+			$this->intro();
+
+			// Display site library.
+			echo ColorMag_Site_Library::colormag_site_library_page_content();
+		}
+
+		/**
+		 * Welcome screen page.
+		 */
+		public function welcome_screen() {
+			$this->about_screen();
 		}
 
 		/**
