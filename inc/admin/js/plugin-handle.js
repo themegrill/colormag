@@ -71,7 +71,7 @@ jQuery( document ).ready(
 								msg = 'Uncaught Error.\n' + jqXHR.responseText;
 							}
 							console.log( msg );
-						},
+						}
 					}
 				);
 			},
@@ -87,7 +87,7 @@ jQuery( document ).ready(
 					button.text( colormag_plugin_helper.activating + '...' );
 					self.activatePlugin( url, redirect );
 				} );
-			},
+			}
 		};
 		$.pluginInstall.init();
 	}
@@ -113,7 +113,6 @@ jQuery( document ).ready( function ( $ ) {
 		// Change button text.
 		jQuery( this ).text( colormag_redirect_demo_page.btn_text );
 
-
 		// Assign `TG demo importer` plugin state for processing from PHP.
 		if ( $( this ).hasClass( 'tdi-activated' ) ) { // Installed and activated.
 			state = 'activated';
@@ -126,7 +125,7 @@ jQuery( document ).ready( function ( $ ) {
 		var data = {
 			action   : 'import_button',
 			security : colormag_redirect_demo_page.nonce,
-			state    : state,
+			state    : state
 		};
 
 		$.ajax( {
@@ -147,7 +146,6 @@ jQuery( document ).ready( function ( $ ) {
 				console.log( thrownError );
 			}
 		} );
-
 
 	} );
 } );
