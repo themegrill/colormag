@@ -341,9 +341,10 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 						<div class="col">
 							<h3><?php esc_html_e( 'Import Demo', 'colormag' ); ?></h3>
 							<p><?php esc_html_e( 'Needs ThemeGrill Demo Importer plugin.', 'colormag' ) ?></p>
-							<p>
-								<a href="<?php echo esc_url( network_admin_url( 'plugin-install.php?tab=search&type=term&s=themegrill-demo-importer' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'colormag' ); ?></a>
-							</p>
+
+							<div class="submit">
+								<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Import', 'colormag' ); ?>"><?php esc_html_e( 'Import', 'colormag' ); ?></a>
+							</div>
 						</div>
 
 						<div class="col">
