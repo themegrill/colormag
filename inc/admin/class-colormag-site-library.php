@@ -87,7 +87,7 @@ class ColorMag_Site_Library {
 				$output .= '</div><!-- .screenshot -->';
 
 				// Displays the pro tag.
-				if ( isset( $demo_package_data->is_pro ) ) {
+				if ( isset( $demo_package_data->isPro ) ) {
 					$output .= '<span class="premium-demo-banner">';
 					$output .= esc_html__( 'Pro', 'colormag' );
 					$output .= '</span><!-- .premium-demo-banner -->';
@@ -115,7 +115,7 @@ class ColorMag_Site_Library {
 				$output .= '</a>';
 
 				// Displays the buy now button.
-				if ( isset( $demo_package_data->is_pro ) ) {
+				if ( isset( $demo_package_data->isPro ) ) {
 					$output .= '<a class="button button-small button-primary purchase-now" href="' . $demo_packages->homepage . '" target="_blank">';
 					$output .= esc_html__( 'Buy Now', 'colormag' );
 					$output .= '</a><!-- .button.button-primary.purchase-now -->';
