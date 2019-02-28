@@ -258,7 +258,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 					'page' => 'colormag-sitelibrary',
 					'tab'  => 'welcome',
 				), 'themes.php' ) ) ); ?>">
-					<?php echo $theme->display( 'Name' ); ?>
+					<?php esc_html_e( 'Getting Started' ); ?>
 				</a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
 					echo 'nav-tab-active';
@@ -266,7 +266,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 					'page' => 'colormag-sitelibrary',
 					'tab'  => 'supported_plugins',
 				), 'themes.php' ) ) ); ?>">
-					<?php esc_html_e( 'Supported Plugins', 'colormag' ); ?>
+					<?php esc_html_e( 'Recommended Plugins', 'colormag' ); ?>
 				</a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) {
 					echo 'nav-tab-active';
