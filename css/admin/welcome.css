@@ -1,9 +1,21 @@
+.wp-badge.tg-welcome-logo {
+	background-color: #ffffff;
+	background-image: url(../../img/themegrill-logo.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 70%;
+}
+
+.header h1 {
+	font-size: 30px;
+}
+
 pre.changelog {
 	font-size: 12px;
 	background-color: #f5f5f5;
 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #f5f5f5), color-stop(50%, #e6e6e6));
 	background-image: -webkit-linear-gradient(#f5f5f5 50%, #e6e6e6 50%);
-	background-image: linear-gradient(#f5f5f5 50%,#e6e6e6 50%);
+	background-image: linear-gradient(#f5f5f5 50%, #e6e6e6 50%);
 	background-size: 38px 38px;
 	border: 1px solid #d4d4d4;
 	display: block;
@@ -17,6 +29,7 @@ pre.changelog {
 pre.changelog span {
 	font-weight: 700;
 }
+
 .return-to-dashboard.colormag {
 	clear: both;
 }
@@ -34,7 +47,7 @@ p.colormag-actions a.skip:hover {
 
 p.colormag-actions a.button-primary,
 p.colormag-actions a.button-secondary {
-	text-decoration: none!important;
+	text-decoration: none !important;
 }
 
 table {
@@ -50,25 +63,10 @@ td {
 	max-width: 100%;
 }
 
-.about-wrap h1 {
-	display: block;
-	text-align: center;
-	width: 100%;
-	font-size: 38px;
-	font-weight: 600;
-}
-
 .welcome-description-wrap {
 	display: inline-block;
 	width: 100%;
 	margin: 20px 0;
-}
-
-.about-wrap .about-text,
-.colormag-screenshot {
-	margin: 20px 10px;
-	width: 47%;
-	float: left;
 }
 
 .about-wrap table td h3 {
@@ -103,15 +101,15 @@ td {
 }
 
 .wrap table th {
-	background-color: #24B37E;
+	background-color: #24b37e;
 }
 
 .wrap table th:last-child {
-	background-color: #228B9B;
+	background-color: #228b9b;
 }
 
 .wrap table th h3 {
-	color: #fff;
+	color: #ffffff;
 	margin: 15px;
 }
 
@@ -124,11 +122,11 @@ tr:nth-child(2n) {
 }
 
 .wrap table td .dashicons.dashicons-no {
-	color: #CE2D2D;
+	color: #ce2d2d;
 }
 
 .wrap table td .dashicons.dashicons-yes {
-	color: #24B37E;
+	color: #24b37e;
 }
 
 table tr .btn-wrapper {
@@ -137,7 +135,7 @@ table tr .btn-wrapper {
 
 table tr .btn-wrapper .button {
 	background-color: #228b9b;
-	color: #fff;
+	color: #ffffff;
 	font-size: 14px;
 	line-height: 0;
 	padding: 27px 0;
@@ -146,13 +144,62 @@ table tr .btn-wrapper .button {
 
 table tr .btn-wrapper .button:hover {
 	background: #097282 none repeat scroll 0 0;
-	color: #fff;
+	color: #ffffff;
+}
+
+.tg-demo-showcase .wp-filter {
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	background: transparent;
+}
+
+.tg-demo-showcase .theme-browser .theme .premium-demo-banner {
+	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	position: absolute;
+	top: 10px;
+	right: 0;
+	height: 30px;
+	width: 50px;
+	background: #51cf66;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #ffffff;
+}
+
+.tg-demo-showcase .theme-browser .theme .premium-demo-banner:before, .tg-demo-showcase .theme-browser .theme .premium-demo-banner:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 100%;
+}
+
+.tg-demo-showcase .theme-browser .theme .premium-demo-banner:before {
+	top: 0;
+	border-top: 15px solid #51cf66;
+	border-left: 15px solid transparent;
+}
+
+.tg-demo-showcase .theme-browser .theme .premium-demo-banner:after {
+	bottom: 0;
+	border-bottom: 15px solid #51cf66;
+	border-left: 15px solid transparent;
 }
 
 @media (max-width: 1400px) {
 	.about-wrap h1 {
 		font-size: 30px;
 	}
+
 	.about-wrap .about-text {
 		font-size: 16px;
 	}
@@ -162,6 +209,7 @@ table tr .btn-wrapper .button:hover {
 	.about-wrap .about-text {
 		font-size: 14px;
 	}
+
 	.about-wrap table td h3,
 	.about-wrap table td {
 		font-size: 14px;
@@ -172,6 +220,7 @@ table tr .btn-wrapper .button:hover {
 	.about-wrap h1 {
 		font-size: 25px;
 	}
+
 	.about-wrap .about-text,
 	.colormag-screenshot {
 		float: none;
