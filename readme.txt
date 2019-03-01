@@ -53,6 +53,7 @@ and we will include it within the theme from next version update.
 = TBD =
 * Tweak - Added site library and demo import process in About ColorMag page.
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
+* Tweak - separate customize control class via different file.
 
 = Version 1.3.5 - 2019-01-16 =
 * Update - StickyJS library to 1.0.4
