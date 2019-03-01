@@ -258,7 +258,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 					'page' => 'colormag-sitelibrary',
 					'tab'  => 'welcome',
 				), 'themes.php' ) ) ); ?>">
-					<?php esc_html_e( 'Getting Started' ); ?>
+					<?php esc_html_e( 'Getting Started', 'colormag' ); ?>
 				</a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
 					echo 'nav-tab-active';
