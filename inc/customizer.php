@@ -9,6 +9,10 @@
  */
 function colormag_customize_register( $wp_customize ) {
 
+	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-upsell-section.php';
+	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-image-radio-control.php';
+	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-custom-css-control.php';
+
 	// Transport postMessage variable set
 	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
@@ -25,41 +29,6 @@ function colormag_customize_register( $wp_customize ) {
 			'selector'        => '#site-description',
 			'render_callback' => 'colormag_customize_partial_blogdescription',
 		) );
-	}
-
-	/**
-	 * Class to include upsell link campaign for theme.
-	 *
-	 * Class COLORMAG_Upsell_Section
-	 */
-	class COLORMAG_Upsell_Section extends WP_Customize_Section {
-		public $type = 'colormag-upsell-section';
-		public $url  = '';
-		public $id   = '';
-
-		/**
-		 * Gather the parameters passed to client JavaScript via JSON.
-		 *
-		 * @return array The array to be exported to the client as JSON.
-		 */
-		public function json() {
-			$json        = parent::json();
-			$json['url'] = esc_url( $this->url );
-			$json['id']  = $this->id;
-
-			return $json;
-		}
-
-		/**
-		 * An Underscore (JS) template for rendering this section.
-		 */
-		protected function render_template() {
-			?>
-			<li id="accordion-section-{{ data.id }}" class="colormag-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
-				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
-			</li>
-			<?php
-		}
 	}
 
 	// Register `COLORMAG_Upsell_Section` type section.
@@ -297,74 +266,6 @@ function colormag_customize_register( $wp_customize ) {
 		),
 	) );
 
-	class COLORMAG_Image_Radio_Control extends WP_Customize_Control {
-
-		public function render_content() {
-
-			if ( empty( $this->choices ) ) {
-				return;
-			}
-
-			$name = '_customize-radio-' . $this->id;
-			?>
-			<style>
-				#colormag-img-container .colormag-radio-img-img {
-					border: 3px solid #DEDEDE;
-					margin: 0 5px 5px 0;
-					cursor: pointer;
-					border-radius: 3px;
-					-moz-border-radius: 3px;
-					-webkit-border-radius: 3px;
-				}
-
-				#colormag-img-container .colormag-radio-img-selected {
-					border: 3px solid #AAA;
-					border-radius: 3px;
-					-moz-border-radius: 3px;
-					-webkit-border-radius: 3px;
-				}
-
-				input[type=checkbox]:before {
-					content: '';
-					margin: -3px 0 0 -4px;
-				}
-			</style>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<ul class="controls" id='colormag-img-container'>
-				<?php
-				foreach ( $this->choices as $value => $label ) :
-					$class = ( $this->value() == $value ) ? 'colormag-radio-img-selected colormag-radio-img-img' : 'colormag-radio-img-img';
-					?>
-					<li style="display: inline;">
-						<label style="margin-left: 0">
-							<input <?php $this->link(); ?>style='display:none' type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php
-							$this->link();
-							checked( $this->value(), $value );
-							?> />
-							<img src='<?php echo esc_html( $label ); ?>' class='<?php echo $class; ?>' />
-						</label>
-					</li>
-				<?php
-				endforeach;
-				?>
-			</ul>
-			<script type="text/javascript">
-
-				jQuery( document ).ready( function ( $ ) {
-					$( '.controls#colormag-img-container li img' ).click( function () {
-						$( '.controls#colormag-img-container li' ).each( function () {
-							$( this ).find( 'img' ).removeClass( 'colormag-radio-img-selected' );
-						} );
-						$( this ).addClass( 'colormag-radio-img-selected' );
-					} );
-				} );
-
-			</script>
-			<?php
-		}
-
-	}
-
 	// Main total Header area display type
 	$wp_customize->add_section( 'colormag_main_total_header_area_display_type_option', array(
 		'priority' => 4,
@@ -598,22 +499,6 @@ function colormag_customize_register( $wp_customize ) {
 	) );
 
 	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
-
-		// Custom CSS setting
-		class COLORMAG_Custom_CSS_Control extends WP_Customize_Control {
-
-			public $type = 'custom_css';
-
-			public function render_content() {
-				?>
-				<label>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-				</label>
-				<?php
-			}
-
-		}
 
 		$wp_customize->add_section( 'colormag_custom_css_setting', array(
 			'priority' => 9,
