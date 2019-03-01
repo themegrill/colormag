@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version 1.3.6 - 2019-03-01 =
 * Tweak - Added site library and demo import process in About ColorMag page.
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
 * Tweak - separate customize control class via different file.

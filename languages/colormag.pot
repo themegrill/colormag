@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 1.3.5\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2019-02-28 10:09:43+00:00\n"
+"POT-Creation-Date: 2019-03-01 05:17:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -172,7 +172,7 @@ msgid "View Demo"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:244
-#: inc/admin/class-colormag-admin.php:378 inc/customizer.php:72
+#: inc/admin/class-colormag-admin.php:378 inc/customizer.php:41
 msgid "View PRO version"
 msgstr ""
 
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Color Options"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:552 inc/customizer.php:560
+#: inc/admin/class-colormag-admin.php:552 inc/customizer.php:461
 msgid "Primary color option"
 msgstr ""
 
@@ -416,7 +416,7 @@ msgstr ""
 msgid "Change Read More Text"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:612 inc/customizer.php:803
+#: inc/admin/class-colormag-admin.php:612 inc/customizer.php:688
 msgid "Related Posts"
 msgstr ""
 
@@ -499,7 +499,7 @@ msgstr ""
 msgid "TG: Featured Posts (Style 7)"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:707 inc/customizer.php:909
+#: inc/admin/class-colormag-admin.php:707 inc/customizer.php:794
 msgid "Category Color Options"
 msgstr ""
 
@@ -575,370 +575,370 @@ msgstr ""
 msgid "No Sidebar Content Centered"
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:52
 msgid "Change the Header Settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:85
+#: inc/customizer.php:54
 msgid "Header Options"
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:59
 msgid "Breaking News"
 msgstr ""
 
-#: inc/customizer.php:103
+#: inc/customizer.php:72
 msgid "Check to enable the breaking news section"
 msgstr ""
 
-#: inc/customizer.php:110
+#: inc/customizer.php:79
 msgid "Show Date"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:93
 msgid "Check to show the date in header"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:116
 msgid "Date in header display type:"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:118
 msgid "Theme Default Setting"
 msgstr ""
 
-#: inc/customizer.php:150
+#: inc/customizer.php:119
 msgid "From WordPress Date Setting"
 msgstr ""
 
-#: inc/customizer.php:166
+#: inc/customizer.php:135
 msgid "Show Home Icon"
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:149
 msgid "Check to show the home icon in the primary menu"
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:164
 msgid "Sticky Menu"
 msgstr ""
 
-#: inc/customizer.php:208
+#: inc/customizer.php:177
 msgid "Check to enable the sticky behavior of the primary menu"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:184
 msgid "Search Icon"
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:197
 msgid "Check to display the Search Icon in the primary menu"
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:204
 msgid "Random Post"
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:218
 msgid "Check to display the Random Post Icon in the primary menu"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:233
 msgid "Responsive Menu Style"
 msgstr ""
 
-#: inc/customizer.php:277
+#: inc/customizer.php:246
 msgid "Check to switch to new responsive menu."
 msgstr ""
 
-#: inc/customizer.php:290
+#: inc/customizer.php:259
 msgid "Choose the option that you want"
 msgstr ""
 
-#: inc/customizer.php:293 inc/customizer.php:973
+#: inc/customizer.php:262 inc/customizer.php:858
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/customizer.php:294 inc/customizer.php:974
+#: inc/customizer.php:263 inc/customizer.php:859
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/customizer.php:295 inc/customizer.php:975
+#: inc/customizer.php:264 inc/customizer.php:860
 msgid "Show Both"
 msgstr ""
 
-#: inc/customizer.php:296 inc/customizer.php:976
+#: inc/customizer.php:265 inc/customizer.php:861
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:371
+#: inc/customizer.php:272
 msgid "Main Header Area Display Type"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:284
 msgid "Choose the main total header area display type that you want"
 msgstr ""
 
-#: inc/customizer.php:395
+#: inc/customizer.php:296
 msgid "Header Image Position"
 msgstr ""
 
-#: inc/customizer.php:407
+#: inc/customizer.php:308
 msgid "Header image display position"
 msgstr ""
 
-#: inc/customizer.php:410 inc/customizer.php:987
+#: inc/customizer.php:311 inc/customizer.php:872
 msgid "Display the Header image just above the site title/text."
 msgstr ""
 
-#: inc/customizer.php:411 inc/customizer.php:988
+#: inc/customizer.php:312 inc/customizer.php:873
 msgid ""
 "Default: Display the Header image between site title/text and the "
 "main/primary menu."
 msgstr ""
 
-#: inc/customizer.php:412 inc/customizer.php:989
+#: inc/customizer.php:313 inc/customizer.php:874
 msgid "Display the Header image below main/primary menu."
 msgstr ""
 
-#: inc/customizer.php:424
+#: inc/customizer.php:325
 msgid "Check to make header image link back to home page"
 msgstr ""
 
-#: inc/customizer.php:431
+#: inc/customizer.php:332
 msgid "Change the Design Settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:334
 msgid "Design Options"
 msgstr ""
 
-#: inc/customizer.php:439
+#: inc/customizer.php:340
 msgid "Front Page Settings"
 msgstr ""
 
-#: inc/customizer.php:450
+#: inc/customizer.php:351
 msgid "Check to hide blog posts/static page on front page"
 msgstr ""
 
-#: inc/customizer.php:457
+#: inc/customizer.php:358
 msgid "Site Layout"
 msgstr ""
 
-#: inc/customizer.php:470
+#: inc/customizer.php:371
 msgid "Choose your site layout. The change is reflected in whole site"
 msgstr ""
 
-#: inc/customizer.php:472 inc/customizer.php:1000
+#: inc/customizer.php:373 inc/customizer.php:885
 msgid "Boxed Layout"
 msgstr ""
 
-#: inc/customizer.php:473 inc/customizer.php:1001
+#: inc/customizer.php:374 inc/customizer.php:886
 msgid "Wide Layout"
 msgstr ""
 
-#: inc/customizer.php:481
+#: inc/customizer.php:382
 msgid "Default layout"
 msgstr ""
 
-#: inc/customizer.php:493
+#: inc/customizer.php:394
 msgid ""
 "Select default layout. This layout will be reflected in whole site "
 "archives, categories, search page etc. The layout for a single post and "
 "page can be controlled from below options"
 msgstr ""
 
-#: inc/customizer.php:507
+#: inc/customizer.php:408
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer.php:519
+#: inc/customizer.php:420
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is set for specific page"
 msgstr ""
 
-#: inc/customizer.php:533
+#: inc/customizer.php:434
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer.php:545
+#: inc/customizer.php:446
 msgid ""
 "Select default layout for single posts. This layout will be reflected in "
 "all single posts unless unique layout is set for specific post"
 msgstr ""
 
-#: inc/customizer.php:572
+#: inc/customizer.php:473
 msgid ""
 "This will reflect in links, buttons and many others. Choose a color to "
 "match your site"
 msgstr ""
 
-#: inc/customizer.php:580
+#: inc/customizer.php:481
 msgid "Skin Color"
 msgstr ""
 
-#: inc/customizer.php:592
+#: inc/customizer.php:493
 msgid "Choose the color skin for your site."
 msgstr ""
 
-#: inc/customizer.php:594
+#: inc/customizer.php:495
 msgid "White Skin"
 msgstr ""
 
-#: inc/customizer.php:595
+#: inc/customizer.php:496
 msgid "Dark Skin"
 msgstr ""
 
-#: inc/customizer.php:620
+#: inc/customizer.php:505
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:632
+#: inc/customizer.php:517
 msgid "Write your Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:641
+#: inc/customizer.php:526
 msgid "Social Options"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:527
 msgid "Change the Social Links settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:648
+#: inc/customizer.php:533
 msgid "Activate social links area"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:546
 msgid "Check to activate social links area"
 msgstr ""
 
-#: inc/customizer.php:675
+#: inc/customizer.php:560
 msgid "Social links to display on:"
 msgstr ""
 
-#: inc/customizer.php:679
+#: inc/customizer.php:564
 msgid "Header only"
 msgstr ""
 
-#: inc/customizer.php:680
+#: inc/customizer.php:565
 msgid "Footer only"
 msgstr ""
 
-#: inc/customizer.php:681
+#: inc/customizer.php:566
 msgid "Both header and footer"
 msgstr ""
 
-#: inc/customizer.php:696
+#: inc/customizer.php:581
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:701
+#: inc/customizer.php:586
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:706
+#: inc/customizer.php:591
 msgid "Google-Plus"
 msgstr ""
 
-#: inc/customizer.php:711
+#: inc/customizer.php:596
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:716
+#: inc/customizer.php:601
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:721
+#: inc/customizer.php:606
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:751
+#: inc/customizer.php:636
 msgid "Check to open in new tab"
 msgstr ""
 
-#: inc/customizer.php:763
+#: inc/customizer.php:648
 msgid "Change the Footer Settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:765
+#: inc/customizer.php:650
 msgid "Footer Options"
 msgstr ""
 
-#: inc/customizer.php:771
+#: inc/customizer.php:656
 msgid "Footer Main Area Display Type"
 msgstr ""
 
-#: inc/customizer.php:784
+#: inc/customizer.php:669
 msgid "Choose the main total footer area display type that you want"
 msgstr ""
 
-#: inc/customizer.php:787
+#: inc/customizer.php:672
 msgid "Type 1 (Default)"
 msgstr ""
 
-#: inc/customizer.php:788
+#: inc/customizer.php:673
 msgid "Type 2"
 msgstr ""
 
-#: inc/customizer.php:795
+#: inc/customizer.php:680
 msgid "Change the Additional Settings from here as you want"
 msgstr ""
 
-#: inc/customizer.php:797
+#: inc/customizer.php:682
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:816
+#: inc/customizer.php:701
 msgid "Check to activate the related posts"
 msgstr ""
 
-#: inc/customizer.php:837
+#: inc/customizer.php:722
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: inc/customizer.php:841 inc/customizer.php:961
+#: inc/customizer.php:726 inc/customizer.php:846
 msgid "Related Posts By Categories"
 msgstr ""
 
-#: inc/customizer.php:842 inc/customizer.php:962
+#: inc/customizer.php:727 inc/customizer.php:847
 msgid "Related Posts By Tags"
 msgstr ""
 
-#: inc/customizer.php:849
+#: inc/customizer.php:734
 msgid "Image Lightbox"
 msgstr ""
 
-#: inc/customizer.php:861
+#: inc/customizer.php:746
 msgid "Check to enable the lightbox for the featured images in single post"
 msgstr ""
 
-#: inc/customizer.php:869
+#: inc/customizer.php:754
 msgid "Featured Image"
 msgstr ""
 
-#: inc/customizer.php:881
+#: inc/customizer.php:766
 msgid "Check to hide the featured image in single post page."
 msgstr ""
 
-#: inc/customizer.php:889
+#: inc/customizer.php:774
 msgid "Featured Image In Single Page"
 msgstr ""
 
-#: inc/customizer.php:901
+#: inc/customizer.php:786
 msgid "Check to display the featured image in single page."
 msgstr ""
 
-#: inc/customizer.php:911
+#: inc/customizer.php:796
 msgid "Change the color of each category items as you want."
 msgstr ""
 
-#: inc/customizer.php:916
+#: inc/customizer.php:801
 msgid "Category Color Settings"
 msgstr ""
 
-#: inc/customizer.php:938
+#: inc/customizer.php:823
 msgid "%s"
 msgstr ""
 
