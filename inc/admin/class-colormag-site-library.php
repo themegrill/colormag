@@ -107,7 +107,9 @@ class ColorMag_Site_Library {
 				$output .= '<div class="theme-actions">';
 
 				// Import button.
-				$output .= '<a class="btn-get-started button button-primary button-small preview install-demo-preview" href="#" data-name="themegrill-demo-importer" data-slug="themegrill-demo-importer" aria-label="' . esc_html__( 'Get started with ColorMag', 'colormag' ) . '">' . esc_html__( 'Import', 'colormag' ) . '</a>';
+				if ( ! isset( $demo_package_data->isPro ) ) {
+					$output .= '<a class="btn-get-started button button-primary button-small preview install-demo-preview" href="#" data-name="themegrill-demo-importer" data-slug="themegrill-demo-importer" aria-label="' . esc_html__( 'Get started with ColorMag', 'colormag' ) . '">' . esc_html__( 'Import', 'colormag' ) . '</a>';
+				}
 
 				// Displays the preview now button.
 				$output .= '<a class="button button-small preview install-demo-preview" href="' . esc_url( $demo_package_data->preview ) . '" target="_blank">';
