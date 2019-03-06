@@ -196,7 +196,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 
 				<div class="colormag-message-wrapper">
 					<div class="colormag-logo">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/colormag-logo.png" alt="<?php esc_html_e( 'ColorMag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/img/colormag-getting-started-logo.png" alt="<?php esc_html_e( 'ColorMag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
 					</div>
 
 					<p>
