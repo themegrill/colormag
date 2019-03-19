@@ -52,6 +52,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Tweak - Remove import button from site library for pro themes.
+* Update - BxSlider to 4.2.15
 
 = Version 1.3.6 - 2019-03-01 =
 * Tweak - Added site library and demo import process in About ColorMag page.
