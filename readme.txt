@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.3.7 - 2019-03-19 =
 * Tweak - Remove import button from site library for pro themes.
 * Update - BxSlider to 4.2.15
 
