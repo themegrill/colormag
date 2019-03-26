@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.3.8 - 2019-03-26 =
 * Fix - Upload Theme button not working
 
 = Version 1.3.7 - 2019-03-19 =
