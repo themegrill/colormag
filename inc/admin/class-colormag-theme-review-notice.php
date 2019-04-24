@@ -26,6 +26,20 @@ class ColorMag_Theme_Review_Notice {
 	 */
 	public function __construct() {
 
+		add_action( 'after_setup_theme', array( $this, 'colormag_theme_rating_notice' ) );
+
+	}
+
+	/**
+	 * Set the required option value as needed for theme review notice.
+	 */
+	public function colormag_theme_rating_notice() {
+
+		// Set the installed time in `colormag_theme_installed_time` option table.
+		$option = get_option( 'colormag_theme_installed_time' );
+		if ( ! $option ) {
+			update_option( 'colormag_theme_installed_time', time() );
+		}
 
 	}
 
