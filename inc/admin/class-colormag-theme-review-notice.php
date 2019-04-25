@@ -54,14 +54,16 @@ class ColorMag_Theme_Review_Notice {
 
 		global $current_user;
 		$user_id                            = $current_user->ID;
+		$ignored_notice                     = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice', true );
 		$ignored_notice_partially_activated = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially_activated', true );
 
 		/**
 		 * Return from notice display if:
 		 * 1. The theme installed is less than 1 month ago.
 		 * 2. If the user has ignored the message partially for 1 month.
+		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) || ( $ignored_notice_partially_activated > strtotime( '-1 month' ) ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) || ( $ignored_notice_partially_activated > strtotime( '-1 month' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
 		?>
@@ -88,7 +90,7 @@ class ColorMag_Theme_Review_Notice {
 					<span><?php esc_html_e( 'Maybe Later', 'colormag' ); ?></span>
 				</a>
 
-				<a href="#" class="btn button-secondary">
+				<a href="?nag_colormag_ignore_theme_review_notice=0" class="btn button-secondary">
 					<span class="dashicons dashicons-smiley"></span>
 					<span><?php esc_html_e( 'I Already Did', 'colormag' ); ?></span>
 				</a>
@@ -110,6 +112,13 @@ class ColorMag_Theme_Review_Notice {
 	 */
 	public function colormag_ignore_theme_review_notice() {
 
+		global $current_user;
+		$user_id = $current_user->ID;
+
+		/* If user clicks to ignore the notice, add that to their user meta */
+		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice'] ) && '0' == $_GET['nag_colormag_ignore_theme_review_notice'] ) {
+			add_user_meta( $user_id, 'colormag_ignore_theme_review_notice', 'true', true );
+		}
 
 	}
 
