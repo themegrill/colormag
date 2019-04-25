@@ -53,9 +53,9 @@ class ColorMag_Theme_Review_Notice {
 	public function colormag_theme_review_notice() {
 
 		global $current_user;
-		$user_id                            = $current_user->ID;
-		$ignored_notice                     = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice', true );
-		$ignored_notice_partially_activated = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially_activated', true );
+		$user_id                  = $current_user->ID;
+		$ignored_notice           = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice', true );
+		$ignored_notice_partially = get_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially', true );
 
 		/**
 		 * Return from notice display if:
@@ -63,7 +63,7 @@ class ColorMag_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 1 month.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) || ( $ignored_notice_partially_activated > strtotime( '-1 month' ) ) || ( $ignored_notice ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) || ( $ignored_notice_partially > strtotime( '-1 month' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
 		?>
@@ -132,9 +132,7 @@ class ColorMag_Theme_Review_Notice {
 
 		/* If user clicks to ignore the notice, add that to their user meta */
 		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) && '0' == $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) {
-			add_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially', 'true', true );
-
-			add_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially_activated', time() );
+			update_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially', time() );
 		}
 
 	}
