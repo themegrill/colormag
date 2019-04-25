@@ -27,6 +27,7 @@ class ColorMag_Theme_Review_Notice {
 	public function __construct() {
 
 		add_action( 'after_setup_theme', array( $this, 'colormag_theme_rating_notice' ) );
+		add_action( 'switch_theme', array( $this, 'colormag_theme_rating_notice_data_remove' ) );
 
 	}
 
@@ -133,6 +134,34 @@ class ColorMag_Theme_Review_Notice {
 		/* If user clicks to ignore the notice, add that to their user meta */
 		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) && '0' == $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) {
 			update_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially', time() );
+		}
+
+	}
+
+	/**
+	 * Remove the data set after the theme has been switched to other theme.
+	 */
+	public function colormag_theme_rating_notice_data_remove() {
+
+		global $current_user;
+		$user_id                  = $current_user->ID;
+		$theme_installed_time     = get_option( 'colormag_theme_installed_time' );
+		$ignored_notice           = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice', true );
+		$ignored_notice_partially = get_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially', true );
+
+		// Delete options data.
+		if ( $theme_installed_time ) {
+			delete_option( 'colormag_theme_installed_time' );
+		}
+
+		// Delete permanent notice remove data.
+		if ( $ignored_notice ) {
+			delete_user_meta( $user_id, 'colormag_ignore_theme_review_notice' );
+		}
+
+		// Delete partial notice remove data.
+		if ( $ignored_notice_partially ) {
+			delete_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially' );
 		}
 
 	}
