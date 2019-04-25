@@ -64,8 +64,7 @@ class ColorMag_Theme_Review_Notice {
 			printf(
 				/* Translators: %1$s current user display name. */
 				esc_html__(
-					'Howdy %1$s! It seems that you have been using this theme for more than 1 month. We hope you are happy with everything that the theme has to offer. If you can spare a mimute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!',
-					'colormag'
+					'Howdy %1$s! It seems that you have been using this theme for more than 1 month. We hope you are happy with everything that the theme has to offer. If you can spare a mimute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
 				),
 				wp_get_current_user()->display_name
 			)
@@ -73,8 +72,23 @@ class ColorMag_Theme_Review_Notice {
 
 			<div class="links">
 				<a href="https://wordpress.org/support/theme/colormag/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">
-					<span class="dashicons dashicons-external"></span>
-					<span><?php esc_html_e( 'Sure, you deserve it.', 'colormag' ); ?></span>
+					<span class="dashicons dashicons-thumbs-up"></span>
+					<span><?php esc_html_e( 'Sure', 'colormag' ); ?></span>
+				</a>
+
+				<a href="#" class="btn button-secondary">
+					<span class="dashicons dashicons-calendar"></span>
+					<span><?php esc_html_e( 'Maybe Later', 'colormag' ); ?></span>
+				</a>
+
+				<a href="#" class="btn button-secondary">
+					<span class="dashicons dashicons-smiley"></span>
+					<span><?php esc_html_e( 'I Already Did', 'colormag' ); ?></span>
+				</a>
+
+				<a href="<?php echo esc_url( 'https://themegrill.com/support-forum/forum/colormag-free/' ); ?>" class="btn button-secondary" target="_blank">
+					<span class="dashicons dashicons-edit"></span>
+					<span><?php esc_html_e( 'File A Query', 'colormag' ); ?></span>
 				</a>
 			</div>
 		</div>
