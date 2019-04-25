@@ -42,6 +42,8 @@ class ColorMag_Theme_Review_Notice {
 		}
 
 		add_action( 'admin_notices', array( $this, 'colormag_theme_review_notice' ), 0 );
+		add_action( 'admin_init', array( $this, 'colormag_ignore_theme_review_notice' ), 0 );
+		add_action( 'admin_init', array( $this, 'colormag_ignore_theme_review_notice_partially' ), 0 );
 
 	}
 
@@ -50,11 +52,16 @@ class ColorMag_Theme_Review_Notice {
 	 */
 	public function colormag_theme_review_notice() {
 
+		global $current_user;
+		$user_id                            = $current_user->ID;
+		$ignored_notice_partially_activated = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially_activated', true );
+
 		/**
-		 * Return from notice display if,
-		 * the theme installed is less than 1 month ago.
+		 * Return from notice display if:
+		 * 1. The theme installed is less than 1 month ago.
+		 * 2. If the user has ignored the message partially for 1 month.
 		 */
-		if ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) || ( $ignored_notice_partially_activated > strtotime( '-1 month' ) ) ) {
 			return;
 		}
 		?>
@@ -67,7 +74,7 @@ class ColorMag_Theme_Review_Notice {
 					'Howdy %1$s! It seems that you have been using this theme for more than 1 month. We hope you are happy with everything that the theme has to offer. If you can spare a mimute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
 				),
 				wp_get_current_user()->display_name
-			)
+			);
 			?>
 
 			<div class="links">
@@ -76,7 +83,7 @@ class ColorMag_Theme_Review_Notice {
 					<span><?php esc_html_e( 'Sure', 'colormag' ); ?></span>
 				</a>
 
-				<a href="#" class="btn button-secondary">
+				<a href="?nag_colormag_ignore_theme_review_notice_partially=0" class="btn button-secondary">
 					<span class="dashicons dashicons-calendar"></span>
 					<span><?php esc_html_e( 'Maybe Later', 'colormag' ); ?></span>
 				</a>
@@ -91,9 +98,36 @@ class ColorMag_Theme_Review_Notice {
 					<span><?php esc_html_e( 'File A Query', 'colormag' ); ?></span>
 				</a>
 			</div>
+
+			<a class="notice-dismiss" style="text-decoration:none;" href="?nag_colormag_ignore_theme_review_notice_partially=0"></a>
 		</div>
 
 		<?php
+	}
+
+	/**
+	 * Function to remove the theme review notice permanently as requested by the user.
+	 */
+	public function colormag_ignore_theme_review_notice() {
+
+
+	}
+
+	/**
+	 * Function to remove the theme review notice partially as requested by the user.
+	 */
+	public function colormag_ignore_theme_review_notice_partially() {
+
+		global $current_user;
+		$user_id = $current_user->ID;
+
+		/* If user clicks to ignore the notice, add that to their user meta */
+		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) && '0' == $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) {
+			add_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially', 'true', true );
+
+			add_user_meta( $user_id, 'colormag_ignore_theme_review_notice_partially_activated', time() );
+		}
+
 	}
 
 }
