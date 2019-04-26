@@ -51,7 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
-* Tweak - Display theme review notice after 1 month of theme installation
+* Tweak - Add review notice message.
 
 = Version 1.3.8 - 2019-03-26 =
 * Fix - Upload Theme button not working
