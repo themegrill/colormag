@@ -93,17 +93,17 @@ class ColorMag_Theme_Review_Notice {
 
 				<a href="?nag_colormag_ignore_theme_review_notice_partially=0" class="btn button-secondary">
 					<span class="dashicons dashicons-calendar"></span>
-					<span><?php esc_html_e( 'Maybe Later', 'colormag' ); ?></span>
+					<span><?php esc_html_e( 'Maybe later', 'colormag' ); ?></span>
 				</a>
 
 				<a href="?nag_colormag_ignore_theme_review_notice=0" class="btn button-secondary">
 					<span class="dashicons dashicons-smiley"></span>
-					<span><?php esc_html_e( 'I Already Did', 'colormag' ); ?></span>
+					<span><?php esc_html_e( 'I already did', 'colormag' ); ?></span>
 				</a>
 
 				<a href="<?php echo esc_url( 'https://themegrill.com/support-forum/forum/colormag-free/' ); ?>" class="btn button-secondary" target="_blank">
 					<span class="dashicons dashicons-edit"></span>
-					<span><?php esc_html_e( 'File A Query', 'colormag' ); ?></span>
+					<span><?php esc_html_e( 'Got theme support question?', 'colormag' ); ?></span>
 				</a>
 			</div>
 
