@@ -28,6 +28,7 @@ class ColorMag_Theme_Review_Notice {
 
 		add_action( 'after_setup_theme', array( $this, 'colormag_theme_rating_notice' ) );
 		add_action( 'switch_theme', array( $this, 'colormag_theme_rating_notice_data_remove' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'colormag_theme_rating_notice_enqueue' ) );
 
 	}
 
@@ -61,6 +62,7 @@ class ColorMag_Theme_Review_Notice {
 
 		/**
 		 * Return from notice display if:
+		 *
 		 * 1. The theme installed is less than 1 month ago.
 		 * 2. If the user has ignored the message partially for 1 month.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
@@ -164,6 +166,15 @@ class ColorMag_Theme_Review_Notice {
 		if ( $ignored_notice_partially ) {
 			delete_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially' );
 		}
+
+	}
+
+	/**
+	 * Enqueue the required CSS file for theme review notice on admin page.
+	 */
+	public function colormag_theme_rating_notice_enqueue() {
+
+		wp_enqueue_style( 'colormag-theme-review-notice', get_template_directory_uri() . '/css/admin/theme-review-notice.css' );
 
 	}
 
