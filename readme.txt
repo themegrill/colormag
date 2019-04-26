@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Tweak - Add review notice message.
+
 = Version 1.3.8 - 2019-03-26 =
 * Fix - Upload Theme button not working
 

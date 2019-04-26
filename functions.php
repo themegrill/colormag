@@ -537,6 +537,7 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
 	require get_template_directory() . '/inc/admin/class-colormag-new-theme-notice.php';
 	require get_template_directory() . '/inc/admin/class-colormag-site-library.php';
+	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
 
 /**
