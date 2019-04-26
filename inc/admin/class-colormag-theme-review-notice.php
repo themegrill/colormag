@@ -73,15 +73,17 @@ class ColorMag_Theme_Review_Notice {
 		?>
 
 		<div class="notice updated theme-review-notice" style="position:relative;">
-			<?php
-			printf(
-				/* Translators: %1$s current user display name. */
-				esc_html__(
-					'Howdy %1$s! It seems that you have been using this theme for more than 1 month. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
-				),
-				'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
-			);
-			?>
+			<p>
+				<?php
+				printf(
+					/* Translators: %1$s current user display name. */
+					esc_html__(
+						'Howdy, %1$s! It seems that you have been using this theme for more than 1 month. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
+					),
+					'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
+				);
+				?>
+			</p>
 
 			<div class="links">
 				<a href="https://wordpress.org/support/theme/colormag/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">

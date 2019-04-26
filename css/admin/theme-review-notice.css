@@ -1,0 +1,32 @@
+.theme-review-notice.notice.updated {
+	border-left-color: #ffc733;
+}
+
+.theme-review-notice .links {
+	margin: 10px 0;
+}
+
+.theme-review-notice .links a {
+	height: auto;
+	padding: 3px 15px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.theme-review-notice .links a .dashicons {
+	line-height: 1.2;
+}
+
+.theme-review-notice .links a.button-primary {
+	margin-left: 0;
+	background: #ffc733;
+	text-shadow: none;
+	box-shadow: none;
+	color: #444444;
+	border-color: #999999;
+}
+
+.theme-review-notice .links a.button-primary:hover {
+	background: #ffc700;
+	border-color: #444444;
+}
