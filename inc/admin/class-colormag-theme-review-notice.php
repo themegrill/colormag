@@ -63,11 +63,11 @@ class ColorMag_Theme_Review_Notice {
 		/**
 		 * Return from notice display if:
 		 *
-		 * 1. The theme installed is less than 1 month ago.
-		 * 2. If the user has ignored the message partially for 1 month.
+		 * 1. The theme installed is less than 15 day ago.
+		 * 2. If the user has ignored the message partially for 15 day.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-1 month' ) ) || ( $ignored_notice_partially > strtotime( '-1 month' ) ) || ( $ignored_notice ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-15 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
 		?>
@@ -78,7 +78,7 @@ class ColorMag_Theme_Review_Notice {
 				printf(
 					/* Translators: %1$s current user display name. */
 					esc_html__(
-						'Howdy, %1$s! It seems that you have been using this theme for more than 1 month. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
+						'Howdy, %1$s! It seems that you have been using this theme for more than 15days. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
 					),
 					'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
 				);
