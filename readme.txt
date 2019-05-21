@@ -50,9 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
-* Tweak - Add review notice message.
+= Version 1.3.9 - 2019-05-21 =
 * Update - FitVids to 1.2.0
+* Tweak - Add review notice message.
 
 = Version 1.3.8 - 2019-03-26 =
 * Fix - Upload Theme button not working
