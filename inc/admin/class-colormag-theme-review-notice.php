@@ -78,7 +78,7 @@ class ColorMag_Theme_Review_Notice {
 				printf(
 					/* Translators: %1$s current user display name. */
 					esc_html__(
-						'Howdy, %1$s! It seems that you have been using this theme for more than 15days. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
+						'Howdy, %1$s! It seems that you have been using this theme for more than 15 days. We hope you are happy with everything that the theme has to offer. If you can spare a minute, please help us by leaving a 5-star review on WordPress.org.  By spreading the love, we can continue to develop new amazing features in the future, for free!', 'colormag'
 					),
 					'<strong>' . esc_html( $current_user->display_name ) . '</strong>'
 				);
