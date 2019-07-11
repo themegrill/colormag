@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.4.0 - 2019-07-11 =
 * Tweak - Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
 * Tweak - Added message to make user aware while installing and activating the ThemeGrill demo importer plugin.
 
