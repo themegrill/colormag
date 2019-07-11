@@ -201,7 +201,9 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 					</div>
 
 					<p>
-						<?php printf( esc_html__( 'Welcome! Thank you for choosing colormag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?>
+						<?php printf( esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?>
+
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
 					</p>
 
 					<div class="submit">
@@ -312,7 +314,13 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			<div class="wrap about-wrap">
 				<?php
 				$this->intro();
+				?>
 
+				<div class="plugin-install-notice">
+					<?php esc_html_e( 'Clicking the "Import" button in any of the demos below will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?>
+				</div>
+
+				<?php
 				// Display site library.
 				echo ColorMag_Site_Library::colormag_site_library_page_content();
 				?>
