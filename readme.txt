@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.4.1 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
 
 = Version 1.4.0 - 2019-07-11 =
