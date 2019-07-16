@@ -13,6 +13,9 @@ project.properties
 # Sass
 .sass-cache/
 
+# Dist folder
+/dist/
+
 # OS X metadata
 .DS_Store
 

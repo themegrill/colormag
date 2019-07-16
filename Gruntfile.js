@@ -76,7 +76,7 @@ module.exports = function( grunt ){
 		// Compress files and folders.
 		compress: {
 			options: {
-				archive: 'colormag.zip'
+				archive: 'dist/colormag.zip'
 			},
 			files: {
 				src: [
