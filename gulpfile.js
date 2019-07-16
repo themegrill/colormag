@@ -41,7 +41,8 @@ function sassCompile() {
         .pipe( sass({
             indentType: 'tab',
             indentWidth: 1,
-            outputStyle: 'expanded'
+            outputStyle: 'expanded',
+            linefeed: 'crlf'
         } ).on( 'error', sass.logError) )
         .pipe( gulp.dest( paths.styles.dest ) )
         .pipe( browserSync.stream() );
@@ -52,7 +53,8 @@ function elementorStylesCompile() {
         .pipe( sass({
             indentType: 'tab',
             indentWidth: 1,
-            outputStyle: 'expanded'
+            outputStyle: 'expanded',
+            linefeed: 'crlf'
         } ).on( 'error', sass.logError) )
         .pipe( postcss([
             autoprefixer({
