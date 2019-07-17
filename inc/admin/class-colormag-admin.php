@@ -189,12 +189,17 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		 * Show welcome notice.
 		 */
 		public function welcome_notice() {
+			$redirect = esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) );
+
+			wp_localize_script(
+				'colormag-plugin-install-helper',
+				'colormag_notice_dismiss_link',
+				array(
+					'redirect' => $redirect,
+				)
+			);
 			?>
 			<div id="message" class="updated colormag-message notice is-dismissible">
-				<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) ); ?>">
-					<span class="screen-reader-text"><?php esc_html_e( 'Dismiss', 'colormag' ); ?></span>
-				</a>
-
 				<p>
 					<?php printf( esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?>
 				</p>

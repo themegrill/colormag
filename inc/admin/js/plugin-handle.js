@@ -9,6 +9,11 @@
  */
 jQuery( document ).ready( function ( $ ) {
 
+	// For dismissing getting started notice.
+	$( '#message.colormag-message .notice-dismiss' ).click( function ( e ) {
+		window.location.href = colormag_notice_dismiss_link.redirect;
+	});
+
 	$( '.btn-get-started' ).click( function ( e ) {
 		e.preventDefault();
 		var extra_uri, redirect_uri, state, dismiss_nonce;
