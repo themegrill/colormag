@@ -196,10 +196,6 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				</a>
 
 				<div class="colormag-message-wrapper">
-					<div class="colormag-logo">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/colormag-getting-started-logo.png" alt="<?php esc_html_e( 'ColorMag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
-					</div>
-
 					<p>
 						<?php printf( esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?>
 
