@@ -190,17 +190,17 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		 */
 		public function welcome_notice() {
 			?>
-			<div id="message" class="updated colormag-message">
+			<div id="message" class="updated colormag-message notice is-dismissible">
 				<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) ); ?>">
-					<?php esc_html_e( 'Dismiss', 'colormag' ); ?>
+					<span class="screen-reader-text"><?php esc_html_e( 'Dismiss', 'colormag' ); ?></span>
 				</a>
 
 				<div class="colormag-message-wrapper">
 					<p>
 						<?php printf( esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">', '</a>' ); ?>
-
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
 					</p>
+
+					<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
 
 					<div class="submit">
 						<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?>"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a>
