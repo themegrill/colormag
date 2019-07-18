@@ -257,19 +257,6 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 				}
 				?>
 
-				<p class="menu-toggle"></p>
-				<?php
-				if ( has_nav_menu( 'primary' ) ) {
-					wp_nav_menu( array(
-						'theme_location'  => 'primary',
-						'container_class' => 'menu-primary-container',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					) );
-				} else {
-					wp_page_menu();
-				}
-				?>
-
 				<?php if ( get_theme_mod( 'colormag_random_post_in_menu', 0 ) == 1 || get_theme_mod( 'colormag_search_icon_in_menu', 0 ) == 1 ) { ?>
 					<div class="search-random-icons-container">
 						<?php
@@ -288,6 +275,19 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						<?php } ?>
 					</div>
 				<?php } ?>
+
+				<p class="menu-toggle"></p>
+				<?php
+				if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu( array(
+						'theme_location'  => 'primary',
+						'container_class' => 'menu-primary-container',
+						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					) );
+				} else {
+					wp_page_menu();
+				}
+				?>
 
 			</div>
 		</nav>
