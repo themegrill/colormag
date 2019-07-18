@@ -3679,11 +3679,14 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 		margin-bottom: 0;
 	}
 	#masthead.colormag-header-clean #site-navigation .random-post a {
-		padding: 15px;
+		padding: 20px;
 	}
 	#masthead.colormag-header-clean #site-navigation .menu-toggle::before,
 	#masthead.colormag-header-clean #site-navigation .fa.search-top {
-		padding: 15px;
+		padding: 20px;
+	}
+	#masthead.colormag-header-clean .main-small-navigation .home-icon a {
+		padding: 20px;
 	}
 	#masthead.colormag-header-clean .main-small-navigation .menu-toggle {
 		background-color: #289dcc;

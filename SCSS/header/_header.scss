@@ -540,17 +540,25 @@
 			#site-navigation {
 				.random-post {
 					a {
-						padding: 15px;
+						padding: 20px;
 					}
 				}
 
 				.menu-toggle::before,
 				.fa.search-top {
-					padding: 15px;
+					padding: 20px;
 				}
 			}
 
 			.main-small-navigation {
+
+				.home-icon {
+
+					a {
+						padding: 20px;
+					}
+				}
+
 				.menu-toggle {
 					background-color: $primary;
 				}
