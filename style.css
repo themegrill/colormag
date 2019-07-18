@@ -757,6 +757,10 @@ body {
 
 /* =SEARCH WIDGET
 ----------------------------------------------- */
+.search-random-icons-container {
+	float: right;
+}
+
 #masthead .search-wrap input.s {
 	width: 200px;
 }
@@ -765,10 +769,7 @@ body {
 	color: #ffffff;
 	cursor: pointer;
 	font-size: 21px;
-	padding: 11px 12px;
-	position: absolute;
-	right: 44px;
-	top: 0;
+	padding: 10px 12px;
 }
 
 .fa.search-top:hover {
@@ -821,9 +822,7 @@ body {
 /* =RANDOM POST
 ----------------------------------------------- */
 .random-post {
-	position: absolute;
-	right: 0;
-	top: 0;
+	float: right;
 }
 
 .random-post .fa-random {
