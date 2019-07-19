@@ -3444,14 +3444,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	padding-right: 0;
 }
 
-#masthead.colormag-header-classic .home-icon {
-	background: none;
-}
-
-#masthead.colormag-header-classic .home-icon .fa {
-	color: #289dcc;
-}
-
 #masthead.colormag-header-classic #site-navigation {
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 	position: relative;
@@ -3601,6 +3593,22 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	color: #343a40;
 }
 
+#masthead.colormag-header-classic .main-navigation .home-icon {
+	background: none;
+}
+
+#masthead.colormag-header-classic .main-navigation .home-icon a {
+	padding: 10px 15px;
+}
+
+#masthead.colormag-header-classic .main-navigation .home-icon a:hover .fa {
+	color: #289dcc;
+}
+
+#masthead.colormag-header-classic .main-navigation .home-icon .fa {
+	color: #343a40;
+}
+
 #masthead.colormag-header-classic .main-small-navigation .menu-primary-container,
 #masthead.colormag-header-classic .main-small-navigation .nav-menu {
 	padding-top: 0;
@@ -3724,6 +3732,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	#masthead.colormag-header-classic #site-navigation .menu-toggle::before,
 	#masthead.colormag-header-classic #site-navigation .fa.search-top {
 		padding: 15px;
+		line-height: 26px;
+	}
+	#masthead.colormag-header-classic #site-navigation .home-icon a {
+		padding: 15px;
+		line-height: 26px;
 	}
 	.breaking-news {
 		height: auto;

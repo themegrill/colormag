@@ -390,6 +390,7 @@ function colormag_custom_css() {
 		#masthead .main-small-navigation li.current-menu-ancestor > a,
 		#masthead .main-small-navigation li.current-page-item > a,
 		#masthead .main-small-navigation li.current-menu-item > a{background-color:' . $primary_color . '}
+		#masthead.colormag-header-classic .main-navigation .home-icon a:hover .fa { color:' . $primary_color . '}
 		.main-small-navigation .current-menu-item>a,.main-small-navigation .current_page_item>a {background:' . $primary_color . '}
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover,
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor,
