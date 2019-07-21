@@ -364,9 +364,10 @@ function colormag_custom_css() {
 		#masthead.colormag-header-clean .breaking-news .newsticker a:hover,
 		#masthead.colormag-header-classic .breaking-news .newsticker a:hover,
 		#masthead.colormag-header-classic #site-navigation .fa.search-top:hover,
-		#masthead.colormag-header-classic #site-navigation .random-post a:hover .fa-random,
+		#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a:hover .fa-random,
+		.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .home-icon:hover .fa,
 		#masthead .main-small-navigation li:hover > .sub-toggle i,
-		.better-responsive-menu #masthead .main-small-navigation .sub-toggle.active .fa  {color:' . $primary_color . '}
+		.better-responsive-menu #masthead .main-small-navigation .sub-toggle.active .fa {color:' . $primary_color . '}
 		.fa.search-top:hover,
 		#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle,
 		.main-navigation ul li.focus > a,
