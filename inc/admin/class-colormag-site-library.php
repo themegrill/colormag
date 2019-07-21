@@ -39,6 +39,11 @@ class ColorMag_Site_Library {
 		$template = 'colormag';
 		$packages = get_transient( 'colormag_site_library_theme_' . $template );
 
+		// Disable repeated HTTP API Calls for GitHub to fetch theme starter sites.
+		if ( $packages ) {
+			return $packages;
+		}
+
 		$raw_packages = wp_safe_remote_get( "https://raw.githubusercontent.com/themegrill/themegrill-demo-pack/master/configs/{$template}.json" );
 
 		if ( ! is_wp_error( $raw_packages ) ) {
