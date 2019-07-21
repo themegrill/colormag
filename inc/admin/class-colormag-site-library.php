@@ -39,18 +39,15 @@ class ColorMag_Site_Library {
 		$template = 'colormag';
 		$packages = get_transient( 'colormag_site_library_theme_' . $template );
 
-		// Disable repeated HTTP API Calls for GitHub to fetch theme starter sites.
-		if ( $packages ) {
-			return $packages;
-		}
+		if ( false === $packages ) {
+			$raw_packages = wp_safe_remote_get( "https://raw.githubusercontent.com/themegrill/themegrill-demo-pack/master/configs/{$template}.json" );
 
-		$raw_packages = wp_safe_remote_get( "https://raw.githubusercontent.com/themegrill/themegrill-demo-pack/master/configs/{$template}.json" );
+			if ( ! is_wp_error( $raw_packages ) ) {
+				$packages = json_decode( wp_remote_retrieve_body( $raw_packages ) );
 
-		if ( ! is_wp_error( $raw_packages ) ) {
-			$packages = json_decode( wp_remote_retrieve_body( $raw_packages ) );
-
-			if ( $packages ) {
-				set_transient( 'colormag_site_library_theme_' . $template, $packages, WEEK_IN_SECONDS );
+				if ( $packages ) {
+					set_transient( 'colormag_site_library_theme_' . $template, $packages, WEEK_IN_SECONDS );
+				}
 			}
 		}
 
