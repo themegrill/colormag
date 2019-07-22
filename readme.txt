@@ -50,6 +50,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - TBD =
+* Fix - Random posts and Search icon position in menu.
+* Fix - Comment form boxes design.
+* Fix - User consent design for comment form.
+
 = Version 1.4.1 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
 
