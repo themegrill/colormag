@@ -313,6 +313,7 @@ input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
+input[type="url"],
 textarea {
 	-moz-appearance: none !important;
 	-webkit-appearance: none !important;
@@ -322,6 +323,7 @@ textarea {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="url"],
 textarea {
 	padding: 1%;
 	border: 1px solid #eaeaea;
@@ -338,6 +340,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="password"]:focus,
+input[type="url"]:focus,
 textarea:focus {
 	border: 1px solid #eaeaea;
 }
@@ -1539,13 +1542,23 @@ li.default-menu {
 	font-size: 1.6rem;
 }
 
+#respond form .comment-form-cookies-consent #wp-comment-cookies-consent {
+	margin-right: 5px;
+}
+
+#respond form .comment-form-cookies-consent label {
+	display: inline-block;
+}
+
 #respond form label {
 	display: block;
 	line-height: 1.5;
 }
 
 #respond form input[type="text"],
-#respond form textarea {
+#respond form textarea,
+#respond form input[type="email"],
+#respond form input[type="url"] {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	font-size: 16px;
