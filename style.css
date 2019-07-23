@@ -2706,6 +2706,11 @@ ul.wp-block-gallery {
 	margin-right: 10px;
 }
 
+.widget_featured_posts.widget_featured_meta .following-post .single-article figure {
+	float: left;
+	margin-right: 10px;
+}
+
 #secondary .widget_featured_posts .following-post .article-content .entry-title {
 	font-size: 14px;
 	line-height: 1.4;
