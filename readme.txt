@@ -59,6 +59,7 @@ and we will include it within the theme from next version update.
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.
 * Tweak - Autofocus on search field for click on search icon toggle button in menu.
+* Tweak - Remove display of `Comments Off` message, if comment is off within featured posts widget.
 
 = Version 1.4.1 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
