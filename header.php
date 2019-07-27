@@ -40,10 +40,12 @@ if ( function_exists( 'wp_body_open' ) ) {
 <?php do_action( 'colormag_before' ); ?>
 
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'colormag' ); ?></a>
+
 	<?php do_action( 'colormag_before_header' ); ?>
 
 	<?php
-	// Add the main total header area display type dynamic class
+	// Add the main total header area display type dynamic class.
 	$main_total_header_option_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
 
 	$class_name = '';
