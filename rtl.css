@@ -114,6 +114,10 @@ input.s:focus {
     float: right;
 }
 
+.search-random-icons-container {
+    float: left;
+}
+
 .main-navigation li {
     float: right;
 }
