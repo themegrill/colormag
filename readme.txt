@@ -54,6 +54,7 @@ and we will include it within the theme from next version update.
 * Fix - Random posts and Search icon position in menu.
 * Fix - Comment form boxes design.
 * Fix - User consent design for comment form.
+* Fix - Published and Updated class for Google Structured Data.
 * Fix - Featured Posts widget image margin when used with Elementor.
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.
