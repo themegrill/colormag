@@ -55,6 +55,8 @@ and we will include it within the theme from next version update.
 * Fix - Comment form boxes design.
 * Fix - User consent design for comment form.
 * Fix - Featured Posts widget image margin when used with Elementor.
+* Tweak - Update `screen-reader-text` CSS.
+* Tweak - Added `skip-link` to content area.
 
 = Version 1.4.1 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
