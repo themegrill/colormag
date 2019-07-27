@@ -2074,7 +2074,7 @@ a#scroll-up:hover {
 	padding-bottom: 20px;
 }
 
-.below-entry-meta .updated {
+.below-entry-meta .updated:not(.published) {
 	display: none;
 }
 
