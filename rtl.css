@@ -492,9 +492,10 @@ a#scroll-up {
     float: left;
 }
 
-.widget_featured_posts .following-post figure {
+.widget_featured_posts.widget_featured_meta .following-post .single-article figure {
     float: right;
     margin-left: 10px;
+    margin-right: 0;
 }
 
 .breaking-news {
