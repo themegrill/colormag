@@ -1,9 +1,54 @@
 jQuery( document ).ready( function () {
 
+	/**
+	 * Search
+	 */
+	var hideSearchForm = function() {
+		jQuery( '#masthead .search-form-top' ).removeClass( 'show' );
+	};
+
 	// For Search Icon Toggle effect added at the top.
-	jQuery( '.search-top' ).click( function () {
-		jQuery( '#masthead .search-form-top' ).toggle();
-	} );
+	jQuery( '.search-top' ).click(
+		function () {
+			jQuery( this ).next( '#masthead .search-form-top' ).toggleClass( 'show' );
+
+			// Focus after some time to fix conflict with toggleClass.
+			setTimeout(
+				function () {
+					jQuery( '#masthead .search-form-top input' ).focus();
+				},
+				200
+			);
+
+			// For esc key press.
+			jQuery( document ).on(
+				'keyup',
+				function ( e ) {
+					// On esc key press.
+					if ( 27 === e.keyCode ) {
+						// If search box is opened.
+						if ( jQuery( '#masthead .search-form-top' ).hasClass( 'show' ) ) {
+							hideSearchForm();
+						}
+					}
+				}
+			);
+
+			jQuery( document ).on(
+				'click.outEvent',
+				function ( e ) {
+					if ( e.target.closest( '.top-search-wrap' ) ) {
+						return;
+					}
+
+					hideSearchForm();
+
+					// Unbind current click event.
+					jQuery( document ).off( 'click.outEvent' );
+				}
+			);
+		}
+	);
 
 	jQuery( '#scroll-up' ).hide();
 

@@ -268,9 +268,11 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						// Displays the search icon.
 						if ( get_theme_mod( 'colormag_search_icon_in_menu', 0 ) == 1 ) {
 							?>
-							<i class="fa fa-search search-top"></i>
-							<div class="search-form-top">
-								<?php get_search_form(); ?>
+							<div class="top-search-wrap">
+								<i class="fa fa-search search-top"></i>
+								<div class="search-form-top">
+									<?php get_search_form(); ?>
+								</div>
 							</div>
 						<?php } ?>
 					</div>

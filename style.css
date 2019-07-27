@@ -768,6 +768,10 @@ body {
 	width: 200px;
 }
 
+.top-search-wrap {
+	float: left;
+}
+
 .fa.search-top {
 	color: #ffffff;
 	cursor: pointer;
@@ -812,6 +816,10 @@ body {
 	top: 44px;
 	z-index: 9999;
 	background-color: #ffffff;
+}
+
+.search-form-top.show {
+	display: block;
 }
 
 .not-found .search-wrap button {
