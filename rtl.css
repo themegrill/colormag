@@ -567,6 +567,18 @@ a#scroll-up {
     margin-left: 10px;
 }
 
+.elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small.tg-col-control .tg-module-thumb,
+.elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small .tg-module-thumb {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.elementor .tg-module-wrapper .tg_module_block .tg-module-thumb .tg-post-categories {
+    left: auto;
+    right: 0;
+}
+
 @media screen and (max-width:768px) {
     #header-logo-image {
         padding-left: 0;
