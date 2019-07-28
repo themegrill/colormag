@@ -56,6 +56,8 @@ and we will include it within the theme from next version update.
 * Fix - User consent design for comment form.
 * Fix - Published and Updated class for Google Structured Data.
 * Fix - Featured Posts widget image margin when used with Elementor.
+* Fix - Featured image alignment on featured posts widget for RTL.
+* Tweak - CSS change for Elementor Block Elements.
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.
 * Tweak - Autofocus on search field for click on search icon toggle button in menu.
