@@ -31,6 +31,7 @@
 			// Small list style
 			&.tg_module_block--list-small {
 				position: relative;
+				margin-bottom: 15px;
 
 				.tg-module-thumb {
 					width: 100px;
@@ -60,20 +61,12 @@
 						margin-left: 0;
 						min-height: 0;
 					}
-
-					&.tg-col-control {
-						margin-bottom: 15px;
-					}
-				}
-
-				&:not(.tg-col-control) {
-					margin-bottom: 15px;
 				}
 
 				&.tg-col-control {
 
 					.tg-module-thumb {
-						margin-bottom: 18px;
+						margin-bottom: 0;
 					}
 				}
 

@@ -215,6 +215,7 @@
 
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small {
 	position: relative;
+	margin-bottom: 15px;
 }
 
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small .tg-module-thumb {
@@ -244,16 +245,8 @@
 	min-height: 0;
 }
 
-.elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small.no-thumbnail.tg-col-control {
-	margin-bottom: 15px;
-}
-
-.elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small:not(.tg-col-control) {
-	margin-bottom: 15px;
-}
-
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small.tg-col-control .tg-module-thumb {
-	margin-bottom: 18px;
+	margin-bottom: 0;
 }
 
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--inner-shadow {
