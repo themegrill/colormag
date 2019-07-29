@@ -50,13 +50,13 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - TBD =
+= Version - 1.4.2 - 2019-07-29 =
 * Fix - Random posts and Search icon position in menu.
 * Fix - Comment form boxes design.
 * Fix - User consent design for comment form.
 * Fix - Published and Updated class for Google Structured Data.
 * Fix - Featured Posts widget image margin when used with Elementor.
-* Fix - Featured image alignment on featured posts widget for RTL.
+* Fix - Featured image alignment on featured posts widget for RTL support.
 * Tweak - CSS change for Elementor Block Elements.
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.

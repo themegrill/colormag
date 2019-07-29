@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.4.1\n"
+"Project-Id-Version: ColorMag 1.4.2\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2019-07-16 08:45:41+00:00\n"
+"POT-Creation-Date: 2019-07-29 04:13:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,7 +111,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:45 inc/functions.php:312
+#: content-page.php:45 inc/functions.php:316
 msgid "Edit"
 msgstr ""
 
@@ -121,6 +121,10 @@ msgstr ""
 
 #: functions.php:82
 msgid "Primary Menu"
+msgstr ""
+
+#: header.php:43
+msgid "Skip to content"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:42
@@ -165,7 +169,7 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:210
-#: inc/admin/class-colormag-site-library.php:111
+#: inc/admin/class-colormag-site-library.php:113
 msgid "Get started with ColorMag"
 msgstr ""
 
@@ -221,7 +225,7 @@ msgid "Needs ThemeGrill Demo Importer plugin."
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:355
-#: inc/admin/class-colormag-site-library.php:111
+#: inc/admin/class-colormag-site-library.php:113
 msgid "Import"
 msgstr ""
 
@@ -532,19 +536,19 @@ msgstr ""
 msgid "View Pro"
 msgstr ""
 
-#: inc/admin/class-colormag-site-library.php:75
+#: inc/admin/class-colormag-site-library.php:77
 msgid "Themes list"
 msgstr ""
 
-#: inc/admin/class-colormag-site-library.php:92
+#: inc/admin/class-colormag-site-library.php:94
 msgid "Pro"
 msgstr ""
 
-#: inc/admin/class-colormag-site-library.php:116
+#: inc/admin/class-colormag-site-library.php:118
 msgid "Preview"
 msgstr ""
 
-#: inc/admin/class-colormag-site-library.php:122
+#: inc/admin/class-colormag-site-library.php:124
 msgid "Buy Now"
 msgstr ""
 
@@ -1232,45 +1236,45 @@ msgstr ""
 msgid "Grid Style 5"
 msgstr ""
 
-#: inc/functions.php:287 inc/related-posts.php:33
-#: inc/widgets/colormag-featured-posts-slider-widget.php:137
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:168
-#: inc/widgets/colormag-featured-posts-widget.php:168
-#: inc/widgets/colormag-highlighted-posts-widget.php:131
+#: inc/functions.php:291 inc/related-posts.php:40
+#: inc/widgets/colormag-featured-posts-slider-widget.php:144
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:175
+#: inc/widgets/colormag-featured-posts-widget.php:175
+#: inc/widgets/colormag-highlighted-posts-widget.php:138
 msgid ""
 "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" "
 "rel=\"bookmark\"><i class=\"fa fa-calendar-o\"></i> %3$s</a></span>"
 msgstr ""
 
-#: inc/functions.php:305
+#: inc/functions.php:309
 msgid "<i class=\"fa fa-comment\"></i> 0 Comments"
 msgstr ""
 
-#: inc/functions.php:305
+#: inc/functions.php:309
 msgid "<i class=\"fa fa-comment\"></i> 1 Comment"
 msgstr ""
 
-#: inc/functions.php:305
+#: inc/functions.php:309
 msgid "<i class=\"fa fa-comments\"></i> % Comments"
 msgstr ""
 
-#: inc/functions.php:307
+#: inc/functions.php:311
 msgid ", "
 msgstr ""
 
-#: inc/functions.php:512
+#: inc/functions.php:518
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:522
+#: inc/functions.php:528
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:526
+#: inc/functions.php:532
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:546
+#: inc/functions.php:552
 msgid "WordPress"
 msgstr ""
 
@@ -1278,51 +1282,51 @@ msgstr ""
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:550
+#: inc/functions.php:556
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: inc/functions.php:550
+#: inc/functions.php:556
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/functions.php:550
+#: inc/functions.php:556
 msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:597
+#: inc/functions.php:603
 msgid "Latest:"
 msgstr ""
 
-#: inc/functions.php:659
+#: inc/functions.php:665
 msgid "View a random post"
 msgstr ""
 
-#: inc/functions.php:873
+#: inc/functions.php:879
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:873
+#: inc/functions.php:879
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:888
+#: inc/functions.php:894
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:891
+#: inc/functions.php:897
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:899
+#: inc/functions.php:905
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:905
+#: inc/functions.php:911
 msgid "Reply"
 msgstr ""
 
-#: inc/related-posts.php:5
+#: inc/related-posts.php:6
 msgid "You May Also Like"
 msgstr ""
 
@@ -1999,12 +2003,12 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/functions.php:516 navigation.php:44
+#: inc/functions.php:522 navigation.php:44
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:517 navigation.php:45
+#: inc/functions.php:523 navigation.php:45
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
