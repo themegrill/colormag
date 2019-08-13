@@ -1082,6 +1082,11 @@ li.default-menu {
 	padding-top: 43px;
 }
 
+.main-small-navigation .menu-primary-container > ul,
+.main-small-navigation .menu > ul {
+	width: 100%;
+}
+
 .main-small-navigation ul {
 	margin: 0;
 	list-style: none;

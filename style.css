@@ -1080,6 +1080,11 @@ li.default-menu {
 	padding-top: 43px;
 }
 
+.main-small-navigation .menu-primary-container > ul,
+.main-small-navigation .menu > ul {
+	width: 100%;
+}
+
 .main-small-navigation ul {
 	margin: 0;
 	list-style: none;
@@ -3301,6 +3306,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead .main-small-navigation ul.menu-scrollbar {
 	overflow-y: scroll;
+	width: 100%;
 }
 
 #masthead .main-small-navigation li:hover > a, #masthead .main-small-navigation li.current-page-ancestor > a, #masthead .main-small-navigation li.current-menu-ancestor > a, #masthead .main-small-navigation li.current-page-item > a, #masthead .main-small-navigation li.current-menu-item > a {
