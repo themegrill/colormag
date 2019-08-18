@@ -63,7 +63,7 @@ get_header(); ?>
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
 								_e( 'Links', 'colormag' );
 
-							elseif ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) :
+							elseif ( is_plugin_active( 'woocommerce/woocommerce.php' ) && function_exists( 'is_woocommerce' ) && is_woocommerce() ) :
 									woocommerce_page_title( false );
 
 							else :
