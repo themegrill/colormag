@@ -3672,6 +3672,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li ul {
 	top: 0;
+	transition: none;
 }
 
 #masthead.colormag-header-classic .main-navigation ul li.menu-item-has-children:hover > ul.sub-menu {
