@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Tweak - Modify menu CSS for keyboard accessibility.
+
 = Version - 1.4.2 - 2019-07-29 =
 * Fix - Random posts and Search icon position in menu.
 * Fix - Comment form boxes design.
