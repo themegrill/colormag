@@ -3296,6 +3296,14 @@ iframe#wp-custom-header-video {
 	width: 100%;
 }
 
+video#wp-custom-header-video {
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
+
 .wp-custom-header-video-button {
 	opacity: 0;
 	visibility: hidden;
