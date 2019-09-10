@@ -11,7 +11,6 @@ function colormag_customize_register( $wp_customize ) {
 
 	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-upsell-section.php';
 	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-image-radio-control.php';
-	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-custom-css-control.php';
 
 	// Transport postMessage variable set
 	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -497,29 +496,8 @@ function colormag_customize_register( $wp_customize ) {
 		),
 		'section' => 'colormag_color_skin_setting_section',
 	) );
-
-	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
-
-		$wp_customize->add_section( 'colormag_custom_css_setting', array(
-			'priority' => 9,
-			'title'    => __( 'Custom CSS', 'colormag' ),
-			'panel'    => 'colormag_design_options',
-		) );
-
-		$wp_customize->add_setting( 'colormag_custom_css', array(
-			'default'              => '',
-			'capability'           => 'edit_theme_options',
-			'sanitize_callback'    => 'wp_filter_nohtml_kses',
-			'sanitize_js_callback' => 'wp_filter_nohtml_kses',
-		) );
-
-		$wp_customize->add_control( new COLORMAG_Custom_CSS_Control( $wp_customize, 'colormag_custom_css', array(
-			'label'    => __( 'Write your Custom CSS', 'colormag' ),
-			'section'  => 'colormag_custom_css_setting',
-			'settings' => 'colormag_custom_css',
-		) ) );
-	}
 	// End of the Design Options
+
 	// Start of the Social Link Options
 	$wp_customize->add_panel( 'colormag_social_links_options', array(
 		'priority'    => 510,

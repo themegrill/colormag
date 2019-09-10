@@ -460,13 +460,6 @@ function colormag_custom_css() {
 		<style type="text/css"><?php echo $colormag_internal_css; ?></style>
 		<?php
 	}
-
-	$colormag_custom_css = get_theme_mod( 'colormag_custom_css' );
-	if ( $colormag_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
-		echo '<!-- ' . get_bloginfo( 'name' ) . ' Custom Styles -->';
-		?>
-		<style type="text/css"><?php echo $colormag_custom_css; ?></style><?php
-	}
 }
 
 /**************************************************************************************/
@@ -825,25 +818,6 @@ if ( ! function_exists( 'colormag_the_custom_logo' ) ) {
 		}
 	}
 }
-
-/**
- * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
- */
-function colormag_custom_css_migrate() {
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = get_theme_mod( 'colormag_custom_css' );
-		if ( $custom_css ) {
-			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return   = wp_update_custom_css_post( $core_css . $custom_css );
-			if ( ! is_wp_error( $return ) ) {
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				remove_theme_mod( 'colormag_custom_css' );
-			}
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'colormag_custom_css_migrate' );
 
 if ( ! function_exists( 'colormag_pingback_header' ) ) :
 
