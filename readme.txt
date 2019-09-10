@@ -53,6 +53,7 @@ and we will include it within the theme from next version update.
 = Version TBD =
 * Tweak - Modify menu CSS for keyboard accessibility.
 * Tweak - Modify self hosted Header Video CSS to align center.
+* Tweak - Deprecate Custom CSS customize option provided via theme
 
 = Version - 1.4.2 - 2019-07-29 =
 * Fix - Random posts and Search icon position in menu.
