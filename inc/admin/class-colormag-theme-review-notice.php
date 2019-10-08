@@ -148,25 +148,28 @@ class ColorMag_Theme_Review_Notice {
 	 */
 	public function colormag_theme_rating_notice_data_remove() {
 
-		global $current_user;
-		$user_id                  = $current_user->ID;
-		$theme_installed_time     = get_option( 'colormag_theme_installed_time' );
-		$ignored_notice           = get_user_meta( $user_id, 'colormag_ignore_theme_review_notice', true );
-		$ignored_notice_partially = get_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially', true );
+		$get_all_users        = get_users();
+		$theme_installed_time = get_option( 'colormag_theme_installed_time' );
 
 		// Delete options data.
 		if ( $theme_installed_time ) {
 			delete_option( 'colormag_theme_installed_time' );
 		}
 
-		// Delete permanent notice remove data.
-		if ( $ignored_notice ) {
-			delete_user_meta( $user_id, 'colormag_ignore_theme_review_notice' );
-		}
+		// Delete user meta data for theme review notice.
+		foreach ( $get_all_users as $user ) {
+			$ignored_notice           = get_user_meta( $user->ID, 'colormag_ignore_theme_review_notice', true );
+			$ignored_notice_partially = get_user_meta( $user->ID, 'nag_colormag_ignore_theme_review_notice_partially', true );
 
-		// Delete partial notice remove data.
-		if ( $ignored_notice_partially ) {
-			delete_user_meta( $user_id, 'nag_colormag_ignore_theme_review_notice_partially' );
+			// Delete permanent notice remove data.
+			if ( $ignored_notice ) {
+				delete_user_meta( $user->ID, 'colormag_ignore_theme_review_notice' );
+			}
+
+			// Delete partial notice remove data.
+			if ( $ignored_notice_partially ) {
+				delete_user_meta( $user->ID, 'nag_colormag_ignore_theme_review_notice_partially' );
+			}
 		}
 
 	}
