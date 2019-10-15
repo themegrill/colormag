@@ -54,6 +54,9 @@ class ColorMag_Customizer {
 		// Include the customize base option file.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/class-colormag-customize-base-option.php';
 
+		// Include the required customize options file.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-options.php';
+
 	}
 
 	/**
