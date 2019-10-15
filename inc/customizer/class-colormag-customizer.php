@@ -26,6 +26,9 @@ class ColorMag_Customizer {
 		// Include the required files for Customize option.
 		add_action( 'customize_register', array( $this, 'colormag_customize_files_include' ) );
 
+		// Include the required customize options.
+		add_action( 'customize_register', array( $this, 'colormag_customize_options' ) );
+
 	}
 
 	/**
@@ -35,6 +38,19 @@ class ColorMag_Customizer {
 
 		// Include the customize base option file.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/class-colormag-customize-base-option.php';
+
+	}
+
+	/**
+	 * Include the required customize options.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 *
+	 * @return array Customizer options for registering panels, sections as well as controls.
+	 */
+	public function colormag_customize_options( $wp_customize ) {
+
+		return apply_filters( 'colormag_customizer_options', array(), $wp_customize );
 
 	}
 
