@@ -9,9 +9,6 @@
  */
 function colormag_customize_register( $wp_customize ) {
 
-	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-upsell-section.php';
-	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-image-radio-control.php';
-
 	// Transport postMessage variable set
 	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 

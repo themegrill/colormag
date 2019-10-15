@@ -29,6 +29,9 @@ class ColorMag_Customizer {
 		// Include the required customize options.
 		add_action( 'customize_register', array( $this, 'colormag_customize_options' ) );
 
+		// Include the custom controls for customize options.
+		add_action( 'customize_register', array( $this, 'colormag_customize_custom_controls_includes' ) );
+
 	}
 
 	/**
@@ -51,6 +54,18 @@ class ColorMag_Customizer {
 	public function colormag_customize_options( $wp_customize ) {
 
 		return apply_filters( 'colormag_customizer_options', array(), $wp_customize );
+
+	}
+
+	/**
+	 * Include the required files for extending the custom Customize controls.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 */
+	public function colormag_customize_custom_controls_includes( $wp_customize ) {
+
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-upsell-section.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-image-radio-control.php';
 
 	}
 
