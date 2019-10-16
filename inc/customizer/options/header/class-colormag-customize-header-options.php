@@ -19,7 +19,7 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 	/**
 	 * Include customize options.
 	 *
-	 * @param                       $options
+	 * @param array                 $options
 	 * @param \WP_Customize_Manager $wp_customize
 	 *
 	 * @return mixed|void

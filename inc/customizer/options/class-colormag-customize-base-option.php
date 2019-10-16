@@ -31,6 +31,7 @@ class ColorMag_Customize_Base_Option {
 	/**
 	 * Base method for customize options.
 	 *
+	 * @param array                $options      Customize options provided via the theme.
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 *
 	 * @return mixed Customizer options for registering panels, sections as well as controls.
