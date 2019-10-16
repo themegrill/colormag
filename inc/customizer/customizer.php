@@ -42,46 +42,6 @@ function colormag_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Category Color Options
-	$wp_customize->add_panel( 'colormag_category_color_panel', array(
-		'priority'    => 535,
-		'title'       => __( 'Category Color Options', 'colormag' ),
-		'capability'  => 'edit_theme_options',
-		'description' => __( 'Change the color of each category items as you want.', 'colormag' ),
-	) );
-
-	$wp_customize->add_section( 'colormag_category_color_setting', array(
-		'priority' => 1,
-		'title'    => __( 'Category Color Settings', 'colormag' ),
-		'panel'    => 'colormag_category_color_panel',
-	) );
-
-	$i                = 1;
-	$args             = array(
-		'orderby'    => 'id',
-		'hide_empty' => 0,
-	);
-	$categories       = get_categories( $args );
-	$wp_category_list = array();
-	foreach ( $categories as $category_list ) {
-		$wp_category_list[ $category_list->cat_ID ] = $category_list->cat_name;
-
-		$wp_customize->add_setting( 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
-			'default'              => '',
-			'capability'           => 'edit_theme_options',
-			'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
-			'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
-			'label'    => sprintf( __( '%s', 'colormag' ), $wp_category_list[ $category_list->cat_ID ] ),
-			'section'  => 'colormag_category_color_setting',
-			'settings' => 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
-			'priority' => $i,
-		) ) );
-		$i ++;
-	}
-
 	// sanitization works
 	// radio/select buttons sanitization
 	function colormag_radio_select_sanitize( $input, $setting ) {
