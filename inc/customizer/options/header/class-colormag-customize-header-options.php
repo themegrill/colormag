@@ -79,10 +79,16 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		// Selective refresh for date display
 		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'colormag_date_display', array(
-				'selector'        => '.date-in-header',
-				'render_callback' => 'colormag_date_display',
-			) );
+			$wp_customize->selective_refresh->add_partial(
+				'colormag_date_display',
+				array(
+					'selector'        => '.date-in-header',
+					'render_callback' => array(
+						'ColorMag_Customizer_Partials',
+						'render_current_date',
+					),
+				)
+			);
 		}
 
 		// date in header display type
@@ -106,10 +112,16 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		// Selective refresh for date display type
 		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'colormag_date_display_type', array(
-				'selector'        => '.date-in-header',
-				'render_callback' => 'colormag_date_display_type',
-			) );
+			$wp_customize->selective_refresh->add_partial(
+				'colormag_date_display_type',
+				array(
+					'selector'        => '.date-in-header',
+					'render_callback' => array(
+						'ColorMag_Customizer_Partials',
+						'render_date_display_type',
+					),
+				)
+			);
 		}
 
 		// home icon enable/disable in primary menu
@@ -204,10 +216,16 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		// Selective refresh for displaying random post icon
 		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'colormag_random_post_in_menu', array(
-				'selector'        => '.random-post',
-				'render_callback' => 'colormag_random_post',
-			) );
+			$wp_customize->selective_refresh->add_partial(
+				'colormag_random_post_in_menu',
+				array(
+					'selector'        => '.random-post',
+					'render_callback' => array(
+						'ColorMag_Customizer_Partials',
+						'render_random_post',
+					),
+				)
+			);
 		}
 
 		// Responsive new menu enable/disable
