@@ -32,6 +32,9 @@ class ColorMag_Customizer {
 		// Include the required customize options.
 		add_action( 'customize_register', array( $this, 'customize_options' ) );
 
+		// Include the required customizer sanitizations, callbacks and partials files.
+		add_action( 'customize_register', array( $this, 'customize_sanitize_callback_include' ) );
+
 		// Enqueue the preview JS for customize options.
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 
@@ -77,6 +80,17 @@ class ColorMag_Customizer {
 	public function customize_options( $wp_customize ) {
 
 		return apply_filters( 'colormag_customizer_options', array(), $wp_customize );
+
+	}
+
+	/**
+	 * Include the required customizer sanitization, callbacks and partials file.
+	 */
+	public function customize_sanitize_callback_include() {
+
+		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-sanitizes.php' );
+		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-callbacks.php' );
+		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-partials.php' );
 
 	}
 
