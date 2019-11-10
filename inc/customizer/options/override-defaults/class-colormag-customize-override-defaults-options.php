@@ -33,15 +33,27 @@ class ColorMag_Customize_Override_Defaults_Options extends ColorMag_Customize_Ba
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'blogname', array(
-				'selector'        => '#site-title a',
-				'render_callback' => 'colormag_customize_partial_blogname',
-			) );
+			$wp_customize->selective_refresh->add_partial(
+				'blogname',
+				array(
+					'selector'        => '#site-title a',
+					'render_callback' => array(
+						'ColorMag_Customizer_Partials',
+						'render_customize_partial_blogname',
+					),
+				)
+			);
 
-			$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-				'selector'        => '#site-description',
-				'render_callback' => 'colormag_customize_partial_blogdescription',
-			) );
+			$wp_customize->selective_refresh->add_partial(
+				'blogdescription',
+				array(
+					'selector'        => '#site-description',
+					'render_callback' => array(
+						'ColorMag_Customizer_Partials',
+						'render_customize_partial_blogdescription',
+					),
+				)
+			);
 		}
 
 	}

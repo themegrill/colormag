@@ -138,24 +138,6 @@ add_action( 'customize_register', 'colormag_customize_register' );
 /* * ************************************************************************************** */
 
 /**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function colormag_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function colormag_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
  * Render the breaking news display type for selective refresh partial
  *
  * @return void
