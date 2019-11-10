@@ -24,7 +24,7 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 	 *
 	 * @return mixed|void
 	 */
-	public function colormag_customizer_options( $options, $wp_customize ) {
+	public function customizer_options( $options, $wp_customize ) {
 
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
