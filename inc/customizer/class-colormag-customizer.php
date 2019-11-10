@@ -32,6 +32,9 @@ class ColorMag_Customizer {
 		// Include the required customize options.
 		add_action( 'customize_register', array( $this, 'customize_options' ) );
 
+		// Enqueue the preview JS for customize options.
+		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
+
 	}
 
 	/**
@@ -75,6 +78,23 @@ class ColorMag_Customizer {
 
 		return apply_filters( 'colormag_customizer_options', array(), $wp_customize );
 
+	}
+
+	/**
+	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+	 *
+	 * @since ColorMag 2.0.0
+	 */
+	public function customize_preview_js() {
+		wp_enqueue_script(
+			'colormag-customizer',
+			get_template_directory_uri() . '/js/customizer.js',
+			array(
+				'customize-preview',
+			),
+			false,
+			true
+		);
 	}
 
 }
