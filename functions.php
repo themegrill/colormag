@@ -502,6 +502,9 @@ require_once( COLORMAG_INCLUDES_DIR . '/custom-header.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/header-functions.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php' );
+require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-sanitizes.php' );
+require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-callbacks.php' );
+require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-partials.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/customizer.php' );
 
 /** Add the Elementor compatibility file */
