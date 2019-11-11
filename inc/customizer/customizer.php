@@ -24,12 +24,6 @@ function colormag_customize_register( $wp_customize ) {
 		)
 	);
 
-	// sanitization works
-	// sanitization of links
-	function colormag_links_sanitize() {
-		return false;
-	}
-
 }
 
 add_action( 'customize_register', 'colormag_customize_register' );
