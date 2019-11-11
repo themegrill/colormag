@@ -71,7 +71,10 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		$wp_customize->add_setting( 'colormag_related_posts', array(
 			'default'           => 'categories',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_related_posts_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_related_posts', array(

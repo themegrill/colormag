@@ -25,72 +25,6 @@ function colormag_customize_register( $wp_customize ) {
 	);
 
 	// sanitization works
-	// radio button sanitization
-	function colormag_related_posts_sanitize( $input ) {
-		$valid_keys = array(
-			'categories' => __( 'Related Posts By Categories', 'colormag' ),
-			'tags'       => __( 'Related Posts By Tags', 'colormag' ),
-		);
-		if ( array_key_exists( $input, $valid_keys ) ) {
-			return $input;
-		} else {
-			return '';
-		}
-	}
-
-	function colormag_show_radio_saniztize( $input ) {
-		$valid_keys = array(
-			'header_logo_only' => __( 'Header Logo Only', 'colormag' ),
-			'header_text_only' => __( 'Header Text Only', 'colormag' ),
-			'show_both'        => __( 'Show Both', 'colormag' ),
-			'disable'          => __( 'Disable', 'colormag' ),
-		);
-		if ( array_key_exists( $input, $valid_keys ) ) {
-			return $input;
-		} else {
-			return '';
-		}
-	}
-
-	function colormag_header_image_position_sanitize( $input ) {
-		$valid_keys = array(
-			'position_one'   => __( 'Display the Header image just above the site title/text.', 'colormag' ),
-			'position_two'   => __( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
-			'position_three' => __( 'Display the Header image below main/primary menu.', 'colormag' ),
-		);
-		if ( array_key_exists( $input, $valid_keys ) ) {
-			return $input;
-		} else {
-			return '';
-		}
-	}
-
-	function colormag_site_layout_sanitize( $input ) {
-		$valid_keys = array(
-			'boxed_layout' => __( 'Boxed Layout', 'colormag' ),
-			'wide_layout'  => __( 'Wide Layout', 'colormag' ),
-		);
-		if ( array_key_exists( $input, $valid_keys ) ) {
-			return $input;
-		} else {
-			return '';
-		}
-	}
-
-	function colormag_layout_sanitize( $input ) {
-		$valid_keys = array(
-			'right_sidebar'               => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
-			'left_sidebar'                => COLORMAG_ADMIN_IMAGES_URL . '/left-sidebar.png',
-			'no_sidebar_full_width'       => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-			'no_sidebar_content_centered' => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
-		);
-		if ( array_key_exists( $input, $valid_keys ) ) {
-			return $input;
-		} else {
-			return '';
-		}
-	}
-
 	// color sanitization
 	function colormag_color_option_hex_sanitize( $color ) {
 		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
@@ -114,26 +48,6 @@ function colormag_customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'colormag_customize_register' );
-
-/* * ************************************************************************************** */
-
-/**
- * Render the breaking news display type for selective refresh partial
- *
- * @return void
- */
-function colormag_date_display_type() {
-	// Return if date display option is not enabled
-	if ( get_theme_mod( 'colormag_date_display', 0 ) == 0 ) {
-		return;
-	}
-
-	if ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'theme_default' ) {
-		echo date_i18n( 'l, F j, Y' );
-	} elseif ( get_theme_mod( 'colormag_date_display_type', 'theme_default' ) == 'wordpress_date_setting' ) {
-		echo date_i18n( get_option( 'date_format' ) );
-	}
-}
 
 /* * ************************************************************************************** */
 

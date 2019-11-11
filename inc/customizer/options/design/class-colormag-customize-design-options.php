@@ -67,7 +67,10 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_site_layout', array(
 			'default'           => 'wide_layout',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_site_layout_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 			'transport'         => 'postMessage',
 		) );
 
@@ -91,7 +94,10 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_default_layout', array(
 			'default'           => 'right_sidebar',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_layout_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 		) );
 
 		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_default_layout', array(
@@ -117,7 +123,10 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_default_page_layout', array(
 			'default'           => 'right_sidebar',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_layout_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 		) );
 
 		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_default_page_layout', array(
@@ -143,7 +152,10 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_default_single_posts_layout', array(
 			'default'           => 'right_sidebar',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_layout_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 		) );
 
 		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_default_single_posts_layout', array(
