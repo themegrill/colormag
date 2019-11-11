@@ -16,4 +16,21 @@
  */
 class ColorMag_Customizer_Sanitizes {
 
+	/**
+	 * Sanitize the checkbox options set within customizer controls.
+	 *
+	 * @param int $input Input from the customize controls.
+	 *
+	 * @return int|string
+	 */
+	function checkbox_sanitize( $input ) {
+
+		if ( $input == 1 ) {
+			return 1;
+		} else {
+			return '';
+		}
+
+	}
+
 }

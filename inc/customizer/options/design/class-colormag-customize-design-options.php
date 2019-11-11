@@ -45,7 +45,10 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_hide_blog_front', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_hide_blog_front', array(

@@ -45,7 +45,10 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_social_link_activate', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 			'transport'         => $customizer_selective_refresh,
 		) );
 
@@ -136,7 +139,10 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 			$wp_customize->add_setting( $colormag_social_link['id'] . '_checkbox', array(
 				'default'           => 0,
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'colormag_checkbox_sanitize',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'checkbox_sanitize',
+				),
 			) );
 
 			$wp_customize->add_control( $colormag_social_link['id'] . '_checkbox', array(

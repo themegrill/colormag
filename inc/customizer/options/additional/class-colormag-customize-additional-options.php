@@ -46,7 +46,10 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		$wp_customize->add_setting( 'colormag_related_posts_activate', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 			'transport'         => $customizer_selective_refresh,
 		) );
 
@@ -92,7 +95,10 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		$wp_customize->add_setting( 'colormag_featured_image_popup', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_featured_image_popup', array(
@@ -112,7 +118,10 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		$wp_customize->add_setting( 'colormag_featured_image_show', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_featured_image_show', array(
@@ -132,7 +141,10 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		$wp_customize->add_setting( 'colormag_featured_image_single_page_show', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_featured_image_single_page_show', array(

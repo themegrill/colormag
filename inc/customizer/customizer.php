@@ -117,15 +117,6 @@ function colormag_customize_register( $wp_customize ) {
 		return $input;
 	}
 
-	// checkbox sanitization
-	function colormag_checkbox_sanitize( $input ) {
-		if ( $input == 1 ) {
-			return 1;
-		} else {
-			return '';
-		}
-	}
-
 	// sanitization of links
 	function colormag_links_sanitize() {
 		return false;

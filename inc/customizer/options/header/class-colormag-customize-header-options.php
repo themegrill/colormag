@@ -46,7 +46,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 1,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_breaking_news', array(
@@ -66,7 +69,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 2,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 			'transport'         => $customizer_selective_refresh,
 		) );
 
@@ -134,7 +140,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 3,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 			'transport'         => $customizer_selective_refresh,
 		) );
 
@@ -163,7 +172,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 4,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_primary_sticky_menu', array(
@@ -183,7 +195,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 5,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_search_icon_in_menu', array(
@@ -203,7 +218,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 6,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 			'transport'         => $customizer_selective_refresh,
 		) );
 
@@ -238,7 +256,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'priority'          => 7,
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_responsive_menu', array(
@@ -317,7 +338,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_header_image_link', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_checkbox_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'checkbox_sanitize',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_header_image_link', array(
