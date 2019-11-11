@@ -25,17 +25,6 @@ function colormag_customize_register( $wp_customize ) {
 	);
 
 	// sanitization works
-	// radio/select buttons sanitization
-	function colormag_radio_select_sanitize( $input, $setting ) {
-		// Ensuring that the input is a slug.
-		$input = sanitize_key( $input );
-		// Get the list of choices from the control associated with the setting.
-		$choices = $setting->manager->get_control( $setting->id )->choices;
-
-		// If the input is a valid key, return it, else, return the default.
-		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-	}
-
 	// radio button sanitization
 	function colormag_related_posts_sanitize( $input ) {
 		$valid_keys = array(

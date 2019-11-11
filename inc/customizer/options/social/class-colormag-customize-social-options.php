@@ -63,7 +63,10 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_social_link_location_option', array(
 			'default'           => 'both',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_radio_select_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 		) );
 
 		$wp_customize->add_control( 'colormag_social_link_location_option', array(

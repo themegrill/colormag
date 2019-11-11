@@ -46,7 +46,10 @@ class ColorMag_Customize_Footer_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_main_footer_layout_display_type', array(
 			'default'           => 'type_one',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_radio_select_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 			'transport'         => 'postMessage',
 		) );
 

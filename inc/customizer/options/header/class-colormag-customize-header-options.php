@@ -101,7 +101,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_date_display_type', array(
 			'default'           => 'theme_default',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_radio_select_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 			'transport'         => $customizer_selective_refresh,
 		) );
 
@@ -297,7 +300,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 		$wp_customize->add_setting( 'colormag_main_total_header_area_display_type', array(
 			'default'           => 'type_one',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_radio_select_sanitize',
+			'sanitize_callback' => array(
+				'ColorMag_Customizer_Sanitizes',
+				'sanitize_radio_select',
+			),
 		) );
 
 		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_main_total_header_area_display_type', array(
