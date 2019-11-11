@@ -54,4 +54,19 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the hex color set within customizer controls.
+	 *
+	 * @param string $color Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_hex_color( $color ) {
+		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
+			return '#' . $unhashed;
+		}
+
+		return $color;
+	}
+
 }

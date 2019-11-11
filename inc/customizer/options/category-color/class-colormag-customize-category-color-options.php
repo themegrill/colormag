@@ -55,7 +55,10 @@ class ColorMag_Customize_Category_Color_Options extends ColorMag_Customize_Base_
 			$wp_customize->add_setting( 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
 				'default'              => '',
 				'capability'           => 'edit_theme_options',
-				'sanitize_callback'    => 'colormag_color_option_hex_sanitize',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_hex_color',
+				),
 				'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
 			) );
 

@@ -25,15 +25,6 @@ function colormag_customize_register( $wp_customize ) {
 	);
 
 	// sanitization works
-	// color sanitization
-	function colormag_color_option_hex_sanitize( $color ) {
-		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
-			return '#' . $unhashed;
-		}
-
-		return $color;
-	}
-
 	function colormag_color_escaping_option_sanitize( $input ) {
 		$input = esc_attr( $input );
 
