@@ -53,13 +53,12 @@ class ColorMag_Customize_Category_Color_Options extends ColorMag_Customize_Base_
 			$wp_category_list[ $category_list->cat_ID ] = $category_list->cat_name;
 
 			$wp_customize->add_setting( 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
-				'default'              => '',
-				'capability'           => 'edit_theme_options',
+				'default'           => '',
+				'capability'        => 'edit_theme_options',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_hex_color',
 				),
-				'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(

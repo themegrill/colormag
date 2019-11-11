@@ -179,14 +179,13 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		) );
 
 		$wp_customize->add_setting( 'colormag_primary_color', array(
-			'default'              => '#289dcc',
-			'capability'           => 'edit_theme_options',
+			'default'           => '#289dcc',
+			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => array(
 				'ColorMag_Customizer_Sanitizes',
 				'sanitize_hex_color',
 			),
-			'sanitize_js_callback' => 'colormag_color_escaping_option_sanitize',
-			'transport'            => 'postMessage',
+			'transport'         => 'postMessage',
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_primary_color', array(
