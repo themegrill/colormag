@@ -23,7 +23,7 @@ class ColorMag_Customizer_Sanitizes {
 	 *
 	 * @return int|string
 	 */
-	function checkbox_sanitize( $input ) {
+	public static function sanitize_checkbox( $input ) {
 
 		if ( $input == 1 ) {
 			return 1;

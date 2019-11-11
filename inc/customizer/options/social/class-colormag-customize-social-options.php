@@ -47,7 +47,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => array(
 				'ColorMag_Customizer_Sanitizes',
-				'checkbox_sanitize',
+				'sanitize_checkbox',
 			),
 			'transport'         => $customizer_selective_refresh,
 		) );
@@ -141,7 +141,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'capability'        => 'edit_theme_options',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
-					'checkbox_sanitize',
+					'sanitize_checkbox',
 				),
 			) );
 
