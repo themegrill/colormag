@@ -51,8 +51,8 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-customize-base-control.php';
 
 		// Include the required customize controls file.
-		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-upsell-section.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-image-radio-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/upsell/class-colormag-upsell-section.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/image-radio/class-colormag-image-radio-control.php';
 
 	}
 
