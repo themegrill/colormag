@@ -56,8 +56,7 @@ function sassCompile() {
 		           outputStyle : 'expanded',
 		           linefeed    : 'crlf'
 	           } ).on( 'error', sass.logError ) )
-	           .pipe( gulp.dest( paths.styles.dest ) )
-	           .pipe( browserSync.stream() );
+	           .pipe( gulp.dest( paths.styles.dest ) );
 }
 
 function elementorStylesCompile() {
@@ -74,8 +73,7 @@ function elementorStylesCompile() {
 			           cascade  : false
 		           } )
 	           ] ) )
-	           .pipe( gulp.dest( paths.elementorStyles.dest ) )
-	           .pipe( browserSync.stream() );
+	           .pipe( gulp.dest( paths.elementorStyles.dest ) );
 }
 
 // Compile customize control styles.
@@ -102,7 +100,6 @@ function compileControlSass() {
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
-	gulp.watch( paths.js.src, browserSyncReload );
 }
 
 
