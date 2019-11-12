@@ -100,6 +100,7 @@ function compileControlSass() {
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
+	gulp.watch( paths.customizeControls.scss.src, compileControlSass );
 }
 
 
