@@ -1,12 +1,13 @@
 'use strict';
 
-var gulp         = require( 'gulp' );
-var browserSync  = require( 'browser-sync' ).create();
-var sass         = require( 'gulp-sass' );
-var postcss      = require( 'gulp-postcss' );
-var autoprefixer = require( 'autoprefixer' );
+var gulp         = require( 'gulp' ),
+    browserSync  = require( 'browser-sync' ).create(),
+    sass         = require( 'gulp-sass' ),
+    postcss      = require( 'gulp-postcss' ),
+    autoprefixer = require( 'autoprefixer' ),
+    notify       = require( 'gulp-notify' );
 
-// Define paths
+// Define paths.
 var paths = {
 
 	styles : {
@@ -22,7 +23,14 @@ var paths = {
 	elementorStyles : {
 		src  : './inc/elementor/assets/SCSS/**/*.scss',
 		dest : './inc/elementor/assets/css/'
-	}
+	},
+
+	customizeControls : {
+		scss : {
+			src  : './inc/customizer/custom-controls/assets/scss/**/*.scss',
+			dest : './inc/customizer/custom-controls/assets/css'
+		}
+	},
 
 };
 
@@ -70,6 +78,26 @@ function elementorStylesCompile() {
 	           .pipe( browserSync.stream() );
 }
 
+// Compile customize control styles.
+function compileControlSass() {
+	return gulp
+		.src( paths.customizeControls.scss.src )
+		.pipe( sass( {
+			indentType  : 'tab',
+			indentWidth : 1,
+			outputStyle : 'expanded',
+			linefeed    : 'crlf'
+		} ).on( 'error', sass.logError ) )
+		.pipe( postcss( [
+			autoprefixer( {
+				browsers : [ 'last 2 versions' ],
+				cascade  : false
+			} )
+		] ) )
+		.pipe( gulp.dest( paths.customizeControls.scss.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
@@ -87,3 +115,4 @@ exports.sassCompile            = sassCompile;
 exports.elementorStylesCompile = elementorStylesCompile;
 exports.watch                  = watch;
 exports.server                 = server;
+exports.compileControlSass     = compileControlSass;
