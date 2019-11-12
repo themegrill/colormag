@@ -47,6 +47,10 @@ class ColorMag_Customizer {
 	 */
 	public function customize_custom_controls_includes( $wp_customize ) {
 
+		// Include the customize base controls file.
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-customize-base-control.php';
+
+		// Include the required customize controls file.
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-upsell-section.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-image-radio-control.php';
 

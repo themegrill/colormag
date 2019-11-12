@@ -17,7 +17,7 @@
 class ColorMag_Customize_Base_Option {
 
 	/**
-	 * Customizer setup constructor.
+	 * Customizer base option constructor.
 	 *
 	 * ColorMag_Customize_Base_Option constructor.
 	 */
