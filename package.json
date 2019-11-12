@@ -26,7 +26,11 @@
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-watch": "^4.3.11",
-    "gulp-notify": "^3.2.0"
+    "gulp-notify": "^3.2.0",
+    "gulp-uglifycss": "^1.0.9"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.4.0"
   },
   "engines": {
     "node": ">=0.8.0",

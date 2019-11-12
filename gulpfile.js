@@ -5,7 +5,9 @@ var gulp         = require( 'gulp' ),
     sass         = require( 'gulp-sass' ),
     postcss      = require( 'gulp-postcss' ),
     autoprefixer = require( 'autoprefixer' ),
-    notify       = require( 'gulp-notify' );
+    notify       = require( 'gulp-notify' ),
+    uglifycss    = require( 'gulp-uglifycss' ),
+    rename       = require( 'gulp-rename' );
 
 // Define paths.
 var paths = {
@@ -29,6 +31,10 @@ var paths = {
 		scss : {
 			src  : './inc/customizer/custom-controls/assets/scss/**/*.scss',
 			dest : './inc/customizer/custom-controls/assets/css'
+		},
+		css: {
+			src: [ './inc/customizer/custom-controls/assets/css/*.css', '!./inc/customizer/custom-controls/assets/css/*.min.css' ],
+			dest: './inc/customizer/custom-controls/assets/css'
 		}
 	},
 
@@ -96,11 +102,21 @@ function compileControlSass() {
 		.on( 'error', notify.onError() );
 }
 
+// Minify customize control css file.
+function minifyControlCSS() {
+	return gulp
+		.src( paths.customizeControls.css.src )
+		.pipe( uglifycss() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.customizeControls.css.dest ) );
+}
+
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
 	gulp.watch( paths.customizeControls.scss.src, compileControlSass );
+	gulp.watch( paths.customizeControls.css.src, minifyControlCSS );
 }
 
 
@@ -114,3 +130,4 @@ exports.elementorStylesCompile = elementorStylesCompile;
 exports.watch                  = watch;
 exports.server                 = server;
 exports.compileControlSass     = compileControlSass;
+exports.minifyControlCSS       = minifyControlCSS;
