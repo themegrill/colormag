@@ -549,6 +549,11 @@ require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-a
 require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-colormag.php' );
 
 /**
+ * Load migration scripts.
+ */
+require_once( COLORMAG_INCLUDES_DIR . '/migration.php' );
+
+/**
  * Load deprecated functions.
  */
 require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-filters.php' );
