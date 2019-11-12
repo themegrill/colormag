@@ -547,4 +547,11 @@ if ( is_admin() ) {
  */
 require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-activation.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-colormag.php' );
+
+/**
+ * Load deprecated functions.
+ */
+require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-filters.php' );
+require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php' );
+require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php' );
 ?>
