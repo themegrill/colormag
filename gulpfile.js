@@ -28,14 +28,28 @@ var paths = {
 	},
 
 	customizeControls : {
-		scss : {
-			src  : './inc/customizer/custom-controls/assets/scss/**/*.scss',
+		scss   : {
+			src  : './inc/customizer/custom-controls/**/*.scss',
+			dest : './inc/customizer/custom-controls/assets/css/controls/'
+		},
+		cssmin : {
+			src  : [
+				'./inc/customizer/custom-controls/assets/css/*.css',
+				'!./inc/customizer/custom-controls/assets/css/*.min.css'
+			],
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
-		css: {
-			src: [ './inc/customizer/custom-controls/assets/css/*.css', '!./inc/customizer/custom-controls/assets/css/*.min.css' ],
-			dest: './inc/customizer/custom-controls/assets/css'
-		}
+		js     : {
+			src  : './inc/customizer/custom-controls/**/*.js',
+			dest : './inc/customizer/custom-controls/assets/js/controls/'
+		},
+		jsmin  : {
+			src  : [
+				'./inc/customizer/custom-controls/assets/js/*.js',
+				'!./inc/customizer/custom-controls/assets/css/*.min.js'
+			],
+			dest : './inc/customizer/custom-controls/assets/js'
+		},
 	},
 
 };
@@ -98,6 +112,7 @@ function compileControlSass() {
 				cascade  : false
 			} )
 		] ) )
+		.pipe( flatten( { subPath : [ 0, - 1 ] } ) )
 		.pipe( gulp.dest( paths.customizeControls.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -105,10 +120,10 @@ function compileControlSass() {
 // Minify customize control css file.
 function minifyControlCSS() {
 	return gulp
-		.src( paths.customizeControls.css.src )
+		.src( paths.customizeControls.cssmin.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix : '.min' } ) )
-		.pipe( gulp.dest( paths.customizeControls.css.dest ) );
+		.pipe( gulp.dest( paths.customizeControls.cssmin.dest ) );
 }
 
 // Watch for file changes.
@@ -116,7 +131,7 @@ function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
 	gulp.watch( paths.customizeControls.scss.src, compileControlSass );
-	gulp.watch( paths.customizeControls.css.src, minifyControlCSS );
+	gulp.watch( paths.customizeControls.cssmin.src, minifyControlCSS );
 }
 
 
