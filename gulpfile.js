@@ -36,7 +36,11 @@ var paths = {
 			dest : './'
 		},
 		cssconcat : {
-			src  : './inc/customizer/custom-controls/assets/css/controls/*.css',
+			src  : [
+				'./inc/customizer/custom-controls/**/*.css',
+				'!./inc/customizer/custom-controls/assets/css/*.css',
+				'!./inc/customizer/custom-controls/assets/css/*.min.css'
+			],
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
 		cssmin    : {
@@ -134,7 +138,7 @@ function compileControlSass() {
 function concatControlCSS() {
 	return gulp
 		.src( paths.customizeControls.cssconcat.src )
-		.pipe( concatCss( 'styles/bundle.css' ) )
+		.pipe( concatCss( 'customize-controls.css' ) )
 		.pipe( gulp.dest( paths.customizeControls.cssconcat.dest ) );
 }
 
@@ -178,6 +182,7 @@ function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
 	gulp.watch( paths.customizeControls.scss.src, compileControlSass );
+	gulp.watch( paths.customizeControls.cssconcat.src, concatControlCSS );
 	gulp.watch( paths.customizeControls.cssmin.src, minifyControlCSS );
 }
 
