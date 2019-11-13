@@ -7,7 +7,8 @@ var gulp         = require( 'gulp' ),
     autoprefixer = require( 'autoprefixer' ),
     notify       = require( 'gulp-notify' ),
     uglifycss    = require( 'gulp-uglifycss' ),
-    rename       = require( 'gulp-rename' );
+    rename       = require( 'gulp-rename' ),
+    concatCss    = require( 'gulp-concat-css' );
 
 // Define paths.
 var paths = {
@@ -31,6 +32,10 @@ var paths = {
 		scss   : {
 			src  : './inc/customizer/custom-controls/**/*.scss',
 			dest : './inc/customizer/custom-controls/assets/css/controls/'
+		},
+		concat: {
+			src  : './inc/customizer/custom-controls/assets/css/controls/*.css',
+			dest : './inc/customizer/custom-controls/assets/css'
 		},
 		cssmin : {
 			src  : [
@@ -117,6 +122,14 @@ function compileControlSass() {
 		.on( 'error', notify.onError() );
 }
 
+// Concat customize control styles.
+function concatControlCSS() {
+	return gulp
+		.src( paths.customizeControls.concat.src )
+		.pipe( concatCss( 'styles/bundle.css' ) )
+		.pipe( gulp.dest( paths.customizeControls.concat.dest ) );
+}
+
 // Minify customize control css file.
 function minifyControlCSS() {
 	return gulp
@@ -146,3 +159,4 @@ exports.watch                  = watch;
 exports.server                 = server;
 exports.compileControlSass     = compileControlSass;
 exports.minifyControlCSS       = minifyControlCSS;
+exports.concatControlCSS       = concatControlCSS;
