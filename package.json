@@ -30,7 +30,8 @@
     "gulp-uglifycss": "^1.0.9",
     "gulp-flatten": "^0.4.0",
     "gulp-concat-css": "^3.1.0",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^4.0.1"
   },
   "dependencies": {
     "gulp-rename": "^1.4.0"
