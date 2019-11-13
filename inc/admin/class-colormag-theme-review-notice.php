@@ -107,7 +107,7 @@ class ColorMag_Theme_Review_Notice {
 				</a>
 			</div>
 
-			<a class="notice-dismiss" style="text-decoration:none;" href="?nag_colormag_ignore_theme_review_notice_partially=0"></a>
+			<a class="notice-dismiss" style="text-decoration:none;" href="?nag_colormag_ignore_theme_review_notice=0"></a>
 		</div>
 
 		<?php
