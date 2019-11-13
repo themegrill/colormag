@@ -10,7 +10,7 @@ var gulp         = require( 'gulp' ),
     rename       = require( 'gulp-rename' ),
     concatCss    = require( 'gulp-concat-css' ),
     concatJS     = require( 'gulp-concat' ),
-	uglify       = require( 'gulp-uglify' );
+    uglify       = require( 'gulp-uglify' );
 
 // Define paths.
 var paths = {
@@ -51,13 +51,17 @@ var paths = {
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
 		jsconcat  : {
-			src  : './inc/customizer/custom-controls/assets/js/controls/*.js',
+			src  : [
+				'./inc/customizer/custom-controls/**/*.js',
+				'!./inc/customizer/custom-controls/assets/js/*.js',
+				'!./inc/customizer/custom-controls/assets/js/*.min.js'
+			],
 			dest : './inc/customizer/custom-controls/assets/js/'
 		},
 		jsmin     : {
 			src  : [
 				'./inc/customizer/custom-controls/assets/js/*.js',
-				'!./inc/customizer/custom-controls/assets/css/*.min.js'
+				'!./inc/customizer/custom-controls/assets/js/*.min.js'
 			],
 			dest : './inc/customizer/custom-controls/assets/js'
 		}
@@ -169,6 +173,8 @@ function watch() {
 	gulp.watch( paths.customizeControls.scss.src, compileControlSass );
 	gulp.watch( paths.customizeControls.cssconcat.src, concatControlCSS );
 	gulp.watch( paths.customizeControls.cssmin.src, minifyControlCSS );
+	gulp.watch( paths.customizeControls.jsconcat.src, concatControlJS );
+	gulp.watch( paths.customizeControls.jsmin.src, minifyControlJs );
 }
 
 
