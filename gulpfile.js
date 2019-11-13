@@ -29,26 +29,26 @@ var paths = {
 	},
 
 	customizeControls : {
-		scss   : {
+		scss      : {
 			src  : './inc/customizer/custom-controls/**/*.scss',
 			dest : './inc/customizer/custom-controls/assets/css/controls/'
 		},
-		concat: {
+		cssconcat : {
 			src  : './inc/customizer/custom-controls/assets/css/controls/*.css',
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
-		cssmin : {
+		cssmin    : {
 			src  : [
 				'./inc/customizer/custom-controls/assets/css/*.css',
 				'!./inc/customizer/custom-controls/assets/css/*.min.css'
 			],
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
-		js     : {
+		js        : {
 			src  : './inc/customizer/custom-controls/**/*.js',
 			dest : './inc/customizer/custom-controls/assets/js/controls/'
 		},
-		jsmin  : {
+		jsmin     : {
 			src  : [
 				'./inc/customizer/custom-controls/assets/js/*.js',
 				'!./inc/customizer/custom-controls/assets/css/*.min.js'
@@ -125,9 +125,9 @@ function compileControlSass() {
 // Concat customize control styles.
 function concatControlCSS() {
 	return gulp
-		.src( paths.customizeControls.concat.src )
+		.src( paths.customizeControls.cssconcat.src )
 		.pipe( concatCss( 'styles/bundle.css' ) )
-		.pipe( gulp.dest( paths.customizeControls.concat.dest ) );
+		.pipe( gulp.dest( paths.customizeControls.cssconcat.dest ) );
 }
 
 // Minify customize control css file.
