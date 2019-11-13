@@ -50,13 +50,6 @@ var paths = {
 			],
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
-		js        : {
-			src  : [
-				'./inc/customizer/custom-controls/**/*.js',
-				'!./inc/customizer/custom-controls/assets/js/**/*.js'
-			],
-			dest : './inc/customizer/custom-controls/assets/js/controls/'
-		},
 		jsconcat  : {
 			src  : './inc/customizer/custom-controls/assets/js/controls/*.js',
 			dest : './inc/customizer/custom-controls/assets/js/'
@@ -151,14 +144,6 @@ function minifyControlCSS() {
 		.pipe( gulp.dest( paths.customizeControls.cssmin.dest ) );
 }
 
-// Copy customize control JS.
-function copyControlJS() {
-	return gulp
-		.src( paths.customizeControls.js.src )
-		.pipe( flatten( { subPath : [ 0, - 1 ] } ) )
-		.pipe( gulp.dest( paths.customizeControls.js.dest ) );
-}
-
 // Concat customize control JS.
 function concatControlJS() {
 	return gulp
@@ -200,5 +185,4 @@ exports.compileControlSass     = compileControlSass;
 exports.minifyControlCSS       = minifyControlCSS;
 exports.concatControlCSS       = concatControlCSS;
 exports.concatControlJS        = concatControlJS;
-exports.copyControlJS          = copyControlJS;
 exports.minifyControlJs        = minifyControlJs;
