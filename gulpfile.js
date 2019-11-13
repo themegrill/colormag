@@ -47,7 +47,10 @@ var paths = {
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
 		js        : {
-			src  : './inc/customizer/custom-controls/**/*.js',
+			src  : [
+				'./inc/customizer/custom-controls/**/*.js',
+				'!./inc/customizer/custom-controls/assets/js/**/*.js'
+			],
 			dest : './inc/customizer/custom-controls/assets/js/controls/'
 		},
 		jsconcat  : {
