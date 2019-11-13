@@ -10,7 +10,6 @@ var gulp         = require( 'gulp' ),
     rename       = require( 'gulp-rename' ),
     concatCss    = require( 'gulp-concat-css' ),
     concatJS     = require( 'gulp-concat' ),
-gulpCopy     = require( 'gulp-copy' ),
 	uglify       = require( 'gulp-uglify' );
 
 // Define paths.
@@ -34,7 +33,7 @@ var paths = {
 	customizeControls : {
 		scss      : {
 			src  : './inc/customizer/custom-controls/**/*.scss',
-			dest : './inc/customizer/custom-controls/assets/css/controls/'
+			dest : './'
 		},
 		cssconcat : {
 			src  : './inc/customizer/custom-controls/assets/css/controls/*.css',
@@ -64,8 +63,8 @@ var paths = {
 				'!./inc/customizer/custom-controls/assets/css/*.min.js'
 			],
 			dest : './inc/customizer/custom-controls/assets/js'
-		},
-	},
+		}
+	}
 
 };
 
@@ -114,7 +113,7 @@ function elementorStylesCompile() {
 // Compile customize control styles.
 function compileControlSass() {
 	return gulp
-		.src( paths.customizeControls.scss.src )
+		.src( paths.customizeControls.scss.src, { base: './' } )
 		.pipe( sass( {
 			indentType  : 'tab',
 			indentWidth : 1,
@@ -127,7 +126,6 @@ function compileControlSass() {
 				cascade  : false
 			} )
 		] ) )
-		.pipe( flatten( { subPath : [ 0, - 1 ] } ) )
 		.pipe( gulp.dest( paths.customizeControls.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
