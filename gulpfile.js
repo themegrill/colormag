@@ -10,7 +10,8 @@ var gulp         = require( 'gulp' ),
     rename       = require( 'gulp-rename' ),
     concatCss    = require( 'gulp-concat-css' ),
     concatJS     = require( 'gulp-concat' ),
-    gulpCopy     = require( 'gulp-copy' );
+gulpCopy     = require( 'gulp-copy' ),
+	uglify       = require( 'gulp-uglify' );
 
 // Define paths.
 var paths = {
@@ -164,6 +165,16 @@ function concatControlJS() {
 		.pipe( gulp.dest( paths.customizeControls.jsconcat.dest ) );
 }
 
+// Minifies the js files.
+function minifyControlJs() {
+	return gulp
+		.src( paths.customizeControls.jsmin.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.customizeControls.jsmin.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
@@ -187,3 +198,4 @@ exports.minifyControlCSS       = minifyControlCSS;
 exports.concatControlCSS       = concatControlCSS;
 exports.concatControlJS        = concatControlJS;
 exports.copyControlJS          = copyControlJS;
+exports.minifyControlJs        = minifyControlJs;
