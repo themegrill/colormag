@@ -26,6 +26,12 @@ class ColorMag_Customize_Override_Defaults_Options extends ColorMag_Customize_Ba
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		$configs = array();
+
+		$options = array_merge( $options, $configs );
+
+		return $options;
+
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
