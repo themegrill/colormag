@@ -33,6 +33,29 @@ class ColorMag_Customize_Base_Control {
 	 */
 	public function enqueue_customize_controls() {
 
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+		/**
+		 * Enqueue required Customize Controls CSS files.
+		 */
+		// Main CSS file.
+		wp_enqueue_style(
+			'colormag-customize-controls',
+			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/css/customize-controls' . $suffix . '.css'
+		);
+
+		/**
+		 * Enqueue required Customize Controls JS files.
+		 */
+		// Main JS file.
+		wp_enqueue_script(
+			'colormag-customize-controls',
+			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/js/customize-controls' . $suffix . '.js',
+			array( 'jquery' ),
+			false,
+			true
+		);
+
 	}
 
 }
