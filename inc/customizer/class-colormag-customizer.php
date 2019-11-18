@@ -23,6 +23,9 @@ class ColorMag_Customizer {
 	 */
 	public function __construct() {
 
+		// Include the custom extending customize panels and sections files for customize options.
+		add_action( 'customize_register', array( $this, 'customize_custom_panels_sections_includes' ) );
+
 		// Include the custom controls for customize options.
 		add_action( 'customize_register', array( $this, 'customize_custom_controls_includes' ) );
 
@@ -40,6 +43,18 @@ class ColorMag_Customizer {
 
 		// Enqueue the preview JS for customize options.
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
+
+	}
+
+	/**
+	 * Include the required files for extending the custom Customize controls.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 */
+	public function customize_custom_panels_sections_includes( $wp_customize ) {
+
+		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-panel.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-section.php';
 
 	}
 
