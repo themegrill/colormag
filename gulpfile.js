@@ -30,6 +30,27 @@ var paths = {
 		dest : './inc/elementor/assets/css/'
 	},
 
+	extendCustomize : {
+		scss      : {
+			src  : './inc/customizer/assets/scss/**/*.scss',
+			dest : './inc/customizer/assets/css'
+		},
+		cssmin    : {
+			src  : [
+				'./inc/customizer/assets/css/*.css',
+				'!./inc/customizer/assets/css/*.min.css'
+			],
+			dest : './inc/customizer/assets/css'
+		},
+		jsmin     : {
+			src  : [
+				'./inc/customizer/assets/js/*.js',
+				'!./inc/customizer/assets/js/*.min.js'
+			],
+			dest : './inc/customizer/assets/js'
+		}
+	},
+
 	customizeControls : {
 		scss      : {
 			src  : './inc/customizer/custom-controls/**/*.scss',
@@ -111,6 +132,45 @@ function elementorStylesCompile() {
 	           .pipe( gulp.dest( paths.elementorStyles.dest ) );
 }
 
+// Compile extend customizer styles.
+function compileExtendCustomizerSass() {
+	return gulp
+		.src( paths.extendCustomize.scss.src )
+		.pipe( sass( {
+			indentType  : 'tab',
+			indentWidth : 1,
+			outputStyle : 'expanded',
+			linefeed    : 'crlf'
+		} ).on( 'error', sass.logError ) )
+		.pipe( postcss( [
+			autoprefixer( {
+				browsers : [ 'last 2 versions' ],
+				cascade  : false
+			} )
+		] ) )
+		.pipe( gulp.dest( paths.extendCustomize.scss.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+// Minify extend customizer css file.
+function minifyExtendCustomizerCSS() {
+	return gulp
+		.src( paths.extendCustomize.cssmin.src )
+		.pipe( uglifycss() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.extendCustomize.cssmin.dest ) );
+}
+
+// Minifies the extend customizer js files.
+function minifyExtendCustomizerJs() {
+	return gulp
+		.src( paths.extendCustomize.jsmin.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.extendCustomize.jsmin.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Compile customize control styles.
 function compileControlSass() {
 	return gulp
@@ -156,7 +216,7 @@ function concatControlJS() {
 		.pipe( gulp.dest( paths.customizeControls.jsconcat.dest ) );
 }
 
-// Minifies the js files.
+// Minifies the customize control js files.
 function minifyControlJs() {
 	return gulp
 		.src( paths.customizeControls.jsmin.src )
@@ -170,6 +230,9 @@ function minifyControlJs() {
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
+	gulp.watch( paths.extendCustomize.scss.src, compileExtendCustomizerSass );
+	gulp.watch( paths.extendCustomize.cssmin.src, minifyExtendCustomizerCSS );
+	gulp.watch( paths.extendCustomize.jsmin.src, minifyExtendCustomizerJs );
 	gulp.watch( paths.customizeControls.scss.src, compileControlSass );
 	gulp.watch( paths.customizeControls.cssconcat.src, concatControlCSS );
 	gulp.watch( paths.customizeControls.cssmin.src, minifyControlCSS );
@@ -181,14 +244,17 @@ function watch() {
 // Define series of tasks.
 var server = gulp.series( browserSyncStart, watch );
 
-exports.browserSyncStart       = browserSyncStart;
-exports.browserSyncReload      = browserSyncReload;
-exports.sassCompile            = sassCompile;
-exports.elementorStylesCompile = elementorStylesCompile;
-exports.watch                  = watch;
-exports.server                 = server;
-exports.compileControlSass     = compileControlSass;
-exports.minifyControlCSS       = minifyControlCSS;
-exports.concatControlCSS       = concatControlCSS;
-exports.concatControlJS        = concatControlJS;
-exports.minifyControlJs        = minifyControlJs;
+exports.browserSyncStart            = browserSyncStart;
+exports.browserSyncReload           = browserSyncReload;
+exports.sassCompile                 = sassCompile;
+exports.elementorStylesCompile      = elementorStylesCompile;
+exports.watch                       = watch;
+exports.server                      = server;
+exports.compileExtendCustomizerSass = compileExtendCustomizerSass;
+exports.minifyExtendCustomizerCSS   = minifyExtendCustomizerCSS;
+exports.minifyExtendCustomizerJs    = minifyExtendCustomizerJs;
+exports.compileControlSass          = compileControlSass;
+exports.minifyControlCSS            = minifyControlCSS;
+exports.concatControlCSS            = concatControlCSS;
+exports.concatControlJS             = concatControlJS;
+exports.minifyControlJs             = minifyControlJs;
