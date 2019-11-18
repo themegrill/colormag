@@ -30,7 +30,10 @@ class ColorMag_Customizer {
 		add_action( 'customize_register', array( $this, 'customize_options_file_include' ) );
 
 		// Include the required customize options.
-		add_action( 'customize_register', array( $this, 'customize_options' ) );
+		add_action( 'customize_register', array( $this, 'get_customizer_configurations' ) );
+
+		// Include the required register customize settings array.
+		add_action( 'customize_register', array( $this, 'register_customize_settings' ) );
 
 		// Include the required customizer sanitizations, callbacks and partials files.
 		add_action( 'customize_register', array( $this, 'customize_sanitize_callback_include' ) );
@@ -82,9 +85,110 @@ class ColorMag_Customizer {
 	 *
 	 * @return array Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customize_options( $wp_customize ) {
+	public function get_customizer_configurations( $wp_customize ) {
 
 		return apply_filters( 'colormag_customizer_options', array(), $wp_customize );
+
+	}
+
+	/**
+	 * Process and Register Customizer Panels, Sections, Settings and Controls.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Reference to WP_Customize_Manager.
+	 *
+	 * @return void
+	 */
+	public function register_customize_settings( $wp_customize ) {
+
+		$configurations = $this->get_customizer_configurations( $wp_customize );
+
+		foreach ( $configurations as $key => $config ) :
+
+			switch ( $config['type'] ) :
+
+				case 'panel':
+					// Remove `panel` type from configuration for registering it in different way.
+					unset( $config['type'] );
+
+					$this->register_panel( $config, $wp_customize );
+
+					break;
+
+				case 'section':
+					// Remove `section` type from configuration for registering it in different way.
+					unset( $config['type'] );
+
+					$this->register_section( $config, $wp_customize );
+
+					break;
+
+				case 'sub-control':
+					// Remove `sub-control` type from configuration for registering it in different way.
+					unset( $config['type'] );
+
+					$this->register_sub_control_setting( $config, $wp_customize );
+
+					break;
+
+				case 'control':
+					// Remove `control` type from configuration for registering it in different way.
+					unset( $config['type'] );
+
+					$this->register_setting_control( $config, $wp_customize );
+
+					break;
+
+			endswitch;
+
+		endforeach;
+
+	}
+
+	/**
+	 * Register Customizer Panel.
+	 *
+	 * @param array                $config       Customize options configuration settings.
+	 * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
+	 *
+	 * @return void
+	 */
+	public function register_panel( $config, $wp_customize ) {
+
+	}
+
+	/**
+	 * Register Customizer Section.
+	 *
+	 * @param array                $config       Customize options configuration settings.
+	 * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
+	 *
+	 * @return void
+	 */
+	public function register_section( $config, $wp_customize ) {
+
+	}
+
+	/**
+	 * Register Customizer Sub Control.
+	 *
+	 * @param array                $config       Customize options configuration settings.
+	 * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
+	 *
+	 * @return void
+	 */
+	public function register_sub_control_setting( $config, $wp_customize ) {
+
+	}
+
+	/**
+	 * Register Customizer Control.
+	 *
+	 * @param array                $config       Customize options configuration settings.
+	 * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
+	 *
+	 * @return void
+	 */
+	public function register_setting_control( $config, $wp_customize ) {
 
 	}
 
