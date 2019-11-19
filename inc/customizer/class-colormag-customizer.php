@@ -56,6 +56,7 @@ class ColorMag_Customizer {
 		// Include the required customizer nested panels and sections files.
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-panel.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-section.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-upsell-section.php';
 
 	}
 
@@ -70,7 +71,6 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-customize-base-control.php';
 
 		// Include the required customize controls file.
-		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/upsell/class-colormag-upsell-section.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/image-radio/class-colormag-image-radio-control.php';
 
 	}
