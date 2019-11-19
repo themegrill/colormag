@@ -227,6 +227,14 @@ class ColorMag_Customizer {
 	 */
 	public function register_panel( $config, $wp_customize ) {
 
+		$wp_customize->add_section(
+			new ColorMag_WP_Customize_Panel(
+				$wp_customize,
+				$config['name'],
+				$config
+			)
+		);
+
 	}
 
 	/**
