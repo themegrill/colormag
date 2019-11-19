@@ -44,29 +44,3 @@
 		}
 	}
 }
-
-/* Upsell button CSS */
-.themegrill-pro-info,
-.customize-control-colormag-important-links a {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
-	background: #008ec2;
-	color: #ffffff;
-	display: block;
-	margin: 15px 0 0;
-	padding: 5px 0;
-	text-align: center;
-	font-weight: 600;
-}
-
-.customize-control-colormag-important-links {
-
-	a {
-		padding: 8px 0;
-
-		&:hover {
-			color: #ffffff;
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
-			background: #2380ba;
-		}
-	}
-}
