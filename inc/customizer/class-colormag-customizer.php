@@ -117,9 +117,9 @@ class ColorMag_Customizer {
 
 		$configurations = $this->get_customizer_configurations( $wp_customize );
 
-		foreach ( $configurations as $key => $config ) :
+		foreach ( $configurations as $key => $config ) {
 
-			switch ( $config['type'] ) :
+			switch ( $config['type'] ) {
 
 				case 'panel':
 					// Remove `panel` type from configuration for registering it in different way.
@@ -152,10 +152,8 @@ class ColorMag_Customizer {
 					$this->register_setting_control( $config, $wp_customize );
 
 					break;
-
-			endswitch;
-
-		endforeach;
+			}
+		}
 
 	}
 
