@@ -1,0 +1,64 @@
+#accordion-section-colormag_upsell_section h3.accordion-section-title {
+	background-color: #289DCC !important;
+	border-left-color: #0073aa;
+	color: #fff !important;
+}
+
+#accordion-section-colormag_upsell_section h3.accordion-section-title a {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+}
+
+#accordion-section-colormag_upsell_section h3.accordion-section-title a:after {
+	content: '\f345';
+	color: #fff;
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	z-index: 1;
+	font: 400 20px/1 dashicons;
+	speak: none;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none !important;
+}
+
+#accordion-section-colormag_upsell_section h3.accordion-section-title a:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#accordion-section-colormag_upsell_section h3.accordion-section-title:hover {
+	background-color: #1f91bf !important;
+	border-left-color: #0073aa !important;
+	color: #fff !important;
+}
+
+#accordion-section-colormag_upsell_section h3.accordion-section-title:after {
+	color: #fff !important;
+}
+
+/* Upsell button CSS */
+.themegrill-pro-info,
+.customize-control-colormag-important-links a {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+	background: #008ec2;
+	color: #ffffff;
+	display: block;
+	margin: 15px 0 0;
+	padding: 5px 0;
+	text-align: center;
+	font-weight: 600;
+}
+
+.customize-control-colormag-important-links a {
+	padding: 8px 0;
+}
+
+.customize-control-colormag-important-links a:hover {
+	color: #ffffff;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+	background: #2380ba;
+}

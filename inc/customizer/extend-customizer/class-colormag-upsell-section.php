@@ -5,8 +5,26 @@
  * Class COLORMAG_Upsell_Section
  */
 class COLORMAG_Upsell_Section extends WP_Customize_Section {
+
+	/**
+	 * Section type.
+	 *
+	 * @var string
+	 */
 	public $type = 'colormag-upsell-section';
+
+	/**
+	 * URL for this section.
+	 *
+	 * @var string
+	 */
 	public $url  = '';
+
+	/**
+	 * Section ID.
+	 *
+	 * @var string
+	 */
 	public $id   = '';
 
 	/**
