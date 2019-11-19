@@ -227,7 +227,7 @@ class ColorMag_Customizer {
 	 */
 	public function register_panel( $config, $wp_customize ) {
 
-		$wp_customize->add_section(
+		$wp_customize->add_panel(
 			new ColorMag_WP_Customize_Panel(
 				$wp_customize,
 				$config['name'],
