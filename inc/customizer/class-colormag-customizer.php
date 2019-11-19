@@ -107,6 +107,36 @@ class ColorMag_Customizer {
 	}
 
 	/**
+	 * Return default values for the Customize Configurations.
+	 *
+	 * @return array
+	 */
+	public function get_colormag_customizer_default_configuration() {
+
+		$default_configuration = array(
+			'priority'             => null,
+			'title'                => null,
+			'label'                => null,
+			'name'                 => null,
+			'type'                 => null,
+			'description'          => null,
+			'capability'           => 'edit_theme_options',
+			'datastore_type'       => 'theme_mod',
+			'settings'             => null,
+			'active_callback'      => null,
+			'sanitize_callback'    => null,
+			'sanitize_js_callback' => null,
+			'theme_supports'       => null,
+			'transport'            => null,
+			'default'              => null,
+			'selector'             => null,
+		);
+
+		return apply_filters( 'colormag_customizer_default_configuration', $default_configuration );
+
+	}
+
+	/**
 	 * Process and Register Customizer Panels, Sections, Settings and Controls.
 	 *
 	 * @param WP_Customize_Manager $wp_customize Reference to WP_Customize_Manager.
@@ -118,6 +148,10 @@ class ColorMag_Customizer {
 		$configurations = $this->get_customizer_configurations( $wp_customize );
 
 		foreach ( $configurations as $key => $config ) {
+			$config = wp_parse_args(
+				$config,
+				$this->get_colormag_customizer_default_configuration()
+			);
 
 			switch ( $config['type'] ) {
 
