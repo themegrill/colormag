@@ -53,6 +53,7 @@ class ColorMag_Customizer {
 	 */
 	public function customize_custom_panels_sections_includes( $wp_customize ) {
 
+		// Include the required customizer nested panels and sections files.
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-panel.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-section.php';
 
@@ -81,6 +82,9 @@ class ColorMag_Customizer {
 
 		// Include the customize base option file.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/class-colormag-customize-base-option.php';
+
+		// Include the required customize section and panels register file.
+		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-register-sections-panels.php';
 
 		// Include the required customize options file.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-options.php';
