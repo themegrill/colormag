@@ -29,6 +29,9 @@ class ColorMag_Customizer {
 		// Include the custom controls for customize options.
 		add_action( 'customize_register', array( $this, 'customize_custom_controls_includes' ) );
 
+		// Register ColorMag customize panels, sections and controls type.
+		add_action( 'customize_register', array( $this, 'register_panels_sections_controls' ) );
+
 		// Include the required files for Customize option.
 		add_action( 'customize_register', array( $this, 'customize_options_file_include' ) );
 
@@ -72,6 +75,22 @@ class ColorMag_Customizer {
 
 		// Include the required customize controls file.
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/image-radio/class-colormag-image-radio-control.php';
+
+	}
+
+	/**
+	 * Register ColorMag customize panels, sections and controls type.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 */
+	public function register_panels_sections_controls( $wp_customize ) {
+
+		// Register panels and sections.
+		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
+		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Section' );
+		$wp_customize->register_section_type( 'ColorMag_Upsell_Section' );
+
+		// Register controls.
 
 	}
 
