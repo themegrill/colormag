@@ -26,7 +26,18 @@ class ColorMag_Customizer_Upsell_Button extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			array(
+				'name'             => 'colormag_upsell_section',
+				'type'             => 'section',
+				'title'            => esc_html__( 'View PRO version', 'colormag' ),
+				'url'              => 'https://themegrill.com/themes/colormag/?utm_source=colormag-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
+				'priority'         => 1,
+				'section_callback' => 'ColorMag_Upsell_Section',
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 

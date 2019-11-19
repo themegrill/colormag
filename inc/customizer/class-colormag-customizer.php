@@ -220,6 +220,16 @@ class ColorMag_Customizer {
 	 */
 	public function register_section( $config, $wp_customize ) {
 
+		$section_callback = isset( $config['section_callback'] ) ? $config['section_callback'] : 'ColorMag_WP_Customize_Section';
+
+		$wp_customize->add_section(
+			new $section_callback(
+				$wp_customize,
+				$config['name'],
+				$config
+			)
+		);
+
 	}
 
 	/**

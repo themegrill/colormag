@@ -14,7 +14,7 @@
  *
  * Class ColorMag_WP_Customize_Panel
  */
-class ColorMag_WP_Customize_Panel {
+class ColorMag_WP_Customize_Panel extends WP_Customize_Panel {
 
 	/**
 	 * Panel

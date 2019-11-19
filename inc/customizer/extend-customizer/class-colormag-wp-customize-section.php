@@ -14,7 +14,7 @@
  *
  * Class ColorMag_WP_Customize_Section
  */
-class ColorMag_WP_Customize_Section {
+class ColorMag_WP_Customize_Section extends WP_Customize_Section {
 
 	/**
 	 * Section
@@ -36,6 +36,7 @@ class ColorMag_WP_Customize_Section {
 	 * @return array Exported parameters.
 	 */
 	public function json() {
+
 		$array                   = wp_array_slice_assoc(
 			(array) $this,
 			array(
