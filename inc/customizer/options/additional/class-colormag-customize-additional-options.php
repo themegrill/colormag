@@ -35,13 +35,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$wp_customize->add_panel( 'colormag_additional_options', array(
-			'capability'  => 'edit_theme_options',
-			'description' => __( 'Change the Additional Settings from here as you want', 'colormag' ),
-			'priority'    => 515,
-			'title'       => __( 'Additional Options', 'colormag' ),
-		) );
-
 		// related posts
 		$wp_customize->add_section( 'colormag_related_posts_section', array(
 			'priority' => 4,

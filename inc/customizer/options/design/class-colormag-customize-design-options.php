@@ -35,13 +35,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$wp_customize->add_panel( 'colormag_design_options', array(
-			'capabitity'  => 'edit_theme_options',
-			'description' => __( 'Change the Design Settings from here as you want', 'colormag' ),
-			'priority'    => 505,
-			'title'       => __( 'Design Options', 'colormag' ),
-		) );
-
 		// FrontPage setting
 		$wp_customize->add_section( 'colormag_front_page_setting', array(
 			'priority' => 1,

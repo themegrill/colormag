@@ -35,13 +35,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$wp_customize->add_panel( 'colormag_header_options', array(
-			'capabitity'  => 'edit_theme_options',
-			'description' => __( 'Change the Header Settings from here as you want', 'colormag' ),
-			'priority'    => 500,
-			'title'       => __( 'Header Options', 'colormag' ),
-		) );
-
 		// breaking news enable/disable
 		$wp_customize->add_section( 'colormag_breaking_news_section', array(
 			'title' => __( 'Breaking News', 'colormag' ),

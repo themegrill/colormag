@@ -35,13 +35,6 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$wp_customize->add_panel( 'colormag_social_links_options', array(
-			'priority'    => 510,
-			'title'       => __( 'Social Options', 'colormag' ),
-			'description' => __( 'Change the Social Links settings from here as you want', 'colormag' ),
-			'capability'  => 'edit_theme_options',
-		) );
-
 		$wp_customize->add_section( 'colormag_social_link_activate_settings', array(
 			'priority' => 1,
 			'title'    => __( 'Activate social links area', 'colormag' ),

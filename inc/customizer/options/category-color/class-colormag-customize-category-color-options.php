@@ -35,13 +35,6 @@ class ColorMag_Customize_Category_Color_Options extends ColorMag_Customize_Base_
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$wp_customize->add_panel( 'colormag_category_color_panel', array(
-			'priority'    => 535,
-			'title'       => __( 'Category Color Options', 'colormag' ),
-			'capability'  => 'edit_theme_options',
-			'description' => __( 'Change the color of each category items as you want.', 'colormag' ),
-		) );
-
 		$wp_customize->add_section( 'colormag_category_color_setting', array(
 			'priority' => 1,
 			'title'    => __( 'Category Color Settings', 'colormag' ),
