@@ -35,12 +35,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		// breaking news enable/disable
-		$wp_customize->add_section( 'colormag_breaking_news_section', array(
-			'title' => __( 'Breaking News', 'colormag' ),
-			'panel' => 'colormag_header_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_breaking_news', array(
 			'priority'          => 1,
 			'default'           => 0,
@@ -56,12 +50,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'label'    => __( 'Check to enable the breaking news section', 'colormag' ),
 			'section'  => 'colormag_breaking_news_section',
 			'settings' => 'colormag_breaking_news',
-		) );
-
-		// date display enable/disable
-		$wp_customize->add_section( 'colormag_date_display_section', array(
-			'title' => __( 'Show Date', 'colormag' ),
-			'panel' => 'colormag_header_options',
 		) );
 
 		$wp_customize->add_setting( 'colormag_date_display', array(
@@ -132,12 +120,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			);
 		}
 
-		// home icon enable/disable in primary menu
-		$wp_customize->add_section( 'colormag_home_icon_display_section', array(
-			'title' => __( 'Show Home Icon', 'colormag' ),
-			'panel' => 'colormag_header_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_home_icon_display', array(
 			'priority'          => 3,
 			'default'           => 0,
@@ -164,12 +146,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			) );
 		}
 
-		// primary sticky menu enable/disable
-		$wp_customize->add_section( 'colormag_primary_sticky_menu_section', array(
-			'title' => __( 'Sticky Menu', 'colormag' ),
-			'panel' => 'colormag_header_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_primary_sticky_menu', array(
 			'priority'          => 4,
 			'default'           => 0,
@@ -187,12 +163,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'settings' => 'colormag_primary_sticky_menu',
 		) );
 
-		// search icon in menu enable/disable
-		$wp_customize->add_section( 'colormag_search_icon_in_menu_section', array(
-			'title' => __( 'Search Icon', 'colormag' ),
-			'panel' => 'colormag_header_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_search_icon_in_menu', array(
 			'priority'          => 5,
 			'default'           => 0,
@@ -208,12 +178,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			'label'    => __( 'Check to display the Search Icon in the primary menu', 'colormag' ),
 			'section'  => 'colormag_search_icon_in_menu_section',
 			'settings' => 'colormag_search_icon_in_menu',
-		) );
-
-		// random posts in menu enable/disable
-		$wp_customize->add_section( 'colormag_random_post_in_menu_section', array(
-			'title' => __( 'Random Post', 'colormag' ),
-			'panel' => 'colormag_header_options',
 		) );
 
 		$wp_customize->add_setting( 'colormag_random_post_in_menu', array(
@@ -247,12 +211,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				)
 			);
 		}
-
-		// Responsive new menu enable/disable
-		$wp_customize->add_section( 'colormag_responsive_menu_section', array(
-			'title' => esc_html__( 'Responsive Menu Style', 'colormag' ),
-			'panel' => 'colormag_header_options',
-		) );
 
 		$wp_customize->add_setting( 'colormag_responsive_menu', array(
 			'priority'          => 7,
@@ -292,13 +250,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			),
 		) );
 
-		// Main total Header area display type
-		$wp_customize->add_section( 'colormag_main_total_header_area_display_type_option', array(
-			'priority' => 4,
-			'title'    => esc_html__( 'Main Header Area Display Type', 'colormag' ),
-			'panel'    => 'colormag_header_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_main_total_header_area_display_type', array(
 			'default'           => 'type_one',
 			'capability'        => 'edit_theme_options',
@@ -318,13 +269,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'type_three' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
 			),
 		) ) );
-
-		// header image position setting
-		$wp_customize->add_section( 'colormag_header_image_position_setting', array(
-			'priority' => 6,
-			'title'    => __( 'Header Image Position', 'colormag' ),
-			'panel'    => 'colormag_header_options',
-		) );
 
 		$wp_customize->add_setting( 'colormag_header_image_position', array(
 			'default'           => 'position_two',

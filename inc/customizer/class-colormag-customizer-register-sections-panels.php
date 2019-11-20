@@ -85,6 +85,84 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority'    => 510,
 			),
 
+			/**
+			 * Register sections.
+			 */
+			/**
+			 * Header sections.
+			 */
+			// Breaking news section.
+			array(
+				'name'  => 'colormag_breaking_news_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Breaking News', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Date display section.
+			array(
+				'name'  => 'colormag_date_display_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Show Date', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Home icon in primary menu section.
+			array(
+				'name'  => 'colormag_home_icon_display_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Show Home Icon', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Primary sticky menu section.
+			array(
+				'name'  => 'colormag_primary_sticky_menu_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Sticky Menu', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Search icon in menu section.
+			array(
+				'name'  => 'colormag_search_icon_in_menu_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Search Icon', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Random post icon in menu section.
+			array(
+				'name'  => 'colormag_random_post_in_menu_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Random Post', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Header image position section.
+			array(
+				'name'  => 'colormag_header_image_position_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Header Image Position', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Main total header area display type section.
+			array(
+				'name'  => 'colormag_main_total_header_area_display_type_option',
+				'type'  => 'section',
+				'title' => esc_html__( 'Main Header Area Display Type', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Responsive menu style section.
+			array(
+				'name'  => 'colormag_responsive_menu_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Responsive Menu Style', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
