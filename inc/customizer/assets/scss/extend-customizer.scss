@@ -1,3 +1,25 @@
+.customize-section-description {
+
+	.colormag-section-description {
+
+		ul {
+			margin: 0;
+
+			> li {
+				list-style: none;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		a {
+			font-style: italic;
+		}
+	}
+}
+
 #accordion-section-colormag_upsell_section {
 
 	h3 {

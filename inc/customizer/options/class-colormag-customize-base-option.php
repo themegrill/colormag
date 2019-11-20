@@ -42,6 +42,52 @@ class ColorMag_Customize_Base_Option {
 
 	}
 
+	/**
+	 * Section Description
+	 *
+	 * @param array $args Description arguments.
+	 *
+	 * @return mixed Markup of the section description.
+	 */
+	public function get_section_description( $args ) {
+
+		// Description.
+		$content = '<div class="colormag-section-description">';
+		$content .= wp_kses_post( $args['description'] );
+
+		// Links.
+		if ( $args['links'] ) {
+
+			$content .= '<ul>';
+			foreach ( $args['links'] as $index => $link ) {
+
+				if ( $link['attrs'] ) {
+
+					$content .= '<li>';
+
+					// Attribute mapping.
+					$attributes = ' target="_blank" ';
+					foreach ( $link['attrs'] as $attr => $attr_value ) {
+						$attributes .= ' ' . $attr . '="' . esc_attr( $attr_value ) . '" ';
+					}
+
+					$content .= '<a ' . $attributes . '>' . esc_html( $link['text'] ) . '</a></li>';
+
+					$content .= '</li>';
+
+				}
+
+			}
+
+			$content .= '</ul>';
+
+		}
+
+		$content .= '</div>';
+
+		return $content;
+	}
+
 }
 
 return new ColorMag_Customize_Base_Option();

@@ -1,3 +1,19 @@
+.customize-section-description .colormag-section-description ul {
+	margin: 0;
+}
+
+.customize-section-description .colormag-section-description ul > li {
+	list-style: none;
+}
+
+.customize-section-description .colormag-section-description ul > li:last-child {
+	margin-bottom: 0;
+}
+
+.customize-section-description .colormag-section-description a {
+	font-style: italic;
+}
+
 #accordion-section-colormag_upsell_section h3.accordion-section-title {
 	background-color: #289DCC !important;
 	border-left-color: #0073aa;
