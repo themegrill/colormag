@@ -3,11 +3,11 @@
 /**
  * Extend WP_Customize_Control for radio image section.
  *
- * Class COLORMAG_Image_Radio_Control
+ * Class ColorMag_Radio_Image_Control
  *
  * @since 1.3.6
  */
-class COLORMAG_Image_Radio_Control extends WP_Customize_Control {
+class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 
 	public function render_content() {
 

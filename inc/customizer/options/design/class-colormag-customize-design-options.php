@@ -99,7 +99,7 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			),
 		) );
 
-		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_default_layout', array(
+		$wp_customize->add_control( new ColorMag_Radio_Image_Control( $wp_customize, 'colormag_default_layout', array(
 			'type'     => 'radio',
 			'label'    => __( 'Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options', 'colormag' ),
 			'section'  => 'colormag_default_layout_setting',
@@ -128,7 +128,7 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			),
 		) );
 
-		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_default_page_layout', array(
+		$wp_customize->add_control( new ColorMag_Radio_Image_Control( $wp_customize, 'colormag_default_page_layout', array(
 			'type'     => 'radio',
 			'label'    => __( 'Select default layout for pages. This layout will be reflected in all pages unless unique layout is set for specific page', 'colormag' ),
 			'section'  => 'colormag_default_page_layout_setting',
@@ -157,7 +157,7 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			),
 		) );
 
-		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_default_single_posts_layout', array(
+		$wp_customize->add_control( new ColorMag_Radio_Image_Control( $wp_customize, 'colormag_default_single_posts_layout', array(
 			'type'     => 'radio',
 			'label'    => __( 'Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post', 'colormag' ),
 			'section'  => 'colormag_default_single_posts_layout_setting',

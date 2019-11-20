@@ -308,7 +308,7 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 			),
 		) );
 
-		$wp_customize->add_control( new COLORMAG_Image_Radio_Control( $wp_customize, 'colormag_main_total_header_area_display_type', array(
+		$wp_customize->add_control( new ColorMag_Radio_Image_Control( $wp_customize, 'colormag_main_total_header_area_display_type', array(
 			'type'    => 'radio',
 			'label'   => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
 			'section' => 'colormag_main_total_header_area_display_type_option',
