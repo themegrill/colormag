@@ -299,8 +299,6 @@ class ColorMag_Customizer {
 		$control_type   = ColorMag_Customize_Base_Control::get_control_instance( $config['control'] );
 		$config['type'] = $config['control'];
 
-		var_dump( $config['label'], $config['type'] );
-
 		if ( false !== $control_type ) {
 			$wp_customize->add_control(
 				new $control_type(
