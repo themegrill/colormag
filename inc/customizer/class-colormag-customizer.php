@@ -281,6 +281,59 @@ class ColorMag_Customizer {
 	 */
 	public function register_setting_control( $config, $wp_customize ) {
 
+		// For adding settings.
+		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : ColorMag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
+		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
+
+		$wp_customize->add_setting(
+			$config['name'],
+			array(
+				'default'           => $config['default'],
+				'type'              => $config['datastore_type'],
+				'transport'         => $transport,
+				'sanitize_callback' => $sanitize_callback,
+			)
+		);
+
+		// For adding controls.
+		$control_type   = ColorMag_Customize_Base_Control::get_control_instance( $config['control'] );
+		$config['type'] = $config['control'];
+
+		var_dump( $config['label'], $config['type'] );
+
+		if ( false !== $control_type ) {
+			$wp_customize->add_control(
+				new $control_type(
+					$wp_customize,
+					$config['name'],
+					$config
+				)
+			);
+		} else {
+			$wp_customize->add_control(
+				$config['name'],
+				$config
+			);
+		}
+
+		// For adding selective refresh.
+		$selective_refresh = isset( $config['partial'] ) ? true : false;
+		$render_callback   = isset( $config['partial']['render_callback'] ) ? $config['partial']['render_callback'] : '';
+
+		if ( $selective_refresh ) {
+
+			if ( isset( $wp_customize->selective_refresh ) ) {
+				$wp_customize->selective_refresh->add_partial(
+					$config['name'],
+					array(
+						'selector'        => $config['partial']['selector'],
+						'render_callback' => $render_callback,
+					)
+				);
+			}
+
+		}
+
 	}
 
 	/**
