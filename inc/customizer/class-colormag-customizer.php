@@ -17,6 +17,13 @@
 class ColorMag_Customizer {
 
 	/**
+	 * Customizer Dependency Array.
+	 *
+	 * @var array
+	 */
+	public static $dependency_array = array();
+
+	/**
 	 * Customizer setup constructor.
 	 *
 	 * ColorMag_Customizer constructor.
@@ -332,6 +339,23 @@ class ColorMag_Customizer {
 
 		}
 
+		// For dependency array.
+		if ( false !== $config['dependency'] ) {
+			$this->update_dependency_array( $config['name'], $config['dependency'] );
+		}
+
+	}
+
+	/**
+	 * Update dependency in the dependency array for controls and sections.
+	 *
+	 * @param string $key        Name of the Setting/Control for which the dependency is added.
+	 * @param array  $dependency Dependency of the $name Setting/Control.
+	 *
+	 * @return void
+	 */
+	private function update_dependency_array( $key, $dependency ) {
+		self::$dependency_array[ $key ] = $dependency;
 	}
 
 	/**
