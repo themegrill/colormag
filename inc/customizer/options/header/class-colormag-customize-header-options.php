@@ -26,7 +26,24 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			// Breaking news in header enable/disable option.
+			array(
+				'name'              => 'colormag_breaking_news',
+				'default'           => 0,
+				'type'              => 'control',
+				'control'           => 'checkbox',
+				'label'             => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
+				'section'           => 'colormag_breaking_news_section',
+				'priority'          => 1,
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_checkbox',
+				),
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
@@ -34,23 +51,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
-		$wp_customize->add_setting( 'colormag_breaking_news', array(
-			'priority'          => 1,
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_breaking_news', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to enable the breaking news section', 'colormag' ),
-			'section'  => 'colormag_breaking_news_section',
-			'settings' => 'colormag_breaking_news',
-		) );
 
 		$wp_customize->add_setting( 'colormag_date_display', array(
 			'priority'          => 2,

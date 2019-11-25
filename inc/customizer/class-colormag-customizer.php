@@ -340,7 +340,7 @@ class ColorMag_Customizer {
 		}
 
 		// For dependency array.
-		if ( false !== $config['dependency'] ) {
+		if ( isset( $config['dependency'] ) ) {
 			$this->update_dependency_array( $config['name'], $config['dependency'] );
 		}
 
