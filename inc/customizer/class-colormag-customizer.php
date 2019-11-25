@@ -51,6 +51,9 @@ class ColorMag_Customizer {
 		// Include the required customizer sanitizations, callbacks and partials files.
 		add_action( 'customize_register', array( $this, 'customize_sanitize_callback_include' ) );
 
+		// Enqueue the required scripts for the custom customize controls for extending panels, sections and controls.
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_customize_controls' ) );
+
 		// Enqueue the preview JS for customize options.
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 
@@ -366,6 +369,45 @@ class ColorMag_Customizer {
 		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-sanitizes.php' );
 		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-callbacks.php' );
 		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-partials.php' );
+
+	}
+
+	/**
+	 * Enqueue custom scripts for customize panels, sections and controls.
+	 */
+	public function enqueue_customize_controls() {
+
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+		/**
+		 * Enqueue required Customize Controls CSS files.
+		 */
+		// Extend customizer CSS file.
+		wp_enqueue_style(
+			'colormag-extend-customizer',
+			COLORMAG_CUSTOMIZER_URL . '/assets/css/extend-customizer' . $suffix . '.css'
+		);
+
+		/**
+		 * Enqueue required Customize Controls JS files.
+		 */
+		// Extend customizer JS file.
+		wp_enqueue_script(
+			'colormag-extend-customizer',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/extend-customizer' . $suffix . '.js',
+			array( 'jquery' ),
+			false,
+			true
+		);
+
+		// Customizer dependency control JS file.
+		wp_enqueue_script(
+			'colormag-customizer-dependency',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer-dependency' . $suffix . '.js',
+			array( 'jquery' ),
+			false,
+			true
+		);
 
 	}
 
