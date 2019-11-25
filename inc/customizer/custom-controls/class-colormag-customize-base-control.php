@@ -69,6 +69,15 @@ class ColorMag_Customize_Base_Control {
 			true
 		);
 
+		// Customizer dependency control JS file.
+		wp_enqueue_script(
+			'colormag-customizer-dependency',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer-dependency' . $suffix . '.js',
+			array( 'jquery' ),
+			false,
+			true
+		);
+
 		// Main JS file.
 		wp_enqueue_script(
 			'colormag-customize-controls',
