@@ -100,7 +100,51 @@ class ColorMag_Customizer {
 		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Section' );
 		$wp_customize->register_section_type( 'ColorMag_Upsell_Section' );
 
-		// Register controls.
+		/**
+		 * Register controls.
+		 **/
+		/**
+		 * WordPress default controls.
+		 */
+		// Checkbox control.
+		ColorMag_Customize_Base_Control::add_control(
+			'checkbox',
+			array(
+				'callback'          => 'WP_Customize_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_checkbox',
+				),
+			)
+		);
+
+		// Radio control.
+		ColorMag_Customize_Base_Control::add_control(
+			'radio',
+			array(
+				'callback'          => 'WP_Customize_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_radio_select',
+				),
+			)
+		);
+
+		// Select control.
+		ColorMag_Customize_Base_Control::add_control(
+			'select',
+			array(
+				'callback'          => 'WP_Customize_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_radio_select',
+				),
+			)
+		);
+
+		/**
+		 * Controls created via the theme.
+		 */
 
 	}
 
