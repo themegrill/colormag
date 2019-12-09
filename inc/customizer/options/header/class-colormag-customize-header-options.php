@@ -30,17 +30,13 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 			// Breaking news in header enable/disable option.
 			array(
-				'name'              => 'colormag_breaking_news',
-				'default'           => 0,
-				'type'              => 'control',
-				'control'           => 'checkbox',
-				'label'             => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
-				'section'           => 'colormag_breaking_news_section',
-				'priority'          => 1,
-				'sanitize_callback' => array(
-					'ColorMag_Customizer_Sanitizes',
-					'sanitize_checkbox',
-				),
+				'name'     => 'colormag_breaking_news',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
+				'section'  => 'colormag_breaking_news_section',
+				'priority' => 1,
 			),
 
 		);
