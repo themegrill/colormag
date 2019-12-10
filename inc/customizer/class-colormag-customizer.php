@@ -102,7 +102,7 @@ class ColorMag_Customizer {
 
 		/**
 		 * Register controls.
-		 **/
+		 */
 		/**
 		 * WordPress default controls.
 		 */
@@ -383,7 +383,6 @@ class ColorMag_Customizer {
 					)
 				);
 			}
-
 		}
 
 		// For dependency array.
@@ -410,9 +409,9 @@ class ColorMag_Customizer {
 	 */
 	public function customize_sanitize_callback_include() {
 
-		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-sanitizes.php' );
-		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-callbacks.php' );
-		require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-partials.php' );
+		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-sanitizes.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-callbacks.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-partials.php';
 
 	}
 
