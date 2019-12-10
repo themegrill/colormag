@@ -467,9 +467,11 @@ class ColorMag_Customizer {
 	 */
 	public function customize_preview_js() {
 
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 		wp_enqueue_script(
 			'colormag-customizer',
-			get_template_directory_uri() . '/js/customizer.js',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer' . $suffix . '.js',
 			array(
 				'customize-preview',
 			),
