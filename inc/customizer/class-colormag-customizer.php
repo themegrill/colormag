@@ -145,6 +145,17 @@ class ColorMag_Customizer {
 		/**
 		 * Controls created via the theme.
 		 */
+		// Radio image control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-radio-image',
+			array(
+				'callback'          => 'ColorMag_Radio_Image_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_radio_select',
+				),
+			)
+		);
 
 	}
 
