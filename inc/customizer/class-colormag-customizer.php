@@ -428,7 +428,9 @@ class ColorMag_Customizer {
 		// Extend customizer CSS file.
 		wp_enqueue_style(
 			'colormag-extend-customizer',
-			COLORMAG_CUSTOMIZER_URL . '/assets/css/extend-customizer' . $suffix . '.css'
+			COLORMAG_CUSTOMIZER_URL . '/assets/css/extend-customizer' . $suffix . '.css',
+			array(),
+			COLORMAG_THEME_VERSION
 		);
 
 		/**
@@ -438,8 +440,10 @@ class ColorMag_Customizer {
 		wp_enqueue_script(
 			'colormag-extend-customizer',
 			COLORMAG_CUSTOMIZER_URL . '/assets/js/extend-customizer' . $suffix . '.js',
-			array( 'jquery' ),
-			false,
+			array(
+				'jquery',
+			),
+			COLORMAG_THEME_VERSION,
 			true
 		);
 
@@ -447,8 +451,10 @@ class ColorMag_Customizer {
 		wp_enqueue_script(
 			'colormag-customizer-dependency',
 			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer-dependency' . $suffix . '.js',
-			array( 'jquery' ),
-			false,
+			array(
+				'jquery',
+			),
+			COLORMAG_THEME_VERSION,
 			true
 		);
 
@@ -460,15 +466,17 @@ class ColorMag_Customizer {
 	 * @since ColorMag 2.0.0
 	 */
 	public function customize_preview_js() {
+
 		wp_enqueue_script(
 			'colormag-customizer',
 			get_template_directory_uri() . '/js/customizer.js',
 			array(
 				'customize-preview',
 			),
-			false,
+			COLORMAG_THEME_VERSION,
 			true
 		);
+
 	}
 
 }
