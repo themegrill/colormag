@@ -460,6 +460,14 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 endif;
 
 /**
+ * Define Theme Constants.
+ */
+$theme = wp_get_theme( 'colormag' );
+define( 'COLORMAG_THEME_VERSION', $theme['Version'] );
+
+echo COLORMAG_THEME_VERSION;
+
+/**
  * Define Directory Location Constants
  */
 define( 'COLORMAG_PARENT_DIR', get_template_directory() );
