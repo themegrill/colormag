@@ -39,6 +39,22 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 1,
 			),
 
+			// Main total header area display type option.
+			array(
+				'name'     => 'colormag_main_total_header_area_display_type',
+				'default'  => 'type_one',
+				'type'     => 'control',
+				'control'  => 'colormag-radio-image',
+				'label'    => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
+				'section'  => 'colormag_main_total_header_area_display_type_option',
+				'priority' => 20,
+				'choices' => array(
+					'type_one'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
+					'type_two'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
+					'type_three' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
+				),
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
@@ -245,26 +261,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'disable'          => __( 'Disable', 'colormag' ),
 			),
 		) );
-
-		$wp_customize->add_setting( 'colormag_main_total_header_area_display_type', array(
-			'default'           => 'type_one',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-		) );
-
-		$wp_customize->add_control( new ColorMag_Radio_Image_Control( $wp_customize, 'colormag_main_total_header_area_display_type', array(
-			'type'    => 'radio',
-			'label'   => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
-			'section' => 'colormag_main_total_header_area_display_type_option',
-			'choices' => array(
-				'type_one'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
-				'type_two'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
-				'type_three' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
-			),
-		) ) );
 
 		$wp_customize->add_setting( 'colormag_header_image_position', array(
 			'default'           => 'position_two',
