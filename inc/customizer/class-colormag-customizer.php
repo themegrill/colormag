@@ -471,7 +471,7 @@ class ColorMag_Customizer {
 
 		wp_enqueue_script(
 			'colormag-customizer',
-			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer' . $suffix . '.js',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/customize-preview' . $suffix . '.js',
 			array(
 				'customize-preview',
 			),

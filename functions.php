@@ -465,8 +465,6 @@ endif;
 $theme = wp_get_theme( 'colormag' );
 define( 'COLORMAG_THEME_VERSION', $theme['Version'] );
 
-echo COLORMAG_THEME_VERSION;
-
 /**
  * Define Directory Location Constants
  */
