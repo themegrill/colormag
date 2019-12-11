@@ -30,6 +30,15 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 
 		parent::to_json();
 
+		$this->json['default'] = $this->setting->default;
+		if ( isset( $this->default ) ) {
+			$this->json['default'] = $this->default;
+		}
+		$this->json['value'] = $this->value();
+
+		$this->json['link']    = $this->get_link();
+		$this->json['id']      = $this->id;
+
 	}
 
 	/**
@@ -52,6 +61,12 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
+		</div>
+
+		<div id="input_{{ data.id }}" class="image">
+			<# for ( key in data.choices ) { #>
+
 			<# } #>
 		</div>
 

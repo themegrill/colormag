@@ -48,10 +48,17 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'label'    => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
 				'section'  => 'colormag_main_total_header_area_display_type_option',
 				'priority' => 20,
-				'choices' => array(
-					'type_one'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
-					'type_two'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
-					'type_three' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
+				'type_one'   => array(
+					'label' => '',
+					'url' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
+				),
+				'type_two'   => array(
+					'label' => '',
+					'url' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
+				),
+				'type_three' => array(
+					'label' => '',
+					'url' => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
 				),
 			),
 
