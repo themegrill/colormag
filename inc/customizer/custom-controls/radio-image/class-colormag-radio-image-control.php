@@ -39,6 +39,21 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 		$this->json['link']    = $this->get_link();
 		$this->json['id']      = $this->id;
 
+		foreach ( $this->choices as $key => $value ) {
+			$this->json['choices'][ $key ]        = $value['url'];
+			$this->json['choices_titles'][ $key ] = $value['label'];
+		}
+
+		$this->json['inputAttrs'] = '';
+		$this->json['labelStyle'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			if ( 'style' !== $attr ) {
+				$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+			} else {
+				$this->json['labelStyle'] = 'style="' . esc_attr( $value ) . '" ';
+			}
+		}
+
 	}
 
 	/**
@@ -66,7 +81,20 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 
 		<div id="input_{{ data.id }}" class="image">
 			<# for ( key in data.choices ) { #>
+			<input {{{ data.inputAttrs }}}
+			       class="image-select"
+			       type="radio"
+			       value="{{ key }}"
+			       name="_customize-radio-{{ data.id }}"
+			       id="{{ data.id }}{{ key }}"
+			       {{{ data.link }}}
+			<# if ( data.value === key ) { #> checked="checked"<# } #>
+			>
 
+			<label for="{{ data.id }}{{ key }}" {{{ data.labelStyle }}} class="colormag-radio-image">
+				<img src="{{{ data.choices[ key ] }}}" alt="{{{ data.choices_titles[ key ] }}}">
+				<span class="image-clickable" title="{{ data.choices_titles[ key ] }}"></span>
+			</label>
 			<# } #>
 		</div>
 
