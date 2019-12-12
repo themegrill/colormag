@@ -85,6 +85,7 @@ class ColorMag_Customizer {
 
 		// Include the required customize controls file.
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/radio-image/class-colormag-radio-image-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/heading/class-colormag-heading-control.php';
 
 	}
 
@@ -153,6 +154,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_radio_select',
+				),
+			)
+		);
+
+		// Heading control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-heading',
+			array(
+				'callback'          => 'ColorMag_Heading_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_false_values',
 				),
 			)
 		);
