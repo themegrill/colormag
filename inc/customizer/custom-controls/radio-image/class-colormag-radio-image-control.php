@@ -22,6 +22,13 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 	public $type = 'colormag-radio-image';
 
 	/**
+	 * Column for image.
+	 *
+	 * @var int
+	 */
+	public $image_col = 1;
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -38,6 +45,8 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 
 		$this->json['link'] = $this->get_link();
 		$this->json['id']   = $this->id;
+
+		$this->json['image_col'] = $this->image_col;
 
 		foreach ( $this->choices as $key => $value ) {
 			$this->json['choices'][ $key ]        = $value['url'];
@@ -79,7 +88,7 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 			<# } #>
 		</div>
 
-		<div id="input_{{ data.id }}" class="image">
+		<div id="input_{{ data.id }}" class="image image-col-{{{ data.image_col }}}">
 			<# for ( key in data.choices ) { #>
 			<input {{{ data.inputAttrs }}}
 			       class="image-select"
