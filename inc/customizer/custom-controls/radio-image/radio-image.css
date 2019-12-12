@@ -1,0 +1,29 @@
+/**
+ * Radio image control CSS.
+ */
+.customize-control-colormag-radio-image input {
+	display: none;
+}
+
+.customize-control-colormag-radio-image input:checked + label {
+	-webkit-box-shadow: 0 0 3px 0 #000;
+	box-shadow: 0 0 3px 0 #000;
+}
+
+.customize-control-colormag-radio-image label {
+	margin-bottom: 15px;
+	position: relative;
+	display: inline-block;
+}
+
+.customize-control-colormag-radio-image label:last-child {
+	margin-bottom: 0;
+}
+
+.customize-control-colormag-radio-image label > img {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
