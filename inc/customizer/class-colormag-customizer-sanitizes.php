@@ -34,6 +34,23 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the text editor strings set within customizer controls.
+	 *
+	 * @param string $input Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_text_editor( $input ) {
+
+		if ( isset( $input ) ) {
+			$input = stripslashes( wp_filter_post_kses( addslashes( $input ) ) );
+		}
+
+		return $input;
+
+	}
+
+	/**
 	 * Sanitize the radio as well as select options set within customizer controls.
 	 *
 	 * @param string               $input Input from the customize controls.
