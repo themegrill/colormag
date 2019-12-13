@@ -55,3 +55,20 @@
 #accordion-section-colormag_upsell_section h3.accordion-section-title:after {
 	color: #fff !important;
 }
+
+.customize-control {
+	position: relative;
+	margin-bottom: 0;
+	margin-top: 12px;
+}
+
+.customize-control .colormag-control-tooltip {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.customize-control .customize-inside-control-row {
+	padding-top: 0;
+	padding-bottom: 0;
+}

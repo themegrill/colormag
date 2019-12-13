@@ -66,3 +66,20 @@
 		}
 	}
 }
+
+.customize-control {
+	position: relative;
+	margin-bottom: 0;
+	margin-top: 12px;
+
+	.colormag-control-tooltip {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.customize-inside-control-row {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
