@@ -4,7 +4,7 @@
  *
  * Class ColorMag_Editor_ControlColorMag_Editor_Control
  *
- * @since 3.0.0
+ * @since 2.0.0
  */
 
 /**
@@ -30,6 +30,15 @@ class ColorMag_Editor_Control extends WP_Customize_Control {
 
 		parent::to_json();
 
+		$this->json['default'] = $this->setting->default;
+		if ( isset( $this->default ) ) {
+			$this->json['default'] = $this->default;
+		}
+		$this->json['value'] = $this->value();
+
+		$this->json['link'] = $this->get_link();
+		$this->json['id']   = $this->id;
+
 	}
 
 	/**
@@ -46,7 +55,13 @@ class ColorMag_Editor_Control extends WP_Customize_Control {
 		?>
 
 		<div class="customizer-text">
+			<# if ( data.label ) { #>
+			<span class="customize-control-title">{{{ data.label }}}</span>
+			<# } #>
 
+			<# if ( data.description ) { #>
+			<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
 		</div>
 
 		<?php
