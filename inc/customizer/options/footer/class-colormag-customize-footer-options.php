@@ -35,13 +35,6 @@ class ColorMag_Customize_Footer_Options extends ColorMag_Customize_Base_Option {
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		// Footer display type option
-		$wp_customize->add_section( 'colormag_main_footer_layout_display_type_section', array(
-			'priority' => 1,
-			'title'    => esc_html__( 'Footer Main Area Display Type', 'colormag' ),
-			'panel'    => 'colormag_footer_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_main_footer_layout_display_type', array(
 			'default'           => 'type_one',
 			'capability'        => 'edit_theme_options',

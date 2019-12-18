@@ -163,6 +163,17 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_header_options',
 			),
 
+			/**
+			 * Footer sections.
+			 */
+			// Footer main area display type section.
+			array(
+				'name'  => 'colormag_main_footer_layout_display_type_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Footer Main Area Display Type', 'colormag' ),
+				'panel' => 'colormag_footer_options',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
