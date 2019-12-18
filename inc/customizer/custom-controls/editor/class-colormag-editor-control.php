@@ -64,6 +64,8 @@ class ColorMag_Editor_Control extends WP_Customize_Control {
 			<# } #>
 		</div>
 
+		<textarea id="editor_{{{ data.id }}}" {{{ data.link }}}>{{ data.value }}</textarea>
+
 		<?php
 	}
 
