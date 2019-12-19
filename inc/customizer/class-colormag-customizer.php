@@ -87,6 +87,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/radio-image/class-colormag-radio-image-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/heading/class-colormag-heading-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/editor/class-colormag-editor-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/color/class-colormag-color-control.php';
 
 	}
 
@@ -179,6 +180,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_text_editor',
+				),
+			)
+		);
+
+		// Color control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-color',
+			array(
+				'callback'          => 'ColorMag_Color_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_hex_color',
 				),
 			)
 		);

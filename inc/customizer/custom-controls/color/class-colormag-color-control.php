@@ -1,25 +1,25 @@
 <?php
 /**
- * Extend WP_Customize_Control to add the editor control.
+ * Extend WP_Customize_Control to add the color control.
  *
- * Class ColorMag_Editor_Control
+ * Class ColorMag_Color_Control
  *
  * @since 2.0.0
  */
 
 /**
- * Class to extend WP_Customize_Control to add the editor customize control.
+ * Class to extend WP_Customize_Control to add the color customize control.
  *
- * Class ColorMag_Editor_Control
+ * Class ColorMag_Color_Control
  */
-class ColorMag_Editor_Control extends WP_Customize_Control {
+class ColorMag_Color_Control extends WP_Customize_Control {
 
 	/**
 	 * Control's Type.
 	 *
 	 * @var string
 	 */
-	public $type = 'colormag-editor';
+	public $type = 'colormag-color';
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
@@ -29,15 +29,6 @@ class ColorMag_Editor_Control extends WP_Customize_Control {
 	public function to_json() {
 
 		parent::to_json();
-
-		$this->json['default'] = $this->setting->default;
-		if ( isset( $this->default ) ) {
-			$this->json['default'] = $this->default;
-		}
-		$this->json['value'] = $this->value();
-
-		$this->json['link'] = $this->get_link();
-		$this->json['id']   = $this->id;
 
 	}
 
@@ -63,8 +54,6 @@ class ColorMag_Editor_Control extends WP_Customize_Control {
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 		</div>
-
-		<textarea id="editor_{{{ data.id }}}" {{{ data.link }}}>{{ data.value }}</textarea>
 
 		<?php
 	}
