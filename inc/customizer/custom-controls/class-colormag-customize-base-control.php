@@ -48,19 +48,33 @@ class ColorMag_Customize_Base_Control {
 		// Main CSS file.
 		wp_enqueue_style(
 			'colormag-customize-controls',
-			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/css/customize-controls' . $suffix . '.css'
+			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/css/customize-controls' . $suffix . '.css',
+			array(),
+			COLORMAG_THEME_VERSION
 		);
 
 		/**
 		 * Enqueue required Customize Controls JS files.
 		 */
+		// WP Color Picker Alpha JS library file.
+		wp_enqueue_script(
+			'wp-color-picker-alpha',
+			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/js/wp-color-picker-alpha' . $suffix . '.js',
+			array(
+				'jquery',
+			),
+			COLORMAG_THEME_VERSION,
+			true
+		);
 
 		// Main JS file.
 		wp_enqueue_script(
 			'colormag-customize-controls',
 			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/js/customize-controls' . $suffix . '.js',
-			array( 'jquery' ),
-			false,
+			array(
+				'jquery',
+			),
+			COLORMAG_THEME_VERSION,
 			true
 		);
 
