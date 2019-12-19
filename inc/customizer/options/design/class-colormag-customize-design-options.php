@@ -35,12 +35,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		// FrontPage setting
-		$wp_customize->add_section( 'colormag_front_page_setting', array(
-			'priority' => 1,
-			'title'    => __( 'Front Page Settings', 'colormag' ),
-			'panel'    => 'colormag_design_options',
-		) );
 		$wp_customize->add_setting( 'colormag_hide_blog_front', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
@@ -54,13 +48,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			'type'    => 'checkbox',
 			'label'   => __( 'Check to hide blog posts/static page on front page', 'colormag' ),
 			'section' => 'colormag_front_page_setting',
-		) );
-
-		// site layout setting
-		$wp_customize->add_section( 'colormag_site_layout_setting', array(
-			'priority' => 2,
-			'title'    => __( 'Site Layout', 'colormag' ),
-			'panel'    => 'colormag_design_options',
 		) );
 
 		$wp_customize->add_setting( 'colormag_site_layout', array(
@@ -81,13 +68,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'wide_layout'  => __( 'Wide Layout', 'colormag' ),
 			),
 			'section' => 'colormag_site_layout_setting',
-		) );
-
-		// default layout setting
-		$wp_customize->add_section( 'colormag_default_layout_setting', array(
-			'priority' => 3,
-			'title'    => __( 'Default layout', 'colormag' ),
-			'panel'    => 'colormag_design_options',
 		) );
 
 		$wp_customize->add_setting( 'colormag_default_layout', array(
@@ -112,13 +92,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			),
 		) ) );
 
-		// default layout for pages
-		$wp_customize->add_section( 'colormag_default_page_layout_setting', array(
-			'priority' => 4,
-			'title'    => __( 'Default layout for pages only', 'colormag' ),
-			'panel'    => 'colormag_design_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_default_page_layout', array(
 			'default'           => 'right_sidebar',
 			'capability'        => 'edit_theme_options',
@@ -140,13 +113,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'no_sidebar_content_centered' => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
 			),
 		) ) );
-
-		// default layout for single posts
-		$wp_customize->add_section( 'colormag_default_single_posts_layout_setting', array(
-			'priority' => 5,
-			'title'    => __( 'Default layout for single posts only', 'colormag' ),
-			'panel'    => 'colormag_design_options',
-		) );
 
 		$wp_customize->add_setting( 'colormag_default_single_posts_layout', array(
 			'default'           => 'right_sidebar',
@@ -170,13 +136,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			),
 		) ) );
 
-		// primary color options
-		$wp_customize->add_section( 'colormag_primary_color_setting', array(
-			'panel'    => 'colormag_design_options',
-			'priority' => 7,
-			'title'    => __( 'Primary color option', 'colormag' ),
-		) );
-
 		$wp_customize->add_setting( 'colormag_primary_color', array(
 			'default'           => '#289dcc',
 			'capability'        => 'edit_theme_options',
@@ -192,13 +151,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			'section'  => 'colormag_primary_color_setting',
 			'settings' => 'colormag_primary_color',
 		) ) );
-
-		// Color Skin
-		$wp_customize->add_section( 'colormag_color_skin_setting_section', array(
-			'priority' => 6,
-			'title'    => esc_html__( 'Skin Color', 'colormag' ),
-			'panel'    => 'colormag_design_options',
-		) );
 
 		$wp_customize->add_setting( 'colormag_color_skin_setting', array(
 			'default'           => 'white',

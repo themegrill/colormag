@@ -164,6 +164,65 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			/**
+			 * Design sections.
+			 */
+			// FrontPage setting section.
+			array(
+				'name'  => 'colormag_front_page_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Front Page Settings', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			// Site layout section.
+			array(
+				'name'  => 'colormag_site_layout_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Site Layout', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			// Default layout section.
+			array(
+				'name'  => 'colormag_default_layout_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Default layout', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			// Default layout for pages section.
+			array(
+				'name'  => 'colormag_default_page_layout_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Default layout for pages only', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			// Default layout for single posts section.
+			array(
+				'name'  => 'colormag_default_single_posts_layout_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Default layout for single posts only', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			// Primary color section.
+			array(
+				'name'  => 'colormag_primary_color_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Primary color option', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			// Color skin section.
+			array(
+				'name'  => 'colormag_color_skin_setting_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Skin Color', 'colormag' ),
+				'panel' => 'colormag_design_options',
+			),
+
+			/**
 			 * Footer sections.
 			 */
 			// Footer main area display type section.
