@@ -26,7 +26,20 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			// Primary color option.
+			array(
+				'name'     => 'colormag_primary_color',
+				'default'  => '#289dcc',
+				'type'     => 'control',
+				'control'  => 'colormag-color',
+				'label'    => esc_html__( 'This will reflect in links, buttons and many others. Choose a color to match your site', 'colormag' ),
+				'section'  => 'colormag_primary_color_setting',
+				'priority' => 1,
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
@@ -134,22 +147,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'no_sidebar_full_width'       => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
 				'no_sidebar_content_centered' => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
 			),
-		) ) );
-
-		$wp_customize->add_setting( 'colormag_primary_color', array(
-			'default'           => '#289dcc',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_hex_color',
-			),
-			'transport'         => 'postMessage',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_primary_color', array(
-			'label'    => __( 'This will reflect in links, buttons and many others. Choose a color to match your site', 'colormag' ),
-			'section'  => 'colormag_primary_color_setting',
-			'settings' => 'colormag_primary_color',
 		) ) );
 
 		$wp_customize->add_setting( 'colormag_color_skin_setting', array(
