@@ -43,8 +43,10 @@ class ColorMag_Radio_Image_Control extends WP_Customize_Control {
 		}
 		$this->json['value'] = $this->value();
 
-		$this->json['link'] = $this->get_link();
-		$this->json['id']   = $this->id;
+		$this->json['link']        = $this->get_link();
+		$this->json['id']          = $this->id;
+		$this->json['label']       = esc_html( $this->label );
+		$this->json['description'] = $this->description;
 
 		$this->json['image_col'] = $this->image_col;
 
