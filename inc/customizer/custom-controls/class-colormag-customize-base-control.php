@@ -61,7 +61,7 @@ class ColorMag_Customize_Base_Control {
 			'wp-color-picker-alpha',
 			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/js/wp-color-picker-alpha' . $suffix . '.js',
 			array(
-				'jquery',
+				'wp-color-picker',
 			),
 			COLORMAG_THEME_VERSION,
 			true
