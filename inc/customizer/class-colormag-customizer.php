@@ -145,6 +145,18 @@ class ColorMag_Customizer {
 			)
 		);
 
+		// Color control.
+		ColorMag_Customize_Base_Control::add_control(
+			'color',
+			array(
+				'callback'          => 'WP_Customize_Color_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_hex_color',
+				),
+			)
+		);
+
 		/**
 		 * Controls created via the theme.
 		 */

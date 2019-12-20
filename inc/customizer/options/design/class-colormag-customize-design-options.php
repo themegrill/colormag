@@ -30,13 +30,14 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 			// Primary color option.
 			array(
-				'name'     => 'colormag_primary_color',
-				'default'  => '#289dcc',
-				'type'     => 'control',
-				'control'  => 'colormag-color',
-				'label'    => esc_html__( 'This will reflect in links, buttons and many others. Choose a color to match your site', 'colormag' ),
-				'section'  => 'colormag_primary_color_setting',
-				'priority' => 1,
+				'name'      => 'colormag_primary_color',
+				'default'   => '#289dcc',
+				'type'      => 'control',
+				'control'   => 'colormag-color',
+				'label'     => esc_html__( 'This will reflect in links, buttons and many others. Choose a color to match your site', 'colormag' ),
+				'section'   => 'colormag_primary_color_setting',
+				'priority'  => 1,
+				'transport' => 'postMessage',
 			),
 
 		);
