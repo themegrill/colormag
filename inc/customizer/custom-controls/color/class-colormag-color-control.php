@@ -66,6 +66,15 @@ class ColorMag_Color_Control extends WP_Customize_Control {
 			<# } #>
 		</div>
 
+		<div class="customize-control-content">
+			<input class="colormag-color-picker-alpha color-picker-hex"
+			       type="text"
+			       data-alpha="true"
+			       data-default-color="{{ data.default }}"
+			       value="{{ data.value }}"
+			/>
+		</div>
+
 		<?php
 	}
 
