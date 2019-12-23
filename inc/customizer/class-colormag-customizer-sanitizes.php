@@ -89,7 +89,31 @@ class ColorMag_Customizer_Sanitizes {
 			return $color;
 		}
 
-		return '';
+	}
+
+	/**
+	 * Sanitize the alpha color set within customizer controls.
+	 *
+	 * @param string $color Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_alpha_color( $color ) {
+
+		if ( '' === $color ) {
+			return '';
+		}
+
+		// Hex sanitize if no rgba color option is chosen.
+		if ( false === strpos( $color, 'rgba' ) ) {
+			return self::sanitize_hex_color( $color );
+		}
+
+		// Sanitize the rgba color provided via customize option.
+		$color = str_replace( ' ', '', $color );
+		sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+
+		return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
 
 	}
 

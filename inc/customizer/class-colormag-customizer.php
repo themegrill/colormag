@@ -203,7 +203,7 @@ class ColorMag_Customizer {
 				'callback'          => 'ColorMag_Color_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
-					'sanitize_hex_color',
+					'sanitize_alpha_color',
 				),
 			)
 		);
