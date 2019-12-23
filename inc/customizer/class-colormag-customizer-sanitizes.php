@@ -53,7 +53,7 @@ class ColorMag_Customizer_Sanitizes {
 	/**
 	 * Sanitize the radio as well as select options set within customizer controls.
 	 *
-	 * @param string               $input Input from the customize controls.
+	 * @param string               $input   Input from the customize controls.
 	 * @param WP_Customize_Setting $setting Setting instance.
 	 *
 	 * @return string
@@ -80,11 +80,16 @@ class ColorMag_Customizer_Sanitizes {
 	 */
 	public static function sanitize_hex_color( $color ) {
 
-		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
-			return '#' . $unhashed;
+		if ( '' === $color ) {
+			return '';
 		}
 
-		return $color;
+		// 3 or 6 hex digits, or the empty string.
+		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+			return $color;
+		}
+
+		return '';
 
 	}
 
