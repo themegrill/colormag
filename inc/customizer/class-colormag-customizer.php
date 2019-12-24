@@ -88,6 +88,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/heading/class-colormag-heading-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/editor/class-colormag-editor-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/color/class-colormag-color-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/buttonset/class-colormag-buttonset-control.php';
 
 	}
 
@@ -204,6 +205,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_alpha_color',
+				),
+			)
+		);
+
+		// Buttonset control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-buttonset',
+			array(
+				'callback'          => 'ColorMag_Buttonset_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_radio_select',
 				),
 			)
 		);
