@@ -41,6 +41,8 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
 
+		$this->json['choices'] = $this->choices;
+
 		$this->json['inputAttrs'] = '';
 		foreach ( $this->input_attrs as $attr => $value ) {
 			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
@@ -68,6 +70,24 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
+		</div>
+
+		<div id="input_{{ data.id }}" class="buttonset">
+			<# for ( key in data.choices ) { #>
+			<input {{{ data.inputAttrs }}}
+			       class="input-buttonset"
+			       type="radio"
+			       value="{{ key }}"
+			       name="_customize-radio-{{ data.id }}"
+			       id="{{ data.id }}{{ key }}"
+			       {{{ data.link }}}
+			<# if ( data.value === key ) { #> checked="checked"<# } #>
+			>
+
+			<label for="{{ data.id }}{{ key }}" class="colormag-radio-buttonset">
+				{{{ data.choices[ key ] }}}
+			</label>
 			<# } #>
 		</div>
 
