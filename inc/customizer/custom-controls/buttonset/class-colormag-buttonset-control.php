@@ -30,6 +30,22 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 
 		parent::to_json();
 
+		$this->json['default'] = $this->setting->default;
+		if ( isset( $this->default ) ) {
+			$this->json['default'] = $this->default;
+		}
+		$this->json['value'] = $this->value();
+
+		$this->json['link']        = $this->get_link();
+		$this->json['id']          = $this->id;
+		$this->json['label']       = esc_html( $this->label );
+		$this->json['description'] = $this->description;
+
+		$this->json['inputAttrs'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+		}
+
 	}
 
 	/**
@@ -45,7 +61,15 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 	protected function content_template() {
 		?>
 
+		<div class="customizer-text">
+			<# if ( data.label ) { #>
+			<span class="customize-control-title">{{{ data.label }}}</span>
+			<# } #>
 
+			<# if ( data.description ) { #>
+			<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
+		</div>
 
 		<?php
 	}

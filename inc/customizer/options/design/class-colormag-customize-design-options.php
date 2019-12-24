@@ -28,6 +28,22 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Site layout option.
+			array(
+				'name'      => 'colormag_site_layout',
+				'default'   => 'wide_layout',
+				'type'      => 'control',
+				'control'   => 'colormag-buttonset',
+				'label'     => esc_html__( 'Choose your site layout. The change is reflected in whole site', 'colormag' ),
+				'section'   => 'colormag_site_layout_setting',
+				'priority'  => 1,
+				'transport' => 'postMessage',
+				'choices'   => array(
+					'boxed_layout' => esc_html__( 'Boxed Layout', 'colormag' ),
+					'wide_layout'  => esc_html__( 'Wide Layout', 'colormag' ),
+				),
+			),
+
 			// Primary color option.
 			array(
 				'name'      => 'colormag_primary_color',
@@ -62,26 +78,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 			'type'    => 'checkbox',
 			'label'   => __( 'Check to hide blog posts/static page on front page', 'colormag' ),
 			'section' => 'colormag_front_page_setting',
-		) );
-
-		$wp_customize->add_setting( 'colormag_site_layout', array(
-			'default'           => 'wide_layout',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-			'transport'         => 'postMessage',
-		) );
-
-		$wp_customize->add_control( 'colormag_site_layout', array(
-			'type'    => 'radio',
-			'label'   => __( 'Choose your site layout. The change is reflected in whole site', 'colormag' ),
-			'choices' => array(
-				'boxed_layout' => __( 'Boxed Layout', 'colormag' ),
-				'wide_layout'  => __( 'Wide Layout', 'colormag' ),
-			),
-			'section' => 'colormag_site_layout_setting',
 		) );
 
 		$wp_customize->add_setting( 'colormag_default_layout', array(
