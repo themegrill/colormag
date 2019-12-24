@@ -6,8 +6,8 @@
 }
 
 .customize-control-colormag-radio-image input:checked + label img {
-	-webkit-box-shadow: 0 0 3px 0 #000000;
-	box-shadow: 0 0 3px 0 #000000;
+	-webkit-box-shadow: 0 0 3px 0 #289dcc;
+	box-shadow: 0 0 3px 0 #289dcc;
 }
 
 .customize-control-colormag-radio-image label {

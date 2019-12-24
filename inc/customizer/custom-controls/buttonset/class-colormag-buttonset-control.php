@@ -85,7 +85,7 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 			<# if ( data.value === key ) { #> checked="checked"<# } #>
 			>
 
-			<label for="{{ data.id }}{{ key }}" class="colormag-radio-buttonset">
+			<label for="{{ data.id }}{{ key }}" class="colormag-buttonset">
 				{{{ data.choices[ key ] }}}
 			</label>
 			<# } #>

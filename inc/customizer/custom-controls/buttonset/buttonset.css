@@ -1,0 +1,27 @@
+/**
+ * Radio buttonset control CSS.
+ */
+.customize-control-colormag-buttonset .buttonset {
+	display: inline-block;
+	border: 1px solid #555d66;
+}
+
+.customize-control-colormag-buttonset .buttonset .colormag-buttonset {
+	float: left;
+	background: #f1f1f1;
+	padding: 5px 12px;
+	border-right: 1px solid #555d66;
+}
+
+.customize-control-colormag-buttonset .buttonset .colormag-buttonset:last-child {
+	border-right: 0;
+}
+
+.customize-control-colormag-buttonset .buttonset input {
+	display: none;
+}
+
+.customize-control-colormag-buttonset .buttonset input:checked + label {
+	background: #289dcc;
+	color: #ffffff;
+}
