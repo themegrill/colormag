@@ -41,6 +41,11 @@ class ColorMag_Toggle_Control extends WP_Customize_Control {
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
 
+		$this->json['inputAttrs'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+		}
+
 	}
 
 	/**
@@ -65,6 +70,20 @@ class ColorMag_Toggle_Control extends WP_Customize_Control {
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 		</div>
+
+		<label for="toggle_{{ data.id }}">
+			<input {{{ data.inputAttrs }}}
+			       class="swictch-toggle"
+			       type="checkbox"
+			       value="{{ data.value }}"
+			       name="_customize-toggle-{{ data.id }}"
+			       id="_customize-toggle-{{ data.id }}"
+			       {{{ data.link }}}
+			<# if ( data.value === true ) { #> checked="checked"<# } #>
+			>
+
+			<span class="switch"></span>
+		</label>
 
 		<?php
 	}
