@@ -89,6 +89,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/editor/class-colormag-editor-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/color/class-colormag-color-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/buttonset/class-colormag-buttonset-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/toggle/class-colormag-toggle-control.php';
 
 	}
 
@@ -217,6 +218,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_radio_select',
+				),
+			)
+		);
+
+		// Toggle control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-toggle',
+			array(
+				'callback'          => 'ColorMag_Toggle_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_checkbox',
 				),
 			)
 		);
