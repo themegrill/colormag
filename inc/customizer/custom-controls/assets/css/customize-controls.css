@@ -40,13 +40,6 @@
   line-height: 2.54545455;
 }
 /**
- * Editor control CSS.
- */
-
-.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
-  width: 100%;
-}
-/**
  * Heading control CSS.
  */
 
@@ -75,6 +68,13 @@
 .customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
   margin-top: 10px;
   padding: 0 12px;
+}
+/**
+ * Editor control CSS.
+ */
+
+.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
+  width: 100%;
 }
 /**
  * Radio image control CSS.
@@ -120,3 +120,6 @@
 .customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
   margin-right: 0;
 }
+/**
+ * Switch toggle control CSS.
+ */
