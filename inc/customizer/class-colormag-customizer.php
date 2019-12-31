@@ -90,6 +90,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/color/class-colormag-color-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/buttonset/class-colormag-buttonset-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/toggle/class-colormag-toggle-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/divider/class-colormag-divider-control.php';
 
 	}
 
@@ -230,6 +231,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_checkbox',
+				),
+			)
+		);
+
+		// Divider control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-divider',
+			array(
+				'callback'          => 'ColorMag_Divider_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_false_values',
 				),
 			)
 		);
