@@ -15,6 +15,10 @@
 		right: 0;
 		top: 6px;
 
+		&.toggle-description {
+			right: 20px;
+		}
+
 		input {
 			display: none;
 

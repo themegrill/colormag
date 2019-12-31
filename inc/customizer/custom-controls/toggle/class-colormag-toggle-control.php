@@ -71,7 +71,9 @@ class ColorMag_Toggle_Control extends WP_Customize_Control {
 			<# } #>
 		</div>
 
-		<label for="toggle_{{ data.id }}">
+		<label for="toggle_{{ data.id }}"
+		       class="<# if ( data.description ) { #>toggle-description<# } #>"
+		>
 			<input {{{ data.inputAttrs }}}
 			       class="switch-toggle"
 			       type="checkbox"

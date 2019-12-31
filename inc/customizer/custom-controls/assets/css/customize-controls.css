@@ -137,6 +137,10 @@
   top: 6px;
 }
 
+.customize-control-colormag-toggle label.toggle-description {
+  right: 20px;
+}
+
 .customize-control-colormag-toggle label input {
   display: none;
 }
