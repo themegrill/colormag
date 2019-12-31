@@ -57,23 +57,25 @@ class ColorMag_Divider_Control extends WP_Customize_Control {
 	protected function content_template() {
 		?>
 
-		<# if ( data.placement == 'above' ) { #>
-		<hr />
-		<# } #>
-
-		<div class="customizer-text">
-			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
+		<div class="divider-placement-{{ data.placement }}">
+			<# if ( data.placement == 'above' ) { #>
+			<hr />
 			<# } #>
 
-			<# if ( data.description ) { #>
-			<span class="description customize-control-description">{{{ data.description }}}</span>
+			<div class="customizer-text">
+				<# if ( data.label ) { #>
+				<span class="customize-control-title">{{{ data.label }}}</span>
+				<# } #>
+
+				<# if ( data.description ) { #>
+				<span class="description customize-control-description">{{{ data.description }}}</span>
+				<# } #>
+			</div>
+
+			<# if ( data.placement == 'below' ) { #>
+			<hr />
 			<# } #>
 		</div>
-
-		<# if ( data.placement == 'below' ) { #>
-		<hr />
-		<# } #>
 
 		<?php
 	}
