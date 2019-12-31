@@ -5,7 +5,7 @@
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor[ 'colormag-toggle' ] = wp.customize.Control.extend( {
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
 
 	ready : function () {
 

@@ -73,11 +73,11 @@ class ColorMag_Toggle_Control extends WP_Customize_Control {
 
 		<label for="toggle_{{ data.id }}">
 			<input {{{ data.inputAttrs }}}
-			       class="swictch-toggle"
+			       class="switch-toggle"
 			       type="checkbox"
 			       value="{{ data.value }}"
 			       name="_customize-toggle-{{ data.id }}"
-			       id="_customize-toggle-{{ data.id }}"
+			       id="toggle_{{ data.id }}"
 			       {{{ data.link }}}
 			<# if ( data.value === true ) { #> checked="checked"<# } #>
 			>
