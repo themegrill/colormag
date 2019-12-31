@@ -11,7 +11,15 @@ wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend
 
 		'use strict';
 
-		var control = this;
+		var control = this,
+		    value   = control.setting._value;
+
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
+			control.setting.set( value );
+		} );
 
 	}
 
