@@ -75,19 +75,21 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 
 		<div id="input_{{ data.id }}" class="buttonset">
 			<# for ( key in data.choices ) { #>
-			<input {{{ data.inputAttrs }}}
-			       class="input-buttonset"
-			       type="radio"
-			       value="{{ key }}"
-			       name="_customize-radio-{{ data.id }}"
-			       id="{{ data.id }}{{ key }}"
-			       {{{ data.link }}}
-			<# if ( data.value === key ) { #> checked="checked"<# } #>
-			>
+			<div class="buttonset-inner">
+				<input {{{ data.inputAttrs }}}
+				       class="input-buttonset"
+				       type="radio"
+				       value="{{ key }}"
+				       name="_customize-radio-{{ data.id }}"
+				       id="{{ data.id }}{{ key }}"
+				       {{{ data.link }}}
+				<# if ( data.value === key ) { #> checked="checked"<# } #>
+				>
 
-			<label for="{{ data.id }}{{ key }}" class="colormag-buttonset">
-				{{{ data.choices[ key ] }}}
-			</label>
+				<label for="{{ data.id }}{{ key }}" class="colormag-buttonset">
+					{{{ data.choices[ key ] }}}
+				</label>
+			</div>
 			<# } #>
 		</div>
 

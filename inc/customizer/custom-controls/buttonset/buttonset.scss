@@ -4,26 +4,27 @@
 .customize-control-colormag-buttonset {
 
 	.buttonset {
-		display: inline-block;
+		display: flex;
+		flex-wrap: wrap;
 		border: 1px solid #555d66;
 
-		.colormag-buttonset {
-			float: left;
-			background: #f1f1f1;
-			padding: 5px 12px;
-			border-right: 1px solid #555d66;
+		.buttonset-inner {
+			flex: 1;
 
-			&:last-child {
-				border-right: 0;
+			.colormag-buttonset {
+				background: #f1f1f1;
+				padding: 5px 12px;
+				display: block;
+				text-align: center;
 			}
-		}
 
-		input {
-			display: none;
+			input {
+				display: none;
 
-			&:checked + label {
-				background: #289dcc;
-				color: #ffffff;
+				&:checked + label {
+					background: #289dcc;
+					color: #ffffff;
+				}
 			}
 		}
 	}
