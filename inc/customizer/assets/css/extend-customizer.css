@@ -62,6 +62,10 @@
 	margin-top: 12px;
 }
 
+.customize-control .customize-control-title {
+	max-width: calc(100% - 20px);
+}
+
 .customize-control .colormag-control-tooltip {
 	position: absolute;
 	top: 0;
