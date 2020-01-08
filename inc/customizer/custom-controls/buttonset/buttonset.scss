@@ -6,10 +6,14 @@
 	.buttonset {
 		display: flex;
 		flex-wrap: wrap;
-		border: 1px solid #555d66;
 
 		.buttonset-inner {
 			flex: 1;
+			border: 1px solid #555d66;
+
+			+ .buttonset-inner {
+				border-left: 0;
+			}
 
 			.colormag-buttonset {
 				background: #f1f1f1;
