@@ -223,6 +223,17 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			/**
+			 * Social sections.
+			 */
+			// Social links activate section.
+			array(
+				'name'  => 'colormag_social_link_activate_settings',
+				'type'  => 'section',
+				'title' => esc_html__( 'Activate social links area', 'colormag' ),
+				'panel' => 'colormag_social_links_options',
+			),
+
+			/**
 			 * Footer sections.
 			 */
 			// Footer main area display type section.
