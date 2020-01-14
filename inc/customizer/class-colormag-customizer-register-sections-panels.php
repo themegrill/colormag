@@ -279,6 +279,17 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_additional_options',
 			),
 
+			/**
+			 * Category color sections.
+			 */
+			// Category color section.
+			array(
+				'name'  => 'colormag_category_color_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Category Color Settings', 'colormag' ),
+				'panel' => 'colormag_category_color_panel',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
