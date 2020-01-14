@@ -35,13 +35,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		// related posts
-		$wp_customize->add_section( 'colormag_related_posts_section', array(
-			'priority' => 4,
-			'title'    => __( 'Related Posts', 'colormag' ),
-			'panel'    => 'colormag_additional_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_related_posts_activate', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
@@ -87,13 +80,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 			),
 		) );
 
-		// featured image popup check
-		$wp_customize->add_section( 'colormag_featured_image_popup_setting', array(
-			'priority' => 6,
-			'title'    => __( 'Image Lightbox', 'colormag' ),
-			'panel'    => 'colormag_additional_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_featured_image_popup', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
@@ -110,13 +96,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 			'settings' => 'colormag_featured_image_popup',
 		) );
 
-		// Feature Image dispaly/hide option
-		$wp_customize->add_section( 'colormag_featured_image_show_setting', array(
-			'priority' => 6,
-			'title'    => esc_html__( 'Featured Image', 'colormag' ),
-			'panel'    => 'colormag_additional_options',
-		) );
-
 		$wp_customize->add_setting( 'colormag_featured_image_show', array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
@@ -131,13 +110,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 			'label'    => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
 			'section'  => 'colormag_featured_image_show_setting',
 			'settings' => 'colormag_featured_image_show',
-		) );
-
-		// Feature Image dispaly option in single page
-		$wp_customize->add_section( 'colormag_featured_image_show_setting_single_page', array(
-			'priority' => 6,
-			'title'    => esc_html__( 'Featured Image In Single Page', 'colormag' ),
-			'panel'    => 'colormag_additional_options',
 		) );
 
 		$wp_customize->add_setting( 'colormag_featured_image_single_page_show', array(

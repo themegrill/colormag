@@ -244,6 +244,41 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_footer_options',
 			),
 
+			/**
+			 * Additional sections.
+			 */
+			// Related posts section.
+			array(
+				'name'  => 'colormag_related_posts_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'Related Posts', 'colormag' ),
+				'panel' => 'colormag_additional_options',
+			),
+
+			// Image lightbox section.
+			array(
+				'name'  => 'colormag_featured_image_popup_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Image Lightbox', 'colormag' ),
+				'panel' => 'colormag_additional_options',
+			),
+
+			// Featured image display section.
+			array(
+				'name'  => 'colormag_featured_image_show_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Featured Image', 'colormag' ),
+				'panel' => 'colormag_additional_options',
+			),
+
+			// Featured image in single page section.
+			array(
+				'name'  => 'colormag_featured_image_show_setting_single_page',
+				'type'  => 'section',
+				'title' => esc_html__( 'Featured Image In Single Page', 'colormag' ),
+				'panel' => 'colormag_additional_options',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
