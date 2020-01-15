@@ -91,6 +91,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/buttonset/class-colormag-buttonset-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/toggle/class-colormag-toggle-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/divider/class-colormag-divider-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/slider/class-colormag-slider-control.php';
 
 	}
 
@@ -243,6 +244,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_false_values',
+				),
+			)
+		);
+
+		// Slider control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-slider',
+			array(
+				'callback'          => 'ColorMag_Slider_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_slider',
 				),
 			)
 		);

@@ -117,4 +117,13 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the slider value set within customizer controls.
+	 */
+	public static function sanitize_slider() {
+
+
+
+	}
+
 }
