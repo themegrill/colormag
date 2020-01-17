@@ -36,7 +36,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'control'   => 'colormag-buttonset',
 				'label'     => esc_html__( 'Choose your site layout. The change is reflected in whole site', 'colormag' ),
 				'section'   => 'colormag_site_layout_setting',
-				'priority'  => 1,
 				'transport' => 'postMessage',
 				'choices'   => array(
 					'boxed_layout' => esc_html__( 'Boxed Layout', 'colormag' ),
@@ -52,7 +51,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'control'   => 'colormag-color',
 				'label'     => esc_html__( 'This will reflect in links, buttons and many others. Choose a color to match your site', 'colormag' ),
 				'section'   => 'colormag_primary_color_setting',
-				'priority'  => 1,
 				'transport' => 'postMessage',
 			),
 
