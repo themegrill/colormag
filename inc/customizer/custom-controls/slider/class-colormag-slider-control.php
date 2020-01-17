@@ -22,6 +22,13 @@ class ColorMag_Slider_Control extends WP_Customize_Control {
 	public $type = 'colormag-slider';
 
 	/**
+	 * Suffix for slider.
+	 *
+	 * @var string
+	 */
+	public $suffix = '';
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -40,6 +47,13 @@ class ColorMag_Slider_Control extends WP_Customize_Control {
 		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+
+		$this->json['suffix'] = $this->suffix;
+
+		$this->json['inputAttrs'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+		}
 
 	}
 
@@ -64,6 +78,10 @@ class ColorMag_Slider_Control extends WP_Customize_Control {
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
+		</div>
+
+		<div class="slider-wrapper">
+
 		</div>
 
 		<?php
