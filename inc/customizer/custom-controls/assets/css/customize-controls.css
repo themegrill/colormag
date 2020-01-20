@@ -69,36 +69,6 @@
   width: 100%;
 }
 /**
- * Heading control CSS.
- */
-
-.customize-control-colormag-heading {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-
-.customize-control-colormag-heading .colormag-heading-wrapper {
-  margin: 0 -12px;
-}
-
-.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-title {
-  display: block;
-  padding: 16px 12px;
-  margin: 0;
-  border-width: 2px 0;
-  border-style: solid;
-  border-color: #eaeaea;
-  background-color: #ffffff;
-  font-size: 12px;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
-  margin-top: 10px;
-  padding: 0 12px;
-}
-/**
  * Radio image control CSS.
  */
 
@@ -143,6 +113,36 @@
   margin-right: 0;
 }
 /**
+ * Heading control CSS.
+ */
+
+.customize-control-colormag-heading {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper {
+  margin: 0 -12px;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-title {
+  display: block;
+  padding: 16px 12px;
+  margin: 0;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #eaeaea;
+  background-color: #ffffff;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
+  margin-top: 10px;
+  padding: 0 12px;
+}
+/**
  * Slider control CSS.
  */
 
@@ -172,11 +172,23 @@
   transition: background 0.3s;
 }
 
-.customize-control-colormag-slider .slider-wrapper input[type=range]::-webkit-slider-thumb,
-.customize-control-colormag-slider .slider-wrapper input[type=range]::-moz-range-thumb,
-.customize-control-colormag-slider .slider-wrapper input[type=range]::-ms-thumb {
+.customize-control-colormag-slider .slider-wrapper input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: #289dcc;
+}
+
+.customize-control-colormag-slider .slider-wrapper input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: #289dcc;
+}
+
+.customize-control-colormag-slider .slider-wrapper input[type=range]::-ms-thumb {
   width: 16px;
   height: 16px;
   border-radius: 100%;
@@ -201,6 +213,22 @@
 
 .customize-control-colormag-slider .slider-wrapper .colormag-range-value .colormag-range-unit {
   padding: 0 0 0 5px;
+}
+
+.customize-control-colormag-slider .slider-wrapper .colormag-slider-reset {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+}
+
+.customize-control-colormag-slider .slider-wrapper .colormag-slider-reset span {
+  font-size: 14px;
+}
+
+.customize-control-colormag-slider .slider-wrapper .colormag-slider-reset:hover,
+.customize-control-colormag-slider .slider-wrapper .colormag-slider-reset:focus {
+  color: #ff0000;
 }
 /**
  * Switch toggle control CSS.

@@ -17,10 +17,22 @@
 			background: rgba(0, 0, 0, 0.1);
 			transition: background 0.3s;
 
-			&::-webkit-slider-thumb,
-			&::-moz-range-thumb,
-			&::-ms-thumb {
+			&::-webkit-slider-thumb {
 				appearance: none;
+				width: 16px;
+				height: 16px;
+				border-radius: 100%;
+				background: #289dcc;
+			}
+
+			&::-moz-range-thumb {
+				width: 16px;
+				height: 16px;
+				border-radius: 100%;
+				background: #289dcc;
+			}
+
+			&::-ms-thumb {
 				width: 16px;
 				height: 16px;
 				border-radius: 100%;
@@ -41,6 +53,21 @@
 
 			.colormag-range-unit {
 				padding: 0 0 0 5px;
+			}
+		}
+
+		.colormag-slider-reset {
+			cursor: pointer;
+			color: rgba(0, 0, 0, 0.3);
+			transition: color 0.3s ease-in;
+
+			span {
+				font-size: 14px;
+			}
+
+			&:hover,
+			&:focus {
+				color: #ff0000;
 			}
 		}
 	}

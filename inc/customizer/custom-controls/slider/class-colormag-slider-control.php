@@ -81,17 +81,20 @@ class ColorMag_Slider_Control extends WP_Customize_Control {
 		</div>
 
 		<div class="slider-wrapper">
-			<input {{{ data.inputAttrs }}} type="range" value="{{ data.value }}" data-reset_value="{{ data.default }}" />
+			<input {{{ data.inputAttrs }}} type="range" value="{{ data.value }}"
+			       data-reset_value="{{ data.default }}" />
 
 			<div class="colormag-range-value">
-				<input type="number" data-name="{{ data.name }}" class="colormag-range-input" {{{ data.link }}} value="{{ data.value }}" {{{ data.inputAttrs }}} >
+				<input type="number" data-name="{{ data.name }}" class="value colormag-range-input" {{{ data.link }}}
+				       value="{{ data.value }}" {{{ data.inputAttrs }}}>
 				<# if ( data.suffix ) { #>
 				<span class="colormag-range-unit">{{ data.suffix }}</span>
 				<# } #>
 			</div>
 
 			<div class="colormag-slider-reset">
-				<span class="dashicons dashicons-image-rotate colormag-control-tooltip" title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>" ></span>
+				<span class="dashicons dashicons-image-rotate colormag-control-tooltip"
+				      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>"></span>
 			</div>
 		</div>
 
