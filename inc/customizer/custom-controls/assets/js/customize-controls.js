@@ -142,6 +142,25 @@ wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control
 } );
 
 /**
+ * Slider control JS to handle the range of the inputs.
+ *
+ * File `slider.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-slider' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+	}
+
+} );
+
+/**
  * Switch toggle control JS to handle the toggle of custom customize controls.
  *
  * File `toggle.js`.

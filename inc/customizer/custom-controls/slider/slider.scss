@@ -3,5 +3,45 @@
  */
 .customize-control-colormag-slider {
 
+	.slider-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 
+		input[type=range] {
+			flex: 1;
+			height: 5px;
+			appearance: none;
+			padding: 0;
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.1);
+			transition: background 0.3s;
+
+			&::-webkit-slider-thumb,
+			&::-moz-range-thumb,
+			&::-ms-thumb {
+				appearance: none;
+				width: 16px;
+				height: 16px;
+				border-radius: 100%;
+				background: #289dcc;
+			}
+		}
+
+		.colormag-range-value {
+			padding: 0 0 0 5px;
+			display: flex;
+			align-items: center;
+
+			input[type=number] {
+				width: 50px;
+				padding: 3px;
+				font-size: 12px;
+			}
+
+			.colormag-range-unit {
+				padding: 0 0 0 5px;
+			}
+		}
+	}
 }

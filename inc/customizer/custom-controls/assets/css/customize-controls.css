@@ -37,6 +37,18 @@
   color: #ffffff;
 }
 /**
+ * Divider control CSS.
+ */
+
+.customize-control-colormag-divider hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
+  top: 30px;
+}
+/**
  * Alpha color control CSS.
  */
 
@@ -48,18 +60,6 @@
   margin-left: 6px;
   min-height: 30px;
   line-height: 2.54545455;
-}
-/**
- * Divider control CSS.
- */
-
-.customize-control-colormag-divider hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
-  top: 30px;
 }
 /**
  * Editor control CSS.
@@ -141,6 +141,66 @@
 
 .customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
   margin-right: 0;
+}
+/**
+ * Slider control CSS.
+ */
+
+.customize-control-colormag-slider .slider-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.customize-control-colormag-slider .slider-wrapper input[type=range] {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.customize-control-colormag-slider .slider-wrapper input[type=range]::-webkit-slider-thumb,
+.customize-control-colormag-slider .slider-wrapper input[type=range]::-moz-range-thumb,
+.customize-control-colormag-slider .slider-wrapper input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: #289dcc;
+}
+
+.customize-control-colormag-slider .slider-wrapper .colormag-range-value {
+  padding: 0 0 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.customize-control-colormag-slider .slider-wrapper .colormag-range-value input[type=number] {
+  width: 50px;
+  padding: 3px;
+  font-size: 12px;
+}
+
+.customize-control-colormag-slider .slider-wrapper .colormag-range-value .colormag-range-unit {
+  padding: 0 0 0 5px;
 }
 /**
  * Switch toggle control CSS.
