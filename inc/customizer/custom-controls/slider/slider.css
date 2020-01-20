@@ -61,7 +61,7 @@
 }
 
 .customize-control-colormag-slider .slider-wrapper .colormag-range-value input[type=number] {
-	width: 50px;
+	width: 60px;
 	padding: 3px;
 	font-size: 12px;
 }
@@ -82,5 +82,9 @@
 }
 
 .customize-control-colormag-slider .slider-wrapper .colormag-slider-reset:hover, .customize-control-colormag-slider .slider-wrapper .colormag-slider-reset:focus {
-	color: #ff0000;
+	color: #289dcc;
+}
+
+.customize-control-colormag-slider .slider-wrapper.slider-description .colormag-slider-reset span {
+	right: 20px;
 }
