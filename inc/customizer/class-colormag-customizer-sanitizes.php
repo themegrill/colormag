@@ -119,10 +119,33 @@ class ColorMag_Customizer_Sanitizes {
 
 	/**
 	 * Sanitize the slider value set within customizer controls.
+	 *
+	 * @param number $val     Customizer setting input number.
+	 * @param object $setting Setting object.
+	 *
+	 * @return int
 	 */
-	public static function sanitize_slider() {
+	public static function sanitize_slider( $val, $setting ) {
 
+		$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
 
+		if ( isset( $input_attrs ) ) {
+
+			$input_attrs['min']  = isset( $input_attrs['min'] ) ? $input_attrs['min'] : 0;
+			$input_attrs['step'] = isset( $input_attrs['step'] ) ? $input_attrs['step'] : 1;
+
+			if ( isset( $input_attrs['max'] ) && $val > $input_attrs['max'] ) {
+				$val = $input_attrs['max'];
+			} elseif ( $val < $input_attrs['min'] ) {
+				$val = $input_attrs['min'];
+			}
+
+			if ( $val ) {
+				$val = (int) $val;
+			}
+		}
+
+		return is_numeric( $val ) ? $val : 0;
 
 	}
 
