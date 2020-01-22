@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Added - New Demo (ColorMag Top Magazine) - Start working on your awesome online magazine with this ColorMag demo.
 * Tweak - Modify menu CSS for keyboard accessibility.
 * Tweak - Modify self hosted Header Video CSS to align center.
 * Tweak - Deprecate Custom CSS customize option provided via theme
