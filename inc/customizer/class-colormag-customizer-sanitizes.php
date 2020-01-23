@@ -118,6 +118,17 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
+	 * Sanitize false values within customizer controls, which user does not have to input by their own.
+	 *
+	 * @return bool
+	 */
+	public static function sanitize_false_values() {
+
+		return false;
+
+	}
+
+	/**
 	 * Sanitize the slider value set within customizer controls.
 	 *
 	 * @param number $val     Customizer setting input number.
