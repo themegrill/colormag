@@ -33,7 +33,7 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'name'    => 'colormag_breaking_news',
 				'default' => 0,
 				'type'    => 'control',
-				'control' => 'checkbox',
+				'control' => 'colormag-toggle',
 				'label'   => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
 				'section' => 'colormag_breaking_news_section',
 			),
