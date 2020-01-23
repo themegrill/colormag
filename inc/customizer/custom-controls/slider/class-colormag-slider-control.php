@@ -4,7 +4,9 @@
  *
  * Class ColorMag_Slider_Control
  *
- * @since 2.0.0
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 2.0.0
  */
 
 /**

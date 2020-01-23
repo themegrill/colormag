@@ -1,4 +1,13 @@
 <?php
+/**
+ * Extend WP_Customize_Section to add the upsell section.
+ *
+ * Class ColorMag_Upsell_Section
+ *
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 2.0.0
+ */
 
 /**
  * Class to include upsell link campaign for theme.

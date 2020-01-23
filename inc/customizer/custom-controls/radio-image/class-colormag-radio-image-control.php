@@ -4,7 +4,9 @@
  *
  * Class ColorMag_Radio_Image_Control
  *
- * @since 1.3.6
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 2.0.0
  */
 
 /**

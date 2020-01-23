@@ -4,7 +4,9 @@
  *
  * Class ColorMag_Divider_Control
  *
- * @since 2.0.0
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 2.0.0
  */
 
 /**
