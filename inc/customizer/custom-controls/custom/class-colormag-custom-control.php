@@ -24,6 +24,20 @@ class ColorMag_Custom_Control extends WP_Customize_Control {
 	public $type = 'colormag-custom';
 
 	/**
+	 * Custom information for this control.
+	 *
+	 * @var string
+	 */
+	public $info = '';
+
+	/**
+	 * Custom links for this control.
+	 *
+	 * @var array
+	 */
+	public $links = array();
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -42,6 +56,9 @@ class ColorMag_Custom_Control extends WP_Customize_Control {
 		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+
+		$this->json['info']  = $this->info;
+		$this->json['links'] = $this->links;
 
 	}
 
@@ -67,6 +84,12 @@ class ColorMag_Custom_Control extends WP_Customize_Control {
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 		</div>
+
+		<# if ( data.info ) { #>
+		<div class="colormag-custom-info">
+			{{{ data.info }}}
+		</div>
+		<# } #>
 
 		<?php
 	}
