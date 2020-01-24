@@ -91,6 +91,14 @@ class ColorMag_Custom_Control extends WP_Customize_Control {
 		</div>
 		<# } #>
 
+		<# if ( data.links ) { #>
+		<ul class="colormag-custom-links">
+			<# _.each( data.links, function( links, id ) { #>
+			<li><a href="{{{ links.url }}}" target="_blank">{{{ links.text }}}</a></li>
+			<# } ) #>
+		</ul>
+		<# } #>
+
 		<?php
 	}
 
