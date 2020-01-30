@@ -86,4 +86,12 @@
 		padding-top: 0;
 		padding-bottom: 0;
 	}
+
+	&.customize-control-radio {
+
+		.customize-inside-control-row {
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+	}
 }

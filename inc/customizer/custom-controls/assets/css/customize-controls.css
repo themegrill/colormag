@@ -66,13 +66,6 @@
   text-decoration: none;
 }
 /**
- * Editor control CSS.
- */
-
-.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
-  width: 100%;
-}
-/**
  * Divider control CSS.
  */
 
@@ -83,6 +76,13 @@
 
 .customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
   top: 30px;
+}
+/**
+ * Editor control CSS.
+ */
+
+.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
+  width: 100%;
 }
 /**
  * Heading control CSS.
