@@ -160,4 +160,22 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the dropdown categories value set within customizer controls.
+	 *
+	 * @param number $cat_id  Customizer setting input category id.
+	 * @param object $setting Setting object.
+	 *
+	 * @return int
+	 */
+	public static function sanitize_dropdown_categories( $cat_id, $setting ) {
+
+		// Ensure input is an absolute integer.
+		$cat_id = absint( $cat_id );
+
+		// If $cat_id is an ID of a published category, return it, otherwise, return the default value.
+		return ( term_exists( $cat_id, 'category' ) ? $cat_id : $setting->default );
+
+	}
+
 }

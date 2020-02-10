@@ -24,11 +24,11 @@ class ColorMag_Dropdown_Categories_Control extends WP_Customize_Control {
 	public $type = 'colormag-dropdown-categories';
 
 	/**
-	 * Custom links for this control.
+	 * Dropdown categories array for this control.
 	 *
 	 * @var array
 	 */
-	public $links = array();
+	public $dropdown = array();
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
@@ -49,6 +49,26 @@ class ColorMag_Dropdown_Categories_Control extends WP_Customize_Control {
 		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+
+		$dropdown = wp_dropdown_categories(
+			array(
+				'echo'              => false,
+				'name'              => '_customize-input-' . esc_attr( $this->id ),
+				'show_option_none'  => ' ',
+				'option_none_value' => '-1',
+				'selected'          => esc_attr( $this->value() ),
+			)
+		);
+
+		// Add in the data link parameter for dropdown categories.
+		$dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
+
+		$this->json['dropdown'] = $dropdown;
+
+		$this->json['inputAttrs'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+		}
 
 	}
 
@@ -73,6 +93,10 @@ class ColorMag_Dropdown_Categories_Control extends WP_Customize_Control {
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
+		</div>
+
+		<div class="customize-control-content">
+			{{{ data.dropdown }}}
 		</div>
 
 		<?php

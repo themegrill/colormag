@@ -281,7 +281,7 @@ class ColorMag_Customizer {
 				'callback'          => 'ColorMag_Dropdown_Categories_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
-					'sanitize_radio_select',
+					'sanitize_dropdown_categories',
 				),
 			)
 		);
