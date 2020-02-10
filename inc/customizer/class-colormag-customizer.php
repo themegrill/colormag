@@ -119,7 +119,6 @@ class ColorMag_Customizer {
 		ColorMag_Customize_Base_Control::add_control(
 			'checkbox',
 			array(
-				'callback'          => 'WP_Customize_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_checkbox',
@@ -131,7 +130,6 @@ class ColorMag_Customizer {
 		ColorMag_Customize_Base_Control::add_control(
 			'radio',
 			array(
-				'callback'          => 'WP_Customize_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_radio_select',
@@ -143,7 +141,6 @@ class ColorMag_Customizer {
 		ColorMag_Customize_Base_Control::add_control(
 			'select',
 			array(
-				'callback'          => 'WP_Customize_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_radio_select',
@@ -155,7 +152,6 @@ class ColorMag_Customizer {
 		ColorMag_Customize_Base_Control::add_control(
 			'textarea',
 			array(
-				'callback'          => 'WP_Customize_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_html',
@@ -167,7 +163,6 @@ class ColorMag_Customizer {
 		ColorMag_Customize_Base_Control::add_control(
 			'dropdown-pages',
 			array(
-				'callback'          => 'WP_Customize_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_dropdown_pages',
