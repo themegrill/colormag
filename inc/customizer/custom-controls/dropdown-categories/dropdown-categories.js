@@ -13,6 +13,11 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 
 		var control = this;
 
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
 	}
 
 } );
