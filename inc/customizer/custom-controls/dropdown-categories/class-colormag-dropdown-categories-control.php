@@ -53,7 +53,7 @@ class ColorMag_Dropdown_Categories_Control extends WP_Customize_Control {
 		$dropdown = wp_dropdown_categories(
 			array(
 				'echo'              => false,
-				'name'              => '_customize-input-' . esc_attr( $this->id ),
+				'name'              => '_customize-dropdown-categories-' . esc_attr( $this->id ),
 				'show_option_none'  => ' ',
 				'option_none_value' => '-1',
 				'selected'          => esc_attr( $this->value() ),
