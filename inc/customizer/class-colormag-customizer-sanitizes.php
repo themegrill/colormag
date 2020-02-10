@@ -178,4 +178,22 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the dropdown pages value set within customizer controls.
+	 *
+	 * @param number $page_id  Customizer setting input category id.
+	 * @param object $setting Setting object.
+	 *
+	 * @return int
+	 */
+	public static function sanitize_dropdown_pages( $page_id, $setting ) {
+
+		// Ensure input is an absolute integer.
+		$page_id = absint( $page_id );
+
+		// If $page_id is an ID of a published page, return it, otherwise, return the default value.
+		return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+
+	}
+
 }
