@@ -151,6 +151,18 @@ class ColorMag_Customizer {
 			)
 		);
 
+		// Textarea control.
+		ColorMag_Customize_Base_Control::add_control(
+			'textarea',
+			array(
+				'callback'          => 'WP_Customize_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_html',
+				),
+			)
+		);
+
 		// Dropdown pages control.
 		ColorMag_Customize_Base_Control::add_control(
 			'dropdown-pages',
@@ -221,7 +233,7 @@ class ColorMag_Customizer {
 				'callback'          => 'ColorMag_Editor_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
-					'sanitize_text_editor',
+					'sanitize_html',
 				),
 			)
 		);

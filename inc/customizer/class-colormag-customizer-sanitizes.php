@@ -40,10 +40,10 @@ class ColorMag_Customizer_Sanitizes {
 	 *
 	 * @return string
 	 */
-	public static function sanitize_text_editor( $input ) {
+	public static function sanitize_html( $input ) {
 
 		if ( isset( $input ) ) {
-			$input = stripslashes( wp_filter_post_kses( addslashes( $input ) ) );
+			$input = wp_filter_post_kses( $input );
 		}
 
 		return $input;
