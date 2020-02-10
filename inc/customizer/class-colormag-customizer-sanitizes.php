@@ -30,7 +30,7 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
-	 * Sanitize the text editor strings set within customizer controls.
+	 * Sanitize the strings enabling HTML tags set within customizer controls.
 	 *
 	 * @param string $input Input from the customize controls.
 	 *
@@ -39,6 +39,19 @@ class ColorMag_Customizer_Sanitizes {
 	public static function sanitize_html( $input ) {
 
 		return wp_filter_post_kses( $input );
+
+	}
+
+	/**
+	 * Sanitize the strings disabling the HTML tags set within customizer controls.
+	 *
+	 * @param string $input Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_nohtml( $input ) {
+
+		return wp_filter_nohtml_kses( $input );
 
 	}
 
