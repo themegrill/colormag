@@ -151,6 +151,18 @@ class ColorMag_Customizer {
 			)
 		);
 
+		// Dropdown pages control.
+		ColorMag_Customize_Base_Control::add_control(
+			'dropdown-pages',
+			array(
+				'callback'          => 'WP_Customize_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_dropdown_pages',
+				),
+			)
+		);
+
 		// Color control.
 		ColorMag_Customize_Base_Control::add_control(
 			'color',
@@ -163,14 +175,14 @@ class ColorMag_Customizer {
 			)
 		);
 
-		// Dropdown pages control.
+		// Image upload control.
 		ColorMag_Customize_Base_Control::add_control(
-			'dropdown-pages',
+			'image',
 			array(
-				'callback'          => 'WP_Customize_Control',
+				'callback'          => 'WP_Customize_Image_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
-					'sanitize_dropdown_pages',
+					'sanitize_image_upload',
 				),
 			)
 		);

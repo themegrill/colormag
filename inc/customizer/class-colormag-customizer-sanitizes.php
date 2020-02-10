@@ -181,7 +181,7 @@ class ColorMag_Customizer_Sanitizes {
 	/**
 	 * Sanitize the dropdown pages value set within customizer controls.
 	 *
-	 * @param number $page_id  Customizer setting input category id.
+	 * @param number $page_id Customizer setting input page id.
 	 * @param object $setting Setting object.
 	 *
 	 * @return int
@@ -193,6 +193,38 @@ class ColorMag_Customizer_Sanitizes {
 
 		// If $page_id is an ID of a published page, return it, otherwise, return the default value.
 		return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+
+	}
+
+	/**
+	 * Sanitize the image value set within customizer controls.
+	 *
+	 * @param number $image   Customizer setting input image filename.
+	 * @param object $setting Setting object.
+	 *
+	 * @return int
+	 */
+	public static function sanitize_image_upload( $image, $setting ) {
+
+		/**
+		 * Array of valid image file types.
+		 *
+		 * The array includes image mime types that are included in wp_get_mime_types()
+		 */
+		$mimes = array(
+			'jpg|jpeg|jpe' => 'image/jpeg',
+			'gif'          => 'image/gif',
+			'png'          => 'image/png',
+			'bmp'          => 'image/bmp',
+			'tiff|tif'     => 'image/tiff',
+			'ico'          => 'image/x-icon',
+		);
+
+		// Return an array with file extension and mime_type.
+		$file = wp_check_filetype( $image, $mimes );
+
+		// If $image has a valid mime_type, return it, otherwise, return the default.
+		return ( $file['ext'] ? $image : $setting->default );
 
 	}
 
