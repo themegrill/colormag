@@ -25,11 +25,7 @@ class ColorMag_Customizer_Sanitizes {
 	 */
 	public static function sanitize_checkbox( $input ) {
 
-		if ( $input == 1 ) {
-			return 1;
-		} else {
-			return '';
-		}
+		return ( ( $input == 1 ) ? 1 : '' );
 
 	}
 
@@ -42,11 +38,7 @@ class ColorMag_Customizer_Sanitizes {
 	 */
 	public static function sanitize_html( $input ) {
 
-		if ( isset( $input ) ) {
-			$input = wp_filter_post_kses( $input );
-		}
-
-		return $input;
+		return wp_filter_post_kses( $input );
 
 	}
 
