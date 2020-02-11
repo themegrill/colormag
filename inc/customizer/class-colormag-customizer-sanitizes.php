@@ -161,7 +161,7 @@ class ColorMag_Customizer_Sanitizes {
 			}
 		}
 
-		return is_numeric( $val ) ? $val : 0;
+		return is_numeric( $val ) ? $val : $setting->default;
 
 	}
 
