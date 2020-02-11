@@ -166,6 +166,19 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the email value set within customizer controls.
+	 *
+	 * @param number $email Input from the customize controls.
+	 *
+	 * @return int
+	 */
+	public static function sanitize_email( $email ) {
+
+		return sanitize_email( $email );
+
+	}
+
+	/**
 	 * Sanitize the dropdown categories value set within customizer controls.
 	 *
 	 * @param number $cat_id  Customizer setting input category id.

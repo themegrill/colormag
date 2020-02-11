@@ -170,6 +170,17 @@ class ColorMag_Customizer {
 			)
 		);
 
+		// Email control.
+		ColorMag_Customize_Base_Control::add_control(
+			'email',
+			array(
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_email',
+				),
+			)
+		);
+
 		// Textarea control.
 		ColorMag_Customize_Base_Control::add_control(
 			'textarea',
