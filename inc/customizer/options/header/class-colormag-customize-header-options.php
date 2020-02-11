@@ -164,43 +164,29 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'section' => 'colormag_search_icon_in_menu_section',
 			),
 
-		);
-
-		$options = array_merge( $options, $configs );
-
-		return $options;
-
-		$wp_customize->add_setting( 'colormag_random_post_in_menu', array(
-			'priority'          => 6,
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-			'transport'         => $customizer_selective_refresh,
-		) );
-
-		$wp_customize->add_control( 'colormag_random_post_in_menu', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to display the Random Post Icon in the primary menu', 'colormag' ),
-			'section'  => 'colormag_random_post_in_menu_section',
-			'settings' => 'colormag_random_post_in_menu',
-		) );
-
-		// Selective refresh for displaying random post icon
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial(
-				'colormag_random_post_in_menu',
-				array(
+			// Random posts icon in menu display option.
+			array(
+				'name'      => 'colormag_random_post_in_menu',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Check to display the Random Post Icon in the primary menu', 'colormag' ),
+				'section'   => 'colormag_random_post_in_menu_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
 					'selector'        => '.random-post',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_random_post',
 					),
-				)
-			);
-		}
+				),
+			),
+
+		);
+
+		$options = array_merge( $options, $configs );
+
+		return $options;
 
 		$wp_customize->add_setting( 'colormag_responsive_menu', array(
 			'priority'          => 7,
