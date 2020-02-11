@@ -53,6 +53,35 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				),
 			),
 
+			// Default layout option.
+			array(
+				'name'      => 'colormag_default_layout',
+				'default'   => 'right_sidebar',
+				'type'      => 'control',
+				'control'   => 'colormag-radio-image',
+				'label'     => esc_html__( 'Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options', 'colormag' ),
+				'section'   => 'colormag_default_layout_setting',
+				'choices'   => array(
+					'right_sidebar'               => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
+					),
+					'left_sidebar'                => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/left-sidebar.png',
+					),
+					'no_sidebar_full_width'       => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
+					),
+					'no_sidebar_content_centered' => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
+					),
+				),
+				'image_col' => 2,
+			),
+
 			// Primary color option.
 			array(
 				'name'      => 'colormag_primary_color',
@@ -72,28 +101,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
-		$wp_customize->add_setting( 'colormag_default_layout', array(
-			'default'           => 'right_sidebar',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-		) );
-
-		$wp_customize->add_control( new ColorMag_Radio_Image_Control( $wp_customize, 'colormag_default_layout', array(
-			'type'     => 'radio',
-			'label'    => __( 'Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options', 'colormag' ),
-			'section'  => 'colormag_default_layout_setting',
-			'settings' => 'colormag_default_layout',
-			'choices'  => array(
-				'right_sidebar'               => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
-				'left_sidebar'                => COLORMAG_ADMIN_IMAGES_URL . '/left-sidebar.png',
-				'no_sidebar_full_width'       => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-				'no_sidebar_content_centered' => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
-			),
-		) ) );
 
 		$wp_customize->add_setting( 'colormag_default_page_layout', array(
 			'default'           => 'right_sidebar',
