@@ -36,7 +36,7 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'name'    => 'colormag_header_logo_placement',
 				'default' => 'header_text_only',
 				'type'    => 'control',
-				'control' => 'colormag-toggle',
+				'control' => 'radio',
 				'label'   => esc_html__( 'Choose the option that you want', 'colormag' ),
 				'section' => 'title_tagline',
 				'choices' => array(
