@@ -26,6 +26,9 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
 		$configs = array(
 
 			// Main total header area display type option.
@@ -87,82 +90,51 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'section' => 'colormag_breaking_news_section',
 			),
 
-		);
-
-		$options = array_merge( $options, $configs );
-
-		return $options;
-
-		// Transport postMessage variable set
-		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
-		$wp_customize->add_setting( 'colormag_date_display', array(
-			'priority'          => 2,
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-			'transport'         => $customizer_selective_refresh,
-		) );
-
-		$wp_customize->add_control( 'colormag_date_display', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to show the date in header', 'colormag' ),
-			'section'  => 'colormag_date_display_section',
-			'settings' => 'colormag_date_display',
-		) );
-
-		// Selective refresh for date display
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial(
-				'colormag_date_display',
-				array(
+			// Date in header display option.
+			array(
+				'name'      => 'colormag_date_display',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Check to show the date in header', 'colormag' ),
+				'section'   => 'colormag_date_display_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
 					'selector'        => '.date-in-header',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_current_date',
 					),
-				)
-			);
-		}
-
-		// date in header display type
-		$wp_customize->add_setting( 'colormag_date_display_type', array(
-			'default'           => 'theme_default',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
+				),
 			),
-			'transport'         => $customizer_selective_refresh,
-		) );
 
-		$wp_customize->add_control( 'colormag_date_display_type', array(
-			'type'     => 'radio',
-			'label'    => esc_html__( 'Date in header display type:', 'colormag' ),
-			'choices'  => array(
-				'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
-				'wordpress_date_setting' => esc_html__( 'From WordPress Date Setting', 'colormag' ),
-			),
-			'section'  => 'colormag_date_display_section',
-			'settings' => 'colormag_date_display_type',
-		) );
-
-		// Selective refresh for date display type
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial(
-				'colormag_date_display_type',
-				array(
+			// Date in header display type option.
+			array(
+				'name'      => 'colormag_date_display_type',
+				'default'   => 'theme_default',
+				'type'      => 'control',
+				'control'   => 'radio',
+				'label'     => esc_html__( 'Date in header display type:', 'colormag' ),
+				'section'   => 'colormag_date_display_section',
+				'transport' => $customizer_selective_refresh,
+				'choices'   => array(
+					'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
+					'wordpress_date_setting' => esc_html__( 'From WordPress Date Setting', 'colormag' ),
+				),
+				'partial'   => array(
 					'selector'        => '.date-in-header',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_date_display_type',
 					),
-				)
-			);
-		}
+				),
+			),
+
+		);
+
+		$options = array_merge( $options, $configs );
+
+		return $options;
 
 		$wp_customize->add_setting( 'colormag_home_icon_display', array(
 			'priority'          => 3,
