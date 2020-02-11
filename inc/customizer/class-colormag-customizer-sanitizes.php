@@ -184,6 +184,19 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the url value set within customizer controls.
+	 *
+	 * @param string $url Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_url( $url ) {
+
+		return esc_url_raw( $url );
+
+	}
+
+	/**
 	 * Sanitize the dropdown categories value set within customizer controls.
 	 *
 	 * @param number $cat_id  Customizer setting input category id.

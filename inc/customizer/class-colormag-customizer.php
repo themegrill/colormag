@@ -181,6 +181,17 @@ class ColorMag_Customizer {
 			)
 		);
 
+		// URL control.
+		ColorMag_Customize_Base_Control::add_control(
+			'url',
+			array(
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_url',
+				),
+			)
+		);
+
 		// Textarea control.
 		ColorMag_Customize_Base_Control::add_control(
 			'textarea',
