@@ -171,9 +171,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		return $options;
 
-		// Transport postMessage variable set
-		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
 	}
 
 }
