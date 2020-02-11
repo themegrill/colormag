@@ -141,7 +141,7 @@ class ColorMag_Customizer_Sanitizes {
 	 *
 	 * @return int
 	 */
-	public static function sanitize_slider( $val, $setting ) {
+	public static function sanitize_number( $val, $setting ) {
 
 		$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
 

@@ -159,6 +159,17 @@ class ColorMag_Customizer {
 			)
 		);
 
+		// Number control.
+		ColorMag_Customize_Base_Control::add_control(
+			'number',
+			array(
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_number',
+				),
+			)
+		);
+
 		// Textarea control.
 		ColorMag_Customize_Base_Control::add_control(
 			'textarea',
@@ -299,7 +310,7 @@ class ColorMag_Customizer {
 				'callback'          => 'ColorMag_Slider_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
-					'sanitize_slider',
+					'sanitize_number',
 				),
 			)
 		);
