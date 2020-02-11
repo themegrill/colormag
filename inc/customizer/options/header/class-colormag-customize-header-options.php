@@ -31,6 +31,22 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Header logo placement option.
+			array(
+				'name'    => 'colormag_header_logo_placement',
+				'default' => 'header_text_only',
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Choose the option that you want', 'colormag' ),
+				'section' => 'title_tagline',
+				'choices' => array(
+					'header_logo_only' => __( 'Header Logo Only', 'colormag' ),
+					'header_text_only' => __( 'Header Text Only', 'colormag' ),
+					'show_both'        => __( 'Show Both', 'colormag' ),
+					'disable'          => __( 'Disable', 'colormag' ),
+				),
+			),
+
 			// Main total header area display type option.
 			array(
 				'name'    => 'colormag_main_total_header_area_display_type',
@@ -197,27 +213,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_header_logo_placement', array(
-			'default'           => 'header_text_only',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_header_logo_placement', array(
-			'type'    => 'radio',
-			'label'   => __( 'Choose the option that you want', 'colormag' ),
-			'section' => 'title_tagline',
-			'choices' => array(
-				'header_logo_only' => __( 'Header Logo Only', 'colormag' ),
-				'header_text_only' => __( 'Header Text Only', 'colormag' ),
-				'show_both'        => __( 'Show Both', 'colormag' ),
-				'disable'          => __( 'Disable', 'colormag' ),
-			),
-		) );
 
 	}
 
