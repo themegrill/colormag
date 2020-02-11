@@ -28,6 +28,30 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Main total header area display type option.
+			array(
+				'name'    => 'colormag_main_total_header_area_display_type',
+				'default' => 'type_one',
+				'type'    => 'control',
+				'control' => 'colormag-radio-image',
+				'label'   => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
+				'section' => 'colormag_main_total_header_area_display_type_option',
+				'choices' => array(
+					'type_one'   => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
+					),
+					'type_two'   => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
+					),
+					'type_three' => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
+					),
+				),
+			),
+
 			// Header image position option.
 			array(
 				'name'    => 'colormag_header_image_position',
@@ -61,30 +85,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'control' => 'colormag-toggle',
 				'label'   => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
 				'section' => 'colormag_breaking_news_section',
-			),
-
-			// Main total header area display type option.
-			array(
-				'name'    => 'colormag_main_total_header_area_display_type',
-				'default' => 'type_one',
-				'type'    => 'control',
-				'control' => 'colormag-radio-image',
-				'label'   => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
-				'section' => 'colormag_main_total_header_area_display_type_option',
-				'choices' => array(
-					'type_one'   => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
-					),
-					'type_two'   => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
-					),
-					'type_three' => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
-					),
-				),
 			),
 
 		);
