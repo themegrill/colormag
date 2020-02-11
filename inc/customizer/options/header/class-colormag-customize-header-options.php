@@ -154,28 +154,21 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'section' => 'colormag_primary_sticky_menu_section',
 			),
 
+			// Search icon in menu display option.
+			array(
+				'name'    => 'colormag_search_icon_in_menu',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Check to display the Search Icon in the primary menu', 'colormag' ),
+				'section' => 'colormag_search_icon_in_menu_section',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_search_icon_in_menu', array(
-			'priority'          => 5,
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_search_icon_in_menu', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to display the Search Icon in the primary menu', 'colormag' ),
-			'section'  => 'colormag_search_icon_in_menu_section',
-			'settings' => 'colormag_search_icon_in_menu',
-		) );
 
 		$wp_customize->add_setting( 'colormag_random_post_in_menu', array(
 			'priority'          => 6,
