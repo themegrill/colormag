@@ -182,28 +182,21 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				),
 			),
 
+			// New responsive menu enable/disable option.
+			array(
+				'name'    => 'colormag_responsive_menu',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Check to switch to new responsive menu.', 'colormag' ),
+				'section' => 'colormag_responsive_menu_section',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_responsive_menu', array(
-			'priority'          => 7,
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_responsive_menu', array(
-			'type'     => 'checkbox',
-			'label'    => esc_html__( 'Check to switch to new responsive menu.', 'colormag' ),
-			'section'  => 'colormag_responsive_menu_section',
-			'settings' => 'colormag_responsive_menu',
-		) );
 
 		$wp_customize->add_setting( 'colormag_header_logo_placement', array(
 			'default'           => 'header_text_only',
