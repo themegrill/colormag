@@ -91,6 +91,22 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Header sections.
 			 */
+			// Main total header area display type section.
+			array(
+				'name'  => 'colormag_main_total_header_area_display_type_option',
+				'type'  => 'section',
+				'title' => esc_html__( 'Main Header Area Display Type', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
+			// Header image position section.
+			array(
+				'name'  => 'colormag_header_image_position_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Header Image Position', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
 			// Breaking news section.
 			array(
 				'name'  => 'colormag_breaking_news_section',
@@ -136,22 +152,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'  => 'colormag_random_post_in_menu_section',
 				'type'  => 'section',
 				'title' => esc_html__( 'Random Post', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
-			// Header image position section.
-			array(
-				'name'  => 'colormag_header_image_position_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Header Image Position', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
-			// Main total header area display type section.
-			array(
-				'name'  => 'colormag_main_total_header_area_display_type_option',
-				'type'  => 'section',
-				'title' => esc_html__( 'Main Header Area Display Type', 'colormag' ),
 				'panel' => 'colormag_header_options',
 			),
 
