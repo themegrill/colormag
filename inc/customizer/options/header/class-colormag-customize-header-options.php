@@ -130,37 +130,25 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				),
 			),
 
+			// Home icon in menu display option.
+			array(
+				'name'      => 'colormag_home_icon_display',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Check to show the home icon in the primary menu', 'colormag' ),
+				'section'   => 'colormag_home_icon_display_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
+					'selector' => '.home-icon',
+				),
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_home_icon_display', array(
-			'priority'          => 3,
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-			'transport'         => $customizer_selective_refresh,
-		) );
-
-		$wp_customize->add_control( 'colormag_home_icon_display', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to show the home icon in the primary menu', 'colormag' ),
-			'section'  => 'colormag_home_icon_display_section',
-			'settings' => 'colormag_home_icon_display',
-		) );
-
-		// Selective refresh for displaying home icon
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'colormag_home_icon_display', array(
-				'selector'        => '.home-icon',
-				'render_callback' => '',
-			) );
-		}
 
 		$wp_customize->add_setting( 'colormag_primary_sticky_menu', array(
 			'priority'          => 4,
