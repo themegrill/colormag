@@ -168,13 +168,18 @@ class ColorMag_Customizer_Sanitizes {
 	/**
 	 * Sanitize the email value set within customizer controls.
 	 *
-	 * @param number $email Input from the customize controls.
+	 * @param string $email   Input from the customize controls.
+	 * @param object $setting Setting object.
 	 *
-	 * @return int
+	 * @return string
 	 */
-	public static function sanitize_email( $email ) {
+	public static function sanitize_email( $email, $setting ) {
 
-		return sanitize_email( $email );
+		// Strips out all characters that are not allowable in an email address.
+		$email = sanitize_email( $email );
+
+		// If $email is a valid email, return it, otherwise, return the default.
+		return ( ! is_null( $email ) ? $email : $setting->default );
 
 	}
 
