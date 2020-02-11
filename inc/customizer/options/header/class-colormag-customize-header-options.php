@@ -28,6 +28,31 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Header image position option.
+			array(
+				'name'    => 'colormag_header_image_position',
+				'default' => 'position_two',
+				'type'    => 'control',
+				'control' => 'radio',
+				'label'   => esc_html__( 'Header image display position', 'colormag' ),
+				'section' => 'colormag_header_image_position_setting',
+				'choices' => array(
+					'position_one'   => __( 'Display the Header image just above the site title/text.', 'colormag' ),
+					'position_two'   => __( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
+					'position_three' => __( 'Display the Header image below main/primary menu.', 'colormag' ),
+				),
+			),
+
+			// Header image link to home page option.
+			array(
+				'name'    => 'colormag_header_image_link',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Check to make header image link back to home page', 'colormag' ),
+				'section' => 'colormag_header_image_position_setting',
+			),
+
 			// Breaking news in header enable/disable option.
 			array(
 				'name'    => 'colormag_breaking_news',
@@ -267,41 +292,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'show_both'        => __( 'Show Both', 'colormag' ),
 				'disable'          => __( 'Disable', 'colormag' ),
 			),
-		) );
-
-		$wp_customize->add_setting( 'colormag_header_image_position', array(
-			'default'           => 'position_two',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_header_image_position', array(
-			'type'    => 'radio',
-			'label'   => __( 'Header image display position', 'colormag' ),
-			'section' => 'colormag_header_image_position_setting',
-			'choices' => array(
-				'position_one'   => __( 'Display the Header image just above the site title/text.', 'colormag' ),
-				'position_two'   => __( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
-				'position_three' => __( 'Display the Header image below main/primary menu.', 'colormag' ),
-			),
-		) );
-
-		$wp_customize->add_setting( 'colormag_header_image_link', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_header_image_link', array(
-			'type'    => 'checkbox',
-			'label'   => __( 'Check to make header image link back to home page', 'colormag' ),
-			'section' => 'colormag_header_image_position_setting',
 		) );
 
 	}
