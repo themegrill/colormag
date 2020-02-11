@@ -28,6 +28,16 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Front page posts/pages display option.
+			array(
+				'name'    => 'colormag_hide_blog_front',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Check to hide blog posts/static page on front page', 'colormag' ),
+				'section' => 'colormag_front_page_setting',
+			),
+
 			// Site layout option.
 			array(
 				'name'      => 'colormag_site_layout',
@@ -62,21 +72,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
-		$wp_customize->add_setting( 'colormag_hide_blog_front', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_hide_blog_front', array(
-			'type'    => 'checkbox',
-			'label'   => __( 'Check to hide blog posts/static page on front page', 'colormag' ),
-			'section' => 'colormag_front_page_setting',
-		) );
 
 		$wp_customize->add_setting( 'colormag_default_layout', array(
 			'default'           => 'right_sidebar',
