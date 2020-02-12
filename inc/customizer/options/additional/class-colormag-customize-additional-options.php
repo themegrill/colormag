@@ -26,14 +26,14 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
 		$configs = array();
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		// Transport postMessage variable set
-		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 		$wp_customize->add_setting( 'colormag_related_posts_activate', array(
 			'default'           => 0,
