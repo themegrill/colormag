@@ -29,56 +29,41 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$configs = array();
+		$configs = array(
+
+			// Related posts enable/disable option.
+			array(
+				'name'      => 'colormag_related_posts_activate',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Check to activate the related posts', 'colormag' ),
+				'section'   => 'colormag_related_posts_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
+					'selector' => '.related-posts',
+				),
+			),
+
+			// Related posts display from option.
+			array(
+				'name'    => 'colormag_related_posts',
+				'default' => 'categories',
+				'type'    => 'control',
+				'control' => 'radio',
+				'label'   => esc_html__( 'Related Posts Must Be Shown As:', 'colormag' ),
+				'section' => 'colormag_related_posts_section',
+				'choices' => array(
+					'categories' => esc_html__( 'Related Posts By Categories', 'colormag' ),
+					'tags'       => esc_html__( 'Related Posts By Tags', 'colormag' ),
+				),
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_related_posts_activate', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-			'transport'         => $customizer_selective_refresh,
-		) );
-
-		$wp_customize->add_control( 'colormag_related_posts_activate', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to activate the related posts', 'colormag' ),
-			'section'  => 'colormag_related_posts_section',
-			'settings' => 'colormag_related_posts_activate',
-		) );
-
-		// Selective refresh for related posts feature
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'colormag_related_posts_activate', array(
-				'selector'        => '.related-posts',
-				'render_callback' => '',
-			) );
-		}
-
-		$wp_customize->add_setting( 'colormag_related_posts', array(
-			'default'           => 'categories',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_related_posts', array(
-			'type'     => 'radio',
-			'label'    => __( 'Related Posts Must Be Shown As:', 'colormag' ),
-			'section'  => 'colormag_related_posts_section',
-			'settings' => 'colormag_related_posts',
-			'choices'  => array(
-				'categories' => __( 'Related Posts By Categories', 'colormag' ),
-				'tags'       => __( 'Related Posts By Tags', 'colormag' ),
-			),
-		) );
 
 		$wp_customize->add_setting( 'colormag_featured_image_popup', array(
 			'default'           => 0,
