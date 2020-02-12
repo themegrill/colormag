@@ -40,10 +40,10 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'label'   => esc_html__( 'Choose the option that you want', 'colormag' ),
 				'section' => 'title_tagline',
 				'choices' => array(
-					'header_logo_only' => __( 'Header Logo Only', 'colormag' ),
-					'header_text_only' => __( 'Header Text Only', 'colormag' ),
-					'show_both'        => __( 'Show Both', 'colormag' ),
-					'disable'          => __( 'Disable', 'colormag' ),
+					'header_logo_only' => esc_html__( 'Header Logo Only', 'colormag' ),
+					'header_text_only' => esc_html__( 'Header Text Only', 'colormag' ),
+					'show_both'        => esc_html__( 'Show Both', 'colormag' ),
+					'disable'          => esc_html__( 'Disable', 'colormag' ),
 				),
 			),
 
@@ -80,9 +80,9 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'label'   => esc_html__( 'Header image display position', 'colormag' ),
 				'section' => 'colormag_header_image_position_setting',
 				'choices' => array(
-					'position_one'   => __( 'Display the Header image just above the site title/text.', 'colormag' ),
-					'position_two'   => __( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
-					'position_three' => __( 'Display the Header image below main/primary menu.', 'colormag' ),
+					'position_one'   => esc_html__( 'Display the Header image just above the site title/text.', 'colormag' ),
+					'position_two'   => esc_html__( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
+					'position_three' => esc_html__( 'Display the Header image below main/primary menu.', 'colormag' ),
 				),
 			),
 
