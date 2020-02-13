@@ -69,27 +69,21 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 				'section' => 'colormag_featured_image_popup_setting',
 			),
 
+			// Featured image display in single post page option.
+			array(
+				'name'    => 'colormag_featured_image_show',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
+				'section' => 'colormag_featured_image_show_setting',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_featured_image_show', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_featured_image_show', array(
-			'type'     => 'checkbox',
-			'label'    => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
-			'section'  => 'colormag_featured_image_show_setting',
-			'settings' => 'colormag_featured_image_show',
-		) );
 
 		$wp_customize->add_setting( 'colormag_featured_image_single_page_show', array(
 			'default'           => 0,
