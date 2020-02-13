@@ -59,27 +59,21 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 				),
 			),
 
+			// Featured image popup enable/disable option.
+			array(
+				'name'    => 'colormag_featured_image_popup',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'colormag-toggle',
+				'label'   => esc_html__( 'Check to enable the lightbox for the featured images in single post', 'colormag' ),
+				'section' => 'colormag_featured_image_popup_setting',
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		$wp_customize->add_setting( 'colormag_featured_image_popup', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_featured_image_popup', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to enable the lightbox for the featured images in single post', 'colormag' ),
-			'section'  => 'colormag_featured_image_popup_setting',
-			'settings' => 'colormag_featured_image_popup',
-		) );
 
 		$wp_customize->add_setting( 'colormag_featured_image_show', array(
 			'default'           => 0,
