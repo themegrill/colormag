@@ -45,33 +45,26 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				),
 			),
 
+			// Social links location option.
+			array(
+				'name'    => 'colormag_social_link_location_option',
+				'default' => 'both',
+				'type'    => 'control',
+				'control' => 'radio',
+				'label'   => esc_html__( 'Social links to display on:', 'colormag' ),
+				'section' => 'colormag_social_link_activate_settings',
+				'choices' => array(
+					'header' => esc_html__( 'Header only', 'colormag' ),
+					'footer' => esc_html__( 'Footer only', 'colormag' ),
+					'both'   => esc_html__( 'Both header and footer', 'colormag' ),
+				),
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		// Social link location option.
-		$wp_customize->add_setting( 'colormag_social_link_location_option', array(
-			'default'           => 'both',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_radio_select',
-			),
-		) );
-
-		$wp_customize->add_control( 'colormag_social_link_location_option', array(
-			'type'     => 'radio',
-			'label'    => esc_html__( 'Social links to display on:', 'colormag' ),
-			'section'  => 'colormag_social_link_activate_settings',
-			'settings' => 'colormag_social_link_location_option',
-			'choices'  => array(
-				'header' => esc_html__( 'Header only', 'colormag' ),
-				'footer' => esc_html__( 'Footer only', 'colormag' ),
-				'both'   => esc_html__( 'Both header and footer', 'colormag' ),
-			),
-		) );
 
 		$colormag_social_links = array(
 			'colormag_social_facebook'   => array(
