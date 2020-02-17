@@ -33,7 +33,7 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'name'    => 'colormag_hide_blog_front',
 				'default' => 0,
 				'type'    => 'control',
-				'control' => 'colormag-toggle',
+				'control' => 'checkbox',
 				'label'   => esc_html__( 'Check to hide blog posts/static page on front page', 'colormag' ),
 				'section' => 'colormag_front_page_setting',
 			),
