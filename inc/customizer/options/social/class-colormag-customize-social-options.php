@@ -64,77 +64,68 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
 		$options = array_merge( $options, $configs );
 
-		return $options;
-
+		// Social links lists.
 		$colormag_social_links = array(
 			'colormag_social_facebook'   => array(
 				'id'      => 'colormag_social_facebook',
-				'title'   => __( 'Facebook', 'colormag' ),
+				'title'   => esc_html__( 'Facebook', 'colormag' ),
 				'default' => '',
 			),
 			'colormag_social_twitter'    => array(
 				'id'      => 'colormag_social_twitter',
-				'title'   => __( 'Twitter', 'colormag' ),
+				'title'   => esc_html__( 'Twitter', 'colormag' ),
 				'default' => '',
 			),
 			'colormag_social_googleplus' => array(
 				'id'      => 'colormag_social_googleplus',
-				'title'   => __( 'Google-Plus', 'colormag' ),
+				'title'   => esc_html__( 'Google-Plus', 'colormag' ),
 				'default' => '',
 			),
 			'colormag_social_instagram'  => array(
 				'id'      => 'colormag_social_instagram',
-				'title'   => __( 'Instagram', 'colormag' ),
+				'title'   => esc_html__( 'Instagram', 'colormag' ),
 				'default' => '',
 			),
 			'colormag_social_pinterest'  => array(
 				'id'      => 'colormag_social_pinterest',
-				'title'   => __( 'Pinterest', 'colormag' ),
+				'title'   => esc_html__( 'Pinterest', 'colormag' ),
 				'default' => '',
 			),
 			'colormag_social_youtube'    => array(
 				'id'      => 'colormag_social_youtube',
-				'title'   => __( 'YouTube', 'colormag' ),
+				'title'   => esc_html__( 'YouTube', 'colormag' ),
 				'default' => '',
 			),
 		);
 
-		$i = 20;
-
+		// Available social links via theme.
 		foreach ( $colormag_social_links as $colormag_social_link ) {
 
-			$wp_customize->add_setting( $colormag_social_link['id'], array(
-				'default'           => $colormag_social_link['default'],
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw',
-			) );
+			// Social links url option.
+			$configs[] = array(
+				'name'    => $colormag_social_link['id'],
+				'default' => $colormag_social_link['default'],
+				'type'    => 'control',
+				'control' => 'url',
+				'label'   => $colormag_social_link['title'],
+				'section' => 'colormag_social_link_activate_settings',
+			);
 
-			$wp_customize->add_control( $colormag_social_link['id'], array(
-				'label'    => $colormag_social_link['title'],
-				'section'  => 'colormag_social_link_activate_settings',
-				'settings' => $colormag_social_link['id'],
-				'priority' => $i,
-			) );
+			// Social links open in new tab enable/disable option.
+			$configs[] = array(
+				'name'    => $colormag_social_link['id'] . '_checkbox',
+				'default' => 0,
+				'type'    => 'control',
+				'control' => 'checkbox',
+				'label'   => esc_html__( 'Check to open in new tab', 'colormag' ),
+				'section' => 'colormag_social_link_activate_settings',
+			);
 
-			$wp_customize->add_setting( $colormag_social_link['id'] . '_checkbox', array(
-				'default'           => 0,
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => array(
-					'ColorMag_Customizer_Sanitizes',
-					'sanitize_checkbox',
-				),
-			) );
-
-			$wp_customize->add_control( $colormag_social_link['id'] . '_checkbox', array(
-				'type'     => 'checkbox',
-				'label'    => __( 'Check to open in new tab', 'colormag' ),
-				'section'  => 'colormag_social_link_activate_settings',
-				'settings' => $colormag_social_link['id'] . '_checkbox',
-				'priority' => $i,
-			) );
-
-			$i ++;
 		}
+
+		$options = array_merge( $options, $configs );
+
+		return $options;
 
 	}
 
