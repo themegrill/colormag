@@ -20,6 +20,36 @@
 	}
 }
 
+.customize-control {
+	position: relative;
+	margin-bottom: 0;
+	margin-top: 12px;
+
+	.customize-control-title {
+		max-width: calc(100% - 20px);
+	}
+
+	.colormag-control-tooltip {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.customize-inside-control-row {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	&.customize-control-radio,
+	&.customize-control-checkbox {
+
+		.customize-inside-control-row {
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+	}
+}
+
 #accordion-section-colormag_upsell_section {
 
 	h3 {
@@ -63,35 +93,6 @@
 			&:after {
 				color: #fff !important;
 			}
-		}
-	}
-}
-
-.customize-control {
-	position: relative;
-	margin-bottom: 0;
-	margin-top: 12px;
-
-	.customize-control-title {
-		max-width: calc(100% - 20px);
-	}
-
-	.colormag-control-tooltip {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-
-	.customize-inside-control-row {
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-
-	&.customize-control-radio {
-
-		.customize-inside-control-row {
-			padding-top: 6px;
-			padding-bottom: 6px;
 		}
 	}
 }
