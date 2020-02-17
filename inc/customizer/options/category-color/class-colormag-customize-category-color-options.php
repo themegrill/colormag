@@ -26,43 +26,26 @@ class ColorMag_Customize_Category_Color_Options extends ColorMag_Customize_Base_
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		// Category color options.
+		$args       = array(
+			'orderby'    => 'id',
+			'hide_empty' => 0,
+		);
+		$categories = get_categories( $args );
+		foreach ( $categories as $category_list ) {
+			$configs[] = array(
+				'name'    => 'colormag_category_color_' . get_cat_id( $category_list->cat_name ),
+				'default' => '',
+				'type'    => 'control',
+				'control' => 'colormag-color',
+				'label'   => $category_list->cat_name,
+				'section' => 'colormag_category_color_setting',
+			);
+		}
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		// Transport postMessage variable set
-		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
-		$i                = 1;
-		$args             = array(
-			'orderby'    => 'id',
-			'hide_empty' => 0,
-		);
-		$categories       = get_categories( $args );
-		$wp_category_list = array();
-		foreach ( $categories as $category_list ) {
-			$wp_category_list[ $category_list->cat_ID ] = $category_list->cat_name;
-
-			$wp_customize->add_setting( 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
-				'default'           => '',
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => array(
-					'ColorMag_Customizer_Sanitizes',
-					'sanitize_hex_color',
-				),
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
-				'label'    => sprintf( __( '%s', 'colormag' ), $wp_category_list[ $category_list->cat_ID ] ),
-				'section'  => 'colormag_category_color_setting',
-				'settings' => 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
-				'priority' => $i,
-			) ) );
-
-			$i ++;
-		}
 
 	}
 
