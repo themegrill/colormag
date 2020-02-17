@@ -26,31 +26,30 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
+		$configs = array(
+
+			// Social links enable/disable option.
+			array(
+				'name'      => 'colormag_social_link_activate',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'checkbox',
+				'label'     => esc_html__( 'Check to activate social links area', 'colormag' ),
+				'section'   => 'colormag_social_link_activate_settings',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
+					'selector' => '.social-links',
+				),
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
-		// Transport postMessage variable set
-		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-
-		$wp_customize->add_setting( 'colormag_social_link_activate', array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array(
-				'ColorMag_Customizer_Sanitizes',
-				'sanitize_checkbox',
-			),
-			'transport'         => $customizer_selective_refresh,
-		) );
-
-		$wp_customize->add_control( 'colormag_social_link_activate', array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to activate social links area', 'colormag' ),
-			'section'  => 'colormag_social_link_activate_settings',
-			'settings' => 'colormag_social_link_activate',
-		) );
 
 		// Social link location option.
 		$wp_customize->add_setting( 'colormag_social_link_location_option', array(
@@ -73,14 +72,6 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'both'   => esc_html__( 'Both header and footer', 'colormag' ),
 			),
 		) );
-
-		// Selective refresh for displaying social icons/links
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial( 'colormag_social_link_activate', array(
-				'selector'        => '.social-links',
-				'render_callback' => '',
-			) );
-		}
 
 		$colormag_social_links = array(
 			'colormag_social_facebook'   => array(
