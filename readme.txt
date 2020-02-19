@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version - 1.4.4 - 2020-02-19 =
 * Tweak - Minor Enhancement.
 
 = Version - 1.4.3 - 2020-01-22 =

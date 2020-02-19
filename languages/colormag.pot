@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.4.3\n"
+"Project-Id-Version: ColorMag 1.4.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-01-22 10:49:00+00:00\n"
+"POT-Creation-Date: 2020-02-19 14:50:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -550,6 +550,35 @@ msgstr ""
 
 #: inc/admin/class-colormag-site-library.php:124
 msgid "Buy Now"
+msgstr ""
+
+#: inc/admin/class-colormag-tdi-notice.php:40
+#. Translators: 1: Notice text 2: Plugin Name 3. CTA
+msgid ""
+"%1$s: Please update \"%2$s\" plugin to latest version to make sure your "
+"site is all secure. We released a security patch in the latest version of "
+"this plugin. %3$s"
+msgstr ""
+
+#: inc/admin/class-colormag-tdi-notice.php:41
+msgid "Action Required"
+msgstr ""
+
+#: inc/admin/class-colormag-tdi-notice.php:42
+#: inc/admin/class-colormag-tdi-notice.php:54
+msgid "ThemeGrill Demo Importer"
+msgstr ""
+
+#: inc/admin/class-colormag-tdi-notice.php:47
+#. Translators: 1: CTA link 2: CTA text
+msgid "Update Now"
+msgstr ""
+
+#: inc/admin/class-colormag-tdi-notice.php:53
+#. Translators: 1: Plugin name
+msgid ""
+"Also, if the purpose of importing the demo via \"%1$s\" plugin is "
+"fulfilled, you can simply delete this plugin now."
 msgstr ""
 
 #: inc/admin/class-colormag-theme-review-notice.php:80
@@ -1294,27 +1323,27 @@ msgstr ""
 msgid "View a random post"
 msgstr ""
 
-#: inc/functions.php:853
+#: inc/functions.php:856
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:853
+#: inc/functions.php:858
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:868
+#: inc/functions.php:875
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:871
+#: inc/functions.php:878
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:879
+#: inc/functions.php:886
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:885
+#: inc/functions.php:892
 msgid "Reply"
 msgstr ""
 
