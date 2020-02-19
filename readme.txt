@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Tweak - Minor Enhancement.
+
 = Version - 1.4.3 - 2020-01-22 =
 * Added - New Demo (ColorMag Top Magazine) - Start working on your awesome online magazine with this ColorMag demo.
 * Tweak - Modify menu CSS for keyboard accessibility.

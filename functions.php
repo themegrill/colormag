@@ -537,6 +537,7 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
 	require get_template_directory() . '/inc/admin/class-colormag-site-library.php';
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
+	require get_template_directory() . '/inc/admin/class-colormag-tdi-notice.php';
 }
 
 /**
@@ -544,4 +545,3 @@ if ( is_admin() ) {
  */
 require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-activation.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-colormag.php' );
-?>
