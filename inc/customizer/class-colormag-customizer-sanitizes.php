@@ -264,4 +264,16 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the background value set within customizer controls.
+	 *
+	 * @param number $background_args Customizer setting input background arguments.
+	 * @param object $setting         Setting object.
+	 *
+	 * @return mixed
+	 */
+	public static function sanitize_background( $background_args, $setting ) {
+
+	}
+
 }

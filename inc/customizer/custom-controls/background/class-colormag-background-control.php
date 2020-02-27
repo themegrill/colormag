@@ -1,6 +1,6 @@
 <?php
 /**
- * Extend WP_Customize_Control to add the radio buttonset control.
+ * Extend WP_Customize_Control to add the background control.
  *
  * Class ColorMag_Color_Control
  *
@@ -10,18 +10,18 @@
  */
 
 /**
- * Class to extend WP_Customize_Control to add the radio buttonset customize control.
+ * Class to extend WP_Customize_Control to add the background customize control.
  *
- * Class ColorMag_Buttonset_Control
+ * Class ColorMag_Background_Control
  */
-class ColorMag_Buttonset_Control extends WP_Customize_Control {
+class ColorMag_Background_Control extends WP_Customize_Control {
 
 	/**
 	 * Control's Type.
 	 *
 	 * @var string
 	 */
-	public $type = 'colormag-buttonset';
+	public $type = 'colormag-background';
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
@@ -42,13 +42,6 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
-
-		$this->json['choices'] = $this->choices;
-
-		$this->json['inputAttrs'] = '';
-		foreach ( $this->input_attrs as $attr => $value ) {
-			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
-		}
 
 	}
 
@@ -72,26 +65,6 @@ class ColorMag_Buttonset_Control extends WP_Customize_Control {
 
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
-			<# } #>
-		</div>
-
-		<div id="input_{{ data.id }}" class="buttonset">
-			<# for ( key in data.choices ) { #>
-			<div class="buttonset-inner">
-				<input {{{ data.inputAttrs }}}
-				       class="input-buttonset"
-				       type="radio"
-				       value="{{ key }}"
-				       name="_customize-radio-{{ data.id }}"
-				       id="{{ data.id }}{{ key }}"
-				       {{{ data.link }}}
-				<# if ( data.value === key ) { #> checked="checked"<# } #>
-				>
-
-				<label for="{{ data.id }}{{ key }}" class="colormag-buttonset">
-					{{{ data.choices[ key ] }}}
-				</label>
-			</div>
 			<# } #>
 		</div>
 
