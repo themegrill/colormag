@@ -23,11 +23,16 @@ class ColorMag_Dashboard {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'colormag-admin-dashboard', get_template_directory_uri() . '/css/admin/dashboard.css' );
+		wp_enqueue_style( 'colormag-admin-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css' );
 	}
 
 	public function create_menu() {
-		$page = add_theme_page( 'ColorMag Options', 'ColorMag Options', 'edit_theme_options', 'colormag-options', array(
+		$theme = wp_get_theme();
+
+		/* translators: %s: Theme Name. */
+		$theme_page_name = sprintf( esc_html__( '%s Options', 'colormag' ), $theme->Name );
+
+		$page = add_theme_page( $theme_page_name, $theme_page_name, 'edit_theme_options', 'colormag-options', array(
 			$this,
 			'option_page'
 		) );
@@ -36,7 +41,7 @@ class ColorMag_Dashboard {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( 'colormag-dashboard', get_template_directory_uri() . '/css/admin/dashboard.css', array(), COLORMAG_THEME_VERSION );
+		wp_enqueue_style( 'colormag-dashboard', get_template_directory_uri() . '/inc/admin/css/dashboard.css', array(), COLORMAG_THEME_VERSION );
 	}
 
 	public function option_page() {
@@ -53,11 +58,16 @@ class ColorMag_Dashboard {
 		</div>
 		<div class="welcome-panel">
 			<div class="welcome-panel-content">
-				<h2><?php esc_html_e( 'Welcome to ColorMag!', 'colormag' ); ?></h2>
+				<h2>
+					<?php
+					/* translators: %s: Theme Name. */
+					echo sprintf( esc_html__( 'Welcome to %s!', 'colormag' ), $theme->Name );
+					?>
+				</h2>
 				<p class="about-description">
 					<?php
 					/* translators: %s: Theme Name. */
-					echo sprintf( esc_html__( 'Important links to get you started with %s', 'colormag' ), esc_html__( 'ColorMag', 'colormag' ) );
+					echo sprintf( esc_html__( 'Important links to get you started with %s', 'colormag' ), $theme->Name );
 					?>
 				</p>
 
