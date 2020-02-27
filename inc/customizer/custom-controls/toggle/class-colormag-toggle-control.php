@@ -9,6 +9,11 @@
  * @since      ColorMag 2.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class to extend WP_Customize_Control to add the switch toggle customize control.
  *

@@ -9,6 +9,11 @@
  * @since      ColorMag 2.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class to include Category Color customize option.
  *
