@@ -85,7 +85,7 @@ class ColorMag_Dashboard {
 						<ul>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'colormag' ) . '</a>', esc_url( 'https://docs.themegrill.com/colormag' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'colormag' ) . '</a>', esc_url( 'https://demo.themegrill.com/colormag-demos' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon welcome-add-page">' . esc_html__( 'Premium Version', 'colormag' ) . '</a>', esc_url( 'http://themegrill.com/themes/colormag' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-migrate">' . esc_html__( 'Premium Version', 'colormag' ) . '</a>', esc_url( 'http://themegrill.com/themes/colormag' ) ); ?></li>
 						</ul>
 					</div>
 
