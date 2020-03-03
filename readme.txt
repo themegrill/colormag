@@ -51,6 +51,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - 1.4.5 - 2020-02-28 =
+* Tweak -Refactor theme page according to WordPress theme guidelines.
+
+= Version - 1.4.4 - 2020-02-19 =
+* Tweak - Minor Enhancement.
+
 = Version - 1.4.3 - 2020-01-22 =
 * Added - New Demo (ColorMag Top Magazine) - Start working on your awesome online magazine with this ColorMag demo.
 * Tweak - Modify menu CSS for keyboard accessibility.

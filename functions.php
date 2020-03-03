@@ -58,6 +58,11 @@ function colormag_content_width() {
 add_action( 'template_redirect', 'colormag_content_width' );
 
 add_action( 'after_setup_theme', 'colormag_setup' );
+
+// Theme version.
+$colormag_theme = wp_get_theme();
+define( 'COLORMAG_THEME_VERSION', $colormag_theme->get( 'Version' ) );
+
 /**
  * All setup functionalities.
  *
@@ -544,8 +549,9 @@ $colormag_version = $theme['Version'];
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
-	require get_template_directory() . '/inc/admin/class-colormag-site-library.php';
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
+	require get_template_directory() . '/inc/admin/class-colormag-tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
 }
 
 /**
@@ -565,4 +571,3 @@ require_once( COLORMAG_INCLUDES_DIR . '/migration.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-filters.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php' );
-?>
