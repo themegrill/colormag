@@ -133,6 +133,39 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 			</select>
 		</div>
 
+		<div class="background-position">
+			<span class="customize-control-title"><?php esc_html_e( 'Background Position', 'colormag' ); ?></span>
+			<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
+				<option value="left top"
+				<# if ( 'left top' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Left Top', 'colormag' ); ?></option>
+				<option value="left center"
+				<# if ( 'left center' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Left Center', 'colormag' ); ?></option>
+				<option value="left bottom"
+				<# if ( 'left bottom' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Left Bottom', 'colormag' ); ?></option>
+				<option value="right top"
+				<# if ( 'right top' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Right Top', 'colormag' ); ?></option>
+				<option value="right center"
+				<# if ( 'right center' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Right Center', 'colormag' ); ?></option>
+				<option value="right bottom"
+				<# if ( 'right bottom' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Right Bottom', 'colormag' ); ?></option>
+				<option value="center top"
+				<# if ( 'center top' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Center Top', 'colormag' ); ?></option>
+				<option value="center center"
+				<# if ( 'center center' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Center Center', 'colormag' ); ?></option>
+				<option value="center bottom"
+				<# if ( 'center bottom' === data.value['background-position'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Center Bottom', 'colormag' ); ?></option>
+			</select>
+		</div>
+
 		<?php
 	}
 
