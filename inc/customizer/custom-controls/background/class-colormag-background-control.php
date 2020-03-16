@@ -73,6 +73,21 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 			<# } #>
 		</div>
 
+		<div class="customize-control-content">
+
+			<div class="background-color">
+				<span class="customize-control-title"><?php esc_html_e( 'Background Color', 'colormag' ); ?></span>
+				<input data-name="{{ data.name }}"
+				       type="text"
+				       data-default-color="{{ data.default['background-color'] }}"
+				       data-alpha="true"
+				       value="{{ data.value['background-color'] }}"
+				       class="colormag-color-picker-alpha color-picker-hex"
+				/>
+			</div>
+
+		</div>
+
 		<?php
 	}
 
