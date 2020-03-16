@@ -166,6 +166,21 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 			</select>
 		</div>
 
+		<div class="background-size">
+			<span class="customize-control-title"><?php esc_html_e( 'Background Size', 'colormag' ); ?></span>
+			<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
+				<option value="cover"
+				<# if ( 'cover' === data.value['background-size'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Cover', 'colormag' ); ?></option>
+				<option value="contain"
+				<# if ( 'contain' === data.value['background-size'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Contain', 'colormag' ); ?></option>
+				<option value="auto"
+				<# if ( 'auto' === data.value['background-size'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Auto', 'colormag' ); ?></option>
+			</select>
+		</div>
+
 		<?php
 	}
 
