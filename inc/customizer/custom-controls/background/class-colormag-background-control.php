@@ -181,6 +181,18 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 			</select>
 		</div>
 
+		<div class="background-attachment">
+			<span class="customize-control-title"><?php esc_html_e( 'Background Attachment', 'colormag' ); ?></span>
+			<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
+				<option value="scroll"
+				<# if ( 'scroll' === data.value['background-attachment'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Scroll', 'colormag' ); ?></option>
+				<option value="fixed"
+				<# if ( 'fixed' === data.value['background-attachment'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Fixed', 'colormag' ); ?></option>
+			</select>
+		</div>
+
 		<?php
 	}
 
