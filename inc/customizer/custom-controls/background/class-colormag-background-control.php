@@ -115,6 +115,24 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 			</div>
 		</div>
 
+		<div class="background-repeat">
+			<span class="customize-control-title"><?php esc_html_e( 'Background Repeat', 'colormag' ); ?></span>
+			<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
+				<option value="no-repeat"
+				<# if ( 'no-repeat' === data.value['background-repeat'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'No Repeat', 'colormag' ); ?></option>
+				<option value="repeat"
+				<# if ( 'repeat' === data.value['background-repeat'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Repeat All', 'colormag' ); ?></option>
+				<option value="repeat-x"
+				<# if ( 'repeat-x' === data.value['background-repeat'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Repeat Horizontally', 'colormag' ); ?></option>
+				<option value="repeat-y"
+				<# if ( 'repeat-y' === data.value['background-repeat'] ) { #> selected <# }
+				#>><?php esc_attr_e( 'Repeat Vertically', 'colormag' ); ?></option>
+			</select>
+		</div>
+
 		<?php
 	}
 
