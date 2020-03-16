@@ -88,6 +88,33 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 
 		</div>
 
+		<div class="background-image">
+			<span class="customize-control-title"><?php esc_html_e( 'Background Image', 'colormag' ); ?></span>
+			<div class="attachment-media-view background-image-upload">
+				<# if ( data.value['background-image'] ) { #>
+				<div class="thumbnail thumbnail-image"><img src="{{ data.value['background-image'] }}" alt="" />
+				</div>
+				<# } else { #>
+				<div class="placeholder"><?php esc_attr_e( 'No Image Selected', 'colormag' ); ?></div>
+				<# } #>
+
+				<div class="actions">
+					<button data-name="{{ data.name }}"
+					        class="button background-image-upload-remove-button<# if ( ! data.value['background-image'] ) { #> hidden <# } #>"
+					>
+						<?php esc_attr_e( 'Remove', 'colormag' ); ?>
+					</button>
+
+					<button data-name="{{ data.name }}"
+					        type="button"
+					        class="button background-image-upload-button"
+					>
+						<?php esc_attr_e( 'Select Image', 'colormag' ); ?>
+					</button>
+				</div>
+			</div>
+		</div>
+
 		<?php
 	}
 
