@@ -59,10 +59,6 @@ add_action( 'template_redirect', 'colormag_content_width' );
 
 add_action( 'after_setup_theme', 'colormag_setup' );
 
-// Theme version.
-$colormag_theme = wp_get_theme();
-define( 'COLORMAG_THEME_VERSION', $colormag_theme->get( 'Version' ) );
-
 /**
  * All setup functionalities.
  *
