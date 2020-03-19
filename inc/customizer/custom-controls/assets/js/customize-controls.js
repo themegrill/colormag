@@ -5,17 +5,46 @@
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor['colormag-background'] = wp.customize.Control.extend( {
+(
+	function ( $ ) {
 
-	ready : function () {
+		$( window ).on( 'load', function () {
+			$( 'html' ).addClass( 'colorpicker-ready' );
+		} );
 
-		'use strict';
+		wp.customize.controlConstructor['colormag-background'] = wp.customize.Control.extend( {
 
-		var control = this;
+			ready : function () {
+
+				'use strict';
+
+				var control = this;
+
+				// Init background control.
+				control.initColorMagBackgroundControl();
+
+			},
+
+			initColorMagBackgroundControl : function () {
+
+				var control     = this,
+				    value       = control.setting._value,
+				    colorpicker = control.container.find( '.colormag-color-picker-alpha' );
+
+				// Hide unnecessary controls by default and show only when background image is set.
+				if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
+					control.container.find( '.customize-control-content > .background-repeat' ).hide();
+					control.container.find( '.customize-control-content > .background-position' ).hide();
+					control.container.find( '.customize-control-content > .background-size' ).hide();
+					control.container.find( '.customize-control-content > .background-attachment' ).hide();
+				}
+
+			}
+
+		} );
 
 	}
-
-} );
+)( jQuery );
 
 /**
  * Radio buttonset control JS to handle the toggle of radio buttonsets.
@@ -161,30 +190,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 } );
 
 /**
- * Radio image control JS to handle the toggle of radio images.
- *
- * File `radio-image.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Slider control JS to handle the range of the inputs.
  *
  * File `slider.js`.
@@ -225,6 +230,30 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 			var value = jQuery( this ).val();
 			jQuery( this ).closest( '.slider-wrapper' ).find( 'input[type=range]' ).val( value );
 			control.setting.set( value );
+		} );
+
+	}
+
+} );
+
+/**
+ * Radio image control JS to handle the toggle of radio images.
+ *
+ * File `radio-image.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
 		} );
 
 	}
