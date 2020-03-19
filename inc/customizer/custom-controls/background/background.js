@@ -63,6 +63,79 @@
 
 				} );
 
+				// Background image setting.
+				control.container.on( 'click', '.background-image-upload-button', function ( e ) {
+					var image = wp.media( { multiple : false } ).open().on( 'select', function () {
+
+						// This will return the selected image from the Media Uploader, the result is an object.
+						var uploadedImage = image.state().get( 'selection' ).first(),
+						    previewImage  = uploadedImage.toJSON().sizes.full.url,
+						    imageUrl,
+						    imageID,
+						    imageWidth,
+						    imageHeight,
+						    preview,
+						    removeButton;
+
+						if ( ! _.isUndefined( uploadedImage.toJSON().sizes.medium ) ) {
+							previewImage = uploadedImage.toJSON().sizes.medium.url;
+						} else if ( ! _.isUndefined( uploadedImage.toJSON().sizes.thumbnail ) ) {
+							previewImage = uploadedImage.toJSON().sizes.thumbnail.url;
+						}
+
+						imageUrl    = uploadedImage.toJSON().sizes.full.url;
+						imageID     = uploadedImage.toJSON().id;
+						imageWidth  = uploadedImage.toJSON().width;
+						imageHeight = uploadedImage.toJSON().height;
+
+						// Show extra controls if the value has an image.
+						if ( '' !== imageUrl ) {
+							control.container.find( '.customize-control-content > .background-repeat, .customize-control-content > .background-position, .customize-control-content > .background-size, .customize-control-content > .background-attachment' ).show();
+						}
+
+						control.saveValue( 'background-image', imageUrl );
+						preview      = control.container.find( '.placeholder, .thumbnail' );
+						removeButton = control.container.find( '.background-image-upload-remove-button' );
+
+						if ( preview.length ) {
+							preview.removeClass().addClass( 'thumbnail thumbnail-image' ).html( '<img src="' + previewImage + '" alt="" />' );
+						}
+
+						if ( removeButton.length ) {
+							removeButton.show();
+						}
+					} );
+
+					e.preventDefault();
+				} );
+
+				control.container.on( 'click', '.background-image-upload-remove-button', function ( e ) {
+
+					var preview,
+					    removeButton;
+
+					e.preventDefault();
+
+					control.saveValue( 'background-image', '' );
+
+					preview      = control.container.find( '.placeholder, .thumbnail' );
+					removeButton = control.container.find( '.background-image-upload-remove-button' );
+
+					// Hide unnecessary controls.
+					control.container.find( '.customize-control-content > .background-repeat' ).hide();
+					control.container.find( '.customize-control-content > .background-position' ).hide();
+					control.container.find( '.customize-control-content > .background-size' ).hide();
+					control.container.find( '.customize-control-content > .background-attachment' ).hide();
+
+					if ( preview.length ) {
+						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
+					}
+
+					if ( removeButton.length ) {
+						removeButton.hide();
+					}
+				} );
+
 			},
 
 			/**
