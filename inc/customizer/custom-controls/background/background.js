@@ -136,6 +136,26 @@
 					}
 				} );
 
+				// Background repeat setting.
+				control.container.on( 'change', '.background-repeat select', function () {
+					control.saveValue( 'background-repeat', jQuery( this ).val() );
+				} );
+
+				// Background position setting.
+				control.container.on( 'change', '.background-position select', function () {
+					control.saveValue( 'background-position', jQuery( this ).val() );
+				} );
+
+				// Background size setting.
+				control.container.on( 'change', '.background-size select', function () {
+					control.saveValue( 'background-size', jQuery( this ).val() );
+				} );
+
+				// Background attachment setting.
+				control.container.on( 'change', '.background-attachment select', function () {
+					control.saveValue( 'background-attachment', jQuery( this ).val() );
+				} );
+
 			},
 
 			/**

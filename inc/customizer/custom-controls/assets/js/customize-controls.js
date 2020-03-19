@@ -136,6 +136,26 @@
 					}
 				} );
 
+				// Background repeat setting.
+				control.container.on( 'change', '.background-repeat select', function () {
+					control.saveValue( 'background-repeat', jQuery( this ).val() );
+				} );
+
+				// Background position setting.
+				control.container.on( 'change', '.background-position select', function () {
+					control.saveValue( 'background-position', jQuery( this ).val() );
+				} );
+
+				// Background size setting.
+				control.container.on( 'change', '.background-size select', function () {
+					control.saveValue( 'background-size', jQuery( this ).val() );
+				} );
+
+				// Background attachment setting.
+				control.container.on( 'change', '.background-attachment select', function () {
+					control.saveValue( 'background-attachment', jQuery( this ).val() );
+				} );
+
 			},
 
 			/**
@@ -182,47 +202,6 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 	}
 
 } );
-
-/**
- * Color picker control JS to handle color picker rendering within customize control.
- *
- * File `color.js`.
- *
- * @package ColorMag
- */
-(
-	function ( $ ) {
-
-		$( window ).on( 'load', function () {
-			$( 'html' ).addClass( 'colorpicker-ready' );
-		} );
-
-		wp.customize.controlConstructor[ 'colormag-color' ] = wp.customize.Control.extend( {
-
-			ready : function () {
-
-				'use strict';
-
-				var control = this;
-
-				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
-
-					change : function ( event, ui ) {
-						var color = ui.color.toString();
-
-						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-							control.setting.set( color );
-						}
-					}
-
-				} );
-
-			}
-
-		} );
-
-	}
-)( jQuery );
 
 /**
  * Dropdown categories control JS to handle the dropdown categories customize control.
@@ -399,3 +378,44 @@ wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend
 	}
 
 } );
+
+/**
+ * Color picker control JS to handle color picker rendering within customize control.
+ *
+ * File `color.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on( 'load', function () {
+			$( 'html' ).addClass( 'colorpicker-ready' );
+		} );
+
+		wp.customize.controlConstructor[ 'colormag-color' ] = wp.customize.Control.extend( {
+
+			ready : function () {
+
+				'use strict';
+
+				var control = this;
+
+				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
+
+					change : function ( event, ui ) {
+						var color = ui.color.toString();
+
+						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+							control.setting.set( color );
+						}
+					}
+
+				} );
+
+			}
+
+		} );
+
+	}
+)( jQuery );
