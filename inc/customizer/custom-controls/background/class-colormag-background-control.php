@@ -51,21 +51,6 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 	}
 
 	/**
-	 * Enqueue control related scripts/styles.
-	 *
-	 * @access public
-	 */
-	public function enqueue() {
-		wp_localize_script(
-			'colormag-customize-controls',
-			'ColorMagCustomizerControlBackground',
-			array(
-				'placeholder' => esc_html__( 'No file selected', 'colormag' ),
-			)
-		);
-	}
-
-	/**
 	 * An Underscore (JS) template for this control's content (but not its container).
 	 *
 	 * Class variables for this control class are available in the `data` JS object;

@@ -38,6 +38,9 @@ class ColorMag_Customize_Base_Control {
 		// Enqueue the required scripts for the custom customize controls.
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_customize_controls' ) );
 
+		// Localize the scripts for custom customize controls.
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'localize_enqueued_scripts' ) );
+
 	}
 
 	/**
@@ -81,6 +84,31 @@ class ColorMag_Customize_Base_Control {
 			),
 			COLORMAG_THEME_VERSION,
 			true
+		);
+
+	}
+
+	/**
+	 * Localize the scripts for custom customize controls.
+	 */
+	public function localize_enqueued_scripts() {
+
+		// Localize background scripts.
+		$this->localize_background_scripts();
+
+	}
+
+	/**
+	 * Localize background scripts.
+	 */
+	public function localize_background_scripts() {
+
+		wp_localize_script(
+			'colormag-customize-controls',
+			'ColorMagCustomizerControlBackground',
+			array(
+				'placeholder' => esc_html__( 'No file selected', 'colormag' ),
+			)
 		);
 
 	}
