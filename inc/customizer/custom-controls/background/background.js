@@ -39,6 +39,47 @@
 					control.container.find( '.customize-control-content > .background-attachment' ).hide();
 				}
 
+				// Background color setting.
+				colorpicker.wpColorPicker( {
+
+					change : function () {
+						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+							setTimeout(
+								function () {
+									control.saveValue( 'background-color', colorpicker.val() );
+								},
+								100
+							);
+						}
+					},
+
+					clear : function ( event ) {
+						var element = jQuery( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
+
+						if ( element ) {
+							control.saveValue( 'background-color', '' );
+						}
+					}
+
+				} );
+
+				console.log( control.saveValue() )
+
+			},
+
+			/**
+			 * Saves the value.
+			 */
+			saveValue : function ( property, value ) {
+
+				var control = this,
+				    input   = jQuery( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
+				    val     = control.setting._value;
+
+				val[property] = value;
+
+				jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+				control.setting.set( val );
 			}
 
 		} );
