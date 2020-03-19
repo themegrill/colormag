@@ -63,8 +63,6 @@
 
 				} );
 
-				console.log( control.saveValue() )
-
 			},
 
 			/**
@@ -80,6 +78,7 @@
 
 				jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 				control.setting.set( val );
+
 			}
 
 		} );
