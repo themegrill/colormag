@@ -193,7 +193,7 @@ class ColorMag_Background_Control extends WP_Customize_Control {
 
 			<input class="background-hidden-value"
 			       value="{{ JSON.stringify( data.value ) }}"
-			       data-name="{{data.name}}"
+			       data-name="{{ data.name }}"
 			       type="hidden" {{{ data.link }}}
 			>
 

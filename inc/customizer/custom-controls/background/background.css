@@ -1,3 +1,11 @@
 /**
  * Background control CSS.
  */
+.customize-control-colormag-background .customize-control-content {
+	background: #fff;
+	padding: 20px 15px;
+}
+
+.customize-control-colormag-background .customize-control-content > div {
+	margin-bottom: 15px;
+}

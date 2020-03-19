@@ -3,4 +3,12 @@
  */
 .customize-control-colormag-background {
 
+	.customize-control-content {
+		background: #fff;
+		padding: 20px 15px;
+
+		> div {
+			margin-bottom: 15px;
+		}
+	}
 }
