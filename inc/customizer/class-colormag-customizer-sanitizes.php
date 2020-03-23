@@ -279,6 +279,15 @@ class ColorMag_Customizer_Sanitizes {
 	 */
 	public static function sanitize_background( $background_args, $setting ) {
 
+		if ( ! is_array( $background_args ) ) {
+			return;
+		}
+
+		// Sanitizing the alpha color option.
+		if ( isset( $background_args['background-color'] ) ) {
+			self::sanitize_alpha_color( $background_args['background-color'] );
+		}
+
 	}
 
 }
