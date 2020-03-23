@@ -61,6 +61,19 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the text fields set within customizer controls.
+	 *
+	 * @param string $input Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_text_field( $input ) {
+
+		return sanitize_text_field( $input );
+
+	}
+
+	/**
 	 * Sanitize the radio as well as select options set within customizer controls.
 	 *
 	 * @param string               $input   Input from the customize controls.
@@ -264,8 +277,8 @@ class ColorMag_Customizer_Sanitizes {
 		// Return an array with file extension and mime_type.
 		$file = wp_check_filetype( $image, $mimes );
 
-		// If $image has a valid mime_type, return it, otherwise, return the default.
-		return ( $file['ext'] ? $image : $setting->default );
+		// If $image has a valid mime_type, return it, otherwise, return the empty value.
+		return ( $file['ext'] ? $image : '' );
 
 	}
 
@@ -283,35 +296,39 @@ class ColorMag_Customizer_Sanitizes {
 			return;
 		}
 
+		$output = array();
+
 		// Sanitizing the alpha color option.
 		if ( isset( $background_args['background-color'] ) ) {
-			self::sanitize_alpha_color( $background_args['background-color'] );
+			$output['background-color'] = self::sanitize_alpha_color( $background_args['background-color'] );
 		}
 
 		// Sanitizing the background image option.
 		if ( isset( $background_args['background-image'] ) ) {
-			self::sanitize_image_upload( $background_args['background-image'], $setting );
+			$output['background-image'] = self::sanitize_image_upload( $background_args['background-image'], $setting );
 		}
 
 		// Sanitizing the background repeat option.
 		if ( isset( $background_args['background-repeat'] ) ) {
-			self::sanitize_radio_select( $background_args['background-repeat'], $setting );
+			$output['background-repeat'] = self::sanitize_text_field( $background_args['background-repeat'] );
 		}
 
 		// Sanitizing the background position option.
 		if ( isset( $background_args['background-position'] ) ) {
-			self::sanitize_radio_select( $background_args['background-position'], $setting );
+			$output['background-position'] = self::sanitize_text_field( $background_args['background-position'] );
 		}
 
 		// Sanitizing the background size option.
 		if ( isset( $background_args['background-size'] ) ) {
-			self::sanitize_radio_select( $background_args['background-size'], $setting );
+			$output['background-size'] = self::sanitize_text_field( $background_args['background-size'] );
 		}
 
 		// Sanitizing the background attachment option.
 		if ( isset( $background_args['background-attachment'] ) ) {
-			self::sanitize_radio_select( $background_args['background-attachment'], $setting );
+			$output['background-attachment'] = self::sanitize_text_field( $background_args['background-attachment'] );
 		}
+
+		return $output;
 
 	}
 
