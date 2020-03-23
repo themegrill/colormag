@@ -293,6 +293,26 @@ class ColorMag_Customizer_Sanitizes {
 			self::sanitize_image_upload( $background_args['background-image'], $setting );
 		}
 
+		// Sanitizing the background repeat option.
+		if ( isset( $background_args['background-repeat'] ) ) {
+			self::sanitize_radio_select( $background_args['background-repeat'], $setting );
+		}
+
+		// Sanitizing the background position option.
+		if ( isset( $background_args['background-position'] ) ) {
+			self::sanitize_radio_select( $background_args['background-position'], $setting );
+		}
+
+		// Sanitizing the background size option.
+		if ( isset( $background_args['background-size'] ) ) {
+			self::sanitize_radio_select( $background_args['background-size'], $setting );
+		}
+
+		// Sanitizing the background attachment option.
+		if ( isset( $background_args['background-attachment'] ) ) {
+			self::sanitize_radio_select( $background_args['background-attachment'], $setting );
+		}
+
 	}
 
 }
