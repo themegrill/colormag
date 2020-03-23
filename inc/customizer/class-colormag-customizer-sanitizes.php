@@ -288,6 +288,11 @@ class ColorMag_Customizer_Sanitizes {
 			self::sanitize_alpha_color( $background_args['background-color'] );
 		}
 
+		// Sanitizing the background image option.
+		if ( isset( $background_args['background-image'] ) ) {
+			self::sanitize_image_upload( $background_args['background-image'], $setting );
+		}
+
 	}
 
 }
