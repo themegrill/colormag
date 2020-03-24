@@ -508,6 +508,7 @@ define( 'COLORMAG_ADMIN_IMAGES_URL', COLORMAG_ADMIN_URL . '/images' );
 require_once( COLORMAG_INCLUDES_DIR . '/custom-header.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/header-functions.php' );
+require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-fonts.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/customizer.php' );
 

@@ -119,4 +119,3 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 		<?php
 	}
 }
-
