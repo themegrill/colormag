@@ -332,4 +332,17 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the typography value set within customizer controls.
+	 *
+	 * @param number $typography_args Customizer setting input typography arguments.
+	 * @param object $setting         Setting object.
+	 *
+	 * @return mixed
+	 */
+	public static function sanitize_typography( $typography_args, $setting ) {
+
+
+	}
+
 }

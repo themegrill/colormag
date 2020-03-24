@@ -100,6 +100,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/custom/class-colormag-custom-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/dropdown-categories/class-colormag-dropdown-categories-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/background/class-colormag-background-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/typography/class-colormag-typography-control.php';
 
 	}
 
@@ -375,6 +376,18 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_background',
+				),
+			)
+		);
+
+		// Typography control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-typography',
+			array(
+				'callback'          => 'ColorMag_Typography_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_typography',
 				),
 			)
 		);
