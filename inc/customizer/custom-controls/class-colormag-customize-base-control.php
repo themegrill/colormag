@@ -53,6 +53,14 @@ class ColorMag_Customize_Base_Control {
 		/**
 		 * Enqueue required Customize Controls CSS files.
 		 */
+		// SelectWoo CSS file.
+		wp_enqueue_style(
+			'colormag-customize-controls',
+			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/css/selectWoo' . $suffix . '.css',
+			array(),
+			COLORMAG_THEME_VERSION
+		);
+
 		// Main CSS file.
 		wp_enqueue_style(
 			'colormag-customize-controls',
@@ -64,6 +72,15 @@ class ColorMag_Customize_Base_Control {
 		/**
 		 * Enqueue required Customize Controls JS files.
 		 */
+		// SelectWoo JS library file.
+		wp_enqueue_script(
+			'wp-color-picker-alpha',
+			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/js/selectWoo' . $suffix . '.js',
+			array(),
+			COLORMAG_THEME_VERSION,
+			true
+		);
+
 		// WP Color Picker Alpha JS library file.
 		wp_enqueue_script(
 			'wp-color-picker-alpha',
