@@ -77,7 +77,7 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 	}
 
 	/**
-	 * Function to display typography select options in customize options.
+	 * Render the control's content.
 	 */
 	public function render_content() {
 		$this_value = $this->value();
