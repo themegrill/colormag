@@ -77,45 +77,9 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 	}
 
 	/**
-	 * Render the control's content.
+	 * Don't render the control content from PHP, as it's rendered via JS on load.
 	 */
 	public function render_content() {
-		$this_value = $this->value();
-		?>
-
-		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-
-		<select class="colormag-typography-select" <?php $this->link(); ?>>
-
-			<?php
-			// Get Standard font options
-			if ( $std_fonts = colormag_standard_fonts_array() ) { ?>
-				<optgroup label="<?php esc_html_e( 'Standard Fonts', 'colormag' ); ?>">
-					<?php
-					// Loop through font options and add to select
-					foreach ( $std_fonts as $font => $value ) { ?>
-						<option
-							value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_value ); ?>><?php echo esc_html( $value ); ?></option>
-					<?php } ?>
-				</optgroup>
-			<?php }
-			?>
-
-			<?php
-			// Google font options
-			if ( $google_fonts = colormag_google_fonts_array() ) { ?>
-				<optgroup label="<?php esc_html_e( 'Google Fonts', 'colormag' ); ?>">
-					<?php
-					// Loop through font options and add to select
-					foreach ( $google_fonts as $font ) { ?>
-						<option
-							value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_value ); ?>><?php echo esc_html( $font ); ?></option>
-					<?php } ?>
-				</optgroup>
-			<?php } ?>
-
-		</select>
-
-		<?php
 	}
+
 }
