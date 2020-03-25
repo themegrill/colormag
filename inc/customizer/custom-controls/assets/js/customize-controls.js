@@ -204,6 +204,47 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 } );
 
 /**
+ * Color picker control JS to handle color picker rendering within customize control.
+ *
+ * File `color.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on( 'load', function () {
+			$( 'html' ).addClass( 'colorpicker-ready' );
+		} );
+
+		wp.customize.controlConstructor[ 'colormag-color' ] = wp.customize.Control.extend( {
+
+			ready : function () {
+
+				'use strict';
+
+				var control = this;
+
+				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
+
+					change : function ( event, ui ) {
+						var color = ui.color.toString();
+
+						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+							control.setting.set( color );
+						}
+					}
+
+				} );
+
+			}
+
+		} );
+
+	}
+)( jQuery );
+
+/**
  * Dropdown categories control JS to handle the dropdown categories customize control.
  *
  * File `dropdown-categorie.js`.
@@ -380,42 +421,135 @@ wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend
 } );
 
 /**
- * Color picker control JS to handle color picker rendering within customize control.
+ * Typography control JS to handle the typography customize option.
  *
- * File `color.js`.
+ * File `typography.js`.
  *
  * @package ColorMag
  */
-(
-	function ( $ ) {
+wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.extend( {
 
-		$( window ).on( 'load', function () {
-			$( 'html' ).addClass( 'colorpicker-ready' );
-		} );
+	ready : function () {
 
-		wp.customize.controlConstructor[ 'colormag-color' ] = wp.customize.Control.extend( {
+		'use strict';
 
-			ready : function () {
+		var control = this;
 
-				'use strict';
+		// On customizer load, render the available font options.
+		control.renderFontSelector();
 
-				var control = this;
+	},
 
-				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
+	renderFontSelector : function () {
 
-					change : function ( event, ui ) {
-						var color = ui.color.toString();
+		var control       = this,
+		    selector      = control.selector + ' .font-family select',
+		    standardFonts = [],
+		    googleFonts   = [],
+		    value         = control.setting._value,
+		    fonts         = control.getFonts(),
+		    fontSelect;
 
-						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-							control.setting.set( color );
+		// Format standard fonts as an array.
+		if ( ! _.isUndefined( fonts.standard ) ) {
+			_.each(
+				fonts.standard,
+				function ( font ) {
+					standardFonts.push(
+						{
+							id   : font.family.replace( /&quot;/g, '&#39' ),
+							text : font.label
 						}
-					}
+					);
+				}
+			);
+		}
 
-				} );
+		// Format Google fonts as an array.
+		if ( ! _.isUndefined( fonts.google ) ) {
+			_.each(
+				fonts.google,
+				function ( font ) {
+					googleFonts.push(
+						{
+							id   : font.family,
+							text : font.label
+						}
+					);
+				}
+			);
+		}
+
+		// Combine fonts and build the final data.
+		data = [
+			{
+				text     : fonts.standardfontslabel,
+				children : standardFonts
+			},
+			{
+				text     : fonts.googlefontslabel,
+				children : googleFonts
+			}
+		];
+
+		// Instantiate selectWoo with the data.
+		fontSelect = jQuery( selector ).selectWoo(
+			{
+				data  : data,
+				width : '100%'
+			}
+		);
+
+		// Set the initial value.
+		if ( value['font-family'] ) {
+			fontSelect.val( value['font-family'].replace( /'/g, '"' ) ).trigger( 'change' );
+		}
+
+		// When the font option value changes.
+		fontSelect.on(
+			'change',
+			function () {
+
+				// Set the value.
+				control.saveValue( 'font-family', jQuery( this ).val() );
 
 			}
+		);
 
-		} );
+	},
+
+	/**
+	 * Get fonts.
+	 */
+	getFonts : function () {
+
+		var control = this;
+
+		if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+			return ColorMagCustomizerControlTypography;
+		}
+
+		return {
+			google   : [],
+			standard : []
+		};
+
+	},
+
+	/**
+	 * Saves the value.
+	 */
+	saveValue : function ( property, value ) {
+
+		var control = this,
+		    input   = control.container.find( '.typography-hidden-value' ),
+		    val     = control.setting._value;
+
+		val[property] = value;
+
+		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+		control.setting.set( val );
 
 	}
-)( jQuery );
+
+} );

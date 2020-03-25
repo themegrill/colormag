@@ -59,12 +59,15 @@ class ColorMag_Fonts {
 			self::$system_fonts = array(
 
 				'serif'      => array(
+					'label'  => 'serif',
 					'family' => 'Georgia,Times,"Times New Roman",serif',
 				),
 				'sans-serif' => array(
+					'label'  => 'sans-serif',
 					'family' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif',
 				),
 				'monospace'  => array(
+					'label'  => 'monospace',
 					'family' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
 				),
 
@@ -108,6 +111,8 @@ class ColorMag_Fonts {
 				foreach ( $google_fonts_json['items'] as $key => $font ) {
 
 					$google_fonts[ $font['family'] ] = array(
+						'family'   => $font['family'],
+						'label'    => $font['family'],
 						'variants' => $font['variants'],
 						'subsets'  => $font['subsets'],
 					);

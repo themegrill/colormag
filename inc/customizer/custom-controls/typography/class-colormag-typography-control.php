@@ -29,6 +29,13 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 	public $type = 'colormag-typography';
 
 	/**
+	 * Languages required subsets.
+	 *
+	 * @var array
+	 */
+	public $languages = array();
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -47,6 +54,18 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+
+		if ( ! array_key_exists( 'fonts', $this->choices ) ) {
+			$this->json['choices'] = array(
+				'fonts' => array(
+					'google'   => array(),
+					'standard' => array(),
+				),
+			);
+		} else {
+			$this->json['choices'] = $this->choices;
+		}
+		$this->json['languages'] = ColorMag_Fonts::get_google_font_subsets();
 
 	}
 
@@ -71,6 +90,27 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
+		</div>
+
+		<div class="customize-control-content">
+
+			<# if ( data.default['font-family'] ) { #>
+
+			<# if ( data.choices['fonts'] ) { data.fonts = data.choices['fonts']; } #>
+			<div class="font-family">
+				<spacn class="customize-control-title"><?php esc_html_e( 'Font family', 'colormag' ); ?></spacn>
+				<div class="colormag-field-content">
+					<select {{{ data.inputAttrs }}} id="colormag-font-family-{{{ data.id }}}"></select>
+				</div>
+			</div>
+
+			<# } #>
+
+			<input class="typography-hidden-value"
+			       value="{{ JSON.stringify( data.value ) }}"
+			       type="hidden" {{{ data.link }}}
+			>
+
 		</div>
 
 		<?php

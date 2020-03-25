@@ -53,9 +53,9 @@ class ColorMag_Customize_Base_Control {
 		/**
 		 * Enqueue required Customize Controls CSS files.
 		 */
-		// SelectWoo CSS file.
+		// SelectWoo CSS library file.
 		wp_enqueue_style(
-			'colormag-customize-controls',
+			'selectWoo',
 			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/css/selectWoo' . $suffix . '.css',
 			array(),
 			COLORMAG_THEME_VERSION
@@ -74,7 +74,7 @@ class ColorMag_Customize_Base_Control {
 		 */
 		// SelectWoo JS library file.
 		wp_enqueue_script(
-			'wp-color-picker-alpha',
+			'selectWoo',
 			COLORMAG_CUSTOMIZER_URL . '/custom-controls/assets/js/selectWoo' . $suffix . '.js',
 			array(),
 			COLORMAG_THEME_VERSION,
@@ -140,10 +140,12 @@ class ColorMag_Customize_Base_Control {
 
 		wp_localize_script(
 			'colormag-customize-controls',
-			'ColorMagCustomizerControlGoogleFonts',
+			'ColorMagCustomizerControlTypography',
 			array(
-				'standard' => ColorMag_Fonts::get_system_fonts(),
-				'google'   => ColorMag_Fonts::get_google_fonts(),
+				'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
+				'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
+				'standard'           => ColorMag_Fonts::get_system_fonts(),
+				'google'             => ColorMag_Fonts::get_google_fonts(),
 			)
 		);
 
