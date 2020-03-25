@@ -41,6 +41,13 @@ class ColorMag_Fonts {
 	public static $font_variants = array();
 
 	/**
+	 * Google font subsets
+	 *
+	 * @var array
+	 */
+	public static $google_font_subsets = array();
+
+	/**
 	 * Get system fonts.
 	 *
 	 * @return mixed|void
@@ -52,13 +59,13 @@ class ColorMag_Fonts {
 			self::$system_fonts = array(
 
 				'serif'      => array(
-					'fallback' => 'Georgia,Times,"Times New Roman",serif',
+					'family' => 'Georgia,Times,"Times New Roman",serif',
 				),
 				'sans-serif' => array(
-					'fallback' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif',
+					'family' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif',
 				),
 				'monospace'  => array(
-					'fallback' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
+					'family' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
 				),
 
 			);
@@ -149,6 +156,52 @@ class ColorMag_Fonts {
 		endif;
 
 		return apply_filters( 'colormag_font_variants', self::$font_variants );
+
+	}
+
+	/**
+	 * Get Google font subsets.
+	 *
+	 * @return mixed|void
+	 */
+	public static function get_google_font_subsets() {
+
+		if ( empty( self::$google_font_subsets ) ) :
+
+			self::$google_font_subsets = array(
+				'arabic'              => esc_html__( 'Arabic', 'colormag' ),
+				'bengali'             => esc_html__( 'Bengali', 'colormag' ),
+				'chinese-hongkong'    => esc_html__( 'Chinese (Hong Kong)', 'colormag' ),
+				'chinese-simplified'  => esc_html__( 'Chinese (Simplified)', 'colormag' ),
+				'chinese-traditional' => esc_html__( 'Chinese (Traditional)', 'colormag' ),
+				'cyrillic'            => esc_html__( 'Cyrillic', 'colormag' ),
+				'cyrillic-ext'        => esc_html__( 'Cyrillic Extended', 'colormag' ),
+				'devanagari'          => esc_html__( 'Devanagari', 'colormag' ),
+				'greek'               => esc_html__( 'Greek', 'colormag' ),
+				'greek-ext'           => esc_html__( 'Greek Extended', 'colormag' ),
+				'gujarati'            => esc_html__( 'Gujarati', 'colormag' ),
+				'gurmukhi'            => esc_html__( 'Gurmukhi', 'colormag' ),
+				'hebrew'              => esc_html__( 'Hebrew', 'colormag' ),
+				'japanese'            => esc_html__( 'Japanese', 'colormag' ),
+				'kannada'             => esc_html__( 'Kannada', 'colormag' ),
+				'khmer'               => esc_html__( 'Khmer', 'colormag' ),
+				'korean'              => esc_html__( 'Korean', 'colormag' ),
+				'latin'               => esc_html__( 'Latin', 'colormag' ),
+				'latin-ext'           => esc_html__( 'Latin Extended', 'colormag' ),
+				'malayalam'           => esc_html__( 'Malayalam', 'colormag' ),
+				'myanmar'             => esc_html__( 'Myanmar', 'colormag' ),
+				'oriya'               => esc_html__( 'Oriya', 'colormag' ),
+				'sinhala'             => esc_html__( 'Sinhala', 'colormag' ),
+				'tamil'               => esc_html__( 'Tamil', 'colormag' ),
+				'telugu'              => esc_html__( 'Telugu', 'colormag' ),
+				'thai'                => esc_html__( 'Thai', 'colormag' ),
+				'tibetan'             => esc_html__( 'Tibetan', 'colormag' ),
+				'vietnamese'          => esc_html__( 'Vietnamese', 'colormag' ),
+			);
+
+		endif;
+
+		return apply_filters( 'colormag_font_variants', self::$google_font_subsets );
 
 	}
 
