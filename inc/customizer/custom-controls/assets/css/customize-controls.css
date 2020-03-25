@@ -95,13 +95,6 @@
   top: 30px;
 }
 /**
- * Editor control CSS.
- */
-
-.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
-  width: 100%;
-}
-/**
  * Heading control CSS.
  */
 
@@ -174,6 +167,13 @@
 
 .customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
   margin-right: 0;
+}
+/**
+ * Editor control CSS.
+ */
+
+.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
+  width: 100%;
 }
 /**
  * Slider control CSS.
@@ -325,4 +325,11 @@
   border-radius: 100%;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+}
+/**
+ * Typography control CSS.
+ */
+
+span.select2-container.select2-container--default.select2-container--open {
+  z-index: 999999;
 }
