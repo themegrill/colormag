@@ -34,6 +34,13 @@ class ColorMag_Fonts {
 	public static $google_fonts = array();
 
 	/**
+	 * Font variants
+	 *
+	 * @var array
+	 */
+	public static $font_variants = array();
+
+	/**
 	 * Get system fonts.
 	 *
 	 * @return mixed|void
@@ -94,7 +101,6 @@ class ColorMag_Fonts {
 				foreach ( $google_fonts_json['items'] as $key => $font ) {
 
 					$google_fonts[ $font['family'] ] = array(
-						'label'    => $font['family'],
 						'variants' => $font['variants'],
 						'subsets'  => $font['subsets'],
 					);
@@ -107,6 +113,42 @@ class ColorMag_Fonts {
 		endif;
 
 		return apply_filters( 'colormag_system_fonts', self::$google_fonts );
+
+	}
+
+	/**
+	 * Get font variants.
+	 *
+	 * @return mixed|void
+	 */
+	public static function get_font_variants() {
+
+		if ( empty( self::$font_variants ) ) :
+
+			self::$font_variants = array(
+				'100'  => esc_html__( 'Thin 100', 'colormag' ),
+				'100i' => esc_html__( 'Thin 100 Italic', 'colormag' ),
+				'200'  => esc_html__( 'Extra-Light 200', 'colormag' ),
+				'200i' => esc_html__( 'Extra-Light 200 Italic', 'colormag' ),
+				'300'  => esc_html__( 'Light 300', 'colormag' ),
+				'300i' => esc_html__( 'Light 300 Italic', 'colormag' ),
+				'400'  => esc_html__( 'Regular 400', 'colormag' ),
+				'400i' => esc_html__( 'Regular 400 Italic', 'colormag' ),
+				'500'  => esc_html__( 'Medium 500', 'colormag' ),
+				'500i' => esc_html__( 'Medium 500 Italic', 'colormag' ),
+				'600'  => esc_html__( 'Semi-Bold 600', 'colormag' ),
+				'600i' => esc_html__( 'Semi-Bold 600 Italic', 'colormag' ),
+				'700'  => esc_html__( 'Bold 700', 'colormag' ),
+				'700i' => esc_html__( 'Bold 700 Italic', 'colormag' ),
+				'800'  => esc_html__( 'Extra-Bold 800', 'colormag' ),
+				'800i' => esc_html__( 'Extra-Bold 800 Italic', 'colormag' ),
+				'900'  => esc_html__( 'Black 900', 'colormag' ),
+				'900i' => esc_html__( 'Black 900 Italic', 'colormag' ),
+			);
+
+		endif;
+
+		return apply_filters( 'colormag_font_variants', self::$font_variants );
 
 	}
 
