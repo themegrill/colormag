@@ -113,6 +113,9 @@ class ColorMag_Customize_Base_Control {
 		// Localize background scripts.
 		$this->localize_background_scripts();
 
+		// Localize Google Fonts scripts.
+		$this->localize_google_fonts_scripts();
+
 	}
 
 	/**
@@ -125,6 +128,22 @@ class ColorMag_Customize_Base_Control {
 			'ColorMagCustomizerControlBackground',
 			array(
 				'placeholder' => esc_html__( 'No file selected', 'colormag' ),
+			)
+		);
+
+	}
+
+	/**
+	 * Localize Google Fonts scripts.
+	 */
+	public function localize_google_fonts_scripts() {
+
+		wp_localize_script(
+			'colormag-customize-controls',
+			'ColorMagCustomizerControlGoogleFonts',
+			array(
+				'standard' => ColorMag_Fonts::get_system_fonts(),
+				'google'   => ColorMag_Fonts::get_google_fonts(),
 			)
 		);
 
