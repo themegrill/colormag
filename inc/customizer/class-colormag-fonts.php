@@ -62,4 +62,52 @@ class ColorMag_Fonts {
 
 	}
 
+	/**
+	 * Get Google fonts.
+	 * It's array is generated from the google-fonts.json file.
+	 *
+	 * @return mixed|void
+	 */
+	public static function get_google_fonts() {
+
+		if ( empty( self::$google_fonts ) ) :
+
+			global $wp_filesystem;
+			$google_fonts_file = apply_filters( 'colormag_google_fonts_json_file', COLORMAG_CUSTOMIZER_DIR . '/custom-controls/typography/google-fonts.json' );
+
+			if ( ! file_exists( COLORMAG_CUSTOMIZER_DIR . '/custom-controls/typography/google-fonts.json' ) ) {
+				return array();
+			}
+
+			// Require `file.php` file of WordPress to include filesystem check for getting the file contents.
+			if ( ! $wp_filesystem ) {
+				require_once ABSPATH . '/wp-admin/includes/file.php';
+			}
+
+			// Proceed only if the file is readable.
+			if ( is_readable( $google_fonts_file ) ) {
+				WP_Filesystem();
+
+				$file_contents     = $wp_filesystem->get_contents( $google_fonts_file );
+				$google_fonts_json = json_decode( $file_contents, 1 );
+
+				foreach ( $google_fonts_json['items'] as $key => $font ) {
+
+					$google_fonts[ $font['family'] ] = array(
+						'label'    => $font['family'],
+						'variants' => $font['variants'],
+						'subsets'  => $font['subsets'],
+					);
+
+					self::$google_fonts = $google_fonts;
+
+				}
+			}
+
+		endif;
+
+		return apply_filters( 'colormag_system_fonts', self::$google_fonts );
+
+	}
+
 }
