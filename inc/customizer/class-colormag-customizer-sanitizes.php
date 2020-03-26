@@ -389,6 +389,25 @@ class ColorMag_Customizer_Sanitizes {
 			}
 		}
 
+		// Sanitizing the subsets option.
+		if ( isset( $typography_args['subsets'] ) ) {
+
+			$subsets        = ColorMag_Fonts::get_google_font_subsets();
+			$subsets_values = array();
+
+			if ( is_array( $typography_args['subsets'] ) ) {
+
+				foreach ( $typography_args['subsets'] as $key => $value ) {
+
+					if ( array_key_exists( $value, $subsets ) ) {
+						$subsets_values[] = self::sanitize_key( $value );
+					}
+				}
+
+				$output['subsets'] = $subsets_values;
+			}
+		}
+
 		return $output;
 
 	}
