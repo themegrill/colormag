@@ -418,6 +418,11 @@ class ColorMag_Customizer_Sanitizes {
 			$output['text-transform'] = self::sanitize_key( $typography_args['text-transform'] );
 		}
 
+		// Sanitizing the text decoration option.
+		if ( isset( $typography_args['text-decoration'] ) ) {
+			$output['text-decoration'] = self::sanitize_key( $typography_args['text-decoration'] );
+		}
+
 		return $output;
 
 	}

@@ -345,6 +345,34 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 			<# } #>
 
+			<# if ( data.default['text-decoration'] ) { #>
+			<div class="text-decoration">
+				<span class="customize-control-title"><?php esc_html_e( 'Decoration', 'colormag' ); ?></span>
+				<div class="colormag-field-content">
+					<select {{{ data.inputAttrs }}} id="colormag-text-decoration-{{{ data.id }}}">
+						<option value="none"
+						<# if ( 'none' === data.value['text-decoration'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'None', 'colormag' ); ?></option>
+						<option value="underline"
+						<# if ( 'underline' === data.value['text-decoration'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Underline', 'colormag' ); ?></option>
+						<option value="overline"
+						<# if ( 'overline' === data.value['text-decoration'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Overline', 'colormag' ); ?></option>
+						<option value="line-through"
+						<# if ( 'line-through' === data.value['text-decoration'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Line Through', 'colormag' ); ?></option>
+						<option value="initial"
+						<# if ( 'initial' === data.value['text-decoration'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Initial', 'colormag' ); ?></option>
+						<option value="inherit"
+						<# if ( 'inherit' === data.value['text-decoration'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Inherit', 'colormag' ); ?></option>
+					</select>
+				</div>
+			</div>
+			<# } #>
+
 			<input class="typography-hidden-value"
 			       value="{{ JSON.stringify( data.value ) }}"
 			       type="hidden" {{{ data.link }}}

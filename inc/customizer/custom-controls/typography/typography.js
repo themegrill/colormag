@@ -28,6 +28,11 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 			control.saveValue( 'text-transform', jQuery( this ).val() );
 		} );
 
+		// Text decoration setting.
+		control.container.on( 'change', '.text-decoration select', function () {
+			control.saveValue( 'text-decoration', jQuery( this ).val() );
+		} );
+
 	},
 
 	renderFontSelector : function () {
