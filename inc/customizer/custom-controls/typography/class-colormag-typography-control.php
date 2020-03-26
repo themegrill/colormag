@@ -183,6 +183,28 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	public function get_custom_fonts() {
 
+		$custom_fonts       = ColorMag_Fonts::get_custom_fonts();
+		$custom_fonts_array = array();
+		$default_variants   = $this->format_variants_array(
+			array(
+				'regular',
+				'italic',
+			)
+		);
+
+		foreach ( $custom_fonts as $key => $font ) {
+
+			$custom_fonts_array[] = array(
+				'family'   => $font['family'],
+				'label'    => $font['label'],
+				'subsets'  => array(),
+				'variants' => ( isset( $font['variants'] ) ) ? $this->format_variants_array( $font['variants'] ) : $default_variants,
+			);
+
+		}
+
+		return $custom_fonts_array;
+
 	}
 
 	/**
