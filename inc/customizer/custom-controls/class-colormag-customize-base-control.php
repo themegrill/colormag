@@ -2,7 +2,7 @@
 /**
  * ColorMag customizer base control class for theme customize options.
  *
- * Class ColorMag_Customize_Base_Option
+ * Class ColorMag_Customize_Base_Control
  *
  * @package    ThemeGrill
  * @subpackage ColorMag

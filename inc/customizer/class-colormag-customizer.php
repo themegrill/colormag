@@ -87,6 +87,7 @@ class ColorMag_Customizer {
 
 		// Include the customize base controls file.
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-customize-base-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-customize-base-additional-control.php';
 
 		// Include the required customize controls file.
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/radio-image/class-colormag-radio-image-control.php';
