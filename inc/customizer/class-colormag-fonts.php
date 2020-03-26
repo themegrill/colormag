@@ -58,17 +58,17 @@ class ColorMag_Fonts {
 
 			self::$system_fonts = array(
 
-				'serif'      => array(
-					'label'  => 'serif',
+				'Georgia,Times,"Times New Roman",serif'                                                                                                 => array(
 					'family' => 'Georgia,Times,"Times New Roman",serif',
+					'label'  => 'serif',
 				),
-				'sans-serif' => array(
-					'label'  => 'sans-serif',
+				'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif' => array(
 					'family' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif',
+					'label'  => 'sans-serif',
 				),
-				'monospace'  => array(
-					'label'  => 'monospace',
+				'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace'                                                   => array(
 					'family' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
+					'label'  => 'monospace',
 				),
 
 			);

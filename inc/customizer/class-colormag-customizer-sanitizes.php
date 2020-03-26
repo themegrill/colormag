@@ -293,7 +293,7 @@ class ColorMag_Customizer_Sanitizes {
 	public static function sanitize_background( $background_args, $setting ) {
 
 		if ( ! is_array( $background_args ) ) {
-			return;
+			return array();
 		}
 
 		$output = array();
@@ -342,6 +342,25 @@ class ColorMag_Customizer_Sanitizes {
 	 */
 	public static function sanitize_typography( $typography_args, $setting ) {
 
+		if ( ! is_array( $typography_args ) ) {
+			return array();
+		}
+
+		$output = array();
+
+		// Sanitizing the font family option.
+		if ( isset( $typography_args['font-family'] ) ) {
+
+			$standard_fonts = ColorMag_Fonts::get_system_fonts();
+			$google_fonts   = ColorMag_Fonts::get_google_fonts();
+			$valid_keys     = array_merge( $standard_fonts, $google_fonts );
+
+			if ( array_key_exists( $typography_args['font-family'], $valid_keys ) ) {
+				$output['font-family'] = self::sanitize_text_field( $typography_args['font-family'] );
+			}
+		}
+
+		return $output;
 
 	}
 
