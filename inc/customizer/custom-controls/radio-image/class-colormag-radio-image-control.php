@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class ColorMag_Radio_Image_Control
  */
-class ColorMag_Radio_Image_Control extends WP_Customize_Control {
+class ColorMag_Radio_Image_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.

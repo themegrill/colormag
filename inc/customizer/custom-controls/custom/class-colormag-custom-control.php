@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class ColorMag_Custom_Control
  */
-class ColorMag_Custom_Control extends WP_Customize_Control {
+class ColorMag_Custom_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
