@@ -36,6 +36,35 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	public $languages = array();
 
 	/**
+	 * Enqueue control related scripts/styles.
+	 */
+	public function enqueue() {
+
+		$standard_fonts   = ColorMag_Fonts::get_system_fonts();
+		$google_fonts     = ColorMag_Fonts::get_google_fonts();
+		$custom_fonts     = ColorMag_Fonts::get_custom_fonts();
+		$localize_scripts = array(
+			'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
+			'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
+			'standard'           => $standard_fonts,
+			'google'             => $google_fonts,
+		);
+
+		// If custom fonts is available,then add it for localization.
+		if ( ! empty( $custom_fonts ) ) {
+			$localize_scripts['customfontslabel'] = esc_html__( 'Custom Fonts', 'colormag' );
+			$localize_scripts['custom']           = $custom_fonts;
+		}
+
+		wp_localize_script(
+			'colormag-customize-controls',
+			'ColorMagCustomizerControlTypography',
+			$localize_scripts
+		);
+
+	}
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
