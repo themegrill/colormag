@@ -292,6 +292,31 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 			<# } #>
 
+			<# if ( data.default['font-style'] ) { #>
+			<div class="font-style">
+				<span class="customize-control-title"><?php esc_html_e( 'Style', 'colormag' ); ?></span>
+				<div class="colormag-field-content">
+					<select {{{ data.inputAttrs }}} id="colormag-font-style-{{{ data.id }}}">
+						<option value="normal"
+						<# if ( 'normal' === data.value['font-style'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Normal', 'colormag' ); ?></option>
+						<option value="italic"
+						<# if ( 'italic' === data.value['font-style'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Italic', 'colormag' ); ?></option>
+						<option value="oblique"
+						<# if ( 'oblique' === data.value['font-style'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Oblique', 'colormag' ); ?></option>
+						<option value="initial"
+						<# if ( 'initial' === data.value['font-style'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Initial', 'colormag' ); ?></option>
+						<option value="inherit"
+						<# if ( 'inherit' === data.value['font-style'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Inherit', 'colormag' ); ?></option>
+					</select>
+				</div>
+			</div>
+			<# } #>
+
 			<input class="typography-hidden-value"
 			       value="{{ JSON.stringify( data.value ) }}"
 			       type="hidden" {{{ data.link }}}

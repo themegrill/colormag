@@ -18,6 +18,11 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		control.renderVariantSelector();
 		control.renderSubsetSelector();
 
+		// Font style setting.
+		control.container.on( 'change', '.font-style select', function () {
+			control.saveValue( 'font-style', jQuery( this ).val() );
+		} );
+
 	},
 
 	renderFontSelector : function () {

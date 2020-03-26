@@ -1,4 +1,28 @@
 /**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Background image control JS to handle the background customize option.
  *
  * File `background.js`.
@@ -178,30 +202,6 @@
 
 	}
 )( jQuery );
-
-/**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
 
 /**
  * Color picker control JS to handle color picker rendering within customize control.
@@ -439,6 +439,11 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		control.renderFontSelector();
 		control.renderVariantSelector();
 		control.renderSubsetSelector();
+
+		// Font style setting.
+		control.container.on( 'change', '.font-style select', function () {
+			control.saveValue( 'font-style', jQuery( this ).val() );
+		} );
 
 	},
 
