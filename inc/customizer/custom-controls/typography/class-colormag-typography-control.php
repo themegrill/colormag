@@ -98,11 +98,20 @@ class ColorMag_Typography_Control extends WP_Customize_Control {
 
 			<# if ( data.choices['fonts'] ) { data.fonts = data.choices['fonts']; } #>
 			<div class="font-family">
-				<spacn class="customize-control-title"><?php esc_html_e( 'Font family', 'colormag' ); ?></spacn>
+				<spacn class="customize-control-title"><?php esc_html_e( 'Family', 'colormag' ); ?></spacn>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-font-family-{{{ data.id }}}"></select>
 				</div>
 			</div>
+
+			<# if ( data.default['font-weight'] ) { #>
+			<div class="font-weight">
+				<span class="customize-control-title"><?php esc_html_e( 'Weight', 'colormag' ); ?></span>
+				<div class="colormag-field-content">
+					<select {{{ data.inputAttrs }}} id="colormag-font-weight-{{{ data.id }}}"></select>
+				</div>
+			</div>
+			<# } #>
 
 			<# } #>
 

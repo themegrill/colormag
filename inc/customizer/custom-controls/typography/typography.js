@@ -120,9 +120,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 	},
 
-	/**
-	 * Get fonts.
-	 */
 	getFonts : function () {
 
 		var control = this;
@@ -138,9 +135,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 	},
 
-	/**
-	 * Saves the value.
-	 */
 	saveValue : function ( property, value ) {
 
 		var control = this,
