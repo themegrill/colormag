@@ -29,61 +29,6 @@ class ColorMag_Customize_Base_Control {
 	public static $controls;
 
 	/**
-	 * Customizer base control constructor.
-	 *
-	 * ColorMag_Customize_Base_Control constructor.
-	 */
-	public function __construct() {
-
-		// Enqueue the required scripts for the custom customize controls.
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_customize_controls' ) );
-
-		// Localize the scripts for custom customize controls.
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'localize_enqueued_scripts' ) );
-
-	}
-
-	/**
-	 * Enqueue custom scripts for customize controls.
-	 */
-	public function enqueue_customize_controls() {
-
-
-
-	}
-
-	/**
-	 * Localize the scripts for custom customize controls.
-	 */
-	public function localize_enqueued_scripts() {
-
-		// Localize background scripts.
-		$this->localize_background_scripts();
-
-		// Localize fonts scripts.
-		$this->localize_fonts_scripts();
-
-	}
-
-	/**
-	 * Localize background scripts.
-	 */
-	public function localize_background_scripts() {
-
-
-
-	}
-
-	/**
-	 * Localize fonts scripts.
-	 */
-	public function localize_fonts_scripts() {
-
-
-
-	}
-
-	/**
 	 * Add Control to self::$controls and register custom controls to WordPress Customizer.
 	 *
 	 * @param string $name       Slug for the control.
