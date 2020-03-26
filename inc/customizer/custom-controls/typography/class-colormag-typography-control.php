@@ -317,6 +317,34 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 			<# } #>
 
+			<# if ( data.default['text-transform'] ) { #>
+			<div class="text-transform">
+				<span class="customize-control-title"><?php esc_html_e( 'Transform', 'colormag' ); ?></span>
+				<div class="colormag-field-content">
+					<select {{{ data.inputAttrs }}} id="colormag-text-transform-{{{ data.id }}}">
+						<option value="none"
+						<# if ( 'none' === data.value['text-transform'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'None', 'colormag' ); ?></option>
+						<option value="capitalize"
+						<# if ( 'capitalize' === data.value['text-transform'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Capitalize', 'colormag' ); ?></option>
+						<option value="uppercase"
+						<# if ( 'uppercase' === data.value['text-transform'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Uppercase', 'colormag' ); ?></option>
+						<option value="lowercase"
+						<# if ( 'lowercase' === data.value['text-transform'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Lowercase', 'colormag' ); ?></option>
+						<option value="initial"
+						<# if ( 'initial' === data.value['text-transform'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Initial', 'colormag' ); ?></option>
+						<option value="inherit"
+						<# if ( 'inherit' === data.value['text-transform'] ) { #> selected <# }
+						#>><?php esc_attr_e( 'Inherit', 'colormag' ); ?></option>
+					</select>
+				</div>
+			</div>
+			<# } #>
+
 			<input class="typography-hidden-value"
 			       value="{{ JSON.stringify( data.value ) }}"
 			       type="hidden" {{{ data.link }}}
