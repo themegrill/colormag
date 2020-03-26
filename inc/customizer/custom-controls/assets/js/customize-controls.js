@@ -347,6 +347,53 @@ wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control
 } );
 
 /**
+ * Slider control JS to handle the range of the inputs.
+ *
+ * File `slider.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Update the text value.
+		jQuery( 'input[type=range]' ).on( 'input change', function () {
+			var value        = jQuery( this ).attr( 'value' ),
+			    input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+
+			input_number.val( value );
+			input_number.change();
+		} );
+
+		// Handle the reset button.
+		jQuery( '.colormag-slider-reset' ).click( function () {
+			var wrapper       = jQuery( this ).closest( '.slider-wrapper' ),
+			    input_range   = wrapper.find( 'input[type=range]' ),
+			    input_number  = wrapper.find( '.colormag-range-value .value' ),
+			    default_value = input_range.data( 'reset_value' );
+
+			input_range.val( default_value );
+			input_number.val( default_value );
+			input_number.change();
+		} );
+
+		// Save changes.
+		this.container.on( 'input change', 'input[type=number]', function () {
+			var value = jQuery( this ).val();
+			jQuery( this ).closest( '.slider-wrapper' ).find( 'input[type=range]' ).val( value );
+			control.setting.set( value );
+		} );
+
+	}
+
+} );
+
+/**
  * Switch toggle control JS to handle the toggle of custom customize controls.
  *
  * File `toggle.js`.
@@ -390,6 +437,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		// On customizer load, render the available font options.
 		control.renderFontSelector();
+		control.renderVariantSelector();
 
 	},
 
@@ -490,6 +538,9 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 				// Set the value.
 				control.saveValue( 'font-family', jQuery( this ).val() );
 
+				// Render new list of selected font options.
+				control.renderVariantSelector();
+
 			}
 		);
 
@@ -510,6 +561,115 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 	},
 
+	renderVariantSelector : function () {
+
+		var control    = this,
+		    value      = control.setting._value,
+		    fontFamily = value['font-family'],
+		    variants   = control.getVariants( fontFamily ),
+		    selector   = control.selector + ' .font-weight select',
+		    data       = [],
+		    isValid    = false,
+		    variantSelector;
+
+		if ( false !== variants ) {
+
+			jQuery( control.selector + ' .font-weight' ).show();
+			_.each(
+				variants,
+				function ( variant ) {
+					if ( value['font-weight'] === variant.id ) {
+						isValid = true;
+					}
+
+					console.log( value['font-weight'], variant.id )
+
+					data.push(
+						{
+							id   : variant.id,
+							text : variant.label
+						}
+					);
+				}
+			);
+
+			if ( ! isValid ) {
+				value['font-weight'] = 'regular';
+			}
+
+			if ( jQuery( selector ).hasClass( 'select2-hidden-accessible' ) ) {
+				jQuery( selector ).selectWoo( 'destroy' );
+				jQuery( selector ).empty();
+			}
+
+			// Instantiate selectWoo with the data.
+			variantSelector = jQuery( selector ).selectWoo(
+				{
+					data  : data,
+					width : '100%'
+				}
+			);
+
+			variantSelector.val( value['font-weight'] ).trigger( 'change' );
+			variantSelector.on(
+				'change',
+				function () {
+					control.saveValue( 'font-weight', jQuery( this ).val() );
+				}
+			);
+
+		} else {
+
+			jQuery( control.selector + ' .font-weight' ).hide();
+
+		}
+
+	},
+
+	getVariants : function ( fontFamily ) {
+		var control = this,
+		    fonts   = control.getFonts();
+
+		var variants = false;
+		_.each(
+			fonts.standard,
+			function ( font ) {
+				if ( fontFamily && font.family === fontFamily.replace( /'/g, '"' ) ) {
+					variants = font.variants;
+
+					return variants;
+				}
+			}
+		);
+
+		_.each(
+			fonts.google,
+			function ( font ) {
+				if ( font.family === fontFamily ) {
+					variants = font.variants;
+
+					return variants;
+				}
+			}
+		);
+
+		// For custom fonts.
+		if ( ! _.isUndefined( fonts.custom ) ) {
+			_.each(
+				fonts.custom,
+				function ( font ) {
+					if ( font.custom === fontFamily ) {
+						variants = font.variants;
+
+						return variants;
+					}
+				}
+			);
+		}
+
+		return variants;
+	},
+
 	saveValue : function ( property, value ) {
 
 		var control = this,
@@ -520,53 +680,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
-
-	}
-
-} );
-
-/**
- * Slider control JS to handle the range of the inputs.
- *
- * File `slider.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Update the text value.
-		jQuery( 'input[type=range]' ).on( 'input change', function () {
-			var value        = jQuery( this ).attr( 'value' ),
-			    input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
-
-			input_number.val( value );
-			input_number.change();
-		} );
-
-		// Handle the reset button.
-		jQuery( '.colormag-slider-reset' ).click( function () {
-			var wrapper       = jQuery( this ).closest( '.slider-wrapper' ),
-			    input_range   = wrapper.find( 'input[type=range]' ),
-			    input_number  = wrapper.find( '.colormag-range-value .value' ),
-			    default_value = input_range.data( 'reset_value' );
-
-			input_range.val( default_value );
-			input_number.val( default_value );
-			input_number.change();
-		} );
-
-		// Save changes.
-		this.container.on( 'input change', 'input[type=number]', function () {
-			var value = jQuery( this ).val();
-			jQuery( this ).closest( '.slider-wrapper' ).find( 'input[type=range]' ).val( value );
-			control.setting.set( value );
-		} );
 
 	}
 
