@@ -75,22 +75,22 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	protected function format_variants_array( $variants ) {
 
-		$all_variants   = ColorMag_Fonts::get_font_variants();
-		$final_variants = array();
+		$font_variants  = ColorMag_Fonts::get_font_variants();
+		$variants_array = array();
 
 		foreach ( $variants as $variant ) {
 
 			if ( is_string( $variant ) ) {
-				$final_variants[] = array(
+				$variants_array[] = array(
 					'id'    => $variant,
-					'label' => isset( $all_variants[ $variant ] ) ? $all_variants[ $variant ] : $variant,
+					'label' => isset( $font_variants[ $variant ] ) ? $font_variants[ $variant ] : $variant,
 				);
 			} elseif ( is_array( $variant ) && isset( $variant['id'] ) && isset( $variant['label'] ) ) {
-				$final_variants[] = $variant;
+				$variants_array[] = $variant;
 			}
 		}
 
-		return $final_variants;
+		return $variants_array;
 
 	}
 
@@ -100,17 +100,17 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	public function get_system_fonts() {
 
 		$standard_fonts       = ColorMag_Fonts::get_system_fonts();
-		$standard_fonts_final = array();
+		$standard_fonts_array = array();
 		$default_variants     = $this->format_variants_array(
 			array(
-				'400',
-				'400i',
+				'regular',
+				'italic',
 			)
 		);
 
 		foreach ( $standard_fonts as $key => $font ) {
 
-			$standard_fonts_final[] = array(
+			$standard_fonts_array[] = array(
 				'family'   => $font['family'],
 				'label'    => $font['label'],
 				'subsets'  => array(),
@@ -119,7 +119,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		}
 
-		return $standard_fonts_final;
+		return $standard_fonts_array;
 
 	}
 
@@ -127,6 +127,54 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 * Gets Google fonts properly formatted for control.
 	 */
 	public function get_google_fonts() {
+
+		// Get formatted array of google fonts.
+		$google_fonts          = ColorMag_Fonts::get_google_fonts();
+		$font_variants         = ColorMag_Fonts::get_font_variants();
+		$foogle_fonts__subsets = ColorMag_Fonts::get_google_font_subsets();
+		$google_fonts_array    = array();
+
+		foreach ( $google_fonts as $family => $args ) {
+
+			// Get label, variants, subsets of individual font.
+			$label    = ( isset( $args['label'] ) ) ? $args['label'] : $family;
+			$variants = ( isset( $args['variants'] ) ) ? $args['variants'] : array( 'regular' );
+			$subsets  = ( isset( $args['subsets'] ) ) ? $args['subsets'] : array();
+
+			$available_variants = array();
+			if ( is_array( $variants ) ) {
+				foreach ( $variants as $variant ) {
+					if ( array_key_exists( $variant, $font_variants ) ) {
+						$available_variants[] = array(
+							'id'    => $variant,
+							'label' => $font_variants[ $variant ],
+						);
+					}
+				}
+			}
+
+			$available_subsets = array();
+			if ( is_array( $subsets ) ) {
+				foreach ( $subsets as $subset ) {
+					if ( array_key_exists( $subset, $foogle_fonts__subsets ) ) {
+						$available_subsets[] = array(
+							'id'    => $subset,
+							'label' => $foogle_fonts__subsets[ $subset ],
+						);
+					}
+				}
+			}
+
+			$google_fonts_array[] = array(
+				'family'   => $family,
+				'label'    => $label,
+				'variants' => $available_variants,
+				'subsets'  => $available_subsets,
+			);
+
+		}
+
+		return $google_fonts_array;
 
 	}
 
