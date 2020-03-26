@@ -61,6 +61,19 @@ class ColorMag_Customizer_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the key values set within customizer controls.
+	 *
+	 * @param string $input Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_key( $input ) {
+
+		return sanitize_key( $input );
+
+	}
+
+	/**
 	 * Sanitize the text fields set within customizer controls.
 	 *
 	 * @param string $input Input from the customize controls.
@@ -363,6 +376,16 @@ class ColorMag_Customizer_Sanitizes {
 
 			if ( array_key_exists( $typography_args['font-family'], $valid_keys ) ) {
 				$output['font-family'] = self::sanitize_text_field( $typography_args['font-family'] );
+			}
+		}
+
+		// Sanitizing the font weight option.
+		if ( isset( $typography_args['font-weight'] ) ) {
+
+			$font_variants = ColorMag_Fonts::get_font_variants();
+
+			if ( array_key_exists( $typography_args['font-weight'], $font_variants ) ) {
+				$output['font-weight'] = self::sanitize_key( $typography_args['font-weight'] );
 			}
 		}
 

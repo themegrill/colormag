@@ -160,8 +160,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 						isValid = true;
 					}
 
-					console.log( value['font-weight'], variant.id )
-
 					data.push(
 						{
 							id   : variant.id,
