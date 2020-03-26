@@ -408,6 +408,11 @@ class ColorMag_Customizer_Sanitizes {
 			}
 		}
 
+		// Sanitizing the font style option.
+		if ( isset( $typography_args['font-style'] ) ) {
+			$output['font-style'] = self::sanitize_key( $typography_args['font-style'] );
+		}
+
 		return $output;
 
 	}
