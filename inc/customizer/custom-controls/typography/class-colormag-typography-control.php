@@ -260,7 +260,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# if ( data.default['font-family'] ) { #>
 
 			<div class="font-family">
-				<spacn class="customize-control-title"><?php esc_html_e( 'Family', 'colormag' ); ?></spacn>
+				<span class="customize-control-title"><?php esc_html_e( 'Family', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-font-family-{{{ data.id }}}"></select>
 				</div>
@@ -271,6 +271,21 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				<span class="customize-control-title"><?php esc_html_e( 'Weight', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-font-weight-{{{ data.id }}}"></select>
+				</div>
+			</div>
+			<# } #>
+
+			<# if ( data.default['subsets'] ) { #>
+			<div class="subsets">
+				<span class="customize-control-title"><?php esc_html_e( 'Subset(s)', 'colormag' ); ?></span>
+				<div class="colormag-field-content">
+					<select {{{ data.inputAttrs }}} id="colormag-subsets-{{{ data.id }}}"
+					<# if ( _.isUndefined( data.choices['disable-multiple-variants'] ) || false ===
+					data.choices['disable-multiple-variants'] ) { #> multiple<# } #>>
+					<# _.each( data.value.subsets, function( subset ) { #>
+					<option value="{{ subset }}" selected="selected">{{ data.languages[ subset ] }}</option>
+					<# } ); #>
+					</select>
 				</div>
 			</div>
 			<# } #>

@@ -438,6 +438,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		// On customizer load, render the available font options.
 		control.renderFontSelector();
 		control.renderVariantSelector();
+		control.renderSubsetSelector();
 
 	},
 
@@ -540,6 +541,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 				// Render new list of selected font options.
 				control.renderVariantSelector();
+				control.renderSubsetSelector();
 
 			}
 		);
@@ -625,6 +627,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 	},
 
 	getVariants : function ( fontFamily ) {
+
 		var control = this,
 		    fonts   = control.getFonts();
 
@@ -666,6 +669,93 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		}
 
 		return variants;
+
+	},
+
+	renderSubsetSelector : function () {
+
+		var control    = this,
+		    value      = control.setting._value,
+		    fontFamily = value['font-family'],
+		    subsets    = control.getSubsets( fontFamily ),
+		    selector   = control.selector + ' .subsets select',
+		    data       = [],
+		    validValue = value.subsets,
+		    subsetSelector;
+
+		if ( false !== subsets ) {
+
+			jQuery( control.selector + ' .subsets' ).show();
+			_.each(
+				subsets,
+				function ( subset ) {
+					if ( _.isObject( validValue ) ) {
+						if ( - 1 === validValue.indexOf( subset.id ) ) {
+							validValue = _.reject(
+								validValue,
+								function ( subValue ) {
+									return subValue === subset.id;
+								}
+							);
+						}
+					}
+
+					data.push(
+						{
+							id   : subset.id,
+							text : subset.label
+						}
+					);
+				}
+			);
+
+		} else {
+
+			jQuery( control.selector + ' .subsets' ).hide();
+
+		}
+
+		if ( jQuery( selector ).hasClass( 'select2-hidden-accessible' ) ) {
+			jQuery( selector ).selectWoo( 'destroy' );
+			jQuery( selector ).empty();
+		}
+
+		// Instantiate selectWoo with the data.
+		subsetSelector = jQuery( selector ).selectWoo(
+			{
+				data : data
+			}
+		);
+
+		subsetSelector.val( validValue ).trigger( 'change' );
+		subsetSelector.on(
+			'change',
+			function () {
+				control.saveValue( 'subsets', jQuery( this ).val() );
+			}
+		);
+
+	},
+
+	getSubsets : function ( fontFamily ) {
+
+		var control = this,
+		    subsets = false,
+		    fonts   = control.getFonts();
+
+		_.each(
+			fonts.google,
+			function ( font ) {
+				if ( font.family === fontFamily ) {
+					subsets = font.subsets;
+
+					return subsets;
+				}
+			}
+		);
+
+		return subsets;
+
 	},
 
 	saveValue : function ( property, value ) {
