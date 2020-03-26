@@ -113,8 +113,8 @@ class ColorMag_Customize_Base_Control {
 		// Localize background scripts.
 		$this->localize_background_scripts();
 
-		// Localize Google Fonts scripts.
-		$this->localize_google_fonts_scripts();
+		// Localize fonts scripts.
+		$this->localize_fonts_scripts();
 
 	}
 
@@ -134,19 +134,30 @@ class ColorMag_Customize_Base_Control {
 	}
 
 	/**
-	 * Localize Google Fonts scripts.
+	 * Localize fonts scripts.
 	 */
-	public function localize_google_fonts_scripts() {
+	public function localize_fonts_scripts() {
+
+		$standard_fonts   = ColorMag_Fonts::get_system_fonts();
+		$google_fonts     = ColorMag_Fonts::get_google_fonts();
+		$custom_fonts     = ColorMag_Fonts::get_custom_fonts();
+		$localize_scripts = array(
+			'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
+			'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
+			'standard'           => $standard_fonts,
+			'google'             => $google_fonts,
+		);
+
+		// If custom fonts is available,then add it for localization.
+		if ( ! empty( $custom_fonts ) ) {
+			$localize_scripts['customfontslabel'] = esc_html__( 'Custom Fonts', 'colormag' );
+			$localize_scripts['custom']           = $custom_fonts;
+		}
 
 		wp_localize_script(
 			'colormag-customize-controls',
 			'ColorMagCustomizerControlTypography',
-			array(
-				'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
-				'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
-				'standard'           => ColorMag_Fonts::get_system_fonts(),
-				'google'             => ColorMag_Fonts::get_google_fonts(),
-			)
+			$localize_scripts
 		);
 
 	}

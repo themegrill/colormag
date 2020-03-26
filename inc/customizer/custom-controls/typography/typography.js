@@ -24,6 +24,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		    selector      = control.selector + ' .font-family select',
 		    standardFonts = [],
 		    googleFonts   = [],
+		    customFonts   = [],
 		    value         = control.setting._value,
 		    fonts         = control.getFonts(),
 		    fontSelect;
@@ -69,6 +70,29 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 				children : googleFonts
 			}
 		];
+
+		// Format custom fonts as an array.
+		if ( ! _.isUndefined( fonts.custom ) ) {
+			_.each(
+				fonts.custom,
+				function ( font ) {
+					customFonts.push(
+						{
+							id   : font.family,
+							text : font.label
+						}
+					);
+				}
+			);
+
+			// Merge on `data` array.
+			data.push(
+				{
+					text     : fonts.customfontslabel,
+					children : customFonts
+				}
+			);
+		}
 
 		// Instantiate selectWoo with the data.
 		fontSelect = jQuery( selector ).selectWoo(

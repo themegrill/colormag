@@ -34,6 +34,13 @@ class ColorMag_Fonts {
 	public static $google_fonts = array();
 
 	/**
+	 * Custom Fonts
+	 *
+	 * @var array
+	 */
+	public static $custom_fonts = array();
+
+	/**
 	 * Font variants
 	 *
 	 * @var array
@@ -125,6 +132,17 @@ class ColorMag_Fonts {
 		endif;
 
 		return apply_filters( 'colormag_system_fonts', self::$google_fonts );
+
+	}
+
+	/**
+	 * Get custom fonts.
+	 *
+	 * @return mixed|void
+	 */
+	public static function get_custom_fonts() {
+
+		return apply_filters( 'colormag_custom_fonts', self::$custom_fonts );
 
 	}
 

@@ -353,7 +353,13 @@ class ColorMag_Customizer_Sanitizes {
 
 			$standard_fonts = ColorMag_Fonts::get_system_fonts();
 			$google_fonts   = ColorMag_Fonts::get_google_fonts();
+			$custom_fonts   = ColorMag_Fonts::get_custom_fonts();
 			$valid_keys     = array_merge( $standard_fonts, $google_fonts );
+
+			// If custom fonts is available, merge it to `$valid_keys` array to make those fonts ready for sanitization.
+			if ( ! empty( $custom_fonts ) ) {
+				$valid_keys = array_merge( $custom_fonts, $valid_keys );
+			}
 
 			if ( array_key_exists( $typography_args['font-family'], $valid_keys ) ) {
 				$output['font-family'] = self::sanitize_text_field( $typography_args['font-family'] );
