@@ -40,9 +40,9 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	public function enqueue() {
 
-		$standard_fonts   = ColorMag_Fonts::get_system_fonts();
-		$google_fonts     = ColorMag_Fonts::get_google_fonts();
-		$custom_fonts     = ColorMag_Fonts::get_custom_fonts();
+		$standard_fonts   = $this->get_system_fonts();
+		$google_fonts     = $this->get_google_fonts();
+		$custom_fonts     = $this->get_custom_fonts();
 		$localize_scripts = array(
 			'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
 			'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
@@ -61,6 +61,79 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			'ColorMagCustomizerControlTypography',
 			$localize_scripts
 		);
+
+	}
+
+	/**
+	 * Formats variants.
+	 *
+	 * @access protected
+	 *
+	 * @param array $variants The variants.
+	 *
+	 * @return array
+	 */
+	protected function format_variants_array( $variants ) {
+
+		$all_variants   = ColorMag_Fonts::get_font_variants();
+		$final_variants = array();
+
+		foreach ( $variants as $variant ) {
+
+			if ( is_string( $variant ) ) {
+				$final_variants[] = array(
+					'id'    => $variant,
+					'label' => isset( $all_variants[ $variant ] ) ? $all_variants[ $variant ] : $variant,
+				);
+			} elseif ( is_array( $variant ) && isset( $variant['id'] ) && isset( $variant['label'] ) ) {
+				$final_variants[] = $variant;
+			}
+		}
+
+		return $final_variants;
+
+	}
+
+	/**
+	 * Gets standard fonts properly formatted for control.
+	 */
+	public function get_system_fonts() {
+
+		$standard_fonts       = ColorMag_Fonts::get_system_fonts();
+		$standard_fonts_final = array();
+		$default_variants     = $this->format_variants_array(
+			array(
+				'400',
+				'400i',
+			)
+		);
+
+		foreach ( $standard_fonts as $key => $font ) {
+
+			$standard_fonts_final[] = array(
+				'family'   => $font['family'],
+				'label'    => $font['label'],
+				'subsets'  => array(),
+				'variants' => ( isset( $font['variants'] ) ) ? $this->format_variants_array( $font['variants'] ) : $default_variants,
+			);
+
+		}
+
+		return $standard_fonts_final;
+
+	}
+
+	/**
+	 * Gets Google fonts properly formatted for control.
+	 */
+	public function get_google_fonts() {
+
+	}
+
+	/**
+	 * Gets custom fonts properly formatted for control.
+	 */
+	public function get_custom_fonts() {
 
 	}
 
@@ -84,16 +157,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
 
-		if ( ! array_key_exists( 'fonts', $this->choices ) ) {
-			$this->json['choices'] = array(
-				'fonts' => array(
-					'google'   => array(),
-					'standard' => array(),
-				),
-			);
-		} else {
-			$this->json['choices'] = $this->choices;
-		}
+		$this->json['choices']   = $this->choices;
 		$this->json['languages'] = ColorMag_Fonts::get_google_font_subsets();
 
 	}
@@ -125,7 +189,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 			<# if ( data.default['font-family'] ) { #>
 
-			<# if ( data.choices['fonts'] ) { data.fonts = data.choices['fonts']; } #>
 			<div class="font-family">
 				<spacn class="customize-control-title"><?php esc_html_e( 'Family', 'colormag' ); ?></spacn>
 				<div class="colormag-field-content">
