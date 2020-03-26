@@ -29,6 +29,23 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 	public $type = 'colormag-background';
 
 	/**
+	 * Enqueue control related scripts/styles.
+	 */
+	public function enqueue() {
+
+		parent::enqueue();
+
+		wp_localize_script(
+			'colormag-customize-controls',
+			'ColorMagCustomizerControlBackground',
+			array(
+				'placeholder' => esc_html__( 'No file selected', 'colormag' ),
+			)
+		);
+
+	}
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()

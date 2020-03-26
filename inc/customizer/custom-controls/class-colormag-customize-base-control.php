@@ -70,13 +70,7 @@ class ColorMag_Customize_Base_Control {
 	 */
 	public function localize_background_scripts() {
 
-		wp_localize_script(
-			'colormag-customize-controls',
-			'ColorMagCustomizerControlBackground',
-			array(
-				'placeholder' => esc_html__( 'No file selected', 'colormag' ),
-			)
-		);
+
 
 	}
 
