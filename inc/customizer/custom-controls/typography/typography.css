@@ -1,6 +1,10 @@
 /**
  * Typography control CSS.
  */
+.customize-control-colormag-typography .customize-control-content .font-size {
+	position: relative;
+}
+
 span.select2-container.select2-container--default.select2-container--open {
 	z-index: 999999;
 }

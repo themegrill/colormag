@@ -293,23 +293,47 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<# if ( data.default['font-size'] ) { #>
-			<ul class="responsive-switchers">
-				<li class="desktop">
-					<button type="button" class="preview-desktop active" data-device="desktop">
-						<i class="dashicons dashicons-desktop"></i>
-					</button>
-				</li>
-				<li class="tablet">
-					<button type="button" class="preview-tablet" data-device="tablet">
-						<i class="dashicons dashicons-tablet"></i>
-					</button>
-				</li>
-				<li class="mobile">
-					<button type="button" class="preview-mobile" data-device="mobile">
-						<i class="dashicons dashicons-smartphone"></i>
-					</button>
-				</li>
-			</ul>
+			<div class="font-size">
+				<span class="customize-control-title"><?php esc_html_e( 'Size', 'colormag' ); ?></span>
+				<ul class="responsive-switchers">
+					<li class="desktop">
+						<button type="button" class="preview-desktop active" data-device="desktop">
+							<i class="dashicons dashicons-desktop"></i>
+						</button>
+					</li>
+					<li class="tablet">
+						<button type="button" class="preview-tablet" data-device="tablet">
+							<i class="dashicons dashicons-tablet"></i>
+						</button>
+					</li>
+					<li class="mobile">
+						<button type="button" class="preview-mobile" data-device="mobile">
+							<i class="dashicons dashicons-smartphone"></i>
+						</button>
+					</li>
+				</ul>
+
+				<div class="desktop control-wrap active">
+					<input type="text"
+					       value="{{ data.value['font-size']['desktop'] }}"
+					       placeholder="<?php esc_html_e( 'px - em - rem', 'colormag' ); ?>"
+					/>
+				</div>
+
+				<div class="tablet control-wrap">
+					<input type="text"
+					       value="{{ data.value['font-size']['tablet'] }}"
+					       placeholder="<?php esc_html_e( 'px - em - rem', 'colormag' ); ?>"
+					/>
+				</div>
+
+				<div class="mobile control-wrap">
+					<input type="text"
+					       value="{{ data.value['font-size']['mobile'] }}"
+					       placeholder="<?php esc_html_e( 'px - em - rem', 'colormag' ); ?>"
+					/>
+				</div>
+			</div>
 			<# } #>
 
 			<# if ( data.default['font-style'] ) { #>
@@ -410,11 +434,13 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		$id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
 		$class = 'customize-control has-responsive-switchers customize-control-' . $this->type;
+		?>
 
-		printf( '<li id="%s" class="%s">', esc_attr( $id ), esc_attr( $class ) );
-		$this->render_content();
-		echo '</li>';
+		<li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
+			<?php $this->render_content(); ?>
+		</li>
 
+		<?php
 	}
 
 	/**

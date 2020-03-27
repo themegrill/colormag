@@ -48,6 +48,45 @@
 			padding-bottom: 6px;
 		}
 	}
+
+	&.has-responsive-switchers {
+
+		.responsive-switchers {
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			li {
+				float: left;
+				margin: 0;
+				border: 2px solid transparent;
+
+				button {
+					outline: none;
+					border: none;
+					cursor: pointer;
+					padding: 2px;
+
+					i {
+						font-size: 16px;
+						line-height: 20px;
+					}
+
+					&.active {
+						border-bottom: 2px solid #555d66;
+					}
+				}
+			}
+		}
+
+		.control-wrap {
+
+			&:not(.active) {
+				display: none;
+				width: 100%;
+			}
+		}
+	}
 }
 
 #accordion-section-colormag_upsell_section {

@@ -40,6 +40,39 @@
 	padding-bottom: 6px;
 }
 
+.customize-control.has-responsive-switchers .responsive-switchers {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.customize-control.has-responsive-switchers .responsive-switchers li {
+	float: left;
+	margin: 0;
+	border: 2px solid transparent;
+}
+
+.customize-control.has-responsive-switchers .responsive-switchers li button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 2px;
+}
+
+.customize-control.has-responsive-switchers .responsive-switchers li button i {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.customize-control.has-responsive-switchers .responsive-switchers li button.active {
+	border-bottom: 2px solid #555d66;
+}
+
+.customize-control.has-responsive-switchers .control-wrap:not(.active) {
+	display: none;
+	width: 100%;
+}
+
 #accordion-section-colormag_upsell_section h3.accordion-section-title {
 	background-color: #289DCC !important;
 	border-left-color: #0073aa;

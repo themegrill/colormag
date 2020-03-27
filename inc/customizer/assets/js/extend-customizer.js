@@ -331,11 +331,6 @@ jQuery( document ).ready(
 				footer_devices.find( 'button' ).removeClass( 'active' ).attr( 'aria-pressed', false );
 				footer_devices.find( 'button.preview-' + device ).addClass( 'active' ).attr( 'aria-pressed', true );
 
-				// Switching open switchers.
-				if ( self.hasClass( 'preview-desktop' ) ) {
-					control.toggleClass( 'responsive-switchers-open' );
-				}
-
 			}
 		);
 
@@ -357,13 +352,6 @@ jQuery( document ).ready(
 				// Switching the control class.
 				control.find( '.control-wrap' ).removeClass( 'active' );
 				control.find( '.control-wrap.' + device ).addClass( 'active' );
-
-				// Switching open switchers.
-				if ( ! self.hasClass( 'preview-desktop' ) ) {
-					control.addClass( 'responsive-switchers-open' );
-				} else {
-					control.removeClass( 'responsive-switchers-open' );
-				}
 
 			}
 		);
