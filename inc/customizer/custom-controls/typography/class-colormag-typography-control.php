@@ -404,6 +404,20 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	}
 
 	/**
+	 * Renders the control wrapper and calls $this->render_content() for the internals.
+	 */
+	protected function render() {
+
+		$id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
+		$class = 'customize-control has-responsive-switchers customize-control-' . $this->type;
+
+		printf( '<li id="%s" class="%s">', esc_attr( $id ), esc_attr( $class ) );
+		$this->render_content();
+		echo '</li>';
+
+	}
+
+	/**
 	 * Don't render the control content from PHP, as it's rendered via JS on load.
 	 */
 	public function render_content() {

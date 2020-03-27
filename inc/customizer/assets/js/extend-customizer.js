@@ -251,7 +251,7 @@
  */
 (
 	function ( $, api ) {
-		api.sectionConstructor[ 'colormag-upsell-section' ] = api.Section.extend( {
+		api.sectionConstructor['colormag-upsell-section'] = api.Section.extend( {
 
 			// No events for this type of section.
 			attachEvents : function () {
@@ -296,3 +296,77 @@
 
 	}
 )( jQuery );
+
+/**
+ * Responsive devices mode click event.
+ */
+jQuery( document ).ready(
+	function ( $ ) {
+
+		// Responsive switcher button click.
+		$( '.customize-control .responsive-switchers button' ).on(
+			'click',
+			function ( event ) {
+
+				// Set up variables.
+				var self           = $( this ),
+				    devices        = $( '.responsive-switchers' ),
+				    device         = $( event.currentTarget ).data( 'device' ),
+				    control        = $( '.customize-control.has-responsive-switchers' ),
+				    body           = $( '.wp-full-overlay' ),
+				    footer_devices = $( '.wp-full-overlay-footer .devices' );
+
+				// Switching the button class.
+				devices.find( 'button' ).removeClass( 'active' );
+				devices.find( 'button.preview-' + device ).addClass( 'active' );
+
+				// Switching the control class.
+				control.find( '.control-wrap' ).removeClass( 'active' );
+				control.find( '.control-wrap.' + device ).addClass( 'active' );
+
+				// Switching wrapper class.
+				body.removeClass( 'preview-desktop preview-tablet preview-mobile' ).addClass( 'preview-' + device );
+
+				// Switching panel footer buttons.
+				footer_devices.find( 'button' ).removeClass( 'active' ).attr( 'aria-pressed', false );
+				footer_devices.find( 'button.preview-' + device ).addClass( 'active' ).attr( 'aria-pressed', true );
+
+				// Switching open switchers.
+				if ( self.hasClass( 'preview-desktop' ) ) {
+					control.toggleClass( 'responsive-switchers-open' );
+				}
+
+			}
+		);
+
+		// If panel footer buttons clicked.
+		$( '.wp-full-overlay-footer .devices button' ).on(
+			'click',
+			function ( event ) {
+
+				// Set up variables.
+				var self    = $( this ),
+				    devices = $( '.customize-control.has-responsive-switchers .responsive-switchers' ),
+				    device  = $( event.currentTarget ).data( 'device' ),
+				    control = $( '.customize-control.has-responsive-switchers' );
+
+				// Switching the button class.
+				devices.find( 'button' ).removeClass( 'active' );
+				devices.find( 'button.preview-' + device ).addClass( 'active' );
+
+				// Switching the control class.
+				control.find( '.control-wrap' ).removeClass( 'active' );
+				control.find( '.control-wrap.' + device ).addClass( 'active' );
+
+				// Switching open switchers.
+				if ( ! self.hasClass( 'preview-desktop' ) ) {
+					control.addClass( 'responsive-switchers-open' );
+				} else {
+					control.removeClass( 'responsive-switchers-open' );
+				}
+
+			}
+		);
+
+	}
+);
