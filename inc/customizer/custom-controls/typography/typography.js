@@ -316,7 +316,8 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		// Instantiate selectWoo with the data.
 		subsetSelector = jQuery( selector ).selectWoo(
 			{
-				data : data
+				data : data,
+				width : '100%'
 			}
 		);
 

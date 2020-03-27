@@ -292,6 +292,26 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 			<# } #>
 
+			<# if ( data.default['font-size'] ) { #>
+			<ul class="responsive-switchers">
+				<li class="desktop">
+					<button type="button" class="preview-desktop active" data-device="desktop">
+						<i class="dashicons dashicons-desktop"></i>
+					</button>
+				</li>
+				<li class="tablet">
+					<button type="button" class="preview-tablet" data-device="tablet">
+						<i class="dashicons dashicons-tablet"></i>
+					</button>
+				</li>
+				<li class="mobile">
+					<button type="button" class="preview-mobile" data-device="mobile">
+						<i class="dashicons dashicons-smartphone"></i>
+					</button>
+				</li>
+			</ul>
+			<# } #>
+
 			<# if ( data.default['font-style'] ) { #>
 			<div class="font-style">
 				<span class="customize-control-title"><?php esc_html_e( 'Style', 'colormag' ); ?></span>
