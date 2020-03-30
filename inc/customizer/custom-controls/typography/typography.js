@@ -41,32 +41,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 	},
 
-	updateFontSize : function () {
-
-		var control  = this,
-		    val      = control.setting._value,
-		    input    = control.container.find( '.typography-hidden-value' ),
-		    newValue = {
-			    'font-size' : {}
-		    };
-
-		control.container.find( '.control-wrap' ).each(
-			function () {
-				var controlValue = jQuery( this ).find( 'input' ).val();
-				var device       = jQuery( this ).find( 'input' ).data( 'device' );
-
-				newValue['font-size'][device] = controlValue;
-			}
-		);
-
-		// Extend/Update the `val` object to include `newValue`'s new data as an object.
-		jQuery.extend( val, newValue );
-
-		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
-		control.setting.set( val );
-
-	},
-
 	renderFontSelector : function () {
 
 		var control       = this,
@@ -391,6 +365,32 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		    val     = control.setting._value;
 
 		val[property] = value;
+
+		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+		control.setting.set( val );
+
+	},
+
+	updateFontSize : function () {
+
+		var control  = this,
+		    val      = control.setting._value,
+		    input    = control.container.find( '.typography-hidden-value' ),
+		    newValue = {
+			    'font-size' : {}
+		    };
+
+		control.container.find( '.control-wrap' ).each(
+			function () {
+				var controlValue = jQuery( this ).find( 'input' ).val();
+				var device       = jQuery( this ).find( 'input' ).data( 'device' );
+
+				newValue['font-size'][device] = controlValue;
+			}
+		);
+
+		// Extend/Update the `val` object to include `newValue`'s new data as an object.
+		jQuery.extend( val, newValue );
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
