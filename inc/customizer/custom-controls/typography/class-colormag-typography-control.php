@@ -380,6 +380,50 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 			<# } #>
 
+			<# if ( data.default['letter-spacing'] ) { #>
+			<div class="letter-spacing">
+				<span class="customize-control-title"><?php esc_html_e( 'Letter Spacing', 'colormag' ); ?></span>
+				<ul class="responsive-switchers">
+					<li class="desktop">
+						<button type="button" class="preview-desktop active" data-device="desktop">
+							<i class="dashicons dashicons-desktop"></i>
+						</button>
+					</li>
+					<li class="tablet">
+						<button type="button" class="preview-tablet" data-device="tablet">
+							<i class="dashicons dashicons-tablet"></i>
+						</button>
+					</li>
+					<li class="mobile">
+						<button type="button" class="preview-mobile" data-device="mobile">
+							<i class="dashicons dashicons-smartphone"></i>
+						</button>
+					</li>
+				</ul>
+
+				<div class="desktop control-wrap active">
+					<input type="text"
+					       value="{{ data.value['letter-spacing']['desktop'] }}"
+					       data-device="desktop"
+					/>
+				</div>
+
+				<div class="tablet control-wrap">
+					<input type="text"
+					       value="{{ data.value['letter-spacing']['tablet'] }}"
+					       data-device="tablet"
+					/>
+				</div>
+
+				<div class="mobile control-wrap">
+					<input type="text"
+					       value="{{ data.value['letter-spacing']['mobile'] }}"
+					       data-device="mobile"
+					/>
+				</div>
+			</div>
+			<# } #>
+
 			<# if ( data.default['font-style'] ) { #>
 			<div class="font-style">
 				<span class="customize-control-title"><?php esc_html_e( 'Style', 'colormag' ); ?></span>
