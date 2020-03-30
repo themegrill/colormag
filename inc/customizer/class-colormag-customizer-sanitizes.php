@@ -424,7 +424,7 @@ class ColorMag_Customizer_Sanitizes {
 		}
 
 		// Sanitizing the font size option.
-		if ( is_array( $typography_args['font-size'] ) ) {
+		if ( isset( $typography_args['font-size'] ) && is_array( $typography_args['font-size'] ) ) {
 
 			$font_size_values = array();
 
@@ -435,6 +435,22 @@ class ColorMag_Customizer_Sanitizes {
 				}
 
 				$output['font-size'] = $font_size_values;
+
+			}
+		}
+
+		// Sanitizing the line height option.
+		if ( isset( $typography_args['line-height'] ) && is_array( $typography_args['line-height'] ) ) {
+
+			$line_height_values = array();
+
+			foreach ( $typography_args['line-height'] as $key => $value ) {
+
+				if ( isset( $key ) && ! empty( $value ) ) {
+					$line_height_values[ $key ] = self::sanitize_key( $value );
+				}
+
+				$output['line-height'] = $line_height_values;
 
 			}
 		}

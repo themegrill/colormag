@@ -385,7 +385,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 			    'font-size' : {}
 		    };
 
-		control.container.find( '.control-wrap' ).each(
+		control.container.find( '.font-size .control-wrap' ).each(
 			function () {
 				var controlValue = jQuery( this ).find( 'input' ).val();
 				var device       = jQuery( this ).find( 'input' ).data( 'device' );
@@ -411,7 +411,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 			    'line-height' : {}
 		    };
 
-		control.container.find( '.control-wrap' ).each(
+		control.container.find( '.line-height .control-wrap' ).each(
 			function () {
 				var controlValue = jQuery( this ).find( 'input' ).val();
 				var device       = jQuery( this ).find( 'input' ).data( 'device' );
