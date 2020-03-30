@@ -6,7 +6,8 @@
 }
 
 .customize-control-colormag-typography .customize-control-content .font-size,
-.customize-control-colormag-typography .customize-control-content .line-height {
+.customize-control-colormag-typography .customize-control-content .line-height,
+.customize-control-colormag-typography .customize-control-content .letter-spacing {
 	position: relative;
 }
 
