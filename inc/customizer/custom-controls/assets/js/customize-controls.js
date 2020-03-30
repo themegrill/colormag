@@ -458,12 +458,12 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		// Font size setting.
 		control.container.on( 'change keyup  input', '.font-size input', function () {
-			control.updateValue();
+			control.updateFontSize();
 		} );
 
 	},
 
-	updateValue : function () {
+	updateFontSize : function () {
 
 		var control  = this,
 		    val      = control.setting._value,

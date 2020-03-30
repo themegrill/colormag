@@ -423,6 +423,22 @@ class ColorMag_Customizer_Sanitizes {
 			$output['text-decoration'] = self::sanitize_key( $typography_args['text-decoration'] );
 		}
 
+		// Sanitizing the font size option.
+		if ( is_array( $typography_args['font-size'] ) ) {
+
+			$font_size_values = array();
+
+			foreach ( $typography_args['font-size'] as $key => $value ) {
+
+				if ( isset( $key ) && ! empty( $value ) ) {
+					$font_size_values[ $key ] = self::sanitize_key( $value );
+				}
+
+				$output['font-size'] = $font_size_values;
+
+			}
+		}
+
 		return $output;
 
 	}
