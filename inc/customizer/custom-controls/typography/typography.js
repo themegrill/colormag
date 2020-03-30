@@ -12,6 +12,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		'use strict';
 
 		var control = this;
+		var value   = control.setting._value;
 
 		// On customizer load, render the available font options.
 		control.renderFontSelector();
@@ -32,6 +33,37 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		control.container.on( 'change', '.text-decoration select', function () {
 			control.saveValue( 'text-decoration', jQuery( this ).val() );
 		} );
+
+		// Font size setting.
+		control.container.on( 'change keyup  input', '.font-size input', function () {
+			control.updateValue();
+		} );
+
+	},
+
+	updateValue : function () {
+
+		var control  = this,
+		    val      = control.setting._value,
+		    input    = control.container.find( '.typography-hidden-value' ),
+		    newValue = {
+			    'font-size' : {}
+		    };
+
+		control.container.find( '.control-wrap' ).each(
+			function () {
+				var controlValue = jQuery( this ).find( 'input' ).val();
+				var device       = jQuery( this ).find( 'input' ).data( 'device' );
+
+				newValue['font-size'][device] = controlValue;
+			}
+		);
+
+		// Extend/Update the `val` object to include `newValue`'s new data as an object.
+		jQuery.extend( val, newValue );
+
+		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+		control.setting.set( val );
 
 	},
 
@@ -316,7 +348,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		// Instantiate selectWoo with the data.
 		subsetSelector = jQuery( selector ).selectWoo(
 			{
-				data : data,
+				data  : data,
 				width : '100%'
 			}
 		);

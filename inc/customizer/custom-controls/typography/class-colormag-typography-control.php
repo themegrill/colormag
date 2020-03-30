@@ -315,21 +315,21 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
-					       value="{{ data.value['font-size']['desktop'] }}"
+					       value="{{ data.value['font-size']['desktop'] }}" data-device="desktop"
 					       placeholder="<?php esc_html_e( 'px - em - rem', 'colormag' ); ?>"
 					/>
 				</div>
 
 				<div class="tablet control-wrap">
 					<input type="text"
-					       value="{{ data.value['font-size']['tablet'] }}"
+					       value="{{ data.value['font-size']['tablet'] }}" data-device="tablet"
 					       placeholder="<?php esc_html_e( 'px - em - rem', 'colormag' ); ?>"
 					/>
 				</div>
 
 				<div class="mobile control-wrap">
 					<input type="text"
-					       value="{{ data.value['font-size']['mobile'] }}"
+					       value="{{ data.value['font-size']['mobile'] }}" data-device="mobile"
 					       placeholder="<?php esc_html_e( 'px - em - rem', 'colormag' ); ?>"
 					/>
 				</div>

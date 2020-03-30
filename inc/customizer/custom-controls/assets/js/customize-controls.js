@@ -347,6 +347,53 @@ wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control
 } );
 
 /**
+ * Slider control JS to handle the range of the inputs.
+ *
+ * File `slider.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Update the text value.
+		jQuery( 'input[type=range]' ).on( 'input change', function () {
+			var value        = jQuery( this ).attr( 'value' ),
+			    input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+
+			input_number.val( value );
+			input_number.change();
+		} );
+
+		// Handle the reset button.
+		jQuery( '.colormag-slider-reset' ).click( function () {
+			var wrapper       = jQuery( this ).closest( '.slider-wrapper' ),
+			    input_range   = wrapper.find( 'input[type=range]' ),
+			    input_number  = wrapper.find( '.colormag-range-value .value' ),
+			    default_value = input_range.data( 'reset_value' );
+
+			input_range.val( default_value );
+			input_number.val( default_value );
+			input_number.change();
+		} );
+
+		// Save changes.
+		this.container.on( 'input change', 'input[type=number]', function () {
+			var value = jQuery( this ).val();
+			jQuery( this ).closest( '.slider-wrapper' ).find( 'input[type=range]' ).val( value );
+			control.setting.set( value );
+		} );
+
+	}
+
+} );
+
+/**
  * Switch toggle control JS to handle the toggle of custom customize controls.
  *
  * File `toggle.js`.
@@ -387,6 +434,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		'use strict';
 
 		var control = this;
+		var value   = control.setting._value;
 
 		// On customizer load, render the available font options.
 		control.renderFontSelector();
@@ -407,6 +455,37 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		control.container.on( 'change', '.text-decoration select', function () {
 			control.saveValue( 'text-decoration', jQuery( this ).val() );
 		} );
+
+		// Font size setting.
+		control.container.on( 'change keyup  input', '.font-size input', function () {
+			control.updateValue();
+		} );
+
+	},
+
+	updateValue : function () {
+
+		var control  = this,
+		    val      = control.setting._value,
+		    input    = control.container.find( '.typography-hidden-value' ),
+		    newValue = {
+			    'font-size' : {}
+		    };
+
+		control.container.find( '.control-wrap' ).each(
+			function () {
+				var controlValue = jQuery( this ).find( 'input' ).val();
+				var device       = jQuery( this ).find( 'input' ).data( 'device' );
+
+				newValue['font-size'][device] = controlValue;
+			}
+		);
+
+		// Extend/Update the `val` object to include `newValue`'s new data as an object.
+		jQuery.extend( val, newValue );
+
+		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+		control.setting.set( val );
 
 	},
 
@@ -691,7 +770,7 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		// Instantiate selectWoo with the data.
 		subsetSelector = jQuery( selector ).selectWoo(
 			{
-				data : data,
+				data  : data,
 				width : '100%'
 			}
 		);
@@ -737,53 +816,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
-
-	}
-
-} );
-
-/**
- * Slider control JS to handle the range of the inputs.
- *
- * File `slider.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Update the text value.
-		jQuery( 'input[type=range]' ).on( 'input change', function () {
-			var value        = jQuery( this ).attr( 'value' ),
-			    input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
-
-			input_number.val( value );
-			input_number.change();
-		} );
-
-		// Handle the reset button.
-		jQuery( '.colormag-slider-reset' ).click( function () {
-			var wrapper       = jQuery( this ).closest( '.slider-wrapper' ),
-			    input_range   = wrapper.find( 'input[type=range]' ),
-			    input_number  = wrapper.find( '.colormag-range-value .value' ),
-			    default_value = input_range.data( 'reset_value' );
-
-			input_range.val( default_value );
-			input_number.val( default_value );
-			input_number.change();
-		} );
-
-		// Save changes.
-		this.container.on( 'input change', 'input[type=number]', function () {
-			var value = jQuery( this ).val();
-			jQuery( this ).closest( '.slider-wrapper' ).find( 'input[type=range]' ).val( value );
-			control.setting.set( value );
-		} );
 
 	}
 
