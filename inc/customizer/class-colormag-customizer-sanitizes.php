@@ -455,6 +455,22 @@ class ColorMag_Customizer_Sanitizes {
 			}
 		}
 
+		// Sanitizing the letter spacing option.
+		if ( isset( $typography_args['letter-spacing'] ) && is_array( $typography_args['letter-spacing'] ) ) {
+
+			$line_height_values = array();
+
+			foreach ( $typography_args['letter-spacing'] as $key => $value ) {
+
+				if ( isset( $key ) && ! empty( $value ) ) {
+					$line_height_values[ $key ] = self::sanitize_key( $value );
+				}
+
+				$output['letter-spacing'] = $line_height_values;
+
+			}
+		}
+
 		return $output;
 
 	}
