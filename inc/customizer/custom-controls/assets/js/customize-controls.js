@@ -466,6 +466,11 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 			control.updateLineHeight();
 		} );
 
+		// Letter spacing setting.
+		control.container.on( 'change keyup paste input', '.letter-spacing input', function () {
+			control.updateLetterSpacing();
+		} );
+
 	},
 
 	renderFontSelector : function () {
@@ -839,6 +844,32 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 				var device       = jQuery( this ).find( 'input' ).data( 'device' );
 
 				newValue['line-height'][device] = controlValue;
+			}
+		);
+
+		// Extend/Update the `val` object to include `newValue`'s new data as an object.
+		jQuery.extend( val, newValue );
+
+		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+		control.setting.set( val );
+
+	},
+
+	updateLetterSpacing : function () {
+
+		var control  = this,
+		    val      = control.setting._value,
+		    input    = control.container.find( '.typography-hidden-value' ),
+		    newValue = {
+			    'letter-spacing' : {}
+		    };
+
+		control.container.find( '.letter-spacing .control-wrap' ).each(
+			function () {
+				var controlValue = jQuery( this ).find( 'input' ).val();
+				var device       = jQuery( this ).find( 'input' ).data( 'device' );
+
+				newValue['letter-spacing'][device] = controlValue;
 			}
 		);
 
