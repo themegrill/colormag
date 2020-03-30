@@ -431,7 +431,7 @@ class ColorMag_Customizer_Sanitizes {
 			foreach ( $typography_args['font-size'] as $key => $value ) {
 
 				if ( isset( $key ) && ! empty( $value ) ) {
-					$font_size_values[ $key ] = self::sanitize_key( $value );
+					$font_size_values[ $key ] = self::sanitize_text_field( $value );
 				}
 
 				$output['font-size'] = $font_size_values;
@@ -447,7 +447,7 @@ class ColorMag_Customizer_Sanitizes {
 			foreach ( $typography_args['line-height'] as $key => $value ) {
 
 				if ( isset( $key ) && ! empty( $value ) ) {
-					$line_height_values[ $key ] = self::sanitize_key( $value );
+					$line_height_values[ $key ] = self::sanitize_text_field( $value );
 				}
 
 				$output['line-height'] = $line_height_values;
@@ -458,15 +458,15 @@ class ColorMag_Customizer_Sanitizes {
 		// Sanitizing the letter spacing option.
 		if ( isset( $typography_args['letter-spacing'] ) && is_array( $typography_args['letter-spacing'] ) ) {
 
-			$line_height_values = array();
+			$letter_spacing_values = array();
 
 			foreach ( $typography_args['letter-spacing'] as $key => $value ) {
 
 				if ( isset( $key ) && ! empty( $value ) ) {
-					$line_height_values[ $key ] = self::sanitize_key( $value );
+					$letter_spacing_values[ $key ] = sanitize_text_field( $value );
 				}
 
-				$output['letter-spacing'] = $line_height_values;
+				$output['letter-spacing'] = $letter_spacing_values;
 
 			}
 		}
