@@ -5,7 +5,12 @@
 
 	.customize-control-content {
 
-		.font-size {
+		> div {
+			margin-bottom: 15px;
+		}
+
+		.font-size,
+		.line-height {
 			position: relative;
 		}
 	}

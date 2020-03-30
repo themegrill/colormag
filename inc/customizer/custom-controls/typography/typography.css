@@ -1,7 +1,12 @@
 /**
  * Typography control CSS.
  */
-.customize-control-colormag-typography .customize-control-content .font-size {
+.customize-control-colormag-typography .customize-control-content > div {
+	margin-bottom: 15px;
+}
+
+.customize-control-colormag-typography .customize-control-content .font-size,
+.customize-control-colormag-typography .customize-control-content .line-height {
 	position: relative;
 }
 
