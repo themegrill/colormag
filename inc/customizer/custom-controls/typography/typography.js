@@ -35,8 +35,13 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		} );
 
 		// Font size setting.
-		control.container.on( 'change keyup  input', '.font-size input', function () {
+		control.container.on( 'change keyup paste input', '.font-size input', function () {
 			control.updateFontSize();
+		} );
+
+		// Line height setting.
+		control.container.on( 'change keyup paste input', '.line-height input', function () {
+			control.updateLineHeight();
 		} );
 
 	},
@@ -386,6 +391,32 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 				var device       = jQuery( this ).find( 'input' ).data( 'device' );
 
 				newValue['font-size'][device] = controlValue;
+			}
+		);
+
+		// Extend/Update the `val` object to include `newValue`'s new data as an object.
+		jQuery.extend( val, newValue );
+
+		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+		control.setting.set( val );
+
+	},
+
+	updateLineHeight : function () {
+
+		var control  = this,
+		    val      = control.setting._value,
+		    input    = control.container.find( '.typography-hidden-value' ),
+		    newValue = {
+			    'line-height' : {}
+		    };
+
+		control.container.find( '.control-wrap' ).each(
+			function () {
+				var controlValue = jQuery( this ).find( 'input' ).val();
+				var device       = jQuery( this ).find( 'input' ).data( 'device' );
+
+				newValue['line-height'][device] = controlValue;
 			}
 		);
 
