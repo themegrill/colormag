@@ -29,6 +29,13 @@ class ColorMag_Customizer {
 	public static $dependency_array = array();
 
 	/**
+	 * All groups parent-child relation array data.
+	 *
+	 * @var array
+	 */
+	public static $group_configs = array();
+
+	/**
 	 * Customizer setup constructor.
 	 *
 	 * ColorMag_Customizer constructor.
@@ -578,6 +585,25 @@ class ColorMag_Customizer {
 	 * @return void
 	 */
 	public function register_sub_control_setting( $config, $wp_customize ) {
+
+		$sub_control_name = $config['name'];
+
+		if ( isset( $wp_customize->get_control( $sub_control_name )->id ) ) {
+			return;
+		}
+
+		$parent = $config['parent'];
+		$tab    = $config['tab'];
+
+		if ( empty( self::$group_configs[ $parent ] ) ) {
+			self::$group_configs[ $parent ] = array();
+		}
+
+		if ( array_key_exists( 'tab', $config ) ) {
+			self::$group_configs[ $parent ]['tabs'][ $tab ][] = $config;
+		} else {
+			self::$group_configs[ $parent ][] = $config;
+		}
 
 	}
 
