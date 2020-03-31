@@ -483,6 +483,7 @@ class ColorMag_Customizer {
 			'transport'            => null,
 			'default'              => null,
 			'selector'             => null,
+			'colormag_fields'      => array(),
 		);
 
 		return apply_filters( 'colormag_customizer_default_configuration', $default_configuration );

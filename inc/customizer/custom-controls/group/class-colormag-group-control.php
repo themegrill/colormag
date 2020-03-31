@@ -29,6 +29,27 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 	public $type = 'colormag-group';
 
 	/**
+	 * The control name.
+	 *
+	 * @var string
+	 */
+	public $name = '';
+
+	/**
+	 * The control tab value.
+	 *
+	 * @var string
+	 */
+	public $tab = '';
+
+	/**
+	 * The fields for group.
+	 *
+	 * @var string
+	 */
+	public $colormag_fields = '';
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -47,6 +68,25 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+
+		$this->json['name'] = $this->name;
+		$config             = array();
+
+		if ( isset( ColorMag_Customizer::$group_configs[ $this->name ]['tabs'] ) ) {
+
+			$tab = array_keys( ColorMag_Customizer::$group_configs[ $this->name ]['tabs'] );
+
+			foreach ( $tab as $key => $value ) {
+				$config['tabs'][ $value ] = wp_list_sort( ColorMag_Customizer::$group_configs[ $this->name ]['tabs'][ $value ], 'priority' );
+			}
+		} else {
+
+			if ( isset( ColorMag_Customizer::$group_configs[ $this->name ] ) ) {
+				$config = wp_list_sort( ColorMag_Customizer::$group_configs[ $this->name ], 'priority' );
+			}
+		}
+
+		$this->json['colormag_fields'] = $config;
 
 	}
 
@@ -71,6 +111,11 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 			<# if ( data.description ) { #>
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
+
+			<span class="dashicons dashicons-edit" data-control="{{ data.name }}"></span>
+		</div>
+
+		<div class="colormag-field-settings-wrap">
 		</div>
 
 		<?php
