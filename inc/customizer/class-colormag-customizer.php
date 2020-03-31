@@ -672,6 +672,10 @@ class ColorMag_Customizer {
 		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : ColorMag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
 		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
 
+		if ( 'colormag-group' === $config['control'] ) {
+			$sanitize_callback = false;
+		}
+
 		$wp_customize->add_setting(
 			$config['name'],
 			array(
