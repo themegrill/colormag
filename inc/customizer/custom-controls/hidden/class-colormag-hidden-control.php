@@ -64,8 +64,8 @@ class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control
 		?>
 
 		<input type='hidden'
-		       class='hidden-field-{{ data.settings.name }}'
-		       data-name='{{ data.settings.name }}'
+		       class='hidden-field-{{ data.settings.default }}'
+		       data-name='{{ data.settings.default }}'
 		       value='{{ data.value }}'
 		>
 

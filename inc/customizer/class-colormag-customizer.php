@@ -615,6 +615,47 @@ class ColorMag_Customizer {
 			self::$group_configs[ $parent ][] = $config;
 		}
 
+		// For adding settings.
+		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : ColorMag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
+		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
+		$customize_config  = array(
+			'name'              => $sub_control_name,
+			'datastore_type'    => 'theme_mod',
+			'control'           => 'colormag-hidden',
+			'section'           => $config['section'],
+			'default'           => $config['default'],
+			'transport'         => $transport,
+			'sanitize_callback' => $sanitize_callback,
+		);
+
+		$wp_customize->add_setting(
+			$customize_config['name'],
+			array(
+				'default'           => $customize_config['default'],
+				'type'              => $customize_config['datastore_type'],
+				'transport'         => $customize_config['transport'],
+				'sanitize_callback' => $customize_config['sanitize_callback'],
+			)
+		);
+
+		// For adding controls.
+		$control_type = ColorMag_Customize_Base_Control::get_control_instance( $customize_config['control'] );
+
+		if ( false !== $control_type ) {
+			$wp_customize->add_control(
+				new $control_type(
+					$wp_customize,
+					$customize_config['name'],
+					$customize_config
+				)
+			);
+		} else {
+			$wp_customize->add_control(
+				$customize_config['name'],
+				$customize_config
+			);
+		}
+
 	}
 
 	/**
