@@ -50,6 +50,28 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 	public $colormag_fields = '';
 
 	/**
+	 * Enqueue control related scripts/styles.
+	 */
+	public function enqueue() {
+
+		parent::enqueue();
+
+		$tmpl = '<div class="colormag-field-settings-modal">';
+		$tmpl .= '<ul class="colormag-fields-wrap">';
+		$tmpl .= '</ul>';
+		$tmpl .= '</div>';
+
+		wp_localize_script(
+			'colormag-customize-controls',
+			'ColorMagCustomizerControlGroup',
+			array(
+				'group_modal_tmpl' => $tmpl,
+			)
+		);
+
+	}
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -112,7 +134,8 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 
-			<span class="colormag-group-toggle-icon dashicons <# if ( data.description ) { #>toggle-description<# } #>" data-control="{{ data.name }}"></span>
+			<span class="colormag-group-toggle-icon dashicons <# if ( data.description ) { #>toggle-description<# } #>"
+			      data-control="{{ data.name }}"></span>
 		</div>
 
 		<div class="colormag-field-settings-wrap">

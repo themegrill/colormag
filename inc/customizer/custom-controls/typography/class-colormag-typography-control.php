@@ -40,6 +40,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	public function enqueue() {
 
+		parent::enqueue();
+
 		$standard_fonts   = $this->get_system_fonts();
 		$google_fonts     = $this->get_google_fonts();
 		$custom_fonts     = $this->get_custom_fonts();
