@@ -63,15 +63,11 @@ class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control
 	protected function content_template() {
 		?>
 
-		<div class="customizer-text">
-			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
-			<# } #>
-
-			<# if ( data.description ) { #>
-			<span class="description customize-control-description">{{{ data.description }}}</span>
-			<# } #>
-		</div>
+		<input type='hidden'
+		       class='hidden-field-{{ data.settings.name }}'
+		       data-name='{{ data.settings.name }}'
+		       value='{{ data.value }}'
+		>
 
 		<?php
 	}
