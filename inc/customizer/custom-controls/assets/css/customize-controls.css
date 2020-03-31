@@ -67,18 +67,6 @@
   line-height: 2.54545455;
 }
 /**
- * Divider control CSS.
- */
-
-.customize-control-colormag-divider hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
-  top: 30px;
-}
-/**
  * Custom control CSS.
  */
 
@@ -95,6 +83,18 @@
   text-decoration: none;
 }
 /**
+ * Divider control CSS.
+ */
+
+.customize-control-colormag-divider hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
+  top: 30px;
+}
+/**
  * Editor control CSS.
  */
 
@@ -104,6 +104,33 @@
 /**
  * Group control CSS.
  */
+
+.customize-control-colormag-group .colormag-group-toggle-icon {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  font-size: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  padding: 4px;
+  color: #289dcc;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.customize-control-colormag-group .colormag-group-toggle-icon:before {
+  content: "\f464";
+}
+
+.customize-control-colormag-group .colormag-group-toggle-icon.open:before {
+  content: "\f158";
+}
+
+.customize-control-colormag-group .colormag-group-toggle-icon.toggle-description {
+  right: 25px;
+}
 /**
  * Heading control CSS.
  */

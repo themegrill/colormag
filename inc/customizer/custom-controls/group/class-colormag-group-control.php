@@ -112,7 +112,7 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 
-			<span class="dashicons dashicons-edit" data-control="{{ data.name }}"></span>
+			<span class="colormag-group-toggle-icon dashicons <# if ( data.description ) { #>toggle-description<# } #>" data-control="{{ data.name }}"></span>
 		</div>
 
 		<div class="colormag-field-settings-wrap">

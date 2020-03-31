@@ -329,17 +329,23 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor['colormag-group'] = wp.customize.Control.extend( {
+(
+	function ( $ ) {
 
-	ready : function () {
+		wp.customize.controlConstructor['colormag-group'] = wp.customize.Control.extend( {
 
-		'use strict';
+			ready : function () {
 
-		var control = this;
+				'use strict';
+
+				var control = this;
+
+			}
+
+		} );
 
 	}
-
-} );
+)( jQuery );
 
 /**
  * Radio image control JS to handle the toggle of radio images.
