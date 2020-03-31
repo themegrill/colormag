@@ -125,17 +125,20 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 	protected function content_template() {
 		?>
 
-		<div class="customizer-text">
-			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
-			<# } #>
+		<div class="colormag-group-wrap">
+			<div class="customizer-text">
+				<# if ( data.label ) { #>
+				<span class="customize-control-title">{{{ data.label }}}</span>
+				<# } #>
 
-			<# if ( data.description ) { #>
-			<span class="description customize-control-description">{{{ data.description }}}</span>
-			<# } #>
+				<# if ( data.description ) { #>
+				<span class="description customize-control-description">{{{ data.description }}}</span>
+				<# } #>
 
-			<span class="colormag-group-toggle-icon dashicons <# if ( data.description ) { #>toggle-description<# } #>"
-			      data-control="{{ data.name }}"></span>
+				<span
+					class="colormag-group-toggle-icon dashicons <# if ( data.description ) { #>toggle-description<# } #>"
+					data-control="{{ data.name }}"></span>
+			</div>
 		</div>
 
 		<div class="colormag-field-settings-wrap">

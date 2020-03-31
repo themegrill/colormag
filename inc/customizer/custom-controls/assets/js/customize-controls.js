@@ -180,30 +180,6 @@
 )( jQuery );
 
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Color picker control JS to handle color picker rendering within customize control.
  *
  * File `color.js`.
@@ -245,13 +221,13 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 )( jQuery );
 
 /**
- * Dropdown categories control JS to handle the dropdown categories customize control.
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
  *
- * File `dropdown-categorie.js`.
+ * File `buttonset.js`.
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
 
 	ready : function () {
 
@@ -260,7 +236,7 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 		var control = this;
 
 		// Change the value.
-		this.container.on( 'change', 'select', function () {
+		this.container.on( 'click', 'input', function () {
 			control.setting.set( jQuery( this ).val() );
 		} );
 
@@ -323,6 +299,30 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 } );
 
 /**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Group control JS to handle the group customize option.
  *
  * File `group.js`.
@@ -339,6 +339,47 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				'use strict';
 
 				var control = this;
+
+				control.registerToggleEvents();
+
+			},
+
+			registerToggleEvents : function () {
+
+				var control = this;
+
+				/* Close popup when click outside on customize sidebar area */
+				$( '.wp-full-overlay-sidebar-content' ).click(
+					function ( e ) {
+						if ( ! $( e.target ).closest( '.colormag-field-settings-modal' ).length ) {
+							$( '.colormag-group-toggle-icon.open' ).trigger( 'click' );
+						}
+					}
+				);
+
+				control.container.on(
+					'click',
+					'.customizer-text .colormag-group-toggle-icon',
+					function ( e ) {
+
+						e.preventDefault();
+						e.stopPropagation();
+
+					}
+				);
+
+				control.container.on(
+					'click',
+					'.colormag-group-wrap > .customizer-text',
+					function ( e ) {
+
+						e.preventDefault();
+						e.stopPropagation();
+
+						$( this ).find( '.colormag-group-toggle-icon' ).trigger( 'click' );
+
+					}
+				);
 
 			}
 
