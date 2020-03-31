@@ -56,6 +56,32 @@
 								get_open_popup.trigger( 'click' );
 							}
 
+							if ( is_loaded ) {
+								parent_wrap.find( '.colormag-field-settings-modal' ).show();
+							} else {
+
+								var fields     = control.params.colormag_fields,
+								    modal_wrap = $( ColorMagCustomizerControlGroup.group_modal_tmpl ),
+								    device     = jQuery( '#customize-footer-actions .active' ).attr( 'data-device' );
+
+								parent_wrap.find( '.colormag-field-settings-wrap' ).append( modal_wrap );
+								parent_wrap.find( '.colormag-fields-wrap' ).attr( 'data-control', control.params.name );
+								control.colormag_render_field( parent_wrap, fields, control );
+								parent_wrap.find( '.colormag-field-settings-modal' ).show();
+
+								if ( 'mobile' == device ) {
+									$( '.control-wrap.mobile' ).addClass( 'active' );
+									$( '.responsive-switchers .preview-mobile' ).addClass( 'active' );
+								} else if ( 'tablet' == device ) {
+									$( '.control-wrap.tablet' ).addClass( 'active' );
+									$( '.responsive-switchers .preview-tablet' ).addClass( 'active' );
+								} else {
+									$( '.control-wrap.desktop' ).addClass( 'active' );
+									$( '.responsive-switchers .preview-desktop' ).addClass( 'active' );
+								}
+
+							}
+
 						}
 
 						$this.toggleClass( 'open' );
@@ -75,6 +101,12 @@
 
 					}
 				);
+
+			},
+
+			colormag_render_field : function ( wrap, fields, control_element ) {
+
+				wrap.find( '.colormag-field-settings-modal' ).data( 'loaded', true );
 
 			}
 
