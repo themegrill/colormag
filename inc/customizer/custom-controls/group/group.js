@@ -35,11 +35,30 @@
 
 				control.container.on(
 					'click',
-					'.customizer-text .colormag-group-toggle-icon',
+					'.colormag-group-wrap .colormag-group-toggle-icon',
 					function ( e ) {
 
 						e.preventDefault();
 						e.stopPropagation();
+
+						var $this          = jQuery( this ),
+						    parent_wrap    = $this.closest( '.customize-control-colormag-group' ),
+						    is_loaded      = parent_wrap.find( '.colormag-field-settings-modal' ).data( 'loaded' ),
+						    parent_section = parent_wrap.parents( '.control-section' );
+
+						if ( $this.hasClass( 'open' ) ) {
+							parent_wrap.find( '.colormag-field-settings-modal' ).hide();
+						} else {
+
+							/* Close popup when another popup is clicked */
+							var get_open_popup = parent_section.find( '.colormag-group-toggle-icon.open' );
+							if ( get_open_popup.length > 0 ) {
+								get_open_popup.trigger( 'click' );
+							}
+
+						}
+
+						$this.toggleClass( 'open' );
 
 					}
 				);

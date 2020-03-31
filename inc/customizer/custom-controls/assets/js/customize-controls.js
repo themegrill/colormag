@@ -180,6 +180,30 @@
 )( jQuery );
 
 /**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Color picker control JS to handle color picker rendering within customize control.
  *
  * File `color.js`.
@@ -221,13 +245,98 @@
 )( jQuery );
 
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ * Group control JS to handle the group customize option.
  *
- * File `buttonset.js`.
+ * File `group.js`.
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+(
+	function ( $ ) {
+
+		wp.customize.controlConstructor['colormag-group'] = wp.customize.Control.extend( {
+
+			ready : function () {
+
+				'use strict';
+
+				var control = this;
+
+				control.registerToggleEvents();
+
+			},
+
+			registerToggleEvents : function () {
+
+				var control = this;
+
+				/* Close popup when click outside on customize sidebar area */
+				$( '.wp-full-overlay-sidebar-content' ).click(
+					function ( e ) {
+						if ( ! $( e.target ).closest( '.colormag-field-settings-modal' ).length ) {
+							$( '.colormag-group-toggle-icon.open' ).trigger( 'click' );
+						}
+					}
+				);
+
+				control.container.on(
+					'click',
+					'.colormag-group-wrap .colormag-group-toggle-icon',
+					function ( e ) {
+
+						e.preventDefault();
+						e.stopPropagation();
+
+						var $this          = jQuery( this ),
+						    parent_wrap    = $this.closest( '.customize-control-colormag-group' ),
+						    is_loaded      = parent_wrap.find( '.colormag-field-settings-modal' ).data( 'loaded' ),
+						    parent_section = parent_wrap.parents( '.control-section' );
+
+						if ( $this.hasClass( 'open' ) ) {
+							parent_wrap.find( '.colormag-field-settings-modal' ).hide();
+						} else {
+
+							/* Close popup when another popup is clicked */
+							var get_open_popup = parent_section.find( '.colormag-group-toggle-icon.open' );
+							if ( get_open_popup.length > 0 ) {
+								get_open_popup.trigger( 'click' );
+							}
+
+						}
+
+						$this.toggleClass( 'open' );
+
+					}
+				);
+
+				control.container.on(
+					'click',
+					'.colormag-group-wrap > .customizer-text',
+					function ( e ) {
+
+						e.preventDefault();
+						e.stopPropagation();
+
+						$( this ).find( '.colormag-group-toggle-icon' ).trigger( 'click' );
+
+					}
+				);
+
+			}
+
+		} );
+
+	}
+)( jQuery );
+
+/**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
 
 	ready : function () {
 
@@ -236,7 +345,7 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 		var control = this;
 
 		// Change the value.
-		this.container.on( 'click', 'input', function () {
+		this.container.on( 'change', 'select', function () {
 			control.setting.set( jQuery( this ).val() );
 		} );
 
@@ -297,96 +406,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 	}
 
 } );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
- * Group control JS to handle the group customize option.
- *
- * File `group.js`.
- *
- * @package ColorMag
- */
-(
-	function ( $ ) {
-
-		wp.customize.controlConstructor['colormag-group'] = wp.customize.Control.extend( {
-
-			ready : function () {
-
-				'use strict';
-
-				var control = this;
-
-				control.registerToggleEvents();
-
-			},
-
-			registerToggleEvents : function () {
-
-				var control = this;
-
-				/* Close popup when click outside on customize sidebar area */
-				$( '.wp-full-overlay-sidebar-content' ).click(
-					function ( e ) {
-						if ( ! $( e.target ).closest( '.colormag-field-settings-modal' ).length ) {
-							$( '.colormag-group-toggle-icon.open' ).trigger( 'click' );
-						}
-					}
-				);
-
-				control.container.on(
-					'click',
-					'.customizer-text .colormag-group-toggle-icon',
-					function ( e ) {
-
-						e.preventDefault();
-						e.stopPropagation();
-
-					}
-				);
-
-				control.container.on(
-					'click',
-					'.colormag-group-wrap > .customizer-text',
-					function ( e ) {
-
-						e.preventDefault();
-						e.stopPropagation();
-
-						$( this ).find( '.colormag-group-toggle-icon' ).trigger( 'click' );
-
-					}
-				);
-
-			}
-
-		} );
-
-	}
-)( jQuery );
 
 /**
  * Radio image control JS to handle the toggle of radio images.
