@@ -12,7 +12,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		'use strict';
 
 		var control = this;
-		var value   = control.setting._value;
 
 		// On customizer load, render the available font options.
 		control.renderFontSelector();

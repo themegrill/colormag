@@ -323,6 +323,25 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 } );
 
 /**
+ * Group control JS to handle the group customize option.
+ *
+ * File `group.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-group'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+	}
+
+} );
+
+/**
  * Radio image control JS to handle the toggle of radio images.
  *
  * File `radio-image.js`.
@@ -434,7 +453,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 		'use strict';
 
 		var control = this;
-		var value   = control.setting._value;
 
 		// On customizer load, render the available font options.
 		control.renderFontSelector();

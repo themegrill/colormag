@@ -67,6 +67,18 @@
   line-height: 2.54545455;
 }
 /**
+ * Divider control CSS.
+ */
+
+.customize-control-colormag-divider hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
+  top: 30px;
+}
+/**
  * Custom control CSS.
  */
 
@@ -83,24 +95,15 @@
   text-decoration: none;
 }
 /**
- * Divider control CSS.
- */
-
-.customize-control-colormag-divider hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
-  top: 30px;
-}
-/**
  * Editor control CSS.
  */
 
 .customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
   width: 100%;
 }
+/**
+ * Group control CSS.
+ */
 /**
  * Heading control CSS.
  */
