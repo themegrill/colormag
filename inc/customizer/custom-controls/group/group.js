@@ -138,7 +138,23 @@
 						fields.tabs,
 						function ( fields_data, key ) {
 
+							var result = control.generateFieldHtml( fields_data, field_values );
+
 							fields_html += '<div id="tab-' + key + '" class="tab">';
+							fields_html += result.html;
+
+							_.each(
+								result.controls,
+								function ( control_value, control_key ) {
+									control_types.push(
+										{
+											key   : control_value.key,
+											value : control_value.value,
+											name  : control_value.name
+										}
+									);
+								}
+							);
 
 							fields_html += '</div>';
 
@@ -147,6 +163,31 @@
 					fields_html += '</div>';
 
 					fields_html += '</div>';
+
+					colormag_field_wrap.html( fields_html );
+
+					$( '#' + control_element.params.name + '-tabs' ).tabs();
+
+				} else {
+
+					var result = control.generateFieldHtml( fields, field_values );
+
+					fields_html += result.html;
+
+					_.each(
+						result.controls,
+						function ( control_value, control_key ) {
+							control_types.push(
+								{
+									key   : control_value.key,
+									value : control_value.value,
+									name  : control_value.name
+								}
+							);
+						}
+					);
+
+					colormag_field_wrap.html( fields_html );
 
 				}
 
@@ -163,6 +204,71 @@
 				}
 
 				return true;
+
+			},
+
+			generateFieldHtml : function ( fields_data, field_values ) {
+
+				var fields_html   = '';
+				var control_types = [];
+
+				_.each(
+					fields_data,
+					function ( attr, index ) {
+
+						var new_value   = (
+							    wp.customize.control( attr.name ) ? wp.customize.control( attr.name ).params.value : ''
+						    ),
+						    control     = attr.control,
+						    template_id = 'customize-control-' + control + '-content',
+						    template    = wp.template( template_id ),
+						    value       = new_value || attr.default,
+						    dataAtts    = '',
+						    input_attrs = '';
+
+						attr.value = value;
+						attr.title = attr.label;
+
+						// Data attributes.
+						_.each(
+							attr.data_attrs,
+							function ( value, name ) {
+								dataAtts += ' data-' + name + ' ="' + value + '"';
+							}
+						);
+
+						// Input attributes.
+						_.each(
+							attr.input_attrs,
+							function ( value, name ) {
+								input_attrs += name + ' ="' + value + '"';
+							}
+						);
+
+						attr.dataAttrs  = dataAtts;
+						attr.inputAttrs = input_attrs;
+
+						control_types.push(
+							{
+								key   : control,
+								value : value,
+								name  : attr.name
+							}
+						);
+
+						fields_html += "<li id='customize-control-" + attr.name + "' class='customize-control customize-control-" + attr.control + "' >";
+						fields_html += template( attr );
+						fields_html += '</li>';
+
+					}
+				);
+
+				var result = new Object();
+
+				result.controls = control_types;
+				result.html     = fields_html;
+
+				return result;
 
 			}
 

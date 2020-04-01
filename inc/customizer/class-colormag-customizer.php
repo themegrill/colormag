@@ -604,7 +604,7 @@ class ColorMag_Customizer {
 		}
 
 		$parent = $config['parent'];
-		$tab    = $config['tab'];
+		$tab    = ( isset( $config['tab'] ) ) ? $config['tab'] : '';
 
 		if ( empty( self::$group_configs[ $parent ] ) ) {
 			self::$group_configs[ $parent ] = array();
