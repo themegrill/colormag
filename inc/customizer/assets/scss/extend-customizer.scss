@@ -89,6 +89,16 @@
 	}
 }
 
+#customize-theme-controls {
+
+	.control-section {
+
+		&.open {
+			height: 100%;
+		}
+	}
+}
+
 #accordion-section-colormag_upsell_section {
 
 	h3 {

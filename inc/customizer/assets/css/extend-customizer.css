@@ -73,6 +73,10 @@
 	width: 100%;
 }
 
+#customize-theme-controls .control-section.open {
+	height: 100%;
+}
+
 #accordion-section-colormag_upsell_section h3.accordion-section-title {
 	background-color: #289DCC !important;
 	border-left-color: #0073aa;
