@@ -692,7 +692,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				    controlContainer = control.container.find( '#customize-control-' + control_name );
 
 				// Hide unnecessary controls if the value doesn't have an image.
-				if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
+				if ( _.isUndefined( control_atts['value']['background-image'] ) || '' === control_atts['value']['background-image'] ) {
 					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
 					controlContainer.find( '.customize-control-content > .background-position' ).hide();
 					controlContainer.find( '.customize-control-content > .background-size' ).hide();
@@ -907,30 +907,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 )( jQuery );
 
 /**
- * Radio image control JS to handle the toggle of radio images.
- *
- * File `radio-image.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Slider control JS to handle the range of the inputs.
  *
  * File `slider.js`.
@@ -978,26 +954,23 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 } );
 
 /**
- * Switch toggle control JS to handle the toggle of custom customize controls.
+ * Radio image control JS to handle the toggle of radio images.
  *
- * File `toggle.js`.
+ * File `radio-image.js`.
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
 
 	ready : function () {
 
 		'use strict';
 
-		var control = this,
-		    value   = control.setting._value;
+		var control = this;
 
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
-
-			control.setting.set( value );
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
 		} );
 
 	}
@@ -1461,6 +1434,33 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
+
+	}
+
+} );
+
+/**
+ * Switch toggle control JS to handle the toggle of custom customize controls.
+ *
+ * File `toggle.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this,
+		    value   = control.setting._value;
+
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
+			control.setting.set( value );
+		} );
 
 	}
 

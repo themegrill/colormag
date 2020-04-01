@@ -368,7 +368,7 @@
 				    controlContainer = control.container.find( '#customize-control-' + control_name );
 
 				// Hide unnecessary controls if the value doesn't have an image.
-				if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
+				if ( _.isUndefined( control_atts['value']['background-image'] ) || '' === control_atts['value']['background-image'] ) {
 					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
 					controlContainer.find( '.customize-control-content > .background-position' ).hide();
 					controlContainer.find( '.customize-control-content > .background-size' ).hide();
