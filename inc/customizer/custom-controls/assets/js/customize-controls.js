@@ -530,6 +530,10 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 								control.initBackgroundControl( control_element, control_type, control_type.name );
 								break;
 
+							case 'colormag-typography':
+								control.initTypographyControl( control_element, control_type, control_type.name );
+								break;
+
 						}
 
 					}
@@ -828,6 +832,54 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 				var control = this,
 				    input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
+				    val     = JSON.parse( input.val() );
+
+				val[property] = value;
+
+				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+				name = $( element ).parents( '.customize-control' ).attr( 'id' );
+				name = name.replace( 'customize-control-', '' );
+
+				control.container.trigger(
+					'colormag_settings_changed',
+					[
+						control,
+						element,
+						val,
+						name
+					]
+				);
+
+			},
+
+			initTypographyControl : function ( control, control_atts, name ) {
+
+				var value            = control.setting._value,
+				    control_name     = control_atts.name,
+				    controlContainer = control.container.find( '#customize-control-' + control_name );
+
+				// Font style setting.
+				controlContainer.on( 'change', '.font-style select', function () {
+					control.saveTypographyValue( 'font-style', $( this ).val(), $( this ), name );
+				} );
+
+				// Text transform setting.
+				controlContainer.on( 'change', '.text-transform select', function () {
+					control.saveTypographyValue( 'text-transform', $( this ).val(), $( this ), name );
+				} );
+
+				// Text decoration setting.
+				controlContainer.on( 'change', '.text-decoration select', function () {
+					control.saveTypographyValue( 'text-decoration', $( this ).val(), $( this ), name );
+				} );
+
+			},
+
+			saveTypographyValue : function ( property, value, element, name ) {
+
+				var control = this,
+				    input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
 				    val     = JSON.parse( input.val() );
 
 				val[property] = value;
