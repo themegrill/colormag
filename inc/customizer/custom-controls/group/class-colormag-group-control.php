@@ -56,6 +56,9 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 
 		parent::enqueue();
 
+		// Enqueue jQuery UI tabs.
+		wp_enqueue_script( 'jquery-ui-tabs' );
+
 		$tmpl = '<div class="colormag-field-settings-modal">';
 		$tmpl .= '<ul class="colormag-fields-wrap">';
 		$tmpl .= '</ul>';

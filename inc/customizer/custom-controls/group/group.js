@@ -106,7 +106,63 @@
 
 			colormag_render_field : function ( wrap, fields, control_element ) {
 
+				var control             = this;
+				var colormag_field_wrap = wrap.find( '.colormag-fields-wrap' );
+				var fields_html         = '';
+				var control_types       = [];
+				var field_values        = control.isJSONString( control_element.params.value ) ? JSON.parse( control_element.params.value ) : {};
+
+				if ( 'undefined' != typeof fields.tabs ) {
+
+					var counter = 0;
+					fields_html += '<div id="' + control_element.params.name + '-tabs" class="colormag-group-tabs">';
+
+					fields_html += '<ul class="colormag-group-list">';
+					_.each(
+						fields.tabs,
+						function ( value, key ) {
+							var li_class = '';
+
+							if ( 0 === counter ) {
+								li_class = "active";
+							}
+
+							fields_html += '<li class="' + li_class + '"><a href="#tab-' + key + '"><span>' + key + '</span></a></li>';
+							counter ++;
+						}
+					);
+					fields_html += '</ul>';
+
+					fields_html += '<div class="colormag-tab-content" >';
+					_.each(
+						fields.tabs,
+						function ( fields_data, key ) {
+
+							fields_html += '<div id="tab-' + key + '" class="tab">';
+
+							fields_html += '</div>';
+
+						}
+					);
+					fields_html += '</div>';
+
+					fields_html += '</div>';
+
+				}
+
 				wrap.find( '.colormag-field-settings-modal' ).data( 'loaded', true );
+
+			},
+
+			isJSONString : function ( string ) {
+
+				try {
+					JSON.parse( string );
+				} catch ( e ) {
+					return false;
+				}
+
+				return true;
 
 			}
 
