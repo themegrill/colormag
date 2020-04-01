@@ -199,7 +199,11 @@
 						switch ( control_type.key ) {
 
 							case 'colormag-color':
-								control.initColor( colormag_field_wrap, control_element, control_type.name );
+								control.initColorControl( colormag_field_wrap, control_element, control_type.name );
+								break;
+
+							case 'colormag-background':
+								control.initBackgroundControl( control_element, control_type, control_type.name );
 								break;
 
 						}
@@ -298,19 +302,19 @@
 
 			},
 
-			initColor : function ( wrap, control_elem, name ) {
+			initColorControl : function ( wrap, control_elem, name ) {
 
-				var control = this;
-				var picker  = wrap.find( '.customize-control-colormag-color .colormag-color-picker-alpha' );
+				var control     = this;
+				var colorpicker = wrap.find( '.customize-control-colormag-color .colormag-color-picker-alpha' );
 
-				picker.wpColorPicker(
+				colorpicker.wpColorPicker(
 					{
 						change : function ( event, ui ) {
 
 							if ( 'undefined' != typeof event.originalEvent || 'undefined' != typeof ui.color._alpha ) {
-								var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0],
-								    name    = $( element ).parents( '.customize-control' ).attr( 'id' ),
-								    name    = name.replace( 'customize-control-', '' );
+								var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
+								name        = $( element ).parents( '.customize-control' ).attr( 'id' );
+								name        = name.replace( 'customize-control-', '' );
 
 								$( element ).val( ui.color.toString() );
 
@@ -329,9 +333,9 @@
 
 						clear : function ( event ) {
 
-							var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0],
-							    name    = $( element ).parents( '.customize-control' ).attr( 'id' ),
-							    name    = name.replace( 'customize-control-', '' );
+							var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
+							name        = $( element ).parents( '.customize-control' ).attr( 'id' );
+							name        = name.replace( 'customize-control-', '' );
 
 							$( element ).val( '' );
 
@@ -350,6 +354,175 @@
 						}
 					}
 				);
+			},
+
+			initBackgroundControl : function ( control, control_atts, name ) {
+
+				var value            = control.setting._value,
+				    control_name     = control_atts.name,
+				    colorpicker      = control.container.find( '.colormag-color-picker-alpha' ),
+				    controlContainer = control.container.find( '#customize-control-' + control_name );
+
+				// Hide unnecessary controls if the value doesn't have an image.
+				if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
+					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
+					controlContainer.find( '.customize-control-content > .background-position' ).hide();
+					controlContainer.find( '.customize-control-content > .background-size' ).hide();
+					controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
+				}
+
+				// Background color setting.
+				colorpicker.wpColorPicker(
+					{
+						change : function () {
+
+							if ( $( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+								var $this = $( this );
+
+								setTimeout(
+									function () {
+										control.saveBackgroundValue( 'background-color', colorpicker.val(), $this, name );
+									},
+									100
+								);
+							}
+
+						},
+
+						clear : function ( event ) {
+
+							var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
+
+							if ( element ) {
+								control.saveBackgroundValue( 'background-color', '', $( element ), name );
+							}
+
+							wp.customize.previewer.refresh();
+
+						}
+					}
+				);
+
+				// Background image setting..
+				controlContainer.on( 'click', '.background-image-upload-button, .thumbnail-image img', function ( e ) {
+					var upload_img_btn = jQuery( this );
+					var image          = wp.media( { multiple : false } ).open().on( 'select', function () {
+
+						// This will return the selected image from the Media Uploader, the result is an object.
+						var uploadedImage = image.state().get( 'selection' ).first(),
+						    previewImage  = uploadedImage.toJSON().sizes.full.url,
+						    imageUrl,
+						    imageID,
+						    imageWidth,
+						    imageHeight,
+						    preview,
+						    removeButton;
+
+						if ( ! _.isUndefined( uploadedImage.toJSON().sizes.medium ) ) {
+							previewImage = uploadedImage.toJSON().sizes.medium.url;
+						} else if ( ! _.isUndefined( uploadedImage.toJSON().sizes.thumbnail ) ) {
+							previewImage = uploadedImage.toJSON().sizes.thumbnail.url;
+						}
+
+						imageUrl    = uploadedImage.toJSON().sizes.full.url;
+						imageID     = uploadedImage.toJSON().id;
+						imageWidth  = uploadedImage.toJSON().width;
+						imageHeight = uploadedImage.toJSON().height;
+
+						// Show extra controls if the value has an image.
+						if ( '' !== imageUrl ) {
+							controlContainer.find( '.customize-control-content > .background-repeat, .customize-control-content > .background-position, .customize-control-content > .background-size, .customize-control-content > .background-attachment' ).show();
+						}
+
+						control.saveBackgroundValue( 'background-image', imageUrl, upload_img_btn, name );
+						preview      = controlContainer.find( '.placeholder, .thumbnail' );
+						removeButton = controlContainer.find( '.background-image-upload-remove-button' );
+
+						if ( preview.length ) {
+							preview.removeClass().addClass( 'thumbnail thumbnail-image' ).html( '<img src="' + previewImage + '" alt="" />' );
+						}
+
+						if ( removeButton.length ) {
+							removeButton.show();
+						}
+					} );
+
+					e.preventDefault();
+				} );
+
+				controlContainer.on( 'click', '.background-image-upload-remove-button', function ( e ) {
+
+					var preview,
+					    removeButton;
+
+					e.preventDefault();
+
+					control.saveBackgroundValue( 'background-image', '', jQuery( this ) );
+
+					preview      = controlContainer.find( '.placeholder, .thumbnail' );
+					removeButton = controlContainer.find( '.background-image-upload-remove-button' );
+
+					// Hide unnecessary controls.
+					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
+					controlContainer.find( '.customize-control-content > .background-position' ).hide();
+					controlContainer.find( '.customize-control-content > .background-size' ).hide();
+					controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
+
+					if ( preview.length ) {
+						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
+					}
+
+					if ( removeButton.length ) {
+						removeButton.hide();
+					}
+
+				} );
+
+				// Background repeat setting.
+				controlContainer.on( 'change', '.background-repeat select', function () {
+					control.saveBackgroundValue( 'background-repeat', $( this ).val(), $( this ), name );
+				} );
+
+				// Background position setting.
+				controlContainer.on( 'change', '.background-position select', function () {
+					control.saveBackgroundValue( 'background-position', $( this ).val(), $( this ), name );
+				} );
+
+				// Background size setting.
+				controlContainer.on( 'change', '.background-size select', function () {
+					control.saveBackgroundValue( 'background-size', $( this ).val(), $( this ), name );
+				} );
+
+				// Background attachment setting.
+				controlContainer.on( 'change', '.background-attachment select', function () {
+					control.saveBackgroundValue( 'background-attachment', $( this ).val(), $( this ), name );
+				} );
+
+			},
+
+			saveBackgroundValue : function ( property, value, element, name ) {
+
+				var control = this,
+				    input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
+				    val     = JSON.parse( input.val() );
+
+				val[property] = value;
+
+				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+				name = $( element ).parents( '.customize-control' ).attr( 'id' );
+				name = name.replace( 'customize-control-', '' );
+
+				control.container.trigger(
+					'colormag_settings_changed',
+					[
+						control,
+						element,
+						val,
+						name
+					]
+				);
+
 			},
 
 		} );
