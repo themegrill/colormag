@@ -17,6 +17,7 @@
 				var control = this;
 
 				control.registerToggleEvents();
+				this.container.on( 'colormag_settings_changed', control.onOptionChange );
 
 			},
 
@@ -41,7 +42,7 @@
 						e.preventDefault();
 						e.stopPropagation();
 
-						var $this          = jQuery( this ),
+						var $this          = $( this ),
 						    parent_wrap    = $this.closest( '.customize-control-colormag-group' ),
 						    is_loaded      = parent_wrap.find( '.colormag-field-settings-modal' ).data( 'loaded' ),
 						    parent_section = parent_wrap.parents( '.control-section' );
@@ -62,7 +63,7 @@
 
 								var fields     = control.params.colormag_fields,
 								    modal_wrap = $( ColorMagCustomizerControlGroup.group_modal_tmpl ),
-								    device     = jQuery( '#customize-footer-actions .active' ).attr( 'data-device' );
+								    device     = $( '#customize-footer-actions .active' ).attr( 'data-device' );
 
 								parent_wrap.find( '.colormag-field-settings-wrap' ).append( modal_wrap );
 								parent_wrap.find( '.colormag-fields-wrap' ).attr( 'data-control', control.params.name );
@@ -191,6 +192,21 @@
 
 				}
 
+				_.each(
+					control_types,
+					function ( control_type, index ) {
+
+						switch ( control_type.key ) {
+
+							case 'colormag-color':
+								control.initColor( colormag_field_wrap, control_element, control_type.name );
+								break;
+
+						}
+
+					}
+				);
+
 				wrap.find( '.colormag-field-settings-modal' ).data( 'loaded', true );
 
 			},
@@ -270,7 +286,71 @@
 
 				return result;
 
-			}
+			},
+
+			onOptionChange : function ( e, control, element, value, name ) {
+
+				var control_id = $( '.hidden-field-' + name );
+				control_id.val( value );
+
+				var sub_control = wp.customize.control( name );
+				sub_control.setting.set( value );
+
+			},
+
+			initColor : function ( wrap, control_elem, name ) {
+
+				var control = this;
+				var picker  = wrap.find( '.customize-control-colormag-color .colormag-color-picker-alpha' );
+
+				picker.wpColorPicker(
+					{
+						change : function ( event, ui ) {
+
+							if ( 'undefined' != typeof event.originalEvent || 'undefined' != typeof ui.color._alpha ) {
+								var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0],
+								    name    = $( element ).parents( '.customize-control' ).attr( 'id' ),
+								    name    = name.replace( 'customize-control-', '' );
+
+								$( element ).val( ui.color.toString() );
+
+								control.container.trigger(
+									'colormag_settings_changed',
+									[
+										control,
+										$( element ),
+										ui.color.toString(),
+										name
+									]
+								);
+							}
+
+						},
+
+						clear : function ( event ) {
+
+							var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0],
+							    name    = $( element ).parents( '.customize-control' ).attr( 'id' ),
+							    name    = name.replace( 'customize-control-', '' );
+
+							$( element ).val( '' );
+
+							control.container.trigger(
+								'colormag_settings_changed',
+								[
+									control,
+									$( element ),
+									'',
+									name
+								]
+							);
+
+							wp.customize.previewer.refresh();
+
+						}
+					}
+				);
+			},
 
 		} );
 
