@@ -59,14 +59,14 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			$localize_scripts['custom']           = $custom_fonts;
 		}
 
-		// Loading available onts.
+		// Loading available fonts.
 		wp_localize_script(
 			'colormag-customize-controls',
 			'ColorMagCustomizerControlTypography',
 			$localize_scripts
 		);
 
-		// Loading Google Font Subsets.
+		// Loading Google font subsets.
 		wp_localize_script(
 			'colormag-customize-controls',
 			'ColorMagCustomizerControlTypographySubsets',
