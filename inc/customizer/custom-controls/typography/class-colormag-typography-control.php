@@ -264,7 +264,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<div class="font-family">
 				<span class="customize-control-title"><?php esc_html_e( 'Family', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
-					<select {{{ data.inputAttrs }}} id="colormag-font-family-{{{ data.id }}}"></select>
+					<select {{{ data.inputAttrs }}} id="colormag-font-family-{{{ data.id || data.name }}}"></select>
 				</div>
 			</div>
 
@@ -272,7 +272,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<div class="font-weight">
 				<span class="customize-control-title"><?php esc_html_e( 'Weight', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
-					<select {{{ data.inputAttrs }}} id="colormag-font-weight-{{{ data.id }}}"></select>
+					<select {{{ data.inputAttrs }}} id="colormag-font-weight-{{{ data.id || data.name }}}"></select>
 				</div>
 			</div>
 			<# } #>
@@ -281,12 +281,10 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<div class="subsets">
 				<span class="customize-control-title"><?php esc_html_e( 'Subset(s)', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
-					<select {{{ data.inputAttrs }}} id="colormag-subsets-{{{ data.id }}}"
-					<# if ( _.isUndefined( data.choices['disable-multiple-variants'] ) || false ===
-					data.choices['disable-multiple-variants'] ) { #> multiple<# } #>>
-					<# _.each( data.value.subsets, function( subset ) { #>
-					<option value="{{ subset }}" selected="selected">{{ data.languages[ subset ] }}</option>
-					<# } ); #>
+					<select {{{ data.inputAttrs }}} id="colormag-subsets-{{{ data.id || data.name }}}" multiple>
+						<# _.each( data.value.subsets, function( subset ) { #>
+						<option value="{{ subset }}" selected="selected">{{ data.languages[ subset ] }}</option>
+						<# } ); #>
 					</select>
 				</div>
 			</div>
@@ -430,7 +428,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<div class="font-style">
 				<span class="customize-control-title"><?php esc_html_e( 'Style', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
-					<select {{{ data.inputAttrs }}} id="colormag-font-style-{{{ data.id }}}">
+					<select {{{ data.inputAttrs }}} id="colormag-font-style-{{{ data.id || data.name }}}">
 						<option value="normal"
 						<# if ( 'normal' === data.value['font-style'] ) { #> selected <# }
 						#>><?php esc_attr_e( 'Normal', 'colormag' ); ?></option>
@@ -455,7 +453,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<div class="text-transform">
 				<span class="customize-control-title"><?php esc_html_e( 'Transform', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
-					<select {{{ data.inputAttrs }}} id="colormag-text-transform-{{{ data.id }}}">
+					<select {{{ data.inputAttrs }}} id="colormag-text-transform-{{{ data.id || data.name }}}">
 						<option value="none"
 						<# if ( 'none' === data.value['text-transform'] ) { #> selected <# }
 						#>><?php esc_attr_e( 'None', 'colormag' ); ?></option>
@@ -483,7 +481,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<div class="text-decoration">
 				<span class="customize-control-title"><?php esc_html_e( 'Decoration', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
-					<select {{{ data.inputAttrs }}} id="colormag-text-decoration-{{{ data.id }}}">
+					<select {{{ data.inputAttrs }}} id="colormag-text-decoration-{{{ data.id || data.name }}}">
 						<option value="none"
 						<# if ( 'none' === data.value['text-decoration'] ) { #> selected <# }
 						#>><?php esc_attr_e( 'None', 'colormag' ); ?></option>

@@ -901,7 +901,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 					control.saveTypographyLineHeight( $( this ), name, control_atts );
 				} );
 
-				// Line height setting.
+				// Letter spacing setting.
 				controlContainer.on( 'change keyup paste input', '.letter-spacing input', function () {
 					control.saveTypographyLetterSpacing( $( this ), name, control_atts );
 				} );
@@ -936,7 +936,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				name = $( element ).parents( '.customize-control' ).attr( 'id' );
 				name = name.replace( 'customize-control-', '' );
 
-				controlContainer.trigger(
+				control.container.trigger(
 					'colormag_settings_changed',
 					[
 						control,
@@ -976,7 +976,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				name = $( element ).parents( '.customize-control' ).attr( 'id' );
 				name = name.replace( 'customize-control-', '' );
 
-				controlContainer.trigger(
+				control.container.trigger(
 					'colormag_settings_changed',
 					[
 						control,

@@ -577,7 +577,7 @@
 					control.saveTypographyLineHeight( $( this ), name, control_atts );
 				} );
 
-				// Line height setting.
+				// Letter spacing setting.
 				controlContainer.on( 'change keyup paste input', '.letter-spacing input', function () {
 					control.saveTypographyLetterSpacing( $( this ), name, control_atts );
 				} );
@@ -612,7 +612,7 @@
 				name = $( element ).parents( '.customize-control' ).attr( 'id' );
 				name = name.replace( 'customize-control-', '' );
 
-				controlContainer.trigger(
+				control.container.trigger(
 					'colormag_settings_changed',
 					[
 						control,
@@ -652,7 +652,7 @@
 				name = $( element ).parents( '.customize-control' ).attr( 'id' );
 				name = name.replace( 'customize-control-', '' );
 
-				controlContainer.trigger(
+				control.container.trigger(
 					'colormag_settings_changed',
 					[
 						control,
