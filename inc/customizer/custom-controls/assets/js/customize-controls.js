@@ -394,15 +394,24 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 								control.colormag_render_field( parent_wrap, fields, control );
 								parent_wrap.find( '.colormag-field-settings-modal' ).show();
 
-								if ( 'mobile' == device ) {
+								if ( 'mobile' === device ) {
 									$( '.control-wrap.mobile' ).addClass( 'active' );
 									$( '.responsive-switchers .preview-mobile' ).addClass( 'active' );
-								} else if ( 'tablet' == device ) {
+
+									$( '.control-wrap.tablet, .control-wrap.desktop' ).removeClass( 'active' );
+									$( '.responsive-switchers .preview-tablet, .responsive-switchers .preview-desktop' ).removeClass( 'active' );
+								} else if ( 'tablet' === device ) {
 									$( '.control-wrap.tablet' ).addClass( 'active' );
 									$( '.responsive-switchers .preview-tablet' ).addClass( 'active' );
+
+									$( '.control-wrap.mobile, .control-wrap.desktop' ).removeClass( 'active' );
+									$( '.responsive-switchers .preview-mobile, .responsive-switchers .preview-desktop' ).removeClass( 'active' );
 								} else {
 									$( '.control-wrap.desktop' ).addClass( 'active' );
 									$( '.responsive-switchers .preview-desktop' ).addClass( 'active' );
+
+									$( '.control-wrap.mobile, .control-wrap.tablet' ).removeClass( 'active' );
+									$( '.responsive-switchers .preview-mobile, .responsive-switchers .preview-tablet' ).removeClass( 'active' );
 								}
 
 							}
