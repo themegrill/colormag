@@ -876,6 +876,9 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name );
 
+				// On customizer load, render the available font options.
+				control.renderTypographyFontSelector( $( this ), name, control_atts );
+
 				// Font style setting.
 				controlContainer.on( 'change', '.font-style select', function () {
 					control.saveTypographyValue( 'font-style', $( this ).val(), $( this ), name );
@@ -905,6 +908,123 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				controlContainer.on( 'change keyup paste input', '.letter-spacing input', function () {
 					control.saveTypographyLetterSpacing( $( this ), name, control_atts );
 				} );
+
+			},
+
+			renderTypographyFontSelector: function( element, name, control_atts ) {
+
+				var control       = this,
+				    selector      = control.selector + ' .font-family select',
+				    standardFonts = [],
+				    googleFonts   = [],
+				    customFonts   = [],
+				    value         = control_atts.value,
+				    fonts         = control.getTypographyFonts(),
+				    fontSelect;
+
+				// Format standard fonts as an array.
+				if ( ! _.isUndefined( fonts.standard ) ) {
+					_.each(
+						fonts.standard,
+						function ( font ) {
+							standardFonts.push(
+								{
+									id   : font.family.replace( /&quot;/g, '&#39' ),
+									text : font.label
+								}
+							);
+						}
+					);
+				}
+
+				// Format Google fonts as an array.
+				if ( ! _.isUndefined( fonts.google ) ) {
+					_.each(
+						fonts.google,
+						function ( font ) {
+							googleFonts.push(
+								{
+									id   : font.family,
+									text : font.label
+								}
+							);
+						}
+					);
+				}
+
+				// Combine fonts and build the final data.
+				data = [
+					{
+						text     : fonts.standardfontslabel,
+						children : standardFonts
+					},
+					{
+						text     : fonts.googlefontslabel,
+						children : googleFonts
+					}
+				];
+
+				// Format custom fonts as an array.
+				if ( ! _.isUndefined( fonts.custom ) ) {
+					_.each(
+						fonts.custom,
+						function ( font ) {
+							customFonts.push(
+								{
+									id   : font.family,
+									text : font.label
+								}
+							);
+						}
+					);
+
+					// Merge on `data` array.
+					data.push(
+						{
+							text     : fonts.customfontslabel,
+							children : customFonts
+						}
+					);
+				}
+
+				// Instantiate selectWoo with the data.
+				fontSelect = $( selector ).selectWoo(
+					{
+						data  : data,
+						width : '100%'
+					}
+				);
+
+				// Set the initial value.
+				if ( value['font-family'] ) {
+					fontSelect.val( value['font-family'].replace( /'/g, '"' ) ).trigger( 'change' );
+				}
+
+				// When the font option value changes.
+				fontSelect.on(
+					'change',
+					function () {
+
+						// Set the value.
+						control.saveTypographyValue( 'font-family', $( this ).val(), $( this ), name );
+
+					}
+				);
+
+			},
+
+			getTypographyFonts : function () {
+
+				var control = this;
+
+				if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+					return ColorMagCustomizerControlTypography;
+				}
+
+				return {
+					google   : [],
+					standard : []
+				};
 
 			},
 
