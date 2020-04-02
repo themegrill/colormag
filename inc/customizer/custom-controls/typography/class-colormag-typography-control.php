@@ -42,10 +42,11 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		parent::enqueue();
 
-		$standard_fonts   = $this->get_system_fonts();
-		$google_fonts     = $this->get_google_fonts();
-		$custom_fonts     = $this->get_custom_fonts();
-		$localize_scripts = array(
+		$standard_fonts      = $this->get_system_fonts();
+		$google_fonts        = $this->get_google_fonts();
+		$custom_fonts        = $this->get_custom_fonts();
+		$google_font_subsets = ColorMag_Fonts::get_google_font_subsets();
+		$localize_scripts    = array(
 			'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
 			'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
 			'standard'           => $standard_fonts,
@@ -58,10 +59,18 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			$localize_scripts['custom']           = $custom_fonts;
 		}
 
+		// Loading available onts.
 		wp_localize_script(
 			'colormag-customize-controls',
 			'ColorMagCustomizerControlTypography',
 			$localize_scripts
+		);
+
+		// Loading Google Font Subsets.
+		wp_localize_script(
+			'colormag-customize-controls',
+			'ColorMagCustomizerControlTypographySubsets',
+			$google_font_subsets
 		);
 
 	}

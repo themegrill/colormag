@@ -294,6 +294,12 @@
 							    'colormag-typography'
 						    ];
 
+						if ( (
+							     'colormag-typography' === attr.control
+						     ) && controlsType.includes( attr.control ) ) {
+							attr.languages = ColorMagCustomizerControlTypographySubsets;
+						}
+
 						if ( controlsType.includes( attr.control ) ) {
 							responsive_switchers = 'has-responsive-switchers';
 						}
@@ -556,6 +562,7 @@
 				// On customizer load, render the available font options.
 				control.renderTypographyFontSelector( $( this ), name, control_atts );
 				control.renderTypographyVariantSelector( $( this ), name, control_atts );
+				control.renderTypographySubsetSelector( $( this ), name, control_atts );
 
 				// Font style setting.
 				controlContainer.on( 'change', '.font-style select', function () {
@@ -596,7 +603,8 @@
 				    standardFonts = [],
 				    googleFonts   = [],
 				    customFonts   = [],
-				    value         = control_atts.value,
+				    input         = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    value         = JSON.parse( input.val() ),
 				    fonts         = control.getTypographyFonts(),
 				    fontSelect;
 
@@ -688,6 +696,7 @@
 
 						// Render new list of selected font options.
 						control.renderTypographyVariantSelector( $( this ), name, control_atts );
+						control.renderTypographySubsetSelector( $( this ), name, control_atts );
 
 					}
 				);
@@ -816,6 +825,94 @@
 				}
 
 				return variants;
+
+			},
+
+			renderTypographySubsetSelector : function ( element, name, control_atts ) {
+
+				var control    = this,
+				    input      = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    value      = JSON.parse( input.val() ),
+				    fontFamily = value['font-family'],
+				    subsets    = control.getTypographySubsets( fontFamily ),
+				    selector   = control.selector + ' .subsets select',
+				    data       = [],
+				    validValue = value.subsets,
+				    subsetSelector;
+
+				if ( false !== subsets ) {
+
+					$( control.selector + ' .subsets' ).show();
+					_.each(
+						subsets,
+						function ( subset ) {
+							if ( _.isObject( validValue ) ) {
+								if ( - 1 === validValue.indexOf( subset.id ) ) {
+									validValue = _.reject(
+										validValue,
+										function ( subValue ) {
+											return subValue === subset.id;
+										}
+									);
+								}
+							}
+
+							data.push(
+								{
+									id   : subset.id,
+									text : subset.label
+								}
+							);
+						}
+					);
+
+				} else {
+
+					$( control.selector + ' .subsets' ).hide();
+
+				}
+
+				if ( $( selector ).hasClass( 'select2-hidden-accessible' ) ) {
+					$( selector ).selectWoo( 'destroy' );
+					$( selector ).empty();
+				}
+
+				// Instantiate selectWoo with the data.
+				subsetSelector = $( selector ).selectWoo(
+					{
+						data  : data,
+						width : '100%'
+					}
+				);
+
+				subsetSelector.val( validValue ).trigger( 'change' );
+				subsetSelector.on(
+					'change',
+					function () {
+						control.saveTypographyValue( 'subsets', $( this ).val(), $( this ), name );
+					}
+				);
+
+			},
+
+			getTypographySubsets : function ( fontFamily ) {
+
+				var control = this,
+				    subsets = false,
+				    fonts   = control.getTypographyFonts();
+
+				_.each(
+					fonts.google,
+					function ( font ) {
+						if ( font.family === fontFamily ) {
+							subsets = font.subsets;
+
+							return subsets;
+						}
+					}
+				);
+
+				return subsets;
 
 			},
 
