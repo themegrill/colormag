@@ -280,7 +280,16 @@
 							}
 						);
 
-						fields_html += "<li id='customize-control-" + attr.name + "' class='customize-control customize-control-" + attr.control + "' >";
+						var responsive_switchers = '',
+						    controlsType         = [
+							    'colormag-typography'
+						    ];
+
+						if ( controlsType.includes( attr.control ) ) {
+							responsive_switchers = 'has-responsive-switchers';
+						}
+
+						fields_html += '<li id="customize-control-' + attr.name + '" class="customize-control ' + responsive_switchers + ' customize-control-' + attr.control + '" >';
 						fields_html += template( attr );
 						fields_html += '</li>';
 
@@ -409,7 +418,7 @@
 
 				// Background image setting..
 				controlContainer.on( 'click', '.background-image-upload-button, .thumbnail-image img', function ( e ) {
-					var upload_img_btn = jQuery( this );
+					var upload_img_btn = $( this );
 					var image          = wp.media( { multiple : false } ).open().on( 'select', function () {
 
 						// This will return the selected image from the Media Uploader, the result is an object.
@@ -461,7 +470,7 @@
 
 					e.preventDefault();
 
-					control.saveBackgroundValue( 'background-image', '', jQuery( this ) );
+					control.saveBackgroundValue( 'background-image', '', $( this ) );
 
 					preview      = controlContainer.find( '.placeholder, .thumbnail' );
 					removeButton = controlContainer.find( '.background-image-upload-remove-button' );
@@ -479,7 +488,6 @@
 					if ( removeButton.length ) {
 						removeButton.hide();
 					}
-
 				} );
 
 				// Background repeat setting.

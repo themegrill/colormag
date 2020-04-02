@@ -304,8 +304,9 @@ jQuery( document ).ready(
 	function ( $ ) {
 
 		// Responsive switcher button click.
-		$( '.customize-control .responsive-switchers button' ).on(
+		$( '.customize-control' ).on(
 			'click',
+			'.responsive-switchers button',
 			function ( event ) {
 
 				// Set up variables.
@@ -335,8 +336,9 @@ jQuery( document ).ready(
 		);
 
 		// If panel footer buttons clicked.
-		$( '.wp-full-overlay-footer .devices button' ).on(
+		$( '.wp-full-overlay-footer .devices' ).on(
 			'click',
+			'button',
 			function ( event ) {
 
 				// Set up variables.

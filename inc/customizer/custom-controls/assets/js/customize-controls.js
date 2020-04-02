@@ -604,7 +604,16 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 							}
 						);
 
-						fields_html += "<li id='customize-control-" + attr.name + "' class='customize-control customize-control-" + attr.control + "' >";
+						var responsive_switchers = '',
+						    controlsType         = [
+							    'colormag-typography'
+						    ];
+
+						if ( controlsType.includes( attr.control ) ) {
+							responsive_switchers = 'has-responsive-switchers';
+						}
+
+						fields_html += '<li id="customize-control-' + attr.name + '" class="customize-control ' + responsive_switchers + ' customize-control-' + attr.control + '" >';
 						fields_html += template( attr );
 						fields_html += '</li>';
 
@@ -733,7 +742,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 				// Background image setting..
 				controlContainer.on( 'click', '.background-image-upload-button, .thumbnail-image img', function ( e ) {
-					var upload_img_btn = jQuery( this );
+					var upload_img_btn = $( this );
 					var image          = wp.media( { multiple : false } ).open().on( 'select', function () {
 
 						// This will return the selected image from the Media Uploader, the result is an object.
@@ -785,7 +794,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 					e.preventDefault();
 
-					control.saveBackgroundValue( 'background-image', '', jQuery( this ) );
+					control.saveBackgroundValue( 'background-image', '', $( this ) );
 
 					preview      = controlContainer.find( '.placeholder, .thumbnail' );
 					removeButton = controlContainer.find( '.background-image-upload-remove-button' );
@@ -803,7 +812,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 					if ( removeButton.length ) {
 						removeButton.hide();
 					}
-
 				} );
 
 				// Background repeat setting.
@@ -907,6 +915,30 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 )( jQuery );
 
 /**
+ * Radio image control JS to handle the toggle of radio images.
+ *
+ * File `radio-image.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Slider control JS to handle the range of the inputs.
  *
  * File `slider.js`.
@@ -954,23 +986,26 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 } );
 
 /**
- * Radio image control JS to handle the toggle of radio images.
+ * Switch toggle control JS to handle the toggle of custom customize controls.
  *
- * File `radio-image.js`.
+ * File `toggle.js`.
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
 
 	ready : function () {
 
 		'use strict';
 
-		var control = this;
+		var control = this,
+		    value   = control.setting._value;
 
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
+			control.setting.set( value );
 		} );
 
 	}
@@ -1434,33 +1469,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
-
-	}
-
-} );
-
-/**
- * Switch toggle control JS to handle the toggle of custom customize controls.
- *
- * File `toggle.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this,
-		    value   = control.setting._value;
-
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
-
-			control.setting.set( value );
-		} );
 
 	}
 
