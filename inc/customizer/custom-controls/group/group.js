@@ -569,12 +569,17 @@
 
 				// Font size setting.
 				controlContainer.on( 'change keyup paste input', '.font-size input', function () {
-					control.saveTypographyFontSize( 'font-size', $( this ), name, control_atts );
+					control.saveTypographyFontSize( $( this ), name, control_atts );
+				} );
+
+				// Line height setting.
+				controlContainer.on( 'change keyup paste input', '.line-height input', function () {
+					control.saveTypographyLineHeight( $( this ), name, control_atts );
 				} );
 
 			},
 
-			saveTypographyFontSize : function ( property, element, name, control_atts ) {
+			saveTypographyFontSize : function ( element, name, control_atts ) {
 
 				var control          = this,
 				    val              = control_atts.value,
@@ -591,6 +596,46 @@
 						var device       = $( this ).find( 'input' ).data( 'device' );
 
 						newValue['font-size'][device] = controlValue;
+					}
+				);
+
+				// Extend/Update the `val` object to include `newValue`'s new data as an object.
+				$.extend( val, newValue );
+
+				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+				name = $( element ).parents( '.customize-control' ).attr( 'id' );
+				name = name.replace( 'customize-control-', '' );
+
+				controlContainer.trigger(
+					'colormag_settings_changed',
+					[
+						control,
+						element,
+						val,
+						name
+					]
+				);
+
+			},
+
+			saveTypographyLineHeight : function ( element, name, control_atts ) {
+
+				var control          = this,
+				    val              = control_atts.value,
+				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    control_name     = control_atts.name,
+				    controlContainer = control.container.find( '#customize-control-' + control_name ),
+				    newValue         = {
+					    'line-height' : {}
+				    };
+
+				controlContainer.find( '.line-height .control-wrap' ).each(
+					function () {
+						var controlValue = $( this ).find( 'input' ).val();
+						var device       = $( this ).find( 'input' ).data( 'device' );
+
+						newValue['line-height'][device] = controlValue;
 					}
 				);
 

@@ -1,28 +1,4 @@
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Background image control JS to handle the background customize option.
  *
  * File `background.js`.
@@ -202,6 +178,30 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 	}
 )( jQuery );
+
+/**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
 
 /**
  * Color picker control JS to handle color picker rendering within customize control.
@@ -893,12 +893,17 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 				// Font size setting.
 				controlContainer.on( 'change keyup paste input', '.font-size input', function () {
-					control.saveTypographyFontSize( 'font-size', $( this ), name, control_atts );
+					control.saveTypographyFontSize( $( this ), name, control_atts );
+				} );
+
+				// Line height setting.
+				controlContainer.on( 'change keyup paste input', '.line-height input', function () {
+					control.saveTypographyLineHeight( $( this ), name, control_atts );
 				} );
 
 			},
 
-			saveTypographyFontSize : function ( property, element, name, control_atts ) {
+			saveTypographyFontSize : function ( element, name, control_atts ) {
 
 				var control          = this,
 				    val              = control_atts.value,
@@ -915,6 +920,46 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 						var device       = $( this ).find( 'input' ).data( 'device' );
 
 						newValue['font-size'][device] = controlValue;
+					}
+				);
+
+				// Extend/Update the `val` object to include `newValue`'s new data as an object.
+				$.extend( val, newValue );
+
+				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+				name = $( element ).parents( '.customize-control' ).attr( 'id' );
+				name = name.replace( 'customize-control-', '' );
+
+				controlContainer.trigger(
+					'colormag_settings_changed',
+					[
+						control,
+						element,
+						val,
+						name
+					]
+				);
+
+			},
+
+			saveTypographyLineHeight : function ( element, name, control_atts ) {
+
+				var control          = this,
+				    val              = control_atts.value,
+				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    control_name     = control_atts.name,
+				    controlContainer = control.container.find( '#customize-control-' + control_name ),
+				    newValue         = {
+					    'line-height' : {}
+				    };
+
+				controlContainer.find( '.line-height .control-wrap' ).each(
+					function () {
+						var controlValue = $( this ).find( 'input' ).val();
+						var device       = $( this ).find( 'input' ).data( 'device' );
+
+						newValue['line-height'][device] = controlValue;
 					}
 				);
 
