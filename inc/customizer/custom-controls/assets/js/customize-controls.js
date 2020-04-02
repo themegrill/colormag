@@ -901,6 +901,11 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 					control.saveTypographyLineHeight( $( this ), name, control_atts );
 				} );
 
+				// Line height setting.
+				controlContainer.on( 'change keyup paste input', '.letter-spacing input', function () {
+					control.saveTypographyLetterSpacing( $( this ), name, control_atts );
+				} );
+
 			},
 
 			saveTypographyFontSize : function ( element, name, control_atts ) {
@@ -972,6 +977,46 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				name = name.replace( 'customize-control-', '' );
 
 				controlContainer.trigger(
+					'colormag_settings_changed',
+					[
+						control,
+						element,
+						val,
+						name
+					]
+				);
+
+			},
+
+			saveTypographyLetterSpacing : function ( element, name, control_atts ) {
+
+				var control          = this,
+				    val              = control_atts.value,
+				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    control_name     = control_atts.name,
+				    controlContainer = control.container.find( '#customize-control-' + control_name ),
+				    newValue         = {
+					    'letter-spacing' : {}
+				    };
+
+				controlContainer.find( '.letter-spacing .control-wrap' ).each(
+					function () {
+						var controlValue = $( this ).find( 'input' ).val();
+						var device       = $( this ).find( 'input' ).data( 'device' );
+
+						newValue['letter-spacing'][device] = controlValue;
+					}
+				);
+
+				// Extend/Update the `val` object to include `newValue`'s new data as an object.
+				$.extend( val, newValue );
+
+				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+				name = $( element ).parents( '.customize-control' ).attr( 'id' );
+				name = name.replace( 'customize-control-', '' );
+
+				control.container.trigger(
 					'colormag_settings_changed',
 					[
 						control,
