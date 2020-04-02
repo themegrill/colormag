@@ -704,13 +704,14 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 			initBackgroundControl : function ( control, control_atts, name ) {
 
-				var value            = control.setting._value,
+				var input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
+				    value            = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    colorpicker      = control.container.find( '.colormag-color-picker-alpha' ),
 				    controlContainer = control.container.find( '#customize-control-' + control_name );
 
 				// Hide unnecessary controls if the value doesn't have an image.
-				if ( _.isUndefined( control_atts['value']['background-image'] ) || '' === control_atts['value']['background-image'] ) {
+				if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
 					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
 					controlContainer.find( '.customize-control-content > .background-position' ).hide();
 					controlContainer.find( '.customize-control-content > .background-size' ).hide();
@@ -878,6 +879,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 				// On customizer load, render the available font options.
 				control.renderTypographyFontSelector( $( this ), name, control_atts );
+				control.renderTypographyVariantSelector( $( this ), name, control_atts );
 
 				// Font style setting.
 				controlContainer.on( 'change', '.font-style select', function () {
@@ -911,7 +913,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 			},
 
-			renderTypographyFontSelector: function( element, name, control_atts ) {
+			renderTypographyFontSelector : function ( element, name, control_atts ) {
 
 				var control       = this,
 				    selector      = control.selector + ' .font-family select',
@@ -1008,6 +1010,9 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 						// Set the value.
 						control.saveTypographyValue( 'font-family', $( this ).val(), $( this ), name );
 
+						// Render new list of selected font options.
+						control.renderTypographyVariantSelector( $( this ), name, control_atts );
+
 					}
 				);
 
@@ -1025,6 +1030,116 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 					google   : [],
 					standard : []
 				};
+
+			},
+
+			renderTypographyVariantSelector : function ( element, name, control_atts ) {
+
+				var control    = this,
+				    input      = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    value      = JSON.parse( input.val() ),
+				    fontFamily = value['font-family'],
+				    variants   = control.getTypographyVariants( fontFamily ),
+				    selector   = control.selector + ' .font-weight select',
+				    data       = [],
+				    isValid    = false,
+				    variantSelector;
+
+				if ( false !== variants ) {
+
+					$( control.selector + ' .font-weight' ).show();
+					_.each(
+						variants,
+						function ( variant ) {
+							if ( value['font-weight'] === variant.id ) {
+								isValid = true;
+							}
+
+							data.push(
+								{
+									id   : variant.id,
+									text : variant.label
+								}
+							);
+						}
+					);
+
+					if ( ! isValid ) {
+						value['font-weight'] = 'regular';
+					}
+
+					if ( $( selector ).hasClass( 'select2-hidden-accessible' ) ) {
+						$( selector ).selectWoo( 'destroy' );
+						$( selector ).empty();
+					}
+
+					// Instantiate selectWoo with the data.
+					variantSelector = $( selector ).selectWoo(
+						{
+							data  : data,
+							width : '100%'
+						}
+					);
+
+					variantSelector.val( value['font-weight'] ).trigger( 'change' );
+					variantSelector.on(
+						'change',
+						function () {
+							control.saveTypographyValue( 'font-weight', $( this ).val(), $( this ), name );
+						}
+					);
+
+				} else {
+
+					$( control.selector + ' .font-weight' ).hide();
+
+				}
+
+			},
+
+			getTypographyVariants : function ( fontFamily ) {
+
+				var control = this,
+				    fonts   = control.getTypographyFonts();
+
+				var variants = false;
+				_.each(
+					fonts.standard,
+					function ( font ) {
+						if ( fontFamily && font.family === fontFamily.replace( /'/g, '"' ) ) {
+							variants = font.variants;
+
+							return variants;
+						}
+					}
+				);
+
+				_.each(
+					fonts.google,
+					function ( font ) {
+						if ( font.family === fontFamily ) {
+							variants = font.variants;
+
+							return variants;
+						}
+					}
+				);
+
+				// For custom fonts.
+				if ( ! _.isUndefined( fonts.custom ) ) {
+					_.each(
+						fonts.custom,
+						function ( font ) {
+							if ( font.custom === fontFamily ) {
+								variants = font.variants;
+
+								return variants;
+							}
+						}
+					);
+				}
+
+				return variants;
 
 			},
 
