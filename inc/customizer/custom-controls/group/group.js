@@ -587,8 +587,8 @@
 			saveTypographyFontSize : function ( element, name, control_atts ) {
 
 				var control          = this,
-				    val              = control_atts.value,
 				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    val              = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name ),
 				    newValue         = {
@@ -627,8 +627,8 @@
 			saveTypographyLineHeight : function ( element, name, control_atts ) {
 
 				var control          = this,
-				    val              = control_atts.value,
 				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    val              = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name ),
 				    newValue         = {
@@ -667,8 +667,8 @@
 			saveTypographyLetterSpacing : function ( element, name, control_atts ) {
 
 				var control          = this,
-				    val              = control_atts.value,
 				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    val              = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name ),
 				    newValue         = {

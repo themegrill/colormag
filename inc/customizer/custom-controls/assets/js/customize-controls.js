@@ -911,8 +911,8 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			saveTypographyFontSize : function ( element, name, control_atts ) {
 
 				var control          = this,
-				    val              = control_atts.value,
 				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    val              = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name ),
 				    newValue         = {
@@ -951,8 +951,8 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			saveTypographyLineHeight : function ( element, name, control_atts ) {
 
 				var control          = this,
-				    val              = control_atts.value,
 				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    val              = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name ),
 				    newValue         = {
@@ -991,8 +991,8 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			saveTypographyLetterSpacing : function ( element, name, control_atts ) {
 
 				var control          = this,
-				    val              = control_atts.value,
 				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+				    val              = JSON.parse( input.val() ),
 				    control_name     = control_atts.name,
 				    controlContainer = control.container.find( '#customize-control-' + control_name ),
 				    newValue         = {

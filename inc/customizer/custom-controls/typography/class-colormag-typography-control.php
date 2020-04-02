@@ -315,6 +315,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
+					       id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
 					       data-device="desktop"
 					       value="{{ data.value['font-size']['desktop'] }}"
 					/>
@@ -322,6 +323,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="tablet control-wrap">
 					<input type="text"
+					       id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
 					       data-device="tablet"
 					       value="{{ data.value['font-size']['tablet'] }}"
 					/>
@@ -329,6 +331,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="mobile control-wrap">
 					<input type="text"
+					       id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
 					       data-device="mobile"
 					       value="{{ data.value['font-size']['mobile'] }}"
 					/>
@@ -359,6 +362,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
+					       id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
 					       value="{{ data.value['line-height']['desktop'] }}"
 					       data-device="desktop"
 					/>
@@ -366,6 +370,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="tablet control-wrap">
 					<input type="text"
+					       id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
 					       value="{{ data.value['line-height']['tablet'] }}"
 					       data-device="tablet"
 					/>
@@ -373,6 +378,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="mobile control-wrap">
 					<input type="text"
+					       id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
 					       value="{{ data.value['line-height']['mobile'] }}"
 					       data-device="mobile"
 					/>
@@ -403,6 +409,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
+					       id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
 					       value="{{ data.value['letter-spacing']['desktop'] }}"
 					       data-device="desktop"
 					/>
@@ -410,6 +417,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="tablet control-wrap">
 					<input type="text"
+					       id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
 					       value="{{ data.value['letter-spacing']['tablet'] }}"
 					       data-device="tablet"
 					/>
@@ -417,6 +425,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="mobile control-wrap">
 					<input type="text"
+					       id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
 					       value="{{ data.value['letter-spacing']['mobile'] }}"
 					       data-device="mobile"
 					/>
