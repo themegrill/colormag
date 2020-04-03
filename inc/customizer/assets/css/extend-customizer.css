@@ -78,6 +78,10 @@
 	height: 100%;
 }
 
+.colormag-hide {
+	display: none !important;
+}
+
 #accordion-section-colormag_upsell_section h3.accordion-section-title {
 	background-color: #289DCC !important;
 	border-left-color: #0073aa;
