@@ -478,13 +478,25 @@ class ColorMag_Customizer_Sanitizes {
 	/**
 	 * Sanitize the sortable value set within customizer controls.
 	 *
-	 * @param number $sortable_args Customizer setting input sortable arguments.
-	 * @param object $setting       Setting object.
+	 * @param number $input   Customizer setting input sortable arguments.
+	 * @param object $setting Setting object.
 	 *
 	 * @return mixed
 	 */
-	public static function sanitize_sortable( $sortable_args, $setting ) {
+	public static function sanitize_sortable( $input, $setting ) {
 
+		// Get list of choices from the control associated with the setting.
+		$choices    = $setting->manager->get_control( $setting->id )->choices;
+		$input_keys = $input;
+
+		foreach ( $input_keys as $key => $value ) {
+			if ( ! array_key_exists( $value, $choices ) ) {
+				unset( $input[ $key ] );
+			}
+		}
+
+		// If the input is a valid key, return it, otherwise, return the default.
+		return ( is_array( $input ) ? $input : $setting->default );
 
 	}
 
