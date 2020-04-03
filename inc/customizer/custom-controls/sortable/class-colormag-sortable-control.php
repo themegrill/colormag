@@ -48,6 +48,13 @@ class ColorMag_Sortable_Control extends ColorMag_Customize_Base_Additional_Contr
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
 
+		$this->json['choices'] = $this->choices;
+
+		$this->json['inputAttrs'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+		}
+
 	}
 
 	/**
@@ -72,6 +79,26 @@ class ColorMag_Sortable_Control extends ColorMag_Customize_Base_Additional_Contr
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 		</div>
+
+		<ul class="sortable">
+			<# _.each( data.value, function( choiceID ) { #>
+			<li {{{ data.inputAttrs }}} class='colormag-sortable-item' data-value='{{ choiceID }}'>
+				<i class='dashicons dashicons-menu'></i>
+				<i class="dashicons dashicons-visibility visibility"></i>
+				{{{ data.choices[ choiceID ] }}}
+			</li>
+			<# } ); #>
+
+			<# _.each( data.choices, function( choiceLabel, choiceID ) { #>
+			<# if ( Array.isArray(data.value) && -1 === data.value.indexOf( choiceID ) ) { #>
+			<li {{{ data.inputAttrs }}} class='colormag-sortable-item invisible' data-value='{{ choiceID }}'>
+				<i class='dashicons dashicons-menu'></i>
+				<i class="dashicons dashicons-visibility visibility"></i>
+				{{{ data.choices[ choiceID ] }}}
+			</li>
+			<# } #>
+			<# } ); #>
+		</ul>
 
 		<?php
 	}
