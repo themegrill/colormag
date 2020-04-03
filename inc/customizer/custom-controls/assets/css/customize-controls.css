@@ -1,4 +1,21 @@
 /**
+ * Background control CSS.
+ */
+
+.customize-control-colormag-background .customize-control-content > div {
+  margin-bottom: 15px;
+}
+
+.customize-control-colormag-background .customize-control-content .wp-picker-container .wp-color-result .color-alpha {
+  height: 28px !important;
+}
+
+.customize-control-colormag-background .customize-control-content .wp-picker-container .wp-picker-clear {
+  margin-left: 6px;
+  min-height: 30px;
+  line-height: 2.54545455;
+}
+/**
  * Radio buttonset control CSS.
  */
 
@@ -37,6 +54,19 @@
   color: #ffffff;
 }
 /**
+ * Alpha color control CSS.
+ */
+
+.customize-control-colormag-color .wp-picker-container .wp-color-result .color-alpha {
+  height: 28px !important;
+}
+
+.customize-control-colormag-color .wp-picker-container .wp-picker-clear {
+  margin-left: 6px;
+  min-height: 30px;
+  line-height: 2.54545455;
+}
+/**
  * Custom control CSS.
  */
 
@@ -51,36 +81,6 @@
   color: #ffffff;
   padding: 8px 16px;
   text-decoration: none;
-}
-/**
- * Alpha color control CSS.
- */
-
-.customize-control-colormag-color .wp-picker-container .wp-color-result .color-alpha {
-  height: 28px !important;
-}
-
-.customize-control-colormag-color .wp-picker-container .wp-picker-clear {
-  margin-left: 6px;
-  min-height: 30px;
-  line-height: 2.54545455;
-}
-/**
- * Background control CSS.
- */
-
-.customize-control-colormag-background .customize-control-content > div {
-  margin-bottom: 15px;
-}
-
-.customize-control-colormag-background .customize-control-content .wp-picker-container .wp-color-result .color-alpha {
-  height: 28px !important;
-}
-
-.customize-control-colormag-background .customize-control-content .wp-picker-container .wp-picker-clear {
-  margin-left: 6px;
-  min-height: 30px;
-  line-height: 2.54545455;
 }
 /**
  * Divider control CSS.
@@ -262,6 +262,50 @@
   margin-top: 0;
 }
 /**
+ * Radio image control CSS.
+ */
+
+.customize-control-colormag-radio-image input {
+  display: none;
+}
+
+.customize-control-colormag-radio-image input:checked + label img {
+  -webkit-box-shadow: 0 0 3px 0 #289dcc;
+  box-shadow: 0 0 3px 0 #289dcc;
+}
+
+.customize-control-colormag-radio-image label {
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.customize-control-colormag-radio-image label > img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.customize-control-colormag-radio-image .image-col-2 label {
+  width: 49%;
+  margin-right: 1%;
+}
+
+.customize-control-colormag-radio-image .image-col-2 label:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.customize-control-colormag-radio-image .image-col-3 label {
+  width: 32%;
+  margin-right: 1%;
+}
+
+.customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
+  margin-right: 0;
+}
+/**
  * Slider control CSS.
  */
 
@@ -354,66 +398,8 @@
   right: 20px;
 }
 /**
- * Radio image control CSS.
+ * Sortable control CSS.
  */
-
-.customize-control-colormag-radio-image input {
-  display: none;
-}
-
-.customize-control-colormag-radio-image input:checked + label img {
-  -webkit-box-shadow: 0 0 3px 0 #289dcc;
-  box-shadow: 0 0 3px 0 #289dcc;
-}
-
-.customize-control-colormag-radio-image label {
-  margin-bottom: 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.customize-control-colormag-radio-image label > img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.customize-control-colormag-radio-image .image-col-2 label {
-  width: 49%;
-  margin-right: 1%;
-}
-
-.customize-control-colormag-radio-image .image-col-2 label:nth-of-type(2n) {
-  margin-right: 0;
-}
-
-.customize-control-colormag-radio-image .image-col-3 label {
-  width: 32%;
-  margin-right: 1%;
-}
-
-.customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
-  margin-right: 0;
-}
-/**
- * Typography control CSS.
- */
-
-.customize-control-colormag-typography .customize-control-content > div {
-  margin-bottom: 15px;
-}
-
-.customize-control-colormag-typography .customize-control-content .font-size,
-.customize-control-colormag-typography .customize-control-content .line-height,
-.customize-control-colormag-typography .customize-control-content .letter-spacing {
-  position: relative;
-}
-
-span.select2-container.select2-container--default.select2-container--open {
-  z-index: 999999;
-}
 /**
  * Switch toggle control CSS.
  */
@@ -472,4 +458,21 @@ span.select2-container.select2-container--default.select2-container--open {
   border-radius: 100%;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+}
+/**
+ * Typography control CSS.
+ */
+
+.customize-control-colormag-typography .customize-control-content > div {
+  margin-bottom: 15px;
+}
+
+.customize-control-colormag-typography .customize-control-content .font-size,
+.customize-control-colormag-typography .customize-control-content .line-height,
+.customize-control-colormag-typography .customize-control-content .letter-spacing {
+  position: relative;
+}
+
+span.select2-container.select2-container--default.select2-container--open {
+  z-index: 999999;
 }

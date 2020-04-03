@@ -110,6 +110,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/background/class-colormag-background-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/typography/class-colormag-typography-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/hidden/class-colormag-hidden-control.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/sortable/class-colormag-sortable-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/group/class-colormag-group-control.php';
 
 	}
@@ -408,6 +409,18 @@ class ColorMag_Customizer {
 			array(
 				'callback'          => 'ColorMag_Hidden_Control',
 				'sanitize_callback' => '',
+			)
+		);
+
+		// Sortable control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-sortable',
+			array(
+				'callback'          => 'ColorMag_Sortable_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_Sanitizes',
+					'sanitize_sortable',
+				),
 			)
 		);
 

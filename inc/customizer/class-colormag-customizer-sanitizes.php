@@ -475,4 +475,17 @@ class ColorMag_Customizer_Sanitizes {
 
 	}
 
+	/**
+	 * Sanitize the sortable value set within customizer controls.
+	 *
+	 * @param number $sortable_args Customizer setting input sortable arguments.
+	 * @param object $setting       Setting object.
+	 *
+	 * @return mixed
+	 */
+	public static function sanitize_sortable( $sortable_args, $setting ) {
+
+
+	}
+
 }
