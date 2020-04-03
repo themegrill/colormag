@@ -756,6 +756,15 @@ class ColorMag_Customizer {
 	}
 
 	/**
+	 * Get dependency array.
+	 *
+	 * @return array Dependencies discovered when registering controls and settings.
+	 */
+	private function get_dependency_array() {
+		return self::$dependency_array;
+	}
+
+	/**
 	 * Include the required customizer sanitization, callbacks and partials file.
 	 */
 	public function customize_sanitize_callback_include() {
@@ -798,15 +807,44 @@ class ColorMag_Customizer {
 			true
 		);
 
+		// Customizer controls toggle JS file.
+		wp_enqueue_script(
+			'colormag-customizer-controls-toggle',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer-controls-toggle' . $suffix . '.js',
+			array(),
+			COLORMAG_THEME_VERSION,
+			true
+		);
+
+		// Customizer controls JS file.
+		wp_enqueue_script(
+			'colormag-customizer-controls',
+			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer-controls' . $suffix . '.js',
+			array(
+				'colormag-customizer-controls-toggle',
+			),
+			COLORMAG_THEME_VERSION,
+			true
+		);
+
 		// Customizer dependency control JS file.
 		wp_enqueue_script(
 			'colormag-customizer-dependency',
 			COLORMAG_CUSTOMIZER_URL . '/assets/js/customizer-dependency' . $suffix . '.js',
 			array(
-				'jquery',
+				'colormag-customizer-controls-toggle',
+				'colormag-customizer-controls',
+				'colormag-extend-customizer',
 			),
 			COLORMAG_THEME_VERSION,
 			true
+		);
+
+		// Localize for customizer controls toggle.
+		wp_localize_script(
+			'colormag-customizer-controls-toggle',
+			'ColorMagCustomizerControlsToggle',
+			$this->get_dependency_array()
 		);
 
 	}
