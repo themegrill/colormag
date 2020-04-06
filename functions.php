@@ -511,7 +511,7 @@ require_once( COLORMAG_INCLUDES_DIR . '/header-functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/class-colormag-dynamic-css.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-fonts.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/class-colormag-enqueue-scripts.php' );
+require_once( COLORMAG_INCLUDES_DIR . '/enqueue-scripts.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/customizer.php' );
 
 /** Add the Elementor compatibility file */
