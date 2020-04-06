@@ -9,14 +9,6 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
-
-/****************************************************************************************/
-add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
-function colormag_image_uploader() {
-	wp_enqueue_media();
-	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader.js', false, '20150309', true );
-}
-
 /****************************************************************************************/
 
 add_filter( 'excerpt_length', 'colormag_excerpt_length' );

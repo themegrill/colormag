@@ -25,7 +25,7 @@ function colormag_scripts_styles_method() {
 	wp_enqueue_style( 'colormag_style', get_stylesheet_uri() );
 
 	// Load the dark color skin via theme options.
-	if ( get_theme_mod( 'colormag_color_skin_setting', 'white' ) == 'dark' ) {
+	if ( 'dark' == get_theme_mod( 'colormag_color_skin_setting', 'white' ) ) {
 		wp_enqueue_style( 'colormag_dark_style', get_template_directory_uri() . '/dark.css' );
 	}
 
@@ -80,3 +80,15 @@ function colormag_scripts_styles_method() {
 }
 
 add_action( 'wp_enqueue_scripts', 'colormag_scripts_styles_method' );
+
+/**
+ * Enqueue image upload script for use within widgets.
+ */
+function colormag_image_uploader() {
+
+	wp_enqueue_media();
+	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader.js', false, '20150309', true );
+
+}
+
+add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
