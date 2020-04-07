@@ -148,32 +148,3 @@ if ( ! function_exists( 'colormag_elementor_colored_category' ) ) :
 	}
 
 endif;
-
-if ( ! function_exists( 'colormag_elementor_custom_css' ) ) :
-
-	/**
-	 * Custom CSS code to be rendered for the Elementor plugin
-	 *
-	 * Hooks in the wp_head hook with priority of 100
-	 *
-	 * @since ColorMag 2.2.3
-	 */
-	function colormag_elementor_custom_css() {
-		$colormag_internal_elementor_css = '';
-		$primary_color                   = esc_html( get_theme_mod( 'colormag_primary_color', '#289dcc' ) );
-
-		if ( $primary_color != '#289dcc' ) {
-			$colormag_internal_elementor_css .= '.elementor .tg-module-wrapper .module-title{border-bottom:1px solid ' . $primary_color . '}.elementor .tg-module-wrapper .module-title span,.elementor .tg-module-wrapper .tg-post-category{background-color:' . $primary_color . '}.elementor .tg-module-wrapper .tg-module-meta .tg-module-comments a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-auther-name a:hover,.elementor .tg-module-wrapper .tg-module-meta .tg-post-date a:hover,.elementor .tg-module-wrapper .tg-module-title:hover a,.elementor .tg-module-wrapper.tg-module-grid .tg_module_grid .tg-module-info .tg-module-meta a:hover{color:' . $primary_color . '}';
-		}
-
-		if ( ! empty( $colormag_internal_elementor_css ) ) {
-			echo '<!-- ' . get_bloginfo( 'name' ) . ' Elementor Internal Styles -->';
-			?>
-			<style type="text/css"><?php echo esc_html( $colormag_internal_elementor_css ); ?></style>
-			<?php
-		}
-	}
-
-endif;
-
-add_action( 'wp_head', 'colormag_elementor_custom_css', 100 );
