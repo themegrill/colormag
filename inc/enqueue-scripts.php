@@ -100,3 +100,79 @@ function colormag_image_uploader() {
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
+
+if ( ! function_exists( 'colormag_parse_css' ) ) :
+
+	/**
+	 * Parses CSS.
+	 *
+	 * @param array  $css_output Array of CSS.
+	 * @param string $min_media  Min Media breakpoint.
+	 * @param string $max_media  Max Media breakpoint.
+	 *
+	 * @return string Generated CSS.
+	 */
+	function colormag_parse_css( $css_output = array(), $min_media = '', $max_media = '' ) {
+
+		$parse_css = '';
+		if ( is_array( $css_output ) && count( $css_output ) > 0 ) {
+
+			foreach ( $css_output as $selector => $properties ) {
+
+				if ( null === $properties ) {
+					break;
+				}
+
+				if ( ! count( $properties ) ) {
+					continue;
+				}
+
+				$temp_parse_css   = $selector . '{';
+				$properties_added = 0;
+
+				foreach ( $properties as $property => $value ) {
+
+					if ( '' === $value ) {
+						continue;
+					}
+
+					$properties_added ++;
+					$temp_parse_css .= $property . ':' . $value . ';';
+				}
+
+				$temp_parse_css .= '}';
+
+				if ( $properties_added > 0 ) {
+					$parse_css .= $temp_parse_css;
+				}
+			}
+
+			if ( '' !== $parse_css && ( '' !== $min_media || '' !== $max_media ) ) {
+
+				$media_css       = '@media ';
+				$min_media_css   = '';
+				$max_media_css   = '';
+				$media_separator = '';
+
+				if ( '' !== $min_media ) {
+					$min_media_css = '(min-width:' . $min_media . 'px)';
+				}
+				if ( '' !== $max_media ) {
+					$max_media_css = '(max-width:' . $max_media . 'px)';
+				}
+				if ( '' !== $min_media && '' !== $max_media ) {
+					$media_separator = ' and ';
+				}
+
+				$media_css .= $min_media_css . $media_separator . $max_media_css . '{' . $parse_css . '}';
+
+				return $media_css;
+
+			}
+		}
+
+		return $parse_css;
+
+	}
+
+endif;
