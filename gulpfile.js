@@ -21,7 +21,12 @@ var paths = {
 	},
 
 	js : {
-		src  : './js/*.js',
+		src  : [
+			'./js/*.js',
+			'!./js/*.min.js',
+			'./js/**/*.js',
+			'!./js/**/*.min.js'
+		],
 		dest : './js/'
 	},
 
@@ -226,6 +231,16 @@ function minifyControlJs() {
 		.on( 'error', notify.onError() );
 }
 
+// Minifies the js files.
+function minifyJs() {
+	return gulp
+		.src( paths.js.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.js.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
@@ -238,6 +253,7 @@ function watch() {
 	gulp.watch( paths.customizeControls.cssmin.src, minifyControlCSS );
 	gulp.watch( paths.customizeControls.jsconcat.src, concatControlJS );
 	gulp.watch( paths.customizeControls.jsmin.src, minifyControlJs );
+	gulp.watch( paths.js.src, minifyJs );
 }
 
 
@@ -258,3 +274,4 @@ exports.minifyControlCSS            = minifyControlCSS;
 exports.concatControlCSS            = concatControlCSS;
 exports.concatControlJS             = concatControlJS;
 exports.minifyControlJs             = minifyControlJs;
+exports.minifyJs                    = minifyJs;
