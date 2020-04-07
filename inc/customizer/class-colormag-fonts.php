@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Helper class for font settings for this theme.
+ *
  * Class ColorMag_Fonts
  */
 class ColorMag_Fonts {

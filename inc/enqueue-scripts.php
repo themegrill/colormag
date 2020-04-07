@@ -88,6 +88,9 @@ function colormag_scripts_styles_method() {
 	 */
 	add_filter( 'colormag_dynamic_theme_css', array( 'ColorMag_Dynamic_CSS', 'render_output' ) );
 
+	// Enqueue required Google font for the theme.
+	ColorMag_Generate_Fonts::render_fonts();
+
 	// Generate dynamic CSS to add inline styles for the theme.
 	$theme_dynamic_css = apply_filters( 'colormag_dynamic_theme_css', '' );
 	wp_add_inline_style( 'colormag_style', $theme_dynamic_css );
