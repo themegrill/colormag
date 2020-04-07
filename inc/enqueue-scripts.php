@@ -83,6 +83,11 @@ function colormag_scripts_styles_method() {
 	// Theme custom JS.
 	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
+	/**
+	 * Inline CSS for this theme.
+	 */
+	add_filter( 'colormag_dynamic_theme_css', array( 'ColorMag_Dynamic_CSS', 'render_output' ) );
+
 	// Generate dynamic CSS to add inline styles for the theme.
 	$theme_dynamic_css = apply_filters( 'colormag_dynamic_theme_css', '' );
 	wp_add_inline_style( 'colormag_style', $theme_dynamic_css );
@@ -110,13 +115,20 @@ if ( ! function_exists( 'colormag_parse_css' ) ) :
 	/**
 	 * Parses CSS.
 	 *
-	 * @param array  $css_output Array of CSS.
-	 * @param string $min_media  Min Media breakpoint.
-	 * @param string $max_media  Max Media breakpoint.
+	 * @param string|array $default_value Default value.
+	 * @param string|array $output_value  Updated value.
+	 * @param array        $css_output    Array of CSS.
+	 * @param string       $min_media     Min Media breakpoint.
+	 * @param string       $max_media     Max Media breakpoint.
 	 *
 	 * @return string Generated CSS.
 	 */
-	function colormag_parse_css( $css_output = array(), $min_media = '', $max_media = '' ) {
+	function colormag_parse_css( $default_value, $output_value, $css_output = array(), $min_media = '', $max_media = '' ) {
+
+		// Return if default value matches.
+		if ( $default_value == $output_value ) {
+			return;
+		}
 
 		$parse_css = '';
 		if ( is_array( $css_output ) && count( $css_output ) > 0 ) {
