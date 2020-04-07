@@ -235,9 +235,11 @@ if ( ! function_exists( 'colormag_parse_css' ) ) :
 				if ( '' !== $min_media ) {
 					$min_media_css = '(min-width:' . $min_media . 'px)';
 				}
+
 				if ( '' !== $max_media ) {
 					$max_media_css = '(max-width:' . $max_media . 'px)';
 				}
+
 				if ( '' !== $min_media && '' !== $max_media ) {
 					$media_separator = ' and ';
 				}
@@ -248,6 +250,64 @@ if ( ! function_exists( 'colormag_parse_css' ) ) :
 
 			}
 		}
+
+		return $parse_css;
+
+	}
+
+endif;
+
+if ( ! function_exists( 'colormag_parse_background_css' ) ) :
+
+	/**
+	 * Returns the background CSS property for dynamic CSS generation.
+	 *
+	 * @param string|array $default_value Default value.
+	 * @param string|array $output_value  Updated value.
+	 * @param string       $selector      CSS selector.
+	 *
+	 * @return string|void Generated CSS for background CSS property.
+	 */
+	function colormag_parse_background_css( $default_value, $output_value, $selector ) {
+
+		if ( $default_value == $output_value ) {
+			return;
+		}
+
+		$parse_css = '';
+		$parse_css .= $selector . ' {';
+
+		// For background color.
+		if ( $output_value['background-color'] != $default_value['background-color'] ) {
+			$parse_css .= 'background-color:' . $output_value['background-color'] . ';';
+		}
+
+		// For background image.
+		if ( $output_value['background-image'] != $default_value['background-image'] ) {
+			$parse_css .= 'background-image:url(' . $output_value['background-image'] . ');';
+		}
+
+		// For background position.
+		if ( $output_value['background-position'] != $default_value['background-position'] ) {
+			$parse_css .= 'background-position:' . $output_value['background-position'] . ';';
+		}
+
+		// For background size.
+		if ( $output_value['background-size'] != $default_value['background-size'] ) {
+			$parse_css .= 'background-size:' . $output_value['background-size'] . ';';
+		}
+
+		// For background attachment.
+		if ( $output_value['background-attachment'] != $default_value['background-attachment'] ) {
+			$parse_css .= 'background-attachment:' . $output_value['background-attachment'] . ';';
+		}
+
+		// For background repeat.
+		if ( $output_value['background-repeat'] != $default_value['background-repeat'] ) {
+			$parse_css .= 'background-repeat:' . $output_value['background-repeat'] . ';';
+		}
+
+		$parse_css .= '}';
 
 		return $parse_css;
 
