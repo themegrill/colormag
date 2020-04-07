@@ -83,6 +83,10 @@ function colormag_scripts_styles_method() {
 	// Theme custom JS.
 	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
+	// Generate dynamic CSS to add inline styles for the theme.
+	$theme_dynamic_css = apply_filters( 'colormag_dynamic_theme_css', '' );
+	wp_add_inline_style( 'colormag_style', $theme_dynamic_css );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'colormag_scripts_styles_method' );
