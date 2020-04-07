@@ -12,11 +12,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 /**
  * Enqueue CSS and JS files.
  */
 function colormag_scripts_styles_method() {
+
+	// Return if enqueueing is not enabled by the user.
+	if ( false === apply_filters( 'colormag_enqueue_theme_assets', true ) ) {
+		return;
+	}
 
 	// Using google font.
 	wp_enqueue_style( 'colormag_google_fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600' );
