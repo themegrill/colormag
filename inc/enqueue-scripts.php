@@ -356,6 +356,17 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 			$parse_css .= 'text-decoration:' . $output_value['text-decoration'] . ';';
 		}
 
+		// For font weight.
+		if ( $output_value['font-weight'] != $default_value['font-weight'] ) {
+			$font_weight_value = $output_value['font-weight'];
+
+			if ( 'italic' === $font_weight_value || 'regular' === $font_weight_value ) {
+				$parse_css .= 'font-weight:' . 400 . ';';
+			} else {
+				$parse_css .= 'font-weight:' . str_replace( 'italic', '', $font_weight_value ) . ';';
+			}
+		}
+
 		$parse_css .= '}';
 
 		return $parse_css;
