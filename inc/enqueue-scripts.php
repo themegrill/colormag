@@ -22,6 +22,8 @@ function colormag_scripts_styles_method() {
 		return;
 	}
 
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	// Using google font.
 	wp_enqueue_style( 'colormag_google_fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600' );
 
@@ -42,44 +44,44 @@ function colormag_scripts_styles_method() {
 	}
 
 	// BxSlider JS.
-	wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider.min.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-	// News Ticker.
-	if ( 1 == get_theme_mod( 'colormag_breaking_news', 0 ) ) {
-		wp_enqueue_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker.min.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-	}
+	wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 	// Sticky Menu.
 	if ( 1 == get_theme_mod( 'colormag_primary_sticky_menu', 0 ) ) {
-		wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL . '/sticky/jquery.sticky.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+		wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL . '/sticky/jquery.sticky' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 	}
 
-	// Navigation JS.
-	wp_enqueue_script( 'colormag-navigation', COLORMAG_JS_URL . '/navigation.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-	// FontAwesome CSS.
-	wp_enqueue_style( 'colormag-fontawesome', get_template_directory_uri() . '/fontawesome/css/font-awesome.css', array(), COLORMAG_THEME_VERSION );
+	// News Ticker.
+	if ( 1 == get_theme_mod( 'colormag_breaking_news', 0 ) ) {
+		wp_enqueue_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+	}
 
 	if ( 1 == get_theme_mod( 'colormag_featured_image_popup', 0 ) ) {
 		// MagnificPopup JS.
-		wp_enqueue_script( 'colormag-featured-image-popup', COLORMAG_JS_URL . '/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+		wp_enqueue_script( 'colormag-featured-image-popup', COLORMAG_JS_URL . '/magnific-popup/jquery.magnific-popup' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 		// MagnificPopup CSS.
-		wp_enqueue_style( 'colormag-featured-image-popup-css', COLORMAG_JS_URL . '/magnific-popup/magnific-popup.css', array(), COLORMAG_THEME_VERSION );
+		wp_enqueue_style( 'colormag-featured-image-popup-css', COLORMAG_JS_URL . '/magnific-popup/magnific-popup' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
 	}
 
+	// Navigation JS.
+	wp_enqueue_script( 'colormag-navigation', COLORMAG_JS_URL . '/navigation' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+
+	// FontAwesome CSS.
+	wp_enqueue_style( 'colormag-fontawesome', get_template_directory_uri() . '/fontawesome/css/font-awesome' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
+
 	// FitVids JS.
-	wp_enqueue_script( 'colormag-fitvids', COLORMAG_JS_URL . '/fitvids/jquery.fitvids.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+	wp_enqueue_script( 'colormag-fitvids', COLORMAG_JS_URL . '/fitvids/jquery.fitvids' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 	// HTML5Shiv for Lower IE versions.
-	wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv.min.js', array(), COLORMAG_THEME_VERSION );
+	wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
 	wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
 	// Skip link focus fix JS enqueue.
-	wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix.js', array(), COLORMAG_THEME_VERSION, true );
+	wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
 
 	// Theme custom JS.
-	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 }
 
@@ -90,8 +92,10 @@ add_action( 'wp_enqueue_scripts', 'colormag_scripts_styles_method' );
  */
 function colormag_image_uploader() {
 
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_enqueue_media();
-	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader.js', false, COLORMAG_THEME_VERSION, true );
+	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
 
 }
 
