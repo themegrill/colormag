@@ -513,7 +513,6 @@ require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/enqueue-scripts.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/class-colormag-dynamic-css.php' );
 require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-generate-fonts.php' );
-require_once( COLORMAG_CUSTOMIZER_DIR . '/customizer.php' );
 
 /** Add the Elementor compatibility file */
 if ( defined( 'ELEMENTOR_VERSION' ) ) {

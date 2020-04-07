@@ -99,6 +99,19 @@ function colormag_scripts_styles_method() {
 
 add_action( 'wp_enqueue_scripts', 'colormag_scripts_styles_method' );
 
+
+/**
+ * Action hook to get the required Google fonts for this theme.
+ */
+function colormag_get_fonts() {
+
+	ColorMag_Generate_Fonts::add_font( 'Open Sans', array( '400', '600' ) );
+
+}
+
+add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
+
+
 /**
  * Enqueue image upload script for use within widgets.
  */
@@ -112,6 +125,7 @@ function colormag_image_uploader() {
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
+
 
 if ( ! function_exists( 'colormag_darkcolor' ) ) :
 
