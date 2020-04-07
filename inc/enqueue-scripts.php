@@ -314,3 +314,52 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
+
+	/**
+	 * Returns the background CSS property for dynamic CSS generation.
+	 *
+	 * @param string|array $default_value Default value.
+	 * @param string|array $output_value  Updated value.
+	 * @param string       $selector      CSS selector.
+	 * @param array        $devices       Devices for breakpoints.
+	 *
+	 * @return string|void Generated CSS for typography CSS.
+	 */
+	function colormag_parse_typography_css( $default_value, $output_value, $selector, $devices = array() ) {
+
+		if ( $default_value == $output_value ) {
+			return;
+		}
+
+		$parse_css = '';
+		$parse_css .= $selector . ' {';
+
+		// For font family.
+		if ( $output_value['font-family'] != $default_value['font-family'] ) {
+			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
+		}
+
+		// For font style.
+		if ( $output_value['font-style'] != $default_value['font-style'] ) {
+			$parse_css .= 'font-style:' . $output_value['font-style'] . ';';
+		}
+
+		// For text transform.
+		if ( $output_value['text-transform'] != $default_value['text-transform'] ) {
+			$parse_css .= 'text-transform:' . $output_value['text-transform'] . ';';
+		}
+
+		// For text decoration.
+		if ( $output_value['text-decoration'] != $default_value['text-decoration'] ) {
+			$parse_css .= 'text-decoration:' . $output_value['text-decoration'] . ';';
+		}
+
+		$parse_css .= '}';
+
+		return $parse_css;
+
+	}
+
+endif;
