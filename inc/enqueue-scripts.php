@@ -110,6 +110,51 @@ function colormag_image_uploader() {
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
 
+if ( ! function_exists( 'colormag_darkcolor' ) ) :
+
+	/**
+	 * Generate darker color
+	 *
+	 * @param string $hex   Hex color value.
+	 * @param string $steps Steps to change the hex color value for equivalent dark color.
+	 *
+	 * Source: http://stackoverflow.com/questions/3512311/how-to-generate-lighter-darker-color-with-php
+	 *
+	 * @return string
+	 */
+	function colormag_darkcolor( $hex, $steps ) {
+
+		// Steps should be between -255 and 255. Negative = darker, positive = lighter.
+		$steps = max( - 255, min( 255, $steps ) );
+
+		// Normalize into a six character long hex string.
+		$hex = str_replace( '#', '', $hex );
+		if ( strlen( $hex ) == 3 ) {
+			$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
+		}
+
+		// Split into three parts: R, G and B.
+		$color_parts = str_split( $hex, 2 );
+		$return      = '#';
+
+		foreach ( $color_parts as $color ) {
+
+			// Convert to decimal.
+			$color = hexdec( $color );
+
+			// Adjust the color.
+			$color = max( 0, min( 255, $color + $steps ) );
+
+			$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code.
+
+		}
+
+		return $return;
+
+	}
+
+endif;
+
 if ( ! function_exists( 'colormag_parse_css' ) ) :
 
 	/**
