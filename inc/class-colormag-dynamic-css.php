@@ -35,6 +35,7 @@ class ColorMag_Dynamic_CSS {
 		 * Variable declarations.
 		 */
 		$primary_color = get_theme_mod( 'colormag_primary_color', '#289dcc' );
+		$primary_dark  = colormag_darkcolor( $primary_color, - 30 );
 
 		$parse_css = '';
 
@@ -58,6 +59,14 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		$parse_css .= colormag_parse_css( '#289dcc', $primary_color, $primary_color_css );
+
+		$primary_dark_color_css = array(
+			'.better-responsive-menu .sub-toggle' => array(
+				'background-color' => esc_html( $primary_dark ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '#289dcc', $primary_color, $primary_dark_color_css, '', 768 );
 
 		$parse_css .= $dynamic_css;
 

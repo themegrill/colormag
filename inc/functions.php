@@ -254,11 +254,6 @@ add_action( 'wp_head', 'colormag_custom_css', 100 );
  */
 function colormag_custom_css() {
 	$colormag_internal_css = '';
-	$primary_color         = get_theme_mod( 'colormag_primary_color', '#289dcc' );
-	$primary_dark          = colormag_darkcolor( $primary_color, - 30 );
-	if ( $primary_color != '#289dcc' ) {
-		$colormag_internal_css .= '@media (max-width: 768px) {.better-responsive-menu .sub-toggle{background-color:' . $primary_dark . '}}';
-	}
 
 	if ( ! empty( $colormag_internal_css ) ) {
 		echo '<!-- ' . get_bloginfo( 'name' ) . ' Internal Styles -->';
