@@ -11,11 +11,20 @@
  * Add Meta Boxes.
  */
 function colormag_add_custom_box() {
-	// Adding layout meta box for page.
-	add_meta_box( 'page-layout', esc_html__( 'Select Layout', 'colormag' ), 'colormag_page_layout', 'page', 'side', 'default' );
 
-	// Adding layout meta box for post.
-	add_meta_box( 'page-layout', esc_html__( 'Select Layout', 'colormag' ), 'colormag_page_layout', 'post', 'side', 'default' );
+	// Adding layout meta box option for page and posts.
+	add_meta_box(
+		'page-layout',
+		esc_html__( 'Select Layout', 'colormag' ),
+		'colormag_page_layout',
+		array(
+			'page',
+			'post',
+		),
+		'side',
+		'default'
+	);
+
 }
 
 add_action( 'add_meta_boxes', 'colormag_add_custom_box' );
