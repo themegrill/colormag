@@ -117,6 +117,7 @@ add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
  */
 function colormag_font_subset() {
 
+
 }
 
 add_filter( 'colormag_font_subset', 'colormag_font_subset' );
