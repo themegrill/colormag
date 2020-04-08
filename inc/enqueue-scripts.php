@@ -275,7 +275,7 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 		}
 
 		$parse_css = '';
-		$parse_css .= $selector . ' {';
+		$parse_css .= $selector . '{';
 
 		// For background color.
 		if ( $output_value['background-color'] != $default_value['background-color'] ) {
@@ -334,7 +334,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		}
 
 		$parse_css = '';
-		$parse_css .= $selector . ' {';
+		$parse_css .= $selector . '{';
 
 		// For font family.
 		if ( $output_value['font-family'] != $default_value['font-family'] ) {
@@ -391,7 +391,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 				// For tablet devices.
 				if ( 'tablet' === $device && $size ) {
-					$parse_css .= '@media (max-width:' . $size . 'px){';
+					$parse_css .= '@media(max-width:' . $size . 'px){';
 					$parse_css .= $selector . '{';
 
 					// For font size on tablet.
@@ -415,7 +415,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 				// For mobile devices.
 				if ( 'mobile' === $device && $size ) {
-					$parse_css .= '@media (max-width:' . $size . 'px){';
+					$parse_css .= '@media(max-width:' . $size . 'px){';
 					$parse_css .= $selector . '{';
 
 					// For font size on mobile.
