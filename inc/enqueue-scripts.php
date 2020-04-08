@@ -368,8 +368,13 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		}
 
 		// For font size on desktop.
-		if ( isset( $output_value['font-size']['tablet'] ) && ( $output_value['font-size']['desktop'] != $default_value['font-size']['desktop'] ) ) {
+		if ( isset( $output_value['font-size']['desktop'] ) && ( $output_value['font-size']['desktop'] != $default_value['font-size']['desktop'] ) ) {
 			$parse_css .= 'font-size:' . $output_value['font-size']['desktop'] . ';';
+		}
+
+		// For line height on desktop.
+		if ( isset( $output_value['line-height']['desktop'] ) && ( $output_value['line-height']['desktop'] != $default_value['line-height']['desktop'] ) ) {
+			$parse_css .= 'line-height:' . $output_value['line-height']['desktop'] . ';';
 		}
 
 		$parse_css .= '}';
@@ -389,6 +394,11 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 						$parse_css .= 'font-size:' . $output_value['font-size']['tablet'] . ';';
 					}
 
+					// For line height on tablet.
+					if ( isset( $output_value['line-height']['tablet'] ) && ( $output_value['line-height']['tablet'] != $default_value['line-height']['tablet'] ) ) {
+						$parse_css .= 'line-height:' . $output_value['line-height']['tablet'] . ';';
+					}
+
 					$parse_css .= '}';
 					$parse_css .= '}';
 				}
@@ -401,6 +411,11 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 					// For font size on mobile.
 					if ( isset( $output_value['font-size']['mobile'] ) && ( $output_value['font-size']['mobile'] != $default_value['font-size']['mobile'] ) ) {
 						$parse_css .= 'font-size:' . $output_value['font-size']['mobile'] . ';';
+					}
+
+					// For line height on mobile.
+					if ( isset( $output_value['line-height']['mobile'] ) && ( $output_value['line-height']['mobile'] != $default_value['line-height']['mobile'] ) ) {
+						$parse_css .= 'line-height:' . $output_value['line-height']['mobile'] . ';';
 					}
 
 					$parse_css .= '}';
