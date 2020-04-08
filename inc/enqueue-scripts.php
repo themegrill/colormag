@@ -377,6 +377,11 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 			$parse_css .= 'line-height:' . $output_value['line-height']['desktop'] . ';';
 		}
 
+		// For letter spacing on desktop.
+		if ( isset( $output_value['letter-spacing']['desktop'] ) && ( $output_value['letter-spacing']['desktop'] != $default_value['letter-spacing']['desktop'] ) ) {
+			$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['desktop'] . ';';
+		}
+
 		$parse_css .= '}';
 
 		// For responsive devices.
@@ -399,6 +404,11 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 						$parse_css .= 'line-height:' . $output_value['line-height']['tablet'] . ';';
 					}
 
+					// For letter spacing on tablet.
+					if ( isset( $output_value['letter-spacing']['tablet'] ) && ( $output_value['letter-spacing']['tablet'] != $default_value['letter-spacing']['tablet'] ) ) {
+						$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['tablet'] . ';';
+					}
+
 					$parse_css .= '}';
 					$parse_css .= '}';
 				}
@@ -416,6 +426,11 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 					// For line height on mobile.
 					if ( isset( $output_value['line-height']['mobile'] ) && ( $output_value['line-height']['mobile'] != $default_value['line-height']['mobile'] ) ) {
 						$parse_css .= 'line-height:' . $output_value['line-height']['mobile'] . ';';
+					}
+
+					// For letter spacing on mobile.
+					if ( isset( $output_value['letter-spacing']['mobile'] ) && ( $output_value['letter-spacing']['mobile'] != $default_value['letter-spacing']['mobile'] ) ) {
+						$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['mobile'] . ';';
 					}
 
 					$parse_css .= '}';
