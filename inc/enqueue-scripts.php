@@ -367,7 +367,47 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 			}
 		}
 
+		// For font size on desktop.
+		if ( isset( $output_value['font-size']['tablet'] ) && ( $output_value['font-size']['desktop'] != $default_value['font-size']['desktop'] ) ) {
+			$parse_css .= 'font-size:' . $output_value['font-size']['desktop'] . ';';
+		}
+
 		$parse_css .= '}';
+
+		// For responsive devices.
+		if ( is_array( $devices ) ) {
+
+			foreach ( $devices as $device => $size ) {
+
+				// For tablet devices.
+				if ( 'tablet' === $device && $size ) {
+					$parse_css .= '@media (max-width:' . $size . 'px){';
+					$parse_css .= $selector . '{';
+
+					// For font size on tablet.
+					if ( isset( $output_value['font-size']['tablet'] ) && ( $output_value['font-size']['tablet'] != $default_value['font-size']['tablet'] ) ) {
+						$parse_css .= 'font-size:' . $output_value['font-size']['tablet'] . ';';
+					}
+
+					$parse_css .= '}';
+					$parse_css .= '}';
+				}
+
+				// For mobile devices.
+				if ( 'mobile' === $device && $size ) {
+					$parse_css .= '@media (max-width:' . $size . 'px){';
+					$parse_css .= $selector . '{';
+
+					// For font size on mobile.
+					if ( isset( $output_value['font-size']['mobile'] ) && ( $output_value['font-size']['mobile'] != $default_value['font-size']['mobile'] ) ) {
+						$parse_css .= 'font-size:' . $output_value['font-size']['mobile'] . ';';
+					}
+
+					$parse_css .= '}';
+					$parse_css .= '}';
+				}
+			}
+		}
 
 		return $parse_css;
 
