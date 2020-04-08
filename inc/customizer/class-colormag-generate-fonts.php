@@ -91,7 +91,7 @@ class ColorMag_Generate_Fonts {
 				// Add Subset.
 				$subset = apply_filters( 'colormag_font_subset', '', $name );
 				if ( ! empty( $subset ) ) {
-					$font_subset[] = $subset;
+					$font_subset = $subset;
 				}
 			}
 		}

@@ -113,6 +113,16 @@ add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
 
 
 /**
+ * Filter hook to get the required Google font subsets for this theme.
+ */
+function colormag_font_subset() {
+
+}
+
+add_filter( 'colormag_font_subset', 'colormag_font_subset' );
+
+
+/**
  * Enqueue image upload script for use within widgets.
  */
 function colormag_image_uploader() {
