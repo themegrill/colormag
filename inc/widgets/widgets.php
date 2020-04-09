@@ -7,6 +7,11 @@
  * @since      ColorMag 1.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Function to register the widget areas(sidebar) and widgets.
  */
@@ -234,6 +239,9 @@ function colormag_widgets_init() {
 }
 
 add_action( 'widgets_init', 'colormag_widgets_init' );
+
+// Abstract class for widgets.
+require COLORMAG_WIDGETS_DIR . '/abstract-colormag-widget.php';
 
 // Require file for TG: Featured Category Slider widget.
 require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-slider-widget.php';
