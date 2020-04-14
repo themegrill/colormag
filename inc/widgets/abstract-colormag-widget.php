@@ -130,6 +130,18 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? 1 : 0;
 					break;
 
+				case 'number':
+					$instance[ $key ] = is_numeric( $new_instance[ $key ] ) ? intval( $new_instance[ $key ] ) : '';
+
+					if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] ) {
+						$instance[ $key ] = max( $instance[ $key ], $setting['input_attrs']['min'] );
+					}
+
+					if ( isset( $setting['input_attrs']['max'] ) && '' !== $setting['input_attrs']['max'] ) {
+						$instance[ $key ] = min( $instance[ $key ], $setting['input_attrs']['max'] );
+					}
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
@@ -236,6 +248,32 @@ abstract class ColorMag_Widget extends WP_Widget {
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
 							<?php echo esc_html( $setting['label'] ); ?>
 						</label>
+					</p>
+					<?php
+					break;
+
+				case 'number':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<input class="widefat <?php echo esc_attr( $class ); ?>"
+						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+						       type="number"
+						       value="<?php echo esc_attr( $value ); ?>"
+							<?php if ( isset( $setting['input_attrs']['step'] ) ) { ?>
+								step="<?php echo esc_attr( $setting['input_attrs']['step'] ); ?>"
+							<?php } ?>
+							<?php if ( isset( $setting['input_attrs']['min'] ) ) { ?>
+								min="<?php echo esc_attr( $setting['input_attrs']['min'] ); ?>"
+							<?php } ?>
+							<?php if ( isset( $setting['input_attrs']['max'] ) ) { ?>
+								max="<?php echo esc_attr( $setting['input_attrs']['max'] ); ?>"
+							<?php } ?>
+						/>
 					</p>
 					<?php
 					break;
