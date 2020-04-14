@@ -1,74 +1,64 @@
 <?php
 /**
- * 300x250 Advertisement Ads
+ * 300x250 Advertisement Ads Widget.
+ *
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 1.0.0
  */
 
-class colormag_300x250_advertisement_widget extends WP_Widget {
+/**
+ * 300x250 Advertisement Ads Widget.
+ *
+ * Class colormag_300x250_advertisement_widget
+ */
+class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 
-	function __construct() {
-		$widget_ops  = array(
-			'classname'                   => 'widget_300x250_advertisement',
-			'description'                 => __( 'Add your 300x250 Advertisement here', 'colormag' ),
-			'customize_selective_refresh' => true,
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+
+		$this->widget_cssclass    = 'widget_300x250_advertisement';
+		$this->widget_description = esc_html__( 'Add your 300x250 Advertisement here', 'colormag' );
+		$this->widget_id          = false;
+		$this->widget_name        = esc_html__( 'TG: 300x250 Advertisement', 'colormag' );
+		$this->settings           = array(
+			'title'                => array(
+				'type'    => 'text',
+				'default' => '',
+				'label'   => esc_html__( 'Title:', 'colormag' ),
+			),
+			'image_addition_label' => array(
+				'type'    => 'custom',
+				'default' => '',
+				'label'   => esc_html__( 'Add your Advertisement 300x250 Images Here', 'colormag' ),
+			),
+			'300x250_image_link'   => array(
+				'type'    => 'url',
+				'default' => '',
+				'label'   => esc_html__( 'Advertisement Image Link ', 'colormag' ),
+			),
+			'300x250_image_url'    => array(
+				'type'    => 'image',
+				'default' => '',
+				'label'   => esc_html__( 'Advertisement Image ', 'colormag' ),
+			),
 		);
-		$control_ops = array( 'width' => 200, 'height' => 250 );
-		parent::__construct( false, $name = __( 'TG: 300x250 Advertisement', 'colormag' ), $widget_ops );
+
+		parent::__construct();
+
 	}
 
-	function form( $instance ) {
-		$instance = wp_parse_args( ( array ) $instance, array(
-			'title'              => '',
-			'300x250_image_url'  => '',
-			'300x250_image_link' => '',
-		) );
-		$title    = esc_attr( $instance['title'] );
-
-		$image_link = '300x250_image_link';
-		$image_url  = '300x250_image_url';
-
-		$instance[ $image_link ] = esc_url( $instance[ $image_link ] );
-		$instance[ $image_url ]  = esc_url( $instance[ $image_url ] );
-		?>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
-		</p>
-		<label><?php _e( 'Add your Advertisement 300x250 Images Here', 'colormag' ); ?></label>
-		<p>
-			<label for="<?php echo $this->get_field_id( $image_link ); ?>"> <?php _e( 'Advertisement Image Link ', 'colormag' ); ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( $image_link ); ?>" name="<?php echo $this->get_field_name( $image_link ); ?>" value="<?php echo $instance[ $image_link ]; ?>" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( $image_url ); ?>"> <?php _e( 'Advertisement Image ', 'colormag' ); ?></label>
-		<div class="media-uploader" id="<?php echo $this->get_field_id( $image_url ); ?>">
-			<div class="custom_media_preview">
-				<?php if ( $instance[ $image_url ] != '' ) : ?>
-					<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="max-width:100%;" />
-				<?php endif; ?>
-			</div>
-			<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( $image_url ); ?>" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php echo esc_url( $instance[ $image_url ] ); ?>" style="margin-top:5px;" />
-			<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( $image_url ); ?>" data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>" data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php esc_html_e( 'Select an Image', 'colormag' ); ?></button>
-		</div>
-		</p>
-
-		<?php
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance          = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-
-		$image_link = '300x250_image_link';
-		$image_url  = '300x250_image_url';
-
-		$instance[ $image_link ] = esc_url_raw( $new_instance[ $image_link ] );
-		$instance[ $image_url ]  = esc_url_raw( $new_instance[ $image_url ] );
-
-		return $instance;
-	}
-
-	function widget( $args, $instance ) {
+	/**
+	 * Output widget.
+	 *
+	 * @see WP_Widget
+	 *
+	 * @param array $args     Arguments.
+	 * @param array $instance Widget instance.
+	 */
+	public function widget( $args, $instance ) {
 		extract( $args );
 		extract( $instance );
 
@@ -80,7 +70,7 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 		$image_link = isset( $instance[ $image_link ] ) ? $instance[ $image_link ] : '';
 		$image_url  = isset( $instance[ $image_url ] ) ? $instance[ $image_url ] : '';
 
-		echo $before_widget;
+		$this->widget_start( $args );
 		?>
 
 		<div class="advertisement_300x250">
@@ -108,7 +98,7 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
 			?>
 		</div>
 		<?php
-		echo $after_widget;
+		$this->widget_end( $args );
 	}
 
 }

@@ -158,9 +158,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_choices ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
-				case 'custom':
-					break;
-
 				case 'dropdown_categories':
 					$new_instance[ $key ] = absint( $new_instance[ $key ] );
 
@@ -414,9 +411,11 @@ abstract class ColorMag_Widget extends WP_Widget {
 							<?php echo esc_html( $setting['label'] ); ?>
 						</label>
 
-						<div style="text-align: center;">
-							<img src="<?php echo esc_url( $setting['image_url'] ); ?>" alt="" />
-						</div>
+						<?php if ( isset( $setting['image_url'] ) ) { ?>
+							<div style="text-align: center;">
+								<img src="<?php echo esc_url( $setting['image_url'] ); ?>" alt="" />
+							</div>
+						<?php } ?>
 					</div>
 					<?php
 					break;
