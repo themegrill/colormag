@@ -59,46 +59,48 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 	 * @param array $instance Widget instance.
 	 */
 	public function widget( $args, $instance ) {
-		extract( $args );
-		extract( $instance );
 
-		$title = isset( $instance['title'] ) ? $instance['title'] : '';
+		$title = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 
-		$image_link = '300x250_image_link';
-		$image_url  = '300x250_image_url';
-
-		$image_link = isset( $instance[ $image_link ] ) ? $instance[ $image_link ] : '';
-		$image_url  = isset( $instance[ $image_url ] ) ? $instance[ $image_url ] : '';
+		$image_link = isset( $instance['300x250_image_link'] ) ? $instance['300x250_image_link'] : '';
+		$image_url  = isset( $instance['300x250_image_url'] ) ? $instance['300x250_image_url'] : '';
 
 		$this->widget_start( $args );
 		?>
 
 		<div class="advertisement_300x250">
-			<?php if ( ! empty( $title ) ) { ?>
+			<?php
+			if ( ! empty( $title ) ) {
+				?>
 				<div class="advertisement-title">
-					<?php echo $before_title . esc_html( $title ) . $after_title; ?>
+					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<?php
 			}
+
 			$output = '';
+
 			if ( ! empty( $image_url ) ) {
 				$image_id  = attachment_url_to_postid( $image_url );
 				$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-				$output    .= '<div class="advertisement-content">';
+
+				$output .= '<div class="advertisement-content">';
 				if ( ! empty( $image_link ) ) {
-					$output .= '<a href="' . $image_link . '" class="single_ad_300x250" target="_blank" rel="nofollow">
-                                    <img src="' . $image_url . '" width="300" height="250" alt="' . $image_alt . '">
-                           </a>';
+					$output .= '<a href="' . $image_link . '" class="single_ad_300x250" target="_blank" rel="nofollow">';
+					$output .= '<img src="' . $image_url . '" width="300" height="250" alt="' . $image_alt . '">';
+					$output .= '</a>';
 				} else {
 					$output .= '<img src="' . $image_url . '" width="300" height="250" alt="' . $image_alt . '">';
 				}
 				$output .= '</div>';
-				echo $output;
+
+				echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 			}
 			?>
 		</div>
 		<?php
 		$this->widget_end( $args );
+
 	}
 
 }
