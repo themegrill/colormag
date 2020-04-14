@@ -103,9 +103,33 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 			// Format the value based on settings type.
 			switch ( $setting['type'] ) {
+
+				case 'image':
+					/**
+					 * Array of valid image file types.
+					 *
+					 * The array includes image mime types that are included in wp_get_mime_types()
+					 */
+					$mimes = array(
+						'jpg|jpeg|jpe' => 'image/jpeg',
+						'gif'          => 'image/gif',
+						'png'          => 'image/png',
+						'bmp'          => 'image/bmp',
+						'tiff|tif'     => 'image/tiff',
+						'ico'          => 'image/x-icon',
+					);
+
+					// Return an array with file extension and mime_type.
+					$file = wp_check_filetype( $new_instance[ $key ], $mimes );
+
+					// If $new_instance[ $key ] has a valid mime_type, assign it to $instance[ $key ], otherwise, assign empty value to $instance[ $key ].
+					$instance[ $key ] = $file['ext'] ? $new_instance[ $key ] : '';
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
+
 			}
 
 			/**
@@ -144,6 +168,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
 							<?php echo esc_html( $setting['label'] ); ?>
 						</label>
+
 						<input type="text"
 						       class="widefat <?php echo esc_attr( $class ); ?>"
 						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
@@ -151,6 +176,46 @@ abstract class ColorMag_Widget extends WP_Widget {
 						       value="<?php echo esc_attr( $value ); ?>"
 						/>
 					</p>
+					<?php
+					break;
+
+				case 'image':
+					?>
+					<div class="media-uploader">
+						<p>
+							<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+								<?php echo esc_html( $setting['label'] ); ?>
+							</label>
+						</p>
+
+						<div class="media-uploader" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<div class="custom_media_preview">
+								<?php if ( $value != '' ) : ?>
+									<img class="custom_media_preview_default"
+									     src="<?php echo esc_url( $value ); ?>"
+									     style="max-width:100%;"
+									/>
+								<?php endif; ?>
+							</div>
+
+							<input type="text"
+							       class="widefat custom_media_input"
+							       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+							       value="<?php echo esc_attr( $value ); ?>"
+							       style="margin-top:5px;"
+							/>
+
+							<button class="custom_media_upload button button-secondary button-large"
+							        id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							        data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>"
+							        data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>"
+							        style="width:100%;margin-top:6px;margin-right:30px;"
+							>
+								<?php esc_html_e( 'Select an Image', 'colormag' ); ?>
+							</button>
+						</div>
+					</div>
 					<?php
 					break;
 
