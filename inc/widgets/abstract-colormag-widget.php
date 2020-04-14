@@ -108,6 +108,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? esc_url_raw( $new_instance[ $key ] ) : $setting['default'];
 					break;
 
+				case 'textarea':
+					$instance[ $key ] = wp_kses( trim( wp_unslash( $new_instance[ $key ] ) ), wp_kses_allowed_html( 'post' ) );
+					break;
+
 				case 'image':
 					/**
 					 * Array of valid image file types.
@@ -248,6 +252,23 @@ abstract class ColorMag_Widget extends WP_Widget {
 						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
 						       value="<?php echo esc_attr( $value ); ?>"
 						/>
+					</p>
+					<?php
+					break;
+
+				case 'textarea':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<textarea class="widefat <?php echo esc_attr( $class ); ?>"
+						          rows="5"
+						          cols="20"
+						          id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+						          name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+						><?php echo esc_textarea( $value ); ?></textarea>
 					</p>
 					<?php
 					break;
