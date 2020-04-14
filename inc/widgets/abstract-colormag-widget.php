@@ -497,4 +497,22 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 	}
 
+	/**
+	 * Output the html at the start of a widget.
+	 *
+	 * @param array $args Arguments.
+	 */
+	public function widget_start( $args ) {
+		echo $args['before_widget']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+	}
+
+	/**
+	 * Output the html at the end of a widget.
+	 *
+	 * @param array $args Arguments.
+	 */
+	public function widget_end( $args ) {
+		echo $args['after_widget']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+	}
+
 }
