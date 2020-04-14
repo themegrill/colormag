@@ -162,6 +162,22 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
+				case 'dropdown_users':
+					$new_instance[ $key ] = absint( $new_instance[ $key ] );
+					$available_users      = array();
+					$all_author_users     = get_users(
+						array(
+							'who' => 'authors',
+						)
+					);
+
+					foreach ( $all_author_users as $author_user ) {
+						$available_users[ $author_user->ID ] = $author_user->display_name;
+					}
+
+					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_users ) ? $new_instance[ $key ] : $setting['default'];
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
@@ -381,6 +397,30 @@ abstract class ColorMag_Widget extends WP_Widget {
 								'name'             => $this->get_field_name( $key ),
 								'selected'         => $value,
 								'taxonomy'         => 'post_tag',
+								'class'            => 'widefat postform',
+							)
+						);
+						?>
+					</p>
+					<?php
+					break;
+
+				case 'dropdown_users':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<?php
+						wp_dropdown_users(
+							array(
+								'show_option_none' => ' ',
+								'name'             => $this->get_field_name( $key ),
+								'selected'         => $value,
+								'orderby'          => 'name',
+								'order'            => 'ASC',
+								'who'              => 'authors',
 								'class'            => 'widefat postform',
 							)
 						);
