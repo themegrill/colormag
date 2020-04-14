@@ -126,6 +126,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = $file['ext'] ? $new_instance[ $key ] : '';
 					break;
 
+				case 'checkbox':
+					$instance[ $key ] = isset( $new_instance[ $key ] ) ? 1 : 0;
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
@@ -216,6 +220,23 @@ abstract class ColorMag_Widget extends WP_Widget {
 							</button>
 						</div>
 					</div>
+					<?php
+					break;
+
+				case 'checkbox':
+					?>
+					<p>
+						<input class="checkbox"
+						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+						       type="checkbox"
+							<?php echo esc_attr( ( $value == 1 ) ? 'checked' : '' ); ?>
+						/>
+
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+					</p>
 					<?php
 					break;
 
