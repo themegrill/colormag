@@ -104,6 +104,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 			// Format the value based on settings type.
 			switch ( $setting['type'] ) {
 
+				case 'url':
+					$instance[ $key ] = isset( $new_instance[ $key ] ) ? esc_url_raw( $new_instance[ $key ] ) : $setting['default'];
+					break;
+
 				case 'image':
 					/**
 					 * Array of valid image file types.
@@ -222,6 +226,23 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<input type="text"
+						       class="widefat <?php echo esc_attr( $class ); ?>"
+						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+						       value="<?php echo esc_attr( $value ); ?>"
+						/>
+					</p>
+					<?php
+					break;
+
+				case 'url':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<input type="url"
 						       class="widefat <?php echo esc_attr( $class ); ?>"
 						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
 						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
