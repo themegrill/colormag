@@ -143,6 +143,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'radio':
+				case 'select':
 					$new_instance[ $key ] = sanitize_key( $new_instance[ $key ] );
 					$available_choices    = $setting['choices'];
 
@@ -306,6 +307,29 @@ abstract class ColorMag_Widget extends WP_Widget {
 								<?php echo esc_html( $choices_value ); ?>
 							</label>
 						<?php } ?>
+					</p>
+					<?php
+					break;
+
+				case 'select':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<select class="widefat <?php echo esc_attr( $class ); ?>"
+						        id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+						        name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+						>
+							<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
+								<option value="<?php echo esc_attr( $choices_key ); ?>"
+									<?php selected( $choices_key, $value ); ?>
+								>
+									<?php echo esc_html( $choices_value ); ?>
+								</option>
+							<?php } ?>
+						</select>
 					</p>
 					<?php
 					break;
