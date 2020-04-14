@@ -123,7 +123,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$file = wp_check_filetype( $new_instance[ $key ], $mimes );
 
 					// If $new_instance[ $key ] has a valid mime_type, assign it to $instance[ $key ], otherwise, assign empty value to $instance[ $key ].
-					$instance[ $key ] = $file['ext'] ? $new_instance[ $key ] : '';
+					$instance[ $key ] = $file['ext'] ? $new_instance[ $key ] : $setting['default'];
 					break;
 
 				case 'checkbox':
@@ -131,7 +131,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'number':
-					$instance[ $key ] = is_numeric( $new_instance[ $key ] ) ? intval( $new_instance[ $key ] ) : '';
+					$instance[ $key ] = is_numeric( $new_instance[ $key ] ) ? intval( $new_instance[ $key ] ) : $setting['default'];
 
 					if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] ) {
 						$instance[ $key ] = max( $instance[ $key ], $setting['input_attrs']['min'] );
@@ -140,6 +140,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 					if ( isset( $setting['input_attrs']['max'] ) && '' !== $setting['input_attrs']['max'] ) {
 						$instance[ $key ] = min( $instance[ $key ], $setting['input_attrs']['max'] );
 					}
+					break;
+
+				case 'radio':
+					$new_instance[ $key ] = sanitize_key( $new_instance[ $key ] );
+					$available_choices    = $setting['choices'];
+
+					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_choices ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
 				default:
@@ -274,6 +281,31 @@ abstract class ColorMag_Widget extends WP_Widget {
 								max="<?php echo esc_attr( $setting['input_attrs']['max'] ); ?>"
 							<?php } ?>
 						/>
+					</p>
+					<?php
+					break;
+
+				case 'radio':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
+							<br />
+
+							<input type="radio"
+							       id="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>"
+							       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+							       value="<?php echo esc_attr( $this->get_field_name( $choices_key ) ); ?>"
+								<?php echo esc_attr( ( $choices_key == $value ) ? 'checked' : '' ); ?>
+							/>
+
+							<label for="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>">
+								<?php echo esc_html( $choices_value ); ?>
+							</label>
+						<?php } ?>
 					</p>
 					<?php
 					break;
