@@ -2,3 +2,42 @@
 	margin: 0 4px 3px 0;
 	vertical-align: middle;
 }
+
+.colormag-message {
+	position: relative;
+}
+
+.colormag-message .colormag-message-close {
+	text-decoration: none;
+}
+
+.colormag-message-wrapper {
+	padding: 20px 0;
+}
+
+.colormag-message-wrapper .colormag-screenshot {
+	width: 20%;
+	max-width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid #dddddd;
+}
+
+.colormag-message-wrapper .colormag-getting-started-notice {
+	width: 70%;
+	max-width: 600px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 20px;
+}
+
+@media (max-width: 600px) {
+	.colormag-message-wrapper .colormag-screenshot {
+		display: none;
+	}
+
+	.colormag-message-wrapper .colormag-getting-started-notice {
+		padding: 0;
+		width: 100%;
+	}
+}

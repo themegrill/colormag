@@ -176,22 +176,33 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				)
 			);
 			?>
-			<div id="message" class="updated colormag-message notice is-dismissible">
-				<p>
-					<?php
-					printf(
-						/* Translators: 1. Welcome page link, 2. Closing of link for Welcome page */
-						esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ),
-						'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">',
-						'</a>'
-					);
-					?>
-				</p>
+			<div id="message" class="updated colormag-message notice">
+				<a class="colormag-message-close notice-dismiss"
+				   href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) ); ?>">
+					<span class="screen-reader-text"><?php esc_html_e( 'Dismiss', 'colormag' ); ?></span>
+				</a>
 
-				<span><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
+				<div class="colormag-message-wrapper">
+					<img class="colormag-screenshot" src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="<?php esc_html_e( 'ColorMag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
 
-				<div class="submit">
-					<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?>"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a>
+					<div class="colormag-getting-started-notice">
+						<p>
+							<?php
+							printf(
+								/* Translators: 1. Welcome page link, 2. Closing of link for Welcome page */
+								esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ),
+								'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">',
+								'</a>'
+							);
+							?>
+						</p>
+
+						<span><?php esc_html_e( 'Clicking the button below will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
+
+						<div class="submit">
+							<a class="btn-get-started button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="<?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?>"><?php esc_html_e( 'Get started with ColorMag', 'colormag' ); ?></a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<?php
