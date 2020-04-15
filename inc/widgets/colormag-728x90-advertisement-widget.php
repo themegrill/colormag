@@ -59,17 +59,10 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 	 * @param array $instance Widget instance.
 	 */
 	public function widget( $args, $instance ) {
-		extract( $args );
-		extract( $instance );
 
-		$title = isset( $instance['title'] ) ? $instance['title'] : '';
-
-
-		$image_link = '728x90_image_link';
-		$image_url  = '728x90_image_url';
-
-		$image_link = isset( $instance[ $image_link ] ) ? $instance[ $image_link ] : '';
-		$image_url  = isset( $instance[ $image_url ] ) ? $instance[ $image_url ] : '';
+		$title      = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
+		$image_link = isset( $instance['728x90_image_link'] ) ? $instance['728x90_image_link'] : '';
+		$image_url  = isset( $instance['728x90_image_url'] ) ? $instance['728x90_image_url'] : '';
 
 		$this->widget_start( $args );
 		?>
@@ -77,31 +70,35 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 		<div class="advertisement_728x90">
 			<?php if ( ! empty( $title ) ) { ?>
 				<div class="advertisement-title">
-					<?php echo $before_title . esc_html( $title ) . $after_title; ?>
+					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<?php
 			}
-			$output    = '';
-			$image_id  = attachment_url_to_postid( $image_url );
-			$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+
+			$output = '';
+
 			if ( ! empty( $image_url ) ) {
+				$image_id  = attachment_url_to_postid( $image_url );
+				$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+
 				$output .= '<div class="advertisement-content">';
 				if ( ! empty( $image_link ) ) {
-					$image_id  = attachment_url_to_postid( $image_url );
-					$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-					$output    .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" rel="nofollow">
-                                    <img src="' . $image_url . '" width="728" height="90" alt="' . $image_alt . '">
-                           </a>';
+					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" rel="nofollow">';
+					$output .= '<img src="' . $image_url . '" width="728" height="90" alt="' . $image_alt . '">';
+					$output .= '</a>';
 				} else {
 					$output .= '<img src="' . $image_url . '" width="728" height="90" alt="' . $image_alt . '">';
 				}
 				$output .= '</div>';
-				echo $output;
+
+				echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 			}
 			?>
 		</div>
+
 		<?php
 		$this->widget_end( $args );
+
 	}
 
 }

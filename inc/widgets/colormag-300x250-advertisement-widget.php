@@ -60,8 +60,7 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$title = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
-
+		$title      = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 		$image_link = isset( $instance['300x250_image_link'] ) ? $instance['300x250_image_link'] : '';
 		$image_url  = isset( $instance['300x250_image_url'] ) ? $instance['300x250_image_url'] : '';
 
@@ -69,9 +68,7 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 		?>
 
 		<div class="advertisement_300x250">
-			<?php
-			if ( ! empty( $title ) ) {
-				?>
+			<?php if ( ! empty( $title ) ) { ?>
 				<div class="advertisement-title">
 					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 				</div>
@@ -98,6 +95,7 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 			}
 			?>
 		</div>
+
 		<?php
 		$this->widget_end( $args );
 
