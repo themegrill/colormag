@@ -236,7 +236,7 @@ body {
 				}
 
 				&.main-navigation {
-					ul#menu-primary {
+					ul {
 						ul.sub-menu,
 						.children {
 							background-color: $news-background;
@@ -248,7 +248,8 @@ body {
 						}
 					}
 					a,
-					.random-post a .fa-random {
+					.random-post a .fa-random,
+					.home-icon .fa {
 						color: $white;
 					}
 				}

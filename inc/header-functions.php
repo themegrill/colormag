@@ -257,6 +257,27 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 				}
 				?>
 
+				<?php if ( get_theme_mod( 'colormag_random_post_in_menu', 0 ) == 1 || get_theme_mod( 'colormag_search_icon_in_menu', 0 ) == 1 ) { ?>
+					<div class="search-random-icons-container">
+						<?php
+						// Displays the random post.
+						if ( get_theme_mod( 'colormag_random_post_in_menu', 0 ) == 1 ) {
+							colormag_random_post();
+						}
+
+						// Displays the search icon.
+						if ( get_theme_mod( 'colormag_search_icon_in_menu', 0 ) == 1 ) {
+							?>
+							<div class="top-search-wrap">
+								<i class="fa fa-search search-top"></i>
+								<div class="search-form-top">
+									<?php get_search_form(); ?>
+								</div>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+
 				<p class="menu-toggle"></p>
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
@@ -270,16 +291,6 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 				}
 				?>
 
-				<?php if ( get_theme_mod( 'colormag_random_post_in_menu', 0 ) == 1 ) { ?>
-					<?php colormag_random_post(); ?>
-				<?php } ?>
-
-				<?php if ( get_theme_mod( 'colormag_search_icon_in_menu', 0 ) == 1 ) { ?>
-					<i class="fa fa-search search-top"></i>
-					<div class="search-form-top">
-						<?php get_search_form(); ?>
-					</div>
-				<?php } ?>
 			</div>
 		</nav>
 

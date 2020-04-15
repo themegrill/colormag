@@ -313,6 +313,7 @@ input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
+input[type="url"],
 textarea {
 	-moz-appearance: none !important;
 	-webkit-appearance: none !important;
@@ -322,6 +323,7 @@ textarea {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="url"],
 textarea {
 	padding: 1%;
 	border: 1px solid #eaeaea;
@@ -338,6 +340,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="password"]:focus,
+input[type="url"]:focus,
 textarea:focus {
 	border: 1px solid #eaeaea;
 }
@@ -745,22 +748,27 @@ body {
 
 /* =SEARCH WIDGET
 ----------------------------------------------- */
+.search-random-icons-container {
+	float: right;
+}
+
 #masthead .search-wrap input.s {
 	width: 200px;
+}
+
+.top-search-wrap {
+	float: left;
 }
 
 .fa.search-top {
 	color: #ffffff;
 	cursor: pointer;
 	font-size: 21px;
-	padding: 11px 12px;
-	position: absolute;
-	right: 44px;
-	top: 0;
-}
+	padding: 10px 12px;
 
-.fa.search-top:hover {
-	background-color: #289dcc;
+	&:hover {
+		background-color: #289dcc;
+	}
 }
 
 .search-wrap {
@@ -796,6 +804,10 @@ body {
 	top: 44px;
 	z-index: 9999;
 	background-color: #ffffff;
+
+	&.show {
+		display: block;
+	}
 }
 
 .not-found .search-wrap button {
@@ -809,9 +821,7 @@ body {
 /* =RANDOM POST
 ----------------------------------------------- */
 .random-post {
-	position: absolute;
-	right: 0;
-	top: 0;
+	float: right;
 }
 
 .random-post .fa-random {
@@ -972,8 +982,12 @@ li.default-menu {
 .main-navigation ul li:hover ul ul,
 .main-navigation ul ul li:hover ul ul,
 .main-navigation ul ul ul li:hover ul ul,
-.main-navigation ul ul ul ul li:hover ul ul {
-	display: none;
+.main-navigation ul ul ul ul li:hover ul ul,
+.main-navigation ul li.focus ul ul,
+.main-navigation ul ul li.focus ul ul,
+.main-navigation ul ul ul li.focus ul ul,
+.main-navigation ul ul ul ul li.focus ul ul {
+	left: -99999px;
 	z-index: 100;
 }
 
@@ -981,8 +995,13 @@ li.default-menu {
 .main-navigation ul ul li:hover ul,
 .main-navigation ul ul ul li:hover ul,
 .main-navigation ul ul ul ul li:hover ul,
-.main-navigation ul ul ul ul ul li:hover ul {
-	display: block;
+.main-navigation ul ul ul ul ul li:hover ul,
+.main-navigation ul li.focus ul,
+.main-navigation ul ul li.focus ul,
+.main-navigation ul ul ul li.focus ul,
+.main-navigation ul ul ul ul li.focus ul,
+.main-navigation ul ul ul ul ul li.focus ul {
+	left: 100%;
 }
 
 .main-navigation ul li ul {
@@ -1025,6 +1044,32 @@ li.default-menu {
 .main-navigation ul li ul li ul {
 	left: 200px;
 	top: 0;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul {
+	position: absolute;
+	float: left;
+	left: -99999px;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul ul {
+	left: -99999px;
+	top: 0;
+}
+
+.main-navigation ul ul ul li:hover > ul,
+.main-navigation ul ul ul li.focus > ul {
+	left: 100%;
 }
 
 .main-navigation select {
@@ -1070,6 +1115,11 @@ li.default-menu {
 .main-small-navigation .menu-primary-container,
 .main-small-navigation .menu {
 	padding-top: 43px;
+}
+
+.main-small-navigation .menu-primary-container > ul,
+.main-small-navigation .menu > ul {
+	width: 100%;
 }
 
 .main-small-navigation ul {
@@ -1494,7 +1544,42 @@ li.default-menu {
 }
 
 .screen-reader-text {
-	display: none;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+
+	&:focus {
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		clip-path: none;
+		color: #21759b;
+		display: block;
+		font-size: 0.875rem;
+		font-size: 14px;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/* Do not show the outline on the skip link target. */
+#main[tabindex="-1"]:focus {
+	outline: 0;
 }
 
 .nav-previous,
@@ -1540,13 +1625,23 @@ li.default-menu {
 	font-size: 1.6rem;
 }
 
+#respond form .comment-form-cookies-consent #wp-comment-cookies-consent {
+	margin-right: 5px;
+}
+
+#respond form .comment-form-cookies-consent label {
+	display: inline-block;
+}
+
 #respond form label {
 	display: block;
 	line-height: 1.5;
 }
 
 #respond form input[type="text"],
-#respond form textarea {
+#respond form textarea,
+#respond form input[type="email"],
+#respond form input[type="url"] {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	font-size: 16px;
@@ -2029,7 +2124,7 @@ a#scroll-up:hover {
 	padding-bottom: 20px;
 }
 
-.below-entry-meta .updated {
+.below-entry-meta .updated:not(.published) {
 	display: none;
 }
 
@@ -2712,6 +2807,11 @@ ul.wp-block-gallery {
 	margin-right: 10px;
 }
 
+.widget_featured_posts.widget_featured_meta .following-post .single-article figure {
+	float: left;
+	margin-right: 10px;
+}
+
 #secondary .widget_featured_posts .following-post .article-content .entry-title {
 	font-size: 14px;
 	line-height: 1.4;
@@ -3275,6 +3375,14 @@ div.wp-custom-header {
 
 iframe#wp-custom-header-video {
 	width: 100%;
+}
+
+video#wp-custom-header-video {
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
 }
 
 .wp-custom-header-video-button {

@@ -50,6 +50,34 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - TBD =
+* Added - New Demo (ColorMag Wild Magazine) - Engage the nature lovers to your wildlife magazine website with this ColorMag demo.
+
+= Version - 1.4.5 - 2020-02-28 =
+* Tweak -Refactor theme page according to WordPress theme guidelines.
+
+= Version - 1.4.4 - 2020-02-19 =
+* Tweak - Minor Enhancement.
+
+= Version - 1.4.3 - 2020-01-22 =
+* Added - New Demo (ColorMag Top Magazine) - Start working on your awesome online magazine with this ColorMag demo.
+* Tweak - Modify menu CSS for keyboard accessibility.
+* Tweak - Modify self hosted Header Video CSS to align center.
+* Tweak - Deprecate Custom CSS customize option provided via theme
+
+= Version - 1.4.2 - 2019-07-29 =
+* Fix - Random posts and Search icon position in menu.
+* Fix - Comment form boxes design.
+* Fix - User consent design for comment form.
+* Fix - Published and Updated class for Google Structured Data.
+* Fix - Featured Posts widget image margin when used with Elementor.
+* Fix - Featured image alignment on featured posts widget for RTL support.
+* Tweak - CSS change for Elementor Block Elements.
+* Tweak - Update `screen-reader-text` CSS.
+* Tweak - Added `skip-link` to content area.
+* Tweak - Autofocus on search field for click on search icon toggle button in menu.
+* Tweak - Remove display of `Comments Off` message, if comment is off within featured posts widget.
+
 = Version 1.4.1 - 2019-07-12 =
 * Remove - Removed dashboard message to align with the theme review guidelines
 

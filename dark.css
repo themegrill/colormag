@@ -190,19 +190,20 @@ body {
 	color: #cccccc;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary .children {
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu,
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul .children {
 	background-color: #212529;
 	border-color: #444444;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary ul.sub-menu li,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul#menu-primary .children li {
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li,
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul .children li {
 	border-color: #444444;
 }
 
 .dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation a,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .random-post a .fa-random {
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .random-post a .fa-random,
+.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .home-icon .fa {
 	color: #fff;
 }
 

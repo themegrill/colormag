@@ -48,7 +48,6 @@ function colormag_scripts_styles_method() {
 	wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider.min.js', array( 'jquery' ), '4.2.10', true );
 
 	wp_enqueue_script( 'colormag-navigation', COLORMAG_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom.js', array( 'jquery' ), false, true );
 
 	wp_enqueue_style( 'colormag-fontawesome', get_template_directory_uri() . '/fontawesome/css/font-awesome.css', array(), '4.2.1' );
 
@@ -70,6 +69,11 @@ function colormag_scripts_styles_method() {
 
 	wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv.min.js' );
 	wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
+
+	// Skip link focus fix JS enqueue.
+	wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix.js', array(), false, true );
+
+	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom.js', array( 'jquery' ), false, true );
 
 }
 
@@ -274,9 +278,9 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 			?>
 
 			<?php
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-				$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 			}
 			$time_string = sprintf( $time_string,
 				esc_attr( get_the_date( 'c' ) ),
@@ -364,9 +368,10 @@ function colormag_custom_css() {
 		#masthead.colormag-header-clean .breaking-news .newsticker a:hover,
 		#masthead.colormag-header-classic .breaking-news .newsticker a:hover,
 		#masthead.colormag-header-classic #site-navigation .fa.search-top:hover,
-		#masthead.colormag-header-classic #site-navigation .random-post a:hover .fa-random,
+		#masthead.colormag-header-classic #site-navigation.main-navigation .random-post a:hover .fa-random,
+		.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .home-icon:hover .fa,
 		#masthead .main-small-navigation li:hover > .sub-toggle i,
-		.better-responsive-menu #masthead .main-small-navigation .sub-toggle.active .fa  {color:' . $primary_color . '}
+		.better-responsive-menu #masthead .main-small-navigation .sub-toggle.active .fa {color:' . $primary_color . '}
 		.fa.search-top:hover,
 		#masthead.colormag-header-classic #site-navigation.main-small-navigation .menu-toggle,
 		.main-navigation ul li.focus > a,
@@ -390,6 +395,7 @@ function colormag_custom_css() {
 		#masthead .main-small-navigation li.current-menu-ancestor > a,
 		#masthead .main-small-navigation li.current-page-item > a,
 		#masthead .main-small-navigation li.current-menu-item > a{background-color:' . $primary_color . '}
+		#masthead.colormag-header-classic .main-navigation .home-icon a:hover .fa { color:' . $primary_color . '}
 		.main-small-navigation .current-menu-item>a,.main-small-navigation .current_page_item>a {background:' . $primary_color . '}
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover,
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor,
@@ -453,13 +459,6 @@ function colormag_custom_css() {
 		?>
 		<style type="text/css"><?php echo $colormag_internal_css; ?></style>
 		<?php
-	}
-
-	$colormag_custom_css = get_theme_mod( 'colormag_custom_css' );
-	if ( $colormag_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
-		echo '<!-- ' . get_bloginfo( 'name' ) . ' Custom Styles -->';
-		?>
-		<style type="text/css"><?php echo $colormag_custom_css; ?></style><?php
 	}
 }
 
@@ -820,25 +819,6 @@ if ( ! function_exists( 'colormag_the_custom_logo' ) ) {
 	}
 }
 
-/**
- * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
- */
-function colormag_custom_css_migrate() {
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = get_theme_mod( 'colormag_custom_css' );
-		if ( $custom_css ) {
-			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return   = wp_update_custom_css_post( $core_css . $custom_css );
-			if ( ! is_wp_error( $return ) ) {
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				remove_theme_mod( 'colormag_custom_css' );
-			}
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'colormag_custom_css_migrate' );
-
 if ( ! function_exists( 'colormag_pingback_header' ) ) :
 
 	/**
@@ -857,62 +837,86 @@ add_action( 'wp_head', 'colormag_pingback_header' );
 /**************************************************************************************/
 
 if ( ! function_exists( 'colormag_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function colormag_comment( $comment, $args, $depth ) {
-$GLOBALS['comment'] = $comment;
-switch ( $comment->comment_type ) :
-case 'pingback' :
-case 'trackback' :
-// Display trackbacks differently than normal comments.
-?>
-<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-	<p><?php _e( 'Pingback:', 'colormag' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'colormag' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-	break;
-	default :
-	// Proceed with normal comments.
-	global $post;
-	?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-	<article id="comment-<?php comment_ID(); ?>" class="comment">
-		<header class="comment-meta comment-author vcard">
-			<?php
-			echo get_avatar( $comment, 74 );
-			printf( '<div class="comment-author-link"><i class="fa fa-user"></i>%1$s%2$s</div>',
-				get_comment_author_link(),
-				// If current post author is also comment author, make it known visually.
-				( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'colormag' ) . '</span>' : ''
-			);
-			printf( '<div class="comment-date-time"><i class="fa fa-calendar-o"></i>%1$s</div>',
-				sprintf( __( '%1$s at %2$s', 'colormag' ), get_comment_date(), get_comment_time() )
-			);
-			printf( '<a class="comment-permalink" href="%1$s"><i class="fa fa-link"></i>Permalink</a>', esc_url( get_comment_link( $comment->comment_ID ) ) );
-			edit_comment_link();
+	/**
+	 * Template for comments and pingbacks.
+	 *
+	 * Used as a callback by wp_list_comments() for displaying the comments.
+	 */
+	function colormag_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
+
+			case 'pingback' :
+
+			case 'trackback' :
+			// Display trackbacks differently than normal comments.
 			?>
-		</header><!-- .comment-meta -->
+			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<p>
+					<?php _e( 'Pingback:', 'colormag' ); ?>
+					<?php comment_author_link(); ?>
+					<?php edit_comment_link( __( '(Edit)', 'colormag' ), '<span class="edit-link">', '</span>' ); ?>
+				</p>
+				<?php
+				break;
 
-		<?php if ( '0' == $comment->comment_approved ) : ?>
-			<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
-		<?php endif; ?>
+			default :
+				// Proceed with normal comments.
+				global $post;
+				?>
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+					<article id="comment-<?php comment_ID(); ?>" class="comment">
+						<header class="comment-meta comment-author vcard">
+							<?php
+							echo get_avatar( $comment, 74 );
+							printf( '<div class="comment-author-link"><i class="fa fa-user"></i>%1$s%2$s</div>',
+								get_comment_author_link(),
+								// If current post author is also comment author, make it known visually.
+								( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'colormag' ) . '</span>' : ''
+							);
+							printf( '<div class="comment-date-time"><i class="fa fa-calendar-o"></i>%1$s</div>',
+								sprintf( __( '%1$s at %2$s', 'colormag' ), get_comment_date(), get_comment_time() )
+							);
+							printf( '<a class="comment-permalink" href="%1$s"><i class="fa fa-link"></i>Permalink</a>', esc_url( get_comment_link( $comment->comment_ID ) ) );
+							edit_comment_link();
+							?>
+						</header><!-- .comment-meta -->
 
-		<section class="comment-content comment">
-			<?php comment_text(); ?>
-			<?php comment_reply_link( array_merge( $args, array(
-				'reply_text' => __( 'Reply', 'colormag' ),
-				'after'      => '',
-				'depth'      => $depth,
-				'max_depth'  => $args['max_depth'],
-			) ) ); ?>
-		</section><!-- .comment-content -->
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
+						<?php endif; ?>
+
+						<section class="comment-content comment">
+							<?php comment_text(); ?>
+							<?php comment_reply_link( array_merge( $args, array(
+								'reply_text' => __( 'Reply', 'colormag' ),
+								'after'      => '',
+								'depth'      => $depth,
+								'max_depth'  => $args['max_depth'],
+							) ) ); ?>
+						</section><!-- .comment-content -->
 
 	</article><!-- #comment-## -->
 	<?php
 	break;
 	endswitch; // end comment_type check
 	}
-	endif;
-	?>
+endif;
+
+/**
+ * Compare user's current version of plugin.
+ */
+if ( ! function_exists( 'colormag_plugin_version_compare' ) ) {
+	function colormag_plugin_version_compare( $plugin_slug, $version_to_compare ) {
+		$installed_plugins = get_plugins();
+
+		// Plugin not installed.
+		if ( ! isset( $installed_plugins[ $plugin_slug ] ) ) {
+			return false;
+		}
+
+		$tdi_user_version = $installed_plugins[ $plugin_slug ]['Version'];
+
+		return version_compare( $tdi_user_version, $version_to_compare, '<' );
+	}
+}

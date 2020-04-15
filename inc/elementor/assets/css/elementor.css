@@ -219,12 +219,12 @@
 }
 
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small .tg-module-thumb {
-	position: absolute;
 	width: 100px;
+	float: left;
+	margin-right: 10px;
 }
 
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small .tg-module-info {
-	margin-left: 110px;
 	min-height: 73px;
 }
 
@@ -243,6 +243,10 @@
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small.no-thumbnail .tg-module-info {
 	margin-left: 0;
 	min-height: 0;
+}
+
+.elementor .tg-module-wrapper .tg_module_block.tg_module_block--list-small.tg-col-control .tg-module-thumb {
+	margin-bottom: 0;
 }
 
 .elementor .tg-module-wrapper .tg_module_block.tg_module_block--inner-shadow {
