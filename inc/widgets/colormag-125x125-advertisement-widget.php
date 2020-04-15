@@ -110,22 +110,15 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$title       = isset( $instance['title'] ) ? $instance['title'] : '';
+		$title       = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 		$image_array = array();
 		$link_array  = array();
 
 		for ( $i = 1; $i < 7; $i ++ ) {
-			$image_link = '125x125_image_link_' . $i;
-			$image_url  = '125x125_image_url_' . $i;
-
-			$image_link = isset( $instance[ $image_link ] ) ? $instance[ $image_link ] : '';
-			$image_url  = isset( $instance[ $image_url ] ) ? $instance[ $image_url ] : '';
-			if ( ! empty( $image_link ) ) {
-				array_push( $link_array, $image_link );
-			}
-			if ( ! empty( $image_url ) ) {
-				array_push( $image_array, $image_url );
-			}
+			$image_link = isset( $instance[ '125x125_image_link_' . $i ] ) ? $instance[ '125x125_image_link_' . $i ] : '';
+			$image_url  = isset( $instance[ '125x125_image_url_' . $i ] ) ? $instance[ '125x125_image_url_' . $i ] : '';
+			array_push( $link_array, $image_link );
+			array_push( $image_array, $image_url );
 		}
 
 		$this->widget_start( $args );
@@ -140,24 +133,30 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 			}
 
 			$output = '';
+
 			if ( ! empty( $image_array ) ) {
-				$image_id  = attachment_url_to_postid( $image_url );
-				$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-				$output    .= '<div class="advertisement-content">';
+				$output .= '<div class="advertisement-content">';
+
 				for ( $i = 1; $i < 7; $i ++ ) {
 					$j = $i - 1;
+
 					if ( ! empty( $image_array[ $j ] ) ) {
+						$image_id  = attachment_url_to_postid( $image_array[ $j ] );
+						$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+
 						if ( ! empty( $link_array[ $j ] ) ) {
-							$output .= '<a href="' . $link_array[ $j ] . '" class="single_ad_125x125" target="_blank" rel="nofollow">
-                                 <img src="' . $image_array[ $j ] . '" width="125" height="125" alt="' . $image_alt . '">
-                              </a>';
+							$output .= '<a href="' . $link_array[ $j ] . '" class="single_ad_125x125" target="_blank" rel="nofollow">';
+							$output .= '<img src="' . $image_array[ $j ] . '" width="125" height="125" alt="' . $image_alt . '">';
+							$output .= '</a>';
 						} else {
 							$output .= '<img src="' . $image_array[ $j ] . '" width="125" height="125" alt="' . $image_alt . '">';
 						}
 					}
 				}
+
 				$output .= '</div>';
-				echo $output;
+
+				echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 			}
 			?>
 		</div>
