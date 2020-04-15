@@ -64,6 +64,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 	public $control_options = array();
 
 	/**
+	 * Widget customize selective refresh.
+	 *
+	 * @var bool
+	 */
+	public $customize_selective_refresh = true;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -71,7 +78,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 		$widget_options = array(
 			'classname'                   => $this->widget_cssclass,
 			'description'                 => $this->widget_description,
-			'customize_selective_refresh' => true,
+			'customize_selective_refresh' => $this->customize_selective_refresh,
 		);
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_options, $this->control_options );
@@ -369,7 +376,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 							<input type="radio"
 							       id="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>"
 							       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-							       value="<?php echo esc_attr( $this->get_field_name( $choices_key ) ); ?>"
+							       value="<?php echo esc_attr( $choices_key ); ?>"
 								<?php echo esc_attr( ( $choices_key == $value ) ? 'checked' : '' ); ?>
 							/>
 
@@ -408,7 +415,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					?>
 					<div class="custom">
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
-							<?php echo esc_html( $setting['label'] ); ?>
+							<?php echo $setting['label']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 						</label>
 
 						<?php if ( isset( $setting['image_url'] ) ) { ?>
@@ -484,6 +491,12 @@ abstract class ColorMag_Widget extends WP_Widget {
 						);
 						?>
 					</p>
+					<?php
+					break;
+
+				case 'separator':
+					?>
+					<hr />
 					<?php
 					break;
 
