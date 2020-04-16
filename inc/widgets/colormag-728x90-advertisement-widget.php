@@ -26,7 +26,6 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 
 		$this->widget_cssclass    = 'widget_728x90_advertisement';
 		$this->widget_description = esc_html__( 'Add your 728x90 Advertisement here', 'colormag' );
-		$this->widget_id          = false;
 		$this->widget_name        = esc_html__( 'TG: 728x90 Advertisement', 'colormag' );
 		$this->settings           = array(
 			'title'                => array(

@@ -26,7 +26,6 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 
 		$this->widget_cssclass             = 'widget_featured_slider widget_featured_meta';
 		$this->widget_description          = esc_html__( 'Display latest posts or posts of specific category, which will be used as the slider.', 'colormag' );
-		$this->widget_id                   = false;
 		$this->widget_name                 = esc_html__( 'TG: Featured Category Slider', 'colormag' );
 		$this->customize_selective_refresh = false;
 		$this->settings                    = array(

@@ -26,7 +26,6 @@ class colormag_featured_posts_vertical_widget extends ColorMag_Widget {
 
 		$this->widget_cssclass    = 'widget_featured_posts widget_featured_posts_vertical widget_featured_meta';
 		$this->widget_description = esc_html__( 'Display latest posts or posts of specific category.', 'colormag' );
-		$this->widget_id          = false;
 		$this->widget_name        = esc_html__( 'TG: Featured Posts (Style 2)', 'colormag' );
 		$this->settings           = array(
 			'widget_layout' => array(

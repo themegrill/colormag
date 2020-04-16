@@ -26,7 +26,6 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 
 		$this->widget_cssclass    = 'widget_highlighted_posts widget_featured_meta';
 		$this->widget_description = esc_html__( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' );
-		$this->widget_id          = false;
 		$this->widget_name        = esc_html__( 'TG: Highlighted Posts', 'colormag' );
 		$this->settings           = array(
 			'number'   => array(

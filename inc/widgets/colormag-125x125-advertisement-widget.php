@@ -26,7 +26,6 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 
 		$this->widget_cssclass    = 'widget_125x125_advertisement';
 		$this->widget_description = esc_html__( 'Add your 125x125 Advertisement here', 'colormag' );
-		$this->widget_id          = false;
 		$this->widget_name        = esc_html__( 'TG: 125x125 Advertisement', 'colormag' );
 		$this->settings           = array(
 			'title'                => array(
