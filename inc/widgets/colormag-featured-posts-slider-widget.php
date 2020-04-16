@@ -132,7 +132,8 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 								<img
 									src="<?php echo esc_url( get_template_directory_uri() . '/img/slider-featured-image.png' ); ?>"
-									alt="">
+									alt=""
+								/>
 							</a>
 						<?php } ?>
 
