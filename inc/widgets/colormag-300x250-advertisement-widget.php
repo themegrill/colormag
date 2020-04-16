@@ -7,6 +7,11 @@
  * @since      ColorMag 1.0.0
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * 300x250 Advertisement Ads Widget.
  *
