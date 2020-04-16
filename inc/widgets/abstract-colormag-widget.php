@@ -38,9 +38,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 	/**
 	 * Widget ID.
 	 *
-	 * @var string
+	 * @var string|bool
 	 */
-	public $widget_id;
+	public $widget_id = false;
 
 	/**
 	 * Widget name.
