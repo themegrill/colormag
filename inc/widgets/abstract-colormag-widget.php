@@ -370,8 +370,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 							<?php echo esc_html( $setting['label'] ); ?>
 						</label>
 
-						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
-							<br />
+						<?php
+						$count = 1;
+						foreach ( $setting['choices'] as $choices_key => $choices_value ) {
+							if ( 1 !== $count ) {
+								echo '<br />';
+							}
+							?>
 
 							<input type="radio"
 							       id="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>"
@@ -383,7 +388,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 							<label for="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>">
 								<?php echo esc_html( $choices_value ); ?>
 							</label>
-						<?php } ?>
+							<?php
+							$count ++;
+						}
+						?>
 					</p>
 					<?php
 					break;

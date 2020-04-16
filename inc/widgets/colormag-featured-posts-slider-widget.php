@@ -32,7 +32,7 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 		$this->settings                    = array(
 			'number'   => array(
 				'type'    => 'number',
-				'default' => '',
+				'default' => 4,
 				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
 			),
 			'type'     => array(

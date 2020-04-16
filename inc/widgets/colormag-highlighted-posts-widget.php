@@ -1,62 +1,68 @@
 <?php
 /**
- * Highlighted Posts widget
+ * Highlighted Posts widget.
+ *
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 1.0.0
  */
 
-class colormag_highlighted_posts_widget extends WP_Widget {
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-	function __construct() {
-		$widget_ops  = array(
-			'classname'                   => 'widget_highlighted_posts widget_featured_meta',
-			'description'                 => __( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' ),
-			'customize_selective_refresh' => true,
+/**
+ * Highlighted Posts widget.
+ *
+ * Class colormag_highlighted_posts_widget
+ */
+class colormag_highlighted_posts_widget extends ColorMag_Widget {
+
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+
+		$this->widget_cssclass    = 'widget_highlighted_posts widget_featured_meta';
+		$this->widget_description = esc_html__( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' );
+		$this->widget_id          = false;
+		$this->widget_name        = esc_html__( 'TG: Highlighted Posts', 'colormag' );
+		$this->settings           = array(
+			'number'   => array(
+				'type'    => 'number',
+				'default' => 4,
+				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
+			),
+			'type'     => array(
+				'type'    => 'radio',
+				'default' => 'latest',
+				'label'   => '',
+				'choices' => array(
+					'latest'   => esc_html__( 'Show latest Posts', 'colormag' ),
+					'category' => esc_html__( 'Show posts from a category', 'colormag' ),
+				),
+			),
+			'category' => array(
+				'type'    => 'dropdown_categories',
+				'default' => '',
+				'label'   => esc_html__( 'Select category', 'colormag' ),
+			),
 		);
-		$control_ops = array( 'width' => 200, 'height' => 250 );
-		parent::__construct( false, $name = __( 'TG: Highlighted Posts', 'colormag' ), $widget_ops );
+
+		parent::__construct();
+
 	}
 
-	function form( $instance ) {
-		$tg_defaults['number']   = 4;
-		$tg_defaults['type']     = 'latest';
-		$tg_defaults['category'] = '';
-		$instance                = wp_parse_args( ( array ) $instance, $tg_defaults );
-		$number                  = $instance['number'];
-		$type                    = $instance['type'];
-		$category                = $instance['category'];
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to display:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-		</p>
-
-		<p>
-			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest" /><?php _e( 'Show latest Posts', 'colormag' ); ?>
-			<br />
-			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category" /><?php _e( 'Show posts from a category', 'colormag' ); ?>
-			<br /></p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'colormag' ); ?>
-				:</label>
-			<?php wp_dropdown_categories( array(
-				'show_option_none' => ' ',
-				'name'             => $this->get_field_name( 'category' ),
-				'selected'         => $category,
-			) ); ?>
-		</p>
-		<?php
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance             = $old_instance;
-		$instance['number']   = absint( $new_instance['number'] );
-		$instance['type']     = $new_instance['type'];
-		$instance['category'] = $new_instance['category'];
-
-		return $instance;
-	}
-
-	function widget( $args, $instance ) {
+	/**
+	 * Output widget.
+	 *
+	 * @param array $args     Arguments.
+	 * @param array $instance Widget instance.
+	 *
+	 * @see WP_Widget
+	 */
+	public function widget( $args, $instance ) {
 		extract( $args );
 		extract( $instance );
 
