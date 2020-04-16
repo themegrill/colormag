@@ -1,81 +1,83 @@
 <?php
 /**
- * Featured Posts widget
+ * TG: Featured Posts (Style 1) widget.
+ *
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 1.0.0
  */
 
-class colormag_featured_posts_widget extends WP_Widget {
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-	function __construct() {
-		$widget_ops  = array(
-			'classname'                   => 'widget_featured_posts widget_featured_meta',
-			'description'                 => __( 'Display latest posts or posts of specific category.', 'colormag' ),
-			'customize_selective_refresh' => true,
+/**
+ * TG: Featured Posts (Style 1) widget.
+ *
+ * Class colormag_featured_posts_widget
+ */
+class colormag_featured_posts_widget extends ColorMag_Widget {
+
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+
+		$this->widget_cssclass    = 'widget_featured_posts widget_featured_meta';
+		$this->widget_description = esc_html__( 'Display latest posts or posts of specific category.', 'colormag' );
+		$this->widget_name        = esc_html__( 'TG: Featured Posts (Style 1)', 'colormag' );
+		$this->settings           = array(
+			'widget_layout' => array(
+				'type'      => 'custom',
+				'default'   => '',
+				'label'     => esc_html__( 'Layout will be as below:', 'colormag' ),
+				'image_url' => get_template_directory_uri() . '/img/style-1.jpg',
+			),
+			'title'         => array(
+				'type'    => 'text',
+				'default' => '',
+				'label'   => esc_html__( 'Title:', 'colormag' ),
+			),
+			'text'          => array(
+				'type'    => 'textarea',
+				'default' => '',
+				'label'   => esc_html__( 'Description', 'colormag' ),
+			),
+			'number'        => array(
+				'type'    => 'number',
+				'default' => 4,
+				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
+			),
+			'type'          => array(
+				'type'    => 'radio',
+				'default' => 'latest',
+				'label'   => '',
+				'choices' => array(
+					'latest'   => esc_html__( 'Show latest Posts', 'colormag' ),
+					'category' => esc_html__( 'Show posts from a category', 'colormag' ),
+				),
+			),
+			'category'      => array(
+				'type'    => 'dropdown_categories',
+				'default' => '',
+				'label'   => esc_html__( 'Select category', 'colormag' ),
+			),
 		);
-		$control_ops = array( 'width' => 200, 'height' => 250 );
-		parent::__construct( false, $name = __( 'TG: Featured Posts (Style 1)', 'colormag' ), $widget_ops );
+
+		parent::__construct();
+
 	}
 
-	function form( $instance ) {
-		$tg_defaults['title']    = '';
-		$tg_defaults['text']     = '';
-		$tg_defaults['number']   = 4;
-		$tg_defaults['type']     = 'latest';
-		$tg_defaults['category'] = '';
-		$instance                = wp_parse_args( ( array ) $instance, $tg_defaults );
-		$title                   = esc_attr( $instance['title'] );
-		$text                    = esc_textarea( $instance['text'] );
-		$number                  = $instance['number'];
-		$type                    = $instance['type'];
-		$category                = $instance['category'];
-		?>
-		<p><?php _e( 'Layout will be as below:', 'colormag' ) ?></p>
-		<div style="text-align: center;"><img src="<?php echo get_template_directory_uri() . '/img/style-1.jpg' ?>">
-		</div>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
-		</p>
-		<?php _e( 'Description', 'colormag' ); ?>
-		<textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo $text; ?></textarea>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to display:', 'colormag' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-		</p>
-
-		<p>
-			<input type="radio" <?php checked( $type, 'latest' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="latest" /><?php _e( 'Show latest Posts', 'colormag' ); ?>
-			<br />
-			<input type="radio" <?php checked( $type, 'category' ) ?> id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="category" /><?php _e( 'Show posts from a category', 'colormag' ); ?>
-			<br /></p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Select category', 'colormag' ); ?>
-				:</label>
-			<?php wp_dropdown_categories( array(
-				'show_option_none' => ' ',
-				'name'             => $this->get_field_name( 'category' ),
-				'selected'         => $category,
-			) ); ?>
-		</p>
-		<?php
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance          = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		if ( current_user_can( 'unfiltered_html' ) ) {
-			$instance['text'] = $new_instance['text'];
-		} else {
-			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) );
-		}
-		$instance['number']   = absint( $new_instance['number'] );
-		$instance['type']     = $new_instance['type'];
-		$instance['category'] = $new_instance['category'];
-
-		return $instance;
-	}
-
-	function widget( $args, $instance ) {
+	/**
+	 * Output widget.
+	 *
+	 * @param array $args     Arguments.
+	 * @param array $instance Widget instance.
+	 *
+	 * @see WP_Widget
+	 */
+	public function widget( $args, $instance ) {
 		extract( $args );
 		extract( $instance );
 
