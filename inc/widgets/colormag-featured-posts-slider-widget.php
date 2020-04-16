@@ -112,7 +112,10 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 						<?php
 						if ( has_post_thumbnail() ) {
 							$image           = '';
+							$thumbnail_id    = get_post_thumbnail_id( $post->ID );
+							$image_alt_text  = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 							$title_attribute = get_the_title( $post->ID );
+							$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
 							$image           .= '<figure class="slider-featured-image">';
 							$image           .= '<a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '">';
 							$image           .= get_the_post_thumbnail(
@@ -120,7 +123,7 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 								$featured,
 								array(
 									'title' => esc_attr( $title_attribute ),
-									'alt'   => esc_attr( $title_attribute ),
+									'alt'   => esc_attr( $image_alt_text ),
 								)
 							);
 							$image           .= '</a>';
