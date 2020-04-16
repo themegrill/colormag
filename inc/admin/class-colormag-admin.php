@@ -166,15 +166,6 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		 * Show welcome notice.
 		 */
 		public function welcome_notice() {
-			$redirect = esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ), 'colormag_hide_notices_nonce', '_colormag_notice_nonce' ) );
-
-			wp_localize_script(
-				'colormag-plugin-install-helper',
-				'colormag_notice_dismiss_link',
-				array(
-					'redirect' => $redirect,
-				)
-			);
 			?>
 			<div id="message" class="updated colormag-message notice">
 				<a class="colormag-message-close notice-dismiss"
