@@ -68,25 +68,8 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
 		$category = isset( $instance['category'] ) ? $instance['category'] : '';
 
-		$post_status = 'publish';
-		if ( 1 == get_option( 'fresh_site' ) ) {
-			$post_status = array( 'auto-draft', 'publish' );
-		}
-
-		$query_args = array(
-			'posts_per_page'      => $number,
-			'post_type'           => 'post',
-			'ignore_sticky_posts' => true,
-			'post_status'         => $post_status,
-			'no_found_rows'       => true,
-		);
-
-		// Display from category chosen.
-		if ( 'category' == $type ) {
-			$query_args['category__in'] = $category;
-		}
-
-		$get_featured_posts = new WP_Query( $query_args );
+		// Create the posts query.
+		$get_featured_posts = $this->query_posts( $number, $type, $category );
 
 		$this->widget_start( $args );
 		?>

@@ -541,7 +541,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * Displays the widget title within the widgets.
 	 *
 	 * @param string $title    The widget title.
-	 * @param string $type     The display type of the widget.
+	 * @param string $type     The display posts from the widget setting.
 	 * @param int    $category The category id of the widget setting.
 	 */
 	public function widget_title( $title, $type, $category ) {
@@ -562,6 +562,41 @@ abstract class ColorMag_Widget extends WP_Widget {
 		if ( ! empty( $title ) ) {
 			echo '<h3 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span></h3>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 		}
+
+	}
+
+	/**
+	 * Query of the posts within the widgets.
+	 *
+	 * @param int    $number   The number of posts to display.
+	 * @param string $type     The display posts from the widget setting.
+	 * @param int    $category The category id of the widget setting.
+	 *
+	 * @return \WP_Query
+	 */
+	public function query_posts( $number, $type, $category ) {
+
+		$post_status = 'publish';
+		if ( 1 == get_option( 'fresh_site' ) ) {
+			$post_status = array( 'auto-draft', 'publish' );
+		}
+
+		$query_args = array(
+			'posts_per_page'      => $number,
+			'post_type'           => 'post',
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
+			'post_status'         => $post_status,
+		);
+
+		// Display posts from category.
+		if ( 'category' == $type ) {
+			$query_args['category__in'] = $category;
+		}
+
+		$get_featured_posts = new WP_Query( $query_args );
+
+		return $get_featured_posts;
 
 	}
 
