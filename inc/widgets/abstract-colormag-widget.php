@@ -566,6 +566,22 @@ abstract class ColorMag_Widget extends WP_Widget {
 	}
 
 	/**
+	 * Displays the widget description within the widgets.
+	 *
+	 * @param string $text The widget description.
+	 */
+	public function widget_description( $text ) {
+
+		// Return if $text is empty.
+		if ( ! $text ) {
+			return;
+		}
+
+		echo '<p>' . wp_kses_post( $text ) . '</p>';
+
+	}
+
+	/**
 	 * Query of the posts within the widgets.
 	 *
 	 * @param int    $number   The number of posts to display.

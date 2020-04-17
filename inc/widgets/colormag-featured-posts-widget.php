@@ -97,11 +97,7 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 		$this->widget_title( $title, $type, $category );
 
 		// Display the description.
-		if ( ! empty( $text ) ) {
-			?>
-			<p><?php echo wp_kses_post( $text ); ?></p>
-			<?php
-		}
+		$this->widget_description( $text );
 
 		$i = 1;
 		while ( $get_featured_posts->have_posts() ) :
