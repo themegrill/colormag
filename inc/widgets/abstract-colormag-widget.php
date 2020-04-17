@@ -538,6 +538,34 @@ abstract class ColorMag_Widget extends WP_Widget {
 	}
 
 	/**
+	 * Displays the widget title within the widgets.
+	 *
+	 * @param string $title    The widget title.
+	 * @param string $type     The display type of the widget.
+	 * @param int    $category The category id of the widget setting.
+	 */
+	public function widget_title( $title, $type, $category ) {
+
+		// Return if $title is empty.
+		if ( ! $title ) {
+			return;
+		}
+
+		$border_color = '';
+		$title_color  = '';
+		if ( 'latest' != $type ) {
+			$border_color = 'style="border-bottom-color:' . colormag_category_color( $category ) . ';"';
+			$title_color  = 'style="background-color:' . colormag_category_color( $category ) . ';"';
+		}
+
+		// Display the title.
+		if ( ! empty( $title ) ) {
+			echo '<h3 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span></h3>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		}
+
+	}
+
+	/**
 	 * Displays the post title within the widgets.
 	 */
 	public function the_title() {

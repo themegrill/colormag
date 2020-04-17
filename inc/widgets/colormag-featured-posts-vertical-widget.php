@@ -108,18 +108,10 @@ class colormag_featured_posts_vertical_widget extends ColorMag_Widget {
 
 		$this->widget_start( $args );
 		?>
-		<?php
-		$border_color = '';
-		$title_color  = '';
-		if ( 'latest' != $type ) {
-			$border_color = 'style="border-bottom-color:' . colormag_category_color( $category ) . ';"';
-			$title_color  = 'style="background-color:' . colormag_category_color( $category ) . ';"';
-		}
 
-		// Display the title.
-		if ( ! empty( $title ) ) {
-			echo '<h3 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span></h3>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-		}
+		<?php
+		// Displays the widget title.
+		$this->widget_title( $title, $type, $category );
 
 		// Display the description.
 		if ( ! empty( $text ) ) {
