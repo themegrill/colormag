@@ -627,8 +627,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 		$image_alt_text  = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 		$title_attribute = get_the_title( $post_id );
 		$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
-		$figure_class    = ! empty( $figure_class ) ? 'class="' . $figure_class . '"' : '';
-		$image           .= '<figure ' . $figure_class . '>';
+		$figure_class    = ! empty( $figure_class ) ? ' class="' . $figure_class . '"' : '';
+		$image           .= '<figure' . $figure_class . '>';
 		$image           .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
 		$image           .= get_the_post_thumbnail(
 			$post_id,
@@ -640,6 +640,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 		);
 		$image           .= '</a>';
 		$image           .= '</figure>';
+
+		echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 		echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
