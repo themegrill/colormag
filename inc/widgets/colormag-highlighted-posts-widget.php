@@ -132,14 +132,15 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 					<?php } ?>
 
 					<div class="article-content">
-						<?php colormag_colored_category(); ?>
-						<h3 class="entry-title">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-								<?php the_title(); ?>
-							</a>
-						</h3>
+						<?php
+						colormag_colored_category();
 
-						<?php $this->entry_meta(); ?>
+						// Displays the post title.
+						$this->the_title();
+
+						// Displays the post meta.
+						$this->entry_meta();
+						?>
 					</div>
 
 				</div>

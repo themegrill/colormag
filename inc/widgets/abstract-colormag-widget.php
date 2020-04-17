@@ -538,6 +538,19 @@ abstract class ColorMag_Widget extends WP_Widget {
 	}
 
 	/**
+	 * Displays the post title within the widgets.
+	 */
+	public function the_title() {
+		?>
+		<h3 class="entry-title">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<?php the_title(); ?>
+			</a>
+		</h3>
+		<?php
+	}
+
+	/**
 	 * Displays the post meta within the widgets.
 	 */
 	public function entry_meta() {
