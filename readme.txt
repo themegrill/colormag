@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - TBD =
+= Version - 1.4.6 - 2020-04-17 =
 * Added - New Demo (ColorMag Wild Magazine) - Engage the nature lovers to your wildlife magazine website with this ColorMag demo.
 * Added - New Demo (ColorMag Entertainment News) - Use this ColorMag demo to provide entertaining information on your news website.
 * Tweak - Notice adjustment with respect to WordPress admin notices guideline
