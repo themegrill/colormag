@@ -541,7 +541,6 @@ $colormag_version = $theme['Version'];
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
-	require get_template_directory() . '/inc/admin/class-colormag-tdi-notice.php';
 	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
 }
 
