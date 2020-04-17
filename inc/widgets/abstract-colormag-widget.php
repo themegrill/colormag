@@ -551,6 +551,38 @@ abstract class ColorMag_Widget extends WP_Widget {
 	}
 
 	/**
+	 * Displays the featured image of the post within the widgets.
+	 *
+	 * @param int    $post_id      The post id.
+	 * @param string $size         The featured image size.
+	 * @param string $figure_class The class for featured image display.
+	 */
+	public function the_post_thumbnail( $post_id, $size = '', $figure_class = '' ) {
+
+		$image           = '';
+		$thumbnail_id    = get_post_thumbnail_id( $post_id );
+		$image_alt_text  = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
+		$title_attribute = get_the_title( $post_id );
+		$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
+		$figure_class    = ! empty( $figure_class ) ? 'class="' . $figure_class . '"' : '';
+		$image           .= '<figure ' . $figure_class . '>';
+		$image           .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
+		$image           .= get_the_post_thumbnail(
+			$post_id,
+			$size,
+			array(
+				'title' => esc_attr( $title_attribute ),
+				'alt'   => esc_attr( $image_alt_text ),
+			)
+		);
+		$image           .= '</a>';
+		$image           .= '</figure>';
+
+		echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+
+	}
+
+	/**
 	 * Displays the post meta within the widgets.
 	 */
 	public function entry_meta() {

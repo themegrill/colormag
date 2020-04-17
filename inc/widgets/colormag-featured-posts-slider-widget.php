@@ -110,25 +110,7 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 					<div class="<?php echo esc_attr( $classes ); ?>">
 						<?php
 						if ( has_post_thumbnail() ) {
-							$image           = '';
-							$thumbnail_id    = get_post_thumbnail_id( $post->ID );
-							$image_alt_text  = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
-							$title_attribute = get_the_title( $post->ID );
-							$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
-							$image           .= '<figure class="slider-featured-image">';
-							$image           .= '<a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '">';
-							$image           .= get_the_post_thumbnail(
-								$post->ID,
-								$featured,
-								array(
-									'title' => esc_attr( $title_attribute ),
-									'alt'   => esc_attr( $image_alt_text ),
-								)
-							);
-							$image           .= '</a>';
-							$image           .= '</figure>';
-
-							echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+							$this->the_post_thumbnail( $post->ID, $featured, 'slider-featured-image' );
 						} else {
 							?>
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
