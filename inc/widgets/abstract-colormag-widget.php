@@ -643,8 +643,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 		echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
-		echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-
 	}
 
 	/**
