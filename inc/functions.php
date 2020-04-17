@@ -704,10 +704,16 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 	}
 endif;
 
-/**
- * Compare user's current version of plugin.
- */
-if ( ! function_exists( 'colormag_plugin_version_compare' ) ) {
+if ( ! function_exists( 'colormag_plugin_version_compare' ) ) :
+
+	/**
+	 * Compare user's current version of plugin.
+	 *
+	 * @param string $plugin_slug        The plugin slug.
+	 * @param string $version_to_compare The plugin's version.
+	 *
+	 * @return bool
+	 */
 	function colormag_plugin_version_compare( $plugin_slug, $version_to_compare ) {
 		$installed_plugins = get_plugins();
 
@@ -716,8 +722,9 @@ if ( ! function_exists( 'colormag_plugin_version_compare' ) ) {
 			return false;
 		}
 
-		$tdi_user_version = $installed_plugins[ $plugin_slug ]['Version'];
+		$plugin_version = $installed_plugins[ $plugin_slug ]['Version'];
 
-		return version_compare( $tdi_user_version, $version_to_compare, '<' );
+		return version_compare( $plugin_version, $version_to_compare, '<' );
 	}
-}
+
+endif;
