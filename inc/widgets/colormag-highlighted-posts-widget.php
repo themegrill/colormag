@@ -77,7 +77,6 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 		<div class="widget_highlighted_post_area">
 			<?php
 			$featured = 'colormag-highlighted-post';
-			$i        = 1;
 			while ( $get_featured_posts->have_posts() ) :
 				$get_featured_posts->the_post();
 				?>
@@ -110,7 +109,6 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 
 				</div>
 				<?php
-				$i ++;
 			endwhile;
 			// Reset Post Data.
 			wp_reset_postdata();
