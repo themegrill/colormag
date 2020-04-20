@@ -635,8 +635,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * @param int    $post_id      The post id.
 	 * @param string $size         The featured image size.
 	 * @param string $figure_class The class for featured image display.
+	 * @param bool   $link_enable  The option to link the featured image to post link.
 	 */
-	public function the_post_thumbnail( $post_id, $size = '', $figure_class = '' ) {
+	public function the_post_thumbnail( $post_id, $size = '', $figure_class = '', $link_enable = true ) {
 
 		$image           = '';
 		$thumbnail_id    = get_post_thumbnail_id( $post_id );
@@ -644,9 +645,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 		$title_attribute = get_the_title( $post_id );
 		$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
 		$figure_class    = ! empty( $figure_class ) ? ' class="' . $figure_class . '"' : '';
-		$image           .= '<figure' . $figure_class . '>';
-		$image           .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
-		$image           .= get_the_post_thumbnail(
+
+		$image .= '<figure' . $figure_class . '>';
+
+		if ( $link_enable ) {
+			$image .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
+		}
+
+		$image .= get_the_post_thumbnail(
 			$post_id,
 			$size,
 			array(
@@ -654,8 +660,12 @@ abstract class ColorMag_Widget extends WP_Widget {
 				'alt'   => esc_attr( $image_alt_text ),
 			)
 		);
-		$image           .= '</a>';
-		$image           .= '</figure>';
+
+		if ( $link_enable ) {
+			$image .= '</a>';
+		}
+
+		$image .= '</figure>';
 
 		echo $image; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
