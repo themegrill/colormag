@@ -182,7 +182,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 							printf(
 								/* Translators: 1. Welcome page link, 2. Closing of link for Welcome page */
 								esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'colormag' ),
-								'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-welcome' ) ) . '">',
+								'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
 								'</a>'
 							);
 							?>
