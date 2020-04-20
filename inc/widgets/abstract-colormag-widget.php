@@ -193,6 +193,17 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_users ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
+				case 'checkboxes':
+					$saved_data       = array();
+					$instance[ $key ] = $new_instance[ $key ];
+
+					foreach ( $instance[ $key ] as $item => $value ) {
+						$saved_data[ $item ] = isset( $item ) ? 1 : 0;
+					}
+
+					$instance[ $key ] = $saved_data;
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
@@ -507,6 +518,37 @@ abstract class ColorMag_Widget extends WP_Widget {
 				case 'separator':
 					?>
 					<hr />
+					<?php
+					break;
+
+				case 'checkboxes':
+					?>
+					<h3><?php echo esc_html( $setting['label'] ); ?></h3>
+
+					<p>
+						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
+							<label class="alignleft"
+							       style="width:50%;display:block;margin-bottom:5px"
+							       for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_html( $choices_key ); ?>"
+							>
+
+								<input type="checkbox"
+								       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_html( $choices_key ); ?>"
+								       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_html( $choices_key ); ?>]"
+								       value="1"
+									<?php
+									if ( isset( $value[ $choices_key ] ) ) {
+										checked( 1, $value[ $choices_key ], true );
+									}
+									?>
+								/>
+
+								<?php echo esc_html( $choices_value['label'] ); ?>
+							</label>
+						<?php } ?>
+					</p>
+
+					<div class="clear"></div>
 					<?php
 					break;
 
