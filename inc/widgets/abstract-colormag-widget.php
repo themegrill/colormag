@@ -204,6 +204,27 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = $saved_data;
 					break;
 
+				case 'numbers':
+					$saved_data       = array();
+					$instance[ $key ] = $new_instance[ $key ];
+
+					foreach ( $instance[ $key ] as $item => $value ) {
+						$temp_data = is_numeric( $value ) ? intval( $value ) : $setting['default'][ $item ];
+
+						if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] && $value < $setting['input_attrs']['min'] ) {
+							$temp_data = max( $value, $setting['input_attrs']['min'] );
+						}
+
+						if ( isset( $setting['input_attrs']['max'] ) && '' !== $setting['input_attrs']['max'] && $value > $setting['input_attrs']['max'] ) {
+							$temp_data = min( $value, $setting['input_attrs']['max'] );
+						}
+
+						$saved_data[ $item ] = $temp_data;
+					}
+
+					$instance[ $key ] = $saved_data;
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
@@ -529,12 +550,12 @@ abstract class ColorMag_Widget extends WP_Widget {
 						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
 							<label class="alignleft"
 							       style="width:50%;display:block;margin-bottom:5px"
-							       for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_html( $choices_key ); ?>"
+							       for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
 							>
 
 								<input type="checkbox"
-								       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_html( $choices_key ); ?>"
-								       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_html( $choices_key ); ?>]"
+								       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+								       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_attr( $choices_key ); ?>]"
 								       value="1"
 									<?php
 									if ( isset( $value[ $choices_key ] ) ) {
@@ -543,7 +564,42 @@ abstract class ColorMag_Widget extends WP_Widget {
 									?>
 								/>
 
-								<?php echo esc_html( $choices_value['label'] ); ?>
+								<?php echo esc_html( $choices_value ); ?>
+							</label>
+						<?php } ?>
+					</p>
+
+					<div class="clear"></div>
+					<?php
+					break;
+
+				case 'numbers':
+					?>
+					<h3><?php echo esc_html( $setting['label'] ); ?></h3>
+
+					<p>
+						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
+							<label class="alignleft"
+							       style="width:50%;display:block;margin-bottom:5px"
+							       for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+							>
+
+								<input type="number"
+								       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+								       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_attr( $choices_key ); ?>]"
+								       value="<?php echo esc_attr( $value[ $choices_key ] ); ?>"
+									<?php if ( isset( $setting['input_attrs']['step'] ) ) { ?>
+										step="<?php echo esc_attr( $setting['input_attrs']['step'] ); ?>"
+									<?php } ?>
+									<?php if ( isset( $setting['input_attrs']['min'] ) ) { ?>
+										min="<?php echo esc_attr( $setting['input_attrs']['min'] ); ?>"
+									<?php } ?>
+									<?php if ( isset( $setting['input_attrs']['max'] ) ) { ?>
+										max="<?php echo esc_attr( $setting['input_attrs']['max'] ); ?>"
+									<?php } ?>
+								/>
+
+								<?php echo esc_html( $choices_value ); ?>
 							</label>
 						<?php } ?>
 					</p>

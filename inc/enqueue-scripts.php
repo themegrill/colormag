@@ -146,8 +146,6 @@ if ( ! function_exists( 'colormag_darkcolor' ) ) :
 	 * @param string $hex   Hex color value.
 	 * @param string $steps Steps to change the hex color value for equivalent dark color.
 	 *
-	 * Source: http://stackoverflow.com/questions/3512311/how-to-generate-lighter-darker-color-with-php
-	 *
 	 * @return string
 	 */
 	function colormag_darkcolor( $hex, $steps ) {
