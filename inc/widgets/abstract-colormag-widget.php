@@ -608,6 +608,24 @@ abstract class ColorMag_Widget extends WP_Widget {
 					<?php
 					break;
 
+				case 'api_key':
+					$api_key = $setting['api_key'];
+
+					if ( ! $api_key ) {
+						$query['autofocus[section]'] = $setting['customize_section'];
+						$section_link                = add_query_arg( $query, admin_url( 'customize.php' ) );
+						?>
+						<p>
+							<span class="<?php echo esc_attr( $setting['class'] ); ?>-error">
+								<?php echo $setting['description']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
+								<br />
+								<a href="<?php echo esc_url( $section_link ); ?>"><?php echo esc_html( $setting['label'] ); ?></a>
+							</span>
+						</p>
+						<?php
+					}
+					break;
+
 				// Default: run an action.
 				default:
 					do_action( 'colormag_widget_field_' . $setting['type'], $key, $value, $setting, $instance );
