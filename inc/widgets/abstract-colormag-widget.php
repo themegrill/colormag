@@ -225,6 +225,20 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = $saved_data;
 					break;
 
+				case 'multiselect':
+					$selected_choices  = array();
+					$available_choices = $setting['choices'];
+
+					foreach ( $new_instance[ $key ] as $selected_key => $selected_value ) {
+
+						if ( array_key_exists( $selected_value, $available_choices ) ) {
+							$selected_choices[] = $selected_value;
+						}
+					}
+
+					$instance[ $key ] = $selected_choices;
+					break;
+
 				default:
 					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
 					break;
@@ -625,6 +639,46 @@ abstract class ColorMag_Widget extends WP_Widget {
 						<?php
 					}
 					break;
+
+				case 'multiselect':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<?php echo esc_html( $setting['label'] ); ?>
+						</label>
+
+						<?php
+						printf(
+						/* Translators: 1. Field name, 2. Field id, 3. Custom style declaration */
+							'<select multiple="multiple" name="%s[]" id="%s" %s>',
+							esc_attr( $this->get_field_name( $key ) ),
+							esc_attr( $this->get_field_id( $key ) ),
+							'style="width:100%"'
+						);
+
+						$available_values = ! empty( $value ) ? $value : array();
+
+						foreach ( $setting['choices'] as $choices_key => $choices_value ) {
+							?>
+							<option value="<?php echo esc_attr( $choices_key ); ?>"
+								<?php
+								if ( in_array( $choices_key, $available_values, true ) ) {
+									echo ' selected="selected"';
+								}
+								?>
+							>
+								<?php echo esc_html( $choices_value ); ?>
+							</option>
+							<?php
+						}
+
+						echo '</select>';
+						?>
+
+					</p>
+					<?php
+					break;
+
 
 				// Default: run an action.
 				default:
