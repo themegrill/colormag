@@ -211,7 +211,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					foreach ( $instance[ $key ] as $item => $value ) {
 						$temp_data = is_numeric( $value ) ? intval( $value ) : $setting['default'][ $item ];
 
-						if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] && $value < $setting['input_attrs']['min'] ) {
+						if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] && ( $value < $setting['input_attrs']['min'] && ! $temp_data ) ) {
 							$temp_data = max( $value, $setting['input_attrs']['min'] );
 						}
 
