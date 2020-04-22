@@ -232,8 +232,17 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			)
 		);
 
+		// Extra option control related to posts filter section.
+		$this->posts_filter_extra();
+
 		$this->end_controls_section();
 
+	}
+
+	/**
+	 * Extra option control related to posts filter section.
+	 */
+	public function posts_filter_extra() {
 	}
 
 }
