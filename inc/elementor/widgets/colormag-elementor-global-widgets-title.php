@@ -76,7 +76,7 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
 	/**
 	 * Disable posts filter control for this widget.
 	 */
-	public function posts_filter() {
+	public function posts_filter_controls() {
 	}
 
 	/**

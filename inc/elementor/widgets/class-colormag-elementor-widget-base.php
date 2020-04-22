@@ -50,7 +50,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_controls();
 
 		// Controls related to posts filter section.
-		$this->posts_filter();
+		$this->posts_filter_controls();
 
 	}
 
@@ -158,7 +158,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		// Widget posts section.
 		$this->start_controls_section(
-			'section_colormag_osts_manage',
+			'section_colormag_posts_manage',
 			array(
 				'label' => esc_html__( 'Posts', 'colormag' ),
 			)
@@ -197,7 +197,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	/**
 	 * Controls related to posts filter section.
 	 */
-	public function posts_filter() {
+	public function posts_filter_controls() {
 
 		// Posts filter section.
 		$this->start_controls_section(
@@ -233,7 +233,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		);
 
 		// Extra option control related to posts filter section.
-		$this->posts_filter_extra();
+		$this->posts_filter_controls_extra();
 
 		$this->end_controls_section();
 
@@ -242,7 +242,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	/**
 	 * Extra option control related to posts filter section.
 	 */
-	public function posts_filter_extra() {
+	public function posts_filter_controls_extra() {
 	}
 
 }
