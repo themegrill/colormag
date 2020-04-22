@@ -39,6 +39,9 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		// Controls related to widget title style section.
 		$this->widget_title_style_controls();
 
+		// Controls related to posts section.
+		$this->posts_controls();
+
 	}
 
 	/**
@@ -136,6 +139,49 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	 * Extra option control related to widget title style section.
 	 */
 	public function widget_title_style_controls_extra() {
+	}
+
+	/**
+	 * Controls related to posts section.
+	 */
+	public function posts_controls() {
+
+		// Widget posts section.
+		$this->start_controls_section(
+			'section_colormag_osts_manage',
+			array(
+				'label' => esc_html__( 'Posts', 'colormag' ),
+			)
+		);
+
+		$this->add_control(
+			'posts_number',
+			array(
+				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 5,
+			)
+		);
+
+		$this->add_control(
+			'offset_posts_number',
+			array(
+				'label' => esc_html__( 'Offset Posts:', 'colormag' ),
+				'type'  => Controls_Manager::TEXT,
+			)
+		);
+
+		// Extra option control related to posts section.
+		$this->posts_controls_extra();
+
+		$this->end_controls_section();
+
+	}
+
+	/**
+	 * Extra option control related to posts section.
+	 */
+	public function posts_controls_extra() {
 	}
 
 }

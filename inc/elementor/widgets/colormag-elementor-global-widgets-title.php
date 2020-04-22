@@ -68,6 +68,12 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
 	}
 
 	/**
+	 * Disable posts control for this widget.
+	 */
+	public function posts_controls() {
+	}
+
+	/**
 	 * Render ColorMag_Elementor_Global_Widgets_Title widget output on the frontend.
 	 *
 	 * Written in PHP and used to generate the final HTML.
@@ -93,4 +99,5 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
 		endif;
 
 	}
+
 }
