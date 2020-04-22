@@ -62,20 +62,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			)
 		);
 
-		// Widget title link.
-		$this->add_control(
-			'widget_title_link',
-			array(
-				'label'         => esc_html__( 'Title URL', 'colormag' ),
-				'type'          => Controls_Manager::URL,
-				'default'       => array(
-					'url'         => '',
-					'is_external' => '',
-				),
-				'show_external' => true,
-			)
-		);
-
 		$this->end_controls_section();
 
 	}
@@ -122,8 +108,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 					'value' => Scheme_Color::COLOR_1,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span'   => 'color: {{VALUE}}',
-					'{{WRAPPER}} .tg-module-wrapper .module-title span a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
 				),
 			)
 		);
