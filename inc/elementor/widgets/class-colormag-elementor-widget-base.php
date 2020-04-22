@@ -42,6 +42,9 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		// Controls related to posts section.
 		$this->posts_controls();
 
+		// Controls related to posts filter section.
+		$this->posts_filter();
+
 	}
 
 	/**
@@ -182,6 +185,48 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	 * Extra option control related to posts section.
 	 */
 	public function posts_controls_extra() {
+	}
+
+	/**
+	 * Controls related to posts filter section.
+	 */
+	public function posts_filter() {
+
+		// Posts filter section.
+		$this->start_controls_section(
+			'section_colormag_posts_filter_manage',
+			array(
+				'label' => esc_html__( 'Filter', 'colormag' ),
+			)
+		);
+
+		$this->add_control(
+			'display_type',
+			array(
+				'label'   => esc_html__( 'Display the posts from:', 'colormag' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'latest',
+				'options' => array(
+					'latest'     => esc_html__( 'Latest Posts', 'colormag' ),
+					'categories' => esc_html__( 'Categories', 'colormag' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'categories_selected',
+			array(
+				'label'     => esc_html__( 'Select categories:', 'colormag' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => colormag_elementor_categories(),
+				'condition' => array(
+					'display_type' => 'categories',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
 	}
 
 }

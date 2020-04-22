@@ -74,6 +74,12 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
 	}
 
 	/**
+	 * Disable posts filter control for this widget.
+	 */
+	public function posts_filter() {
+	}
+
+	/**
 	 * Render ColorMag_Elementor_Global_Widgets_Title widget output on the frontend.
 	 *
 	 * Written in PHP and used to generate the final HTML.
