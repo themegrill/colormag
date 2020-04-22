@@ -120,6 +120,9 @@ if ( ! function_exists( 'colormag_elementor_widgets_registered' ) ) :
 	 */
 	function colormag_elementor_widgets_registered( $widgets_manager ) {
 
+		// Require the Widget Base class.
+		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/class-colormag-elementor-widget-base.php';
+
 		// Require the files.
 		// 1. Block Widgets.
 		require COLORMAG_ELEMENTOR_WIDGETS_DIR . '/colormag-elementor-widgets-block-1.php';
