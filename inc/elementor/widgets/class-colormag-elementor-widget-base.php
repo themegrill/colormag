@@ -62,8 +62,17 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			)
 		);
 
+		// Extra option control related to widget title section.
+		$this->widget_title_controls_extra();
+
 		$this->end_controls_section();
 
+	}
+
+	/**
+	 * Extra option control related to widget title section.
+	 */
+	public function widget_title_controls_extra() {
 	}
 
 	/**
@@ -113,8 +122,17 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			)
 		);
 
+		// Extra option control related to widget title style section.
+		$this->widget_title_style_controls_extra();
+
 		$this->end_controls_section();
 
+	}
+
+	/**
+	 * Extra option control related to widget title style section.
+	 */
+	public function widget_title_style_controls_extra() {
 	}
 
 }
