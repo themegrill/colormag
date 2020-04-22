@@ -77,14 +77,18 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
 	protected function render() {
 
 		$widget_title = $this->get_settings( 'widget_title' );
-		if ( ! empty( $widget_title ) ) : ?>
+
+		if ( ! empty( $widget_title ) ) :
+			?>
+
 			<div class="tg-module-wrapper">
 				<div class="tg-module-title-wrap">
 					<h4 class="module-title">
-						<span><?php echo $this->get_settings( 'widget_title' ); ?></span>
+						<span><?php echo esc_html( $widget_title ); ?></span>
 					</h4>
 				</div><!-- tg-module-title-wrap -->
 			</div>
+
 			<?php
 		endif;
 
