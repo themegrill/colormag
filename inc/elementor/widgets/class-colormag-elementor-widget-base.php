@@ -27,6 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 	/**
+	 * Post number.
+	 *
+	 * @var int
+	 */
+	public $post_number = 5;
+
+	/**
 	 * Register Colormag_Elementor_Widget_Base widget controls.
 	 *
 	 * @access protected
@@ -162,7 +169,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			array(
 				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => 5,
+				'default' => $this->post_number,
 			)
 		);
 
