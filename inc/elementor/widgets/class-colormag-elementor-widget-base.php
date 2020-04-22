@@ -4,8 +4,11 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @since      ColorMag 2.0.0
  */
+
+// Declare required namespace.
+namespace ColorMagElementor;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;

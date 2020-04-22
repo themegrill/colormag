@@ -155,7 +155,7 @@ if ( ! function_exists( 'colormag_elementor_widgets_registered' ) ) :
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Grid_5() );
 
 		// 3. Global Widgets.
-		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Global_Widgets_Title() );
+		$widgets_manager->register_widget_type( new ColorMag_Elementor_Global_Widgets_Title() );
 
 	}
 

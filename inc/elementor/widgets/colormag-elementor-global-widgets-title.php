@@ -7,13 +7,19 @@
  * @since      ColorMag 1.2.3
  */
 
-namespace Elementor;
+use ColorMagElementor\Colormag_Elementor_Widget_Base;
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	return; // Exit if it is accessed directly
+	exit;
 }
 
-class ColorMag_Elementor_Global_Widgets_Title extends Widget_Base {
+/**
+ * ColorMag Elementor Global Widget Title.
+ *
+ * Class ColorMag_Elementor_Global_Widgets_Title
+ */
+class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_Base {
 
 	/**
 	 * Retrieve ColorMag_Elementor_Global_Widgets_Title widget name.
@@ -59,80 +65,6 @@ class ColorMag_Elementor_Global_Widgets_Title extends Widget_Base {
 	 */
 	public function get_categories() {
 		return array( 'colormag-widget-global' );
-	}
-
-	/**
-	 * Register ColorMag_Elementor_Global_Widgets_Title widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @access protected
-	 */
-	protected function _register_controls() {
-
-		// Widget title section
-		$this->start_controls_section(
-			'section_colormag_global_widgets_title_title_manage',
-			array(
-				'label' => esc_html__( 'Block Title', 'colormag' ),
-			)
-		);
-
-		$this->add_control(
-			'widget_title',
-			array(
-				'label'       => esc_html__( 'Title:', 'colormag' ),
-				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Add your custom block title', 'colormag' ),
-				'label_block' => true,
-			)
-		);
-
-		$this->end_controls_section();
-
-		// Widget design section
-		$this->start_controls_section(
-			'section_colormag_global_widgets_title_design_manage',
-			array(
-				'label' => esc_html__( 'Widget Title', 'colormag' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			)
-		);
-
-		$this->add_control(
-			'widget_title_color',
-			array(
-				'label'     => esc_html__( 'Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#289dcc',
-				'scheme'    => array(
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
-					'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->add_control(
-			'widget_title_text_color',
-			array(
-				'label'     => esc_html__( 'Text Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ffffff',
-				'scheme'    => array(
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->end_controls_section();
 	}
 
 	/**
