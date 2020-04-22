@@ -281,4 +281,26 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 	}
 
+	/**
+	 * Displays the widget title.
+	 *
+	 * @param string $widget_title The available widget title.
+	 */
+	public function widget_title( $widget_title ) {
+
+		// Return if $widget_title is empty.
+		if ( ! $widget_title ) {
+			return;
+		}
+		?>
+
+		<div class="tg-module-title-wrap">
+			<h4 class="module-title">
+				<span><?php echo esc_html( $widget_title ); ?></span>
+			</h4>
+		</div><!-- tg-module-title-wrap -->
+
+		<?php
+	}
+
 }

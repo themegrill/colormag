@@ -76,6 +76,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 	 */
 	protected function render() {
 
+		$widget_title        = $this->get_settings( 'widget_title' );
 		$posts_number        = $this->get_settings( 'posts_number' );
 		$display_type        = $this->get_settings( 'display_type' );
 		$offset_posts_number = $this->get_settings( 'offset_posts_number' );
@@ -87,14 +88,8 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 
 		<div class="tg-module-block tg-module-block--style-1 tg-module-wrapper">
 			<?php
-			$widget_title = $this->get_settings( 'widget_title' );
-			if ( ! empty( $widget_title ) ) : ?>
-				<div class="tg-module-title-wrap">
-					<h4 class="module-title">
-						<span><?php echo $this->get_settings( 'widget_title' ); ?></span>
-					</h4>
-				</div><!-- tg-module-title-wrap -->
-			<?php endif;
+			// Displays the widget title.
+			$this->widget_title( $widget_title );
 			?>
 
 			<div class="tg-row">
