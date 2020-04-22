@@ -245,4 +245,40 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	public function posts_filter_controls_extra() {
 	}
 
+	/**
+	 * Query of the posts within the widgets.
+	 *
+	 * @param int    $posts_number        The number of posts to display.
+	 * @param string $display_type        The display posts from the widget setting.
+	 * @param int    $categories_selected The category id of the widget setting.
+	 * @param int    $offset_posts_number The offset posts number of the widget setting.
+	 *
+	 * @return \WP_Query
+	 */
+	public function query_posts( $posts_number, $display_type, $categories_selected, $offset_posts_number ) {
+
+		$query_args = array(
+			'posts_per_page'      => $posts_number,
+			'post_type'           => 'post',
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
+		);
+
+		// Display from the category selected.
+		if ( 'categories' == $display_type ) {
+			$query_args['category__in'] = $categories_selected;
+		}
+
+		// Offset the posts.
+		if ( ! empty( $offset_posts_number ) ) {
+			$query_args['offset'] = $offset_posts_number;
+		}
+
+		// Start the WP_Query Object/Class.
+		$get_featured_posts = new \WP_Query( $query_args );
+
+		return $get_featured_posts;
+
+	}
+
 }

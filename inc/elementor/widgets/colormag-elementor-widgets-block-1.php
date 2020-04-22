@@ -81,25 +81,8 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 		$offset_posts_number = $this->get_settings( 'offset_posts_number' );
 		$categories_selected = $this->get_settings( 'categories_selected' );
 
-		$args = array(
-			'posts_per_page'      => $posts_number,
-			'post_type'           => 'post',
-			'ignore_sticky_posts' => true,
-			'no_found_rows'       => true,
-		);
-
-		// Display from the category selected
-		if ( 'categories' == $display_type ) {
-			$args[ 'category__in' ] = $categories_selected;
-		}
-
-		// Offset the posts
-		if ( ! empty( $offset_posts_number ) ) {
-			$args[ 'offset' ] = $offset_posts_number;
-		}
-
-		// Start the WP_Query Object/Class
-		$get_featured_posts = new \WP_Query( $args );
+		// Create the posts query.
+		$get_featured_posts = $this->query_posts( $posts_number, $display_type, $categories_selected,$offset_posts_number );
 		?>
 
 		<div class="tg-module-block tg-module-block--style-1 tg-module-wrapper">
