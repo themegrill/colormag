@@ -303,4 +303,28 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		<?php
 	}
 
+	/**
+	 * Displays the post title within the widgets.
+	 */
+	public function the_title() {
+		?>
+		<h3 class="tg-module-title entry-title">
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		</h3>
+		<?php
+	}
+
+	/**
+	 * Displays the featured image of the post within the widgets.
+	 *
+	 * @param string $size The featured image size.
+	 */
+	public function the_post_thumbnail( $size = '' ) {
+		?>
+		<a href="<?php the_permalink(); ?>" class="tg-thumb-link">
+			<?php the_post_thumbnail( $size ); ?>
+		</a>
+		<?php
+	}
+
 }

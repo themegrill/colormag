@@ -96,71 +96,84 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 				<?php
 				$count = 1;
 				while ( $get_featured_posts->have_posts() ) :
-				$get_featured_posts->the_post(); ?>
+					$get_featured_posts->the_post();
 
-			<?php
-			$featured_image_size = ( $count == 1 ) ? 'colormag-featured-image' : 'colormag-featured-post-small';
-			?>
-			<?php if ( $count == 1 ) : // on first post. ?>
-				<div class="tg-col-control">
-					<div class="tg_module_block">
-						<?php if ( has_post_thumbnail() ) : ?>
-							<figure class="tg-module-thumb">
-								<a href="<?php the_permalink(); ?>" class="tg-thumb-link">
-									<?php the_post_thumbnail( $featured_image_size ); ?>
-								</a>
-								<?php colormag_elementor_colored_category(); ?>
-							</figure>
-							<?php
-						else :
-							if ( $count == 1 ) :
-								colormag_elementor_colored_category();
-							endif;
-						endif;
+					$featured_image_size = ( 1 == $count ) ? 'colormag-featured-image' : 'colormag-featured-post-small';
+
+					if ( 1 == $count ) : // on first post.
 						?>
-						<h3 class="tg-module-title entry-title">
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</h3>
+						<div class="tg-col-control">
+							<div class="tg_module_block">
+								<?php if ( has_post_thumbnail() ) : ?>
+									<figure class="tg-module-thumb">
+										<?php
+										$this->the_post_thumbnail( $featured_image_size );
 
-						<?php colormag_elementor_widgets_meta(); // Displays the entry meta ?>
-						<div class="tg-expert entry-content">
-							<?php the_excerpt(); // Displays the post excerpts
-							?>
-						</div>
-					</div>
-				</div>
-			<?php endif; ?>
-			<?php if ( $count == 2 ) : ?>
-				<div class="tg-col-control">
-					<?php endif; ?>
-					<?php if ( $count >= 2 ) : // add grid style after first post. ?>
-						<div class="tg_module_block tg_module_block--list-small">
-							<?php if ( has_post_thumbnail() ) : ?>
-								<figure class="tg-module-thumb">
-									<a href="<?php the_permalink(); ?>" class="tg-thumb-link">
-										<?php the_post_thumbnail( $featured_image_size ); ?>
-									</a>
-								</figure>
+										colormag_elementor_colored_category();
+										?>
+									</figure>
+									<?php
+								else :
+									if ( 1 == $count ) :
+										colormag_elementor_colored_category();
+									endif;
+								endif;
+								?>
+
 								<?php
-							endif;
-							?>
-							<div class="tg-module-info">
-								<h3 class="tg-module-title entry-title">
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</h3>
+								// Display the post title.
+								$this->the_title();
 
-								<?php colormag_elementor_widgets_meta(); // Displays the entry meta ?>
+								// Displays the entry meta.
+								colormag_elementor_widgets_meta();
+								?>
+
+								<div class="tg-expert entry-content">
+									<?php
+									// Displays the post excerpts.
+									the_excerpt();
+									?>
+								</div>
 							</div>
 						</div>
-					<?php endif;
+						<?php
+					endif;
+
+					if ( 2 == $count ) :
+						?>
+						<div class="tg-col-control">
+					<?php endif; ?>
+
+					<?php if ( 2 <= $count ) : // Add grid style after first post. ?>
+							<div class="tg_module_block tg_module_block--list-small">
+								<?php if ( has_post_thumbnail() ) : ?>
+									<figure class="tg-module-thumb">
+										<?php $this->the_post_thumbnail( $featured_image_size ); ?>
+									</figure>
+								<?php endif; ?>
+
+								<div class="tg-module-info">
+									<?php
+									// Display the post title.
+									$this->the_title();
+
+									// Displays the entry meta.
+									colormag_elementor_widgets_meta();
+									?>
+								</div>
+							</div>
+							<?php
+						endif;
+
 					$count ++;
-					endwhile;
+				endwhile;
+
+				if ( 2 < $count ) :
 					?>
-					<?php if ( $count > 2 ) : ?>
-				</div>
-			<?php endif; ?>
-				<?php
-				// Reset the postdata
+					</div>
+					<?php
+				endif;
+				// Reset the postdata.
 				wp_reset_postdata();
 				?>
 			</div>
