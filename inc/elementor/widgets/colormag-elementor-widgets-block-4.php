@@ -7,13 +7,19 @@
  * @since      ColorMag 1.2.3
  */
 
-namespace Elementor;
+use ColorMagElementor\Colormag_Elementor_Widget_Base;
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	return; // Exit if it is accessed directly
+	exit;
 }
 
-class ColorMag_Elementor_Widgets_Block_4 extends Widget_Base {
+/**
+ * ColorMag Elementor Widget Block 4.
+ *
+ * Class ColorMag_Elementor_Widgets_Block_4
+ */
+class ColorMag_Elementor_Widgets_Block_4 extends Colormag_Elementor_Widget_Base {
 
 	/**
 	 * Retrieve ColorMag_Elementor_Widgets_Block_4 widget name.
@@ -59,142 +65,6 @@ class ColorMag_Elementor_Widgets_Block_4 extends Widget_Base {
 	 */
 	public function get_categories() {
 		return array( 'colormag-widget-blocks' );
-	}
-
-	/**
-	 * Register ColorMag_Elementor_Widgets_Block_4 widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @access protected
-	 */
-	protected function _register_controls() {
-
-		// Widget title section
-		$this->start_controls_section(
-			'section_colormag_featured_posts_block_4_title_manage',
-			array(
-				'label' => esc_html__( 'Block Title', 'colormag' ),
-			)
-		);
-
-		$this->add_control(
-			'widget_title',
-			array(
-				'label'       => esc_html__( 'Title:', 'colormag' ),
-				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Add your custom block title', 'colormag' ),
-				'label_block' => true,
-			)
-		);
-
-		$this->end_controls_section();
-
-		// Widget design section
-		$this->start_controls_section(
-			'section_colormag_featured_posts_block_4_design_manage',
-			array(
-				'label' => esc_html__( 'Widget Title', 'colormag' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			)
-		);
-
-		$this->add_control(
-			'widget_title_color',
-			array(
-				'label'     => esc_html__( 'Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#289dcc',
-				'scheme'    => array(
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
-					'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->add_control(
-			'widget_title_text_color',
-			array(
-				'label'     => esc_html__( 'Text Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ffffff',
-				'scheme'    => array(
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->end_controls_section();
-
-		// Widget posts section
-		$this->start_controls_section(
-			'section_colormag_featured_posts_block_4_posts_manage',
-			array(
-				'label' => esc_html__( 'Posts', 'colormag' ),
-			)
-		);
-
-		$this->add_control(
-			'posts_number',
-			array(
-				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => 5,
-			)
-		);
-
-		$this->add_control(
-			'offset_posts_number',
-			array(
-				'label' => esc_html__( 'Offset Posts:', 'colormag' ),
-				'type'  => Controls_Manager::TEXT,
-			)
-		);
-
-		$this->end_controls_section();
-
-		// Widget filter section
-		$this->start_controls_section(
-			'section_colormag_featured_posts_block_4_filter_manage',
-			array(
-				'label' => esc_html__( 'Filter', 'colormag' ),
-			)
-		);
-
-		$this->add_control(
-			'display_type',
-			array(
-				'label'   => esc_html__( 'Display the posts from:', 'colormag' ),
-				'type'    => Controls_Manager::SELECT,
-				'default' => 'latest',
-				'options' => array(
-					'latest'     => esc_html__( 'Latest Posts', 'colormag' ),
-					'categories' => esc_html__( 'Categories', 'colormag' ),
-				),
-			)
-		);
-
-		$this->add_control(
-			'categories_selected',
-			array(
-				'label'     => esc_html__( 'Select categories:', 'colormag' ),
-				'type'      => Controls_Manager::SELECT,
-				'options'   => colormag_elementor_categories(),
-				'condition' => array(
-					'display_type' => 'categories',
-				),
-			)
-		);
-
-		$this->end_controls_section();
 	}
 
 	/**
