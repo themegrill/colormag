@@ -94,11 +94,10 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
 			?>
 
 			<div class="tg-module-wrapper">
-				<div class="tg-module-title-wrap">
-					<h4 class="module-title">
-						<span><?php echo esc_html( $widget_title ); ?></span>
-					</h4>
-				</div><!-- tg-module-title-wrap -->
+				<?php
+				// Displays the widget title.
+				$this->widget_title( $widget_title );
+				?>
 			</div>
 
 			<?php
