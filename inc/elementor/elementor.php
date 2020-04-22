@@ -142,7 +142,7 @@ if ( ! function_exists( 'colormag_elementor_widgets_registered' ) ) :
 
 		// Register the widgets
 		// 1. Block Widgets.
-		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_1() );
+		$widgets_manager->register_widget_type( new ColorMag_Elementor_Widgets_Block_1() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_2() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_4() );
 		$widgets_manager->register_widget_type( new \Elementor\ColorMag_Elementor_Widgets_Block_6() );
