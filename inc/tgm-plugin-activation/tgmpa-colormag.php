@@ -26,7 +26,7 @@ function colormag_register_required_plugins() {
 
 		// Include Everest Forms as recommended
 		array(
-			'name'     => 'Everest Forms – Easy Contact Form and Form Builder',
+			'name'     => 'Everest Forms &#8209; Easy Contact Form and Form Builder',
 			'slug'     => 'everest-forms',
 			'required' => false,
 		),

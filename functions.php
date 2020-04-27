@@ -346,14 +346,14 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 				),
 				'womens-relay-competition'           => array(
 					'post_type'    => 'post',
-					'post_title'   => 'Women’s Relay Competition',
+					'post_title'   => 'Womens Relay Competition',
 					'post_content' => 'The young team of Franziska Hildebrand, Franziska Preuss, Vanessa Hinz and Dahlmeier clocked 1 hour, 11 minutes, 54.6 seconds to beat France by just over 1 minute. Italy took bronze, 1:06.1 behind. Germany missed six targets overall, avoiding any laps around the penalty loop. Maria Dorin Habert of France, who has two individual gold medals at these worlds, passed Russia and France on the last leg and to take her team from fourth to second.',
 					'thumbnail'    => '{{featured-image-relay-race}}',
 				),
 				'a-paradise-for-holiday'             => array(
 					'post_type'    => 'post',
 					'post_title'   => 'A Paradise for Holiday',
-					'post_content' => 'Chocolate bar marzipan sweet marzipan. Danish tart bear claw donut cake bonbon biscuit powder croissant. Liquorice cake cookie. Dessert cotton candy macaroon gummies sweet gingerbread sugar plum. Biscuit tart cake. Candy jelly ice cream halvah jelly-o jelly beans brownie pastry sweet. Candy sweet roll dessert. Lemon drops jelly-o fruitcake topping. Soufflé jelly beans bonbon.',
+					'post_content' => 'Chocolate bar marzipan sweet marzipan. Danish tart bear claw donut cake bonbon biscuit powder croissant. Liquorice cake cookie. Dessert cotton candy macaroon gummies sweet gingerbread sugar plum. Biscuit tart cake. Candy jelly ice cream halvah jelly-o jelly beans brownie pastry sweet. Candy sweet roll dessert. Lemon drops jelly-o fruitcake topping. Souffle jelly beans bonbon.',
 					'thumbnail'    => '{{featured-image-paradise-for-holiday}}',
 				),
 				'destruction-in-montania'            => array(
