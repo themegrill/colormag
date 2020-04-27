@@ -17,14 +17,14 @@ function colormag_register_required_plugins() {
 	 */
 	$plugins = array(
 
-		// Include ThemeGrill Demo Importer as recommended,
+		// Include ThemeGrill Demo Importer as recommended.
 		array(
 			'name'     => 'ThemeGrill Demo Importer',
 			'slug'     => 'themegrill-demo-importer',
 			'required' => false,
 		),
 
-		// Include Everest Forms as recommended,
+		// Include Everest Forms as recommended.
 		array(
 			'name'     => 'Everest Forms &#8209; Easy Contact Form and Form Builder',
 			'slug'     => 'everest-forms',
