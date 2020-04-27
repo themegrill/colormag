@@ -75,6 +75,9 @@ require COLORMAG_INCLUDES_DIR . '/colormag-after-setup-theme.php';
 /** ColorMag template redirect file, hooked for `template_redirect`. */
 require COLORMAG_INCLUDES_DIR . '/colormag-template-redirect.php';
 
+/** Helper functions. */
+require COLORMAG_INCLUDES_DIR . '/helper-functions.php';
+
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
 require_once COLORMAG_INCLUDES_DIR . '/functions.php';
