@@ -103,7 +103,7 @@ function colormag_save_custom_meta( $post_id ) {
 	global $page_layout, $post;
 
 	// Verify the nonce before proceeding.
-	if ( ! isset( $_POST['custom_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['custom_meta_box_nonce'], basename( __FILE__ ) ) ) {
+	if ( ! isset( $_POST['custom_meta_box_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['custom_meta_box_nonce'] ), basename( __FILE__ ) ) ) {
 		return;
 	}
 
@@ -112,7 +112,8 @@ function colormag_save_custom_meta( $post_id ) {
 		return;
 	}
 
-	if ( 'page' == $_POST['post_type'] ) {
+	if ( 'page' == wp_unslash( $_POST['post_type'] ) ) {
+
 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return $post_id;
 		}
@@ -124,7 +125,7 @@ function colormag_save_custom_meta( $post_id ) {
 
 		// Execute this saving function.
 		$old = get_post_meta( $post_id, $field['id'], true );
-		$new = $_POST[ $field['id'] ];
+		$new = wp_unslash( $_POST[ $field['id'] ] );
 
 		if ( $new && $new != $old ) {
 			update_post_meta( $post_id, $field['id'], $new );
@@ -134,4 +135,4 @@ function colormag_save_custom_meta( $post_id ) {
 	}
 }
 
-add_action( 'pre_post_update', 'colormag_save_custom_meta' );
+add_action( 'save_post', 'colormag_save_custom_meta' );
