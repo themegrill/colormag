@@ -26,43 +26,6 @@ if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
 }
 
 /**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 800;
-}
-
-/**
- * $content_width global variable adjustment as per layout option.
- */
-function colormag_content_width() {
-	global $post;
-	global $content_width;
-
-	if ( $post ) {
-		$layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true );
-	}
-	if ( empty( $layout_meta ) || is_archive() || is_search() ) {
-		$layout_meta = 'default_layout';
-	}
-	$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-
-	if ( $layout_meta == 'default_layout' ) {
-		if ( $colormag_default_layout == 'no_sidebar_full_width' ) {
-			$content_width = 1140; /* pixels */
-		} else {
-			$content_width = 800; /* pixels */
-		}
-	} elseif ( $layout_meta == 'no_sidebar_full_width' ) {
-		$content_width = 1140; /* pixels */
-	} else {
-		$content_width = 800; /* pixels */
-	}
-}
-
-add_action( 'template_redirect', 'colormag_content_width' );
-
-/**
  * Define Theme Constants.
  */
 $theme = wp_get_theme( 'colormag' );
@@ -106,8 +69,11 @@ define( 'COLORMAG_ELEMENTOR_WIDGETS_URL', COLORMAG_ELEMENTOR_URL . '/widgets' );
 
 define( 'COLORMAG_ADMIN_IMAGES_URL', COLORMAG_ADMIN_URL . '/images' );
 
-/** ColorMag setup files, hooked for `after_setup_theme`. */
+/** ColorMag setup file, hooked for `after_setup_theme`. */
 require COLORMAG_INCLUDES_DIR . '/colormag-after-setup-theme.php';
+
+/** ColorMag template redirect file, hooked for `template_redirect`. */
+require COLORMAG_INCLUDES_DIR . '/colormag-template-redirect.php';
 
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
