@@ -6,7 +6,10 @@
  * @version 1.0.0
  */
 
-defined( 'ABSPATH' ) || exit;
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Delete the `Hello world!` post after successful demo import
