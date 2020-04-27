@@ -110,30 +110,36 @@ define( 'COLORMAG_ADMIN_IMAGES_URL', COLORMAG_ADMIN_URL . '/images' );
 require COLORMAG_INCLUDES_DIR . '/colormag-after-setup-theme.php';
 
 /** Load functions */
-require_once( COLORMAG_INCLUDES_DIR . '/custom-header.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/functions.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/header-functions.php' );
-require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-fonts.php' );
-require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/enqueue-scripts.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/class-colormag-dynamic-css.php' );
-require_once( COLORMAG_CUSTOMIZER_DIR . '/class-colormag-generate-fonts.php' );
+require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
+require_once COLORMAG_INCLUDES_DIR . '/functions.php';
+require_once COLORMAG_INCLUDES_DIR . '/header-functions.php';
+require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-fonts.php';
+require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
+require_once COLORMAG_INCLUDES_DIR . '/enqueue-scripts.php';
+require_once COLORMAG_INCLUDES_DIR . '/class-colormag-dynamic-css.php';
+require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-generate-fonts.php';
 
 /** Add the Elementor compatibility file */
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
-	require_once( COLORMAG_ELEMENTOR_DIR . '/elementor.php' );
-	require_once( COLORMAG_ELEMENTOR_DIR . '/elementor-functions.php' );
+	require_once COLORMAG_ELEMENTOR_DIR . '/elementor.php';
+	require_once COLORMAG_ELEMENTOR_DIR . '/elementor-functions.php';
 }
 
-require_once( COLORMAG_ADMIN_DIR . '/meta-boxes.php' );
+/** Add meta boxes. */
+require_once COLORMAG_ADMIN_DIR . '/meta-boxes.php';
 
 /** Load Widgets and Widgetized Area */
-require_once( COLORMAG_WIDGETS_DIR . '/widgets.php' );
+require_once COLORMAG_WIDGETS_DIR . '/widgets.php';
+
+/** Load migration scripts. */
+require_once COLORMAG_INCLUDES_DIR . '/migration.php';
 
 /**
- * Detect plugin. For use on Front End only.
+ * Load deprecated functions.
  */
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-filters.php';
+require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php';
+require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php';
 
 /**
  * Load Demo Importer Configs.
@@ -141,12 +147,6 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( class_exists( 'TG_Demo_Importer' ) ) {
 	require get_template_directory() . '/inc/demo-config.php';
 }
-
-/**
- * Assign the ColorMag version to a variable.
- */
-$theme            = wp_get_theme( 'colormag' );
-$colormag_version = $theme['Version'];
 
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
@@ -160,17 +160,10 @@ if ( is_admin() ) {
 /**
  * Load TGMPA Configs.
  */
-require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-activation.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-colormag.php' );
+require_once COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require_once COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-colormag.php';
 
 /**
- * Load migration scripts.
+ * Detect plugin. For use on Front End only.
  */
-require_once( COLORMAG_INCLUDES_DIR . '/migration.php' );
-
-/**
- * Load deprecated functions.
- */
-require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-filters.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php' );
+include_once ABSPATH . 'wp-admin/includes/plugin.php';
