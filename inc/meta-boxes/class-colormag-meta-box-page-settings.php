@@ -33,7 +33,7 @@ class ColorMag_Meta_Box_Page_Settings {
 
 		/**
 		 * Meta box options.
-		 * */
+		 */
 		// Layout.
 		$colormag_page_layout = get_post_meta( $post->ID, 'colormag_page_layout', true );
 		if ( '' === $colormag_page_layout ) {
