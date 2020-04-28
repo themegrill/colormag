@@ -37,3 +37,33 @@ function colormag_continue_reading() {
 }
 
 add_filter( 'excerpt_more', 'colormag_continue_reading' );
+
+
+/**
+ * Removing the default style of WordPress gallery.
+ */
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/**
+ * Filtering the size to be full from thumbnail to be used in WordPress gallery as a default size.
+ *
+ * @param array $out   The output array of shortcode attributes.
+ * @param array $pairs The supported attributes and their defaults.
+ * @param array $atts  The user defined shortcode attributes.
+ *
+ * @return mixed
+ */
+function colormag_gallery_atts( $out, $pairs, $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'size' => 'colormag-featured-image',
+		),
+		$atts
+	);
+
+	$out['size'] = $atts['size'];
+
+	return $out;
+}
+
+add_filter( 'shortcode_atts_gallery', 'colormag_gallery_atts', 10, 3 );

@@ -10,31 +10,6 @@
  * @since      ColorMag 1.0
  */
 
-/****************************************************************************************/
-
-/**
- * Removing the default style of wordpress gallery
- */
-add_filter( 'use_default_gallery_style', '__return_false' );
-
-/**
- * Filtering the size to be full from thumbnail to be used in WordPress gallery as a default size
- */
-function colormag_gallery_atts( $out, $pairs, $atts ) {
-	$atts = shortcode_atts( array(
-		'size' => 'colormag-featured-image',
-	), $atts );
-
-	$out['size'] = $atts['size'];
-
-	return $out;
-
-}
-
-add_filter( 'shortcode_atts_gallery', 'colormag_gallery_atts', 10, 3 );
-
-/****************************************************************************************/
-
 add_filter( 'body_class', 'colormag_body_class' );
 /**
  * Filter the body_class
