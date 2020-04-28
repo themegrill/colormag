@@ -335,20 +335,6 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) {
 
 }
 
-
-/**************************************************************************************/
-
-/*
- * Creating responsive video for posts/pages
- */
-if ( ! function_exists( 'colormag_responsive_video' ) ) :
-	function colormag_responsive_video( $html, $url, $attr, $post_ID ) {
-		return '<div class="fitvids-video">' . $html . '</div>';
-	}
-
-	add_filter( 'embed_oembed_html', 'colormag_responsive_video', 10, 4 );
-endif;
-
 /**************************************************************************************/
 
 /*

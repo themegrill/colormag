@@ -91,3 +91,20 @@ function colormag_remove_more_jump_link( $link ) {
 }
 
 add_filter( 'the_content_more_link', 'colormag_remove_more_jump_link' );
+
+
+/**
+ * Creating responsive video for posts/pages.
+ *
+ * @param string|false $html    The cached HTML result, stored in post meta.
+ * @param string       $url     The attempted embed URL.
+ * @param array        $attr    An array of shortcode attributes.
+ * @param int          $post_ID Post ID.
+ *
+ * @return string
+ */
+function colormag_responsive_video( $html, $url, $attr, $post_ID ) {
+	return '<div class="fitvids-video">' . $html . '</div>';
+}
+
+add_filter( 'embed_oembed_html', 'colormag_responsive_video', 10, 4 );
