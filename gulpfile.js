@@ -94,6 +94,10 @@ var paths = {
 	},
 
 	metaBoxes : {
+		scss      : {
+			src  : './inc/meta-boxes/assets/scss/*.scss',
+			dest : './inc/meta-boxes/assets/css'
+		},
 		cssmin    : {
 			src  : [
 				'./inc/meta-boxes/assets/css/*.css',
@@ -258,6 +262,26 @@ function minifyJs() {
 		.on( 'error', notify.onError() );
 }
 
+// Compile meta boxes styles.
+function compileMetaBoxSass() {
+	return gulp
+		.src( paths.metaBoxes.scss.src )
+		.pipe( sass( {
+			indentType  : 'tab',
+			indentWidth : 1,
+			outputStyle : 'expanded',
+			linefeed    : 'crlf'
+		} ).on( 'error', sass.logError ) )
+		.pipe( postcss( [
+			autoprefixer( {
+				browsers : [ 'last 2 versions' ],
+				cascade  : false
+			} )
+		] ) )
+		.pipe( gulp.dest( paths.metaBoxes.scss.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Minify meta box css file.
 function minifyMetaBoxCSS() {
 	return gulp
@@ -290,6 +314,7 @@ function watch() {
 	gulp.watch( paths.customizeControls.jsconcat.src, concatControlJS );
 	gulp.watch( paths.customizeControls.jsmin.src, minifyControlJs );
 	gulp.watch( paths.js.src, minifyJs );
+	gulp.watch( paths.metaBoxes.scss.src, compileMetaBoxSass );
 	gulp.watch( paths.metaBoxes.cssmin.src, minifyMetaBoxCSS );
 	gulp.watch( paths.metaBoxes.jsmin.src, minifyMetaBoxJs );
 }
@@ -313,5 +338,6 @@ exports.concatControlCSS            = concatControlCSS;
 exports.concatControlJS             = concatControlJS;
 exports.minifyControlJs             = minifyControlJs;
 exports.minifyJs                    = minifyJs;
+exports.compileMetaBoxSass          = compileMetaBoxSass;
 exports.minifyMetaBoxCSS            = minifyMetaBoxCSS;
 exports.minifyMetaBoxJs             = minifyMetaBoxJs;
