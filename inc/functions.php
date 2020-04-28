@@ -167,24 +167,6 @@ function colormag_custom_css() {
 
 /**************************************************************************************/
 
-add_filter( 'the_content_more_link', 'colormag_remove_more_jump_link' );
-/**
- * Removing the more link jumping to middle of content
- */
-function colormag_remove_more_jump_link( $link ) {
-	$offset = strpos( $link, '#more-' );
-	if ( $offset ) {
-		$end = strpos( $link, '"', $offset );
-	}
-	if ( $end ) {
-		$link = substr_replace( $link, '', $offset, $end - $offset );
-	}
-
-	return $link;
-}
-
-/**************************************************************************************/
-
 add_action( 'colormag_footer_copyright', 'colormag_footer_copyright', 10 );
 /**
  * function to show the footer info, copyright information

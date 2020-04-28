@@ -67,3 +67,27 @@ function colormag_gallery_atts( $out, $pairs, $atts ) {
 }
 
 add_filter( 'shortcode_atts_gallery', 'colormag_gallery_atts', 10, 3 );
+
+
+/**
+ * Removing the more link jumping to middle of content.
+ *
+ * @param string $link Read More link element.
+ *
+ * @return string|string[]
+ */
+function colormag_remove_more_jump_link( $link ) {
+	$offset = strpos( $link, '#more-' );
+
+	if ( $offset ) {
+		$end = strpos( $link, '"', $offset );
+	}
+
+	if ( $end ) {
+		$link = substr_replace( $link, '', $offset, $end - $offset );
+	}
+
+	return $link;
+}
+
+add_filter( 'the_content_more_link', 'colormag_remove_more_jump_link' );
