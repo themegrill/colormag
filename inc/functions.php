@@ -302,27 +302,15 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) {
 		);
 		// Related by categories
 		if ( get_theme_mod( 'colormag_related_posts', 'categories' ) == 'categories' ) {
-
-			$cats = get_post_meta( $post->ID, 'related-posts', true );
-
-			if ( ! $cats ) {
-				$cats                 = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
-				$args['category__in'] = $cats;
-			} else {
-				$args['cat'] = $cats;
-			}
+			$cats                 = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
+			$args['category__in'] = $cats;
 		}
 		// Related by tags
 		if ( get_theme_mod( 'colormag_related_posts', 'categories' ) == 'tags' ) {
+			$tags            = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
+			$args['tag__in'] = $tags;
 
-			$tags = get_post_meta( $post->ID, 'related-posts', true );
-
-			if ( ! $tags ) {
-				$tags            = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
-				$args['tag__in'] = $tags;
-			} else {
-				$args['tag_slug__in'] = explode( ',', $tags );
-			}
+			// If no tags added, return.
 			if ( ! $tags ) {
 				$break = true;
 			}
