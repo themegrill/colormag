@@ -27,3 +27,13 @@ function colormag_excerpt_length( $length ) {
 }
 
 add_filter( 'excerpt_length', 'colormag_excerpt_length' );
+
+
+/**
+ * Returns a "Continue Reading" link for excerpts.
+ */
+function colormag_continue_reading() {
+	return '';
+}
+
+add_filter( 'excerpt_more', 'colormag_continue_reading' );

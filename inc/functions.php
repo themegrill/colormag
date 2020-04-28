@@ -9,16 +9,6 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
-/****************************************************************************************/
-
-
-add_filter( 'excerpt_more', 'colormag_continue_reading' );
-/**
- * Returns a "Continue Reading" link for excerpts
- */
-function colormag_continue_reading() {
-	return '';
-}
 
 /****************************************************************************************/
 
