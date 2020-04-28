@@ -123,8 +123,12 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 	/**
 	 * Category Color for widgets and other
+	 *
+	 * @param bool $echo Boolean value to echo or just return.
+	 *
+	 * @return mixed
 	 */
-	function colormag_colored_category() {
+	function colormag_colored_category( $echo = true ) {
 
 		global $post;
 		$categories = get_the_category();
@@ -133,6 +137,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 		if ( $categories ) {
 			$output .= '<div class="above-entry-meta"><span class="cat-links">';
+
 			foreach ( $categories as $category ) {
 				$color_code = colormag_category_color( get_cat_id( $category->cat_name ) );
 				if ( ! empty( $color_code ) ) {
@@ -144,7 +149,11 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 			$output .= '</span></div>';
 
-			echo trim( $output, $separator ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			if ( $echo ) {
+				echo trim( $output, $separator ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			} else {
+				return trim( $output, $separator );
+			}
 		}
 
 	}

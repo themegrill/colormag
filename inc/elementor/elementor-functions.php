@@ -137,6 +137,7 @@ if ( ! function_exists( 'colormag_elementor_colored_category' ) ) :
 
 		if ( $categories ) {
 			$output .= '<div class="tg-post-categories">';
+
 			foreach ( $categories as $category ) {
 				$color_code = colormag_category_color( get_cat_id( $category->cat_name ) );
 				if ( ! empty( $color_code ) ) {
@@ -145,11 +146,13 @@ if ( ! function_exists( 'colormag_elementor_colored_category' ) ) :
 					$output .= '<a href="' . get_category_link( $category->term_id ) . '" class="tg-post-category" rel="category tag">' . $category->cat_name . '</a>' . $separator;
 				}
 			}
+
 			$output .= '</div>';
 
 			if ( 0 == $display ) {
 				$output = trim( $output, $separator );
 			}
+
 			if ( 1 == $display ) {
 				echo trim( $output, $separator ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 			}
