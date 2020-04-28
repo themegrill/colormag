@@ -89,3 +89,31 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_category_color' ) ) :
+
+	/**
+	 * Getting Category Color.
+	 *
+	 * @param int $wp_category_id Category id.
+	 *
+	 * @return string The category color.
+	 */
+	function colormag_category_color( $wp_category_id ) {
+
+		$args     = array(
+			'orderby'    => 'id',
+			'hide_empty' => 0,
+		);
+		$category = get_categories( $args );
+
+		foreach ( $category as $category_list ) {
+			$color = get_theme_mod( 'colormag_category_color_' . $wp_category_id );
+
+			return $color;
+		}
+
+	}
+
+endif;
