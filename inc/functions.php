@@ -11,17 +11,6 @@
  */
 /****************************************************************************************/
 
-add_filter( 'excerpt_length', 'colormag_excerpt_length' );
-/**
- * Sets the post excerpt length to 40 words.
- *
- * function tied to the excerpt_length filter hook.
- *
- * @uses filter excerpt_length
- */
-function colormag_excerpt_length( $length ) {
-	return 20;
-}
 
 add_filter( 'excerpt_more', 'colormag_continue_reading' );
 /**
