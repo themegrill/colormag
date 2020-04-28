@@ -91,7 +91,24 @@ var paths = {
 			],
 			dest : './inc/customizer/custom-controls/assets/js'
 		}
-	}
+	},
+
+	metaBoxes : {
+		cssmin    : {
+			src  : [
+				'./inc/meta-boxes/assets/css/*.css',
+				'!./inc/meta-boxes/assets/css/*.min.css'
+			],
+			dest : './inc/meta-boxes/assets/css'
+		},
+		jsmin     : {
+			src  : [
+				'./inc/meta-boxes/assets/js/*.js',
+				'!./inc/meta-boxes/assets/js/*.min.js'
+			],
+			dest : './inc/meta-boxes/assets/js'
+		}
+	},
 
 };
 
@@ -241,6 +258,25 @@ function minifyJs() {
 		.on( 'error', notify.onError() );
 }
 
+// Minify meta box css file.
+function minifyMetaBoxCSS() {
+	return gulp
+		.src( paths.metaBoxes.cssmin.src )
+		.pipe( uglifycss() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.metaBoxes.cssmin.dest ) );
+}
+
+// Minifies the metabox js files.
+function minifyMetaBoxJs() {
+	return gulp
+		.src( paths.metaBoxes.jsmin.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.metaBoxes.jsmin.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
@@ -254,6 +290,8 @@ function watch() {
 	gulp.watch( paths.customizeControls.jsconcat.src, concatControlJS );
 	gulp.watch( paths.customizeControls.jsmin.src, minifyControlJs );
 	gulp.watch( paths.js.src, minifyJs );
+	gulp.watch( paths.metaBoxes.cssmin.src, minifyMetaBoxCSS );
+	gulp.watch( paths.metaBoxes.jsmin.src, minifyMetaBoxJs );
 }
 
 
@@ -275,3 +313,5 @@ exports.concatControlCSS            = concatControlCSS;
 exports.concatControlJS             = concatControlJS;
 exports.minifyControlJs             = minifyControlJs;
 exports.minifyJs                    = minifyJs;
+exports.minifyMetaBoxCSS            = minifyMetaBoxCSS;
+exports.minifyMetaBoxJs             = minifyMetaBoxJs;

@@ -96,6 +96,8 @@ if ( defined( 'ELEMENTOR_VERSION' ) ) {
 
 /** Add meta boxes. */
 require_once COLORMAG_ADMIN_DIR . '/meta-boxes.php';
+require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-boxes.php';
+require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-box-page-settings.php';
 
 /** Load Widgets and Widgetized Area */
 require_once COLORMAG_WIDGETS_DIR . '/widgets.php';
