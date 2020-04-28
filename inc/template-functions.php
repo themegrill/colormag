@@ -108,3 +108,38 @@ function colormag_responsive_video( $html, $url, $attr, $post_ID ) {
 }
 
 add_filter( 'embed_oembed_html', 'colormag_responsive_video', 10, 4 );
+
+
+/**
+ * Use of the hooks for Category Color in the archive titles
+ *
+ * @param string $title Category title.
+ *
+ * @return string Category page title.
+ */
+function colormag_colored_category_title( $title ) {
+
+	$output             = '';
+	$color_value        = colormag_category_color( get_cat_id( $title ) );
+	$color_border_value = colormag_category_color( get_cat_id( $title ) );
+
+	if ( ! empty( $color_value ) ) {
+		$output = '<h1 class="page-title" style="border-bottom-color: ' . esc_attr( $color_border_value ) . '"><span style="background-color: ' . esc_attr( $color_value ) . '">' . esc_html( $title ) . '</span></h1>';
+	} else {
+		$output = '<h1 class="page-title"><span>' . $title . '</span></h1>';
+	}
+
+	return $output;
+
+}
+
+/**
+ * Filters the single_cat_title.
+ *
+ * @param string $category_title Category title.
+ */
+function colormag_category_title_function( $category_title ) {
+	add_filter( 'single_cat_title', 'colormag_colored_category_title' );
+}
+
+add_action( 'colormag_category_title', 'colormag_category_title_function' );

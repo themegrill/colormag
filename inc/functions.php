@@ -337,27 +337,6 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) {
 
 /**************************************************************************************/
 
-/*
- * Use of the hooks for Category Color in the archive titles
- */
-function colormag_colored_category_title( $title ) {
-	$color_value        = colormag_category_color( get_cat_id( $title ) );
-	$color_border_value = colormag_category_color( get_cat_id( $title ) );
-	if ( ! empty( $color_value ) ) {
-		return '<h1 class="page-title" style="border-bottom-color: ' . $color_border_value . '">' . '<span style="background-color: ' . $color_value . '">' . $title . '</span></h1>';
-	} else {
-		return '<h1 class="page-title"><span>' . $title . '</span></h1>';
-	}
-}
-
-function colormag_category_title_function( $category_title ) {
-	add_filter( 'single_cat_title', 'colormag_colored_category_title' );
-}
-
-add_action( 'colormag_category_title', 'colormag_category_title_function' );
-
-/**************************************************************************************/
-
 /**
  * Making the theme Woocommrece compatible
  */
