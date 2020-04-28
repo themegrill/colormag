@@ -455,28 +455,3 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 	endswitch; // end comment_type check
 	}
 endif;
-
-if ( ! function_exists( 'colormag_plugin_version_compare' ) ) :
-
-	/**
-	 * Compare user's current version of plugin.
-	 *
-	 * @param string $plugin_slug        The plugin slug.
-	 * @param string $version_to_compare The plugin's version.
-	 *
-	 * @return bool
-	 */
-	function colormag_plugin_version_compare( $plugin_slug, $version_to_compare ) {
-		$installed_plugins = get_plugins();
-
-		// Plugin not installed.
-		if ( ! isset( $installed_plugins[ $plugin_slug ] ) ) {
-			return false;
-		}
-
-		$plugin_version = $installed_plugins[ $plugin_slug ]['Version'];
-
-		return version_compare( $plugin_version, $version_to_compare, '<' );
-	}
-
-endif;
