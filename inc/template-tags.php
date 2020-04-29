@@ -181,8 +181,8 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 		if ( empty( $layout_meta ) || is_archive() || is_search() ) {
 			$layout_meta = 'default_layout';
 		}
-		$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
 
+		$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
 		$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
 		$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
 
