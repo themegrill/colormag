@@ -190,6 +190,104 @@ if ( ! function_exists( 'colormag_date_display' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_comment' ) ) :
+
+	/**
+	 * Template for comments and pingbacks.
+	 *
+	 * Used as a callback by wp_list_comments() for displaying the comments.
+	 *
+	 * @param WP_Comment $comment Comment to display.
+	 * @param array      $args    An array of arguments.
+	 * @param int        $depth   Depth of the current comment.
+	 */
+	function colormag_comment( $comment, $args, $depth ) {
+
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
+
+			case 'pingback':
+			case 'trackback':
+				// Display trackbacks differently than normal comments.
+				?>
+				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<p>
+					<?php esc_html_e( 'Pingback:', 'colormag' ); ?>
+					<?php comment_author_link(); ?>
+					<?php edit_comment_link( __( '(Edit)', 'colormag' ), '<span class="edit-link">', '</span>' ); ?>
+				</p>
+				<?php
+				break;
+
+			default:
+				// Proceed with normal comments.
+				global $post;
+				?>
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+					<article id="comment-<?php comment_ID(); ?>" class="comment">
+						<header class="comment-meta comment-author vcard">
+							<?php
+							echo get_avatar( $comment, 74 );
+
+							printf(
+								'<div class="comment-author-link"><i class="fa fa-user"></i>%1$s%2$s</div>',
+								get_comment_author_link(),
+								// If current post author is also comment author, make it known visually.
+								( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'colormag' ) . '</span>' : ''
+							);
+
+							printf(
+								'<div class="comment-date-time"><i class="fa fa-calendar-o"></i>%1$s</div>',
+								sprintf(
+									/* Translators: 1. Comment date, 2. Comment time */
+									esc_html__( '%1$s at %2$s', 'colormag' ),
+									esc_html( get_comment_date() ),
+									esc_html( get_comment_time() )
+								)
+							);
+
+							printf(
+								'<a class="comment-permalink" href="%1$s"><i class="fa fa-link"></i>' . esc_html__( 'Permalink', 'colormag' ) . '</a>',
+								esc_url( get_comment_link( $comment->comment_ID ) )
+							); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+
+							edit_comment_link();
+							?>
+						</header><!-- .comment-meta -->
+
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
+						<?php endif; ?>
+
+						<section class="comment-content comment">
+							<?php
+							comment_text();
+
+							comment_reply_link(
+								array_merge(
+									$args,
+									array(
+										'reply_text' => esc_html__( 'Reply', 'colormag' ),
+										'after'      => '',
+										'depth'      => $depth,
+										'max_depth'  => $args['max_depth'],
+									)
+								)
+							);
+							?>
+						</section><!-- .comment-content -->
+
+					</article><!-- #comment-## -->
+				<?php
+				break;
+
+		endswitch; // End comment_type check.
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_plugin_version_compare' ) ) :
 
 	/**
