@@ -226,8 +226,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'multiselect':
-					$selected_choices  = array();
-					$available_choices = $setting['choices'];
+					$selected_choices     = array();
+					$available_choices    = $setting['choices'];
+					$new_instance[ $key ] = isset( $new_instance[ $key ] ) ? $new_instance[ $key ] : array();
 
 					foreach ( $new_instance[ $key ] as $selected_key => $selected_value ) {
 
