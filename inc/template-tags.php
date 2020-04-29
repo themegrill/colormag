@@ -164,9 +164,10 @@ endif;
 if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 
 	/**
-	 * Function to select the sidebar
+	 * Function to display the sidebar selected.
 	 */
 	function colormag_sidebar_select() {
+
 		global $post;
 
 		if ( $post ) {
@@ -182,34 +183,22 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 			$layout_meta = 'default_layout';
 		}
 
-		$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
+		$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
 		$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
 		$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
 
-		if ( $layout_meta == 'default_layout' ) {
+		if ( 'default_layout' === $layout_meta ) {
 			if ( is_page() ) {
-				if ( $colormag_default_page_layout == 'right_sidebar' ) {
-					get_sidebar();
-				} elseif ( $colormag_default_page_layout == 'left_sidebar' ) {
-					get_sidebar( 'left' );
-				}
+				colormag_get_sidebar( $colormag_default_page_layout );
+			} elseif ( is_single() ) {
+				colormag_get_sidebar( $colormag_default_post_layout );
+			} else {
+				colormag_get_sidebar( $colormag_default_layout );
 			}
-			if ( is_single() ) {
-				if ( $colormag_default_post_layout == 'right_sidebar' ) {
-					get_sidebar();
-				} elseif ( $colormag_default_post_layout == 'left_sidebar' ) {
-					get_sidebar( 'left' );
-				}
-			} elseif ( $colormag_default_layout == 'right_sidebar' ) {
-				get_sidebar();
-			} elseif ( $colormag_default_layout == 'left_sidebar' ) {
-				get_sidebar( 'left' );
-			}
-		} elseif ( $layout_meta == 'right_sidebar' ) {
-			get_sidebar();
-		} elseif ( $layout_meta == 'left_sidebar' ) {
-			get_sidebar( 'left' );
+		} else {
+			colormag_get_sidebar( $layout_meta );
 		}
+
 	}
 
 endif;
