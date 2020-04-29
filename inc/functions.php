@@ -12,61 +12,6 @@
 
 /****************************************************************************************/
 
-if ( ! function_exists( 'colormag_sidebar_select' ) ) :
-	/**
-	 * Function to select the sidebar
-	 */
-	function colormag_sidebar_select() {
-		global $post;
-
-		if ( $post ) {
-			$layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true );
-		}
-
-		if ( is_home() ) {
-			$queried_id  = get_option( 'page_for_posts' );
-			$layout_meta = get_post_meta( $queried_id, 'colormag_page_layout', true );
-		}
-
-		if ( empty( $layout_meta ) || is_archive() || is_search() ) {
-			$layout_meta = 'default_layout';
-		}
-		$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-
-		$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-		$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
-
-		if ( $layout_meta == 'default_layout' ) {
-			if ( is_page() ) {
-				if ( $colormag_default_page_layout == 'right_sidebar' ) {
-					get_sidebar();
-				} elseif ( $colormag_default_page_layout == 'left_sidebar' ) {
-					get_sidebar( 'left' );
-				}
-			}
-			if ( is_single() ) {
-				if ( $colormag_default_post_layout == 'right_sidebar' ) {
-					get_sidebar();
-				} elseif ( $colormag_default_post_layout == 'left_sidebar' ) {
-					get_sidebar( 'left' );
-				}
-			} elseif ( $colormag_default_layout == 'right_sidebar' ) {
-				get_sidebar();
-			} elseif ( $colormag_default_layout == 'left_sidebar' ) {
-				get_sidebar( 'left' );
-			}
-		} elseif ( $layout_meta == 'right_sidebar' ) {
-			get_sidebar();
-		} elseif ( $layout_meta == 'left_sidebar' ) {
-			get_sidebar( 'left' );
-		}
-	}
-endif;
-
-/****************************************************************************************/
-
-/****************************************************************************************/
-
 add_action( 'wp_head', 'colormag_custom_css', 100 );
 /**
  * Hooks the Custom Internal CSS to head section
