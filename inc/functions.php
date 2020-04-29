@@ -48,43 +48,6 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 	}
 endif;
 
-
-/**************************************************************************************/
-
-/*
- * Breaking News/Latest Posts ticker section in the header
- */
-if ( ! function_exists( 'colormag_breaking_news' ) ) :
-	function colormag_breaking_news() {
-		$post_status = 'publish';
-		if ( get_option( 'fresh_site' ) == 1 ) {
-			$post_status = array( 'auto-draft', 'publish' );
-		}
-
-		$get_featured_posts = new WP_Query( array(
-			'posts_per_page'      => 5,
-			'post_type'           => 'post',
-			'ignore_sticky_posts' => true,
-			'post_status'         => $post_status,
-		) );
-		?>
-		<div class="breaking-news">
-			<strong class="breaking-news-latest"><?php _e( 'Latest:', 'colormag' ); ?></strong>
-			<ul class="newsticker">
-				<?php while ( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
-					<li>
-						<a href="<?php the_permalink(); ?>"
-						   title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-					</li>
-				<?php endwhile; ?>
-			</ul>
-		</div>
-		<?php
-		// Reset Post Data
-		wp_reset_query();
-	}
-endif;
-
 /**************************************************************************************/
 
 /*
