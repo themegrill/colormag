@@ -82,6 +82,9 @@ require COLORMAG_INCLUDES_DIR . '/helper-functions.php';
 require COLORMAG_INCLUDES_DIR . '/template-tags.php';
 require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 
+/** WP_Query functions files. */
+require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
+
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
 require_once COLORMAG_INCLUDES_DIR . '/functions.php';
