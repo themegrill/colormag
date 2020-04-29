@@ -12,6 +12,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * WooCommerce setup function.
+ *
+ * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+ * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
+ * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
+ *
+ * @return void
+ */
+function colormag_woocommerce_setup() {
+
+	// Adding the WooCommerce plugin support.
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+
+}
+
+add_action( 'after_setup_theme', 'colormag_woocommerce_setup' );
 
 /**
  * Making the theme Woocommrece compatible
