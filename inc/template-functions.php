@@ -156,3 +156,66 @@ function colormag_category_title_function( $category_title ) {
 }
 
 add_action( 'colormag_category_title', 'colormag_category_title_function' );
+
+
+/**
+ * Filter the body_class.
+ *
+ * Throwing different body class for the different layouts in the body tag.
+ *
+ * @param array $classes CSS classes applied to the body tag.
+ *
+ * @return array Classes for body.
+ */
+function colormag_body_class( $classes ) {
+
+	global $post;
+
+	if ( $post ) {
+		$layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true );
+	}
+
+	if ( is_home() ) {
+		$queried_id  = get_option( 'page_for_posts' );
+		$layout_meta = get_post_meta( $queried_id, 'colormag_page_layout', true );
+	}
+
+	if ( empty( $layout_meta ) || is_archive() || is_search() ) {
+		$layout_meta = 'default_layout';
+	}
+
+	$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
+	$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
+	$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
+
+	if ( 'default_layout' === $layout_meta ) {
+		if ( is_page() ) {
+			$classes[] = colormag_get_sidebar_layout_class( $colormag_default_page_layout );
+		} elseif ( is_single() ) {
+			$classes[] = colormag_get_sidebar_layout_class( $colormag_default_post_layout );
+		} else {
+			$classes[] = colormag_get_sidebar_layout_class( $colormag_default_layout );
+		}
+	} else {
+		$classes[] = colormag_get_sidebar_layout_class( $layout_meta );
+	}
+
+	// For site layout option.
+	$site_layout = get_theme_mod( 'colormag_site_layout', 'wide_layout' );
+	$classes[]   = ( 'wide_layout' === $site_layout ) ? 'wide' : 'box-layout';
+
+	// For responsive menu display.
+	if ( 1 === get_theme_mod( 'colormag_responsive_menu', 0 ) ) {
+		$classes[] = 'better-responsive-menu';
+	}
+
+	// Add body class for body skin type.
+	if ( 'dark' === get_theme_mod( 'colormag_color_skin_setting', 'white' ) ) {
+		$classes[] = 'dark-skin';
+	}
+
+	return $classes;
+
+}
+
+add_filter( 'body_class', 'colormag_body_class' );
