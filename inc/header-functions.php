@@ -174,7 +174,7 @@ if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 						<div id="header-logo-image">
 							<?php
 							if ( function_exists( 'the_custom_logo' ) && has_custom_logo( $blog_id = 0 ) ) {
-								colormag_the_custom_logo();
+								the_custom_logo();
 							}
 							?>
 						</div><!-- #header-logo-image -->

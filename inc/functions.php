@@ -323,18 +323,6 @@ function colormag_wrapper_end() {
 	colormag_sidebar_select();
 }
 
-// Displays the site logo
-if ( ! function_exists( 'colormag_the_custom_logo' ) ) {
-	/**
-	 * Displays the optional custom logo.
-	 */
-	function colormag_the_custom_logo() {
-		if ( function_exists( 'the_custom_logo' ) ) {
-			the_custom_logo();
-		}
-	}
-}
-
 /**************************************************************************************/
 
 if ( ! function_exists( 'colormag_comment' ) ) :
