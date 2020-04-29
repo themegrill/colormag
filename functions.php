@@ -70,7 +70,7 @@ define( 'COLORMAG_ELEMENTOR_WIDGETS_URL', COLORMAG_ELEMENTOR_URL . '/widgets' );
 define( 'COLORMAG_ADMIN_IMAGES_URL', COLORMAG_ADMIN_URL . '/images' );
 
 /** ColorMag setup file, hooked for `after_setup_theme`. */
-require COLORMAG_INCLUDES_DIR . '/colormag-after-setup-theme.php';
+require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 
 /** ColorMag template redirect file, hooked for `template_redirect`. */
 require COLORMAG_INCLUDES_DIR . '/colormag-template-redirect.php';
