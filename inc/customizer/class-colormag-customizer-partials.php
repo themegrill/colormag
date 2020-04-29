@@ -55,7 +55,7 @@ class ColorMag_Customizer_Partials {
 	public static function render_date_display_type() {
 
 		// Return if date display option is not enabled.
-		if ( get_theme_mod( 'colormag_date_display', 0 ) == 0 ) {
+		if ( 0 == get_theme_mod( 'colormag_date_display', 0 ) ) {
 			return;
 		}
 

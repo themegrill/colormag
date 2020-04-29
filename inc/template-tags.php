@@ -161,6 +161,35 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_date_display' ) ) :
+
+	/**
+	 * Display the date in the header.
+	 */
+	function colormag_date_display() {
+
+		// Bail out if date in header option is disabled.
+		if ( 0 == get_theme_mod( 'colormag_date_display', 0 ) ) {
+			return;
+		}
+		?>
+
+		<div class="date-in-header">
+			<?php
+			if ( 'theme_default' == get_theme_mod( 'colormag_date_display_type', 'theme_default' ) ) {
+				echo esc_html( date_i18n( 'l, F j, Y' ) );
+			} elseif ( 'wordpress_date_setting' == get_theme_mod( 'colormag_date_display_type', 'theme_default' ) ) {
+				echo esc_html( date_i18n( get_option( 'date_format' ) ) );
+			}
+			?>
+		</div>
+
+		<?php
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_plugin_version_compare' ) ) :
 
 	/**
