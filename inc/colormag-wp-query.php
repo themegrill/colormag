@@ -60,3 +60,46 @@ if ( ! function_exists( 'colormag_breaking_news' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_random_post' ) ) :
+
+	/**
+	 * Random post icon in menu.
+	 */
+	function colormag_random_post() {
+
+		// Bail out if random post in menu is not activated.
+		if ( 0 == get_theme_mod( 'colormag_random_post_in_menu', 0 ) ) {
+			return;
+		}
+
+		// Arguments for post query.
+		$args = array(
+			'posts_per_page'      => 1,
+			'post_type'           => 'post',
+			'ignore_sticky_posts' => true,
+			'orderby'             => 'rand',
+		);
+
+		$get_random_post = new WP_Query( $args );
+		?>
+
+		<div class="random-post">
+			<?php
+			while ( $get_random_post->have_posts() ) :
+				$get_random_post->the_post();
+				?>
+				<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e( 'View a random post', 'colormag' ); ?>">
+					<i class="fa fa-random"></i>
+				</a>
+			<?php endwhile; ?>
+		</div>
+
+		<?php
+		// Reset Post Data.
+		wp_reset_postdata();
+
+	}
+
+endif;
