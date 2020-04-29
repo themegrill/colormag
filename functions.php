@@ -93,7 +93,9 @@ require_once COLORMAG_INCLUDES_DIR . '/class-colormag-dynamic-css.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-generate-fonts.php';
 
 /** Add the WooCommerce plugin support */
-require_once COLORMAG_INCLUDES_DIR . '/woocommerce.php';
+if ( class_exists( 'WooCommerce' ) ) {
+	require_once COLORMAG_INCLUDES_DIR . '/woocommerce.php';
+}
 
 /** Add the Elementor compatibility file */
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
