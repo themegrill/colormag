@@ -56,3 +56,31 @@ if ( ! function_exists( 'colormag_get_sidebar_layout_class' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_get_sidebar' ) ) :
+
+	/**
+	 * Get sidebar as per the option chosen.
+	 *
+	 * @param string $sidebar        The passed sidebar area to be used.
+	 * @param string $sidebar_prefix The prefix for sidebar area to be used.
+	 */
+	function colormag_get_sidebar( $sidebar, $sidebar_prefix = '' ) {
+
+		// Bail out if `no_sidebar_full_width` or `no_sidebar_content_centered` is chosen.
+		if ( 'no_sidebar_full_width' == $sidebar || 'no_sidebar_content_centered' == $sidebar ) {
+			return;
+		}
+
+		$sidebar = str_replace( '_sidebar', '', $sidebar );
+
+		if ( $sidebar_prefix ) {
+			get_sidebar( $sidebar_prefix . '-' . $sidebar );
+		} else {
+			get_sidebar( $sidebar );
+		}
+
+	}
+
+endif;
