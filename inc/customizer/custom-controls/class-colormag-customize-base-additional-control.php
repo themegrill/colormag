@@ -44,6 +44,7 @@ class ColorMag_Customize_Base_Additional_Control extends WP_Customize_Control {
 			array(),
 			COLORMAG_THEME_VERSION
 		);
+		wp_style_add_data( 'colormag-customize-controls', 'rtl', 'replace' );
 
 		/**
 		 * Enqueue required Customize Controls JS files.

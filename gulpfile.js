@@ -10,7 +10,8 @@ var gulp         = require( 'gulp' ),
     rename       = require( 'gulp-rename' ),
     concatCss    = require( 'gulp-concat-css' ),
     concatJS     = require( 'gulp-concat' ),
-    uglify       = require( 'gulp-uglify' );
+    uglify       = require( 'gulp-uglify' ),
+    rtlcss       = require( 'gulp-rtlcss' );
 
 // Define paths.
 var paths = {
@@ -113,6 +114,40 @@ var paths = {
 			dest : './inc/meta-boxes/assets/js'
 		}
 	},
+
+	rtlcss : {
+		style             : {
+			src  : [ './style.css' ],
+			dest : './'
+		},
+		extendCustomize   : {
+			src  : [
+				'./inc/customizer/assets/css/extend-customizer.css',
+				'./inc/customizer/assets/css/extend-customizer.min.css'
+			],
+			dest : './inc/customizer/assets/css'
+		},
+		customizeControls : {
+			src  : [
+				'./inc/customizer/custom-controls/assets/css/customize-controls.css',
+				'./inc/customizer/custom-controls/assets/css/customize-controls.min.css'
+			],
+			dest : './inc/customizer/custom-controls/assets/css'
+		},
+		elementorStyles   : {
+			src  : [
+				'./inc/elementor/assets/css/elementor.css'
+			],
+			dest : './inc/elementor/assets/css'
+		},
+		metaBoxes         : {
+			src  : [
+				'./inc/meta-boxes/assets/css/meta-boxes.css',
+				'./inc/meta-boxes/assets/css/meta-boxes.min.css'
+			],
+			dest : './inc/meta-boxes/assets/css'
+		}
+	}
 
 };
 
@@ -301,6 +336,56 @@ function minifyMetaBoxJs() {
 		.on( 'error', notify.onError() );
 }
 
+// Generates RTL CSS file.
+function generateRTLCSS() {
+	return gulp
+		.src( paths.rtlcss.style.src )
+		.pipe( rtlcss() )
+		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( gulp.dest( paths.rtlcss.style.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+// Generates Extend Customize RTL CSS file.
+function generateExtendCustomizeRTLCSS() {
+	return gulp
+		.src( paths.rtlcss.extendCustomize.src )
+		.pipe( rtlcss() )
+		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( gulp.dest( paths.rtlcss.extendCustomize.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+// Generates Customize Controls RTL CSS file.
+function generateCustomizeControlsRTLCSS() {
+	return gulp
+		.src( paths.rtlcss.customizeControls.src )
+		.pipe( rtlcss() )
+		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( gulp.dest( paths.rtlcss.customizeControls.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+// Generates Elementor RTL CSS file.
+function generateElementorRTLCSS() {
+	return gulp
+		.src( paths.rtlcss.elementorStyles.src )
+		.pipe( rtlcss() )
+		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( gulp.dest( paths.rtlcss.elementorStyles.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+// Generates Meta Boxes RTL CSS file.
+function generateMetaBoxesRTLCSS() {
+	return gulp
+		.src( paths.rtlcss.metaBoxes.src )
+		.pipe( rtlcss() )
+		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( gulp.dest( paths.rtlcss.metaBoxes.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
@@ -317,27 +402,37 @@ function watch() {
 	gulp.watch( paths.metaBoxes.scss.src, compileMetaBoxSass );
 	gulp.watch( paths.metaBoxes.cssmin.src, minifyMetaBoxCSS );
 	gulp.watch( paths.metaBoxes.jsmin.src, minifyMetaBoxJs );
+	gulp.watch( paths.rtlcss.style.src, generateRTLCSS );
+	gulp.watch( paths.rtlcss.extendCustomize.src, generateExtendCustomizeRTLCSS );
+	gulp.watch( paths.rtlcss.customizeControls.src, generateCustomizeControlsRTLCSS );
+	gulp.watch( paths.rtlcss.elementorStyles.src, generateElementorRTLCSS );
+	gulp.watch( paths.rtlcss.metaBoxes.src, generateMetaBoxesRTLCSS );
 }
 
 
 // Define series of tasks.
 var server = gulp.series( browserSyncStart, watch );
 
-exports.browserSyncStart            = browserSyncStart;
-exports.browserSyncReload           = browserSyncReload;
-exports.sassCompile                 = sassCompile;
-exports.elementorStylesCompile      = elementorStylesCompile;
-exports.watch                       = watch;
-exports.server                      = server;
-exports.compileExtendCustomizerSass = compileExtendCustomizerSass;
-exports.minifyExtendCustomizerCSS   = minifyExtendCustomizerCSS;
-exports.minifyExtendCustomizerJs    = minifyExtendCustomizerJs;
-exports.compileControlSass          = compileControlSass;
-exports.minifyControlCSS            = minifyControlCSS;
-exports.concatControlCSS            = concatControlCSS;
-exports.concatControlJS             = concatControlJS;
-exports.minifyControlJs             = minifyControlJs;
-exports.minifyJs                    = minifyJs;
-exports.compileMetaBoxSass          = compileMetaBoxSass;
-exports.minifyMetaBoxCSS            = minifyMetaBoxCSS;
-exports.minifyMetaBoxJs             = minifyMetaBoxJs;
+exports.browserSyncStart                = browserSyncStart;
+exports.browserSyncReload               = browserSyncReload;
+exports.sassCompile                     = sassCompile;
+exports.elementorStylesCompile          = elementorStylesCompile;
+exports.watch                           = watch;
+exports.server                          = server;
+exports.compileExtendCustomizerSass     = compileExtendCustomizerSass;
+exports.minifyExtendCustomizerCSS       = minifyExtendCustomizerCSS;
+exports.minifyExtendCustomizerJs        = minifyExtendCustomizerJs;
+exports.compileControlSass              = compileControlSass;
+exports.minifyControlCSS                = minifyControlCSS;
+exports.concatControlCSS                = concatControlCSS;
+exports.concatControlJS                 = concatControlJS;
+exports.minifyControlJs                 = minifyControlJs;
+exports.minifyJs                        = minifyJs;
+exports.compileMetaBoxSass              = compileMetaBoxSass;
+exports.minifyMetaBoxCSS                = minifyMetaBoxCSS;
+exports.minifyMetaBoxJs                 = minifyMetaBoxJs;
+exports.generateRTLCSS                  = generateRTLCSS;
+exports.generateExtendCustomizeRTLCSS   = generateExtendCustomizeRTLCSS;
+exports.generateCustomizeControlsRTLCSS = generateCustomizeControlsRTLCSS;
+exports.generateElementorRTLCSS         = generateElementorRTLCSS;
+exports.generateMetaBoxesRTLCSS         = generateMetaBoxesRTLCSS;

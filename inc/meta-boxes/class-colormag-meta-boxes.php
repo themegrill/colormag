@@ -75,6 +75,7 @@ class ColorMag_Meta_Boxes {
 
 		// Enqueue meta boxes CSS file.
 		wp_enqueue_style( 'colormag-meta-boxes', COLORMAG_INCLUDES_URL . '/meta-boxes/assets/css/meta-boxes' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
+		wp_style_add_data( 'colormag-meta-boxes', 'rtl', 'replace' );
 
 		// Enqueue meta boxes JS file.
 		wp_enqueue_script( 'colormag-meta-boxes', COLORMAG_INCLUDES_URL . '/meta-boxes/assets/js/meta-boxes' . $suffix . '.js', array( 'jquery-ui-tabs' ), COLORMAG_THEME_VERSION, true );

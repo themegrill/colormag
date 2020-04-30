@@ -194,6 +194,7 @@ if ( ! function_exists( 'colormag_elementor_enqueue_style' ) ) :
 
 		// Enqueue the main Elementor CSS file for use with Elementor.
 		wp_enqueue_style( 'colormag-elementor', COLORMAG_ELEMENTOR_URL . '/assets/css/elementor.css', array(), COLORMAG_THEME_VERSION );
+		wp_style_add_data( 'colormag-elementor', 'rtl', 'replace' );
 
 	}
 

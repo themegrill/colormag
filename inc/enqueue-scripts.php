@@ -26,6 +26,7 @@ function colormag_scripts_styles_method() {
 
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), COLORMAG_THEME_VERSION );
+	wp_style_add_data( 'colormag_style', 'rtl', 'replace' );
 
 	// Load the dark color skin via theme options.
 	if ( 'dark' == get_theme_mod( 'colormag_color_skin_setting', 'white' ) ) {

@@ -792,6 +792,7 @@ class ColorMag_Customizer {
 			array(),
 			COLORMAG_THEME_VERSION
 		);
+		wp_style_add_data( 'colormag-extend-customizer', 'rtl', 'replace' );
 
 		/**
 		 * Enqueue required Customize Controls JS files.
