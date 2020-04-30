@@ -72,8 +72,8 @@ define( 'COLORMAG_ADMIN_IMAGES_URL', COLORMAG_ADMIN_URL . '/images' );
 /** ColorMag setup file, hooked for `after_setup_theme`. */
 require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 
-/** ColorMag template redirect file, hooked for `template_redirect`. */
-require COLORMAG_INCLUDES_DIR . '/colormag-template-redirect.php';
+/** ColorMag content width file. */
+require COLORMAG_INCLUDES_DIR . '/colormag-content-width.php';
 
 /** Helper functions. */
 require COLORMAG_INCLUDES_DIR . '/helper-functions.php';
