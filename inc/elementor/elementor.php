@@ -192,7 +192,6 @@ if ( ! function_exists( 'colormag_elementor_enqueue_style' ) ) :
 	 */
 	function colormag_elementor_enqueue_style() {
 
-
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 		// Enqueue the main Elementor CSS file for use with Elementor.
