@@ -225,6 +225,13 @@
   margin-bottom: 15px;
 }
 /**
+ * Group control CSS.
+ */
+
+.customize-control-colormag-hidden.customize-control {
+  margin-top: 0;
+}
+/**
  * Heading control CSS.
  */
 
@@ -253,13 +260,6 @@
 .customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
   margin-top: 10px;
   padding: 0 12px;
-}
-/**
- * Group control CSS.
- */
-
-.customize-control-colormag-hidden.customize-control {
-  margin-top: 0;
 }
 /**
  * Radio image control CSS.

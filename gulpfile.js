@@ -39,7 +39,8 @@ var paths = {
 		cssmin : {
 			src  : [
 				'./inc/elementor/assets/css/*.css',
-				'!./inc/elementor/assets/css/*.min.css'
+				'!./inc/elementor/assets/css/*.min.css',
+				'!./inc/elementor/assets/css/*-rtl.css'
 			],
 			dest : './inc/elementor/assets/css/'
 		}
@@ -53,7 +54,8 @@ var paths = {
 		cssmin    : {
 			src  : [
 				'./inc/customizer/assets/css/*.css',
-				'!./inc/customizer/assets/css/*.min.css'
+				'!./inc/customizer/assets/css/*.min.css',
+				'!./inc/customizer/assets/css/**-rtl.css'
 			],
 			dest : './inc/customizer/assets/css'
 		},
@@ -82,7 +84,8 @@ var paths = {
 		cssmin    : {
 			src  : [
 				'./inc/customizer/custom-controls/assets/css/*.css',
-				'!./inc/customizer/custom-controls/assets/css/*.min.css'
+				'!./inc/customizer/custom-controls/assets/css/*.min.css',
+				'!./inc/customizer/custom-controls/assets/css/*-rtl.css'
 			],
 			dest : './inc/customizer/custom-controls/assets/css'
 		},
@@ -111,7 +114,8 @@ var paths = {
 		cssmin    : {
 			src  : [
 				'./inc/meta-boxes/assets/css/*.css',
-				'!./inc/meta-boxes/assets/css/*.min.css'
+				'!./inc/meta-boxes/assets/css/*.min.css',
+				'!./inc/meta-boxes/assets/css/*-rtl.css'
 			],
 			dest : './inc/meta-boxes/assets/css'
 		},
