@@ -2386,6 +2386,10 @@ ul.wp-block-gallery {
 
 /* =FRONT PAGE WIDGET AREAS
 ----------------------------------------------- */
+.rtl .bx-wrapper {
+	direction: ltr;
+}
+
 .widget_slider_area {
 	float: right;
 	width: 55.26315789%;
@@ -2432,6 +2436,7 @@ ul.wp-block-gallery {
 	padding-right: 5%;
 	position: absolute;
 	width: 100%;
+	text-align: right;
 }
 
 .widget_featured_slider .slide-content .above-entry-meta .cat-links a {
