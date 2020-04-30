@@ -32,8 +32,17 @@ var paths = {
 	},
 
 	elementorStyles : {
-		src  : './inc/elementor/assets/SCSS/**/*.scss',
-		dest : './inc/elementor/assets/css/'
+		scss : {
+			src  : './inc/elementor/assets/SCSS/**/*.scss',
+			dest : './inc/elementor/assets/css/'
+		},
+		cssmin : {
+			src  : [
+				'./inc/elementor/assets/css/*.css',
+				'!./inc/elementor/assets/css/*.min.css'
+			],
+			dest : './inc/elementor/assets/css/'
+		}
 	},
 
 	extendCustomize : {
@@ -136,7 +145,8 @@ var paths = {
 		},
 		elementorStyles   : {
 			src  : [
-				'./inc/elementor/assets/css/elementor.css'
+				'./inc/elementor/assets/css/elementor.css',
+				'./inc/elementor/assets/css/elementor.min.css'
 			],
 			dest : './inc/elementor/assets/css'
 		},
@@ -177,7 +187,7 @@ function sassCompile() {
 }
 
 function elementorStylesCompile() {
-	return gulp.src( paths.elementorStyles.src )
+	return gulp.src( paths.elementorStyles.scss.src )
 	           .pipe( sass( {
 		           indentType  : 'tab',
 		           indentWidth : 1,
@@ -190,7 +200,16 @@ function elementorStylesCompile() {
 			           cascade  : false
 		           } )
 	           ] ) )
-	           .pipe( gulp.dest( paths.elementorStyles.dest ) );
+	           .pipe( gulp.dest( paths.elementorStyles.scss.dest ) );
+}
+
+// Minify elementor styles css file.
+function minifyelementorStyles() {
+	return gulp
+		.src( paths.elementorStyles.cssmin.src )
+		.pipe( uglifycss() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.elementorStyles.cssmin.dest ) );
 }
 
 // Compile extend customizer styles.
@@ -389,7 +408,8 @@ function generateMetaBoxesRTLCSS() {
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
-	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
+	gulp.watch( paths.elementorStyles.scss.src, elementorStylesCompile );
+	gulp.watch( paths.elementorStyles.cssmin.src, minifyelementorStyles );
 	gulp.watch( paths.extendCustomize.scss.src, compileExtendCustomizerSass );
 	gulp.watch( paths.extendCustomize.cssmin.src, minifyExtendCustomizerCSS );
 	gulp.watch( paths.extendCustomize.jsmin.src, minifyExtendCustomizerJs );
@@ -417,6 +437,7 @@ exports.browserSyncStart                = browserSyncStart;
 exports.browserSyncReload               = browserSyncReload;
 exports.sassCompile                     = sassCompile;
 exports.elementorStylesCompile          = elementorStylesCompile;
+exports.minifyelementorStyles           = minifyelementorStyles;
 exports.watch                           = watch;
 exports.server                          = server;
 exports.compileExtendCustomizerSass     = compileExtendCustomizerSass;

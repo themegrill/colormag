@@ -192,8 +192,11 @@ if ( ! function_exists( 'colormag_elementor_enqueue_style' ) ) :
 	 */
 	function colormag_elementor_enqueue_style() {
 
+
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 		// Enqueue the main Elementor CSS file for use with Elementor.
-		wp_enqueue_style( 'colormag-elementor', COLORMAG_ELEMENTOR_URL . '/assets/css/elementor.css', array(), COLORMAG_THEME_VERSION );
+		wp_enqueue_style( 'colormag-elementor', COLORMAG_ELEMENTOR_URL . '/assets/css/elementor' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
 		wp_style_add_data( 'colormag-elementor', 'rtl', 'replace' );
 
 	}
