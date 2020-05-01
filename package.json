@@ -45,6 +45,6 @@
     "compileAssets": "gulp compile",
     "makepot": "grunt makepot",
     "compress": "grunt compress",
-    "build": "npm run compileAssets && npm run makepot npm run compress"
+    "build": "npm run compileAssets && npm run makepot && npm run compress"
   }
 }
