@@ -16,8 +16,10 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 	/**
 	 * Shows meta information of post.
+	 *
+	 * @param bool $full_post_meta Whether to display full post meta or not.
 	 */
-	function colormag_entry_meta() {
+	function colormag_entry_meta( $full_post_meta = true ) {
 
 		if ( 'post' == get_post_type() ) :
 
@@ -65,22 +67,33 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 			<?php if ( ! post_password_required() && comments_open() ) { ?>
 				<span class="comments">
 						<?php
-						comments_popup_link(
-							__( '<i class="fa fa-comment"></i> 0 Comments', 'colormag' ),
-							__( '<i class="fa fa-comment"></i> 1 Comment', 'colormag' ),
-							__( '<i class="fa fa-comments"></i> % Comments', 'colormag' )
-						);
+						if ( $full_post_meta ) {
+							comments_popup_link(
+								__( '<i class="fa fa-comment"></i> 0 Comments', 'colormag' ),
+								__( '<i class="fa fa-comment"></i> 1 Comment', 'colormag' ),
+								__( '<i class="fa fa-comments"></i> % Comments', 'colormag' )
+							);
+						} else {
+							?>
+							<span class="comments"><i class="fa fa-comment"></i><?php comments_popup_link( '0', '1', '%' ); ?></span>
+							<?php
+						}
 						?>
 					</span>
 				<?php
 			}
 
-			$tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
-			if ( $tags_list ) {
-				echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			if ( $full_post_meta ) {
+				$tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
+
+				if ( $tags_list ) {
+					echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				}
 			}
 
-			edit_post_link( __( 'Edit', 'colormag' ), '<span class="edit-link"><i class="fa fa-edit"></i>', '</span>' );
+			if ( $full_post_meta ) {
+				edit_post_link( __( 'Edit', 'colormag' ), '<span class="edit-link"><i class="fa fa-edit"></i>', '</span>' );
+			}
 
 			echo '</div>';
 
