@@ -42,9 +42,9 @@
     "npm": ">=1.1.0"
   },
   "scripts": {
-    "styles": "gulp sassCompile && gulp elementorStylesCompile",
+    "compileAssets": "gulp compile",
     "makepot": "grunt makepot",
     "compress": "grunt compress",
-    "build": "npm run styles && npm run makepot && npm run compress"
+    "build": "npm run compileAssets && npm run makepot npm run compress"
   }
 }

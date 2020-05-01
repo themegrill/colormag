@@ -434,8 +434,14 @@ function watch() {
 }
 
 
-// Define series of tasks.
-var server = gulp.series( browserSyncStart, watch );
+var server            = gulp.series( browserSyncStart, watch ),
+    styles            = gulp.series( sassCompile, generateRTLCSS ),
+    scripts           = gulp.series( minifyJs ),
+    elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, generateElementorRTLCSS ),
+    extendCustomizer  = gulp.series( compileExtendCustomizerSass, minifyExtendCustomizerCSS, minifyExtendCustomizerJs, generateExtendCustomizeRTLCSS ),
+    customizeControls = gulp.series( compileControlSass, concatControlCSS, minifyControlCSS, concatControlJS, minifyControlJs, generateCustomizeControlsRTLCSS ),
+    metaBoxes         = gulp.series( compileMetaBoxSass, minifyMetaBoxCSS, minifyMetaBoxJs, generateMetaBoxesRTLCSS ),
+    compile           = gulp.series( styles, scripts, elementorStyles, extendCustomizer, customizeControls, metaBoxes );
 
 exports.browserSyncStart                = browserSyncStart;
 exports.browserSyncReload               = browserSyncReload;
@@ -444,6 +450,13 @@ exports.elementorStylesCompile          = elementorStylesCompile;
 exports.minifyelementorStyles           = minifyelementorStyles;
 exports.watch                           = watch;
 exports.server                          = server;
+exports.styles                          = styles;
+exports.scripts                         = scripts;
+exports.elementorStyles                 = elementorStyles;
+exports.extendCustomizer                = extendCustomizer;
+exports.customizeControls               = customizeControls;
+exports.metaBoxes                       = metaBoxes;
+exports.compile                         = compile;
 exports.compileExtendCustomizerSass     = compileExtendCustomizerSass;
 exports.minifyExtendCustomizerCSS       = minifyExtendCustomizerCSS;
 exports.minifyExtendCustomizerJs        = minifyExtendCustomizerJs;
