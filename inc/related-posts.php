@@ -1,6 +1,6 @@
 <?php
 /**
- * Related posts featured display..
+ * Related posts featured display.
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
