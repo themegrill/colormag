@@ -30,18 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <body <?php body_class(); ?>>
 
-<?php
-/**
- * WordPress function to load custom scripts after body.
- *
- * Introduced in WordPress 5.2.0
- *
- * @since ColorMag 1.4.0
- */
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-?>
+<?php wp_body_open(); ?>
 
 <?php do_action( 'colormag_before' ); ?>
 

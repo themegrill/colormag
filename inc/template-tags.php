@@ -104,6 +104,21 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 endif;
 
 
+if ( ! function_exists( 'wp_body_open' ) ) :
+
+	/**
+	 * Adds backwards compatibility for wp_body_open() introduced with WordPress 5.2.
+	 *
+	 * @return void
+	 * @see   https://developer.wordpress.org/reference/functions/wp_body_open/
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_category_color' ) ) :
 
 	/**
