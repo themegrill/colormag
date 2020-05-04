@@ -85,6 +85,14 @@ require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 /** WP_Query functions files. */
 require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
 
+/**
+ * Load required theme hook files.
+ */
+require_once COLORMAG_INCLUDES_DIR . '/hooks/hooks.php';
+require_once COLORMAG_INCLUDES_DIR . '/hooks/header.php';
+require_once COLORMAG_INCLUDES_DIR . '/hooks/content.php';
+require_once COLORMAG_INCLUDES_DIR . '/hooks/footer.php';
+
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
 require_once COLORMAG_INCLUDES_DIR . '/functions.php';
