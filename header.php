@@ -45,7 +45,24 @@ do_action( 'colormag_action_before' );
 ?>
 
 
-	<?php do_action( 'colormag_before_header' ); ?>
+	<?php
+	do_action( 'colormag_before_header' );
+
+	/**
+	 * Functions hooked into colormag_action_before_header action.
+	 */
+	do_action( 'colormag_action_before_header' );
+
+	/**
+	 * Functions hooked into colormag_action_header action.
+	 */
+	do_action( 'colormag_action_header' );
+
+	/**
+	 * Functions hooked into colormag_action_after_header action.
+	 */
+	do_action( 'colormag_action_after_header' );
+	?>
 
 	<?php
 	// Add the main total header area display type dynamic class.
