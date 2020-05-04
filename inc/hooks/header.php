@@ -55,3 +55,31 @@ if ( ! function_exists( 'colormag_skip_content_link' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_header_start' ) ) :
+
+	/**
+	 * Header starts.
+	 */
+	function colormag_header_start() {
+		?>
+
+		<?php
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_header_end' ) ) :
+
+	/**
+	 * Header ends.
+	 */
+	function colormag_header_end() {
+		?>
+
+		<?php
+	}
+
+endif;

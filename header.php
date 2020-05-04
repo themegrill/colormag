@@ -46,10 +46,10 @@ do_action( 'colormag_action_before' );
 
 
 	<?php
-	do_action( 'colormag_before_header' );
-
 	/**
 	 * Functions hooked into colormag_action_before_header action.
+	 *
+	 * @hooked colormag_header_start - 10
 	 */
 	do_action( 'colormag_action_before_header' );
 
@@ -60,6 +60,8 @@ do_action( 'colormag_action_before' );
 
 	/**
 	 * Functions hooked into colormag_action_after_header action.
+	 *
+	 * @hooked colormag_header_end - 10
 	 */
 	do_action( 'colormag_action_after_header' );
 	?>

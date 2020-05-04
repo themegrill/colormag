@@ -23,6 +23,11 @@ add_action( 'colormag_action_before', 'colormag_page_start', 10 );
 // Skip content link.
 add_action( 'colormag_action_before', 'colormag_skip_content_link', 15 );
 
+// Header starts.
+add_action( 'colormag_action_before_header', 'colormag_header_start', 10 );
+// Header ends.
+add_action( 'colormag_action_after_header', 'colormag_header_end', 10 );
+
 
 /**
  * Hooks for the footer of this theme.
