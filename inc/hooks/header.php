@@ -78,7 +78,7 @@ if ( ! function_exists( 'colormag_header_nav_container_start' ) ) :
 	 */
 	function colormag_header_nav_container_start() {
 		?>
-
+		<div id="header-text-nav-container" class="clearfix">
 		<?php
 	}
 
@@ -92,7 +92,7 @@ if ( ! function_exists( 'colormag_header_nav_container_end' ) ) :
 	 */
 	function colormag_header_nav_container_end() {
 		?>
-
+		</div><!-- #header-text-nav-container -->
 		<?php
 	}
 

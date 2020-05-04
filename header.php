@@ -80,7 +80,7 @@ do_action( 'colormag_action_before' );
 
 
 
-		<div id="header-text-nav-container" class="clearfix">
+
 
 			<?php colormag_top_header_bar_display(); // Display the top header bar ?>
 
@@ -100,7 +100,7 @@ do_action( 'colormag_action_before' );
 
 			<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
 
-		</div><!-- #header-text-nav-container -->
+
 
 		<?php
 		if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_three' ) {
