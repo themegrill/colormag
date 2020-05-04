@@ -30,6 +30,8 @@ add_action( 'colormag_action_before_header', 'colormag_header_nav_container_star
 // Header nav container ends.
 add_action( 'colormag_action_before_header', 'colormag_header_nav_container_end', 20 );
 
+// Header image display before header end.
+add_action( 'colormag_action_after_header', 'colormag_header_image_before_header_end', 5 );
 // Header ends.
 add_action( 'colormag_action_after_header', 'colormag_header_end', 10 );
 

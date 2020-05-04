@@ -80,8 +80,6 @@ do_action( 'colormag_action_before' );
 
 
 
-
-
 			<?php colormag_top_header_bar_display(); // Display the top header bar ?>
 
 			<?php
@@ -99,14 +97,6 @@ do_action( 'colormag_action_before' );
 			?>
 
 			<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
-
-
-
-		<?php
-		if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_three' ) {
-			colormag_render_header_image();
-		}
-		?>
 
 
 
