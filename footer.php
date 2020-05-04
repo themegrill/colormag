@@ -56,7 +56,16 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 
-</div><!-- #page -->
-<?php wp_footer(); ?>
+<?php
+/**
+ * Functions hooked into colormag_action_after action.
+ *
+ * @hooked colormag_page_end - 10
+ */
+do_action( 'colormag_action_after' );
+
+wp_footer();
+?>
+
 </body>
 </html>

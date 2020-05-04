@@ -27,3 +27,17 @@ if ( ! function_exists( 'colormag_head' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_page_start' ) ) :
+
+	/**
+	 * Page start.
+	 */
+	function colormag_page_start() {
+		?>
+		<div id="page" class="hfeed site">
+		<?php
+	}
+
+endif;

@@ -11,3 +11,17 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+
+if ( ! function_exists( 'colormag_page_end' ) ) :
+
+	/**
+	 * Page end.
+	 */
+	function colormag_page_end() {
+		?>
+		</div><!-- #page -->
+		<?php
+	}
+
+endif;

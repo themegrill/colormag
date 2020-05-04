@@ -15,9 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks for the header of this theme.
  */
+// HTML Head.
+add_action( 'colormag_action_head', 'colormag_head', 10 );
+
+// Page starts.
+add_action( 'colormag_action_before', 'colormag_page_start', 10 );
+
+
 /**
- * HTML Head.
- *
- * @see colormag_head()
+ * Hooks for the footer of this theme.
  */
-add_action( 'colormag_action_head', 'colormag_head' );
+// Page ends.
+add_action( 'colormag_action_after', 'colormag_page_end', 10 );

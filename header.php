@@ -37,11 +37,13 @@ do_action( 'colormag_before' );
 
 /**
  * Functions hooked into colormag_action_before action.
+ *
+ * @hooked colormag_page_start - 10
  */
 do_action( 'colormag_action_before' );
 ?>
 
-<div id="page" class="hfeed site">
+
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'colormag' ); ?></a>
 
 	<?php do_action( 'colormag_before_header' ); ?>
