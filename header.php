@@ -30,9 +30,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <body <?php body_class(); ?>>
 
-<?php wp_body_open(); ?>
+<?php
+wp_body_open();
 
-<?php do_action( 'colormag_before' ); ?>
+do_action( 'colormag_before' );
+
+/**
+ * Functions hooked into colormag_action_before action.
+ */
+do_action( 'colormag_action_before' );
+?>
 
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'colormag' ); ?></a>
