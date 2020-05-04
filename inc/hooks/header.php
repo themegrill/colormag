@@ -105,11 +105,11 @@ if ( ! function_exists( 'colormag_header_image_before_header_end' ) ) :
 	 * Display the header image just before the header closes.
 	 */
 	function colormag_header_image_before_header_end() {
+		$colormag_header_image_position = get_theme_mod( 'colormag_header_image_position', 'position_two' );
 
-		if ( 'position_three' === get_theme_mod( 'colormag_header_image_position', 'position_two' ) ) {
+		if ( 'position_three' === $colormag_header_image_position ) {
 			colormag_render_header_image();
 		}
-
 	}
 
 endif;
