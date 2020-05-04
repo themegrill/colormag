@@ -78,7 +78,8 @@ do_action( 'colormag_action_before' );
 	}
 	?>
 
-	<header id="masthead" class="site-header clearfix <?php echo esc_attr( $class_name ); ?>">
+
+
 		<div id="header-text-nav-container" class="clearfix">
 
 			<?php colormag_top_header_bar_display(); // Display the top header bar ?>
@@ -107,7 +108,7 @@ do_action( 'colormag_action_before' );
 		}
 		?>
 
-	</header>
+
 
 	<?php do_action( 'colormag_after_header' ); ?>
 	<?php do_action( 'colormag_before_main' ); ?>

@@ -64,7 +64,7 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	 */
 	function colormag_header_start() {
 		?>
-
+		<header id="masthead" class="site-header clearfix <?php echo esc_attr( colormag_header_layout_class() ); ?>">
 		<?php
 	}
 
@@ -78,7 +78,7 @@ if ( ! function_exists( 'colormag_header_end' ) ) :
 	 */
 	function colormag_header_end() {
 		?>
-
+		</header><!-- #masthead -->
 		<?php
 	}
 
