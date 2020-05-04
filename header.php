@@ -8,16 +8,22 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11"/>
 	<?php
 	/**
-	 * This hook is important for wordpress plugins and other many things
+	 * Functions hooked into colormag_action_head action.
+	 *
+	 * @hooked colormag_head - 10
 	 */
+	do_action( 'colormag_action_head' );
+
 	wp_head();
 	?>
 </head>
