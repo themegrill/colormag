@@ -20,6 +20,8 @@ add_action( 'colormag_action_head', 'colormag_head', 10 );
 
 // Page starts.
 add_action( 'colormag_action_before', 'colormag_page_start', 10 );
+// Skip content link.
+add_action( 'colormag_action_before', 'colormag_skip_content_link', 15 );
 
 
 /**

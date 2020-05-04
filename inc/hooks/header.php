@@ -41,3 +41,17 @@ if ( ! function_exists( 'colormag_page_start' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_skip_content_link' ) ) :
+
+	/**
+	 * Skip content link.
+	 */
+	function colormag_skip_content_link() {
+		?>
+		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'colormag' ); ?></a>
+		<?php
+	}
+
+endif;
