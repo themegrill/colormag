@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Delete the `Hello world!` post after successful demo import
+ * Delete the `Hello world!` post after successful demo import.
  */
 function colormag_delete_post_import() {
 	$page = get_page_by_title( 'Hello world!', OBJECT, 'post' );
