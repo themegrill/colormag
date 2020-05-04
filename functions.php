@@ -85,6 +85,9 @@ require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 /** WP_Query functions files. */
 require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
 
+/** Dynamic class file include. */
+require_once COLORMAG_INCLUDES_DIR . '/colormag-dynamic-classes.php';
+
 /**
  * Load required theme hook files.
  */
