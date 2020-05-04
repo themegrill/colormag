@@ -75,7 +75,7 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 							);
 						} else {
 							?>
-							<span class="comments"><i class="fa fa-comment"></i><?php comments_popup_link( '0', '1', '%' ); ?></span>
+							<i class="fa fa-comment"></i><?php comments_popup_link( '0', '1', '%' ); ?>
 							<?php
 						}
 						?>
