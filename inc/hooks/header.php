@@ -71,6 +71,34 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_header_nav_container_start' ) ) :
+
+	/**
+	 * Header nav container starts.
+	 */
+	function colormag_header_nav_container_start() {
+		?>
+
+		<?php
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_header_nav_container_end' ) ) :
+
+	/**
+	 * Header nav container ends.
+	 */
+	function colormag_header_nav_container_end() {
+		?>
+
+		<?php
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_header_end' ) ) :
 
 	/**
