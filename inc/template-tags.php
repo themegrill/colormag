@@ -320,6 +320,52 @@ if ( ! function_exists( 'colormag_date_display' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
+
+	/**
+	 * Function to display the top header bar
+	 *
+	 * @since ColorMag 1.2.2
+	 */
+	function colormag_top_header_bar_display() {
+
+		$breaking_news_enable  = get_theme_mod( 'colormag_breaking_news', 0 );
+		$date_display_enable   = get_theme_mod( 'colormag_date_display', 0 );
+		$social_links_enable   = get_theme_mod( 'colormag_social_link_activate', 0 );
+		$social_links_location = get_theme_mod( 'colormag_social_link_location_option', 'both' );
+
+		if ( 1 == $date_display_enable || 1 == $breaking_news_enable || ( 1 == $social_links_enable && ( 'both' === $social_links_location || 'header' === $social_links_location ) ) ) :
+			?>
+
+			<div class="news-bar">
+				<div class="inner-wrap clearfix">
+					<?php
+					// Displays the current date.
+					if ( 1 == $date_display_enable ) {
+						colormag_date_display();
+					}
+
+					// Displays the breaking news.
+					if ( 1 == $breaking_news_enable ) {
+						colormag_breaking_news();
+					}
+
+					// Displays the social links in header.
+					if ( 1 == $social_links_enable && ( 'both' === $social_links_location || 'header' === $social_links_location ) ) {
+						colormag_social_links();
+					}
+					?>
+				</div>
+			</div>
+
+			<?php
+		endif;
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_comment' ) ) :
 
 	/**

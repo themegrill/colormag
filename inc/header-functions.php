@@ -9,43 +9,6 @@
 
 /* * ************************************************************************************* */
 
-if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
-
-	/**
-	 * Function to display the top header bar
-	 *
-	 * @since ColorMag 1.2.2
-	 */
-	function colormag_top_header_bar_display() {
-		if ( get_theme_mod( 'colormag_breaking_news', 0 ) == 1 || get_theme_mod( 'colormag_date_display', 0 ) == 1 || get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) :
-			?>
-			<div class="news-bar">
-				<div class="inner-wrap clearfix">
-					<?php
-					if ( get_theme_mod( 'colormag_date_display', 0 ) == 1 ) {
-						colormag_date_display();
-					}
-					?>
-
-					<?php
-					if ( get_theme_mod( 'colormag_breaking_news', 0 ) == 1 ) {
-						colormag_breaking_news();
-					}
-					?>
-
-					<?php
-					if ( ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) && ( ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'both' ) || ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'header' ) ) ) {
-						colormag_social_links();
-					}
-					?>
-				</div>
-			</div>
-		<?php
-		endif;
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 
 	/**
