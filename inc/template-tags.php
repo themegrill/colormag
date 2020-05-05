@@ -323,7 +323,7 @@ endif;
 if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 
 	/**
-	 * Function to display the top header bar
+	 * Function to display the top header bar.
 	 *
 	 * @since ColorMag 1.2.2
 	 */
@@ -360,6 +360,84 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 
 			<?php
 		endif;
+
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
+
+	/**
+	 * Function to display the middle header bar.
+	 *
+	 * @since ColorMag 1.2.2
+	 */
+	function colormag_below_header_bar_display() {
+
+		$random_post_icon = get_theme_mod( 'colormag_random_post_in_menu', 0 );
+		$search_icon      = get_theme_mod( 'colormag_search_icon_in_menu', 0 );
+		?>
+
+		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
+			<div class="inner-wrap clearfix">
+				<?php
+				if ( 1 == get_theme_mod( 'colormag_home_icon_display', 0 ) ) {
+					$home_icon_class = 'home-icon';
+					if ( is_front_page() ) {
+						$home_icon_class = 'home-icon front_page_on';
+					}
+					?>
+
+					<div class="<?php echo esc_attr( $home_icon_class ); ?>">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+						   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+						>
+							<i class="fa fa-home"></i>
+						</a>
+					</div>
+				<?php } ?>
+
+				<?php if ( 1 == $random_post_icon || 1 == $search_icon ) { ?>
+					<div class="search-random-icons-container">
+						<?php
+						// Displays the random post.
+						if ( 1 == $random_post_icon ) {
+							colormag_random_post();
+						}
+
+						// Displays the search icon.
+						if ( 1 == $search_icon ) {
+							?>
+							<div class="top-search-wrap">
+								<i class="fa fa-search search-top"></i>
+								<div class="search-form-top">
+									<?php get_search_form(); ?>
+								</div>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+
+				<p class="menu-toggle"></p>
+				<?php
+				if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'container_class' => 'menu-primary-container',
+							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						)
+					);
+				} else {
+					wp_page_menu();
+				}
+				?>
+
+			</div>
+		</nav>
+
+		<?php
 
 	}
 
