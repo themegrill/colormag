@@ -6,55 +6,6 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
-/* * ************************************************************************************* */
-
-if ( ! function_exists( 'colormag_social_links' ) ) :
-
-	/**
-	 * This function is for social links display on header
-	 *
-	 * Get links through Theme Options
-	 */
-	function colormag_social_links() {
-		// Bail out if social links is not activated
-		if ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 0 ) {
-			return;
-		}
-
-		$colormag_social_links = array(
-			'colormag_social_facebook'   => 'Facebook',
-			'colormag_social_twitter'    => 'Twitter',
-			'colormag_social_googleplus' => 'Google-Plus',
-			'colormag_social_instagram'  => 'Instagram',
-			'colormag_social_pinterest'  => 'Pinterest',
-			'colormag_social_youtube'    => 'YouTube',
-		);
-		?>
-		<div class="social-links clearfix">
-			<ul>
-				<?php
-				$i                     = 0;
-				$colormag_links_output = '';
-				foreach ( $colormag_social_links as $key => $value ) {
-					$link = get_theme_mod( $key, '' );
-					if ( ! empty( $link ) ) {
-						if ( get_theme_mod( $key . '_checkbox', 0 ) == 1 ) {
-							$new_tab = 'target="_blank"';
-						} else {
-							$new_tab = '';
-						}
-						$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
-					}
-					$i ++;
-				}
-				echo $colormag_links_output;
-				?>
-			</ul>
-		</div><!-- .social-links -->
-		<?php
-	}
-
-endif;
 
 /* * ************************************************************************************* */
 

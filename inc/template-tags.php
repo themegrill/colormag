@@ -232,6 +232,65 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_social_links' ) ) :
+
+	/**
+	 * Displays the social links.
+	 */
+	function colormag_social_links() {
+
+		// Bail out if social links is not activated.
+		if ( 0 == get_theme_mod( 'colormag_social_link_activate', 0 ) ) {
+			return;
+		}
+
+		$colormag_social_links = array(
+			'colormag_social_facebook'   => 'Facebook',
+			'colormag_social_twitter'    => 'Twitter',
+			'colormag_social_googleplus' => 'Google-Plus',
+			'colormag_social_instagram'  => 'Instagram',
+			'colormag_social_pinterest'  => 'Pinterest',
+			'colormag_social_youtube'    => 'YouTube',
+		);
+		?>
+
+		<div class="social-links clearfix">
+			<ul>
+				<?php
+				/**
+				 * Social links set which is static via the theme customize option.
+				 */
+				$i                     = 0;
+				$colormag_links_output = '';
+				foreach ( $colormag_social_links as $key => $value ) {
+					$link = get_theme_mod( $key, '' );
+
+					if ( ! empty( $link ) ) {
+						$new_tab = '';
+
+						// For opening link in new tab.
+						if ( 1 == get_theme_mod( $key . '_checkbox', 0 ) ) {
+							$new_tab = 'target="_blank"';
+						}
+
+						$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
+					}
+
+					$i ++;
+				}
+
+				// Displays the social links which is set static via theme customize option.
+				echo $colormag_links_output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				?>
+			</ul>
+		</div><!-- .social-links -->
+		<?php
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_date_display' ) ) :
 
 	/**
