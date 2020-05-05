@@ -172,3 +172,17 @@ if ( ! function_exists( 'colormag_main_section_start' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_main_section_inner_start' ) ) :
+
+	/**
+	 * Main section inner starts.
+	 */
+	function colormag_main_section_inner_start() {
+		?>
+		<div class="inner-wrap clearfix">
+		<?php
+	}
+
+endif;

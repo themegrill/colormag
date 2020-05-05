@@ -13,6 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+if ( ! function_exists( 'colormag_main_section_inner_end' ) ) :
+
+	/**
+	 *  Main section inner ends.
+	 */
+	function colormag_main_section_inner_end() {
+		?>
+		</div><!-- .inner-wrap -->
+		<?php
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_main_section_end' ) ) :
 
 	/**
