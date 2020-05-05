@@ -55,6 +55,8 @@ do_action( 'colormag_action_before' );
 
 	/**
 	 * Functions hooked into colormag_action_header action.
+	 *
+	 * @hooked colormag_header - 10
 	 */
 	do_action( 'colormag_action_header' );
 
@@ -65,40 +67,6 @@ do_action( 'colormag_action_before' );
 	 */
 	do_action( 'colormag_action_after_header' );
 	?>
-
-	<?php
-	// Add the main total header area display type dynamic class.
-	$main_total_header_option_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
-
-	$class_name = '';
-	if ( $main_total_header_option_layout_class == 'type_two' ) {
-		$class_name = 'colormag-header-clean';
-	} else if ( $main_total_header_option_layout_class == 'type_three' ) {
-		$class_name = 'colormag-header-classic';
-	}
-	?>
-
-
-
-			<?php colormag_top_header_bar_display(); // Display the top header bar ?>
-
-			<?php
-			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_one' ) {
-				the_custom_header_markup();
-			}
-			?>
-
-			<?php colormag_middle_header_bar_display(); // Display the middle header bar ?>
-
-			<?php
-			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_two' ) {
-				the_custom_header_markup();
-			}
-			?>
-
-			<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
-
-
 
 	<?php do_action( 'colormag_after_header' ); ?>
 	<?php do_action( 'colormag_before_main' ); ?>
