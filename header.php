@@ -107,6 +107,3 @@ do_action( 'colormag_action_before_content' );
  * @hooked colormag_main_section_inner_start - 10
  */
 do_action( 'colormag_action_before_inner_content' );
-?>
-
-
