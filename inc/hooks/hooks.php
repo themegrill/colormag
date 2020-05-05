@@ -49,7 +49,7 @@ add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner
  * Hooks for the footer of this theme.
  */
 // Main section inner ends.
-add_action( 'colormag_action_after_inner_content', 'colormag_main_section_inner_start', 10 );
+add_action( 'colormag_action_after_inner_content', 'colormag_main_section_inner_end', 10 );
 
 // Main section ends.
 add_action( 'colormag_action_after_content', 'colormag_main_section_end', 10 );
