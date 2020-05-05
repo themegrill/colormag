@@ -108,7 +108,7 @@ if ( ! function_exists( 'colormag_header_image_before_header_end' ) ) :
 		$colormag_header_image_position = get_theme_mod( 'colormag_header_image_position', 'position_two' );
 
 		if ( 'position_three' === $colormag_header_image_position ) {
-			colormag_render_header_image();
+			the_custom_header_markup();
 		}
 	}
 

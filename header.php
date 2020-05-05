@@ -84,7 +84,7 @@ do_action( 'colormag_action_before' );
 
 			<?php
 			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_one' ) {
-				colormag_render_header_image();
+				the_custom_header_markup();
 			}
 			?>
 
@@ -92,7 +92,7 @@ do_action( 'colormag_action_before' );
 
 			<?php
 			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_two' ) {
-				colormag_render_header_image();
+				the_custom_header_markup();
 			}
 			?>
 

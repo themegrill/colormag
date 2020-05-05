@@ -88,35 +88,6 @@ add_action( 'colormag_header_image_markup_render', 'colormag_header_image_markup
 
 /* * ************************************************************************************* */
 
-if ( ! function_exists( 'colormag_render_header_image' ) ) :
-
-	/**
-	 * Shows the small info text on top header part
-	 */
-	function colormag_render_header_image() {
-		if ( function_exists( 'the_custom_header_markup' ) ) {
-			do_action( 'colormag_header_image_markup_render' );
-			the_custom_header_markup();
-		} else {
-			$header_image = get_header_image();
-			if ( ! empty( $header_image ) ) {
-				if ( get_theme_mod( 'colormag_header_image_link', 0 ) == 1 ) {
-					?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<?php } ?>
-				<div class="header-image-wrap">
-					<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-				</div>
-				<?php if ( get_theme_mod( 'colormag_header_image_link', 0 ) == 1 ) { ?>
-					</a>
-					<?php
-				}
-			}
-		}
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 
 	/**
