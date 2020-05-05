@@ -33,7 +33,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 wp_body_open();
 
+/**
+ * Hook: colormag_before.
+ */
 do_action( 'colormag_before' );
+
 
 /**
  * Functions hooked into colormag_action_before action.
@@ -42,39 +46,52 @@ do_action( 'colormag_before' );
  * @hooked colormag_skip_content_link - 15
  */
 do_action( 'colormag_action_before' );
+
+
+/**
+ * Hook: colormag_before_header.
+ */
+do_action( 'colormag_before_header' );
+
+
+/**
+ * Functions hooked into colormag_action_before_header action.
+ *
+ * @hooked colormag_header_start - 10
+ * @hooked colormag_header_nav_container_start - 15
+ */
+do_action( 'colormag_action_before_header' );
+
+
+/**
+ * Functions hooked into colormag_action_header action.
+ *
+ * @hooked colormag_header - 10
+ */
+do_action( 'colormag_action_header' );
+
+
+/**
+ * Functions hooked into colormag_action_after_header action.
+ *
+ * @hooked colormag_header_image_before_header_end - 10
+ * @hooked colormag_header_nav_container_end - 15
+ * @hooked colormag_header_end - 20
+ */
+do_action( 'colormag_action_after_header' );
+
+
+/**
+ * Hook: colormag_after_header.
+ */
+do_action( 'colormag_after_header' );
+
+
+/**
+ * Hook: colormag_before_main.
+ */
+do_action( 'colormag_before_main' );
 ?>
-
-
-	<?php
-	do_action( 'colormag_before_header' );
-
-	/**
-	 * Functions hooked into colormag_action_before_header action.
-	 *
-	 * @hooked colormag_header_start - 10
-	 * @hooked colormag_header_nav_container_start - 15
-	 */
-	do_action( 'colormag_action_before_header' );
-
-	/**
-	 * Functions hooked into colormag_action_header action.
-	 *
-	 * @hooked colormag_header - 10
-	 */
-	do_action( 'colormag_action_header' );
-
-	/**
-	 * Functions hooked into colormag_action_after_header action.
-	 *
-	 * @hooked colormag_header_image_before_header_end - 10
-	 * @hooked colormag_header_nav_container_end - 15
-	 * @hooked colormag_header_end - 20
-	 */
-	do_action( 'colormag_action_after_header' );
-	?>
-
-	<?php do_action( 'colormag_after_header' ); ?>
-	<?php do_action( 'colormag_before_main' ); ?>
 
 	<div id="main" class="clearfix">
 		<div class="inner-wrap clearfix">
