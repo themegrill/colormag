@@ -159,6 +159,43 @@ add_action( 'colormag_category_title', 'colormag_category_title_function' );
 
 
 /**
+ * Filter the get_header_image_tag() for option of adding the link back to home page option.
+ *
+ * @param string $html   The HTML image tag markup being filtered.
+ * @param object $header The custom header object returned by 'get_custom_header()'.
+ * @param array  $attr   Array of the attributes for the image tag.
+ *
+ * @return string
+ */
+function colormag_header_image_markup( $html, $header, $attr ) {
+
+	$output       = '';
+	$header_image = get_header_image();
+
+	if ( ! empty( $header_image ) ) {
+		$output .= '<div class="header-image-wrap">';
+
+		if ( 1 == get_theme_mod( 'colormag_header_image_link', 0 ) ) {
+			$output .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
+		}
+
+		$output .= '<img src="' . esc_url( $header_image ) . '" class="header-image" width="' . absint( get_custom_header()->width ) . '" height="' . absint( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+
+		if ( 1 == get_theme_mod( 'colormag_header_image_link', 0 ) ) {
+			$output .= '</a>';
+		}
+
+		$output .= '</div>';
+	}
+
+	return $output;
+
+}
+
+add_filter( 'get_header_image_tag', 'colormag_header_image_markup', 10, 3 );
+
+
+/**
  * Filter the body_class.
  *
  * Throwing different body class for the different layouts in the body tag.

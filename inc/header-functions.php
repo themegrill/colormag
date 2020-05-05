@@ -58,36 +58,6 @@ endif;
 
 /* * ************************************************************************************* */
 
-// Filter the get_header_image_tag() for option of adding the link back to home page option
-function colormag_header_image_markup( $html, $header, $attr ) {
-	$output       = '';
-	$header_image = get_header_image();
-
-	if ( ! empty( $header_image ) ) {
-		$output .= '<div class="header-image-wrap">';
-		if ( get_theme_mod( 'colormag_header_image_link', 0 ) == 1 ) {
-			$output .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
-		}
-
-		$output .= '<img src="' . esc_url( $header_image ) . '" class="header-image" width="' . get_custom_header()->width . '" height="' . get_custom_header()->height . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
-
-		if ( get_theme_mod( 'colormag_header_image_link', 0 ) == 1 ) {
-			$output .= '</a>';
-		}
-		$output .= '</div>';
-	}
-
-	return $output;
-}
-
-function colormag_header_image_markup_filter() {
-	add_filter( 'get_header_image_tag', 'colormag_header_image_markup', 10, 3 );
-}
-
-add_action( 'colormag_header_image_markup_render', 'colormag_header_image_markup_filter' );
-
-/* * ************************************************************************************* */
-
 if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 
 	/**
