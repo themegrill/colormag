@@ -366,6 +366,85 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
+
+	/**
+	 * Function to display the middle header bar.
+	 *
+	 * @since ColorMag 1.2.2
+	 */
+	function colormag_middle_header_bar_display() {
+
+		$screen_reader       = '';
+		$description         = get_bloginfo( 'description', 'display' );
+		$header_display_type = get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' );
+		?>
+
+		<div class="inner-wrap">
+			<div id="header-text-nav-wrap" class="clearfix">
+
+				<div id="header-left-section">
+					<?php
+					if ( 'show_both' === $header_display_type || 'header_logo_only' === $header_display_type ) {
+						?>
+						<div id="header-logo-image">
+							<?php
+							if ( function_exists( 'the_custom_logo' ) ) {
+								the_custom_logo();
+							}
+							?>
+						</div><!-- #header-logo-image -->
+						<?php
+					}
+
+					if ( 'header_logo_only' === $header_display_type || 'disable' === ( $header_display_type ) ) {
+						$screen_reader = 'screen-reader-text';
+					}
+					?>
+
+					<div id="header-text" class="<?php echo esc_attr( $screen_reader ); ?>">
+						<?php if ( is_front_page() || is_home() ) : ?>
+							<h1 id="site-title">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</h1>
+						<?php else : ?>
+							<h3 id="site-title">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</h3>
+						<?php endif; ?>
+
+						<?php
+						if ( $description || is_customize_preview() ) :
+							?>
+							<p id="site-description">
+								<?php echo $description; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
+							</p><!-- #site-description -->
+						<?php endif; ?>
+					</div><!-- #header-text -->
+				</div><!-- #header-left-section -->
+
+				<div id="header-right-section">
+					<?php
+					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
+						?>
+						<div id="header-right-sidebar" class="clearfix">
+							<?php dynamic_sidebar( 'colormag_header_sidebar' ); ?>
+						</div>
+						<?php
+					}
+					?>
+				</div><!-- #header-right-section -->
+
+			</div><!-- #header-text-nav-wrap -->
+		</div><!-- .inner-wrap -->
+
+		<?php
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 
 	/**
