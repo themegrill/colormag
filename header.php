@@ -91,6 +91,18 @@ do_action( 'colormag_after_header' );
  * Hook: colormag_before_main.
  */
 do_action( 'colormag_before_main' );
+
+
+/**
+ * Functions hooked into colormag_action_before_content action.
+ */
+do_action( 'colormag_action_before_content' );
+
+
+/**
+ * Functions hooked into colormag_action_before_inner_content action.
+ */
+do_action( 'colormag_action_before_inner_content' );
 ?>
 
 	<div id="main" class="clearfix">

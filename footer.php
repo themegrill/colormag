@@ -8,6 +8,23 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+
+/**
+ * Functions hooked into colormag_action_after_inner_content action.
+ */
+do_action( 'colormag_action_after_inner_content' );
+
+
+/**
+ * Functions hooked into colormag_action_after_content action.
+ */
+do_action( 'colormag_action_after_content' );
 ?>
 
 </div><!-- .inner-wrap -->
