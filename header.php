@@ -95,6 +95,8 @@ do_action( 'colormag_before_main' );
 
 /**
  * Functions hooked into colormag_action_before_content action.
+ *
+ * @hooked colormag_main_section_start - 10
  */
 do_action( 'colormag_action_before_content' );
 
@@ -105,5 +107,5 @@ do_action( 'colormag_action_before_content' );
 do_action( 'colormag_action_before_inner_content' );
 ?>
 
-	<div id="main" class="clearfix">
+
 		<div class="inner-wrap clearfix">

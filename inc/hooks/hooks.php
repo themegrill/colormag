@@ -38,9 +38,15 @@ add_action( 'colormag_action_after_header', 'colormag_header_nav_container_end',
 // Header ends.
 add_action( 'colormag_action_after_header', 'colormag_header_end', 20 );
 
+// Main section starts.
+add_action( 'colormag_action_before_content', 'colormag_main_section_start', 10 );
+
 
 /**
  * Hooks for the footer of this theme.
  */
 // Page ends.
 add_action( 'colormag_action_after', 'colormag_page_end', 10 );
+
+// Main section ends.
+add_action( 'colormag_action_after_content', 'colormag_main_section_end', 10 );

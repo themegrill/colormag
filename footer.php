@@ -23,12 +23,14 @@ do_action( 'colormag_action_after_inner_content' );
 
 /**
  * Functions hooked into colormag_action_after_content action.
+ *
+ * @hooked colormag_main_section_end - 10
  */
 do_action( 'colormag_action_after_content' );
 ?>
 
 </div><!-- .inner-wrap -->
-</div><!-- #main -->
+
 
 <?php if ( is_active_sidebar( 'colormag_advertisement_above_the_footer_sidebar' ) ) { ?>
 	<div class="advertisement_above_footer">

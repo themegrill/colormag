@@ -158,3 +158,17 @@ if ( ! function_exists( 'colormag_header_end' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_main_section_start' ) ) :
+
+	/**
+	 * Main section starts.
+	 */
+	function colormag_main_section_start() {
+		?>
+		<div id="main" class="clearfix">
+		<?php
+	}
+
+endif;
