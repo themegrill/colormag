@@ -99,7 +99,6 @@ require_once COLORMAG_INCLUDES_DIR . '/hooks/footer.php';
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
 require_once COLORMAG_INCLUDES_DIR . '/functions.php';
-require_once COLORMAG_INCLUDES_DIR . '/header-functions.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-fonts.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 require_once COLORMAG_INCLUDES_DIR . '/enqueue-scripts.php';
