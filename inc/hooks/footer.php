@@ -144,6 +144,22 @@ if ( ! function_exists( 'colormag_footer_socket_right_section' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_footer_socket_left_section' ) ) :
+
+	/**
+	 * Footer socket area left section.
+	 */
+	function colormag_footer_socket_left_section() {
+		?>
+		<div class="footer-socket-left-section">
+			<?php do_action( 'colormag_footer_copyright' ); ?>
+		</div>
+		<?php
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_footer_socket_area_end' ) ) :
 
 	/**

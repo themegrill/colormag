@@ -60,6 +60,7 @@ do_action( 'colormag_action_before_inner_footer' );
  *
  * @hooked colormag_footer_socket_area_start - 10
  * @hooked colormag_footer_socket_right_section - 15
+ * @hooked colormag_footer_socket_left_section - 20
  * @hooked colormag_footer_socket_area_end - 25
  */
 do_action( 'colormag_action_footer' );
@@ -86,9 +87,7 @@ do_action( 'colormag_action_after_footer' );
 
 
 
-				<div class="footer-socket-left-section">
-					<?php do_action( 'colormag_footer_copyright' ); ?>
-				</div>
+
 
 
 

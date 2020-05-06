@@ -70,6 +70,8 @@ add_action( 'colormag_action_before_inner_footer', 'colormag_footer_socket_inner
 add_action( 'colormag_action_footer', 'colormag_footer_socket_area_start', 10 );
 // Footer socket area right section.
 add_action( 'colormag_action_footer', 'colormag_footer_socket_right_section', 15 );
+// Footer socket area left section.
+add_action( 'colormag_action_footer', 'colormag_footer_socket_left_section', 20 );
 // Footer socket area ends.
 add_action( 'colormag_action_footer', 'colormag_footer_socket_area_end', 25 );
 
