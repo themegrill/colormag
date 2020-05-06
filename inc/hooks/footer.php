@@ -244,7 +244,7 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 
 		$tg_link = '<a href="https://themegrill.com/themes/colormag" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'colormag' ) . '" rel="author"><span>' . esc_html__( 'ThemeGrill', 'colormag' ) . '</span></a>';
 
-		$default_footer_value = sprintf( /* Translators: %1$s Current year, %2$s Site link */ esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ) . '<br>' . sprintf( /* Translators: %1$s Theme name, %2$s ThemeGrill site link */ esc_html__( 'Theme: %1$s by %2$s.', 'colormag' ), 'ColorMag', $tg_link ) . ' ' . sprintf( /* Translators: %s WordPress link */ esc_html__( 'Powered by %s.', 'colormag' ), $wp_link );
+		$default_footer_value = sprintf( /* Translators: %1$s: Current year, %2$s: Site link */ esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ) . '<br>' . sprintf( /* Translators: %1$s: Theme name, %2$s: ThemeGrill site link */ esc_html__( 'Theme: %1$s by %2$s.', 'colormag' ), 'ColorMag', $tg_link ) . ' ' . sprintf( /* Translators: %s: WordPress link */ esc_html__( 'Powered by %s.', 'colormag' ), $wp_link );
 
 		$colormag_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
 
