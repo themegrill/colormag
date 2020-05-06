@@ -63,6 +63,30 @@ if ( ! function_exists( 'colormag_advertisement_above_footer_sidebar' ) )  :
 endif;
 
 
+if ( ! function_exists( 'colormag_footer_start' ) ) :
+
+	/**
+	 * Footer starts.
+	 */
+	function colormag_footer_start() {
+
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_footer_end' ) ) :
+
+	/**
+	 * Footer ends.
+	 */
+	function colormag_footer_end() {
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_page_end' ) ) :
 
 	/**

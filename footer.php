@@ -40,12 +40,16 @@ do_action( 'colormag_before_footer' );
 
 /**
  * Functions hooked into colormag_action_before_footer action.
+ *
+ * @hooked colormag_footer_start - 10
  */
 do_action( 'colormag_action_before_footer' );
 
 
 /**
  * Functions hooked into colormag_action_after_footer action.
+ *
+ * @hooked colormag_footer_end - 10
  */
 do_action( 'colormag_action_after_footer' );
 ?>
