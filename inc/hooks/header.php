@@ -130,12 +130,12 @@ if ( ! function_exists( 'colormag_header_nav_container_end' ) ) :
 endif;
 
 
-if ( ! function_exists( 'colormag_header_image_before_header_end' ) ) :
+if ( ! function_exists( 'colormag_header_image_before_nav_container_end' ) ) :
 
 	/**
 	 * Display the header image just before the header closes.
 	 */
-	function colormag_header_image_before_header_end() {
+	function colormag_header_image_before_nav_container_end() {
 		$colormag_header_image_position = get_theme_mod( 'colormag_header_image_position', 'position_two' );
 
 		if ( 'position_three' === $colormag_header_image_position ) {

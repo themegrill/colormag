@@ -33,7 +33,7 @@ add_action( 'colormag_action_before_inner_header', 'colormag_header_nav_containe
 add_action( 'colormag_action_header', 'colormag_header', 10 );
 
 // Header image display before header end.
-add_action( 'colormag_action_after_inner_header', 'colormag_header_image_before_header_end', 5 );
+add_action( 'colormag_action_after_inner_header', 'colormag_header_image_before_nav_container_end', 5 );
 // Header nav container ends.
 add_action( 'colormag_action_after_inner_header', 'colormag_header_nav_container_end', 10 );
 

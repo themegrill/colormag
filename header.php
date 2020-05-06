@@ -81,7 +81,7 @@ do_action( 'colormag_action_header' );
 /**
  * Functions hooked into colormag_action_after_inner_header action.
  *
- * @hooked colormag_header_image_before_header_end - 5
+ * @hooked colormag_header_image_before_nav_container_end - 5
  * @hooked colormag_header_nav_container_end - 10
  */
 do_action( 'colormag_action_after_inner_header' );
