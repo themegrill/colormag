@@ -25,18 +25,20 @@ add_action( 'colormag_action_before', 'colormag_skip_content_link', 15 );
 
 // Header starts.
 add_action( 'colormag_action_before_header', 'colormag_header_start', 10 );
+
 // Header nav container starts.
-add_action( 'colormag_action_before_header', 'colormag_header_nav_container_start', 15 );
+add_action( 'colormag_action_before_inner_header', 'colormag_header_nav_container_start', 10 );
 
 // Header main area.
 add_action( 'colormag_action_header', 'colormag_header', 10 );
 
 // Header image display before header end.
-add_action( 'colormag_action_after_header', 'colormag_header_image_before_header_end', 10 );
+add_action( 'colormag_action_after_inner_header', 'colormag_header_image_before_header_end', 5 );
 // Header nav container ends.
-add_action( 'colormag_action_after_header', 'colormag_header_nav_container_end', 15 );
+add_action( 'colormag_action_after_inner_header', 'colormag_header_nav_container_end', 10 );
+
 // Header ends.
-add_action( 'colormag_action_after_header', 'colormag_header_end', 20 );
+add_action( 'colormag_action_after_header', 'colormag_header_end', 10 );
 
 // Main section starts.
 add_action( 'colormag_action_before_content', 'colormag_main_section_start', 10 );
