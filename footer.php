@@ -64,7 +64,7 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 }
 ?>
 
-<footer id="colophon" class="clearfix <?php echo esc_attr( $class_name ); ?>">
+
 	<?php get_sidebar( 'footer' ); ?>
 	<div class="footer-socket-wrapper clearfix">
 		<div class="inner-wrap">
@@ -83,7 +83,7 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 			</div>
 		</div>
 	</div>
-</footer>
+
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 

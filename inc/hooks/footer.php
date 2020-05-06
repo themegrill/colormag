@@ -69,7 +69,9 @@ if ( ! function_exists( 'colormag_footer_start' ) ) :
 	 * Footer starts.
 	 */
 	function colormag_footer_start() {
-
+		?>
+		<footer id="colophon" class="clearfix <?php echo esc_attr( colormag_footer_layout_class() ); ?>">
+		<?php
 	}
 
 endif;
@@ -81,7 +83,9 @@ if ( ! function_exists( 'colormag_footer_end' ) ) :
 	 * Footer ends.
 	 */
 	function colormag_footer_end() {
-
+		?>
+		</footer><!-- #colophon -->
+		<?php
 	}
 
 endif;
