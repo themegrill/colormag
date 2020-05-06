@@ -722,13 +722,12 @@ abstract class ColorMag_Widget extends WP_Widget {
 			return;
 		}
 
-		$border_color = '';
-		$title_color  = '';
-		if ( 'latest' != $type ) {
-			if ( colormag_category_color( $category ) ) {
-				$border_color = 'style="border-bottom-color:' . colormag_category_color( $category ) . ';"';
-				$title_color  = 'style="background-color:' . colormag_category_color( $category ) . ';"';
-			}
+		$border_color   = '';
+		$title_color    = '';
+		$category_color = colormag_category_color( $category );
+		if ( 'latest' != $type && $category_color ) {
+			$border_color = 'style="border-bottom-color:' . $category_color . ';"';
+			$title_color  = 'style="background-color:' . $category_color . ';"';
 		}
 
 		// Display the title.
