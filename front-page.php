@@ -32,6 +32,8 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 <?php endif; ?>
 
 	<div class="main-content-section clearfix">
+		<?php do_action( 'colormag_before_body_content' ); ?>
+
 		<div id="primary">
 			<div id="content" class="clearfix">
 
@@ -100,6 +102,8 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 			</div>
 		</div>
 		<?php colormag_sidebar_select(); ?>
+
+		<?php do_action( 'colormag_after_body_content' ); ?>
 	</div>
 
 <?php get_footer(); ?>
