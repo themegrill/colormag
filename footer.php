@@ -48,6 +48,18 @@ do_action( 'colormag_action_before_footer' );
 
 
 /**
+ * Functions hooked into colormag_action_before_inner_footer action.
+ */
+do_action( 'colormag_action_before_inner_footer' );
+
+
+/**
+ * Functions hooked into colormag_action_after_inner_footer action.
+ */
+do_action( 'colormag_action_after_inner_footer' );
+
+
+/**
  * Functions hooked into colormag_action_after_footer action.
  *
  * @hooked colormag_footer_end - 10
