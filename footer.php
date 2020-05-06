@@ -36,6 +36,18 @@ do_action( 'colormag_action_after_content' );
  * Hook: colormag_before_footer.
  */
 do_action( 'colormag_before_footer' );
+
+
+/**
+ * Functions hooked into colormag_action_before_footer action.
+ */
+do_action( 'colormag_action_before_footer' );
+
+
+/**
+ * Functions hooked into colormag_action_after_footer action.
+ */
+do_action( 'colormag_action_after_footer' );
 ?>
 
 <?php
