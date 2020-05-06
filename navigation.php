@@ -45,7 +45,6 @@ endif;
 if ( is_single() ) :
 
 	if ( is_attachment() ) :
-		// For attachment page.
 		?>
 		<ul class="default-wp-page clearfix">
 			<li class="previous"><?php previous_image_link( false, esc_html__( '&larr; Previous', 'colormag' ) ); ?></li>
@@ -53,12 +52,13 @@ if ( is_single() ) :
 		</ul>
 		<?php
 	else :
-		// For single post page.
 		?>
+
 		<ul class="default-wp-page clearfix">
 			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . esc_html_x( '&larr;', 'Previous post link', 'colormag' ) . '</span> %title' ); ?></li>
 			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . esc_html_x( '&rarr;', 'Next post link', 'colormag' ) . '</span>' ); ?></li>
 		</ul>
+
 		<?php
 	endif;
 
