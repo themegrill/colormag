@@ -42,6 +42,7 @@ do_action( 'colormag_before_footer' );
  * Functions hooked into colormag_action_before_footer action.
  *
  * @hooked colormag_footer_start - 10
+ * @hooked colormag_footer_sidebar - 15
  */
 do_action( 'colormag_action_before_footer' );
 
@@ -55,7 +56,7 @@ do_action( 'colormag_action_after_footer' );
 ?>
 
 
-	<?php get_sidebar( 'footer' ); ?>
+
 	<div class="footer-socket-wrapper clearfix">
 		<div class="inner-wrap">
 			<div class="footer-socket-area">
