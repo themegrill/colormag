@@ -725,8 +725,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 		$border_color = '';
 		$title_color  = '';
 		if ( 'latest' != $type ) {
-			$border_color = 'style="border-bottom-color:' . colormag_category_color( $category ) . ';"';
-			$title_color  = 'style="background-color:' . colormag_category_color( $category ) . ';"';
+			if ( colormag_category_color( $category ) ) {
+				$border_color = 'style="border-bottom-color:' . colormag_category_color( $category ) . ';"';
+				$title_color  = 'style="background-color:' . colormag_category_color( $category ) . ';"';
+			}
 		}
 
 		// Display the title.
