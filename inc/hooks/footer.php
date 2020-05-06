@@ -109,9 +109,11 @@ if ( ! function_exists( 'colormag_footer_socket_area_start' ) ) :
 	/**
 	 * Footer socket area starts.
 	 */
-	function colormag_footer_socket_area_start() {
-
-	}
+function colormag_footer_socket_area_start() {
+	?>
+	<div class="footer-socket-area">
+	<?php
+}
 
 endif;
 
@@ -121,9 +123,11 @@ if ( ! function_exists( 'colormag_footer_socket_area_end' ) ) :
 	/**
 	 * Footer socket area ends.
 	 */
-	function colormag_footer_socket_area_end() {
-
-	}
+function colormag_footer_socket_area_end() {
+	?>
+	</div><!-- .footer-socket-area -->
+	<?php
+}
 
 endif;
 

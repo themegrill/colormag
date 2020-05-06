@@ -82,7 +82,7 @@ do_action( 'colormag_action_after_footer' );
 
 
 
-			<div class="footer-socket-area">
+
 				<div class="footer-socket-right-section">
 					<?php
 					if ( ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) && ( ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'both' ) || ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'footer' ) ) ) {
@@ -94,7 +94,7 @@ do_action( 'colormag_action_after_footer' );
 				<div class="footer-socket-left-section">
 					<?php do_action( 'colormag_footer_copyright' ); ?>
 				</div>
-			</div>
+
 
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
