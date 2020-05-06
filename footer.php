@@ -27,22 +27,16 @@ do_action( 'colormag_action_after_inner_content' );
  * Functions hooked into colormag_action_after_content action.
  *
  * @hooked colormag_main_section_end - 10
+ * @hooked colormag_advertisement_above_footer_sidebar - 15
  */
 do_action( 'colormag_action_after_content' );
+
+
+/**
+ * Hook: colormag_before_footer.
+ */
+do_action( 'colormag_before_footer' );
 ?>
-
-
-
-
-<?php if ( is_active_sidebar( 'colormag_advertisement_above_the_footer_sidebar' ) ) { ?>
-	<div class="advertisement_above_footer">
-		<div class="inner-wrap">
-			<?php dynamic_sidebar( 'colormag_advertisement_above_the_footer_sidebar' ); ?>
-		</div>
-	</div>
-<?php } ?>
-
-<?php do_action( 'colormag_before_footer' ); ?>
 
 <?php
 // Add the main total header area display type dynamic class

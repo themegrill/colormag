@@ -41,6 +41,28 @@ if ( ! function_exists( 'colormag_main_section_end' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_advertisement_above_footer_sidebar' ) )  :
+
+	/**
+	 * Advertisement above footer sidebar area.
+	 */
+	function colormag_advertisement_above_footer_sidebar() {
+
+		if ( is_active_sidebar( 'colormag_advertisement_above_the_footer_sidebar' ) ) :
+			?>
+			<div class="advertisement_above_footer">
+				<div class="inner-wrap">
+					<?php dynamic_sidebar( 'colormag_advertisement_above_the_footer_sidebar' ); ?>
+				</div>
+			</div>
+			<?php
+		endif;
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_page_end' ) ) :
 
 	/**

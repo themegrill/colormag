@@ -53,6 +53,8 @@ add_action( 'colormag_action_after_inner_content', 'colormag_main_section_inner_
 
 // Main section ends.
 add_action( 'colormag_action_after_content', 'colormag_main_section_end', 10 );
+// Advertisement above footer sidebar area.
+add_action( 'colormag_action_after_content', 'colormag_advertisement_above_footer_sidebar', 15 );
 
 // Page ends.
 add_action( 'colormag_action_after', 'colormag_page_end', 10 );
