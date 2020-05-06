@@ -59,6 +59,7 @@ do_action( 'colormag_action_before_inner_footer' );
  * Functions hooked into colormag_action_footer action.
  *
  * @hooked colormag_footer_socket_area_start - 10
+ * @hooked colormag_footer_socket_right_section - 15
  * @hooked colormag_footer_socket_area_end - 25
  */
 do_action( 'colormag_action_footer' );
@@ -83,13 +84,7 @@ do_action( 'colormag_action_after_footer' );
 
 
 
-				<div class="footer-socket-right-section">
-					<?php
-					if ( ( get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) && ( ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'both' ) || ( get_theme_mod( 'colormag_social_link_location_option', 'both' ) == 'footer' ) ) ) {
-						colormag_social_links();
-					}
-					?>
-				</div>
+
 
 				<div class="footer-socket-left-section">
 					<?php do_action( 'colormag_footer_copyright' ); ?>
