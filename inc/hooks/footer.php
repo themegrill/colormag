@@ -104,6 +104,30 @@ if ( ! function_exists( 'colormag_footer_socket_inner_wrapper_start' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_footer_socket_area_start' ) ) :
+
+	/**
+	 * Footer socket area starts.
+	 */
+	function colormag_footer_socket_area_start() {
+
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_footer_socket_area_end' ) ) :
+
+	/**
+	 * Footer socket area ends.
+	 */
+	function colormag_footer_socket_area_end() {
+
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_footer_socket_inner_wrapper_end' ) ) :
 
 	/**
