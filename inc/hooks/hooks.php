@@ -80,6 +80,8 @@ add_action( 'colormag_action_after_inner_footer', 'colormag_footer_socket_inner_
 
 // Footer ends.
 add_action( 'colormag_action_after_footer', 'colormag_footer_end', 10 );
+// Scroll to top button.
+add_action( 'colormag_action_after_footer', 'colormag_scroll_top_button', 15 );
 
 // Page ends.
 add_action( 'colormag_action_after', 'colormag_page_end', 10 );

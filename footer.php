@@ -78,11 +78,12 @@ do_action( 'colormag_action_after_inner_footer' );
  * Functions hooked into colormag_action_after_footer action.
  *
  * @hooked colormag_footer_end - 10
+ * @hooked colormag_scroll_top_button - 15
  */
 do_action( 'colormag_action_after_footer' );
 ?>
 
-<a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+
 
 <?php
 /**

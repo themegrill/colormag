@@ -203,6 +203,20 @@ if ( ! function_exists( 'colormag_footer_end' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
+
+	/**
+	 * Scroll to top button.
+	 */
+	function colormag_scroll_top_button() {
+		?>
+		<a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+		<?php
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_page_end' ) ) :
 
 	/**
