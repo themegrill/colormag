@@ -64,11 +64,23 @@ do_action( 'colormag_action_before_header' );
 
 
 /**
+ * Functions hooked into colormag_action_before_inner_header action.
+ */
+do_action( 'colormag_action_before_inner_header' );
+
+
+/**
  * Functions hooked into colormag_action_header action.
  *
  * @hooked colormag_header - 10
  */
 do_action( 'colormag_action_header' );
+
+
+/**
+ * Functions hooked into colormag_action_after_inner_header action.
+ */
+do_action( 'colormag_action_after_inner_header' );
 
 
 /**
