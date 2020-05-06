@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'colormag_header_layout_class' ) ) :
 
 	/**
-	 * Function to return the classname for total header option layout class.
+	 * Function to return the classname for header option layout class.
 	 *
 	 * @return string CSS classname.
 	 */
@@ -29,6 +29,29 @@ if ( ! function_exists( 'colormag_header_layout_class' ) ) :
 			$class_name = 'colormag-header-clean';
 		} elseif ( 'type_three' === $colormag_header_layout_class ) {
 			$class_name = 'colormag-header-classic';
+		}
+
+		return $class_name;
+
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_footer_layout_class' ) ) :
+
+	/**
+	 * Function to return the classname for footer option layout class.
+	 *
+	 * @return string CSS classname.
+	 */
+	function colormag_footer_layout_class() {
+
+		$colormag_footer_layout_class = get_theme_mod( 'colormag_main_footer_layout_display_type', 'type_one' );
+		$class_name                   = '';
+
+		if ( 'type_two' === $colormag_footer_layout_class ) {
+			$class_name = 'colormag-footer--classic';
 		}
 
 		return $class_name;
