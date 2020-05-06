@@ -54,16 +54,6 @@ do_action( 'colormag_action_before_footer' );
 do_action( 'colormag_action_after_footer' );
 ?>
 
-<?php
-// Add the main total header area display type dynamic class
-$main_total_footer_option_layout_class = get_theme_mod( 'colormag_main_footer_layout_display_type', 'type_one' );
-
-$class_name = '';
-if ( $main_total_footer_option_layout_class == 'type_two' ) {
-	$class_name = 'colormag-footer--classic';
-}
-?>
-
 
 	<?php get_sidebar( 'footer' ); ?>
 	<div class="footer-socket-wrapper clearfix">
