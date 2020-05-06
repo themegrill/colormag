@@ -2,14 +2,23 @@
 /**
  * The template for displaying 404 pages (Page Not Found).
  *
- * @package ThemeGrill
+ * @package    ThemeGrill
  * @subpackage ColorMag
- * @since ColorMag 1.0
+ * @since      ColorMag 1.0
  */
 
-get_header(); ?>
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-	<?php do_action( 'colormag_before_body_content' ); ?>
+get_header();
+
+/**
+ * Hook: colormag_before_body_content.
+ */
+do_action( 'colormag_before_body_content' );
+?>
 
 	<div id="primary">
 		<div id="content" class="clearfix">
@@ -18,9 +27,10 @@ get_header(); ?>
 
 					<?php if ( ! dynamic_sidebar( 'colormag_error_404_page_sidebar' ) ) : ?>
 						<header class="page-header">
-							<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'colormag' ); ?></h1>
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'colormag' ); ?></h1>
 						</header>
-						<p><?php _e( 'It looks like nothing was found at this location. Try the search below.', 'colormag' ); ?></p>
+
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Try the search below.', 'colormag' ); ?></p>
 						<?php get_search_form(); ?>
 					<?php endif; ?>
 
@@ -29,8 +39,12 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-	<?php colormag_sidebar_select(); ?>
+<?php
+colormag_sidebar_select();
 
-	<?php do_action( 'colormag_after_body_content' ); ?>
+/**
+ * Hook: colormag_after_body_content.
+ */
+do_action( 'colormag_after_body_content' );
 
-<?php get_footer(); ?>
+get_footer();
