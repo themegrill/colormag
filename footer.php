@@ -69,8 +69,6 @@ do_action( 'colormag_action_after_footer' );
 
 
 
-	<div class="footer-socket-wrapper clearfix">
-		<div class="inner-wrap">
 			<div class="footer-socket-area">
 				<div class="footer-socket-right-section">
 					<?php
@@ -84,8 +82,6 @@ do_action( 'colormag_action_after_footer' );
 					<?php do_action( 'colormag_footer_copyright' ); ?>
 				</div>
 			</div>
-		</div>
-	</div>
 
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>

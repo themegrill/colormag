@@ -63,6 +63,12 @@ add_action( 'colormag_action_before_footer', 'colormag_footer_start', 10 );
 // Footer sidebar.
 add_action( 'colormag_action_before_footer', 'colormag_footer_sidebar', 15 );
 
+// Footer socket inner wrapper starts.
+add_action( 'colormag_action_before_inner_footer', 'colormag_footer_socket_inner_wrapper_start', 10 );
+
+// Footer socket inner wrapper ends.
+add_action( 'colormag_action_after_inner_footer', 'colormag_footer_socket_inner_wrapper_end', 10 );
+
 // Footer ends.
 add_action( 'colormag_action_after_footer', 'colormag_footer_end', 10 );
 

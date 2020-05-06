@@ -89,6 +89,36 @@ if ( ! function_exists( 'colormag_footer_sidebar' ) ) :
 endif;
 
 
+if ( ! function_exists( 'colormag_footer_socket_inner_wrapper_start' ) ) :
+
+	/**
+	 * Footer socket inner wrapper starts.
+	 */
+	function colormag_footer_socket_inner_wrapper_start() {
+		?>
+		<div class="footer-socket-wrapper clearfix">
+			<div class="inner-wrap">
+		<?php
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_footer_socket_inner_wrapper_end' ) ) :
+
+	/**
+	 * Footer socket inner wrapper ends.
+	 */
+	function colormag_footer_socket_inner_wrapper_end() {
+		?>
+			</div><!-- .inner-wrap -->
+		</div><!-- .footer-socket-wrapper -->
+		<?php
+	}
+
+endif;
+
+
 if ( ! function_exists( 'colormag_footer_end' ) ) :
 
 	/**
