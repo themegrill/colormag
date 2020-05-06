@@ -81,11 +81,8 @@ do_action( 'colormag_action_after_inner_footer' );
  * @hooked colormag_scroll_top_button - 15
  */
 do_action( 'colormag_action_after_footer' );
-?>
 
 
-
-<?php
 /**
  * Functions hooked into colormag_action_after action.
  *
