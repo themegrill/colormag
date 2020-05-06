@@ -85,3 +85,6 @@ add_action( 'colormag_action_after_footer', 'colormag_scroll_top_button', 15 );
 
 // Page ends.
 add_action( 'colormag_action_after', 'colormag_page_end', 10 );
+
+// Footer copyright.
+add_action( 'colormag_footer_copyright', 'colormag_footer_copyright', 10 );
