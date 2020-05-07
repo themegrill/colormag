@@ -47,6 +47,11 @@ do_action( 'colormag_before_body_content' );
 		if ( true === apply_filters( 'colormag_single_post_page_navigation_filter', true ) ) :
 			get_template_part( 'navigation', 'single' );
 		endif;
+
+		/**
+		 * Functions hooked into colormag_action_after_single_post_content action.
+		 */
+		do_action( 'colormag_action_after_single_post_content' );
 		?>
 
 		<?php if ( get_the_author_meta( 'description' ) ) : ?>
