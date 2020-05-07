@@ -56,6 +56,9 @@ add_action( 'colormag_action_archive_header', 'colormag_archive_header', 10 );
 // Post/Page comments.
 add_action( 'colormag_action_comments', 'colormag_render_comments', 10 );
 
+// Author bio.
+add_action( 'colormag_action_after_single_post_content', 'colormag_author_bio', 10 );
+
 
 /**
  * Hooks for the footer of this theme.

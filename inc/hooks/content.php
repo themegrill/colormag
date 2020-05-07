@@ -138,3 +138,30 @@ if ( ! function_exists( 'colormag_render_comments' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_author_bio' ) ) :
+
+	/**
+	 * Author bio.
+	 */
+	function colormag_author_bio() {
+
+		if ( get_the_author_meta( 'description' ) ) :
+
+			$avatar_image_size = apply_filters( 'colormag_author_bio_avatar_size_filter', 100 );
+			?>
+
+			<div class="author-box">
+				<div class="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), $avatar_image_size ); ?></div>
+				<h4 class="author-name"><?php the_author_meta( 'display_name' ); ?></h4>
+				<p class="author-description"><?php the_author_meta( 'description' ); ?></p>
+			</div>
+
+			<?php
+
+		endif;
+
+	}
+
+endif;
