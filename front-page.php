@@ -107,11 +107,15 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 						 */
 						do_action( 'colormag_after_front_page_loop' );
 
-						get_template_part( 'navigation', 'none' );
+						if ( true === apply_filters( 'colormag_front_page_navigation_filter', true ) ) :
+							get_template_part( 'navigation', 'none' );
+						endif;
 
 					else :
 
-						get_template_part( 'no-results', 'none' );
+						if ( true === apply_filters( 'colormag_front_page_no_results_filter', true ) ) :
+							get_template_part( 'no-results', 'none' );
+						endif;
 
 					endif;
 					?>
