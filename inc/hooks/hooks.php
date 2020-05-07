@@ -52,6 +52,11 @@ add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner
  */
 // Archive header.
 add_action( 'colormag_action_archive_header', 'colormag_archive_header', 10 );
+// Posts archive navigation.
+add_action( 'colormag_after_archive_page_loop', 'colormag_posts_archive_navigation', 10 );
+
+// Posts index navigation.
+add_action( 'colormag_after_index_page_loop', 'colormag_posts_index_navigation', 10 );
 
 
 /**

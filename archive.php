@@ -59,10 +59,10 @@ do_action( 'colormag_before_body_content' );
 				<?php
 				/**
 				 * Hook: colormag_after_archive_page_loop.
+				 *
+				 * @hooked: colormag_posts_archive_navigation - 10
 				 */
 				do_action( 'colormag_after_archive_page_loop' );
-
-				get_template_part( 'navigation', 'archive' );
 
 			else :
 
