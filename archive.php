@@ -6,6 +6,7 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -31,25 +32,46 @@ do_action( 'colormag_before_body_content' );
 				 * @hooked colormag_archive_header - 10
 				 */
 				do_action( 'colormag_action_archive_header' );
+
+				/**
+				 * Hook: colormag_before_archive_page_loop.
+				 */
+				do_action( 'colormag_before_archive_page_loop' );
 				?>
 
 				<div class="article-container">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
 
-						<?php get_template_part( 'content', 'archive' ); ?>
-
-					<?php endwhile; ?>
+						/**
+						 * Include the Post-Type-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						 */
+						get_template_part( 'content', 'archive' );
+					endwhile;
+					?>
 
 				</div>
 
-				<?php get_template_part( 'navigation', 'archive' ); ?>
+				<?php
+				/**
+				 * Hook: colormag_after_archive_page_loop.
+				 */
+				do_action( 'colormag_after_archive_page_loop' );
 
-			<?php else : ?>
+				get_template_part( 'navigation', 'archive' );
+				?>
 
-				<?php get_template_part( 'no-results', 'archive' ); ?>
+				<?php
+			else :
 
-			<?php endif; ?>
+				get_template_part( 'no-results', 'archive' );
+
+			endif;
+			?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
