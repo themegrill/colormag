@@ -123,6 +123,7 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 				<?php endif; ?>
 			</div>
 		</div>
+
 		<?php
 		colormag_sidebar_select();
 
