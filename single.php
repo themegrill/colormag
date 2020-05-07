@@ -23,15 +23,31 @@ do_action( 'colormag_before_body_content' );
 	<div id="primary">
 		<div id="content" class="clearfix">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			/**
+			 * Hook: colormag_before_single_post_page_loop.
+			 */
+			do_action( 'colormag_before_single_post_page_loop' );
 
-				<?php get_template_part( 'content', 'single' ); ?>
+			while ( have_posts() ) :
+				the_post();
 
-			<?php endwhile; ?>
+				get_template_part( 'content', 'single' );
+			endwhile;
+
+			/**
+			 * Hook: colormag_after_singl_poste_page_loop.
+			 */
+			do_action( 'colormag_after_single_post_page_loop' );
+			?>
 
 		</div><!-- #content -->
 
-		<?php get_template_part( 'navigation', 'single' ); ?>
+		<?php
+		if ( true === apply_filters( 'colormag_single_post_page_navigation_filter', true ) ) :
+			get_template_part( 'navigation', 'single' );
+		endif;
+		?>
 
 		<?php if ( get_the_author_meta( 'description' ) ) : ?>
 			<div class="author-box">
