@@ -6,22 +6,37 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
-get_header(); ?>
 
-<?php do_action( 'colormag_before_body_content' ); ?>
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+get_header();
+
+/**
+ * Hook: colormag_before_body_content.
+ */
+do_action( 'colormag_before_body_content' );
+?>
 
 	<div id="primary">
 		<div id="content" class="clearfix">
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'colormag' ), get_search_query() ); ?></h1>
+					<h1 class="page-title">
+						<?php
+						printf(
+							/* Translators: %s: Search query. */
+							esc_html__( 'Search Results for: %s', 'colormag' ),
+							get_search_query()
+						);
+						?>
+					</h1>
 				</header><!-- .page-header -->
 
 				<div class="article-container">
-
-					<?php global $post_i;
-					$post_i = 1; ?>
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -42,8 +57,13 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php colormag_sidebar_select(); ?>
+<?php
+colormag_sidebar_select();
 
-<?php do_action( 'colormag_after_body_content' ); ?>
+/**
+ * Hook: colormag_after_body_content.
+ */
+do_action( 'colormag_after_body_content' );
 
-<?php get_footer(); ?>
+get_footer();
+
