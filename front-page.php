@@ -104,10 +104,10 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 
 						/**
 						 * Hook: colormag_after_front_page_loop.
+						 *
+						 * @hooked colormag_posts_front_page_navigation - 10
 						 */
 						do_action( 'colormag_after_front_page_loop' );
-
-						get_template_part( 'navigation', 'none' );
 
 					else :
 

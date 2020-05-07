@@ -58,6 +58,9 @@ add_action( 'colormag_after_archive_page_loop', 'colormag_posts_archive_navigati
 // Posts index navigation.
 add_action( 'colormag_after_index_page_loop', 'colormag_posts_index_navigation', 10 );
 
+// Posts front page navigation.
+add_action( 'colormag_after_front_page_loop', 'colormag_posts_front_page_navigation', 10 );
+
 
 /**
  * Hooks for the footer of this theme.
