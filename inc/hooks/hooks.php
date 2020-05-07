@@ -53,6 +53,9 @@ add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner
 // Archive header.
 add_action( 'colormag_action_archive_header', 'colormag_archive_header', 10 );
 
+// Post/Page comments.
+add_action( 'colormag_action_comments', 'colormag_render_comments', 10 );
+
 
 /**
  * Hooks for the footer of this theme.

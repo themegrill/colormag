@@ -38,10 +38,12 @@ do_action( 'colormag_before_body_content' );
 				 */
 				do_action( 'colormag_before_comments_template' );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || '0' != get_comments_number() ) {
-					comments_template();
-				}
+				/**
+				 * Functions hooked into colormag_action_after_inner_content action.
+				 *
+				 * @hooked colormag_render_comments - 10
+				 */
+				do_action( 'colormag_action_comments' );
 
 				/**
 				 * Hook: colormag_after_comments_template.

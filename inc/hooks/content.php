@@ -121,3 +121,20 @@ if ( ! function_exists( 'colormag_archive_header' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_render_comments' ) ) :
+
+	/**
+	 * Post/Page comments.
+	 */
+	function colormag_render_comments() {
+
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( comments_open() || '0' != get_comments_number() ) {
+			comments_template();
+		}
+
+	}
+
+endif;
