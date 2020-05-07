@@ -23,21 +23,38 @@ do_action( 'colormag_before_body_content' );
 	<div id="primary">
 		<div id="content" class="clearfix">
 
-			<?php if ( have_posts() ) : ?>
+			<?php
+			if ( have_posts() ) :
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				/**
+				 * Hook: colormag_before_index_page_loop.
+				 */
+				do_action( 'colormag_before_index_page_loop' );
 
-					<?php get_template_part( 'content', '' ); ?>
+				while ( have_posts() ) :
+					the_post();
 
-				<?php endwhile; ?>
+					/**
+					 * Include the Post-Type-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+					 */
+					get_template_part( 'content', '' );
+				endwhile;
 
-				<?php get_template_part( 'navigation', 'none' ); ?>
+				/**
+				 * Hook: colormag_after_index_page_loop.
+				 */
+				do_action( 'colormag_after_index_page_loop' );
 
-			<?php else : ?>
+				get_template_part( 'navigation', 'none' );
 
-				<?php get_template_part( 'no-results', 'none' ); ?>
+			else :
 
-			<?php endif; ?>
+				get_template_part( 'no-results', 'none' );
+
+			endif;
+			?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
