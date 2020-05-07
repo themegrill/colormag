@@ -48,6 +48,13 @@ add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner
 
 
 /**
+ * Hooks for the content of this theme.
+ */
+// Archive header.
+add_action( 'colormag_action_archive_header', 'colormag_archive_header', 10 );
+
+
+/**
  * Hooks for the footer of this theme.
  */
 // Main section inner ends.
