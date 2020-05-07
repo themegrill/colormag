@@ -44,10 +44,10 @@ do_action( 'colormag_before_body_content' );
 
 				/**
 				 * Hook: colormag_after_index_page_loop.
-				 *
-				 * @hooked: colormag_posts_index_navigation - 10
 				 */
 				do_action( 'colormag_after_index_page_loop' );
+
+				get_template_part( 'navigation', 'none' );
 
 			else :
 
