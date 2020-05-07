@@ -63,9 +63,7 @@ do_action( 'colormag_before_body_content' );
 				do_action( 'colormag_after_archive_page_loop' );
 
 				get_template_part( 'navigation', 'archive' );
-				?>
 
-				<?php
 			else :
 
 				get_template_part( 'no-results', 'archive' );
