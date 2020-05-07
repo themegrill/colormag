@@ -121,15 +121,3 @@ if ( ! function_exists( 'colormag_archive_header' ) ) :
 	}
 
 endif;
-
-
-if ( ! function_exists( 'colormag_posts_front_page_navigation' ) ) :
-
-	/**
-	 * Posts front page navigation.
-	 */
-	function colormag_posts_front_page_navigation() {
-		get_template_part( 'navigation', 'none' );
-	}
-
-endif;
