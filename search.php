@@ -22,6 +22,7 @@ do_action( 'colormag_before_body_content' );
 
 	<div id="primary">
 		<div id="content" class="clearfix">
+
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
@@ -36,23 +37,48 @@ do_action( 'colormag_before_body_content' );
 					</h1>
 				</header><!-- .page-header -->
 
+				<?php
+				/**
+				 * Hook: colormag_before_search_results_page_loop.
+				 */
+				do_action( 'colormag_before_search_results_page_loop' );
+				?>
+
 				<div class="article-container">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
 
-						<?php get_template_part( 'content', 'archive' ); ?>
-
-					<?php endwhile; ?>
+						/**
+						 * Include the Post-Type-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						 */
+						get_template_part( 'content', 'archive' );
+					endwhile;
+					?>
 
 				</div>
 
-				<?php get_template_part( 'navigation', 'archive' ); ?>
+				<?php
+				/**
+				 * Hook: colormag_after_search_results_page_loop.
+				 */
+				do_action( 'colormag_after_search_results_page_loop' );
 
-			<?php else : ?>
+				if ( true === apply_filters( 'colormag_search_results_page_navigation_filter', true ) ) :
+					get_template_part( 'navigation', 'archive' );
+				endif;
 
-				<?php get_template_part( 'no-results', 'archive' ); ?>
+			else :
 
-			<?php endif; ?>
+				if ( true === apply_filters( 'colormag_search_results_page_no_results_filter', true ) ) :
+					get_template_part( 'no-results', 'archive' );
+				endif;
+
+			endif;
+			?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
@@ -66,4 +92,3 @@ colormag_sidebar_select();
 do_action( 'colormag_after_body_content' );
 
 get_footer();
-
