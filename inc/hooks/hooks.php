@@ -58,6 +58,8 @@ add_action( 'colormag_action_comments', 'colormag_render_comments', 10 );
 
 // Author bio.
 add_action( 'colormag_action_after_single_post_content', 'colormag_author_bio', 10 );
+// Related posts.
+add_action( 'colormag_action_after_single_post_content', 'colormag_related_posts', 20 );
 
 
 /**

@@ -165,3 +165,19 @@ if ( ! function_exists( 'colormag_author_bio' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_related_posts' ) ) :
+
+	/**
+	 * Related posts.
+	 */
+	function colormag_related_posts() {
+
+		if ( 1 == get_theme_mod( 'colormag_related_posts_activate', 0 ) ) {
+			get_template_part( 'inc/related-posts' );
+		}
+
+	}
+
+endif;

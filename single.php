@@ -52,16 +52,10 @@ do_action( 'colormag_before_body_content' );
 		 * Functions hooked into colormag_action_after_single_post_content action.
 		 *
 		 * @hooked colormag_author_bio - 10
+		 * @hooked colormag_related_posts - 20
 		 */
 		do_action( 'colormag_action_after_single_post_content' );
-		?>
 
-		<?php if ( get_theme_mod( 'colormag_related_posts_activate', 0 ) == 1 ) {
-			get_template_part( 'inc/related-posts' );
-		}
-		?>
-
-		<?php
 		/**
 		 * Hook: colormag_before_comments_template.
 		 */
