@@ -10,23 +10,35 @@
  * @since      ColorMag 1.2.3
  */
 
-get_header(); ?>
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-<?php do_action( 'colormag_before_body_content' ); ?>
+get_header();
 
-<div id="primary">
-	<div id="content" class="pagebuilder-content clearfix">
-		<?php
-		while ( have_posts() ) : the_post();
+/**
+ * Hook: colormag_before_body_content.
+ */
+do_action( 'colormag_before_body_content' );
+?>
 
-			the_content();
+	<div id="primary">
+		<div id="content" class="pagebuilder-content clearfix">
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-		endwhile;
-		?>
+				the_content();
+			endwhile;
+			?>
+		</div><!-- #content -->
+	</div><!-- #primary -->
 
-	</div><!-- #content -->
-</div><!-- #primary -->
+<?php
+/**
+ * Hook: colormag_after_body_content.
+ */
+do_action( 'colormag_after_body_content' );
 
-<?php do_action( 'colormag_after_body_content' ); ?>
-
-<?php get_footer(); ?>
+get_footer();
