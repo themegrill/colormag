@@ -79,12 +79,17 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 
 			endif; // Do not display the front pages sidebar areas when the Page Builder Template is activated.
 
-			if ( 0 == get_theme_mod( 'colormag_hide_blog_front', 0 ) ):
+			if ( 0 == get_theme_mod( 'colormag_hide_blog_front', 0 ) ) :
 				?>
 
 				<div class="article-container">
 					<?php
 					if ( have_posts() ) :
+
+						/**
+						 * Hook: colormag_before_front_page_loop.
+						 */
+						do_action( 'colormag_before_front_page_loop' );
 
 						while ( have_posts() ) :
 							the_post();
@@ -96,6 +101,11 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 							}
 
 						endwhile;
+
+						/**
+						 * Hook: colormag_after_front_page_loop.
+						 */
+						do_action( 'colormag_after_front_page_loop' );
 
 						get_template_part( 'navigation', 'none' );
 
