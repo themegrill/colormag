@@ -47,11 +47,15 @@ do_action( 'colormag_before_body_content' );
 				 */
 				do_action( 'colormag_after_index_page_loop' );
 
-				get_template_part( 'navigation', 'none' );
+				if ( true === apply_filters( 'colormag_index_page_navigation_filter', true ) ) :
+					get_template_part( 'navigation', 'none' );
+				endif;
 
 			else :
 
-				get_template_part( 'no-results', 'none' );
+				if ( true === apply_filters( 'colormag_index_page_no_results_filter', true ) ) :
+					get_template_part( 'no-results', 'none' );
+				endif;
 
 			endif;
 			?>
