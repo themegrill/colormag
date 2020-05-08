@@ -36,7 +36,7 @@ do_action( 'colormag_before_body_content' );
 			endwhile;
 
 			/**
-			 * Hook: colormag_after_singl_poste_page_loop.
+			 * Hook: colormag_after_single_post_page_loop.
 			 */
 			do_action( 'colormag_after_single_post_page_loop' );
 			?>
