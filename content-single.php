@@ -29,17 +29,23 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 	do_action( 'colormag_before_single_post_page_loop' );
 	?>
 
-	<?php if ( 0 == get_theme_mod( 'colormag_featured_image_show', 0 ) && has_post_thumbnail() ) : ?>
-		<div class="featured-image">
-			<?php if ( 1 == get_theme_mod( 'colormag_featured_image_popup', 0 ) ) : ?>
-				<a href="<?php echo esc_url( $image_popup_url ); ?>" class="image-popup"><?php the_post_thumbnail( 'colormag-featured-image' ); ?></a>
-				<?php
-			else :
-				the_post_thumbnail( 'colormag-featured-image' );
-			endif;
+	<?php
+	if ( ! has_post_format( array( 'gallery' ) ) ) :
+		if ( 0 == get_theme_mod( 'colormag_featured_image_show', 0 ) && has_post_thumbnail() ) :
 			?>
-		</div>
-	<?php endif; ?>
+			<div class="featured-image">
+				<?php if ( 1 == get_theme_mod( 'colormag_featured_image_popup', 0 ) ) : ?>
+					<a href="<?php echo esc_url( $image_popup_url ); ?>" class="image-popup"><?php the_post_thumbnail( 'colormag-featured-image' ); ?></a>
+					<?php
+				else :
+					the_post_thumbnail( 'colormag-featured-image' );
+				endif;
+				?>
+			</div>
+			<?php
+		endif;
+	endif;
+	?>
 
 	<div class="article-content clearfix">
 

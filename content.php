@@ -26,13 +26,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	do_action( 'colormag_before_posts_loop' );
 	?>
 
-	<?php if ( has_post_thumbnail() ) : ?>
-		<div class="featured-image">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				<?php the_post_thumbnail( 'colormag-featured-image' ); ?>
-			</a>
-		</div>
-	<?php endif; ?>
+	<?php
+	if ( ! has_post_format( array( 'gallery' ) ) ) :
+		if ( has_post_thumbnail() ) :
+			?>
+			<div class="featured-image">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<?php the_post_thumbnail( 'colormag-featured-image' ); ?>
+				</a>
+			</div>
+			<?php
+		endif;
+	endif;
+	?>
 
 	<div class="article-content clearfix">
 
