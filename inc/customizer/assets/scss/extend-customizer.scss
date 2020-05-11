@@ -92,10 +92,51 @@
 
 #customize-theme-controls {
 
+	.in-sub-panel & {
+
+		.customize-pane-child.current-panel-parent {
+			transform: translateX(-100%);
+		}
+	}
+
+	.customize-pane-child.current-section-parent {
+		transform: translateX(-100%);
+	}
+
 	.control-section {
 
 		&.open {
 			height: 100%;
+		}
+
+		&.control-section-colormag_section {
+
+			.accordion-section {
+				margin-left: -12px;
+				margin-right: -12px;
+			}
+
+			.accordion-section-title {
+				color: #555d66;
+				background-color: #fff;
+				border-bottom: 1px solid #ddd;
+				border-left: 4px solid #fff;
+				transition: .15s color ease-in-out, .15s background-color ease-in-out, .15s border-color ease-in-out;
+			}
+
+			.accordion-section-title:after {
+				color: #a0a5aa;
+			}
+
+			.accordion-section-title:hover,.accordion-section-title:focus {
+				color: #0073aa;
+				background: #f3f3f5;
+				border-left-color: #0073aa;
+			}
+
+			.accordion-section-title:hover:after {
+				color: #0073aa;
+			}
 		}
 	}
 }
