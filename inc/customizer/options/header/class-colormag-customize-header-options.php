@@ -101,28 +101,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'section' => 'colormag_header_image_position_setting',
 			),
 
-			// Date in header display type option.
-			array(
-				'name'      => 'colormag_date_display_type',
-				'default'   => 'theme_default',
-				'type'      => 'control',
-				'control'   => 'radio',
-				'label'     => esc_html__( 'Date in header display type:', 'colormag' ),
-				'section'   => 'colormag_date_display_section',
-				'transport' => $customizer_selective_refresh,
-				'choices'   => array(
-					'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
-					'wordpress_date_setting' => esc_html__( 'From WordPress Date Setting', 'colormag' ),
-				),
-				'partial'   => array(
-					'selector'        => '.date-in-header',
-					'render_callback' => array(
-						'ColorMag_Customizer_Partials',
-						'render_date_display_type',
-					),
-				),
-			),
-
 			// Home icon in menu display option.
 			array(
 				'name'      => 'colormag_home_icon_display',
