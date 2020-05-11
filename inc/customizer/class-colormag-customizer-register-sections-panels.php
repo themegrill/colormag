@@ -120,14 +120,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_header_options',
 			),
 
-			// Breaking news section.
-			array(
-				'name'  => 'colormag_breaking_news_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Breaking News', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			// Date display section.
 			array(
 				'name'  => 'colormag_date_display_section',
