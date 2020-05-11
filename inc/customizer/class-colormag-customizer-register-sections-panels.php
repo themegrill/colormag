@@ -96,6 +96,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Header sections.
 			 */
+			// Header general section.
+			array(
+				'name'  => 'colormag_header_general_section',
+				'type'  => 'section',
+				'title' => esc_html__( 'General', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
 			// Header top bar section.
 			array(
 				'name'  => 'colormag_header_top_bar_section',
