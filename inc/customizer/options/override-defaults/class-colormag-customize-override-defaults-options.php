@@ -40,33 +40,6 @@ class ColorMag_Customize_Override_Defaults_Options extends ColorMag_Customize_Ba
 		// Transport postMessage variable set
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-		$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-
-		if ( isset( $wp_customize->selective_refresh ) ) {
-			$wp_customize->selective_refresh->add_partial(
-				'blogname',
-				array(
-					'selector'        => '#site-title a',
-					'render_callback' => array(
-						'ColorMag_Customizer_Partials',
-						'render_customize_partial_blogname',
-					),
-				)
-			);
-
-			$wp_customize->selective_refresh->add_partial(
-				'blogdescription',
-				array(
-					'selector'        => '#site-description',
-					'render_callback' => array(
-						'ColorMag_Customizer_Partials',
-						'render_customize_partial_blogdescription',
-					),
-				)
-			);
-		}
-
 	}
 
 }

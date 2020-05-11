@@ -45,6 +45,9 @@ class ColorMag_Customizer {
 		// Include the custom extending customize panels and sections files for customize options.
 		add_action( 'customize_register', array( $this, 'customize_custom_panels_sections_includes' ) );
 
+		// Include the customize options.
+		add_action( 'customize_register', array( $this, 'customize_register' ) );
+
 		// Include the custom controls for customize options.
 		add_action( 'customize_register', array( $this, 'customize_custom_controls_includes' ) );
 
@@ -82,6 +85,18 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-panel.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-section.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-upsell-section.php';
+
+	}
+
+	/**
+	 * Include the required files for extending the custom Customize controls.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 */
+	public function customize_register( $wp_customize ) {
+
+		// Override default.
+		require COLORMAG_CUSTOMIZER_DIR . '/override-defaults.php';
 
 	}
 
@@ -451,9 +466,6 @@ class ColorMag_Customizer {
 		/**
 		 * Include the required customize options file.
 		 */
-		// Override default.
-		require COLORMAG_CUSTOMIZER_DIR . '/override-defaults.php';
-
 		// Header customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-general.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-top-bar.php';
