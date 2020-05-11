@@ -36,6 +36,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Register panels.
 			 */
+			// Header Options.
+			array(
+				'name'        => 'colormag_header_options',
+				'type'        => 'panel',
+				'title'       => esc_html__( 'Header Options', 'colormag' ),
+				'description' => esc_html__( 'Change the Header Settings from here as you want', 'colormag' ),
+				'priority'    => 10,
+			),
+
 			// Additional Panel.
 			array(
 				'name'        => 'colormag_additional_options',
@@ -72,15 +81,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority'    => 515,
 			),
 
-			// Header Options.
-			array(
-				'name'        => 'colormag_header_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Header Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Header Settings from here as you want', 'colormag' ),
-				'priority'    => 500,
-			),
-
 			// Social Options.
 			array(
 				'name'        => 'colormag_social_links_options',
@@ -96,6 +96,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Header sections.
 			 */
+			// Header top bar section.
+			array(
+				'name'  => 'colormag_header_top_bar_setting',
+				'type'  => 'section',
+				'title' => esc_html__( 'Header Top Bar', 'colormag' ),
+				'panel' => 'colormag_header_options',
+			),
+
 			// Main total header area display type section.
 			array(
 				'name'  => 'colormag_main_total_header_area_display_type_option',
