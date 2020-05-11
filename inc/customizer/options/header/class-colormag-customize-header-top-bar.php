@@ -31,7 +31,21 @@ class ColorMag_Customize_Header_Top_Bar extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			/**
+			 * Breaking news options.
+			 */
+			// Breaking news heading.
+			array(
+				'name'    => 'colormag_breaking_news_heading',
+				'type'    => 'control',
+				'control' => 'colormag-heading',
+				'label'   => esc_html__( 'Breaking News', 'colormag' ),
+				'section' => 'colormag_header_top_bar_setting',
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
