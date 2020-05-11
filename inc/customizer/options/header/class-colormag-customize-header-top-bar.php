@@ -57,6 +57,19 @@ class ColorMag_Customize_Header_Top_Bar extends ColorMag_Customize_Base_Option {
 				'priority' => 10,
 			),
 
+			/**
+			 * Date in header options.
+			 */
+			// Date in header heading separator.
+			array(
+				'name'     => 'colormag_date_display_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Show Date', 'colormag' ),
+				'section'  => 'colormag_header_top_bar_setting',
+				'priority' => 105,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
