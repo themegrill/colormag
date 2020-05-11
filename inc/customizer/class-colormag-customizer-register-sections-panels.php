@@ -120,14 +120,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_header_options',
 			),
 
-			// Date display section.
-			array(
-				'name'  => 'colormag_date_display_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Show Date', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			// Home icon in primary menu section.
 			array(
 				'name'  => 'colormag_home_icon_display_section',
