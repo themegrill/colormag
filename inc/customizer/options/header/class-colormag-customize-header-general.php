@@ -31,7 +31,34 @@ class ColorMag_Customize_Header_General extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			// Main total header area display type option.
+			array(
+				'name'     => 'colormag_main_total_header_area_display_type',
+				'default'  => 'type_one',
+				'type'     => 'control',
+				'control'  => 'colormag-radio-image',
+				'label'    => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
+				'section'  => 'colormag_header_general_section',
+				'choices'  => array(
+					'type_one'   => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-1.png',
+					),
+					'type_two'   => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-2.png',
+					),
+					'type_three' => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/header-variation-3.png',
+					),
+				),
+				'priority' => 5,
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
