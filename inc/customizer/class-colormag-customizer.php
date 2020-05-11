@@ -451,6 +451,9 @@ class ColorMag_Customizer {
 		/**
 		 * Include the required customize options file.
 		 */
+		// Override default.
+		require COLORMAG_CUSTOMIZER_DIR . '/override-defaults.php';
+
 		// Header customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-general.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-top-bar.php';
