@@ -2,7 +2,7 @@
 /**
  * Class to include Header Top Bar customize options.
  *
- * Class ColorMag_Customize_Header_Options
+ * Class ColorMag_Customize_Header_Top_Bar
  *
  * @package    ThemeGrill
  * @subpackage ColorMag

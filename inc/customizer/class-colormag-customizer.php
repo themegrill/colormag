@@ -448,7 +448,11 @@ class ColorMag_Customizer {
 		// Include the required customize upsell button file.
 		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-upsell-button.php';
 
-		// Include the required customize options file.
+		/**
+		 * Include the required customize options file.
+		 */
+		// Header customize options.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-general.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-top-bar.php';
 
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-options.php';
