@@ -101,24 +101,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 				'section' => 'colormag_header_image_position_setting',
 			),
 
-			// Date in header display option.
-			array(
-				'name'      => 'colormag_date_display',
-				'default'   => 0,
-				'type'      => 'control',
-				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to show the date in header', 'colormag' ),
-				'section'   => 'colormag_date_display_section',
-				'transport' => $customizer_selective_refresh,
-				'partial'   => array(
-					'selector'        => '.date-in-header',
-					'render_callback' => array(
-						'ColorMag_Customizer_Partials',
-						'render_current_date',
-					),
-				),
-			),
-
 			// Date in header display type option.
 			array(
 				'name'      => 'colormag_date_display_type',

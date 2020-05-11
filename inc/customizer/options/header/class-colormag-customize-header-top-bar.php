@@ -31,6 +31,9 @@ class ColorMag_Customize_Header_Top_Bar extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
 		$configs = array(
 
 			/**
@@ -68,6 +71,25 @@ class ColorMag_Customize_Header_Top_Bar extends ColorMag_Customize_Base_Option {
 				'label'    => esc_html__( 'Show Date', 'colormag' ),
 				'section'  => 'colormag_header_top_bar_setting',
 				'priority' => 105,
+			),
+
+			// Date in header display option.
+			array(
+				'name'      => 'colormag_date_display',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'checkbox',
+				'label'     => esc_html__( 'Check to show the date in header', 'colormag' ),
+				'section'   => 'colormag_header_top_bar_setting',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
+					'selector'        => '.date-in-header',
+					'render_callback' => array(
+						'ColorMag_Customizer_Partials',
+						'render_current_date',
+					),
+				),
+				'priority'  => 110,
 			),
 
 		);
