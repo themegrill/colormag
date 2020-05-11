@@ -120,6 +120,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_header_options',
 			),
 
+			// Site identity section.
+			array(
+				'name'    => 'title_tagline',
+				'type'    => 'section',
+				'title'   => esc_html__( 'Site Identity', 'colormag' ),
+				'section' => 'colormag_header_main_area_section',
+			),
+
 			// Header image position section.
 			array(
 				'name'  => 'colormag_header_image_position_setting',
