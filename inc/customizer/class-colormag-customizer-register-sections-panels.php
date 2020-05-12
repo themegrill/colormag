@@ -200,6 +200,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 10,
 			),
 
+			// Single post section.
+			array(
+				'name'     => 'colormag_post_page_blog_single_post_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Single Post', 'colormag' ),
+				'panel'    => 'colormag_post_page_blog_options',
+				'priority' => 15,
+			),
+
 			/**
 			 * Social sections.
 			 */
