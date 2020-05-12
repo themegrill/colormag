@@ -31,7 +31,22 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			/**
+			 * Home icon options.
+			 */
+			// Home icon in menu heading separator.
+			array(
+				'name'     => 'colormag_home_icon_display_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Show Home Icon', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 5,
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
