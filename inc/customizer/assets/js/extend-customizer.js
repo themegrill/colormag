@@ -341,27 +341,34 @@
 (
 	function ( $ ) {
 
-		wp.customize.bind( 'ready', function () {
-			wp.customize.control.each( function ( ctrl, i ) {
+		wp.customize.bind(
+			'ready',
+			function () {
+				wp.customize.control.each(
+					function ( ctrl, i ) {
+						var description = ctrl.container.find( '.customize-control-description' );
 
-				var description = ctrl.container.find( '.customize-control-description' );
-				if ( description.length ) {
-					var title, li_wrapper, tooltip;
-					title      = ctrl.container.find( '.customize-control-title' );
-					li_wrapper = description.closest( 'li' );
-					tooltip    = description.text().replace( /[u00A0-u9999<>&]/gim, function ( i ) {
-						return '&#' + i.charCodeAt( 0 ) + ';';
-					} );
+						if ( description.length ) {
+							var title, li_wrapper, tooltip;
+							title      = ctrl.container.find( '.customize-control-title' );
+							li_wrapper = description.closest( 'li' );
+							tooltip    = description.text().replace(
+								/[u00A0-u9999<>&]/gim,
+								function ( i ) {
+									return '&#' + i.charCodeAt( 0 ) + ';';
+								}
+							);
 
-					// Remove the description from displaying below the controller's label.
-					description.remove();
+							// Remove the description from displaying below the controller's label.
+							description.remove();
 
-					// Add the help icon in description of customize controls.
-					li_wrapper.append( '<i class="colormag-control-tooltip dashicons dashicons-editor-help" title="' + tooltip + '"></i>' );
-				}
-
-			} );
-		} );
+							// Add the help icon in description of customize controls.
+							li_wrapper.append( '<i class="colormag-control-tooltip dashicons dashicons-editor-help" title="' + tooltip + '"></i>' );
+						}
+					}
+				);
+			}
+		);
 
 	}
 )( jQuery );
