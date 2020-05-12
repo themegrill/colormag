@@ -20,8 +20,15 @@ $wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_option
 $wp_customize->get_section( 'header_image' )->priority = 25;
 
 // Background image section.
-$wp_customize->get_section( 'background_image' )->panel = 'colormag_design_options';
-$wp_customize->get_section( 'header_image' )->priority  = 15;
+$wp_customize->get_section( 'background_image' )->panel    = 'colormag_design_options';
+$wp_customize->get_section( 'background_image' )->priority = 15;
+
+/**
+ * Override controls.
+ */
+// Background color control.
+$wp_customize->get_control( 'background_color' )->section  = 'background_image';
+$wp_customize->get_control( 'background_color' )->priority = 5;
 
 // Override Settings.
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
