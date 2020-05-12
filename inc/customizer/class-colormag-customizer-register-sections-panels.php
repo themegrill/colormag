@@ -191,6 +191,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 5,
 			),
 
+			// Blog/Archive/Search section.
+			array(
+				'name'     => 'colormag_post_page_blog_archive_search_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Blog/Archive/Search', 'colormag' ),
+				'panel'    => 'colormag_post_page_blog_options',
+				'priority' => 10,
+			),
+
 			/**
 			 * Social sections.
 			 */
