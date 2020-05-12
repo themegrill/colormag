@@ -469,6 +469,7 @@ class ColorMag_Customizer {
 		// Header customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-general.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-top-bar.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-main-area.php';
 
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-options.php';
