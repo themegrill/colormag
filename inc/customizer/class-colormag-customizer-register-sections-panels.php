@@ -180,6 +180,18 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			/**
+			 * Post/Page/Blog sections.
+			 */
+			// General section.
+			array(
+				'name'     => 'colormag_post_page_blog_general_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'General', 'colormag' ),
+				'panel'    => 'colormag_post_page_blog_options',
+				'priority' => 5,
+			),
+
+			/**
 			 * Social sections.
 			 */
 			// Social links activate section.
