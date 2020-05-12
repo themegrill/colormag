@@ -56,7 +56,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 
 			// Post/Page/Blog Options.
 			array(
-				'name'        => 'colormag_post_page_blog_options',
+				'name'        => 'colormag_blog_options',
 				'type'        => 'panel',
 				'title'       => esc_html__( 'Post/Page/Blog Options', 'colormag' ),
 				'description' => esc_html__( 'Change the Post/Page/Blog Settings from here as you want', 'colormag' ),
@@ -184,19 +184,19 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 */
 			// Single post section.
 			array(
-				'name'     => 'colormag_post_page_blog_single_post_section',
+				'name'     => 'colormag_blog_single_post_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Single Post', 'colormag' ),
-				'panel'    => 'colormag_post_page_blog_options',
+				'panel'    => 'colormag_blog_options',
 				'priority' => 15,
 			),
 
 			// Page section.
 			array(
-				'name'     => 'colormag_post_page_blog_single_page_section',
+				'name'     => 'colormag_blog_single_page_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Page', 'colormag' ),
-				'panel'    => 'colormag_post_page_blog_options',
+				'panel'    => 'colormag_blog_options',
 				'priority' => 20,
 			),
 
