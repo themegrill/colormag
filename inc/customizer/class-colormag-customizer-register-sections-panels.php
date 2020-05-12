@@ -125,6 +125,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'    => 'title_tagline',
 				'type'    => 'section',
 				'title'   => esc_html__( 'Site Identity', 'colormag' ),
+				'panel'   => 'colormag_header_options',
 				'section' => 'colormag_header_main_area_section',
 			),
 
