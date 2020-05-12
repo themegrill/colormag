@@ -153,14 +153,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Design sections.
 			 */
-			// Site layout section.
-			array(
-				'name'  => 'colormag_site_layout_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Site Layout', 'colormag' ),
-				'panel' => 'colormag_design_options',
-			),
-
 			// Default layout section.
 			array(
 				'name'  => 'colormag_default_layout_setting',
