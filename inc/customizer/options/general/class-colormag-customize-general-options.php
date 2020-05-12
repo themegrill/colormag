@@ -31,7 +31,20 @@ class ColorMag_Customize_General_Options extends ColorMag_Customize_Base_Option 
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			// Front page posts/pages display option.
+			array(
+				'name'     => 'colormag_hide_blog_front',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to hide blog posts/static page on front page', 'colormag' ),
+				'section'  => 'colormag_general_section',
+				'priority' => 5,
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
