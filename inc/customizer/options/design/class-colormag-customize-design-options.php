@@ -33,21 +33,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Site layout option.
-			array(
-				'name'      => 'colormag_site_layout',
-				'default'   => 'wide_layout',
-				'type'      => 'control',
-				'control'   => 'colormag-buttonset',
-				'label'     => esc_html__( 'Choose your site layout. The change is reflected in whole site', 'colormag' ),
-				'section'   => 'colormag_site_layout_setting',
-				'transport' => 'postMessage',
-				'choices'   => array(
-					'boxed_layout' => esc_html__( 'Boxed Layout', 'colormag' ),
-					'wide_layout'  => esc_html__( 'Wide Layout', 'colormag' ),
-				),
-			),
-
 			// Default layout option.
 			array(
 				'name'      => 'colormag_default_layout',
