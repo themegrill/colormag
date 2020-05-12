@@ -473,7 +473,6 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-media.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-primary-menu.php';
 
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/social/class-colormag-customize-social-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-options.php';
