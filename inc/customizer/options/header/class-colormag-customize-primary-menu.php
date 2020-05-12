@@ -31,6 +31,9 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
 		$configs = array(
 
 			/**
@@ -44,6 +47,21 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 				'label'    => esc_html__( 'Show Home Icon', 'colormag' ),
 				'section'  => 'colormag_header_primary_menu_section',
 				'priority' => 5,
+			),
+
+			// Home icon in menu display option.
+			array(
+				'name'      => 'colormag_home_icon_display',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'checkbox',
+				'label'     => esc_html__( 'Check to show the home icon in the primary menu', 'colormag' ),
+				'section'   => 'colormag_header_primary_menu_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
+					'selector' => '.home-icon',
+				),
+				'priority'  => 10,
 			),
 
 		);

@@ -36,20 +36,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Home icon in menu display option.
-			array(
-				'name'      => 'colormag_home_icon_display',
-				'default'   => 0,
-				'type'      => 'control',
-				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to show the home icon in the primary menu', 'colormag' ),
-				'section'   => 'colormag_home_icon_display_section',
-				'transport' => $customizer_selective_refresh,
-				'partial'   => array(
-					'selector' => '.home-icon',
-				),
-			),
-
 			// Primary sticky menu enable/disable option.
 			array(
 				'name'    => 'colormag_primary_sticky_menu',
