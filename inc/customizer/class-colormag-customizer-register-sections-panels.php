@@ -54,6 +54,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority'    => 10,
 			),
 
+			// Post/Page/Blog Options.
+			array(
+				'name'        => 'colormag_post_page_blog_options',
+				'type'        => 'panel',
+				'title'       => esc_html__( 'Post/Page/Blog Options', 'colormag' ),
+				'description' => esc_html__( 'Change the Post/Page/Blog Settings from here as you want', 'colormag' ),
+				'priority'    => 10,
+			),
+
 			// Additional Panel.
 			array(
 				'name'        => 'colormag_additional_options',
