@@ -144,6 +144,19 @@ class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
 				'priority'  => 310,
 			),
 
+			/**
+			 * Responsive menu options.
+			 */
+			// Responsive menu heading separator.
+			array(
+				'name'     => 'colormag_responsive_menu_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Responsive Menu Style', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 405,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
