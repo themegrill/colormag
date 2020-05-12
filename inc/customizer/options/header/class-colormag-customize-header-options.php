@@ -36,16 +36,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// New responsive menu enable/disable option.
-			array(
-				'name'    => 'colormag_responsive_menu',
-				'default' => 0,
-				'type'    => 'control',
-				'control' => 'checkbox',
-				'label'   => esc_html__( 'Check to switch to new responsive menu.', 'colormag' ),
-				'section' => 'colormag_responsive_menu_section',
-			),
-
 		);
 
 		$options = array_merge( $options, $configs );

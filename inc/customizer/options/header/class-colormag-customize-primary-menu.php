@@ -157,6 +157,17 @@ class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
 				'priority' => 405,
 			),
 
+			// New responsive menu enable/disable option.
+			array(
+				'name'     => 'colormag_responsive_menu',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to switch to new responsive menu.', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 410,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
