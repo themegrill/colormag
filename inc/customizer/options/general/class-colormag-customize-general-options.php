@@ -49,8 +49,8 @@ class ColorMag_Customize_General_Options extends ColorMag_Customize_Base_Option 
 				'name'      => 'colormag_site_layout',
 				'default'   => 'wide_layout',
 				'type'      => 'control',
-				'control'   => 'colormag-buttonset',
-				'label'     => esc_html__( 'Choose your site layout. The change is reflected in whole site', 'colormag' ),
+				'control'   => 'radio',
+				'label'     => esc_html__( 'Site Layout', 'colormag' ),
 				'section'   => 'colormag_general_section',
 				'transport' => 'postMessage',
 				'choices'   => array(
@@ -66,7 +66,7 @@ class ColorMag_Customize_General_Options extends ColorMag_Customize_Base_Option 
 				'default'  => 'white',
 				'type'     => 'control',
 				'control'  => 'radio',
-				'label'    => esc_html__( 'Choose the color skin for your site.', 'colormag' ),
+				'label'    => esc_html__( 'Skin Color', 'colormag' ),
 				'section'  => 'colormag_general_section',
 				'choices'  => array(
 					'white' => esc_html__( 'White Skin', 'colormag' ),
