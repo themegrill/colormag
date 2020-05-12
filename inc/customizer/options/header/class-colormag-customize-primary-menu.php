@@ -49,6 +49,17 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 				'priority' => 5,
 			),
 
+			// Primary sticky menu enable/disable option.
+			array(
+				'name'     => 'colormag_primary_sticky_menu',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to enable the sticky behavior of the primary menu', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 10,
+			),
+
 			/**
 			 * Home icon options.
 			 */

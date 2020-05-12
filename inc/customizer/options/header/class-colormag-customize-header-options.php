@@ -36,16 +36,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Primary sticky menu enable/disable option.
-			array(
-				'name'    => 'colormag_primary_sticky_menu',
-				'default' => 0,
-				'type'    => 'control',
-				'control' => 'checkbox',
-				'label'   => esc_html__( 'Check to enable the sticky behavior of the primary menu', 'colormag' ),
-				'section' => 'colormag_primary_sticky_menu_section',
-			),
-
 			// Search icon in menu display option.
 			array(
 				'name'    => 'colormag_search_icon_in_menu',
