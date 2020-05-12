@@ -142,14 +142,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
-			// Home icon in primary menu section.
-			array(
-				'name'  => 'colormag_home_icon_display_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Show Home Icon', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			// Primary sticky menu section.
 			array(
 				'name'  => 'colormag_primary_sticky_menu_section',
