@@ -142,14 +142,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
-			// Responsive menu style section.
-			array(
-				'name'  => 'colormag_responsive_menu_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Responsive Menu Style', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			/**
 			 * Design sections.
 			 */
