@@ -60,6 +60,21 @@ class ColorMag_Customize_General_Options extends ColorMag_Customize_Base_Option 
 				'priority'  => 10,
 			),
 
+			// Skin color option.
+			array(
+				'name'     => 'colormag_color_skin_setting',
+				'default'  => 'white',
+				'type'     => 'control',
+				'control'  => 'radio',
+				'label'    => esc_html__( 'Choose the color skin for your site.', 'colormag' ),
+				'section'  => 'colormag_general_section',
+				'choices'  => array(
+					'white' => esc_html__( 'White Skin', 'colormag' ),
+					'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
+				),
+				'priority' => 15,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );

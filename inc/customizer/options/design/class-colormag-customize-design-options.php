@@ -120,20 +120,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 				'image_col' => 2,
 			),
 
-			// Skin color option.
-			array(
-				'name'    => 'colormag_color_skin_setting',
-				'default' => 'white',
-				'type'    => 'control',
-				'control' => 'radio',
-				'label'   => esc_html__( 'Choose the color skin for your site.', 'colormag' ),
-				'section' => 'colormag_color_skin_setting_section',
-				'choices' => array(
-					'white' => esc_html__( 'White Skin', 'colormag' ),
-					'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
-				),
-			),
-
 			// Primary color option.
 			array(
 				'name'      => 'colormag_primary_color',
