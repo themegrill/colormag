@@ -218,6 +218,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
+			// Post meta section.
+			array(
+				'name'     => 'colormag_post_page_blog_post_meta_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Post Meta', 'colormag' ),
+				'panel'    => 'colormag_post_page_blog_options',
+				'priority' => 25,
+			),
+
 			/**
 			 * Social sections.
 			 */
