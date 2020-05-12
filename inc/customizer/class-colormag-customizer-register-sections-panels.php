@@ -177,14 +177,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel' => 'colormag_design_options',
 			),
 
-			// Color skin section.
-			array(
-				'name'  => 'colormag_color_skin_setting_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Skin Color', 'colormag' ),
-				'panel' => 'colormag_design_options',
-			),
-
 			// Primary color section.
 			array(
 				'name'  => 'colormag_primary_color_setting',
