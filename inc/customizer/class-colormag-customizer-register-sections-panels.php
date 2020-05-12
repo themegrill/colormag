@@ -209,6 +209,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 15,
 			),
 
+			// Page section.
+			array(
+				'name'     => 'colormag_post_page_blog_single_page_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Page', 'colormag' ),
+				'panel'    => 'colormag_post_page_blog_options',
+				'priority' => 20,
+			),
+
 			/**
 			 * Social sections.
 			 */
