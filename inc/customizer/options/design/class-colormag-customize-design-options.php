@@ -33,35 +33,6 @@ class ColorMag_Customize_Design_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Default layout option.
-			array(
-				'name'      => 'colormag_default_layout',
-				'default'   => 'right_sidebar',
-				'type'      => 'control',
-				'control'   => 'colormag-radio-image',
-				'label'     => esc_html__( 'Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options', 'colormag' ),
-				'section'   => 'colormag_default_layout_setting',
-				'choices'   => array(
-					'right_sidebar'               => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
-					),
-					'left_sidebar'                => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/left-sidebar.png',
-					),
-					'no_sidebar_full_width'       => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-					),
-					'no_sidebar_content_centered' => array(
-						'label' => '',
-						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
-					),
-				),
-				'image_col' => 2,
-			),
-
 			// Default layout for pages only option.
 			array(
 				'name'      => 'colormag_default_page_layout',

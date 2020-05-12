@@ -469,15 +469,15 @@ class ColorMag_Customizer {
 		// General customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/general/class-colormag-customize-general-options.php';
 
-		// Design customize options.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-general-options.php';
-
 		// Header customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-general-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-top-bar-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-main-area-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-header-media-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-primary-menu-options.php';
+
+		// Design customize options.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-general-options.php';
 
 		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/social/class-colormag-customize-social-options.php';

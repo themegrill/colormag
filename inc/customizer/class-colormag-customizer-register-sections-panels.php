@@ -45,6 +45,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority'    => 10,
 			),
 
+			// Design Options.
+			array(
+				'name'        => 'colormag_design_options',
+				'type'        => 'panel',
+				'title'       => esc_html__( 'Design Options', 'colormag' ),
+				'description' => esc_html__( 'Change the Design Settings from here as you want', 'colormag' ),
+				'priority'    => 10,
+			),
+
 			// Additional Panel.
 			array(
 				'name'        => 'colormag_additional_options',
@@ -61,15 +70,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'title'       => esc_html__( 'Category Color Options', 'colormag' ),
 				'description' => esc_html__( 'Change the color of each category items as you want.', 'colormag' ),
 				'priority'    => 535,
-			),
-
-			// Design Options.
-			array(
-				'name'        => 'colormag_design_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Design Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Design Settings from here as you want', 'colormag' ),
-				'priority'    => 505,
 			),
 
 			// Footer Options.
