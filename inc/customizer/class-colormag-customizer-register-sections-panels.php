@@ -142,14 +142,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
-			// Primary sticky menu section.
-			array(
-				'name'  => 'colormag_primary_sticky_menu_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Sticky Menu', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			// Search icon in menu section.
 			array(
 				'name'  => 'colormag_search_icon_in_menu_section',

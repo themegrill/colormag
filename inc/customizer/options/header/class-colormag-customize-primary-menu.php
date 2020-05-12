@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class ColorMag_Customize_Primary_Menu
  */
-class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
