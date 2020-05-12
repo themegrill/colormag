@@ -98,35 +98,39 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 */
 			// Header general section.
 			array(
-				'name'  => 'colormag_header_general_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'General', 'colormag' ),
-				'panel' => 'colormag_header_options',
+				'name'     => 'colormag_header_general_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'General', 'colormag' ),
+				'panel'    => 'colormag_header_options',
+				'priority' => 5,
 			),
 
 			// Header top bar section.
 			array(
-				'name'  => 'colormag_header_top_bar_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Top Bar', 'colormag' ),
-				'panel' => 'colormag_header_options',
+				'name'     => 'colormag_header_top_bar_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Top Bar', 'colormag' ),
+				'panel'    => 'colormag_header_options',
+				'priority' => 10,
 			),
 
 			// Header main area section.
 			array(
-				'name'  => 'colormag_header_main_area_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Main Area', 'colormag' ),
-				'panel' => 'colormag_header_options',
+				'name'     => 'colormag_header_main_area_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Main Area', 'colormag' ),
+				'panel'    => 'colormag_header_options',
+				'priority' => 15,
 			),
 
 			// Site identity section.
 			array(
-				'name'    => 'title_tagline',
-				'type'    => 'section',
-				'title'   => esc_html__( 'Site Identity', 'colormag' ),
-				'panel'   => 'colormag_header_options',
-				'section' => 'colormag_header_main_area_section',
+				'name'     => 'title_tagline',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Site Identity', 'colormag' ),
+				'panel'    => 'colormag_header_options',
+				'section'  => 'colormag_header_main_area_section',
+				'priority' => 5,
 			),
 
 			// Header image position section.
