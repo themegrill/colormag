@@ -12,9 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Override Sections.
+/**
+ * Override Sections.
+ */
+// Header media section.
 $wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_options';
 $wp_customize->get_section( 'header_image' )->priority = 25;
+
+// Background image section.
+$wp_customize->get_section( 'background_image' )->panel = 'colormag_design_options';
+$wp_customize->get_section( 'header_image' )->priority  = 15;
 
 // Override Settings.
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
