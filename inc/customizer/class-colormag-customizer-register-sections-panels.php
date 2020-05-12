@@ -133,14 +133,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 5,
 			),
 
-			// Header image position section.
-			array(
-				'name'  => 'colormag_header_image_position_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Header Image Position', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			// Home icon in primary menu section.
 			array(
 				'name'  => 'colormag_home_icon_display_section',
