@@ -106,7 +106,8 @@
 	color: #a0a5aa;
 }
 
-#customize-theme-controls .control-section.control-section-colormag_section .accordion-section-title:hover, #customize-theme-controls .control-section.control-section-colormag_section .accordion-section-title:focus {
+#customize-theme-controls .control-section.control-section-colormag_section .accordion-section-title:hover,
+#customize-theme-controls .control-section.control-section-colormag_section .accordion-section-title:focus {
 	color: #0073aa;
 	background: #f3f3f5;
 	border-left-color: #0073aa;

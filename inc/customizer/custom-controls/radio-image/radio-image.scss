@@ -14,11 +14,30 @@
 	label {
 		margin-bottom: 15px;
 		position: relative;
-		display: inline-block;
+		display: block;
+		float: left;
 
 		> img {
 			display: flex;
 			flex-wrap: wrap;
+		}
+	}
+
+	.image-col-1,
+	.image-col-2,
+	.image-col-3 {
+
+		&:after {
+			content: '';
+			clear: both;
+			display: block;
+		}
+	}
+
+	.image-col-1 {
+
+		label {
+			width: 100%;
 		}
 	}
 

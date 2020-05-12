@@ -13,7 +13,8 @@
 .customize-control-colormag-radio-image label {
 	margin-bottom: 15px;
 	position: relative;
-	display: inline-block;
+	display: block;
+	float: left;
 }
 
 .customize-control-colormag-radio-image label > img {
@@ -22,6 +23,18 @@
 	display: flex;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+}
+
+.customize-control-colormag-radio-image .image-col-1:after,
+.customize-control-colormag-radio-image .image-col-2:after,
+.customize-control-colormag-radio-image .image-col-3:after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.customize-control-colormag-radio-image .image-col-1 label {
+	width: 100%;
 }
 
 .customize-control-colormag-radio-image .image-col-2 label {
