@@ -142,14 +142,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
-			// Search icon in menu section.
-			array(
-				'name'  => 'colormag_search_icon_in_menu_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Search Icon', 'colormag' ),
-				'panel' => 'colormag_header_options',
-			),
-
 			// Random post icon in menu section.
 			array(
 				'name'  => 'colormag_random_post_in_menu_section',
