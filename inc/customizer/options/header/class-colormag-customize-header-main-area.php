@@ -35,18 +35,19 @@ class ColorMag_Customize_Header_Main_Area extends ColorMag_Customize_Base_Option
 
 			// Header logo placement option.
 			array(
-				'name'    => 'colormag_header_logo_placement',
-				'default' => 'header_text_only',
-				'type'    => 'control',
-				'control' => 'radio',
-				'label'   => esc_html__( 'Choose the option that you want', 'colormag' ),
-				'section' => 'title_tagline',
-				'choices' => array(
+				'name'     => 'colormag_header_logo_placement',
+				'default'  => 'header_text_only',
+				'type'     => 'control',
+				'control'  => 'radio',
+				'label'    => esc_html__( 'Choose the option that you want', 'colormag' ),
+				'section'  => 'title_tagline',
+				'choices'  => array(
 					'header_logo_only' => esc_html__( 'Header Logo Only', 'colormag' ),
 					'header_text_only' => esc_html__( 'Header Text Only', 'colormag' ),
 					'show_both'        => esc_html__( 'Show Both', 'colormag' ),
 					'disable'          => esc_html__( 'Disable', 'colormag' ),
 				),
+				'priority' => 5,
 			),
 
 		);
