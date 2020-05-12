@@ -36,16 +36,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Header image link to home page option.
-			array(
-				'name'    => 'colormag_header_image_link',
-				'default' => 0,
-				'type'    => 'control',
-				'control' => 'checkbox',
-				'label'   => esc_html__( 'Check to make header image link back to home page', 'colormag' ),
-				'section' => 'colormag_header_image_position_setting',
-			),
-
 			// Home icon in menu display option.
 			array(
 				'name'      => 'colormag_home_icon_display',

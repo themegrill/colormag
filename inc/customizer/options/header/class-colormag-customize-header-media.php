@@ -49,6 +49,17 @@ class ColorMag_Customize_Header_Media extends ColorMag_Customize_Base_Option {
 				'priority' => 10,
 			),
 
+			// Header image link to home page option.
+			array(
+				'name'     => 'colormag_header_image_link',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to make header image link back to home page', 'colormag' ),
+				'section'  => 'header_image',
+				'priority' => 15,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
