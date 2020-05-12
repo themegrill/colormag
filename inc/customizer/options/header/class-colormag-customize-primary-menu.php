@@ -112,6 +112,19 @@ class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
 				'priority' => 210,
 			),
 
+			/**
+			 * Random posts icon options.
+			 */
+			// Random posts icon in menu heading separator.
+			array(
+				'name'     => 'colormag_random_post_in_menu_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Random Post', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 305,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
