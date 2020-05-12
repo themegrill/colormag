@@ -37,6 +37,19 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 		$configs = array(
 
 			/**
+			 * Sticky menu options.
+			 */
+			// Sticky menu heading separator.
+			array(
+				'name'     => 'colormag_primary_sticky_menu_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Sticky Menu', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 5,
+			),
+
+			/**
 			 * Home icon options.
 			 */
 			// Home icon in menu heading separator.
@@ -46,7 +59,7 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Show Home Icon', 'colormag' ),
 				'section'  => 'colormag_header_primary_menu_section',
-				'priority' => 5,
+				'priority' => 105,
 			),
 
 			// Home icon in menu display option.
@@ -61,7 +74,7 @@ class ColorMag_Customize_Primary_Menu  extends ColorMag_Customize_Base_Option {
 				'partial'   => array(
 					'selector' => '.home-icon',
 				),
-				'priority'  => 10,
+				'priority'  => 110,
 			),
 
 		);
