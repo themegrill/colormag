@@ -3,244 +3,313 @@
  */
 (
 	function ( $ ) {
-		var api = wp.customize;
 
-		api.bind( 'pane-contents-reflowed', function () {
-			// Reflow sections.
-			var sections = [];
-			api.section.each( function ( section ) {
-				if (
-					'colormag_section' !== section.params.type ||
-					'undefined' === typeof section.params.section
-				) {
-					return;
-				}
+		var _panelEmbed,
+		    _panelIsContextuallyActive,
+		    _panelAttachEvents,
+		    _sectionEmbed,
+		    _sectionIsContextuallyActive,
+		    _sectionAttachEvents;
 
-				sections.push( section );
-			} );
+		wp.customize.bind(
+			'pane-contents-reflowed',
+			function () {
+				var panels   = [],
+				    sections = [];
 
-			sections.sort( api.utils.prioritySort ).reverse();
-			$.each( sections, function ( i, section ) {
-				var parentContainer = $(
-					'#sub-accordion-section-' + section.params.section
+				// Reflow sections.
+				wp.customize.section.each(
+					function ( section ) {
+						if (
+							'colormag_section' !== section.params.type ||
+							'undefined' === typeof section.params.section
+						) {
+							return;
+						}
+
+						sections.push( section );
+					}
 				);
 
-				parentContainer
-					.children( '.section-meta' )
-					.after( section.headContainer );
-			} );
+				sections.sort( wp.customize.utils.prioritySort ).reverse();
 
-			// Reflow panels.
-			var panels = [];
-			api.panel.each( function ( panel ) {
-				if (
-					'colormag_panel' !== panel.params.type ||
-					'undefined' === typeof panel.params.panel
-				) {
-					return;
-				}
+				$.each(
+					sections,
+					function ( i, section ) {
+						var parentContainer = $(
+							'#sub-accordion-section-' + section.params.section
+						);
 
-				panels.push( panel );
-			} );
-
-			panels.sort( api.utils.prioritySort ).reverse();
-
-			$.each( panels, function ( i, panel ) {
-				var parentContainer = $(
-					'#sub-accordion-panel-' + panel.params.panel
+						parentContainer
+							.children( '.section-meta' )
+							.after( section.headContainer );
+					}
 				);
 
-				parentContainer.children( '.panel-meta' ).after( panel.headContainer );
-			} );
-		} );
+				// Reflow panels.
+				wp.customize.panel.each(
+					function ( panel ) {
+						if (
+							'colormag_panel' !== panel.params.type ||
+							'undefined' === typeof panel.params.panel
+						) {
+							return;
+						}
+
+						panels.push( panel );
+					}
+				);
+
+				panels.sort( wp.customize.utils.prioritySort ).reverse();
+
+				$.each(
+					panels,
+					function ( i, panel ) {
+						var parentContainer = $(
+							'#sub-accordion-panel-' + panel.params.panel
+						);
+
+						parentContainer.children( '.panel-meta' ).after( panel.headContainer );
+					}
+				);
+			}
+		);
 
 		// Extend Panel.
-		var _panelEmbed                = wp.customize.Panel.prototype.embed;
-		var _panelIsContextuallyActive = wp.customize.Panel.prototype.isContextuallyActive;
-		var _panelAttachEvents         = wp.customize.Panel.prototype.attachEvents;
+		_panelEmbed                = wp.customize.Panel.prototype.embed;
+		_panelIsContextuallyActive = wp.customize.Panel.prototype.isContextuallyActive;
+		_panelAttachEvents         = wp.customize.Panel.prototype.attachEvents;
 
-		wp.customize.Panel = wp.customize.Panel.extend( {
-			attachEvents         : function () {
-				if (
-					'colormag_panel' !== this.params.type ||
-					'undefined' === typeof this.params.panel
-				) {
+		wp.customize.Panel = wp.customize.Panel.extend(
+			{
+				attachEvents         : function () {
+					var panel;
+
+					if (
+						'colormag_panel' !== this.params.type ||
+						'undefined' === typeof this.params.panel
+					) {
+						_panelAttachEvents.call( this );
+
+						return;
+					}
+
 					_panelAttachEvents.call( this );
 
-					return;
-				}
+					panel = this;
 
-				_panelAttachEvents.call( this );
-				var panel = this;
-				panel.expanded.bind( function ( expanded ) {
-					var parent = api.panel( panel.params.panel );
-					if ( expanded ) {
-						parent.contentContainer.addClass( 'current-panel-parent' );
-					} else {
-						parent.contentContainer.removeClass( 'current-panel-parent' );
+					panel.expanded.bind(
+						function ( expanded ) {
+							var parent = wp.customize.panel( panel.params.panel );
+
+							if ( expanded ) {
+								parent.contentContainer.addClass( 'current-panel-parent' );
+							} else {
+								parent.contentContainer.removeClass( 'current-panel-parent' );
+							}
+						}
+					);
+
+					panel.container
+					     .find( '.customize-panel-back' )
+					     .off( 'click keydown' )
+					     .on( 'click keydown',
+						     function ( event ) {
+							     if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
+								     return;
+							     }
+
+							     event.preventDefault(); // Keep this AFTER the key filter above.
+
+							     if ( panel.expanded() ) {
+								     wp.customize.panel( panel.params.panel ).expand();
+							     }
+						     }
+					     );
+				},
+				embed                : function () {
+					var panel = this,
+					    parentContainer;
+
+					if (
+						'colormag_panel' !== this.params.type ||
+						'undefined' === typeof this.params.panel
+					) {
+						_panelEmbed.call( this );
+
+						return;
 					}
-				} );
 
-				panel.container
-				     .find( '.customize-panel-back' )
-				     .off( 'click keydown' )
-				     .on( 'click keydown', function ( event ) {
-					     if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
-						     return;
-					     }
-
-					     event.preventDefault(); // Keep this AFTER the key filter above.
-
-					     if ( panel.expanded() ) {
-						     api.panel( panel.params.panel ).expand();
-					     }
-				     } );
-			},
-			embed                : function () {
-				if (
-					'colormag_panel' !== this.params.type ||
-					'undefined' === typeof this.params.panel
-				) {
 					_panelEmbed.call( this );
 
-					return;
+					parentContainer = $(
+						'#sub-accordion-panel-' + this.params.panel
+					);
+
+					parentContainer.append( panel.headContainer );
+				},
+				isContextuallyActive : function () {
+					var panel       = this,
+					    children,
+					    activeCount = 0;
+
+					if ( 'colormag_panel' !== this.params.type ) {
+						return _panelIsContextuallyActive.call( this );
+					}
+
+					children = this._children( 'panel', 'section' );
+
+					wp.customize.panel.each(
+						function ( child ) {
+							if ( ! child.params.panel ) {
+								return;
+							}
+
+							if ( child.params.panel !== panel.id ) {
+								return;
+							}
+
+							children.push( child );
+						}
+					);
+
+					children.sort( wp.customize.utils.prioritySort );
+
+					_( children ).each(
+						function ( child ) {
+							if ( child.active() && child.isContextuallyActive() ) {
+								activeCount += 1;
+							}
+						}
+					);
+
+					return (
+						0 !== activeCount
+					);
 				}
-
-				_panelEmbed.call( this );
-				var panel           = this;
-				var parentContainer = $(
-					'#sub-accordion-panel-' + this.params.panel
-				);
-
-				parentContainer.append( panel.headContainer );
-			},
-			isContextuallyActive : function () {
-				if ( 'colormag_panel' !== this.params.type ) {
-					return _panelIsContextuallyActive.call( this );
-				}
-
-				var panel    = this;
-				var children = this._children( 'panel', 'section' );
-				api.panel.each( function ( child ) {
-					if ( ! child.params.panel ) {
-						return;
-					}
-
-					if ( child.params.panel !== panel.id ) {
-						return;
-					}
-
-					children.push( child );
-				} );
-
-				children.sort( api.utils.prioritySort );
-				var activeCount = 0;
-				_( children ).each( function ( child ) {
-					if ( child.active() && child.isContextuallyActive() ) {
-						activeCount += 1;
-					}
-				} );
-
-				return activeCount !== 0;
 			}
-		} );
+		);
 
 		// Extend Section.
-		var _sectionEmbed                = wp.customize.Section.prototype.embed;
-		var _sectionIsContextuallyActive = wp.customize.Section.prototype.isContextuallyActive;
-		var _sectionAttachEvents         = wp.customize.Section.prototype.attachEvents;
+		_sectionEmbed                = wp.customize.Section.prototype.embed;
+		_sectionIsContextuallyActive = wp.customize.Section.prototype.isContextuallyActive;
+		_sectionAttachEvents         = wp.customize.Section.prototype.attachEvents;
 
-		wp.customize.Section = wp.customize.Section.extend( {
-			attachEvents         : function () {
-				if (
-					'colormag_section' !== this.params.type ||
-					'undefined' === typeof this.params.section
-				) {
-					_sectionAttachEvents.call( this );
-					return;
-				}
+		wp.customize.Section = wp.customize.Section.extend(
+			{
+				attachEvents         : function () {
+					var section = this;
 
-				_sectionAttachEvents.call( this );
-				var section = this;
-				section.expanded.bind( function ( expanded ) {
-					var parent = api.section( section.params.section );
-					if ( expanded ) {
-						parent.contentContainer.addClass( 'current-section-parent' );
-					} else {
-						parent.contentContainer.removeClass(
-							'current-section-parent'
-						);
-					}
-				} );
+					if (
+						'colormag_section' !== this.params.type ||
+						'undefined' === typeof this.params.section
+					) {
+						_sectionAttachEvents.call( section );
 
-				section.container
-				       .find( '.customize-section-back' )
-				       .off( 'click keydown' )
-				       .on( 'click keydown', function ( event ) {
-					       if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
-						       return;
-					       }
-
-					       event.preventDefault(); // Keep this AFTER the key filter above.
-
-					       if ( section.expanded() ) {
-						       api.section( section.params.section ).expand();
-					       }
-				       } );
-			},
-			embed                : function () {
-				if (
-					'colormag_section' !== this.params.type ||
-					'undefined' === typeof this.params.section
-				) {
-					_sectionEmbed.call( this );
-					return;
-				}
-
-				_sectionEmbed.call( this );
-				var section         = this;
-				var parentContainer = $(
-					'#sub-accordion-section-' + this.params.section
-				);
-
-				parentContainer.append( section.headContainer );
-			},
-			isContextuallyActive : function () {
-				if ( 'colormag_section' !== this.params.type ) {
-					return _sectionIsContextuallyActive.call( this );
-				}
-
-				var section  = this;
-				var children = this._children( 'section', 'control' );
-				api.section.each( function ( child ) {
-					if ( ! child.params.section ) {
 						return;
 					}
 
-					if ( child.params.section !== section.id ) {
+					_sectionAttachEvents.call( section );
+
+					section.expanded.bind(
+						function ( expanded ) {
+							var parent = wp.customize.section( section.params.section );
+
+							if ( expanded ) {
+								parent.contentContainer.addClass( 'current-section-parent' );
+							} else {
+								parent.contentContainer.removeClass(
+									'current-section-parent'
+								);
+							}
+						}
+					);
+
+					section.container
+					       .find( '.customize-section-back' )
+					       .off( 'click keydown' )
+					       .on( 'click keydown',
+						       function ( event ) {
+							       if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
+								       return;
+							       }
+
+							       event.preventDefault(); // Keep this AFTER the key filter above.
+
+							       if ( section.expanded() ) {
+								       wp.customize.section( section.params.section ).expand();
+							       }
+						       }
+					       );
+				},
+				embed                : function () {
+					var section = this,
+					    parentContainer;
+
+					if (
+						'colormag_section' !== this.params.type ||
+						'undefined' === typeof this.params.section
+					) {
+						_sectionEmbed.call( section );
+
 						return;
 					}
 
-					children.push( child );
-				} );
+					_sectionEmbed.call( section );
 
-				children.sort( api.utils.prioritySort );
-				var activeCount = 0;
-				_( children ).each( function ( child ) {
-					if ( 'undefined' !== typeof child.isContextuallyActive ) {
-						if ( child.active() && child.isContextuallyActive() ) {
-							activeCount += 1;
-						}
-					} else {
-						if ( child.active() ) {
-							activeCount += 1;
-						}
+					parentContainer = $(
+						'#sub-accordion-section-' + this.params.section
+					);
+
+					parentContainer.append( section.headContainer );
+				},
+				isContextuallyActive : function () {
+					var section     = this,
+					    children,
+					    activeCount = 0;
+
+					if ( 'colormag_section' !== this.params.type ) {
+						return _sectionIsContextuallyActive.call( this );
 					}
-				} );
 
-				return activeCount !== 0;
+					children = this._children( 'section', 'control' );
+
+					wp.customize.section.each(
+						function ( child ) {
+							if ( ! child.params.section ) {
+								return;
+							}
+
+							if ( child.params.section !== section.id ) {
+								return;
+							}
+
+							children.push( child );
+						}
+					);
+
+					children.sort( wp.customize.utils.prioritySort );
+
+					_( children ).each(
+						function ( child ) {
+							if ( 'undefined' !== typeof child.isContextuallyActive ) {
+								if ( child.active() && child.isContextuallyActive() ) {
+									activeCount += 1;
+								}
+							} else {
+								if ( child.active() ) {
+									activeCount += 1;
+								}
+							}
+						}
+					);
+
+					return (
+						0 !== activeCount
+					);
+				}
 			}
-		} );
+		);
 	}
 )( jQuery );
 
