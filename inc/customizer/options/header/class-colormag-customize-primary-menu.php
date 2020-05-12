@@ -101,6 +101,17 @@ class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
 				'priority' => 205,
 			),
 
+			// Search icon in menu display option.
+			array(
+				'name'     => 'colormag_search_icon_in_menu',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to display the Search Icon in the primary menu', 'colormag' ),
+				'section'  => 'colormag_header_primary_menu_section',
+				'priority' => 210,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
