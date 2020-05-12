@@ -93,6 +93,36 @@ class ColorMag_Customize_Design_General_Options  extends ColorMag_Customize_Base
 				'priority'  => 10,
 			),
 
+			// Default layout for single posts page only option.
+			array(
+				'name'      => 'colormag_default_single_posts_layout',
+				'default'   => 'right_sidebar',
+				'type'      => 'control',
+				'control'   => 'colormag-radio-image',
+				'label'     => esc_html__( 'Default layout for single posts only', 'colormag' ),
+				'section'   => 'colormag_design_general_section',
+				'choices'   => array(
+					'right_sidebar'               => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
+					),
+					'left_sidebar'                => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/left-sidebar.png',
+					),
+					'no_sidebar_full_width'       => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
+					),
+					'no_sidebar_content_centered' => array(
+						'label' => '',
+						'url'   => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
+					),
+				),
+				'image_col' => 2,
+				'priority'  => 15,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
