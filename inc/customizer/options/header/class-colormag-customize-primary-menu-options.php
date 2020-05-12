@@ -2,7 +2,7 @@
 /**
  * Class to include Header Primary Menu customize options.
  *
- * Class ColorMag_Customize_Primary_Menu
+ * Class ColorMag_Customize_Primary_Menu_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Header Primary Menu customize options.
  *
- * Class ColorMag_Customize_Primary_Menu
+ * Class ColorMag_Customize_Primary_Menu_Options
  */
-class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
@@ -178,4 +178,4 @@ class ColorMag_Customize_Primary_Menu extends ColorMag_Customize_Base_Option {
 
 }
 
-return new ColorMag_Customize_Primary_Menu();
+return new ColorMag_Customize_Primary_Menu_Options();

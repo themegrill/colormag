@@ -2,7 +2,7 @@
 /**
  * Class to include Header General customize options.
  *
- * Class ColorMag_Customize_Header_General
+ * Class ColorMag_Customize_Header_General_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Header General customize options.
  *
- * Class ColorMag_Customize_Header_General
+ * Class ColorMag_Customize_Header_General_Options
  */
-class ColorMag_Customize_Header_General extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Header_General_Options extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
@@ -68,4 +68,4 @@ class ColorMag_Customize_Header_General extends ColorMag_Customize_Base_Option {
 
 }
 
-return new ColorMag_Customize_Header_General();
+return new ColorMag_Customize_Header_General_Options();

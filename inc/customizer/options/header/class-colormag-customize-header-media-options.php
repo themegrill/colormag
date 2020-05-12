@@ -2,7 +2,7 @@
 /**
  * Class to include Header Media customize options.
  *
- * Class ColorMag_Customize_Header_Media
+ * Class ColorMag_Customize_Header_Media_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Header Media customize options.
  *
- * Class ColorMag_Customize_Header_Media
+ * Class ColorMag_Customize_Header_Media_Options
  */
-class ColorMag_Customize_Header_Media extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
@@ -69,4 +69,4 @@ class ColorMag_Customize_Header_Media extends ColorMag_Customize_Base_Option {
 	}
 }
 
-return new ColorMag_Customize_Header_Media();
+return new ColorMag_Customize_Header_Media_Options();
