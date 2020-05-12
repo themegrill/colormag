@@ -95,6 +95,13 @@
   top: 30px;
 }
 /**
+ * Editor control CSS.
+ */
+
+.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
+  width: 100%;
+}
+/**
  * Group control CSS.
  */
 
@@ -218,20 +225,6 @@
   margin-bottom: 15px;
 }
 /**
- * Group control CSS.
- */
-
-.customize-control-colormag-hidden.customize-control {
-  margin-top: 0;
-}
-/**
- * Editor control CSS.
- */
-
-.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
-  width: 100%;
-}
-/**
  * Heading control CSS.
  */
 
@@ -260,6 +253,13 @@
 .customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
   margin-top: 10px;
   padding: 0 12px;
+}
+/**
+ * Group control CSS.
+ */
+
+.customize-control-colormag-hidden.customize-control {
+  margin-top: 0;
 }
 /**
  * Radio image control CSS.
@@ -291,7 +291,8 @@
 
 .customize-control-colormag-radio-image .image-col-1:after,
 .customize-control-colormag-radio-image .image-col-2:after,
-.customize-control-colormag-radio-image .image-col-3:after {
+.customize-control-colormag-radio-image .image-col-3:after,
+.customize-control-colormag-radio-image .image-col-4:after {
   content: '';
   clear: both;
   display: block;
@@ -316,6 +317,15 @@
 }
 
 .customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.customize-control-colormag-radio-image .image-col-4 label {
+  width: 24%;
+  margin-right: 1%;
+}
+
+.customize-control-colormag-radio-image .image-col-4 label:nth-of-type(4n) {
   margin-right: 0;
 }
 /**
