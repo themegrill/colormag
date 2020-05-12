@@ -162,30 +162,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 5,
 			),
 
-			// Default layout section.
-			array(
-				'name'  => 'colormag_default_layout_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Default layout', 'colormag' ),
-				'panel' => 'colormag_design_options',
-			),
-
-			// Default layout for pages section.
-			array(
-				'name'  => 'colormag_default_page_layout_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Default layout for pages only', 'colormag' ),
-				'panel' => 'colormag_design_options',
-			),
-
-			// Default layout for single posts section.
-			array(
-				'name'  => 'colormag_default_single_posts_layout_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Default layout for single posts only', 'colormag' ),
-				'panel' => 'colormag_design_options',
-			),
-
 			// Primary color section.
 			array(
 				'name'  => 'colormag_primary_color_setting',
