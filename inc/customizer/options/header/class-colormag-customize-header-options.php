@@ -36,24 +36,6 @@ class ColorMag_Customize_Header_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Random posts icon in menu display option.
-			array(
-				'name'      => 'colormag_random_post_in_menu',
-				'default'   => 0,
-				'type'      => 'control',
-				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to display the Random Post Icon in the primary menu', 'colormag' ),
-				'section'   => 'colormag_random_post_in_menu_section',
-				'transport' => $customizer_selective_refresh,
-				'partial'   => array(
-					'selector'        => '.random-post',
-					'render_callback' => array(
-						'ColorMag_Customizer_Partials',
-						'render_random_post',
-					),
-				),
-			),
-
 			// New responsive menu enable/disable option.
 			array(
 				'name'    => 'colormag_responsive_menu',
