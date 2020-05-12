@@ -31,7 +31,25 @@ class ColorMag_Customize_Header_Media extends ColorMag_Customize_Base_Option {
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			// Header image position option.
+			array(
+				'name'     => 'colormag_header_image_position',
+				'default'  => 'position_two',
+				'type'     => 'control',
+				'control'  => 'radio',
+				'label'    => esc_html__( 'Header image display position', 'colormag' ),
+				'section'  => 'header_image',
+				'choices'  => array(
+					'position_one'   => esc_html__( 'Display the Header image just above the site title/text.', 'colormag' ),
+					'position_two'   => esc_html__( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
+					'position_three' => esc_html__( 'Display the Header image below main/primary menu.', 'colormag' ),
+				),
+				'priority' => 10,
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 

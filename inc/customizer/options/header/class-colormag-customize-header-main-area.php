@@ -47,7 +47,7 @@ class ColorMag_Customize_Header_Main_Area extends ColorMag_Customize_Base_Option
 					'show_both'        => esc_html__( 'Show Both', 'colormag' ),
 					'disable'          => esc_html__( 'Disable', 'colormag' ),
 				),
-				'priority' => 5,
+				'priority' => 10,
 			),
 
 		);
