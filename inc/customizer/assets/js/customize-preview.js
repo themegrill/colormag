@@ -8,33 +8,65 @@
 
 ( function ( $ ) {
 
-	// Site title
-	wp.customize( 'blogname', function ( value ) {
-		value.bind( function ( to ) {
-			$( '#site-title a' ).text( to );
-		} );
-	} );
+	// Site title.
+	wp.customize(
+		'blogname',
+		function ( value ) {
+			value.bind(
+				function ( to ) {
+					$( '#site-title a' ).text( to );
+				}
+			);
+		}
+	);
 
 	// Site description.
-	wp.customize( 'blogdescription', function ( value ) {
-		value.bind( function ( to ) {
-			$( '#site-description' ).text( to );
-		} );
-	} );
-
-	// Site Layout Option
-	wp.customize( 'colormag_site_layout', function ( value ) {
-		value.bind( function ( layout ) {
-				var site_layout = layout;
-
-				if ( site_layout === 'wide_layout' ) {
-					$( 'body' ).addClass( 'wide' );
-				} else if ( site_layout === 'boxed_layout' ) {
-					$( 'body' ).removeClass( 'wide' );
+	wp.customize(
+		'blogdescription',
+		function ( value ) {
+			value.bind(
+				function ( to ) {
+					$( '#site-description' ).text( to );
 				}
-			}
-		);
-	} );
+			);
+		}
+	);
+
+	// Site Layout Option.
+	wp.customize(
+		'colormag_site_layout',
+		function ( value ) {
+			value.bind(
+				function ( layout ) {
+					var site_layout = layout;
+
+					if ( 'wide_layout' === site_layout ) {
+						$( 'body' ).removeClass( 'box-layout' ).addClass( 'wide' );
+					} else if ( 'boxed_layout' === site_layout ) {
+						$( 'body' ).removeClass( 'wide' ).addClass( 'box-layout' );
+					}
+				}
+			);
+		}
+	);
+
+	// Footer Main Area Display Type.
+	wp.customize(
+		'colormag_main_footer_layout_display_type',
+		function ( value ) {
+			value.bind(
+				function ( layout ) {
+					var display_type = layout;
+
+					if ( display_type === 'type_two' ) {
+						$( '#colophon' ).removeClass( 'colormag-footer--classic-bordered' ).addClass( 'colormag-footer--classic' );
+					} else if ( display_type === 'type_one' ) {
+						$( '#colophon' ).removeClass( 'colormag-footer--classic colormag-footer--classic-bordered' );
+					}
+				}
+			);
+		}
+	);
 
 	// Primary Color Option
 	wp.customize( 'colormag_primary_color', function ( value ) {
@@ -122,20 +154,6 @@
 			$( 'head #colormag-internal-primary-color' ).remove();
 			$( 'head' ).append( primaryColorStyle );
 		} );
-	} );
-
-	// Footer Main Area Display Type
-	wp.customize( 'colormag_main_footer_layout_display_type', function ( value ) {
-		value.bind( function ( layout ) {
-				var display_type = layout;
-
-				if ( display_type === 'type_two' ) {
-					$( '#colophon' ).removeClass( 'colormag-footer--classic-bordered' ).addClass( 'colormag-footer--classic' );
-				} else if ( display_type === 'type_one' ) {
-					$( '#colophon' ).removeClass( 'colormag-footer--classic colormag-footer--classic-bordered' );
-				}
-			}
-		);
 	} );
 
 } )( jQuery );
