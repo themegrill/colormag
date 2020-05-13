@@ -55,6 +55,19 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'priority' => 10,
 			),
 
+			/**
+			 * Related posts options.
+			 */
+			// Related posts heading separator.
+			array(
+				'name'     => 'colormag_related_posts_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Related Posts', 'colormag' ),
+				'section'  => 'colormag_blog_single_post_section',
+				'priority' => 305,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
