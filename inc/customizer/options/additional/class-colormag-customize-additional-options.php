@@ -64,16 +64,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 				),
 			),
 
-			// Featured image display in single post page option.
-			array(
-				'name'    => 'colormag_featured_image_show',
-				'default' => 0,
-				'type'    => 'control',
-				'control' => 'checkbox',
-				'label'   => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
-				'section' => 'colormag_featured_image_show_setting',
-			),
-
 			// Featured image display in single page option.
 			array(
 				'name'    => 'colormag_featured_image_single_page_show',
