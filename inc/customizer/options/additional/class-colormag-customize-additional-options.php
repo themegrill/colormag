@@ -64,16 +64,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 				),
 			),
 
-			// Featured image popup enable/disable option.
-			array(
-				'name'    => 'colormag_featured_image_popup',
-				'default' => 0,
-				'type'    => 'control',
-				'control' => 'checkbox',
-				'label'   => esc_html__( 'Check to enable the lightbox for the featured images in single post', 'colormag' ),
-				'section' => 'colormag_featured_image_popup_setting',
-			),
-
 			// Featured image display in single post page option.
 			array(
 				'name'    => 'colormag_featured_image_show',
