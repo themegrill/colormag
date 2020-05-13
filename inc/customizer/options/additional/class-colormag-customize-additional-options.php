@@ -36,20 +36,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 
 		$configs = array(
 
-			// Related posts display from option.
-			array(
-				'name'    => 'colormag_related_posts',
-				'default' => 'categories',
-				'type'    => 'control',
-				'control' => 'radio',
-				'label'   => esc_html__( 'Related Posts Must Be Shown As:', 'colormag' ),
-				'section' => 'colormag_related_posts_section',
-				'choices' => array(
-					'categories' => esc_html__( 'Related Posts By Categories', 'colormag' ),
-					'tags'       => esc_html__( 'Related Posts By Tags', 'colormag' ),
-				),
-			),
-
 			// Featured image display in single page option.
 			array(
 				'name'    => 'colormag_featured_image_single_page_show',
