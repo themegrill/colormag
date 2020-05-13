@@ -93,9 +93,26 @@ class ColorMag_Dynamic_CSS {
 
 		}
 
+		$parse_css .= self::render_custom_output();
+
 		$parse_css .= $dynamic_css;
 
 		return apply_filters( 'colormag_theme_dynamic_css', $parse_css );
+
+	}
+
+
+	/**
+	 * Function to output Custom CSS code, which does not have the specific CSS design option, ie, static CSS code.
+	 *
+	 * @return string
+	 */
+	public static function render_custom_output() {
+
+		// Generate dynamic CSS.
+		$colormag_custom_css = '';
+
+		return $colormag_custom_css;
 
 	}
 
