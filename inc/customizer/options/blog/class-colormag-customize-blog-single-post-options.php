@@ -31,6 +31,9 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
 		$configs = array(
 
 			// Featured image popup enable/disable option.
@@ -66,6 +69,21 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'label'    => esc_html__( 'Related Posts', 'colormag' ),
 				'section'  => 'colormag_blog_single_post_section',
 				'priority' => 305,
+			),
+
+			// Related posts enable/disable option.
+			array(
+				'name'      => 'colormag_related_posts_activate',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'checkbox',
+				'label'     => esc_html__( 'Check to activate the related posts', 'colormag' ),
+				'section'   => 'colormag_blog_single_post_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
+					'selector' => '.related-posts',
+				),
+				'priority'  => 310,
 			),
 
 		);

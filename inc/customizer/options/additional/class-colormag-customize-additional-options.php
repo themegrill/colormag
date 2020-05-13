@@ -36,20 +36,6 @@ class ColorMag_Customize_Additional_Options extends ColorMag_Customize_Base_Opti
 
 		$configs = array(
 
-			// Related posts enable/disable option.
-			array(
-				'name'      => 'colormag_related_posts_activate',
-				'default'   => 0,
-				'type'      => 'control',
-				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to activate the related posts', 'colormag' ),
-				'section'   => 'colormag_related_posts_section',
-				'transport' => $customizer_selective_refresh,
-				'partial'   => array(
-					'selector' => '.related-posts',
-				),
-			),
-
 			// Related posts display from option.
 			array(
 				'name'    => 'colormag_related_posts',
