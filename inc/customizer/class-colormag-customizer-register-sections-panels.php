@@ -225,14 +225,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Additional sections.
 			 */
-			// Related posts section.
-			array(
-				'name'  => 'colormag_related_posts_section',
-				'type'  => 'section',
-				'title' => esc_html__( 'Related Posts', 'colormag' ),
-				'panel' => 'colormag_additional_options',
-			),
-
 			// Featured image in single page section.
 			array(
 				'name'  => 'colormag_featured_image_show_setting_single_page',
