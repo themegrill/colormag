@@ -78,7 +78,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'        => 'panel',
 				'title'       => esc_html__( 'Footer Options', 'colormag' ),
 				'description' => esc_html__( 'Change the Footer Settings from here as you want', 'colormag' ),
-				'priority'    => 515,
+				'priority'    => 10,
 			),
 
 			/**
