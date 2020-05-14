@@ -201,6 +201,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Footer sections.
 			 */
+			// General section.
+			array(
+				'name'     => 'colormag_footer_general_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'General', 'colormag' ),
+				'panel'    => 'colormag_footer_options',
+				'priority' => 5,
+			),
+
 			// Footer main area display type section.
 			array(
 				'name'  => 'colormag_main_footer_layout_display_type_section',
