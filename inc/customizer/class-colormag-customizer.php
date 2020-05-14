@@ -482,9 +482,12 @@ class ColorMag_Customizer {
 		// Design customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-general-options.php';
 
-		// Post/Page/Blog Options.
+		// Post/Page/Blog customize Options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/blog/class-colormag-customize-blog-single-post-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/blog/class-colormag-customize-blog-single-page-options.php';
+
+		// Footer customize options.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-general-options.php';
 
 		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-options.php';
