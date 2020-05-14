@@ -35,29 +35,69 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 
 			// Header image position option.
 			array(
-				'name'     => 'colormag_header_image_position',
-				'default'  => 'position_two',
-				'type'     => 'control',
-				'control'  => 'radio',
-				'label'    => esc_html__( 'Header image display position', 'colormag' ),
-				'section'  => 'header_image',
-				'choices'  => array(
+				'name'       => 'colormag_header_image_position',
+				'default'    => 'position_two',
+				'type'       => 'control',
+				'control'    => 'radio',
+				'label'      => esc_html__( 'Header image display position', 'colormag' ),
+				'section'    => 'header_image',
+				'choices'    => array(
 					'position_one'   => esc_html__( 'Display the Header image just above the site title/text.', 'colormag' ),
 					'position_two'   => esc_html__( 'Default: Display the Header image between site title/text and the main/primary menu.', 'colormag' ),
 					'position_three' => esc_html__( 'Display the Header image below main/primary menu.', 'colormag' ),
 				),
-				'priority' => 10,
+				'dependency' => array(
+					'conditions' => array(
+						array(
+							'header_image',
+							'!=',
+							'',
+						),
+						array(
+							'header_video',
+							'!=',
+							'',
+						),
+						array(
+							'external_header_video',
+							'!=',
+							'',
+						),
+					),
+					'operator'   => 'OR',
+				),
+				'priority'   => 10,
 			),
 
 			// Header image link to home page option.
 			array(
-				'name'     => 'colormag_header_image_link',
-				'default'  => 0,
-				'type'     => 'control',
-				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to make header image link back to home page', 'colormag' ),
-				'section'  => 'header_image',
-				'priority' => 15,
+				'name'       => 'colormag_header_image_link',
+				'default'    => 0,
+				'type'       => 'control',
+				'control'    => 'checkbox',
+				'label'      => esc_html__( 'Check to make header image link back to home page', 'colormag' ),
+				'section'    => 'header_image',
+				'dependency' => array(
+					'conditions' => array(
+						array(
+							'header_image',
+							'!=',
+							'',
+						),
+						array(
+							'header_video',
+							'!=',
+							'',
+						),
+						array(
+							'external_header_video',
+							'!=',
+							'',
+						),
+					),
+					'operator'   => 'OR',
+				),
+				'priority'   => 15,
 			),
 
 		);
