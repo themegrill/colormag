@@ -131,6 +131,15 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'priority' => $social_links_count,
 			);
 
+			// Social links separator.
+			$configs[] = array(
+				'name'     => $colormag_social_link['id'] . '_separator',
+				'type'     => 'control',
+				'control'  => 'colormag-divider',
+				'section'  => 'colormag_social_section',
+				'priority' => $social_links_count,
+			);
+
 			$social_links_count ++;
 
 		}
