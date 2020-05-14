@@ -43,7 +43,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'type'      => 'control',
 				'control'   => 'checkbox',
 				'label'     => esc_html__( 'Check to activate social links area', 'colormag' ),
-				'section'   => 'colormag_social_link_activate_settings',
+				'section'   => 'colormag_social_link_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
 					'selector' => '.social-links',
@@ -57,7 +57,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'type'    => 'control',
 				'control' => 'radio',
 				'label'   => esc_html__( 'Social links to display on:', 'colormag' ),
-				'section' => 'colormag_social_link_activate_settings',
+				'section' => 'colormag_social_link_section',
 				'choices' => array(
 					'header' => esc_html__( 'Header only', 'colormag' ),
 					'footer' => esc_html__( 'Footer only', 'colormag' ),
@@ -113,7 +113,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'type'    => 'control',
 				'control' => 'url',
 				'label'   => $colormag_social_link['title'],
-				'section' => 'colormag_social_link_activate_settings',
+				'section' => 'colormag_social_link_section',
 			);
 
 			// Social links open in new tab enable/disable option.
@@ -123,7 +123,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'type'    => 'control',
 				'control' => 'checkbox',
 				'label'   => esc_html__( 'Check to open in new tab', 'colormag' ),
-				'section' => 'colormag_social_link_activate_settings',
+				'section' => 'colormag_social_link_section',
 			);
 
 		}

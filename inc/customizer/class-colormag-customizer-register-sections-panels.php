@@ -204,10 +204,11 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 */
 			// Social links activate section.
 			array(
-				'name'  => 'colormag_social_link_activate_settings',
-				'type'  => 'section',
-				'title' => esc_html__( 'Activate social links area', 'colormag' ),
-				'panel' => 'colormag_social_options',
+				'name'     => 'colormag_social_link_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Activate social links area', 'colormag' ),
+				'panel'    => 'colormag_social_options',
+				'priority' => 5,
 			),
 
 			/**
