@@ -31,6 +31,9 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		$header_image_value = get_theme_mod( 'header_image' ) === 'remove-header' ? 'remove-header' : '';
+		$header_video_value = get_theme_mod( 'header_video' ) === 0 ? 0 : '';
+
 		$configs = array(
 
 			// Header image position option.
@@ -51,12 +54,12 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 						array(
 							'header_image',
 							'!=',
-							'',
+							$header_image_value,
 						),
 						array(
 							'header_video',
 							'!=',
-							'',
+							$header_video_value,
 						),
 						array(
 							'external_header_video',
@@ -82,12 +85,12 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 						array(
 							'header_image',
 							'!=',
-							'',
+							$header_image_value,
 						),
 						array(
 							'header_video',
 							'!=',
-							'',
+							$header_video_value,
 						),
 						array(
 							'external_header_video',
