@@ -191,7 +191,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
-			// Additional Panel.
+			// Additional Section.
 			array(
 				'name'     => 'colormag_additional_section',
 				'type'     => 'section',
@@ -219,17 +219,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'  => 'section',
 				'title' => esc_html__( 'Footer Main Area Display Type', 'colormag' ),
 				'panel' => 'colormag_footer_options',
-			),
-
-			/**
-			 * Additional sections.
-			 */
-			// Featured image in single page section.
-			array(
-				'name'  => 'colormag_featured_image_show_setting_single_page',
-				'type'  => 'section',
-				'title' => esc_html__( 'Featured Image In Single Page', 'colormag' ),
-				'panel' => 'colormag_additional_options',
 			),
 
 			/**
