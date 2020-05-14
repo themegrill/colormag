@@ -48,21 +48,23 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'partial'   => array(
 					'selector' => '.social-links',
 				),
+				'priority'  => 5,
 			),
 
 			// Social links location option.
 			array(
-				'name'    => 'colormag_social_link_location_option',
-				'default' => 'both',
-				'type'    => 'control',
-				'control' => 'radio',
-				'label'   => esc_html__( 'Social links to display on:', 'colormag' ),
-				'section' => 'colormag_social_link_section',
-				'choices' => array(
+				'name'     => 'colormag_social_link_location_option',
+				'default'  => 'both',
+				'type'     => 'control',
+				'control'  => 'radio',
+				'label'    => esc_html__( 'Social links to display on:', 'colormag' ),
+				'section'  => 'colormag_social_link_section',
+				'choices'  => array(
 					'header' => esc_html__( 'Header only', 'colormag' ),
 					'footer' => esc_html__( 'Footer only', 'colormag' ),
 					'both'   => esc_html__( 'Both header and footer', 'colormag' ),
 				),
+				'priority' => 10,
 			),
 
 		);
