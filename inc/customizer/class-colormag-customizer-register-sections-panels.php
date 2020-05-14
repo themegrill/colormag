@@ -36,15 +36,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			/**
 			 * Register panels.
 			 */
-			// Social Options.
-			array(
-				'name'        => 'colormag_social_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Social Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Social Links Settings from here as you want', 'colormag' ),
-				'priority'    => 10,
-			),
-
 			// Header Options.
 			array(
 				'name'        => 'colormag_header_options',
@@ -98,6 +89,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_general_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'General Options', 'colormag' ),
+				'priority' => 5,
+			),
+
+			// Social sections.
+			array(
+				'name'     => 'colormag_social_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Social Options', 'colormag' ),
 				'priority' => 5,
 			),
 
@@ -197,18 +196,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'Additional Options', 'colormag' ),
 				'priority' => 10,
-			),
-
-			/**
-			 * Social sections.
-			 */
-			// Social links activate section.
-			array(
-				'name'     => 'colormag_social_link_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Activate social links area', 'colormag' ),
-				'panel'    => 'colormag_social_options',
-				'priority' => 5,
 			),
 
 			/**
