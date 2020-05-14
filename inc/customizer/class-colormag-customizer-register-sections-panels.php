@@ -69,7 +69,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'        => 'panel',
 				'title'       => esc_html__( 'Additional Options', 'colormag' ),
 				'description' => esc_html__( 'Change the Additional Settings from here as you want', 'colormag' ),
-				'priority'    => 515,
+				'priority'    => 10,
 			),
 
 			// Category Color Panel.
