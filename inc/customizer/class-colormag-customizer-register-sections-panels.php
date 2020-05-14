@@ -63,15 +63,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority'    => 10,
 			),
 
-			// Additional Panel.
-			array(
-				'name'        => 'colormag_additional_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Additional Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Additional Settings from here as you want', 'colormag' ),
-				'priority'    => 10,
-			),
-
 			// Category Color Panel.
 			array(
 				'name'        => 'colormag_category_color_panel',
@@ -198,6 +189,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'title'    => esc_html__( 'Page', 'colormag' ),
 				'panel'    => 'colormag_blog_options',
 				'priority' => 20,
+			),
+
+			// Additional Panel.
+			array(
+				'name'     => 'colormag_additional_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Additional Options', 'colormag' ),
+				'priority' => 10,
 			),
 
 			/**
