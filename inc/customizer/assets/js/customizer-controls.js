@@ -54,12 +54,10 @@
 								$.each(
 									toggles,
 									function ( i, toggle ) {
-
 										// Loop through the controls for the toggle.
 										$.each(
 											toggle.controls,
 											function ( k, controlId ) {
-
 												// Get the control object.
 												api.control(
 													controlId,

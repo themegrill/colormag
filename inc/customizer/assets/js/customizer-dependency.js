@@ -30,6 +30,7 @@
 			 */
 			init : function () {
 				var $this = this;
+
 				$this.handleDependency();
 				$this.hideEmptySections();
 
@@ -64,7 +65,6 @@
 						var control = api.control( id );
 
 						$this.checkControlVisibility( control, id );
-
 					}
 				);
 			},
@@ -76,7 +76,6 @@
 			 * @method checkControlVisibility
 			 */
 			checkControlVisibility : function ( control, id ) {
-
 				var $this  = this,
 				    values = api.get();
 
@@ -90,8 +89,7 @@
 						    operator         = ! _.isUndefined( dependency_param.operator ) ? dependency_param.operator : 'AND';
 
 						if ( 'undefined' !== typeof conditions ) {
-							check = $this.checkDependency( conditions, values, operator );
-
+							check                     = $this.checkDependency( conditions, values, operator );
 							this.checked_controls[id] = check;
 
 							if ( ! check ) {
@@ -101,6 +99,7 @@
 							}
 						}
 					}
+
 				}
 			},
 
@@ -124,12 +123,10 @@
 					    value;
 
 					if ( ! _.isUndefined( ColorMagCustomizerControlsToggle[testValue] ) ) {
-
 						var conditions = ! _.isUndefined( ColorMagCustomizerControlsToggle[testValue]['conditions'] ) ? ColorMagCustomizerControlsToggle[testValue]['conditions'] : ColorMagCustomizerControlsToggle[testValue];
 						var operator   = ! _.isUndefined( ColorMagCustomizerControlsToggle[testValue]['operator'] ) ? ColorMagCustomizerControlsToggle[testValue]['operator'] : 'AND';
 
 						if ( ! _.isUndefined( conditions ) ) {
-
 							// Check visibility for dependent controls also.
 							if ( ! control.checkDependency( conditions, values, operator ) ) {
 								returnNow = true;
@@ -151,7 +148,6 @@
 						check = control.compareValues( value, cond, cond_val );
 					}
 
-
 				} else if ( _.isArray( testValue ) ) {
 
 					$.each(
@@ -164,12 +160,10 @@
 							    test_val  = ! _.isUndefined( values[cond_key] ) ? values[cond_key] : '';
 
 							if ( 'undefined' !== typeof ColorMagCustomizerControlsToggle[cond_key] ) {
-
 								var conditions = ! _.isUndefined( ColorMagCustomizerControlsToggle[cond_key]['conditions'] ) ? ColorMagCustomizerControlsToggle[cond_key]['conditions'] : ColorMagCustomizerControlsToggle[cond_key];
 								var operator   = ! _.isUndefined( ColorMagCustomizerControlsToggle[cond_key]['operator'] ) ? ColorMagCustomizerControlsToggle[cond_key]['operator'] : 'AND';
 
 								if ( ! _.isUndefined( conditions ) ) {
-
 									// Check visibility for dependent controls also.
 									if ( ! control.checkDependency( conditions, values, operator ) ) {
 										check = false;
@@ -180,6 +174,7 @@
 									} else {
 										check           = true;
 										var control_obj = api.control( cond_key );
+
 										control_obj.container.removeClass( 'colormag-hide' );
 									}
 								}
@@ -188,7 +183,6 @@
 							}
 
 							if ( check ) {
-
 								if ( 'AND' == compare_operator ) {
 									if ( ! control.compareValues( test_val, cond_cond, cond_val ) ) {
 										check = false;
@@ -205,15 +199,18 @@
 								}
 							}
 						}
+
 					);
 
 					// Break loop in case of OR operator.
 					if ( returnNow && 'OR' == compare_operator ) {
 						check = true;
 					}
+
 				}
 
 				return check;
+
 			},
 
 			/**
@@ -296,6 +293,7 @@
 								}
 							)
 						}
+
 						equal = _.isEmpty( _v ) ? false : true;
 						break;
 
@@ -324,11 +322,11 @@
 				}
 
 				return equal;
+
 			},
 
 			/**
 			 * Hide Section without Controls.
-			 *
 			 */
 			hideEmptySections : function () {
 
