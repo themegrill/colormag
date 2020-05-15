@@ -34,10 +34,14 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Variable declarations.
 		 */
+		// Primary color.
 		$primary_color = get_theme_mod( 'colormag_primary_color', '#289dcc' );
 		$primary_dark  = colormag_darkcolor( $primary_color, - 30 );
 
+
+		// Generate dynamic CSS.
 		$parse_css = '';
+
 
 		// For primary color option.
 		$primary_color_css = array(
@@ -93,7 +97,10 @@ class ColorMag_Dynamic_CSS {
 
 		}
 
+
+		// Add the custom CSS rendered dynamically, which is static.
 		$parse_css .= self::render_custom_output();
+
 
 		$parse_css .= $dynamic_css;
 
@@ -111,6 +118,7 @@ class ColorMag_Dynamic_CSS {
 
 		// Generate dynamic CSS.
 		$colormag_custom_css = '';
+
 
 		return $colormag_custom_css;
 
