@@ -94,25 +94,30 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 
 			// Date in header display type option.
 			array(
-				'name'      => 'colormag_date_display_type',
-				'default'   => 'theme_default',
-				'type'      => 'control',
-				'control'   => 'radio',
-				'label'     => esc_html__( 'Date in header display type:', 'colormag' ),
-				'section'   => 'colormag_header_top_bar_section',
-				'transport' => $customizer_selective_refresh,
-				'choices'   => array(
+				'name'       => 'colormag_date_display_type',
+				'default'    => 'theme_default',
+				'type'       => 'control',
+				'control'    => 'radio',
+				'label'      => esc_html__( 'Date in header display type:', 'colormag' ),
+				'section'    => 'colormag_header_top_bar_section',
+				'transport'  => $customizer_selective_refresh,
+				'choices'    => array(
 					'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
 					'wordpress_date_setting' => esc_html__( 'From WordPress Date Setting', 'colormag' ),
 				),
-				'partial'   => array(
+				'partial'    => array(
 					'selector'        => '.date-in-header',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_date_display_type',
 					),
 				),
-				'priority'  => 115,
+				'dependency' => array(
+					'colormag_date_display',
+					'!=',
+					0,
+				),
+				'priority'   => 115,
 			),
 
 		);
