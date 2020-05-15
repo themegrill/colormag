@@ -51,21 +51,27 @@ class ColorMag_Customize_Category_Color_Options extends ColorMag_Customize_Base_
 		$options = array_merge( $options, $configs );
 
 		// Category color options.
-		$args       = array(
+		$args           = array(
 			'orderby'    => 'id',
 			'hide_empty' => 0,
 		);
-		$categories = get_categories( $args );
+		$categories     = get_categories( $args );
+		$priority_count = 110;
 
 		foreach ( $categories as $category_list ) {
+
 			$configs[] = array(
-				'name'    => 'colormag_category_color_' . get_cat_id( $category_list->cat_name ),
-				'default' => '',
-				'type'    => 'control',
-				'control' => 'colormag-color',
-				'label'   => $category_list->cat_name,
-				'section' => 'colormag_category_color_setting',
+				'name'     => 'colormag_category_color_' . get_cat_id( $category_list->cat_name ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-color',
+				'label'    => $category_list->cat_name,
+				'section'  => 'colormag_category_color_section',
+				'priority' => $priority_count,
 			);
+
+			$priority_count ++;
+
 		}
 
 		$options = array_merge( $options, $configs );
