@@ -490,7 +490,6 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-general-options.php';
 
 		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-additional-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/category-color/class-colormag-customize-category-color-options.php';
 
