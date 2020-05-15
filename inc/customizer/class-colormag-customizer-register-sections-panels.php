@@ -38,47 +38,42 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 */
 			// Header Options.
 			array(
-				'name'        => 'colormag_header_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Header Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Header Settings from here as you want', 'colormag' ),
-				'priority'    => 10,
+				'name'     => 'colormag_header_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Header Options', 'colormag' ),
+				'priority' => 10,
 			),
 
 			// Design Options.
 			array(
-				'name'        => 'colormag_design_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Design Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Design Settings from here as you want', 'colormag' ),
-				'priority'    => 10,
+				'name'     => 'colormag_design_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Design Options', 'colormag' ),
+				'priority' => 10,
 			),
 
 			// Post/Page/Blog Options.
 			array(
-				'name'        => 'colormag_blog_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Post/Page/Blog Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Post/Page/Blog Settings from here as you want', 'colormag' ),
-				'priority'    => 10,
+				'name'     => 'colormag_blog_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Post/Page/Blog Options', 'colormag' ),
+				'priority' => 10,
 			),
 
 			// Category Color Panel.
 			array(
-				'name'        => 'colormag_category_color_panel',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Category Color Options', 'colormag' ),
-				'description' => esc_html__( 'Change the color of each category items as you want.', 'colormag' ),
-				'priority'    => 535,
+				'name'     => 'colormag_category_color_panel',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Category Color Options', 'colormag' ),
+				'priority' => 535,
 			),
 
 			// Footer Options.
 			array(
-				'name'        => 'colormag_footer_options',
-				'type'        => 'panel',
-				'title'       => esc_html__( 'Footer Options', 'colormag' ),
-				'description' => esc_html__( 'Change the Footer Settings from here as you want', 'colormag' ),
-				'priority'    => 10,
+				'name'     => 'colormag_footer_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Footer Options', 'colormag' ),
+				'priority' => 10,
 			),
 
 			/**
