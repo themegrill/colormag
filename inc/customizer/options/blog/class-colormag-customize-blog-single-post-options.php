@@ -88,17 +88,22 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 
 			// Related posts display from option.
 			array(
-				'name'     => 'colormag_related_posts',
-				'default'  => 'categories',
-				'type'     => 'control',
-				'control'  => 'radio',
-				'label'    => esc_html__( 'Related Posts Must Be Shown As:', 'colormag' ),
-				'section'  => 'colormag_blog_single_post_section',
-				'choices'  => array(
+				'name'       => 'colormag_related_posts',
+				'default'    => 'categories',
+				'type'       => 'control',
+				'control'    => 'radio',
+				'label'      => esc_html__( 'Related Posts Must Be Shown As:', 'colormag' ),
+				'section'    => 'colormag_blog_single_post_section',
+				'choices'    => array(
 					'categories' => esc_html__( 'Related Posts By Categories', 'colormag' ),
 					'tags'       => esc_html__( 'Related Posts By Tags', 'colormag' ),
 				),
-				'priority' => 315,
+				'dependency' => array(
+					'colormag_related_posts_activate',
+					'!=',
+					0,
+				),
+				'priority'   => 315,
 			),
 
 		);
