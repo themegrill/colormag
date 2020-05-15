@@ -31,12 +31,32 @@ class ColorMag_Customize_Category_Color_Options extends ColorMag_Customize_Base_
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
+		$configs = array(
+
+			/**
+			 * Category color settings options.
+			 */
+			// Category color settings heading separator.
+			array(
+				'name'     => 'colormag_category_color_settings_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Category Color Settings', 'colormag' ),
+				'section'  => 'colormag_category_color_section',
+				'priority' => 105,
+			),
+
+		);
+
+		$options = array_merge( $options, $configs );
+
 		// Category color options.
 		$args       = array(
 			'orderby'    => 'id',
 			'hide_empty' => 0,
 		);
 		$categories = get_categories( $args );
+
 		foreach ( $categories as $category_list ) {
 			$configs[] = array(
 				'name'    => 'colormag_category_color_' . get_cat_id( $category_list->cat_name ),
