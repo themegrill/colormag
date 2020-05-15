@@ -53,27 +53,37 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
 			// Social links location option.
 			array(
-				'name'     => 'colormag_social_link_location_option',
-				'default'  => 'both',
-				'type'     => 'control',
-				'control'  => 'radio',
-				'label'    => esc_html__( 'Social links to display on:', 'colormag' ),
-				'section'  => 'colormag_social_section',
-				'choices'  => array(
+				'name'       => 'colormag_social_link_location_option',
+				'default'    => 'both',
+				'type'       => 'control',
+				'control'    => 'radio',
+				'label'      => esc_html__( 'Social links to display on:', 'colormag' ),
+				'section'    => 'colormag_social_section',
+				'choices'    => array(
 					'header' => esc_html__( 'Header only', 'colormag' ),
 					'footer' => esc_html__( 'Footer only', 'colormag' ),
 					'both'   => esc_html__( 'Both header and footer', 'colormag' ),
 				),
-				'priority' => 10,
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
+				'priority'   => 10,
 			),
 
 			// Social links separator.
 			array(
-				'name'     => 'colormag_social_link_separator',
-				'type'     => 'control',
-				'control'  => 'colormag-divider',
-				'section'  => 'colormag_social_section',
-				'priority' => 15,
+				'name'       => 'colormag_social_link_separator',
+				'type'       => 'control',
+				'control'    => 'colormag-divider',
+				'section'    => 'colormag_social_section',
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
+				'priority'   => 15,
 			),
 
 		);
@@ -120,33 +130,48 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
 			// Social links url option.
 			$configs[] = array(
-				'name'     => $colormag_social_link['id'],
-				'default'  => $colormag_social_link['default'],
-				'type'     => 'control',
-				'control'  => 'url',
-				'label'    => $colormag_social_link['title'],
-				'section'  => 'colormag_social_section',
-				'priority' => $social_links_count,
+				'name'       => $colormag_social_link['id'],
+				'default'    => $colormag_social_link['default'],
+				'type'       => 'control',
+				'control'    => 'url',
+				'label'      => $colormag_social_link['title'],
+				'section'    => 'colormag_social_section',
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
+				'priority'   => $social_links_count,
 			);
 
 			// Social links open in new tab enable/disable option.
 			$configs[] = array(
-				'name'     => $colormag_social_link['id'] . '_checkbox',
-				'default'  => 0,
-				'type'     => 'control',
-				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to open in new tab', 'colormag' ),
-				'section'  => 'colormag_social_section',
-				'priority' => $social_links_count,
+				'name'       => $colormag_social_link['id'] . '_checkbox',
+				'default'    => 0,
+				'type'       => 'control',
+				'control'    => 'checkbox',
+				'label'      => esc_html__( 'Check to open in new tab', 'colormag' ),
+				'section'    => 'colormag_social_section',
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
+				'priority'   => $social_links_count,
 			);
 
 			// Social links separator.
 			$configs[] = array(
-				'name'     => $colormag_social_link['id'] . '_separator',
-				'type'     => 'control',
-				'control'  => 'colormag-divider',
-				'section'  => 'colormag_social_section',
-				'priority' => $social_links_count,
+				'name'       => $colormag_social_link['id'] . '_separator',
+				'type'       => 'control',
+				'control'    => 'colormag-divider',
+				'section'    => 'colormag_social_section',
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
+				'priority'   => $social_links_count,
 			);
 
 			$social_links_count ++;
