@@ -33,21 +33,6 @@ class ColorMag_Customize_Footer_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
-			// Main total footer area display type option.
-			array(
-				'name'      => 'colormag_main_footer_layout_display_type',
-				'default'   => 'type_one',
-				'type'      => 'control',
-				'control'   => 'radio',
-				'label'     => esc_html__( 'Choose the main total footer area display type that you want', 'colormag' ),
-				'section'   => 'colormag_main_footer_layout_display_type_section',
-				'choices'   => array(
-					'type_one' => esc_html__( 'Type 1 (Default)', 'colormag' ),
-					'type_two' => esc_html__( 'Type 2', 'colormag' ),
-				),
-				'transport' => 'postMessage',
-			),
-
 		);
 
 		$options = array_merge( $options, $configs );
