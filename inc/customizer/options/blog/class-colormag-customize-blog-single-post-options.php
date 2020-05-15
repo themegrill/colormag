@@ -36,17 +36,6 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 
 		$configs = array(
 
-			// Featured image popup enable/disable option.
-			array(
-				'name'     => 'colormag_featured_image_popup',
-				'default'  => 0,
-				'type'     => 'control',
-				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to enable the lightbox for the featured images in single post', 'colormag' ),
-				'section'  => 'colormag_blog_single_post_section',
-				'priority' => 5,
-			),
-
 			// Featured image display in single post page option.
 			array(
 				'name'     => 'colormag_featured_image_show',
@@ -55,7 +44,23 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'control'  => 'checkbox',
 				'label'    => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
 				'section'  => 'colormag_blog_single_post_section',
-				'priority' => 10,
+				'priority' => 5,
+			),
+
+			// Featured image popup enable/disable option.
+			array(
+				'name'       => 'colormag_featured_image_popup',
+				'default'    => 0,
+				'type'       => 'control',
+				'control'    => 'checkbox',
+				'label'      => esc_html__( 'Check to enable the lightbox for the featured images in single post', 'colormag' ),
+				'section'    => 'colormag_blog_single_post_section',
+				'dependency' => array(
+					'colormag_featured_image_show',
+					'!=',
+					1,
+				),
+				'priority'   => 10,
 			),
 
 			/**
