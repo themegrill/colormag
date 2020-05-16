@@ -30,7 +30,12 @@ class ColorMag_Dashboard {
 	}
 
 	public function create_menu() {
-		$theme = wp_get_theme();
+		
+		if ( is_child_theme() ) {
+			$theme = wp_get_theme()->parent();
+		} else {
+			$theme = wp_get_theme();
+		}
 
 		/* translators: %s: Theme Name. */
 		$theme_page_name = sprintf( esc_html__( '%s Options', 'colormag' ), $theme->Name );
@@ -48,14 +53,19 @@ class ColorMag_Dashboard {
 	}
 
 	public function option_page() {
-		$theme = wp_get_theme();
+		
+		if ( is_child_theme() ) {
+			$theme = wp_get_theme()->parent();
+		} else {
+			$theme = wp_get_theme();
+		}
 		?>
 		<div class="wrap">
 		<div class="colormag-header">
 			<h1>
 				<?php
 				/* translators: %s: Theme version. */
-				echo sprintf( esc_html__( 'ColorMag %s', 'colormag' ), COLORMAG_THEME_VERSION );
+				echo sprintf( esc_html__( 'ColorMag %s', 'colormag' ), $theme->Version );
 				?>
 			</h1>
 		</div>
