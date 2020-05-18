@@ -1813,6 +1813,19 @@ li.default-menu {
 	display: inline-block;
 }
 
+/*
+404 page design
+--------------------------------------------------------------*/
+.error-404 .page-header .page-title {
+	border: medium none;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.error-404 .page-header, .error-404 p {
+	text-align: center;
+}
+
 /* =FOOTER SOCKET AREA
 ----------------------------------------------- */
 .footer-socket-wrapper {
