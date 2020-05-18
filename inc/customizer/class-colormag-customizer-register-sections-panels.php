@@ -68,6 +68,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 10,
 			),
 
+			// Color Options.
+			array(
+				'name'     => 'colormag_color_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Color Options', 'colormag' ),
+				'priority' => 10,
+			),
+
 			/**
 			 * Register sections.
 			 */
@@ -194,6 +202,18 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'General', 'colormag' ),
 				'panel'    => 'colormag_footer_options',
+				'priority' => 5,
+			),
+
+			/**
+			 * Color sections.
+			 */
+			// General section.
+			array(
+				'name'     => 'colormag_color_general_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'General', 'colormag' ),
+				'panel'    => 'colormag_color_options',
 				'priority' => 5,
 			),
 

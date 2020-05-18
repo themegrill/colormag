@@ -489,6 +489,9 @@ class ColorMag_Customizer {
 		// Footer customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-general-options.php';
 
+		// Color customize options.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/color/class-colormag-customize-color-general-options.php';
+
 		// Additional customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-additional-options.php';
 
