@@ -398,50 +398,54 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 				// For tablet devices.
 				if ( 'tablet' === $device && $size ) {
-					$parse_css .= '@media(max-width:' . $size . 'px){';
-					$parse_css .= $selector . '{';
+					if ( $output_value['font-size']['tablet'] || $output_value['line-height']['tablet'] || $output_value['letter-spacing']['tablet'] ) {
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
 
-					// For font size on tablet.
-					if ( isset( $output_value['font-size']['tablet'] ) && ( $output_value['font-size']['tablet'] != $default_value['font-size']['tablet'] ) ) {
-						$parse_css .= 'font-size:' . $output_value['font-size']['tablet'] . ';';
+						// For font size on tablet.
+						if ( isset( $output_value['font-size']['tablet'] ) && ( $output_value['font-size']['tablet'] != $default_value['font-size']['tablet'] ) ) {
+							$parse_css .= 'font-size:' . $output_value['font-size']['tablet'] . ';';
+						}
+
+						// For line height on tablet.
+						if ( isset( $output_value['line-height']['tablet'] ) && ( $output_value['line-height']['tablet'] != $default_value['line-height']['tablet'] ) ) {
+							$parse_css .= 'line-height:' . $output_value['line-height']['tablet'] . ';';
+						}
+
+						// For letter spacing on tablet.
+						if ( isset( $output_value['letter-spacing']['tablet'] ) && ( $output_value['letter-spacing']['tablet'] != $default_value['letter-spacing']['tablet'] ) ) {
+							$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['tablet'] . ';';
+						}
+
+						$parse_css .= '}';
+						$parse_css .= '}';
 					}
-
-					// For line height on tablet.
-					if ( isset( $output_value['line-height']['tablet'] ) && ( $output_value['line-height']['tablet'] != $default_value['line-height']['tablet'] ) ) {
-						$parse_css .= 'line-height:' . $output_value['line-height']['tablet'] . ';';
-					}
-
-					// For letter spacing on tablet.
-					if ( isset( $output_value['letter-spacing']['tablet'] ) && ( $output_value['letter-spacing']['tablet'] != $default_value['letter-spacing']['tablet'] ) ) {
-						$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['tablet'] . ';';
-					}
-
-					$parse_css .= '}';
-					$parse_css .= '}';
 				}
 
 				// For mobile devices.
 				if ( 'mobile' === $device && $size ) {
-					$parse_css .= '@media(max-width:' . $size . 'px){';
-					$parse_css .= $selector . '{';
+					if ( $output_value['font-size']['mobile'] || $output_value['line-height']['mobile'] || $output_value['letter-spacing']['mobile'] ) {
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
 
-					// For font size on mobile.
-					if ( isset( $output_value['font-size']['mobile'] ) && ( $output_value['font-size']['mobile'] != $default_value['font-size']['mobile'] ) ) {
-						$parse_css .= 'font-size:' . $output_value['font-size']['mobile'] . ';';
+						// For font size on mobile.
+						if ( isset( $output_value['font-size']['mobile'] ) && ( $output_value['font-size']['mobile'] != $default_value['font-size']['mobile'] ) ) {
+							$parse_css .= 'font-size:' . $output_value['font-size']['mobile'] . ';';
+						}
+
+						// For line height on mobile.
+						if ( isset( $output_value['line-height']['mobile'] ) && ( $output_value['line-height']['mobile'] != $default_value['line-height']['mobile'] ) ) {
+							$parse_css .= 'line-height:' . $output_value['line-height']['mobile'] . ';';
+						}
+
+						// For letter spacing on mobile.
+						if ( isset( $output_value['letter-spacing']['mobile'] ) && ( $output_value['letter-spacing']['mobile'] != $default_value['letter-spacing']['mobile'] ) ) {
+							$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['mobile'] . ';';
+						}
+
+						$parse_css .= '}';
+						$parse_css .= '}';
 					}
-
-					// For line height on mobile.
-					if ( isset( $output_value['line-height']['mobile'] ) && ( $output_value['line-height']['mobile'] != $default_value['line-height']['mobile'] ) ) {
-						$parse_css .= 'line-height:' . $output_value['line-height']['mobile'] . ';';
-					}
-
-					// For letter spacing on mobile.
-					if ( isset( $output_value['letter-spacing']['mobile'] ) && ( $output_value['letter-spacing']['mobile'] != $default_value['letter-spacing']['mobile'] ) ) {
-						$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['mobile'] . ';';
-					}
-
-					$parse_css .= '}';
-					$parse_css .= '}';
 				}
 			}
 		}
