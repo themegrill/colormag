@@ -156,14 +156,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 5,
 			),
 
-			// Primary color section.
-			array(
-				'name'  => 'colormag_primary_color_setting',
-				'type'  => 'section',
-				'title' => esc_html__( 'Primary color option', 'colormag' ),
-				'panel' => 'colormag_design_options',
-			),
-
 			/**
 			 * Post/Page/Blog sections.
 			 */
