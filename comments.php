@@ -35,8 +35,8 @@ if ( post_password_required() ) {
 			$comment_count = get_comments_number();
 			if ( '1' === $comment_count ) {
 				printf(
-				/* Translators: %2$s: Post title */
-					esc_html__( 'One thought on &ldquo;%2$s&rdquo;', 'colormag' ),
+				/* Translators: %1$s: Post title */
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'colormag' ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
