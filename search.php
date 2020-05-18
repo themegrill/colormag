@@ -27,13 +27,15 @@ do_action( 'colormag_before_body_content' );
 
 				<header class="page-header">
 					<h1 class="page-title">
-						<?php
-						printf(
+						<span>
+							<?php
+							printf(
 							/* Translators: %s: Search query. */
-							esc_html__( 'Search Results for: %s', 'colormag' ),
-							get_search_query()
-						);
-						?>
+								esc_html__( 'Search Results for: %s', 'colormag' ),
+								get_search_query()
+							);
+							?>
+						</span>
 					</h1>
 				</header><!-- .page-header -->
 
