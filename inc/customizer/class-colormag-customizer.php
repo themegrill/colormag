@@ -498,8 +498,6 @@ class ColorMag_Customizer {
 		// Category color customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/category-color/class-colormag-customize-category-color-options.php';
 
-		require COLORMAG_CUSTOMIZER_DIR . '/options/design/class-colormag-customize-design-options.php';
-
 	}
 
 	/**
