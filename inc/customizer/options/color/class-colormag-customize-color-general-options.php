@@ -31,7 +31,20 @@ class ColorMag_Customize_Color_General_Options extends ColorMag_Customize_Base_O
 	 */
 	public function customizer_options( $options, $wp_customize ) {
 
-		$configs = array();
+		$configs = array(
+
+			// Primary color option.
+			array(
+				'name'     => 'colormag_primary_color',
+				'default'  => '#289dcc',
+				'type'     => 'control',
+				'control'  => 'colormag-color',
+				'label'    => esc_html__( 'Primary Color', 'colormag' ),
+				'section'  => 'colormag_color_general_section',
+				'priority' => 5,
+			),
+
+		);
 
 		$options = array_merge( $options, $configs );
 
