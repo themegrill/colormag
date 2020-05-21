@@ -156,6 +156,9 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
+		// Responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
+
 		$starter_content = array(
 			'widgets'     => array(
 				'colormag_header_sidebar'                          => array(
