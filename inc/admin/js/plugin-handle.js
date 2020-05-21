@@ -13,11 +13,11 @@ jQuery( document ).ready( function ( $ ) {
 		e.preventDefault();
 
 		// Show updating gif icon and update button text.
-		$( this ).addClass( 'updating-message' ).text( foodhuntRedirectDemoPage.btn_text );
+		$( this ).addClass( 'updating-message' ).text( colormagRedirectDemoPage.btn_text );
 
 		var btnData = {
 			action   : 'import_button',
-			security : foodhuntRedirectDemoPage.nonce,
+			security : colormagRedirectDemoPage.nonce,
 		};
 
 		$.ajax( {
@@ -28,11 +28,11 @@ jQuery( document ).ready( function ( $ ) {
 				var redirectUri,
 					dismissNonce,
 					extraUri   = '',
-					btnDismiss = $( '.foodhunt-message-close' );
+					btnDismiss = $( '.colormag-message-close' );
 
 				if ( btnDismiss.length ) {
-					dismissNonce = btnDismiss.attr( 'href' ).split( '_foodhunt_notice_nonce=' )[1];
-					extraUri     = '&_foodhunt_notice_nonce=' + dismissNonce;
+					dismissNonce = btnDismiss.attr( 'href' ).split( '_colormag_notice_nonce=' )[1];
+					extraUri     = '&_colormag_notice_nonce=' + dismissNonce;
 				}
 
 				redirectUri          = response.redirect + extraUri;
