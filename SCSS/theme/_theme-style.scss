@@ -3264,9 +3264,7 @@ Responsive Structure
 			color: #1b7aa0;
 		}
 	}
-}
 
-@media screen and (max-width: 767px) {
 	.no-sidebar-full-width,
 	.no-sidebar {
 
@@ -3275,8 +3273,8 @@ Responsive Structure
 			.entry-content {
 
 				> .alignwide {
-					margin-left: -10px;
-					margin-right: -10px;
+					margin-left: -15px;
+					margin-right: -15px;
 				}
 			}
 		}
@@ -3288,13 +3286,16 @@ Responsive Structure
 				.entry-content {
 
 					> .alignwide {
-						margin-left: -10px;
-						margin-right: -10px;
+						margin-left: -15px;
+						margin-right: -15px;
 					}
 				}
 			}
 		}
 	}
+}
+
+@media screen and (max-width: 767px) {
 }
 
 @media screen and (max-width: 600px) {

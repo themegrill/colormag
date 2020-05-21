@@ -3171,18 +3171,15 @@ Responsive Structure
 	.sub-toggle.active .fa {
 		color: #1b7aa0;
 	}
-}
-
-@media screen and (max-width: 767px) {
 	.no-sidebar-full-width #primary .entry-content > .alignwide,
 	.no-sidebar #primary .entry-content > .alignwide {
-		margin-left: -10px;
-		margin-right: -10px;
+		margin-left: -15px;
+		margin-right: -15px;
 	}
 	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
 	.no-sidebar.box-layout #primary .entry-content > .alignwide {
-		margin-left: -10px;
-		margin-right: -10px;
+		margin-left: -15px;
+		margin-right: -15px;
 	}
 }
 
