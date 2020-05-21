@@ -224,3 +224,51 @@ if ( ! function_exists( 'colormag_links_sanitize' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_customize_partial_blogname' ) ) :
+
+	/**
+	 * Deprecate site title partial refresh function.
+	 */
+	function colormag_customize_partial_blogname() {
+
+		_deprecated_function( __FUNCTION__, '2.0.0', 'ColorMag_Customizer_Partials::render_customize_partial_blogname()' );
+
+		ColorMag_Customizer_Partials::render_customize_partial_blogname();
+
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_customize_partial_blogdescription' ) ) :
+
+	/**
+	 * Deprecate site tagline partial refresh function.
+	 */
+	function colormag_customize_partial_blogdescription() {
+
+		_deprecated_function( __FUNCTION__, '2.0.0', 'ColorMag_Customizer_Partials::render_customize_partial_blogdescription()' );
+
+		ColorMag_Customizer_Partials::render_customize_partial_blogdescription();
+
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_date_display_type' ) ) :
+
+	/**
+	 * Deprecate date display type refresh function.
+	 */
+	function colormag_date_display_type() {
+
+		_deprecated_function( __FUNCTION__, '2.0.0', 'ColorMag_Customizer_Partials::render_date_display_type()' );
+
+		ColorMag_Customizer_Partials::render_date_display_type();
+
+	}
+
+endif;
