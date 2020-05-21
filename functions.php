@@ -471,6 +471,17 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 endif;
 
 /**
+ * Enqueue block editor styles.
+ *
+ * @since ColorMag 1.4.7
+ */
+function colormag_block_editor_styles() {
+	wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600' );
+	wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'colormag_block_editor_styles', 1, 1 );
+
+/**
  * Define Directory Location Constants
  */
 define( 'COLORMAG_PARENT_DIR', get_template_directory() );
