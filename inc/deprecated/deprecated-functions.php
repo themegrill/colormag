@@ -131,3 +131,23 @@ if ( ! function_exists( 'colormag_layout_sanitize' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_color_option_hex_sanitize' ) ) :
+
+	/**
+	 * Deprecate function for hex color sanitization.
+	 *
+	 * @param string $color Input from the customize controls.
+	 *
+	 * @return string
+	 */
+	function colormag_color_option_hex_sanitize( $color ) {
+
+		_deprecated_function( __FUNCTION__, '2.0.0', 'ColorMag_Customizer_Sanitizes::sanitize_hex_color( $color )' );
+
+		return ColorMag_Customizer_Sanitizes::sanitize_hex_color( $color );
+
+	}
+
+endif;
