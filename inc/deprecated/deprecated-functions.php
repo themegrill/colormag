@@ -190,3 +190,21 @@ if ( ! function_exists( 'colormag_color_escaping_option_sanitize' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_checkbox_sanitize' ) ) :
+
+	/**
+	 * Deprecate function for checkbox sanitization.
+	 *
+	 * @param string $input Input from the customize controls.
+	 */
+	function colormag_checkbox_sanitize( $input ) {
+
+		_deprecated_function( __FUNCTION__, '2.0.0', 'ColorMag_Customizer_Sanitizes::sanitize_checkbox( $input )' );
+
+		return ColorMag_Customizer_Sanitizes::sanitize_checkbox( $input );
+
+	}
+
+endif;
