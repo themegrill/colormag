@@ -153,6 +153,9 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		// Gutenberg layout support.
 		add_theme_support( 'align-wide' );
 
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
 		$starter_content = array(
 			'widgets'     => array(
 				'colormag_header_sidebar'                          => array(
