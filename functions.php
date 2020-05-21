@@ -59,10 +59,6 @@ add_action( 'template_redirect', 'colormag_content_width' );
 
 add_action( 'after_setup_theme', 'colormag_setup' );
 
-// Theme version.
-$colormag_theme = wp_get_theme();
-define( 'COLORMAG_THEME_VERSION', $colormag_theme->get( 'Version' ) );
-
 /**
  * All setup functionalities.
  *
@@ -529,11 +525,10 @@ if ( class_exists( 'TG_Demo_Importer' ) ) {
 	require get_template_directory() . '/inc/demo-config.php';
 }
 
-/**
- * Assign the ColorMag version to a variable.
- */
-$theme            = wp_get_theme( 'colormag' );
-$colormag_version = $theme['Version'];
+// Theme version.
+$colormag_theme = wp_get_theme( 'colormag' );
+
+define( 'COLORMAG_THEME_VERSION', $colormag_theme->get( 'Version' ) );
 
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
