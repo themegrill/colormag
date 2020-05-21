@@ -208,3 +208,19 @@ if ( ! function_exists( 'colormag_checkbox_sanitize' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_links_sanitize' ) ) :
+
+	/**
+	 * Deprecate function for false value sanitization.
+	 */
+	function colormag_links_sanitize() {
+
+		_deprecated_function( __FUNCTION__, '2.0.0', 'ColorMag_Customizer_Sanitizes::sanitize_false_values()' );
+
+		return ColorMag_Customizer_Sanitizes::sanitize_false_values();
+
+	}
+
+endif;
