@@ -3156,12 +3156,31 @@ ul.wp-block-gallery {
 Responsive Structure
 --------------------------------------------------------------*/
 @media screen and (max-width: 1200px) {
-
 	.no-sidebar-full-width {
 
-		.alignwide {
-			margin-left: -10px;
-			margin-right: -10px;
+		#primary {
+
+			.entry-content {
+
+				> .alignwide {
+					margin-left: -20px;
+					margin-right: -20px;
+				}
+			}
+		}
+	}
+
+	.no-sidebar {
+
+		#primary {
+
+			.entry-content {
+
+				> .alignwide {
+					margin-left: -50px;
+					margin-right: -50px;
+				}
+			}
 		}
 	}
 }
@@ -3251,12 +3270,29 @@ Responsive Structure
 	.no-sidebar-full-width,
 	.no-sidebar {
 
-		&.box-layout {
-			.alignwide {
-				margin-left: -20px;
-				margin-right: -20px;
-			}
+		#primary {
 
+			.entry-content {
+
+				> .alignwide {
+					margin-left: -10px;
+					margin-right: -10px;
+				}
+			}
+		}
+
+		&.box-layout {
+
+			#primary {
+
+				.entry-content {
+
+					> .alignwide {
+						margin-left: -10px;
+						margin-right: -10px;
+					}
+				}
+			}
 		}
 	}
 }
@@ -3329,17 +3365,29 @@ Responsive Structure
 	.no-sidebar-full-width,
 	.no-sidebar {
 
-		.alignwide {
-			margin-left: 0;
-			margin-right: 0;
+		#primary {
+
+			.entry-content {
+
+				> .alignwide {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
 		}
 
 		&.box-layout {
-			.alignwide {
-				margin-left: 0;
-				margin-right: 0;
-			}
 
+			#primary {
+
+				.entry-content {
+
+					> .alignwide {
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+			}
 		}
 	}
 }

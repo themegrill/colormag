@@ -3082,9 +3082,13 @@ ul.wp-block-gallery {
 Responsive Structure
 --------------------------------------------------------------*/
 @media screen and (max-width: 1200px) {
-	.no-sidebar-full-width .alignwide {
-		margin-left: -10px;
-		margin-right: -10px;
+	.no-sidebar-full-width #primary .entry-content > .alignwide {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.no-sidebar #primary .entry-content > .alignwide {
+		margin-left: -50px;
+		margin-right: -50px;
 	}
 }
 
@@ -3170,10 +3174,15 @@ Responsive Structure
 }
 
 @media screen and (max-width: 767px) {
-	.no-sidebar-full-width.box-layout .alignwide,
-	.no-sidebar.box-layout .alignwide {
-		margin-left: -20px;
-		margin-right: -20px;
+	.no-sidebar-full-width #primary .entry-content > .alignwide,
+	.no-sidebar #primary .entry-content > .alignwide {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
+	.no-sidebar.box-layout #primary .entry-content > .alignwide {
+		margin-left: -10px;
+		margin-right: -10px;
 	}
 }
 
@@ -3241,13 +3250,13 @@ Responsive Structure
 	.gallery-columns-9 .gallery-item {
 		width: 25%;
 	}
-	.no-sidebar-full-width .alignwide,
-	.no-sidebar .alignwide {
+	.no-sidebar-full-width #primary .entry-content > .alignwide,
+	.no-sidebar #primary .entry-content > .alignwide {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	.no-sidebar-full-width.box-layout .alignwide,
-	.no-sidebar.box-layout .alignwide {
+	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
+	.no-sidebar.box-layout #primary .entry-content > .alignwide {
 		margin-left: 0;
 		margin-right: 0;
 	}
