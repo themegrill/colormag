@@ -1925,20 +1925,23 @@ a#scroll-up:hover {
 	overflow: hidden;
 }
 
-.no-sidebar-full-width .alignfull,
-.no-sidebar .alignfull {
+.no-sidebar-full-width #primary .entry-content > .alignfull,
+.no-sidebar #primary .entry-content > .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: unset;
 }
 
-.no-sidebar-full-width .alignfull img,
-.no-sidebar .alignfull img {
-	max-width: unset;
+.no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover-image, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover-image {
+	width: unset;
 }
 
-.no-sidebar-full-width .alignwide,
-.no-sidebar .alignwide {
+.no-sidebar-full-width #primary .entry-content > .alignwide,
+.no-sidebar #primary .entry-content > .alignwide {
 	margin-left: -100px;
 	margin-right: -100px;
 	max-width: unset;
@@ -1949,10 +1952,18 @@ a#scroll-up:hover {
 	overflow: hidden;
 }
 
-.no-sidebar-full-width.box-layout .alignwide,
-.no-sidebar.box-layout .alignwide {
-	margin-left: -100px;
-	margin-right: -100px;
+.no-sidebar-full-width.box-layout #primary .entry-content > .alignfull,
+.no-sidebar.box-layout #primary .entry-content > .alignfull {
+	margin-left: -30px;
+	margin-right: -30px;
+}
+
+.no-sidebar-full-width.box-layout #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width.box-layout #primary .entry-content > .alignfull.wp-block-cover-image, .no-sidebar-full-width.box-layout #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width.box-layout #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar.box-layout #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar.box-layout #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar.box-layout #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar.box-layout #primary .entry-content > .alignfull.wp-block-cover-image {
+	width: unset;
 }
 
 .widget_featured_posts .article-content .above-entry-meta .cat-links a {

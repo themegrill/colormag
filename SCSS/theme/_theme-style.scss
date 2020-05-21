@@ -1933,20 +1933,29 @@ a#scroll-up:hover {
 .no-sidebar {
 	overflow: hidden;
 
-	.alignfull {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		max-width: unset;
+	#primary {
 
-		img {
-			max-width: unset;
+		.entry-content {
+
+			> .alignfull {
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				max-width: unset;
+
+				&.wp-block-cover,
+				&.wp-block-cover-image,
+				&.wp-block-cover,
+				&.wp-block-cover-image {
+					width: unset;
+				}
+			}
+
+			> .alignwide {
+				margin-left: -100px;
+				margin-right: -100px;
+				max-width: unset;
+			}
 		}
-	}
-
-	.alignwide {
-		margin-left: -100px;
-		margin-right: -100px;
-		max-width: unset;
 	}
 
 	&.box-layout {
@@ -1954,11 +1963,24 @@ a#scroll-up:hover {
 		#main {
 			overflow: hidden;
 		}
-		.alignwide {
-			margin-left: -100px;
-			margin-right: -100px;
-		}
 
+		#primary {
+
+			.entry-content {
+
+				> .alignfull {
+					margin-left: -30px;
+					margin-right: -30px;
+
+					&.wp-block-cover,
+					&.wp-block-cover-image,
+					&.wp-block-cover,
+					&.wp-block-cover-image {
+						width: unset;
+					}
+				}
+			}
+		}
 	}
 }
 
