@@ -151,3 +151,17 @@ if ( ! function_exists( 'colormag_color_option_hex_sanitize' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'colormag_color_escaping_option_sanitize' ) ) :
+
+	/**
+	 * Deprecate function for color escaping sanitization.
+	 *
+	 * @param string $input Input from the customize controls.
+	 */
+	function colormag_color_escaping_option_sanitize( $input ) {
+		_deprecated_function( __FUNCTION__, '2.0.0' );
+	}
+
+endif;
