@@ -50,7 +50,8 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version TBD =
+* Add   - Required header fields: `Tested up to` and `Requires PHP` in style.css.
 * Fix   - Theme name and version in the admin dashboard while child theme active.
 * Tweak - Add and improve theme-related notices.
 
