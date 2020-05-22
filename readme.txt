@@ -51,7 +51,9 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
-* Add - Required header fields: `Tested up to` and `Requires PHP` in style.css.
+* Add   - Required header fields: `Tested up to` and `Requires PHP` in style.css.
+* Fix   - Theme name and version in the admin dashboard while child theme active.
+* Tweak - Add and improve theme-related notices.
 
 = Version - 1.4.6 - 2020-04-17 =
 * Added - New Demo (ColorMag Wild Magazine) - Engage the nature lovers to your wildlife magazine website with this ColorMag demo.
