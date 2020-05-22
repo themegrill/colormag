@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Add - Required header fields: `Tested up to` and `Requires PHP` in style.css.
+
 = Version - 1.4.6 - 2020-04-17 =
 * Added - New Demo (ColorMag Wild Magazine) - Engage the nature lovers to your wildlife magazine website with this ColorMag demo.
 * Added - New Demo (ColorMag Entertainment News) - Use this ColorMag demo to provide entertaining information on your news website.
