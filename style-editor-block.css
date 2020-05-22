@@ -75,3 +75,15 @@
 .editor-styles-wrapper h6.wp-block {
 	font-size: 22px;
 }
+
+/* Horizontal Lines */
+.editor-styles-wrapper .wp-block hr {
+	background-color: #eaeaea;
+	border: 0;
+	height: 1px;
+	margin: 30px 0;
+}
+
+.editor-styles-wrapper .wp-block hr.is-style-dots {
+	height: auto;
+}
