@@ -3128,7 +3128,7 @@ Responsive Structure
 		margin-left: -50px;
 		margin-right: -50px;
 	}
-	.no-sidebar.box-layout #primary .entry-content > .alignfull {
+	.no-sidebar #primary .entry-content > .alignfull {
 		margin-left: -100px;
 		margin-right: -100px;
 	}
@@ -3227,6 +3227,10 @@ Responsive Structure
 	.no-sidebar.box-layout #primary .entry-content > .alignfull {
 		margin-left: -30px;
 		margin-right: -30px;
+	}
+	.no-sidebar #primary .entry-content > .alignfull {
+		margin-left: -15px;
+		margin-right: -15px;
 	}
 }
 
