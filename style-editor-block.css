@@ -11,3 +11,11 @@
 .editor-styles-wrapper > * {
 	font-family: 'Open Sans', serif;
 }
+
+.editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
+	padding: 5px 0 0;
+	font-size: 32px;
+	line-height: 1.2;
+	color: #333333;
+	font-weight: normal;
+}
