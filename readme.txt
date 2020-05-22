@@ -51,6 +51,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
+* Fix   - Theme name and version in the admin dashboard while child theme active.
 * Tweak - Add and improve theme-related notices.
 
 = Version - 1.4.6 - 2020-04-17 =
