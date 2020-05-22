@@ -159,7 +159,6 @@
 
 .editor-styles-wrapper dl {
 	margin-bottom: 24px;
-	font-size: 20px;
 }
 
 .editor-styles-wrapper dt {
@@ -265,4 +264,96 @@
 	font-weight: 300;
 	letter-spacing: 0.05em;
 	float: right;
+}
+
+/* Forms */
+.editor-styles-wrapper input[type="search"] {
+	appearance: none !important;
+}
+
+.editor-styles-wrapper input[type="text"],
+.editor-styles-wrapper input[type="email"],
+.editor-styles-wrapper input[type="search"],
+.editor-styles-wrapper input[type="url"],
+.editor-styles-wrapper textarea {
+	appearance: none !important;
+	padding: 1%;
+	border: 1px solid #eaeaea;
+	line-height: 20px;
+	width: 95%;
+	margin: 0 0 30px;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+}
+
+.editor-styles-wrapper input[type="text"]:focus,
+.editor-styles-wrapper input[type="email"]:focus,
+.editor-styles-wrapper input[type="search"]:focus,
+.editor-styles-wrapper input[type="password"]:focus,
+.editor-styles-wrapper input[type="url"]:focus,
+.editor-styles-wrapper textarea:focus {
+	border: 1px solid #eaeaea;
+}
+
+.editor-styles-wrapper input[type="reset"],
+.editor-styles-wrapper input[type="button"],
+.editor-styles-wrapper input[type="submit"],
+.editor-styles-wrapper .wp-block button,
+.editor-styles-wrapper .wp-block button:not(.components-button) {
+	margin-bottom: 30px;
+	padding: 10px 20px;
+	background-color: #289dcc;
+	border: 0px;
+	transition: background-color 0.3s linear 0s;
+	border-radius: 3px;
+	font-size: 18px;
+	appearance: none !important;
+	cursor: pointer;
+	display: inline-block;
+	color: #ffffff;
+}
+
+.editor-styles-wrapper button:not(.components-button),
+.editor-styles-wrapper input[type="reset"]:hover,
+.editor-styles-wrapper input[type="button"]:hover,
+.editor-styles-wrapper input[type="submit"]:hover,
+.editor-styles-wrapper .wp-block button:hover,
+.editor-styles-wrapper .wp-block button:not(.components-button) {
+	background-color: #33363b;
+}
+
+.editor-styles-wrapper input[type="reset"]:active,
+.editor-styles-wrapper input[type="button"]:active,
+.editor-styles-wrapper input[type="submit"]:active,
+.editor-styles-wrapper .wp-block button:not(.components-button) {
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.editor-styles-wrapper .wp-block .mce-widget button {
+	font-size: 13px;
+	line-height: 1.53846153;
+	padding: 2px 3px;
+	box-shadow: none;
+	background-color: transparent;
+	color: #595959;
+	margin-bottom: 0;
+	appearance: inherit !important;
+	cursor: inherit;
+}
+
+.block-editor-default-block-appender .block-editor-inserter__toggle.components-button {
+	padding: inherit;
+}
+
+/* Links */
+.editor-styles-wrapper a,
+.wp-block-file .wp-block-file__textlink {
+	color: #289dcc;
+	text-decoration: none;
+}
+
+.editor-styles-wrapper a:hover,
+.editor-styles-wrapper a:focus,
+.editor-styles-wrapper a:active {
+	text-decoration: underline;
 }
