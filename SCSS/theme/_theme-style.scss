@@ -261,50 +261,54 @@ li > ol {
 
 /* =BLOCKQUOTE
 ----------------------------------------------- */
-blockquote {
+blockquote,
+.wp-block-quote {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
-	background-color: #289dcc;
-	color: #ffffff;
+	background-color: $primary;
+	color: $white;
 	border-radius: 5px;
-}
+	border-left: 0;
 
-blockquote p {
-	font-size: 20px;
-	font-family: 'Open Sans', serif;
-	line-height: 1.4;
-	position: relative;
-	padding-top: 13px;
-	padding-left: 40px;
-}
+	p {
+		font-size: 16px;
+		font-family: 'Open Sans', serif;
+		line-height: 1.4;
+		position: relative;
+		padding-top: 0;
+		padding-left: 15px;
 
-blockquote p:before {
-	content: "\f10d";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	text-decoration: inherit;
-	color: #ffffff;
-	font-size: 60px;
-	position: absolute;
-	top: -27px;
-	left: -27px;
-}
+		&::before {
+			content: "\f10d";
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: inherit;
+			color: $white;
+			font-size: 32px;
+			position: absolute;
+			top: -27px;
+			left: -27px;
+		}
+	}
 
-blockquote em, blockquote i, blockquote cite {
-	font-style: normal;
-}
+	a {
+		color: $white;
+		text-decoration: underline;
+	}
 
-blockquote cite {
-	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	letter-spacing: 0.05em;
-	float: right;
-}
+	em,
+	i,
+	cite {
+		font-style: normal;
+	}
 
-blockquote a {
-	color: #ffffff;
-	text-decoration: underline;
+	cite {
+		font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		float: right;
+	}
 }
 
 /* =FORMS

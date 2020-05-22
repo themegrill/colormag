@@ -204,7 +204,11 @@ pre {
 	margin-bottom: 20px;
 	overflow: auto;
 	padding: 20px;
-	border: 1px solid #eaeaea;
+	border: 1px solid #EAEAEA;
+	font-family: "Courier 10 Pitch",Courier,monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
 }
 
 pre, code, kbd, var, samp, tt {
@@ -282,50 +286,61 @@ li > ol {
 
 /* =BLOCKQUOTE
 ----------------------------------------------- */
-blockquote {
+blockquote,
+.wp-block-quote {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
 	background-color: #289dcc;
-	color: #ffffff;
+	color: #fff;
 	border-radius: 5px;
+	border-left: 0;
 }
 
-blockquote p {
-	font-size: 20px;
+blockquote p,
+.wp-block-quote p {
+	font-size: 16px;
 	font-family: 'Open Sans', serif;
 	line-height: 1.4;
 	position: relative;
-	padding-top: 13px;
-	padding-left: 40px;
+	padding-top: 0;
+	padding-left: 15px;
 }
 
-blockquote p:before {
+blockquote p::before,
+.wp-block-quote p::before {
 	content: "\f10d";
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
-	color: #ffffff;
-	font-size: 60px;
+	color: #fff;
+	font-size: 32px;
 	position: absolute;
 	top: -27px;
 	left: -27px;
 }
 
-blockquote em, blockquote i, blockquote cite {
+blockquote a,
+.wp-block-quote a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+blockquote em,
+blockquote i,
+blockquote cite,
+.wp-block-quote em,
+.wp-block-quote i,
+.wp-block-quote cite {
 	font-style: normal;
 }
 
-blockquote cite {
+blockquote cite,
+.wp-block-quote cite {
 	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.05em;
 	float: right;
-}
-
-blockquote a {
-	color: #ffffff;
-	text-decoration: underline;
 }
 
 /* =FORMS
