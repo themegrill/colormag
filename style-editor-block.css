@@ -298,7 +298,6 @@
 .editor-styles-wrapper input[type="reset"],
 .editor-styles-wrapper input[type="button"],
 .editor-styles-wrapper input[type="submit"],
-.editor-styles-wrapper .wp-block button,
 .editor-styles-wrapper .wp-block button:not(.components-button) {
 	margin-bottom: 30px;
 	padding: 10px 20px;
@@ -313,11 +312,9 @@
 	color: #ffffff;
 }
 
-.editor-styles-wrapper button:not(.components-button),
 .editor-styles-wrapper input[type="reset"]:hover,
 .editor-styles-wrapper input[type="button"]:hover,
 .editor-styles-wrapper input[type="submit"]:hover,
-.editor-styles-wrapper .wp-block button:hover,
 .editor-styles-wrapper .wp-block button:not(.components-button) {
 	background-color: #33363b;
 }
@@ -356,4 +353,24 @@
 .editor-styles-wrapper a:focus,
 .editor-styles-wrapper a:active {
 	text-decoration: underline;
+}
+
+/* Alignments */
+.editor-styles-wrapper .alignleft {
+	display: inline;
+	float: left;
+	margin-right: 30px;
+}
+
+.editor-styles-wrapper .alignright {
+	display: inline;
+	float: right;
+	margin-left: 30px;
+}
+
+.editor-styles-wrapper .aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
