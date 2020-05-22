@@ -179,7 +179,11 @@ pre {
 	margin-bottom: 20px;
 	overflow: auto;
 	padding: 20px;
-	border: 1px solid #eaeaea;
+	border: 1px solid #EAEAEA;
+	font-family: "Courier 10 Pitch",Courier,monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
 }
 
 pre, code, kbd, var, samp, tt {

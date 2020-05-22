@@ -10,6 +10,7 @@
 
 .editor-styles-wrapper > * {
 	font-family: 'Open Sans', serif;
+	color: #444444;
 }
 
 .editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
@@ -94,4 +95,113 @@
 .editor-styles-wrapper p {
 	margin-bottom: 15px;
 	font-size: 15px;
+}
+
+.editor-styles-wrapper strong {
+	font-weight: bold;
+}
+
+.editor-styles-wrapper cite,
+.editor-styles-wrapper em,
+.editor-styles-wrapper i {
+	font-style: italic;
+}
+
+.editor-styles-wrapper code,
+.editor-styles-wrapper kbd,
+.editor-styles-wrapper var,
+.editor-styles-wrapper samp,
+.editor-styles-wrapper tt {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
+}
+
+.editor-styles-wrapper abbr,
+.editor-styles-wrapper acronym,
+.editor-styles-wrapper dfn {
+	border-bottom: 1px dotted #777777;
+	cursor: help;
+}
+
+.editor-styles-wrapper address {
+	display: block;
+	font-style: italic;
+	margin: 0 0 15px;
+}
+
+.editor-styles-wrapper ins {
+	background: #f8f8f8;
+}
+
+.editor-styles-wrapper table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+.editor-styles-wrapper sup,
+.editor-styles-wrapper sub {
+	font-size: 10px;
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.editor-styles-wrapper sup {
+	bottom: 1ex;
+}
+
+.editor-styles-wrapper sub {
+	top: .5ex;
+}
+
+.editor-styles-wrapper dl {
+	margin-bottom: 24px;
+	font-size: 20px;
+}
+
+.editor-styles-wrapper dt {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.editor-styles-wrapper dd {
+	margin-bottom: 24px;
+}
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+	list-style: none;
+}
+
+.editor-styles-wrapper ol {
+	list-style: decimal;
+}
+
+.editor-styles-wrapper ul {
+	list-style: square;
+}
+
+.editor-styles-wrapper li > ul,
+.editor-styles-wrapper li > ol {
+	margin: 0 0 0 10px;
+}
+
+.editor-styles-wrapper li {
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+.editor-styles-wrapper pre {
+	background-color: #ffffff;
+	margin-bottom: 20px;
+	overflow: auto;
+	padding: 20px;
+	border: 1px solid #eaeaea;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
 }
