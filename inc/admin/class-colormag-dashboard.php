@@ -26,7 +26,7 @@ class ColorMag_Dashboard {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'colormag-admin-dashboard', get_template_directory_uri() . '/css/admin/dashboard.css' );
+		wp_enqueue_style( 'colormag-admin-dashboard', get_template_directory_uri() . '/inc/admin/css/admin.css' );
 	}
 
 	public function create_menu() {
@@ -44,7 +44,7 @@ class ColorMag_Dashboard {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( 'colormag-dashboard', get_template_directory_uri() . '/css/admin/dashboard.css', array(), COLORMAG_THEME_VERSION );
+		wp_enqueue_style( 'colormag-dashboard', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), COLORMAG_THEME_VERSION );
 	}
 
 	public function option_page() {
