@@ -3079,6 +3079,16 @@ ul.wp-block-gallery {
 }
 
 /*--------------------------------------------------------------
+Gutenberg Blocks Layout.
+--------------------------------------------------------------*/
+.wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-gallery.aligncenter,
+.wp-block-social-links.alignleft,
+.wp-block-social-links.alignright,
+.wp-block-social-links.aligncenter {
+	display: flex;
+}
+
+/*--------------------------------------------------------------
 Responsive Structure
 --------------------------------------------------------------*/
 @media screen and (max-width: 1200px) {
