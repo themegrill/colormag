@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.4.6\n"
+"Project-Id-Version: ColorMag 1.4.7\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-04-17 08:35:06+00:00\n"
+"POT-Creation-Date: 2020-05-22 10:59:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:83
 msgid "Primary Menu"
 msgstr ""
 
@@ -97,105 +97,80 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:41
-msgid "Activating "
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:47
+#: inc/admin/class-colormag-admin.php:38
 msgid "Processing..."
 msgstr ""
 
-#: inc/admin/class-colormag-admin.php:146
-msgid "Action failed. Please refresh the page and retry."
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:150
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:173
-msgid "Dismiss"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "ColorMag"
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:184
-#. Translators: 1. Welcome page link, 2. Closing of link for Welcome page
-msgid ""
-"Welcome! Thank you for choosing ColorMag! To fully take advantage of the "
-"best our theme can offer please make sure you visit our %swelcome page%s."
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:191
-msgid ""
-"Clicking the button below will install and activate the ThemeGrill demo "
-"importer plugin."
-msgstr ""
-
-#: inc/admin/class-colormag-admin.php:194
-msgid "Get started with ColorMag"
-msgstr ""
-
-#: inc/admin/class-colormag-dashboard.php:36
+#: inc/admin/class-colormag-dashboard.php:41
 #. translators: %s: Theme Name.
 msgid "%s Options"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:58
+#: inc/admin/class-colormag-dashboard.php:68
 #. translators: %s: Theme version.
 msgid "ColorMag %s"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:67
+#: inc/admin/class-colormag-dashboard.php:77
 #. translators: %s: Theme Name.
 msgid "Welcome to %s!"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:73
+#: inc/admin/class-colormag-dashboard.php:83
 #. translators: %s: Theme Name.
 msgid "Important links to get you started with %s"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:79
+#: inc/admin/class-colormag-dashboard.php:89
 msgid "Get Started"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:82
+#: inc/admin/class-colormag-dashboard.php:92
 msgid "Learn Basics"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:87
+#: inc/admin/class-colormag-dashboard.php:97
 msgid "Next Steps"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:89
+#: inc/admin/class-colormag-dashboard.php:99
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:90
+#: inc/admin/class-colormag-dashboard.php:100
 msgid "Starter Demos"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:91
+#: inc/admin/class-colormag-dashboard.php:101
 msgid "Premium Version"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:96
+#: inc/admin/class-colormag-dashboard.php:106
 msgid "Further Actions"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:98
-#: inc/admin/class-colormag-theme-review-notice.php:106
+#: inc/admin/class-colormag-dashboard.php:108
+#: inc/admin/class-colormag-theme-review-notice.php:95
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:99
+#: inc/admin/class-colormag-dashboard.php:109
 msgid "Leave a review"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:80
+#: inc/admin/class-colormag-notice.php:59
+#: inc/admin/class-colormag-notice.php:78
+#: inc/admin/class-colormag-welcome-notice.php:77
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/admin/class-colormag-notice.php:63
+#: inc/admin/class-colormag-notice.php:82
+#: inc/admin/class-colormag-welcome-notice.php:81
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:68
 #. Translators: %1$s current user display name.
 msgid ""
 "Howdy, %1$s! It seems that you have been using this theme for more than 15 "
@@ -205,16 +180,50 @@ msgid ""
 "amazing features in the future, for free!"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:91
+#: inc/admin/class-colormag-theme-review-notice.php:80
 msgid "Sure"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:96
+#: inc/admin/class-colormag-theme-review-notice.php:85
+#: inc/admin/class-colormag-upgrade-notice.php:95
 msgid "Maybe later"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:101
+#: inc/admin/class-colormag-theme-review-notice.php:90
 msgid "I already did"
+msgstr ""
+
+#: inc/admin/class-colormag-upgrade-notice.php:90
+#. Translators: %1$s current user display name., %2$s this theme name., %3$s
+#. discount coupon code., %4$s discount percentage.
+msgid "Upgrade to pro"
+msgstr ""
+
+#: inc/admin/class-colormag-upgrade-notice.php:100
+msgid "Got pre sales queries?"
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:26
+msgid "Get started with Colormag"
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:46
+msgid "Colormag"
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:54
+#. translators: 1: welcome page link starting html tag, 2: welcome page link
+#. ending html tag.
+msgid ""
+"Welcome! Thank you for choosing Colormag! To fully take advantage of the "
+"best our theme can offer please make sure you visit our %1$swelcome "
+"page%2$s."
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:63
+msgid ""
+"Clicking the button will install and activate the ThemeGrill demo importer "
+"plugin."
 msgstr ""
 
 #: inc/admin/meta-boxes.php:16 inc/admin/meta-boxes.php:18
@@ -614,6 +623,10 @@ msgstr ""
 
 #: inc/customizer.php:801
 msgid "%s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "ColorMag"
 msgstr ""
 
 #: inc/demo-config.php:27
