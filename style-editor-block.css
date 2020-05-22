@@ -19,3 +19,7 @@
 	color: #333333;
 	font-weight: normal;
 }
+
+.wp-block {
+	max-width: 1140px;
+}
