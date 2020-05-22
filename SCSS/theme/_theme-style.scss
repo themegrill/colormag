@@ -1987,6 +1987,12 @@ a#scroll-up:hover {
 						width: unset;
 					}
 				}
+
+				> .alignwide {
+					margin-left: -30px;
+					margin-right: -30px;
+					max-width: unset;
+				}
 			}
 		}
 	}
@@ -3205,6 +3211,20 @@ Responsive Structure
 				> .alignwide {
 					margin-left: -50px;
 					margin-right: -50px;
+				}
+			}
+		}
+
+		&.box-layout {
+
+			#primary {
+
+				.entry-content {
+
+					> .alignfull {
+						margin-left: -100px;
+						margin-right: -100px;
+					}
 				}
 			}
 		}
