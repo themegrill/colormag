@@ -1,0 +1,13 @@
+/* Basic Block Editor CSS */
+.editor-styles-wrapper {
+	background-color: #ffffff;
+	color: #444444;
+	font-size: 16px;
+	font-family: 'Open Sans', serif;
+	line-height: 1.6;
+	word-wrap: break-word;
+}
+
+.editor-styles-wrapper > * {
+	font-family: 'Open Sans', serif;
+}
