@@ -263,7 +263,8 @@ li > ol {
 ----------------------------------------------- */
 blockquote,
 .wp-block-quote,
-.wp-block-quote.is-style-large {
+.wp-block-quote.is-style-large,
+.wp-block-quote.has-text-align-right {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
 	background-color: $primary;
@@ -530,6 +531,7 @@ img#wpstats {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 
 /*****************************************************************/

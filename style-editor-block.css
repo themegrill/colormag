@@ -279,6 +279,12 @@
 	float: right;
 }
 
+.editor-styles-wrapper .wp-block blockquote.has-text-align-right {
+	border-right: 0;
+	border-left: 0;
+	padding: 30px 30px 20px 45px;
+}
+
 /* Forms */
 .editor-styles-wrapper input[type="search"] {
 	appearance: none !important;

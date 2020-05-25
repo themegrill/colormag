@@ -290,7 +290,8 @@ li > ol {
 ----------------------------------------------- */
 blockquote,
 .wp-block-quote,
-.wp-block-quote.is-style-large {
+.wp-block-quote.is-style-large,
+.wp-block-quote.has-text-align-right {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
 	background-color: #289dcc;
@@ -301,7 +302,8 @@ blockquote,
 
 blockquote p,
 .wp-block-quote p,
-.wp-block-quote.is-style-large p {
+.wp-block-quote.is-style-large p,
+.wp-block-quote.has-text-align-right p {
 	font-size: 16px;
 	font-family: 'Open Sans', serif;
 	line-height: 1.4;
@@ -312,7 +314,8 @@ blockquote p,
 
 blockquote p::before,
 .wp-block-quote p::before,
-.wp-block-quote.is-style-large p::before {
+.wp-block-quote.is-style-large p::before,
+.wp-block-quote.has-text-align-right p::before {
 	content: "\f10d";
 	font-family: FontAwesome;
 	font-style: normal;
@@ -327,7 +330,8 @@ blockquote p::before,
 
 blockquote a,
 .wp-block-quote a,
-.wp-block-quote.is-style-large a {
+.wp-block-quote.is-style-large a,
+.wp-block-quote.has-text-align-right a {
 	color: #fff;
 	text-decoration: underline;
 }
@@ -340,13 +344,17 @@ blockquote cite,
 .wp-block-quote cite,
 .wp-block-quote.is-style-large em,
 .wp-block-quote.is-style-large i,
-.wp-block-quote.is-style-large cite {
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.has-text-align-right em,
+.wp-block-quote.has-text-align-right i,
+.wp-block-quote.has-text-align-right cite {
 	font-style: normal;
 }
 
 blockquote cite,
 .wp-block-quote cite,
-.wp-block-quote.is-style-large cite {
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.has-text-align-right cite {
 	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.05em;
@@ -562,6 +570,7 @@ img#wpstats {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 
 /*****************************************************************/
