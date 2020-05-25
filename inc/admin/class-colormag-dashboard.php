@@ -26,11 +26,16 @@ class ColorMag_Dashboard {
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'colormag-admin-dashboard', get_template_directory_uri() . '/css/admin/dashboard.css' );
+		wp_enqueue_style( 'colormag-admin-dashboard', get_template_directory_uri() . '/inc/admin/css/admin.css' );
 	}
 
 	public function create_menu() {
-		$theme = wp_get_theme();
+		
+		if ( is_child_theme() ) {
+			$theme = wp_get_theme()->parent();
+		} else {
+			$theme = wp_get_theme();
+		}
 
 		/* translators: %s: Theme Name. */
 		$theme_page_name = sprintf( esc_html__( '%s Options', 'colormag' ), $theme->Name );
@@ -44,18 +49,23 @@ class ColorMag_Dashboard {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( 'colormag-dashboard', get_template_directory_uri() . '/css/admin/dashboard.css', array(), COLORMAG_THEME_VERSION );
+		wp_enqueue_style( 'colormag-dashboard', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), COLORMAG_THEME_VERSION );
 	}
 
 	public function option_page() {
-		$theme = wp_get_theme();
+		
+		if ( is_child_theme() ) {
+			$theme = wp_get_theme()->parent();
+		} else {
+			$theme = wp_get_theme();
+		}
 		?>
 		<div class="wrap">
 		<div class="colormag-header">
 			<h1>
 				<?php
 				/* translators: %s: Theme version. */
-				echo sprintf( esc_html__( 'ColorMag %s', 'colormag' ), COLORMAG_THEME_VERSION );
+				echo sprintf( esc_html__( 'ColorMag %s', 'colormag' ), $theme->Version );
 				?>
 			</h1>
 		</div>
