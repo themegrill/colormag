@@ -501,6 +501,7 @@ require_once( COLORMAG_INCLUDES_DIR . '/custom-header.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/header-functions.php' );
 require_once( COLORMAG_INCLUDES_DIR . '/customizer.php' );
+require_once( COLORMAG_INCLUDES_DIR . '/customizer/class-colormag-customizer.php' );
 
 /** Add the Elementor compatibility file */
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
