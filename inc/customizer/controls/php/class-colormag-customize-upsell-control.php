@@ -90,7 +90,7 @@ class ColorMag_Customize_Upsell_Control extends ColorMag_Customize_Base_Control 
 			<div class="launch-offer">
 				<?php
 				printf(
-				/* translators: %1$s discount coupon code., %2$s discount percentage */
+					/* translators: %1$s discount coupon code., %2$s discount percentage */
 					esc_html__( 'Use the coupon code %1$s to get %2$s discount (limited time offer). Enjoy!', 'colormag' ),
 					'<span class="coupon-code">save10</span>',
 					'10%'
