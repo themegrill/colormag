@@ -262,7 +262,8 @@ li > ol {
 /* =BLOCKQUOTE
 ----------------------------------------------- */
 blockquote,
-.wp-block-quote {
+.wp-block-quote,
+.wp-block-quote.is-style-large {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
 	background-color: $primary;

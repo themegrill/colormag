@@ -289,7 +289,8 @@ li > ol {
 /* =BLOCKQUOTE
 ----------------------------------------------- */
 blockquote,
-.wp-block-quote {
+.wp-block-quote,
+.wp-block-quote.is-style-large {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
 	background-color: #289dcc;
@@ -299,7 +300,8 @@ blockquote,
 }
 
 blockquote p,
-.wp-block-quote p {
+.wp-block-quote p,
+.wp-block-quote.is-style-large p {
 	font-size: 16px;
 	font-family: 'Open Sans', serif;
 	line-height: 1.4;
@@ -309,7 +311,8 @@ blockquote p,
 }
 
 blockquote p::before,
-.wp-block-quote p::before {
+.wp-block-quote p::before,
+.wp-block-quote.is-style-large p::before {
 	content: "\f10d";
 	font-family: FontAwesome;
 	font-style: normal;
@@ -323,7 +326,8 @@ blockquote p::before,
 }
 
 blockquote a,
-.wp-block-quote a {
+.wp-block-quote a,
+.wp-block-quote.is-style-large a {
 	color: #fff;
 	text-decoration: underline;
 }
@@ -333,12 +337,16 @@ blockquote i,
 blockquote cite,
 .wp-block-quote em,
 .wp-block-quote i,
-.wp-block-quote cite {
+.wp-block-quote cite,
+.wp-block-quote.is-style-large em,
+.wp-block-quote.is-style-large i,
+.wp-block-quote.is-style-large cite {
 	font-style: normal;
 }
 
 blockquote cite,
-.wp-block-quote cite {
+.wp-block-quote cite,
+.wp-block-quote.is-style-large cite {
 	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.05em;

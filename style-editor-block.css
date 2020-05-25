@@ -210,6 +210,7 @@
 }
 
 .editor-styles-wrapper blockquote,
+.editor-styles-wrapper blockquote.is-style-large,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
@@ -220,6 +221,7 @@
 }
 
 .editor-styles-wrapper blockquote p,
+.editor-styles-wrapper blockquote.is-style-large p,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote p {
 	line-height: 1.4;
 	position: relative;
@@ -227,12 +229,14 @@
 	padding-left: 15px;
 }
 
+.wp-block-freeform.block-library-rich-text__tinymce blockquote.is-style-large p,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote p {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
 .editor-styles-wrapper blockquote p::before,
+.editor-styles-wrapper blockquote.is-style-large p::before,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote p::before {
 	content: "\f10d";
 	font-family: FontAwesome;
@@ -247,6 +251,7 @@
 }
 
 .editor-styles-wrapper blockquote a,
+.editor-styles-wrapper blockquote.is-style-large a,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote a {
 	color: #ffffff;
 	text-decoration: underline;
@@ -255,6 +260,9 @@
 .editor-styles-wrapper blockquote em,
 .editor-styles-wrapper blockquote i,
 .editor-styles-wrapper blockquote cite,
+.editor-styles-wrapper blockquote.is-style-large em,
+.editor-styles-wrapper blockquote.is-style-large i,
+.editor-styles-wrapper blockquote.is-style-large cite,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote em,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote i,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote cite {
@@ -263,6 +271,7 @@
 }
 
 .editor-styles-wrapper blockquote cite,
+.editor-styles-wrapper blockquote.is-style-large cite,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote cite {
 	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
