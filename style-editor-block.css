@@ -359,6 +359,46 @@
 	text-decoration: underline;
 }
 
+/* Tables */
+.editor-styles-wrapper table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper .wp-block th {
+	font-weight: bold;
+}
+
+.editor-styles-wrapper th,
+.editor-styles-wrapper td,
+.editor-styles-wrapper .wp-block th,
+.editor-styles-wrapper .wp-block td {
+	border: 1px solid #eaeaea;
+	padding: 6px 10px;
+}
+
+.editor-styles-wrapper caption,
+.editor-styles-wrapper th,
+.editor-styles-wrapper td,
+.editor-styles-wrapper .wp-block caption,
+.editor-styles-wrapper .wp-block th,
+.editor-styles-wrapper .wp-block td {
+	text-align: left;
+}
+
+.editor-styles-wrapper th.has-text-align-center,
+.editor-styles-wrapper td.has-text-align-center {
+	text-align: center;
+}
+
+.editor-styles-wrapper th.has-text-align-right,
+.editor-styles-wrapper td.has-text-align-right {
+	text-align: right;
+}
+
 /* Alignments */
 .editor-styles-wrapper .alignleft,
 .editor-styles-wrapper .wp-block .mce-content-body .alignleft {
