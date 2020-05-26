@@ -74,25 +74,19 @@ class ColorMag_Customize_Upsell_Control extends ColorMag_Customize_Base_Control 
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Flexible Menu Designs', 'colormag' ); ?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Full Width, Grid Blog and Many More', 'colormag' ); ?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Full Width, Grid Blog', 'colormag' ); ?>
 				</li>
 				<li class="upsell-feature"><span
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Different Footer Designs', 'colormag' ); ?>
 				</li>
-				<li class="upsell-feature"><span class="dashicons dashicons-yes"></span>
-					<?php
-					/* Translators: %1$u number of particular feature */
-					echo sprintf( esc_html__( '%1$u+ Customizer Options', 'colormag' ), 100 );
-					?>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '100+ Customizer Options', 'colormag' ); ?>
 				</li>
 				<li class="upsell-feature"><span
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Page Settings', 'colormag' ); ?>
 				</li>
-				<li class="upsell-feature"><span class="dashicons dashicons-yes"></span>
-					<?php
-					/* Translators: %1$u number of particular feature */
-					echo sprintf( esc_html__( '%1$u+ Starter Demos', 'colormag' ), 18 );
-					?>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '18+ Starter Demos', 'colormag' ); ?>
 				</li>
 			</ul>
 
