@@ -100,7 +100,7 @@ class ColorMag_Customize_Upsell_Control extends ColorMag_Customize_Base_Control 
 		</div> <!-- /.colormag-upsell-wrapper -->
 
 		<a class="upsell-cta" target="_blank"
-		   href="<?php echo esc_url( 'https://themegrill.com/colormag-pricing/?utm_source=colormag-dashboard-message&utm_medium=view-pricing-link&utm_campaign=upgrade' ); ?>"><?php esc_html_e( 'View Pricing', 'colormag' ); ?></a>
+		   href="<?php echo esc_url( 'https://themegrill.com/colormag-pricing/?utm_source=colormag-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade' ); ?>"><?php esc_html_e( 'View Pricing', 'colormag' ); ?></a>
 
 		<?php
 	}
