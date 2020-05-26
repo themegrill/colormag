@@ -313,6 +313,16 @@ blockquote,
 	}
 }
 
+blockquote {
+
+	&.wp-block-quote {
+
+		&.has-text-align-right {
+			border-right: 0;
+		}
+	}
+}
+
 /* =FORMS
 ----------------------------------------------- */
 input, textarea {
