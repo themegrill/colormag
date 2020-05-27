@@ -803,24 +803,21 @@ function colormag_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'colormag-upsell',
+		'colormag_upsell',
 		array(
 			'default'           => '',
-			'type'              => 'option',
-			'transport'         => $customizer_selective_refresh,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_editor_sanitize',
+			'sanitize_callback' => 'colormag_links_sanitize',
 		)
 	);
 
 	$wp_customize->add_control(
 		new ColorMag_Upsell_Custom_Control(
 			$wp_customize,
-			'colormag-upsell',
+			'colormag_upsell',
 			array(
-				'label'   => __( 'You can add phone numbers, other contact info here as you like. This box also accepts shortcodes.', 'colormag' ),
 				'section' => 'colormag_upsell_section',
-				'setting' => 'colormag-upsell',
+				'setting' => 'colormag_upsell',
 			)
 		)
 	);
