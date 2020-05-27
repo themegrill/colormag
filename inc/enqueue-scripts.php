@@ -105,8 +105,11 @@ add_action( 'wp_enqueue_scripts', 'colormag_scripts_styles_method' );
  */
 function colormag_block_editor_styles() {
 
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
-	wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
+	wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.' . $suffix . 'css', array(), COLORMAG_THEME_VERSION );
+	wp_style_add_data( 'colormag-block-editor-styles', 'rtl', 'replace' );
 
 }
 
