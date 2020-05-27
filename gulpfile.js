@@ -21,17 +21,6 @@ var paths = {
 		dest : './'
 	},
 
-	blockStyles : {
-		cssmin : {
-			src  : [
-				'./style-editor-block.css',
-				'!./style-editor-block.min.css',
-				'!./style-editor-block-rtl.css'
-			],
-			dest : './'
-		}
-	},
-
 	js : {
 		src  : [
 			'./js/*.js',
@@ -203,15 +192,6 @@ function sassCompile() {
 		           linefeed    : 'crlf'
 	           } ).on( 'error', sass.logError ) )
 	           .pipe( gulp.dest( paths.styles.dest ) );
-}
-
-// Minify block style css file.
-function minifyblockStyleCSS() {
-	return gulp
-		.src( paths.blockStyles.cssmin.src )
-		.pipe( uglifycss() )
-		.pipe( rename( { suffix : '.min' } ) )
-		.pipe( gulp.dest( paths.blockStyles.cssmin.dest ) );
 }
 
 function elementorStylesCompile() {
@@ -446,7 +426,6 @@ function generateMetaBoxesRTLCSS() {
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
-	gulp.watch( paths.blockStyles.cssmin.src, minifyblockStyleCSS );
 	gulp.watch( paths.elementorStyles.scss.src, elementorStylesCompile );
 	gulp.watch( paths.elementorStyles.cssmin.src, minifyelementorStyles );
 	gulp.watch( paths.extendCustomize.scss.src, compileExtendCustomizerSass );
@@ -471,7 +450,7 @@ function watch() {
 
 
 var server            = gulp.series( browserSyncStart, watch ),
-    styles            = gulp.series( sassCompile, generateRTLCSS, minifyblockStyleCSS, generateBlockStyleRTLCSS ),
+    styles            = gulp.series( sassCompile, generateRTLCSS, generateBlockStyleRTLCSS ),
     scripts           = gulp.series( minifyJs ),
     elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, generateElementorRTLCSS ),
     extendCustomizer  = gulp.series( compileExtendCustomizerSass, minifyExtendCustomizerCSS, minifyExtendCustomizerJs, generateExtendCustomizeRTLCSS ),
@@ -482,7 +461,6 @@ var server            = gulp.series( browserSyncStart, watch ),
 exports.browserSyncStart                = browserSyncStart;
 exports.browserSyncReload               = browserSyncReload;
 exports.sassCompile                     = sassCompile;
-exports.minifyblockStyleCSS             = minifyblockStyleCSS;
 exports.elementorStylesCompile          = elementorStylesCompile;
 exports.minifyelementorStyles           = minifyelementorStyles;
 exports.watch                           = watch;

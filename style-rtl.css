@@ -4,7 +4,9 @@ Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: ColorMag is a perfect responsive magazine style WordPress theme. Suitable for news, newspaper, magazine, publishing, business and any kind of sites. Get free support at https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/colormag/
-Version: 1.4.6
+Version: 1.4.8
+Tested up to: 5.4.1
+Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats, footer-widgets, blog, e-commerce, news, rtl-language-support
@@ -83,7 +85,7 @@ th {
 	font-weight: bold;
 }
 
-th, td {
+th, td, .wp-block-table th, .wp-block-table td {
 	border: 1px solid #eaeaea;
 	padding: 6px 10px;
 }
@@ -174,11 +176,11 @@ h6 {
 	line-height: 1.2;
 }
 
-hr {
-	border-color: #eaeaea;
-	border-style: solid none none;
-	border-width: 1px 0 0;
-	height: 0;
+hr,
+.wp-block-separator {
+	background-color: #eaeaea;
+	border: 0;
+	height: 1px;
 	margin: 30px 0;
 }
 
@@ -204,7 +206,11 @@ pre {
 	margin-bottom: 20px;
 	overflow: auto;
 	padding: 20px;
-	border: 1px solid #eaeaea;
+	border: 1px solid #EAEAEA;
+	font-family: "Courier 10 Pitch",Courier,monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
 }
 
 pre, code, kbd, var, samp, tt {
@@ -282,50 +288,81 @@ li > ol {
 
 /* =BLOCKQUOTE
 ----------------------------------------------- */
-blockquote {
+blockquote,
+.wp-block-quote,
+.wp-block-quote.is-style-large,
+.wp-block-quote.has-text-align-right {
 	padding: 30px 45px 20px 30px;
 	margin-bottom: 20px;
 	background-color: #289dcc;
-	color: #ffffff;
+	color: #fff;
 	border-radius: 5px;
+	border-right: 0;
 }
 
-blockquote p {
-	font-size: 20px;
+blockquote p,
+.wp-block-quote p,
+.wp-block-quote.is-style-large p,
+.wp-block-quote.has-text-align-right p {
+	font-size: 16px;
 	font-family: 'Open Sans', serif;
 	line-height: 1.4;
 	position: relative;
-	padding-top: 13px;
-	padding-right: 40px;
+	padding-top: 0;
+	padding-right: 15px;
 }
 
-blockquote p:before {
+blockquote p::before,
+.wp-block-quote p::before,
+.wp-block-quote.is-style-large p::before,
+.wp-block-quote.has-text-align-right p::before {
 	content: "\f10d";
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
-	color: #ffffff;
-	font-size: 60px;
+	color: #fff;
+	font-size: 32px;
 	position: absolute;
 	top: -27px;
 	right: -27px;
 }
 
-blockquote em, blockquote i, blockquote cite {
+blockquote a,
+.wp-block-quote a,
+.wp-block-quote.is-style-large a,
+.wp-block-quote.has-text-align-right a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+blockquote em,
+blockquote i,
+blockquote cite,
+.wp-block-quote em,
+.wp-block-quote i,
+.wp-block-quote cite,
+.wp-block-quote.is-style-large em,
+.wp-block-quote.is-style-large i,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.has-text-align-right em,
+.wp-block-quote.has-text-align-right i,
+.wp-block-quote.has-text-align-right cite {
 	font-style: normal;
 }
 
-blockquote cite {
+blockquote cite,
+.wp-block-quote cite,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.has-text-align-right cite {
 	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.05em;
 	float: left;
 }
 
-blockquote a {
-	color: #ffffff;
-	text-decoration: underline;
+blockquote.wp-block-quote.has-text-align-right {
+	border-left: 0;
 }
 
 /* =FORMS
@@ -537,6 +574,7 @@ img#wpstats {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+	text-align: center;
 }
 
 /*****************************************************************/
@@ -1938,20 +1976,21 @@ a#scroll-up:hover {
 	overflow: hidden;
 }
 
-.no-sidebar-full-width .alignfull,
-.no-sidebar .alignfull {
+.no-sidebar-full-width #primary .entry-content > .alignfull,
+.no-sidebar #primary .entry-content > .alignfull {
 	margin-right: calc(50% - 50vw);
 	margin-left: calc(50% - 50vw);
 	max-width: unset;
 }
 
-.no-sidebar-full-width .alignfull img,
-.no-sidebar .alignfull img {
-	max-width: unset;
+.no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover-image {
+	width: unset;
 }
 
-.no-sidebar-full-width .alignwide,
-.no-sidebar .alignwide {
+.no-sidebar-full-width #primary .entry-content > .alignwide,
+.no-sidebar #primary .entry-content > .alignwide {
 	margin-right: -100px;
 	margin-left: -100px;
 	max-width: unset;
@@ -1962,10 +2001,23 @@ a#scroll-up:hover {
 	overflow: hidden;
 }
 
-.no-sidebar-full-width.box-layout .alignwide,
-.no-sidebar.box-layout .alignwide {
-	margin-right: -100px;
-	margin-left: -100px;
+.no-sidebar-full-width.box-layout #primary .entry-content > .alignfull,
+.no-sidebar.box-layout #primary .entry-content > .alignfull {
+	margin-right: -30px;
+	margin-left: -30px;
+}
+
+.no-sidebar-full-width.box-layout #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width.box-layout #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar.box-layout #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar.box-layout #primary .entry-content > .alignfull.wp-block-cover-image {
+	width: unset;
+}
+
+.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
+.no-sidebar.box-layout #primary .entry-content > .alignwide {
+	margin-right: -30px;
+	margin-left: -30px;
+	max-width: unset;
 }
 
 .widget_featured_posts .article-content .above-entry-meta .cat-links a {
@@ -2301,8 +2353,14 @@ a#scroll-up:hover {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
+ul.blocks-gallery-grid,
 ul.wp-block-gallery {
 	padding: 0;
+}
+
+ul.blocks-gallery-grid img,
+ul.wp-block-gallery img {
+	margin-bottom: 0;
 }
 
 /* =FEATURED BLOG
@@ -3086,12 +3144,30 @@ ul.wp-block-gallery {
 }
 
 /*--------------------------------------------------------------
+Gutenberg Blocks Layout.
+--------------------------------------------------------------*/
+.wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-gallery.aligncenter,
+.wp-block-social-links.alignleft,
+.wp-block-social-links.alignright,
+.wp-block-social-links.aligncenter {
+	display: flex;
+}
+
+/*--------------------------------------------------------------
 Responsive Structure
 --------------------------------------------------------------*/
 @media screen and (max-width: 1200px) {
-	.no-sidebar-full-width .alignwide {
-		margin-right: -10px;
-		margin-left: -10px;
+	.no-sidebar-full-width #primary .entry-content > .alignwide {
+		margin-right: -20px;
+		margin-left: -20px;
+	}
+	.no-sidebar #primary .entry-content > .alignwide {
+		margin-right: -50px;
+		margin-left: -50px;
+	}
+	.no-sidebar #primary .entry-content > .alignfull {
+		margin-right: -100px;
+		margin-left: -100px;
 	}
 }
 
@@ -3174,13 +3250,24 @@ Responsive Structure
 	.sub-toggle.active .fa {
 		color: #1b7aa0;
 	}
-}
-
-@media screen and (max-width: 767px) {
-	.no-sidebar-full-width.box-layout .alignwide,
-	.no-sidebar.box-layout .alignwide {
-		margin-right: -20px;
-		margin-left: -20px;
+	.no-sidebar-full-width #primary .entry-content > .alignwide,
+	.no-sidebar #primary .entry-content > .alignwide {
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
+	.no-sidebar.box-layout #primary .entry-content > .alignwide {
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.no-sidebar-full-width.box-layout #primary .entry-content > .alignfull,
+	.no-sidebar.box-layout #primary .entry-content > .alignfull {
+		margin-right: -30px;
+		margin-left: -30px;
+	}
+	.no-sidebar #primary .entry-content > .alignfull {
+		margin-right: -15px;
+		margin-left: -15px;
 	}
 }
 
@@ -3248,13 +3335,13 @@ Responsive Structure
 	.gallery-columns-9 .gallery-item {
 		width: 25%;
 	}
-	.no-sidebar-full-width .alignwide,
-	.no-sidebar .alignwide {
+	.no-sidebar-full-width #primary .entry-content > .alignwide,
+	.no-sidebar #primary .entry-content > .alignwide {
 		margin-right: 0;
 		margin-left: 0;
 	}
-	.no-sidebar-full-width.box-layout .alignwide,
-	.no-sidebar.box-layout .alignwide {
+	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
+	.no-sidebar.box-layout #primary .entry-content > .alignwide {
 		margin-right: 0;
 		margin-left: 0;
 	}
