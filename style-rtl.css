@@ -1043,7 +1043,7 @@ li.default-menu {
 .main-navigation ul li ul {
 	position: absolute;
 	width: 200px;
-	top: 42px;
+	top: 100%;
 }
 
 .main-navigation ul li ul li {
