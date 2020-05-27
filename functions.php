@@ -149,6 +149,12 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		// Gutenberg layout support.
 		add_theme_support( 'align-wide' );
 
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
+
 		$starter_content = array(
 			'widgets'     => array(
 				'colormag_header_sidebar'                          => array(
@@ -459,6 +465,17 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		add_theme_support( 'starter-content', $starter_content );
 	}
 endif;
+
+/**
+ * Enqueue block editor styles.
+ *
+ * @since ColorMag 1.4.7
+ */
+function colormag_block_editor_styles() {
+	wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600' );
+	wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'colormag_block_editor_styles', 1, 1 );
 
 /**
  * Define Directory Location Constants
