@@ -52,6 +52,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - 1.4.8 -2020-05-27 =
+* Tweak - Enhance customizer upsell section.
+* Enhancement - Gutenberg compatibility
+
 = Version 1.4.7 -2020-05-22 =
 * Add   - Required header fields: `Tested up to` and `Requires PHP` in style.css.
 * Fix   - Theme name and version in the admin dashboard while child theme active.

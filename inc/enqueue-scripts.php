@@ -99,6 +99,21 @@ add_action( 'wp_enqueue_scripts', 'colormag_scripts_styles_method' );
 
 
 /**
+ * Enqueue block editor styles.
+ *
+ * @since ColorMag 1.4.7
+ */
+function colormag_block_editor_styles() {
+
+	wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+	wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
+
+}
+
+add_action( 'enqueue_block_editor_assets', 'colormag_block_editor_styles', 1, 1 );
+
+
+/**
  * Action hook to get the required Google fonts for this theme.
  */
 function colormag_get_fonts() {
