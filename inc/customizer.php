@@ -10,12 +10,19 @@
 function colormag_customize_register( $wp_customize ) {
 
 	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-image-radio-control.php';
+	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-upsell-custom-control.php';
 
 	// Transport postMessage variable set
 	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	/*
+	* Assigning the theme name
+	*/
+	$colormag_themename = get_option( 'stylesheet' );
+	$colormag_themename = preg_replace( '/\W/', '_', strtolower( $colormag_themename ) );
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -789,6 +796,40 @@ function colormag_customize_register( $wp_customize ) {
 		) ) );
 		$i ++;
 	}
+
+	/**
+	 * Upsell.
+	 */
+	$wp_customize->add_section(
+		'colormag_upsell_section',
+		array(
+			'priority' => 1,
+			'title'    => __( 'View Pro Version', 'colormag' ),
+		)
+	);
+
+	$wp_customize->add_setting(
+		$colormag_themename . '[-upsell]',
+		array(
+			'default'           => '',
+			'type'              => 'option',
+			'transport'         => $customizer_selective_refresh,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'colormag_editor_sanitize',
+		)
+	);
+
+	$wp_customize->add_control(
+		new ColorMag_Upsell_Custom_Control(
+			$wp_customize,
+			$colormag_themename . '[-upsell]',
+			array(
+				'label'   => __( 'You can add phone numbers, other contact info here as you like. This box also accepts shortcodes.', 'colormag' ),
+				'section' => 'colormag_upsell_section',
+				'setting' => $colormag_themename . '[colormag_upsell]',
+			)
+		)
+	);
 
 	// sanitization works
 	// radio/select buttons sanitization
