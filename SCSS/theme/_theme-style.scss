@@ -1964,8 +1964,6 @@ a#scroll-up:hover {
 				max-width: unset;
 
 				&.wp-block-cover,
-				&.wp-block-cover-image,
-				&.wp-block-cover,
 				&.wp-block-cover-image {
 					width: unset;
 				}
@@ -1993,8 +1991,6 @@ a#scroll-up:hover {
 					margin-left: -30px;
 					margin-right: -30px;
 
-					&.wp-block-cover,
-					&.wp-block-cover-image,
 					&.wp-block-cover,
 					&.wp-block-cover-image {
 						width: unset;
