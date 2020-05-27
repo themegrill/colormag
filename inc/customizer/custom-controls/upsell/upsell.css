@@ -1,11 +1,14 @@
+/**
+ * Upsell section.
+ */
+li#accordion-section-colormag_upsell_section h3 a:after {
+	color: #fff;
+}
+
 li#accordion-section-colormag_upsell_section h3.accordion-section-title {
 	background-color: #289DCC !important;
 	border-left-color: #0073aa;
 	color: #fff !important;
-}
-
-#accordion-section-colormag_upsell_section h3 a:after {
-	color: #fff;
 }
 
 li#accordion-section-colormag_upsell_section h3.accordion-section-title a {
@@ -16,6 +19,9 @@ li#accordion-section-colormag_upsell_section h3.accordion-section-title:after {
 	color: #fff !important;
 }
 
+/**
+ * Upsell control.
+ */
 li.customize-control-colormag-upsell .colormag-upsell-wrapper {
 	background-color: #fff;
 	margin-left: -12px;
@@ -41,15 +47,15 @@ li.customize-control-colormag-upsell .upsell-features {
 	font-size: 14px;
 }
 
+li.customize-control-colormag-upsell .upsell-feature {
+	padding: 0 0 8px 0;
+	margin: 0 0 8px 0;
+}
+
 li.customize-control-colormag-upsell .upsell-feature .dashicons {
 	color: #1CB4DD;
 	margin-right: 8px;
 	width: 14px;
-}
-
-li.customize-control-colormag-upsell .upsell-feature {
-	padding: 0 0 8px 0;
-	margin: 0 0 8px 0;
 }
 
 li.customize-control-colormag-upsell .upsell-feature:last-child {
