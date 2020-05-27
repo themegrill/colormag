@@ -5,7 +5,7 @@ class ColorMag_Upsell_Custom_Control extends WP_Customize_Control {
 	public $type = 'colormag-upsell-control';
 
 	public function enqueue() {
-		wp_enqueue_style( 'colormag-customizer', get_template_directory_uri() . '/css/admin/customizer.css', array(), FLASH_THEME_VERSION );
+		wp_enqueue_style( 'colormag-customizer', get_template_directory_uri() . '/css/admin/customizer.css', array(), COLORMAG_THEME_VERSION );
 	}
 
 	public function render_content() {
