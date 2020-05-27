@@ -18,12 +18,6 @@ function colormag_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	/*
-	* Assigning the theme name
-	*/
-	$colormag_themename = get_option( 'stylesheet' );
-	$colormag_themename = preg_replace( '/\W/', '_', strtolower( $colormag_themename ) );
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '#site-title a',
@@ -809,7 +803,7 @@ function colormag_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		$colormag_themename . '[-upsell]',
+		'colormag-upsell',
 		array(
 			'default'           => '',
 			'type'              => 'option',
@@ -822,11 +816,11 @@ function colormag_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new ColorMag_Upsell_Custom_Control(
 			$wp_customize,
-			$colormag_themename . '[-upsell]',
+			'colormag-upsell',
 			array(
 				'label'   => __( 'You can add phone numbers, other contact info here as you like. This box also accepts shortcodes.', 'colormag' ),
 				'section' => 'colormag_upsell_section',
-				'setting' => $colormag_themename . '[colormag_upsell]',
+				'setting' => 'colormag-upsell',
 			)
 		)
 	);
