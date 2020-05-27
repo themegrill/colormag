@@ -21,6 +21,17 @@ var paths = {
 		dest : './'
 	},
 
+	blockStyles : {
+		cssmin : {
+			src  : [
+				'./style-editor-block.css',
+				'!./style-editor-block.min.css',
+				'!./style-editor-block-rtl.css'
+			],
+			dest : './'
+		}
+	},
+
 	js : {
 		src  : [
 			'./js/*.js',
@@ -133,6 +144,10 @@ var paths = {
 			src  : [ './style.css' ],
 			dest : './'
 		},
+		blockStyle        : {
+			src  : [ './style-editor-block.css' ],
+			dest : './'
+		},
 		extendCustomize   : {
 			src  : [
 				'./inc/customizer/assets/css/extend-customizer.css',
@@ -188,6 +203,15 @@ function sassCompile() {
 		           linefeed    : 'crlf'
 	           } ).on( 'error', sass.logError ) )
 	           .pipe( gulp.dest( paths.styles.dest ) );
+}
+
+// Minify block style css file.
+function minifyblockStyleCSS() {
+	return gulp
+		.src( paths.blockStyles.cssmin.src )
+		.pipe( uglifycss() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( gulp.dest( paths.blockStyles.cssmin.dest ) );
 }
 
 function elementorStylesCompile() {
@@ -369,6 +393,16 @@ function generateRTLCSS() {
 		.on( 'error', notify.onError() );
 }
 
+// Generates Block Style RTL CSS file.
+function generateBlockStyleRTLCSS() {
+	return gulp
+		.src( paths.rtlcss.blockStyle.src )
+		.pipe( rtlcss() )
+		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( gulp.dest( paths.rtlcss.blockStyle.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Generates Extend Customize RTL CSS file.
 function generateExtendCustomizeRTLCSS() {
 	return gulp
@@ -412,6 +446,7 @@ function generateMetaBoxesRTLCSS() {
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
+	gulp.watch( paths.blockStyles.cssmin.src, minifyblockStyleCSS );
 	gulp.watch( paths.elementorStyles.scss.src, elementorStylesCompile );
 	gulp.watch( paths.elementorStyles.cssmin.src, minifyelementorStyles );
 	gulp.watch( paths.extendCustomize.scss.src, compileExtendCustomizerSass );
@@ -427,6 +462,7 @@ function watch() {
 	gulp.watch( paths.metaBoxes.cssmin.src, minifyMetaBoxCSS );
 	gulp.watch( paths.metaBoxes.jsmin.src, minifyMetaBoxJs );
 	gulp.watch( paths.rtlcss.style.src, generateRTLCSS );
+	gulp.watch( paths.rtlcss.blockStyle.src, generateBlockStyleRTLCSS );
 	gulp.watch( paths.rtlcss.extendCustomize.src, generateExtendCustomizeRTLCSS );
 	gulp.watch( paths.rtlcss.customizeControls.src, generateCustomizeControlsRTLCSS );
 	gulp.watch( paths.rtlcss.elementorStyles.src, generateElementorRTLCSS );
@@ -435,7 +471,7 @@ function watch() {
 
 
 var server            = gulp.series( browserSyncStart, watch ),
-    styles            = gulp.series( sassCompile, generateRTLCSS ),
+    styles            = gulp.series( sassCompile, generateRTLCSS, minifyblockStyleCSS, generateBlockStyleRTLCSS ),
     scripts           = gulp.series( minifyJs ),
     elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, generateElementorRTLCSS ),
     extendCustomizer  = gulp.series( compileExtendCustomizerSass, minifyExtendCustomizerCSS, minifyExtendCustomizerJs, generateExtendCustomizeRTLCSS ),
@@ -446,6 +482,7 @@ var server            = gulp.series( browserSyncStart, watch ),
 exports.browserSyncStart                = browserSyncStart;
 exports.browserSyncReload               = browserSyncReload;
 exports.sassCompile                     = sassCompile;
+exports.minifyblockStyleCSS             = minifyblockStyleCSS;
 exports.elementorStylesCompile          = elementorStylesCompile;
 exports.minifyelementorStyles           = minifyelementorStyles;
 exports.watch                           = watch;
@@ -470,6 +507,7 @@ exports.compileMetaBoxSass              = compileMetaBoxSass;
 exports.minifyMetaBoxCSS                = minifyMetaBoxCSS;
 exports.minifyMetaBoxJs                 = minifyMetaBoxJs;
 exports.generateRTLCSS                  = generateRTLCSS;
+exports.generateBlockStyleRTLCSS        = generateBlockStyleRTLCSS;
 exports.generateExtendCustomizeRTLCSS   = generateExtendCustomizeRTLCSS;
 exports.generateCustomizeControlsRTLCSS = generateCustomizeControlsRTLCSS;
 exports.generateElementorRTLCSS         = generateElementorRTLCSS;
