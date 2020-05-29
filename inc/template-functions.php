@@ -117,7 +117,13 @@ add_filter( 'the_content_more_link', 'colormag_remove_more_jump_link' );
  * @return string
  */
 function colormag_responsive_video( $html, $url, $attr, $post_ID ) {
-	return '<div class="fitvids-video">' . $html . '</div>';
+
+	if ( ! current_theme_supports( 'responsive-embeds' ) ) {
+		return '<div class="fitvids-video">' . $html . '</div>';
+	}
+
+	return $html;
+
 }
 
 add_filter( 'embed_oembed_html', 'colormag_responsive_video', 10, 4 );
