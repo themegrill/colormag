@@ -110,7 +110,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 					<div class="thumbnail thumbnail-image"><img src="{{ data.value['background-image'] }}" alt="" />
 					</div>
 					<# } else { #>
-					<div class="placeholder"><?php esc_attr_e( 'No Image Selected', 'colormag' ); ?></div>
+					<div class="placeholder"><?php esc_html_e( 'No Image Selected', 'colormag' ); ?></div>
 					<# } #>
 
 					<div class="actions">
@@ -135,16 +135,16 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="no-repeat"
 					<# if ( 'no-repeat' === data.value['background-repeat'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'No Repeat', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'No Repeat', 'colormag' ); ?></option>
 					<option value="repeat"
 					<# if ( 'repeat' === data.value['background-repeat'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Repeat All', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Repeat All', 'colormag' ); ?></option>
 					<option value="repeat-x"
 					<# if ( 'repeat-x' === data.value['background-repeat'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Repeat Horizontally', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Repeat Horizontally', 'colormag' ); ?></option>
 					<option value="repeat-y"
 					<# if ( 'repeat-y' === data.value['background-repeat'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Repeat Vertically', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Repeat Vertically', 'colormag' ); ?></option>
 				</select>
 			</div>
 
@@ -153,31 +153,31 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="left top"
 					<# if ( 'left top' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Left Top', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Left Top', 'colormag' ); ?></option>
 					<option value="left center"
 					<# if ( 'left center' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Left Center', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Left Center', 'colormag' ); ?></option>
 					<option value="left bottom"
 					<# if ( 'left bottom' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Left Bottom', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Left Bottom', 'colormag' ); ?></option>
 					<option value="right top"
 					<# if ( 'right top' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Right Top', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Right Top', 'colormag' ); ?></option>
 					<option value="right center"
 					<# if ( 'right center' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Right Center', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Right Center', 'colormag' ); ?></option>
 					<option value="right bottom"
 					<# if ( 'right bottom' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Right Bottom', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Right Bottom', 'colormag' ); ?></option>
 					<option value="center top"
 					<# if ( 'center top' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Center Top', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Center Top', 'colormag' ); ?></option>
 					<option value="center center"
 					<# if ( 'center center' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Center Center', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Center Center', 'colormag' ); ?></option>
 					<option value="center bottom"
 					<# if ( 'center bottom' === data.value['background-position'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Center Bottom', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Center Bottom', 'colormag' ); ?></option>
 				</select>
 			</div>
 
@@ -186,13 +186,13 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="cover"
 					<# if ( 'cover' === data.value['background-size'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Cover', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Cover', 'colormag' ); ?></option>
 					<option value="contain"
 					<# if ( 'contain' === data.value['background-size'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Contain', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Contain', 'colormag' ); ?></option>
 					<option value="auto"
 					<# if ( 'auto' === data.value['background-size'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Auto', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Auto', 'colormag' ); ?></option>
 				</select>
 			</div>
 
@@ -201,10 +201,10 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="scroll"
 					<# if ( 'scroll' === data.value['background-attachment'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Scroll', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Scroll', 'colormag' ); ?></option>
 					<option value="fixed"
 					<# if ( 'fixed' === data.value['background-attachment'] ) { #> selected <# }
-					#>><?php esc_attr_e( 'Fixed', 'colormag' ); ?></option>
+					#>><?php esc_html_e( 'Fixed', 'colormag' ); ?></option>
 				</select>
 			</div>
 

@@ -449,19 +449,19 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 					<select {{{ data.inputAttrs }}} id="colormag-font-style-{{{ data.id || data.name }}}">
 						<option value="normal"
 						<# if ( 'normal' === data.value['font-style'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Normal', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Normal', 'colormag' ); ?></option>
 						<option value="italic"
 						<# if ( 'italic' === data.value['font-style'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Italic', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Italic', 'colormag' ); ?></option>
 						<option value="oblique"
 						<# if ( 'oblique' === data.value['font-style'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Oblique', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Oblique', 'colormag' ); ?></option>
 						<option value="initial"
 						<# if ( 'initial' === data.value['font-style'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Initial', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Initial', 'colormag' ); ?></option>
 						<option value="inherit"
 						<# if ( 'inherit' === data.value['font-style'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Inherit', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Inherit', 'colormag' ); ?></option>
 					</select>
 				</div>
 			</div>
@@ -474,22 +474,22 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 					<select {{{ data.inputAttrs }}} id="colormag-text-transform-{{{ data.id || data.name }}}">
 						<option value="none"
 						<# if ( 'none' === data.value['text-transform'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'None', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'None', 'colormag' ); ?></option>
 						<option value="capitalize"
 						<# if ( 'capitalize' === data.value['text-transform'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Capitalize', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Capitalize', 'colormag' ); ?></option>
 						<option value="uppercase"
 						<# if ( 'uppercase' === data.value['text-transform'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Uppercase', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Uppercase', 'colormag' ); ?></option>
 						<option value="lowercase"
 						<# if ( 'lowercase' === data.value['text-transform'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Lowercase', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Lowercase', 'colormag' ); ?></option>
 						<option value="initial"
 						<# if ( 'initial' === data.value['text-transform'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Initial', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Initial', 'colormag' ); ?></option>
 						<option value="inherit"
 						<# if ( 'inherit' === data.value['text-transform'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Inherit', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Inherit', 'colormag' ); ?></option>
 					</select>
 				</div>
 			</div>
@@ -502,22 +502,22 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 					<select {{{ data.inputAttrs }}} id="colormag-text-decoration-{{{ data.id || data.name }}}">
 						<option value="none"
 						<# if ( 'none' === data.value['text-decoration'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'None', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'None', 'colormag' ); ?></option>
 						<option value="underline"
 						<# if ( 'underline' === data.value['text-decoration'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Underline', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Underline', 'colormag' ); ?></option>
 						<option value="overline"
 						<# if ( 'overline' === data.value['text-decoration'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Overline', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Overline', 'colormag' ); ?></option>
 						<option value="line-through"
 						<# if ( 'line-through' === data.value['text-decoration'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Line Through', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Line Through', 'colormag' ); ?></option>
 						<option value="initial"
 						<# if ( 'initial' === data.value['text-decoration'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Initial', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Initial', 'colormag' ); ?></option>
 						<option value="inherit"
 						<# if ( 'inherit' === data.value['text-decoration'] ) { #> selected <# }
-						#>><?php esc_attr_e( 'Inherit', 'colormag' ); ?></option>
+						#>><?php esc_html_e( 'Inherit', 'colormag' ); ?></option>
 					</select>
 				</div>
 			</div>
