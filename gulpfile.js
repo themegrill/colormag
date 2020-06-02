@@ -11,7 +11,8 @@ var gulp         = require( 'gulp' ),
     concatCss    = require( 'gulp-concat-css' ),
     concatJS     = require( 'gulp-concat' ),
     uglify       = require( 'gulp-uglify' ),
-    rtlcss       = require( 'gulp-rtlcss' );
+    rtlcss       = require( 'gulp-rtlcss' ),
+    lec          = require( 'gulp-line-ending-corrector' );
 
 // Define paths.
 var paths = {
@@ -191,6 +192,13 @@ function sassCompile() {
 		           outputStyle : 'expanded',
 		           linefeed    : 'crlf'
 	           } ).on( 'error', sass.logError ) )
+	           .pipe( postcss( [
+		           autoprefixer( {
+			           browsers : [ 'last 2 versions' ],
+			           cascade  : false
+		           } )
+	           ] ) )
+	           .pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 	           .pipe( gulp.dest( paths.styles.dest ) );
 }
 
@@ -208,6 +216,7 @@ function elementorStylesCompile() {
 			           cascade  : false
 		           } )
 	           ] ) )
+	           .pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 	           .pipe( gulp.dest( paths.elementorStyles.scss.dest ) );
 }
 
@@ -217,6 +226,7 @@ function minifyelementorStyles() {
 		.src( paths.elementorStyles.cssmin.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.elementorStyles.cssmin.dest ) );
 }
 
@@ -236,6 +246,7 @@ function compileExtendCustomizerSass() {
 				cascade  : false
 			} )
 		] ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.extendCustomize.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -246,6 +257,7 @@ function minifyExtendCustomizerCSS() {
 		.src( paths.extendCustomize.cssmin.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.extendCustomize.cssmin.dest ) );
 }
 
@@ -255,6 +267,7 @@ function minifyExtendCustomizerJs() {
 		.src( paths.extendCustomize.jsmin.src )
 		.pipe( uglify() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.extendCustomize.jsmin.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -275,6 +288,7 @@ function compileControlSass() {
 				cascade  : false
 			} )
 		] ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.customizeControls.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -284,6 +298,7 @@ function concatControlCSS() {
 	return gulp
 		.src( paths.customizeControls.cssconcat.src )
 		.pipe( concatCss( 'customize-controls.css' ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.customizeControls.cssconcat.dest ) );
 }
 
@@ -293,6 +308,7 @@ function minifyControlCSS() {
 		.src( paths.customizeControls.cssmin.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.customizeControls.cssmin.dest ) );
 }
 
@@ -301,6 +317,7 @@ function concatControlJS() {
 	return gulp
 		.src( paths.customizeControls.jsconcat.src )
 		.pipe( concatJS( 'customize-controls.js' ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.customizeControls.jsconcat.dest ) );
 }
 
@@ -310,6 +327,7 @@ function minifyControlJs() {
 		.src( paths.customizeControls.jsmin.src )
 		.pipe( uglify() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.customizeControls.jsmin.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -320,6 +338,7 @@ function minifyJs() {
 		.src( paths.js.src )
 		.pipe( uglify() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.js.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -340,6 +359,7 @@ function compileMetaBoxSass() {
 				cascade  : false
 			} )
 		] ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.metaBoxes.scss.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -350,6 +370,7 @@ function minifyMetaBoxCSS() {
 		.src( paths.metaBoxes.cssmin.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.metaBoxes.cssmin.dest ) );
 }
 
@@ -359,6 +380,7 @@ function minifyMetaBoxJs() {
 		.src( paths.metaBoxes.jsmin.src )
 		.pipe( uglify() )
 		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.metaBoxes.jsmin.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -369,6 +391,7 @@ function generateRTLCSS() {
 		.src( paths.rtlcss.style.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.style.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -379,6 +402,7 @@ function generateBlockStyleRTLCSS() {
 		.src( paths.rtlcss.blockStyle.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.blockStyle.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -389,6 +413,7 @@ function generateExtendCustomizeRTLCSS() {
 		.src( paths.rtlcss.extendCustomize.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.extendCustomize.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -399,6 +424,7 @@ function generateCustomizeControlsRTLCSS() {
 		.src( paths.rtlcss.customizeControls.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.customizeControls.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -409,6 +435,7 @@ function generateElementorRTLCSS() {
 		.src( paths.rtlcss.elementorStyles.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.elementorStyles.dest ) )
 		.on( 'error', notify.onError() );
 }
@@ -419,6 +446,7 @@ function generateMetaBoxesRTLCSS() {
 		.src( paths.rtlcss.metaBoxes.src )
 		.pipe( rtlcss() )
 		.pipe( rename( { suffix: '-rtl' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.rtlcss.metaBoxes.dest ) )
 		.on( 'error', notify.onError() );
 }

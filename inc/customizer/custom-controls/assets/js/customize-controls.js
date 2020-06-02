@@ -245,30 +245,6 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 )( jQuery );
 
 /**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Editor control JS to handle the editor rendering within customize control.
  *
  * File `editor.js`.
@@ -317,6 +293,30 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			} );
 
 		}
+
+	}
+
+} );
+
+/**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
 
 	}
 
@@ -1462,6 +1462,33 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 } );
 
 /**
+ * Switch toggle control JS to handle the toggle of custom customize controls.
+ *
+ * File `toggle.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this,
+		    value   = control.setting._value;
+
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
+			control.setting.set( value );
+		} );
+
+	}
+
+} );
+
+/**
  * Sortable control JS to handle the sortable feature of custom customize controls.
  *
  * File `sortable.js`.
@@ -1521,33 +1548,6 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 		);
 
 		control.setting.set( newValue );
-
-	}
-
-} );
-
-/**
- * Switch toggle control JS to handle the toggle of custom customize controls.
- *
- * File `toggle.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this,
-		    value   = control.setting._value;
-
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
-
-			control.setting.set( value );
-		} );
 
 	}
 

@@ -225,13 +225,6 @@
   margin-bottom: 15px;
 }
 /**
- * Group control CSS.
- */
-
-.customize-control-colormag-hidden.customize-control {
-  margin-top: 0;
-}
-/**
  * Heading control CSS.
  */
 
@@ -260,6 +253,13 @@
 .customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
   margin-top: 10px;
   padding: 0 12px;
+}
+/**
+ * Group control CSS.
+ */
+
+.customize-control-colormag-hidden.customize-control {
+  margin-top: 0;
 }
 /**
  * Radio image control CSS.
@@ -515,6 +515,23 @@
   transition: all ease 0.3s;
 }
 /**
+ * Typography control CSS.
+ */
+
+.customize-control-colormag-typography .customize-control-content > div {
+  margin-bottom: 15px;
+}
+
+.customize-control-colormag-typography .customize-control-content .font-size,
+.customize-control-colormag-typography .customize-control-content .line-height,
+.customize-control-colormag-typography .customize-control-content .letter-spacing {
+  position: relative;
+}
+
+span.select2-container.select2-container--default.select2-container--open {
+  z-index: 999999;
+}
+/**
  * Upsell section.
  */
 
@@ -617,21 +634,4 @@ li.customize-control-colormag-upsell .upsell-cta:hover {
   background-color: #006EE5;
   -webkit-box-shadow: 0 2px 10px 5px #46464633;
   box-shadow: 0 2px 10px 5px #46464633;
-}
-/**
- * Typography control CSS.
- */
-
-.customize-control-colormag-typography .customize-control-content > div {
-  margin-bottom: 15px;
-}
-
-.customize-control-colormag-typography .customize-control-content .font-size,
-.customize-control-colormag-typography .customize-control-content .line-height,
-.customize-control-colormag-typography .customize-control-content .letter-spacing {
-  position: relative;
-}
-
-span.select2-container.select2-container--default.select2-container--open {
-  z-index: 999999;
 }
