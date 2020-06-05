@@ -50,7 +50,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - TBD =
+= Version - 1.4.9 -2020-06-05 =
 * Fix - Responsive video embeds.
 
 = Version - 1.4.8 -2020-05-27 =

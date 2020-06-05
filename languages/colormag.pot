@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 1.4.8\n"
+"Project-Id-Version: ColorMag 1.4.9\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-05-27 06:17:59+00:00\n"
+"POT-Creation-Date: 2020-06-05 01:47:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1011,27 +1011,27 @@ msgstr ""
 msgid "View a random post"
 msgstr ""
 
-#: inc/functions.php:857
+#: inc/functions.php:861
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:859
+#: inc/functions.php:863
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:876
+#: inc/functions.php:880
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:879
+#: inc/functions.php:883
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:887
+#: inc/functions.php:891
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:893
+#: inc/functions.php:897
 msgid "Reply"
 msgstr ""
 
