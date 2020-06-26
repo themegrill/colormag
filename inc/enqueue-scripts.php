@@ -360,27 +360,27 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		$parse_css .= $selector . '{';
 
 		// For font family.
-		if ( $output_value['font-family'] != $default_value['font-family'] ) {
+		if ( isset( $output_value['font-family'] ) && ( $output_value['font-family'] != $default_value['font-family'] ) ) {
 			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
 		}
 
 		// For font style.
-		if ( $output_value['font-style'] != $default_value['font-style'] ) {
+		if ( isset( $output_value['font-style'] ) && ( $output_value['font-style'] != $default_value['font-style'] ) ) {
 			$parse_css .= 'font-style:' . $output_value['font-style'] . ';';
 		}
 
 		// For text transform.
-		if ( $output_value['text-transform'] != $default_value['text-transform'] ) {
+		if ( isset( $output_value['text-transform'] ) && ( $output_value['text-transform'] != $default_value['text-transform'] ) ) {
 			$parse_css .= 'text-transform:' . $output_value['text-transform'] . ';';
 		}
 
 		// For text decoration.
-		if ( $output_value['text-decoration'] != $default_value['text-decoration'] ) {
+		if ( isset( $output_value['text-decoration'] ) && ( $output_value['text-decoration'] != $default_value['text-decoration'] ) ) {
 			$parse_css .= 'text-decoration:' . $output_value['text-decoration'] . ';';
 		}
 
 		// For font weight.
-		if ( $output_value['font-weight'] != $default_value['font-weight'] ) {
+		if ( isset( $output_value['font-weight'] ) && ( $output_value['font-weight'] != $default_value['font-weight'] ) ) {
 			$font_weight_value = $output_value['font-weight'];
 
 			if ( 'italic' === $font_weight_value || 'regular' === $font_weight_value ) {
