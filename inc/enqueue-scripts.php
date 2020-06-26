@@ -301,32 +301,32 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 		$parse_css .= $selector . '{';
 
 		// For background color.
-		if ( $output_value['background-color'] != $default_value['background-color'] ) {
+		if ( isset( $output_value['background-color'] ) && ( $output_value['background-color'] != $default_value['background-color'] ) ) {
 			$parse_css .= 'background-color:' . $output_value['background-color'] . ';';
 		}
 
 		// For background image.
-		if ( $output_value['background-image'] != $default_value['background-image'] ) {
+		if ( isset( $output_value['background-image'] ) && ( $output_value['background-image'] != $default_value['background-image'] ) ) {
 			$parse_css .= 'background-image:url(' . $output_value['background-image'] . ');';
 		}
 
 		// For background position.
-		if ( $output_value['background-position'] != $default_value['background-position'] ) {
+		if ( isset( $output_value['background-position'] ) && ( $output_value['background-position'] != $default_value['background-position'] ) ) {
 			$parse_css .= 'background-position:' . $output_value['background-position'] . ';';
 		}
 
 		// For background size.
-		if ( $output_value['background-size'] != $default_value['background-size'] ) {
+		if ( isset( $output_value['background-size'] ) && ( $output_value['background-size'] != $default_value['background-size'] ) ) {
 			$parse_css .= 'background-size:' . $output_value['background-size'] . ';';
 		}
 
 		// For background attachment.
-		if ( $output_value['background-attachment'] != $default_value['background-attachment'] ) {
+		if ( isset( $output_value['background-attachment'] ) && ( $output_value['background-attachment'] != $default_value['background-attachment'] ) ) {
 			$parse_css .= 'background-attachment:' . $output_value['background-attachment'] . ';';
 		}
 
 		// For background repeat.
-		if ( $output_value['background-repeat'] != $default_value['background-repeat'] ) {
+		if ( isset( $output_value['background-repeat'] ) && ( $output_value['background-repeat'] != $default_value['background-repeat'] ) ) {
 			$parse_css .= 'background-repeat:' . $output_value['background-repeat'] . ';';
 		}
 
