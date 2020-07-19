@@ -8,9 +8,8 @@
  * @since      ColorMag 1.0
  */
 function colormag_customize_register( $wp_customize ) {
-
+	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-upsell-section.php';
 	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-image-radio-control.php';
-	require COLORMAG_INCLUDES_DIR . '/customize-controls/class-colormag-upsell-custom-control.php';
 
 	// Transport postMessage variable set
 	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -772,6 +771,7 @@ function colormag_customize_register( $wp_customize ) {
 	);
 	$categories       = get_categories( $args );
 	$wp_category_list = array();
+
 	foreach ( $categories as $category_list ) {
 		$wp_category_list[ $category_list->cat_ID ] = $category_list->cat_name;
 
@@ -794,30 +794,16 @@ function colormag_customize_register( $wp_customize ) {
 	/**
 	 * Upsell.
 	 */
+	$wp_customize->register_section_type( 'COLORMAG_Upsell_Section' );
+
+	// Add `COLORMAG_Upsell_Section` to display pro link.
 	$wp_customize->add_section(
-		'colormag_upsell_section',
-		array(
-			'priority' => 1,
-			'title'    => __( 'View Pro Version', 'colormag' ),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'colormag_upsell',
-		array(
-			'default'           => '',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'colormag_links_sanitize',
-		)
-	);
-
-	$wp_customize->add_control(
-		new ColorMag_Upsell_Custom_Control(
-			$wp_customize,
-			'colormag_upsell',
+		new COLORMAG_Upsell_Section( $wp_customize, 'colormag_upsell_section',
 			array(
-				'section' => 'colormag_upsell_section',
-				'setting' => 'colormag_upsell',
+				'priority'   => 1,
+				'title'      => esc_html__( 'View PRO version', 'colormag' ),
+				'url'        => 'https://themegrill.com/colormag-pricing/?utm_source=colormag-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade',
+				'capability' => 'edit_theme_options',
 			)
 		)
 	);
@@ -940,7 +926,8 @@ add_action( 'customize_register', 'colormag_customize_register' );
  */
 
 function colormag_customize_preview_js() {
-	wp_enqueue_script( 'colormag-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), false, true );
+	wp_enqueue_style( 'colormag-customize-upsell-section', get_template_directory_uri() . '/inc/admin/css/customize-upsell-section.css' );
+	wp_enqueue_script( 'colormag-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview', 'jquery' ), false, true );
 }
 
 add_action( 'customize_preview_init', 'colormag_customize_preview_js' );
