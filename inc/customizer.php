@@ -801,7 +801,7 @@ function colormag_customize_register( $wp_customize ) {
 		new COLORMAG_Upsell_Section( $wp_customize, 'colormag_upsell_section',
 			array(
 				'priority'   => 1,
-				'title'      => esc_html__( 'View PRO version', 'colormag' ),
+				'title'      => esc_html__( 'View Pro Version', 'colormag' ),
 				'url'        => 'https://themegrill.com/colormag-pricing/?utm_source=colormag-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade',
 				'capability' => 'edit_theme_options',
 			)
