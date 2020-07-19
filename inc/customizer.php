@@ -601,7 +601,7 @@ function colormag_customize_register( $wp_customize ) {
 			'priority' => $i,
 		) );
 
-		$i ++;
+		$i++;
 	}
 	// End of the Social Link Options
 	// Start of the Footer Options
@@ -788,7 +788,7 @@ function colormag_customize_register( $wp_customize ) {
 			'settings' => 'colormag_category_color_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
 			'priority' => $i,
 		) ) );
-		$i ++;
+		$i++;
 	}
 
 	/**
@@ -926,7 +926,10 @@ add_action( 'customize_register', 'colormag_customize_register' );
  */
 
 function colormag_customize_preview_js() {
-	wp_enqueue_script( 'colormag-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview', 'jquery' ), false, true );
+	wp_enqueue_script( 'colormag-customizer', get_template_directory_uri() . '/js/customizer.js', array(
+		'customize-preview',
+		'jquery',
+	), false, true );
 }
 
 add_action( 'customize_preview_init', 'colormag_customize_preview_js' );
@@ -984,6 +987,7 @@ function colormag_customizer_custom_scripts() {
 			background-color: #289DCC !important;
 			border-left-color: #0073aa;
 			color: #fff !important;
+			padding: 0;
 		}
 
 		#accordion-section-colormag_upsell_section h3 a:after {
@@ -1005,6 +1009,7 @@ function colormag_customizer_custom_scripts() {
 			color: #fff;
 			display: block;
 			text-decoration: none;
+			padding: 12px 15px 15px;
 		}
 
 		li#accordion-section-colormag_upsell_section h3.accordion-section-title a:focus {
@@ -1020,46 +1025,24 @@ function colormag_customizer_custom_scripts() {
 		li#accordion-section-colormag_upsell_section h3.accordion-section-title:after {
 			color: #fff !important;
 		}
-
-		/* Upsell button CSS */
-		.themegrill-pro-info,
-		.customize-control-colormag-important-links a {
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
-			background: #008EC2;
-			color: #fff;
-			display: block;
-			margin: 15px 0 0;
-			padding: 5px 0;
-			text-align: center;
-			font-weight: 600;
-		}
-
-		.customize-control-colormag-important-links a {
-			padding: 8px 0;
-		}
-
-		.themegrill-pro-info:hover,
-		.customize-control-colormag-important-links a:hover {
-			color: #ffffff;
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
-			background: #2380BA;
-		}
 	</style>
 
 	<script>
-		( function ( $, api ) {
-			api.sectionConstructor['colormag-upsell-section'] = api.Section.extend( {
+		(
+			function ( $, api ) {
+				api.sectionConstructor['colormag-upsell-section'] = api.Section.extend( {
 
-				// No events for this type of section.
-				attachEvents : function () {
-				},
+					// No events for this type of section.
+					attachEvents : function () {
+					},
 
-				// Always make the section active.
-				isContextuallyActive : function () {
-					return true;
-				}
-			} );
-		} )( jQuery, wp.customize );
+					// Always make the section active.
+					isContextuallyActive : function () {
+						return true;
+					}
+				} );
+			}
+		)( jQuery, wp.customize );
 
 	</script>
 	<?php
