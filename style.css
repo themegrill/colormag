@@ -2326,18 +2326,18 @@ a#scroll-up:hover {
 	display: inline-block;
 	background-color: #289dcc;
 	border-radius: 3px;
+	transition: all 0.3s;
+}
+
+.more-link:hover {
+	background-color: #248DB7;
 }
 
 .more-link span {
 	font-size: 12px;
 	padding: 5px 10px;
 	color: #ffffff;
-	cursor: pointer;
 	display: inline-block;
-}
-
-.more-link span:hover {
-	background-color: rgba(0, 0, 0, 0.1);
 }
 
 ul.blocks-gallery-grid,
