@@ -1186,6 +1186,19 @@ li.default-menu {
 	color: #ffffff;
 }
 
+#masthead .main-small-navigation li.active-menu-item > a {
+	color: #fff;
+	background-color: #289dcc;
+}
+
+#masthead .main-small-navigation li.active-menu-item > .sub-toggle {
+	background-color: #fff;
+}
+
+#masthead .main-small-navigation li.active-menu-item > .sub-toggle i {
+	color: #289dcc;
+}
+
 /* =PAGE HEADER TITLE
 ----------------------------------------------- */
 .page-header .page-title {
