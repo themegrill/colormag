@@ -54,7 +54,7 @@ and we will include it within the theme from next version update.
 * Fix - Responsive video embeds.
 
 = Version - 1.4.8 -2020-05-27 =
-* Tweak - Enhance customizer upsell section.
+* Tweak       - Enhance customizer upsell section.
 * Enhancement - Gutenberg compatibility
 
 = Version 1.4.7 -2020-05-22 =
@@ -80,12 +80,12 @@ and we will include it within the theme from next version update.
 * Tweak - Deprecate Custom CSS customize option provided via theme
 
 = Version - 1.4.2 - 2019-07-29 =
-* Fix - Random posts and Search icon position in menu.
-* Fix - Comment form boxes design.
-* Fix - User consent design for comment form.
-* Fix - Published and Updated class for Google Structured Data.
-* Fix - Featured Posts widget image margin when used with Elementor.
-* Fix - Featured image alignment on featured posts widget for RTL support.
+* Fix   - Random posts and Search icon position in menu.
+* Fix   - Comment form boxes design.
+* Fix   - User consent design for comment form.
+* Fix   - Published and Updated class for Google Structured Data.
+* Fix   - Featured Posts widget image margin when used with Elementor.
+* Fix   - Featured image alignment on featured posts widget for RTL support.
 * Tweak - CSS change for Elementor Block Elements.
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.
@@ -101,13 +101,13 @@ and we will include it within the theme from next version update.
 
 = Version 1.3.9 - 2019-05-21 =
 * Update - FitVids to 1.2.0
-* Tweak - Add review notice message.
+* Tweak  - Add review notice message.
 
 = Version 1.3.8 - 2019-03-26 =
 * Fix - Upload Theme button not working
 
 = Version 1.3.7 - 2019-03-19 =
-* Tweak - Remove import button from site library for pro themes.
+* Tweak  - Remove import button from site library for pro themes.
 * Update - BxSlider to 4.2.15
 
 = Version 1.3.6 - 2019-03-01 =
@@ -121,8 +121,8 @@ and we will include it within the theme from next version update.
 
 = Version 1.3.4 - 2018-12-07 =
 * Recommend - Zakra Gutenberg ready theme
-* Fix - Gallery padding for Gutenberg
-* Tweak - Utilize single custom JS file for required theme JS settings.
+* Fix       - Gallery padding for Gutenberg
+* Tweak     - Utilize single custom JS file for required theme JS settings.
 
 = Version 1.3.3 - 2018-11-19 =
 * Added - Gutenberg compatibility
@@ -155,13 +155,13 @@ and we will include it within the theme from next version update.
 * Fix - Flex issue on safari
 
 = Version 1.2.4 - 2018-02-27 =
-* Fix - Header layout ( Main Header Area Display ) design issue
-* Fix - Touchscreen submenu double click issue in small devices
+* Fix    - Header layout ( Main Header Area Display ) design issue
+* Fix    - Touchscreen submenu double click issue in small devices
 * Tweaks - Introduce customizer live preview and selective refresh feature.
 
 = Version 1.2.3 - 2017-12-12 =
-* Added - Scrollbar for fixed better responsive menu if overflow.
-* Tweaks - Touch screen accessible submenu
+* Added   - Scrollbar for fixed better responsive menu if overflow.
+* Tweaks  - Touch screen accessible submenu
 * Feature - Added Elementor plugin support
 * Feature - Added Block widgets for use within Elementor plugin
 * Feature - Added Grid widgets for use within Elementor plugin
@@ -171,17 +171,17 @@ and we will include it within the theme from next version update.
 * Feature - Added footer variation options
 
 = Version 1.2.1 - 2017-08-31 =
-* Tweaks - Updated BxSlider to version 4.2.12
-* Tweaks - WooCommerce sidebar layout now utilizes the same sidebar area provided via the theme by default
-* Tweaks - Image alt text added to the advertisement widgets provided via this theme
-* Tweaks - Introduce selective refresh for site title and description
+* Tweaks  - Updated BxSlider to version 4.2.12
+* Tweaks  - WooCommerce sidebar layout now utilizes the same sidebar area provided via the theme by default
+* Tweaks  - Image alt text added to the advertisement widgets provided via this theme
+* Tweaks  - Introduce selective refresh for site title and description
 * Feature - Added theme starter content introduced in WordPress 4.7
 
 = Version 1.2.0 - 2017-04-27 =
 * Feature - Added option to display the date in header set via WordPress date setting
-* Tweaks - Add theme support for WooCommerce 3.0's new gallery feature
-* Tweaks - Updated FontAwesome icons to version 4.7.0
-* Fix - Search results page design
+* Tweaks  - Add theme support for WooCommerce 3.0's new gallery feature
+* Tweaks  - Updated FontAwesome icons to version 4.7.0
+* Fix     - Search results page design
 
 = Version 1.1.9 - 2017-03-03 =
 * Tweaks - Updated BxSlider to version 4.2.10
@@ -190,8 +190,8 @@ and we will include it within the theme from next version update.
 
 = Version 1.1.8 - 2017-01-16 =
 * Feature - Added new responsive menu design.
-* Added - RTL Language support.
-* Added - Support for Video Headers introduced in WordPress 4.7.
+* Added   - RTL Language support.
+* Added   - Support for Video Headers introduced in WordPress 4.7.
 
 = Version 1.1.7 - 2016-12-09 =
 * Feature - Migrated the Custom Logo from theme options to the Site Logo in Site Identity section
