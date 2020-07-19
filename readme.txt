@@ -51,7 +51,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Enhance - Post `Read more` CTA UI
+* Fix - Mobile sub toggle icon color and bg color conflict while opening two submenu at once.
+* Enhance - Post `Read more` CTA UI.
 
 = Version - 1.4.9 -2020-06-05 =
 * Fix - Responsive video embeds.
