@@ -29,7 +29,7 @@ class colormag_featured_posts_vertical_widget extends WP_Widget {
 		$category                = $instance['category'];
 		?>
 		<p><?php _e( 'Layout will be as below:', 'colormag' ) ?></p>
-		<div style="text-align: center;"><img src="<?php echo get_template_directory_uri() . '/img/style-2.jpg' ?>">
+		<div style="text-align: center;"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/img/style-2.jpg' ?>">
 		</div>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'colormag' ); ?></label>

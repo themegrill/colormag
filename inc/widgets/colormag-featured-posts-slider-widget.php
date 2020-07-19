@@ -120,7 +120,7 @@ class colormag_featured_posts_slider_widget extends WP_Widget {
 					} else {
 						?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/slider-featured-image.png">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/slider-featured-image.png">
 						</a>
 					<?php }
 					?>

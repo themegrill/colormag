@@ -13,7 +13,6 @@ External resources linked to the theme.
 Resources packed within the theme.
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
-* Images in the screenshot is from http://pixabay.com/ link. License: CC0 Public Domain
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed
 * Stickyjs by Anthony Garand | MIT Licensed
