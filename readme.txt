@@ -49,6 +49,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Remove - Unused codes.
+
 = Version - 1.5.0 -2020-07-20 =
 * Fix - Mobile sub toggle icon color and bg color conflict while opening two submenu at once.
 * Enhance - Post `Read more` CTA UI.
