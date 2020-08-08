@@ -4,7 +4,7 @@ Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: ColorMag is a perfect responsive magazine style WordPress theme. Suitable for news, newspaper, magazine, publishing, business and any kind of sites. Get free support at https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/colormag/
-Version: 1.5.0
+Version: 1.5.1
 Tested up to: 5.4.1
 Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
@@ -20,8 +20,7 @@ and Blueprint http://www.blueprintcss.org/
 /*==========  Gray colors  ==========*/
 /*=====  Light colors  ======*/
 /*==========  Brand-colors  ==========*/
-/*==========  social links colors  ==========*/
-/* =Reset
+/*==========  social links colors  ==========*//* =Reset
 -------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -129,7 +128,7 @@ input,
 select,
 textarea {
 	color: #444444;
-	font: 16px 'Open Sans', serif;
+	font: 16px "Open Sans", serif;
 	line-height: 1.6;
 	word-wrap: break-word;
 }
@@ -143,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 18px;
 	color: #333333;
 	font-weight: normal;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 }
 
 h1 {
@@ -189,7 +188,7 @@ hr,
 p {
 	line-height: 1.6;
 	margin-bottom: 15px;
-	font-family: 'Open Sans', serif;
+	font-family: "Open Sans", serif;
 	font-size: 15px;
 }
 
@@ -206,8 +205,8 @@ pre {
 	margin-bottom: 20px;
 	overflow: auto;
 	padding: 20px;
-	border: 1px solid #EAEAEA;
-	font-family: "Courier 10 Pitch",Courier,monospace;
+	border: 1px solid #eaeaea;
+	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 14px;
 	line-height: 1.4;
 	white-space: pre-wrap;
@@ -295,7 +294,7 @@ blockquote,
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
 	background-color: #289dcc;
-	color: #fff;
+	color: #ffffff;
 	border-radius: 5px;
 	border-left: 0;
 }
@@ -305,7 +304,7 @@ blockquote p,
 .wp-block-quote.is-style-large p,
 .wp-block-quote.has-text-align-right p {
 	font-size: 16px;
-	font-family: 'Open Sans', serif;
+	font-family: "Open Sans", serif;
 	line-height: 1.4;
 	position: relative;
 	padding-top: 0;
@@ -321,7 +320,7 @@ blockquote p::before,
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
-	color: #fff;
+	color: #ffffff;
 	font-size: 32px;
 	position: absolute;
 	top: -27px;
@@ -332,7 +331,7 @@ blockquote a,
 .wp-block-quote a,
 .wp-block-quote.is-style-large a,
 .wp-block-quote.has-text-align-right a {
-	color: #fff;
+	color: #ffffff;
 	text-decoration: underline;
 }
 
@@ -652,7 +651,7 @@ body {
 	font-size: 16px;
 	color: #666666;
 	padding-bottom: 0px;
-	font-family: 'Open Sans', serif;
+	font-family: "Open Sans", serif;
 }
 
 #header-right-section {
@@ -933,7 +932,7 @@ nav li > ol {
 .main-navigation li {
 	float: left;
 	position: relative;
-	font-family: 'Open Sans', serif;
+	font-family: "Open Sans", serif;
 	font-weight: 300;
 }
 
@@ -1123,7 +1122,7 @@ li.default-menu {
 	color: #ffffff;
 	margin: 0;
 	text-align: center;
-	font-family: 'Open Sans', serif;
+	font-family: "Open Sans", serif;
 	padding-bottom: 0;
 	line-height: 1.2;
 }
@@ -1202,12 +1201,12 @@ li.default-menu {
 }
 
 #masthead .main-small-navigation li.active-menu-item > a {
-	color: #fff;
+	color: #ffffff;
 	background-color: #289dcc;
 }
 
 #masthead .main-small-navigation li.active-menu-item > .sub-toggle {
-	background-color: #fff;
+	background-color: #ffffff;
 }
 
 #masthead .main-small-navigation li.active-menu-item > .sub-toggle i {
@@ -2343,7 +2342,7 @@ a#scroll-up:hover {
 }
 
 .more-link:hover {
-	background-color: #248DB7;
+	background-color: #248db7;
 }
 
 .more-link span {
@@ -2478,7 +2477,7 @@ ul.wp-block-gallery img {
 .widget_slider_area .widget-title span,
 .widget_beside_slider .widget-title span {
 	background-color: #289dcc;
-	color: #fff;
+	color: #ffffff;
 	padding: 6px 12px;
 	display: inline-block;
 }
@@ -3156,10 +3155,12 @@ Responsive Structure
 		margin-left: -20px;
 		margin-right: -20px;
 	}
+
 	.no-sidebar #primary .entry-content > .alignwide {
 		margin-left: -50px;
 		margin-right: -50px;
 	}
+
 	.no-sidebar #primary .entry-content > .alignfull {
 		margin-left: -100px;
 		margin-right: -100px;
@@ -3170,9 +3171,11 @@ Responsive Structure
 	#page {
 		width: 97%;
 	}
+
 	.wide #page {
 		width: 100%;
 	}
+
 	.inner-wrap {
 		width: 94%;
 	}
@@ -3182,54 +3185,68 @@ Responsive Structure
 	#header-text-nav-wrap {
 		padding: 10px 0;
 	}
+
 	#header-left-section {
 		float: none;
 		margin-bottom: 10px;
 	}
+
 	#header-logo-image {
 		float: none;
 		text-align: center;
 		padding-right: 0;
 	}
+
 	#header-text {
 		float: none;
 		text-align: center;
 		padding-right: 0;
 	}
+
 	#header-right-section {
 		float: none;
 	}
+
 	#header-right-section .widget {
 		text-align: center;
 	}
+
 	.menu-toggle {
 		display: block;
 		float: left;
 	}
+
 	.main-navigation ul {
 		display: none;
 	}
+
 	.main-navigation .home-icon a {
 		padding: 7px 10px;
 	}
+
 	.widget_slider_area,
 	.widget_beside_slider {
 		float: none;
 		width: 100%;
 	}
+
 	.widget_slider_area {
 		padding-bottom: 10px;
 	}
+
 	#primary, #secondary {
 		float: none;
 		width: 100%;
 	}
+
 	.better-responsive-menu .sub-menu {
 		display: none;
 	}
+
 	.main-small-navigation li {
 		position: relative;
 	}
+
 	.sub-toggle {
 		position: absolute;
 		right: 20px;
@@ -3239,27 +3256,33 @@ Responsive Structure
 		padding: 0 7px;
 		background-color: #1b7aa0;
 	}
+
 	.sub-toggle .fa {
 		color: #ffffff;
 	}
+
 	.sub-toggle.active .fa {
 		color: #1b7aa0;
 	}
+
 	.no-sidebar-full-width #primary .entry-content > .alignwide,
 	.no-sidebar #primary .entry-content > .alignwide {
 		margin-left: -15px;
 		margin-right: -15px;
 	}
+
 	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
 	.no-sidebar.box-layout #primary .entry-content > .alignwide {
 		margin-left: -15px;
 		margin-right: -15px;
 	}
+
 	.no-sidebar-full-width.box-layout #primary .entry-content > .alignfull,
 	.no-sidebar.box-layout #primary .entry-content > .alignfull {
 		margin-left: -30px;
 		margin-right: -30px;
 	}
+
 	.no-sidebar #primary .entry-content > .alignfull {
 		margin-left: -15px;
 		margin-right: -15px;
@@ -3270,58 +3293,70 @@ Responsive Structure
 	.logged-in #masthead #site-navigation {
 		top: 0 !important;
 	}
+
 	.news-bar {
 		text-align: center;
 	}
+
 	.date-in-header,
 	.breaking-news,
 	#masthead .social-links {
 		float: none;
 		max-width: 100%;
 	}
+
 	.newsticker li {
 		text-align: left;
 	}
+
 	.archive #content .post:first-child,
 	.archive #content .post:nth-child(2n),
 	.archive #content .post:nth-child(2n+1) {
 		float: none;
 		width: 100%;
 	}
+
 	.blog .post:first-child,
 	.blog .post:nth-child(2n),
 	.blog .post:nth-child(2n+1) {
 		float: none;
 		width: 100%;
 	}
+
 	.search .status-publish:first-child,
 	.search .status-publish:nth-child(2n),
 	.search .status-publish:nth-child(2n+1) {
 		float: none;
 		width: 100%;
 	}
+
 	.tg-footer-main-widget {
 		float: none;
 		margin-right: 0;
 		width: 100%;
 	}
+
 	.tg-footer-other-widgets {
 		float: none;
 		width: 100%;
 	}
+
 	.footer-socket-right-section,
 	.footer-socket-left-section {
 		float: none;
 		text-align: center;
 	}
+
 	.footer-socket-wrapper .copyright {
 		float: none;
 		max-width: 100%;
 		text-align: center;
 	}
+
 	.footer-socket-area .social-links {
 		float: none;
 	}
+
 	.gallery-columns-4 .gallery-item,
 	.gallery-columns-5 .gallery-item,
 	.gallery-columns-6 .gallery-item,
@@ -3330,11 +3365,13 @@ Responsive Structure
 	.gallery-columns-9 .gallery-item {
 		width: 25%;
 	}
+
 	.no-sidebar-full-width #primary .entry-content > .alignwide,
 	.no-sidebar #primary .entry-content > .alignwide {
 		margin-left: 0;
 		margin-right: 0;
 	}
+
 	.no-sidebar-full-width.box-layout #primary .entry-content > .alignwide,
 	.no-sidebar.box-layout #primary .entry-content > .alignwide {
 		margin-left: 0;
@@ -3348,9 +3385,11 @@ Responsive Structure
 		float: none;
 		width: 100%;
 	}
+
 	.main-content-section .tg-one-half {
 		width: 100%;
 	}
+
 	.tg-second-footer-widget,
 	.tg-third-footer-widget,
 	.tg-fourth-footer-widget {
@@ -3358,10 +3397,12 @@ Responsive Structure
 		margin-right: 0;
 		width: 100%;
 	}
+
 	.single-related-posts {
 		margin-right: 0;
 		width: 100%;
 	}
+
 	.gallery-columns-4 .gallery-item,
 	.gallery-columns-5 .gallery-item,
 	.gallery-columns-6 .gallery-item,
@@ -3428,14 +3469,14 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 .wp-custom-header-video-button:before {
-	content: '\f04b';
+	content: "\f04b";
 	display: block;
 	font-family: FontAwesome;
 	font-size: 20px;
 }
 
 .wp-custom-header-video-button.wp-custom-header-video-pause:before {
-	content: '\f04c';
+	content: "\f04c";
 }
 
 #masthead {
@@ -3453,7 +3494,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead .main-small-navigation li:hover > a, #masthead .main-small-navigation li.current-page-ancestor > a, #masthead .main-small-navigation li.current-menu-ancestor > a, #masthead .main-small-navigation li.current-page-item > a, #masthead .main-small-navigation li.current-menu-item > a {
-	color: #fff;
+	color: #ffffff;
 	background-color: #289dcc;
 }
 
@@ -3474,7 +3515,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	padding: 0 10px;
 	display: inline-block;
 	vertical-align: top;
-	color: #fff;
+	color: #ffffff;
 	font-weight: 400;
 }
 
@@ -3606,7 +3647,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 #masthead.colormag-header-classic .breaking-news .breaking-news-latest {
 	background: #212529;
 	padding: 0 10px;
-	color: #fff;
+	color: #ffffff;
 	font-weight: 400;
 	display: inline-block;
 	vertical-align: top;
@@ -3695,7 +3736,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic #site-navigation .menu-toggle:hover::before {
-	color: #fff;
+	color: #ffffff;
 }
 
 #masthead.colormag-header-classic .main-navigation a {
@@ -3770,7 +3811,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li:hover > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-ancestor > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item > a, #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.focus > a {
-	color: #fff;
+	color: #ffffff;
 	background-color: #289dcc;
 }
 
@@ -3860,11 +3901,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic .main-small-navigation .menu-toggle::before {
-	color: #fff;
+	color: #ffffff;
 }
 
 #masthead.colormag-header-classic .is-sticky #site-navigation {
-	background-color: #fff;
+	background-color: #ffffff;
 	box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -3872,52 +3913,66 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	.better-responsive-menu .main-small-navigation .menu-primary-container {
 		padding-bottom: 20px;
 	}
+
 	#masthead .main-small-navigation li:hover > .sub-toggle, #masthead .main-small-navigation li.current-page-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-menu-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-page-item > .sub-toggle, #masthead .main-small-navigation li.current-menu-item > .sub-toggle {
-		background-color: #fff;
+		background-color: #ffffff;
 	}
+
 	#masthead .main-small-navigation li:hover > .sub-toggle i, #masthead .main-small-navigation li.current-page-ancestor > .sub-toggle i, #masthead .main-small-navigation li.current-menu-ancestor > .sub-toggle i, #masthead .main-small-navigation li.current-page-item > .sub-toggle i, #masthead .main-small-navigation li.current-menu-item > .sub-toggle i {
 		color: #289dcc;
 	}
+
 	#masthead.colormag-header-clean #menu-primary {
 		background-color: #ffffff;
 	}
+
 	#masthead.colormag-header-clean .date-in-header,
 	#masthead.colormag-header-clean .social-links {
 		float: none;
 		text-align: center;
 	}
+
 	#masthead.colormag-header-clean .breaking-news {
 		width: 100%;
 		float: none;
 		margin-bottom: 5px;
 		text-align: center;
 	}
+
 	#masthead.colormag-header-clean #header-text-nav-wrap {
 		padding: 0 0 20px;
 	}
+
 	#masthead.colormag-header-clean #header-left-section,
 	#masthead.colormag-header-clean #header-logo-image {
 		margin-bottom: 0;
 	}
+
 	#masthead.colormag-header-clean #site-navigation .random-post a {
 		padding: 20px;
 	}
+
 	#masthead.colormag-header-clean #site-navigation .menu-toggle::before,
 	#masthead.colormag-header-clean #site-navigation .fa.search-top {
 		padding: 20px;
 	}
+
 	#masthead.colormag-header-clean .main-small-navigation .home-icon a {
 		padding: 20px;
 	}
+
 	#masthead.colormag-header-clean .main-small-navigation .menu-toggle {
 		background-color: #289dcc;
 	}
+
 	#masthead.colormag-header-clean .main-small-navigation .random-post a {
 		padding: 15px;
 	}
+
 	#masthead.colormag-header-classic #menu-primary {
 		background-color: #ffffff;
 	}
+
 	#masthead.colormag-header-classic .date-in-header,
 	#masthead.colormag-header-classic .breaking-news,
 	#masthead.colormag-header-classic .social-links {
@@ -3925,32 +3980,40 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 		float: none;
 		text-align: center;
 	}
+
 	#masthead.colormag-header-classic #header-text-nav-wrap {
 		padding: 0;
 	}
+
 	#masthead.colormag-header-classic #header-left-section,
 	#masthead.colormag-header-classic #header-logo-image {
 		margin-bottom: 0;
 	}
+
 	#masthead.colormag-header-classic .main-small-navigation .menu-toggle {
 		background-color: #289dcc;
 		border-color: #289dcc;
 	}
+
 	#masthead.colormag-header-classic .main-small-navigation .random-post a {
 		padding: 15px;
 	}
+
 	#masthead.colormag-header-classic #site-navigation .random-post a {
 		padding: 15px;
 	}
+
 	#masthead.colormag-header-classic #site-navigation .menu-toggle::before,
 	#masthead.colormag-header-classic #site-navigation .fa.search-top {
 		padding: 15px;
 		line-height: 26px;
 	}
+
 	#masthead.colormag-header-classic #site-navigation .home-icon a {
 		padding: 15px;
 		line-height: 26px;
 	}
+
 	.breaking-news {
 		height: auto;
 	}
@@ -3960,12 +4023,15 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	.better-responsive-menu .main-small-navigation .menu-primary-container {
 		padding-bottom: 15px;
 	}
+
 	#masthead.colormag-header-classic .date-in-header, #masthead.colormag-header-clean .date-in-header {
 		display: none;
 	}
+
 	#masthead.colormag-header-classic .breaking-news .breaking-news-latest, #masthead.colormag-header-clean .breaking-news .breaking-news-latest {
 		padding: 0 5px;
 	}
+
 	#masthead.colormag-header-classic .breaking-news .newsticker, #masthead.colormag-header-clean .breaking-news .newsticker {
 		padding-left: 0;
 	}
@@ -3988,7 +4054,7 @@ Classic Layout
 	position: absolute;
 	display: block;
 	bottom: -1px;
-	content: ' ';
+	content: " ";
 	left: 0;
 	width: 25px;
 	height: 2px;

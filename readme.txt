@@ -49,7 +49,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version - 1.5.1 -2020-08-08 =
 * Remove - Unused codes.
 
 = Version - 1.5.0 -2020-07-20 =
