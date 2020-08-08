@@ -1915,6 +1915,7 @@ a#scroll-up {
 	display: none;
 	opacity: 0.5;
 	filter: alpha(opacity=50); /* For IE8 and earlier */
+	transition: all 0.3s ease;
 }
 
 a#scroll-up i {
