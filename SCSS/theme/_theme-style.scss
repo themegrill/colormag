@@ -445,6 +445,7 @@ input[type="submit"]:active {
 a {
 	color: #289dcc;
 	text-decoration: none;
+	transition: all 0.3s ease;
 }
 
 a:focus, a:active, a:hover {
@@ -1915,7 +1916,6 @@ a#scroll-up {
 	display: none;
 	opacity: 0.5;
 	filter: alpha(opacity=50); /* For IE8 and earlier */
-	transition: all 0.3s ease;
 }
 
 a#scroll-up i {

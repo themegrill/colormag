@@ -50,7 +50,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version - 1.5.1 -2020-08-08 =
-* Remove - Unused codes.
+* Enhancement - Links CSS transition.
+* Remove      - Unused codes.
 
 = Version - 1.5.0 -2020-07-20 =
 * Fix - Mobile sub toggle icon color and bg color conflict while opening two submenu at once.
