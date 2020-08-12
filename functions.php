@@ -551,9 +551,3 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
-
-/**
- * Load TGMPA Configs.
- */
-require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/class-tgm-plugin-activation.php' );
-require_once( COLORMAG_INCLUDES_DIR . '/tgm-plugin-activation/tgmpa-colormag.php' );
