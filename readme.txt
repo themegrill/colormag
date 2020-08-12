@@ -49,6 +49,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Remove - TGMPA library to recommend plugins
+
 = Version - 1.5.1 -2020-08-08 =
 * Enhancement - Links CSS transition.
 * Remove      - Unused codes.
