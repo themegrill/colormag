@@ -29,6 +29,33 @@ class ColorMag_Color_Control extends ColorMag_Customize_Base_Additional_Control 
 	public $type = 'colormag-color';
 
 	/**
+	 * Enqueue control related scripts/styles.
+	 */
+	public function enqueue() {
+		parent::enqueue();
+
+		/**
+		 * Color picker strings from WordPress.
+		 *
+		 * Added since WordPress 5.5 has removed them causing alpha color not appearing issue.
+		 */
+		if ( version_compare( $GLOBALS['wp_version'], '5.5', '>=' ) ) {
+			wp_localize_script(
+				'wp-color-picker',
+				'wpColorPickerL10n',
+				array(
+					'clear'            => esc_html__( 'Clear', 'colormag' ),
+					'clearAriaLabel'   => esc_html__( 'Clear color', 'colormag' ),
+					'defaultString'    => esc_html__( 'Default', 'colormag' ),
+					'defaultAriaLabel' => esc_html__( 'Select default color', 'colormag' ),
+					'pick'             => esc_html__( 'Select Color', 'colormag' ),
+					'defaultLabel'     => esc_html__( 'Color value', 'colormag' ),
+				)
+			);
+		}
+	}
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -75,10 +102,10 @@ class ColorMag_Color_Control extends ColorMag_Customize_Base_Additional_Control 
 
 		<div class="customize-control-content">
 			<input class="colormag-color-picker-alpha color-picker-hex"
-			       type="text"
-			       data-alpha="true"
-			       data-default-color="{{ data.default }}"
-			       value="{{ data.value }}"
+				   type="text"
+				   data-alpha="true"
+				   data-default-color="{{ data.default }}"
+				   value="{{ data.value }}"
 			/>
 		</div>
 
