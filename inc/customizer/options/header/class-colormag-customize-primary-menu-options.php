@@ -29,7 +29,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
@@ -45,7 +45,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Sticky Menu', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 5,
 			),
 
@@ -55,8 +55,8 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to enable the sticky behavior of the primary menu', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 10,
 			),
 
@@ -69,7 +69,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Show Home Icon', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 105,
 			),
 
@@ -79,8 +79,8 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to show the home icon in the primary menu', 'colormag' ),
-				'section'   => 'colormag_header_primary_menu_section',
+				'label'     => esc_html__( 'Enable', 'colormag' ),
+				'section'   => 'colormag_primary_menu_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
 					'selector' => '.home-icon',
@@ -97,7 +97,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Search Icon', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 205,
 			),
 
@@ -107,8 +107,8 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to display the Search Icon in the primary menu', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 210,
 			),
 
@@ -121,7 +121,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Random Post', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 305,
 			),
 
@@ -131,8 +131,8 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to display the Random Post Icon in the primary menu', 'colormag' ),
-				'section'   => 'colormag_header_primary_menu_section',
+				'label'     => esc_html__( 'Enable', 'colormag' ),
+				'section'   => 'colormag_primary_menu_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
 					'selector'        => '.random-post',
@@ -153,7 +153,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Responsive Menu Style', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 405,
 			),
 
@@ -163,8 +163,8 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to switch to new responsive menu.', 'colormag' ),
-				'section'  => 'colormag_header_primary_menu_section',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
 				'priority' => 410,
 			),
 
