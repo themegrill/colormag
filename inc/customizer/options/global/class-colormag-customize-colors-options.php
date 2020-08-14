@@ -85,7 +85,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => $priority_count,
 			);
 
-			$priority_count++;
+			$priority_count ++;
 
 		}
 
