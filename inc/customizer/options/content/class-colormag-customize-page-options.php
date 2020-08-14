@@ -1,6 +1,6 @@
 <?php
 /**
- * Class to include Blog Single Post customize options.
+ * Class to include Blog Page customize options.
  *
  * Class ColorMag_Customize_Page_Options
  *
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class to include Blog Single Post customize options.
+ * Class to include Blog Page customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Post
+ * Class ColorMag_Customize_Blog_Page
  */
 class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 
