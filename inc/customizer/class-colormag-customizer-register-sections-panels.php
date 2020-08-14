@@ -46,8 +46,8 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 
 			// Front Page Options.
 			array(
-				'name'     => 'colormag_front_page_options',
-				'type'     => 'panel',
+				'name'     => 'colormag_front_page_section',
+				'type'     => 'section',
 				'title'    => esc_html__( 'Front Page', 'colormag' ),
 				'priority' => 10,
 			),
