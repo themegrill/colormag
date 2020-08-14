@@ -493,8 +493,8 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-primary-menu-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header/class-colormag-customize-sticky-header-options.php';
 
-		// General customize options.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/general/class-colormag-customize-general-options.php';
+		// Content options.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-single-post-options.php';
 
 		// Social customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/social/class-colormag-customize-social-options.php';

@@ -226,12 +226,47 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 50,
 			),
 
+			/**
+			 * Content.
+			 */
 			array(
-				'name'     => 'colormag_global_colors_section',
+				'name'     => 'colormag_blog_archive_section',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Colors', 'colormag' ),
-				'panel'    => 'colormag_global_panel',
+				'title'    => esc_html__( 'Blog / Archive', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
 				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_single_post_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Single Post', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_post_meta_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Post Meta', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_page_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Page', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_sidebar_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Sidebar', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 50,
 			),
 
 			// General sections.
