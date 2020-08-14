@@ -48,6 +48,15 @@ $wp_customize->get_control( 'background_repeat' )->priority = 45;
 $wp_customize->get_control( 'background_attachment' )->section  = 'colormag_global_background_section';
 $wp_customize->get_control( 'background_attachment' )->priority = 50;
 
+// Site Identity.
+$wp_customize->get_control( 'custom_logo' )->priority     = 6;
+$wp_customize->get_control( 'site_icon' )->priority       = 8;
+$wp_customize->get_control( 'blogname' )->priority        = 10;
+$wp_customize->get_control( 'blogdescription' )->priority = 12;
+
+$wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_panel';
+$wp_customize->get_section( 'header_image' )->priority = 10;
+
 // Override Settings.
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';

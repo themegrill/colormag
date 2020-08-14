@@ -49,39 +49,39 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_front_page_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Front Page', 'colormag' ),
-				'priority' => 10,
+				'priority' => 20,
 			),
 
 			// Header Options.
 			array(
-				'name'     => 'colormag_header_options',
+				'name'     => 'colormag_header_panel',
 				'type'     => 'panel',
 				'title'    => esc_html__( 'Header', 'colormag' ),
-				'priority' => 10,
+				'priority' => 30,
 			),
 
 			// Content Options.
 			array(
-				'name'     => 'colormag_content_options',
+				'name'     => 'colormag_content_panel',
 				'type'     => 'panel',
 				'title'    => esc_html__( 'Content', 'colormag' ),
-				'priority' => 10,
+				'priority' => 40,
 			),
 
 			// Footer Options.
 			array(
-				'name'     => 'colormag_footer_options',
+				'name'     => 'colormag_footer_panel',
 				'type'     => 'panel',
 				'title'    => esc_html__( 'Footer', 'colormag' ),
-				'priority' => 10,
+				'priority' => 50,
 			),
 
 			// Additional Options.
 			array(
-				'name'     => 'colormag_additional_options',
+				'name'     => 'colormag_additional_panel',
 				'type'     => 'panel',
 				'title'    => esc_html__( 'Additional', 'colormag' ),
-				'priority' => 10,
+				'priority' => 60,
 			),
 
 			// Design Options.
@@ -183,6 +183,49 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
+			/**
+			 * Header.
+			 */
+			array(
+				'name'     => 'title_tagline',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Site Identity', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 5,
+			),
+
+			array(
+				'name'     => 'colormag_top_bar_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Top Bar', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_primary_header_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Primary Header', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Primary Menu', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_sticky_header_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Sticky Header', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 50,
+			),
+
 			array(
 				'name'     => 'colormag_global_colors_section',
 				'type'     => 'section',
@@ -235,16 +278,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'title'    => esc_html__( 'Main Area', 'colormag' ),
 				'panel'    => 'colormag_header_options',
 				'priority' => 15,
-			),
-
-			// Site identity section.
-			array(
-				'name'     => 'title_tagline',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Site Identity', 'colormag' ),
-				'panel'    => 'colormag_header_options',
-				'section'  => 'colormag_header_main_area_section',
-				'priority' => 5,
 			),
 
 			// Header primary menu section.
