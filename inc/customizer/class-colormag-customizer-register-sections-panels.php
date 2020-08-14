@@ -156,6 +156,33 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
+			// Layout.
+			array(
+				'name'     => 'colormag_global_layout_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Layout', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_site_layout_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Site Layout', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_layout_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_sidebar_layout_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Sidebar Layout', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_layout_section',
+				'priority' => 20,
+			),
+
 			array(
 				'name'     => 'colormag_global_colors_section',
 				'type'     => 'section',
