@@ -29,7 +29,7 @@ class ColorMag_Customize_Header_General_Options extends ColorMag_Customize_Base_
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
 
@@ -40,7 +40,7 @@ class ColorMag_Customize_Header_General_Options extends ColorMag_Customize_Base_
 				'type'     => 'control',
 				'control'  => 'colormag-radio-image',
 				'label'    => esc_html__( 'Choose the main total header area display type that you want', 'colormag' ),
-				'section'  => 'colormag_header_general_section',
+				'section'  => 'colormag_primary_header_section',
 				'choices'  => array(
 					'type_one'   => array(
 						'label' => '',
