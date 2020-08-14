@@ -29,34 +29,42 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
 
 			/**
 			 * Register panels.
 			 */
+			// Global Options.
+			array(
+				'name'     => 'colormag_global_panel',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Global', 'colormag' ),
+				'priority' => 10,
+			),
+
+			// Front Page Options.
+			array(
+				'name'     => 'colormag_front_page_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Front Page', 'colormag' ),
+				'priority' => 10,
+			),
+
 			// Header Options.
 			array(
 				'name'     => 'colormag_header_options',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Header Options', 'colormag' ),
+				'title'    => esc_html__( 'Header', 'colormag' ),
 				'priority' => 10,
 			),
 
-			// Design Options.
+			// Content Options.
 			array(
-				'name'     => 'colormag_design_options',
+				'name'     => 'colormag_content_options',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Design Options', 'colormag' ),
-				'priority' => 10,
-			),
-
-			// Post/Page/Blog Options.
-			array(
-				'name'     => 'colormag_blog_options',
-				'type'     => 'panel',
-				'title'    => esc_html__( 'Post/Page/Blog Options', 'colormag' ),
+				'title'    => esc_html__( 'Content', 'colormag' ),
 				'priority' => 10,
 			),
 
@@ -64,7 +72,31 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			array(
 				'name'     => 'colormag_footer_options',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Footer Options', 'colormag' ),
+				'title'    => esc_html__( 'Footer', 'colormag' ),
+				'priority' => 10,
+			),
+
+			// Additional Options.
+			array(
+				'name'     => 'colormag_additional_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Additional', 'colormag' ),
+				'priority' => 10,
+			),
+
+			// Design Options.
+			array(
+				'name'     => 'colormag_design_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Design', 'colormag' ),
+				'priority' => 10,
+			),
+
+			// Post/Page/Blog Options.
+			array(
+				'name'     => 'colormag_blog_options',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Post/Page/Blog', 'colormag' ),
 				'priority' => 10,
 			),
 
@@ -72,13 +104,57 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			array(
 				'name'     => 'colormag_color_options',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Color Options', 'colormag' ),
+				'title'    => esc_html__( 'Color', 'colormag' ),
 				'priority' => 10,
 			),
 
 			/**
 			 * Register sections.
 			 */
+			// Color.
+			array(
+				'name'     => 'colormag_global_colors_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_primary_colors_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Primary Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_skin_color_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Skin Color', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_category_colors_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Category Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_global_colors_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 10,
+			),
+
 			// General sections.
 			array(
 				'name'     => 'colormag_general_section',

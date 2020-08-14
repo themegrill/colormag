@@ -477,6 +477,9 @@ class ColorMag_Customizer {
 		/**
 		 * Include the required customize options file.
 		 */
+		// Global.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-colors-options.php';
+
 		// General customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/general/class-colormag-customize-general-options.php';
 
