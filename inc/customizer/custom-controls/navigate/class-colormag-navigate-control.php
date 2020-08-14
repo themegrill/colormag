@@ -1,8 +1,8 @@
 <?php
 /**
- * Extend WP_Customize_Control to include hidden control.
+ * Extend WP_Customize_Control to add the navigate control.
  *
- * Class ColorMag_Hidden_Control
+ * Class ColorMag_Navigate_Control
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -15,18 +15,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class to extend WP_Customize_Control to add the hidden customize control.
+ * Class to extend WP_Customize_Control to add the navigate customize control.
  *
- * Class ColorMag_Hidden_Control
+ * Class ColorMag_Navigate_Control
  */
-class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control {
+class ColorMag_Navigate_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
 	 *
 	 * @var string
 	 */
-	public $type = 'colormag-hidden';
+	public $type = 'colormag-navigate';
+
+	public $navigate_info = array();
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
@@ -37,16 +39,9 @@ class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control
 
 		parent::to_json();
 
-		$this->json['default'] = $this->setting->default;
-		if ( isset( $this->default ) ) {
-			$this->json['default'] = $this->default;
-		}
-		$this->json['value'] = $this->value();
-
-		$this->json['link']        = $this->get_link();
-		$this->json['id']          = $this->id;
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+		$this->json['navigate_info']    = $this->navigate_info;
 
 	}
 
@@ -62,13 +57,20 @@ class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control
 	 */
 	protected function content_template() {
 		?>
-
-		<input type='hidden'
-		       class='hidden-field-{{ data.settings.default }}'
-		       data-name='{{ data.settings.default }}'
-		       value='{{ data.value }}'
-		>
-
+		<div class="customize-control-content tg-navigate">
+			<?php
+			echo sprintf(
+				/* Translators: %1$s: Anchor tag open, %2$s: Customizer section name %3$s: Anchor tag close */
+				esc_html__(
+					'%1$s Click here to edit %2$s features %3$s',
+					'colormag'
+				),
+				'<a data-section="{{{ data.navigate_info.target_id }}}" href="#">',
+				'{{{ data.navigate_info.target_label }}}',
+				'</a>'
+			);
+			?>
+		</div>
 		<?php
 	}
 
@@ -76,6 +78,6 @@ class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control
 	 * Don't render the control content from PHP, as it's rendered via JS on load.
 	 */
 	public function render_content() {
-	}
 
+	}
 }

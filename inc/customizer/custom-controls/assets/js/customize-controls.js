@@ -1,4 +1,69 @@
 /**
+ * Color picker control JS to handle color picker rendering within customize control.
+ *
+ * File `color.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on( 'load', function () {
+			$( 'html' ).addClass( 'colorpicker-ready' );
+		} );
+
+		wp.customize.controlConstructor[ 'colormag-color' ] = wp.customize.Control.extend( {
+
+			ready : function () {
+
+				'use strict';
+
+				var control = this;
+
+				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
+
+					change : function ( event, ui ) {
+						var color = ui.color.toString();
+
+						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+							control.setting.set( color );
+						}
+					}
+
+				} );
+
+			}
+
+		} );
+
+	}
+)( jQuery );
+
+/**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Background image control JS to handle the background customize option.
  *
  * File `background.js`.
@@ -180,71 +245,6 @@
 )( jQuery );
 
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
- * Color picker control JS to handle color picker rendering within customize control.
- *
- * File `color.js`.
- *
- * @package ColorMag
- */
-(
-	function ( $ ) {
-
-		$( window ).on( 'load', function () {
-			$( 'html' ).addClass( 'colorpicker-ready' );
-		} );
-
-		wp.customize.controlConstructor[ 'colormag-color' ] = wp.customize.Control.extend( {
-
-			ready : function () {
-
-				'use strict';
-
-				var control = this;
-
-				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
-
-					change : function ( event, ui ) {
-						var color = ui.color.toString();
-
-						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-							control.setting.set( color );
-						}
-					}
-
-				} );
-
-			}
-
-		} );
-
-	}
-)( jQuery );
-
-/**
  * Editor control JS to handle the editor rendering within customize control.
  *
  * File `editor.js`.
@@ -293,30 +293,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			} );
 
 		}
-
-	}
-
-} );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
 
 	}
 
@@ -1391,13 +1367,13 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 )( jQuery );
 
 /**
- * Radio image control JS to handle the toggle of radio images.
+ * Dropdown categories control JS to handle the dropdown categories customize control.
  *
- * File `radio-image.js`.
+ * File `dropdown-categorie.js`.
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
 
 	ready : function () {
 
@@ -1406,9 +1382,100 @@ wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control
 		var control = this;
 
 		// Change the value.
-		this.container.on( 'click', 'input', function () {
+		this.container.on( 'change', 'select', function () {
 			control.setting.set( jQuery( this ).val() );
 		} );
+
+	}
+
+} );
+
+/**
+ * Background image control JS to handle the navigate customize option.
+ *
+ * File `navigate.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on( 'load', function () {
+
+			$( '.tg-navigate a' ).on( 'click', function ( e ) {
+				e.preventDefault();
+
+				var targetSection = $( this ).data( 'section' );
+
+				if ( targetSection ) {
+					wp.customize.section( targetSection ).focus();
+				}
+			} );
+
+		} );
+	}
+)( jQuery );
+
+/**
+ * Sortable control JS to handle the sortable feature of custom customize controls.
+ *
+ * File `sortable.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Set the sortable container.
+		control.sortableContainer = control.container.find( 'ul.sortable' ).first();
+
+		// Init sortable.
+		control.sortableContainer.sortable(
+			{
+				// Update value when we stop sorting.
+				stop : function () {
+					control.updateValue();
+				}
+			}
+		).disableSelection().find( 'li' ).each(
+			function () {
+				// Enable/disable options when we click on the eye of Thundera.
+				jQuery( this ).find( 'i.visibility' ).click(
+					function () {
+						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+					}
+				);
+			}
+		).click(
+			function () {
+				// Update value on click.
+				control.updateValue();
+			}
+		);
+
+	},
+
+	updateValue : function () {
+
+		'use strict';
+
+		var control  = this,
+		    newValue = [];
+
+		this.sortableContainer.find( 'li' ).each(
+			function () {
+				if ( ! jQuery( this ).is( '.invisible' ) ) {
+					newValue.push( jQuery( this ).data( 'value' ) );
+				}
+			}
+		);
+
+		control.setting.set( newValue );
 
 	}
 
@@ -1489,13 +1556,13 @@ wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend
 } );
 
 /**
- * Sortable control JS to handle the sortable feature of custom customize controls.
+ * Radio image control JS to handle the toggle of radio images.
  *
- * File `sortable.js`.
+ * File `radio-image.js`.
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.extend( {
+wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
 
 	ready : function () {
 
@@ -1503,51 +1570,10 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 
 		var control = this;
 
-		// Set the sortable container.
-		control.sortableContainer = control.container.find( 'ul.sortable' ).first();
-
-		// Init sortable.
-		control.sortableContainer.sortable(
-			{
-				// Update value when we stop sorting.
-				stop : function () {
-					control.updateValue();
-				}
-			}
-		).disableSelection().find( 'li' ).each(
-			function () {
-				// Enable/disable options when we click on the eye of Thundera.
-				jQuery( this ).find( 'i.visibility' ).click(
-					function () {
-						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
-					}
-				);
-			}
-		).click(
-			function () {
-				// Update value on click.
-				control.updateValue();
-			}
-		);
-
-	},
-
-	updateValue : function () {
-
-		'use strict';
-
-		var control  = this,
-		    newValue = [];
-
-		this.sortableContainer.find( 'li' ).each(
-			function () {
-				if ( ! jQuery( this ).is( '.invisible' ) ) {
-					newValue.push( jQuery( this ).data( 'value' ) );
-				}
-			}
-		);
-
-		control.setting.set( newValue );
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
 
 	}
 

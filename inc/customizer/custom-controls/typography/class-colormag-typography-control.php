@@ -6,7 +6,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.0.0
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -323,27 +323,30 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="text"
+					<input type="number"
 					       id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
 					       data-device="desktop"
 					       value="{{ data.value['font-size']['desktop'] }}"
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
 					       data-device="tablet"
 					       value="{{ data.value['font-size']['tablet'] }}"
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
 					       data-device="mobile"
 					       value="{{ data.value['font-size']['mobile'] }}"
 					/>
+					<span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
@@ -370,7 +373,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="text"
+					<input type="number"
+					       step="0.1"
 					       id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
 					       value="{{ data.value['line-height']['desktop'] }}"
 					       data-device="desktop"
@@ -378,7 +382,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
+					<input type="number"
+					       step="0.1"
 					       id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
 					       value="{{ data.value['line-height']['tablet'] }}"
 					       data-device="tablet"
@@ -386,7 +391,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
+					<input type="number"
+					       step="0.1"
 					       id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
 					       value="{{ data.value['line-height']['mobile'] }}"
 					       data-device="mobile"
@@ -417,27 +423,33 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="text"
+					<input type="number"
+					       step="1"
 					       id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
 					       value="{{ data.value['letter-spacing']['desktop'] }}"
 					       data-device="desktop"
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
+					<input type="number"
+					       step="1"
 					       id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
 					       value="{{ data.value['letter-spacing']['tablet'] }}"
 					       data-device="tablet"
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
+					<input type="number"
+					       step="1"
 					       id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
 					       value="{{ data.value['letter-spacing']['mobile'] }}"
 					       data-device="mobile"
 					/>
+					<span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
