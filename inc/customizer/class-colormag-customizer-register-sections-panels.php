@@ -84,30 +84,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 60,
 			),
 
-			// Design Options.
-			array(
-				'name'     => 'colormag_design_options',
-				'type'     => 'panel',
-				'title'    => esc_html__( 'Design', 'colormag' ),
-				'priority' => 10,
-			),
-
-			// Post/Page/Blog Options.
-			array(
-				'name'     => 'colormag_blog_options',
-				'type'     => 'panel',
-				'title'    => esc_html__( 'Post/Page/Blog', 'colormag' ),
-				'priority' => 10,
-			),
-
-			// Color Options.
-			array(
-				'name'     => 'colormag_color_options',
-				'type'     => 'panel',
-				'title'    => esc_html__( 'Color', 'colormag' ),
-				'priority' => 10,
-			),
-
 			/**
 			 * Register sections.
 			 */
@@ -230,14 +206,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 * Content.
 			 */
 			array(
-				'name'     => 'colormag_blog_archive_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Blog / Archive', 'colormag' ),
-				'panel'    => 'colormag_content_panel',
-				'priority' => 10,
-			),
-
-			array(
 				'name'     => 'colormag_single_post_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Single Post', 'colormag' ),
@@ -246,27 +214,11 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			array(
-				'name'     => 'colormag_post_meta_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Post Meta', 'colormag' ),
-				'panel'    => 'colormag_content_panel',
-				'priority' => 30,
-			),
-
-			array(
 				'name'     => 'colormag_page_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Page', 'colormag' ),
 				'panel'    => 'colormag_content_panel',
 				'priority' => 40,
-			),
-
-			array(
-				'name'     => 'colormag_sidebar_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Sidebar', 'colormag' ),
-				'panel'    => 'colormag_content_panel',
-				'priority' => 50,
 			),
 
 			/**
@@ -280,33 +232,9 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 10,
 			),
 
-			array(
-				'name'     => 'colormag_footer_widgets_area_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Footer Widgets Area', 'colormag' ),
-				'panel'    => 'colormag_footer_panel',
-				'priority' => 20,
-			),
-
-			array(
-				'name'     => 'colormag_footer_bottom_bar_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Footer Bottom Bar', 'colormag' ),
-				'panel'    => 'colormag_footer_panel',
-				'priority' => 30,
-			),
-
 			/**
 			 * Additional.
 			 */
-			array(
-				'name'     => 'colormag_additional_general_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'General', 'colormag' ),
-				'panel'    => 'colormag_additional_panel',
-				'priority' => 10,
-			),
-
 			array(
 				'name'     => 'colormag_social_icons_section',
 				'type'     => 'section',
@@ -315,13 +243,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
-			array(
-				'name'     => 'colormag_integrations_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Integrations', 'colormag' ),
-				'panel'    => 'colormag_additional_panel',
-				'priority' => 30,
-			),
 		);
 
 		$options = array_merge( $options, $configs );
