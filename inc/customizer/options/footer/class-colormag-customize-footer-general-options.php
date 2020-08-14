@@ -29,7 +29,7 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
 
