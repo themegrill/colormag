@@ -18,16 +18,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since ColorMag 2.0.0
  */
-function colormag_major_theme_update_customize_migrate() {
+function colormag_major_update_v1_customize_migrate() {
 
 	// Bail out if the migration is already done.
-	if ( get_option( 'colormag_major_theme_update_customize_migrate' ) ) {
+	if ( get_option( 'colormag_major_update_v1_customize_migrate' ) ) {
 		return;
 	}
 
 	// Set flag to not repeat the migration process, ie, run it only once.
-	update_option( 'colormag_major_theme_update_customize_migrate', true );
+	update_option( 'colormag_major_update_v1_customize_migrate', true );
 
 }
 
-add_action( 'after_setup_theme', 'colormag_major_theme_update_customize_migrate' );
+add_action( 'after_setup_theme', 'colormag_major_update_v1_customize_migrate' );
