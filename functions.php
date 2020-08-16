@@ -122,9 +122,6 @@ require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-box-page-s
 /** Load Widgets and Widgetized Area */
 require_once COLORMAG_WIDGETS_DIR . '/widgets.php';
 
-/** Load migration scripts. */
-require_once COLORMAG_INCLUDES_DIR . '/migration.php';
-
 /**
  * Load deprecated functions.
  */
