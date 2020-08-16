@@ -1,6 +1,6 @@
 <?php
 /**
- * Class to include Blog Page customize options.
+ * Class to include Blog Single Page customize options.
  *
  * Class ColorMag_Customize_Page_Options
  *
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class to include Blog Page customize options.
+ * Class to include Page customize options.
  *
- * Class ColorMag_Customize_Blog_Page
+ * Class ColorMag_Customize_Page_Options
  */
 class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 
@@ -43,6 +43,7 @@ class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 				'section'  => 'colormag_page_section',
 				'priority' => 5,
 			),
+
 		);
 
 		$options = array_merge( $options, $configs );
