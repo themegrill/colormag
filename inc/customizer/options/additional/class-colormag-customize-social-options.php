@@ -2,7 +2,7 @@
 /**
  * Class to include Social customize options.
  *
- * Class ColorMag_Customize_Social_Options
+ * Class ColorMag_Customize_Social_Icons_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Social customize option.
  *
- * Class ColorMag_Customize_Social_Options
+ * Class ColorMag_Customize_Social_Icons_Options
  */
 class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
