@@ -2,7 +2,7 @@
 /**
  * Class to include Blog Single Post customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Post
+ * Class ColorMag_Customize_Single_Post_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Blog Single Post customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Post
+ * Class ColorMag_Customize_Single_Post_Options
  */
 class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Option {
 
