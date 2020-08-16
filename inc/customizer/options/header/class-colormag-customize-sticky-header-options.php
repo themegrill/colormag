@@ -2,7 +2,7 @@
 /**
  * Class to include Header Primary Menu customize options.
  *
- * Class ColorMag_Customize_Sticky_Menu_Options
+ * Class ColorMag_Customize_Sticky_Header_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Header Primary Menu customize options.
  *
- * Class ColorMag_Customize_Sticky_Menu_Options
+ * Class ColorMag_Customize_Sticky_Header_Options
  */
 class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_Option {
 
@@ -30,9 +30,6 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
 	public function register_options( $options, $wp_customize ) {
-
-		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
-		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 		$configs = array(
 
@@ -59,6 +56,7 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 				'section'  => 'colormag_sticky_header_section',
 				'priority' => 10,
 			),
+
 		);
 
 		$options = array_merge( $options, $configs );
