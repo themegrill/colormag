@@ -479,6 +479,7 @@ class ColorMag_Customizer {
 		 */
 		// Global.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-colors-options.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-background-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-layout-options.php';
 
 		// Front Page.
