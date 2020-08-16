@@ -6,7 +6,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @since      ColorMag 2.0.0
  */
 
 // Exit if accessed directly.
@@ -61,6 +61,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				),
 				'priority' => 15,
 			),
+
 		);
 
 		$options = array_merge( $options, $configs );
