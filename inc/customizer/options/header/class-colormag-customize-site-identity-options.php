@@ -33,6 +33,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 
 		$configs = array(
 
+			// Visibility header separator.
 			array(
 				'name'     => 'colormag_front_page_heading',
 				'type'     => 'control',
@@ -58,6 +59,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				),
 				'priority' => 30,
 			),
+
 		);
 
 		$options = array_merge( $options, $configs );
