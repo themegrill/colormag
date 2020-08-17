@@ -38,7 +38,7 @@ class ColorMag_Customize_Background_Options extends ColorMag_Customize_Base_Opti
 			 */
 			// Outside Background Heading Separator.
 			array(
-				'name'     => 'colormag_inside_container_background_heading',
+				'name'     => 'colormag_outside_container_background_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Outside Container', 'colormag' ),
