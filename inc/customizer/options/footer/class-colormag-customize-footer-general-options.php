@@ -33,6 +33,16 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 
 		$configs = array(
 
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_footer_style_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_footer_general_section',
+				'priority' => 0,
+			),
+
 			// Main total footer area display type option.
 			array(
 				'name'      => 'colormag_main_footer_layout_display_type',
