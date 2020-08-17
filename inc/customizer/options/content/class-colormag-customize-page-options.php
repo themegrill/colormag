@@ -33,13 +33,24 @@ class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_page_feature_image_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Featured Image', 'colormag' ),
+				'section'  => 'colormag_page_section',
+				'priority' => 0,
+			),
+
 			// Featured image display in single page option.
 			array(
 				'name'     => 'colormag_featured_image_single_page_show',
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to display the featured image in single page.', 'colormag' ),
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to display the featured image in single page.', 'colormag' ),
 				'section'  => 'colormag_page_section',
 				'priority' => 5,
 			),
