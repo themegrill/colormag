@@ -33,6 +33,16 @@ class ColorMag_Customize_Header_General_Options extends ColorMag_Customize_Base_
 
 		$configs = array(
 
+			// Style header separator.
+			array(
+				'name'     => 'colormag_style_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_primary_header_section',
+				'priority' => 0,
+			),
+
 			// Main total header area display type option.
 			array(
 				'name'     => 'colormag_main_total_header_area_display_type',
