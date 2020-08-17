@@ -137,7 +137,7 @@
 								li_class = "active";
 							}
 
-							fields_html += '<li class="' + li_class + '"><a href="#tab-' + key + '"><span>' + key + '</span></a></li>';
+							fields_html += '<li class="' + li_class + '"><a href="#tab-' + key.replace( ' ','-' ) + '"><span>' + key + '</span></a></li>';
 							counter ++;
 						}
 					);
@@ -150,7 +150,7 @@
 
 							var result = control.generateFieldHtml( fields_data, field_values );
 
-							fields_html += '<div id="tab-' + key + '" class="tab">';
+							fields_html += '<div id="tab-' + key.replace( ' ','-' ) + '" class="tab">';
 							fields_html += result.html;
 
 							_.each(
