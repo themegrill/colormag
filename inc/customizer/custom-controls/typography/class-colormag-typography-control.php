@@ -238,8 +238,9 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
 
-		$this->json['choices']   = $this->choices;
-		$this->json['languages'] = ColorMag_Fonts::get_google_font_subsets();
+		$this->json['choices']     = $this->choices;
+		$this->json['input_attrs'] = $this->input_attrs;
+		$this->json['languages']   = ColorMag_Fonts::get_google_font_subsets();
 
 	}
 
@@ -323,27 +324,75 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="text"
+					<input type="number"
 					       id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
 					       data-device="desktop"
-					       value="{{ data.value['font-size']['desktop'] }}"
+							<# if ( data.value['font-size'] ) { #>
+								value="{{ data.value['font-size']['desktop'] }}"
+							<# } else { #>
+								value="{{ data.default['font-size']['desktop'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['desktop'] ) { #>
+								<# if ( data.input_attrs['desktop']['font-size']['step'] ) { #>
+									step="{{ data.input_attrs['desktop']['font-size']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['desktop']['font-size']['min'] || data.input_attrs['desktop']['font-size']['min'] ) { #>
+									min="{{ data.input_attrs['desktop']['font-size']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['desktop']['font-size']['max'] ) { #>
+									max="{{ data.input_attrs['desktop']['font-size']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
 					       data-device="tablet"
-					       value="{{ data.value['font-size']['tablet'] }}"
+							<# if ( data.value['font-size'] ) { #>
+								value="{{ data.value['font-size']['tablet'] }}"
+							<# } else { #>
+								value="{{ data.default['font-size']['tablet'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['tablet'] ) { #>
+								<# if ( data.input_attrs['tablet']['font-size']['step'] ) { #>
+									step="{{ data.input_attrs['tablet']['font-size']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['tablet']['font-size']['min'] || data.input_attrs['tablet']['font-size']['min'] ) { #>
+									min="{{ data.input_attrs['tablet']['font-size']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['tablet']['font-size']['max'] ) { #>
+									max="{{ data.input_attrs['tablet']['font-size']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
 					       data-device="mobile"
-					       value="{{ data.value['font-size']['mobile'] }}"
+							<# if ( data.value['font-size'] ) { #>
+								value="{{ data.value['font-size']['mobile'] }}"
+							<# } else { #>
+								value="{{ data.default['font-size']['mobile'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['mobile'] ) { #>
+								<# if ( data.input_attrs['mobile']['font-size']['step'] ) { #>
+									step="{{ data.input_attrs['mobile']['font-size']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['mobile']['font-size']['min'] || data.input_attrs['mobile']['font-size']['min'] ) { #>
+									min="{{ data.input_attrs['mobile']['font-size']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['mobile']['font-size']['max'] ) { #>
+									max="{{ data.input_attrs['mobile']['font-size']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
+					<span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
@@ -370,26 +419,71 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="text"
+					<input type="number"
 					       id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
-					       value="{{ data.value['line-height']['desktop'] }}"
 					       data-device="desktop"
+							<# if ( data.value['line-height'] ) { #>
+								value="{{ data.value['line-height']['desktop'] }}"
+							<# } else { #>
+								value="{{ data.default['line-height']['desktop'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['desktop'] ) { #>
+								<# if ( data.input_attrs['desktop']['line-height']['step'] ) { #>
+									step="{{ data.input_attrs['desktop']['line-height']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['desktop']['line-height']['min'] || data.input_attrs['desktop']['line-height']['min'] ) { #>
+									min="{{ data.input_attrs['desktop']['line-height']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['desktop']['line-height']['max'] ) { #>
+									max="{{ data.input_attrs['desktop']['line-height']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
-					       value="{{ data.value['line-height']['tablet'] }}"
 					       data-device="tablet"
+							<# if ( data.value['line-height'] ) { #>
+								value="{{ data.value['line-height']['tablet'] }}"
+							<# } else { #>
+								value="{{ data.default['line-height']['tablet'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['tablet'] ) { #>
+								<# if ( data.input_attrs['tablet']['line-height']['step'] ) { #>
+									step="{{ data.input_attrs['tablet']['line-height']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['tablet']['line-height']['min'] || data.input_attrs['tablet']['line-height']['min'] ) { #>
+									min="{{ data.input_attrs['tablet']['line-height']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['tablet']['line-height']['max'] ) { #>
+									max="{{ data.input_attrs['tablet']['line-height']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
-					       value="{{ data.value['line-height']['mobile'] }}"
 					       data-device="mobile"
+							<# if ( data.value['line-height'] ) { #>
+								value="{{ data.value['line-height']['mobile'] }}"
+							<# } else { #>
+								value="{{ data.default['line-height']['mobile'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['mobile'] ) { #>
+								<# if ( data.input_attrs['mobile']['line-height']['step'] ) { #>
+									step="{{ data.input_attrs['mobile']['line-height']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['mobile']['line-height']['min'] || data.input_attrs['mobile']['line-height']['min'] ) { #>
+									min="{{ data.input_attrs['mobile']['line-height']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['mobile']['line-height']['max'] ) { #>
+									max="{{ data.input_attrs['mobile']['line-height']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
 				</div>
 			</div>
@@ -417,27 +511,75 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="text"
+					<input type="number"
 					       id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
-					       value="{{ data.value['letter-spacing']['desktop'] }}"
 					       data-device="desktop"
+							<# if ( data.value['letter-spacing'] ) { #>
+								value="{{ data.value['letter-spacing']['desktop'] }}"
+							<# } else { #>
+								value="{{ data.default['letter-spacing']['desktop'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['desktop'] ) { #>
+								<# if ( data.input_attrs['desktop']['letter-spacing']['step'] ) { #>
+									step="{{ data.input_attrs['desktop']['letter-spacing']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['desktop']['letter-spacing']['min'] || data.input_attrs['desktop']['letter-spacing']['min'] ) { #>
+									min="{{ data.input_attrs['desktop']['letter-spacing']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['desktop']['letter-spacing']['max'] ) { #>
+									max="{{ data.input_attrs['desktop']['letter-spacing']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
-					       value="{{ data.value['letter-spacing']['tablet'] }}"
 					       data-device="tablet"
+							<# if ( data.value['letter-spacing'] ) { #>
+								value="{{ data.value['letter-spacing']['tablet'] }}"
+							<# } else { #>
+								value="{{ data.default['letter-spacing']['tablet'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['tablet'] ) { #>
+								<# if ( data.input_attrs['tablet']['letter-spacing']['step'] ) { #>
+									step="{{ data.input_attrs['tablet']['letter-spacing']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['tablet']['letter-spacing']['min'] || data.input_attrs['tablet']['letter-spacing']['min'] ) { #>
+									min="{{ data.input_attrs['tablet']['letter-spacing']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['tablet']['letter-spacing']['max'] ) { #>
+									max="{{ data.input_attrs['tablet']['letter-spacing']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
+					<span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
+					<input type="number"
 					       id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
-					       value="{{ data.value['letter-spacing']['mobile'] }}"
 					       data-device="mobile"
+							<# if ( data.value['letter-spacing'] ) { #>
+								value="{{ data.value['letter-spacing']['mobile'] }}"
+							<# } else { #>
+								value="{{ data.default['letter-spacing']['mobile'] }}"
+							<# } #>
+							<# if ( data.input_attrs && data.input_attrs['mobile'] ) { #>
+								<# if ( data.input_attrs['mobile']['letter-spacing']['step'] ) { #>
+									step="{{ data.input_attrs['mobile']['letter-spacing']['step'] }}"
+								<# } #>
+								<# if ( 0 == data.input_attrs['mobile']['letter-spacing']['min'] || data.input_attrs['mobile']['letter-spacing']['min'] ) { #>
+									min="{{ data.input_attrs['mobile']['letter-spacing']['min'] }}"
+								<# } #>
+								<# if ( data.input_attrs['mobile']['letter-spacing']['max'] ) { #>
+									max="{{ data.input_attrs['mobile']['letter-spacing']['max'] }}"
+								<# } #>
+							<# } #>
 					/>
+					<span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>

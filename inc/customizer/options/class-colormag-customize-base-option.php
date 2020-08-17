@@ -29,7 +29,7 @@ class ColorMag_Customize_Base_Option {
 	public function __construct() {
 
 		// Register the customize panels, sections and controls.
-		add_filter( 'colormag_customizer_options', array( $this, 'customizer_options' ), 10, 2 );
+		add_filter( 'colormag_customizer_options', array( $this, 'register_options' ), 10, 2 );
 
 	}
 
@@ -41,7 +41,7 @@ class ColorMag_Customize_Base_Option {
 	 *
 	 * @return mixed Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		return $options;
 

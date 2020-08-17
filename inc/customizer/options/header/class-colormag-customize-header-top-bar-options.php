@@ -29,36 +29,12 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 		$configs = array(
-
-			/**
-			 * Breaking news options.
-			 */
-			// Breaking news heading separator.
-			array(
-				'name'     => 'colormag_breaking_news_heading',
-				'type'     => 'control',
-				'control'  => 'colormag-heading',
-				'label'    => esc_html__( 'Breaking News', 'colormag' ),
-				'section'  => 'colormag_header_top_bar_section',
-				'priority' => 5,
-			),
-
-			// Breaking news in header enable/disable option.
-			array(
-				'name'     => 'colormag_breaking_news',
-				'default'  => 0,
-				'type'     => 'control',
-				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
-				'section'  => 'colormag_header_top_bar_section',
-				'priority' => 10,
-			),
 
 			/**
 			 * Date in header options.
@@ -69,8 +45,8 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Show Date', 'colormag' ),
-				'section'  => 'colormag_header_top_bar_section',
-				'priority' => 105,
+				'section'  => 'colormag_top_bar_section',
+				'priority' => 10,
 			),
 
 			// Date in header display option.
@@ -79,8 +55,9 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to show the date in header', 'colormag' ),
-				'section'   => 'colormag_header_top_bar_section',
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to show the date in header', 'colormag' ),
+				'section'   => 'colormag_top_bar_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
 					'selector'        => '.date-in-header',
@@ -89,7 +66,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 						'render_current_date',
 					),
 				),
-				'priority'  => 110,
+				'priority'  => 20,
 			),
 
 			// Date in header display type option.
@@ -99,7 +76,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 				'type'       => 'control',
 				'control'    => 'radio',
 				'label'      => esc_html__( 'Date in header display type:', 'colormag' ),
-				'section'    => 'colormag_header_top_bar_section',
+				'section'    => 'colormag_top_bar_section',
 				'transport'  => $customizer_selective_refresh,
 				'choices'    => array(
 					'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
@@ -117,7 +94,32 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'!=',
 					0,
 				),
-				'priority'   => 115,
+				'priority'   => 30,
+			),
+
+			/**
+			 * Breaking news options.
+			 */
+			// Breaking news heading separator.
+			array(
+				'name'     => 'colormag_breaking_news_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Breaking News', 'colormag' ),
+				'section'  => 'colormag_top_bar_section',
+				'priority' => 40,
+			),
+
+			// Breaking news in header enable/disable option.
+			array(
+				'name'     => 'colormag_breaking_news',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
+				'section'  => 'colormag_top_bar_section',
+				'priority' => 50,
 			),
 
 		);

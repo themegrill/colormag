@@ -29,7 +29,7 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$header_image_value = get_theme_mod( 'header_image' ) === 'remove-header' ? 'remove-header' : '';
 		$header_video_value = get_theme_mod( 'header_video' ) === 0 ? 0 : '';

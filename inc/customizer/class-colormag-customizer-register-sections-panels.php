@@ -29,192 +29,218 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
 
 			/**
 			 * Register panels.
 			 */
+			// Global Options.
+			array(
+				'name'     => 'colormag_global_panel',
+				'type'     => 'panel',
+				'title'    => esc_html__( 'Global', 'colormag' ),
+				'priority' => 10,
+			),
+
+			// Front Page Options.
+			array(
+				'name'     => 'colormag_front_page_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Front Page', 'colormag' ),
+				'priority' => 20,
+			),
+
 			// Header Options.
 			array(
-				'name'     => 'colormag_header_options',
+				'name'     => 'colormag_header_panel',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Header Options', 'colormag' ),
-				'priority' => 10,
+				'title'    => esc_html__( 'Header', 'colormag' ),
+				'priority' => 30,
 			),
 
-			// Design Options.
+			// Content Options.
 			array(
-				'name'     => 'colormag_design_options',
+				'name'     => 'colormag_content_panel',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Design Options', 'colormag' ),
-				'priority' => 10,
-			),
-
-			// Post/Page/Blog Options.
-			array(
-				'name'     => 'colormag_blog_options',
-				'type'     => 'panel',
-				'title'    => esc_html__( 'Post/Page/Blog Options', 'colormag' ),
-				'priority' => 10,
+				'title'    => esc_html__( 'Content', 'colormag' ),
+				'priority' => 40,
 			),
 
 			// Footer Options.
 			array(
-				'name'     => 'colormag_footer_options',
+				'name'     => 'colormag_footer_panel',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Footer Options', 'colormag' ),
-				'priority' => 10,
+				'title'    => esc_html__( 'Footer', 'colormag' ),
+				'priority' => 50,
 			),
 
-			// Color Options.
+			// Additional Options.
 			array(
-				'name'     => 'colormag_color_options',
+				'name'     => 'colormag_additional_panel',
 				'type'     => 'panel',
-				'title'    => esc_html__( 'Color Options', 'colormag' ),
-				'priority' => 10,
+				'title'    => esc_html__( 'Additional', 'colormag' ),
+				'priority' => 60,
 			),
 
 			/**
 			 * Register sections.
 			 */
-			// General sections.
+			// Color.
 			array(
-				'name'     => 'colormag_general_section',
+				'name'     => 'colormag_global_colors_section',
 				'type'     => 'section',
-				'title'    => esc_html__( 'General Options', 'colormag' ),
-				'priority' => 5,
-			),
-
-			// Social sections.
-			array(
-				'name'     => 'colormag_social_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Social Options', 'colormag' ),
-				'priority' => 5,
-			),
-
-			/**
-			 * Header sections.
-			 */
-			// Header general section.
-			array(
-				'name'     => 'colormag_header_general_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'General', 'colormag' ),
-				'panel'    => 'colormag_header_options',
-				'priority' => 5,
-			),
-
-			// Header top bar section.
-			array(
-				'name'     => 'colormag_header_top_bar_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Top Bar', 'colormag' ),
-				'panel'    => 'colormag_header_options',
+				'title'    => esc_html__( 'Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
 				'priority' => 10,
 			),
 
-			// Header main area section.
 			array(
-				'name'     => 'colormag_header_main_area_section',
+				'name'     => 'colormag_primary_colors_section',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Main Area', 'colormag' ),
-				'panel'    => 'colormag_header_options',
-				'priority' => 15,
+				'title'    => esc_html__( 'Primary Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 10,
 			),
 
-			// Site identity section.
+			array(
+				'name'     => 'colormag_skin_color_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Skin Color', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_category_colors_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Category Colors', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 40,
+			),
+
+			// Background.
+			array(
+				'name'     => 'colormag_global_background_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Background', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 20,
+			),
+
+			// Layout.
+			array(
+				'name'     => 'colormag_global_layout_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Layout', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_site_layout_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Site Layout', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_layout_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_sidebar_layout_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Sidebar Layout', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'section'  => 'colormag_global_layout_section',
+				'priority' => 20,
+			),
+
+			/**
+			 * Header.
+			 */
 			array(
 				'name'     => 'title_tagline',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Site Identity', 'colormag' ),
-				'panel'    => 'colormag_header_options',
-				'section'  => 'colormag_header_main_area_section',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 5,
 			),
 
-			// Header primary menu section.
 			array(
-				'name'     => 'colormag_header_primary_menu_section',
+				'name'     => 'colormag_top_bar_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Top Bar', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_primary_header_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Primary Header', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Primary Menu', 'colormag' ),
-				'panel'    => 'colormag_header_options',
-				'priority' => 20,
+				'panel'    => 'colormag_header_panel',
+				'priority' => 40,
 			),
 
-			/**
-			 * Design sections.
-			 */
-			// General section.
 			array(
-				'name'     => 'colormag_design_general_section',
+				'name'     => 'colormag_sticky_header_section',
 				'type'     => 'section',
-				'title'    => esc_html__( 'General', 'colormag' ),
-				'panel'    => 'colormag_design_options',
-				'priority' => 5,
+				'title'    => esc_html__( 'Sticky Header', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 50,
 			),
 
 			/**
-			 * Post/Page/Blog sections.
+			 * Content.
 			 */
-			// Single post section.
 			array(
-				'name'     => 'colormag_blog_single_post_section',
+				'name'     => 'colormag_single_post_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Single Post', 'colormag' ),
-				'panel'    => 'colormag_blog_options',
-				'priority' => 15,
-			),
-
-			// Page section.
-			array(
-				'name'     => 'colormag_blog_single_page_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Page', 'colormag' ),
-				'panel'    => 'colormag_blog_options',
+				'panel'    => 'colormag_content_panel',
 				'priority' => 20,
 			),
 
-			// Additional Section.
 			array(
-				'name'     => 'colormag_additional_section',
+				'name'     => 'colormag_page_section',
 				'type'     => 'section',
-				'title'    => esc_html__( 'Additional Options', 'colormag' ),
-				'priority' => 10,
+				'title'    => esc_html__( 'Page', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 40,
 			),
 
 			/**
-			 * Footer sections.
+			 * Footer.
 			 */
-			// General section.
 			array(
 				'name'     => 'colormag_footer_general_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'General', 'colormag' ),
-				'panel'    => 'colormag_footer_options',
-				'priority' => 5,
+				'panel'    => 'colormag_footer_panel',
+				'priority' => 10,
 			),
 
 			/**
-			 * Color sections.
+			 * Additional.
 			 */
-			// General section.
 			array(
-				'name'     => 'colormag_color_general_section',
+				'name'     => 'colormag_social_icons_section',
 				'type'     => 'section',
-				'title'    => esc_html__( 'General', 'colormag' ),
-				'panel'    => 'colormag_color_options',
-				'priority' => 5,
-			),
-
-			// Category color sections.
-			array(
-				'name'     => 'colormag_category_color_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Category Color Options', 'colormag' ),
-				'priority' => 10,
+				'title'    => esc_html__( 'Social Icons', 'colormag' ),
+				'panel'    => 'colormag_additional_panel',
+				'priority' => 20,
 			),
 
 		);

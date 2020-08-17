@@ -1,8 +1,8 @@
 <?php
 /**
- * Class to include Design General customize options.
+ * Class to include Layout customize options.
  *
- * Class ColorMag_Customize_Design_General_Options
+ * Class ColorMag_Customize_Layout_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class to include Design General customize options.
+ * Class to include Layout customize options.
  *
- * Class ColorMag_Customize_Design_General_Options
+ * Class ColorMag_Customize_Layout_Options
  */
-class ColorMag_Customize_Design_General_Options extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
@@ -29,9 +29,25 @@ class ColorMag_Customize_Design_General_Options extends ColorMag_Customize_Base_
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
+
+			// Site layout option.
+			array(
+				'name'      => 'colormag_site_layout',
+				'default'   => 'wide_layout',
+				'type'      => 'control',
+				'control'   => 'radio',
+				'label'     => esc_html__( 'Site Layout', 'colormag' ),
+				'section'   => 'colormag_site_layout_section',
+				'transport' => 'postMessage',
+				'choices'   => array(
+					'boxed_layout' => esc_html__( 'Boxed Layout', 'colormag' ),
+					'wide_layout'  => esc_html__( 'Wide Layout', 'colormag' ),
+				),
+				'priority'  => 10,
+			),
 
 			// Default layout option.
 			array(
@@ -40,7 +56,7 @@ class ColorMag_Customize_Design_General_Options extends ColorMag_Customize_Base_
 				'type'      => 'control',
 				'control'   => 'colormag-radio-image',
 				'label'     => esc_html__( 'Default layout', 'colormag' ),
-				'section'   => 'colormag_design_general_section',
+				'section'   => 'colormag_sidebar_layout_section',
 				'choices'   => array(
 					'right_sidebar'               => array(
 						'label' => '',
@@ -70,7 +86,7 @@ class ColorMag_Customize_Design_General_Options extends ColorMag_Customize_Base_
 				'type'      => 'control',
 				'control'   => 'colormag-radio-image',
 				'label'     => esc_html__( 'Default layout for pages only', 'colormag' ),
-				'section'   => 'colormag_design_general_section',
+				'section'   => 'colormag_sidebar_layout_section',
 				'choices'   => array(
 					'right_sidebar'               => array(
 						'label' => '',
@@ -100,7 +116,7 @@ class ColorMag_Customize_Design_General_Options extends ColorMag_Customize_Base_
 				'type'      => 'control',
 				'control'   => 'colormag-radio-image',
 				'label'     => esc_html__( 'Default layout for single posts only', 'colormag' ),
-				'section'   => 'colormag_design_general_section',
+				'section'   => 'colormag_sidebar_layout_section',
 				'choices'   => array(
 					'right_sidebar'               => array(
 						'label' => '',
@@ -128,9 +144,8 @@ class ColorMag_Customize_Design_General_Options extends ColorMag_Customize_Base_
 		$options = array_merge( $options, $configs );
 
 		return $options;
-
 	}
 
 }
 
-return new ColorMag_Customize_Design_General_Options();
+return new ColorMag_Customize_Layout_Options();

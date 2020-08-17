@@ -2,7 +2,7 @@
 /**
  * Class to include Blog Single Post customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Post
+ * Class ColorMag_Customize_Single_Post_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Blog Single Post customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Post
+ * Class ColorMag_Customize_Single_Post_Options
  */
-class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
@@ -29,12 +29,22 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 		$configs = array(
+
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_single_post_title_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Post Title', 'colormag' ),
+				'section'  => 'colormag_single_post_section',
+				'priority' => 0,
+			),
 
 			// Featured image display in single post page option.
 			array(
@@ -42,8 +52,9 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
-				'section'  => 'colormag_blog_single_post_section',
+				'label'       => esc_html__( 'Disable', 'colormag' ),
+				'description' => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
+				'section'  => 'colormag_single_post_section',
 				'priority' => 5,
 			),
 
@@ -54,7 +65,7 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'type'       => 'control',
 				'control'    => 'checkbox',
 				'label'      => esc_html__( 'Check to enable the lightbox for the featured images in single post', 'colormag' ),
-				'section'    => 'colormag_blog_single_post_section',
+				'section'    => 'colormag_single_post_section',
 				'dependency' => array(
 					'colormag_featured_image_show',
 					'!=',
@@ -72,7 +83,7 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
 				'label'    => esc_html__( 'Related Posts', 'colormag' ),
-				'section'  => 'colormag_blog_single_post_section',
+				'section'  => 'colormag_single_post_section',
 				'priority' => 305,
 			),
 
@@ -82,8 +93,9 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to activate the related posts', 'colormag' ),
-				'section'   => 'colormag_blog_single_post_section',
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to activate the related posts', 'colormag' ),
+				'section'   => 'colormag_single_post_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
 					'selector' => '.related-posts',
@@ -98,7 +110,7 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 				'type'       => 'control',
 				'control'    => 'radio',
 				'label'      => esc_html__( 'Related Posts Must Be Shown As:', 'colormag' ),
-				'section'    => 'colormag_blog_single_post_section',
+				'section'    => 'colormag_single_post_section',
 				'choices'    => array(
 					'categories' => esc_html__( 'Related Posts By Categories', 'colormag' ),
 					'tags'       => esc_html__( 'Related Posts By Tags', 'colormag' ),
@@ -121,4 +133,4 @@ class ColorMag_Customize_Blog_Single_Post extends ColorMag_Customize_Base_Option
 
 }
 
-return new ColorMag_Customize_Blog_Single_Post();
+return new ColorMag_Customize_Single_Post_Options();

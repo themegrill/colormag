@@ -2,7 +2,7 @@
 /**
  * Class to include Blog Single Page customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Page_Options
+ * Class ColorMag_Customize_Page_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class to include Blog Single Page customize options.
+ * Class to include Page customize options.
  *
- * Class ColorMag_Customize_Blog_Single_Page_Options
+ * Class ColorMag_Customize_Page_Options
  */
-class ColorMag_Customize_Blog_Single_Page_Options extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 
 	/**
 	 * Include customize options.
@@ -29,9 +29,19 @@ class ColorMag_Customize_Blog_Single_Page_Options extends ColorMag_Customize_Bas
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
+
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_page_feature_image_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Featured Image', 'colormag' ),
+				'section'  => 'colormag_page_section',
+				'priority' => 0,
+			),
 
 			// Featured image display in single page option.
 			array(
@@ -39,8 +49,9 @@ class ColorMag_Customize_Blog_Single_Page_Options extends ColorMag_Customize_Bas
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to display the featured image in single page.', 'colormag' ),
-				'section'  => 'colormag_blog_single_page_section',
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to display the featured image in single page.', 'colormag' ),
+				'section'  => 'colormag_page_section',
 				'priority' => 5,
 			),
 
@@ -54,4 +65,4 @@ class ColorMag_Customize_Blog_Single_Page_Options extends ColorMag_Customize_Bas
 
 }
 
-return new ColorMag_Customize_Blog_Single_Page_Options();
+return new ColorMag_Customize_Page_Options();

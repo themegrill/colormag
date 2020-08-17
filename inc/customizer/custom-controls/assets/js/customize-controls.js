@@ -245,6 +245,30 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 )( jQuery );
 
 /**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Editor control JS to handle the editor rendering within customize control.
  *
  * File `editor.js`.
@@ -293,30 +317,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			} );
 
 		}
-
-	}
-
-} );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
 
 	}
 
@@ -461,7 +461,7 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 								li_class = "active";
 							}
 
-							fields_html += '<li class="' + li_class + '"><a href="#tab-' + key + '"><span>' + key + '</span></a></li>';
+							fields_html += '<li class="' + li_class + '"><a href="#tab-' + key.replace( ' ','-' ) + '"><span>' + key + '</span></a></li>';
 							counter ++;
 						}
 					);
@@ -474,7 +474,7 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 
 							var result = control.generateFieldHtml( fields_data, field_values );
 
-							fields_html += '<div id="tab-' + key + '" class="tab">';
+							fields_html += '<div id="tab-' + key.replace( ' ','-' ) + '" class="tab">';
 							fields_html += result.html;
 
 							_.each(
@@ -1391,6 +1391,32 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 )( jQuery );
 
 /**
+ * Background image control JS to handle the navigate customize option.
+ *
+ * File `navigate.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on( 'load', function () {
+
+			$( '.tg-navigate a' ).on( 'click', function ( e ) {
+				e.preventDefault();
+
+				var targetSection = $( this ).data( 'section' );
+
+				if ( targetSection ) {
+					wp.customize.section( targetSection ).focus();
+				}
+			} );
+
+		} );
+	}
+)( jQuery );
+
+/**
  * Radio image control JS to handle the toggle of radio images.
  *
  * File `radio-image.js`.
@@ -1462,33 +1488,6 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 } );
 
 /**
- * Switch toggle control JS to handle the toggle of custom customize controls.
- *
- * File `toggle.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this,
-		    value   = control.setting._value;
-
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
-
-			control.setting.set( value );
-		} );
-
-	}
-
-} );
-
-/**
  * Sortable control JS to handle the sortable feature of custom customize controls.
  *
  * File `sortable.js`.
@@ -1548,6 +1547,33 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 		);
 
 		control.setting.set( newValue );
+
+	}
+
+} );
+
+/**
+ * Switch toggle control JS to handle the toggle of custom customize controls.
+ *
+ * File `toggle.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this,
+		    value   = control.setting._value;
+
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
+			control.setting.set( value );
+		} );
 
 	}
 

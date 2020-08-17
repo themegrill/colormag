@@ -2,7 +2,7 @@
 /**
  * Class to include Social customize options.
  *
- * Class ColorMag_Customize_Social_Options
+ * Class ColorMag_Customize_Social_Icons_Options
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include Social customize option.
  *
- * Class ColorMag_Customize_Social_Options
+ * Class ColorMag_Customize_Social_Icons_Options
  */
 class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
@@ -29,12 +29,22 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
 		$configs = array(
+
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_social_icons_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Social Icons', 'colormag' ),
+				'section'  => 'colormag_social_icons_section',
+				'priority' => 0,
+			),
 
 			// Social links enable/disable option.
 			array(
@@ -42,8 +52,9 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to activate social links area', 'colormag' ),
-				'section'   => 'colormag_social_section',
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to activate social links area', 'colormag' ),
+				'section'   => 'colormag_social_icons_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
 					'selector' => '.social-links',
@@ -57,8 +68,9 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'default'    => 'both',
 				'type'       => 'control',
 				'control'    => 'radio',
-				'label'      => esc_html__( 'Social links to display on:', 'colormag' ),
-				'section'    => 'colormag_social_section',
+				'label'       => esc_html__( 'Visibility', 'colormag' ),
+				'description' => esc_html__( 'Social links to display on:', 'colormag' ),
+				'section'    => 'colormag_social_icons_section',
 				'choices'    => array(
 					'header' => esc_html__( 'Header only', 'colormag' ),
 					'footer' => esc_html__( 'Footer only', 'colormag' ),
@@ -77,7 +89,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'name'       => 'colormag_social_link_separator',
 				'type'       => 'control',
 				'control'    => 'colormag-divider',
-				'section'    => 'colormag_social_section',
+				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
 					'colormag_social_link_activate',
 					'!=',
@@ -135,7 +147,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'type'       => 'control',
 				'control'    => 'url',
 				'label'      => $colormag_social_link['title'],
-				'section'    => 'colormag_social_section',
+				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
 					'colormag_social_link_activate',
 					'!=',
@@ -151,7 +163,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'type'       => 'control',
 				'control'    => 'checkbox',
 				'label'      => esc_html__( 'Check to open in new tab', 'colormag' ),
-				'section'    => 'colormag_social_section',
+				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
 					'colormag_social_link_activate',
 					'!=',
@@ -165,7 +177,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'name'       => $colormag_social_link['id'] . '_separator',
 				'type'       => 'control',
 				'control'    => 'colormag-divider',
-				'section'    => 'colormag_social_section',
+				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
 					'colormag_social_link_activate',
 					'!=',
