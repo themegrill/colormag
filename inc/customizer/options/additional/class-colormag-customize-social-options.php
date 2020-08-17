@@ -36,13 +36,24 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
 		$configs = array(
 
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_social_icons_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Social Icons', 'colormag' ),
+				'section'  => 'colormag_social_icons_section',
+				'priority' => 0,
+			),
+
 			// Social links enable/disable option.
 			array(
 				'name'      => 'colormag_social_link_activate',
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to activate social links area', 'colormag' ),
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to activate social links area', 'colormag' ),
 				'section'   => 'colormag_social_icons_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
@@ -57,7 +68,8 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'default'    => 'both',
 				'type'       => 'control',
 				'control'    => 'radio',
-				'label'      => esc_html__( 'Social links to display on:', 'colormag' ),
+				'label'       => esc_html__( 'Visibility', 'colormag' ),
+				'description' => esc_html__( 'Social links to display on:', 'colormag' ),
 				'section'    => 'colormag_social_icons_section',
 				'choices'    => array(
 					'header' => esc_html__( 'Header only', 'colormag' ),
