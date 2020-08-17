@@ -36,13 +36,24 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 
 		$configs = array(
 
+			// Post Title header separator.
+			array(
+				'name'     => 'colormag_single_post_title_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-heading',
+				'label'    => esc_html__( 'Post Title', 'colormag' ),
+				'section'  => 'colormag_single_post_section',
+				'priority' => 0,
+			),
+
 			// Featured image display in single post page option.
 			array(
 				'name'     => 'colormag_featured_image_show',
 				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'checkbox',
-				'label'    => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
+				'label'       => esc_html__( 'Disable', 'colormag' ),
+				'description' => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
 				'priority' => 5,
 			),
@@ -82,7 +93,8 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to activate the related posts', 'colormag' ),
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'description' => esc_html__( 'Check to activate the related posts', 'colormag' ),
 				'section'   => 'colormag_single_post_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
