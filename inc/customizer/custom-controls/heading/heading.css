@@ -1,0 +1,29 @@
+/**
+ * Heading control CSS.
+ */
+.customize-control-colormag-heading {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper {
+	margin: 0 -12px;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-title {
+	display: block;
+	padding: 16px 12px;
+	margin: 0;
+	border-width: 2px 0;
+	border-style: solid;
+	border-color: #eaeaea;
+	background-color: #ffffff;
+	font-size: 12px;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
+	margin-top: 10px;
+	padding: 0 12px;
+}

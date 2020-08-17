@@ -1,0 +1,84 @@
+/**
+ * Slider control CSS.
+ */
+.customize-control-colormag-slider {
+
+	.slider-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		input[type=range] {
+			flex: 1;
+			height: 5px;
+			appearance: none;
+			padding: 0;
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.1);
+			transition: background 0.3s;
+
+			&::-webkit-slider-thumb {
+				appearance: none;
+				width: 16px;
+				height: 16px;
+				border-radius: 100%;
+				background: #289dcc;
+			}
+
+			&::-moz-range-thumb {
+				width: 16px;
+				height: 16px;
+				border-radius: 100%;
+				background: #289dcc;
+			}
+
+			&::-ms-thumb {
+				width: 16px;
+				height: 16px;
+				border-radius: 100%;
+				background: #289dcc;
+			}
+		}
+
+		.colormag-range-value {
+			padding: 0 0 0 5px;
+			display: flex;
+			align-items: center;
+
+			input[type=number] {
+				width: 60px;
+				padding: 3px;
+				font-size: 12px;
+			}
+
+			.colormag-range-unit {
+				padding: 0 0 0 5px;
+			}
+		}
+
+		.colormag-slider-reset {
+			cursor: pointer;
+			color: rgba(0, 0, 0, 0.3);
+			transition: color 0.3s ease-in;
+
+			span {
+				font-size: 14px;
+			}
+
+			&:hover,
+			&:focus {
+				color: #289dcc;
+			}
+		}
+
+		&.slider-description {
+
+			.colormag-slider-reset {
+
+				span {
+					right: 20px;
+				}
+			}
+		}
+	}
+}

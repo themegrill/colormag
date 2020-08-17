@@ -1,0 +1,58 @@
+/**
+ * Switch toggle control CSS.
+ */
+.customize-control-colormag-toggle {
+
+	.customize-control-title {
+		max-width: calc(100% - 50px);
+	}
+
+	label {
+		position: absolute;
+		display: inline-block;
+		width: 40px;
+		height: 12px;
+		right: 0;
+		top: 6px;
+
+		&.toggle-description {
+			right: 20px;
+		}
+
+		input {
+			display: none;
+
+			&:checked + .switch:before {
+				background-color: #289dcc;
+			}
+
+			&:checked + .switch:before {
+				transform: translateX(20px);
+			}
+		}
+
+		.switch {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #b4b9be;
+			border-radius: 8px;
+			transition: all ease 0.3s;
+
+			&:before {
+				position: absolute;
+				content: '';
+				height: 20px;
+				width: 20px;
+				left: 0;
+				bottom: -4px;
+				background-color: #cccccc;
+				border-radius: 100%;
+				transition: all ease 0.3s;
+			}
+		}
+	}
+}

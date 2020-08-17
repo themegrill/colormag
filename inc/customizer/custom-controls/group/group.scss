@@ -1,0 +1,117 @@
+/**
+ * Group control CSS.
+ */
+.customize-control-colormag-group {
+
+	.colormag-group-toggle-icon {
+		position: absolute;
+		top: -2px;
+		right: 0;
+		width: 15px;
+		height: 15px;
+		font-size: 16px;
+		border: 1px solid #dddddd;
+		border-radius: 2px;
+		padding: 4px;
+		color: #289dcc;
+		background: #ffffff;
+		cursor: pointer;
+
+		&:before {
+			content: "\f464";
+		}
+
+		&.open:before {
+			content: "\f158";
+		}
+
+		&.toggle-description {
+			right: 25px;
+		}
+	}
+
+	.colormag-field-settings-modal {
+		position: absolute;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+		border-radius: 5px;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		background-color: #ffffff;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -15px;
+			right: 5px;
+			border: 8px solid transparent;
+			border-bottom-color: #ffffff;
+			pointer-events: none;
+		}
+
+		.colormag-field-settings-wrap {
+			width: 100%;
+		}
+
+		.colormag-group-tabs,
+		.colormag-tab-content {
+			position: relative;
+		}
+
+		.colormag-group-list {
+			overflow: hidden;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 15px 15px 0 15px;
+
+			&:before,
+			&:after {
+				content: "";
+				display: table;
+				border-collapse: collapse;
+			}
+
+			li {
+				flex: 1 1 auto;
+				padding: 0.5rem 0.5rem;
+				margin: 0;
+				text-align: center;
+				border: 1px solid rgba(0, 0, 0, 0.1);
+
+				&:not(:first-child) {
+					border-left-width: 0;
+				}
+
+				&:focus {
+					outline-style: none;
+				}
+
+				&.ui-state-active {
+					background-color: #289dcc;
+
+					a {
+						color: #ffffff;
+					}
+				}
+
+				a {
+					color: #555d66;
+					text-decoration: none;
+
+					&:focus {
+						box-shadow: none;
+					}
+				}
+			}
+		}
+
+		.customize-control {
+			padding: 0 15px;
+			box-sizing: border-box;
+
+			&:last-child {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

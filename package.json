@@ -25,16 +25,27 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-watch": "^4.3.11"
+    "gulp-watch": "^4.3.11",
+    "gulp-notify": "^3.2.0",
+    "gulp-uglifycss": "^1.0.9",
+    "gulp-flatten": "^0.4.0",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-rtlcss": "^1.4.1",
+    "gulp-line-ending-corrector": "^1.0.3"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.4.0"
   },
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.1.0"
   },
   "scripts": {
-    "styles": "gulp sassCompile && gulp elementorStylesCompile",
+    "compileAssets": "gulp compile",
     "makepot": "grunt makepot",
     "compress": "grunt compress",
-    "build": "npm run styles && npm run makepot && npm run compress"
+    "build": "npm run compileAssets && npm run makepot && npm run compress"
   }
 }

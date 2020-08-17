@@ -1,0 +1,36 @@
+/**
+ * Radio buttonset control CSS.
+ */
+.customize-control-colormag-buttonset {
+
+	.buttonset {
+		display: flex;
+		flex-wrap: wrap;
+
+		.buttonset-inner {
+			flex: 1;
+			border: 1px solid #555d66;
+
+			+ .buttonset-inner {
+				border-left: 0;
+			}
+
+			.colormag-buttonset {
+				background: #f1f1f1;
+				padding: 5px 12px;
+				display: block;
+				text-align: center;
+			}
+
+			input {
+				display: none;
+
+				&:checked + label {
+					background: #289dcc;
+					color: #ffffff;
+				}
+			}
+		}
+	}
+
+}

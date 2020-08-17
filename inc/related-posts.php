@@ -1,62 +1,63 @@
-<?php $related_posts = colormag_related_posts_function(); ?>
+<?php
+/**
+ * Related posts featured display.
+ *
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 1.0.0
+ */
 
-<?php if ( $related_posts->have_posts() ): ?>
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-	<h4 class="related-posts-main-title">
-		<i class="fa fa-thumbs-up"></i><span><?php esc_html_e( 'You May Also Like', 'colormag' ); ?></span>
-	</h4>
+$related_posts = colormag_related_posts_function();
 
-	<div class="related-posts clearfix">
+if ( $related_posts->have_posts() ) :
+	?>
 
-		<?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-			<div class="single-related-posts">
+	<div class="related-posts-wrapper">
 
-				<?php if ( has_post_thumbnail() ): ?>
-					<div class="related-posts-thumbnail">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php the_post_thumbnail( 'colormag-featured-post-medium' ); ?>
-						</a>
-					</div>
-				<?php endif; ?>
+		<h4 class="related-posts-main-title">
+			<i class="fa fa-thumbs-up"></i><span><?php esc_html_e( 'You May Also Like', 'colormag' ); ?></span>
+		</h4>
 
-				<div class="article-content">
+		<div class="related-posts clearfix">
 
-					<h3 class="entry-title">
-						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-					</h3><!--/.post-title-->
+			<?php
+			while ( $related_posts->have_posts() ) :
+				$related_posts->the_post();
+				?>
+				<div class="single-related-posts">
 
-					<div class="below-entry-meta">
-						<?php
-						$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-						if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-							$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-						}
-						$time_string = sprintf( $time_string,
-							esc_attr( get_the_date( 'c' ) ),
-							esc_html( get_the_date() ),
-							esc_attr( get_the_modified_date( 'c' ) ),
-							esc_html( get_the_modified_date() )
-						);
-						printf( __( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>', 'colormag' ),
-							esc_url( get_permalink() ),
-							esc_attr( get_the_time() ),
-							$time_string
-						);
-						?>
+					<?php if ( has_post_thumbnail() ) : ?>
+						<div class="related-posts-thumbnail">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+								<?php the_post_thumbnail( 'colormag-featured-post-medium' ); ?>
+							</a>
+						</div>
+					<?php endif; ?>
 
-						<span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a></span></span>
+					<div class="article-content">
+						<h3 class="entry-title">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</h3><!--/.post-title-->
 
-						<?php if ( ! post_password_required() && comments_open() ) { ?>
-							<span class="comments"><i class="fa fa-comment"></i><?php comments_popup_link( '0', '1', '%' ); ?></span>
-						<?php } ?>
+						<?php colormag_entry_meta( false ); ?>
 					</div>
 
-				</div>
+				</div><!--/.related-->
+			<?php endwhile; ?>
 
-			</div><!--/.related-->
-		<?php endwhile; ?>
+		</div><!--/.post-related-->
 
-	</div><!--/.post-related-->
-<?php endif; ?>
+	</div>
 
-<?php wp_reset_postdata(); ?>
+	<?php
+endif;
+
+// Reset postdata.
+wp_reset_postdata();

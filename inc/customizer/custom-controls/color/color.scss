@@ -1,0 +1,21 @@
+/**
+ * Alpha color control CSS.
+ */
+.customize-control-colormag-color {
+
+	.wp-picker-container {
+
+		.wp-color-result {
+
+			.color-alpha {
+				height: 28px !important;
+			}
+		}
+
+		.wp-picker-clear {
+			margin-left: 6px;
+			min-height: 30px;
+			line-height: 2.54545455;
+		}
+	}
+}

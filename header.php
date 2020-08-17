@@ -8,16 +8,22 @@
  * @subpackage ColorMag
  * @since      ColorMag 1.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11"/>
 	<?php
 	/**
-	 * This hook is important for wordpress plugins and other many things
+	 * Functions hooked into colormag_action_head action.
+	 *
+	 * @hooked colormag_head - 10
 	 */
+	do_action( 'colormag_action_head' );
+
 	wp_head();
 	?>
 </head>
@@ -25,70 +31,93 @@
 <body <?php body_class(); ?>>
 
 <?php
+wp_body_open();
+
 /**
- * WordPress function to load custom scripts after body.
- *
- * Introduced in WordPress 5.2.0
- *
- * @since ColorMag 1.4.0
+ * Hook: colormag_before.
  */
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-?>
+do_action( 'colormag_before' );
 
-<?php do_action( 'colormag_before' ); ?>
 
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'colormag' ); ?></a>
+/**
+ * Functions hooked into colormag_action_before action.
+ *
+ * @hooked colormag_page_start - 10
+ * @hooked colormag_skip_content_link - 15
+ */
+do_action( 'colormag_action_before' );
 
-	<?php do_action( 'colormag_before_header' ); ?>
 
-	<?php
-	// Add the main total header area display type dynamic class.
-	$main_total_header_option_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
+/**
+ * Hook: colormag_before_header.
+ */
+do_action( 'colormag_before_header' );
 
-	$class_name = '';
-	if ( $main_total_header_option_layout_class == 'type_two' ) {
-		$class_name = 'colormag-header-clean';
-	} else if ( $main_total_header_option_layout_class == 'type_three' ) {
-		$class_name = 'colormag-header-classic';
-	}
-	?>
 
-	<header id="masthead" class="site-header clearfix <?php echo esc_attr( $class_name ); ?>">
-		<div id="header-text-nav-container" class="clearfix">
+/**
+ * Functions hooked into colormag_action_before_header action.
+ *
+ * @hooked colormag_header_start - 10
+ */
+do_action( 'colormag_action_before_header' );
 
-			<?php colormag_top_header_bar_display(); // Display the top header bar ?>
 
-			<?php
-			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_one' ) {
-				colormag_render_header_image();
-			}
-			?>
+/**
+ * Functions hooked into colormag_action_before_inner_header action.
+ *
+ * @hooked colormag_header_nav_container_start - 10
+ */
+do_action( 'colormag_action_before_inner_header' );
 
-			<?php colormag_middle_header_bar_display(); // Display the middle header bar ?>
 
-			<?php
-			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_two' ) {
-				colormag_render_header_image();
-			}
-			?>
+/**
+ * Functions hooked into colormag_action_header action.
+ *
+ * @hooked colormag_header - 10
+ */
+do_action( 'colormag_action_header' );
 
-			<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
 
-		</div><!-- #header-text-nav-container -->
+/**
+ * Functions hooked into colormag_action_after_inner_header action.
+ *
+ * @hooked colormag_header_image_before_nav_container_end - 5
+ * @hooked colormag_header_nav_container_end - 10
+ */
+do_action( 'colormag_action_after_inner_header' );
 
-		<?php
-		if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_three' ) {
-			colormag_render_header_image();
-		}
-		?>
 
-	</header>
+/**
+ * Functions hooked into colormag_action_after_header action.
+ *
+ * @hooked colormag_header_end - 10
+ */
+do_action( 'colormag_action_after_header' );
 
-	<?php do_action( 'colormag_after_header' ); ?>
-	<?php do_action( 'colormag_before_main' ); ?>
 
-	<div id="main" class="clearfix">
-		<div class="inner-wrap clearfix">
+/**
+ * Hook: colormag_after_header.
+ */
+do_action( 'colormag_after_header' );
+
+
+/**
+ * Hook: colormag_before_main.
+ */
+do_action( 'colormag_before_main' );
+
+
+/**
+ * Functions hooked into colormag_action_before_content action.
+ *
+ * @hooked colormag_main_section_start - 10
+ */
+do_action( 'colormag_action_before_content' );
+
+
+/**
+ * Functions hooked into colormag_action_before_inner_content action.
+ *
+ * @hooked colormag_main_section_inner_start - 10
+ */
+do_action( 'colormag_action_before_inner_content' );

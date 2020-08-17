@@ -1,0 +1,34 @@
+/**
+ * Sortable control CSS.
+ */
+.customize-control-colormag-sortable ul.ui-sortable {
+	cursor: default;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
+	cursor: pointer;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li {
+	padding: 5px 10px;
+	border: 1px solid #555555;
+	background: #ffffff;
+	cursor: move;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
+	float: right;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
+	margin-right: 10px;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible {
+	color: #aaaaaa;
+	border: 1px dashed #aaaaaa;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
+	color: #aaaaaa;
+}

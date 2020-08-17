@@ -1,0 +1,28 @@
+/**
+ * Background control CSS.
+ */
+.customize-control-colormag-background {
+
+	.customize-control-content {
+
+		> div {
+			margin-bottom: 15px;
+		}
+
+		.wp-picker-container {
+
+			.wp-color-result {
+
+				.color-alpha {
+					height: 28px !important;
+				}
+			}
+
+			.wp-picker-clear {
+				margin-left: 6px;
+				min-height: 30px;
+				line-height: 2.54545455;
+			}
+		}
+	}
+}

@@ -1,17 +1,44 @@
-<?php if ( has_post_format( 'gallery' ) ) : ?>
+<?php
+/**
+ * Post formats custom outputs.
+ *
+ * @package    ThemeGrill
+ * @subpackage ColorMag
+ * @since      ColorMag 1.0.0
+ */
 
-   <div class="gallery-post-format">
-      <?php
-      $galleries = get_post_gallery_images( $post );
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-      $output = '<ul class="gallery-images">';
-      foreach ($galleries as $gallery) {
-         $output .= '<li>' . '<img src="'. $gallery . '">' . '</li>';
-      }
-      $output .= '</ul>';
+/**
+ * For Gallery Post Format.
+ */
+if ( has_post_format( 'gallery' ) ) :
 
-      echo $output;
-      ?>
-   </div>
+	if ( get_post_gallery() ) :
+		?>
+		<div class="gallery-post-format">
+			<?php
+			$output         = '';
+			$galleries      = get_post_gallery( $post, false );
+			$attachment_ids = explode( ',', $galleries['ids'] );
+			$output         = '<ul class="gallery-images">';
 
-<?php endif; ?>
+			foreach ( $attachment_ids as $attachment_id ) {
+				// Displaying the attached image of gallery.
+				$link = wp_get_attachment_image( $attachment_id, 'colormag-featured-image' );
+
+				$output .= '<li>' . $link . '</li>';
+			}
+
+			$output .= '</ul>';
+
+			echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			?>
+		</div>
+		<?php
+	endif;
+
+endif;

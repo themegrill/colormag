@@ -393,8 +393,6 @@ textarea {
 	width: 95%;
 	margin: 0 0 30px;
 	background-color: #f8f8f8;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
 
@@ -432,9 +430,8 @@ button {
 	padding: 10px 20px;
 	background-color: #289dcc;
 	border: 0px;
+	-webkit-transition: background-color 0.3s linear 0s;
 	transition: background-color 0.3s linear 0s;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
 	font-size: 18px;
 	-moz-appearance: none !important;
@@ -478,7 +475,6 @@ input[type="reset"]:active,
 input[type="button"]:active,
 input[type="submit"]:active {
 	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -487,6 +483,7 @@ input[type="submit"]:active {
 a {
 	color: #289dcc;
 	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
 
@@ -717,6 +714,7 @@ body {
 .social-links i.fa {
 	padding: 5px 10px;
 	text-align: center;
+	-webkit-transition: background-color 0.2s ease-out 0s;
 	transition: background-color 0.2s ease-out 0s;
 	font-size: 25px;
 }
@@ -895,6 +893,7 @@ nav li > ol {
 }
 
 #site-navigation {
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
 	position: relative;
 	background-color: #232323;
@@ -1044,7 +1043,7 @@ li.default-menu {
 .main-navigation ul li ul {
 	position: absolute;
 	width: 200px;
-	top: 42px;
+	top: 100%;
 }
 
 .main-navigation ul li ul li {
@@ -1249,6 +1248,7 @@ li.default-menu {
 	border-radius: 3px;
 	background-color: #289dcc;
 	color: #ffffff;
+	-webkit-transition: background-color 0.3s linear 0s;
 	transition: background-color 0.3s linear 0s;
 	display: inline-block;
 }
@@ -1391,7 +1391,6 @@ li.default-menu {
 	vertical-align: top;
 	width: 100%;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1591,6 +1590,7 @@ li.default-menu {
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
 	clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
@@ -1605,8 +1605,10 @@ li.default-menu {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
+	-webkit-clip-path: none;
 	clip-path: none;
 	color: #21759b;
 	display: block;
@@ -1686,7 +1688,7 @@ li.default-menu {
 #respond form textarea,
 #respond form input[type="email"],
 #respond form input[type="url"] {
-	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	font-size: 16px;
 	line-height: 1.5;
@@ -1863,6 +1865,19 @@ li.default-menu {
 	color: #ffffff;
 	padding: 6px 12px;
 	display: inline-block;
+}
+
+/*
+404 page design
+--------------------------------------------------------------*/
+.error-404 .page-header .page-title {
+	border: medium none;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.error-404 .page-header, .error-404 p {
+	text-align: center;
 }
 
 /* =FOOTER SOCKET AREA
@@ -2106,6 +2121,7 @@ a#scroll-up:hover {
 
 .single #content .post,
 #content .post {
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -2192,6 +2208,7 @@ a#scroll-up:hover {
 
 .post .entry-title a, .search .entry-title a {
 	color: #333333;
+	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
 
@@ -2279,8 +2296,6 @@ a#scroll-up:hover {
 	line-height: 30px;
 	text-align: center;
 	width: 30px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
 	border-radius: 5px;
 	padding: 12px 8px 8px 8px;
 }
@@ -2340,6 +2355,7 @@ a#scroll-up:hover {
 	display: inline-block;
 	background-color: #289dcc;
 	border-radius: 3px;
+	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
 
@@ -2397,7 +2413,6 @@ ul.wp-block-gallery img {
 .post-box .post-content-area {
 	position: absolute;
 	top: 50%;
-	-ms-transform: translateY(-50%);
 	/* IE 9 */
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -2458,6 +2473,10 @@ ul.wp-block-gallery img {
 
 /* =FRONT PAGE WIDGET AREAS
 ----------------------------------------------- */
+.rtl .bx-wrapper {
+	direction: rtl;
+}
+
 .widget_slider_area {
 	float: left;
 	width: 55.26315789%;
@@ -2496,14 +2515,13 @@ ul.wp-block-gallery img {
 .widget_featured_slider .slide-content {
 	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-	background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-	background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.3)));
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 	padding-bottom: 20px;
 	padding-left: 5%;
 	position: absolute;
 	width: 100%;
+	text-align: left;
 }
 
 .widget_featured_slider .slide-content .above-entry-meta .cat-links a {
@@ -2580,9 +2598,7 @@ ul.wp-block-gallery img {
 .widget_highlighted_posts .article-content {
 	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-	background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-	background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 	padding-bottom: 10px;
 	padding-left: 5%;
@@ -2694,7 +2710,6 @@ ul.wp-block-gallery img {
 .search .status-publish {
 	margin-bottom: 30px;
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -2839,6 +2854,7 @@ ul.wp-block-gallery img {
 
 .widget_featured_posts .single-article {
 	background-color: #ffffff;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -2898,7 +2914,6 @@ ul.wp-block-gallery img {
 	background-color: #ffffff;
 	padding: 8px 0 4px;
 	-webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	font-size: 14px;
 }
@@ -2945,6 +2960,7 @@ ul.wp-block-gallery img {
 	width: 100%;
 	display: inline-block;
 	padding: 10px;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	margin-bottom: 25px;
 }
@@ -2970,6 +2986,7 @@ ul.wp-block-gallery img {
 
 .single-related-posts {
 	width: 32.5%;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	margin-right: 1.25%;
 	float: left;
@@ -3107,6 +3124,7 @@ ul.wp-block-gallery img {
 
 .advertisement_728x90 img {
 	margin-bottom: 0;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	padding: 10px;
 	display: block;
@@ -3146,6 +3164,8 @@ Gutenberg Blocks Layout.
 .wp-block-social-links.alignleft,
 .wp-block-social-links.alignright,
 .wp-block-social-links.aligncenter {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -3381,11 +3401,6 @@ Responsive Structure
 	}
 }
 
-/* search result tile hide */
-.search h1.page-title {
-	display: none;
-}
-
 /*--------------------------------------------------------------
 16.0 heaader media css
 --------------------------------------------------------------*/
@@ -3417,8 +3432,6 @@ video#wp-custom-header-video {
 	width: 62px;
 	height: 50px;
 	font: 0px/0 a;
-	-moz-transition: all 0.5s;
-	-o-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
@@ -3495,6 +3508,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-clean .social-links i.fa {
 	color: #495057;
+	-webkit-transition: color 0.35s;
 	transition: color 0.35s;
 	font-size: 16px;
 	padding: 0 6px;
@@ -3513,6 +3527,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-clean #site-navigation {
+	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 	position: relative;
 	background-color: transparent;
@@ -3629,6 +3644,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic .social-links i.fa {
 	color: #495057;
+	-webkit-transition: color 0.35s;
 	transition: color 0.35s;
 	font-size: 16px;
 	padding: 0 6px;
@@ -3658,6 +3674,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 #masthead.colormag-header-classic #site-navigation {
+	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 	box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 	position: relative;
 	background-color: transparent;
@@ -3726,6 +3743,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic .main-navigation ul > li > a {
 	border-bottom: 2px solid transparent;
+	-webkit-transition: border 0.5s ease;
 	transition: border 0.5s ease;
 }
 
@@ -3746,6 +3764,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 #masthead.colormag-header-classic .main-navigation ul ul.sub-menu {
 	top: 100%;
 	background-color: #f8f8f8;
+	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 	display: block;
 	opacity: 0;
@@ -3761,6 +3780,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li a {
 	width: auto;
 	padding: 10px 15px;
+	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 	border-bottom: none transparent;
 }
@@ -3781,6 +3801,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic .main-navigation ul ul.sub-menu li ul {
 	top: 0;
+	-webkit-transition: none;
 	transition: none;
 }
 
@@ -3830,6 +3851,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	position: absolute;
 	top: 100%;
 	width: 100%;
+	-webkit-box-shadow: 0 1px 11px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.2);
 }
 
@@ -3866,6 +3888,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 #masthead.colormag-header-classic .is-sticky #site-navigation {
 	background-color: #fff;
+	-webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 }
 

@@ -1,0 +1,24 @@
+/**
+ * Custom control CSS.
+ */
+.customize-control-colormag-custom {
+
+	.colormag-custom-info {
+		margin-bottom: 15px;
+	}
+
+	.colormag-custom-links {
+
+		li {
+
+			a {
+				background: #289dcc;
+				display: block;
+				text-align: center;
+				color: #ffffff;
+				padding: 8px 16px;
+				text-decoration: none;
+			}
+		}
+	}
+}

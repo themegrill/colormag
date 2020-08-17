@@ -1,0 +1,119 @@
+/**
+ * Upsell section.
+ */
+li {
+
+	&#accordion-section-colormag_upsell_section {
+
+		h3 {
+
+			a {
+
+				&:after {
+					color: #fff;
+				}
+			}
+
+			&.accordion-section-title {
+				background-color: #289DCC !important;
+				border-left-color: #0073aa;
+				color: #fff !important;
+
+				a {
+					color: #fff;
+				}
+
+				&:after {
+					color: #fff !important;
+				}
+			}
+		}
+	}
+}
+
+
+/**
+ * Upsell control.
+ */
+li {
+
+	&.customize-control-colormag-upsell {
+
+		.colormag-upsell-wrapper {
+			background-color: #fff;
+			margin-left: -12px;
+			margin-right: -12px;
+			color: #464646;
+		}
+
+		.upsell-features,
+		.launch-offer {
+			padding: 25px;
+		}
+
+		.upsell-heading {
+			font-size: 16px !important;
+			text-transform: uppercase;
+			margin: 0 0 15px 0;
+			line-height: 1.5;
+			color: #464646;
+			font-weight: bold;
+		}
+
+		.upsell-features {
+			font-size: 14px;
+		}
+
+		.upsell-feature {
+			padding: 0 0 8px 0;
+			margin: 0 0 8px 0;
+
+			.dashicons {
+				color: #1CB4DD;
+				margin-right: 8px;
+				width: 14px;
+			}
+
+			&:last-child {
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		.launch-offer {
+			color: #0C5460;
+			background-color: #D1ECF1;
+			padding: 15px 25px;
+			font-size: 14px;
+			line-height: 1.8;
+
+			strong {
+				text-transform: uppercase;
+				font-size: 14px;
+			}
+		}
+
+		.coupon-code {
+			display: inline-block;
+		}
+
+		.upsell-cta {
+			background-color: #006EE5;
+			color: #fff;
+			padding: 14px;
+			margin: 30px 0;
+			border-radius: 4px;
+			text-decoration: none;
+			display: block;
+			font-size: 16px;
+			transition: 0.3s all;
+			text-transform: uppercase;
+			text-align: center;
+
+			&:hover {
+				background-color: #006EE5;
+				box-shadow: 0 2px 10px 5px #46464633;
+			}
+		}
+	}
+}

@@ -19,6 +19,8 @@ Resources packed within the theme.
 * Magnific-Popup by Dmitry Semenov | MIT Licensed
 * FitVids by Chris Coyier and Paravel | WTFPL Licensed
 * Bxslider by Steven Wanderski released under the MIT license
+* wp-color-picker-alpha by Sergio | GPLv2 Licensed
+* SelectWoo by WooCommerce | MIT Licensed
 * TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer | GPL v2 Licensed
 * Other custom js files are our own creation and is licensed under the same license as this theme.
 
