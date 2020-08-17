@@ -33,7 +33,6 @@ class ColorMag_Customize_Front_Page_Options extends ColorMag_Customize_Base_Opti
 
 		$configs = array(
 
-			// Front page heading separator.
 			array(
 				'name'     => 'colormag_front_page_heading',
 				'type'     => 'control',
