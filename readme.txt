@@ -52,7 +52,10 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Remove - TGMPA library to recommend plugins
+* Remove    - TGMPA library to recommend plugins
+* Refactor  - Customize controls.
+* Refactor  - Customizer sections and options.
+* Deprecate - Demo config via theme.
 
 = Version - 1.5.1 -2020-08-08 =
 * Enhancement - Links CSS transition.
