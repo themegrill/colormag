@@ -95,6 +95,13 @@
   top: 30px;
 }
 /**
+ * Editor control CSS.
+ */
+
+.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
+  width: 100%;
+}
+/**
  * Group control CSS.
  */
 
@@ -218,20 +225,6 @@
   margin-bottom: 15px;
 }
 /**
- * Editor control CSS.
- */
-
-.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
-  width: 100%;
-}
-/**
- * Group control CSS.
- */
-
-.customize-control-colormag-hidden.customize-control {
-  margin-top: 0;
-}
-/**
  * Heading control CSS.
  */
 
@@ -260,6 +253,13 @@
 .customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
   margin-top: 10px;
   padding: 0 12px;
+}
+/**
+ * Group control CSS.
+ */
+
+.customize-control-colormag-hidden.customize-control {
+  margin-top: 0;
 }
 /**
  * Radio image control CSS.
@@ -421,6 +421,41 @@
   left: 20px;
 }
 /**
+ * Sortable control CSS.
+ */
+
+.customize-control-colormag-sortable ul.ui-sortable {
+  cursor: default;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
+  cursor: pointer;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li {
+  padding: 5px 10px;
+  border: 1px solid #555555;
+  background: #ffffff;
+  cursor: move;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
+  float: left;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
+  margin-left: 10px;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible {
+  color: #aaaaaa;
+  border: 1px dashed #aaaaaa;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
+  color: #aaaaaa;
+}
+/**
  * Switch toggle control CSS.
  */
 
@@ -478,41 +513,6 @@
   border-radius: 100%;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
-}
-/**
- * Sortable control CSS.
- */
-
-.customize-control-colormag-sortable ul.ui-sortable {
-  cursor: default;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
-  cursor: pointer;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li {
-  padding: 5px 10px;
-  border: 1px solid #555555;
-  background: #ffffff;
-  cursor: move;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
-  float: left;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
-  margin-left: 10px;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li.invisible {
-  color: #aaaaaa;
-  border: 1px dashed #aaaaaa;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
-  color: #aaaaaa;
 }
 /**
  * Typography control CSS.
