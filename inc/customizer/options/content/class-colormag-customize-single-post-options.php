@@ -38,10 +38,10 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 
 			// Post Title header separator.
 			array(
-				'name'     => 'colormag_single_post_title_heading',
+				'name'     => 'colormag_single_feature_image_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
-				'label'    => esc_html__( 'Post Title', 'colormag' ),
+				'label'    => esc_html__( 'Featured Image', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
 				'priority' => 0,
 			),
