@@ -269,60 +269,6 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 } );
 
 /**
- * Editor control JS to handle the editor rendering within customize control.
- *
- * File `editor.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this,
-		    id      = 'editor_' + control.id;
-
-		wp.editor.initialize( id, {
-			tinymce      : {
-				wpautop : true
-			},
-			quicktags    : true,
-			mediaButtons : true
-		} );
-
-	},
-
-	onChangeActive : function ( active, args ) {
-
-		'use strict';
-
-		var control = this,
-		    id      = 'editor_' + control.id,
-		    element = control.container.find( 'textarea' ),
-		    editor;
-
-		editor = tinyMCE.get( id );
-
-		if ( editor ) {
-
-			editor.onChange.add( function ( ed ) {
-				var content;
-
-				ed.save();
-				content = editor.getContent();
-				element.val( content ).trigger( 'change' );
-				wp.customize.instance( control.id ).set( content );
-			} );
-
-		}
-
-	}
-
-} );
-
-/**
  * Group control JS to handle the group customize option.
  *
  * File `group.js`.
@@ -1391,6 +1337,60 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 )( jQuery );
 
 /**
+ * Editor control JS to handle the editor rendering within customize control.
+ *
+ * File `editor.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this,
+		    id      = 'editor_' + control.id;
+
+		wp.editor.initialize( id, {
+			tinymce      : {
+				wpautop : true
+			},
+			quicktags    : true,
+			mediaButtons : true
+		} );
+
+	},
+
+	onChangeActive : function ( active, args ) {
+
+		'use strict';
+
+		var control = this,
+		    id      = 'editor_' + control.id,
+		    element = control.container.find( 'textarea' ),
+		    editor;
+
+		editor = tinyMCE.get( id );
+
+		if ( editor ) {
+
+			editor.onChange.add( function ( ed ) {
+				var content;
+
+				ed.save();
+				content = editor.getContent();
+				element.val( content ).trigger( 'change' );
+				wp.customize.instance( control.id ).set( content );
+			} );
+
+		}
+
+	}
+
+} );
+
+/**
  * Background image control JS to handle the navigate customize option.
  *
  * File `navigate.js`.
@@ -1480,6 +1480,33 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 		this.container.on( 'input change', 'input[type=number]', function () {
 			var value = jQuery( this ).val();
 			jQuery( this ).closest( '.slider-wrapper' ).find( 'input[type=range]' ).val( value );
+			control.setting.set( value );
+		} );
+
+	}
+
+} );
+
+/**
+ * Switch toggle control JS to handle the toggle of custom customize controls.
+ *
+ * File `toggle.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this,
+		    value   = control.setting._value;
+
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
 			control.setting.set( value );
 		} );
 
@@ -2009,33 +2036,6 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
-
-	}
-
-} );
-
-/**
- * Switch toggle control JS to handle the toggle of custom customize controls.
- *
- * File `toggle.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this,
-		    value   = control.setting._value;
-
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
-
-			control.setting.set( value );
-		} );
 
 	}
 

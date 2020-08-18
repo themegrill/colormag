@@ -95,43 +95,6 @@
   top: 30px;
 }
 /**
- * Editor control CSS.
- */
-
-.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
-  width: 100%;
-}
-/**
- * Heading control CSS.
- */
-
-.customize-control-colormag-heading {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-
-.customize-control-colormag-heading .colormag-heading-wrapper {
-  margin: 0 -12px;
-}
-
-.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-title {
-  display: block;
-  padding: 16px 12px;
-  margin: 0;
-  border-width: 2px 0;
-  border-style: solid;
-  border-color: #eaeaea;
-  background-color: #ffffff;
-  font-size: 12px;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
-  margin-top: 10px;
-  padding: 0 12px;
-}
-/**
  * Group control CSS.
  */
 
@@ -255,6 +218,50 @@
   margin-bottom: 15px;
 }
 /**
+ * Editor control CSS.
+ */
+
+.customize-control-colormag-editor .wp-editor-tools .wp-editor-container textarea {
+  width: 100%;
+}
+/**
+ * Group control CSS.
+ */
+
+.customize-control-colormag-hidden.customize-control {
+  margin-top: 0;
+}
+/**
+ * Heading control CSS.
+ */
+
+.customize-control-colormag-heading {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper {
+  margin: 0 -12px;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-title {
+  display: block;
+  padding: 16px 12px;
+  margin: 0;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #eaeaea;
+  background-color: #ffffff;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.customize-control-colormag-heading .colormag-heading-wrapper .customize-control-description {
+  margin-top: 10px;
+  padding: 0 12px;
+}
+/**
  * Radio image control CSS.
  */
 
@@ -320,13 +327,6 @@
 
 .customize-control-colormag-radio-image .image-col-4 label:nth-of-type(4n) {
   margin-left: 0;
-}
-/**
- * Group control CSS.
- */
-
-.customize-control-colormag-hidden.customize-control {
-  margin-top: 0;
 }
 /**
  * Slider control CSS.
@@ -421,41 +421,6 @@
   left: 20px;
 }
 /**
- * Sortable control CSS.
- */
-
-.customize-control-colormag-sortable ul.ui-sortable {
-  cursor: default;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
-  cursor: pointer;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li {
-  padding: 5px 10px;
-  border: 1px solid #555555;
-  background: #ffffff;
-  cursor: move;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
-  float: left;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
-  margin-left: 10px;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li.invisible {
-  color: #aaaaaa;
-  border: 1px dashed #aaaaaa;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
-  color: #aaaaaa;
-}
-/**
  * Switch toggle control CSS.
  */
 
@@ -513,6 +478,41 @@
   border-radius: 100%;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+}
+/**
+ * Sortable control CSS.
+ */
+
+.customize-control-colormag-sortable ul.ui-sortable {
+  cursor: default;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
+  cursor: pointer;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li {
+  padding: 5px 10px;
+  border: 1px solid #555555;
+  background: #ffffff;
+  cursor: move;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
+  float: left;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
+  margin-left: 10px;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible {
+  color: #aaaaaa;
+  border: 1px dashed #aaaaaa;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
+  color: #aaaaaa;
 }
 /**
  * Typography control CSS.
