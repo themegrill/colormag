@@ -84,6 +84,7 @@ class ColorMag_Customizer {
 		// Include the required customizer nested panels and sections files.
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-panel.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-wp-customize-section.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/extend-customizer/class-colormag-upsell-section.php';
 
 	}
 
@@ -111,7 +112,6 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/class-colormag-customize-base-additional-control.php';
 
 		// Include the required customize controls file.
-		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/upsell/class-colormag-upsell-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/radio-image/class-colormag-radio-image-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/heading/class-colormag-heading-control.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/custom-controls/editor/class-colormag-editor-control.php';
@@ -266,21 +266,6 @@ class ColorMag_Customizer {
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_Sanitizes',
 					'sanitize_image_upload',
-				),
-			)
-		);
-
-		/**
-		 * Controls created via the theme.
-		 */
-		// Upsell control.
-		ColorMag_Customize_Base_Control::add_control(
-			'colormag-upsell',
-			array(
-				'callback'          => 'ColorMag_Upsell_Control',
-				'sanitize_callback' => array(
-					'ColorMag_Customizer_Sanitizes',
-					'sanitize_false_values',
 				),
 			)
 		);
