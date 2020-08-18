@@ -80,11 +80,11 @@ class ColorMag_Dynamic_CSS {
 		if ( defined( 'ELEMENTOR_VERSION' ) ) {
 
 			$primary_color_elementor_css = array(
-				'.elementor .tg-module-wrapper .module-title' => array(
+				'.elementor .elementor-widget-wrap .tg-module-wrapper .module-title' => array(
 					'border-bottom-color' => esc_html( $primary_color ),
 				),
 
-				'.elementor .tg-module-wrapper .module-title span,.elementor .tg-module-wrapper .tg-post-category' => array(
+				'.elementor .elementor-widget-wrap .tg-module-wrapper .module-title span,.elementor .elementor-widget-wrap .tg-module-wrapper .tg-post-category' => array(
 					'background-color' => esc_html( $primary_color ),
 				),
 

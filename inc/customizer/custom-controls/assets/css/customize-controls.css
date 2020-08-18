@@ -54,16 +54,17 @@
   color: #ffffff;
 }
 /**
- * Divider control CSS.
+ * Alpha color control CSS.
  */
 
-.customize-control-colormag-divider hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.customize-control-colormag-color .wp-picker-container .wp-color-result .color-alpha {
+  height: 28px !important;
 }
 
-.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
-  top: 30px;
+.customize-control-colormag-color .wp-picker-container .wp-picker-clear {
+  margin-left: 6px;
+  min-height: 30px;
+  line-height: 2.54545455;
 }
 /**
  * Custom control CSS.
@@ -82,17 +83,16 @@
   text-decoration: none;
 }
 /**
- * Alpha color control CSS.
+ * Divider control CSS.
  */
 
-.customize-control-colormag-color .wp-picker-container .wp-color-result .color-alpha {
-  height: 28px !important;
+.customize-control-colormag-divider hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.customize-control-colormag-color .wp-picker-container .wp-picker-clear {
-  margin-left: 6px;
-  min-height: 30px;
-  line-height: 2.54545455;
+.customize-control-colormag-divider .divider-placement-above + .colormag-control-tooltip {
+  top: 30px;
 }
 /**
  * Group control CSS.
