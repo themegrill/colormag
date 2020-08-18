@@ -41,7 +41,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'name'     => 'colormag_single_post_title_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-heading',
-				'label'    => esc_html__( 'Feature Image', 'colormag' ),
+				'label'    => esc_html__( 'Featured Image', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
 				'priority' => 0,
 			),
