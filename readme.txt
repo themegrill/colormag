@@ -51,6 +51,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Fix - Primary color issue
+
 = Version - 2.0.0.1 -2020-08-18 =
 * Fix - PHP syntax error
 
