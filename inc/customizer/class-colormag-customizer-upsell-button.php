@@ -35,7 +35,7 @@ class ColorMag_Customizer_Upsell_Button extends ColorMag_Customize_Base_Option {
 
 			// View Pro Version section.
 			array(
-				'name'             => 'colormag_upsell',
+				'name'             => 'colormag_customize_upsell_section',
 				'type'             => 'section',
 				'title'            => esc_html__( 'View Pro Version', 'colormag' ),
 				'url'              => 'https://themegrill.com/colormag-pricing/?utm_source=colormag-customizer&utm_medium=view-pro-link&utm_campaign=colormag-pricing',
