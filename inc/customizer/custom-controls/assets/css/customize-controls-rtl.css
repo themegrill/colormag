@@ -329,6 +329,41 @@
   margin-left: 0;
 }
 /**
+ * Sortable control CSS.
+ */
+
+.customize-control-colormag-sortable ul.ui-sortable {
+  cursor: default;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
+  cursor: pointer;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li {
+  padding: 5px 10px;
+  border: 1px solid #555555;
+  background: #ffffff;
+  cursor: move;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
+  float: left;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
+  margin-left: 10px;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible {
+  color: #aaaaaa;
+  border: 1px dashed #aaaaaa;
+}
+
+.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
+  color: #aaaaaa;
+}
+/**
  * Slider control CSS.
  */
 
@@ -419,41 +454,6 @@
 
 .customize-control-colormag-slider .slider-wrapper.slider-description .colormag-slider-reset span {
   left: 20px;
-}
-/**
- * Sortable control CSS.
- */
-
-.customize-control-colormag-sortable ul.ui-sortable {
-  cursor: default;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable .dashicons-visibility {
-  cursor: pointer;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li {
-  padding: 5px 10px;
-  border: 1px solid #555555;
-  background: #ffffff;
-  cursor: move;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li .dashicons.dashicons-menu {
-  float: left;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li .dashicons.visibility {
-  margin-left: 10px;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li.invisible {
-  color: #aaaaaa;
-  border: 1px dashed #aaaaaa;
-}
-
-.customize-control-colormag-sortable ul.ui-sortable li.invisible .dashicons.visibility {
-  color: #aaaaaa;
 }
 /**
  * Switch toggle control CSS.
