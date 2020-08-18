@@ -140,6 +140,7 @@ class ColorMag_Customizer {
 		// Register panels and sections.
 		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
 		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Section' );
+		$wp_customize->register_section_type( 'ColorMag_Upsell_Section' );
 
 		/**
 		 * Register controls.
