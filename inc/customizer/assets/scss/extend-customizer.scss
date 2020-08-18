@@ -145,3 +145,38 @@
 .colormag-hide {
 	display: none !important;
 }
+
+#accordion-section-colormag_customize_upsell_section {
+
+	h3 {
+
+		&.accordion-section-title {
+			background-color: #289DCC !important;
+			border-left-color: #0073aa;
+			color: #fff !important;
+			padding: 0;
+
+			a {
+				color: #fff;
+				display: block;
+				padding: 12px 15px 15px;
+				text-decoration: none;
+
+				&:hover {
+					background-color: #1f91bf !important;
+				}
+			}
+
+			&:after {
+				color: #fff !important;
+			}
+		}
+
+		a {
+
+			&::after {
+				color: #fff;
+			}
+		}
+	}
+}

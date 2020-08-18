@@ -29,25 +29,18 @@ class ColorMag_Customizer_Upsell_Button extends ColorMag_Customize_Base_Option {
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function customizer_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize ) {
 
 		$configs = array(
 
 			// View Pro Version section.
 			array(
-				'name'     => 'colormag_upsell_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'View Pro Version', 'colormag' ),
-				'priority' => 1,
-			),
-
-			// View Pro Version option.
-			array(
-				'name'     => 'colormag_upsell',
-				'type'     => 'control',
-				'control'  => 'colormag-upsell',
-				'section'  => 'colormag_upsell_section',
-				'priority' => 5,
+				'name'             => 'colormag_customize_upsell_section',
+				'type'             => 'section',
+				'title'            => esc_html__( 'View Pro Version', 'colormag' ),
+				'url'              => 'https://themegrill.com/colormag-pricing/?utm_source=colormag-customizer&utm_medium=view-pro-link&utm_campaign=colormag-pricing',
+				'priority'         => 1,
+				'section_callback' => 'ColorMag_Upsell_Section',
 			),
 
 		);
