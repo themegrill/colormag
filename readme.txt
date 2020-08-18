@@ -51,10 +51,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
-* Remove    - TGMPA library to recommend plugins
+= Version - 2.0.0 -2020-08-18 =
 * Refactor  - Customize controls.
 * Refactor  - Customizer sections and options.
+* Remove    - TGMPA library to recommend plugins
 * Deprecate - Demo config via theme.
 
 = Version - 1.5.1 -2020-08-08 =
