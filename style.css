@@ -2359,10 +2359,6 @@ a#scroll-up:hover {
 	transition: all 0.3s;
 }
 
-.more-link:hover {
-	background-color: #248DB7;
-}
-
 .more-link span {
 	font-size: 12px;
 	padding: 5px 10px;
