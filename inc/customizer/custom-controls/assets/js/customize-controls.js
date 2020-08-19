@@ -1,28 +1,4 @@
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Background image control JS to handle the background customize option.
  *
  * File `background.js`.
@@ -204,6 +180,30 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 )( jQuery );
 
 /**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Color picker control JS to handle color picker rendering within customize control.
  *
  * File `color.js`.
@@ -243,30 +243,6 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 	}
 )( jQuery );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
 
 /**
  * Editor control JS to handle the editor rendering within customize control.
@@ -317,6 +293,30 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			} );
 
 		}
+
+	}
+
+} );
+
+/**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
 
 	}
 
@@ -1553,33 +1553,6 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 } );
 
 /**
- * Switch toggle control JS to handle the toggle of custom customize controls.
- *
- * File `toggle.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this,
-		    value   = control.setting._value;
-
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
-
-			control.setting.set( value );
-		} );
-
-	}
-
-} );
-
-/**
  * Typography control JS to handle the typography customize option.
  *
  * File `typography.js`.
@@ -2036,6 +2009,33 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 		control.setting.set( val );
+
+	}
+
+} );
+
+/**
+ * Switch toggle control JS to handle the toggle of custom customize controls.
+ *
+ * File `toggle.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this,
+		    value   = control.setting._value;
+
+		// Save the value.
+		this.container.on( 'change', 'input', function () {
+			value = jQuery( this ).is( ':checked' ) ? true : false;
+
+			control.setting.set( value );
+		} );
 
 	}
 
