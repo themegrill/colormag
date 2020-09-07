@@ -51,6 +51,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Tweak - Updated `Tested up to` to 5.5
+
 = Version - 2.0.0.3 -2020-08-19 =
 * Fix - Primary color issue for read more button
 * Fix - Primary color issue for header style 3 menu border
