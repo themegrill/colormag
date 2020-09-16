@@ -186,3 +186,35 @@ if ( ! function_exists( 'colormag_main_section_inner_start' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'colormag_change_logo_attr' ) ) :
+
+	/**
+	 * Change the logo image attr while retina logo is set.
+	 *
+	 * @param $attr
+	 * @param $attachment
+	 * @param $size
+	 *
+	 * @return mixed
+	 */
+	function colormag_change_logo_attr( $attr, $attachment, $size ) {
+		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+
+		if ( ! empty( $custom_logo ) ) {
+			$custom_logo = $custom_logo[0];
+		}
+
+		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
+			$retina_logo    = get_theme_mod( 'colormag_retina_logo', '' );
+			$attr['srcset'] = '';
+
+			if ( $retina_logo ) {
+				$attr['srcset'] = $custom_logo . ' 1x,' . $retina_logo . ' 2x';
+			}
+		}
+
+		return $attr;
+	}
+
+endif;
