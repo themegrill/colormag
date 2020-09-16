@@ -43,7 +43,7 @@ class ColorMag_Customizer_Sanitizes {
 	 */
 	public static function sanitize_html( $input ) {
 
-		return wp_filter_post_kses( $input );
+		return wp_kses_post( $input );
 
 	}
 
