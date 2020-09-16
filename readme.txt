@@ -53,6 +53,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = TBD =
 * Tweak - Updated `Tested up to` to 5.5
+* Fix - Link in slider not working on certain devices in Chrome
 
 = Version - 2.0.0.3 -2020-08-19 =
 * Fix - Primary color issue for read more button
