@@ -51,7 +51,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version - 2.0.1 -2020-09-16 =
 * Tweak - Updated `Tested up to` to 5.5
 * Fix - Link in slider not working on certain devices in Chrome
 
