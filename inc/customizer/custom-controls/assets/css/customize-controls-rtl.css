@@ -233,6 +233,13 @@
   margin-bottom: 15px;
 }
 /**
+ * Group control CSS.
+ */
+
+.customize-control-colormag-hidden.customize-control {
+  margin-top: 0;
+}
+/**
  * Heading control CSS.
  */
 
@@ -328,13 +335,6 @@
 
 .customize-control-colormag-radio-image .image-col-4 label:nth-of-type(4n) {
   margin-left: 0;
-}
-/**
- * Group control CSS.
- */
-
-.customize-control-colormag-hidden.customize-control {
-  margin-top: 0;
 }
 /**
  * Slider control CSS.
@@ -464,6 +464,39 @@
   color: #aaaaaa;
 }
 /**
+ * Typography control CSS.
+ */
+
+.customize-control-colormag-typography .customize-control-content > div {
+  margin-bottom: 15px;
+}
+
+.customize-control-colormag-typography .customize-control-content .font-size,
+.customize-control-colormag-typography .customize-control-content .line-height,
+.customize-control-colormag-typography .customize-control-content .letter-spacing {
+  position: relative;
+}
+
+.customize-control-colormag-typography .customize-control-content .control-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.customize-control-colormag-typography .customize-control-content .unit {
+  margin-right: 6px;
+  padding: 0 12px;
+  background: #dddddd;
+  border-radius: 2px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+span.select2-container.select2-container--default.select2-container--open {
+  z-index: 999999;
+}
+/**
  * Switch toggle control CSS.
  */
 
@@ -521,37 +554,4 @@
   border-radius: 100%;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
-}
-/**
- * Typography control CSS.
- */
-
-.customize-control-colormag-typography .customize-control-content > div {
-  margin-bottom: 15px;
-}
-
-.customize-control-colormag-typography .customize-control-content .font-size,
-.customize-control-colormag-typography .customize-control-content .line-height,
-.customize-control-colormag-typography .customize-control-content .letter-spacing {
-  position: relative;
-}
-
-.customize-control-colormag-typography .customize-control-content .control-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.customize-control-colormag-typography .customize-control-content .unit {
-  margin-right: 6px;
-  padding: 0 12px;
-  background: #dddddd;
-  border-radius: 2px;
-  line-height: 30px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-span.select2-container.select2-container--default.select2-container--open {
-  z-index: 999999;
 }
