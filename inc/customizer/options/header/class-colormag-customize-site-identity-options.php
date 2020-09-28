@@ -31,15 +31,6 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 	 */
 	public function register_options( $options, $wp_customize ) {
 
-		$wp_customize->add_setting(
-			'colormag_retina_logo',
-			array(
-				'default'           => '',
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
 		$configs = array(
 
 			// Site logo header separator.
