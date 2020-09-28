@@ -13,11 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<form action="<?php echo esc_url( home_url( '/' ) ); ?>"
-      class="search-form searchform clearfix"
-      method="get"
-      role="search"
->
+<form action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form searchform clearfix" method="get" role="search">
 
 	<div class="search-wrap">
 		<input type="search"
