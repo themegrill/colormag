@@ -53,6 +53,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = TBD =
 * Fix - Search form result display for specific language when using Polylang plugin.
+* Fix - Alpha color selector design issue on custom customize controls.
 
 = Version - 2.0.1 -2020-09-16 =
 * Tweak - Updated `Tested up to` to 5.5
