@@ -204,6 +204,30 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 } );
 
 /**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Color picker control JS to handle color picker rendering within customize control.
  *
  * File `color.js`.
@@ -243,30 +267,6 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 	}
 )( jQuery );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
 
 /**
  * Editor control JS to handle the editor rendering within customize control.
