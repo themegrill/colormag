@@ -14,3 +14,7 @@
 	min-height: 30px;
 	line-height: 2.54545455;
 }
+
+.customize-control-colormag-background .customize-control-content .wp-picker-container .iris-picker .iris-alpha-slider {
+	margin-right: -1px;
+}
