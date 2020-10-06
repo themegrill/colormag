@@ -46,6 +46,9 @@ add_action( 'colormag_action_before_content', 'colormag_main_section_start', 10 
 // Main section inner starts.
 add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner_start', 10 );
 
+// Update image attributes for retina logo.
+add_filter( 'wp_get_attachment_image_attributes', 'colormag_change_logo_attr', 10, 3 );
+
 
 /**
  * Hooks for the content of this theme.
