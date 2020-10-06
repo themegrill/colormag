@@ -190,7 +190,7 @@ endif;
 if ( ! function_exists( 'colormag_change_logo_attr' ) ) :
 
 	/**
-	 * Change the logo image attr while retina logo is set.
+	 * Change the image attributes while retina logo is set.
 	 *
 	 * @param $attr
 	 * @param $attachment

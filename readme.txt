@@ -52,7 +52,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
-* Feature - Added Retina logo option.
+* Feature - Retina logo option.
 
 = Version - 2.0.1 -2020-09-16 =
 * Tweak - Updated `Tested up to` to 5.5
