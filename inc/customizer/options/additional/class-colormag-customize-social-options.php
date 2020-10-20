@@ -31,8 +31,6 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 	 */
 	public function register_options( $options, $wp_customize ) {
 
-		error_log( print_r( `asdfasdasdasdasdasd`, true ) );
-
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
@@ -42,7 +40,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 			array(
 				'name'     => 'colormag_social_icons_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Social Icons', 'colormag' ),
 				'section'  => 'colormag_social_icons_section',
 				'priority' => 0,

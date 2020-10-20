@@ -37,7 +37,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 			array(
 				'name'     => 'colormag_site_logo_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Site Logo', 'colormag' ),
 				'section'  => 'title_tagline',
 				'priority' => 5,
@@ -47,7 +47,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 			array(
 				'name'     => 'colormag_site_icon_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Site Icon', 'colormag' ),
 				'section'  => 'title_tagline',
 				'priority' => 7,
@@ -57,7 +57,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 			array(
 				'name'     => 'colormag_site_title_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Site Title', 'colormag' ),
 				'section'  => 'title_tagline',
 				'priority' => 9,
@@ -67,7 +67,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 			array(
 				'name'     => 'colormag_site_tagline_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Site Tagline', 'colormag' ),
 				'section'  => 'title_tagline',
 				'priority' => 11,
@@ -77,7 +77,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 			array(
 				'name'     => 'colormag_visibility_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Visibility', 'colormag' ),
 				'section'  => 'title_tagline',
 				'priority' => 20,

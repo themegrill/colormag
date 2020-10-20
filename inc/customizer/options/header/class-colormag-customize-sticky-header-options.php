@@ -40,7 +40,7 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 			array(
 				'name'     => 'colormag_primary_sticky_menu_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Sticky Menu', 'colormag' ),
 				'section'  => 'colormag_sticky_header_section',
 				'priority' => 5,

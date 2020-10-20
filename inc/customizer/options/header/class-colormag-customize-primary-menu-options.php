@@ -43,7 +43,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 			array(
 				'name'     => 'colormag_home_icon_display_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Show Home Icon', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 10,
@@ -72,7 +72,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 			array(
 				'name'     => 'colormag_search_icon_in_menu_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Search Icon', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 30,
@@ -97,7 +97,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 			array(
 				'name'     => 'colormag_random_post_in_menu_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Random Post', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 50,
@@ -130,7 +130,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 			array(
 				'name'     => 'colormag_responsive_menu_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Responsive Menu Style', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 70,

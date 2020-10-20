@@ -40,7 +40,7 @@ class ColorMag_Customize_Background_Options extends ColorMag_Customize_Base_Opti
 			array(
 				'name'     => 'colormag_outside_container_background_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Outside Container', 'colormag' ),
 				'section'  => 'colormag_global_background_section',
 				'priority' => 0,

@@ -83,6 +83,7 @@ class ColorMag_Customizer_FrameWork {
 		require dirname(__FILE__) . '/extend-customizer/class-colormag-wp-customize-panel.php';
 		require dirname(__FILE__) . '/extend-customizer/class-colormag-wp-customize-section.php';
 		require dirname(__FILE__) . '/extend-customizer/class-colormag-wp-customize-separator.php';
+		require dirname(__FILE__) . '/extend-customizer/class-colormag-upsell-section.php';
 
 	}
 

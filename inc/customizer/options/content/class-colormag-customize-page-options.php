@@ -37,7 +37,7 @@ class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 			array(
 				'name'     => 'colormag_page_feature_image_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Featured Image', 'colormag' ),
 				'section'  => 'colormag_page_section',
 				'priority' => 0,

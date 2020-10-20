@@ -36,15 +36,36 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 			/**
 			 * Primary Colors.
 			 */
+			// Primary color heading.
+			array(
+				'name'     => 'colormag_primary_color_heading',
+				'default'  => '#289dcc',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Primary Color', 'colormag' ),
+				'section'  => 'colormag_primary_colors_section',
+				'priority' => 0,
+			),
+
 			// Primary color option.
 			array(
 				'name'     => 'colormag_primary_color',
 				'default'  => '#289dcc',
 				'type'     => 'control',
 				'control'  => 'colormag-color',
-				'label'    => esc_html__( 'Primary Color', 'colormag' ),
 				'section'  => 'colormag_primary_colors_section',
 				'priority' => 10,
+			),
+
+			// Skin color heading.
+			array(
+				'name'     => 'colormag_skin_color_heading',
+				'default'  => '#289dcc',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Skin Color', 'colormag' ),
+				'section'  => 'colormag_skin_color_section',
+				'priority' => 0,
 			),
 
 			// Skin color option.
@@ -53,13 +74,12 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'default'  => 'white',
 				'type'     => 'control',
 				'control'  => 'radio',
-				'label'    => esc_html__( 'Skin Color', 'colormag' ),
 				'section'  => 'colormag_skin_color_section',
 				'choices'  => array(
 					'white' => esc_html__( 'White Skin', 'colormag' ),
 					'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
 				),
-				'priority' => 15,
+				'priority' => 10,
 			),
 
 		);

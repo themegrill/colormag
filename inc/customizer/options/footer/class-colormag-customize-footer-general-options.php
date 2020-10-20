@@ -37,7 +37,7 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 			array(
 				'name'     => 'colormag_footer_style_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Style', 'colormag' ),
 				'section'  => 'colormag_footer_general_section',
 				'priority' => 0,

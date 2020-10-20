@@ -36,7 +36,7 @@ class ColorMag_Customize_Front_Page_Options extends ColorMag_Customize_Base_Opti
 			array(
 				'name'     => 'colormag_front_page_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Front Page', 'colormag' ),
 				'section'  => 'colormag_front_page_section',
 				'priority' => 10,

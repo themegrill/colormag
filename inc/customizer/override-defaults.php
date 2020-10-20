@@ -29,6 +29,7 @@ $wp_customize->get_section( 'header_image' )->priority = 25;
 // Outside container > background control.
 $wp_customize->get_control( 'background_color' )->section  = 'colormag_global_background_section';
 $wp_customize->get_control( 'background_color' )->priority = 20;
+$wp_customize->get_control( 'background_color' )->type = 'colormag-color';
 
 $wp_customize->get_control( 'background_image' )->section  = 'colormag_global_background_section';
 $wp_customize->get_control( 'background_image' )->priority = 25;

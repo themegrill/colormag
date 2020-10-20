@@ -43,7 +43,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 			array(
 				'name'     => 'colormag_date_display_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Show Date', 'colormag' ),
 				'section'  => 'colormag_top_bar_section',
 				'priority' => 10,
@@ -104,7 +104,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 			array(
 				'name'     => 'colormag_breaking_news_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Breaking News', 'colormag' ),
 				'section'  => 'colormag_top_bar_section',
 				'priority' => 40,

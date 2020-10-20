@@ -37,7 +37,7 @@ class ColorMag_Customize_Header_General_Options extends ColorMag_Customize_Base_
 			array(
 				'name'     => 'colormag_style_heading',
 				'type'     => 'control',
-				'control'  => 'colormag-heading',
+				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Style', 'colormag' ),
 				'section'  => 'colormag_primary_header_section',
 				'priority' => 0,
