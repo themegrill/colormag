@@ -31,6 +31,8 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 	 */
 	public function register_options( $options, $wp_customize ) {
 
+		error_log( print_r( `asdfasdasdasdasdasd`, true ) );
+
 		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
 		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 

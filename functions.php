@@ -91,11 +91,9 @@ require_once COLORMAG_INCLUDES_DIR . '/hooks/footer.php';
 
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/custom-header.php';
-require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-fonts.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 require_once COLORMAG_INCLUDES_DIR . '/enqueue-scripts.php';
 require_once COLORMAG_INCLUDES_DIR . '/class-colormag-dynamic-css.php';
-require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-generate-fonts.php';
 
 /** Add the WooCommerce plugin support */
 if ( class_exists( 'WooCommerce' ) ) {
