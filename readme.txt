@@ -52,7 +52,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version - 2.0.3 -2020-10-21 =
 * Enhancement - Customizer design.
 
 = Version - 2.0.2 -2020-09-28 =
