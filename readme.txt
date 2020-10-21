@@ -52,6 +52,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Enhancement - Customizer design.
+
 = Version - 2.0.2 -2020-09-28 =
 * Fix - Search form result display for specific language when using Polylang plugin.
 * Fix - Alpha color selector design issue on custom customize controls.
