@@ -61,8 +61,8 @@ class ColorMag_Customizer {
 		// Include the required customize section and panels register file.
 		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-register-sections-panels.php';
 
-//		// Include the required customize upsell button file.
-//		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-upsell-button.php';
+		// Include the required customize upsell button file.
+		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-upsell-button.php';
 
 		/**
 		 * Include the required customize options file.

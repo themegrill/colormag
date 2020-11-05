@@ -4,11 +4,8 @@
  *
  * Creates a jQuery color control.
  *
- * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2020, Astra
- * @link        https://wpastra.com/
- * @since       2.0.0
+ * @package     ColorMag
+ * @author      ColorMag
  */
 
 // Exit if accessed directly.
@@ -18,13 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( class_exists( 'WP_Customize_Section' ) ) {
 
-	/**
-	 * Adds a custom Customize Section for section separator.
-	 *
-	 * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
-	 * @since 2.0.0
-	 * @see WP_Customize_Section
-	 */
 	class ColorMag_WP_Customize_Separator extends WP_Customize_Section {
 
 		/**
