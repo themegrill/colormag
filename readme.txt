@@ -52,6 +52,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - 2.0.4 TBD =
+* Fix   - jQuery deprecated message in some of the theme custom JS files
+
 = Version - 2.0.3 -2020-10-21 =
 * Enhancement - Customizer design.
 
