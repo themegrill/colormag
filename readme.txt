@@ -52,7 +52,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - 2.0.4 TBD =
+= Version - 2.0.4 -2020-12-16 =
 * Tweak - Update footer credit link with `rel="nofollow"` attributes.
 * Fix   - jQuery deprecated message in some of the theme custom JS files
 

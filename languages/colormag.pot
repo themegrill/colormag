@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 2.0.3\n"
+"Project-Id-Version: ColorMag 2.0.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2020-10-21 06:57:09+00:00\n"
+"POT-Creation-Date: 2020-12-16 05:16:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1182,8 +1182,8 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "ThemeGrill"
+#. Theme Name of the plugin/theme
+msgid "ColorMag"
 msgstr ""
 
 #: inc/hooks/footer.php:247
@@ -1596,10 +1596,6 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "ColorMag"
-msgstr ""
-
 #. Theme URI of the plugin/theme
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
@@ -1610,6 +1606,10 @@ msgid ""
 "for news, newspaper, magazine, publishing, business and any kind of sites. "
 "Get free support at https://themegrill.com/support-forum/ and check the "
 "demo at https://demo.themegrill.com/colormag/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the plugin/theme
