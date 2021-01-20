@@ -1903,6 +1903,7 @@ li.default-menu {
 	color: #b1b6b6;
 	float: right;
 	font-size: 14px;
+	line-height: 1.7;
 }
 
 .footer-socket-wrapper .copyright a {
@@ -2971,6 +2972,10 @@ ul.wp-block-gallery img {
 }
 
 /* Related Posts */
+.related-posts-wrapper {
+	margin-top: 30px;
+}
+
 .related-posts-main-title .fa {
 	color: #289dcc;
 }

@@ -2972,6 +2972,10 @@ ul.wp-block-gallery img {
 }
 
 /* Related Posts */
+.related-posts-wrapper {
+	margin-top: 30px;
+}
+
 .related-posts-main-title .fa {
 	color: #289dcc;
 }
