@@ -57,7 +57,19 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 10,
 			),
 
-			// Skin color heading.
+			array(
+				'name'        => 'colormag_primary_color_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_primary_colors_section',
+				'priority'    => 20,
+			),
+
+
+		// Skin color heading.
 			array(
 				'name'     => 'colormag_skin_color_heading',
 				'default'  => '#289dcc',

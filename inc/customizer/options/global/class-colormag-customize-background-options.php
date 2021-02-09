@@ -46,6 +46,17 @@ class ColorMag_Customize_Background_Options extends ColorMag_Customize_Base_Opti
 				'priority' => 0,
 			),
 
+			array(
+				'name'        => 'colormag_background_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_global_background_section',
+				'priority'    => 40,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );

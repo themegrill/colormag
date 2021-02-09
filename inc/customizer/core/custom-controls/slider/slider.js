@@ -14,16 +14,16 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 		var control = this;
 
 		// Update the text value.
-		jQuery( 'input[type=range]' ).on( 'input change', function () {
-			var value        = jQuery( this ).attr( 'value' ),
-			    input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+		this.container.find( 'input[type=range]' ).on( 'input change', function () {
+			var value        = jQuery( this ).val(),
+				input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
 
 			input_number.val( value );
 			input_number.change();
 		} );
 
 		// Handle the reset button.
-		jQuery( '.colormag-slider-reset' ).click( function () {
+		this.container.find( '.colormag-slider-reset' ).click( function () {
 			var wrapper       = jQuery( this ).closest( '.slider-wrapper' ),
 			    input_range   = wrapper.find( 'input[type=range]' ),
 			    input_number  = wrapper.find( '.colormag-range-value .value' ),

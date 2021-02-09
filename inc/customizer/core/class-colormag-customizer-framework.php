@@ -122,6 +122,8 @@ class ColorMag_Customizer_FrameWork {
 		require dirname(__FILE__) . '/custom-controls/sortable/class-colormag-sortable-control.php';
 		require dirname(__FILE__) . '/custom-controls/group/class-colormag-group-control.php';
 		require dirname(__FILE__) . '/custom-controls/title/class-colormag-title-control.php';
+		require dirname(__FILE__) . '/custom-controls/dimensions/class-colormag-dimensions-control.php';
+		require dirname(__FILE__) . '/custom-controls/upgrade/class-colormag-upgrade-control.php';
 
 	}
 
@@ -136,6 +138,8 @@ class ColorMag_Customizer_FrameWork {
 		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
 		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Section' );
 		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Separator' );
+		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
+		$wp_customize->register_section_type( 'ColorMag_Upsell_Section' );
 
 		/**
 		 * Register controls.
@@ -462,6 +466,22 @@ class ColorMag_Customizer_FrameWork {
 			)
 		);
 
+		// Dimensions control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-dimensions',
+			array(
+				'callback' => 'ColorMag_Dimensions_Control',
+			)
+		);
+
+		// Upgrade control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-upgrade',
+			array(
+				'callback' => 'ColorMag_Upgrade_Control',
+			)
+		);
+
 	}
 
 	/**
@@ -639,7 +659,7 @@ class ColorMag_Customizer_FrameWork {
 		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
 		$customize_config  = array(
 			'name'              => $sub_control_name,
-			'datastore_type'    => 'theme_mod',
+			'datastore_type'    => apply_filters( 'colormag_customize_datastore_type', 'theme_mod' ),
 			'control'           => 'colormag-hidden',
 			'section'           => $config['section'],
 			'default'           => $config['default'],

@@ -1,28 +1,4 @@
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Background image control JS to handle the background customize option.
  *
  * File `background.js`.
@@ -204,6 +180,30 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 )( jQuery );
 
 /**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Color picker control JS to handle color picker rendering within customize control.
  *
  * File `color.js`.
@@ -243,6 +243,168 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 	}
 )( jQuery );
+
+/**
+ * Dimensions JS to handle the background customize option.
+ *
+ * File `background.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor['colormag-dimensions'] = wp.customize.Control.extend( {
+
+    ready : function () {
+
+        'use strict';
+
+        var control = this;
+
+        // Top Dimension setting.
+        control.container.on( 'change keyup paste input', '.top input', function () {
+            control.updateTop();
+        } );
+
+        // Right Dimension setting.
+        control.container.on( 'change keyup paste input', '.right input', function () {
+            control.updateRight();
+        } );
+
+        // Left Dimension setting.
+        control.container.on( 'change keyup paste input', '.left input', function () {
+            control.updateLeft();
+        } );
+
+        // Bottom Dimension setting.
+        control.container.on( 'change keyup paste input', '.bottom input', function () {
+            control.updateBottom();
+        } );
+
+    },
+
+    updateTop : function () {
+
+        var control  = this,
+            val      = control.setting._value,
+            input    = control.container.find( '.dimensions-hidden-value' ),
+            newValue = {
+                'top' : {}
+            };
+
+        control.container.find( '.top .input-wrapper' ).each(
+            function () {
+                var controlValue = jQuery( this ).find( 'input' ).val();
+
+                newValue['top'] = controlValue;
+            }
+        );
+
+        // Extend/Update the `val` object to include `newValue`'s new data as an object.
+        jQuery.extend( val, newValue );
+
+        jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+        control.setting.set( val );
+
+    },
+
+    updateRight : function () {
+
+        var control  = this,
+            val      = control.setting._value,
+            input    = control.container.find( '.dimensions-hidden-value' ),
+            newValue = {
+                'right' : {}
+            };
+
+        control.container.find( '.right .input-wrapper' ).each(
+            function () {
+                var controlValue = jQuery( this ).find( 'input' ).val();
+
+                newValue['right'] = controlValue;
+            }
+        );
+
+        // Extend/Update the `val` object to include `newValue`'s new data as an object.
+        jQuery.extend( val, newValue );
+
+        jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+        control.setting.set( val );
+
+    },
+
+    updateBottom: function () {
+
+        var control  = this,
+            val      = control.setting._value,
+            input    = control.container.find( '.dimensions-hidden-value' ),
+            newValue = {
+                'bottom' : {}
+            };
+
+        control.container.find( '.bottom .input-wrapper' ).each(
+            function () {
+                var controlValue = jQuery( this ).find( 'input' ).val();
+
+                newValue['bottom'] = controlValue;
+            }
+        );
+
+        // Extend/Update the `val` object to include `newValue`'s new data as an object.
+        jQuery.extend( val, newValue );
+
+        jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+        control.setting.set( val );
+
+    },
+
+    updateLeft : function () {
+
+        var control  = this,
+            val      = control.setting._value,
+            input    = control.container.find( '.dimensions-hidden-value' ),
+            newValue = {
+                'left' : {}
+            };
+
+        control.container.find( '.left .input-wrapper' ).each(
+            function () {
+                var controlValue = jQuery( this ).find( 'input' ).val();
+
+                newValue['left'] = controlValue;
+            }
+        );
+
+        // Extend/Update the `val` object to include `newValue`'s new data as an object.
+        jQuery.extend( val, newValue );
+
+        jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+        control.setting.set( val );
+
+    },
+
+} );
+/**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
 
 /**
  * Editor control JS to handle the editor rendering within customize control.
@@ -293,30 +455,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 			} );
 
 		}
-
-	}
-
-} );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
 
 	}
 
@@ -1456,16 +1594,16 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
 		var control = this;
 
 		// Update the text value.
-		jQuery( 'input[type=range]' ).on( 'input change', function () {
-			var value        = jQuery( this ).attr( 'value' ),
-			    input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+		this.container.find( 'input[type=range]' ).on( 'input change', function () {
+			var value        = jQuery( this ).val(),
+				input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
 
 			input_number.val( value );
 			input_number.change();
 		} );
 
 		// Handle the reset button.
-		jQuery( '.colormag-slider-reset' ).click( function () {
+		this.container.find( '.colormag-slider-reset' ).click( function () {
 			var wrapper       = jQuery( this ).closest( '.slider-wrapper' ),
 			    input_range   = wrapper.find( 'input[type=range]' ),
 			    input_number  = wrapper.find( '.colormag-range-value .value' ),

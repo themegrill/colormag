@@ -15,6 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( class_exists( 'WP_Customize_Section' ) ) {
 
+	/**
+	 * Adds a custom Customize Section for section separator.
+	 *
+	 * @link https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
+	 * @since 2.0.0
+	 * @see WP_Customize_Section
+	 */
 	class ColorMag_WP_Customize_Separator extends WP_Customize_Section {
 
 		/**

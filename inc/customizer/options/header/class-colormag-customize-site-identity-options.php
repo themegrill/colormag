@@ -100,6 +100,17 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'priority' => 30,
 			),
 
+			array(
+				'name'        => 'colormag_site_identity_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'title_tagline',
+				'priority'    => 50,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );

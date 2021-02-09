@@ -111,7 +111,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	public static function sanitize_radio_select( $input, $setting ) {
 
 		// Ensuring that the input is a slug.
-		$input = sanitize_key( $input );
+		$input = sanitize_text_field( $input );
 
 		// Get the list of choices from the control associated with the setting.
 		$choices = $setting->manager->get_control( $setting->id )->choices;

@@ -84,7 +84,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Related Posts', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
-				'priority' => 305,
+				'priority' => 20,
 			),
 
 			// Related posts enable/disable option.
@@ -100,7 +100,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'partial'   => array(
 					'selector' => '.related-posts',
 				),
-				'priority'  => 310,
+				'priority'  => 30,
 			),
 
 			// Related posts display from option.
@@ -120,7 +120,18 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 					'!=',
 					0,
 				),
-				'priority'   => 315,
+				'priority'   => 40,
+			),
+
+			array(
+				'name'        => 'colormag_customize_single_post_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_single_post_section',
+				'priority'    => 50,
 			),
 
 		);

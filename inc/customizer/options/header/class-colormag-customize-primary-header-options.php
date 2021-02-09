@@ -68,6 +68,17 @@ class ColorMag_Customize_Header_General_Options extends ColorMag_Customize_Base_
 				'priority' => 5,
 			),
 
+			array(
+				'name'        => 'colormag_primary_header_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_primary_header_section',
+				'priority'    => 20,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );
