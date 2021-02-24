@@ -52,7 +52,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version - 2.0.5 - 2021-02-24 =
 * Tweak - Update screenshot image.
 
 = Version - 2.0.4 -2020-12-16 =
