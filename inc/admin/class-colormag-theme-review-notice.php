@@ -55,7 +55,7 @@ class ColorMag_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 15 days.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '0 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-15 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
 			return;
 		} ?>
 		<div class="notice notice-success colormag-notice theme-review-notice" style="position:relative;">
@@ -63,7 +63,6 @@ class ColorMag_Theme_Review_Notice {
 				<div class="colormag-message__image">
 					<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>"/>
 					<?php
-                    // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose
 					?>
 				</div>
 				<div class="colormag-message-review__text">
@@ -97,11 +96,8 @@ class ColorMag_Theme_Review_Notice {
 							<span>Got theme support question?</span>
 						</a>
 					</div>
-
 				</div>
-
 			</div>
-
 			<a class="notice-dismiss" href="?nag_colormag_ignore_theme_review_notice=0"></a>
 		</div> <!-- /.theme-review-notice -->
 		<?php
