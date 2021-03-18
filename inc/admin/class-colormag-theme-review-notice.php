@@ -17,6 +17,7 @@ defined( 'ABSPATH' ) || exit;
  */
 class ColorMag_Theme_Review_Notice {
 
+
 	/**
 	 * Constructor function to include the required functionality for the class.
 	 *
@@ -56,11 +57,16 @@ class ColorMag_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 15 days.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-15 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '0 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
 		?>
 		<div class="notice notice-success colormag-notice theme-review-notice" style="position:relative;">
+		<div class="colormag-message__content">
+			<div class="colormag-message__image">
+				<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
+			</div>
+			<div class="colormag-message-review__text">
 			<p>
 				<?php
 				printf(
@@ -95,6 +101,8 @@ class ColorMag_Theme_Review_Notice {
 					<span><?php esc_html_e( 'Got theme support question?', 'colormag' ); ?></span>
 				</a>
 			</div> <!-- /.links -->
+			</div>
+		</div>
 
 			<a class="notice-dismiss" href="?nag_colormag_ignore_theme_review_notice=0"></a>
 		</div> <!-- /.theme-review-notice -->
@@ -106,7 +114,7 @@ class ColorMag_Theme_Review_Notice {
 	 */
 	public function ignore_theme_review_notice() {
 		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice'] ) && '0' == $_GET['nag_colormag_ignore_theme_review_notice'] ) {
+		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice'] ) && '0' === $_GET['nag_colormag_ignore_theme_review_notice'] ) {
 			add_user_meta( get_current_user_id(), 'colormag_ignore_theme_review_notice', 'true', true );
 		}
 	}
@@ -116,7 +124,7 @@ class ColorMag_Theme_Review_Notice {
 	 */
 	public function ignore_theme_review_notice_partially() {
 		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) && '0' == $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) {
+		if ( isset( $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) && '0' === $_GET['nag_colormag_ignore_theme_review_notice_partially'] ) {
 			update_user_meta( get_current_user_id(), 'nag_colormag_ignore_theme_review_notice_partially', time() );
 		}
 	}
