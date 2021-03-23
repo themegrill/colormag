@@ -51,7 +51,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'name'      => 'colormag_social_link_activate',
 				'default'   => 0,
 				'type'      => 'control',
-				'control'   => 'checkbox',
+				'control'   => 'colormag-toggle',
 				'label'       => esc_html__( 'Enable', 'colormag' ),
 				'description' => esc_html__( 'Check to activate social links area', 'colormag' ),
 				'section'   => 'colormag_social_icons_section',
@@ -62,26 +62,57 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'priority'  => 5,
 			),
 
-			// Social links location option.
+			// Social links position title.
 			array(
-				'name'       => 'colormag_social_link_location_option',
-				'default'    => 'both',
-				'type'       => 'control',
-				'control'    => 'radio',
-				'label'       => esc_html__( 'Visibility', 'colormag' ),
-				'description' => esc_html__( 'Social links to display on:', 'colormag' ),
-				'section'    => 'colormag_social_icons_section',
-				'choices'    => array(
-					'header' => esc_html__( 'Header only', 'colormag' ),
-					'footer' => esc_html__( 'Footer only', 'colormag' ),
-					'both'   => esc_html__( 'Both header and footer', 'colormag' ),
-				),
+				'name'     => 'colormag_social_icons_position_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Position', 'colormag' ),
+				'section'  => 'colormag_social_icons_section',
+				'priority' => 10,
 				'dependency' => array(
 					'colormag_social_link_activate',
 					'!=',
 					0,
 				),
-				'priority'   => 10,
+			),
+
+			array(
+				'name'        => 'colormag_social_icons_header_activate',
+				'default'     => 1,
+				'type'        => 'control',
+				'control'     => 'colormag-toggle',
+				'label'       => esc_html__( 'Header', 'colormag' ),
+				'section'     => 'colormag_social_icons_section',
+				'transport'   => $customizer_selective_refresh,
+				'partial'     => array(
+					'selector' => '.social-links',
+				),
+				'priority'    => 15,
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
+			),
+
+			array(
+				'name'        => 'colormag_social_icons_footer_activate',
+				'default'     => 1,
+				'type'        => 'control',
+				'control'     => 'colormag-toggle',
+				'label'       => esc_html__( 'Footer', 'colormag' ),
+				'section'     => 'colormag_social_icons_section',
+				'transport'   => $customizer_selective_refresh,
+				'partial'     => array(
+					'selector' => '.social-links',
+				),
+				'priority'    => 20,
+				'dependency' => array(
+					'colormag_social_link_activate',
+					'!=',
+					0,
+				),
 			),
 
 			// Social links separator.
@@ -95,7 +126,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 					'!=',
 					0,
 				),
-				'priority'   => 15,
+				'priority'   => 25,
 			),
 
 		);
@@ -103,7 +134,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 		$options = array_merge( $options, $configs );
 
 		// Social links lists.
-		$social_links_count    = 20;
+		$social_links_count    = 30;
 		$colormag_social_links = array(
 			'colormag_social_facebook'   => array(
 				'id'      => 'colormag_social_facebook',
