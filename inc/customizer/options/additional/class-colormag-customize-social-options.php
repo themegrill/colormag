@@ -48,7 +48,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 
 			// Social links enable/disable option.
 			array(
-				'name'      => 'colormag_social_link_activate',
+				'name'      => 'colormag_social_icons_activate',
 				'default'   => 0,
 				'type'      => 'control',
 				'control'   => 'colormag-toggle',
@@ -71,7 +71,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'section'  => 'colormag_social_icons_section',
 				'priority' => 10,
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
@@ -90,7 +90,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				),
 				'priority'    => 15,
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
@@ -109,7 +109,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				),
 				'priority'    => 20,
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
@@ -122,7 +122,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'control'    => 'colormag-divider',
 				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
@@ -180,7 +180,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'label'      => $colormag_social_link['title'],
 				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
@@ -196,7 +196,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'label'      => esc_html__( 'Check to open in new tab', 'colormag' ),
 				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
@@ -210,7 +210,7 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'control'    => 'colormag-divider',
 				'section'    => 'colormag_social_icons_section',
 				'dependency' => array(
-					'colormag_social_link_activate',
+					'colormag_social_icons_activate',
 					'!=',
 					0,
 				),
