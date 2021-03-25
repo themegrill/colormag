@@ -240,7 +240,7 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 	function colormag_social_links() {
 
 		// Bail out if social links is not activated.
-		if ( 0 == get_theme_mod( 'colormag_social_link_activate', 0 ) ) {
+		if ( 0 == get_theme_mod( 'colormag_social_icons_activate', 0 ) ) {
 			return;
 		}
 
@@ -334,7 +334,7 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 		$social_links_enable   = get_theme_mod( 'colormag_social_icons_activate', 0 );
 		$social_links_location = get_theme_mod( 'colormag_social_icons_header_activate', 1 );
 
-		if ( 1 == $date_display_enable || 1 == $breaking_news_enable || ( 1 == $social_links_enable && 1 === $social_links_location  ) ) :
+		if ( 1 == $date_display_enable || 1 == $breaking_news_enable || ( 1 == $social_links_enable && 1 == $social_links_location  ) ) :
 			?>
 
 			<div class="news-bar">
@@ -351,7 +351,7 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 					}
 
 					// Displays the social links in header.
-					if ( 1 == $social_links_enable && '1' == $social_links_location ) {
+					if ( 1 == $social_links_enable && 1 == $social_links_location ) {
 						colormag_social_links();
 					}
 					?>
