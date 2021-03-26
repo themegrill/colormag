@@ -32,15 +32,11 @@ function colormag_social_icons_control_migrate() {
 	// Disable social icon on header if enabled on footer only.
 	if ( 'footer' === $social_icon_visibility ) {
 		set_theme_mod( 'colormag_social_icons_header_activate', false );
-
-		error_log( print_r( 'Header is inactive' . $social_icon_visibility ), true );
 	}
 
 	// Disable social icon on footer if enabled on header only.
 	if ( 'header' === $social_icon_visibility ) {
 		set_theme_mod( 'colormag_social_icons_footer_activate', false );
-
-		error_log( print_r( 'Footer is inactive' . $social_icon_visibility ), true );
 	}
 
 	$remove_theme_mod_settings = array(
