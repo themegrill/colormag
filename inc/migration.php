@@ -32,7 +32,7 @@ function colormag_social_icons_control_migrate() {
 	// Disable social icon on header if enabled on footer only.
 	if ( 'footer' === $social_icon_visibility ) {
 		set_theme_mod( 'colormag_social_icons_header_activate', false );
-		error_log( print_r( 'Header is inactive' . $social_icon_visibility ), true );
+
 		error_log( print_r( 'Header is inactive' . $social_icon_visibility ), true );
 	}
 
