@@ -38,7 +38,7 @@ class ColorMag_Customize_Front_Page_Options extends ColorMag_Customize_Base_Opti
 				'type'     => 'control',
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Front Page', 'colormag' ),
-				'section'  => 'colormag_front_page_section',
+				'section'  => 'colormag_front_page_general_section',
 				'priority' => 10,
 			),
 
@@ -49,7 +49,7 @@ class ColorMag_Customize_Front_Page_Options extends ColorMag_Customize_Base_Opti
 				'type'     => 'control',
 				'control'  => 'checkbox',
 				'label'    => esc_html__( 'Check to hide blog posts/static page on front page', 'colormag' ),
-				'section'  => 'colormag_front_page_section',
+				'section'  => 'colormag_front_page_general_section',
 				'priority' => 20,
 			),
 		);
