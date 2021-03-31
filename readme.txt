@@ -52,6 +52,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - TBD =
+* Enhancement - Social Icons control.
+
 = Version - 2.0.5.1 - 2021-02-25 =
 * Tweak - Fix URL of welcome banner image.
 

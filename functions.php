@@ -110,6 +110,9 @@ if ( defined( 'ELEMENTOR_VERSION' ) ) {
 require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-boxes.php';
 require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-box-page-settings.php';
 
+/** Load migration scripts. */
+require_once COLORMAG_INCLUDES_DIR . '/migration.php';
+
 /** Load Widgets and Widgetized Area */
 require_once COLORMAG_WIDGETS_DIR . '/widgets.php';
 
