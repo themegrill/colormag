@@ -52,7 +52,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - TBD =
+= Version - 2.0.6 - 2021-03-31 =
 * Enhancement - Social Icons control.
 
 = Version - 2.0.5.1 - 2021-02-25 =
