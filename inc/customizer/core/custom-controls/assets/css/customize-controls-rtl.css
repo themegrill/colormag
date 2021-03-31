@@ -165,6 +165,10 @@ input[type=range]:focus {
 	margin-bottom: 5px;
 }
 
+.wp-picker-container .iris-picker .iris-alpha-slider {
+	margin-left: -1px;
+}
+
 .customize-control-colormag-divider {
 	padding: 0 !important;
 }
@@ -433,14 +437,16 @@ li.customize-control.customize-control-colormag-hidden {
 }
 
 .customize-control-colormag-radio-image label {
-	display: block;
-	float: right;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
 	margin: 10px auto;
 	position: relative;
 }
 
 .customize-control-colormag-radio-image label > img {
 	background: #ebebeb;
+	border: 2px solid #ebebeb;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -462,30 +468,16 @@ li.customize-control.customize-control-colormag-hidden {
 }
 
 .customize-control-colormag-radio-image .image-col-2 label {
-	margin-left: 20px;
 	width: calc((100% / 2) - 10px);
 }
 
-.customize-control-colormag-radio-image .image-col-2 label:nth-of-type(2n) {
-	margin-left: 0;
-}
-
 .customize-control-colormag-radio-image .image-col-3 label {
-	margin-left: 10px;
 	width: calc((100% / 3) - 8px);
 }
 
-.customize-control-colormag-radio-image .image-col-3 label:nth-of-type(3n) {
-	margin-left: 0;
-}
-
 .customize-control-colormag-radio-image .image-col-4 label {
-	margin-left: 10px;
+	margin-left: 5px;
 	width: calc((100% / 4) - 8px);
-}
-
-.customize-control-colormag-radio-image .image-col-4 label:nth-of-type(4n) {
-	margin-left: 0;
 }
 
 /**
@@ -794,4 +786,41 @@ span.select2-container.select2-container--default.select2-container--open {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+}
+
+/**
+ * Dimensions control CSS.
+ */
+.customize-control-colormag-dimensions {
+	position: relative;
+}
+
+.customize-control-colormag-dimensions .wrapper {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 6px 8px;
+}
+
+.customize-control-colormag-dimensions .wrapper .control {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.customize-control-colormag-dimensions .wrapper .control .top, .customize-control-colormag-dimensions .wrapper .control .right, .customize-control-colormag-dimensions .wrapper .control .bottom, .customize-control-colormag-dimensions .wrapper .control .left {
+	width: 23%;
+}
+
+.customize-control-colormag-dimensions .wrapper .control .top h5, .customize-control-colormag-dimensions .wrapper .control .right h5, .customize-control-colormag-dimensions .wrapper .control .bottom h5, .customize-control-colormag-dimensions .wrapper .control .left h5 {
+	margin: 0;
+	font-weight: normal;
+}
+
+p.upgrade-description {
+	margin-top: 10px;
+	font-style: italic;
 }

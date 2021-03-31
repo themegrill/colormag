@@ -103,9 +103,9 @@ class ColorMag_Fonts {
 		if ( empty( self::$google_fonts ) ) :
 
 			global $wp_filesystem;
-			$google_fonts_file = apply_filters( 'colormag_google_fonts_json_file', COLORMAG_CUSTOMIZER_DIR . '/custom-controls/typography/google-fonts.json' );
+			$google_fonts_file = apply_filters( 'colormag_google_fonts_json_file', dirname(__FILE__) . '/custom-controls/typography/google-fonts.json' );
 
-			if ( ! file_exists( COLORMAG_CUSTOMIZER_DIR . '/custom-controls/typography/google-fonts.json' ) ) {
+			if ( ! file_exists( dirname(__FILE__) . '/custom-controls/typography/google-fonts.json' ) ) {
 				return array();
 			}
 

@@ -129,6 +129,17 @@ class ColorMag_Customize_Social_Options extends ColorMag_Customize_Base_Option {
 				'priority'   => 25,
 			),
 
+			array(
+				'name'        => 'colormag_social_icons_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_social_icons_section',
+				'priority'    => 100,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );

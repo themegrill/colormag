@@ -57,6 +57,17 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 				'priority' => 10,
 			),
 
+			array(
+				'name'        => 'colormag_sticky_menu_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'zakra' ),
+				'description' => esc_html__( 'Unlock more features available for this section.', 'zakra' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_sticky_header_section',
+				'priority'    => 20,
+			),
+
 		);
 
 		$options = array_merge( $options, $configs );

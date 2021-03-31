@@ -324,7 +324,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="number"
+					<input type="text"
 					       id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
 					       data-device="desktop"
 							<# if ( data.value['font-size'] ) { #>
@@ -344,11 +344,11 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-					<span class="unit">px</span>
+                    <span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="number"
+					<input type="text"
 					       id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
 					       data-device="tablet"
 							<# if ( data.value['font-size'] ) { #>
@@ -368,11 +368,11 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-					<span class="unit">px</span>
+                    <span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="number"
+					<input type="text"
 					       id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
 					       data-device="mobile"
 							<# if ( data.value['font-size'] ) { #>
@@ -392,7 +392,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-					<span class="unit">px</span>
+                    <span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
@@ -419,7 +419,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="number"
+					<input type="text"
 					       id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
 					       data-device="desktop"
 							<# if ( data.value['line-height'] ) { #>
@@ -442,7 +442,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="number"
+					<input type="text"
 					       id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
 					       data-device="tablet"
 							<# if ( data.value['line-height'] ) { #>
@@ -465,7 +465,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="number"
+					<input type="text"
 					       id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
 					       data-device="mobile"
 							<# if ( data.value['line-height'] ) { #>
@@ -511,7 +511,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 				</ul>
 
 				<div class="desktop control-wrap active">
-					<input type="number"
+					<input type="text"
 					       id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
 					       data-device="desktop"
 							<# if ( data.value['letter-spacing'] ) { #>
@@ -531,11 +531,11 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-					<span class="unit">px</span>
+                    <span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="number"
+					<input type="text"
 					       id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
 					       data-device="tablet"
 							<# if ( data.value['letter-spacing'] ) { #>
@@ -555,11 +555,11 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-					<span class="unit">px</span>
+                    <span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="number"
+					<input type="text"
 					       id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
 					       data-device="mobile"
 							<# if ( data.value['letter-spacing'] ) { #>
@@ -579,7 +579,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-					<span class="unit">px</span>
+                    <span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
