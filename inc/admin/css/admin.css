@@ -15,15 +15,15 @@
  */
 .colormag-notice {
 	position: relative;
-	padding: 6px 40px 6px 12px;
+	padding: 8px 40px 8px 8px;
 }
 
 .colormag-notice .links {
-	margin: 0.5em 0;
+	margin: 1.2em 0;
 }
 
 .colormag-notice .links a {
-	margin: 2px;
+	margin-right: 10px;
 }
 
 .colormag-notice .links a > span {
@@ -43,7 +43,6 @@
  */
 .colormag-message__content {
 	display: flex;
-	align-items: center;
 }
 
 .colormag-message__content .colormag-message__image {
@@ -132,4 +131,100 @@ a.colormag-message-close:before {
 		padding: 0;
 		width: 100%;
 	}
+}
+
+/**
+ * Colormag Review Notice
+ */
+ .colormag-notice.theme-review-notice {
+	border-left-color: #289dcc;
+	padding: 20px 15px;
+}
+
+@media screen and (max-width: 720px) {
+	.colormag-notice.theme-review-notice .colormag-message__content {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.colormag-notice.theme-review-notice .colormag-message__image {
+	flex: 0;
+	min-height: auto;
+	margin-right: 35px;
+	margin-left: 10px;
+	padding-right: 0;
+	border-right: none;
+}
+
+@media screen and (max-width: 720px) {
+	.colormag-notice.theme-review-notice .colormag-message__image {
+		margin-bottom: 15px;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+}
+
+.colormag-notice.theme-review-notice .colormag-logo--png {
+	width: 80px;
+	height: 80px;
+}
+
+.colormag-notice.theme-review-notice h3 {
+	font-size: 21px;
+	margin: 0;
+	line-height: 1;
+	color: #000;
+}
+
+.colormag-notice.theme-review-notice p {
+	font-size: 14px;
+	line-height: 21px;
+	color: #3C434A;
+	margin: 0;
+	margin-bottom: 6px;
+	max-width: 720px;
+}
+
+.colormag-notice.theme-review-notice span.dashicons.dashicons-smiley.smile-icon {
+	background: #f7e143;
+	border-radius: 50%;
+	font-size: 15px;
+	border: 1px solid;
+	width: 17px;
+	height: 17px;
+}
+
+.colormag-notice.theme-review-notice .button-primary {
+	background: #289dcc;
+	border-color: #289dcc;
+	box-shadow: none;
+	color: #fff;
+}
+
+@media screen and (max-width: 603px) {
+	.colormag-notice.theme-review-notice .button-primary {
+		margin-bottom: 10px;
+	}
+}
+
+.colormag-notice.theme-review-notice .button-secondary {
+	color: #289dcc;
+	border-color: #289dcc;
+	background: #f6f7f7;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 603px) {
+	.colormag-notice.theme-review-notice .button-secondary {
+		margin-bottom: 10px;
+	}
+}
+
+.colormag-notice.theme-review-notice strong {
+	color: #000;
+}
+
+.colormag-notice.theme-review-notice .links {
+	margin: 1.2em 0 5px 0;
 }
