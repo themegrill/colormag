@@ -52,6 +52,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Enhancement – Review notice UI and contents.
+* Enhancement – Upgrade notice contents.
+
 = Version - 2.0.5.1 - 2021-02-25 =
 * Tweak - Fix URL of welcome banner image.
 
