@@ -69,7 +69,7 @@ class ColorMag_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 15 days.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-15 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-0 day' ) ) || ( $ignored_notice_partially > strtotime( '-15 day' ) ) || ( $ignored_notice ) ) {
 			return;
 		}
 		?>
@@ -123,7 +123,7 @@ class ColorMag_Theme_Review_Notice {
 
 				<a href="<?php echo esc_url( $dismiss_url ); ?>" class="btn button-secondary">
 					<span class="dashicons dashicons-smiley"></span>
-					<span><?php esc_html_e( 'I already did', 'colormag' ); ?></span>
+					<span><?php esc_html_e( 'I already did!', 'colormag' ); ?></span>
 				</a>
 
 				<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="btn button-secondary">

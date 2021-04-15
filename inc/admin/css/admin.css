@@ -20,6 +20,7 @@
 
 .colormag-notice .links {
 	margin: 1.2em 0;
+	display: flex;
 }
 
 .colormag-notice .links a {
@@ -28,6 +29,7 @@
 
 .colormag-notice .links a > span {
 	vertical-align: middle;
+	padding-right: 5px;
 }
 
 .colormag-notice .notice-text .coupon-code {
@@ -228,3 +230,10 @@ a.colormag-message-close:before {
 .colormag-notice.theme-review-notice .links {
 	margin: 1.2em 0 5px 0;
 }
+
+.colormag-notice.theme-review-notice a.btn{
+    display: flex;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
