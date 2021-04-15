@@ -71,15 +71,15 @@ class ColorMag_Upgrade_Notice extends ColorMag_Notice {
 				$current_user = wp_get_current_user();
 
 				printf(
-					esc_html__(
 					/* Translators: %1$s current user display name., %2$s this theme name., %3$s discount coupon code., %4$s discount percentage. */
+					esc_html__(
 						'Howdy, %1$s! You\'ve been using %2$s theme for a while now, and we hope you\'re happy with it. To access more premium features you can always upgrade to pro. All contents and settings will remain as it is after upgrading to pro, you basically start from where you left. Also, you can use the coupon code %3$s to get %4$s discount (limited time offer) while making the purchase. Enjoy! ',
 						'colormag'
 					),
 					'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
 					'ColorMag',
-					'<code class="coupon-code">upgrade15</code>',
-					'15%'
+					'<code class="coupon-code">TGFREEUSER</code>',
+					'up to 25%'
 				);
 				?>
 			</p>
