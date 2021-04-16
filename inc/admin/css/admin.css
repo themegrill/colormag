@@ -10,9 +10,7 @@
 	margin-top: 0;
 }
 
-/**
- * Notices.
- */
+// Notices.
 .colormag-notice {
 	position: relative;
 	padding: 8px 40px 8px 8px;
@@ -21,6 +19,7 @@
 .colormag-notice .links {
 	margin: 1.2em 0;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .colormag-notice .links a {
@@ -40,9 +39,7 @@
 	text-decoration: none;
 }
 
-/**
- * Welcome notice.
- */
+// Welcome notice.
 .colormag-message__content {
 	display: flex;
 }
@@ -107,9 +104,7 @@ a.colormag-message-close:before {
 	}
 }
 
-/**
- * Dashboard page.
- */
+// Dashboard page.
 .wrap .colormag-header {
 	background-color: #fff;
 	padding: 12px 20px;
@@ -122,10 +117,8 @@ a.colormag-message-close:before {
 	margin-top: 0;
 }
 
-/**
- * Responsive.
- */
-@media (max-width: 600px) {
+// Responsive.
+@media (max-width: 768px) {
 	.colormag-message__content .colormag-screenshot {
 		display: none;
 	}
@@ -135,15 +128,13 @@ a.colormag-message-close:before {
 	}
 }
 
-/**
- * Colormag Review Notice
- */
+// Colormag Review Notice.
  .colormag-notice.theme-review-notice {
 	border-left-color: #289dcc;
 	padding: 20px 15px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 	.colormag-notice.theme-review-notice .colormag-message__content {
 		display: flex;
 		flex-direction: column;
@@ -159,7 +150,7 @@ a.colormag-message-close:before {
 	border-right: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 	.colormag-notice.theme-review-notice .colormag-message__image {
 		margin-bottom: 15px;
 		margin-right: 0px;
@@ -204,7 +195,7 @@ a.colormag-message-close:before {
 	color: #fff;
 }
 
-@media screen and (max-width: 603px) {
+@media screen and (max-width: 768px) {
 	.colormag-notice.theme-review-notice .button-primary {
 		margin-bottom: 10px;
 	}
@@ -217,7 +208,7 @@ a.colormag-message-close:before {
 	vertical-align: top;
 }
 
-@media screen and (max-width: 603px) {
+@media screen and (max-width: 768px) {
 	.colormag-notice.theme-review-notice .button-secondary {
 		margin-bottom: 10px;
 	}
@@ -231,7 +222,7 @@ a.colormag-message-close:before {
 	margin: 1.2em 0 5px 0;
 }
 
-.colormag-notice.theme-review-notice a.btn{
+.colormag-notice.theme-review-notice a.btn {
     display: flex;
     max-width: fit-content;
     justify-content: center;

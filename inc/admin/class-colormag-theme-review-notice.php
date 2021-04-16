@@ -79,7 +79,7 @@ class ColorMag_Theme_Review_Notice {
 				<img class="colormag-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/colormag-logo-square.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
 			</div>
 			<div class="colormag-message-review__text">
-			<h3><?php printf( esc_html( 'HAKUNA %s' ), '<strong>MATATA!</strong>' ); ?></h3>
+			<h3><?php echo esc_html( 'HAKUNA MATATA!' ); ?></h3>
 					<p>(
 						<?php
 						printf(
