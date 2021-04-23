@@ -101,9 +101,7 @@ class ColorMag_Theme_Review_Notice {
 						?>
 					</p>
 					<strong>
-						<?php
-							esc_html_e( 'What benefit would you have?', 'colormag' )
-						?>
+						<?php esc_html_e( 'What benefit would you have?', 'colormag' ); ?>
 					</strong>
 					<p>
 						<?php
