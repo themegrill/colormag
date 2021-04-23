@@ -95,7 +95,7 @@ class ColorMag_Theme_Review_Notice {
 								/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
 								esc_html__( 'Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review.', 'colormag' ),
 								'<strong>',
-								esc_html( wp_get_theme()->get( 'Name' ) ),
+								esc_html( wp_get_theme( get_template() ) ),
 								'</strong>'
 							);
 						?>
