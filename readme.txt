@@ -52,6 +52,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Fix - Elementor's Text Editor widget's font size overridden by theme.
+
 = Version - 2.0.6 - 2021-03-31 =
 * Enhancement - Social Icons control.
 
