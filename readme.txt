@@ -64,6 +64,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Tweak - Update screenshot image source link.
+
 = Version - 2.0.7 - 2021-05-12 =
 * Fix - Elementor's Text Editor widget's font size overridden by theme.
 
