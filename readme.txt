@@ -25,6 +25,7 @@ Resources packed within the theme.
   https://pxhere.com/en/photo/597908
   https://pxhere.com/en/photo/1250568
   https://pxhere.com/en/photo/893081
+  https://pxhere.com/en/photo/622393
   
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed
