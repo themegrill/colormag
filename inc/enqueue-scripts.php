@@ -81,6 +81,14 @@ function colormag_scripts_styles_method() {
 	// Theme custom JS.
 	wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
+	// Theme reveal image on scroll JS.
+	wp_enqueue_script( 'colormag-reveal-on-scroll', COLORMAG_JS_URL . '/colormag-reveal-on-scroll' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+
+	$image_loading_styles = get_theme_mod( 'colormag_image_loading_option', 'style-1' );
+	if ( in_array( $image_loading_styles, array( 'style-1', 'style-2', 'style-3' ), true ) ) {
+		wp_localize_script( 'colormag-reveal-on-scroll', 'imageStyle', array( $image_loading_styles ) );
+	}
+
 	/**
 	 * Inline CSS for this theme.
 	 */

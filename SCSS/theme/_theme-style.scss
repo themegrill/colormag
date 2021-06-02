@@ -3584,3 +3584,39 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 .wp-custom-header-video-button.wp-custom-header-video-pause:before {
 	content: '\f04c';
 }
+
+/*--------------------------------------------------------------
+Reveal Images on Scroll Style
+--------------------------------------------------------------*/
+
+.tg-image-to-reveal-style-1 {
+	opacity: 0;
+	transform: translateY(5px);
+	transition: all .8s ease-out;
+}
+
+.tg-image-to-reveal-style-1--is-revealed {
+    opacity: 1;
+	transform: translateY(0);
+}
+
+
+.tg-image-to-reveal-style-2 {
+	opacity: 0;
+	transform: translateY(-5px);
+	transition: all .8s ease-out;
+}
+
+.tg-image-to-reveal-style-2--is-revealed {
+    opacity: 1;
+	transform: translateY(0);
+}
+
+.tg-image-to-reveal-style-3 {
+	opacity: 0;
+	transition: all .8s ease-out;
+}
+
+.tg-image-to-reveal-style-3--is-revealed {
+    opacity: 1;
+}

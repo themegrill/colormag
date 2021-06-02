@@ -262,3 +262,27 @@ function colormag_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'colormag_body_class' );
+
+
+/**
+ * Filters the wp_get_attachment_image_attributes.
+ *
+ * Adds image-to-reveal-style-* classes to all the image element in the document.
+ *
+ * @param array $attr attributes of image element.
+ *
+ * @return array Image element with an added CSS class.
+ */
+function colormag_images_to_reveal_class( $attr ) {
+
+	$valid_styles     = array( 'style-1', 'style-2', 'style-3' );
+	$image_load_style = get_theme_mod( 'colormag_image_loading_option', 'style-1' );
+
+	if ( in_array( $image_load_style, $valid_styles, true ) && ! strpos( $attr['class'], 'tg-image-to-reveal-' . $image_load_style ) ) {
+		$attr['class'] .= ' tg-image-to-reveal-' . $image_load_style;
+	}
+
+	return $attr;
+}
+
+add_filter( 'wp_get_attachment_image_attributes', 'colormag_images_to_reveal_class', 10, 1 );
