@@ -150,6 +150,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 30,
 			),
 
+			// Images.
+			array(
+				'name'     => 'colormag_global_image_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Images', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 40,
+			),
+
 			array(
 				'name'     => 'colormag_site_layout_section',
 				'type'     => 'section',
