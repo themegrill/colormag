@@ -130,7 +130,7 @@ a.colormag-message-close:before {
 
 /* Colormag review notice */
 .colormag-notice.theme-review-notice {
-	border-left-color: #289dcc;
+	border-left-color: #6547DB;
 	padding: 20px 15px;
 }
 
@@ -168,6 +168,7 @@ a.colormag-message-close:before {
 	color: #3C434A;
 	margin: 0 0 6px 0;
 	max-width: 720px;
+	padding: 2px 0;
 }
 
 .colormag-notice.theme-review-notice span.dashicons.dashicons-smiley.smile-icon {
@@ -180,8 +181,8 @@ a.colormag-message-close:before {
 }
 
 .colormag-notice.theme-review-notice .button-primary {
-	background: #289dcc;
-	border-color: #289dcc;
+	background: #6547DB;
+	border-color: #6547DB;
 	box-shadow: none;
 	color: #fff;
 }
@@ -193,8 +194,8 @@ a.colormag-message-close:before {
 }
 
 .colormag-notice.theme-review-notice .button-secondary {
-	color: #289dcc;
-	border-color: #289dcc;
+	color: #6547DB;
+	border-color: #6547DB;
 	background: #f6f7f7;
 	vertical-align: top;
 }
