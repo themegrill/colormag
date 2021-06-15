@@ -3,7 +3,7 @@
  *
  * File `slider.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend( {
 

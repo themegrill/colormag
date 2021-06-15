@@ -2,11 +2,11 @@
 /**
  * Helper class for font settings for this theme.
  *
- * Class Colormag_Fonts
+ * Class ColorMag_Fonts
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 3.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper class for font settings for this theme.
  *
- * Class Colormag_Fonts
+ * Class ColorMag_Fonts
  */
-class Colormag_Fonts {
+class ColorMag_Fonts {
 
 	/**
 	 * System Fonts

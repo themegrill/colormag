@@ -3,7 +3,7 @@
  *
  * File `background.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-dimensions'] = wp.customize.Control.extend( {
 

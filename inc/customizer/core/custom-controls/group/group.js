@@ -3,7 +3,7 @@
  *
  * File `group.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 (
 	function ( $ ) {
@@ -62,7 +62,7 @@
 							} else {
 
 								var fields     = control.params.colormag_fields,
-								    modal_wrap = $( ColormagCustomizerControlGroup.group_modal_tmpl ),
+								    modal_wrap = $( ColorMagCustomizerControlGroup.group_modal_tmpl ),
 								    device     = $( '#customize-footer-actions .active' ).attr( 'data-device' );
 
 								parent_wrap.find( '.colormag-field-settings-wrap' ).append( modal_wrap );
@@ -297,7 +297,7 @@
 						if ( (
 							     'colormag-typography' === attr.control
 						     ) && controlsType.includes( attr.control ) ) {
-							attr.languages = ColormagCustomizerControlTypographySubsets;
+							attr.languages = ColorMagCustomizerControlTypographySubsets;
 						}
 
 						if ( controlsType.includes( attr.control ) ) {
@@ -498,7 +498,7 @@
 					controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
 
 					if ( preview.length ) {
-						preview.removeClass().addClass( 'placeholder' ).html( ColormagCustomizerControlBackground.placeholder );
+						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
 					}
 
 					if ( removeButton.length ) {
@@ -707,8 +707,8 @@
 
 				var control = this;
 
-				if ( ! _.isUndefined( ColormagCustomizerControlTypography ) ) {
-					return ColormagCustomizerControlTypography;
+				if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+					return ColorMagCustomizerControlTypography;
 				}
 
 				return {

@@ -9,9 +9,9 @@
  */
 
 /**
- * Class Colormag_Dimensions_Control
+ * Class ColorMag_Dimensions_Control
  */
-class Colormag_Dimensions_Control extends Colormag_Customize_Base_Additional_Control {
+class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Control {
 
 
 	/**

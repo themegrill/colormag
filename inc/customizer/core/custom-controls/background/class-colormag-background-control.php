@@ -2,11 +2,11 @@
 /**
  * Extend WP_Customize_Control to add the background control.
  *
- * Class Colormag_Color_Control
+ * Class ColorMag_Color_Control
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 3.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to extend WP_Customize_Control to add the background customize control.
  *
- * Class Colormag_Background_Control
+ * Class ColorMag_Background_Control
  */
-class Colormag_Background_Control extends Colormag_Customize_Base_Additional_Control {
+class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
@@ -37,7 +37,7 @@ class Colormag_Background_Control extends Colormag_Customize_Base_Additional_Con
 
 		wp_localize_script(
 			'colormag-customize-controls',
-			'ColormagCustomizerControlBackground',
+			'ColorMagCustomizerControlBackground',
 			array(
 				'placeholder' => esc_html__( 'No file selected', 'colormag' ),
 			)

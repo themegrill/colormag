@@ -3,7 +3,7 @@
  *
  * File `typography.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.extend( {
 
@@ -160,8 +160,8 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		var control = this;
 
-		if ( ! _.isUndefined( ColormagCustomizerControlTypography ) ) {
-			return ColormagCustomizerControlTypography;
+		if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+			return ColorMagCustomizerControlTypography;
 		}
 
 		return {

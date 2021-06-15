@@ -10,9 +10,9 @@
  */
 
 /**
- * Class Colormag_Customize_Heading_Control
+ * Class ColorMag_Customize_Heading_Control
  */
-class Colormag_Upgrade_Control extends Colormag_Customize_Base_Additional_Control {
+class ColorMag_Upgrade_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Customize control type.

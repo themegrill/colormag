@@ -2,11 +2,11 @@
 /**
  * Customize upsell section.
  *
- * Class Colormag_Upsell_Section
+ * Class ColorMag_Upsell_Section
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 2.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 2.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to include upsell link campaign for theme.
  *
- * Class Colormag_Upsell_Section
+ * Class ColorMag_Upsell_Section
  */
-class Colormag_Upsell_Section extends WP_Customize_Section {
+class ColorMag_Upsell_Section extends WP_Customize_Section {
 
 	/**
 	 * Control type.

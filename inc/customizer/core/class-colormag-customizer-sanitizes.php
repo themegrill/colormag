@@ -1,12 +1,12 @@
 <?php
 /**
- * Colormag customizer class for theme customize sanitizes.
+ * ColorMag customizer class for theme customize sanitizes.
  *
- * Class Colormag_Customizer_FrameWork_Sanitizes
+ * Class ColorMag_Customizer_FrameWork_Sanitizes
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 3.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Colormag customizer class for theme customize callbacks.
+ * ColorMag customizer class for theme customize callbacks.
  *
- * Class Colormag_Customizer_FrameWork_Sanitizes
+ * Class ColorMag_Customizer_FrameWork_Sanitizes
  */
-class Colormag_Customizer_FrameWork_Sanitizes {
+class ColorMag_Customizer_FrameWork_Sanitizes {
 
 	/**
 	 * Sanitize the checkbox options set within customizer controls.
@@ -378,9 +378,9 @@ class Colormag_Customizer_FrameWork_Sanitizes {
 		// Sanitizing the font family option.
 		if ( isset( $typography_args['font-family'] ) ) {
 
-			$standard_fonts = Colormag_Fonts::get_system_fonts();
-			$google_fonts   = Colormag_Fonts::get_google_fonts();
-			$custom_fonts   = Colormag_Fonts::get_custom_fonts();
+			$standard_fonts = ColorMag_Fonts::get_system_fonts();
+			$google_fonts   = ColorMag_Fonts::get_google_fonts();
+			$custom_fonts   = ColorMag_Fonts::get_custom_fonts();
 			$valid_keys     = array_merge( $standard_fonts, $google_fonts );
 
 			// If custom fonts is available, merge it to `$valid_keys` array to make those fonts ready for sanitization.
@@ -396,7 +396,7 @@ class Colormag_Customizer_FrameWork_Sanitizes {
 		// Sanitizing the font weight option.
 		if ( isset( $typography_args['font-weight'] ) ) {
 
-			$font_variants = Colormag_Fonts::get_font_variants();
+			$font_variants = ColorMag_Fonts::get_font_variants();
 
 			if ( array_key_exists( $typography_args['font-weight'], $font_variants ) ) {
 				$output['font-weight'] = self::sanitize_key( $typography_args['font-weight'] );
@@ -406,7 +406,7 @@ class Colormag_Customizer_FrameWork_Sanitizes {
 		// Sanitizing the subsets option.
 		if ( isset( $typography_args['subsets'] ) ) {
 
-			$subsets        = Colormag_Fonts::get_google_font_subsets();
+			$subsets        = ColorMag_Fonts::get_google_font_subsets();
 			$subsets_values = array();
 
 			if ( is_array( $typography_args['subsets'] ) ) {

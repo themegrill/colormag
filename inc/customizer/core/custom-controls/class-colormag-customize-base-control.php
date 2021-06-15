@@ -1,12 +1,12 @@
 <?php
 /**
- * Colormag customizer base control class for theme customize options.
+ * ColorMag customizer base control class for theme customize options.
  *
- * Class Colormag_Customize_Base_Control
+ * Class ColorMag_Customize_Base_Control
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 3.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Colormag customizer base control class.
+ * ColorMag customizer base control class.
  *
- * Class Colormag_Customize_Base_Control
+ * Class ColorMag_Customize_Base_Control
  */
-class Colormag_Customize_Base_Control {
+class ColorMag_Customize_Base_Control {
 
 	/**
 	 * Registered Controls.
@@ -102,4 +102,4 @@ class Colormag_Customize_Base_Control {
 
 }
 
-return new Colormag_Customize_Base_Control();
+return new ColorMag_Customize_Base_Control();

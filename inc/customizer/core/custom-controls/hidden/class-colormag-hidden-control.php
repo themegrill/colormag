@@ -2,11 +2,11 @@
 /**
  * Extend WP_Customize_Control to include hidden control.
  *
- * Class Colormag_Hidden_Control
+ * Class ColorMag_Hidden_Control
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 3.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to extend WP_Customize_Control to add the hidden customize control.
  *
- * Class Colormag_Hidden_Control
+ * Class ColorMag_Hidden_Control
  */
-class Colormag_Hidden_Control extends Colormag_Customize_Base_Additional_Control {
+class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.

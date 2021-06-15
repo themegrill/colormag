@@ -3,7 +3,7 @@
  *
  * File `radio-image.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
 

@@ -1,7 +1,7 @@
 /**
  * Customizer dependency controls.
  *
- * @package Colormag
+ * @package ColorMag
  */
 
 (
@@ -15,9 +15,9 @@
 		/**
 		 * Helper class for the main Customizer interface.
 		 *
-		 * @class Colormag_Customizer_FrameWork
+		 * @class ColorMag_Customizer_FrameWork
 		 */
-		var Colormag_Customizer_FrameWork = {
+		var ColorMag_Customizer_FrameWork = {
 
 			controls : {},
 
@@ -82,9 +82,9 @@
 				if ( ! _.isUndefined( control ) ) {
 
 					// If control has dependency defined.
-					if ( 'undefined' != typeof ColormagCustomizerControlsToggle[id] ) {
+					if ( 'undefined' != typeof ColorMagCustomizerControlsToggle[id] ) {
 						var check            = false,
-						    dependency_param = ColormagCustomizerControlsToggle[id],
+						    dependency_param = ColorMagCustomizerControlsToggle[id],
 						    conditions       = ! _.isUndefined( dependency_param.conditions ) ? dependency_param.conditions : dependency_param,
 						    operator         = ! _.isUndefined( dependency_param.operator ) ? dependency_param.operator : 'AND';
 
@@ -122,9 +122,9 @@
 					    cond_val = conditions[2],
 					    value;
 
-					if ( ! _.isUndefined( ColormagCustomizerControlsToggle[testValue] ) ) {
-						var conditions = ! _.isUndefined( ColormagCustomizerControlsToggle[testValue]['conditions'] ) ? ColormagCustomizerControlsToggle[testValue]['conditions'] : ColormagCustomizerControlsToggle[testValue];
-						var operator   = ! _.isUndefined( ColormagCustomizerControlsToggle[testValue]['operator'] ) ? ColormagCustomizerControlsToggle[testValue]['operator'] : 'AND';
+					if ( ! _.isUndefined( ColorMagCustomizerControlsToggle[testValue] ) ) {
+						var conditions = ! _.isUndefined( ColorMagCustomizerControlsToggle[testValue]['conditions'] ) ? ColorMagCustomizerControlsToggle[testValue]['conditions'] : ColorMagCustomizerControlsToggle[testValue];
+						var operator   = ! _.isUndefined( ColorMagCustomizerControlsToggle[testValue]['operator'] ) ? ColorMagCustomizerControlsToggle[testValue]['operator'] : 'AND';
 
 						if ( ! _.isUndefined( conditions ) ) {
 							// Check visibility for dependent controls also.
@@ -159,9 +159,9 @@
 							    cond_val  = val[2],
 							    test_val  = ! _.isUndefined( values[cond_key] ) ? values[cond_key] : '';
 
-							if ( 'undefined' !== typeof ColormagCustomizerControlsToggle[cond_key] ) {
-								var conditions = ! _.isUndefined( ColormagCustomizerControlsToggle[cond_key]['conditions'] ) ? ColormagCustomizerControlsToggle[cond_key]['conditions'] : ColormagCustomizerControlsToggle[cond_key];
-								var operator   = ! _.isUndefined( ColormagCustomizerControlsToggle[cond_key]['operator'] ) ? ColormagCustomizerControlsToggle[cond_key]['operator'] : 'AND';
+							if ( 'undefined' !== typeof ColorMagCustomizerControlsToggle[cond_key] ) {
+								var conditions = ! _.isUndefined( ColorMagCustomizerControlsToggle[cond_key]['conditions'] ) ? ColorMagCustomizerControlsToggle[cond_key]['conditions'] : ColorMagCustomizerControlsToggle[cond_key];
+								var operator   = ! _.isUndefined( ColorMagCustomizerControlsToggle[cond_key]['operator'] ) ? ColorMagCustomizerControlsToggle[cond_key]['operator'] : 'AND';
 
 								if ( ! _.isUndefined( conditions ) ) {
 									// Check visibility for dependent controls also.
@@ -360,7 +360,7 @@
 				var check = false;
 
 				$.each(
-					ColormagCustomizerControlsToggle,
+					ColorMagCustomizerControlsToggle,
 					function ( index, val ) {
 
 						if ( ! _.isUndefined( val.conditions ) ) {
@@ -398,7 +398,7 @@
 
 		$(
 			function () {
-				Colormag_Customizer_FrameWork.init();
+				ColorMag_Customizer_FrameWork.init();
 			}
 		);
 

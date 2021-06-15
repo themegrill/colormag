@@ -2,11 +2,11 @@
 /**
  * Extend WP_Customize_Control to add the fontawesome control.
  *
- * Class Colormag_Fontawesome_Control
+ * Class ColorMag_Fontawesome_Control
  *
  * @package    ThemeGrill
- * @subpackage Colormag
- * @since      Colormag 3.0.0
+ * @subpackage ColorMag
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to extend WP_Customize_Control to add the fontawesome customize control.
  *
- * Class Colormag_Fontawesome_Control
+ * Class ColorMag_Fontawesome_Control
  */
-class Colormag_Fontawesome_Control extends Colormag_Customize_Base_Additional_Control {
+class ColorMag_Fontawesome_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
@@ -45,7 +45,7 @@ class Colormag_Fontawesome_Control extends Colormag_Customize_Base_Additional_Co
 
 		wp_localize_script(
 			'colormag-customize-controls',
-			'ColormagCustomizerControlFontawesome' . $this->id,
+			'ColorMagCustomizerControlFontawesome' . $this->id,
 			$fontawesome_array
 		);
 	}

@@ -1,7 +1,7 @@
 /**
  * Customizer controls toggle.
  *
- * @package Colormag
+ * @package ColorMag
  */
 
 (
@@ -13,7 +13,7 @@
 		/**
 		 * Trigger hooks
 		 */
-		ColormagControlTrigger = {
+		ColorMagControlTrigger = {
 
 			/**
 			 * Trigger a hook.
@@ -53,9 +53,9 @@
 		/**
 		 * Helper class that contains data for showing and hiding controls.
 		 *
-		 * @class ColormagCustomizerToggles
+		 * @class ColorMagCustomizerToggles
 		 */
-		ColormagCustomizerToggles = {
+		ColorMagCustomizerToggles = {
 
 			'colormag_header_image_link' : [],
 

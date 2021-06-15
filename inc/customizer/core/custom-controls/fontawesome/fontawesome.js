@@ -11,16 +11,16 @@
 
 					var control = this;
 
-					control.initColormagFontawesomeControl();
+					control.initColorMagFontawesomeControl();
 				},
 
-				initColormagFontawesomeControl: function() {
+				initColorMagFontawesomeControl: function() {
 					var control       = this,
 						selector      = control.selector,
 						elSelector    = $( selector ).find( 'select' ),
 						faData        = [],
 						value         = control.setting._value,
-						data          = window['ColormagCustomizerControlFontawesome' + this.id],
+						data          = window['ColorMagCustomizerControlFontawesome' + this.id],
 						faDataCounter = 0,
 						faSelect;
 

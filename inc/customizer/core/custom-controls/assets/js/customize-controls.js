@@ -3,7 +3,7 @@
  *
  * File `background.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 (
 	function ( $ ) {
@@ -21,11 +21,11 @@
 				var control = this;
 
 				// Init background control.
-				control.initColormagBackgroundControl();
+				control.initColorMagBackgroundControl();
 
 			},
 
-			initColormagBackgroundControl : function () {
+			initColorMagBackgroundControl : function () {
 
 				var control     = this,
 				    value       = control.setting._value,
@@ -128,7 +128,7 @@
 					control.container.find( '.customize-control-content > .background-attachment' ).hide();
 
 					if ( preview.length ) {
-						preview.removeClass().addClass( 'placeholder' ).html( ColormagCustomizerControlBackground.placeholder );
+						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
 					}
 
 					if ( removeButton.length ) {
@@ -184,7 +184,7 @@
  *
  * File `buttonset.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
 
@@ -208,7 +208,7 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
  *
  * File `color.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 (
 	function ( $ ) {
@@ -249,7 +249,7 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
  *
  * File `background.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-dimensions'] = wp.customize.Control.extend( {
 
@@ -387,7 +387,7 @@ wp.customize.controlConstructor['colormag-dimensions'] = wp.customize.Control.ex
  *
  * File `dropdown-categorie.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
 
@@ -411,7 +411,7 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
  *
  * File `editor.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.extend( {
 
@@ -473,16 +473,16 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 					var control = this;
 
-					control.initColormagFontawesomeControl();
+					control.initColorMagFontawesomeControl();
 				},
 
-				initColormagFontawesomeControl: function() {
+				initColorMagFontawesomeControl: function() {
 					var control       = this,
 						selector      = control.selector,
 						elSelector    = $( selector ).find( 'select' ),
 						faData        = [],
 						value         = control.setting._value,
-						data          = window['ColormagCustomizerControlFontawesome' + this.id],
+						data          = window['ColorMagCustomizerControlFontawesome' + this.id],
 						faDataCounter = 0,
 						faSelect;
 
@@ -540,7 +540,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
  *
  * File `group.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 (
 	function ( $ ) {
@@ -599,7 +599,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 							} else {
 
 								var fields     = control.params.colormag_fields,
-								    modal_wrap = $( ColormagCustomizerControlGroup.group_modal_tmpl ),
+								    modal_wrap = $( ColorMagCustomizerControlGroup.group_modal_tmpl ),
 								    device     = $( '#customize-footer-actions .active' ).attr( 'data-device' );
 
 								parent_wrap.find( '.colormag-field-settings-wrap' ).append( modal_wrap );
@@ -834,7 +834,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 						if ( (
 							     'colormag-typography' === attr.control
 						     ) && controlsType.includes( attr.control ) ) {
-							attr.languages = ColormagCustomizerControlTypographySubsets;
+							attr.languages = ColorMagCustomizerControlTypographySubsets;
 						}
 
 						if ( controlsType.includes( attr.control ) ) {
@@ -1035,7 +1035,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 					controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
 
 					if ( preview.length ) {
-						preview.removeClass().addClass( 'placeholder' ).html( ColormagCustomizerControlBackground.placeholder );
+						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
 					}
 
 					if ( removeButton.length ) {
@@ -1244,8 +1244,8 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 				var control = this;
 
-				if ( ! _.isUndefined( ColormagCustomizerControlTypography ) ) {
-					return ColormagCustomizerControlTypography;
+				if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+					return ColorMagCustomizerControlTypography;
 				}
 
 				return {
@@ -1608,7 +1608,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
  *
  * File `navigate.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 (
 	function ( $ ) {
@@ -1634,7 +1634,7 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
  *
  * File `radio-image.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control.extend( {
 
@@ -1658,7 +1658,7 @@ wp.customize.controlConstructor[ 'colormag-radio-image' ] = wp.customize.Control
  *
  * File `slider.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend( {
 
@@ -1705,7 +1705,7 @@ wp.customize.controlConstructor['colormag-slider'] = wp.customize.Control.extend
  *
  * File `sortable.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.extend( {
 
@@ -1770,7 +1770,7 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
  *
  * File `toggle.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
 
@@ -1797,7 +1797,7 @@ wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend
  *
  * File `typography.js`.
  *
- * @package Colormag
+ * @package ColorMag
  */
 wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.extend( {
 
@@ -1954,8 +1954,8 @@ wp.customize.controlConstructor['colormag-typography'] = wp.customize.Control.ex
 
 		var control = this;
 
-		if ( ! _.isUndefined( ColormagCustomizerControlTypography ) ) {
-			return ColormagCustomizerControlTypography;
+		if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+			return ColorMagCustomizerControlTypography;
 		}
 
 		return {
