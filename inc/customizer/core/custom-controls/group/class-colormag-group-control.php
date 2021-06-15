@@ -2,11 +2,11 @@
 /**
  * Extend WP_Customize_Control to include group control.
  *
- * Class ColorMag_Group_Control
+ * Class Colormag_Group_Control
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to extend WP_Customize_Control to add the group customize control.
  *
- * Class ColorMag_Group_Control
+ * Class Colormag_Group_Control
  */
-class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control {
+class Colormag_Group_Control extends Colormag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
@@ -66,7 +66,7 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 
 		wp_localize_script(
 			'colormag-customize-controls',
-			'ColorMagCustomizerControlGroup',
+			'ColormagCustomizerControlGroup',
 			array(
 				'group_modal_tmpl' => $tmpl,
 			)
@@ -97,17 +97,17 @@ class ColorMag_Group_Control extends ColorMag_Customize_Base_Additional_Control 
 		$this->json['name'] = $this->name;
 		$config             = array();
 
-		if ( isset( ColorMag_Customizer_FrameWork::$group_configs[ $this->name ]['tabs'] ) ) {
+		if ( isset( Colormag_Customizer_FrameWork::$group_configs[ $this->name ]['tabs'] ) ) {
 
-			$tab = array_keys( ColorMag_Customizer_FrameWork::$group_configs[ $this->name ]['tabs'] );
+			$tab = array_keys( Colormag_Customizer_FrameWork::$group_configs[ $this->name ]['tabs'] );
 
 			foreach ( $tab as $key => $value ) {
-				$config['tabs'][ $value ] = wp_list_sort( ColorMag_Customizer_FrameWork::$group_configs[ $this->name ]['tabs'][ $value ], 'priority' );
+				$config['tabs'][ $value ] = wp_list_sort( Colormag_Customizer_FrameWork::$group_configs[ $this->name ]['tabs'][ $value ], 'priority' );
 			}
 		} else {
 
-			if ( isset( ColorMag_Customizer_FrameWork::$group_configs[ $this->name ] ) ) {
-				$config = wp_list_sort( ColorMag_Customizer_FrameWork::$group_configs[ $this->name ], 'priority' );
+			if ( isset( Colormag_Customizer_FrameWork::$group_configs[ $this->name ] ) ) {
+				$config = wp_list_sort( Colormag_Customizer_FrameWork::$group_configs[ $this->name ], 'priority' );
 			}
 		}
 

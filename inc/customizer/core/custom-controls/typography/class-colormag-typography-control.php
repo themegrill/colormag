@@ -2,11 +2,11 @@
 /**
  * Extend WP_Customize_Control to include typography control.
  *
- * Class ColorMag_Typography_Control
+ * Class Colormag_Typography_Control
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to extend WP_Customize_Control to add the typography customize control.
  *
- * Class ColorMag_Typography_Control
+ * Class Colormag_Typography_Control
  */
-class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Control {
+class Colormag_Typography_Control extends Colormag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
@@ -45,7 +45,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		$standard_fonts      = $this->get_system_fonts();
 		$google_fonts        = $this->get_google_fonts();
 		$custom_fonts        = $this->get_custom_fonts();
-		$google_font_subsets = ColorMag_Fonts::get_google_font_subsets();
+		$google_font_subsets = Colormag_Fonts::get_google_font_subsets();
 		$localize_scripts    = array(
 			'standardfontslabel' => esc_html__( 'Standard Fonts', 'colormag' ),
 			'googlefontslabel'   => esc_html__( 'Google Fonts', 'colormag' ),
@@ -62,14 +62,14 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		// Loading available fonts.
 		wp_localize_script(
 			'colormag-customize-controls',
-			'ColorMagCustomizerControlTypography',
+			'ColormagCustomizerControlTypography',
 			$localize_scripts
 		);
 
 		// Loading Google font subsets.
 		wp_localize_script(
 			'colormag-customize-controls',
-			'ColorMagCustomizerControlTypographySubsets',
+			'ColormagCustomizerControlTypographySubsets',
 			$google_font_subsets
 		);
 
@@ -86,7 +86,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	protected function format_variants_array( $variants ) {
 
-		$font_variants  = ColorMag_Fonts::get_font_variants();
+		$font_variants  = Colormag_Fonts::get_font_variants();
 		$variants_array = array();
 
 		foreach ( $variants as $variant ) {
@@ -110,12 +110,15 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	public function get_system_fonts() {
 
-		$standard_fonts       = ColorMag_Fonts::get_system_fonts();
+		$standard_fonts       = Colormag_Fonts::get_system_fonts();
 		$standard_fonts_array = array();
 		$default_variants     = $this->format_variants_array(
-			array(
-				'regular',
-				'italic',
+			apply_filters(
+				'colormag_default_variants',
+				array(
+					'regular',
+					'italic',
+				)
 			)
 		);
 
@@ -140,9 +143,9 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	public function get_google_fonts() {
 
 		// Get formatted array of google fonts.
-		$google_fonts          = ColorMag_Fonts::get_google_fonts();
-		$font_variants         = ColorMag_Fonts::get_font_variants();
-		$foogle_fonts__subsets = ColorMag_Fonts::get_google_font_subsets();
+		$google_fonts          = Colormag_Fonts::get_google_fonts();
+		$font_variants         = Colormag_Fonts::get_font_variants();
+		$foogle_fonts__subsets = Colormag_Fonts::get_google_font_subsets();
 		$google_fonts_array    = array();
 
 		foreach ( $google_fonts as $family => $args ) {
@@ -194,7 +197,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	public function get_custom_fonts() {
 
-		$custom_fonts       = ColorMag_Fonts::get_custom_fonts();
+		$custom_fonts       = Colormag_Fonts::get_custom_fonts();
 		$custom_fonts_array = array();
 		$default_variants   = $this->format_variants_array(
 			array(
@@ -240,7 +243,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		$this->json['choices']     = $this->choices;
 		$this->json['input_attrs'] = $this->input_attrs;
-		$this->json['languages']   = ColorMag_Fonts::get_google_font_subsets();
+		$this->json['languages']   = Colormag_Fonts::get_google_font_subsets();
 
 	}
 
@@ -344,7 +347,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
@@ -368,7 +370,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
@@ -392,7 +393,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
@@ -531,7 +531,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
@@ -555,7 +554,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
@@ -579,7 +577,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>

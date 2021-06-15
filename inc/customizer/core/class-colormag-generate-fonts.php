@@ -2,11 +2,11 @@
 /**
  * Helper class to enqueue fonts.
  *
- * Class ColorMag_Fonts
+ * Class Colormag_Fonts
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper class to enqueue fonts.
  *
- * Class ColorMag_Generate_Fonts
+ * Class Colormag_Generate_Fonts
  */
-class ColorMag_Generate_Fonts {
+class Colormag_Generate_Fonts {
 
 	/**
 	 * Get fonts to generate.
@@ -80,7 +80,7 @@ class ColorMag_Generate_Fonts {
 		$google_fonts = array();
 		$font_subset  = array();
 
-		$system_fonts = ColorMag_Fonts::get_system_fonts();
+		$system_fonts = Colormag_Fonts::get_system_fonts();
 
 		foreach ( $font_list as $name => $font ) {
 			if ( ! empty( $name ) && ! isset( $system_fonts[ $name ] ) ) {
@@ -155,7 +155,7 @@ class ColorMag_Generate_Fonts {
 				$font_args['subset'] = rawurlencode( trim( $subsets ) );
 			}
 
-			return add_query_arg( $font_args, $base_url );
+			return add_query_arg( array( $font_args, '&display=swap' ), $base_url );
 		}
 
 		return '';

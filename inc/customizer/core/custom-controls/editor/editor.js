@@ -3,7 +3,7 @@
  *
  * File `editor.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.extend( {
 

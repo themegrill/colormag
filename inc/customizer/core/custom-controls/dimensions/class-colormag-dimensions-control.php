@@ -9,9 +9,9 @@
  */
 
 /**
- * Class ColorMag_Dimensions_Control
+ * Class Colormag_Dimensions_Control
  */
-class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Control {
+class Colormag_Dimensions_Control extends Colormag_Customize_Base_Additional_Control {
 
 
 	/**
@@ -61,7 +61,7 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
                     <div class="top">
                         <h5>Top</h5>
                         <div class="input-wrapper">
-                            <input type="text"  id="colormag-top-{{{ data.id || data.name }}}"
+                            <input type="text"
                             <# if ( data.value['top'] ) { #>
                             value="{{ data.value['top'] }}"
                             <# } else { #>
@@ -77,7 +77,7 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
                     <div class="right">
                         <h5>Right</h5>
                         <div class="input-wrapper">
-                            <input type="text"  id="colormag-right-{{{ data.id || data.name }}}"
+                            <input type="text"
                             <# if ( data.value['right'] ) { #>
                             value="{{ data.value['right'] }}"
                             <# } else { #>
@@ -93,7 +93,7 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
                     <div class="bottom">
                         <h5>Bottom</h5>
                         <div class="input-wrapper">
-                            <input type="text"  id="colormag-bottom-{{{ data.id || data.name }}}"
+                            <input type="text"
                             <# if ( data.value['bottom'] ) { #>
                             value="{{ data.value['bottom'] }}"
                             <# } else { #>
@@ -109,7 +109,7 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
                     <div class="left">
                         <h5>Left</h5>
                         <div class="input-wrapper">
-                            <input type="text"  id="colormag-left-{{{ data.id || data.name }}}"
+                            <input type="text"
                             <# if ( data.value['left'] ) { #>
                             value="{{ data.value['left'] }}"
                             <# } else { #>

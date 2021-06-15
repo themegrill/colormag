@@ -1,12 +1,12 @@
 <?php
 /**
- * ColorMag customizer base additional control class for theme customize options.
+ * Colormag customizer base additional control class for theme customize options.
  *
- * Class ColorMag_Customize_Base_Additional_Control
+ * Class Colormag_Customize_Base_Additional_Control
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class ColorMag_Customize_Base_Additional_Control
+ * Class Colormag_Customize_Base_Additional_Control
  */
-class ColorMag_Customize_Base_Additional_Control extends WP_Customize_Control {
+class Colormag_Customize_Base_Additional_Control extends WP_Customize_Control {
 
 	/**
 	 * Enqueue control related scripts/styles.

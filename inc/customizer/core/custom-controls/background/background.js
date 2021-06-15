@@ -3,7 +3,7 @@
  *
  * File `background.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 (
 	function ( $ ) {
@@ -21,11 +21,11 @@
 				var control = this;
 
 				// Init background control.
-				control.initColorMagBackgroundControl();
+				control.initColormagBackgroundControl();
 
 			},
 
-			initColorMagBackgroundControl : function () {
+			initColormagBackgroundControl : function () {
 
 				var control     = this,
 				    value       = control.setting._value,
@@ -128,7 +128,7 @@
 					control.container.find( '.customize-control-content > .background-attachment' ).hide();
 
 					if ( preview.length ) {
-						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
+						preview.removeClass().addClass( 'placeholder' ).html( ColormagCustomizerControlBackground.placeholder );
 					}
 
 					if ( removeButton.length ) {

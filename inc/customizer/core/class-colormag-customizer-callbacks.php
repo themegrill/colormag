@@ -1,12 +1,12 @@
 <?php
 /**
- * ColorMag customizer class for theme customize callbacks.
+ * Colormag customizer class for theme customize callbacks.
  *
- * Class ColorMag_Customizer_FrameWork_FrameWork_Callbacks
+ * Class Colormag_Customizer_FrameWork_FrameWork_Callbacks
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -15,10 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * ColorMag customizer class for theme customize callbacks.
+ * Colormag customizer class for theme customize callbacks.
  *
- * Class ColorMag_Customizer_FrameWork_Callbacks
+ * Class Colormag_Customizer_FrameWork_Callbacks
  */
-class ColorMag_Customizer_FrameWork_Callbacks {
+class Colormag_Customizer_FrameWork_Callbacks {
 
 }

@@ -3,7 +3,7 @@
  *
  * File `toggle.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
 

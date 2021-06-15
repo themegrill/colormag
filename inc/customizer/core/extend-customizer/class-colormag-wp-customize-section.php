@@ -2,11 +2,11 @@
 /**
  * Extend customize section to include nested sections.
  *
- * Class ColorMag_WP_Customize_Section
+ * Class Colormag_WP_Customize_Section
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Extend customize section to include nested sections.
  *
- * Class ColorMag_WP_Customize_Section
+ * Class Colormag_WP_Customize_Section
  */
-class ColorMag_WP_Customize_Section extends WP_Customize_Section {
+class Colormag_WP_Customize_Section extends WP_Customize_Section {
 
 	/**
 	 * Section

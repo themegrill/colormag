@@ -1,12 +1,12 @@
 <?php
 /**
- * ColorMag customizer class for theme customize options.
+ * Colormag customizer class for theme customize options.
  *
- * Class ColorMag_Customizer_FrameWork
+ * Class Colormag_Customizer_FrameWork
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -19,11 +19,11 @@ require dirname(__FILE__) . '/class-colormag-fonts.php';
 require dirname(__FILE__) . '/class-colormag-generate-fonts.php';
 
 /**
- * ColorMag customizer class.
+ * Colormag customizer class.
  *
- * Class ColorMag_Customizer_FrameWork
+ * Class Colormag_Customizer_FrameWork
  */
-class ColorMag_Customizer_FrameWork {
+class Colormag_Customizer_FrameWork {
 
 	/**
 	 * Customizer Dependency Array.
@@ -42,7 +42,7 @@ class ColorMag_Customizer_FrameWork {
 	/**
 	 * Customizer setup constructor.
 	 *
-	 * ColorMag_Customizer_FrameWork constructor.
+	 * Colormag_Customizer_FrameWork constructor.
 	 */
 	public function __construct() {
 
@@ -52,7 +52,7 @@ class ColorMag_Customizer_FrameWork {
 		// Include the custom controls for customize options.
 		add_action( 'customize_register', array( $this, 'customize_custom_controls_includes' ) );
 
-		// Register ColorMag customize panels, sections and controls type.
+		// Register Colormag customize panels, sections and controls type.
 		add_action( 'customize_register', array( $this, 'register_panels_sections_controls' ) );
 
 		// Include the required customize options.
@@ -124,22 +124,23 @@ class ColorMag_Customizer_FrameWork {
 		require dirname(__FILE__) . '/custom-controls/title/class-colormag-title-control.php';
 		require dirname(__FILE__) . '/custom-controls/dimensions/class-colormag-dimensions-control.php';
 		require dirname(__FILE__) . '/custom-controls/upgrade/class-colormag-upgrade-control.php';
+		require dirname(__FILE__) . '/custom-controls/fontawesome/class-colormag-fontawesome-control.php';
 
 	}
 
 	/**
-	 * Register ColorMag customize panels, sections and controls type.
+	 * Register Colormag customize panels, sections and controls type.
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 */
 	public function register_panels_sections_controls( $wp_customize ) {
 
 		// Register panels and sections.
-		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
-		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Section' );
-		$wp_customize->register_section_type( 'ColorMag_WP_Customize_Separator' );
-		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
-		$wp_customize->register_section_type( 'ColorMag_Upsell_Section' );
+		$wp_customize->register_panel_type( 'Colormag_WP_Customize_Panel' );
+		$wp_customize->register_section_type( 'Colormag_WP_Customize_Section' );
+		$wp_customize->register_section_type( 'Colormag_WP_Customize_Separator' );
+		$wp_customize->register_panel_type( 'Colormag_WP_Customize_Panel' );
+		$wp_customize->register_section_type( 'Colormag_Upsell_Section' );
 
 		/**
 		 * Register controls.
@@ -148,123 +149,123 @@ class ColorMag_Customizer_FrameWork {
 		 * WordPress default controls.
 		 */
 		// Checkbox control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'checkbox',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_checkbox',
 				),
 			)
 		);
 
 		// Radio control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'radio',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_radio_select',
 				),
 			)
 		);
 
 		// Select control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'select',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_radio_select',
 				),
 			)
 		);
 
 		// Text control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'text',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_nohtml',
 				),
 			)
 		);
 
 		// Number control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'number',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_number',
 				),
 			)
 		);
 
 		// Email control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'email',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_email',
 				),
 			)
 		);
 
 		// URL control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'url',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_url',
 				),
 			)
 		);
 
 		// Textarea control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'textarea',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_html',
 				),
 			)
 		);
 
 		// Dropdown pages control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'dropdown-pages',
 			array(
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_dropdown_pages',
 				),
 			)
 		);
 
 		// Color control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'color',
 			array(
 				'callback'          => 'WP_Customize_Color_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_hex_color',
 				),
 			)
 		);
 
 		// Image upload control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'image',
 			array(
 				'callback'          => 'WP_Customize_Image_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_image_upload',
 				),
 			)
@@ -274,214 +275,225 @@ class ColorMag_Customizer_FrameWork {
 		 * Controls created via the theme.
 		 */
 		// Radio image control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-radio-image',
 			array(
-				'callback'          => 'ColorMag_Radio_Image_Control',
+				'callback'          => 'Colormag_Radio_Image_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_radio_select',
 				),
 			)
 		);
 
 		// Heading control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-heading',
 			array(
-				'callback'          => 'ColorMag_Heading_Control',
+				'callback'          => 'Colormag_Heading_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_false_values',
 				),
 			)
 		);
 
 		// Navigate control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-navigate',
 			array(
-				'callback'          => 'ColorMag_Navigate_Control',
+				'callback'          => 'Colormag_Navigate_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_false_values',
 				),
 			)
 		);
 
 		// Editor control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-editor',
 			array(
-				'callback'          => 'ColorMag_Editor_Control',
+				'callback'          => 'Colormag_Editor_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_html',
 				),
 			)
 		);
 
 		// Color control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-color',
 			array(
-				'callback'          => 'ColorMag_Color_Control',
+				'callback'          => 'Colormag_Color_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_alpha_color',
 				),
 			)
 		);
 
 		// Buttonset control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-buttonset',
 			array(
-				'callback'          => 'ColorMag_Buttonset_Control',
+				'callback'          => 'Colormag_Buttonset_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_radio_select',
 				),
 			)
 		);
 
 		// Toggle control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-toggle',
 			array(
-				'callback'          => 'ColorMag_Toggle_Control',
+				'callback'          => 'Colormag_Toggle_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_checkbox',
 				),
 			)
 		);
 
 		// Divider control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-divider',
 			array(
-				'callback'          => 'ColorMag_Divider_Control',
+				'callback'          => 'Colormag_Divider_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_false_values',
 				),
 			)
 		);
 
 		// Slider control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-slider',
 			array(
-				'callback'          => 'ColorMag_Slider_Control',
+				'callback'          => 'Colormag_Slider_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_number',
 				),
 			)
 		);
 
 		// Custom control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-custom',
 			array(
-				'callback'          => 'ColorMag_Custom_Control',
+				'callback'          => 'Colormag_Custom_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_false_values',
 				),
 			)
 		);
 
 		// Dropdown categories control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-dropdown-categories',
 			array(
-				'callback'          => 'ColorMag_Dropdown_Categories_Control',
+				'callback'          => 'Colormag_Dropdown_Categories_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_dropdown_categories',
 				),
 			)
 		);
 
 		// Background control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-background',
 			array(
-				'callback'          => 'ColorMag_Background_Control',
+				'callback'          => 'Colormag_Background_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_background',
 				),
 			)
 		);
 
 		// Typography control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-typography',
 			array(
-				'callback'          => 'ColorMag_Typography_Control',
+				'callback'          => 'Colormag_Typography_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_typography',
 				),
 			)
 		);
 
 		// Hidden control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-hidden',
 			array(
-				'callback'          => 'ColorMag_Hidden_Control',
+				'callback'          => 'Colormag_Hidden_Control',
 				'sanitize_callback' => '',
 			)
 		);
 
 		// Sortable control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-sortable',
 			array(
-				'callback'          => 'ColorMag_Sortable_Control',
+				'callback'          => 'Colormag_Sortable_Control',
 				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'Colormag_Customizer_FrameWork_Sanitizes',
 					'sanitize_sortable',
 				),
 			)
 		);
 
 		// Group control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-group',
 			array(
-				'callback' => 'ColorMag_Group_Control',
+				'callback' => 'Colormag_Group_Control',
 			)
 		);
 
 		// Title control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-title',
 			array(
-				'callback' => 'ColorMag_Title_Control',
+				'callback' => 'Colormag_Title_Control',
 			)
 		);
 
 		// Dimensions control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-dimensions',
 			array(
-				'callback' => 'ColorMag_Dimensions_Control',
+				'callback' => 'Colormag_Dimensions_Control',
 			)
 		);
 
 		// Upgrade control.
-		ColorMag_Customize_Base_Control::add_control(
+		Colormag_Customize_Base_Control::add_control(
 			'colormag-upgrade',
 			array(
-				'callback' => 'ColorMag_Upgrade_Control',
+				'callback' => 'Colormag_Upgrade_Control',
 			)
 		);
 
+		// Fontawesome control.
+		Colormag_Customize_Base_Control::add_control(
+			'colormag-fontawesome',
+			array(
+				'callback' => 'Colormag_Fontawesome_Control',
+				'sanitize_callback' => array(
+					'Colormag_Customizer_FrameWork_Sanitizes',
+					'sanitize_radio_select',
+				),
+			)
+		);
 	}
 
 	/**
@@ -594,7 +606,7 @@ class ColorMag_Customizer_FrameWork {
 	public function register_panel( $config, $wp_customize ) {
 
 		$wp_customize->add_panel(
-			new ColorMag_WP_Customize_Panel(
+			new Colormag_WP_Customize_Panel(
 				$wp_customize,
 				$config['name'],
 				$config
@@ -613,7 +625,7 @@ class ColorMag_Customizer_FrameWork {
 	 */
 	public function register_section( $config, $wp_customize ) {
 
-		$section_callback = isset( $config['section_callback'] ) ? $config['section_callback'] : 'ColorMag_WP_Customize_Section';
+		$section_callback = isset( $config['section_callback'] ) ? $config['section_callback'] : 'Colormag_WP_Customize_Section';
 
 		$wp_customize->add_section(
 			new $section_callback(
@@ -655,7 +667,7 @@ class ColorMag_Customizer_FrameWork {
 		}
 
 		// For adding settings.
-		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : ColorMag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
+		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : Colormag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
 		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
 		$customize_config  = array(
 			'name'              => $sub_control_name,
@@ -678,7 +690,7 @@ class ColorMag_Customizer_FrameWork {
 		);
 
 		// For adding controls.
-		$control_type = ColorMag_Customize_Base_Control::get_control_instance( $customize_config['control'] );
+		$control_type = Colormag_Customize_Base_Control::get_control_instance( $customize_config['control'] );
 
 		if ( false !== $control_type ) {
 			$wp_customize->add_control(
@@ -708,7 +720,7 @@ class ColorMag_Customizer_FrameWork {
 	public function register_setting_control( $config, $wp_customize ) {
 
 		// For adding settings.
-		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : ColorMag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
+		$sanitize_callback = isset( $config['sanitize_callback'] ) ? $config['sanitize_callback'] : Colormag_Customize_Base_Control::get_sanitize_callback( $config['control'] );
 		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
 
 		if ( 'colormag-group' === $config['control'] ) {
@@ -726,7 +738,7 @@ class ColorMag_Customizer_FrameWork {
 		);
 
 		// For adding controls.
-		$control_type   = ColorMag_Customize_Base_Control::get_control_instance( $config['control'] );
+		$control_type   = Colormag_Customize_Base_Control::get_control_instance( $config['control'] );
 		$config['type'] = $config['control'];
 
 		if ( false !== $control_type ) {
@@ -868,7 +880,7 @@ class ColorMag_Customizer_FrameWork {
 		// Localize for customizer controls toggle.
 		wp_localize_script(
 			'colormag-customizer-controls-toggle',
-			'ColorMagCustomizerControlsToggle',
+			'ColormagCustomizerControlsToggle',
 			$this->get_dependency_array()
 		);
 
@@ -877,7 +889,7 @@ class ColorMag_Customizer_FrameWork {
 	/**
 	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
 	 *
-	 * @since ColorMag 3.0.0
+	 * @since Colormag 3.0.0
 	 */
 	public function customize_preview_js() {
 
@@ -908,4 +920,4 @@ class ColorMag_Customizer_FrameWork {
 
 }
 
-return new ColorMag_Customizer_FrameWork();
+return new Colormag_Customizer_FrameWork();

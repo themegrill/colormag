@@ -1,7 +1,7 @@
 /**
  * Customizer controls.
  *
- * @package ColorMag
+ * @package Colormag
  */
 (
 	function ( $ ) {
@@ -12,9 +12,9 @@
 		/**
 		 * Helper class for the main Customizer interface.
 		 *
-		 * @class ColorMagCustomizer
+		 * @class ColormagCustomizer
 		 */
-		ColorMagCustomizer = {
+		ColormagCustomizer = {
 
 			controls : {},
 
@@ -24,7 +24,7 @@
 			 * @method init
 			 */
 			init : function () {
-				ColorMagCustomizer._initToggles();
+				ColormagCustomizer._initToggles();
 			},
 
 			/**
@@ -38,11 +38,11 @@
 			_initToggles : function () {
 
 				// Trigger the Adv Tab Click trigger.
-				ColorMagControlTrigger.triggerHook( 'colormag-toggle-control', api );
+				ColormagControlTrigger.triggerHook( 'colormag-toggle-control', api );
 
 				// Loop through each setting.
 				$.each(
-					ColorMagCustomizerToggles,
+					ColormagCustomizerToggles,
 					function ( settingId, toggles ) {
 
 						// Get the setting object.
@@ -91,7 +91,7 @@
 
 		$(
 			function () {
-				ColorMagCustomizer.init();
+				ColormagCustomizer.init();
 			}
 		);
 

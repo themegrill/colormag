@@ -2,11 +2,11 @@
 /**
  * Extend WP_Customize_Control to add the color control.
  *
- * Class ColorMag_Color_Control
+ * Class Colormag_Color_Control
  *
  * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 3.0.0
+ * @subpackage Colormag
+ * @since      Colormag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class to extend WP_Customize_Control to add the color customize control.
  *
- * Class ColorMag_Color_Control
+ * Class Colormag_Color_Control
  */
-class ColorMag_Color_Control extends ColorMag_Customize_Base_Additional_Control {
+class Colormag_Color_Control extends Colormag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.

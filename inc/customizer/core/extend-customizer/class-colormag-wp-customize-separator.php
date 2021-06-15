@@ -4,8 +4,8 @@
  *
  * Creates a jQuery color control.
  *
- * @package     ColorMag
- * @author      ColorMag
+ * @package     Colormag
+ * @author      Colormag
  */
 
 // Exit if accessed directly.
@@ -22,7 +22,7 @@ if ( class_exists( 'WP_Customize_Section' ) ) {
 	 * @since 2.0.0
 	 * @see WP_Customize_Section
 	 */
-	class ColorMag_WP_Customize_Separator extends WP_Customize_Section {
+	class Colormag_WP_Customize_Separator extends WP_Customize_Section {
 
 		/**
 		 * Control type.

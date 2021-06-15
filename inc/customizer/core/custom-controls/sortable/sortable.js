@@ -3,7 +3,7 @@
  *
  * File `sortable.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.extend( {
 

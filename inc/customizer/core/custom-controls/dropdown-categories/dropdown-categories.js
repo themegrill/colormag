@@ -3,7 +3,7 @@
  *
  * File `dropdown-categorie.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
 

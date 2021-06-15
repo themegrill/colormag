@@ -3,7 +3,7 @@
  *
  * File `color.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 (
 	function ( $ ) {

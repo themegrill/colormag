@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class ColorMag_Customize_Base_Option {
+class Colormag_Customize_Base_Option {
 
 	public function __construct() {
 
@@ -76,4 +76,4 @@ class ColorMag_Customize_Base_Option {
 
 }
 
-return new ColorMag_Customize_Base_Option();
+return new Colormag_Customize_Base_Option();

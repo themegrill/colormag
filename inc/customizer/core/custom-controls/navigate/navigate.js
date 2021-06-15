@@ -3,7 +3,7 @@
  *
  * File `navigate.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 (
 	function ( $ ) {

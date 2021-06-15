@@ -3,7 +3,7 @@
  *
  * File `buttonset.js`.
  *
- * @package ColorMag
+ * @package Colormag
  */
 wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
 
