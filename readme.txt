@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Fix - Font display swap property and value for google fonts.
+
 = Version - 2.0.8 - 2021-05-27 =
 * Tweak - Update screenshot image.
 * Tweak - Update screenshot image source link.
