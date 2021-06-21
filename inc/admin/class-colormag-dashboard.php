@@ -30,7 +30,7 @@ class ColorMag_Dashboard {
 	}
 
 	public function create_menu() {
-		
+
 		if ( is_child_theme() ) {
 			$theme = wp_get_theme()->parent();
 		} else {
@@ -53,7 +53,7 @@ class ColorMag_Dashboard {
 	}
 
 	public function option_page() {
-		
+
 		if ( is_child_theme() ) {
 			$theme = wp_get_theme()->parent();
 		} else {
@@ -97,7 +97,7 @@ class ColorMag_Dashboard {
 						<h3><?php esc_html_e( 'Next Steps', 'colormag' ); ?></h3>
 						<ul>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'colormag' ) . '</a>', esc_url( 'https://docs.themegrill.com/colormag' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'colormag' ) . '</a>', esc_url( 'https://demo.themegrill.com/colormag-demos' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'colormag' ) . '</a>', esc_url( 'https://themegrilldemos.com/colormag-demos/' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-migrate">' . esc_html__( 'Premium Version', 'colormag' ) . '</a>', esc_url( 'https://themegrill.com/themes/colormag' ) ); ?></li>
 						</ul>
 					</div>

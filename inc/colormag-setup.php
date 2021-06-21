@@ -125,7 +125,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 					'ad_banner_header' => array(
 						'colormag_728x90_advertisement_widget',
 						array(
-							'728x90_image_link' => 'https://demo.themegrill.com/colormag-pro/',
+							'728x90_image_link' => 'https://themegrilldemos.com/colormag-pro/',
 							'728x90_image_url'  => get_template_directory_uri() . '/img/ad-large.jpg',
 						),
 					),
@@ -238,8 +238,8 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 							'title' => 'Useful Links',
 							'text'  => '<ul>
 										<li><a href="https://themegrill.com/">ThemeGrill</a></li>
-										<li><a href="https://themegrill.com/support-forum/">Support</a></li>
-										<li><a href="https://themegrill.com/theme-instruction/colormag/">Documentation</a></li>
+										<li><a href="https://themegrill.com/contact/">Support</a></li>
+										<li><a href="https://docs.themegrill.com/colormag/">Documentation</a></li>
 										<li><a href="https://themegrill.com/frequently-asked-questions/">FAQ</a></li>
 										<li><a href="https://themegrill.com/themes/">Themes</a></li>
 										<li><a href="https://themegrill.com/plugins/">Plugins</a></li>
@@ -273,7 +273,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						'colormag_300x250_advertisement_widget',
 						array(
 							'title'              => 'ColorMag Pro',
-							'300x250_image_link' => 'https://demo.themegrill.com/colormag-pro/',
+							'300x250_image_link' => 'https://themegrilldemos.com/colormag-pro/',
 							'300x250_image_url'  => get_template_directory_uri() . '/img/ad-medium.jpg',
 						),
 					),
