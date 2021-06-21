@@ -121,7 +121,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 
 		$starter_content = array(
 			'widgets'     => array(
-				'colormag_header_sidebar'                          => array(
+				'colormag_header_sidebar'                 => array(
 					'ad_banner_header' => array(
 						'colormag_728x90_advertisement_widget',
 						array(
@@ -130,7 +130,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_front_page_slider_area'                  => array(
+				'colormag_front_page_slider_area'         => array(
 					'featured_posts_slider' => array(
 						'colormag_featured_posts_slider_widget',
 						array(
@@ -138,7 +138,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_front_page_area_beside_slider'           => array(
+				'colormag_front_page_area_beside_slider'  => array(
 					'featured_posts_slider' => array(
 						'colormag_highlighted_posts_widget',
 						array(
@@ -146,7 +146,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_right_sidebar'                           => array(
+				'colormag_right_sidebar'                  => array(
 					'featured_posts_right_sidebar' => array(
 						'colormag_featured_posts_vertical_widget',
 						array(
@@ -185,7 +185,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_front_page_content_top_section'          => array(
+				'colormag_front_page_content_top_section' => array(
 					'featured_posts_style_1' => array(
 						'colormag_featured_posts_widget',
 						array(
@@ -194,7 +194,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_front_page_content_middle_left_section'  => array(
+				'colormag_front_page_content_middle_left_section' => array(
 					'featured_posts_style_2_left' => array(
 						'colormag_featured_posts_vertical_widget',
 						array(
@@ -212,7 +212,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_front_page_content_bottom_section'       => array(
+				'colormag_front_page_content_bottom_section' => array(
 					'featured_posts_style_1_bottom' => array(
 						'colormag_featured_posts_widget',
 						array(
@@ -222,7 +222,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_footer_sidebar_one'                      => array(
+				'colormag_footer_sidebar_one'             => array(
 					'text_footer_about' => array(
 						'text',
 						array(
@@ -231,7 +231,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_footer_sidebar_two'                      => array(
+				'colormag_footer_sidebar_two'             => array(
 					'text_footer_links' => array(
 						'text',
 						array(
@@ -249,7 +249,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_footer_sidebar_three'                    => array(
+				'colormag_footer_sidebar_three'           => array(
 					'text_footer_other_themes' => array(
 						'text',
 						array(
@@ -268,7 +268,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 						),
 					),
 				),
-				'colormag_footer_sidebar_four'                     => array(
+				'colormag_footer_sidebar_four'            => array(
 					'ad_banner_footer'         => array(
 						'colormag_300x250_advertisement_widget',
 						array(
@@ -366,13 +366,13 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 				),
 			),
 
-			'options'    => array(
+			'options'     => array(
 				'blogname'        => 'ColorMag',
 				'blogdescription' => 'ColorMag Demo site',
 			),
 
 			// Set the front page section theme mods to the IDs of the core-registered pages.
-			'theme_mods' => array(
+			'theme_mods'  => array(
 				'custom_logo'                     => '{{colormag-logo}}',
 				'colormag_breaking_news'          => 1,
 				'colormag_date_display'           => 1,
@@ -393,7 +393,7 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 			),
 
 			// Set up nav menus for each of the two areas registered in the theme.
-			'nav_menus'  => array(
+			'nav_menus'   => array(
 				// Assign a menu to the "primary" location.
 				'primary' => array(
 					'name'  => 'Primary',
