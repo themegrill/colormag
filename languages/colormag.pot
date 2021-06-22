@@ -1655,8 +1655,8 @@ msgstr ""
 msgid ""
 "ColorMag is a perfect responsive magazine style WordPress theme. Suitable "
 "for news, newspaper, magazine, publishing, business and any kind of sites. "
-"Get free support at https://themegrill.com/support-forum/ and check the "
-"demo at https://demo.themegrill.com/colormag/"
+"Get free support at https://themegrill.com/contact/ and check the "
+"demo at https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the plugin/theme
