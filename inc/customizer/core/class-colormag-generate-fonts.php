@@ -155,7 +155,7 @@ class ColorMag_Generate_Fonts {
 				$font_args['subset'] = rawurlencode( trim( $subsets ) );
 			}
 
-			return add_query_arg( $font_args, $base_url );
+			return add_query_arg( array( $font_args, '&display=swap' ), $base_url );
 		}
 
 		return '';
