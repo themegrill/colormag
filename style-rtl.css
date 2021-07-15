@@ -425,7 +425,6 @@ input[type="reset"],
 input[type="button"],
 input[type="submit"],
 button {
-	margin-bottom: 30px;
 	padding: 10px 20px;
 	background-color: #289dcc;
 	border: 0px;
