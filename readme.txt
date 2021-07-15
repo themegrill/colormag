@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Fix - Search button alignment issue caused by WP 5.8.
+
 = Version - 2.0.8 - 2021-05-27 =
 * Tweak - Update screenshot image.
 * Tweak - Update screenshot image source link.
