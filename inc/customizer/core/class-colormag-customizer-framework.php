@@ -124,6 +124,7 @@ class ColorMag_Customizer_FrameWork {
 		require dirname(__FILE__) . '/custom-controls/title/class-colormag-title-control.php';
 		require dirname(__FILE__) . '/custom-controls/dimensions/class-colormag-dimensions-control.php';
 		require dirname(__FILE__) . '/custom-controls/upgrade/class-colormag-upgrade-control.php';
+		require dirname(__FILE__) . '/custom-controls/fontawesome/class-colormag-fontawesome-control.php';
 
 	}
 
@@ -482,6 +483,17 @@ class ColorMag_Customizer_FrameWork {
 			)
 		);
 
+		// Fontawesome control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-fontawesome',
+			array(
+				'callback' => 'ColorMag_Fontawesome_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'sanitize_radio_select',
+				),
+			)
+		);
 	}
 
 	/**

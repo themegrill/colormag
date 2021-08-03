@@ -68,6 +68,10 @@ a:focus {
 	top: 9px;
 }
 
+.customize-control .colormag-control-tooltip:hover {
+	cursor: pointer;
+}
+
 .customize-control .attachment-media-view .button-add-media {
 	background: #ebebeb;
 }
@@ -81,7 +85,7 @@ a:focus {
 .customize-control .select2-selection--single {
 	border-color: #eeeeee;
 	border-radius: 2px;
-	min-height: 34px;
+	height: 33px;
 }
 
 .customize-control .customize-inside-control-row {

@@ -113,9 +113,12 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		$standard_fonts       = ColorMag_Fonts::get_system_fonts();
 		$standard_fonts_array = array();
 		$default_variants     = $this->format_variants_array(
-			array(
-				'regular',
-				'italic',
+			apply_filters(
+				'colormag_default_variants',
+				array(
+					'regular',
+					'italic',
+				)
 			)
 		);
 
@@ -344,7 +347,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
@@ -368,7 +370,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
@@ -392,7 +393,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>
@@ -531,7 +531,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="tablet control-wrap">
@@ -555,7 +554,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 
 				<div class="mobile control-wrap">
@@ -579,7 +577,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 								<# } #>
 							<# } #>
 					/>
-                    <span class="unit">px</span>
 				</div>
 			</div>
 			<# } #>

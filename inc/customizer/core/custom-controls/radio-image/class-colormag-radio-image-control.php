@@ -100,18 +100,20 @@ class ColorMag_Radio_Image_Control extends ColorMag_Customize_Base_Additional_Co
 		<div id="input_{{ data.id }}" class="image image-col-{{{ data.image_col }}}">
 			<# for ( key in data.choices ) { #>
 			<input {{{ data.inputAttrs }}}
-			       class="image-select"
-			       type="radio"
-			       value="{{ key }}"
-			       name="_customize-radio-{{ data.id }}"
-			       id="{{ data.id }}{{ key }}"
-			       {{{ data.link }}}
+				   class="image-select"
+				   type="radio"
+				   value="{{ key }}"
+				   name="_customize-radio-{{ data.id }}"
+				   id="{{ data.id }}{{ key }}"
+				   {{{ data.link }}}
 			<# if ( data.value === key ) { #> checked="checked"<# } #>
 			>
 
 			<label for="{{ data.id }}{{ key }}" {{{ data.labelStyle }}} class="colormag-radio-image">
 				<img src="{{{ data.choices[ key ] }}}" alt="{{{ data.choices_titles[ key ] }}}">
-				<span class="image-clickable" title="{{ data.choices_titles[ key ] }}"></span>
+				<# if ( '' !== data.choices_titles[ key ] ) { #>
+					<span class="image-clickable tooltip-text">{{{ data.choices_titles[ key ] }}}</span>
+				<# } #>
 			</label>
 			<# } #>
 		</div>
