@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 2.0.8\n"
+"Project-Id-Version: ColorMag 2.0.9\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2021-05-27 07:40:10+00:00\n"
+"POT-Creation-Date: 2021-08-03 05:25:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,54 +63,54 @@ msgstr ""
 msgid "%s Options"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:68
+#: inc/admin/class-colormag-dashboard.php:74
 #. translators: %s: Theme version.
 msgid "ColorMag %s"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:77
+#: inc/admin/class-colormag-dashboard.php:83
 #. translators: %s: Theme Name.
 msgid "Welcome to %s!"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:83
+#: inc/admin/class-colormag-dashboard.php:89
 #. translators: %s: Theme Name.
 msgid "Important links to get you started with %s"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:89
+#: inc/admin/class-colormag-dashboard.php:95
 msgid "Get Started"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:92
+#: inc/admin/class-colormag-dashboard.php:98
 msgid "Learn Basics"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:97
+#: inc/admin/class-colormag-dashboard.php:103
 msgid "Next Steps"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:99
+#: inc/admin/class-colormag-dashboard.php:105
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:100
+#: inc/admin/class-colormag-dashboard.php:106
 msgid "Starter Demos"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:101
+#: inc/admin/class-colormag-dashboard.php:107
 msgid "Premium Version"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:106
+#: inc/admin/class-colormag-dashboard.php:112
 msgid "Further Actions"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:108
+#: inc/admin/class-colormag-dashboard.php:114
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:109
+#: inc/admin/class-colormag-dashboard.php:115
 msgid "Leave a review"
 msgstr ""
 
@@ -670,19 +670,19 @@ msgstr ""
 msgid "Custom Fonts"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:275
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:278
 msgid "Family"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:283
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:286
 msgid "Weight"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:292
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:295
 msgid "Subset(s)"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:307
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:310
 msgid "Size"
 msgstr ""
 
@@ -694,70 +694,70 @@ msgstr ""
 msgid "Letter Spacing"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:589
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:586
 #: inc/customizer/options/footer/class-colormag-customize-footer-general-options.php:41
 #: inc/customizer/options/header/class-colormag-customize-primary-header-options.php:41
 msgid "Style"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:594
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:591
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:597
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:594
 msgid "Italic"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:600
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:597
 msgid "Oblique"
+msgstr ""
+
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:600
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:628
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:656
+msgid "Initial"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:603
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:631
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:659
-msgid "Initial"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:606
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:634
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:662
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:614
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:611
 msgid "Transform"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:619
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:647
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:616
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:644
 msgid "None"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:622
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:619
 msgid "Capitalize"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:625
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:622
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:628
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:625
 msgid "Lowercase"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:642
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:639
 msgid "Decoration"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:650
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:647
 msgid "Underline"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:653
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:650
 msgid "Overline"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:656
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:653
 msgid "Line Through"
 msgstr ""
 
@@ -1655,8 +1655,8 @@ msgstr ""
 msgid ""
 "ColorMag is a perfect responsive magazine style WordPress theme. Suitable "
 "for news, newspaper, magazine, publishing, business and any kind of sites. "
-"Get free support at https://themegrill.com/contact/ and check the "
-"demo at https://themegrilldemos.com/colormag/"
+"Get free support at https://themegrill.com/contact/ and check the demo at "
+"https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the plugin/theme
