@@ -166,7 +166,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'dropdown_categories':
-					$new_instance[ $key ] = absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
 
 					$instance[ $key ] = term_exists( $new_instance[ $key ], 'category' ) ? $new_instance[ $key ] : $setting['default'];
 					break;
