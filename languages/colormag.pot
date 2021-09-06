@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 2.0.9\n"
+"Project-Id-Version: ColorMag 2.1.0\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2021-08-03 05:25:20+00:00\n"
+"POT-Creation-Date: 2021-09-06 06:32:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -516,111 +516,111 @@ msgstr ""
 msgid "No file selected"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:96
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:94
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:107
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:105
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:113
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:111
 msgid "No Image Selected"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:120
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:118
 msgid "Remove"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:127
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:125
 msgid "Select Image"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:134
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:132
 msgid "Background Repeat"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:138
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:136
 msgid "No Repeat"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:141
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:139
 msgid "Repeat All"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:144
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:142
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:147
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:145
 msgid "Repeat Vertically"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:152
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:150
 msgid "Background Position"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:156
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:154
 msgid "Left Top"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:159
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:157
 msgid "Left Center"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:162
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:160
 msgid "Left Bottom"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:165
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:163
 msgid "Right Top"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:168
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:166
 msgid "Right Center"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:171
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:169
 msgid "Right Bottom"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:174
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:172
 msgid "Center Top"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:177
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:175
 msgid "Center Center"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:180
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:178
 msgid "Center Bottom"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:185
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:183
 msgid "Background Size"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:189
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:187
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:192
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:190
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:195
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:193
 msgid "Auto"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:200
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:198
 msgid "Background Attachment"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:204
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:202
 msgid "Scroll"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:207
+#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:205
 msgid "Fixed"
 msgstr ""
 
@@ -648,13 +648,13 @@ msgstr ""
 msgid "Color value"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/navigate/class-colormag-navigate-control.php:64
+#: inc/customizer/core/custom-controls/navigate/class-colormag-navigate-control.php:62
 #. Translators: %1$s: Anchor tag open, %2$s: Customizer section name %3$s:
 #. Anchor tag close
 msgid "%1$s Click here to edit %2$s features %3$s"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/slider/class-colormag-slider-control.php:112
+#: inc/customizer/core/custom-controls/slider/class-colormag-slider-control.php:110
 msgid "Back to default"
 msgstr ""
 
@@ -670,102 +670,103 @@ msgstr ""
 msgid "Custom Fonts"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:278
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:274
 msgid "Family"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:286
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:282
 msgid "Weight"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:295
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:291
 msgid "Subset(s)"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:310
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:306
 msgid "Size"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:402
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:398
 msgid "Line Height"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:494
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:490
 msgid "Letter Spacing"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:586
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:582
 #: inc/customizer/options/footer/class-colormag-customize-footer-general-options.php:41
 #: inc/customizer/options/header/class-colormag-customize-primary-header-options.php:41
 msgid "Style"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:591
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:587
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:594
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:590
 msgid "Italic"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:597
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:593
 msgid "Oblique"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:600
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:628
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:656
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:596
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:624
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:652
 msgid "Initial"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:603
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:631
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:659
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:599
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:627
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:655
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:611
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:607
 msgid "Transform"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:616
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:644
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:612
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:640
 msgid "None"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:619
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:615
 msgid "Capitalize"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:622
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:618
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:625
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:621
 msgid "Lowercase"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:639
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:635
 msgid "Decoration"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:647
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:643
 msgid "Underline"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:650
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:646
 msgid "Overline"
 msgstr ""
 
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:653
+#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:649
 msgid "Line Through"
 msgstr ""
 
-#: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:68
+#: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:69
+#. Translators: 1: Panel Title.
 msgid "Customizing &#9656; %s"
 msgstr ""
 
-#: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:72
+#: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:73
 msgid "Customizing"
 msgstr ""
 

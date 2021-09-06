@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - TBD =
+= Version - 2.1.0 - 2021-09-06 =
 * Fix - Dropdown issue in widgets.
 * Fix - Background color customizer option not working properly.
 
