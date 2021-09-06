@@ -4,8 +4,7 @@
  *
  * Creates a jQuery color control.
  *
- * @package     ColorMag
- * @author      ColorMag
+ * @package ColorMag
  */
 
 // Exit if accessed directly.

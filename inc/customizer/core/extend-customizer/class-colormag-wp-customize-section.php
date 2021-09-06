@@ -65,6 +65,7 @@ class ColorMag_WP_Customize_Section extends WP_Customize_Section {
 
 		if ( $this->panel ) {
 			$array['customizeAction'] = sprintf(
+				/* Translators: 1: Panel Title. */
 				esc_html__( 'Customizing &#9656; %s', 'colormag' ),
 				esc_html( $this->manager->get_panel( $this->panel )->title )
 			);

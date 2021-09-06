@@ -78,8 +78,6 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	/**
 	 * Formats variants.
 	 *
-	 * @access protected
-	 *
 	 * @param array $variants The variants.
 	 *
 	 * @return array
@@ -253,9 +251,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>
@@ -328,8 +324,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
-					       id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
-					       data-device="desktop"
+						   id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
+						   data-device="desktop"
 							<# if ( data.value['font-size'] ) { #>
 								value="{{ data.value['font-size']['desktop'] }}"
 							<# } else { #>
@@ -351,8 +347,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="tablet control-wrap">
 					<input type="text"
-					       id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
-					       data-device="tablet"
+						   id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
+						   data-device="tablet"
 							<# if ( data.value['font-size'] ) { #>
 								value="{{ data.value['font-size']['tablet'] }}"
 							<# } else { #>
@@ -374,8 +370,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="mobile control-wrap">
 					<input type="text"
-					       id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
-					       data-device="mobile"
+						   id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
+						   data-device="mobile"
 							<# if ( data.value['font-size'] ) { #>
 								value="{{ data.value['font-size']['mobile'] }}"
 							<# } else { #>
@@ -420,8 +416,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
-					       id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
-					       data-device="desktop"
+						   id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
+						   data-device="desktop"
 							<# if ( data.value['line-height'] ) { #>
 								value="{{ data.value['line-height']['desktop'] }}"
 							<# } else { #>
@@ -443,8 +439,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="tablet control-wrap">
 					<input type="text"
-					       id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
-					       data-device="tablet"
+						   id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
+						   data-device="tablet"
 							<# if ( data.value['line-height'] ) { #>
 								value="{{ data.value['line-height']['tablet'] }}"
 							<# } else { #>
@@ -466,8 +462,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="mobile control-wrap">
 					<input type="text"
-					       id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
-					       data-device="mobile"
+						   id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
+						   data-device="mobile"
 							<# if ( data.value['line-height'] ) { #>
 								value="{{ data.value['line-height']['mobile'] }}"
 							<# } else { #>
@@ -512,8 +508,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="desktop control-wrap active">
 					<input type="text"
-					       id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
-					       data-device="desktop"
+						   id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
+						   data-device="desktop"
 							<# if ( data.value['letter-spacing'] ) { #>
 								value="{{ data.value['letter-spacing']['desktop'] }}"
 							<# } else { #>
@@ -535,8 +531,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="tablet control-wrap">
 					<input type="text"
-					       id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
-					       data-device="tablet"
+						   id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
+						   data-device="tablet"
 							<# if ( data.value['letter-spacing'] ) { #>
 								value="{{ data.value['letter-spacing']['tablet'] }}"
 							<# } else { #>
@@ -558,8 +554,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 				<div class="mobile control-wrap">
 					<input type="text"
-					       id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
-					       data-device="mobile"
+						   id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
+						   data-device="mobile"
 							<# if ( data.value['letter-spacing'] ) { #>
 								value="{{ data.value['letter-spacing']['mobile'] }}"
 							<# } else { #>
@@ -663,8 +659,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<input class="typography-hidden-value"
-			       value="{{ JSON.stringify( data.value ) }}"
-			       type="hidden" {{{ data.link }}}
+				   value="{{ JSON.stringify( data.value ) }}"
+				   type="hidden" {{{ data.link }}}
 			>
 
 		</div>

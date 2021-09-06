@@ -50,33 +50,31 @@ class ColorMag_Title_Control extends ColorMag_Customize_Base_Additional_Control 
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>
 
-        <div class="colormag-title-wrapper">
-            <label class="customizer-text">
-                <# if ( data.label ) { #>
-                <span class="customize-control-title">{{{ data.label }}}</span>
-                <# if ( data.description ) { #>
-                <span class="tool-tip">
+		<div class="colormag-title-wrapper">
+			<label class="customizer-text">
+				<# if ( data.label ) { #>
+				<span class="customize-control-title">{{{ data.label }}}</span>
+				<# if ( data.description ) { #>
+				<span class="tool-tip">
 					<i class="dashicons dashicons-editor-help"></i>
 					<span class="tooltip-text">{{{ data.description }}}</span>
 				</span>
-                <# } #>
-                <# } #>
-            </label>
-            <# if ( data.link ) { #>
-            <div class="guide-tutorial">
-                <span class="control-url">
+				<# } #>
+				<# } #>
+			</label>
+			<# if ( data.link ) { #>
+			<div class="guide-tutorial">
+				<span class="control-url">
 					<a href=  " {{{data.link}}} "   target="_blank">Doc</a>
 				</span>
-            </div>
-            <# } #>
-        </div>
+			</div>
+			<# } #>
+		</div>
 
 		<?php
 	}

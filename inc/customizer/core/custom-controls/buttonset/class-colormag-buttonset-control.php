@@ -63,9 +63,7 @@ class ColorMag_Buttonset_Control extends ColorMag_Customize_Base_Additional_Cont
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>
@@ -84,12 +82,12 @@ class ColorMag_Buttonset_Control extends ColorMag_Customize_Base_Additional_Cont
 			<# for ( key in data.choices ) { #>
 			<div class="buttonset-inner">
 				<input {{{ data.inputAttrs }}}
-				       class="input-buttonset"
-				       type="radio"
-				       value="{{ key }}"
-				       name="_customize-radio-{{ data.id }}"
-				       id="{{ data.id }}{{ key }}"
-				       {{{ data.link }}}
+					   class="input-buttonset"
+					   type="radio"
+					   value="{{ key }}"
+					   name="_customize-radio-{{ data.id }}"
+					   id="{{ data.id }}{{ key }}"
+					   {{{ data.link }}}
 				<# if ( data.value === key ) { #> checked="checked"<# } #>
 				>
 

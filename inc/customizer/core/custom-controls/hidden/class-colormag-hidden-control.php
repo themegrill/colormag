@@ -56,17 +56,15 @@ class ColorMag_Hidden_Control extends ColorMag_Customize_Base_Additional_Control
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>
 
 		<input type='hidden'
-		       class='hidden-field-{{ data.settings.default }}'
-		       data-name='{{ data.settings.default }}'
-		       value='{{ data.value }}'
+			   class='hidden-field-{{ data.settings.default }}'
+			   data-name='{{ data.settings.default }}'
+			   value='{{ data.value }}'
 		>
 
 		<?php

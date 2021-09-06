@@ -692,6 +692,34 @@ li.customize-control.customize-control-colormag-hidden {
 	color: #aaaaaa;
 }
 
+.customize-control-colormag-sortable ul.unsortable .dashicons-visibility {
+	cursor: pointer;
+}
+
+.customize-control-colormag-sortable ul.unsortable li {
+	padding: 5px 10px;
+	border: 1px solid #555555;
+	background: #ffffff;
+	cursor: default;
+}
+
+.customize-control-colormag-sortable ul.unsortable li .dashicons.dashicons-menu {
+	float: right;
+}
+
+.customize-control-colormag-sortable ul.unsortable li .dashicons.visibility {
+	margin-right: 10px;
+}
+
+.customize-control-colormag-sortable ul.unsortable li.invisible {
+	color: #aaaaaa;
+	border: 1px dashed #aaaaaa;
+}
+
+.customize-control-colormag-sortable ul.unsortable li.invisible .dashicons.visibility {
+	color: #aaaaaa;
+}
+
 /**
  * Switch toggle control CSS.
  */

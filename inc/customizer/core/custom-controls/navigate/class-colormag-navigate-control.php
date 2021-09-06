@@ -39,9 +39,9 @@ class ColorMag_Navigate_Control extends ColorMag_Customize_Base_Additional_Contr
 
 		parent::to_json();
 
-		$this->json['label']       = esc_html( $this->label );
-		$this->json['description'] = $this->description;
-		$this->json['navigate_info']    = $this->navigate_info;
+		$this->json['label']         = esc_html( $this->label );
+		$this->json['description']   = $this->description;
+		$this->json['navigate_info'] = $this->navigate_info;
 
 	}
 
@@ -51,9 +51,7 @@ class ColorMag_Navigate_Control extends ColorMag_Customize_Base_Additional_Contr
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>

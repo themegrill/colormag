@@ -4,8 +4,7 @@
  *
  * @package colormag
  *
- * @see     WP_Customize_Control
- * @access  public
+ * @see WP_Customize_Control
  */
 
 /**
@@ -37,7 +36,7 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
 		$this->json['value'] = $this->value();
 
 		$this->json['link']    = $this->get_link();
-		$this->json['choices']     = $this->choices;
+		$this->json['choices'] = $this->choices;
 
 	}
 
@@ -45,90 +44,89 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
 	 * Renders the Underscore template for this control.
 	 *
 	 * @see    WP_Customize_Control::print_template()
-	 * @access protected
 	 * @return void
 	 */
 	protected function content_template() {
 		?>
 
-        <label>
-            <# if ( data.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
-            <# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><#
-            } #>
-            <div class="wrapper">
-                <div class="control">
-                    <# if ( data.default['top'] ) { #>
-                    <div class="top">
-                        <h5>Top</h5>
-                        <div class="input-wrapper">
-                            <input type="text"
-                            <# if ( data.value['top'] ) { #>
-                            value="{{ data.value['top'] }}"
-                            <# } else { #>
-                            value="{{ data.default['top'] }}"
-                            <# } #>
-                            />
+		<label>
+			<# if ( data.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
+			<# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><#
+			} #>
+			<div class="wrapper">
+				<div class="control">
+					<# if ( data.default['top'] ) { #>
+					<div class="top">
+						<h5>Top</h5>
+						<div class="input-wrapper">
+							<input type="text"
+							<# if ( data.value['top'] ) { #>
+							value="{{ data.value['top'] }}"
+							<# } else { #>
+							value="{{ data.default['top'] }}"
+							<# } #>
+							/>
 
-                        </div>
-                    </div>
-                    <# } #>
+						</div>
+					</div>
+					<# } #>
 
-                    <# if ( data.default['right'] ) { #>
-                    <div class="right">
-                        <h5>Right</h5>
-                        <div class="input-wrapper">
-                            <input type="text"
-                            <# if ( data.value['right'] ) { #>
-                            value="{{ data.value['right'] }}"
-                            <# } else { #>
-                            value="{{ data.default['right'] }}"
-                            <# } #>
-                            />
+					<# if ( data.default['right'] ) { #>
+					<div class="right">
+						<h5>Right</h5>
+						<div class="input-wrapper">
+							<input type="text"
+							<# if ( data.value['right'] ) { #>
+							value="{{ data.value['right'] }}"
+							<# } else { #>
+							value="{{ data.default['right'] }}"
+							<# } #>
+							/>
 
-                        </div>
-                    </div>
-                    <# } #>
+						</div>
+					</div>
+					<# } #>
 
-                    <# if ( data.default['bottom'] ) { #>
-                    <div class="bottom">
-                        <h5>Bottom</h5>
-                        <div class="input-wrapper">
-                            <input type="text"
-                            <# if ( data.value['bottom'] ) { #>
-                            value="{{ data.value['bottom'] }}"
-                            <# } else { #>
-                            value="{{ data.default['bottom'] }}"
-                            <# } #>
-                            />
+					<# if ( data.default['bottom'] ) { #>
+					<div class="bottom">
+						<h5>Bottom</h5>
+						<div class="input-wrapper">
+							<input type="text"
+							<# if ( data.value['bottom'] ) { #>
+							value="{{ data.value['bottom'] }}"
+							<# } else { #>
+							value="{{ data.default['bottom'] }}"
+							<# } #>
+							/>
 
-                        </div>
-                    </div>
-                    <# } #>
+						</div>
+					</div>
+					<# } #>
 
-                    <# if ( data.default['left'] ) { #>
-                    <div class="left">
-                        <h5>Left</h5>
-                        <div class="input-wrapper">
-                            <input type="text"
-                            <# if ( data.value['left'] ) { #>
-                            value="{{ data.value['left'] }}"
-                            <# } else { #>
-                            value="{{ data.default['left'] }}"
-                            <# } #>
-                            />
+					<# if ( data.default['left'] ) { #>
+					<div class="left">
+						<h5>Left</h5>
+						<div class="input-wrapper">
+							<input type="text"
+							<# if ( data.value['left'] ) { #>
+							value="{{ data.value['left'] }}"
+							<# } else { #>
+							value="{{ data.default['left'] }}"
+							<# } #>
+							/>
 
-                        </div>
-                    </div>
-                </div>
-                <# } #>
+						</div>
+					</div>
+				</div>
+				<# } #>
 
-                <input class="dimensions-hidden-value"
-                       value="{{ JSON.stringify( data.value ) }}"
-                       type="hidden" {{{ data.link }}}
-                >
+				<input class="dimensions-hidden-value"
+					   value="{{ JSON.stringify( data.value ) }}"
+					   type="hidden" {{{ data.link }}}
+				>
 
-            </div>
-        </label>
+			</div>
+		</label>
 
 		<?php
 	}

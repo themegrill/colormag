@@ -6,7 +6,6 @@
  *
  * @since   1.4.6
  * @see     WP_Customize_Control
- * @access  public
  */
 
 /**
@@ -17,8 +16,7 @@ class ColorMag_Upgrade_Control extends ColorMag_Customize_Base_Additional_Contro
 	/**
 	 * Customize control type.
 	 *
-	 * @access public
-	 * @var    string
+	 * @var string
 	 */
 	public $type = 'colormag-upgrade';
 
@@ -50,18 +48,16 @@ class ColorMag_Upgrade_Control extends ColorMag_Customize_Base_Additional_Contro
 	 * Renders the Underscore template for this control.
 	 *
 	 * @see    WP_Customize_Control::print_template()
-	 * @access protected
 	 * @return void
 	 */
-
 	protected function content_template() {
 		?>
 		<p class="description upgrade-description">{{{ data.description }}}</p>
 
 		<span>
-            <a href="{{{data.url}}}" class="button button-primary" target="_blank">
-                {{ data.label }}
-            </a>
+			<a href="{{{data.url}}}" class="button button-primary" target="_blank">
+				{{ data.label }}
+			</a>
 		</span>
 		<?php
 	}

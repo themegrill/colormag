@@ -38,7 +38,7 @@ class ColorMag_Customize_Base_Option {
 	public function get_section_description( $args ) {
 
 		// Description.
-		$content = '<div class="colormag-section-description">';
+		$content  = '<div class="colormag-section-description">';
 		$content .= wp_kses_post( $args['description'] );
 
 		// Links.

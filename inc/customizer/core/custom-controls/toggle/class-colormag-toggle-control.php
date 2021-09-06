@@ -61,9 +61,7 @@ class ColorMag_Toggle_Control extends ColorMag_Customize_Base_Additional_Control
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>
@@ -79,15 +77,15 @@ class ColorMag_Toggle_Control extends ColorMag_Customize_Base_Additional_Control
 		</div>
 
 		<label for="toggle_{{ data.id }}"
-		       class="<# if ( data.description ) { #>toggle-description<# } #>"
+			   class="<# if ( data.description ) { #>toggle-description<# } #>"
 		>
 			<input {{{ data.inputAttrs }}}
-			       class="switch-toggle"
-			       type="checkbox"
-			       value="{{ data.value }}"
-			       name="_customize-toggle-{{ data.id }}"
-			       id="toggle_{{ data.id }}"
-			       {{{ data.link }}}
+				   class="switch-toggle"
+				   type="checkbox"
+				   value="{{ data.value }}"
+				   name="_customize-toggle-{{ data.id }}"
+				   id="toggle_{{ data.id }}"
+				   {{{ data.link }}}
 			<# if ( data.value === true ) { #> checked="checked"<# } #>
 			>
 

@@ -30,7 +30,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	 */
 	public static function sanitize_checkbox( $input ) {
 
-		return ( ( $input == 1 ) ? 1 : '' );
+		return ( ( 1 === $input || '1' === $input || true === (bool) $input ) ? 1 : '' );
 
 	}
 
@@ -155,15 +155,24 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		}
 
 		// Hex sanitize if no rgba color option is chosen.
-		if ( false === strpos( $color, 'rgba' ) ) {
+		if ( false === strpos( $color, 'rgb' ) ) {
 			return self::sanitize_hex_color( $color );
 		}
 
 		// Sanitize the rgba color provided via customize option.
 		$color = str_replace( ' ', '', $color );
-		sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 
-		return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+		if ( strpos( $color, 'rgba' ) !== false ) {
+
+			sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+
+			return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+
+		} else {
+			sscanf( $color, 'rgb(%d,%d,%d)', $red, $green, $blue );
+		}
+
+		return 'rgb(' . $red . ',' . $green . ',' . $blue . ')';
 
 	}
 
@@ -273,7 +282,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		$page_id = absint( $page_id );
 
 		// If $page_id is an ID of a published page, return it, otherwise, return the default value.
-		return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+		return ( 'publish' === get_post_status( $page_id ) ? $page_id : $setting->default );
 
 	}
 
@@ -563,7 +572,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		$choices    = $setting->manager->get_control( $setting->id )->choices;
 		$input_keys = $input;
 
-		foreach ( $input_keys as $key => $value ) {
+		foreach ( (array) $input_keys as $key => $value ) {
 			if ( ! array_key_exists( $value, $choices ) ) {
 				unset( $input[ $key ] );
 			}

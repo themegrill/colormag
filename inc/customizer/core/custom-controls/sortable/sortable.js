@@ -16,6 +16,24 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 		// Set the sortable container.
 		control.sortableContainer = control.container.find( 'ul.sortable' ).first();
 
+		control.unsortableContainer = control.container.find( 'ul.unsortable' ).first();
+
+		control.unsortableContainer.find( 'li' ).each(
+			function () {
+				// Enable/disable options when we click on the eye of Thundera.
+				jQuery( this ).find( 'i.visibility' ).click(
+					function () {
+						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+					}
+				);
+			}
+		).click(
+			function () {
+				// Update value on click.
+				control.updateValue();
+			}
+		);
+
 		// Init sortable.
 		control.sortableContainer.sortable(
 			{
@@ -46,19 +64,33 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 
 		'use strict';
 
-		var control  = this,
-		    newValue = [];
+		var control    = this,
+			sortable = [],
+			unsortable =[],
+			newValue   = [];
 
 		this.sortableContainer.find( 'li' ).each(
 			function () {
 				if ( ! jQuery( this ).is( '.invisible' ) ) {
-					newValue.push( jQuery( this ).data( 'value' ) );
+					sortable.push( jQuery( this ).data( 'value' ) );
 				}
 			}
 		);
+
+		this.unsortableContainer.find( 'li' ).each(
+			function (i) {
+				if ( ! jQuery( this ).is( '.invisible' ) ) {
+					unsortable.push( jQuery( this ).data( 'value' ) );
+				}
+			}
+		);
+
+		newValue = unsortable.concat(sortable);
 
 		control.setting.set( newValue );
 
 	}
 
+
 } );
+

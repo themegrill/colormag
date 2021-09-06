@@ -461,81 +461,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 } );
 
 /**
- * Control: FontAwesome.
- */
-(
-	function ( $ ) {
-
-		wp.customize.controlConstructor['colormag-fontawesome'] = wp.customize.Control.extend(
-			{
-				ready: function () {
-					'use strict';
-
-					var control = this;
-
-					control.initColorMagFontawesomeControl();
-				},
-
-				initColorMagFontawesomeControl: function() {
-					var control       = this,
-						selector      = control.selector,
-						elSelector    = $( selector ).find( 'select' ),
-						faData        = [],
-						value         = control.setting._value,
-						data          = window['ColorMagCustomizerControlFontawesome' + this.id],
-						faDataCounter = 0,
-						faSelect;
-
-					$.each(
-						data,
-						function ( key, value ) {
-							faData[ faDataCounter ] = {
-								id: value,
-								text: value
-							};
-
-							faDataCounter++;
-						}
-					);
-
-					// Add HTML inside the option element.
-					function formatState( state ) {
-
-						if ( ! state.id ) {
-							return state.text;
-						}
-
-						var $state = $(
-							'<span><i class="fa fa-lg ' + state.text + '"></i> ' + state.text + '</span>'
-						);
-
-						return $state;
-					};
-
-					// Apply selectWoo.
-					faSelect = elSelector.selectWoo(
-						{
-							data: faData,
-							width: '100%',
-							templateResult: formatState,
-						}
-					);
-
-					faSelect.val( value ).trigger( 'change' );
-
-					faSelect.on(
-						'change',
-						function () {
-							control.setting.set( elSelector.val() );
-						}
-					);
-				},
-			}
-		);
-	}
-)( jQuery );
-
-/**
  * Group control JS to handle the group customize option.
  *
  * File `group.js`.
@@ -1604,6 +1529,81 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 )( jQuery );
 
 /**
+ * Control: FontAwesome.
+ */
+(
+	function ( $ ) {
+
+		wp.customize.controlConstructor['colormag-fontawesome'] = wp.customize.Control.extend(
+			{
+				ready: function () {
+					'use strict';
+
+					var control = this;
+
+					control.initColorMagFontawesomeControl();
+				},
+
+				initColorMagFontawesomeControl: function() {
+					var control       = this,
+						selector      = control.selector,
+						elSelector    = $( selector ).find( 'select' ),
+						faData        = [],
+						value         = control.setting._value,
+						data          = window['ColorMagCustomizerControlFontawesome' + this.id],
+						faDataCounter = 0,
+						faSelect;
+
+					$.each(
+						data,
+						function ( key, value ) {
+							faData[ faDataCounter ] = {
+								id: value,
+								text: value
+							};
+
+							faDataCounter++;
+						}
+					);
+
+					// Add HTML inside the option element.
+					function formatState( state ) {
+
+						if ( ! state.id ) {
+							return state.text;
+						}
+
+						var $state = $(
+							'<span><i class="fa fa-lg ' + state.text + '"></i> ' + state.text + '</span>'
+						);
+
+						return $state;
+					};
+
+					// Apply selectWoo.
+					faSelect = elSelector.selectWoo(
+						{
+							data: faData,
+							width: '100%',
+							templateResult: formatState,
+						}
+					);
+
+					faSelect.val( value ).trigger( 'change' );
+
+					faSelect.on(
+						'change',
+						function () {
+							control.setting.set( elSelector.val() );
+						}
+					);
+				},
+			}
+		);
+	}
+)( jQuery );
+
+/**
  * Background image control JS to handle the navigate customize option.
  *
  * File `navigate.js`.
@@ -1718,6 +1718,24 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 		// Set the sortable container.
 		control.sortableContainer = control.container.find( 'ul.sortable' ).first();
 
+		control.unsortableContainer = control.container.find( 'ul.unsortable' ).first();
+
+		control.unsortableContainer.find( 'li' ).each(
+			function () {
+				// Enable/disable options when we click on the eye of Thundera.
+				jQuery( this ).find( 'i.visibility' ).click(
+					function () {
+						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+					}
+				);
+			}
+		).click(
+			function () {
+				// Update value on click.
+				control.updateValue();
+			}
+		);
+
 		// Init sortable.
 		control.sortableContainer.sortable(
 			{
@@ -1748,22 +1766,36 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 
 		'use strict';
 
-		var control  = this,
-		    newValue = [];
+		var control    = this,
+			sortable = [],
+			unsortable =[],
+			newValue   = [];
 
 		this.sortableContainer.find( 'li' ).each(
 			function () {
 				if ( ! jQuery( this ).is( '.invisible' ) ) {
-					newValue.push( jQuery( this ).data( 'value' ) );
+					sortable.push( jQuery( this ).data( 'value' ) );
 				}
 			}
 		);
+
+		this.unsortableContainer.find( 'li' ).each(
+			function (i) {
+				if ( ! jQuery( this ).is( '.invisible' ) ) {
+					unsortable.push( jQuery( this ).data( 'value' ) );
+				}
+			}
+		);
+
+		newValue = unsortable.concat(sortable);
 
 		control.setting.set( newValue );
 
 	}
 
+
 } );
+
 
 /**
  * Switch toggle control JS to handle the toggle of custom customize controls.

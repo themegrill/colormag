@@ -45,7 +45,7 @@ class ColorMag_Generate_Fonts {
 
 		if ( ! empty( $font_weight ) && isset( self::$fonts[ $name ] ) ) {
 			foreach ( (array) $font_weight as $variant ) {
-				if ( ! in_array( $variant, self::$fonts[ $name ]['font-weight'] ) ) {
+				if ( ! in_array( $variant, self::$fonts[ $name ]['font-weight'], true ) ) {
 					self::$fonts[ $name ]['font-weight'][] = $variant;
 				}
 			}

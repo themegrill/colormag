@@ -70,9 +70,7 @@ class ColorMag_Slider_Control extends ColorMag_Customize_Base_Additional_Control
 	 * Class variables for this control class are available in the `data` JS object;
 	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
 	 *
-	 * @see    WP_Customize_Control::print_template()
-	 *
-	 * @access protected
+	 * @see WP_Customize_Control::print_template()
 	 */
 	protected function content_template() {
 		?>
@@ -89,18 +87,18 @@ class ColorMag_Slider_Control extends ColorMag_Customize_Base_Additional_Control
 
 		<div class="slider-wrapper <# if ( data.description ) { #>slider-description<# } #>">
 			<input {{{ data.inputAttrs }}}
-			       type="range"
-			       value="{{ data.value }}"
-			       data-reset_value="{{ data.default }}"
+				   type="range"
+				   value="{{ data.value }}"
+				   data-reset_value="{{ data.default }}"
 			/>
 
 			<div class="colormag-range-value">
 				<input type="number"
-				       data-name="{{ data.name }}"
-				       class="value colormag-range-input"
-				       {{{ data.link }}}
-				       value="{{ data.value }}"
-				       {{{ data.inputAttrs }}}
+					   data-name="{{ data.name }}"
+					   class="value colormag-range-input"
+					   {{{ data.link }}}
+					   value="{{ data.value }}"
+					   {{{ data.inputAttrs }}}
 				>
 				<# if ( data.suffix ) { #>
 				<span class="colormag-range-unit">{{ data.suffix }}</span>
@@ -109,7 +107,7 @@ class ColorMag_Slider_Control extends ColorMag_Customize_Base_Additional_Control
 
 			<div class="colormag-slider-reset">
 				<span class="dashicons dashicons-image-rotate colormag-control-tooltip"
-				      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>"
+					  title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>"
 				>
 				</span>
 			</div>
