@@ -18,16 +18,28 @@
 
 				'use strict';
 
-				var control = this;
+				var control = this,
+					isHueSlider = ( this.params.mode === 'hue' ),
+					picker = this.container.find( '.colormag-color-picker-alpha' ),
+					color = picker.val().replace( /\s+/g, '' );
 
-				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
+				picker.wpColorPicker( {
 
 					change : function ( event, ui ) {
-						var color = ui.color.toString();
+						var current = ( isHueSlider ? ui.color.h() : picker.iris( 'color' ) );
 
-						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-							control.setting.set( color );
+						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) && color !== current.replace( /\s+/g, '' ) ) {
+							control.setting.set( current );
 						}
+					},
+
+					clear: function() {
+
+						if ( ! control.setting.get() ) {
+							control.setting.set( '' );
+						}
+
+						control.setting.set( '' );
 					}
 
 				} );

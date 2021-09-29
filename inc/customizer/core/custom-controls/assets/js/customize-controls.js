@@ -1,4 +1,28 @@
 /**
+ * Radio buttonset control JS to handle the toggle of radio buttonsets.
+ *
+ * File `buttonset.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
+
+	ready : function () {
+
+		'use strict';
+
+		var control = this;
+
+		// Change the value.
+		this.container.on( 'click', 'input', function () {
+			control.setting.set( jQuery( this ).val() );
+		} );
+
+	}
+
+} );
+
+/**
  * Background image control JS to handle the background customize option.
  *
  * File `background.js`.
@@ -180,30 +204,6 @@
 )( jQuery );
 
 /**
- * Radio buttonset control JS to handle the toggle of radio buttonsets.
- *
- * File `buttonset.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'click', 'input', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
-
-/**
  * Color picker control JS to handle color picker rendering within customize control.
  *
  * File `color.js`.
@@ -223,16 +223,28 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 				'use strict';
 
-				var control = this;
+				var control = this,
+					isHueSlider = ( this.params.mode === 'hue' ),
+					picker = this.container.find( '.colormag-color-picker-alpha' ),
+					color = picker.val().replace( /\s+/g, '' );
 
-				this.container.find( '.colormag-color-picker-alpha' ).wpColorPicker( {
+				picker.wpColorPicker( {
 
 					change : function ( event, ui ) {
-						var color = ui.color.toString();
+						var current = ( isHueSlider ? ui.color.h() : picker.iris( 'color' ) );
 
-						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-							control.setting.set( color );
+						if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) && color !== current.replace( /\s+/g, '' ) ) {
+							control.setting.set( current );
 						}
+					},
+
+					clear: function() {
+
+						if ( ! control.setting.get() ) {
+							control.setting.set( '' );
+						}
+
+						control.setting.set( '' );
 					}
 
 				} );
@@ -459,6 +471,81 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 	}
 
 } );
+
+/**
+ * Control: FontAwesome.
+ */
+(
+	function ( $ ) {
+
+		wp.customize.controlConstructor['colormag-fontawesome'] = wp.customize.Control.extend(
+			{
+				ready: function () {
+					'use strict';
+
+					var control = this;
+
+					control.initColorMagFontawesomeControl();
+				},
+
+				initColorMagFontawesomeControl: function() {
+					var control       = this,
+						selector      = control.selector,
+						elSelector    = $( selector ).find( 'select' ),
+						faData        = [],
+						value         = control.setting._value,
+						data          = window['ColorMagCustomizerControlFontawesome' + this.id],
+						faDataCounter = 0,
+						faSelect;
+
+					$.each(
+						data,
+						function ( key, value ) {
+							faData[ faDataCounter ] = {
+								id: value,
+								text: value
+							};
+
+							faDataCounter++;
+						}
+					);
+
+					// Add HTML inside the option element.
+					function formatState( state ) {
+
+						if ( ! state.id ) {
+							return state.text;
+						}
+
+						var $state = $(
+							'<span><i class="fa fa-lg ' + state.text + '"></i> ' + state.text + '</span>'
+						);
+
+						return $state;
+					};
+
+					// Apply selectWoo.
+					faSelect = elSelector.selectWoo(
+						{
+							data: faData,
+							width: '100%',
+							templateResult: formatState,
+						}
+					);
+
+					faSelect.val( value ).trigger( 'change' );
+
+					faSelect.on(
+						'change',
+						function () {
+							control.setting.set( elSelector.val() );
+						}
+					);
+				},
+			}
+		);
+	}
+)( jQuery );
 
 /**
  * Group control JS to handle the group customize option.
@@ -802,18 +889,21 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 						change : function ( event, ui ) {
 
 							if ( 'undefined' != typeof event.originalEvent || 'undefined' != typeof ui.color._alpha ) {
+
 								var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
 								name        = $( element ).parents( '.customize-control' ).attr( 'id' );
+								var picker  = $( '#' + name + '.customize-control-colormag-color .colormag-color-picker-alpha' );
 								name        = name.replace( 'customize-control-', '' );
+								var current = picker.iris( 'color' );
 
-								$( element ).val( ui.color.toString() );
+								$( element ).val( current );
 
 								control.container.trigger(
 									'colormag_settings_changed',
 									[
 										control,
 										$( element ),
-										ui.color.toString(),
+										current,
 										name
 									]
 								);
@@ -1525,81 +1615,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 		} );
 
-	}
-)( jQuery );
-
-/**
- * Control: FontAwesome.
- */
-(
-	function ( $ ) {
-
-		wp.customize.controlConstructor['colormag-fontawesome'] = wp.customize.Control.extend(
-			{
-				ready: function () {
-					'use strict';
-
-					var control = this;
-
-					control.initColorMagFontawesomeControl();
-				},
-
-				initColorMagFontawesomeControl: function() {
-					var control       = this,
-						selector      = control.selector,
-						elSelector    = $( selector ).find( 'select' ),
-						faData        = [],
-						value         = control.setting._value,
-						data          = window['ColorMagCustomizerControlFontawesome' + this.id],
-						faDataCounter = 0,
-						faSelect;
-
-					$.each(
-						data,
-						function ( key, value ) {
-							faData[ faDataCounter ] = {
-								id: value,
-								text: value
-							};
-
-							faDataCounter++;
-						}
-					);
-
-					// Add HTML inside the option element.
-					function formatState( state ) {
-
-						if ( ! state.id ) {
-							return state.text;
-						}
-
-						var $state = $(
-							'<span><i class="fa fa-lg ' + state.text + '"></i> ' + state.text + '</span>'
-						);
-
-						return $state;
-					};
-
-					// Apply selectWoo.
-					faSelect = elSelector.selectWoo(
-						{
-							data: faData,
-							width: '100%',
-							templateResult: formatState,
-						}
-					);
-
-					faSelect.val( value ).trigger( 'change' );
-
-					faSelect.on(
-						'change',
-						function () {
-							control.setting.set( elSelector.val() );
-						}
-					);
-				},
-			}
-		);
 	}
 )( jQuery );
 

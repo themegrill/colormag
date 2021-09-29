@@ -340,18 +340,21 @@
 						change : function ( event, ui ) {
 
 							if ( 'undefined' != typeof event.originalEvent || 'undefined' != typeof ui.color._alpha ) {
+
 								var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
 								name        = $( element ).parents( '.customize-control' ).attr( 'id' );
+								var picker  = $( '#' + name + '.customize-control-colormag-color .colormag-color-picker-alpha' );
 								name        = name.replace( 'customize-control-', '' );
+								var current = picker.iris( 'color' );
 
-								$( element ).val( ui.color.toString() );
+								$( element ).val( current );
 
 								control.container.trigger(
 									'colormag_settings_changed',
 									[
 										control,
 										$( element ),
-										ui.color.toString(),
+										current,
 										name
 									]
 								);

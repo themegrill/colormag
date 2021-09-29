@@ -148,7 +148,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	 *
 	 * @return string
 	 */
-	public static function sanitize_alpha_color( $color ) {
+	public static function sanitize_alpha_color( $color, $setting ) {
 
 		if ( '' === $color ) {
 			return '';
@@ -166,14 +166,66 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 
 			sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 
+			if ( 'background_color' === $setting->id ) {
+				return self::convert_rgba_to_hex( $red, $green, $blue, $alpha );
+			}
+
 			return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
 
-		} else {
-			sscanf( $color, 'rgb(%d,%d,%d)', $red, $green, $blue );
+		}
+
+		sscanf( $color, 'rgb(%d,%d,%d)', $red, $green, $blue );
+
+		if ( 'background_color' === $setting->id ) {
+			return self::convert_rgba_to_hex( $red, $green, $blue );
 		}
 
 		return 'rgb(' . $red . ',' . $green . ',' . $blue . ')';
 
+	}
+
+	/**
+	 * Converts RGB/A to a Hex value.
+	 *
+	 * @param int   $red color value.
+	 * @param int   $green color value.
+	 * @param int   $blue color value.
+	 * @param float $alpha color value.
+	 * @return string Hex value.
+	 */
+	public static function convert_rgba_to_hex( $red, $green, $blue, $alpha = 1 ) {
+
+		$red   = dechex( (int) $red );
+		$green = dechex( (int) $green );
+		$blue  = dechex( (int) $blue );
+		$alpha = (float) $alpha;
+
+		if ( strlen( $red ) < 2 ) {
+			$red = '0' . $red;
+		}
+
+		if ( strlen( $green ) < 2 ) {
+			$green = '0' . $green;
+		}
+
+		if ( strlen( $blue ) < 2 ) {
+			$blue = '0' . $blue;
+		}
+
+		if ( $alpha < 1 ) {
+
+			$alpha = $alpha * 255;
+
+			if ( $alpha < 7 ) {
+				$alpha = '0' . dechex( $alpha );
+			} else {
+				$alpha = dechex( $alpha );
+			}
+
+			return $red . $green . $blue . $alpha;
+		}
+
+		return $red . $green . $blue;
 	}
 
 	/**
@@ -336,7 +388,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 
 		// Sanitizing the alpha color option.
 		if ( isset( $background_args['background-color'] ) ) {
-			$output['background-color'] = self::sanitize_alpha_color( $background_args['background-color'] );
+			$output['background-color'] = self::sanitize_alpha_color( $background_args['background-color'], $setting );
 		}
 
 		// Sanitizing the background image option.

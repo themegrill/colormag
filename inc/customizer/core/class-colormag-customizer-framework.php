@@ -142,6 +142,27 @@ class ColorMag_Customizer_FrameWork {
 		$wp_customize->register_panel_type( 'ColorMag_WP_Customize_Panel' );
 		$wp_customize->register_section_type( 'ColorMag_Upsell_Section' );
 
+		// Overrides sanitize callback if theme supports custom-background.
+		if ( current_theme_supports( 'custom-background' ) ) {
+
+			remove_filter(
+				'customize_sanitize_background_color',
+				$wp_customize->get_setting( 'background_color' )->sanitize_callback
+			);
+
+			$wp_customize->get_setting( 'background_color' )->sanitize_callback = array(
+				'ColorMag_Customizer_FrameWork_Sanitizes',
+				'sanitize_alpha_color',
+			);
+
+			add_filter(
+				'customize_sanitize_background_color',
+				array( 'ColorMag_Customizer_FrameWork_Sanitizes', 'sanitize_alpha_color' ),
+				10,
+				2
+			);
+		}
+
 		/**
 		 * Register controls.
 		 */
