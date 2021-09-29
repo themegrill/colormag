@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - TBD =
+* Fix - Color opacity option in customizer not working properly.
+
 = Version - 2.1.0 - 2021-09-06 =
 * Fix - Dropdown issue in widgets.
 * Fix - Background color customizer option not working properly.
