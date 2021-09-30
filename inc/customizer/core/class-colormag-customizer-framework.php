@@ -163,6 +163,27 @@ class ColorMag_Customizer_FrameWork {
 			);
 		}
 
+		// Overrides sanitize callback if theme supports custom-header.
+		if ( current_theme_supports( 'custom-header' ) ) {
+
+			remove_filter(
+				'customize_sanitize_header_textcolor',
+				$wp_customize->get_setting( 'header_textcolor' )->sanitize_callback
+			);
+
+			$wp_customize->get_setting( 'header_textcolor' )->sanitize_callback = array(
+				'ColorMag_Customizer_FrameWork_Sanitizes',
+				'sanitize_alpha_color',
+			);
+
+			add_filter(
+				'customize_sanitize_header_textcolor',
+				array( 'ColorMag_Customizer_FrameWork_Sanitizes', 'sanitize_alpha_color' ),
+				10,
+				2
+			);
+		}
+
 		/**
 		 * Register controls.
 		 */
