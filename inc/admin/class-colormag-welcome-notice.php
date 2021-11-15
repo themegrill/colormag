@@ -23,7 +23,7 @@ class Colormag_Welcome_Notice {
 	 *
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started with Colormag', 'colormag' ) . '">' . esc_html__( 'Get started with Colormag', 'colormag' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started with ColorMag', 'colormag' ) . '">' . esc_html__( 'Get started with ColorMag', 'colormag' ) . '</a>';
 
 		return $html;
 	}
@@ -51,7 +51,7 @@ class Colormag_Welcome_Notice {
 						<?php
 						printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'Welcome! Thank you for choosing Colormag! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'colormag' ),
+							esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'colormag' ),
 							'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
 							'</a>'
 						);
