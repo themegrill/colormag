@@ -93,6 +93,8 @@ class ColorMag_Customizer {
 		// Additional customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-options.php';
 
+		// Include the required customize review link file.
+		require COLORMAG_CUSTOMIZER_DIR . '/options/review-link/class-colormag-customize-review-link-options.php';
 	}
 
 }
