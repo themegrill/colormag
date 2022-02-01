@@ -252,6 +252,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
+			array(
+				'name'             => 'colormag_customize_review_link_section',
+				'type'             => 'section',
+				'title'            => esc_html__( 'Leave a Review on .org', 'colormag' ),
+				'url'              => 'https://wordpress.org/support/theme/colormag/reviews/#new-post',
+				'priority'         => 200,
+				'section_callback' => 'ColorMag_Upsell_Section',
+			)
+
 		);
 
 		$options = array_merge( $options, $configs );
