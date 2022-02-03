@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+== TBD ==
+* Add - Review link section on customizer.
+
 = Version - TBD =
 * Fix - Color opacity option in customizer not working properly.
 
