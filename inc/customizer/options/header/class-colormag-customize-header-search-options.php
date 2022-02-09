@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class ColorMag_Customize_Header_Search_Options
  */
+if ( class_exists( 'WooCommerce' ) ) :
 class ColorMag_Customize_Header_Search_Options extends ColorMag_Customize_Base_Option {
 
 	/**
@@ -30,28 +31,27 @@ class ColorMag_Customize_Header_Search_Options extends ColorMag_Customize_Base_O
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
 	public function register_options( $options, $wp_customize ) {
+			$configs = array(
 
-		$configs = array(
+				/**
+				 * Header Search options.
+				 */
 
-			/**
-			 * Header Search options.
-			 */
-
-			array(
-				'name'        => 'colormag_header_search_option',
-				'default'     => 'wp_search',
-				'label'       => esc_html__( 'Choose a search option', 'colormag' ),
-				'description' => esc_html__( 'Applicable to Header Style 1, 2 and 3.', 'colormag' ),
-				'section'     => 'colormag_header_search_section',
-				'type'        => 'control',
-				'control'	  => 'select',
-				'choices'     => array(
-					'wp_search' => esc_html__( 'WordPress search', 'colormag' ),
-					'wc_search' => esc_html__( 'WooCommerce search', 'colormag' ),
+				array(
+					'name'        => 'colormag_header_search_option',
+					'default'     => 'wp_search',
+					'label'       => esc_html__( 'Choose a search option', 'colormag' ),
+					'description' => esc_html__( 'Applicable to Header Style 1, 2 and 3.', 'colormag' ),
+					'section'     => 'colormag_header_search_section',
+					'type'        => 'control',
+					'control'	  => 'select',
+					'choices'     => array(
+						'wp_search' => esc_html__( 'WordPress search', 'colormag' ),
+						'wc_search' => esc_html__( 'WooCommerce search', 'colormag' ),
+					),
+					'priority' => 10,
 				),
-				'priority' => 10,
-			),
-		);
+			);
 
 		$options = array_merge( $options, $configs );
 
@@ -62,3 +62,4 @@ class ColorMag_Customize_Header_Search_Options extends ColorMag_Customize_Base_O
 }
 
 return new ColorMag_Customize_Header_Search_Options();
+endif;
