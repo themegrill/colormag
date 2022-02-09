@@ -208,6 +208,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'Sticky Header', 'colormag' ),
 				'panel'    => 'colormag_header_panel',
+				'priority' => 45,
+			),
+
+			array(
+				'name'     => 'colormag_header_search_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Header Search', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
 				'priority' => 50,
 			),
 
