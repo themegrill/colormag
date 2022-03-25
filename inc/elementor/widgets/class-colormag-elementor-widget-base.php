@@ -38,7 +38,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		// Controls related to widget title section.
 		$this->widget_title_controls();
