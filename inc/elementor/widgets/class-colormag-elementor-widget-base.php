@@ -12,7 +12,7 @@ namespace ColorMagElementor;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Scheme_Color;
+use Elementor\Core\Schemes\Color;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -112,8 +112,8 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#289dcc',
 				'scheme'    => array(
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
@@ -129,8 +129,8 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'scheme'    => array(
-					'type'  => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
+					'type'  => Color::get_type(),
+					'value' => Color::COLOR_1,
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
