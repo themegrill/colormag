@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version - TBD =
+= Version - 2.1.1 - 2022-03-25 =
 * Fix - Elementor\Scheme_Color is deprecated.
 * Fix - _register_controls is deprecated.
 * Fix - Color opacity option in customizer not working properly.

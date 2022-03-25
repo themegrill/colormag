@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2021 ThemeGrill
+# <!=Copyright (C) 2022 ThemeGrill
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 2.1.0\n"
+"Project-Id-Version: ColorMag 2.1.1\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2021-09-06 06:32:39+00:00\n"
+"POT-Creation-Date: 2022-03-25 06:22:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -196,14 +196,14 @@ msgid "Got pre sales queries?"
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:26
-msgid "Get started with Colormag"
+msgid "Get started with ColorMag"
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:54
 #. translators: 1: welcome page link starting html tag, 2: welcome page link
 #. ending html tag.
 msgid ""
-"Welcome! Thank you for choosing Colormag! To fully take advantage of the "
+"Welcome! Thank you for choosing ColorMag! To fully take advantage of the "
 "best our theme can offer please make sure you visit our %1$swelcome "
 "page%2$s."
 msgstr ""
