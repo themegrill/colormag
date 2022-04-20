@@ -79,7 +79,7 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 
 				endif; // Do not display the front pages sidebar areas when the Page Builder Template is activated.
 
-				if ( 0 == get_theme_mod( 'colormag_hide_blog_front', 0 ) ) :
+				if ( ! get_theme_mod( 'colormag_hide_blog_front', 0 ) ) :
 					?>
 
 					<div class="article-container">

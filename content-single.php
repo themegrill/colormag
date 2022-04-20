@@ -31,7 +31,7 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 
 	<?php
 	if ( ! has_post_format( array( 'gallery' ) ) ) :
-		if ( 0 == get_theme_mod( 'colormag_featured_image_show', 0 ) && has_post_thumbnail() ) :
+		if ( ! get_theme_mod( 'colormag_featured_image_show', 0 ) && has_post_thumbnail() ) :
 			?>
 			<div class="featured-image">
 				<?php if ( 1 == get_theme_mod( 'colormag_featured_image_popup', 0 ) ) : ?>

@@ -65,6 +65,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+== TBD ==
+* Fix - Option for hiding blog/static page on front page not working on certain condition.
+* Fix - Option for disabling Featured Image on single post not working on certain condition.
+
 = Version - 2.1.1 - 2022-03-25 =
 * Fix - Elementor\Scheme_Color is deprecated.
 * Fix - _register_controls is deprecated.
