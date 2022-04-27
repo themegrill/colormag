@@ -65,9 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== TBD ==
+= Version - 2.1.2 - 2022-04-20 =
 * Fix - Option for hiding blog/static page on front page not working on certain condition.
-* Fix - Option for disabling Featured Image on single post not working on certain condition.
+* Fix - Featured image not showing in a single post on certain condition.
 
 = Version - 2.1.1 - 2022-03-25 =
 * Fix - Elementor\Scheme_Color is deprecated.
