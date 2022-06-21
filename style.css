@@ -17,7 +17,6 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
-/* cyrillic-ext */
 @font-face {
 	font-family: 'Open Sans';
 	font-style: normal;
@@ -25,6 +24,60 @@ and Blueprint http://www.blueprintcss.org/
 	font-stretch: normal;
 	font-display: fallback;
 	src: url(fonts/OpenSans-VariableFont.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-Bold.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-ExtraBold.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-Light.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-Medium.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-Regular.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-SemiBold.woff) format("woff");
 }
 
 /*==========  Gray colors  ==========*/
