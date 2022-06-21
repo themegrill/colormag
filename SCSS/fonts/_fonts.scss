@@ -1,10 +1,12 @@
+/* Fonts.
+--------------------------------------------- */
 @font-face {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(fonts/OpenSans-VariableFont.woff) format('woff');
+	src: url(fonts/OpenSans-Bold.woff) format('woff');
 }
 
 @font-face {
@@ -13,7 +15,7 @@
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(fonts/OpenSans-Bold.woff) format('woff');
+	src: url(fonts/OpenSans-BoldItalic.woff) format('woff');
 }
 
 @font-face {
@@ -31,8 +33,35 @@
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
+	src: url(fonts/OpenSans-ExtraBoldItalic.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-Italic.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
 	src:
-	url(fonts/OpenSans-Light.woff) format('woff');
+		url(fonts/OpenSans-Light.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-LightItalic.woff) format('woff');
 }
 
 @font-face {
@@ -42,6 +71,15 @@
 	font-stretch: normal;
 	font-display: fallback;
 	src: url(fonts/OpenSans-Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-MediumItalic.woff) format('woff');
 }
 
 @font-face {
@@ -60,5 +98,23 @@
 	font-stretch: normal;
 	font-display: fallback;
 	src:
-	url(fonts/OpenSans-SemiBold.woff) format('woff');
+		url(fonts/OpenSans-SemiBold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-SemiBoldItalic.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-VariableFont.woff) format('woff');
 }

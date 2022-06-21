@@ -17,13 +17,15 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
+/* Fonts.
+--------------------------------------------- */
 @font-face {
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(fonts/OpenSans-VariableFont.woff) format("woff");
+	src: url(fonts/OpenSans-Bold.woff) format("woff");
 }
 
 @font-face {
@@ -32,7 +34,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(fonts/OpenSans-Bold.woff) format("woff");
+	src: url(fonts/OpenSans-BoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -50,6 +52,24 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
+	src: url(fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-Italic.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
 	src: url(fonts/OpenSans-Light.woff) format("woff");
 }
 
@@ -59,7 +79,25 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
+	src: url(fonts/OpenSans-LightItalic.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
 	src: url(fonts/OpenSans-Medium.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-MediumItalic.woff) format("woff");
 }
 
 @font-face {
@@ -78,6 +116,24 @@ and Blueprint http://www.blueprintcss.org/
 	font-stretch: normal;
 	font-display: fallback;
 	src: url(fonts/OpenSans-SemiBold.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-SemiBoldItalic.woff) format("woff");
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	font-display: fallback;
+	src: url(fonts/OpenSans-VariableFont.woff) format("woff");
 }
 
 /*==========  Gray colors  ==========*/
