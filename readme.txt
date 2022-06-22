@@ -66,7 +66,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 == TBD ==
-* Implement - Load default fonts locally for GDPR compliant.
+* Tweak - Load default fonts locally.
 
 = Version - 2.1.2 - 2022-04-20 =
 * Fix - Option for hiding blog/static page on front page not working on certain condition.
