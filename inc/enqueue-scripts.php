@@ -113,19 +113,6 @@ function colormag_block_editor_styles() {
 
 add_action( 'enqueue_block_editor_assets', 'colormag_block_editor_styles', 1, 1 );
 
-
-///**
-// * Action hook to get the required Google fonts for this theme.
-// */
-//function colormag_get_fonts() {
-//
-//	ColorMag_Generate_Fonts::add_font( 'Open Sans', array( '400', '600' ) );
-//
-//}
-//
-//add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
-
-
 /**
  * Filter hook to get the required Google font subsets for this theme.
  */
