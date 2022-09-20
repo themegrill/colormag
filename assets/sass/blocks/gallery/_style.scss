@@ -1,0 +1,9 @@
+.wp-block-gallery,
+.wp-block-social-links {
+
+	&.alignleft,
+	&.alignright,
+	&.aligncenter {
+		display: flex;
+	}
+}

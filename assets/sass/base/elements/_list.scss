@@ -1,0 +1,17 @@
+/**
+ * List.
+ */
+ul {
+	list-style: none;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li {
+	> ul,
+	> ol {
+		margin: 0 0 0 10px;
+	}
+}

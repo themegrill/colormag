@@ -1,0 +1,81 @@
+/*
+Theme Name: ColorMag Pro
+Theme URI: https://themegrill.com/themes/colormag/
+Author: ThemeGrill
+Author URI: https://themegrill.com/wordpress-themes/
+Description: ColorMag Pro is the pro version of ColorMag free theme.
+Version: 3.4.3
+Tested up to: 6.0
+Requires PHP: 5.6
+License: GNU General Public License, version 3 (GPLv3)
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats, footer-widgets, blog, e-commerce, news, rtl-language-support
+Text Domain: colormag
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+
+/* Import Fonts.
+--------------------------------------------- */
+@import "fonts/fonts";
+
+/*--------------------------------------------------------------
+# Abstracts
+--------------------------------------------------------------*/
+
+/* Import variables and mixins.
+--------------------------------------------- */
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "layouts/layouts";
+
+/*--------------------------------------------------------------
+# Gutenberg blocks.
+--------------------------------------------------------------*/
+@import "blocks/blocks";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+@import "plugins/wp-pagenavi";
+@import "plugins/headroom";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/accessibility";
+@import "utilities/alignments";
+@import "utilities/clearings";
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@import "responsive/responsive";

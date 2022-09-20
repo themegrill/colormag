@@ -1,0 +1,411 @@
+/* Header Layout: Classic.
+--------------------------------------------- */
+.colormag-header-classic {
+
+	.breaking-news {
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 0;
+	}
+
+	.breaking-news-latest {
+		background-color: $color__background-news;
+		padding-left: 8px;
+		padding-right: 8px;
+		color: $color__white;
+		font-weight: 400;
+	}
+
+	.newsticker {
+
+		a {
+			color: $color__gray-four;
+
+			&:hover {
+				color: $color__primary;
+			}
+		}
+	}
+
+	/* Social Icons. */
+	.fa {
+		color: $color__social-icon;
+	}
+
+	.social-links {
+
+		li {
+
+			&:hover {
+
+				.fa {
+					color: $color__primary;
+				}
+			}
+		}
+
+	}
+
+	/* Primary Header. */
+	#header-text-nav-wrap {
+		padding: 30px 0 20px;
+
+		#header-right-section {
+			display: none;
+		}
+
+		#header-left-section {
+			display: unset;
+			float: none;
+			text-align: center;
+
+			#header-logo-image,
+			#header-text {
+				float: none;
+				padding-right: 0;
+
+				padding-left: 0;
+			}
+		}
+	}
+
+	#site-navigation {
+		box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
+		position: relative;
+		background-color: transparent;
+		border-top: 0 solid transparent;
+		z-index: 999;
+
+		&.headroom--pinned {
+			background: inherit;
+		}
+
+		.inner-wrap {
+			background-color: transparent;
+		}
+
+		.fa.search-top {
+			color: $color__menu-link;
+			float: right;
+			font-size: 16px;
+			padding: 15px;
+
+			&:hover {
+				background: transparent;
+				color: $color__primary;
+			}
+
+		}
+
+
+		.menu-toggle {
+			line-height: 26px;
+			border: 1px solid $color__menu-link;
+
+			&::before {
+				padding: 20px;
+				color: $color__menu-link;;
+			}
+
+			&:hover {
+				border-color: $color__primary;
+
+				&::before {
+					color: $color__white;
+				}
+			}
+		}
+	}
+
+	.main-navigation {
+		a {
+			font-weight: 700;
+			padding: 10px 0;
+			line-height: 26px;
+			color: $color__menu-link;
+			background-color: transparent;
+
+			&::after {
+				color: inherit;
+			}
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+
+		li {
+			background-color: transparent;
+		}
+
+		ul {
+
+			li {
+				&.current-menu-item,
+				&.current_page_item,
+				&:hover,
+				&.focus {
+					& > a {
+						color: $color__primary;
+					}
+				}
+
+				&.current-menu-item ul li a,
+				ul li.current-menu-item a,
+				&.current_page_ancestor ul li a,
+				&.current-menu-ancestor ul li a,
+				&.current_page_item ul li a {
+					color: $color__menu-link;
+				}
+			}
+
+			> li {
+				padding-left: 15px;
+				padding-right: 15px;
+				float: none;
+				display: inline-block;
+				vertical-align: top;
+
+				> a {
+					border-bottom: 2px solid transparent;
+					transition: border 0.5s ease;
+				}
+
+				&:hover,
+				&.current-menu-item,
+				&.current-menu-ancestor {
+					> a {
+						background-color: transparent;
+						border-bottom: 2px solid $color__primary;
+					}
+
+				}
+			}
+
+			ul.sub-menu {
+				top: 100%;
+				background-color: $color__gray-ten;
+				transition: all 0.3s ease;
+				display: block;
+				opacity: 0;
+				visibility: hidden;
+				border: 1px solid $color__gray-eight;
+				text-align: left;
+
+				li {
+					border-bottom: 1px solid $color__gray-eight;
+					display: block;
+					padding-left: 0;
+					padding-right: 0;
+
+					a {
+						width: auto;
+						padding: 10px 15px;
+						transition: all 0.5s ease;
+						border-color: transparent;
+					}
+
+					&:hover,
+					&.current-menu-ancestor,
+					&.current-menu-item,
+					&.focus {
+						border-color: $color__primary;
+
+						> a {
+							background-color: $color__primary;
+							color: $color__white;
+						}
+					}
+
+					&:last-child {
+						border-bottom: none transparent;
+					}
+
+					ul {
+						top: 0;
+						transition: none;
+					}
+				}
+			}
+
+
+			li.menu-item-has-children {
+				&:hover {
+					> ul.sub-menu {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+
+			li.focus {
+				> a {
+					border-color: $color__primary;
+				}
+
+				> ul.sub-menu {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		.random-post {
+
+			a {
+				font-size: 14px;
+				padding: 10px 15px;
+				color: $color__menu-link;
+
+				&:hover {
+					background: transparent;
+
+					.fa-random {
+						color: $color__primary;
+					}
+				}
+
+
+				.fa-random {
+					color: $color__menu-link;
+				}
+			}
+		}
+
+		.home-icon {
+			background: none;
+
+			a {
+				padding: 10px 15px;
+
+				&:hover {
+
+					.fa {
+						color: $color__primary;
+					}
+				}
+			}
+
+			.fa {
+				color: $color__menu-link;
+			}
+		}
+	}
+
+	.main-small-navigation {
+		.menu-primary-container,
+		.nav-menu {
+			padding-top: 0;
+			position: absolute;
+			top: 100%;
+			width: 100%;
+			box-shadow: 0 1px 11px rgba(0, 0, 0, 0.2);
+		}
+
+		.random-post {
+			bottom: 0;
+
+			a {
+				font-size: 14px;
+				padding: 12px 15px;
+				color: $color__menu-link;
+
+				&:hover {
+					background: transparent;
+
+					.fa-random {
+						color: $color__primary;
+					}
+				}
+
+
+				.fa-random {
+					color: $color__menu-link;
+				}
+			}
+		}
+
+		.menu-toggle {
+			background-color: $color__primary;
+			border-color: $color__primary;
+
+			&::before {
+				color: $color__white;
+			}
+		}
+	}
+
+
+	.is-sticky {
+		#site-navigation {
+			background-color: $color__white;
+			box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+		}
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.colormag-header-classic {
+		.breaking-news {
+			margin-top: 10px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.colormag-header-classic {
+
+		.breaking-news {
+			margin-top: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.colormag-header-classic {
+		#header-text-nav-wrap {
+			padding: 0;
+		}
+
+		#header-left-section,
+		#header-logo-image {
+			margin-bottom: 0;
+
+		}
+
+		.main-small-navigation {
+			.menu-toggle {
+				background-color: $color__primary;
+				border-color: $color__primary;
+			}
+
+			.random-post {
+				a {
+					padding: 15px;
+				}
+			}
+		}
+
+		#site-navigation {
+			.random-post {
+				a {
+					padding: 15px;
+				}
+			}
+
+			.menu-toggle::before,
+			.fa.search-top {
+				padding: 15px;
+				line-height: 26px;
+			}
+
+			.home-icon {
+
+				a {
+					padding: 15px;
+					line-height: 26px;
+				}
+			}
+		}
+	}
+}

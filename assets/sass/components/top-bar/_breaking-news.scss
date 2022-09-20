@@ -1,0 +1,40 @@
+.breaking-news {
+	background-color: $color__background-gray;
+	line-height: 20px;
+	padding-left: 8px;
+	padding-right: 8px;
+	display: flex;
+	position: relative;
+	word-wrap: break-word;
+	font-size: 14px; // For Below Navigation options.
+
+	.breaking-news-main & { /* Below Navigation */
+		display: inline-flex;
+	}
+
+	div {
+		display: inline-block;
+		word-wrap: break-word;
+	}
+
+	@include breakpoint("mdm") {
+		margin-top: 0;
+	}
+}
+
+.breaking-news-latest {
+	color: $color__gray-four;
+	position: relative;
+}
+
+.newsticker {
+	max-width: 240px;
+	overflow: hidden;
+	margin-left: 4px;
+}
+
+/* Below Navigation */
+.breaking-news-main {
+	margin-bottom: 1%;
+	padding-bottom: 30px;
+}

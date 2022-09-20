@@ -254,7 +254,7 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 		);
 		?>
 
-		<div class="social-links clearfix">
+		<div class="social-links">
 			<ul>
 				<?php
 				/**
@@ -338,23 +338,29 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 			?>
 
 			<div class="news-bar">
-				<div class="inner-wrap clearfix">
-					<?php
-					// Displays the current date.
-					if ( 1 == $date_display_enable ) {
-						colormag_date_display();
-					}
+				<div class="inner-wrap">
+					<div class="tg-news-bar__one">
+						<?php
+						// Displays the current date.
+						if ( 1 == $date_display_enable ) {
+							colormag_date_display();
+						}
 
-					// Displays the breaking news.
-					if ( 1 == $breaking_news_enable ) {
-						colormag_breaking_news();
-					}
+						// Displays the breaking news.
+						if ( 1 == $breaking_news_enable ) {
+							colormag_breaking_news();
+						}
+						?>
+					</div>
 
-					// Displays the social links in header.
-					if ( 1 == $social_links_enable && 1 == $social_links_location ) {
-						colormag_social_links();
-					}
-					?>
+					<div class="tg-news-bar__two">
+						<?php
+						// Displays the social links in header.
+						if ( 1 == $social_links_enable && 1 == $social_links_location ) {
+							colormag_social_links();
+						}
+						?>
+					</div>
 				</div>
 			</div>
 

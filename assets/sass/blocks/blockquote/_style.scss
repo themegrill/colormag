@@ -1,0 +1,61 @@
+blockquote,
+.wp-block-quote,
+.wp-block-quote.is-style-large,
+.wp-block-quote.has-text-align-right {
+	padding: 30px 30px 20px 45px;
+	margin-bottom: 20px;
+	background-color: $color__primary;
+	color: $color__white;
+	border-radius: 5px;
+	border-left: 0;
+
+	p {
+		font-size: 16px;
+		font-family: "Open Sans", serif;
+		line-height: 1.4;
+		position: relative;
+		padding-top: 0;
+		padding-left: 15px;
+
+		&::before {
+			content: "\f10d";
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: inherit;
+			color: $color__white;
+			font-size: 32px;
+			position: absolute;
+			top: -27px;
+			left: -27px;
+		}
+	}
+
+	a {
+		color: $color__white;
+		text-decoration: underline;
+	}
+
+	em,
+	i,
+	cite {
+		font-style: normal;
+	}
+
+	cite {
+		font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		float: right;
+	}
+}
+
+blockquote {
+
+	&.wp-block-quote {
+
+		&.has-text-align-right {
+			border-right: 0;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+#page {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#main {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	background-color: #ffffff;
+}
+
+.wide {
+	padding-top: 0;
+	padding-bottom: 0;
+
+	#page {
+		max-width: 100%;
+	}
+}
+
+#primary {
+	float: left;
+	width: 70.17543859%;
+}
+
+#secondary {
+	float: right;
+	width: 27.19298245%;
+}
+
+.main-content-section {
+	padding-top: 20px;
+
+	.tg-one-half {
+		width: 48.75%;
+		padding-bottom: 0;
+		margin-right: 0;
+		float: left;
+
+		&.tg-one-half-last {
+			float: right;
+		}
+	}
+}

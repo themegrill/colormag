@@ -1,0 +1,87 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: #444444;
+	font-size: 16px;
+	font-family: "Open Sans", serif;
+	line-height: 1.6;
+	word-wrap: break-word;
+}
+
+p {
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+pre {
+	background-color: $color__white;
+	margin-bottom: 20px;
+	overflow: auto;
+	padding: 20px;
+	border: 1px solid $color__border;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
+}
+
+code,
+kbd,
+var,
+samp,
+tt {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
+}
+
+abbr,
+acronym,
+dfn {
+	border-bottom: 1px dotted #777777;
+	cursor: help;
+}
+
+address {
+	display: block;
+	font-style: italic;
+	margin: 0 0 15px;
+}
+
+ins {
+	background: #f8f8f8;
+}
+
+hr,
+.wp-block-separator {
+	background-color: $color__border;
+	border: 0;
+	height: 1px;
+	margin: 30px 0;
+}
+
+dl {
+	font-size: 16px;
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+dd {
+	margin-bottom: 24px;
+}

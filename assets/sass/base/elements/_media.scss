@@ -1,0 +1,152 @@
+/**
+ * Media.
+ */
+figure {
+	margin: 0;
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+	margin-bottom: 18px;
+}
+
+.entry-content,
+.comment-content,
+.widget {
+	img {
+		max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	}
+}
+
+img {
+
+	&.size-full,
+	&.size-large {
+		max-width: 100%;
+		height: auto;
+	}
+
+	&.alignleft,
+	&.alignright,
+	&.aligncenter {
+		margin-bottom: 1.625em;
+	}
+
+	a & {
+		border: 0;
+	}
+
+	&#wpstats {
+		display: none;
+	}
+}
+
+.entry-content {
+	img {
+		&.wp-smiley {
+			border: none;
+			margin-bottom: 0;
+			margin-top: 0;
+			padding: 0;
+		}
+	}
+}
+
+/* Captions. */
+.wp-caption {
+	border: 1px solid $color__gray-seven;
+	margin-bottom: 1.5rem;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 1.2% auto 0;
+		max-width: 98%;
+	}
+
+	#colophon & {
+		border: 1px solid #444444;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075rem 0;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* WordPress Gallery Support. */
+.gallery {
+	margin: 0 auto 15px;
+
+	.gallery-caption {
+		font-size: 12px;
+		line-height: 1.2;
+		padding-top: 5px;
+	}
+}
+
+.gallery-item {
+	display: inline-block;
+	padding: 15px 2%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	box-sizing: border-box;
+
+	.gallery-columns-3 &,
+	.gallery-columns-4 &,
+	.gallery-columns-5 & {
+		padding: 15px 1%;
+	}
+
+	.gallery-columns-6 &,
+	.gallery-columns-7 &,
+	.gallery-columns-8 &,
+	.gallery-columns-9 & {
+		padding: 10px 0.5%;
+	}
+
+	.gallery-columns-2 & {
+		width: 50%;
+	}
+
+	.gallery-columns-3 & {
+		width: 33.33%;
+	}
+
+	.gallery-columns-4 & {
+		width: 25%;
+	}
+
+	.gallery-columns-5 & {
+		width: 20%;
+	}
+
+	.gallery-columns-6 & {
+		width: 16.66%;
+	}
+
+	.gallery-columns-7 & {
+		width: 14.28%;
+	}
+
+	.gallery-columns-8 & {
+		width: 12.5%;
+	}
+
+	.gallery-columns-9 & {
+		width: 11.11%;
+	}
+}
+
+.gallery-icon {
+	img {
+		margin: 0 auto;
+	}
+}

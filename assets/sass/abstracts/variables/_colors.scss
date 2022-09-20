@@ -1,0 +1,66 @@
+// Light.
+$color__white: #fff;
+$color__gray-eleven: darken($color__white, 2.5%); // #f9f9f9
+$color__gray-ten: darken($color__white, 2.6%); // #f8f8f8
+$color__gray-nine: darken($color__white, 5%); // #f2f2f2
+$color__gray-eight: darken($color__white, 8.4%); // #eaeaea
+$color__gray-seven: darken($color__white, 20%); // #cccccc
+
+// Dark.
+$color__black: #000;
+$color__gray-one: lighten($color__black, 13.6%); // #232323
+$color__gray-two: lighten($color__black, 20%); // #333333
+$color__gray-three: lighten($color__black, 26.5%); // #444444
+$color__gray-four: lighten($color__black, 33.5%); // # 555
+$color__gray-five: lighten($color__black, 46.5%); // #777777
+$color__gray-six: lighten($color__black, 53.5%); // #888888
+
+// Brand.
+$color__primary: #289dcc;
+$color__title: #424143;
+$color__border: #eaeaea;
+$color__background-gray: #EBEBEC;
+$color__background-news: #212529;
+$color__social-icon: #495057;
+$color__menu-link: #343a40;
+$color__background-news-bar: #f1f3f5;
+$color__border-title: #5e616a;
+$color__border-footer: #40444f;
+$color__background-footer-socket: #252730;
+$color__light-content: darken($color__white, 35%);
+
+// Dark mode.
+$color__background-dark: #151515;
+$color__background-dark-page: #0D0D0D;
+$color__background-dark-footer-socket: #121212;
+$color__background-medium-footer-socket: lighten($color__background-dark-footer-socket, 1.5%);
+$color__background-dark-news: lighten($color__background-dark-page, 1.5%); // #1e1e1e
+
+// Socials.
+$color__twitter: #1bb2e9;
+$color__facebook: #3b5a9b;
+$color__youtube: #ed3f41;
+$color__vimeo-square: #44bbff;
+$color__skype: #009cef;
+$color__linkedin: #007bb6;
+$color__google-plus: #dc4937;
+$color__github: #4183c4;
+$color__flickr: #0062dd;
+$color__dribbble: #e24d87;
+$color__instagram: #3f729b;
+$color__pinterest: #d5282e;
+$color__stumbleupon: #ec4823;
+$color__tumblr: #455469;
+$color__wordpress: #21759b;
+$color__codepen: #ccc;
+$color__digg: #14589e;
+$color__reddit: #ff4500;
+$color__xing: #026466;
+$color__vk: #45668e;
+$color__weibo: #e6162d;
+$color__leanpub: #000;
+$color__renren: #237bc2;
+$color__rss: #f26522;
+$color__soundcloud: #ff3a00;
+$color__vine: #00bf8f;
+$color__delicious: #2a96ff;

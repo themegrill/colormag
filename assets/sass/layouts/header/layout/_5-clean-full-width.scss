@@ -1,0 +1,16 @@
+/* Header Layout: Clean Full Width.
+--------------------------------------------- */
+.colormag-header-clean--full-width {
+	#site-navigation {
+		background-color: $color__background-news;
+	}
+
+	.news-bar {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		background-color: $color__background-news-bar;
+	}
+
+	#header-text-nav-wrap {
+		padding-bottom: 0;
+	}
+}

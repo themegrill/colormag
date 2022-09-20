@@ -1,0 +1,49 @@
+/* Top Bar.
+--------------------------------------------- */
+#header-meta {
+	background-color: $color__white;
+}
+
+.news-bar {
+	background-color: $color__gray-ten;
+	padding: 8px 0;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	border-bottom-style: solid;
+
+	.inner-wrap {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+.tg-news-bar__two {
+	flex: 1;
+}
+
+@include breakpoint("mdm") {
+
+	.tg-news-bar__one,
+	.tg-news-bar__two {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+	}
+}
+
+@include breakpoint("lrg") {
+
+	.tg-news-bar__two {
+		justify-content: flex-end;
+	}
+
+	.news-bar {
+		.inner-wrap {
+			flex-direction: row;
+			gap: 15px;
+		}
+	}
+
+
+}

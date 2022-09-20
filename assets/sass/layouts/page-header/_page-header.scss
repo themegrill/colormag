@@ -1,0 +1,13 @@
+.page-header .page-title {
+	border-bottom: 2px solid $color__primary;
+	font-size: 18px;
+	margin-bottom: 15px;
+	padding-bottom: 0;
+
+	span {
+		background-color: $color__primary;
+		color: $color__white;
+		padding: 6px 12px;
+		display: inline-block;
+	}
+}

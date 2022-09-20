@@ -1,0 +1,169 @@
+/* Social Icons.
+--------------------------------------------- */
+.fa {
+	font-size: 22px;
+	color: $color__gray-seven;
+}
+
+.social-links {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	li {
+		margin-left: 16px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	a {
+		display: flex;
+		width: 20px;
+		height: 20px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.fa {
+		text-align: center;
+		transition: color 0.2s ease-out 0s;
+		font-size: 18px;
+
+		&:hover {
+			color: $color__primary;
+		}
+	}
+
+	.fa-twitter {
+		color: $color__twitter;
+	}
+
+	.fa-facebook {
+		color: $color__facebook;
+	}
+
+	.fa-youtube {
+		color: $color__youtube;
+	}
+
+	.fa-vimeo-square {
+		color: $color__vimeo-square;
+	}
+
+	.fa-skype {
+		color: $color__skype;
+	}
+
+	.fa-linkedin {
+		color: $color__linkedin;
+	}
+
+	.fa-google-plus {
+		color: $color__google-plus;
+	}
+
+	.fa-github {
+		color: $color__github;
+	}
+
+	.fa-flickr {
+		color: $color__flickr;
+	}
+
+	.fa-dribbble {
+		color: $color__dribbble;
+	}
+
+	.fa-instagram {
+		color: $color__instagram;
+	}
+
+	.fa-pinterest {
+		color: $color__pinterest;
+	}
+
+	.fa-stumbleupon {
+		color: $color__stumbleupon;
+	}
+
+	.fa-tumblr {
+		color: $color__tumblr;
+	}
+
+	.fa-wordpress {
+		color: $color__wordpress;
+	}
+
+	.fa-codepen {
+		color: $color__gray-seven;
+	}
+
+	.fa-digg {
+		color: $color__digg;
+	}
+
+	.fa-reddit {
+		color: $color__reddit;
+	}
+
+	.fa-xing {
+		color: $color__xing;
+	}
+
+	.fa-vk {
+		color: $color__vk;
+	}
+
+	.fa-weibo {
+		color: $color__weibo;
+	}
+
+	.fa-leanpub {
+		color: $color__leanpub;
+	}
+
+	.fa-renren {
+		color: $color__renren;
+	}
+
+	.fa-rss {
+		color: $color__rss;
+	}
+
+	.fa-soundcloud {
+		color: $color__soundcloud;
+	}
+
+	.fa-vine {
+		color: $color__vine;
+	}
+
+	.fa-delicious {
+		color: $color__delicious;
+	}
+}
+
+.search-random-icons-container {
+	.social-links {
+		float: left;
+
+		a {
+			padding: 10px 2px;
+		}
+
+		a:hover {
+			color: #81d742;
+		}
+
+		ul {
+			li {
+				display: inline-block;
+				background: unset;
+			}
+		}
+	}
+}

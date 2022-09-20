@@ -1,0 +1,29 @@
+/* Post Format: Link.
+--------------------------------------------- */
+.format-link .entry-content {
+	p {
+		text-align: center;
+		padding-top: 30px;
+	}
+
+	a {
+		text-decoration: underline;
+		text-transform: uppercase;
+		padding: 15px 40px;
+		border-radius: 3px;
+		background-color: $color__primary;
+		color: #ffffff;
+		transition: background-color 0.3s linear 0s;
+		display: inline-block;
+
+		&:hover {
+			background-color: #33363b;
+		}
+	}
+}
+
+/* Post Format: Aside.
+--------------------------------------------- */
+.format-aside .entry-header {
+	display: none;
+}

@@ -1,0 +1,86 @@
+/* Search.
+--------------------------------------------- */
+.search-random-icons-container {
+	order: 3;
+	margin-left: auto;
+	display: flex;
+}
+
+#masthead .search-wrap input.s {
+	width: 200px;
+}
+
+.fa.search-top {
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 21px;
+	padding: 10px 12px;
+
+	&:hover {
+		background-color: $color__primary;
+	}
+}
+
+.search-wrap {
+	position: relative;
+
+	button {
+		border-radius: 0;
+		color: $color__white;
+		line-height: 45px;
+		margin-bottom: 0;
+		padding: 0 15px;
+		margin-left: -5px;
+		margin-top: 1px;
+	}
+}
+
+.search-icon::before {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	color: $color__white;
+	font-size: 18px;
+}
+
+.search-form-top {
+	border: 1px solid $color__border;
+	display: none;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	top: 44px;
+	z-index: 9999;
+	background-color: $color__white;
+
+	&.show {
+		display: block;
+	}
+}
+
+.not-found .search-wrap button {
+	right: 175px;
+}
+
+#secondary .search-wrap button {
+	right: 26px;
+}
+
+/* Random Posts Icon.
+--------------------------------------------- */
+.random-post {
+	order :1;
+
+	.fa-random {
+		color: $color__white;
+		font-size: 20px;
+		vertical-align: middle;
+	}
+}
+
+.main-navigation .random-post a {
+	border-bottom: medium none;
+	padding: 10px 12px;
+}

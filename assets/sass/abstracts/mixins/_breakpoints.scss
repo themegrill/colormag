@@ -1,0 +1,18 @@
+@mixin breakpoint($point) {
+	@if $point == xlrg {
+		@media screen and (min-width: 1200px) { @content ; }
+	}
+	@else if $point == lrg {
+		@media screen and (min-width: 992px) { @content ; }
+	}
+	@else if $point == mdm {
+		@media screen and (min-width: 768px) { @content ; }
+	}
+	@else if $point == sml {
+		@media screen and (min-width: 600px)  { @content ; }
+	}
+	@else if $point == xsml {
+		@media screen and (max-width: 600px)  { @content ; }
+
+	}
+}

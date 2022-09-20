@@ -1,0 +1,14 @@
+/**
+ * Links.
+ */
+a {
+	color: $color__primary;
+	text-decoration: none;
+	transition: all 0.3s ease;
+
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: none;
+	}
+}

@@ -155,7 +155,10 @@ jQuery( document ).ready(
 					direction    : 'down',
 					duration     : 4000,
 					autostart    : 1,
-					pauseOnHover : 1
+					pauseOnHover : 1,
+					start        : function () {
+						jQuery( '.newsticker' ).css( 'visibility', 'visible' );
+					}
 				}
 			);
 		}
@@ -197,7 +200,11 @@ jQuery( document ).ready(
 					nextSelector   : '.slide-next',
 					prevSelector   : '.slide-prev',
 					pager          : false,
-					tickerHover    : true
+					tickerHover    : true,
+					onSliderLoad   : function () {
+						jQuery( '.widget_slider_area_rotate' ).css( 'visibility', 'visible' );
+						jQuery( '.widget_slider_area_rotate' ).css( 'height', 'auto' );
+					}
 				}
 			);
 

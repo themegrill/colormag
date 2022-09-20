@@ -1,0 +1,136 @@
+/**
+ * Fields.
+ */
+input,
+textarea {
+	-webkit-border-radius: 0;
+}
+
+input {
+	&[type="text"],
+	&[type="email"],
+	&[type="search"],
+	&[type="password"],
+	&[type="url"] {
+		appearance: none !important;
+
+		&:focus {
+			border: 1px solid $color__border;
+		}
+	}
+
+	&[type="reset"],
+	&[type="button"],
+	&[type="submit"] {
+		margin-bottom: 30px;
+		padding: 5px 10px;
+		background-color: $color__primary;
+		border: 0;
+		transition: background-color 0.3s linear 0s;
+		border-radius: 3px;
+		font-size: 16px;
+		appearance: none !important;
+		cursor: pointer;
+		display: inline-block;
+		color: $color__white;
+
+		&:active {
+			box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+
+		&:hover {
+			background-color: #33363b;
+		}
+	}
+
+	&[type="text"],
+	&[type="email"],
+	&[type="password"],
+	&[type="url"] {
+		padding: 1%;
+		border: 1px solid $color__border;
+		line-height: 20px;
+		width: 95%;
+		margin: 0 0 30px;
+		background-color: #f8f8f8;
+		border-radius: 3px;
+	}
+
+	&.s {
+		width: 85%;
+		padding: 4px 54px 4px 10px;
+		height: 45px;
+		color: #777777;
+		background-color: $color__white;
+		margin: 0;
+		border: 1px solid $color__border;
+
+		&:focus {
+			padding-left: 10px;
+			border-color: $color__border;
+			text-indent: 0;
+		}
+	}
+}
+
+textarea {
+	appearance: none !important;
+	padding: 1%;
+	border: 1px solid $color__border;
+	line-height: 20px;
+	width: 95%;
+	margin: 0 0 30px;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+
+	&:focus {
+		border: 1px solid $color__border;
+	}
+}
+
+
+.colormag-button {
+	margin-bottom: 30px;
+	padding: 5px 10px;
+	background-color: $color__primary;
+	border: 0;
+	transition: background-color 0.3s linear 0s;
+	border-radius: 3px;
+	font-size: 16px;
+	appearance: none !important;
+	cursor: pointer;
+	display: inline-block;
+	color: $color__white;
+
+	&:hover {
+		background-color: #33363b;
+	}
+}
+
+
+button {
+	padding: 5px 10px;
+	background-color: $color__primary;
+	border: 0;
+	transition: background-color 0.3s linear 0s;
+	border-radius: 3px;
+	font-size: 16px;
+	appearance: none !important;
+	cursor: pointer;
+	display: inline-block;
+	color: $color__white;
+
+	&:hover {
+		background-color: #33363b;
+	}
+}
+
+#search-form {
+	input[type="submit"] {
+		border-radius: 0;
+		margin-left: -8px;
+		margin-bottom: 0;
+		padding: 6px 10px 5px;
+		font-size: 18px;
+	}
+}

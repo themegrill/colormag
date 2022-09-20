@@ -1,0 +1,45 @@
+/* 404 Page.
+--------------------------------------------- */
+.error-404 .page-header .page-title {
+	border: medium none;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.error-wrap span {
+	display: block;
+	text-align: center;
+}
+
+.num-404 {
+	color: $color__primary;
+	font-size: 300px;
+	font-weight: 700;
+	line-height: 300px;
+}
+
+.error {
+	background: $color__primary none repeat scroll 0 0;
+	color: #ffffff;
+	font-size: 25px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	line-height: 35px;
+	margin: 20px auto;
+	padding: 2px 28px;
+	text-transform: uppercase;
+	width: 93%;
+}
+
+.error-404 {
+	.page-header, p {
+		text-align: center;
+	}
+}
+
+.page-template-page-builder {
+	#primary {
+		float: none;
+		width: 100%;
+	}
+}

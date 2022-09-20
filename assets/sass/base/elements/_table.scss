@@ -1,0 +1,26 @@
+/**
+ * Table.
+ */
+table {
+	/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 0 1.5em;
+	width: 100%;
+
+	th {
+		font-weight: bold;
+	}
+
+	th,
+	td {
+		border: 1px solid $color__border;
+		padding: 6px 10px;
+	}
+
+	caption,
+	th,
+	td {
+		text-align: left;
+	}
+}
