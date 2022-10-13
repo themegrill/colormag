@@ -446,18 +446,6 @@ a:focus, a:active, a:hover {
 	margin: 0;
 }
 
-/* 3 Columns. */
-.tg-one-third {
-	float: left;
-	width: 31.578947%;
-	margin: 0 2.631579% 0 0;
-}
-
-.tg-one-third-last {
-	float: right;
-	margin-right: 0;
-}
-
 /* 4 Columns. */
 .tg-one-fourth {
 	float: left;
