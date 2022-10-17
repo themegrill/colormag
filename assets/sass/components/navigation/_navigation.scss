@@ -429,19 +429,6 @@ li.default-menu {
 Styles for separating single posts loaded from ajax call.
 --------------------------------------------------------------*/
 
-.tg-autoload-posts {
-
-	.related-posts {
-		margin-bottom: 25px;
-	}
-
-	.tg-post + .tg-post {
-		margin-top: 15px;
-		padding-top: 60px;
-		border-top: 1px solid #f8f8f8;
-	}
-}
-
 #comments.comments-area {
 
 	.tg-autoload-posts & {
