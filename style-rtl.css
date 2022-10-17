@@ -1787,7 +1787,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	margin-bottom: 0;
 }
 
-.top-full-width-sidebar .widget_featured_slider {
+.widget_featured_slider {
 	margin-bottom: 10px;
 }
 
@@ -5187,18 +5187,11 @@ ul.wp-block-gallery img {
 	margin-left: 0;
 }
 
-.top-full-width-sidebar .widget-title, .footer-widgets-area .widget-title {
+.footer-widgets-area .widget-title {
 	border-bottom: 2px solid #289dcc;
 	font-size: 18px;
 	margin-bottom: 15px;
 	padding-bottom: 0;
-}
-
-.top-full-width-sidebar .widget-title span {
-	background-color: #289dcc;
-	color: #fff;
-	padding: 6px 12px;
-	display: inline-block;
 }
 
 .footer-widgets-area .widget-title span {
@@ -5410,26 +5403,6 @@ Classic Bordered Layout
 
 #colophon.colormag-footer--classic .first-post .article-content, #colophon.colormag-footer--classic-bordered .first-post .article-content {
 	padding: 0 0 5px;
-}
-
-/* Footer Menu.
---------------------------------------------- */
-.footer-menu {
-	padding-top: 5px;
-}
-
-.footer-menu ul li {
-	display: inline-block;
-	padding-right: 10px;
-	font-size: 12px;
-}
-
-#colophon .footer-menu ul li a {
-	color: #b1b6b6;
-}
-
-#colophon .footer-menu ul li a:hover {
-	color: #289dcc;
 }
 
 /* Scroll to Top.

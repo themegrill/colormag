@@ -71,18 +71,11 @@
 	margin-right: 0;
 }
 
-.top-full-width-sidebar .widget-title, .footer-widgets-area .widget-title {
+.footer-widgets-area .widget-title {
 	border-bottom: 2px solid $color__primary;
 	font-size: 18px;
 	margin-bottom: 15px;
 	padding-bottom: 0;
-}
-
-.top-full-width-sidebar .widget-title span {
-	background-color: $color__primary;
-	color: $color__white;
-	padding: 6px 12px;
-	display: inline-block;
 }
 
 .footer-widgets-area {
@@ -329,26 +322,6 @@ Classic Bordered Layout
 		}
 	}
 
-}
-
-/* Footer Menu.
---------------------------------------------- */
-.footer-menu {
-	padding-top: 5px;
-
-	ul li {
-		display: inline-block;
-		padding-left: 10px;
-		font-size: 12px;
-	}
-}
-
-#colophon .footer-menu ul li a {
-	color: #b1b6b6;
-
-	&:hover {
-		color: $color__primary;
-	}
 }
 
 /* Scroll to Top.
