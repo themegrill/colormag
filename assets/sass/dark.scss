@@ -192,6 +192,7 @@ body {
 		color: $color__gray-seven;
 		border-color: $color__gray-five;
 	}
+
 	.view-all-link {
 		background :$color__background-dark-page;
 	}
@@ -271,16 +272,20 @@ body {
 		.footer-widgets-wrapper {
 			background-color: $color__background-medium-footer-socket;
 		}
+
 		.footer-socket-wrapper {
 			background-color: $color__background-dark-footer-socket;
 		}
 	}
+
 	.elementor {
 		.tg-module-wrapper {
 			color: $color__gray-seven;
+
 			.tg-module-title {
 				color: $color__white;
 			}
+
 			.tg-module-meta {
 				.tg-post-auther-name,
 				.tg-post-date,
@@ -291,6 +296,7 @@ body {
 					}
 				}
 			}
+
 			&.tg-module-block.tg-module-block--style-5 .tg_module_block .tg-module-title,
 			&.tg-module-block.tg-module-block--style-5 .tg_module_block .block-content {
 				background: $color__background-dark-page;

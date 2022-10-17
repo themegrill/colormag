@@ -259,9 +259,11 @@
 	.image-ticker-news .article-content .entry-title {
 		display: none;
 	}
+
 	.logged-in #masthead #site-navigation {
 		top: 0 !important;
 	}
+
 	.archive #content {
 		.post {
 			&:first-child, &:nth-child( 2n ), &:nth-child( 2n+1 ) {
@@ -275,6 +277,7 @@
 			width: 100%;
 		}
 	}
+
 	.blog #content .archive-layout-grid.post:first-child,
 	.search #content .archive-layout-grid.post:first-child,
 	.archive #content .archive-layout-grid.post:nth-child( odd ),
@@ -337,25 +340,31 @@
 		margin-right: 0;
 		width: 100%;
 	}
+
 	.tg-footer-other-widgets {
 		float: none;
 		width: 100%;
 	}
+
 	.footer-socket-right-section, .footer-socket-left-section {
 		float: none;
 		text-align: center;
 	}
+
 	.footer-socket-wrapper .copyright {
 		float: none;
 		max-width: 100%;
 		text-align: center;
 	}
+
 	.footer-socket-area .social-links {
 		float: none;
 	}
+
 	.gallery-columns-4 .gallery-item, .gallery-columns-5 .gallery-item, .gallery-columns-6 .gallery-item, .gallery-columns-7 .gallery-item, .gallery-columns-8 .gallery-item, .gallery-columns-9 .gallery-item {
 		width: 25%;
 	}
+
 	.author-img {
 		img {
 			margin-right: 0;
