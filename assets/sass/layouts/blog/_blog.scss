@@ -29,8 +29,7 @@
 .search #content .status-publish,
 .archive #content .status-publish {
 
-	&:not( :first-child ) .article-content .entry-title,
-	&.archive-layout-two:first-child .article-content .entry-title {
+	&:not( :first-child ) .article-content .entry-title {
 		font-size: 22px;
 	}
 }
