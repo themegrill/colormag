@@ -1578,39 +1578,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	content: "\f04c";
 }
 
-/* Load image elements smoothly
- * on page load and scroll.
---------------------------------------------- */
-.tg-image-to-reveal-fade-in-up {
-	opacity: 0;
-	-webkit-transform: translateY(5px);
-	transform: translateY(5px);
-	-webkit-transition: all .8s ease-out;
-	transition: all .8s ease-out;
-}
-
-.tg-image-to-reveal-fade-in-down {
-	opacity: 0;
-	-webkit-transform: translateY(-5px);
-	transform: translateY(-5px);
-	-webkit-transition: all .8s ease-out;
-	transition: all .8s ease-out;
-}
-
-.tg-image-to-reveal-fade-in {
-	opacity: 0;
-	-webkit-transition: all .8s ease-out;
-	transition: all .8s ease-out;
-}
-
-.tg-image-to-reveal-fade-in-up--is-revealed,
-.tg-image-to-reveal-fade-in-down--is-revealed,
-.tg-image-to-reveal-fade-in--is-revealed {
-	opacity: 1;
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
-}
-
 /* Front Page Widget Areas.
 --------------------------------------------- */
 .widget_slider_area {
