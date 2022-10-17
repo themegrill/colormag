@@ -1229,23 +1229,23 @@ li.default-menu {
 
 /* Pagination.
 --------------------------------------------- */
-.link-pagination {
+.pagination {
 	margin: 15px 0;
 }
 
-.link-pagination span {
+.pagination span {
 	padding: 2px 5px;
 	border: 1px solid #eaeaea;
 	background-color: #289dcc;
 	color: #ffffff;
 }
 
-.link-pagination a span {
+.pagination a span {
 	background-color: #ffffff;
 	color: #777777;
 }
 
-.link-pagination a span:hover {
+.pagination a span:hover {
 	color: #289dcc;
 	border-color: #289dcc;
 	text-decoration: none;
