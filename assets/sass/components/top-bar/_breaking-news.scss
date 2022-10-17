@@ -8,10 +8,6 @@
 	word-wrap: break-word;
 	font-size: 14px; // For Below Navigation options.
 
-	.breaking-news-main & { /* Below Navigation */
-		display: inline-flex;
-	}
-
 	div {
 		display: inline-block;
 		word-wrap: break-word;
@@ -31,10 +27,4 @@
 	max-width: 240px;
 	overflow: hidden;
 	margin-left: 4px;
-}
-
-/* Below Navigation */
-.breaking-news-main {
-	margin-bottom: 1%;
-	padding-bottom: 30px;
 }

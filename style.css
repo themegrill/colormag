@@ -805,13 +805,6 @@ button:hover {
 	font-size: 14px;
 }
 
-.breaking-news-main .breaking-news {
-	/* Below Navigation */
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-}
-
 .breaking-news div {
 	display: inline-block;
 	word-wrap: break-word;
@@ -832,12 +825,6 @@ button:hover {
 	max-width: 240px;
 	overflow: hidden;
 	margin-left: 4px;
-}
-
-/* Below Navigation */
-.breaking-news-main {
-	margin-bottom: 1%;
-	padding-bottom: 30px;
 }
 
 .date-in-header {
