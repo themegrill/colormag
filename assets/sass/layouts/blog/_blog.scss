@@ -35,9 +35,6 @@
 	}
 }
 
-#content .post {
-}
-
 .single #content .post {
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
@@ -49,24 +46,6 @@
 
 .single #content .post {
 	margin-bottom: 0;
-}
-
-.human-diff-time {
-	font-size: 12px;
-	color: #888888;
-
-	.posted-on {
-		&:not( .human-diff-time-display ) {
-			display: none;
-		}
-	}
-
-	.human-diff-time-display {
-		&:hover {
-			color: $color__primary;
-			cursor: pointer;
-		}
-	}
 }
 
 #content .post {
