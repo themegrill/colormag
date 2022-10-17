@@ -5288,26 +5288,6 @@ blockquote.wp-block-quote.has-text-align-right {
 	border: 1px solid #f2f2f2;
 }
 
-/* Plugin: Headroom.
---------------------------------------------- */
-.headroom {
-	will-change: transform;
-	-webkit-transition: -webkit-transform 200ms linear;
-	transition: -webkit-transform 200ms linear;
-	transition: transform 200ms linear;
-	transition: transform 200ms linear, -webkit-transform 200ms linear;
-}
-
-#site-navigation.headroom--pinned {
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-#site-navigation.headroom--unpinned {
-	-webkit-transform: translateY(-100%);
-	transform: translateY(-100%);
-}
-
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
