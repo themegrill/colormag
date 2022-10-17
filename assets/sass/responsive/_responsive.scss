@@ -35,35 +35,6 @@
 	}
 }
 
-@media screen and (min-width: 980px) {
-	.weather-location .owf {
-		line-height: 120px;
-	}
-	.weather-info .weather-icon {
-		font-size: 150px;
-	}
-	.weather-location-name {
-		font-size: 30px;
-		padding-top: 0;
-	}
-	.weather-desc {
-		font-size: 18px;
-		padding-top: 15px;
-	}
-	.weather-current-temp {
-		font-size: 60px;
-	}
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail {
-				width: 50%;
-			}
-		}
-	}
-}
-
 @media screen and (max-width: 1190px) {
 	#page {
 		width: 97%;
@@ -85,48 +56,6 @@
 	}
 	.video-player.video-player--horizontal .video-playlist .video-playlist-item {
 		width: 25.5%;
-	}
-}
-
-@media (min-width: 769px) and (max-width: 979px) {
-	.weather-today {
-		margin-left: 0;
-	}
-	.video-playlist {
-		width: 40%;
-	}
-	.video-player--vertical {
-		.video-playing {
-			width: 60%;
-			padding-bottom: 54%;
-		}
-
-		.video-playlist-info {
-			width: 70.5%;
-		}
-	}
-
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail {
-				width: 50%;
-			}
-		}
-	}
-}
-
-@media (min-width: 601px) and (max-width: 800px) {
-
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail {
-				width: 50%;
-			}
-		}
 	}
 }
 
@@ -305,9 +234,6 @@
 	.call-to-action__title {
 		font-size: 36px;
 	}
-	.widget_call_to_action .btn--primary {
-		padding: 15px 20px;
-	}
 }
 
 @media screen and (max-width: 600px) {
@@ -405,17 +331,6 @@
 			}
 		}
 	}
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail,
-			.article-content {
-				width: 100%;
-				float: none;
-			}
-		}
-	}
 
 	.tg-footer-main-widget {
 		float: none;
@@ -471,28 +386,6 @@
 
 	.call-to-action-content {
 		margin-bottom: 20px;
-	}
-
-	.widget_call_to_action .btn--primary {
-		padding: 10px 15px;
-		font-weight: 400;
-	}
-
-	.video-player.video-player--horizontal {
-		.video-playing {
-			padding-bottom: 70%;
-		}
-
-		.video-playlist .video-playlist-item {
-			width: 51%;
-		}
-	}
-
-	.exchange-currency {
-		&.exchange-column-2 .currency-table, &.exchange-column-3 .currency-table {
-			width: 100%;
-			padding-right: 0;
-		}
 	}
 
 	.weather-forecast-day, #secondary .weather-forecast-day {
@@ -555,16 +448,6 @@
 
 @media screen and (max-width: 420px) {
 
-	.widget_block_picture_news.widget_highlighted_posts {
-
-		.single-article {
-			float: none;
-			margin-right: 0;
-			max-width: 100%;
-			width: 100%;
-		}
-	}
-
 	.widget_highlighted_posts .single-article {
 		float: none;
 		margin-right: 0;
@@ -617,20 +500,6 @@
 	height: 0;
 }
 
-/* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
-
-.mega-menu {
-	.widget_slider_area_rotate, .widget_block_picture_news .widget_highlighted_post_area, .thumbnail-big-sliders, .image-ticker-news, .breaking-news-widget-slide {
-		visibility: hidden !important;
-	}
-
-	.mega-toggle-on {
-		.widget_slider_area_rotate, .widget_block_picture_news .widget_highlighted_post_area, .thumbnail-big-sliders, .image-ticker-news, .breaking-news-widget-slide {
-			visibility: visible !important;
-		}
-	}
-}
-
 /*--------------------------------------------------------------
 17.0 JetPack Infinite Scroll
 --------------------------------------------------------------*/
@@ -653,80 +522,9 @@
 18.0 single post pagination
 --------------------------------------------------------------*/
 
-.thumbnail-pagination {
-	margin: 30px 0;
-}
-
 .default-wp-page {
 	.previous, .next {
 		padding: 10px;
 		box-sizing: border-box;
-	}
-}
-
-.thumbnail-pagination {
-	li {
-		width: 49.5%;
-		-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-		-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-		min-height: 90px;
-	}
-
-	img {
-		width: 20%;
-		display: inline-block;
-		vertical-align: top;
-		margin: 0;
-	}
-
-	.next {
-		text-align: right;
-	}
-
-	.previous a {
-		padding-left: 4%;
-	}
-
-	.next a {
-		padding-right: 4%;
-	}
-
-	a {
-		display: inline-block;
-		vertical-align: top;
-		width: 75%;
-		color: #67666a;
-		line-height: 28px;
-		position: relative;
-		text-transform: uppercase;
-		padding: 0;
-		font-weight: 700;
-
-		&:hover {
-			text-decoration: none;
-		}
-
-		span {
-			display: none;
-		}
-	}
-}
-
-@media screen and (max-width: 767px) {
-	.thumbnail-pagination {
-		li {
-			width: 100%;
-			display: block;
-			min-height: 70px;
-
-			&.previous {
-				margin-bottom: 20px;
-			}
-		}
-
-		a {
-			font-size: 15px;
-		}
 	}
 }
