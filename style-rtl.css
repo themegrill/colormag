@@ -832,30 +832,6 @@ button:hover {
 	text-align: center;
 }
 
-.top-bar-menu {
-	text-align: center;
-}
-
-.top-bar-menu ul {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	gap: 10px;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-}
-
-.top-bar-menu li:first-child {
-	margin-right: 0;
-}
-
-.top-bar-menu a {
-	display: block;
-}
-
 /* Primary Menu.
 --------------------------------------------- */
 nav li > ul, nav li > ol {
