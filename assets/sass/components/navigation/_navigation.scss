@@ -147,21 +147,6 @@ li.default-menu {
 	display: none;
 }
 
-.menu-logo {
-	a {
-		padding: 0;
-
-		&:hover {
-			background-color: unset;
-		}
-	}
-
-	img {
-		width: auto;
-		margin-bottom: 0;
-	}
-}
-
 /* Primary Menu: Dropdown.
 --------------------------------------------- */
 .main-navigation {
@@ -327,12 +312,6 @@ li.default-menu {
 
 .main-small-navigation {
 	float: none;
-
-	.menu-logo {
-		a {
-			padding: 0;
-		}
-	}
 
 	.menu-primary-container {
 		width: 100%;

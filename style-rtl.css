@@ -999,19 +999,6 @@ li.default-menu {
 	display: none;
 }
 
-.menu-logo a {
-	padding: 0;
-}
-
-.menu-logo a:hover {
-	background-color: unset;
-}
-
-.menu-logo img {
-	width: auto;
-	margin-bottom: 0;
-}
-
 /* Primary Menu: Dropdown.
 --------------------------------------------- */
 .main-navigation .sub-menu,
@@ -1156,10 +1143,6 @@ li.default-menu {
 
 .main-small-navigation {
 	float: none;
-}
-
-.main-small-navigation .menu-logo a {
-	padding: 0;
 }
 
 .main-small-navigation .menu-primary-container {
@@ -3972,10 +3955,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 	top: 0;
 }
 
-.colormag-header-clean .menu-logo a {
-	padding: 0;
-}
-
 .colormag-header-clean .main-small-navigation .menu-primary-container,
 .colormag-header-clean .main-small-navigation .nav-menu {
 	padding-top: 0;
@@ -4018,9 +3997,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 	.colormag-header-clean #site-navigation .menu-toggle::before,
 	.colormag-header-clean #site-navigation .fa.search-top {
 		padding: 20px;
-	}
-	.colormag-header-clean .main-small-navigation .menu-logo a {
-		padding: 0;
 	}
 	.colormag-header-clean .main-small-navigation .home-icon a {
 		padding: 20px;
