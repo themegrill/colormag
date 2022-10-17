@@ -168,8 +168,7 @@ body {
 
 .dark-skin #masthead.colormag-header-clean .breaking-news .newsticker a,
 .dark-skin #masthead.colormag-header-clean .social-links i.fa, .dark-skin #masthead.colormag-header-classic .breaking-news .newsticker a,
-.dark-skin #masthead.colormag-header-classic .social-links i.fa, .dark-skin #masthead.colormag-header-clean--full-width .breaking-news .newsticker a,
-.dark-skin #masthead.colormag-header-clean--full-width .social-links i.fa {
+.dark-skin #masthead.colormag-header-classic .social-links i.fa {
 	color: #cccccc;
 }
 
@@ -209,10 +208,6 @@ body {
 .dark-skin #masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a .fa-random,
 .dark-skin #masthead.colormag-header-classic #site-navigation .fa.search-top {
 	color: #fff;
-}
-
-.dark-skin #masthead.colormag-header-clean--full-width .news-bar {
-	background-color: #111111;
 }
 
 .dark-skin .colormag-footer--classic .footer-widgets-wrapper {

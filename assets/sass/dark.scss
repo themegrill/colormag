@@ -216,8 +216,7 @@ body {
 		}
 
 		&.colormag-header-clean,
-		&.colormag-header-classic,
-		&.colormag-header-clean--full-width {
+		&.colormag-header-classic {
 			.breaking-news .newsticker a,
 			.social-links i.fa {
 				color: $color__gray-seven;
@@ -265,11 +264,6 @@ body {
 				.fa.search-top {
 					color: $color__white;
 				}
-			}
-		}
-		&.colormag-header-clean--full-width {
-			.news-bar {
-				background-color: $color__background-dark-news;
 			}
 		}
 	}

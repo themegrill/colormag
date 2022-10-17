@@ -3775,9 +3775,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 	.colormag-header-clean .main-small-navigation .random-post a {
 		padding: 15px;
 	}
-	.colormag-header-clean.colormag-header-clean--top #header-text-nav-wrap, .colormag-header-clean.colormag-header-clean--full-width #header-text-nav-wrap {
-		padding: 0;
-	}
 }
 
 /* Header Layout: Classic.
@@ -4116,50 +4113,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 		padding: 15px;
 		line-height: 26px;
 	}
-}
-
-/* Header Layout: Clean Top.
---------------------------------------------- */
-.colormag-header-clean--top #site-navigation {
-	margin-top: 30px;
-}
-
-.colormag-header-clean--top .is-sticky #site-navigation {
-	margin-top: 0;
-}
-
-/* Header Layout: Clean Full Width.
---------------------------------------------- */
-.colormag-header-clean--full-width #site-navigation {
-	background-color: #212529;
-}
-
-.colormag-header-clean--full-width .news-bar {
-	-webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	background-color: #f1f3f5;
-}
-
-.colormag-header-clean--full-width #header-text-nav-wrap {
-	padding-bottom: 0;
-}
-
-/* Header Layout: Classic Top.
---------------------------------------------- */
-.colormag-header-classic--top #site-navigation {
-	margin-top: 15px;
-}
-
-.colormag-header-classic--top #site-navigation.headroom--pinned {
-	margin-top: 0;
-}
-
-.colormag-header-classic--top .is-sticky #site-navigation {
-	margin-top: 0;
-}
-
-.colormag-header-classic--top #header-text-nav-wrap {
-	padding: 15px 0 30px;
 }
 
 .page-header .page-title {
