@@ -4265,14 +4265,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 	position: relative;
 }
 
-.featured-image-caption {
-	font-style: italic;
-	font-size: 14px;
-	padding: 10px 15px 0 0;
-	display: block;
-	color: #444444;
-}
-
 .archive #content .post p {
 	font-size: 14px;
 }
