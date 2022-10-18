@@ -3979,6 +3979,14 @@ ul.wp-block-gallery img {
 	color: #aaaaaa;
 }
 
+.footer-widgets-area a {
+	color: #ffffff;
+}
+
+.footer-widgets-area a:hover {
+	color: #289dcc;
+}
+
 .footer-widgets-area .reading-time {
 	color: #ffffff;
 }

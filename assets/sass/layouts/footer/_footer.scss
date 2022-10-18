@@ -91,6 +91,14 @@
 		color: #aaaaaa;
 	}
 
+	a {
+		color: #ffffff;
+
+		&:hover {
+			color: $color__primary;
+		}
+	}
+
 	.reading-time {
 		color: #ffffff;
 	}
