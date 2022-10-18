@@ -30,7 +30,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rtlcss": "^1.4.1",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.9",
     "gulp-watch": "^4.3.11"
