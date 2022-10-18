@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD ==
+* Improvements - Header top bar design and CSS code refactor
+
 = Version - 2.1.3 - 2022-06-22 =
 * Tweak - Load default fonts locally.
 
