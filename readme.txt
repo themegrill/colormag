@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD ==
+* Fix - Primary menu not center when using header style 3.
+
 = Version - 2.1.4 - 2022-10-18 ==
 * Improvements - Header top bar design and CSS code refactor.
 
