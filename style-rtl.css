@@ -856,9 +856,6 @@ nav li > ul, nav li > ol {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
 }
 
 .home-icon .fa {
@@ -1407,7 +1404,6 @@ Styles for separating single posts loaded from ajax call.
 	-webkit-box-ordinal-group: 4;
 	-ms-flex-order: 3;
 	order: 3;
-	margin-right: auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2952,6 +2948,10 @@ i.fa-arrow-up, i.fa-arrow-down {
 
 .colormag-header-classic #site-navigation .menu-toggle:hover::before {
 	color: #fff;
+}
+
+.colormag-header-classic #site-navigation .menu-primary-container {
+	margin: 0 auto;
 }
 
 .colormag-header-classic .main-navigation a {
