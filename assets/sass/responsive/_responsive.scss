@@ -145,8 +145,10 @@
 		}
 	}
 
-    .menu-primary-container .sub-menu {
-		display: none;
+    .menu-primary-container {
+        .sub-menu{
+            display: none;
+        }
 	}
 
 	.video-player--vertical {
