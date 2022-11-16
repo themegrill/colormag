@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD ==
+* Fix - Top header enlarge issue on page load.
+
 = Version - 2.1.4 - 2022-10-18 ==
 * Improvements - Header top bar design and CSS code refactor.
 
