@@ -4567,6 +4567,9 @@ blockquote.wp-block-quote.has-text-align-right {
 	.main-small-navigation li.current-menu-item > .sub-toggle i {
 		color: #d40234;
 	}
+	.better-responsive-menu .sub-menu {
+		display: none;
+	}
 	.video-player--vertical .video-playing, .video-player--vertical .video-playlist {
 		width: 100%;
 		display: block;
