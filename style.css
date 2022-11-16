@@ -825,6 +825,7 @@ button:hover {
 	max-width: 240px;
 	overflow: hidden;
 	margin-left: 4px;
+	height: 20px;
 }
 
 .date-in-header {
