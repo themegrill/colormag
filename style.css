@@ -1404,7 +1404,6 @@ Styles for separating single posts loaded from ajax call.
 	-webkit-box-ordinal-group: 4;
 	-ms-flex-order: 3;
 	order: 3;
-	margin-left: auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
