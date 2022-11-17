@@ -69,6 +69,7 @@ and we will include it within the theme from next version update.
 * Fix - Primary menu expanded by default when responsive menu is enabled.
 * Fix - Primary menu hover color issue.
 * Fix - Top header enlarge issue on page load.
+* Fix - Primary menu not centered while 3rd header style.
 
 = Version - 2.1.4 - 2022-10-18 ==
 * Improvements - Header top bar design and CSS code refactor.

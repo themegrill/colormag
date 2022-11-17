@@ -342,6 +342,10 @@
 			box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 		}
 	}
+
+    .menu-primary-container{
+        flex-grow: 1;
+    }
 }
 
 @media screen and (min-width: 481px) {
