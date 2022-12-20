@@ -4363,6 +4363,27 @@ blockquote.wp-block-quote.has-text-align-right {
 	border: 1px solid #f2f2f2;
 }
 
+[class*='mzb'] h3 {
+	padding-bottom: 0;
+}
+
+[class*='mzb'] h2 {
+	padding-bottom: 0;
+}
+
+[class*='mzb'] img {
+	margin-bottom: 0;
+}
+
+[class*='mzb'] .editor-styles-wrapper h1,
+[class*='mzb'] .editor-styles-wrapper h2,
+[class*='mzb'] .editor-styles-wrapper h3,
+[class*='mzb'] .editor-styles-wrapper h4,
+[class*='mzb'] .editor-styles-wrapper h5,
+[class*='mzb'] .editor-styles-wrapper h6 {
+	padding-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
