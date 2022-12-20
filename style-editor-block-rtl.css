@@ -1,3 +1,8 @@
+body {
+	--color--light--primary: #9bc8da;
+	--color--primary: #289dcc;
+}
+
 /* Basic Block Editor CSS */
 .editor-styles-wrapper {
 	background-color: #ffffff;
@@ -956,4 +961,115 @@
 	.editor-styles-wrapper .wp-block .gallery-columns-9 .gallery-item {
 		width: 33.33%;
 	}
+}
+
+/* Support Magazine Blocks */
+[class*='mzb'] h1,
+[class*='mzb'] h2,
+[class*='mzb'] h3,
+[class*='mzb'] h4,
+[class*='mzb'] h5,
+[class*='mzb'] h6 {
+	padding-bottom: 0;
+}
+
+[class*='mzb'] a:hover {
+	text-decoration: none;
+}
+
+[class*='mzb'] .mzb-post-list .mzb-post-title,
+[class*='mzb'] .mzb-grid-module .mzb-post-title,
+[class*='mzb'] .mzb-tab-post .mzb-post-title,
+[class*='mzb'] .mzb-featured-categories .mzb-post-title,
+[class*='mzb'] .mzb-banner-posts .mzb-post-title {
+	margin-bottom: 10px;
+}
+
+[class*='mzb'] .mzb-post-author a:hover,
+[class*='mzb'] .mzb-post-date a:hover {
+	color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-banner-posts .mzb-post-categories a {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-banner-posts .mzb-post-title {
+	margin-top: 10px;
+}
+
+[class*='mzb'] .mzb-post-count-wrapper {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-tab-post .mzb-tab-title.active {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-post-heading h2::before {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-post-meta .comments-link svg {
+	fill: var(--color--primary);
+}
+
+.mzb-post-date a,
+.mzb-post-author a {
+	color: #888888;
+}
+
+.mzb-post-date svg,
+.mzb-post-author svg {
+	fill: #888888;
+}
+
+.mzb-news-ticker span {
+	color: var(--color--primary);
+}
+
+.mzb-banner-posts .mzb-post-author a,
+.mzb-banner-posts .mzb-post-date a,
+.mzb-banner-posts .mzb-post-title a,
+.mzb-grid-module .mzb-post-author a,
+.mzb-grid-module .mzb-post-date a,
+.mzb-grid-module .mzb-post-title a {
+	color: var(--color--white);
+}
+
+.mzb-banner-posts .mzb-post-author a:hover,
+.mzb-banner-posts .mzb-post-date a:hover,
+.mzb-banner-posts .mzb-post-title a:hover,
+.mzb-grid-module .mzb-post-author a:hover,
+.mzb-grid-module .mzb-post-date a:hover,
+.mzb-grid-module .mzb-post-title a:hover {
+	color: var(--color--primary);
+}
+
+.mzb-banner-posts .mzb-post-author svg,
+.mzb-banner-posts .mzb-post-date svg,
+.mzb-banner-posts .mzb-post-title svg,
+.mzb-grid-module .mzb-post-author svg,
+.mzb-grid-module .mzb-post-date svg,
+.mzb-grid-module .mzb-post-title svg {
+	fill: var(--color--white);
+}
+
+.mzb-news-ticker svg {
+	fill: var(--color--primary);
+}
+
+.editor-styles-wrapper .components-placeholder.mzb-section-preset .mzb-section-preset-btn {
+	padding: 0 !important;
+	background-color: rgba(0, 0, 0, 0) !important;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+
+.editor-styles-wrapper [class*='mzb'] a {
+	color: #333333;
 }

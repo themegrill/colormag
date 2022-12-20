@@ -147,6 +147,11 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 /* Import variables and mixins.
 --------------------------------------------- */
+body {
+	--color--light--primary: #9bc8da;
+	--color--primary: #289dcc;
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -4363,6 +4368,20 @@ blockquote.wp-block-quote.has-text-align-right {
 	border: 1px solid #f2f2f2;
 }
 
+[class*='mzb'] a {
+	color: #333333;
+}
+
+[class*='mzb'] .mzb-post-date a,
+[class*='mzb'] .mzb-post-author a {
+	color: #888888;
+}
+
+[class*='mzb'] .mzb-post-date svg,
+[class*='mzb'] .mzb-post-author svg {
+	fill: #888888;
+}
+
 [class*='mzb'] h3 {
 	padding-bottom: 0;
 }
@@ -4382,6 +4401,66 @@ blockquote.wp-block-quote.has-text-align-right {
 [class*='mzb'] .editor-styles-wrapper h5,
 [class*='mzb'] .editor-styles-wrapper h6 {
 	padding-bottom: 0;
+}
+
+[class*='mzb'] .mzb-post-author a:hover,
+[class*='mzb'] .mzb-post-date a:hover {
+	color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-banner-posts .mzb-post-categories a {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-post-count-wrapper {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-tab-post .mzb-tab-title.active {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-post-heading h2::before {
+	background-color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-post-meta .comments-link svg {
+	fill: var(--color--primary);
+}
+
+.mzb-news-ticker span {
+	color: var(--color--primary);
+}
+
+.mzb-banner-posts .mzb-post-author a,
+.mzb-banner-posts .mzb-post-date a,
+.mzb-banner-posts .mzb-post-title a,
+.mzb-grid-module .mzb-post-author a,
+.mzb-grid-module .mzb-post-date a,
+.mzb-grid-module .mzb-post-title a {
+	color: var(--color--white);
+}
+
+.mzb-banner-posts .mzb-post-author a:hover,
+.mzb-banner-posts .mzb-post-date a:hover,
+.mzb-banner-posts .mzb-post-title a:hover,
+.mzb-grid-module .mzb-post-author a:hover,
+.mzb-grid-module .mzb-post-date a:hover,
+.mzb-grid-module .mzb-post-title a:hover {
+	color: var(--color--primary);
+}
+
+.mzb-banner-posts .mzb-post-author svg,
+.mzb-banner-posts .mzb-post-date svg,
+.mzb-banner-posts .mzb-post-title svg,
+.mzb-grid-module .mzb-post-author svg,
+.mzb-grid-module .mzb-post-date svg,
+.mzb-grid-module .mzb-post-title svg {
+	fill: var(--color--white);
+}
+
+.mzb-news-ticker svg {
+	fill: var(--color--primary);
 }
 
 /*--------------------------------------------------------------

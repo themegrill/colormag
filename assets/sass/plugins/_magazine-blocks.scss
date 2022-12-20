@@ -1,4 +1,19 @@
 [class*='mzb'] {
+    a {
+        color: #333333;
+    }
+
+    .mzb-post-date,
+    .mzb-post-author {
+        a {
+            color: #888888;
+        }
+
+        svg {
+            fill: #888888;
+        }
+    }
+
     h3 {
         padding-bottom: 0
     }
@@ -18,5 +33,81 @@
     .editor-styles-wrapper h5,
     .editor-styles-wrapper h6 {
         padding-bottom: 0;
+    }
+
+    .mzb-post-author,
+    .mzb-post-date {
+        a {
+            &:hover {
+                color: var(--color--primary);
+            }
+        }
+    }
+
+    .mzb-banner-posts {
+        .mzb-post-categories {
+            a {
+                background-color: var(--color--primary);
+            }
+        }
+    }
+
+    .mzb-post-count-wrapper {
+        background-color: var(--color--primary);
+    }
+
+    .mzb-tab-post {
+        .mzb-tab-title {
+            &.active {
+                background-color: var(--color--primary);
+
+            }
+        }
+    }
+
+    .mzb-post-heading {
+        h2 {
+            &::before {
+                background-color: var(--color--primary);
+            }
+        }
+    }
+
+    .mzb-post-meta {
+        .comments-link {
+            svg {
+                fill: var(--color--primary);
+            }
+        }
+    }
+
+}
+
+.mzb-news-ticker span {
+    color: var(--color--primary);
+}
+
+.mzb-banner-posts,
+.mzb-grid-module {
+    .mzb-post-author,
+    .mzb-post-date,
+    .mzb-post-title {
+        a {
+            color: var(--color--white);
+
+            &:hover {
+                color: var(--color--primary);
+            }
+        }
+
+        svg {
+            fill: var(--color--white);
+        }
+    }
+}
+
+.mzb-news-ticker {
+    svg {
+        fill: var(--color--primary);
     }
 }

@@ -114,6 +114,11 @@ function colormag_block_editor_styles() {
 add_action( 'enqueue_block_editor_assets', 'colormag_block_editor_styles', 1, 1 );
 
 /**
+ * Utils methods.
+ */
+require get_template_directory() . '/inc/class-colormag-utils.php';
+
+/**
  * Filter hook to get the required Google font subsets for this theme.
  */
 function colormag_font_subset() {

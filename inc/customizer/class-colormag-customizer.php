@@ -39,6 +39,9 @@ class ColorMag_Customizer {
 		// Include the required files for Customize option.
 		add_action( 'customize_register', array( $this, 'customize_options_file_include' ) , 9 );
 
+		// Include the required style for editor.
+		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_dynamic_css' ) );
+
 	}
 
 	/**
@@ -93,6 +96,27 @@ class ColorMag_Customizer {
 		// Additional customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-options.php';
 
+	}
+
+	/**
+	 * Adds inline styles.
+	 *
+	 * @return void
+	 */
+	public function customizer_dynamic_css() {
+		wp_add_inline_style( 'colormag-style', ColorMag_Dynamic_CSS::get_css() );
+	}
+
+	public function editor_dynamic_css() {
+		wp_add_inline_style( 'colormag-block-editor-styles', ColorMag_Dynamic_CSS::colormag_editor_block_css() );
+	}
+
+	/**
+	 * Undocumented function.
+	 *
+	 * @return void
+	 */
+	public function get_css() {
 	}
 
 }
