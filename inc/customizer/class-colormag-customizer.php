@@ -25,7 +25,6 @@ require( dirname( __FILE__ ) . '/core/class-colormag-customize-base-option.php' 
  */
 class ColorMag_Customizer {
 
-
 	/**
 	 * Customizer setup constructor.
 	 *

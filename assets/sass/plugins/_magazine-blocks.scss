@@ -1,17 +1,16 @@
 [class*='mzb'] {
-    a {
-        color: #333333;
+
+    .editor-styles-wrapper h1,
+    .editor-styles-wrapper h2,
+    .editor-styles-wrapper h3,
+    .editor-styles-wrapper h4,
+    .editor-styles-wrapper h5,
+    .editor-styles-wrapper h6 {
+        padding-bottom: 0;
     }
 
-    .mzb-post-date,
-    .mzb-post-author {
-        a {
-            color: #888888;
-        }
-
-        svg {
-            fill: #888888;
-        }
+    a {
+        color: var(--color--text--main);
     }
 
     h3 {
@@ -26,21 +25,18 @@
         margin-bottom: 0;
     }
 
-    .editor-styles-wrapper h1,
-    .editor-styles-wrapper h2,
-    .editor-styles-wrapper h3,
-    .editor-styles-wrapper h4,
-    .editor-styles-wrapper h5,
-    .editor-styles-wrapper h6 {
-        padding-bottom: 0;
-    }
-
-    .mzb-post-author,
-    .mzb-post-date {
+    .mzb-post-date,
+    .mzb-post-author {
         a {
+            color: var(--color-gray--six);
+
             &:hover {
                 color: var(--color--primary);
             }
+        }
+
+        svg {
+            fill: var(--color-gray--six);
         }
     }
 
@@ -83,12 +79,9 @@
 
 }
 
-.mzb-news-ticker span {
-    color: var(--color--primary);
-}
-
 .mzb-banner-posts,
 .mzb-grid-module {
+
     .mzb-post-author,
     .mzb-post-date,
     .mzb-post-title {
@@ -103,11 +96,5 @@
         svg {
             fill: var(--color--white);
         }
-    }
-}
-
-.mzb-news-ticker {
-    svg {
-        fill: var(--color--primary);
     }
 }

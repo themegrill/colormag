@@ -3,7 +3,7 @@
  * ColorMag utils class.
  *
  * @package ColorMag
- * @since   2.1.5
+ * @since   2.1.6
  */
 
 // Exit if accessed directly.
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * Class responsible for different utility methods.
  *
- * @since 2.1.5
+ * @since 2.1.6
  */
 class ColorMag_Utils {
 
@@ -24,7 +24,7 @@ class ColorMag_Utils {
 	 * @param string $hex Hex color.
 	 *
 	 * @return array      Array with color components (r, g, b).
-	 * @since  2.1.5
+	 * @since  2.1.6
 	 *
 	 */
 	public static function get_rgba_values_from_hex( $hex ) {
@@ -71,7 +71,7 @@ class ColorMag_Utils {
 	 * @param string $rgba RGBA color value.
 	 *
 	 * @return string
-	 * @since  2.1.5
+	 * @since  2.1.6
 	 *
 	 */
 	public static function rgba_to_hex( $rgba ) {
@@ -105,7 +105,7 @@ class ColorMag_Utils {
 	 * @param integer $steps -255 (darken) to 255 (brighten).
 	 *
 	 * @return string          hex or rgba color value depending on the param passed.
-	 * @since  2.1.5
+	 * @since  2.1.6
 	 *
 	 */
 	public static function adjust_color_brightness( $hex, $steps ) {
@@ -140,7 +140,7 @@ class ColorMag_Utils {
 	 * @param integer $steps 0 (transparent) to 100 (opaque).
 	 *
 	 * @return string          rgba color value with opacity level.
-	 * @since   2.1.5
+	 * @since   2.1.6
 	 *
 	 */
 

@@ -109,7 +109,6 @@ class ColorMag_Dynamic_CSS {
 
 	}
 
-
 	/**
 	 * Function to output Custom CSS code, which does not have the specific CSS design option, ie, static CSS code.
 	 *
@@ -120,12 +119,11 @@ class ColorMag_Dynamic_CSS {
 		// Generate dynamic CSS.
 		$colormag_custom_css = '';
 
-
 		return $colormag_custom_css;
 
 	}
 
-		/**
+	/**
 	 * Returns the background CSS property for editor.
 	 *
 	 * @param string|array $default_value Default value.

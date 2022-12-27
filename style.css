@@ -150,6 +150,8 @@ and Blueprint http://www.blueprintcss.org/
 body {
 	--color--light--primary: #9bc8da;
 	--color--primary: #289dcc;
+	--color--text--main: #333333;
+	--color-gray--six: #888888;
 }
 
 /*--------------------------------------------------------------
@@ -4368,18 +4370,17 @@ blockquote.wp-block-quote.has-text-align-right {
 	border: 1px solid #f2f2f2;
 }
 
+[class*='mzb'] .editor-styles-wrapper h1,
+[class*='mzb'] .editor-styles-wrapper h2,
+[class*='mzb'] .editor-styles-wrapper h3,
+[class*='mzb'] .editor-styles-wrapper h4,
+[class*='mzb'] .editor-styles-wrapper h5,
+[class*='mzb'] .editor-styles-wrapper h6 {
+	padding-bottom: 0;
+}
+
 [class*='mzb'] a {
-	color: #333333;
-}
-
-[class*='mzb'] .mzb-post-date a,
-[class*='mzb'] .mzb-post-author a {
-	color: #888888;
-}
-
-[class*='mzb'] .mzb-post-date svg,
-[class*='mzb'] .mzb-post-author svg {
-	fill: #888888;
+	color: var(--color--text--main);
 }
 
 [class*='mzb'] h3 {
@@ -4394,18 +4395,19 @@ blockquote.wp-block-quote.has-text-align-right {
 	margin-bottom: 0;
 }
 
-[class*='mzb'] .editor-styles-wrapper h1,
-[class*='mzb'] .editor-styles-wrapper h2,
-[class*='mzb'] .editor-styles-wrapper h3,
-[class*='mzb'] .editor-styles-wrapper h4,
-[class*='mzb'] .editor-styles-wrapper h5,
-[class*='mzb'] .editor-styles-wrapper h6 {
-	padding-bottom: 0;
+[class*='mzb'] .mzb-post-date a,
+[class*='mzb'] .mzb-post-author a {
+	color: var(--color-gray--six);
 }
 
-[class*='mzb'] .mzb-post-author a:hover,
-[class*='mzb'] .mzb-post-date a:hover {
+[class*='mzb'] .mzb-post-date a:hover,
+[class*='mzb'] .mzb-post-author a:hover {
 	color: var(--color--primary);
+}
+
+[class*='mzb'] .mzb-post-date svg,
+[class*='mzb'] .mzb-post-author svg {
+	fill: var(--color-gray--six);
 }
 
 [class*='mzb'] .mzb-banner-posts .mzb-post-categories a {
@@ -4426,10 +4428,6 @@ blockquote.wp-block-quote.has-text-align-right {
 
 [class*='mzb'] .mzb-post-meta .comments-link svg {
 	fill: var(--color--primary);
-}
-
-.mzb-news-ticker span {
-	color: var(--color--primary);
 }
 
 .mzb-banner-posts .mzb-post-author a,
@@ -4457,10 +4455,6 @@ blockquote.wp-block-quote.has-text-align-right {
 .mzb-grid-module .mzb-post-date svg,
 .mzb-grid-module .mzb-post-title svg {
 	fill: var(--color--white);
-}
-
-.mzb-news-ticker svg {
-	fill: var(--color--primary);
 }
 
 /*--------------------------------------------------------------
