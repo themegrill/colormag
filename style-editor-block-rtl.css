@@ -984,7 +984,7 @@ body {
 [class*='mzb'] .mzb-tab-post .mzb-post-title,
 [class*='mzb'] .mzb-featured-categories .mzb-post-title,
 [class*='mzb'] .mzb-banner-posts .mzb-post-title {
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
 
 [class*='mzb'] .mzb-post-author a:hover,

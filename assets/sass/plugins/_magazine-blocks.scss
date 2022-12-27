@@ -1,24 +1,11 @@
 [class*='mzb'] {
-
-    .editor-styles-wrapper h1,
-    .editor-styles-wrapper h2,
-    .editor-styles-wrapper h3,
-    .editor-styles-wrapper h4,
-    .editor-styles-wrapper h5,
-    .editor-styles-wrapper h6 {
-        padding-bottom: 0;
-    }
-
     a {
         color: var(--color--text--main);
     }
 
-    h3 {
-        padding-bottom: 0
-    }
-
+    h3,
     h2 {
-        padding-bottom: 0;
+        padding-bottom: 0
     }
 
     img {
@@ -29,68 +16,20 @@
     .mzb-post-author {
         a {
             color: var(--color-gray--six);
-
-            &:hover {
-                color: var(--color--primary);
-            }
         }
 
         svg {
             fill: var(--color-gray--six);
         }
     }
-
-    .mzb-banner-posts {
-        .mzb-post-categories {
-            a {
-                background-color: var(--color--primary);
-            }
-        }
-    }
-
-    .mzb-post-count-wrapper {
-        background-color: var(--color--primary);
-    }
-
-    .mzb-tab-post {
-        .mzb-tab-title {
-            &.active {
-                background-color: var(--color--primary);
-
-            }
-        }
-    }
-
-    .mzb-post-heading {
-        h2 {
-            &::before {
-                background-color: var(--color--primary);
-            }
-        }
-    }
-
-    .mzb-post-meta {
-        .comments-link {
-            svg {
-                fill: var(--color--primary);
-            }
-        }
-    }
-
 }
 
 .mzb-banner-posts,
 .mzb-grid-module {
-
     .mzb-post-author,
-    .mzb-post-date,
-    .mzb-post-title {
+    .mzb-post-date {
         a {
             color: var(--color--white);
-
-            &:hover {
-                color: var(--color--primary);
-            }
         }
 
         svg {
