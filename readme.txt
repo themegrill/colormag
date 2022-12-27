@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD ==
+* Integration - Magazine Blocks plugin.
+
 = Version - 2.1.5 - 2022-11-17 ==
 * Fix - Primary menu expanded by default when responsive menu is enabled.
 * Fix - Primary menu hover color issue.
