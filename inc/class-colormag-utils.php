@@ -146,13 +146,13 @@ class ColorMag_Utils {
 
 	public static function adjust_color_opacity( $hex, $steps ) {
 
-		$steps = max( 0, min( 100, $steps ) );
+		// $steps = max( 0, min( 100, $steps ) );
 
-		list ( 'r' => $r, 'g' => $g, 'b' => $b, 'a' => $a ) = self::get_rgba_values_from_hex( $hex );
+		// list ( 'r' => $r, 'g' => $g, 'b' => $b, 'a' => $a ) = self::get_rgba_values_from_hex( $hex );
 
-		$a = $steps / 100 * $a;
-		$a = max( 0, min( 1, round( $a, 2 ) ) );
+		// $a = $steps / 100 * $a;
+		// $a = max( 0, min( 1, round( $a, 2 ) ) );
 
-		return "rgba($r,$g,$b,$a)";
+		// return "rgba($r,$g,$b,$a)";
 	}
 }

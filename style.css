@@ -2709,6 +2709,31 @@ i.fa-arrow-up, i.fa-arrow-down {
 
 .colormag-header-clean #header-text-nav-wrap {
 	padding: 30px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-column-gap: 30px;
+	-moz-column-gap: 30px;
+	column-gap: 30px;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.colormag-header-clean #header-left-section {
+	-ms-flex-preferred-size: 30%;
+	flex-basis: 30%;
+}
+
+.colormag-header-clean #header-right-section {
+	-ms-flex-preferred-size: 65%;
+	flex-basis: 65%;
+}
+
+.colormag-header-clean img {
+	margin-bottom: 0;
 }
 
 .colormag-header-clean .home-icon .fa {
@@ -2850,6 +2875,15 @@ i.fa-arrow-up, i.fa-arrow-down {
 	}
 	.colormag-header-clean .main-small-navigation .random-post a {
 		padding: 15px;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.colormag-header-clean #header-text-nav-wrap {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		row-gap: 30px;
 	}
 }
 
