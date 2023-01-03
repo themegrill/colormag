@@ -2885,6 +2885,10 @@ i.fa-arrow-up, i.fa-arrow-down {
 		justify-content: center;
 		row-gap: 30px;
 	}
+	.colormag-header-clean #header-right-section {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+	}
 }
 
 /* Header Layout: Classic.
