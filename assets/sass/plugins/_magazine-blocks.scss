@@ -1,0 +1,39 @@
+[class*='mzb'] {
+    a {
+        color: var(--color--text--main);
+    }
+
+    h3,
+    h2 {
+        padding-bottom: 0
+    }
+
+    img {
+        margin-bottom: 0;
+    }
+
+    .mzb-post-date,
+    .mzb-post-author {
+        a {
+            color: var(--color-gray--six);
+        }
+
+        svg {
+            fill: var(--color-gray--six);
+        }
+    }
+}
+
+.mzb-banner-posts,
+.mzb-grid-module {
+    .mzb-post-author,
+    .mzb-post-date {
+        a {
+            color: var(--color--white);
+        }
+
+        svg {
+            fill: var(--color--white);
+        }
+    }
+}

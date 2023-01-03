@@ -101,13 +101,13 @@ class ColorMag_Dynamic_CSS {
 		// Add the custom CSS rendered dynamically, which is static.
 		$parse_css .= self::render_custom_output();
 
-
 		$parse_css .= $dynamic_css;
+
+		$parse_css .= self::colormag_editor_block_css();
 
 		return apply_filters( 'colormag_theme_dynamic_css', $parse_css );
 
 	}
-
 
 	/**
 	 * Function to output Custom CSS code, which does not have the specific CSS design option, ie, static CSS code.
@@ -119,8 +119,40 @@ class ColorMag_Dynamic_CSS {
 		// Generate dynamic CSS.
 		$colormag_custom_css = '';
 
-
 		return $colormag_custom_css;
+
+	}
+
+	/**
+	 * Returns the background CSS property for editor.
+	 *
+	 * @param string|array $default_value Default value.
+	 * @param string|array $output_value  Updated value.
+	 * @param string       $selector      CSS selector.
+	 *
+	 * @return string|void Generated CSS for background CSS property.
+	 */
+	public static function colormag_editor_block_css() {
+		$parse_css = '';
+
+		// Primary color.
+		$primary_color     = get_theme_mod( 'colormag_primary_color', '#289dcc' );
+		$primary_color_css = array(
+			'.mzb-featured-posts, .mzb-social-icon, .mzb-featured-categories, .mzb-social-icons-insert'
+			=> array(
+				'--color--light--primary' => ColorMag_Utils::adjust_color_opacity( $primary_color, 10 ),
+			),
+
+			'body'
+			=> array(
+				'--color--light--primary' => esc_html( $primary_color ),
+				'--color--primary'        => esc_html( $primary_color ),
+			),
+		);
+	
+		$parse_css    .= colormag_parse_css( '#289dcc', $primary_color, $primary_color_css );
+
+		return $parse_css;
 
 	}
 

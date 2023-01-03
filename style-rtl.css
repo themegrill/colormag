@@ -147,6 +147,13 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 /* Import variables and mixins.
 --------------------------------------------- */
+body {
+	--color--light--primary: #9bc8da;
+	--color--primary: #289dcc;
+	--color--text--main: #333333;
+	--color-gray--six: #888888;
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -4361,6 +4368,43 @@ blockquote.wp-block-quote.has-text-align-right {
 	color: #777777;
 	padding: 4px 10px;
 	border: 1px solid #f2f2f2;
+}
+
+[class*='mzb'] a {
+	color: var(--color--text--main);
+}
+
+[class*='mzb'] h3,
+[class*='mzb'] h2 {
+	padding-bottom: 0;
+}
+
+[class*='mzb'] img {
+	margin-bottom: 0;
+}
+
+[class*='mzb'] .mzb-post-date a,
+[class*='mzb'] .mzb-post-author a {
+	color: var(--color-gray--six);
+}
+
+[class*='mzb'] .mzb-post-date svg,
+[class*='mzb'] .mzb-post-author svg {
+	fill: var(--color-gray--six);
+}
+
+.mzb-banner-posts .mzb-post-author a,
+.mzb-banner-posts .mzb-post-date a,
+.mzb-grid-module .mzb-post-author a,
+.mzb-grid-module .mzb-post-date a {
+	color: var(--color--white);
+}
+
+.mzb-banner-posts .mzb-post-author svg,
+.mzb-banner-posts .mzb-post-date svg,
+.mzb-grid-module .mzb-post-author svg,
+.mzb-grid-module .mzb-post-date svg {
+	fill: var(--color--white);
 }
 
 /*--------------------------------------------------------------
