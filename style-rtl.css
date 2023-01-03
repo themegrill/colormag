@@ -2850,7 +2850,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 
 @media screen and (max-width: 768px) {
 	.colormag-header-clean #header-text-nav-wrap {
-		padding: 0 0 20px;
+		padding: 20px 0;
 	}
 	.colormag-header-clean #header-left-section,
 	.colormag-header-clean #header-logo-image {
