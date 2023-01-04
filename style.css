@@ -3938,6 +3938,15 @@ ul.wp-block-gallery img {
 	width: 100%;
 }
 
+.page-template-page-builder #main {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.page-template-page-builder .main-content-section {
+	padding-top: 0;
+}
+
 /* General Styles.
 --------------------------------------------- */
 #colophon {

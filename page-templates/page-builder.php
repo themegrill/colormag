@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Builder Template
+ * Template Name: Gutenberg Block / Page Builder (ColorMag)
  *
  * Displays the Page Builder Template provided via the theme.
  * Suitable for page builder plugins

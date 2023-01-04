@@ -67,6 +67,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD ==
 * Integration - Magazine Blocks plugin.
+* Tweak       - Improvements on page builder template.
 * Fix         - Logo alignment issue in header clean layout.
 
 = Version - 2.1.5 - 2022-11-17 ==
