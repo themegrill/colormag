@@ -1412,6 +1412,7 @@ Styles for separating single posts loaded from ajax call.
 	-webkit-box-ordinal-group: 4;
 	-ms-flex-order: 3;
 	order: 3;
+	margin-right: auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -3182,6 +3183,10 @@ i.fa-arrow-up, i.fa-arrow-down {
 	background-color: #fff;
 	-webkit-box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+.colormag-header-classic .search-random-icons-container {
+	margin-right: none;
 }
 
 .colormag-header-classic .menu-primary-container {
