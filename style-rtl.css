@@ -3185,10 +3185,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 	box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 }
 
-.colormag-header-classic .search-random-icons-container {
-	margin-right: none;
-}
-
 .colormag-header-classic .menu-primary-container {
 	-webkit-box-flex: 1;
 	-ms-flex-positive: 1;
