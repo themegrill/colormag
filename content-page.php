@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$markup =  is_front_page() ? 'h1' : 'h2'; 
 		?>
 		<header class="entry-header">
-			<<?php echo esc_attr( $markup ); ?> class="entry-title"<?php echo colormag_schema_markup( 'entry_title' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+			<<?php echo esc_attr( $markup ); ?> class="entry-title">
 				<?php the_title(); ?>
 			</<?php echo esc_attr( $markup );  ?> >
 		</header>

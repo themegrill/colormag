@@ -3943,6 +3943,10 @@ ul.wp-block-gallery img {
 	padding-bottom: 0;
 }
 
+.page-template-page-builder .main-content-section {
+	padding-top: 0;
+}
+
 /* General Styles.
 --------------------------------------------- */
 #colophon {

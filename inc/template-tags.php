@@ -188,7 +188,6 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 endif;
 
-
 if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 
 	/**
@@ -196,6 +195,9 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 	 */
 	function colormag_sidebar_select() {
 
+		if ( ( is_page_template( 'page-templates/page-builder.php' ) ) ) {
+			return;
+		}
 		global $post;
 
 		if ( $post ) {
