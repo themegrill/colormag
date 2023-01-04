@@ -1,7 +1,6 @@
 /* Header Layout: Classic.
 --------------------------------------------- */
 .colormag-header-classic {
-
 	.breaking-news {
 		padding-left: 0;
 		padding-right: 0;
@@ -17,7 +16,6 @@
 	}
 
 	.newsticker {
-
 		a {
 			color: $color__gray-four;
 
@@ -33,17 +31,13 @@
 	}
 
 	.social-links {
-
 		li {
-
 			&:hover {
-
 				.fa {
 					color: $color__primary;
 				}
 			}
 		}
-
 	}
 
 	/* Primary Header. */
@@ -94,9 +88,7 @@
 				background: transparent;
 				color: $color__primary;
 			}
-
 		}
-
 
 		.menu-toggle {
 			line-height: 26px;
@@ -104,7 +96,7 @@
 
 			&::before {
 				padding: 20px;
-				color: $color__menu-link;;
+				color: $color__menu-link;
 			}
 
 			&:hover {
@@ -139,7 +131,6 @@
 		}
 
 		ul {
-
 			li {
 				&.current-menu-item,
 				&.current_page_item,
@@ -178,7 +169,6 @@
 						background-color: transparent;
 						border-bottom: 2px solid $color__primary;
 					}
-
 				}
 			}
 
@@ -228,7 +218,6 @@
 				}
 			}
 
-
 			li.menu-item-has-children {
 				&:hover {
 					> ul.sub-menu {
@@ -251,7 +240,6 @@
 		}
 
 		.random-post {
-
 			a {
 				font-size: 14px;
 				padding: 10px 15px;
@@ -264,7 +252,6 @@
 						color: $color__primary;
 					}
 				}
-
 
 				.fa-random {
 					color: $color__menu-link;
@@ -279,7 +266,6 @@
 				padding: 10px 15px;
 
 				&:hover {
-
 					.fa {
 						color: $color__primary;
 					}
@@ -318,7 +304,6 @@
 					}
 				}
 
-
 				.fa-random {
 					color: $color__menu-link;
 				}
@@ -335,7 +320,6 @@
 		}
 	}
 
-
 	.is-sticky {
 		#site-navigation {
 			background-color: $color__white;
@@ -343,9 +327,9 @@
 		}
 	}
 
-    .menu-primary-container{
-        flex-grow: 1;
-    }
+	.menu-primary-container {
+		flex-grow: 1;
+	}
 }
 
 @media screen and (min-width: 481px) {
@@ -358,7 +342,6 @@
 
 @media screen and (min-width: 768px) {
 	.colormag-header-classic {
-
 		.breaking-news {
 			margin-top: 0;
 		}
@@ -374,7 +357,6 @@
 		#header-left-section,
 		#header-logo-image {
 			margin-bottom: 0;
-
 		}
 
 		.main-small-navigation {
@@ -404,7 +386,6 @@
 			}
 
 			.home-icon {
-
 				a {
 					padding: 15px;
 					line-height: 26px;
