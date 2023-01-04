@@ -32,17 +32,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header">
-		<?php if ( is_front_page() ) : ?>
-			<h2 class="entry-title">
+	<?php
+	if ( ( ! is_page_template( 'page-templates/page-builder.php' ) ) ) {
+
+		$markup =  is_front_page() ? 'h1' : 'h2'; 
+		?>
+		<header class="entry-header">
+			<<?php echo esc_attr( $markup ); ?> class="entry-title"<?php echo colormag_schema_markup( 'entry_title' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
 				<?php the_title(); ?>
-			</h2>
-		<?php else : ?>
-			<h1 class="entry-title">
-				<?php the_title(); ?>
-			</h1>
-		<?php endif; ?>
-	</header>
+			</<?php echo esc_attr( $markup );  ?> >
+		</header>
+
+		<?php
+	}
+	?>
 
 	<div class="entry-content clearfix">
 		<?php
