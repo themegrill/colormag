@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 2.1.5\n"
+"Project-Id-Version: ColorMag 2.1.6\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-01-03 11:02:08+00:00\n"
+"POT-Creation-Date: 2023-01-04 09:14:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,11 +42,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:53 content-single.php:74
+#: content-page.php:56 content-single.php:74
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:63 inc/template-tags.php:95
+#: content-page.php:66 inc/template-tags.php:95
 msgid "Edit"
 msgstr ""
 
@@ -1292,32 +1292,32 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:554
+#: inc/template-tags.php:556
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:556
+#: inc/template-tags.php:558
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:575
+#: inc/template-tags.php:577
 msgid "Post author"
 msgstr ""
 
-#: inc/template-tags.php:582
+#: inc/template-tags.php:584
 #. Translators: 1. Comment date, 2. Comment time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:589
+#: inc/template-tags.php:591
 msgid "Permalink"
 msgstr ""
 
-#: inc/template-tags.php:598
+#: inc/template-tags.php:600
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:609
+#: inc/template-tags.php:611
 msgid "Reply"
 msgstr ""
 
@@ -1684,7 +1684,7 @@ msgid "Contact Page Template"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Page Builder Template"
+msgid "Gutenberg Block / Page Builder (ColorMag)"
 msgstr ""
 
 #: comments.php:45
