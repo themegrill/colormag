@@ -144,7 +144,7 @@ class ColorMag_Utils {
 	 *
 	 */
 
-	 public static function adjust_color_opacity( $hex, $steps ) {
+	public static function adjust_color_opacity( $hex, $steps ) {
 
 		$steps     = max( 0, min( 100, $steps ) );
 		$rgba      = self::get_rgba_values_from_hex( $hex );
