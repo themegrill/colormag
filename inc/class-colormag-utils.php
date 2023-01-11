@@ -148,7 +148,7 @@ class ColorMag_Utils {
 
 		$steps     = max( 0, min( 100, $steps ) );
 		$rgba      = self::get_rgba_values_from_hex( $hex );
-		$a         = $rgba['a'];
+		$a         = isset( $rgba['a'] ) ? $rgba['a'] : 1;
 		$a         = $steps / 100 * $a;
 		$a         = max( 0, min( 1, round( $a, 2 ) ) );
 		$rgba['a'] = $a;
