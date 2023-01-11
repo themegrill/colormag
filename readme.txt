@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - 2.1.8 - 2023-01-11 ==
+* Fix - Php error.
+
 = Version - 2.1.7 - 2023-01-09 ==
 * Fix - Php error.
 
