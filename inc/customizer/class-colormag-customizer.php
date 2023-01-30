@@ -94,7 +94,6 @@ class ColorMag_Customizer {
 
 		// Additional customize options.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-options.php';
-
 	}
 
 	/**
