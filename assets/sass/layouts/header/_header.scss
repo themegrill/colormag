@@ -1,0 +1,132 @@
+/* Header.
+--------------------------------------------- */
+.cm-header {
+	background-color: $color__white;
+}
+
+.cm-site-branding {
+	img {
+		width: auto;
+		margin-bottom: 0;
+	}
+
+	a {
+		display: block;
+	}
+}
+
+.cm-site-title {
+	padding-bottom: 0;
+	line-height: 1.5;
+	font-size: 40px;
+
+	a {
+		color: $color__primary;
+	}
+}
+
+.cm-site-description {
+	line-height: 1.8;
+	font-size: 16px;
+	color: $color__text-main;
+	margin: $spacing_4 0 0 0;
+	font-family: "Open Sans", serif;
+	word-break: break-word;
+}
+
+.header-image {
+	margin-bottom: 0;
+	border-bottom: 1px solid $color__border;
+	width: 100%;
+}
+
+.cm-header-col-1 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 16px;
+	flex-basis: 30%;
+}
+
+.cm-header-col-2 {
+	.widget {
+		text-align: right;
+		color: $color__text-content;
+
+		.widget-title {
+			font-size: 18px;
+			line-height: 1.2;
+			padding-bottom: $spacing_5;
+		}
+	}
+
+	.wp-block-image {
+		margin: 0;
+	}
+
+	img {
+		margin-bottom: 0;
+	}
+}
+
+.cm-header-2 {
+	.cm-row {
+		display: flex;
+	}
+}
+
+/* For header display type one */
+.header_display_type_one {
+	.cm-header-1 {
+		.cm-row {
+			flex-direction: row-reverse;
+		}
+	}
+
+	.cm-header-col-2 .widget {
+		text-align: left;
+	}
+}
+
+/* For header display type two */
+.header_display_type_two {
+	.cm-header-1 {
+		.cm-row {
+			flex-direction: column;
+		}
+	}
+
+	.cm-header-col-1 {
+		flex-direction: column;
+		float: none;
+		text-align: center;
+		justify-content: center;
+	}
+
+	.cm-site-branding {
+		padding-right: 0;
+	}
+
+	#cm-site-info {
+		padding-right: 0;
+	}
+
+	.cm-header-col-2 {
+		.widget {
+			color: $color__text-content;
+			text-align: center;
+		}
+
+	}
+}
+
+.cm-menu-toggle {
+	display: flex;
+	cursor: pointer;
+}
+
+@include breakpoint("mdm") {
+	.cm-menu-toggle {
+		display: none;
+	}
+}
