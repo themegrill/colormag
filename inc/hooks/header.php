@@ -64,7 +64,7 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	 */
 	function colormag_header_start() {
 		?>
-		<header id="cm-header" class="cm-header clearfix <?php echo esc_attr( colormag_header_layout_class() ); ?>">
+		<header id="cm-header" class="cm-header <?php echo esc_attr( colormag_header_layout_class() ); ?>">
 		<?php
 	}
 
@@ -78,7 +78,7 @@ if ( ! function_exists( 'colormag_header_nav_container_start' ) ) :
 	 */
 	function colormag_header_nav_container_start() {
 		?>
-		<div id="cm-header-container" class="clearfix">
+		<div id="cm-header-container">
 		<?php
 	}
 
