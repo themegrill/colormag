@@ -6,7 +6,7 @@
 
 .cm-header-bar {
 	background-color: $color__gray-ten;
-	padding: 8px 0;
+	padding: 10px 0;
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	font-size: 14px;
 	border-bottom-style: solid;
@@ -28,8 +28,7 @@
 
 @include breakpoint("mdm") {
 
-	.cm-header-bar__one,
-	.cm-header-bar__two {
+	.cm-header-bar__one {
 		display: flex;
 		gap: 15px;
 		align-items: center;

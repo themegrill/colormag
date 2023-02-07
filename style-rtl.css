@@ -2451,7 +2451,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 
 .cm-header-bar {
 	background-color: #f8f8f8;
-	padding: 8px 0;
+	padding: 10px 0;
 	-webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	font-size: 14px;
@@ -2486,8 +2486,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 }
 
 @media screen and (min-width: 768px) {
-	.cm-header-bar__one,
-	.cm-header-bar__two {
+	.cm-header-bar__one {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
