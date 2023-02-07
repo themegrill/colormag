@@ -120,13 +120,13 @@
 	}
 }
 
-.cm-menu-toggle {
+.cm-cm-menu-toggle {
 	display: flex;
 	cursor: pointer;
 }
 
 @include breakpoint("mdm") {
-	.cm-menu-toggle {
+	.cm-cm-menu-toggle {
 		display: none;
 	}
 }

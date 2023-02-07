@@ -85,11 +85,11 @@
 
 @media screen and (max-width: 768px) {
 
-	.menu-toggle {
+	.cm-menu-toggle {
 		display: flex;
 	}
 
-	.main-navigation {
+	.cm-header-2 {
 		ul {
 			display: none;
 		}
@@ -99,7 +99,7 @@
 		}
 	}
 
-	.search-random-icons-container .social-links ul {
+	.cm-header-actions .social-links ul {
 		display: block;
 	}
 
@@ -260,7 +260,7 @@
 		display: none;
 	}
 
-	.logged-in #cm-header #site-navigation {
+	.logged-in #cm-header #cm-header-2 {
 		top: 0 !important;
 	}
 

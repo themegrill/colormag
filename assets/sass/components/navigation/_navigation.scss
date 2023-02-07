@@ -7,7 +7,7 @@ nav li {
 	}
 }
 
-#site-navigation {
+#cm-header-2 {
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
 	position: relative;
 	background-color: #232323;
@@ -33,12 +33,12 @@ nav li {
 }
 
 .sticky-wrapper {
-	&.is-sticky .main-navigation .home-icon a, .main-navigation .home-icon a {
+	&.is-sticky .cm-header-2 .home-icon a, .cm-header-2 .home-icon a {
 		padding: 7px 10px;
 	}
 }
 
-.main-navigation .home-icon a {
+.cm-header-2 .home-icon a {
 	padding: 7px 10px;
 }
 
@@ -46,7 +46,7 @@ nav li {
 	padding: 7px 10px;
 }
 
-.main-navigation {
+.cm-header-2 {
 	width: 100%;
 	text-align: center;
 
@@ -76,7 +76,7 @@ li.default-menu {
 	display: none;
 }
 
-.main-navigation {
+.cm-header-2 {
 	a:hover {
 	}
 
@@ -149,7 +149,7 @@ li.default-menu {
 
 /* Primary Menu: Dropdown.
 --------------------------------------------- */
-.main-navigation {
+.cm-header-2 {
 	.sub-menu,
 	.children {
 		background-color: #232323;
@@ -280,12 +280,12 @@ li.default-menu {
 
 /* Toggle Menu.
 --------------------------------------------- */
-.menu-toggle, .top-menu-toggle {
+.cm-menu-toggle, .top-cm-menu-toggle {
 	display: none;
 	cursor: pointer;
 }
 
-.cm-header .menu-toggle {
+.cm-header .cm-menu-toggle {
 	color: $color__white;
 	margin: 0;
 	text-align: center;
@@ -313,13 +313,13 @@ li.default-menu {
 .main-small-navigation {
 	float: none;
 
-	.menu-primary-container {
+	.cm-menu-primary-container {
 		width: 100%;
 		position: absolute;
 		top: 100%;
 	}
 
-	.menu-primary-container,
+	.cm-menu-primary-container,
 	.menu {
 
 		& > ul {

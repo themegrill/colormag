@@ -470,8 +470,10 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 		$search_icon      = get_theme_mod( 'colormag_search_icon_in_menu', 0 );
 		?>
 
-		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
-			<div class="inner-wrap clearfix">
+		<div id="cm-header-2" class="cm-header-2">
+				<nav id="cm-primary-nav" class="cm-primary-nav"<?php echo colormag_schema_markup( 'nav' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+					<div class="cm-container">
+						<div class="cm-row">
 				<?php
 				if ( 1 == get_theme_mod( 'colormag_home_icon_display', 0 ) ) {
 					$home_icon_class = 'home-icon';
@@ -490,7 +492,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 				<?php } ?>
 
 				<?php if ( 1 == $random_post_icon || 1 == $search_icon ) { ?>
-					<div class="search-random-icons-container">
+					<div class="cm-header-actions">
 						<?php
 						// Displays the random post.
 						if ( 1 == $random_post_icon ) {
@@ -500,7 +502,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						// Displays the search icon.
 						if ( 1 == $search_icon ) {
 							?>
-							<div class="top-search-wrap">
+							<div class="cm-top-search">
 								<i class="fa fa-search search-top"></i>
 								<div class="search-form-top">
 									<?php get_search_form(); ?>
@@ -510,13 +512,13 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 					</div>
 				<?php } ?>
 
-				<p class="menu-toggle"></p>
+				<p class="cm-menu-toggle"></p>
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
-							'container_class' => 'menu-primary-container',
+							'container_class' => 'cm-menu-primary-container',
 							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 						)
 					);

@@ -203,7 +203,7 @@ body {
 
 	#cm-header {
 		&.colormag-header-clean {
-			.main-navigation {
+			.cm-header-2 {
 				.sub-menu,
 				.children {
 					background-color: $color__background-news;
@@ -226,7 +226,7 @@ body {
 
 		&.colormag-header-classic {
 			.is-sticky {
-				#site-navigation {
+				#cm-header-2 {
 					background-color: $color__background-news;
 				}
 
@@ -235,15 +235,15 @@ body {
 				}
 			}
 
-			#site-navigation {
-				.menu-toggle {
+			#cm-header-2 {
+				.cm-menu-toggle {
 					border-color: $color__gray-seven;
 					&::before {
 						color:$color__gray-seven;
 					}
 				}
 
-				&.main-navigation {
+				&.cm-header-2 {
 					ul {
 						ul.sub-menu,
 						.children {

@@ -63,7 +63,7 @@
 		}
 	}
 
-	#site-navigation {
+	#cm-header-2 {
 		box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 		position: relative;
 		background-color: transparent;
@@ -90,7 +90,7 @@
 			}
 		}
 
-		.menu-toggle {
+		.cm-menu-toggle {
 			line-height: 26px;
 			border: 1px solid $color__menu-link;
 
@@ -109,7 +109,7 @@
 		}
 	}
 
-	.main-navigation {
+	.cm-header-2 {
 		a {
 			font-weight: 700;
 			padding: 10px 0;
@@ -279,7 +279,7 @@
 	}
 
 	.main-small-navigation {
-		.menu-primary-container,
+		.cm-menu-primary-container,
 		.nav-menu {
 			padding-top: 0;
 			position: absolute;
@@ -310,7 +310,7 @@
 			}
 		}
 
-		.menu-toggle {
+		.cm-menu-toggle {
 			background-color: $color__primary;
 			border-color: $color__primary;
 
@@ -321,13 +321,13 @@
 	}
 
 	.is-sticky {
-		#site-navigation {
+		#cm-header-2 {
 			background-color: $color__white;
 			box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 		}
 	}
 
-	.menu-primary-container {
+	.cm-menu-primary-container {
 		flex-grow: 1;
 	}
 }
@@ -360,7 +360,7 @@
 		}
 
 		.main-small-navigation {
-			.menu-toggle {
+			.cm-menu-toggle {
 				background-color: $color__primary;
 				border-color: $color__primary;
 			}
@@ -372,14 +372,14 @@
 			}
 		}
 
-		#site-navigation {
+		#cm-header-2 {
 			.random-post {
 				a {
 					padding: 15px;
 				}
 			}
 
-			.menu-toggle::before,
+			.cm-menu-toggle::before,
 			.fa.search-top {
 				padding: 15px;
 				line-height: 26px;
