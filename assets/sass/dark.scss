@@ -34,13 +34,13 @@ body {
 
 .dark-skin {
 	#page,
-	#header-text-nav-container,
+	#cm-header-container,
 	#main,
 	#secondary .widget {
 		background-color: $color__background-dark-page;
 	}
 
-	.news-bar {
+	.cm-header-bar {
 		background-color: $color__background-dark-news;
 	}
 
@@ -201,7 +201,7 @@ body {
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
 
-	#masthead {
+	#cm-header {
 		&.colormag-header-clean {
 			.main-navigation {
 				.sub-menu,

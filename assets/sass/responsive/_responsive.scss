@@ -263,7 +263,7 @@
 		display: none;
 	}
 
-	.logged-in #masthead #site-navigation {
+	.logged-in #cm-header #site-navigation {
 		top: 0 !important;
 	}
 
@@ -493,7 +493,7 @@
 }
 
 @media screen and (max-width: 380px) {
-	#masthead .search-wrap input.s {
+	#cm-header .search-wrap input.s {
 		width: 165px;
 	}
 }

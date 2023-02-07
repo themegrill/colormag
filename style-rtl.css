@@ -437,6 +437,14 @@ a:focus, a:active, a:hover {
 	max-width: 1140px;
 }
 
+.cm-container {
+	max-width: 1140px;
+	margin-right: auto;
+	margin-left: auto;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
 /**
  * Columns.
  */
@@ -1087,7 +1095,7 @@ li.default-menu {
 	cursor: pointer;
 }
 
-.site-header .menu-toggle {
+.cm-header .menu-toggle {
 	color: #fff;
 	margin: 0;
 	text-align: center;
@@ -1096,11 +1104,11 @@ li.default-menu {
 	line-height: 1.2;
 }
 
-.site-header .menu-toggle:hover {
+.cm-header .menu-toggle:hover {
 	background-color: #289dcc;
 }
 
-.site-header .menu-toggle::before {
+.cm-header .menu-toggle::before {
 	content: "\f0c9";
 	font-family: FontAwesome;
 	font-style: normal;
@@ -1418,7 +1426,7 @@ Styles for separating single posts loaded from ajax call.
 	display: flex;
 }
 
-#masthead .search-wrap input.s {
+#cm-header .search-wrap input.s {
 	width: 200px;
 }
 
@@ -2441,7 +2449,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 	background-color: #fff;
 }
 
-.news-bar {
+.cm-header-bar {
 	background-color: #f8f8f8;
 	padding: 8px 0;
 	-webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
@@ -2450,7 +2458,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 	border-bottom-style: solid;
 }
 
-.news-bar .inner-wrap {
+.cm-header-bar .cm-row {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2461,17 +2469,25 @@ i.fa-arrow-up, i.fa-arrow-down {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
+	gap: 15px;
 }
 
-.tg-news-bar__two {
+.cm-header-bar__two {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	gap: 15px;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 @media screen and (min-width: 768px) {
-	.tg-news-bar__one,
-	.tg-news-bar__two {
+	.cm-header-bar__one,
+	.cm-header-bar__two {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -2483,12 +2499,15 @@ i.fa-arrow-up, i.fa-arrow-down {
 }
 
 @media screen and (min-width: 992px) {
-	.tg-news-bar__two {
+	.cm-header-bar__two {
 		-webkit-box-pack: end;
 		-ms-flex-pack: end;
 		justify-content: flex-end;
 	}
-	.news-bar .inner-wrap {
+	.cm-header-bar {
+		padding: 8px;
+	}
+	.cm-header-bar .cm-row {
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
 		-ms-flex-direction: row;
@@ -2497,12 +2516,12 @@ i.fa-arrow-up, i.fa-arrow-down {
 	}
 }
 
-#masthead .main-small-navigation ul.menu-scrollbar {
+#cm-header .main-small-navigation ul.menu-scrollbar {
 	overflow-y: scroll;
 	width: 100%;
 }
 
-#masthead .main-small-navigation li:hover > a, #masthead .main-small-navigation li.current-page-ancestor > a, #masthead .main-small-navigation li.current-menu-ancestor > a, #masthead .main-small-navigation li.current-page-item > a, #masthead .main-small-navigation li.current-menu-item > a {
+#cm-header .main-small-navigation li:hover > a, #cm-header .main-small-navigation li.current-page-ancestor > a, #cm-header .main-small-navigation li.current-menu-ancestor > a, #cm-header .main-small-navigation li.current-page-item > a, #cm-header .main-small-navigation li.current-menu-item > a {
 	color: #fff;
 	background-color: #289dcc;
 }
@@ -2515,10 +2534,10 @@ i.fa-arrow-up, i.fa-arrow-down {
 	.top-bar-menu {
 		margin-right: 0;
 	}
-	#masthead .main-small-navigation li:hover > .sub-toggle, #masthead .main-small-navigation li.current-page-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-menu-ancestor > .sub-toggle, #masthead .main-small-navigation li.current-page-item > .sub-toggle, #masthead .main-small-navigation li.current-menu-item > .sub-toggle {
+	#cm-header .main-small-navigation li:hover > .sub-toggle, #cm-header .main-small-navigation li.current-page-ancestor > .sub-toggle, #cm-header .main-small-navigation li.current-menu-ancestor > .sub-toggle, #cm-header .main-small-navigation li.current-page-item > .sub-toggle, #cm-header .main-small-navigation li.current-menu-item > .sub-toggle {
 		background-color: #fff;
 	}
-	#masthead .main-small-navigation li:hover > .sub-toggle i, #masthead .main-small-navigation li.current-page-ancestor > .sub-toggle i, #masthead .main-small-navigation li.current-menu-ancestor > .sub-toggle i, #masthead .main-small-navigation li.current-page-item > .sub-toggle i, #masthead .main-small-navigation li.current-menu-item > .sub-toggle i {
+	#cm-header .main-small-navigation li:hover > .sub-toggle i, #cm-header .main-small-navigation li.current-page-ancestor > .sub-toggle i, #cm-header .main-small-navigation li.current-menu-ancestor > .sub-toggle i, #cm-header .main-small-navigation li.current-page-item > .sub-toggle i, #cm-header .main-small-navigation li.current-menu-item > .sub-toggle i {
 		color: #289dcc;
 	}
 	.breaking-news {
@@ -2527,18 +2546,18 @@ i.fa-arrow-up, i.fa-arrow-down {
 }
 
 @media screen and (max-width: 480px) {
-	#masthead.colormag-header-classic .date-in-header, #masthead.colormag-header-clean .date-in-header {
+	#cm-header.colormag-header-classic .date-in-header, #cm-header.colormag-header-clean .date-in-header {
 		display: none;
 	}
-	#masthead.colormag-header-classic .breaking-news .breaking-news-latest, #masthead.colormag-header-clean .breaking-news .breaking-news-latest {
+	#cm-header.colormag-header-classic .breaking-news .breaking-news-latest, #cm-header.colormag-header-clean .breaking-news .breaking-news-latest {
 		padding: 0 5px;
 	}
-	#masthead.colormag-header-classic .breaking-news .newsticker, #masthead.colormag-header-clean .breaking-news .newsticker {
+	#cm-header.colormag-header-classic .breaking-news .newsticker, #cm-header.colormag-header-clean .breaking-news .newsticker {
 		padding-right: 0;
 	}
 }
 
-#header-text-nav-container {
+#cm-header-container {
 	background-color: #ffffff;
 }
 
@@ -4739,7 +4758,7 @@ blockquote.wp-block-quote.has-text-align-right {
 	.image-ticker-news .article-content .entry-title {
 		display: none;
 	}
-	.logged-in #masthead #site-navigation {
+	.logged-in #cm-header #site-navigation {
 		top: 0 !important;
 	}
 	.archive #content .post:first-child, .archive #content .post:nth-child(2n), .archive #content .post:nth-child(2n+1) {
@@ -4908,7 +4927,7 @@ blockquote.wp-block-quote.has-text-align-right {
 }
 
 @media screen and (max-width: 380px) {
-	#masthead .search-wrap input.s {
+	#cm-header .search-wrap input.s {
 		width: 165px;
 	}
 }

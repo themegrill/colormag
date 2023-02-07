@@ -1,4 +1,4 @@
-#masthead {
+#cm-header {
 	.main-small-navigation {
 		ul {
 			&.menu-scrollbar {
@@ -33,7 +33,7 @@
 		margin-left: 0;
 	}
 
-	#masthead {
+	#cm-header {
 		.main-small-navigation {
 			li {
 				&:hover,
@@ -59,7 +59,7 @@
 }
 
 @media screen and (max-width: 480px) {
-	#masthead {
+	#cm-header {
 		&.colormag-header-classic,
 		&.colormag-header-clean {
 
@@ -80,7 +80,7 @@
 	}
 }
 
-#header-text-nav-container {
+#cm-header-container {
 	background-color: #ffffff;
 }
 
