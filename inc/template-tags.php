@@ -434,7 +434,7 @@ if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 						</div><!-- #cm-site-info -->
 					</div><!-- .cm-header-col-1 -->
 
-					<div id="cm-header-col-2">
+					<div class="cm-header-col-2">
 						<?php
 						if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 							?>
@@ -471,7 +471,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 		?>
 
 		<div id="cm-header-2" class="cm-header-2">
-				<nav id="cm-primary-nav" class="cm-primary-nav"<?php echo colormag_schema_markup( 'nav' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+				<nav id="cm-primary-nav" class="cm-primary-nav" role="navigation">
 					<div class="cm-container">
 						<div class="cm-row">
 				<?php
