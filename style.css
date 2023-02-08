@@ -2932,7 +2932,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 	text-align: center;
 }
 
-.cm-cm-menu-toggle {
+.cm-menu-toggle {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2940,7 +2940,7 @@ i.fa-arrow-up, i.fa-arrow-down {
 }
 
 @media screen and (min-width: 768px) {
-	.cm-cm-menu-toggle {
+	.cm-menu-toggle {
 		display: none;
 	}
 }
