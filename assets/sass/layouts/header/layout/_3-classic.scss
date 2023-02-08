@@ -1,120 +1,65 @@
 /* Header Layout: Classic.
 --------------------------------------------- */
 .colormag-header-classic {
-	.breaking-news {
-		padding-left: 0;
-		padding-right: 0;
-		margin-top: 0;
-	}
+	.cm-row {
+		justify-content: center;
 
-	.breaking-news-latest {
-		background-color: $color__background-news;
-		padding-left: 8px;
-		padding-right: 8px;
-		color: $color__white;
-		font-weight: 400;
-	}
-
-	.newsticker {
-		a {
-			color: $color__gray-four;
-
-			&:hover {
-				color: $color__primary;
-			}
-		}
-	}
-
-	/* Social Icons. */
-	.fa {
-		color: $color__social-icon;
-	}
-
-	.social-links {
-		li {
-			&:hover {
-				.fa {
-					color: $color__primary;
-				}
-			}
-		}
-	}
-
-	/* Primary Header. */
-	#header-text-nav-wrap {
-		padding: 30px 0 20px;
-
-		#header-right-section {
+		.cm-header-col-2 {
 			display: none;
 		}
 
-		#header-left-section {
+		.cm-header-col-1 {
 			display: unset;
 			float: none;
 			text-align: center;
+		}
+	}
 
-			#header-logo-image,
-			#header-text {
-				float: none;
-				padding-right: 0;
-
-				padding-left: 0;
-			}
+	.cm-header-bar {
+		.cm-row {
+			padding: 0;
 		}
 	}
 
 	#cm-primary-nav {
-		box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
-		position: relative;
 		background-color: transparent;
-		border-top: 0 solid transparent;
-		z-index: 999;
 
 		&.headroom--pinned {
 			background: inherit;
 		}
 
-		.inner-wrap {
+		.cm-row {
 			background-color: transparent;
+			justify-content: flex-start;
 		}
 
-		.fa.search-top {
-			color: $color__menu-link;
-			float: right;
-			font-size: 16px;
-			padding: 15px;
+		.fa {
+			color: #3F3F46;
 
 			&:hover {
 				background: transparent;
 				color: $color__primary;
 			}
+
 		}
 
+
 		.cm-menu-toggle {
-			line-height: 26px;
-			border: 1px solid $color__menu-link;
-
 			&::before {
-				padding: 20px;
-				color: $color__menu-link;
+				color: #3F3F46;
 			}
+		}
 
-			&:hover {
-				border-color: $color__primary;
-
-				&::before {
-					color: $color__white;
-				}
+		.cm-home-icon {
+			&.front_page_on {
+				background-color: transparent;
 			}
 		}
 	}
 
 	.cm-primary-nav {
 		a {
-			font-weight: 700;
-			padding: 10px 0;
-			line-height: 26px;
-			color: $color__menu-link;
+			color: #3F3F46;
 			background-color: transparent;
 
 			&::after {
@@ -131,6 +76,8 @@
 		}
 
 		ul {
+			justify-content: center;
+
 			li {
 				&.current-menu-item,
 				&.current_page_item,
@@ -138,6 +85,7 @@
 				&.focus {
 					& > a {
 						color: $color__primary;
+						background-color: transparent;
 					}
 				}
 
@@ -151,8 +99,6 @@
 			}
 
 			> li {
-				padding-left: 15px;
-				padding-right: 15px;
 				float: none;
 				display: inline-block;
 				vertical-align: top;
@@ -160,6 +106,7 @@
 				> a {
 					border-bottom: 2px solid transparent;
 					transition: border 0.5s ease;
+					color: #3F3F46;
 				}
 
 				&:hover,
@@ -169,28 +116,26 @@
 						background-color: transparent;
 						border-bottom: 2px solid $color__primary;
 					}
+
 				}
 			}
 
 			ul.sub-menu {
-				top: 100%;
-				background-color: $color__gray-ten;
+				background-color: $color__white;
 				transition: all 0.3s ease;
 				display: block;
 				opacity: 0;
 				visibility: hidden;
-				border: 1px solid $color__gray-eight;
+				border: 1px solid #F4F4F5;
 				text-align: left;
 
 				li {
-					border-bottom: 1px solid $color__gray-eight;
+					border-bottom: 1px solid #F4F4F5;
 					display: block;
-					padding-left: 0;
-					padding-right: 0;
 
 					a {
 						width: auto;
-						padding: 10px 15px;
+						padding: $spacing_12px $spacing_16px;
 						transition: all 0.5s ease;
 						border-color: transparent;
 					}
@@ -218,11 +163,18 @@
 				}
 			}
 
+
 			li.menu-item-has-children {
 				&:hover {
 					> ul.sub-menu {
 						opacity: 1;
 						visibility: visible;
+					}
+				}
+
+				a {
+					&::after {
+						color: #343a40;
 					}
 				}
 			}
@@ -239,12 +191,8 @@
 			}
 		}
 
-		.random-post {
+		.cm-random-post {
 			a {
-				font-size: 14px;
-				padding: 10px 15px;
-				color: $color__menu-link;
-
 				&:hover {
 					background: transparent;
 
@@ -254,32 +202,13 @@
 				}
 
 				.fa-random {
-					color: $color__menu-link;
+					color: #3F3F46;
 				}
-			}
-		}
-
-		.cm-home-icon {
-			background: none;
-
-			a {
-				padding: 10px 15px;
-
-				&:hover {
-					.fa {
-						color: $color__primary;
-					}
-				}
-			}
-
-			.fa {
-				color: $color__menu-link;
 			}
 		}
 	}
 
 	.cm-mobile-nav {
-		.cm-menu-primary-container,
 		.nav-menu {
 			padding-top: 0;
 			position: absolute;
@@ -288,14 +217,8 @@
 			box-shadow: 0 1px 11px rgba(0, 0, 0, 0.2);
 		}
 
-		.random-post {
-			bottom: 0;
-
+		.cm-random-post {
 			a {
-				font-size: 14px;
-				padding: 12px 15px;
-				color: $color__menu-link;
-
 				&:hover {
 					background: transparent;
 
@@ -310,12 +233,30 @@
 			}
 		}
 
-		.cm-menu-toggle {
-			background-color: $color__primary;
-			border-color: $color__primary;
+		li {
+			background-color: $color__white;
+			border-color: #E4E4E7;
 
-			&::before {
-				color: $color__white;
+			a {
+				color: #3F3F46;
+			}
+
+			&:hover,
+			&.current-page-ancestor,
+			&.current-menu-ancestor,
+			&.current-page-item,
+			&.current-menu-item {
+				> .cm-sub-toggle {
+					i {
+						color: $color__white;
+					}
+				}
+			}
+		}
+
+		.cm-sub-toggle {
+			.fa {
+				color: #3F3F46;
 			}
 		}
 	}
@@ -332,65 +273,10 @@
 	}
 }
 
-@media screen and (min-width: 481px) {
+@include breakpoint("mdm") {
 	.colormag-header-classic {
-		.breaking-news {
-			margin-top: 10px;
-		}
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.colormag-header-classic {
-		.breaking-news {
-			margin-top: 0;
-		}
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.colormag-header-classic {
-		#header-text-nav-wrap {
-			padding: 0;
-		}
-
-		#header-left-section,
-		#header-logo-image {
-			margin-bottom: 0;
-		}
-
-		.cm-mobile-nav {
-			.cm-menu-toggle {
-				background-color: $color__primary;
-				border-color: $color__primary;
-			}
-
-			.random-post {
-				a {
-					padding: 15px;
-				}
-			}
-		}
-
 		#cm-primary-nav {
-			.random-post {
-				a {
-					padding: 15px;
-				}
-			}
-
-			.cm-menu-toggle::before,
-			.fa.search-top {
-				padding: 15px;
-				line-height: 26px;
-			}
-
-			.cm-home-icon {
-				a {
-					padding: 15px;
-					line-height: 26px;
-				}
-			}
+			border-top: 4px solid #289dcc;
 		}
 	}
 }
