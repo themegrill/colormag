@@ -53,11 +53,11 @@ body {
 	background-color: #111111;
 }
 
-.dark-skin .main-small-navigation li {
+.dark-skin .cm-mobile-nav li {
 	background-color: #232323;
 }
 
-.dark-skin .main-small-navigation a {
+.dark-skin .cm-mobile-nav a {
 	color: #fff;
 }
 
@@ -169,7 +169,7 @@ body {
 	background-color: #212529;
 }
 
-.dark-skin #cm-header.colormag-header-clean .main-small-navigation li {
+.dark-skin #cm-header.colormag-header-clean .cm-mobile-nav li {
 	background-color: #212529;
 }
 
@@ -183,7 +183,7 @@ body {
 	background-color: #212529;
 }
 
-.dark-skin #cm-header.colormag-header-classic .is-sticky .main-small-navigation li {
+.dark-skin #cm-header.colormag-header-classic .is-sticky .cm-mobile-nav li {
 	background-color: #212529;
 }
 
@@ -212,7 +212,7 @@ body {
 	color: #fff;
 }
 
-.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.main-small-navigation .random-post a .fa-random,
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-mobile-nav .random-post a .fa-random,
 .dark-skin #cm-header.colormag-header-classic #cm-primary-nav .fa.search-top {
 	color: #fff;
 }

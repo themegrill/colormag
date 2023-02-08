@@ -831,8 +831,7 @@ button:hover {
 # Components
 --------------------------------------------------------------*/
 .breaking-news,
-.top-bar-menu,
-.social-links {
+.top-bar-menu {
 	margin-top: 10px;
 }
 
@@ -3096,19 +3095,19 @@ i.fa-arrow-up, i.fa-arrow-down {
 	top: 0;
 }
 
-.colormag-header-clean .main-small-navigation .cm-menu-primary-container,
-.colormag-header-clean .main-small-navigation .nav-menu {
+.colormag-header-clean .cm-mobile-nav .cm-menu-primary-container,
+.colormag-header-clean .cm-mobile-nav .nav-menu {
 	padding-top: 0;
 	position: absolute;
 	top: 100%;
 	width: 100%;
 }
 
-.colormag-header-clean .main-small-navigation .random-post {
+.colormag-header-clean .cm-mobile-nav .random-post {
 	line-height: 26px;
 }
 
-.colormag-header-clean .main-small-navigation .random-post a {
+.colormag-header-clean .cm-mobile-nav .random-post a {
 	padding: 20px;
 }
 
@@ -3139,13 +3138,13 @@ i.fa-arrow-up, i.fa-arrow-down {
 	.colormag-header-clean #cm-primary-nav .fa.search-top {
 		padding: 20px;
 	}
-	.colormag-header-clean .main-small-navigation .cm-home-icon a {
+	.colormag-header-clean .cm-mobile-nav .cm-home-icon a {
 		padding: 20px;
 	}
-	.colormag-header-clean .main-small-navigation .cm-menu-toggle {
+	.colormag-header-clean .cm-mobile-nav .cm-menu-toggle {
 		background-color: #289dcc;
 	}
-	.colormag-header-clean .main-small-navigation .random-post a {
+	.colormag-header-clean .cm-mobile-nav .random-post a {
 		padding: 15px;
 	}
 }
@@ -3413,8 +3412,8 @@ i.fa-arrow-up, i.fa-arrow-down {
 	color: #343a40;
 }
 
-.colormag-header-classic .main-small-navigation .cm-menu-primary-container,
-.colormag-header-classic .main-small-navigation .nav-menu {
+.colormag-header-classic .cm-mobile-nav .cm-menu-primary-container,
+.colormag-header-classic .cm-mobile-nav .nav-menu {
 	padding-top: 0;
 	position: absolute;
 	top: 100%;
@@ -3423,34 +3422,34 @@ i.fa-arrow-up, i.fa-arrow-down {
 	box-shadow: 0 1px 11px rgba(0, 0, 0, 0.2);
 }
 
-.colormag-header-classic .main-small-navigation .random-post {
+.colormag-header-classic .cm-mobile-nav .random-post {
 	bottom: 0;
 }
 
-.colormag-header-classic .main-small-navigation .random-post a {
+.colormag-header-classic .cm-mobile-nav .random-post a {
 	font-size: 14px;
 	padding: 12px 15px;
 	color: #343a40;
 }
 
-.colormag-header-classic .main-small-navigation .random-post a:hover {
+.colormag-header-classic .cm-mobile-nav .random-post a:hover {
 	background: transparent;
 }
 
-.colormag-header-classic .main-small-navigation .random-post a:hover .fa-random {
+.colormag-header-classic .cm-mobile-nav .random-post a:hover .fa-random {
 	color: #289dcc;
 }
 
-.colormag-header-classic .main-small-navigation .random-post a .fa-random {
+.colormag-header-classic .cm-mobile-nav .random-post a .fa-random {
 	color: #343a40;
 }
 
-.colormag-header-classic .main-small-navigation .cm-menu-toggle {
+.colormag-header-classic .cm-mobile-nav .cm-menu-toggle {
 	background-color: #289dcc;
 	border-color: #289dcc;
 }
 
-.colormag-header-classic .main-small-navigation .cm-menu-toggle::before {
+.colormag-header-classic .cm-mobile-nav .cm-menu-toggle::before {
 	color: #fff;
 }
 
@@ -3486,11 +3485,11 @@ i.fa-arrow-up, i.fa-arrow-down {
 	.colormag-header-classic #header-logo-image {
 		margin-bottom: 0;
 	}
-	.colormag-header-classic .main-small-navigation .cm-menu-toggle {
+	.colormag-header-classic .cm-mobile-nav .cm-menu-toggle {
 		background-color: #289dcc;
 		border-color: #289dcc;
 	}
-	.colormag-header-classic .main-small-navigation .random-post a {
+	.colormag-header-classic .cm-mobile-nav .random-post a {
 		padding: 15px;
 	}
 	.colormag-header-classic #cm-primary-nav .random-post a {
@@ -4927,10 +4926,10 @@ blockquote.wp-block-quote.has-text-align-right {
 	.sub-toggle .fa {
 		color: #ffffff;
 	}
-	.main-small-navigation li.current-menu-item > .sub-toggle {
+	.cm-mobile-nav li.current-menu-item > .sub-toggle {
 		background: #ffffff none repeat scroll 100% 0;
 	}
-	.main-small-navigation li.current-menu-item > .sub-toggle i {
+	.cm-mobile-nav li.current-menu-item > .sub-toggle i {
 		color: #d40234;
 	}
 	.better-responsive-menu .sub-menu {

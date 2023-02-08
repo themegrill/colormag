@@ -44,7 +44,7 @@ body {
 		background-color: $color__background-dark-news;
 	}
 
-	.main-small-navigation {
+	.cm-mobile-nav {
 		li {
 			background-color: $color__gray-one;
 		}
@@ -209,7 +209,7 @@ body {
 					background-color: $color__background-news;
 				}
 			}
-			.main-small-navigation {
+			.cm-mobile-nav {
 				li {
 					background-color:$color__background-news;
 				}
@@ -230,7 +230,7 @@ body {
 					background-color: $color__background-news;
 				}
 
-				.main-small-navigation li {
+				.cm-mobile-nav li {
 					background-color: $color__background-news;
 				}
 			}
@@ -261,7 +261,7 @@ body {
 						color: $color__white;
 					}
 				}
-				&.main-small-navigation .random-post a .fa-random,
+				&.cm-mobile-nav .random-post a .fa-random,
 				.fa.search-top {
 					color: $color__white;
 				}

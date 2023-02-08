@@ -32,12 +32,12 @@
 		}
 
 		button.onclick = function () {
-			if ( - 1 !== container.className.indexOf( 'main-small-navigation' ) ) {
-				container.className = container.className.replace( 'main-small-navigation', 'cm-primary-nav' );
+			if ( - 1 !== container.className.indexOf( 'cm-mobile-nav' ) ) {
+				container.className = container.className.replace( 'cm-mobile-nav', 'cm-primary-nav' );
 				button.setAttribute( 'aria-expanded', 'false' );
 				menu.setAttribute( 'aria-expanded', 'false' );
 			} else {
-				container.className = container.className.replace( 'cm-primary-nav', 'main-small-navigation' );
+				container.className = container.className.replace( 'cm-primary-nav', 'cm-mobile-nav' );
 				button.setAttribute( 'aria-expanded', 'true' );
 				menu.setAttribute( 'aria-expanded', 'true' );
 			}
