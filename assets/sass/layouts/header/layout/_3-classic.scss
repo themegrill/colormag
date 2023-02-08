@@ -63,7 +63,7 @@
 		}
 	}
 
-	#cm-header-2 {
+	#cm-primary-nav {
 		box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 		position: relative;
 		background-color: transparent;
@@ -109,7 +109,7 @@
 		}
 	}
 
-	.cm-header-2 {
+	.cm-primary-nav {
 		a {
 			font-weight: 700;
 			padding: 10px 0;
@@ -259,7 +259,7 @@
 			}
 		}
 
-		.home-icon {
+		.cm-home-icon {
 			background: none;
 
 			a {
@@ -321,7 +321,7 @@
 	}
 
 	.is-sticky {
-		#cm-header-2 {
+		#cm-primary-nav {
 			background-color: $color__white;
 			box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
 		}
@@ -372,7 +372,7 @@
 			}
 		}
 
-		#cm-header-2 {
+		#cm-primary-nav {
 			.random-post {
 				a {
 					padding: 15px;
@@ -385,7 +385,7 @@
 				line-height: 26px;
 			}
 
-			.home-icon {
+			.cm-home-icon {
 				a {
 					padding: 15px;
 					line-height: 26px;

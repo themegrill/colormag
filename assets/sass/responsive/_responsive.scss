@@ -89,12 +89,12 @@
 		display: flex;
 	}
 
-	.cm-header-2 {
+	.cm-primary-nav {
 		ul {
 			display: none;
 		}
 
-		.home-icon a {
+		.cm-home-icon a {
 			padding: 7px 10px;
 		}
 	}
@@ -260,7 +260,7 @@
 		display: none;
 	}
 
-	.logged-in #cm-header #cm-header-2 {
+	.logged-in #cm-header #cm-primary-nav {
 		top: 0 !important;
 	}
 

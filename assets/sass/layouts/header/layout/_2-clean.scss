@@ -63,14 +63,14 @@
 		margin-bottom: 0;
 	}
 
-	.home-icon {
+	.cm-home-icon {
 
 		.fa {
 			font-size: 21px;
 		}
 	}
 
-	#cm-header-2 {
+	#cm-primary-nav {
 		box-shadow: 0 0 0 rgba(0, 0, 0, 0) inset;
 		position: relative;
 		background-color: transparent;
@@ -121,7 +121,7 @@
 		}
 	}
 
-	.cm-header-2 {
+	.cm-primary-nav {
 		a {
 			font-weight: 500;
 			padding: 20px;
@@ -199,7 +199,7 @@
 
 		}
 
-		#cm-header-2 {
+		#cm-primary-nav {
 
 			.random-post {
 				a {
@@ -216,7 +216,7 @@
 
 		.main-small-navigation {
 
-			.home-icon {
+			.cm-home-icon {
 
 				a {
 					padding: 20px;

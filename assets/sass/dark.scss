@@ -203,7 +203,7 @@ body {
 
 	#cm-header {
 		&.colormag-header-clean {
-			.cm-header-2 {
+			.cm-primary-nav {
 				.sub-menu,
 				.children {
 					background-color: $color__background-news;
@@ -226,7 +226,7 @@ body {
 
 		&.colormag-header-classic {
 			.is-sticky {
-				#cm-header-2 {
+				#cm-primary-nav {
 					background-color: $color__background-news;
 				}
 
@@ -235,7 +235,7 @@ body {
 				}
 			}
 
-			#cm-header-2 {
+			#cm-primary-nav {
 				.cm-menu-toggle {
 					border-color: $color__gray-seven;
 					&::before {
@@ -243,7 +243,7 @@ body {
 					}
 				}
 
-				&.cm-header-2 {
+				&.cm-primary-nav {
 					ul {
 						ul.sub-menu,
 						.children {
@@ -257,7 +257,7 @@ body {
 					}
 					a,
 					.random-post a .fa-random,
-					.home-icon .fa {
+					.cm-home-icon .fa {
 						color: $color__white;
 					}
 				}

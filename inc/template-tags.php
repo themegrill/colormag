@@ -476,9 +476,9 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						<div class="cm-row">
 				<?php
 				if ( 1 == get_theme_mod( 'colormag_home_icon_display', 0 ) ) {
-					$home_icon_class = 'home-icon';
+					$home_icon_class = 'cm-home-icon';
 					if ( is_front_page() ) {
-						$home_icon_class = 'home-icon front_page_on';
+						$home_icon_class = 'cm-home-icon front_page_on';
 					}
 					?>
 

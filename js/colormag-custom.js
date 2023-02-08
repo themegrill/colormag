@@ -90,10 +90,10 @@ jQuery( document ).ready(
 		 * Better responsive menu settings.
 		 */
 		// Adds right icon to submenu.
-		jQuery( '.better-responsive-menu #cm-header-2 .menu-item-has-children' ).append( '<span class="sub-toggle"> <i class="fa fa-caret-down"></i> </span>' );
+		jQuery( '.better-responsive-menu #cm-primary-nav .menu-item-has-children' ).append( '<span class="sub-toggle"> <i class="fa fa-caret-down"></i> </span>' );
 
 		// Adds down icon for menu with sub menu.
-		jQuery( '.better-responsive-menu #cm-header-2 .sub-toggle' ).click(
+		jQuery( '.better-responsive-menu #cm-primary-nav .sub-toggle' ).click(
 			function () {
 				jQuery( this ).parent( '.menu-item-has-children' ).children( 'ul.sub-menu' ).first().slideToggle( '1000' );
 				jQuery( this ).children( '.fa-caret-right' ).first().toggleClass( 'fa-caret-down' );
@@ -103,7 +103,7 @@ jQuery( document ).ready(
 
 		jQuery( document ).on(
 			'click',
-			'#cm-header-2 ul li.menu-item-has-children > a',
+			'#cm-primary-nav ul li.menu-item-has-children > a',
 			function ( event ) {
 				var menuClass = jQuery( this ).parent( '.menu-item-has-children' );
 
@@ -127,7 +127,7 @@ jQuery( document ).ready(
 				if ( window.matchMedia( '(max-width: 768px)' ).matches && jQuery( '#cm-header .sticky-wrapper' ).length >= 1 ) {
 					var screenHeight        = jQuery( window ).height();
 					var availableMenuHeight = screenHeight - 43;
-					var menu                = jQuery( '#cm-header-2' ).find( 'ul' ).first();
+					var menu                = jQuery( '#cm-primary-nav' ).find( 'ul' ).first();
 
 					menu.css( 'max-height', availableMenuHeight );
 					menu.addClass( 'menu-scrollbar' );
@@ -168,14 +168,14 @@ jQuery( document ).ready(
 			var wpAdminBar = jQuery( '#wpadminbar' );
 
 			if ( wpAdminBar.length ) {
-				jQuery( '#cm-header-2' ).sticky(
+				jQuery( '#cm-primary-nav' ).sticky(
 					{
 						topSpacing : wpAdminBar.height(),
 						zIndex     : 999
 					}
 				);
 			} else {
-				jQuery( '#cm-header-2' ).sticky(
+				jQuery( '#cm-primary-nav' ).sticky(
 					{
 						topSpacing : 0,
 						zIndex     : 999

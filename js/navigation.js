@@ -8,7 +8,7 @@
 	function () {
 		var container, button, menu, links, i, len;
 
-		container = document.getElementById( 'cm-header-2' );
+		container = document.getElementById( 'cm-primary-nav' );
 		if ( ! container ) {
 			return;
 		}
@@ -33,11 +33,11 @@
 
 		button.onclick = function () {
 			if ( - 1 !== container.className.indexOf( 'main-small-navigation' ) ) {
-				container.className = container.className.replace( 'main-small-navigation', 'cm-header-2' );
+				container.className = container.className.replace( 'main-small-navigation', 'cm-primary-nav' );
 				button.setAttribute( 'aria-expanded', 'false' );
 				menu.setAttribute( 'aria-expanded', 'false' );
 			} else {
-				container.className = container.className.replace( 'cm-header-2', 'main-small-navigation' );
+				container.className = container.className.replace( 'cm-primary-nav', 'main-small-navigation' );
 				button.setAttribute( 'aria-expanded', 'true' );
 				menu.setAttribute( 'aria-expanded', 'true' );
 			}
