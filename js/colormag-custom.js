@@ -90,14 +90,13 @@ jQuery( document ).ready(
 		 * Better responsive menu settings.
 		 */
 		// Adds right icon to submenu.
-		jQuery( '.better-responsive-menu #cm-primary-nav .menu-item-has-children' ).append( '<span class="sub-toggle"> <i class="fa fa-caret-down"></i> </span>' );
+		jQuery( '.cm-menu-primary-container .menu-item-has-children' ).append( '<span class="cm-sub-toggle"> <i class="fa fa-angle-right"></i> </span>' );
 
 		// Adds down icon for menu with sub menu.
-		jQuery( '.better-responsive-menu #cm-primary-nav .sub-toggle' ).click(
+		jQuery( '.cm-menu-primary-container .cm-sub-toggle' ).click(
 			function () {
 				jQuery( this ).parent( '.menu-item-has-children' ).children( 'ul.sub-menu' ).first().slideToggle( '1000' );
-				jQuery( this ).children( '.fa-caret-right' ).first().toggleClass( 'fa-caret-down' );
-				jQuery( this ).toggleClass( 'active' );
+				jQuery( this ).children( '.fa-angle-right' ).first().toggleClass( 'fa-angle-down' );
 			}
 		);
 
