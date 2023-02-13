@@ -892,7 +892,6 @@ nav li > ul, nav li > ol {
 
 .cm-primary-nav {
 	width: 100%;
-	text-align: center;
 }
 
 .cm-primary-nav .menu {
@@ -1283,8 +1282,12 @@ li.default-menu {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 	padding: 10px 12px;
-	line-height: 1.8;
+	line-height: 2;
+	height: 48px;
 }
 
 .cm-mobile-nav li {

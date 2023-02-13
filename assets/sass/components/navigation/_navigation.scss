@@ -9,7 +9,6 @@ nav li {
 
 .cm-primary-nav {
 	width: 100%;
-	text-align: center;
 
 	.menu {
 		flex: 1;
@@ -438,8 +437,10 @@ li.default-menu {
 
 	.cm-random-post a {
 		display: flex;
+		align-items: center;
 		padding: 10px 12px;
-		line-height: 1.8;
+		line-height: 2;
+		height: 48px;
 	}
 
 	li {
