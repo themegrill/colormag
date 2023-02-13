@@ -164,6 +164,7 @@
 			width: 20%;
 		}
 	}
+
 	.video-player.video-player--horizontal .video-playlist .video-playlist-item {
 		width: 35%;
 	}
@@ -223,15 +224,18 @@
 		width: 100%;
 		margin: 0;
 	}
+
 	.num-404 {
 		font-size: 170px;
 		line-height: 210px;
 	}
+
 	.error {
 		margin: 0 auto 50px;
 		padding: 0;
 		width: 70%;
 	}
+
 	.call-to-action__title {
 		font-size: 36px;
 	}
@@ -362,7 +366,12 @@
 		float: none;
 	}
 
-	.gallery-columns-4 .gallery-item, .gallery-columns-5 .gallery-item, .gallery-columns-6 .gallery-item, .gallery-columns-7 .gallery-item, .gallery-columns-8 .gallery-item, .gallery-columns-9 .gallery-item {
+	.gallery-columns-4 .gallery-item,
+	.gallery-columns-5 .gallery-item,
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
 		width: 25%;
 	}
 
