@@ -114,7 +114,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'section'   => 'colormag_primary_menu_section',
 				'transport' => $customizer_selective_refresh,
 				'partial'   => array(
-					'selector'        => '.random-post',
+					'selector'        => '.cm-random-post',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_random_post',

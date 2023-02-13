@@ -92,7 +92,7 @@ class ColorMag_Customizer_Partials {
 		);
 		?>
 
-		<div class="random-post">
+		<div class="cm-random-post">
 			<?php
 			while ( $get_random_post->have_posts() ) :
 				$get_random_post->the_post();
