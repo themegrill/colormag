@@ -2469,14 +2469,10 @@ i.fa-arrow-up, i.fa-arrow-down {
 }
 
 .advertisement_728x90 {
-	padding: 15px 0 45px;
 	display: block;
 }
 
 .advertisement_728x90 img {
-	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-	padding: 10px;
 	display: block;
 	margin: 0 auto;
 }
