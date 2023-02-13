@@ -36,7 +36,7 @@ class ColorMag_Dynamic_CSS {
 		 */
 		// Primary color.
 		$primary_color = get_theme_mod( 'colormag_primary_color', '#289dcc' );
-		$primary_dark  = colormag_darkcolor( $primary_color, - 30 );
+		$primary_dark  = colormag_rbg_darkcolor( $primary_color, - 30 );
 
 
 		// Generate dynamic CSS.

@@ -187,6 +187,37 @@ if ( ! function_exists( 'colormag_darkcolor' ) ) :
 
 endif;
 
+if ( ! function_exists( 'colormag_rbg_darkcolor' ) ) :
+
+	/**
+	 * Generate darker color
+	 *
+	 * @param string $rgb   Hex color value.
+	 * @param string $steps Steps to change the hex color value for equivalent dark color.
+	 *
+	 * @return string
+	 */
+	function colormag_rbg_darkcolor( $rgb, $steps ) {;
+		// Steps should be between -255 and 255. Negative = darker, positive = lighter
+		$steps = max( -255, min( 255, $steps ) );
+
+		// Split into three parts: R, G, and B
+		$color_parts = explode( ',', $rgb );
+		$return = '';
+
+		foreach ( $color_parts as $color ) {
+			$color  = intval( $color ); // Convert to integer
+			error_log( print_r( $color, true ) );
+			$color  = max( 0, min( 255, $color + $steps ) ); // Adjust color
+			$return .= strval( $color ) . ','; // Concatenate with a comma
+		}
+
+		return rtrim( $return, ',' ); // Remove the trailing comma
+
+	}
+
+endif;
+
 if ( ! function_exists( 'colormag_parse_css' ) ) :
 
 	/**
