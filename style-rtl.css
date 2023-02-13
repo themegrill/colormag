@@ -1707,24 +1707,37 @@ Styles for separating single posts loaded from ajax call.
 /* Search.
 --------------------------------------------- */
 .cm-header-actions {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-webkit-box-ordinal-group: 4;
 	-ms-flex-order: 3;
 	order: 3;
 	margin-right: auto;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
 }
 
-#cm-header .search-wrap input.s {
-	width: 200px;
+.cm-top-search {
+	position: initial;
+}
+
+.cm-top-search:has(.show) .fa.search-top::before {
+	content: '✖';
 }
 
 .fa.search-top {
-	color: #ffffff;
+	color: #fff;
 	cursor: pointer;
-	font-size: 21px;
-	padding: 10px 12px;
+	font-size: 24px;
+	padding: 12px;
+	width: 48px;
 }
 
 .fa.search-top:hover {
@@ -1736,13 +1749,11 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .search-wrap button {
-	border-radius: 0;
+	border-radius: 4px 0 0 4px;
 	color: #fff;
-	line-height: 45px;
 	margin-bottom: 0;
 	padding: 0 15px;
-	margin-right: -5px;
-	margin-top: 1px;
+	margin-right: -4px;
 }
 
 .search-icon::before {
@@ -1756,18 +1767,51 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .search-form-top {
-	border: 1px solid #eaeaea;
-	display: none;
-	padding: 10px;
 	position: absolute;
 	left: 0;
-	top: 44px;
 	z-index: 9999;
+	border: 1px solid #F4F4F5;
+	display: none;
+	padding: 24px;
+	border-radius: 0 0 4px 4px;
 	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-form-top.show {
 	display: block;
+	width: 100%;
+}
+
+.search-form-top.show::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 12px solid #fff;
+	border-right: 12px solid transparent;
+	border-left: 12px solid transparent;
+	top: -12px;
+	left: 54px;
+}
+
+.search-form-top :focus-visible {
+	outline: none;
+}
+
+.search-form-top input.s {
+	width: 100%;
+	font-size: 14px;
+	padding: 12px;
+	border: 1px solid #E4E4E7;
+	border-radius: 0 4px 4px 0;
+}
+
+.search-form-top .search-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .not-found .search-wrap button {
@@ -1780,21 +1824,44 @@ Styles for separating single posts loaded from ajax call.
 
 /* Random Posts Icon.
 --------------------------------------------- */
-.random-post {
+.cm-random-post {
 	-webkit-box-ordinal-group: 2;
 	-ms-flex-order: 1;
 	order: 1;
 }
 
-.random-post .fa-random {
+.cm-random-post .fa-random {
 	color: #fff;
 	font-size: 20px;
 	vertical-align: middle;
 }
 
-.cm-primary-nav .random-post a {
+.cm-primary-nav .cm-random-post a {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 48px;
 	border-bottom: medium none;
 	padding: 10px 12px;
+}
+
+@media screen and (min-width: 768px) {
+	.cm-header-actions {
+		-ms-flex-preferred-size: unset;
+		flex-basis: unset;
+	}
+	.search-form-top.show {
+		width: 570px;
+	}
+	.search-form-top.show::before {
+		left: 10px;
+	}
+	.cm-top-search {
+		position: relative;
+	}
 }
 
 /* Header Media.
