@@ -257,6 +257,17 @@ function colormag_body_class( $classes ) {
 		$classes[] = 'dark-skin';
 	}
 
+	/**
+	 * Header styles.
+	 */
+	$header_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
+
+	if ( 'type_two' === $header_layout_class ) {
+		$classes[] = 'colormag-header-clean';
+	} elseif ( 'type_three' === $header_layout_class ) {
+		$classes[] = 'colormag-header-classic';
+	}
+
 	return $classes;
 
 }
