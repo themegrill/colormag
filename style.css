@@ -1741,6 +1741,7 @@ Styles for separating single posts loaded from ajax call.
 	font-size: 24px;
 	padding: 12px;
 	width: 48px;
+	text-align: center;
 }
 
 .fa.search-top:hover {
