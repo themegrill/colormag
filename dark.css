@@ -43,21 +43,21 @@ body {
 }
 
 .dark-skin #page,
-.dark-skin #header-text-nav-container,
+.dark-skin #cm-header-container,
 .dark-skin #main,
 .dark-skin #secondary .widget {
 	background-color: #0D0D0D;
 }
 
-.dark-skin .news-bar {
+.dark-skin .cm-header-bar {
 	background-color: #111111;
 }
 
-.dark-skin .main-small-navigation li {
+.dark-skin .cm-mobile-nav li {
 	background-color: #232323;
 }
 
-.dark-skin .main-small-navigation a {
+.dark-skin .cm-mobile-nav a {
 	color: #fff;
 }
 
@@ -164,56 +164,56 @@ body {
 	background: #0D0D0D;
 }
 
-.dark-skin #masthead.colormag-header-clean .main-navigation .sub-menu,
-.dark-skin #masthead.colormag-header-clean .main-navigation .children {
+.dark-skin #cm-header.colormag-header-clean .cm-primary-nav .sub-menu,
+.dark-skin #cm-header.colormag-header-clean .cm-primary-nav .children {
 	background-color: #212529;
 }
 
-.dark-skin #masthead.colormag-header-clean .main-small-navigation li {
+.dark-skin #cm-header.colormag-header-clean .cm-mobile-nav li {
 	background-color: #212529;
 }
 
-.dark-skin #masthead.colormag-header-clean .breaking-news .newsticker a,
-.dark-skin #masthead.colormag-header-clean .social-links i.fa, .dark-skin #masthead.colormag-header-classic .breaking-news .newsticker a,
-.dark-skin #masthead.colormag-header-classic .social-links i.fa {
+.dark-skin #cm-header.colormag-header-clean .breaking-news .newsticker a,
+.dark-skin #cm-header.colormag-header-clean .social-links i.fa, .dark-skin #cm-header.colormag-header-classic .breaking-news .newsticker a,
+.dark-skin #cm-header.colormag-header-classic .social-links i.fa {
 	color: #cccccc;
 }
 
-.dark-skin #masthead.colormag-header-classic .is-sticky #site-navigation {
+.dark-skin #cm-header.colormag-header-classic .is-sticky #cm-primary-nav {
 	background-color: #212529;
 }
 
-.dark-skin #masthead.colormag-header-classic .is-sticky .main-small-navigation li {
+.dark-skin #cm-header.colormag-header-classic .is-sticky .cm-mobile-nav li {
 	background-color: #212529;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation .menu-toggle {
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav .cm-menu-toggle {
 	border-color: #cccccc;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation .menu-toggle::before {
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav .cm-menu-toggle::before {
 	color: #cccccc;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul .children {
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav ul ul.sub-menu,
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav ul .children {
 	background-color: #212529;
 	border-color: #444444;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul ul.sub-menu li,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation ul .children li {
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav ul ul.sub-menu li,
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav ul .children li {
 	border-color: #444444;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation a,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .random-post a .fa-random,
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-navigation .home-icon .fa {
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav a,
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav .random-post a .fa-random,
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-primary-nav .cm-home-icon .fa {
 	color: #fff;
 }
 
-.dark-skin #masthead.colormag-header-classic #site-navigation.main-small-navigation .random-post a .fa-random,
-.dark-skin #masthead.colormag-header-classic #site-navigation .fa.search-top {
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav.cm-mobile-nav .random-post a .fa-random,
+.dark-skin #cm-header.colormag-header-classic #cm-primary-nav .fa.search-top {
 	color: #fff;
 }
 

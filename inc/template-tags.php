@@ -339,29 +339,31 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 		if ( 1 == $date_display_enable || 1 == $breaking_news_enable || ( 1 == $social_links_enable && 1 == $social_links_location  ) ) :
 			?>
 
-			<div class="news-bar">
-				<div class="inner-wrap">
-					<div class="tg-news-bar__one">
-						<?php
-						// Displays the current date.
-						if ( 1 == $date_display_enable ) {
-							colormag_date_display();
-						}
+			<div class="cm-header-bar">
+				<div class="cm-container">
+					<div class="cm-row">
+						<div class="cm-header-bar__one">
+							<?php
+							// Displays the current date.
+							if ( 1 == $date_display_enable ) {
+								colormag_date_display();
+							}
 
-						// Displays the breaking news.
-						if ( 1 == $breaking_news_enable ) {
-							colormag_breaking_news();
-						}
-						?>
-					</div>
+							// Displays the breaking news.
+							if ( 1 == $breaking_news_enable ) {
+								colormag_breaking_news();
+							}
+							?>
+						</div>
 
-					<div class="tg-news-bar__two">
-						<?php
-						// Displays the social links in header.
-						if ( 1 == $social_links_enable && 1 == $social_links_location ) {
-							colormag_social_links();
-						}
-						?>
+						<div class="cm-header-bar__two">
+							<?php
+							// Displays the social links in header.
+							if ( 1 == $social_links_enable && 1 == $social_links_location ) {
+								colormag_social_links();
+							}
+							?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -388,63 +390,65 @@ if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 		$header_display_type = get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' );
 		?>
 
-		<div class="inner-wrap">
-			<div id="header-text-nav-wrap" class="clearfix">
+		<div id="cm-header-1" class="cm-header-1">
+			<div class="cm-container">
+				<div class="cm-row">
 
-				<div id="header-left-section">
-					<?php
-					if ( 'show_both' === $header_display_type || 'header_logo_only' === $header_display_type ) {
-						?>
-						<div id="header-logo-image">
+					<div class="cm-header-col-1">
+						<?php
+						if ( 'show_both' === $header_display_type || 'header_logo_only' === $header_display_type ) {
+							?>
+							<div id="cm-site-branding" class="cm-site-branding">
+								<?php
+								if ( function_exists( 'the_custom_logo' ) ) {
+									the_custom_logo();
+								}
+								?>
+							</div><!-- #cm-site-branding -->
 							<?php
-							if ( function_exists( 'the_custom_logo' ) ) {
-								the_custom_logo();
-							}
-							?>
-						</div><!-- #header-logo-image -->
-						<?php
-					}
+						}
 
-					if ( 'header_logo_only' === $header_display_type || 'disable' === ( $header_display_type ) ) {
-						$screen_reader = 'screen-reader-text';
-					}
-					?>
-
-					<div id="header-text" class="<?php echo esc_attr( $screen_reader ); ?>">
-						<?php if ( is_front_page() || is_home() ) : ?>
-							<h1 id="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-							</h1>
-						<?php else : ?>
-							<h3 id="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-							</h3>
-						<?php endif; ?>
-
-						<?php
-						if ( $description || is_customize_preview() ) :
-							?>
-							<p id="site-description">
-								<?php echo $description; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
-							</p><!-- #site-description -->
-						<?php endif; ?>
-					</div><!-- #header-text -->
-				</div><!-- #header-left-section -->
-
-				<div id="header-right-section">
-					<?php
-					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
+						if ( 'header_logo_only' === $header_display_type || 'disable' === ( $header_display_type ) ) {
+							$screen_reader = 'screen-reader-text';
+						}
 						?>
-						<div id="header-right-sidebar" class="clearfix">
-							<?php dynamic_sidebar( 'colormag_header_sidebar' ); ?>
-						</div>
-						<?php
-					}
-					?>
-				</div><!-- #header-right-section -->
 
-			</div><!-- #header-text-nav-wrap -->
-		</div><!-- .inner-wrap -->
+						<div id="cm-site-info" class="<?php echo esc_attr( $screen_reader ); ?>">
+							<?php if ( is_front_page() || is_home() ) : ?>
+								<h1 class="cm-site-title">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+								</h1>
+							<?php else : ?>
+								<h3 class="cm-site-title">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+								</h3>
+							<?php endif; ?>
+
+							<?php
+							if ( $description || is_customize_preview() ) :
+								?>
+								<p class="cm-site-description">
+									<?php echo $description; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
+								</p><!-- .cm-site-description -->
+							<?php endif; ?>
+						</div><!-- #cm-site-info -->
+					</div><!-- .cm-header-col-1 -->
+
+					<div class="cm-header-col-2">
+						<?php
+						if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
+							?>
+							<div id="header-right-sidebar" class="clearfix">
+								<?php dynamic_sidebar( 'colormag_header_sidebar' ); ?>
+							</div>
+							<?php
+						}
+						?>
+					</div><!-- .cm-header-col-2 -->
+				</div>
+
+			</div>
+		</div>
 
 		<?php
 
@@ -466,13 +470,15 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 		$search_icon      = get_theme_mod( 'colormag_search_icon_in_menu', 0 );
 		?>
 
-		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
-			<div class="inner-wrap clearfix">
+		<div id="cm-header-2" class="cm-header-2">
+				<nav id="cm-primary-nav" class="cm-primary-nav" role="navigation">
+					<div class="cm-container">
+						<div class="cm-row">
 				<?php
 				if ( 1 == get_theme_mod( 'colormag_home_icon_display', 0 ) ) {
-					$home_icon_class = 'home-icon';
+					$home_icon_class = 'cm-home-icon';
 					if ( is_front_page() ) {
-						$home_icon_class = 'home-icon front_page_on';
+						$home_icon_class = 'cm-home-icon front_page_on';
 					}
 					?>
 
@@ -486,7 +492,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 				<?php } ?>
 
 				<?php if ( 1 == $random_post_icon || 1 == $search_icon ) { ?>
-					<div class="search-random-icons-container">
+					<div class="cm-header-actions">
 						<?php
 						// Displays the random post.
 						if ( 1 == $random_post_icon ) {
@@ -496,7 +502,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						// Displays the search icon.
 						if ( 1 == $search_icon ) {
 							?>
-							<div class="top-search-wrap">
+							<div class="cm-top-search">
 								<i class="fa fa-search search-top"></i>
 								<div class="search-form-top">
 									<?php get_search_form(); ?>
@@ -506,13 +512,13 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 					</div>
 				<?php } ?>
 
-				<p class="menu-toggle"></p>
+				<p class="cm-menu-toggle"></p>
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
-							'container_class' => 'menu-primary-container',
+							'container_class' => 'cm-menu-primary-container',
 							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 						)
 					);

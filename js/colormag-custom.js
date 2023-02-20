@@ -11,18 +11,18 @@ jQuery( document ).ready(
 		 * Search.
 		 */
 		var hideSearchForm = function () {
-			jQuery( '#masthead .search-form-top' ).removeClass( 'show' );
+			jQuery( '#cm-header .search-form-top' ).removeClass( 'show' );
 		};
 
 		// For Search Icon Toggle effect added at the top.
 		jQuery( '.search-top' ).click(
 			function () {
-				jQuery( this ).next( '#masthead .search-form-top' ).toggleClass( 'show' );
+				jQuery( this ).next( '#cm-header .search-form-top' ).toggleClass( 'show' );
 
 				// Focus after some time to fix conflict with toggleClass.
 				setTimeout(
 					function () {
-						jQuery( '#masthead .search-form-top input' ).focus();
+						jQuery( '#cm-header .search-form-top input' ).focus();
 					},
 					200
 				);
@@ -34,7 +34,7 @@ jQuery( document ).ready(
 						// On esc key press.
 						if ( 27 === e.keyCode ) {
 							// If search box is opened.
-							if ( jQuery( '#masthead .search-form-top' ).hasClass( 'show' ) ) {
+							if ( jQuery( '#cm-header .search-form-top' ).hasClass( 'show' ) ) {
 								hideSearchForm();
 							}
 						}
@@ -44,7 +44,7 @@ jQuery( document ).ready(
 				jQuery( document ).on(
 					'click.outEvent',
 					function ( e ) {
-						if ( e.target.closest( '.top-search-wrap' ) ) {
+						if ( e.target.closest( '.cm-top-search' ) ) {
 							return;
 						}
 
@@ -90,20 +90,19 @@ jQuery( document ).ready(
 		 * Better responsive menu settings.
 		 */
 		// Adds right icon to submenu.
-		jQuery( '.better-responsive-menu #site-navigation .menu-item-has-children' ).append( '<span class="sub-toggle"> <i class="fa fa-caret-down"></i> </span>' );
+		jQuery( '.cm-menu-primary-container .menu-item-has-children' ).append( '<span class="cm-sub-toggle"> <i class="fa fa-angle-right"></i> </span>' );
 
 		// Adds down icon for menu with sub menu.
-		jQuery( '.better-responsive-menu #site-navigation .sub-toggle' ).click(
+		jQuery( '.cm-menu-primary-container .cm-sub-toggle' ).click(
 			function () {
 				jQuery( this ).parent( '.menu-item-has-children' ).children( 'ul.sub-menu' ).first().slideToggle( '1000' );
-				jQuery( this ).children( '.fa-caret-right' ).first().toggleClass( 'fa-caret-down' );
-				jQuery( this ).toggleClass( 'active' );
+				jQuery( this ).children( '.fa-angle-right' ).first().toggleClass( 'fa-angle-down' );
 			}
 		);
 
 		jQuery( document ).on(
 			'click',
-			'#site-navigation ul li.menu-item-has-children > a',
+			'#cm-primary-nav ul li.menu-item-has-children > a',
 			function ( event ) {
 				var menuClass = jQuery( this ).parent( '.menu-item-has-children' );
 
@@ -124,10 +123,10 @@ jQuery( document ).ready(
 		 */
 		jQuery( window ).on( 'load',
 			function() {
-				if ( window.matchMedia( '(max-width: 768px)' ).matches && jQuery( '#masthead .sticky-wrapper' ).length >= 1 ) {
+				if ( window.matchMedia( '(max-width: 768px)' ).matches && jQuery( '#cm-header .sticky-wrapper' ).length >= 1 ) {
 					var screenHeight        = jQuery( window ).height();
 					var availableMenuHeight = screenHeight - 43;
-					var menu                = jQuery( '#site-navigation' ).find( 'ul' ).first();
+					var menu                = jQuery( '#cm-primary-nav' ).find( 'ul' ).first();
 
 					menu.css( 'max-height', availableMenuHeight );
 					menu.addClass( 'menu-scrollbar' );
@@ -168,14 +167,14 @@ jQuery( document ).ready(
 			var wpAdminBar = jQuery( '#wpadminbar' );
 
 			if ( wpAdminBar.length ) {
-				jQuery( '#site-navigation' ).sticky(
+				jQuery( '#cm-primary-nav' ).sticky(
 					{
 						topSpacing : wpAdminBar.height(),
 						zIndex     : 999
 					}
 				);
 			} else {
-				jQuery( '#site-navigation' ).sticky(
+				jQuery( '#cm-primary-nav' ).sticky(
 					{
 						topSpacing : 0,
 						zIndex     : 999

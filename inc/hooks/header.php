@@ -64,7 +64,7 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	 */
 	function colormag_header_start() {
 		?>
-		<header id="masthead" class="site-header clearfix <?php echo esc_attr( colormag_header_layout_class() ); ?>">
+		<header id="cm-header" class="cm-header">
 		<?php
 	}
 
@@ -78,7 +78,7 @@ if ( ! function_exists( 'colormag_header_nav_container_start' ) ) :
 	 */
 	function colormag_header_nav_container_start() {
 		?>
-		<div id="header-text-nav-container" class="clearfix">
+		<div id="cm-header-container">
 		<?php
 	}
 
@@ -123,7 +123,7 @@ if ( ! function_exists( 'colormag_header_nav_container_end' ) ) :
 	 */
 	function colormag_header_nav_container_end() {
 		?>
-		</div><!-- #header-text-nav-container -->
+		</div><!-- #cm-header-container -->
 		<?php
 	}
 
@@ -153,7 +153,7 @@ if ( ! function_exists( 'colormag_header_end' ) ) :
 	 */
 	function colormag_header_end() {
 		?>
-		</header><!-- #masthead -->
+		</header><!-- #cm-header -->
 		<?php
 	}
 

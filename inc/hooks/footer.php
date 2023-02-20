@@ -210,7 +210,7 @@ if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
 	 */
 	function colormag_scroll_top_button() {
 		?>
-		<a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+		<a href="#cm-header" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 		<?php
 	}
 

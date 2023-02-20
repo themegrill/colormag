@@ -34,17 +34,17 @@ body {
 
 .dark-skin {
 	#page,
-	#header-text-nav-container,
+	#cm-header-container,
 	#main,
 	#secondary .widget {
 		background-color: $color__background-dark-page;
 	}
 
-	.news-bar {
+	.cm-header-bar {
 		background-color: $color__background-dark-news;
 	}
 
-	.main-small-navigation {
+	.cm-mobile-nav {
 		li {
 			background-color: $color__gray-one;
 		}
@@ -201,15 +201,15 @@ body {
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
 
-	#masthead {
+	#cm-header {
 		&.colormag-header-clean {
-			.main-navigation {
+			.cm-primary-nav {
 				.sub-menu,
 				.children {
 					background-color: $color__background-news;
 				}
 			}
-			.main-small-navigation {
+			.cm-mobile-nav {
 				li {
 					background-color:$color__background-news;
 				}
@@ -226,24 +226,24 @@ body {
 
 		&.colormag-header-classic {
 			.is-sticky {
-				#site-navigation {
+				#cm-primary-nav {
 					background-color: $color__background-news;
 				}
 
-				.main-small-navigation li {
+				.cm-mobile-nav li {
 					background-color: $color__background-news;
 				}
 			}
 
-			#site-navigation {
-				.menu-toggle {
+			#cm-primary-nav {
+				.cm-menu-toggle {
 					border-color: $color__gray-seven;
 					&::before {
 						color:$color__gray-seven;
 					}
 				}
 
-				&.main-navigation {
+				&.cm-primary-nav {
 					ul {
 						ul.sub-menu,
 						.children {
@@ -257,11 +257,11 @@ body {
 					}
 					a,
 					.random-post a .fa-random,
-					.home-icon .fa {
+					.cm-home-icon .fa {
 						color: $color__white;
 					}
 				}
-				&.main-small-navigation .random-post a .fa-random,
+				&.cm-mobile-nav .random-post a .fa-random,
 				.fa.search-top {
 					color: $color__white;
 				}

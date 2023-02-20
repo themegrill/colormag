@@ -85,7 +85,7 @@ if ( ! function_exists( 'colormag_random_post' ) ) :
 		$get_random_post = new WP_Query( $args );
 		?>
 
-		<div class="random-post">
+		<div class="cm-random-post">
 			<?php
 			while ( $get_random_post->have_posts() ) :
 				$get_random_post->the_post();

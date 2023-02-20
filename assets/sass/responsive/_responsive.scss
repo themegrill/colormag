@@ -60,9 +60,6 @@
 }
 
 @media screen and (max-width: 800px) {
-	#header-text-nav-wrap {
-		padding: 10px 0;
-	}
 	#header-left-section, .header_display_type_one #header-left-section {
 		float: none;
 		margin-bottom: 10px;
@@ -88,21 +85,17 @@
 
 @media screen and (max-width: 768px) {
 
-	.menu-toggle {
+	.cm-menu-toggle {
 		display: flex;
 	}
 
-	.main-navigation {
+	.cm-primary-nav {
 		ul {
 			display: none;
 		}
-
-		.home-icon a {
-			padding: 7px 10px;
-		}
 	}
 
-	.search-random-icons-container .social-links ul {
+	.cm-header-actions .social-links ul {
 		display: block;
 	}
 
@@ -110,16 +103,16 @@
 		float: none;
 		width: 100%;
 	}
+
 	.widget_slider_area {
 		padding-bottom: 10px;
 	}
+
 	#primary, #secondary {
 		float: none;
 		width: 100%;
 	}
-	.advertisement_728x90 img {
-		width: 96%;
-	}
+
 	.sub-toggle {
 		background: $color__primary none repeat scroll 0 0;
 		color: #ffffff;
@@ -137,7 +130,8 @@
 			color: #ffffff;
 		}
 	}
-	.main-small-navigation li.current-menu-item > .sub-toggle {
+
+	.cm-mobile-nav li.current-menu-item > .sub-toggle {
 		background: #ffffff none repeat scroll 0 0;
 
 		i {
@@ -166,6 +160,7 @@
 			width: 20%;
 		}
 	}
+
 	.video-player.video-player--horizontal .video-playlist .video-playlist-item {
 		width: 35%;
 	}
@@ -225,15 +220,18 @@
 		width: 100%;
 		margin: 0;
 	}
+
 	.num-404 {
 		font-size: 170px;
 		line-height: 210px;
 	}
+
 	.error {
 		margin: 0 auto 50px;
 		padding: 0;
 		width: 70%;
 	}
+
 	.call-to-action__title {
 		font-size: 36px;
 	}
@@ -263,7 +261,7 @@
 		display: none;
 	}
 
-	.logged-in #masthead #site-navigation {
+	.logged-in #cm-header #cm-primary-nav {
 		top: 0 !important;
 	}
 
@@ -364,7 +362,12 @@
 		float: none;
 	}
 
-	.gallery-columns-4 .gallery-item, .gallery-columns-5 .gallery-item, .gallery-columns-6 .gallery-item, .gallery-columns-7 .gallery-item, .gallery-columns-8 .gallery-item, .gallery-columns-9 .gallery-item {
+	.gallery-columns-4 .gallery-item,
+	.gallery-columns-5 .gallery-item,
+	.gallery-columns-6 .gallery-item,
+	.gallery-columns-7 .gallery-item,
+	.gallery-columns-8 .gallery-item,
+	.gallery-columns-9 .gallery-item {
 		width: 25%;
 	}
 
@@ -493,7 +496,7 @@
 }
 
 @media screen and (max-width: 380px) {
-	#masthead .search-wrap input.s {
+	#cm-header .search-wrap input.s {
 		width: 165px;
 	}
 }

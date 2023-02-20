@@ -5,3 +5,35 @@
 	margin: 0 auto;
 	max-width: 1140px;
 }
+
+.cm-container {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $spacing_15px;
+	padding-right: $spacing_15px;
+	box-sizing: content-box;
+}
+
+.cm-header-1 {
+	.cm-row {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		gap: 10px;
+		padding: $spacing_24 0;
+	}
+}
+
+@include breakpoint("mdm") {
+	.cm-header-1 {
+		.cm-row {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: left;
+			gap: 20px;
+		}
+	}
+}

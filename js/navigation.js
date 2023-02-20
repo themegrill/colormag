@@ -8,12 +8,12 @@
 	function () {
 		var container, button, menu, links, i, len;
 
-		container = document.getElementById( 'site-navigation' );
+		container = document.getElementById( 'cm-primary-nav' );
 		if ( ! container ) {
 			return;
 		}
 
-		button = container.getElementsByClassName( 'menu-toggle' )[0];
+		button = container.getElementsByClassName( 'cm-menu-toggle' )[0];
 		if ( 'undefined' === typeof button ) {
 			return;
 		}
@@ -32,12 +32,12 @@
 		}
 
 		button.onclick = function () {
-			if ( - 1 !== container.className.indexOf( 'main-small-navigation' ) ) {
-				container.className = container.className.replace( 'main-small-navigation', 'main-navigation' );
+			if ( - 1 !== container.className.indexOf( 'cm-mobile-nav' ) ) {
+				container.className = container.className.replace( 'cm-mobile-nav', 'cm-primary-nav' );
 				button.setAttribute( 'aria-expanded', 'false' );
 				menu.setAttribute( 'aria-expanded', 'false' );
 			} else {
-				container.className = container.className.replace( 'main-navigation', 'main-small-navigation' );
+				container.className = container.className.replace( 'cm-primary-nav', 'cm-mobile-nav' );
 				button.setAttribute( 'aria-expanded', 'true' );
 				menu.setAttribute( 'aria-expanded', 'true' );
 			}
