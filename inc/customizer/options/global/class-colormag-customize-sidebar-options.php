@@ -43,28 +43,6 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 				'priority' => 10,
 			),
 
-			// Sticky Sidebar subtitle.
-			array(
-				'name'     => 'colormag_sticky_sidebar_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Sticky Sidebar', 'colormag' ),
-				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 20,
-			),
-
-			// Sticky sidebar and content area enable/disable option.
-			array(
-				'name'        => 'colormag_enable_sticky_sidebar',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to activate the sticky options for content and sidebar areas.', 'colormag' ),
-				'section'     => 'colormag_global_sidebar_section',
-				'priority'    => 30,
-			),
-
 			// Widget Title subtitle.
 			array(
 				'name'     => 'colormag_widget_title_subtitle',

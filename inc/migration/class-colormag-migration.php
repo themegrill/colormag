@@ -1441,14 +1441,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			/**
 			 * Toggle control migration.
 			 */
-			// Sticky sidebar.
-			$enable_sticky_sidebar = get_theme_mod( 'colormag_sticky_content_sidebar' );
-
-			if ( $enable_sticky_sidebar ) {
-				set_theme_mod( 'colormag_enable_sticky_sidebar', true );
-			}
-			remove_theme_mod( 'colormag_sticky_content_sidebar' );
-
 			// Hide Blog/Static page posts.
 			$blog_static_page_posts = get_theme_mod( 'colormag_hide_blog_front' );
 

@@ -162,12 +162,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
 			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
-			// Theia Sticky Sidebar enqueue.
-			if ( 1 === get_theme_mod( 'colormag_enable_sticky_sidebar', 0 ) ) {
-				wp_enqueue_script( 'theia-sticky-sidebar', COLORMAG_JS_URL . '/theia-sticky-sidebar/theia-sticky-sidebar' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-				wp_enqueue_script( 'ResizeSensor', COLORMAG_JS_URL . '/theia-sticky-sidebar/ResizeSensor' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-			}
-
 			// prognroll JS enqueue.
 			if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) {
 				wp_enqueue_script( 'prognroll', COLORMAG_JS_URL . '/prognroll/prognroll' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
