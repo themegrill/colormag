@@ -45,26 +45,6 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'priority' => 10,
 			),
 
-			array(
-				'name'        => 'colormag_site_logo_height',
-				'default'     => array(
-					'size' => '',
-					'unit' => 'px',
-				),
-				'suffix'      => array( 'px' ),
-				'type'        => 'control',
-				'control'     => 'colormag-slider',
-				'label'       => esc_html__( 'Height', 'colormag' ),
-				'section'     => 'title_tagline',
-				'transport'   => 'postMessage',
-				'priority'    => 40,
-				'input_attrs' => array(
-					'px' => array(
-						'step' => 1,
-					),
-				),
-			),
-
 			/**
 			 *  Site Icon.
 			 */

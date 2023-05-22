@@ -13,7 +13,6 @@ colormagGenerateCSS( 'colormag_top_bar_border_bottom_color', '.cm-top-bar', 'bor
 colormagGenerateDimensionCSS( 'colormag_primary_menu_dimension_padding', '.cm-primary-nav a', 'padding' );
 colormagGenerateDimensionCSS( 'colormag_main_header_dimension_padding', '.cm-primary-nav', 'padding' );
 
-colormagGenerateSliderCSS( 'colormag_site_logo_height', '.cm-site-branding img', 'height');
 colormagGenerateSliderCSS( 'colormag_top_bar_border_bottom_size', '.cm-top-bar', 'border-bottom-width');
 
 colormagGenerateTypographyCSS( 'colormag_site_title_typography', '.cm-site-title');

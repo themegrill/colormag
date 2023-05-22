@@ -776,20 +776,6 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
-		$site_logo_height = get_theme_mod( 'colormag_site_logo_height' );
-
-		$site_logo_height_default = array(
-			'size' => '',
-			'unit' => 'px',
-		);
-
-		$parse_css .= colormag_parse_slider_css(
-			$site_logo_height_default,
-			$site_logo_height,
-			'.cm-site-branding img',
-			'height'
-		);
-
 		// Main Header
 		$main_header_dimension_padding_default = array(
 			'top'    => '',

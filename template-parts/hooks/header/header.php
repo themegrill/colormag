@@ -525,34 +525,3 @@ endif;
 
 	add_action( 'colormag_action_breadcrumb', 'colormag_theme_breadcrumb', 10 );
 
-if ( ! function_exists( 'colormag_change_logo_attr' ) ) :
-
-	/**
-	 * Change the image attributes while retina logo is set.
-	 *
-	 * @param $attr
-	 * @param $attachment
-	 * @param $size
-	 *
-	 * @return mixed
-	 */
-	function colormag_change_logo_attr( $attr, $attachment, $size ) {
-		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-
-		if ( ! empty( $custom_logo ) ) {
-			$custom_logo = $custom_logo[0];
-		}
-
-		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
-			$attr['srcset'] = '';
-
-			$attr['srcset'] = $custom_logo . ' 1x';
-
-		}
-
-		return $attr;
-	}
-
-endif;
-
-	add_filter( 'wp_get_attachment_image_attributes', 'colormag_change_logo_attr', 10, 3 );
