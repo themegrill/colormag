@@ -68,7 +68,7 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 			// Header image position option.
 			array(
 				'name'       => 'colormag_header_media_position',
-				'default'    => 'position_two',
+				'default'    => 'position-two',
 				'type'       => 'control',
 				'control'    => 'select',
 				'section'    => 'header_image',
@@ -129,37 +129,6 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 					'operator'   => 'OR',
 				),
 				'priority'   => 30,
-			),
-
-			// Header image link to custom location option.
-			array(
-				'name'       => 'colormag_header_image_custom_link',
-				'default'    => '',
-				'type'       => 'control',
-				'control'    => 'url',
-				'label'      => esc_html__( 'Custom link to header image ', 'colormag' ),
-				'section'    => 'header_image',
-				'dependency' => array(
-					'conditions' => array(
-						array(
-							'header_image',
-							'!=',
-							$header_image_value,
-						),
-						array(
-							'header_video',
-							'!=',
-							$header_video_value,
-						),
-						array(
-							'external_header_video',
-							'!=',
-							'',
-						),
-					),
-					'operator'   => 'OR',
-				),
-				'priority'   => 40,
 			),
 
 		);

@@ -189,13 +189,9 @@ function colormag_header_image_markup( $html, $header, $attr ) {
 			$output .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
 		}
 
-		if ( 0 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) && '' != get_theme_mod( 'colormag_header_image_custom_link', '' ) ) {
-			$output .= '<a href="' . esc_url( get_theme_mod( 'colormag_header_image_custom_link', '' ) ) . '">';
-		}
-
 		$output .= '<img src="' . esc_url( $header_image ) . '" class="header-image" width="' . absint( get_custom_header()->width ) . '" height="' . absint( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 
-		if ( 1 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) || '' != get_theme_mod( 'colormag_header_image_custom_link', '' ) ) {
+		if ( 1 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) ) {
 			$output .= '</a>';
 		}
 
