@@ -64,12 +64,6 @@ require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php';
 require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php';
 
 /**
- * Freemius.
- */
-// Dynamic class file include.
-require_once COLORMAG_INCLUDES_DIR . '/freemius/class-fs-colormagtheme.php';
-
-/**
  * Helper.
  */
 // Load utils & helper functions.
@@ -253,10 +247,3 @@ add_action( 'template_redirect', 'colormag_content_width' );
  * Detect plugin. For use on Front End only.
  */
 include_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-FS_ThemeGrill::init (
-	'4212',
-	'colormag',
-	'pk_414d89e1f7eda2dd7de41050ab418',
-	'ColorMag'
-);
