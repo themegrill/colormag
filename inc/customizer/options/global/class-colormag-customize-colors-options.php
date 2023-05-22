@@ -67,27 +67,6 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 30,
 			),
 
-			// Base color option.
-			array(
-				'name'     => 'colormag_base_color_group',
-				'label'    => esc_html__( 'Base', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 40,
-			),
-
-			array(
-				'name'     => 'colormag_base_color',
-				'default'  => '#444444',
-				'type'     => 'sub-control',
-				'control'  => 'colormag-color',
-				'parent'   => 'colormag_base_color_group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 50,
-			),
-
 			// Skin color option.
 			array(
 				'name'     => 'colormag_color_skin_setting',

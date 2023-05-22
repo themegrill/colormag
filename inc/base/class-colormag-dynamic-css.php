@@ -1601,21 +1601,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Color options.
 		 */
-		$base_color = get_theme_mod( 'colormag_base_color', '#444444' );
-
-		// Base color.
-		$base_color_css = array(
-			'body,
-			button,
-			input,
-			select,
-			textarea' => array(
-				'color' => esc_html( $base_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#444444', $base_color, $base_color_css );
-
 		// Headings color.
 		$headings_color = get_theme_mod( 'colormag_headings_color', '#333333' );
 

@@ -969,11 +969,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			 */
 			$color_options = array(
 				array(
-					'old_key' => 'colormag_base_color',
-					'new_key' => 'colormag_base_color',
-					'default' => '#444444',
-				),
-				array(
 					'old_key' => 'colormag_content_part_title_color',
 					'new_key' => 'colormag_headings_color',
 					'default' => '#333333',
