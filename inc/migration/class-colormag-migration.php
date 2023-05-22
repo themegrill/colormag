@@ -14,7 +14,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 	class ColorMag_Migration {
 
 		public function __construct() {
-			add_action( 'after_setup_theme',  array( $this, 'colormag_social_icons_control_migrate' ) );
+			add_action( 'after_setup_theme', array( $this, 'colormag_social_icons_control_migrate' ) );
 			add_action( 'after_setup_theme', array( $this, 'colormag_major_update_customizer_migration_v3' ) );
 		}
 
