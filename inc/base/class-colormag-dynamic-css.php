@@ -1601,55 +1601,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Color options.
 		 */
-		// Headings color.
-		$headings_color = get_theme_mod( 'colormag_headings_color', '#333333' );
-
-		$headings_color_css = array(
-			'h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6' => array(
-				'color' => esc_html( $headings_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $headings_color, $headings_color_css );
-
-		// Heading H1 color.
-		$heading_h1_color = get_theme_mod( 'colormag_h1_color', '#333333' );
-
-		$heading_h1_color_css = array(
-			'h1' => array(
-				'color' => esc_html( $heading_h1_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $heading_h1_color, $heading_h1_color_css );
-
-		// Heading H2 color.
-		$heading_h2_color = get_theme_mod( 'colormag_h2_color', '#333333' );
-
-		$heading_h2_color_css = array(
-			'h2' => array(
-				'color' => esc_html( $heading_h2_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $heading_h2_color, $heading_h2_color_css );
-
-		// Heading H3 color.
-		$heading_h3_color = get_theme_mod( 'colormag_h3_color', '#333333' );
-
-		$heading_h3_color_css = array(
-			'h3' => array(
-				'color' => esc_html( $heading_h3_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $heading_h3_color, $heading_h3_color_css );
-
 		// Sidebar widget title color.
 		$sidebar_widget_title_color_css = array(
 			'.cm-secondary .cm-widget-title span,
