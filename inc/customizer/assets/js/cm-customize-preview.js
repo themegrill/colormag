@@ -5,9 +5,6 @@
  *
  */
 
-colormagGenerateCSS( 'colormag_site_title_color', '.cm-site-title a', 'color' )
-colormagGenerateCSS( 'colormag_site_title_hover_color', '.cm-site-title a:hover', 'color' )
-colormagGenerateCSS( 'colormag_site_tagline_color', '.cm-site-description', 'color' )
 colormagGenerateCSS( 'colormag_top_bar_border_bottom_color', '.cm-top-bar', 'border-bottom-color' )
 
 colormagGenerateDimensionCSS( 'colormag_primary_menu_dimension_padding', '.cm-primary-nav a', 'padding' );
@@ -15,8 +12,6 @@ colormagGenerateDimensionCSS( 'colormag_main_header_dimension_padding', '.cm-pri
 
 colormagGenerateSliderCSS( 'colormag_top_bar_border_bottom_size', '.cm-top-bar', 'border-bottom-width');
 
-colormagGenerateTypographyCSS( 'colormag_site_title_typography', '.cm-site-title');
-colormagGenerateTypographyCSS( 'colormag_site_tagline_typography', '.cm-site-description');
 colormagGenerateTypographyCSS( 'colormag_news_ticker_label_typography', '.breaking-news .breaking-news-latest');
 colormagGenerateTypographyCSS( 'colormag_news_ticker_content_typography', '.breaking-news ul li a');
 colormagGenerateTypographyCSS( 'colormag_primary_menu_typography', '.cm-primary-nav ul li a');

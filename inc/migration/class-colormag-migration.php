@@ -844,14 +844,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			$typography_options = array(
 				array(
-					'old_key' => 'colormag_site_title_typography_setting',
-					'new_key' => 'colormag_site_title_typography',
-				),
-				array(
-					'old_key' => 'colormag_site_tagline_typography_setting',
-					'new_key' => 'colormag_site_tagline_typography',
-				),
-				array(
 					'old_key' => 'colormag_breaking_news_label_typography_setting',
 					'new_key' => 'colormag_news_ticker_label_typography',
 				),
