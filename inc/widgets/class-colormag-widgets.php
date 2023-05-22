@@ -330,23 +330,6 @@ function colormag_widgets_init() {
 	register_widget( 'colormag_728x90_advertisement_widget' );
 	register_widget( 'colormag_300x250_advertisement_widget' );
 	register_widget( 'colormag_125x125_advertisement_widget' );
-
-	// Pro Widgets.
-	register_widget( 'colormag_video_widget' );
-	register_widget( 'colormag_news_in_picture_widget' );
-	register_widget( 'colormag_default_news_widget' );
-	register_widget( 'colormag_tabbed_widget' );
-	register_widget( 'colormag_random_post_widget' );
-	register_widget( 'colormag_slider_news_widget' );
-	register_widget( 'colormag_breaking_news_widget' );
-	register_widget( 'colormag_ticker_news_widget' );
-	register_widget( 'colormag_featured_posts_small_thumbnails' );
-	register_widget( 'colormag_weather_widget' );
-	register_widget( 'colormag_cta_widget' );
-	register_widget( 'colormag_video_playlist' );
-	register_widget( 'colormag_exchange_widget' );
-	register_widget( 'colormag_google_maps_widget' );
-
 }
 
 add_action( 'widgets_init', 'colormag_widgets_init' );
@@ -369,13 +352,13 @@ require COLORMAG_WIDGETS_DIR . '/abstract-colormag-widget.php';
 // Require file for TG: Featured Category Slider widget.
 require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-slider-widget.php';
 
-// Require file for TG: Highligted Posts.
+// Require file for TG: Highlighted Posts.
 require COLORMAG_WIDGETS_DIR . '/colormag-highlighted-posts-widget.php';
 
-// Require file for TG: Featured Post style 1.
+// Require file for TG: Featured Posts (Style 1).
 require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-widget.php';
 
-// Require file for TG: Featured Post style 2.
+// Require file for TG: Featured Posts (Style 2).
 require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-vertical-widget.php';
 
 // Require file for TG: 300x250 Advertisement.
@@ -384,51 +367,7 @@ require COLORMAG_WIDGETS_DIR . '/colormag-300x250-advertisement-widget.php';
 // Require file for TG: 728x90 Advertisement.
 require COLORMAG_WIDGETS_DIR . '/colormag-728x90-advertisement-widget.php';
 
-// Require file for TG: 728x90 Advertisement.
+// Require file for TG: 125x125 Advertisement.
 require COLORMAG_WIDGETS_DIR . '/colormag-125x125-advertisement-widget.php';
 
-/**
- * Pro widgets.
- */
-// Require file for TG: Videos.
-require COLORMAG_WIDGETS_DIR . '/colormag-video-widget.php';
-
-// Require file for TG: Featured Posts (Style 5).
-require COLORMAG_WIDGETS_DIR . '/colormag-news-in-picture-widget.php';
-
-// Require file for TG: Featured Posts (Style 4).
-require COLORMAG_WIDGETS_DIR . '/colormag-default-news-widget.php';
-
-// Require file for TG: Tabbed Widget.
-require COLORMAG_WIDGETS_DIR . '/colormag-tabbed-widget.php';
-
-// Require file for TG: Random Posts Widget.
-require COLORMAG_WIDGETS_DIR . '/colormag-random-post-widget.php';
-
-// Require file for TG: Featured Posts (Style 6).
-require COLORMAG_WIDGETS_DIR . '/colormag-slider-news-widget.php';
-
-// Require file for TG: Breaking News Widget.
-require COLORMAG_WIDGETS_DIR . '/colormag-breaking-news-widget.php';
-
-// Require file for TG: Featured Posts (Style 7).
-require COLORMAG_WIDGETS_DIR . '/colormag-ticker-news-widget.php';
-
-// Require file for TG: Featured Posts (Style 3).
-require COLORMAG_WIDGETS_DIR . '/colormag-featured-posts-small-thumbnails.php';
-
-// Require file for TG: Call To Action.
-require COLORMAG_WIDGETS_DIR . '/colormag-cta-widget.php';
-
-// Require file for TG: Weather.
-require COLORMAG_WIDGETS_DIR . '/colormag-weather-widget.php';
-
-// Require file for TG: Currency Exchange.
-require COLORMAG_WIDGETS_DIR . '/colormag-exchange-widget.php';
-
-// Require file for TG: Featured Videos Playlist.
-require COLORMAG_WIDGETS_DIR . '/colormag-video-playlist.php';
-
-// Require file for TG: Google Maps.
-require COLORMAG_WIDGETS_DIR . '/colormag-google-maps-widget.php';
 
