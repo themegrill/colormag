@@ -544,12 +544,10 @@ if ( ! function_exists( 'colormag_change_logo_attr' ) ) :
 		}
 
 		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
-			$retina_logo    = get_theme_mod( 'colormag_retina_logo', '' );
 			$attr['srcset'] = '';
 
-			if ( $retina_logo ) {
-				$attr['srcset'] = $custom_logo . ' 1x,' . $retina_logo . ' 2x';
-			}
+			$attr['srcset'] = $custom_logo . ' 1x';
+
 		}
 
 		return $attr;
