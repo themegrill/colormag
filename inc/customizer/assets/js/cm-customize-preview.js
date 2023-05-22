@@ -23,14 +23,6 @@ colormagGenerateSliderCSS( 'colormag_button_border_width', '.colormag-button, in
 colormagGenerateSliderCSS( 'colormag_site_logo_height', '.cm-site-branding img', 'height');
 colormagGenerateSliderCSS( 'colormag_top_bar_border_bottom_size', '.cm-top-bar', 'border-bottom-width');
 
-
-colormagGenerateTypographyCSS( 'colormag_headings_typography', 'h1, h2, h3 ,h4, h5, h6');
-colormagGenerateTypographyCSS( 'colormag_h1_typography', 'h1');
-colormagGenerateTypographyCSS( 'colormag_h2_typography', 'h2');
-colormagGenerateTypographyCSS( 'colormag_h3_typography', 'h3');
-colormagGenerateTypographyCSS( 'colormag_h4_typography', 'h4');
-colormagGenerateTypographyCSS( 'colormag_h5_typography', 'h5');
-colormagGenerateTypographyCSS( 'colormag_h6_typography', 'h6');
 colormagGenerateTypographyCSS( 'colormag_button_typography', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link span');
 colormagGenerateTypographyCSS( 'colormag_site_title_typography', '.cm-site-title');
 colormagGenerateTypographyCSS( 'colormag_site_tagline_typography', '.cm-site-description');

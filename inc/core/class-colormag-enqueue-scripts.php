@@ -309,31 +309,11 @@ function colormag_get_fonts() {
 	/**
 	 * Typography options.
 	 */
-	$headings_typography_default      = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$heading_h1_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$heading_h2_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$heading_h3_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
 	$breaking_news_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
-	$headings_typography              = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
-	$heading_h1_typography            = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
-	$heading_h2_typography            = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
-	$heading_h3_typography            = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
 	$breaking_news_label_typography   = get_theme_mod( 'colormag_news_ticker_label_typography', $breaking_news_typography_default );
 	$breaking_news_content_typography = get_theme_mod( 'colormag_news_ticker_content_typography', $breaking_news_typography_default );
 
@@ -367,19 +347,6 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $button_typography['font-family'], $button_typography_font_weight );
 
 	// Typography options.
-	if ( 'default' === $headings_typography['font-family'] ) {
-		$headings_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $heading_h1_typography['font-family'] ) {
-		$heading_h1_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $heading_h2_typography['font-family'] ) {
-		$heading_h2_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $heading_h3_typography['font-family'] ) {
-		$heading_h3_typography['font-family'] = 'Open Sans';
-	}
-
 	if ( 'default' === $breaking_news_label_typography['font-family'] ) {
 		$breaking_news_label_typography ['font-family'] = 'Open Sans';
 	}
@@ -389,21 +356,9 @@ function colormag_get_fonts() {
 
 	$breaking_news_label_typography_font_weight   = isset( $breaking_news_label_typography['font-weight'] ) ? $breaking_news_label_typography['font-weight'] : 'regular';
 	$breaking_news_content_typography_font_weight = isset( $breaking_news_content_typography['font-weight'] ) ? $breaking_news_content_typography['font-weight'] : 'regular';
-	$heading_typography_font_weight               = isset( $headings_typography['font-weight'] ) ? $headings_typography['font-weight'] : 'regular';
-	$heading_h1_typography_font_weight            = isset( $heading_h1_typography['font-weight'] ) ? $heading_h1_typography['font-weight'] : 'regular';
-	$heading_h2_base_typography_font_weight       = isset( $heading_h2_typography['font-weight'] ) ? $heading_h2_typography['font-weight'] : 'regular';
-	$heading_h3_typography_font_weight            = isset( $heading_h3_typography['font-weight'] ) ? $heading_h3_typography['font-weight'] : 'regular';
 
-	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $breaking_news_label_typography['font-family'], $breaking_news_label_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $breaking_news_content_typography['font-family'], $breaking_news_content_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $heading_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_base_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
@@ -444,46 +399,6 @@ function colormag_font_subset() {
 
 	if ( isset( $breaking_news_label_typography['subsets'] ) && is_array( $breaking_news_label_typography['subsets'] ) ) {
 		$google_font_subsets = array_merge( $breaking_news_content_typography['subsets'], $google_font_subsets );
-	}
-
-	// Headings typography.
-	$headings_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$headings_typography         = get_theme_mod( 'colormag_headings_typographys', $headings_typography_default );
-
-	if ( isset( $headings_typography['subsets'] ) && is_array( $headings_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $headings_typography['subsets'], $google_font_subsets );
-	}
-
-	// Heading H1 typography.
-	$heading_h1_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$heading_h1_typography         = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
-
-	if ( isset( $heading_h1_typography['subsets'] ) && is_array( $heading_h1_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $heading_h1_typography['subsets'], $google_font_subsets );
-	}
-
-	// Heading H2 typography.
-	$heading_h2_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$heading_h2_typography         = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
-
-	if ( isset( $heading_h2_typography['subsets'] ) && is_array( $heading_h2_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $heading_h2_typography['subsets'], $google_font_subsets );
-	}
-
-	// Heading H3 typography.
-	$heading_h3_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$heading_h3_typography         = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
-
-	if ( isset( $heading_h3_typography['subsets'] ) && is_array( $heading_h3_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $heading_h3_typography['subsets'], $google_font_subsets );
 	}
 
 	return $google_font_subsets;

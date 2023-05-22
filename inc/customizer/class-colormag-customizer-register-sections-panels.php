@@ -188,15 +188,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 10,
 			),
 
-			array(
-				'name'     => 'colormag_headings_typography_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Headings', 'colormag' ),
-				'panel'    => 'colormag_global_panel',
-				'section'  => 'colormag_global_typography_section',
-				'priority' => 20,
-			),
-
 			/**
 			 * Front Page.
 			 */
