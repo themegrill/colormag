@@ -81,11 +81,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			 */
 			$color_options = array(
 				array(
-					'old_key' => 'colormag_button_text_color',
-					'new_key' => 'colormag_button_color',
-					'default' => '#ffffff',
-				),
-				array(
 					'old_key' => 'colormag_breaking_news_label_background_color',
 					'new_key' => 'colormag_news_ticker_label_background_color',
 					'default' => '#55ac55',
@@ -856,10 +851,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			};
 
 			$typography_options = array(
-				array(
-					'old_key' => 'colormag_button_typography_setting',
-					'new_key' => 'colormag_button_typography',
-				),
 				array(
 					'old_key' => 'colormag_site_title_typography_setting',
 					'new_key' => 'colormag_site_title_typography',

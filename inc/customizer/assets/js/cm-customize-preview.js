@@ -8,22 +8,14 @@
 colormagGenerateCSS( 'colormag_site_title_color', '.cm-site-title a', 'color' )
 colormagGenerateCSS( 'colormag_site_title_hover_color', '.cm-site-title a:hover', 'color' )
 colormagGenerateCSS( 'colormag_site_tagline_color', '.cm-site-description', 'color' )
-colormagGenerateCSS( 'colormag_button_color', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link span', 'color' )
-colormagGenerateCSS( 'colormag_button_background_color', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'background-color' )
 colormagGenerateCSS( 'colormag_top_bar_border_bottom_color', '.cm-top-bar', 'border-bottom-color' )
-colormagGenerateCSS( 'colormag_button_border_color', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'border-color' )
-colormagGenerateCSS( 'colormag_button_border_style', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'border-style' )
 
-colormagGenerateDimensionCSS( 'colormag_button_dimension_padding', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'padding' );
 colormagGenerateDimensionCSS( 'colormag_primary_menu_dimension_padding', '.cm-primary-nav a', 'padding' );
 colormagGenerateDimensionCSS( 'colormag_main_header_dimension_padding', '.cm-primary-nav', 'padding' );
 
-colormagGenerateSliderCSS( 'colormag_button_border_radius', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'border-radius');
-colormagGenerateSliderCSS( 'colormag_button_border_width', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'border-width');
 colormagGenerateSliderCSS( 'colormag_site_logo_height', '.cm-site-branding img', 'height');
 colormagGenerateSliderCSS( 'colormag_top_bar_border_bottom_size', '.cm-top-bar', 'border-bottom-width');
 
-colormagGenerateTypographyCSS( 'colormag_button_typography', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link span');
 colormagGenerateTypographyCSS( 'colormag_site_title_typography', '.cm-site-title');
 colormagGenerateTypographyCSS( 'colormag_site_tagline_typography', '.cm-site-description');
 colormagGenerateTypographyCSS( 'colormag_news_ticker_label_typography', '.breaking-news .breaking-news-latest');

@@ -248,60 +248,10 @@ class ColorMag_Dynamic_CSS {
 				),
 			),
 		);
-		$button_typography_default     = array(
-			'font-family'    => 'default',
-			'font-weight'    => 'regular',
-			'subsets'        => array( 'latin' ),
-			'font-size'      => array(
-				'desktop' => array(
-					'size' => '12',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'line-height'    => array(
-				'desktop' => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'letter-spacing' => array(
-				'desktop' => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'font-style'     => 'normal',
-			'text-transform' => 'none',
-		);
 
 		$post_title_typography = get_theme_mod( 'colormag_post_title_typography', $post_title_typography_default );
 		$page_title_typography = get_theme_mod( 'colormag_page_title_typography', $page_title_typography_default );
 		$post_meta_typography  = get_theme_mod( 'colormag_post_meta_typography', $post_meta_typography_default );
-		$button_typography     = get_theme_mod( 'colormag_button_typography', $button_typography_default );
 
 		// Footer options.
 		$footer_copyright_color                       = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
@@ -1063,54 +1013,6 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#888888', $post_meta_color, $post_meta_color_css );
 
-		// Button meta typography.
-		$parse_css .= colormag_parse_typography_css(
-			$button_typography_default,
-			$button_typography,
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button span',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
-		// Button text color.
-		$button_text_color = get_theme_mod( 'colormag_button_color', '#ffffff' );
-
-		$button_text_color_css = array(
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button span' => array(
-				'color' => esc_html( $button_text_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#ffffff', $button_text_color, $button_text_color_css );
-
-		// Button background color.
-		$button_background_color = get_theme_mod( 'colormag_button_background_color', '#207daf' );
-
-		$button_background_color_css = array(
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button' => array(
-				'background-color' => esc_html( $button_background_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#207daf', $button_background_color, $button_background_color_css );
-
 		/**
 		 * Footer options.
 		 */
@@ -1224,90 +1126,9 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $footer_widget_content_link_text_hover_color, $footer_widget_content_link_text_hover_color_css );
 
-		/**
-		 * Button.
-		 */
-		$button_padding_default = array(
-			'top'    => '',
-			'right'  => '',
-			'bottom' => '',
-			'left'   => '',
-			'unit'   => 'px',
-		);
-
-		$button_padding = get_theme_mod( 'colormag_button_dimension_padding', $button_padding_default );
-
-		$parse_css .= colormag_parse_dimension_css(
-			$button_padding_default,
-			$button_padding,
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button',
-			'padding'
-		);
-
 		$button_border_radius_default = array(
 			'size' => 3,
 			'unit' => 'px',
-		);
-
-		$button_border_radius = get_theme_mod( 'colormag_button_border_radius', 3 );
-
-		$parse_css .= colormag_parse_slider_css(
-			$button_border_radius_default,
-			$button_border_radius,
-			'.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link',
-			'border-radius'
-		);
-
-		$button_border_width_default = array(
-			'size' => '',
-			'unit' => 'px',
-		);
-
-		$button_border_width = get_theme_mod( 'colormag_button_border_width', '' );
-
-		$parse_css .= colormag_parse_slider_css(
-			$button_border_width_default,
-			$button_border_width,
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button',
-			'border-width'
-		);
-
-		$button_border_color = get_theme_mod( 'colormag_button_border_color', '' );
-
-		$parse_css .= colormag_parse_border_css(
-			'',
-			$button_border_color,
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button',
-			'color'
-		);
-
-		$button_border_style = get_theme_mod( 'colormag_button_border_style', 'none' );
-
-		$parse_css .= colormag_parse_border_css(
-			'none',
-			$button_border_style,
-			'.colormag-button,
-			input[type="reset"],
-			input[type="button"],
-			input[type="submit"],
-			button,
-			.cm-entry-button',
-			'style'
 		);
 
 		/**

@@ -297,16 +297,6 @@ function colormag_get_fonts() {
 	$primary_menu_typography         = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
 
 	/**
-	 * Global.
-	 */
-
-	$button_typography_default = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$button_typography         = get_theme_mod( 'colormag_button_typography', $button_typography_default );
-
-	/**
 	 * Typography options.
 	 */
 	$breaking_news_typography_default = array(
@@ -337,15 +327,6 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $site_tagline_typography['font-family'] );
 	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );
 
-	// Global.
-	if ( 'default' === $button_typography['font-family'] ) {
-		$button_typography['font-family'] = 'Open Sans';
-	}
-
-	$button_typography_font_weight = isset( $button_typography['font-weight'] ) ? $button_typography['font-weight'] : 'regular';
-
-	ColorMag_Generate_Fonts::add_font( $button_typography['font-family'], $button_typography_font_weight );
-
 	// Typography options.
 	if ( 'default' === $breaking_news_label_typography['font-family'] ) {
 		$breaking_news_label_typography ['font-family'] = 'Open Sans';
@@ -371,15 +352,6 @@ function colormag_font_subset() {
 
 	$google_font_subsets = array();
 
-	// Button.
-	$button_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$button_typography         = get_theme_mod( 'colormag_button_typography', $button_typography_default );
-
-	if ( isset( $button_typography['subsets'] ) && is_array( $button_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $button_typography['subsets'], $google_font_subsets );
-	}
 
 	/**
 	 * Typography options.
