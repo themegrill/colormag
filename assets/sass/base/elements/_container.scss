@@ -5,3 +5,38 @@
 	margin: 0 auto;
 	max-width: 1140px;
 }
+
+.cm-container {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: length( 'l-8' );
+    padding-right: length( 'l-8' );
+    box-sizing: content-box;
+}
+
+.cm-header-1 {
+
+	.cm-row {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		gap: length( 'l-5');
+		padding: length( 'l-12' ) 0;;
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.cm-header-1 {
+
+		.cm-row {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: left;
+			gap: length( 'l-10');
+		}
+	}
+}

@@ -1,22 +1,51 @@
+/* Header.
+--------------------------------------------- */
 @import "header/top-bar";
+@import "header/header";
+@import "header/layouts/layout-1/style-1";
+@import "header/layouts/layout-1/style-2";
+@import "header/layouts/layout-2/style-1";
+@import "header/layouts/layout-2/style-2";
+@import "header/layouts/layout-3/style-1";
 
-@import "header/primary-header";
-@import "header/layout/2-clean";
-@import "header/layout/3-classic";
+/* Page templates.
+--------------------------------------------- */
+@import "page-templates/page-builder";
 
-@import "page-header/page-header";
-
+/* Content.
+--------------------------------------------- */
 @import "content/content";
 
+/* Blog.
+--------------------------------------------- */
+@import "blog/layouts/layout-1";
+@import "blog/layouts/layout-2";
 @import "blog/blog";
 @import "blog/single-post";
 
+/* Common.
+--------------------------------------------- */
+@import "common/header-footer-bars";
+
+/* Post format.
+--------------------------------------------- */
 @import "post-format/post-format";
 
+/* Sidebar.
+--------------------------------------------- */
+@import "sidebar/right-sidebar";
 @import "sidebar/left-sidebar";
 @import "sidebar/no-sidebar";
+@import "sidebar/two-sidebars";
 
-@import "pages/search";
+/* Pages.
+--------------------------------------------- */
 @import "pages/404";
+@import "pages/no-result";
+@import "pages/search";
 
+/* Footer.
+--------------------------------------------- */
+@import "footer/footer-bar";
 @import "footer/footer";
+@import "footer/scroll-to-top";

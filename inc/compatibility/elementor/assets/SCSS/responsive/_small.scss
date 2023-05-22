@@ -1,0 +1,131 @@
+@media only screen and (max-width : 768px) {
+	.elementor {
+		.tg-module-wrapper {
+			
+			// common
+			&.tg-module-block {
+				&.tg-module-block--style-1,
+				&.tg-module-block--style-2,
+				&.tg-module-block--style-3,
+				&.tg-module-block--style-6,
+				&.tg-module-block--style-7,
+				&.tg-module-block--style-8,
+				&.tg-module-block--style-9 {
+					.tg-col-control {
+						flex-basis: $column-12;
+					}
+				}
+				
+				&.tg-module-block--style-5 {
+					.tg_module_block {
+						.tg-module-title {
+							left: 20px;
+							right: 20px;
+							font-size: 21px;
+						}
+						
+						.block-content {
+							padding-right: 45px;
+							padding-left: 45px;
+						}
+					}
+				}
+				
+				&.tg-module-block--style-7 {
+					.tg-col-control {
+						flex-basis: $column-12;
+					}
+				}
+			}
+			
+			&.tg-module-grid {
+				&.tg-module-grid--style-1,
+				&.tg-module-grid--style-2,
+				&.tg-module-grid--style-3,
+				&.tg-module-grid--style-4,
+				&.tg-module-grid--style-6,
+				&.tg-module-grid--style-7,
+				&.tg-module-grid--style-8,
+				&.tg-module-grid--style-9 {
+					.tg-col-control {
+						flex-basis: $column-12;
+					}
+				}
+				
+				&.tg-module-grid--style-1,
+				&.tg-module-grid--style-2 {
+					.tg_module_grid--small {
+						flex-basis: $column-6;
+					}
+				}
+				
+				&.tg-module-grid--style-2 {
+					.tg_module_grid--full {
+						flex-basis: $column-12;
+					}
+				}
+				
+				&.tg-module-grid--style-5 {
+					.tg-col-control {
+						flex-basis: $column-6;
+						margin-bottom: 4px;
+					}
+				}
+				
+				&.tg-module-grid--style-3,
+				&.tg-module-grid--style-4 {
+					.tg-col-control {
+						margin-bottom: 4px;
+					}
+				}
+				&.tg-module-grid--style-6 {
+					.tg_module_grid--medium {
+						margin-bottom: 4px;
+						flex-basis: $column-6;
+					}
+				}
+			}
+		}
+		
+		.tg-trending-news {
+			
+			.swiper-controls {
+				display: none;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.elementor {
+		.tg-module-wrapper {
+			&.tg-module-grid {
+				&.tg-module-grid--style-1,
+				&.tg-module-grid--style-2 {
+					.tg_module_grid--half {
+						flex-basis: $column-12;
+					}
+				}
+				
+				&.tg-module-grid--style-5 {
+					.tg-col-control {
+						flex-basis: $column-12;
+					}
+				}
+			}
+		}
+		.tg-trending-news {
+			flex-direction: column;
+			
+			.tg-module-title-wrap {
+				margin-bottom: 10px;
+			}
+
+			.trending-news-wrapper {
+				margin-left: 0;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}

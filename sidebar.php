@@ -2,9 +2,9 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="secondary">
+<div id="cm-secondary" class="cm-secondary"<?php echo colormag_schema_markup( 'sidebar' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
 	<?php do_action( 'colormag_before_sidebar' ); ?>
 
 	<?php
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 
 	// Displays the sidebar area as needed.
-	if ( ! dynamic_sidebar( $sidebar ) ) :
+	if ( ! is_active_sidebar( $sidebar ) ) :
 
 		if ( 'colormag_contact_page_sidebar' == $sidebar ) {
 			$sidebar_display = esc_html__( 'Contact Page', 'colormag' );
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'title'  => esc_html__( 'Example Widget', 'colormag' ),
 				'text'   => sprintf(
 					/* Translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section */
-					esc_html__( 'This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets are added then this will be replaced by those widgets.', 'colormag' ),
+					esc_html__( 'This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets.', 'colormag' ),
 					$sidebar_display,
 					current_user_can( 'edit_theme_options' ) ? '<a href="' . admin_url( 'widgets.php' ) . '">' : '',
 					current_user_can( 'edit_theme_options' ) ? '</a>' : ''
@@ -46,13 +46,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'filter' => true,
 			),
 			array(
-				'before_widget' => '<aside class="widget widget_text clearfix">',
+				'before_widget' => '<aside class="widget widget_text">',
 				'after_widget'  => '</aside>',
-				'before_title'  => '<h3 class="widget-title"><span>',
+				'before_title'  => '<h3 class="cm-widget-title"><span>',
 				'after_title'   => '</span></h3>',
 			)
 		);
-
+	else :
+		dynamic_sidebar( $sidebar );
 	endif;
 	?>
 

@@ -2,9 +2,9 @@
 /**
  * Displays the searchform of the theme.
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.

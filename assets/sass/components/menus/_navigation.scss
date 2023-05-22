@@ -1,0 +1,287 @@
+/* Navigation.
+--------------------------------------------- */
+.default-wp-page {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin-top: length( 'l-15' );
+}
+
+.previous,
+.next {
+
+	a {
+		cursor: pointer;
+		@include font-size('font-size-md');
+		word-break: break-all;
+
+		&:hover {
+			color: $color__primary;
+			text-decoration: underline;
+		}
+	}
+}
+
+.nav-previous,
+.nav-next {
+	margin-bottom: 15px;
+
+	a {
+		color: $color__primary;
+		cursor: pointer;
+		font-size: 16px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.nav-previous {
+
+	a {
+		float: left;
+	}
+}
+
+.nav-next  {
+
+	a {
+		float: right;
+	}
+}
+
+/*--------------------------------------------------------------
+18.0 single post pagination
+--------------------------------------------------------------*/
+
+.thumbnail-pagination {
+	margin: 30px 0;
+}
+
+.thumbnail-pagination {
+
+	li {
+		width: 49.5%;
+		-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+		min-height: 90px;
+	}
+
+	img {
+		width: 20%;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0;
+	}
+
+	.next {
+		text-align: right;
+	}
+
+	.previous a {
+		padding-left: 4%;
+	}
+
+	.next a {
+		padding-right: 4%;
+	}
+
+	a {
+		display: inline-block;
+		vertical-align: top;
+		width: 75%;
+		color: #67666a;
+		line-height: 28px;
+		position: relative;
+		text-transform: uppercase;
+		padding: 0;
+		font-weight: 700;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		span {
+			display: none;
+		}
+	}
+}
+
+/* Slider widget NEXT PREVIOUS buttons.
+--------------------------------------------- */
+.slide-prev,
+.slide-next {
+	filter: alpha(opacity=70);
+	background-color: $color__primary;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	/* IE 9 */
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 9;
+	border-radius: 3px;
+}
+
+.slide-prev {
+	margin-left: 20px;
+}
+
+.slide-next {
+	right: 0;
+	margin-right: 20px;
+}
+
+.slide-prev:hover,
+.cm-category-slide-prev:hover,
+.slide-next:hover,
+.cm-category-slide-next:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+/* Infinite pagination */
+
+.tg-infinite-pagination {
+	text-align: center;
+
+	.page-numbers {
+		display: none;
+	}
+
+	.tg-load-more {
+		display: inline-block;
+		text-align: center;
+		font-size: 12px;
+		background-color: $color__primary;
+		padding: 8px 15px;
+		border-radius: 3px;
+
+		&.loading {
+			cursor: default;
+
+			.tg-load-more-icon {
+				display: inline-block;
+			}
+		}
+
+		.tg-load-more-icon {
+			vertical-align: middle;
+			display: none;
+			padding-right: 5px;
+		}
+
+		.tg-load-more-text {
+			vertical-align: middle;
+			display: inline-block;
+		}
+	}
+
+	a,
+	span {
+		color: $color__white;
+	}
+
+	.spinner {
+		width: 16px;
+		height: 16px;
+		border: 2px solid rgba(24, 24, 24, 0.3);
+		border-top-color: $color__white;
+		border-radius: 50%;
+		animation: spinner 2s linear infinite;
+	}
+
+	@keyframes spinner {
+
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.tg-no-more-post {
+		background-color: $color__primary;
+	}
+}
+
+.tg-infinite-pagination--scroll {
+
+	.tg-load-more {
+		text-align: center;
+		display: inline-block;
+		font-size: 12px;
+		background-color: transparent;
+		padding: 8px 15px;
+		border-radius: 3px;
+
+		&.loading {
+			cursor: default;
+			background: unset;
+
+			.tg-load-more-icon {
+				display: inline-block;
+			}
+		}
+
+		.tg-load-more-icon {
+			vertical-align: middle;
+			display: none;
+			padding-right: 5px;
+		}
+	}
+
+	.spinner {
+		width: 16px;
+		height: 16px;
+		border: 2px solid rgba(24, 24, 24, 0.3);
+		border-top-color: #808080;
+		border-radius: 50%;
+		animation: spinner 2s linear infinite;
+	}
+
+	@keyframes spinner {
+
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.tg-no-more-post {
+		background-color: $color__primary;
+	}
+
+	.spinner {
+		width: 24px;
+		height: 24px;
+		background: unset;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.thumbnail-pagination {
+
+		li {
+			width: 100%;
+			display: block;
+			min-height: 70px;
+
+			&.previous {
+				margin-bottom: 20px;
+			}
+		}
+
+		a {
+			font-size: 15px;
+		}
+	}
+}

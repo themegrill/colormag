@@ -62,7 +62,6 @@ class ColorMag_Customize_Base_Option {
 					$content .= '</li>';
 
 				}
-
 			}
 
 			$content .= '</ul>';

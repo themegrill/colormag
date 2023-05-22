@@ -1,0 +1,91 @@
+/* Footer Bar.
+--------------------------------------------- */
+.cm-footer-bar {
+	padding-top: length( 'l-12', em );
+    padding-bottom: length( 'l-12', em );
+	background-color: $color__gray-800;
+    color: $color__gray-100;
+
+    .cm-row {
+        @include font-size('font-size-xs');
+    }
+
+    a {
+		color: $color__primary;
+
+		&:hover {
+			color: $color__white;
+			text-decoration: underline;
+		}
+	}
+}
+
+.cm-footer-bar-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.cm-footer-bar-style-2 {
+
+    .cm-footer-bar-area {
+        flex-direction: column-reverse;
+    }
+
+	.cm-footer-bar__1 {
+		display: flex;
+		order: 2;
+
+		.social-links {
+			text-align: left;
+		}
+
+		.cm-footer-menu {
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.cm-footer-bar-style-3 {
+
+	.cm-footer-bar-area {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.cm-footer-bar__1 {
+
+		.social-links {
+			text-align: center;
+		}
+
+		.cm-footer-menu {
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+@include breakpoint("mdm") {
+
+    .cm-footer-bar-area {
+        flex-direction: row-reverse;
+        text-align: left;
+    }
+
+	.cm-footer-bar-style-2 {
+        
+        .cm-footer-bar-area {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+	}
+}

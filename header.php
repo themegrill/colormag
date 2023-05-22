@@ -1,21 +1,23 @@
 <?php
 /**
- * Theme Header Section for our theme.
+ * Theme Header Section for ColorMag theme.
  *
- * Displays all of the <head> section and everything up till <div id="main" class="clearfix"> <div class="inner-wrap">
+ * Displays all of the <head> section and everything up till <div id="cm-content" class="cm-content"> <div class="inner-wrap">
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+defined( 'ABSPATH' ) || exit;
+
+do_action( 'colormag_action_doctype' );
+
+?>
+
 <head>
+
 	<?php
 	/**
 	 * Functions hooked into colormag_action_head action.
@@ -23,101 +25,76 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * @hooked colormag_head - 10
 	 */
 	do_action( 'colormag_action_head' );
-
-	wp_head();
 	?>
+
+	<?php wp_head(); ?>
+
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?><?php echo colormag_schema_markup( 'body' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
 
 <?php
-wp_body_open();
 
+global $colormag_duplicate_posts;
+$colormag_duplicate_posts = array();
+
+?>
+
+<?php
+/**
+ * WordPress function to load custom scripts after body.
+ *
+ * Introduced in WordPress 5.2.0
+ *
+ */
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
+
+<?php
 /**
  * Hook: colormag_before.
  */
 do_action( 'colormag_before' );
+?>
 
-
+<?php
 /**
  * Functions hooked into colormag_action_before action.
  *
+ * @hooked colormag_background_image_clickable - 5
  * @hooked colormag_page_start - 10
  * @hooked colormag_skip_content_link - 15
  */
 do_action( 'colormag_action_before' );
+?>
 
+<?php colormag_header() ?>
 
-/**
- * Hook: colormag_before_header.
- */
-do_action( 'colormag_before_header' );
-
-
-/**
- * Functions hooked into colormag_action_before_header action.
- *
- * @hooked colormag_header_start - 10
- */
-do_action( 'colormag_action_before_header' );
-
-
-/**
- * Functions hooked into colormag_action_before_inner_header action.
- *
- * @hooked colormag_header_nav_container_start - 10
- */
-do_action( 'colormag_action_before_inner_header' );
-
-
-/**
- * Functions hooked into colormag_action_header action.
- *
- * @hooked colormag_header - 10
- */
-do_action( 'colormag_action_header' );
-
-
-/**
- * Functions hooked into colormag_action_after_inner_header action.
- *
- * @hooked colormag_header_image_before_nav_container_end - 5
- * @hooked colormag_header_nav_container_end - 10
- */
-do_action( 'colormag_action_after_inner_header' );
-
-
-/**
- * Functions hooked into colormag_action_after_header action.
- *
- * @hooked colormag_header_end - 10
- */
-do_action( 'colormag_action_after_header' );
-
-
-/**
- * Hook: colormag_after_header.
- */
-do_action( 'colormag_after_header' );
-
-
+<?php
 /**
  * Hook: colormag_before_main.
  */
 do_action( 'colormag_before_main' );
+?>
 
-
+<?php
 /**
  * Functions hooked into colormag_action_before_content action.
  *
  * @hooked colormag_main_section_start - 10
+ * @hooked colormag_before_content_breaking_news - 15
+ * @hooked colormag_front_page_full_width_sidebar - 20
  */
 do_action( 'colormag_action_before_content' );
+?>
 
-
+<?php
 /**
  * Functions hooked into colormag_action_before_inner_content action.
  *
  * @hooked colormag_main_section_inner_start - 10
+ * @hooked colormag_breadcrumb - 15
  */
 do_action( 'colormag_action_before_inner_content' );

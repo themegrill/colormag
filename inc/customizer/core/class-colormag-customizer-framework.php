@@ -14,9 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Include the Typography control fonts file.
-require dirname(__FILE__) . '/class-colormag-fonts.php';
-require dirname(__FILE__) . '/class-colormag-generate-fonts.php';
+require dirname( __FILE__ ) . '/functions.php';
+
+// Include Customind base options file.
+require dirname( __FILE__ ) . '/class-colormag-customize-base-option.php';
+
+// Include the Customind webfont loader file.
+require dirname( __FILE__ ) . '/colormag-webfont-loader.php';
+
+// Include the Customind typography control fonts file.
+require dirname( __FILE__ ) . '/class-colormag-fonts.php';
+require dirname( __FILE__ ) . '/class-colormag-generate-fonts.php';
 
 /**
  * ColorMag customizer class.
@@ -80,10 +88,10 @@ class ColorMag_Customizer_FrameWork {
 	public function customize_custom_panels_sections_includes( $wp_customize ) {
 
 		// Include the required customizer nested panels and sections files.
-		require dirname(__FILE__) . '/extend-customizer/class-colormag-wp-customize-panel.php';
-		require dirname(__FILE__) . '/extend-customizer/class-colormag-wp-customize-section.php';
-		require dirname(__FILE__) . '/extend-customizer/class-colormag-wp-customize-separator.php';
-		require dirname(__FILE__) . '/extend-customizer/class-colormag-upsell-section.php';
+		require dirname( __FILE__ ) . '/extend-customizer/class-colormag-wp-customize-panel.php';
+		require dirname( __FILE__ ) . '/extend-customizer/class-colormag-wp-customize-section.php';
+		require dirname( __FILE__ ) . '/extend-customizer/class-colormag-wp-customize-separator.php';
+		require dirname( __FILE__ ) . '/extend-customizer/class-colormag-upsell-section.php';
 
 	}
 
@@ -101,30 +109,32 @@ class ColorMag_Customizer_FrameWork {
 	public function customize_custom_controls_includes( $wp_customize ) {
 
 		// Include the customize base controls file.
-		require dirname(__FILE__) . '/custom-controls/class-colormag-customize-base-control.php';
-		require dirname(__FILE__) . '/custom-controls/class-colormag-customize-base-additional-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/class-colormag-customize-base-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/class-colormag-customize-base-additional-control.php';
 
 		// Include the required customize controls file.
-		require dirname(__FILE__) . '/custom-controls/radio-image/class-colormag-radio-image-control.php';
-		require dirname(__FILE__) . '/custom-controls/heading/class-colormag-heading-control.php';
-		require dirname(__FILE__) . '/custom-controls/navigate/class-colormag-navigate-control.php';
-		require dirname(__FILE__) . '/custom-controls/editor/class-colormag-editor-control.php';
-		require dirname(__FILE__) . '/custom-controls/color/class-colormag-color-control.php';
-		require dirname(__FILE__) . '/custom-controls/buttonset/class-colormag-buttonset-control.php';
-		require dirname(__FILE__) . '/custom-controls/toggle/class-colormag-toggle-control.php';
-		require dirname(__FILE__) . '/custom-controls/divider/class-colormag-divider-control.php';
-		require dirname(__FILE__) . '/custom-controls/slider/class-colormag-slider-control.php';
-		require dirname(__FILE__) . '/custom-controls/custom/class-colormag-custom-control.php';
-		require dirname(__FILE__) . '/custom-controls/dropdown-categories/class-colormag-dropdown-categories-control.php';
-		require dirname(__FILE__) . '/custom-controls/background/class-colormag-background-control.php';
-		require dirname(__FILE__) . '/custom-controls/typography/class-colormag-typography-control.php';
-		require dirname(__FILE__) . '/custom-controls/hidden/class-colormag-hidden-control.php';
-		require dirname(__FILE__) . '/custom-controls/sortable/class-colormag-sortable-control.php';
-		require dirname(__FILE__) . '/custom-controls/group/class-colormag-group-control.php';
-		require dirname(__FILE__) . '/custom-controls/title/class-colormag-title-control.php';
-		require dirname(__FILE__) . '/custom-controls/dimensions/class-colormag-dimensions-control.php';
-		require dirname(__FILE__) . '/custom-controls/upgrade/class-colormag-upgrade-control.php';
-		require dirname(__FILE__) . '/custom-controls/fontawesome/class-colormag-fontawesome-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/radio-image/class-colormag-radio-image-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/support/class-colormag-support-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/navigate/class-colormag-navigate-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/editor/class-colormag-editor-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/color/class-colormag-color-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/buttonset/class-colormag-buttonset-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/toggle/class-colormag-toggle-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/divider/class-colormag-divider-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/slider/class-colormag-slider-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/custom/class-colormag-custom-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/dropdown-categories/class-colormag-dropdown-categories-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/background/class-colormag-background-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/typography/class-colormag-typography-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/hidden/class-colormag-hidden-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/sortable/class-colormag-sortable-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/group/class-colormag-group-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/title/class-colormag-title-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/subtitle/class-colormag-subtitle-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/dimensions/class-colormag-dimensions-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/upgrade/class-colormag-upgrade-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/fontawesome/class-colormag-fontawesome-control.php';
+		require dirname( __FILE__ ) . '/custom-controls/date/class-colormag-date-control.php';
 
 	}
 
@@ -328,18 +338,6 @@ class ColorMag_Customizer_FrameWork {
 			)
 		);
 
-		// Heading control.
-		ColorMag_Customize_Base_Control::add_control(
-			'colormag-heading',
-			array(
-				'callback'          => 'ColorMag_Heading_Control',
-				'sanitize_callback' => array(
-					'ColorMag_Customizer_FrameWork_Sanitizes',
-					'sanitize_false_values',
-				),
-			)
-		);
-
 		// Navigate control.
 		ColorMag_Customize_Base_Control::add_control(
 			'colormag-navigate',
@@ -419,7 +417,7 @@ class ColorMag_Customizer_FrameWork {
 				'callback'          => 'ColorMag_Slider_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_FrameWork_Sanitizes',
-					'sanitize_number',
+					'sanitize_slider',
 				),
 			)
 		);
@@ -509,6 +507,22 @@ class ColorMag_Customizer_FrameWork {
 			)
 		);
 
+		// Subtitle control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-subtitle',
+			array(
+				'callback' => 'ColorMag_Subtitle_Control',
+			)
+		);
+
+		// Support control.
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-guide',
+			array(
+				'callback' => 'ColorMag_Support_Control',
+			)
+		);
+
 		// Dimensions control.
 		ColorMag_Customize_Base_Control::add_control(
 			'colormag-dimensions',
@@ -529,10 +543,22 @@ class ColorMag_Customizer_FrameWork {
 		ColorMag_Customize_Base_Control::add_control(
 			'colormag-fontawesome',
 			array(
-				'callback' => 'ColorMag_Fontawesome_Control',
+				'callback'          => 'ColorMag_Fontawesome_Control',
 				'sanitize_callback' => array(
 					'ColorMag_Customizer_FrameWork_Sanitizes',
 					'sanitize_radio_select',
+				),
+			)
+		);
+
+		// Date Control
+		ColorMag_Customize_Base_Control::add_control(
+			'colormag-date',
+			array(
+				'callback'          => 'ColorMag_Date_Control',
+				'sanitize_callback' => array(
+					'ColorMag_Customizer_FrameWork_Sanitizes',
+					'sanitize_date',
 				),
 			)
 		);
@@ -547,6 +573,11 @@ class ColorMag_Customizer_FrameWork {
 	 */
 	public function get_customizer_configurations( $wp_customize ) {
 
+		/**
+		 * Filter for customizer options.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_customizer_options', array(), $wp_customize );
 
 	}
@@ -578,6 +609,11 @@ class ColorMag_Customizer_FrameWork {
 			'colormag_fields'      => array(),
 		);
 
+		/**
+		 * Filter for customizer default configuration.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_customizer_default_configuration', $default_configuration );
 
 	}
@@ -713,6 +749,12 @@ class ColorMag_Customizer_FrameWork {
 		$transport         = isset( $config['transport'] ) ? $config['transport'] : 'refresh';
 		$customize_config  = array(
 			'name'              => $sub_control_name,
+
+			/**
+			 * Filter for customize data store type.
+			 *
+			 * @since   1.0.0
+			 */
 			'datastore_type'    => apply_filters( 'colormag_customize_datastore_type', 'theme_mod' ),
 			'control'           => 'colormag-hidden',
 			'section'           => $config['section'],
@@ -732,7 +774,16 @@ class ColorMag_Customizer_FrameWork {
 		);
 
 		// For adding controls.
-		$control_type = ColorMag_Customize_Base_Control::get_control_instance( $customize_config['control'] );
+		$control_type     = ColorMag_Customize_Base_Control::get_control_instance( $customize_config[ 'control' ] );
+		$new_control_type = ColorMag_Customize_Base_Control::get_control_instance( $config[ 'control' ] );
+
+		if ( $new_control_type ) {
+			$control_data = new $new_control_type( $wp_customize, $sub_control_name, $config );
+			add_action( 'customize_controls_print_footer_scripts', function () use ( $config, $control_data ) {
+				$script = "var {$config['name']} = " . wp_json_encode( $control_data->json() ) . ';';
+				wp_print_inline_script_tag( $script );
+			} );
+		}
 
 		if ( false !== $control_type ) {
 			$wp_customize->add_control(
@@ -848,8 +899,8 @@ class ColorMag_Customizer_FrameWork {
 	 */
 	public function customize_sanitize_callback_include() {
 
-		require dirname(__FILE__) . '/class-colormag-customizer-sanitizes.php';
-		require dirname(__FILE__) . '/class-colormag-customizer-callbacks.php';
+		require dirname( __FILE__ ) . '/class-colormag-customizer-sanitizes.php';
+		require dirname( __FILE__ ) . '/class-colormag-customizer-callbacks.php';
 
 	}
 

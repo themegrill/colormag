@@ -1,0 +1,8 @@
+/* SVG icons */
+.cm-icon {
+	display: block;
+	width: length( 'l-8', em );
+	height: length( 'l-8', em );
+	transition: all 0.3s;
+    fill: $color__gray-500;
+}

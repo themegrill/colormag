@@ -1,13 +1,13 @@
-.no-sidebar #primary {
+.no-sidebar .cm-primary {
 	float: none;
 	margin: 0 auto;
 }
 
-.no-sidebar-full-width #primary {
+.no-sidebar-full-width .cm-primary {
 	width: 100%;
 }
 
-.no-sidebar #secondary, .no-sidebar-full-width #secondary {
+.no-sidebar .cm-secondary, .no-sidebar-full-width .cm-secondary {
 	display: none;
 }
 
@@ -15,9 +15,9 @@
 .no-sidebar {
 	overflow: hidden;
 
-	#primary {
+	.cm-primary {
 
-		.entry-content {
+		.cm-entry-summary {
 
 			> .alignfull {
 				margin-left: calc(50% - 50vw);
@@ -40,13 +40,13 @@
 
 	&.box-layout {
 
-		#main {
+		.cm-content {
 			overflow: hidden;
 		}
 
-		#primary {
+		.cm-primary {
 
-			.entry-content {
+			.cm-entry-summary {
 
 				> .alignfull {
 					margin-left: -30px;

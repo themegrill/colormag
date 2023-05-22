@@ -4,9 +4,9 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.
@@ -15,9 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="no-results not-found">
+<section class="cm-no-results cm-not-found">
+	<img
+		src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/search-result.png' ); ?>"
+		alt=""
+	/>
 
-	<div class="page-content">
+	<header class="cm-page-header">
+		<h1 class="cm-page-title"><?php esc_html_e( 'No matching post found', 'colormag' ); ?></h1>
+	</header><!-- .cm-page-header -->
+
+	<div class="cm-page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p>
@@ -52,6 +60,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		endif;
 		?>
-	</div><!-- .page-content -->
+	</div><!-- .cm-page-content -->
 
-</section><!-- .no-results -->
+</section><!-- .cm-no-results -->

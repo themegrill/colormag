@@ -1,0 +1,37 @@
+/**
+ * demo-importer.scss
+ * General Demo Importer admin styles.
+ */
+
+/**
+ * Styling begins.
+ */
+.themegrill-demo-importer-BlankState {
+	padding: 5em 0 0;
+	text-align: center;
+
+	.themegrill-demo-importer-BlankState-icon {
+		fill: #ddd;
+		width: 128px;
+		height: 128px;
+		margin: 0 0 .875em;
+	}
+
+	.themegrill-demo-importer-BlankState-message {
+		color: #aaa;
+		margin: 0 auto 1.5em;
+		line-height: 1.5em;
+		font-size: 1.2em;
+		max-width: 500px;
+	}
+
+	.themegrill-demo-importer-BlankState-cta {
+		margin: 0 .25em;
+
+		&.installed::before,
+		&.installing::before,
+		&.updating-message::before {
+			margin-top: 11px;
+		}
+	}
+}

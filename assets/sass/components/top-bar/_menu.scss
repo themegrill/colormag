@@ -1,0 +1,22 @@
+.top-bar-menu {
+	text-align: center;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		justify-content: center;
+		list-style: none;
+	}
+
+	li {
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	a {
+		display: block;
+	}
+}

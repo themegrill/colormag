@@ -1,0 +1,49 @@
+/* Random Posts Widget.
+--------------------------------------------- */
+.cm-random-post-widget {
+
+	.cm-post {
+		display: flex;
+		box-shadow: none;
+
+		a {
+			position: relative;
+		}
+	}
+
+	.cm-random-post {
+		width: 100%;
+	}
+
+	.cm-post-content {
+		flex: 1;
+
+		.cm-entry-title {
+			margin-bottom: length( 'l-4' );
+			font-size: 14px;
+			line-height: 1.4;
+		}
+
+		.cm-below-entry-meta {
+			margin-bottom: 0;
+		}
+	}
+
+	.cm-author {
+		display: none;
+	}
+}
+
+.cm-random-posts {
+	display: flex;
+	flex-direction: column;
+	gap: length( 'l-6' );
+	padding: length( 'l-6' );
+	border-radius: 4px;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	width: 100%;
+
+	img {
+		border-radius: 4px;
+	}
+}

@@ -15,7 +15,7 @@ input {
 		appearance: none !important;
 
 		&:focus {
-			border: 1px solid $color__border;
+			border: 1px solid $color__gray-200;
 		}
 	}
 
@@ -48,7 +48,7 @@ input {
 	&[type="password"],
 	&[type="url"] {
 		padding: 1%;
-		border: 1px solid $color__border;
+		border: 1px solid $color__gray-200;
 		line-height: 20px;
 		width: 95%;
 		margin: 0 0 30px;
@@ -59,15 +59,14 @@ input {
 	&.s {
 		width: 85%;
 		padding: 4px 54px 4px 10px;
-		height: 45px;
 		color: #777777;
 		background-color: $color__white;
 		margin: 0;
-		border: 1px solid $color__border;
+		border: 1px solid $color__gray-200;
 
 		&:focus {
 			padding-left: 10px;
-			border-color: $color__border;
+			border-color: $color__gray-200;
 			text-indent: 0;
 		}
 	}
@@ -76,18 +75,17 @@ input {
 textarea {
 	appearance: none !important;
 	padding: 1%;
-	border: 1px solid $color__border;
+	border: 1px solid #E4E4E7;
 	line-height: 20px;
-	width: 95%;
-	margin: 0 0 30px;
-	background-color: #f8f8f8;
-	border-radius: 3px;
+	width: 100%;
+	margin: 0 0 32px;
+	background-color: #fcfcfc;
+	border-radius: 4px;
 
 	&:focus {
-		border: 1px solid $color__border;
+		border: 1px solid $color__gray-200;
 	}
 }
-
 
 .colormag-button {
 	margin-bottom: 30px;
@@ -126,6 +124,7 @@ button {
 }
 
 #search-form {
+
 	input[type="submit"] {
 		border-radius: 0;
 		margin-left: -8px;

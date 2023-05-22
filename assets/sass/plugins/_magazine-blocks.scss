@@ -1,39 +1,23 @@
 [class*='mzb'] {
-    a {
-        color: var(--color--text--main);
+
+    h3 {
+        padding-bottom: 0
     }
 
-    h3,
     h2 {
-        padding-bottom: 0
+        padding-bottom: 0;
     }
 
     img {
         margin-bottom: 0;
     }
 
-    .mzb-post-date,
-    .mzb-post-author {
-        a {
-            color: var(--color-gray--six);
-        }
-
-        svg {
-            fill: var(--color-gray--six);
-        }
-    }
-}
-
-.mzb-banner-posts,
-.mzb-grid-module {
-    .mzb-post-author,
-    .mzb-post-date {
-        a {
-            color: var(--color--white);
-        }
-
-        svg {
-            fill: var(--color--white);
-        }
+    .editor-styles-wrapper h1,
+    .editor-styles-wrapper h2,
+    .editor-styles-wrapper h3,
+    .editor-styles-wrapper h4,
+    .editor-styles-wrapper h5,
+    .editor-styles-wrapper h6 {
+        padding-bottom: 0;
     }
 }

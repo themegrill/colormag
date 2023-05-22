@@ -1,13 +1,45 @@
+// Neutral.
+$color__gray-900:            #18181b;
+$color__gray-800:            #27272a;
+$color__gray-700:            #3f3f46;
+$color__gray-600:            #52525b;
+$color__gray-500:            #71717a;
+$color__gray-400:            #a1a1aa;
+$color__gray-300:            #d4d4d8;
+$color__gray-200:            #e4e4e7;
+$color__gray-100:            #f4f4f5;
+$color__gray-50:             #fafafa;
+
+// White.
+$color__white:               #fff;
+
+// Black.
+$color__black:               #000;
+
+// Brand.
+$color__blue-900:             #0d354a;
+$color__blue-800:             #124560;
+$color__blue-700:             #17597c;
+$color__blue-600:             #1d729f;
+$color__blue-500:             #207daf;
+$color__blue-400:             #4d97bf;
+$color__blue-300:             #6aa8c9;
+$color__blue-200:             #98c3da;
+$color__blue-100:             #bad7e6;
+$color__blue-50:              #e9f2f7;
+
+// Others.
+$color__primary:             $color__blue-500;
+$color__text:                $color__gray-700;
+
 // Light.
-$color__white: #fff;
-$color__gray-eleven: darken($color__white, 2.5%); // #f9f9f9
-$color__gray-ten: darken($color__white, 2.6%); // #f8f8f8
-$color__gray-nine: darken($color__white, 5%); // #f2f2f2
-$color__gray-eight: darken($color__white, 8.4%); // #eaeaea
-$color__gray-seven: darken($color__white, 20%); // #cccccc
+$color__gray-eleven:         darken($color__white, 2.5%); // #f9f9f9
+$color__gray-ten:            darken($color__white, 2.6%); // #f8f8f8
+$color__gray-nine:           darken($color__white, 5%); // #f2f2f2
+$color__gray-eight:          darken($color__white, 8.4%); // #eaeaea
+$color__gray-seven:          darken($color__white, 20%); // #cccccc
 
 // Dark.
-$color__black: #000;
 $color__gray-one: lighten($color__black, 13.6%); // #232323
 $color__gray-two: lighten($color__black, 20%); // #333333
 $color__gray-three: lighten($color__black, 26.5%); // #444444
@@ -16,22 +48,18 @@ $color__gray-five: lighten($color__black, 46.5%); // #777777
 $color__gray-six: lighten($color__black, 53.5%); // #888888
 
 // Brand.
-$color__primary: #289dcc;
-$color__title: #424143;
-$color__border: #eaeaea;
-$color__background-gray: #EBEBEC;
 $color__background-news: #212529;
 $color__social-icon: #495057;
 $color__menu-link: #343a40;
 $color__background-news-bar: #f1f3f5;
 $color__border-title: #5e616a;
-$color__border-footer: #40444f;
 $color__background-footer-socket: #252730;
 $color__light-content: darken($color__white, 35%);
 
 // Dark mode.
 $color__background-dark: #151515;
-$color__background-dark-page: #0D0D0D;
+$color__background-light: #19190d;
+$color__background-dark-page: #0d0d0d;
 $color__background-dark-footer-socket: #121212;
 $color__background-medium-footer-socket: lighten($color__background-dark-footer-socket, 1.5%);
 $color__background-dark-news: lighten($color__background-dark-page, 1.5%); // #1e1e1e
@@ -65,10 +93,8 @@ $color__soundcloud: #ff3a00;
 $color__vine: #00bf8f;
 $color__delicious: #2a96ff;
 
-// Support Magazine Blocks.
 body {
-    --color--light--primary: #9bc8da;
-    --color--primary: #289dcc;
-    --color--text--main: #333333;
-    --color-gray--six: #888888;
+	--color--gray: #888888;
+	--color--light--primary: #9bc8da;
+    --color--primary: #207daf;
 }

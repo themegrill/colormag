@@ -24,7 +24,7 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 	 */
 	public function __construct() {
 
-		$this->widget_cssclass    = 'widget_728x90_advertisement';
+		$this->widget_cssclass    = 'cm-728x90-advertisemen-widget';
 		$this->widget_description = esc_html__( 'Add your 728x90 Advertisement here', 'colormag' );
 		$this->widget_name        = esc_html__( 'TG: 728x90 Advertisement', 'colormag' );
 		$this->settings           = array(
@@ -48,6 +48,11 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 				'default' => '',
 				'label'   => esc_html__( 'Advertisement Image ', 'colormag' ),
 			),
+			'rel_value'            => array(
+				'type'    => 'checkbox',
+				'default' => '0',
+				'label'   => esc_html__( 'Check to make dofollow link.', 'colormag' ),
+			),
 		);
 
 		parent::__construct();
@@ -65,15 +70,28 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 	public function widget( $args, $instance ) {
 
 		$title      = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
+		$rel_value  = ! empty( $instance['rel_value'] ) ? true : false;
 		$image_link = isset( $instance['728x90_image_link'] ) ? $instance['728x90_image_link'] : '';
 		$image_url  = isset( $instance['728x90_image_url'] ) ? $instance['728x90_image_url'] : '';
+
+		// For WPML plugin compatibility, register string.
+		if ( function_exists( 'icl_register_string' ) ) {
+			icl_register_string( 'ColorMag Pro', 'TG: 728x90 Image Link' . $this->id, $image_link );
+			icl_register_string( 'ColorMag Pro', 'TG: 728x90 Image URL' . $this->id, $image_url );
+		}
+
+		// For WPML plugin compatibility, assign variable to converted string.
+		if ( function_exists( 'icl_t' ) ) {
+			$image_link = icl_t( 'ColorMag Pro', 'TG: 728x90 Image Link' . $this->id, $image_link );
+			$image_url  = icl_t( 'ColorMag Pro', 'TG: 728x90 Image URL' . $this->id, $image_url );
+		}
 
 		$this->widget_start( $args );
 		?>
 
 		<div class="advertisement_728x90">
 			<?php if ( ! empty( $title ) ) { ?>
-				<div class="advertisement-title">
+				<div class="cm-advertisement-title">
 					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<?php
@@ -85,9 +103,11 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 				$image_id  = attachment_url_to_postid( $image_url );
 				$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
-				$output .= '<div class="advertisement-content">';
+				$output .= '<div class="cm-advertisement-content">';
 				if ( ! empty( $image_link ) ) {
-					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" rel="nofollow">';
+					$value = $rel_value ? '' : 'rel="nofollow"';
+
+					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" ' . $value . '>';
 					$output .= '<img src="' . $image_url . '" width="728" height="90" alt="' . $image_alt . '">';
 					$output .= '</a>';
 				} else {

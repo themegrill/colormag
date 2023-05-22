@@ -66,31 +66,34 @@ class ColorMag_Toggle_Control extends ColorMag_Customize_Base_Additional_Control
 	protected function content_template() {
 		?>
 
-		<div class="customizer-text">
-			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
-			<# } #>
+        <label for="toggle_{{ data.id }}">
+            <div class="colormag-toggle">
+			<div class="customizer-text">
+				<# if ( data.label ) { #>
+                    <span class="customize-control-label">{{{ data.label }}}</span>
+				<# } #>
 
-			<# if ( data.description ) { #>
-			<span class="description customize-control-description">{{{ data.description }}}</span>
-			<# } #>
-		</div>
+				<# if ( data.description ) { #>
+				<span class="description customize-control-description">{{{ data.description }}}</span>
+				<# } #>
+			</div>
 
-		<label for="toggle_{{ data.id }}"
-			   class="<# if ( data.description ) { #>toggle-description<# } #>"
-		>
-			<input {{{ data.inputAttrs }}}
-				   class="switch-toggle"
-				   type="checkbox"
-				   value="{{ data.value }}"
-				   name="_customize-toggle-{{ data.id }}"
-				   id="toggle_{{ data.id }}"
-				   {{{ data.link }}}
-			<# if ( data.value === true ) { #> checked="checked"<# } #>
+			<div class=" colormag-toggle-input <# if ( data.description ) { #>toggle-description<# } #>"
 			>
+				<input {{{ data.inputAttrs }}}
+					   class="switch-toggle"
+					   type="checkbox"
+					   value="{{ data.value }}"
+					   name="_customize-toggle-{{ data.id }}"
+					   id="toggle_{{ data.id }}"
+					   {{{ data.link }}}
+				<# if ( data.value === true ) { #> checked="checked"<# } #>
+				>
 
-			<span class="switch"></span>
-		</label>
+				<span class="switch"></span>
+			</div>
+		</div>
+        </label>
 
 		<?php
 	}

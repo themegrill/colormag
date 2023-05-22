@@ -28,6 +28,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 	 */
 	public $type = 'colormag-typography';
 
+	public $suffix = '';
+
 	/**
 	 * Languages required subsets.
 	 *
@@ -55,8 +57,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		// If custom fonts is available,then add it for localization.
 		if ( ! empty( $custom_fonts ) ) {
-			$localize_scripts['customfontslabel'] = esc_html__( 'Custom Fonts', 'colormag' );
-			$localize_scripts['custom']           = $custom_fonts;
+			$localize_scripts[ 'customfontslabel' ] = esc_html__( 'Custom Fonts', 'colormag' );
+			$localize_scripts[ 'custom' ]           = $custom_fonts;
 		}
 
 		// Loading available fonts.
@@ -94,7 +96,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 					'id'    => $variant,
 					'label' => isset( $font_variants[ $variant ] ) ? $font_variants[ $variant ] : $variant,
 				);
-			} elseif ( is_array( $variant ) && isset( $variant['id'] ) && isset( $variant['label'] ) ) {
+			} elseif ( is_array( $variant ) && isset( $variant[ 'id' ] ) && isset( $variant[ 'label' ] ) ) {
 				$variants_array[] = $variant;
 			}
 		}
@@ -111,6 +113,11 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		$standard_fonts       = ColorMag_Fonts::get_system_fonts();
 		$standard_fonts_array = array();
 		$default_variants     = $this->format_variants_array(
+		/**
+		 * Filter for default variants.
+		 *
+		 * @since   1.0.0
+		 */
 			apply_filters(
 				'colormag_default_variants',
 				array(
@@ -123,10 +130,10 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		foreach ( $standard_fonts as $key => $font ) {
 
 			$standard_fonts_array[] = array(
-				'family'   => $font['family'],
-				'label'    => $font['label'],
+				'family'   => $font[ 'family' ],
+				'label'    => $font[ 'label' ],
 				'subsets'  => array(),
-				'variants' => ( isset( $font['variants'] ) ) ? $this->format_variants_array( $font['variants'] ) : $default_variants,
+				'variants' => ( isset( $font[ 'variants' ] ) ) ? $this->format_variants_array( $font[ 'variants' ] ) : $default_variants,
 			);
 
 		}
@@ -149,9 +156,9 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		foreach ( $google_fonts as $family => $args ) {
 
 			// Get label, variants, subsets of individual font.
-			$label    = ( isset( $args['label'] ) ) ? $args['label'] : $family;
-			$variants = ( isset( $args['variants'] ) ) ? $args['variants'] : array( 'regular' );
-			$subsets  = ( isset( $args['subsets'] ) ) ? $args['subsets'] : array();
+			$label    = ( isset( $args[ 'label' ] ) ) ? $args[ 'label' ] : $family;
+			$variants = ( isset( $args[ 'variants' ] ) ) ? $args[ 'variants' ] : array( 'regular' );
+			$subsets  = ( isset( $args[ 'subsets' ] ) ) ? $args[ 'subsets' ] : array();
 
 			$available_variants = array();
 			if ( is_array( $variants ) ) {
@@ -207,10 +214,10 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 		foreach ( $custom_fonts as $key => $font ) {
 
 			$custom_fonts_array[] = array(
-				'family'   => $font['family'],
-				'label'    => $font['label'],
+				'family'   => $font[ 'family' ],
+				'label'    => $font[ 'label' ],
 				'subsets'  => array(),
-				'variants' => ( isset( $font['variants'] ) ) ? $this->format_variants_array( $font['variants'] ) : $default_variants,
+				'variants' => ( isset( $font[ 'variants' ] ) ) ? $this->format_variants_array( $font[ 'variants' ] ) : $default_variants,
 			);
 
 		}
@@ -228,21 +235,29 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		parent::to_json();
 
-		$this->json['default'] = $this->setting->default;
+		$this->json[ 'default' ] = $this->setting->default;
 		if ( isset( $this->default ) ) {
-			$this->json['default'] = $this->default;
+			$this->json[ 'default' ] = $this->default;
 		}
-		$this->json['value'] = $this->value();
+		$this->json[ 'value' ] = $this->value();
 
-		$this->json['link']        = $this->get_link();
-		$this->json['id']          = $this->id;
-		$this->json['label']       = esc_html( $this->label );
-		$this->json['description'] = $this->description;
+		$this->json[ 'link' ]        = $this->get_link();
+		$this->json[ 'id' ]          = $this->id;
+		$this->json[ 'label' ]       = esc_html( $this->label );
+		$this->json[ 'description' ] = $this->description;
+		$this->json[ 'choices' ]     = $this->choices;
+		$this->json[ 'languages' ]   = ColorMag_Fonts::get_google_font_subsets();
 
-		$this->json['choices']     = $this->choices;
-		$this->json['input_attrs'] = $this->input_attrs;
-		$this->json['languages']   = ColorMag_Fonts::get_google_font_subsets();
+		$input_attrs = colormag_get_typography_input_attrs( $this->value() );
 
+		$this->json[ 'suffix' ]         = $input_attrs[ 'suffix' ];
+		$this->json[ 'default_suffix' ] = $input_attrs[ 'default_suffix' ];
+
+		$this->json[ 'input_attrs' ] = array_merge(
+			$this->input_attrs,
+			$input_attrs[ 'input_attrs' ]
+
+		);
 	}
 
 	/**
@@ -258,28 +273,27 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 
 		<div class="customizer-text">
 			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
+			<span class="customize-control-label">{{{data.label }}}</span>
 			<# } #>
 
 			<# if ( data.description ) { #>
-			<span class="description customize-control-description">{{{ data.description }}}</span>
+			<span class="description customize-control-description">{{{data.description }}}</span>
 			<# } #>
 		</div>
 
 		<div class="customize-control-content">
 
 			<# if ( data.default['font-family'] ) { #>
-
-			<div class="font-family">
-				<span class="customize-control-title"><?php esc_html_e( 'Family', 'colormag' ); ?></span>
+			<div class="font-family customize-group">
+				<span class="customize-control-label"><?php esc_html_e( 'Family', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-font-family-{{{ data.id || data.name }}}"></select>
 				</div>
 			</div>
 
 			<# if ( data.default['font-weight'] ) { #>
-			<div class="font-weight">
-				<span class="customize-control-title"><?php esc_html_e( 'Weight', 'colormag' ); ?></span>
+			<div class="font-weight customize-group">
+				<span class="customize-control-label"><?php esc_html_e( 'Weight', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-font-weight-{{{ data.id || data.name }}}"></select>
 				</div>
@@ -287,12 +301,12 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<# if ( data.default['subsets'] ) { #>
-			<div class="subsets">
-				<span class="customize-control-title"><?php esc_html_e( 'Subset(s)', 'colormag' ); ?></span>
+			<div class="subsets customize-group">
+				<span class="customize-control-label"><?php esc_html_e( 'Subset(s)', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-subsets-{{{ data.id || data.name }}}" multiple>
 						<# _.each( data.value.subsets, function( subset ) { #>
-						<option value="{{ subset }}" selected="selected">{{ data.languages[ subset ] }}</option>
+						<option value="{{ subset }}" selected="selected">{{ data.languages[subset] }}</option>
 						<# } ); #>
 					</select>
 				</div>
@@ -302,284 +316,801 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<# if ( data.default['font-size'] ) { #>
-			<div class="font-size">
-				<span class="customize-control-title"><?php esc_html_e( 'Size', 'colormag' ); ?></span>
-				<ul class="responsive-switchers">
-					<li class="desktop">
-						<button type="button" class="preview-desktop active" data-device="desktop">
-							<i class="dashicons dashicons-desktop"></i>
-						</button>
-					</li>
-					<li class="tablet">
-						<button type="button" class="preview-tablet" data-device="tablet">
-							<i class="dashicons dashicons-tablet"></i>
-						</button>
-					</li>
-					<li class="mobile">
-						<button type="button" class="preview-mobile" data-device="mobile">
-							<i class="dashicons dashicons-smartphone"></i>
-						</button>
-					</li>
-				</ul>
-
+			<div class="font-size customize-group">
 				<div class="desktop control-wrap active">
-					<input type="text"
-						   id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
-						   data-device="desktop"
-							<# if ( data.value['font-size'] ) { #>
-								value="{{ data.value['font-size']['desktop'] }}"
+					<span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span class="customize-control-label"><?php esc_html_e( 'Size', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="font-size-unit" data-device="desktop" name="unit">
+								  <# _.each(data.suffix['font-size'], function( suffix ) {  #>
+								  <option value="{{ suffix }}"
+								    <# if(data.value['font-size'] && data.value['font-size']['desktop'] && data.value['font-size']['desktop']['unit']) { #>
+											<# if ( data.value['font-size']['desktop']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['font-size'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-font-size-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+							  </div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-font-size-desktop-warning"
+						      id="colormag-font-size-desktop-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['font-size']['desktop']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['font-size']['desktop']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['font-size']['desktop']['step'] }}}"
+								data-reset_value="{{ data.default['font-size']['desktop']['size'] }}"
+								data-reset_unit="{{ data.default['font-size']['desktop']['unit'] }}"
+
+							<# if(data.value['font-size'] && data.value['font-size']['desktop'] &&
+							data.value['font-size']['desktop']['size']) { #>
+							value="{{ data.value['font-size']['desktop']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['font-size']['desktop'] }}"
+							value="{{ data.default['font-size']['desktop']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['desktop'] ) { #>
-								<# if ( data.input_attrs['desktop']['font-size']['step'] ) { #>
-									step="{{ data.input_attrs['desktop']['font-size']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-font-size-desktop-{{{ data.id || data.name }}}"
+								       data-device="desktop"
+								       min="{{{ data.input_attrs.attributes['font-size']['desktop']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['font-size']['desktop']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['font-size']['desktop']['step'] }}}"
+
+								<# if(data.value['font-size'] && data.value['font-size']['desktop'] &&
+								data.value['font-size']['desktop']['size']) { #>
+								value="{{ data.value['font-size']['desktop']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['font-size']['desktop']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['desktop']['font-size']['min'] || data.input_attrs['desktop']['font-size']['min'] ) { #>
-									min="{{ data.input_attrs['desktop']['font-size']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['desktop']['font-size']['max'] ) { #>
-									max="{{ data.input_attrs['desktop']['font-size']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
-						   id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
-						   data-device="tablet"
-							<# if ( data.value['font-size'] ) { #>
-								value="{{ data.value['font-size']['tablet'] }}"
+					 <span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span class="customize-control-label"><?php esc_html_e( 'Size', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+							<div class="input-wrapper">
+								<select class="font-size-unit" data-device="tablet" name="unit">
+									<# _.each(data.suffix['font-size'], function( suffix ) { #>
+									 <option value="{{ suffix }}"
+										  <# if(data.value['font-size'] && data.value['font-size']['tablet'] && data.value['font-size']['tablet']['unit']) { #>
+											<# if ( data.value['font-size']['tablet']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['font-size'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+									</option>
+									<# }) #>
+								</select>
+								<div class="colormag-font-size-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+							</div>
+						</div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-font-size-tablet-warning"
+						      id="colormag-font-size-tablet-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['font-size']['tablet']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['font-size']['tablet']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['font-size']['tablet']['step'] }}}"
+								data-reset_value="{{ data.default['font-size']['tablet']['size'] }}"
+								data-reset_unit="{{ data.default['font-size']['tablet']['unit'] }}"
+
+							<# if(data.value['font-size'] && data.value['font-size']['tablet'] &&
+							data.value['font-size']['tablet']['size']) { #>
+							value="{{ data.value['font-size']['tablet']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['font-size']['tablet'] }}"
+							value="{{ data.default['font-size']['tablet']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['tablet'] ) { #>
-								<# if ( data.input_attrs['tablet']['font-size']['step'] ) { #>
-									step="{{ data.input_attrs['tablet']['font-size']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-font-size-tablet-{{{ data.id || data.name }}}"
+								       data-device="tablet"
+								       min="{{{ data.input_attrs.attributes['font-size']['tablet']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['font-size']['tablet']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['font-size']['tablet']['step'] }}}"
+
+								<# if(data.value['font-size'] && data.value['font-size']['tablet'] &&
+								data.value['font-size']['tablet']['size']) { #>
+								value="{{ data.value['font-size']['tablet']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['font-size']['tablet']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['tablet']['font-size']['min'] || data.input_attrs['tablet']['font-size']['min'] ) { #>
-									min="{{ data.input_attrs['tablet']['font-size']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['tablet']['font-size']['max'] ) { #>
-									max="{{ data.input_attrs['tablet']['font-size']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
-						   id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
-						   data-device="mobile"
-							<# if ( data.value['font-size'] ) { #>
-								value="{{ data.value['font-size']['mobile'] }}"
+					 <span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span class="customize-control-label"><?php esc_html_e( 'Size', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					 <div class="unit-wrapper">
+							<div class="input-wrapper">
+								<select class="font-size-unit" data-device="mobile" name="unit">
+									<# _.each(data.suffix['font-size'], function( suffix ) { #>
+									 <option value="{{ suffix }}"
+										  <# if(data.value['font-size'] && data.value['font-size']['mobile'] && data.value['font-size']['mobile']['unit']) { #>
+											<# if ( data.value['font-size']['mobile']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['font-size'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+									</option>
+									<# }) #>
+								</select>
+								<div class="colormag-font-size-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+							</div>
+						</div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-font-size-mobile-warning"
+						      id="colormag-font-size-mobile-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['font-size']['mobile']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['font-size']['mobile']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['font-size']['mobile']['step'] }}}"
+								data-reset_value="{{ data.default['font-size']['mobile']['size'] }}"
+								data-reset_unit="{{ data.default['font-size']['mobile']['unit'] }}"
+
+							<# if(data.value['font-size'] && data.value['font-size']['mobile'] &&
+							data.value['font-size']['mobile']['size']) { #>
+							value="{{ data.value['font-size']['mobile']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['font-size']['mobile'] }}"
+							value="{{ data.default['font-size']['mobile']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['mobile'] ) { #>
-								<# if ( data.input_attrs['mobile']['font-size']['step'] ) { #>
-									step="{{ data.input_attrs['mobile']['font-size']['step'] }}"
+
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-font-size-mobile-{{{ data.id || data.name }}}"
+								       data-device="mobile"
+								       min="{{{ data.input_attrs.attributes['font-size']['mobile']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['font-size']['mobile']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['font-size']['mobile']['step'] }}}"
+
+								<# if(data.value['font-size'] && data.value['font-size']['mobile'] &&
+								data.value['font-size']['mobile']['size']) { #>
+								value="{{ data.value['font-size']['mobile']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['font-size']['mobile']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['mobile']['font-size']['min'] || data.input_attrs['mobile']['font-size']['min'] ) { #>
-									min="{{ data.input_attrs['mobile']['font-size']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['mobile']['font-size']['max'] ) { #>
-									max="{{ data.input_attrs['mobile']['font-size']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<# } #>
 
 			<# if ( data.default['line-height'] ) { #>
-			<div class="line-height">
-				<span class="customize-control-title"><?php esc_html_e( 'Line Height', 'colormag' ); ?></span>
-				<ul class="responsive-switchers">
-					<li class="desktop">
-						<button type="button" class="preview-desktop active" data-device="desktop">
-							<i class="dashicons dashicons-desktop"></i>
-						</button>
-					</li>
-					<li class="tablet">
-						<button type="button" class="preview-tablet" data-device="tablet">
-							<i class="dashicons dashicons-tablet"></i>
-						</button>
-					</li>
-					<li class="mobile">
-						<button type="button" class="preview-mobile" data-device="mobile">
-							<i class="dashicons dashicons-smartphone"></i>
-						</button>
-					</li>
-				</ul>
-
+			<div class="line-height customize-group">
 				<div class="desktop control-wrap active">
-					<input type="text"
-						   id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
-						   data-device="desktop"
-							<# if ( data.value['line-height'] ) { #>
-								value="{{ data.value['line-height']['desktop'] }}"
+					<span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span class="customize-control-label"><?php esc_html_e( 'Line Height', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="line-height-unit" data-device="desktop" name="unit">
+								  <# _.each(data.suffix['line-height'], function( suffix ) {  #>
+								   <option value="{{ suffix }}"
+										  <# if(data.value['line-height'] && data.value['line-height']['desktop'] && data.value['line-height']['desktop']['unit']) { #>
+											<# if ( data.value['line-height']['desktop']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['line-height'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-line-height-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-line-height-desktop-warning"
+						      id="colormag-line-height-desktop-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['line-height']['desktop']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['line-height']['desktop']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['line-height']['desktop']['step'] }}}"
+								data-reset_value="{{ data.default['line-height']['desktop']['size'] }}"
+								data-reset_unit="{{ data.default['line-height']['desktop']['unit'] }}"
+
+							<# if(data.value['line-height'] && data.value['line-height']['desktop'] &&
+							data.value['line-height']['desktop']['size']) { #>
+							value="{{ data.value['line-height']['desktop']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['line-height']['desktop'] }}"
+							value="{{ data.default['line-height']['desktop']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['desktop'] ) { #>
-								<# if ( data.input_attrs['desktop']['line-height']['step'] ) { #>
-									step="{{ data.input_attrs['desktop']['line-height']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-line-height-desktop-{{{ data.id || data.name }}}"
+								       data-device="desktop"
+								       min="{{{ data.input_attrs.attributes['line-height']['desktop']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['line-height']['desktop']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['line-height']['desktop']['step'] }}}"
+
+								<# if(data.value['line-height'] && data.value['line-height']['desktop'] &&
+								data.value['line-height']['desktop']['size']) { #>
+								value="{{ data.value['line-height']['desktop']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['line-height']['desktop']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['desktop']['line-height']['min'] || data.input_attrs['desktop']['line-height']['min'] ) { #>
-									min="{{ data.input_attrs['desktop']['line-height']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['desktop']['line-height']['max'] ) { #>
-									max="{{ data.input_attrs['desktop']['line-height']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
-						   id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
-						   data-device="tablet"
-							<# if ( data.value['line-height'] ) { #>
-								value="{{ data.value['line-height']['tablet'] }}"
+					 <span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span class="customize-control-label"><?php esc_html_e( 'Line Height', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="line-height-unit" data-device="tablet" name="unit">
+								  <# _.each(data.suffix['line-height'], function( suffix ) {  #>
+								   <option value="{{ suffix }}"
+										   <# if(data.value['line-height'] && data.value['line-height']['tablet'] && data.value['line-height']['tablet']['unit']) { #>
+											<# if ( data.value['line-height']['tablet']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['line-height'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-line-height-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-line-height-tablet-warning"
+						      id="colormag-line-height-tablet-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['line-height']['tablet']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['line-height']['tablet']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['line-height']['tablet']['step'] }}}"
+								data-reset_value="{{ data.default['line-height']['tablet']['size'] }}"
+								data-reset_unit="{{ data.default['line-height']['tablet']['unit'] }}"
+
+							<# if(data.value['line-height'] && data.value['line-height']['tablet'] &&
+							data.value['line-height']['tablet']['size']) { #>
+							value="{{ data.value['line-height']['tablet']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['line-height']['tablet'] }}"
+							value="{{ data.default['line-height']['tablet']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['tablet'] ) { #>
-								<# if ( data.input_attrs['tablet']['line-height']['step'] ) { #>
-									step="{{ data.input_attrs['tablet']['line-height']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-line-height-tablet-{{{ data.id || data.name }}}"
+								       data-device="tablet"
+								       min="{{{ data.input_attrs.attributes['line-height']['tablet']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['line-height']['tablet']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['line-height']['tablet']['step'] }}}"
+
+								<# if(data.value['line-height'] && data.value['line-height']['tablet'] &&
+								data.value['line-height']['tablet']['size']) { #>
+								value="{{ data.value['line-height']['tablet']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['line-height']['tablet']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['tablet']['line-height']['min'] || data.input_attrs['tablet']['line-height']['min'] ) { #>
-									min="{{ data.input_attrs['tablet']['line-height']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['tablet']['line-height']['max'] ) { #>
-									max="{{ data.input_attrs['tablet']['line-height']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
-						   id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
-						   data-device="mobile"
-							<# if ( data.value['line-height'] ) { #>
-								value="{{ data.value['line-height']['mobile'] }}"
+					 <span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span class="customize-control-label"><?php esc_html_e( 'Line Height', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="line-height-unit" data-device="mobile" name="unit">
+								  <# _.each(data.suffix['line-height'], function( suffix ) {  #>
+								   <option value="{{ suffix }}"
+										   <# if(data.value['line-height'] && data.value['line-height']['mobile'] && data.value['line-height']['mobile']['unit']) { #>
+											<# if ( data.value['line-height']['mobile']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['line-height'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}s
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-line-height-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-line-height-mobile-warning"
+						      id="colormag-line-height-mobile-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['line-height']['mobile']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['line-height']['mobile']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['line-height']['mobile']['step'] }}}"
+								data-reset_value="{{ data.default['line-height']['mobile']['size'] }}"
+								data-reset_unit="{{ data.default['line-height']['mobile']['unit'] }}"
+
+							<# if(data.value['line-height'] && data.value['line-height']['mobile'] &&
+							data.value['line-height']['mobile']['size']) { #>
+							value="{{ data.value['line-height']['mobile']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['line-height']['mobile'] }}"
+							value="{{ data.default['line-height']['mobile']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['mobile'] ) { #>
-								<# if ( data.input_attrs['mobile']['line-height']['step'] ) { #>
-									step="{{ data.input_attrs['mobile']['line-height']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-line-height-mobile-{{{ data.id || data.name }}}"
+								       data-device="mobile"
+								       min="{{{ data.input_attrs.attributes['line-height']['mobile']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['line-height']['mobile']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['line-height']['mobile']['step'] }}}"
+
+								<# if(data.value['line-height'] && data.value['line-height']['mobile'] &&
+								data.value['line-height']['mobile']['size']) { #>
+								value="{{ data.value['line-height']['mobile']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['line-height']['mobile']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['mobile']['line-height']['min'] || data.input_attrs['mobile']['line-height']['min'] ) { #>
-									min="{{ data.input_attrs['mobile']['line-height']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['mobile']['line-height']['max'] ) { #>
-									max="{{ data.input_attrs['mobile']['line-height']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<# } #>
 
-			<# if ( data.default['letter-spacing'] ) { #>
-			<div class="letter-spacing">
-				<span class="customize-control-title"><?php esc_html_e( 'Letter Spacing', 'colormag' ); ?></span>
-				<ul class="responsive-switchers">
-					<li class="desktop">
-						<button type="button" class="preview-desktop active" data-device="desktop">
-							<i class="dashicons dashicons-desktop"></i>
-						</button>
-					</li>
-					<li class="tablet">
-						<button type="button" class="preview-tablet" data-device="tablet">
-							<i class="dashicons dashicons-tablet"></i>
-						</button>
-					</li>
-					<li class="mobile">
-						<button type="button" class="preview-mobile" data-device="mobile">
-							<i class="dashicons dashicons-smartphone"></i>
-						</button>
-					</li>
-				</ul>
 
+			<# if ( data.default['letter-spacing'] ) { #>
+			<div class="letter-spacing customize-group">
 				<div class="desktop control-wrap active">
-					<input type="text"
-						   id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
-						   data-device="desktop"
-							<# if ( data.value['letter-spacing'] ) { #>
-								value="{{ data.value['letter-spacing']['desktop'] }}"
+					<span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span
+							class="customize-control-label"><?php esc_html_e( 'Letter Spacing', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="letter-spacing-unit" data-device="desktop" name="unit">
+
+								  <# _.each(data.suffix['letter-spacing'], function( suffix ) {  #>
+								   <option value="{{ suffix }}"
+										   <# if(data.value['letter-spacing'] && data.value['letter-spacing']['desktop'] && data.value['letter-spacing']['desktop']['unit']) { #>
+											<# if ( data.value['letter-spacing']['desktop']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['letter-spacing'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-letter-spacing-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-letter-spacing-desktop-warning"
+						      id="colormag-letter-spacing-desktop-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['letter-spacing']['desktop']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['letter-spacing']['desktop']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['letter-spacing']['desktop']['step'] }}}"
+								data-reset_value="{{ data.default['letter-spacing']['desktop']['size'] }}"
+								data-reset_unit="{{ data.default['letter-spacing']['desktop']['unit'] }}"
+
+							<# if(data.value['letter-spacing'] && data.value['letter-spacing']['desktop'] &&
+							data.value['letter-spacing']['desktop']['size']) { #>
+							value="{{ data.value['letter-spacing']['desktop']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['letter-spacing']['desktop'] }}"
+							value="{{ data.default['letter-spacing']['desktop']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['desktop'] ) { #>
-								<# if ( data.input_attrs['desktop']['letter-spacing']['step'] ) { #>
-									step="{{ data.input_attrs['desktop']['letter-spacing']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-letter-spacing-desktop-{{{ data.id || data.name }}}"
+								       data-device="desktop"
+								       min="{{{ data.input_attrs.attributes['letter-spacing']['desktop']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['letter-spacing']['desktop']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['letter-spacing']['desktop']['step'] }}}"
+
+								<# if(data.value['letter-spacing'] && data.value['letter-spacing']['desktop'] &&
+								data.value['letter-spacing']['desktop']['size']) { #>
+								value="{{ data.value['letter-spacing']['desktop']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['letter-spacing']['desktop']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['desktop']['letter-spacing']['min'] || data.input_attrs['desktop']['letter-spacing']['min'] ) { #>
-									min="{{ data.input_attrs['desktop']['letter-spacing']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['desktop']['letter-spacing']['max'] ) { #>
-									max="{{ data.input_attrs['desktop']['letter-spacing']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="tablet control-wrap">
-					<input type="text"
-						   id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
-						   data-device="tablet"
-							<# if ( data.value['letter-spacing'] ) { #>
-								value="{{ data.value['letter-spacing']['tablet'] }}"
+					<span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span
+							class="customize-control-label"><?php esc_html_e( 'Letter Spacing', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="letter-spacing-unit" data-device="tablet" name="unit">
+								  <# _.each(data.suffix['letter-spacing'], function( suffix ) {  #>
+								   <option value="{{ suffix }}"
+								  <# if(data.value['letter-spacing'] && data.value['letter-spacing']['tablet'] && data.value['letter-spacing']['tablet']['unit']) { #>
+											<# if ( data.value['letter-spacing']['tablet']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['letter-spacing'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-letter-spacing-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-letter-spacing-tablet-warning"
+						      id="colormag-letter-spacing-tablet-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['letter-spacing']['tablet']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['letter-spacing']['tablet']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['letter-spacing']['tablet']['step'] }}}"
+								data-reset_value="{{ data.default['letter-spacing']['tablet']['size'] }}"
+								data-reset_unit="{{ data.default['letter-spacing']['tablet']['unit'] }}"
+
+							<# if(data.value['letter-spacing'] && data.value['letter-spacing']['tablet'] &&
+							data.value['letter-spacing']['tablet']['size']) { #>
+							value="{{ data.value['letter-spacing']['tablet']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['letter-spacing']['tablet'] }}"
+							value="{{ data.default['letter-spacing']['tablet']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['tablet'] ) { #>
-								<# if ( data.input_attrs['tablet']['letter-spacing']['step'] ) { #>
-									step="{{ data.input_attrs['tablet']['letter-spacing']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-letter-spacing-tablet-{{{ data.id || data.name }}}"
+								       data-device="tablet"
+								       min="{{{ data.input_attrs.attributes['letter-spacing']['tablet']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['letter-spacing']['tablet']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['letter-spacing']['tablet']['step'] }}}"
+
+								<# if(data.value['letter-spacing'] && data.value['letter-spacing']['tablet'] &&
+								data.value['letter-spacing']['tablet']['size']) { #>
+								value="{{ data.value['letter-spacing']['tablet']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['letter-spacing']['tablet']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['tablet']['letter-spacing']['min'] || data.input_attrs['tablet']['letter-spacing']['min'] ) { #>
-									min="{{ data.input_attrs['tablet']['letter-spacing']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['tablet']['letter-spacing']['max'] ) { #>
-									max="{{ data.input_attrs['tablet']['letter-spacing']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="mobile control-wrap">
-					<input type="text"
-						   id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
-						   data-device="mobile"
-							<# if ( data.value['letter-spacing'] ) { #>
-								value="{{ data.value['letter-spacing']['mobile'] }}"
+					<span class="customize-label-wrapper">
+					<span class="customizer-label-switcher-wrapper">
+						<span
+							class="customize-control-label"><?php esc_html_e( 'Letter Spacing', 'colormag' ); ?></span>
+						<ul class="responsive-switchers">
+							<li class="desktop active">
+								<button type="button" class="preview-desktop" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					</span>
+					  <div class="unit-wrapper">
+						  <div class="input-wrapper">
+							  <select class="letter-spacing-unit" data-device="mobile" name="unit">
+								  <# _.each(data.suffix['letter-spacing'], function( suffix ) {  #>
+								   <option value="{{ suffix }}"
+										  <# if(data.value['letter-spacing'] && data.value['letter-spacing']['mobile'] && data.value['letter-spacing']['mobile']['unit']) { #>
+											<# if ( data.value['letter-spacing']['mobile']['unit'] == suffix ) { #> Selected <# } #>
+											<# } else { #>
+												<# if ( data.default_suffix['letter-spacing'] == suffix ) { #> Selected <# } #>
+											<# } #>
+										>{{suffix}}
+								  </option>
+								  <# }) #>
+							  </select>
+							  <div class="colormag-letter-spacing-reset">
+									<span class="dashicons dashicons-image-rotate"
+									      title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+									</span>
+								</div>
+						  </div>
+					  </div>
+				</span>
+					<div class="control slider-wrapper">
+						<span class="colormag-warning colormag-letter-spacing-mobile-warning"
+						      id="colormag-letter-spacing-mobile-warning"></span>
+						<div class="range">
+							<input
+								type="range"
+								data-reset_value="{{ data.default['letter-spacing']['mobile']['size'] }}"
+								class="colormag-progress"
+								min="{{{ data.input_attrs.attributes['letter-spacing']['mobile']['min'] }}}"
+								max="{{{ data.input_attrs.attributes['letter-spacing']['mobile']['max'] }}}"
+								step="{{{ data.input_attrs.attributes['letter-spacing']['mobile']['step'] }}}"
+								data-reset_value="{{ data.default['letter-spacing']['mobile']['size'] }}"
+								data-reset_unit="{{ data.default['letter-spacing']['mobile']['unit'] }}"
+
+							<# if(data.value['letter-spacing'] && data.value['letter-spacing']['mobile'] &&
+							data.value['letter-spacing']['mobile']['size']) { #>
+							value="{{ data.value['letter-spacing']['mobile']['size'] }}"
 							<# } else { #>
-								value="{{ data.default['letter-spacing']['mobile'] }}"
+							value="{{ data.default['letter-spacing']['mobile']['size'] }}"
 							<# } #>
-							<# if ( data.input_attrs && data.input_attrs['mobile'] ) { #>
-								<# if ( data.input_attrs['mobile']['letter-spacing']['step'] ) { #>
-									step="{{ data.input_attrs['mobile']['letter-spacing']['step'] }}"
+							/>
+						</div>
+						<div class="size colormag-range-value">
+							<div class="input-wrapper">
+								<input type="number" id="colormag-letter-spacing-mobile-{{{ data.id || data.name }}}"
+								       data-device="mobile"
+								       min="{{{ data.input_attrs.attributes['letter-spacing']['mobile']['min'] }}}"
+								       max="{{{ data.input_attrs.attributes['letter-spacing']['mobile']['max'] }}}"
+								       step="{{{ data.input_attrs.attributes['letter-spacing']['mobile']['step'] }}}"
+
+								<# if(data.value['letter-spacing'] && data.value['letter-spacing']['mobile'] &&
+								data.value['letter-spacing']['mobile']['size']) { #>
+								value="{{ data.value['letter-spacing']['mobile']['size'] }}"
+								<# } else { #>
+								value="{{ data.default['letter-spacing']['mobile']['size'] }}"
 								<# } #>
-								<# if ( 0 == data.input_attrs['mobile']['letter-spacing']['min'] || data.input_attrs['mobile']['letter-spacing']['min'] ) { #>
-									min="{{ data.input_attrs['mobile']['letter-spacing']['min'] }}"
-								<# } #>
-								<# if ( data.input_attrs['mobile']['letter-spacing']['max'] ) { #>
-									max="{{ data.input_attrs['mobile']['letter-spacing']['max'] }}"
-								<# } #>
-							<# } #>
-					/>
+
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<# } #>
 
 			<# if ( data.default['font-style'] ) { #>
-			<div class="font-style">
-				<span class="customize-control-title"><?php esc_html_e( 'Style', 'colormag' ); ?></span>
+			<div class="font-style customize-group">
+				<span class="customize-control-label"><?php esc_html_e( 'Style', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-font-style-{{{ data.id || data.name }}}">
 						<option value="normal"
@@ -603,8 +1134,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<# if ( data.default['text-transform'] ) { #>
-			<div class="text-transform">
-				<span class="customize-control-title"><?php esc_html_e( 'Transform', 'colormag' ); ?></span>
+			<div class="text-transform customize-group">
+				<span class="customize-control-label"><?php esc_html_e( 'Transform', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-text-transform-{{{ data.id || data.name }}}">
 						<option value="none"
@@ -631,8 +1162,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<# if ( data.default['text-decoration'] ) { #>
-			<div class="text-decoration">
-				<span class="customize-control-title"><?php esc_html_e( 'Decoration', 'colormag' ); ?></span>
+			<div class="text-decoration customize-group">
+				<span class="customize-control-label"><?php esc_html_e( 'Decoration', 'colormag' ); ?></span>
 				<div class="colormag-field-content">
 					<select {{{ data.inputAttrs }}} id="colormag-text-decoration-{{{ data.id || data.name }}}">
 						<option value="none"
@@ -659,8 +1190,8 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 			<# } #>
 
 			<input class="typography-hidden-value"
-				   value="{{ JSON.stringify( data.value ) }}"
-				   type="hidden" {{{ data.link }}}
+			       value="{{ JSON.stringify( data.value ) }}"
+			       type="hidden" {{{ data.link }}}
 			>
 
 		</div>

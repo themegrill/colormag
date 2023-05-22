@@ -1,9 +1,14 @@
 .left-sidebar {
-	#primary {
-		float: right;
-	}
 
-	#secondary {
-		float: left;
+	.cm-content {
+
+		.cm-row {
+			flex-direction: row-reverse;
+		}
+	
+		.cm-primary {
+			padding-right: 0;
+			padding-left: length( 'l-15', em );
+		}
 	}
 }

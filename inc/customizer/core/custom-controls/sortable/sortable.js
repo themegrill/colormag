@@ -20,12 +20,9 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 
 		control.unsortableContainer.find( 'li' ).each(
 			function () {
-				// Enable/disable options when we click on the eye of Thundera.
-				jQuery( this ).find( 'i.visibility' ).click(
-					function () {
-						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
-					}
-				);
+				jQuery( this ).find( '.switch' ).on( 'click', function() {
+					jQuery( this ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+				} )
 			}
 		).click(
 			function () {
@@ -45,9 +42,9 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 		).disableSelection().find( 'li' ).each(
 			function () {
 				// Enable/disable options when we click on the eye of Thundera.
-				jQuery( this ).find( 'i.visibility' ).click(
+				jQuery( this ).find( '.switch' ).click(
 					function () {
-						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+						jQuery( this ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
 					}
 				);
 			}
@@ -93,4 +90,3 @@ wp.customize.controlConstructor['colormag-sortable'] = wp.customize.Control.exte
 
 
 } );
-

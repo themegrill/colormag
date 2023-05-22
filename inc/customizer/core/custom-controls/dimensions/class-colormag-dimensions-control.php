@@ -12,13 +12,19 @@
  */
 class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Control {
 
-
 	/**
 	 * Control's Type.
 	 *
 	 * @var string
 	 */
 	public $type = 'colormag-dimensions';
+
+	/**
+	 * Suffix for Dimension.
+	 *
+	 * @var array
+	 */
+	public $suffix = array();
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
@@ -29,14 +35,18 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
 
 		parent::to_json();
 
-		$this->json['default'] = $this->setting->default;
-		if ( isset( $this->default ) ) {
-			$this->json['default'] = $this->default;
-		}
-		$this->json['value'] = $this->value();
-
+		$this->json['default'] = isset( $this->default ) ? $this->default : $this->setting->default;
+		$this->json['value']   = $this->value();
+		$this->json['suffix']  = $this->suffix;
 		$this->json['link']    = $this->get_link();
 		$this->json['choices'] = $this->choices;
+		$this->json['id']      = $this->id;
+		$this->json['sides']   = array(
+			'top'    => __( 'Top', 'colormag' ),
+			'right'  => __( 'Right', 'colormag' ),
+			'bottom' => __( 'Bottom', 'colormag' ),
+			'left'   => __( 'Left', 'colormag' ),
+		);
 
 	}
 
@@ -49,93 +59,56 @@ class ColorMag_Dimensions_Control extends ColorMag_Customize_Base_Additional_Con
 	protected function content_template() {
 		?>
 
-		<label>
-			<# if ( data.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
-			<# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><#
-			} #>
-			<div class="wrapper">
-				<div class="control">
-					<# if ( data.default['top'] ) { #>
-					<div class="top">
-						<h5>Top</h5>
-						<div class="input-wrapper">
-							<input type="text"
-							<# if ( data.value['top'] ) { #>
-							value="{{ data.value['top'] }}"
-							<# } else { #>
-							value="{{ data.default['top'] }}"
-							<# } #>
-							/>
-
-						</div>
-					</div>
-					<# } #>
-
-					<# if ( data.default['right'] ) { #>
-					<div class="right">
-						<h5>Right</h5>
-						<div class="input-wrapper">
-							<input type="text"
-							<# if ( data.value['right'] ) { #>
-							value="{{ data.value['right'] }}"
-							<# } else { #>
-							value="{{ data.default['right'] }}"
-							<# } #>
-							/>
-
-						</div>
-					</div>
-					<# } #>
-
-					<# if ( data.default['bottom'] ) { #>
-					<div class="bottom">
-						<h5>Bottom</h5>
-						<div class="input-wrapper">
-							<input type="text"
-							<# if ( data.value['bottom'] ) { #>
-							value="{{ data.value['bottom'] }}"
-							<# } else { #>
-							value="{{ data.default['bottom'] }}"
-							<# } #>
-							/>
-
-						</div>
-					</div>
-					<# } #>
-
-					<# if ( data.default['left'] ) { #>
-					<div class="left">
-						<h5>Left</h5>
-						<div class="input-wrapper">
-							<input type="text"
-							<# if ( data.value['left'] ) { #>
-							value="{{ data.value['left'] }}"
-							<# } else { #>
-							value="{{ data.default['left'] }}"
-							<# } #>
-							/>
-
+		<div class="colormag-dimension-wrapper">
+			<input type="hidden" value='{{{ "object" === typeof data.value ? JSON.stringify( data.value ) : data.value  }}}' id="colormag_dimensions_{{{ data.id }}}" name="colormag_dimensions_{{{ data.id }}}">
+			<# if ( data.label ) { #>
+			<div class="dimension-label-unit-wrapper">
+				<div class="label-switcher-wrapper">
+					<span class="customize-control-label">{{{ data.label }}}</span>
+				</div>
+				<div class="unit-wrapper">
+					<div class="input-wrapper">
+						<select class="dimension-unit" name="unit" data-type="unit" value="">
+							<# _.each( data.suffix, function( suffix ) { #>
+							<option value="{{ suffix }}" {{{ data.value.unit && data.value.unit == suffix ? 'selected' : '' }}}>{{{ suffix }}}</option>
+							<# } ); #>
+						</select>
+						<div class="colormag-dimensions-reset">
+							<span class="dashicons dashicons-image-rotate"
+								title="<?php esc_attr_e( 'Back to default', 'colormag' ); ?>">
+							</span>
 						</div>
 					</div>
 				</div>
-				<# } #>
-
-				<input class="dimensions-hidden-value"
-					   value="{{ JSON.stringify( data.value ) }}"
-					   type="hidden" {{{ data.link }}}
-				>
-
 			</div>
-		</label>
-
+			<# } #>
+			<# if ( data.description ) { #>
+				<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
+			<div class="wrapper">
+                <div class="control">
+					<# _.each( data.sides, function( label, key ) { #>
+						<label for="{{ key }}" class="{{ key }}">
+							<input type="number"
+                                   id="{{ key }}"
+                                   data-type="{{{ key }}}"
+                                   value="{{{ data.value[ key ] ? data.value[ key ] : data.default[ key ] }}}"
+							<h5>{{{ label }}}</h5>
+						</label>
+					<# } ) #>
+					<button class="colormag-binding">
+						<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24">
+							<path d="M12 22a5 5 0 0 1-5-5v-2.5a.83.83 0 0 1 .83-.83.84.84 0 0 1 .84.83V17a3.33 3.33 0 0 0 6.66 0v-2.5a.84.84 0 0 1 .84-.83.83.83 0 0 1 .83.83V17a5 5 0 0 1-5 5Zm4.17-11.67a.84.84 0 0 1-.84-.83V7a3.33 3.33 0 0 0-6.66 0v2.5a.84.84 0 0 1-.84.83A.83.83 0 0 1 7 9.5V7a5 5 0 0 1 10 0v2.5a.83.83 0 0 1-.83.83Zm-3.34 5V8.67a.83.83 0 1 0-1.66 0v6.66a.83.83 0 1 0 1.66 0Z"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
 		<?php
 	}
 
 	/**
 	 * Don't render the control content from PHP, as it's rendered via JS on load.
 	 */
-	protected function render_content() {
-
-	}
-
+	protected function render_content() {}
 }

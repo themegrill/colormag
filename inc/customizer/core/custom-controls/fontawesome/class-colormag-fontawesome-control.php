@@ -37,7 +37,11 @@ class ColorMag_Fontawesome_Control extends ColorMag_Customize_Base_Additional_Co
 
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-		// Asset path might be different according to theme.
+		/**
+		 * Filter for fontawesome source.
+		 *
+		 * @since   1.0.0
+		 */
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . apply_filters( 'colormag_fontawesome_src', '/font-awesome/css/font-awesome' ) . $suffix . '.css', false, '4.7.0' );
 
 		// Get choices.
@@ -81,7 +85,7 @@ class ColorMag_Fontawesome_Control extends ColorMag_Customize_Base_Additional_Co
 	protected function content_template() {
 		?>
 		<label for="_colormag-fontawesome-{{{ data.id }}}">
-			<# if ( data.label ) { #><span class="customize-control-title">{{{ data.label }}}</span><# } #>
+			<# if ( data.label ) { #><span class="customize-control-label">{{{ data.label }}}</span><# } #>
 			<# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><# } #>
 		</label>
 		<div class="colormag-fontawesome-wrapper">

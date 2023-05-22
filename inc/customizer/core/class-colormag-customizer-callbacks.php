@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * ColorMag customizer class for theme customize callbacks.
  *
- * Class ColorMag_Customizer_FrameWork_Callbacks
+ * Class ColorMag_Customizer_Callbacks
  */
-class ColorMag_Customizer_FrameWork_Callbacks {
+class ColorMag_Customizer_Callbacks {
 
 }

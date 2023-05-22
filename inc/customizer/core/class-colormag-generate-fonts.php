@@ -62,8 +62,18 @@ class ColorMag_Generate_Fonts {
 	 */
 	public static function get_fonts() {
 
+		/**
+		 * Action for content width.
+		 *
+		 * @since   1.0.0
+		 */
 		do_action( 'colormag_get_fonts' );
 
+		/**
+		 * Filter for add fonts.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_add_fonts', self::$fonts );
 
 	}
@@ -75,6 +85,11 @@ class ColorMag_Generate_Fonts {
 	 */
 	public static function render_fonts() {
 
+		/**
+		 * Filter for render fonts.
+		 *
+		 * @since   1.0.0
+		 */
 		$font_list = apply_filters( 'colormag_render_fonts', self::get_fonts() );
 
 		$google_fonts = array();
@@ -82,13 +97,23 @@ class ColorMag_Generate_Fonts {
 
 		$system_fonts = ColorMag_Fonts::get_system_fonts();
 
+		$fonts = 'Open Sans';
+
 		foreach ( $font_list as $name => $font ) {
+
 			if ( ! empty( $name ) && ! isset( $system_fonts[ $name ] ) ) {
+				if ( $fonts == $name ) {
+					continue;
+				}
 
 				// Add font variants.
 				$google_fonts[ $name ] = $font['font-weight'];
 
-				// Add Subset.
+				/**
+				 * Filter to add subset.
+				 *
+				 * @since   1.0.0
+				 */
 				$subset = apply_filters( 'colormag_font_subset', '', $name );
 				if ( ! empty( $subset ) ) {
 					$font_subset = array_unique( $subset );
@@ -96,8 +121,19 @@ class ColorMag_Generate_Fonts {
 			}
 		}
 
+		if ( empty( $google_fonts ) ) {
+			return;
+		}
+
 		$google_font_url = self::google_fonts_url( $google_fonts, $font_subset );
-		wp_enqueue_style( 'colormag_googlefonts', $google_font_url, array(), COLORMAG_THEME_VERSION, 'all' );
+
+		$host_fonts_locally = get_theme_mod( 'colormag_load_google_fonts_locally', 0 );
+
+		if ( 1 == $host_fonts_locally ) {
+			wp_enqueue_style( 'colormag_googlefonts', colormag_get_webfont_url( 'https:' . $google_font_url ), array(), COLORMAG_THEME_VERSION, 'all' );
+		} else {
+			wp_enqueue_style( 'colormag_googlefonts', $google_font_url, array(), COLORMAG_THEME_VERSION, 'all' );
+		}
 
 	}
 
@@ -116,6 +152,11 @@ class ColorMag_Generate_Fonts {
 		$font_args = array();
 		$family    = array();
 
+		/**
+		 * Filter for google fonts selected.
+		 *
+		 * @since   1.0.0
+		 */
 		$fonts = apply_filters( 'colormag_google_fonts_selected', $fonts );
 
 		/* Format Each Font Family in Array */

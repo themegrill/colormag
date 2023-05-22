@@ -7,9 +7,9 @@
  * handled by a callback to colormag_comment() which is
  * located in the inc/functions.php file.
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.
@@ -35,13 +35,13 @@ if ( post_password_required() ) {
 			$comment_count = get_comments_number();
 			if ( '1' === $comment_count ) {
 				printf(
-				/* Translators: %1$s: Post title */
+					/* Translators: %1$s: Post title */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'colormag' ),
-					'<span>' . esc_html( get_the_title() ) . '</span>'
+					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf(
-				/* Translators: %1$s: Comment count, %2$s: Post title */
+					/* Translators: %1$s: Comment count, %2$s: Post title */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'colormag' ) ),
 					number_format_i18n( $comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . esc_html( get_the_title() ) . '</span>'

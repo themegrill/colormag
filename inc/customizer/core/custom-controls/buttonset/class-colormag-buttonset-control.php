@@ -70,7 +70,7 @@ class ColorMag_Buttonset_Control extends ColorMag_Customize_Base_Additional_Cont
 
 		<div class="customizer-text">
 			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
+			<span class="customize-control-label">{{{ data.label }}}</span>
 			<# } #>
 
 			<# if ( data.description ) { #>

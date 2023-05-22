@@ -2,9 +2,9 @@
 /**
  * Theme Page Section for our theme.
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.
@@ -13,59 +13,68 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
-
-/**
- * Hook: colormag_before_body_content.
- */
-do_action( 'colormag_before_body_content' );
 ?>
+<div class="cm-row">
+	<?php
 
-	<div id="primary">
-		<div id="content" class="clearfix">
-			<?php
-			/**
-			 * Hook: colormag_before_single_page_loop.
-			 */
-			do_action( 'colormag_before_single_page_loop' );
+	/**
+	 * Hook: colormag_before_body_content.
+	 */
+	do_action( 'colormag_before_body_content' );
+	?>
 
-			while ( have_posts() ) :
-				the_post();
+		<?php colormag_two_sidebar_select(); ?>
 
-				get_template_part( 'content', 'page' );
+		<div id="cm-primary" class="cm-primary">
+			<div class="cm-posts" class="clearfix">
+				<?php
+				/**
+				 * Hook: colormag_before_single_page_loop.
+				 */
+				do_action( 'colormag_before_single_page_loop' );
+
+				while ( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/content', 'page' );
+
+					/**
+					 * Hook: colormag_before_comments_template.
+					 */
+					do_action( 'colormag_before_comments_template' );
+
+					/**
+					 * Functions hooked into colormag_action_after_inner_content action.
+					 *
+					 * @hooked colormag_render_comments - 10
+					 */
+					do_action( 'colormag_action_comments' );
+
+					/**
+					 * Hook: colormag_after_comments_template.
+					 */
+					do_action( 'colormag_after_comments_template' );
+
+				endwhile;
 
 				/**
-				 * Hook: colormag_before_comments_template.
+				 * Hook: colormag_after_single_page_loop.
 				 */
-				do_action( 'colormag_before_comments_template' );
+				do_action( 'colormag_after_single_page_loop' );
+				?>
+			</div><!-- .cm-posts -->
+		</div><!-- #cm-primary -->
 
-				/**
-				 * Functions hooked into colormag_action_after_inner_content action.
-				 *
-				 * @hooked colormag_render_comments - 10
-				 */
-				do_action( 'colormag_action_comments' );
+	<?php
 
-				/**
-				 * Hook: colormag_after_comments_template.
-				 */
-				do_action( 'colormag_after_comments_template' );
+	colormag_sidebar_select();
 
-			endwhile;
-
-			/**
-			 * Hook: colormag_after_single_page_loop.
-			 */
-			do_action( 'colormag_after_single_page_loop' );
-			?>
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	/**
+	 * Hook: colormag_after_body_content.
+	 */
+	do_action( 'colormag_after_body_content' );
+	?>
+</div>
 
 <?php
-colormag_sidebar_select();
-
-/**
- * Hook: colormag_after_body_content.
- */
-do_action( 'colormag_after_body_content' );
-
 get_footer();

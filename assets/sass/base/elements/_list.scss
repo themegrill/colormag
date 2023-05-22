@@ -2,7 +2,19 @@
  * List.
  */
 ul {
-	list-style: none;
+	list-style: disc;
+
+	ul {
+		list-style: circle;
+
+		ul {
+			list-style: square;
+		}
+	}
+
+	&.default-wp-page {
+		list-style: none;
+	}
 }
 
 ol {
@@ -10,8 +22,10 @@ ol {
 }
 
 li {
-	> ul,
-	> ol {
+	line-height: 1.8;
+
+	>ul,
+	>ol {
 		margin: 0 0 0 10px;
 	}
 }

@@ -1,0 +1,44 @@
+/* Style 1 widget.
+--------------------------------------------- */
+.cm-featured-posts--style-1 {
+
+    .cm-entry-title {
+        margin-bottom: length( 'l-4' );
+    }
+
+    .cm-first-post {
+
+        .cm-entry-title {
+            margin-bottom: length( 'l-6' );
+        }
+    }
+
+    .cm-posts {
+        width: 100%;
+        gap: length( 'l-6' );
+
+        .cm-below-entry-meta {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include breakpoint("mdm") {
+	
+    .cm-featured-posts {
+
+        &.cm-featured-posts--style-1 {
+
+            .cm-posts {
+                flex-basis: calc(52% - 20px);
+                margin-bottom: length( 'l-14' );
+            }
+
+            .cm-first-post {
+                flex-basis: 48%;
+                margin-right: length( 'l-10' );
+                margin-bottom: 0;
+            }
+        }
+    }
+}

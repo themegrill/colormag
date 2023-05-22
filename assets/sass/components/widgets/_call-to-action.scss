@@ -1,0 +1,89 @@
+/* Call to Action.
+--------------------------------------------- */
+.widget_call_to_action {
+	margin-bottom: length( 'l-15' );
+}
+
+.call-to-action {
+	padding: length( 'l-15' );
+	background-color: $color__primary;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.call-to-action-border {
+	position: relative;
+	z-index: 1;
+	padding: 60px 60px 70px;
+	background-color: rgba(250, 250, 250, 0.87);
+
+}
+
+.call-to-action--center {
+	text-align: center;
+}
+
+.call-to-action--left {
+	text-align: left;
+}
+
+.call-to-action--right {
+	text-align: right;
+}
+
+.call-to-action-border {
+
+	&::before {
+		position: absolute;
+		content: "";
+		top: 30px;
+		bottom: 30px;
+		left: 30px;
+		right: 30px;
+		margin: 0 auto;
+		border: 1px solid #c0bcb9;
+		height: auto;
+		width: auto;
+		z-index: -1;
+	}
+
+	&::after {
+		position: absolute;
+		content: "";
+		top: 30px;
+		bottom: 30px;
+		left: 30px;
+		right: 30px;
+		margin: 0 auto;
+		border: 1px solid #c0bcb9;
+		height: auto;
+		width: auto;
+		z-index: -1;
+		top: 34px;
+		left: 34px;
+		right: 34px;
+		bottom: 34px;
+	}
+}
+
+.call-to-action__title {
+	margin-bottom: length( 'l-5' );
+	font-size: 48px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.call-to-action-content {
+	margin-bottom: length( 'l-20' );
+}
+
+.widget_call_to_action .btn--primary {
+	display: inline-block;
+	padding: 20px 25px;
+	color: $color__white;
+	background-color: $color__primary;
+	@include font-size("font-size-xs");
+	font-weight: 700;
+	text-transform: uppercase;
+
+}

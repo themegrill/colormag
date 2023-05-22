@@ -2,9 +2,9 @@
 /**
  * The template for displaying 404 pages (Page Not Found).
  *
- * @package    ThemeGrill
- * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @package ColorMag
+ *
+ * @since   ColorMag 1.0.0
  */
 
 // Exit if accessed directly.
@@ -13,38 +13,58 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
-
-/**
- * Hook: colormag_before_body_content.
- */
-do_action( 'colormag_before_body_content' );
 ?>
+<div class="cm-row">
+	<?php
 
-	<div id="primary">
-		<div id="content" class="clearfix">
-			<section class="error-404 not-found">
-				<div class="page-content">
+	/**
+	 * Hook: colormag_before_body_content.
+	 */
+	do_action( 'colormag_before_body_content' );
+	?>
 
-					<?php if ( ! dynamic_sidebar( 'colormag_error_404_page_sidebar' ) ) : ?>
-						<header class="page-header">
-							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'colormag' ); ?></h1>
+		<?php colormag_two_sidebar_select(); ?>
+
+		<div id="cm-primary" class="cm-primary">
+			<div class="cm-posts">
+				<section class="cm-error-404 cm-not-found">
+
+					<?php if ( ! is_active_sidebar( 'colormag_error_404_page_sidebar' ) ) : ?>
+						<header class="cm-page-header">
+							<p><?php esc_html_e( 'oops ! Page Not Found', 'colormag' ); ?></p>
+
+							<h1 class="cm-page-title"><?php esc_html_e( '404', 'colormag' ); ?></h1>
 						</header>
 
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. Try the search below.', 'colormag' ); ?></p>
-						<?php get_search_form(); ?>
-					<?php endif; ?>
+						<div class="cm-page-content">
+							<p><?php esc_html_e( 'We are sorry for the inconvenience. The page you’re trying to access does not exist or has been removed.', 'colormag' ); ?></p>
+						</div>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-		</div><!-- #content -->
-	</div><!-- #primary -->
+						<a class="cm-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<span>
+								<?php esc_html_e( 'Back to Home', 'colormag' ); ?>
+							</span>
+						</a>
+					<?php
+					else :
+						dynamic_sidebar( 'colormag_error_404_page_sidebar' );
+					endif;
+					?>
+
+				</section><!-- .cm-error-404 -->
+			</div><!-- .cm-posts -->
+		</div><!-- #cm-primary -->
+
+	<?php
+	colormag_sidebar_select();
+
+	/**
+	 * Hook: colormag_after_body_content.
+	 */
+	do_action( 'colormag_after_body_content' );
+	
+	?>
+</div>
 
 <?php
-colormag_sidebar_select();
-
-/**
- * Hook: colormag_after_body_content.
- */
-do_action( 'colormag_after_body_content' );
-
 get_footer();

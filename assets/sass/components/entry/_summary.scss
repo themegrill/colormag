@@ -1,0 +1,8 @@
+.cm-entry-summary {
+    margin-top: length( 'l-6' );
+
+    p {
+        margin-bottom: 0;
+        @include font-size("font-size-xs");
+    }
+}

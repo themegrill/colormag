@@ -1,0 +1,47 @@
+$valid-units: ('px', 'rem', 'em');
+
+$length-values: (
+		'l-1': 2,
+		'l-2': 4,
+		'l-3': 6,
+		'l-4': 8,
+		'l-5': 10,
+		'l-6': 12,
+		'l-7': 14,
+		'l-8': 16,
+		'l-9': 18,
+		'l-10': 20,
+		'l-11': 22,
+		'l-12': 24,
+		'l-13': 26,
+		'l-14': 28,
+		'l-15': 30,
+		'l-16': 32,
+		'l-17': 34,
+		'l-18': 36,
+		'l-19': 38,
+		'l-20': 40,
+		'l-30': 60,
+);
+
+@function length($size, $unit: px) {
+	$output-value: 0;
+
+	@if not map-has-key($length-values, $size) {
+		@error "Invalid size '#{$size}' for length mixin. Must be one of: #{map-keys($length-values)}.";
+	}
+
+	@if not index($valid-units, $unit) {
+		@error "Invalid unit '#{$unit}' for length mixin. Must be one of: #{$valid-units}.";
+	}
+
+	$pixel-value: map-get($length-values, $size);
+
+	@if $unit == 'px' {
+		$output-value: $pixel-value + px;
+	} @else {
+		$output-value: $pixel-value / 16 * 1#{if($unit == 'rem', 'rem', 'em')};
+	}
+
+	@return $output-value;
+}

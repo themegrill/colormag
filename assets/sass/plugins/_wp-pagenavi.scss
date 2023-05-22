@@ -5,7 +5,8 @@
 	margin-bottom: 30px;
 }
 
-#content .wp-pagenavi {
+.cm-posts .wp-pagenavi {
+
 	.page, a {
 		padding: 4px 10px;
 		color: #777777;
@@ -14,15 +15,16 @@
 
 	.current {
 		padding: 4px 10px;
-		color: #ffffff;
+		color: $color__white;
 		background-color: $color__primary;
 		border: 1px solid #f2f2f2;
 	}
 
 	a {
+
 		&:hover {
 			padding: 4px 10px;
-			color: #ffffff;
+			color: $color__white;
 			background-color: $color__primary;
 			border: 1px solid #f2f2f2;
 		}

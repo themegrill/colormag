@@ -1,13 +1,14 @@
 /* Search.
 --------------------------------------------- */
 .search {
+
 	.status-publish {
-		margin-bottom: 30px;
+		margin-bottom: length( 'l-15' );
 		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 		width: 48.7013%;
 
-		.article-content {
-			padding: 15px;
+		.cm-post-content {
+			padding: length( 'l-8' );
 		}
 
 		&:nth-child( 2n ) {
@@ -22,6 +23,16 @@
 		&:first-child {
 			float: none;
 			width: 100%;
+		}
+	}
+
+	.cm-grid-style-2.status-publish {
+		width: 100%;
+
+		img {
+			float: left;
+			margin-bottom: 0;
+			margin-right: length( 'l-10' );
 		}
 	}
 }

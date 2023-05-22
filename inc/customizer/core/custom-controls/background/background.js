@@ -64,7 +64,7 @@
 				} );
 
 				// Background image setting.
-				control.container.on( 'click', '.background-image-upload-button, .thumbnail-image img', function ( e ) {
+				control.container.on( 'click', '.background-image-upload-button, .background-image-upload .placeholder, .thumbnail-image img', function ( e ) {
 					var image = wp.media( { multiple : false } ).open().on( 'select', function () {
 
 						// This will return the selected image from the Media Uploader, the result is an object.

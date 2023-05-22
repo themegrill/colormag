@@ -1,0 +1,22 @@
+/* Style 3 widget.
+--------------------------------------------- */
+.tg-front-post-load-more {
+	display: inline-block;
+	padding: length( 'l-5' );
+	background-color: $color__black;
+	color: $color__white;
+	@include font-size("font-size-xxs");
+	font-weight: 600;
+}
+
+.widget .waiting {
+	margin: 0 0 0 6px;
+	vertical-align: middle;
+}
+
+.cm-featured-posts--style-3 {
+
+	.cm-posts {
+		gap: length( 'l-6' );
+	}
+}

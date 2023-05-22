@@ -5,17 +5,17 @@
 	function ( $ ) {
 
 		var _panelEmbed,
-		    _panelIsContextuallyActive,
-		    _panelAttachEvents,
-		    _sectionEmbed,
-		    _sectionIsContextuallyActive,
-		    _sectionAttachEvents;
+			_panelIsContextuallyActive,
+			_panelAttachEvents,
+			_sectionEmbed,
+			_sectionIsContextuallyActive,
+			_sectionAttachEvents;
 
 		wp.customize.bind(
 			'pane-contents-reflowed',
 			function () {
 				var panels   = [],
-				    sections = [];
+					sections = [];
 
 				// Reflow sections.
 				wp.customize.section.each(
@@ -111,25 +111,25 @@
 					);
 
 					panel.container
-					     .find( '.customize-panel-back' )
-					     .off( 'click keydown' )
-					     .on( 'click keydown',
-						     function ( event ) {
-							     if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
-								     return;
-							     }
+						.find( '.customize-panel-back' )
+						.off( 'click keydown' )
+						.on( 'click keydown',
+							function ( event ) {
+								if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
+									return;
+								}
 
-							     event.preventDefault(); // Keep this AFTER the key filter above.
+								event.preventDefault(); // Keep this AFTER the key filter above.
 
-							     if ( panel.expanded() ) {
-								     wp.customize.panel( panel.params.panel ).expand();
-							     }
-						     }
-					     );
+								if ( panel.expanded() ) {
+									wp.customize.panel( panel.params.panel ).expand();
+								}
+							}
+						);
 				},
 				embed                : function () {
 					var panel = this,
-					    parentContainer;
+						parentContainer;
 
 					if (
 						'colormag_panel' !== this.params.type ||
@@ -150,8 +150,8 @@
 				},
 				isContextuallyActive : function () {
 					var panel       = this,
-					    children,
-					    activeCount = 0;
+						children,
+						activeCount = 0;
 
 					if ( 'colormag_panel' !== this.params.type ) {
 						return _panelIsContextuallyActive.call( this );
@@ -226,25 +226,25 @@
 					);
 
 					section.container
-					       .find( '.customize-section-back' )
-					       .off( 'click keydown' )
-					       .on( 'click keydown',
-						       function ( event ) {
-							       if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
-								       return;
-							       }
+						.find( '.customize-section-back' )
+						.off( 'click keydown' )
+						.on( 'click keydown',
+							function ( event ) {
+								if ( wp.customize.utils.isKeydownButNotEnterEvent( event ) ) {
+									return;
+								}
 
-							       event.preventDefault(); // Keep this AFTER the key filter above.
+								event.preventDefault(); // Keep this AFTER the key filter above.
 
-							       if ( section.expanded() ) {
-								       wp.customize.section( section.params.section ).expand();
-							       }
-						       }
-					       );
+								if ( section.expanded() ) {
+									wp.customize.section( section.params.section ).expand();
+								}
+							}
+						);
 				},
 				embed                : function () {
 					var section = this,
-					    parentContainer;
+						parentContainer;
 
 					if (
 						'colormag_section' !== this.params.type ||
@@ -265,8 +265,8 @@
 				},
 				isContextuallyActive : function () {
 					var section     = this,
-					    children,
-					    activeCount = 0;
+						children,
+						activeCount = 0;
 
 					if ( 'colormag_section' !== this.params.type ) {
 						return _sectionIsContextuallyActive.call( this );
@@ -364,53 +364,27 @@ jQuery( document ).ready(
 			function ( event ) {
 
 				// Set up variables.
-				var self           = $( this ),
-				    devices        = $( '.responsive-switchers' ),
-				    device         = $( event.currentTarget ).data( 'device' ),
-				    control        = $( '.customize-control.has-responsive-switchers' ),
-				    body           = $( '.wp-full-overlay' ),
-				    footer_devices = $( '.wp-full-overlay-footer .devices' );
+				var device         = $( event.currentTarget ).data( 'device' );
 
-				// Switching the button class.
-				devices.find( 'button' ).removeClass( 'active' );
-				devices.find( 'button.preview-' + device ).addClass( 'active' );
-
-				// Switching the control class.
-				control.find( '.control-wrap' ).removeClass( 'active' );
-				control.find( '.control-wrap.' + device ).addClass( 'active' );
-
-				// Switching wrapper class.
-				body.removeClass( 'preview-desktop preview-tablet preview-mobile' ).addClass( 'preview-' + device );
-
-				// Switching panel footer buttons.
-				footer_devices.find( 'button' ).removeClass( 'active' ).attr( 'aria-pressed', false );
-				footer_devices.find( 'button.preview-' + device ).addClass( 'active' ).attr( 'aria-pressed', true );
-
+				togglePreviewDevice( device );
 			}
 		);
 
-		// If panel footer buttons clicked.
-		$( '.wp-full-overlay-footer .devices' ).on(
-			'click',
-			'button',
-			function ( event ) {
+		function togglePreviewDevice ( device ) {
+			var devices        = $( '.responsive-switchers' ),
+				control        = $( '.customize-control.has-responsive-switchers' );
 
-				// Set up variables.
-				var self    = $( this ),
-				    devices = $( '.customize-control.has-responsive-switchers .responsive-switchers' ),
-				    device  = $( event.currentTarget ).data( 'device' ),
-				    control = $( '.customize-control.has-responsive-switchers' );
+			wp.customize.previewedDevice.set( device );
 
-				// Switching the button class.
-				devices.find( 'button' ).removeClass( 'active' );
-				devices.find( 'button.preview-' + device ).addClass( 'active' );
+			// Switching the button class.
+			devices.find( 'button.preview-' + device ).parent( 'li' ).addClass( 'active' ).siblings().removeClass( 'active' );
 
-				// Switching the control class.
-				control.find( '.control-wrap' ).removeClass( 'active' );
-				control.find( '.control-wrap.' + device ).addClass( 'active' );
+			// Switching the control class.
+			control.find( '.control-wrap' ).removeClass( 'active' );
+			control.find( '.control-wrap.' + device ).addClass( 'active' );
+		}
 
-			}
-		);
+		wp.customize.previewedDevice.bind( togglePreviewDevice );
 
 	}
 );

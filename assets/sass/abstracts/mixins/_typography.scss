@@ -1,0 +1,30 @@
+$font-size__base: 10px;
+$font-size__percent: 62.5%; // 10/16 = 62.5%
+
+$font-sizes: (
+	"font-size-xxs": 12px,
+	"font-size-xs":  14px,
+	"font-size-sm":   16px,
+	"font-size-md":   18px,
+	"font-size-lg":   20px,
+	"font-size-xl":   24px,
+	"font-size-xxl":   32px,
+	"font-size-xxxl":   40px,
+);
+
+// px to rem.
+@function font-size($size, $unit: rem) {
+	@return ($size / $font-size__base) + $unit;
+}
+
+// Generate font sizes as per key provided.
+@mixin font-size($size-key) {
+	$size: map-get($font-sizes, $size-key);
+
+	@if not $size {
+		@warn 'Invalid font size key: #{$size-key}.';
+		$size: map-get($font-sizes, "font-size-xl");
+	}
+
+	font-size: font-size($size);
+}

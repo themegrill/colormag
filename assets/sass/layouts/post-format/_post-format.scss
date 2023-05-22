@@ -1,29 +1,36 @@
 /* Post Format: Link.
 --------------------------------------------- */
-.format-link .entry-content {
-	p {
-		text-align: center;
-		padding-top: 30px;
-	}
+.format-link {
 
-	a {
-		text-decoration: underline;
-		text-transform: uppercase;
-		padding: 15px 40px;
-		border-radius: 3px;
-		background-color: $color__primary;
-		color: #ffffff;
-		transition: background-color 0.3s linear 0s;
-		display: inline-block;
+	.cm-entry-summary {
 
-		&:hover {
-			background-color: #33363b;
+		p {
+			text-align: center;
+			padding-top: length( 'l-15' );
+		}
+
+		a {
+			display: inline-block;
+			padding: 15px 40px;
+			background-color: $color__primary;
+			color: $color__white;
+			border-radius: 3px;
+			text-decoration: underline;
+			text-transform: uppercase;
+			transition: background-color 0.3s linear 0s;
+
+			&:hover {
+				background-color: #33363b;
+			}
 		}
 	}
 }
 
 /* Post Format: Aside.
 --------------------------------------------- */
-.format-aside .entry-header {
-	display: none;
+.format-aside {
+
+	.cm-entry-header {
+		display: none;
+	}
 }

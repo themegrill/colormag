@@ -4,38 +4,33 @@ h3,
 h4,
 h5,
 h6 {
-	padding-bottom: 18px;
-	color: #333333;
-	font-weight: normal;
+	margin-bottom: length( 'l-10' );
+	color: $color__gray-800;
+	font-weight: 500;
 	font-family: "Open Sans", sans-serif;
+	line-height: $line-height__headings;
 }
 
 h1 {
-	font-size: 36px;
-	line-height: 1.2;
+	@include font-size('font-size-xxxl');
 }
 
 h2 {
-	font-size: 32px;
-	line-height: 1.2;
+	@include font-size('font-size-xxl');
 }
 
 h3 {
-	font-size: 28px;
-	line-height: 1.2;
+	@include font-size('font-size-xxl');
 }
 
 h4 {
-	font-size: 24px;
-	line-height: 1.2;
+	@include font-size('font-size-lg');
 }
 
 h5 {
-	font-size: 22px;
-	line-height: 1.2;
+	@include font-size('font-size-md');
 }
 
 h6 {
-	font-size: 18px;
-	line-height: 1.2;
+	@include font-size('font-size-sm');
 }

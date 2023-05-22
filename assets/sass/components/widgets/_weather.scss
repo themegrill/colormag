@@ -1,0 +1,118 @@
+/* Weather.
+--------------------------------------------- */
+.cm-secondary .widget.widget_weather .weather-info {
+	color: #fffdfd;
+}
+
+.widget_weather {
+
+	.weather-info {
+		color: #fffdfd;
+	}
+
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+.weather-forecast-header {
+	padding: 30px 20px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: block;
+	color: #fffdfd;
+}
+
+.weather-info {
+	padding: 0 20px 30px;
+	text-align: center;
+}
+
+.weather-location,
+.weather-today {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.weather-location {
+	margin-top: 5px;
+
+	span {
+		display: block;
+	}
+
+	.owf {
+		line-height: 80px;
+	}
+}
+
+.cm-secondary .weather-location .owf {
+	line-height: 80px;
+}
+
+.weather-info .weather-icon {
+	font-size: 100px;
+}
+
+.cm-secondary {
+	.weather-info .weather-icon {
+		font-size: 100px;
+	}
+
+	.weather-location-name {
+		font-size: 24px;
+		font-weight: 700;
+		padding-top: 15px;
+	}
+}
+
+.weather-location-name {
+	font-size: 24px;
+	font-weight: 700;
+	padding-top: 15px;
+}
+
+.weather-desc {
+	padding-top: 15px;
+}
+
+.weather-today {
+	text-align: left;
+	margin-left: 40px;
+}
+
+.cm-secondary .weather-desc,
+.weather-desc {
+	font-size: 16px;
+	text-transform: capitalize;
+	font-weight: 500;
+	padding-top: 0;
+}
+
+.weather-info .weather-temp,
+.weather_highlow,
+.weather_wind {
+	display: block;
+	padding-top: 10px;
+}
+
+.cm-secondary .weather-current-temp,
+.weather-current-temp {
+	font-size: 48px;
+	font-weight: 700;
+}
+
+.weather-today span {
+	margin-right: 5px;
+	color: #fffdfd;
+}
+
+.weather-current-temp sup {
+	vertical-align: text-top;
+	font-size: 16px;
+	line-height: 40px;
+}

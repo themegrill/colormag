@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.0.0
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -23,7 +23,7 @@ if ( ! function_exists( 'colormag_apply_filters_deprecated' ) ) :
 	 * @param string $replacement Optional. The hook that should have been used. Default null.
 	 * @param string $message     Optional. A message regarding the change. Default null.
 	 *
-	 * @since 2.0.0
+	 * @since 3.0.0
 	 */
 	function colormag_apply_filters_deprecated( $tag, $args, $version, $replacement = null, $message = null ) {
 

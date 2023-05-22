@@ -36,6 +36,13 @@ class ColorMag_Divider_Control extends ColorMag_Customize_Base_Additional_Contro
 	public $placement = 'above';
 
 	/**
+	 * Divider style
+	 *
+	 * @var string
+	 */
+	public $style = '';
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -48,6 +55,8 @@ class ColorMag_Divider_Control extends ColorMag_Customize_Base_Additional_Contro
 		$this->json['description'] = $this->description;
 
 		$this->json['placement'] = $this->placement;
+
+		$this->json['style'] = $this->style;
 
 	}
 
@@ -62,14 +71,14 @@ class ColorMag_Divider_Control extends ColorMag_Customize_Base_Additional_Contro
 	protected function content_template() {
 		?>
 
-		<div class="divider-placement-{{ data.placement }}">
+		<div class="divider-placement-{{ data.placement }} colormag-divider-{{data.style}}">
 			<# if ( data.placement == 'above' ) { #>
 			<hr />
 			<# } #>
 
 			<div class="customizer-text">
 				<# if ( data.label ) { #>
-				<span class="customize-control-title">{{{ data.label }}}</span>
+				<span class="customize-control-label">{{{ data.label }}}</span>
 				<# } #>
 
 				<# if ( data.description ) { #>

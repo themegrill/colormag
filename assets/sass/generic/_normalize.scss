@@ -2,14 +2,63 @@
 1.0 Reset browser defaults.
 ---------------------------------------------------------------*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
 	border: 0;
 	font: inherit;
 	font-size: 100%;
@@ -21,16 +70,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 
-html {
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-}
-
-* {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
 
 article,
 aside,
@@ -49,24 +88,9 @@ ol, ul {
 	list-style: none;
 }
 
-table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: collapse;
-	border-spacing: 0;
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
-th {
-	font-weight: bold;
-}
-
 th, td, .wp-block-table th, .wp-block-table td {
-	border: 1px solid $color__border;
+	border: 1px solid $color__gray-200;
 	padding: 6px 10px;
-}
-
-caption, th, td {
-	text-align: left;
 }
 
 blockquote:before, blockquote:after,
@@ -97,7 +121,8 @@ embed, iframe, object {
 
 /* Superscript and Subscript.
 --------------------------------------------- */
-sup, sub {
+sup,
+sub {
 	font-size: 10px;
 	height: 0;
 	line-height: 1;

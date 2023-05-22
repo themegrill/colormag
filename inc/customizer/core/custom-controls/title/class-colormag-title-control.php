@@ -61,19 +61,12 @@ class ColorMag_Title_Control extends ColorMag_Customize_Base_Additional_Control 
 				<span class="customize-control-title">{{{ data.label }}}</span>
 				<# if ( data.description ) { #>
 				<span class="tool-tip">
-					<i class="dashicons dashicons-editor-help"></i>
-					<span class="tooltip-text">{{{ data.description }}}</span>
+                    <i class="dashicons dashicons-editor-help"></i>
+				<span class="tooltip-text">{{{ data.description }}}</span>
 				</span>
 				<# } #>
 				<# } #>
 			</label>
-			<# if ( data.link ) { #>
-			<div class="guide-tutorial">
-				<span class="control-url">
-					<a href=  " {{{data.link}}} "   target="_blank">Doc</a>
-				</span>
-			</div>
-			<# } #>
 		</div>
 
 		<?php

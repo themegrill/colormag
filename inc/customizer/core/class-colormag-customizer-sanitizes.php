@@ -37,7 +37,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	/**
 	 * Sanitize the number options set within customizer controls.
 	 *
-	 * @param int                  $number  Input from the customize controls.
+	 * @param int $number Input from the customize controls.
 	 * @param WP_Customize_Setting $setting Setting instance.
 	 *
 	 * @return int
@@ -103,7 +103,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	/**
 	 * Sanitize the radio as well as select options set within customizer controls.
 	 *
-	 * @param string               $input   Input from the customize controls.
+	 * @param string $input Input from the customize controls.
 	 * @param WP_Customize_Setting $setting Setting instance.
 	 *
 	 * @return string
@@ -119,6 +119,40 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		// If the input is a valid key, return it, else, return the default.
 		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 
+	}
+
+	/**
+	 * Sanitize the input set within customizer controls.
+	 *
+	 * @param string $input Input from the customize controls.
+	 * @param WP_Customize_Setting $setting Setting instance.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_date( $input ) {
+
+		// General sanitization, to get rid of malicious scripts or characters.
+		$input = sanitize_text_field( $input );
+		$input = filter_var( $input, FILTER_SANITIZE_STRING );
+
+		// Validate date to check if it is in desired date format.
+		if ( self::validate_date_format( $input ) ) {
+			return $input;
+		} else {
+			// If user tries to enter any other value return today's date.
+			$input = gmdate( 'Y-m-d' );
+
+			return $input;
+		}
+	}
+
+	public static function validate_date_format( $input, $date_format = 'Y-m-d' ) {
+
+		// Create a Date object with a given format.
+		$d = DateTime::createFromFormat( $date_format, $input );
+
+		// Check if given date matches the given format and return the comparison.
+		return $d && $d->format( $date_format ) === $input;
 	}
 
 	/**
@@ -154,6 +188,10 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 			return '';
 		}
 
+		if ( 'header_textcolor' === $setting->id && 'blank' === $color ) {
+			return 'blank';
+		}
+
 		// Hex sanitize if no rgba color option is chosen.
 		if ( false === strpos( $color, 'rgb' ) ) {
 			return self::sanitize_hex_color( $color );
@@ -166,7 +204,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 
 			sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 
-			if ( 'background_color' === $setting->id ) {
+			if ( 'background_color' === $setting->id || 'header_textcolor' === $setting->id ) {
 				return self::convert_rgba_to_hex( $red, $green, $blue, $alpha );
 			}
 
@@ -176,7 +214,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 
 		sscanf( $color, 'rgb(%d,%d,%d)', $red, $green, $blue );
 
-		if ( 'background_color' === $setting->id ) {
+		if ( 'background_color' === $setting->id || 'header_textcolor' === $setting->id ) {
 			return self::convert_rgba_to_hex( $red, $green, $blue );
 		}
 
@@ -187,10 +225,11 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	/**
 	 * Converts RGB/A to a Hex value.
 	 *
-	 * @param int   $red color value.
-	 * @param int   $green color value.
-	 * @param int   $blue color value.
+	 * @param int $red color value.
+	 * @param int $green color value.
+	 * @param int $blue color value.
 	 * @param float $alpha color value.
+	 *
 	 * @return string Hex value.
 	 */
 	public static function convert_rgba_to_hex( $red, $green, $blue, $alpha = 1 ) {
@@ -242,7 +281,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	/**
 	 * Sanitize the slider value set within customizer controls.
 	 *
-	 * @param number $val     Customizer setting input number.
+	 * @param number $val Customizer setting input number.
 	 * @param object $setting Setting object.
 	 *
 	 * @return int
@@ -253,13 +292,13 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 
 		if ( isset( $input_attrs ) ) {
 
-			$input_attrs['min']  = isset( $input_attrs['min'] ) ? $input_attrs['min'] : 0;
-			$input_attrs['step'] = isset( $input_attrs['step'] ) ? $input_attrs['step'] : 1;
+			$input_attrs[ 'min' ]  = isset( $input_attrs[ 'min' ] ) ? $input_attrs[ 'min' ] : 0;
+			$input_attrs[ 'step' ] = isset( $input_attrs[ 'step' ] ) ? $input_attrs[ 'step' ] : 1;
 
-			if ( isset( $input_attrs['max'] ) && $val > $input_attrs['max'] ) {
-				$val = $input_attrs['max'];
-			} elseif ( $val < $input_attrs['min'] ) {
-				$val = $input_attrs['min'];
+			if ( isset( $input_attrs[ 'max' ] ) && $val > $input_attrs[ 'max' ] ) {
+				$val = $input_attrs[ 'max' ];
+			} elseif ( $val < $input_attrs[ 'min' ] ) {
+				$val = $input_attrs[ 'min' ];
 			}
 
 			if ( $val ) {
@@ -272,9 +311,81 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the dimension value and unit within customizer controls.
+	 *
+	 * @param number $val Customizer setting input number and unit.
+	 * @param object $setting Setting object.
+	 *
+	 * @return int
+	 */
+
+	public static function sanitize_dimension( $input, $setting ) {
+
+		if ( isset( $input ) ) {
+
+			$input_attrs = $setting->manager->get_control( $setting->id )->json()[ 'input_attrs' ];
+			$unit        = isset( $input[ 'unit' ] ) ? $input[ 'unit' ] : 'px';
+
+			$input[ 'top' ]    = isset( $input[ 'top' ] ) ? (float) $input[ 'top' ] : 0;
+			$input[ 'bottom' ] = isset( $input[ 'bottom' ] ) ? (float) $input[ 'bottom' ] : 0;
+			$input[ 'left' ]   = isset( $input[ 'left' ] ) ? (float) $input[ 'left' ] : 0;
+			$input[ 'right' ]  = isset( $input[ 'right' ] ) ? (float) $input[ 'right' ] : 0;
+
+			$min = isset( $input_attrs[ $unit ][ 'min' ] ) ? (float) $input_attrs[ $unit ][ 'min' ] : 0;
+			$max = isset( $input_attrs[ $unit ][ 'max' ] ) ? (float) $input_attrs[ $unit ][ 'max' ] : 200;
+
+			foreach ( $input as $key => $value ) {
+				if ( $value < $min ) {
+					$input[ $key ] = $min;
+				} elseif ( $value > $max ) {
+					$input[ $key ] = $max;
+				}
+			}
+		}
+
+		return $input;
+	}
+
+	/**
+	 * Sanitize the slider value and unit within customizer controls.
+	 *
+	 * @param number $val Customizer setting input number and unit.
+	 * @param object $setting Setting object.
+	 *
+	 * @return int
+	 */
+
+	public static function sanitize_slider( $input, WP_Customize_Setting $setting ) {
+
+		if ( isset( $input[ 'size' ] ) ) {
+
+			$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+
+			$size = isset( $input[ 'size' ] ) ? (float) $input[ 'size' ] : 0;
+			$unit = isset( $input[ 'unit' ] ) ? $input[ 'unit' ] : 'px';
+
+			$min = isset( $input_attrs[ $unit ][ 'min' ] ) ? (float) $input_attrs[ $unit ][ 'min' ] : 0;
+			$max = isset( $input_attrs[ $unit ][ 'max' ] ) ? (float) $input_attrs[ $unit ][ 'max' ] : 200;
+
+			if ( $size < $min ) {
+				$size = $min;
+			} elseif ( $size > $max ) {
+				$size = $max;
+			}
+
+			$input = array(
+				'size' => $size,
+				'unit' => $unit,
+			);
+		}
+
+		return $input;
+	}
+
+	/**
 	 * Sanitize the email value set within customizer controls.
 	 *
-	 * @param string $email   Input from the customize controls.
+	 * @param string $email Input from the customize controls.
 	 * @param object $setting Setting object.
 	 *
 	 * @return string
@@ -305,7 +416,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	/**
 	 * Sanitize the dropdown categories value set within customizer controls.
 	 *
-	 * @param number $cat_id  Customizer setting input category id.
+	 * @param number $cat_id Customizer setting input category id.
 	 * @param object $setting Setting object.
 	 *
 	 * @return int
@@ -341,7 +452,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	/**
 	 * Sanitize the image value set within customizer controls.
 	 *
-	 * @param number $image   Customizer setting input image filename.
+	 * @param number $image Customizer setting input image filename.
 	 * @param object $setting Setting object.
 	 *
 	 * @return int
@@ -366,7 +477,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		$file = wp_check_filetype( $image, $mimes );
 
 		// If $image has a valid mime_type, return it, otherwise, return the empty value.
-		return ( $file['ext'] ? $image : '' );
+		return ( $file[ 'ext' ] ? $image : '' );
 
 	}
 
@@ -374,7 +485,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	 * Sanitize the background value set within customizer controls.
 	 *
 	 * @param number $background_args Customizer setting input background arguments.
-	 * @param object $setting         Setting object.
+	 * @param object $setting Setting object.
 	 *
 	 * @return mixed
 	 */
@@ -387,33 +498,33 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		$output = array();
 
 		// Sanitizing the alpha color option.
-		if ( isset( $background_args['background-color'] ) ) {
-			$output['background-color'] = self::sanitize_alpha_color( $background_args['background-color'], $setting );
+		if ( isset( $background_args[ 'background-color' ] ) ) {
+			$output[ 'background-color' ] = self::sanitize_alpha_color( $background_args[ 'background-color' ], $setting );
 		}
 
 		// Sanitizing the background image option.
-		if ( isset( $background_args['background-image'] ) ) {
-			$output['background-image'] = self::sanitize_image_upload( $background_args['background-image'], $setting );
+		if ( isset( $background_args[ 'background-image' ] ) ) {
+			$output[ 'background-image' ] = self::sanitize_image_upload( $background_args[ 'background-image' ], $setting );
 		}
 
 		// Sanitizing the background repeat option.
-		if ( isset( $background_args['background-repeat'] ) ) {
-			$output['background-repeat'] = self::sanitize_text_field( $background_args['background-repeat'] );
+		if ( isset( $background_args[ 'background-repeat' ] ) ) {
+			$output[ 'background-repeat' ] = self::sanitize_text_field( $background_args[ 'background-repeat' ] );
 		}
 
 		// Sanitizing the background position option.
-		if ( isset( $background_args['background-position'] ) ) {
-			$output['background-position'] = self::sanitize_text_field( $background_args['background-position'] );
+		if ( isset( $background_args[ 'background-position' ] ) ) {
+			$output[ 'background-position' ] = self::sanitize_text_field( $background_args[ 'background-position' ] );
 		}
 
 		// Sanitizing the background size option.
-		if ( isset( $background_args['background-size'] ) ) {
-			$output['background-size'] = self::sanitize_text_field( $background_args['background-size'] );
+		if ( isset( $background_args[ 'background-size' ] ) ) {
+			$output[ 'background-size' ] = self::sanitize_text_field( $background_args[ 'background-size' ] );
 		}
 
 		// Sanitizing the background attachment option.
-		if ( isset( $background_args['background-attachment'] ) ) {
-			$output['background-attachment'] = self::sanitize_text_field( $background_args['background-attachment'] );
+		if ( isset( $background_args[ 'background-attachment' ] ) ) {
+			$output[ 'background-attachment' ] = self::sanitize_text_field( $background_args[ 'background-attachment' ] );
 		}
 
 		return $output;
@@ -424,7 +535,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	 * Sanitize the typography value set within customizer controls.
 	 *
 	 * @param number $typography_args Customizer setting input typography arguments.
-	 * @param object $setting         Setting object.
+	 * @param object $setting Setting object.
 	 *
 	 * @return mixed
 	 */
@@ -437,7 +548,7 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 		$output = array();
 
 		// Sanitizing the font family option.
-		if ( isset( $typography_args['font-family'] ) ) {
+		if ( isset( $typography_args[ 'font-family' ] ) ) {
 
 			$standard_fonts = ColorMag_Fonts::get_system_fonts();
 			$google_fonts   = ColorMag_Fonts::get_google_fonts();
@@ -449,161 +560,149 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 				$valid_keys = array_merge( $custom_fonts, $valid_keys );
 			}
 
-			if ( array_key_exists( $typography_args['font-family'], $valid_keys ) ) {
-				$output['font-family'] = self::sanitize_text_field( $typography_args['font-family'] );
+			if ( array_key_exists( $typography_args[ 'font-family' ], $valid_keys ) ) {
+				$output[ 'font-family' ] = self::sanitize_text_field( $typography_args[ 'font-family' ] );
 			}
 		}
 
 		// Sanitizing the font weight option.
-		if ( isset( $typography_args['font-weight'] ) ) {
+		if ( isset( $typography_args[ 'font-weight' ] ) ) {
 
 			$font_variants = ColorMag_Fonts::get_font_variants();
 
-			if ( array_key_exists( $typography_args['font-weight'], $font_variants ) ) {
-				$output['font-weight'] = self::sanitize_key( $typography_args['font-weight'] );
+			if ( array_key_exists( $typography_args[ 'font-weight' ], $font_variants ) ) {
+				$output[ 'font-weight' ] = self::sanitize_key( $typography_args[ 'font-weight' ] );
 			}
 		}
 
 		// Sanitizing the subsets option.
-		if ( isset( $typography_args['subsets'] ) ) {
+		if ( isset( $typography_args[ 'subsets' ] ) ) {
 
 			$subsets        = ColorMag_Fonts::get_google_font_subsets();
 			$subsets_values = array();
 
-			if ( is_array( $typography_args['subsets'] ) ) {
+			if ( is_array( $typography_args[ 'subsets' ] ) ) {
 
-				foreach ( $typography_args['subsets'] as $key => $value ) {
+				foreach ( $typography_args[ 'subsets' ] as $key => $value ) {
 
 					if ( array_key_exists( $value, $subsets ) ) {
 						$subsets_values[] = self::sanitize_key( $value );
 					}
 				}
 
-				$output['subsets'] = $subsets_values;
+				$output[ 'subsets' ] = $subsets_values;
 			}
 		}
 
 		// Sanitizing the font style option.
-		if ( isset( $typography_args['font-style'] ) ) {
-			$output['font-style'] = self::sanitize_key( $typography_args['font-style'] );
+		if ( isset( $typography_args[ 'font-style' ] ) ) {
+			$output[ 'font-style' ] = self::sanitize_key( $typography_args[ 'font-style' ] );
 		}
 
 		// Sanitizing the text transform option.
-		if ( isset( $typography_args['text-transform'] ) ) {
-			$output['text-transform'] = self::sanitize_key( $typography_args['text-transform'] );
+		if ( isset( $typography_args[ 'text-transform' ] ) ) {
+			$output[ 'text-transform' ] = self::sanitize_key( $typography_args[ 'text-transform' ] );
 		}
 
 		// Sanitizing the text decoration option.
-		if ( isset( $typography_args['text-decoration'] ) ) {
-			$output['text-decoration'] = self::sanitize_key( $typography_args['text-decoration'] );
+		if ( isset( $typography_args[ 'text-decoration' ] ) ) {
+			$output[ 'text-decoration' ] = self::sanitize_key( $typography_args[ 'text-decoration' ] );
 		}
 
+		$input_attrs = colormag_get_typography_input_attrs( $typography_args );
+
 		// Sanitizing the font size option.
-		if ( isset( $typography_args['font-size'] ) && is_array( $typography_args['font-size'] ) ) {
+		if ( isset( $typography_args[ 'font-size' ] ) && is_array( $typography_args[ 'font-size' ] ) ) {
 
-			$font_size_values = array();
+			$font_size_values      = array();
+			$font_size_input_attrs = $input_attrs[ 'input_attrs' ][ 'attributes_config' ][ 'font-size' ];
 
-			$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+			foreach ( $typography_args[ 'font-size' ] as $key => $val ) {
+				if ( empty( $val ) || ! in_array( $key, array( 'desktop', 'tablet', 'mobile' ), true ) ) {
+					continue;
+				}
+				$size = isset( $val[ 'size' ] ) ? (float) $val[ 'size' ] : 0;
+				$unit = isset( $val[ 'unit' ] ) ? $val[ 'unit' ] : 'px';
+				$min  = isset( $font_size_input_attrs[ $unit ][ 'min' ] ) ? (float) $font_size_input_attrs[ $unit ][ 'min' ] : 0;
+				$max  = isset( $font_size_input_attrs[ $unit ][ 'max' ] ) ? (float) $font_size_input_attrs[ $unit ][ 'max' ] : 200;
 
-			foreach ( $typography_args['font-size'] as $key => $value ) {
-
-				if ( isset( $key ) && ! empty( $value ) ) {
-
-					if ( isset( $input_attrs ) && ! empty( $input_attrs ) ) {
-
-						foreach ( $input_attrs as $input_key => $input_value ) {
-
-							$input_value['font-size']['min']  = isset( $input_value['font-size']['min'] ) ? $input_value['font-size']['min'] : 0;
-							$input_value['font-size']['step'] = isset( $input_value['font-size']['step'] ) ? $input_value['font-size']['step'] : 1;
-
-							if ( isset( $input_value['font-size']['max'] ) && $value > $input_value['font-size']['max'] ) {
-								$font_size_values[ $key ] = self::sanitize_text_field( $input_value['font-size']['max'] );
-							} elseif ( $value < $input_value['font-size']['min'] ) {
-								$font_size_values[ $key ] = self::sanitize_text_field( $input_value['font-size']['min'] );
-							} else {
-								$font_size_values[ $key ] = self::sanitize_text_field( $value );
-							}
-						}
-					} else {
-						$font_size_values[ $key ] = self::sanitize_text_field( $value );
-					}
+				if ( $size < $min ) {
+					$size = $min;
+				} elseif ( $size > $max ) {
+					$size = $max;
 				}
 
-				$output['font-size'] = $font_size_values;
-
+				$font_size_values[ $key ] = array(
+					'size' => $size,
+					'unit' => $unit,
+				);
 			}
+
+			$output[ 'font-size' ] = $font_size_values;
+
 		}
 
 		// Sanitizing the line height option.
-		if ( isset( $typography_args['line-height'] ) && is_array( $typography_args['line-height'] ) ) {
+		if ( isset( $typography_args[ 'line-height' ] ) && is_array( $typography_args[ 'line-height' ] ) ) {
 
 			$line_height_values = array();
 
-			$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+			$line_height_input_attrs = $input_attrs[ 'input_attrs' ][ 'attributes_config' ][ 'line-height' ];
 
-			foreach ( $typography_args['line-height'] as $key => $value ) {
+			foreach ( $typography_args[ 'line-height' ] as $key => $val ) {
+				if ( empty( $val ) || ! in_array( $key, array( 'desktop', 'tablet', 'mobile' ), true ) ) {
+					continue;
+				}
+				$size = isset( $val[ 'size' ] ) ? (float) $val[ 'size' ] : 0;
+				$unit = isset( $val[ 'unit' ] ) ? $val[ 'unit' ] : '-';
+				$min  = isset( $line_height_input_attrs[ $unit ][ 'min' ] ) ? (float) $line_height_input_attrs[ $unit ][ 'min' ] : 0;
+				$max  = isset( $line_height_input_attrs[ $unit ][ 'max' ] ) ? (float) $line_height_input_attrs[ $unit ][ 'max' ] : 10;
 
-				if ( isset( $key ) && ! empty( $value ) ) {
-
-					if ( isset( $input_attrs ) && ! empty( $input_attrs ) ) {
-
-						foreach ( $input_attrs as $input_key => $input_value ) {
-
-							$input_value['line-height']['min']  = isset( $input_value['line-height']['min'] ) ? $input_value['line-height']['min'] : 0;
-							$input_value['line-height']['step'] = isset( $input_value['line-height']['step'] ) ? $input_value['line-height']['step'] : 1;
-
-							if ( isset( $input_value['line-height']['max'] ) && $value > $input_value['line-height']['max'] ) {
-								$line_height_values[ $key ] = self::sanitize_text_field( $input_value['line-height']['max'] );
-							} elseif ( $value < $input_value['line-height']['min'] ) {
-								$line_height_values[ $key ] = self::sanitize_text_field( $input_value['line-height']['min'] );
-							} else {
-								$line_height_values[ $key ] = self::sanitize_text_field( $value );
-							}
-						}
-					} else {
-						$line_height_values[ $key ] = self::sanitize_text_field( $value );
-					}
+				if ( $size < $min ) {
+					$size = $min;
+				} elseif ( $size > $max ) {
+					$size = $max;
 				}
 
-				$output['line-height'] = $line_height_values;
-
+				$line_height_values[ $key ] = array(
+					'size' => $size,
+					'unit' => $unit,
+				);
 			}
+
+			$output[ 'line-height' ] = $line_height_values;
+
 		}
 
 		// Sanitizing the letter spacing option.
-		if ( isset( $typography_args['letter-spacing'] ) && is_array( $typography_args['letter-spacing'] ) ) {
+		if ( isset( $typography_args[ 'letter-spacing' ] ) && is_array( $typography_args[ 'letter-spacing' ] ) ) {
 
 			$letter_spacing_values = array();
 
-			$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+			$letter_spacing_input_attrs = $input_attrs[ 'input_attrs' ][ 'attributes_config' ][ 'letter-spacing' ];
 
-			foreach ( $typography_args['letter-spacing'] as $key => $value ) {
+			foreach ( $typography_args[ 'letter-spacing' ] as $key => $val ) {
+				if ( empty( $val ) || ! in_array( $key, array( 'desktop', 'tablet', 'mobile' ), true ) ) {
+					continue;
+				}
+				$size = isset( $val[ 'size' ] ) ? (float) $val[ 'size' ] : 0;
+				$unit = isset( $val[ 'unit' ] ) ? $val[ 'unit' ] : 'px';
+				$min  = isset( $letter_spacing_input_attrs[ $unit ][ 'min' ] ) ? (float) $letter_spacing_input_attrs[ $unit ][ 'min' ] : 0;
+				$max  = isset( $letter_spacing_input_attrs[ $unit ][ 'max' ] ) ? (float) $letter_spacing_input_attrs[ $unit ][ 'max' ] : 100;
 
-				if ( isset( $key ) && ! empty( $value ) ) {
-
-					if ( isset( $input_attrs ) && ! empty( $input_attrs ) ) {
-
-						foreach ( $input_attrs as $input_key => $input_value ) {
-
-							$input_value['letter-spacing']['min']  = isset( $input_value['letter-spacing']['min'] ) ? $input_value['letter-spacing']['min'] : 0;
-							$input_value['letter-spacing']['step'] = isset( $input_value['letter-spacing']['step'] ) ? $input_value['letter-spacing']['step'] : 1;
-
-							if ( isset( $input_value['letter-spacing']['max'] ) && $value > $input_value['letter-spacing']['max'] ) {
-								$letter_spacing_values[ $key ] = self::sanitize_text_field( $input_value['letter-spacing']['max'] );
-							} elseif ( $value < $input_value['letter-spacing']['min'] ) {
-								$letter_spacing_values[ $key ] = self::sanitize_text_field( $input_value['letter-spacing']['min'] );
-							} else {
-								$letter_spacing_values[ $key ] = self::sanitize_text_field( $value );
-							}
-						}
-					} else {
-						$letter_spacing_values[ $key ] = sanitize_text_field( $value );
-					}
+				if ( $size < $min ) {
+					$size = $min;
+				} elseif ( $size > $max ) {
+					$size = $max;
 				}
 
-				$output['letter-spacing'] = $letter_spacing_values;
-
+				$letter_spacing_values[ $key ] = array(
+					'size' => $size,
+					'unit' => $unit,
+				);
 			}
+
+			$output[ 'letter-spacing' ] = $letter_spacing_values;
 		}
 
 		return $output;
@@ -611,9 +710,26 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 	}
 
 	/**
+	 * Sanitize the gradient control's values.
+	 *
+	 * @param number $gradient_args Customizer setting input gradient arguments.
+	 * @param object $setting Setting object.
+	 *
+	 * @return mixed
+	 */
+	public static function sanitize_gradient( $gradient_args, $setting ) {
+
+		if ( ! is_array( $gradient_args ) ) {
+			return array();
+		}
+
+		return $gradient_args;
+	}
+
+	/**
 	 * Sanitize the sortable value set within customizer controls.
 	 *
-	 * @param number $input   Customizer setting input sortable arguments.
+	 * @param number $input Customizer setting input sortable arguments.
 	 * @param object $setting Setting object.
 	 *
 	 * @return mixed

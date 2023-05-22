@@ -1,22 +1,26 @@
+html {
+	font-size: $font-size__percent; /* Sets base font size to 10px */
+}
+
 body,
 button,
 input,
 select,
 textarea {
-	color: #444444;
+	color: $color__text;
 	font-size: 16px;
 	font-family: "Open Sans", serif;
-	line-height: 1.6;
+	line-height: $line-height__body;
 	word-wrap: break-word;
 }
 
 p {
-	line-height: 1.6;
-	margin-bottom: 15px;
+	margin-bottom: 16px;
+	line-height: $line-height__body;
 }
 
 strong {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 cite,
@@ -26,15 +30,15 @@ i {
 }
 
 pre {
-	background-color: $color__white;
-	margin-bottom: 20px;
 	overflow: auto;
-	padding: 20px;
-	border: 1px solid $color__border;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+    padding: 30px 30px 84px 30px ;
+	background-color: #FAFAFA;
 	font-size: 14px;
-	line-height: 1.4;
-	white-space: pre-wrap;
+	font-style: italic;
+    line-height: 1.7;
+	margin-bottom: 20px;
+    max-width: 100%;
+    width: 798px;
 }
 
 code,
@@ -67,7 +71,7 @@ ins {
 
 hr,
 .wp-block-separator {
-	background-color: $color__border;
+	background-color: $color__gray-200;
 	border: 0;
 	height: 1px;
 	margin: 30px 0;

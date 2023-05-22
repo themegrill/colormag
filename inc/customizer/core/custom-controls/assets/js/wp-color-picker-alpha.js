@@ -270,13 +270,13 @@
 
 			if ( self.alphaOptions.alphaEnabled ) {
 				var	controls     = self.controls,
-					alpha        = parseInt( self._color._alpha * 100 ),
-					color        = self._color.toRgb(),
-					gradient     = [
-						'rgb(' + color.r + ',' + color.g + ',' + color.b + ') 0%',
-						'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 0) 100%'
-					],
-					target       = self.picker.closest( '.wp-picker-container' ).find( '.wp-color-result' );
+					   alpha        = parseInt( self._color._alpha * 100 ),
+					   color        = self._color.toRgb(),
+					   gradient     = [
+						   'rgb(' + color.r + ',' + color.g + ',' + color.b + ') 0%',
+						   'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 0) 100%'
+					   ],
+					   target       = self.picker.closest( '.wp-picker-container' ).find( '.wp-color-result' );
 
 				self.options.color = self._getColor();
 				// Generate background slider alpha, only for CSS3.
@@ -406,7 +406,7 @@
 					alphaEnabled: ( el.data( 'alphaEnabled' ) || false ),
 					alphaCustomWidth: 130,
 					alphaReset: false,
-					alphaColorType: 'rgb',
+					alphaColorType: 'hex',
 					alphaColorWithSpace: false,
 				};
 

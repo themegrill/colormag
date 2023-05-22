@@ -28,6 +28,11 @@ class ColorMag_Navigate_Control extends ColorMag_Customize_Base_Additional_Contr
 	 */
 	public $type = 'colormag-navigate';
 
+	/**
+	 * Holds information regarding section/panel to navigate.
+	 *
+	 * @var array
+	 */
 	public $navigate_info = array();
 
 	/**
@@ -63,7 +68,7 @@ class ColorMag_Navigate_Control extends ColorMag_Customize_Base_Additional_Contr
 					'%1$s Click here to edit %2$s features %3$s',
 					'colormag'
 				),
-				'<a data-section="{{{ data.navigate_info.target_id }}}" href="#">',
+				'<a data-section="{{{ data.navigate_info.target_id }}}" data-target={{data.navigate_info.target_container}} href="#">',
 				'{{{ data.navigate_info.target_label }}}',
 				'</a>'
 			);

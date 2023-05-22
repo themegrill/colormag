@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.0.0
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -142,7 +142,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'checkbox':
-					$instance[ $key ] = isset( $new_instance[ $key ] ) ? 1 : 0;
+					$instance[ $key ] = (
+						'1' == $new_instance[ $key ] || 'on' == $new_instance[ $key ]
+						) ? '1' : '0';
 					break;
 
 				case 'number':
@@ -172,17 +174,17 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'dropdown_tags':
-					$new_instance[ $key ] = absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
 
 					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
 				case 'dropdown_users':
-					$new_instance[ $key ] = absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
 					$available_users      = array();
 					$all_author_users     = get_users(
 						array(
-							'who' => 'authors',
+							'capability' => 'authors',
 						)
 					);
 
@@ -542,7 +544,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 								'selected'         => $value,
 								'orderby'          => 'name',
 								'order'            => 'ASC',
-								'who'              => 'authors',
+								'capability'       => 'authors',
 								'class'            => 'widefat postform',
 							)
 						);
@@ -650,7 +652,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 						<?php
 						printf(
-						/* Translators: 1. Field name, 2. Field id, 3. Custom style declaration */
+							/* Translators: 1. Field name, 2. Field id, 3. Custom style declaration */
 							'<select multiple="multiple" name="%s[]" id="%s" %s>',
 							esc_attr( $this->get_field_name( $key ) ),
 							esc_attr( $this->get_field_id( $key ) ),
@@ -679,7 +681,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 					</p>
 					<?php
 					break;
-
 
 				// Default: run an action.
 				default:
@@ -711,11 +712,12 @@ abstract class ColorMag_Widget extends WP_Widget {
 	/**
 	 * Displays the widget title within the widgets.
 	 *
-	 * @param string $title    The widget title.
-	 * @param string $type     The display posts from the widget setting.
-	 * @param int    $category The category id of the widget setting.
+	 * @param string $title           The widget title.
+	 * @param string $type            The display posts from the widget setting.
+	 * @param int    $category        The category id of the widget setting.
+	 * @param string $view_all_button View all button data of the widget.
 	 */
-	public function widget_title( $title, $type, $category ) {
+	public function widget_title( $title, $type, $category, $view_all_button ) {
 
 		// Return if $title is empty.
 		if ( ! $title ) {
@@ -730,10 +732,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 			$title_color  = 'style="background-color:' . $category_color . ';"';
 		}
 
-		// Display the title.
-		if ( ! empty( $title ) ) {
-			echo '<h3 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span></h3>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		// Assign the view all link to be displayed in the widget title.
+		$category_link = '';
+		if ( 'true' == $view_all_button && ( ! empty( $category ) && 'latest' != $type ) ) {
+			$category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
 		}
+
+		// Display the title.
+		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . $category_link . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 	}
 
@@ -756,33 +762,67 @@ abstract class ColorMag_Widget extends WP_Widget {
 	/**
 	 * Query of the posts within the widgets.
 	 *
-	 * @param int    $number   The number of posts to display.
-	 * @param string $type     The display posts from the widget setting.
-	 * @param int    $category The category id of the widget setting.
+	 * @param int    $number                 The number of posts to display.
+	 * @param string $type                   The display posts from the widget setting.
+	 * @param int    $category               The category id of the widget setting.
+	 * @param int    $tag                    The tag id of the widget setting.
+	 * @param int    $author                 The author id of the widget setting.
+	 * @param string $random_posts           Random posts enable data of the widget.
+	 * @param string $child_category         Child category enable for query of the widget.
+	 * @param bool   $video_post_format_args Video post format option for query of the widget.
 	 *
 	 * @return \WP_Query
 	 */
-	public function query_posts( $number, $type, $category ) {
+	public function query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category, $video_post_format_args = false ) {
 
-		$post_status = 'publish';
-		if ( 1 == get_option( 'fresh_site' ) ) {
-			$post_status = array( 'auto-draft', 'publish' );
-		}
+		// Adding the excluding post function.
+		$post__not_in = colormag_exclude_duplicate_posts();
 
-		$query_args = array(
+		$args = array(
 			'posts_per_page'      => $number,
 			'post_type'           => 'post',
 			'ignore_sticky_posts' => true,
 			'no_found_rows'       => true,
-			'post_status'         => $post_status,
+			'post__not_in'        => $post__not_in,
 		);
 
-		// Display posts from category.
-		if ( 'category' == $type ) {
-			$query_args['category__in'] = $category;
+		// Displays from tag chosen.
+		if ( 'tag' == $type ) {
+			$args['tag__in'] = $tag;
 		}
 
-		$get_featured_posts = new WP_Query( $query_args );
+		// Displays from author chosen.
+		if ( 'author' == $type ) {
+			$args['author__in'] = $author;
+		}
+
+		// Display from category chosen.
+		if ( 'category' == $type && 'false' == $child_category ) {
+			$args['category__in'] = $category;
+		}
+
+		// Displays random posts.
+		if ( 'true' == $random_posts ) {
+			$args['orderby'] = 'rand';
+		}
+
+		// Displays post from parent as well as child category.
+		if ( 'category' == $type && 'true' == $child_category ) {
+			$args['cat'] = $category;
+		}
+
+		// Displays the posts from video post format.
+		if ( $video_post_format_args ) {
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'post_format',
+					'field'    => 'slug',
+					'terms'    => array( 'post-format-video' ),
+				),
+			);
+		}
+
+		$get_featured_posts = new WP_Query( $args );
 
 		return $get_featured_posts;
 
@@ -792,13 +832,11 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * Displays the post title within the widgets.
 	 */
 	public function the_title() {
-		?>
-		<h3 class="entry-title">
+		echo '<' . apply_filters( 'colormag_front_page_widget_post_title_markup', 'h3' ) . ' class="cm-entry-title">' ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				<?php the_title(); ?>
+			<?php echo wp_kses_post( colormag_get_the_title( get_the_title() ) ); ?>
 			</a>
-		</h3>
-		<?php
+		<?php echo '</' . apply_filters( 'colormag_front_page_widget_post_title_markup', 'h3' ) . '>';
 	}
 
 	/**
@@ -809,16 +847,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * @param string $figure_class The class for featured image display.
 	 * @param bool   $link_enable  The option to link the featured image to post link.
 	 */
-	public function the_post_thumbnail( $post_id, $size = '', $figure_class = '', $link_enable = true ) {
+	public function the_post_thumbnail( $post_id, $size = '', $link_enable = true ) {
 
 		$image           = '';
 		$thumbnail_id    = get_post_thumbnail_id( $post_id );
 		$image_alt_text  = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
 		$title_attribute = get_the_title( $post_id );
 		$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
-		$figure_class    = ! empty( $figure_class ) ? ' class="' . $figure_class . '"' : '';
-
-		$image .= '<figure' . $figure_class . '>';
 
 		if ( $link_enable ) {
 			$image .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
@@ -834,6 +869,12 @@ abstract class ColorMag_Widget extends WP_Widget {
 		);
 
 		if ( $link_enable ) {
+			if ( has_post_format( 'video' ) ) {
+				$image .= '<span class="play-button-wrapper">
+								<i class="fa fa-play" aria-hidden="true"></i>
+							</span>';
+			}
+
 			$image .= '</a>';
 		}
 
@@ -848,54 +889,45 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 */
 	public function entry_meta() {
 
-		echo '<div class="below-entry-meta">';
-
-		// Displays the same published and updated date if the post is never updated.
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
-		// Displays the different published and updated date if the post is updated.
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
-
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
+		$meta_orders = get_theme_mod(
+			'colormag_post_meta_structure',
+			array(
+				'categories',
+				'date',
+				'author',
+				'views',
+				'comments',
+				'tags',
+				'read-time',
+			)
 		);
 
-		printf(
-			/* Translators: 1. Post link, 2. Post time, 3. Post date */
-			__( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>', 'colormag' ),
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			$time_string
-		); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-		?>
+		$human_diff_time = '';
+		if ( 'style-2' == get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) ) {
+			$human_diff_time = 'human-diff-time';
+		}
 
-		<span class="byline">
-			<span class="author vcard">
-				<i class="fa fa-user"></i>
-				<a class="url fn n"
-				   href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
-				   title="<?php echo get_the_author(); ?>"
-				>
-					<?php echo esc_html( get_the_author() ); ?>
-				</a>
-			</span>
-		</span>
+		echo '<div class="cm-below-entry-meta ' . esc_attr( $human_diff_time ) . '">';
 
-		<?php if ( ! post_password_required() && comments_open() ) { ?>
-			<span class="comments">
-				<i class="fa fa-comment"></i><?php comments_popup_link( '0', '1', '%' ); ?>
-			</span>
-		<?php } ?>
+		foreach ( $meta_orders as $key => $meta_order ) {
 
-		<?php
+			if ( 'date' === $meta_order ) {
+				colormag_date_meta_markup();
+			}
+
+			if ( 'author' === $meta_order ) {
+				colormag_author_meta_markup();
+			}
+
+			if ( 'comments' === $meta_order ) {
+				colormag_comment_meta_markup( true );
+			}
+
+			if ( 'read-time' === $meta_order ) {
+				colormag_read_time_meta_markup( true, false );
+			}
+		}
+
 		echo '</div>';
-
 	}
-
 }

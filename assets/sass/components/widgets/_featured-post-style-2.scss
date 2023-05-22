@@ -1,0 +1,25 @@
+/* Style 2 widget.
+--------------------------------------------- */
+.cm-featured-posts--style-2 {
+
+    &.cm-featured-posts {
+
+        .cm-first-post,
+        .cm-posts {
+            flex-basis: 100%;
+            width: 100%;
+            gap: length( 'l-6' );
+        }
+    }
+
+    .cm-posts {
+
+        .cm-entry-title {
+            margin-bottom: length( 'l-4' );
+        }
+
+        .cm-below-entry-meta {
+            margin-bottom: 0;
+        }
+    }
+}

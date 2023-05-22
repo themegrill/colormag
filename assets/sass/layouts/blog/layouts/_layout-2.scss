@@ -1,0 +1,51 @@
+.cm-posts {
+
+	&.cm-layout-2-style-1 {
+
+		.post:first-child,
+		.page:first-child {
+			grid-column: 1/-1;
+		}
+	}
+
+	&.cm-layout-2-style-2,
+	&.cm-layout-2-style-1 {
+		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+
+		&.col-2 {
+			--grid-column: 1;
+		}
+	
+		&.col-3 {
+			--grid-column: 1;
+		}
+	
+		&.col-4 {
+			--grid-column: 1;
+		}
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.cm-posts {
+
+		&.cm-layout-2-style-2,
+		&.cm-layout-2-style-1 {
+			grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+	
+			&.col-2 {
+				--grid-column: 2;
+			}
+		
+			&.col-3 {
+				--grid-column: 3;
+			}
+		
+			&.col-4 {
+				--grid-column: 4;
+			}
+		}
+	}
+}
+

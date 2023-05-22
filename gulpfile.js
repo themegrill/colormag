@@ -8,9 +8,10 @@ var gulp         = require( 'gulp' ),
     notify       = require( 'gulp-notify' ),
     uglifycss    = require( 'gulp-uglifycss' ),
     rename       = require( 'gulp-rename' ),
+    flatten      = require( 'gulp-flatten' ),
     concatCss    = require( 'gulp-concat-css' ),
     concatJS     = require( 'gulp-concat' ),
-    uglify       = require( 'gulp-uglify' ),
+    uglify       = require( 'gulp-uglify-es' ).default,
     rtlcss       = require( 'gulp-rtlcss' ),
     lec          = require( 'gulp-line-ending-corrector' );
 
@@ -32,6 +33,14 @@ var paths = {
 		dest : './js/'
 	},
 
+	customizePreviewJS : {
+		src : [
+			'./inc/customizer/assets/js/*.js',
+			'!./inc/customizer/assets/js/*.min.js',
+		],
+		dest : './inc/customizer/assets/js/',
+	},
+
 	elementorStyles : {
 		scss : {
 			src  : './inc/elementor/assets/SCSS/**/*.scss',
@@ -44,6 +53,16 @@ var paths = {
 				'!./inc/elementor/assets/css/*-rtl.css'
 			],
 			dest : './inc/elementor/assets/css/'
+		}
+	},
+
+	elementorJS : {
+		jsmin : {
+			src  : [
+				'./inc/elementor/assets/js/**/*.js',
+				'!./inc/elementor/assets/js/**/*.min.js'
+			],
+			dest : './inc/elementor/assets/js/'
 		}
 	},
 
@@ -80,10 +99,10 @@ var paths = {
 		},
 		elementorStyles   : {
 			src  : [
-				'./inc/elementor/assets/css/elementor.css',
-				'./inc/elementor/assets/css/elementor.min.css'
+				'./inc/compatibility/elementor/assets/css/elementor.css',
+				'./inc/compatibility/elementor/assets/css/elementor.min.css'
 			],
-			dest : './inc/elementor/assets/css'
+			dest : './inc/compatibility/elementor/assets/css'
 		},
 		metaBoxes         : {
 			src  : [
@@ -99,7 +118,7 @@ var paths = {
 // Start browserSync.
 function browserSyncStart( cb ) {
 	browserSync.init( {
-		proxy : 'colormag.local'
+		proxy : 'colormagpro.local/colormag-pro'
 	}, cb );
 }
 
@@ -146,6 +165,17 @@ function elementorStylesCompile() {
 	           .pipe( gulp.dest( paths.elementorStyles.scss.dest ) );
 }
 
+// Minifies the elementor js files.
+function minifyelementorJs() {
+	return gulp
+		.src( paths.elementorJS.jsmin.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( gulp.dest( paths.elementorJS.jsmin.dest ) )
+		.on( 'error', notify.onError() );
+}
+
 // Minify elementor styles css file.
 function minifyelementorStyles() {
 	return gulp
@@ -164,6 +194,17 @@ function minifyJs() {
 		.pipe( rename( { suffix : '.min' } ) )
 		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.js.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+// Minifies the customizer js files.
+function minifyCustomizerJs() {
+	return gulp
+		.src( paths.customizePreviewJS.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( gulp.dest( paths.customizePreviewJS.dest ) )
 		.on( 'error', notify.onError() );
 }
 
@@ -258,7 +299,9 @@ function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
 	gulp.watch( paths.elementorStyles.scss.src, elementorStylesCompile );
 	gulp.watch( paths.elementorStyles.cssmin.src, minifyelementorStyles );
+	gulp.watch( paths.elementorJS.jsmin.src, minifyelementorJs );
 	gulp.watch( paths.js.src, minifyJs );
+	gulp.watch( paths.js.src, minifyCustomizerJs );
 	gulp.watch( paths.metaBoxes.scss.src, compileMetaBoxSass );
 	gulp.watch( paths.metaBoxes.cssmin.src, minifyMetaBoxCSS );
 	gulp.watch( paths.metaBoxes.jsmin.src, minifyMetaBoxJs );
@@ -268,11 +311,11 @@ function watch() {
 	gulp.watch( paths.rtlcss.metaBoxes.src, generateMetaBoxesRTLCSS );
 }
 
-
+// Define series of tasks.
 var server            = gulp.series( browserSyncStart, watch ),
     styles            = gulp.series( sassCompile, generateRTLCSS, generateBlockStyleRTLCSS ),
     scripts           = gulp.series( minifyJs ),
-    elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, generateElementorRTLCSS ),
+    elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, minifyelementorJs, generateElementorRTLCSS ),
     metaBoxes         = gulp.series( compileMetaBoxSass, minifyMetaBoxCSS, minifyMetaBoxJs, generateMetaBoxesRTLCSS ),
     compile           = gulp.series( styles, scripts, elementorStyles, metaBoxes );
 
@@ -281,6 +324,7 @@ exports.browserSyncReload               = browserSyncReload;
 exports.sassCompile                     = sassCompile;
 exports.elementorStylesCompile          = elementorStylesCompile;
 exports.minifyelementorStyles           = minifyelementorStyles;
+exports.minifyelementorJs               = minifyelementorJs;
 exports.watch                           = watch;
 exports.server                          = server;
 exports.styles                          = styles;
@@ -289,6 +333,7 @@ exports.elementorStyles                 = elementorStyles;
 exports.metaBoxes                       = metaBoxes;
 exports.compile                         = compile;
 exports.minifyJs                        = minifyJs;
+exports.minifyCustomizerJs              = minifyCustomizerJs;
 exports.compileMetaBoxSass              = compileMetaBoxSass;
 exports.minifyMetaBoxCSS                = minifyMetaBoxCSS;
 exports.minifyMetaBoxJs                 = minifyMetaBoxJs;

@@ -1,0 +1,26 @@
+/* Style 7 widget.
+--------------------------------------------- */
+.cm-featured-posts--style-7 {
+
+    .cm-post-content {
+        display: none;
+    }
+}
+
+@include breakpoint("mdm") {
+
+    .cm-featured-posts--style-7 {
+
+        img {
+            margin-bottom: length( 'l-2' );
+        }
+
+        .cm-post-content {
+            display: flex;
+        }
+
+        .cm-entry-title {
+            margin-bottom: 0;
+        }
+    }
+}

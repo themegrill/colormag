@@ -80,7 +80,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 
 		<div class="customizer-text">
 			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
+			<span class="customize-control-label">{{{ data.label }}}</span>
 			<# } #>
 
 			<# if ( data.description ) { #>
@@ -91,7 +91,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 		<div class="customize-control-content">
 
 			<div class="background-color">
-				<span class="customize-control-title"><?php esc_html_e( 'Background Color', 'colormag' ); ?></span>
+				<span class="customize-control-label"><?php esc_html_e( 'Background Color', 'colormag' ); ?></span>
 				<input data-name="{{ data.name }}"
 						type="text"
 						data-default-color="{{ data.default['background-color'] }}"
@@ -102,7 +102,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 
 			<div class="background-image">
-				<span class="customize-control-title"><?php esc_html_e( 'Background Image', 'colormag' ); ?></span>
+				<span class="customize-control-label"><?php esc_html_e( 'Background Image', 'colormag' ); ?></span>
 				<div class="attachment-media-view background-image-upload">
 					<# if ( data.value['background-image'] ) { #>
 					<div class="thumbnail thumbnail-image"><img src="{{ data.value['background-image'] }}" alt="" />
@@ -129,7 +129,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 
 			<div class="background-repeat">
-				<span class="customize-control-title"><?php esc_html_e( 'Background Repeat', 'colormag' ); ?></span>
+				<span class="customize-control-label"><?php esc_html_e( 'Background Repeat', 'colormag' ); ?></span>
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="no-repeat"
 					<# if ( 'no-repeat' === data.value['background-repeat'] ) { #> selected <# }
@@ -147,7 +147,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 
 			<div class="background-position">
-				<span class="customize-control-title"><?php esc_html_e( 'Background Position', 'colormag' ); ?></span>
+				<span class="customize-control-label"><?php esc_html_e( 'Background Position', 'colormag' ); ?></span>
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="left top"
 					<# if ( 'left top' === data.value['background-position'] ) { #> selected <# }
@@ -180,7 +180,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 
 			<div class="background-size">
-				<span class="customize-control-title"><?php esc_html_e( 'Background Size', 'colormag' ); ?></span>
+				<span class="customize-control-label"><?php esc_html_e( 'Background Size', 'colormag' ); ?></span>
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="cover"
 					<# if ( 'cover' === data.value['background-size'] ) { #> selected <# }
@@ -195,7 +195,7 @@ class ColorMag_Background_Control extends ColorMag_Customize_Base_Additional_Con
 			</div>
 
 			<div class="background-attachment">
-				<span class="customize-control-title"><?php esc_html_e( 'Background Attachment', 'colormag' ); ?></span>
+				<span class="customize-control-label"><?php esc_html_e( 'Background Attachment', 'colormag' ); ?></span>
 				<select data-name="{{ data.name }}" {{{ data.inputAttrs }}}>
 					<option value="scroll"
 					<# if ( 'scroll' === data.value['background-attachment'] ) { #> selected <# }

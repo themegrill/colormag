@@ -1,0 +1,42 @@
+.cm-posts {
+
+    &.cm-layout-1-style-1 {
+		--grid-column: 1;
+	}
+}
+
+.cm-layout-1-style-1 {
+
+	.post {
+		display: flex;
+		flex-direction: column;
+
+		&:first-child {
+			padding: 0;
+		}
+	}
+
+	.cm-featured-image {
+		flex-basis: 50%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.cm-post-content {
+		flex: 1;
+		align-items: center;
+		padding: 16px;
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.cm-layout-1-style-1 {
+
+		.post {
+			flex-direction: row;
+		}
+	}
+}

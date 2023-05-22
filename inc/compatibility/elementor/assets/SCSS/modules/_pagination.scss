@@ -1,0 +1,153 @@
+.elementor {
+	
+	.widget-pagination {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 30px;
+		
+		.page-numbers {
+			color: $color_gray_six;
+			padding: 10px 15px;
+			cursor: pointer;
+			position: relative;
+			border:1px solid $color_gray_six;
+			line-height: 1;
+			margin-right: 10px;
+			transition: 0.5s all ease;
+			
+			&.current {
+				background-color: $color_gray_one;
+				color:$white;
+				border-color: $color_gray_one;
+			}
+			
+			&.dots {
+				border: none transparent;
+				padding: 10px 5px;
+			}
+			
+			&.prev,
+			&.next {
+				font-size: 0;
+				text-align: center;
+				
+				&::before {
+					content: '\f104';
+					font-family: fontAwesome;
+					font-size: 20px;
+					display: block;
+					line-height: 0.7;
+				}
+			}
+
+			&.next {
+
+				&::before {
+					content: '\f105';
+				}
+			}
+		}
+		
+		a {
+			&:hover {
+				background-color: $primary;
+				border-color: $primary;
+				color:$white;
+			}
+		}
+	}
+	
+	.tg-row {
+		
+		.widget-pagination {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	
+	.tg-module-grid--style-1, 
+	.tg-module-grid--style-2,
+	.tg-module-grid--style-3,
+	.tg-module-grid--style-4,
+	.tg-module-grid--style-5, 
+	.tg-module-grid--style-6,
+	.tg-module-grid--style-8,
+	.tg-module-grid--style-9 {
+		
+		.tg-row,
+		.tg-row.thinner {
+			
+			.widget-pagination {
+				padding-left: 2px;
+				padding-right: 2px;
+				margin-top: 30px;
+			}
+		}
+	}
+	.tg-module-block--style-1,
+	.tg-module-block--style-9 {
+		.tg-row {
+			
+			.widget-pagination {
+				margin-top: 30px;
+			}
+		}
+	}
+	
+	.tg-module-wrapper {
+		position: relative;
+		
+		.html-loading {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(255, 255, 255, 0.9);
+			z-index: 9999;
+			text-align: center;
+			padding-top: 15%;
+			color: $color_gray_six;
+			
+			.fa {
+				color: inherit;
+			}
+		}
+	}
+	
+	@keyframes tg-fade-in {
+		from {
+			opacity: 0.3;
+		}
+		
+		to {
+			opacity: 1;
+		}
+	}
+	
+	.tg-fade-in {
+		-webkit-animation-name: tg-fade-in;
+		animation-name: tg-fade-in;
+	}
+	
+	@keyframes tg-fade-out {
+		from {
+			opacity: 1;
+		}
+		
+		to {
+			opacity: 0;
+		}
+	}
+	
+	.tg-fade-out {
+		-webkit-animation-name: tg-fade-out;
+		animation-name: tg-fade-out;
+	}
+	
+	.tg-module-wrapper {
+		animation-duration: 0.6s;
+		animation-fill-mode: both;
+	}
+}

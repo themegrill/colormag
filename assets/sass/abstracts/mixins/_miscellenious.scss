@@ -1,0 +1,18 @@
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin clearfix() {
+
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+	}
+
+	&::after {
+		clear: both;
+	}
+}

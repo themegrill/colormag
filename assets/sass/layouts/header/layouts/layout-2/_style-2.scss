@@ -1,0 +1,36 @@
+.cm-layout-2-style-2 {
+
+    .cm-main-header {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#cm-primary-nav {
+
+		&.headroom--pinned {
+			margin-top: 0;
+		}
+	}
+
+	.is-sticky {
+
+		#cm-primary-nav {
+			margin-top: 0;
+		}
+	}
+
+	.cm-menu-primary-container {
+		margin-top: 4px;
+	}
+}
+
+.cm-layout-2 {
+
+	&.cm-layout-2-style-2 {
+
+		#cm-primary-nav {
+			border-bottom: 4px solid #207daf;
+			border-top: 0;
+		}
+	}
+}

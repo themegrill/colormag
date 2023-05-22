@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.0.0
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -63,6 +63,9 @@ class ColorMag_Meta_Boxes {
 				'page',
 			)
 		);
+
+		// Video URL option for video post format only.
+		add_meta_box( 'post-video-url', esc_html__( 'Video URL', 'colormag' ), 'ColorMag_Meta_Box_Page_Settings::render_video_url', 'post', 'side', 'high' );
 
 	}
 

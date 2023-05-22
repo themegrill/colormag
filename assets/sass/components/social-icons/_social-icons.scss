@@ -1,19 +1,37 @@
 /* Social Icons.
 --------------------------------------------- */
 .fa {
-	font-size: 22px;
-	color: $color__gray-seven;
+	@include font-size('font-size-sm');
+	color: $color__gray-500;
 }
 
 .social-links {
+
 	ul {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		list-style: none;
+
+		li {
+
+			&:hover > a {
+				background-color: transparent;
+			}
+		}
+
+		a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	li {
 		margin-left: 16px;
+		border-top: 0;
 
 		&:first-child {
 			margin-left: 0;
@@ -147,22 +165,31 @@
 	}
 }
 
-.search-random-icons-container {
+.cm-header-actions {
+
 	.social-links {
-		float: left;
 
 		a {
-			padding: 10px 2px;
+			padding: 0;
 		}
 
-		a:hover {
-			color: #81d742;
+		li {
+			margin-left: 0;
+			padding: 12px;
 		}
 
 		ul {
+
 			li {
 				display: inline-block;
-				background: unset;
+				background: transparent;
+
+				a {
+
+					&:hover {
+						background-color: transparent;
+					}
+				}
 			}
 		}
 	}

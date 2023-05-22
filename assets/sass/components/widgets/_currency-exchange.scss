@@ -1,0 +1,208 @@
+/* Currency Exchange.
+--------------------------------------------- */
+.cm-header-col-2 .widget.widget_exchange,
+.widget.widget_exchange {
+	margin-bottom: length( 'l-15' );
+	text-align: left;
+}
+
+.exchange-currency {
+	background-color: #fcfdfd;
+
+	.base-currency {
+		text-align: center;
+		padding: length( 'l-10' );
+		font-size: 18px;
+		font-weight: 700;
+		border-bottom: 1px solid #e4e3e2;
+	}
+
+	.currency-list {
+		padding: length( 'l-10' );
+	}
+
+	.currency-table {
+
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: length( 'l-5' );
+		padding-bottom: length( 'l-5' );
+		margin-right: -4px;
+		font-size: 14px;
+		border-bottom: 1px solid #efefef;
+
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: 0 none;
+		}
+	}
+
+	.currency--country {
+		font-weight: 700;
+		display: inline-block;
+	}
+
+	&.exchange-column-1 .currency-table {
+		width: 100%;
+		padding-right: 0;
+	}
+
+	&.exchange-column-2 .currency-table {
+		width: 46%;
+		padding-right: 8%;
+	}
+
+	&.exchange-column-3 .currency-table {
+		width: 28%;
+		padding-right: 8%;
+	}
+
+	&.exchange-column-2 .currency-table:nth-child(2n),
+	&.exchange-column-3 .currency-table:nth-child(3n) {
+		padding-right: 0;
+	}
+}
+
+.currency--flag {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-image: url(assets/img/flags.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	vertical-align: top;
+	margin: 1px 5px 0 0;
+
+	&.currency--flag-aud {
+		background-position: 2px -2px;
+	}
+
+	&.currency--flag-bgn {
+		background-position: -24px 0;
+	}
+
+	&.currency--flag-brl {
+		background-position: -48px 0;
+	}
+
+	&.currency--flag-cad {
+		background-position: -72px 0;
+	}
+
+	&.currency--flag-chf {
+		background-position: -96px 0;
+	}
+
+	&.currency--flag-cny {
+		background-position: 0 -24px;
+	}
+
+	&.currency--flag-czk {
+		background-position: -24px -24px;
+	}
+
+	&.currency--flag-dkk {
+		background-position: -48px -24px;
+	}
+
+	&.currency--flag-gbp {
+		background-position: -96px -24px;
+	}
+
+	&.currency--flag-hkd {
+		background-position: 0 -48px;
+	}
+
+	&.currency--flag-hrk {
+		background-position: -24px -48px;
+	}
+
+	&.currency--flag-huf {
+		background-position: -48px -48px;
+	}
+
+	&.currency--flag-idr {
+		background-position: -72px -48px;
+	}
+
+	&.currency--flag-ils {
+		background-position: -96px -48px;
+	}
+
+	&.currency--flag-inr {
+		background-position: 0 -71px;
+	}
+
+	&.currency--flag-jpy {
+		background-position: -24px -75px;
+	}
+
+	&.currency--flag-krw {
+		background-position: -48px -72px;
+	}
+
+	&.currency--flag-mxn {
+		background-position: -72px -72px;
+	}
+
+	&.currency--flag-myr {
+		background-position: -96px -72px;
+	}
+
+	&.currency--flag-nok {
+		background-position: 0 -96px;
+	}
+
+	&.currency--flag-nzd {
+		background-position: -24px -96px;
+	}
+
+	&.currency--flag-php {
+		background-position: -48px -96px;
+	}
+
+	&.currency--flag-pln {
+		background-position: -72px -96px;
+	}
+
+	&.currency--flag-ron {
+		background-position: -96px -96px;
+	}
+
+	&.currency--flag-rub {
+		background-position: -120px 0;
+	}
+
+	&.currency--flag-sek {
+		background-position: -120px -24px;
+	}
+
+	&.currency--flag-sgd {
+		background-position: -120px -48px;
+	}
+
+	&.currency--flag-thb {
+		background-position: -120px -72px;
+	}
+
+	&.currency--flag-try {
+		background-position: -120px -96px;
+	}
+
+	&.currency--flag-usd {
+		background-position: 0 -120px;
+	}
+
+	&.currency--flag-zar {
+		background-position: -24px -120px;
+	}
+
+	&.currency--flag-eur {
+		background-position: -72px -24px;
+	}
+}
+
+.currency--rate {
+	float: right;
+}

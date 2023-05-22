@@ -5,22 +5,24 @@
  *
  * @package ColorMag
  */
-wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend( {
+wp.customize.controlConstructor['colormag-toggle'] = wp.customize.Control.extend(
+	{
 
-	ready : function () {
+		ready : function () {
 
-		'use strict';
+			'use strict';
 
-		var control = this,
-		    value   = control.setting._value;
+			var control = this,
+				value   = control.setting._value;
 
-		// Save the value.
-		this.container.on( 'change', 'input', function () {
-			value = jQuery( this ).is( ':checked' ) ? true : false;
+			// Save the value.
+			this.container.on( 'change', 'input', function () {
+				value = jQuery( this ).is( ':checked' ) ? true : false;
 
-			control.setting.set( value );
-		} );
+				control.setting.set( value );
+			} );
+
+		}
 
 	}
-
-} );
+);

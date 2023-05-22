@@ -36,6 +36,13 @@ class ColorMag_Radio_Image_Control extends ColorMag_Customize_Base_Additional_Co
 	public $image_col = 1;
 
 	/**
+	 * Alignment class.
+	 *
+	 * @var int
+	 */
+	public $class = "";
+
+	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
 	 * @see WP_Customize_Control::to_json()
@@ -44,31 +51,32 @@ class ColorMag_Radio_Image_Control extends ColorMag_Customize_Base_Additional_Co
 
 		parent::to_json();
 
-		$this->json['default'] = $this->setting->default;
+		$this->json[ 'default' ] = $this->setting->default;
 		if ( isset( $this->default ) ) {
-			$this->json['default'] = $this->default;
+			$this->json[ 'default' ] = $this->default;
 		}
-		$this->json['value'] = $this->value();
+		$this->json[ 'value' ] = $this->value();
 
-		$this->json['link']        = $this->get_link();
-		$this->json['id']          = $this->id;
-		$this->json['label']       = esc_html( $this->label );
-		$this->json['description'] = $this->description;
+		$this->json[ 'link' ]        = $this->get_link();
+		$this->json[ 'id' ]          = $this->id;
+		$this->json[ 'label' ]       = esc_html( $this->label );
+		$this->json[ 'description' ] = $this->description;
 
-		$this->json['image_col'] = $this->image_col;
+		$this->json[ 'image_col' ] = $this->image_col;
+		$this->json[ 'class' ]     = $this->class;
 
 		foreach ( $this->choices as $key => $value ) {
-			$this->json['choices'][ $key ]        = $value['url'];
-			$this->json['choices_titles'][ $key ] = $value['label'];
+			$this->json[ 'choices' ][ $key ]        = $value[ 'url' ];
+			$this->json[ 'choices_titles' ][ $key ] = $value[ 'label' ];
 		}
 
-		$this->json['inputAttrs'] = '';
-		$this->json['labelStyle'] = '';
+		$this->json[ 'inputAttrs' ] = '';
+		$this->json[ 'labelStyle' ] = '';
 		foreach ( $this->input_attrs as $attr => $value ) {
 			if ( 'style' !== $attr ) {
-				$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+				$this->json[ 'inputAttrs' ] .= $attr . '="' . esc_attr( $value ) . '" ';
 			} else {
-				$this->json['labelStyle'] = 'style="' . esc_attr( $value ) . '" ';
+				$this->json[ 'labelStyle' ] = 'style="' . esc_attr( $value ) . '" ';
 			}
 		}
 
@@ -87,7 +95,7 @@ class ColorMag_Radio_Image_Control extends ColorMag_Customize_Base_Additional_Co
 
 		<div class="customizer-text">
 			<# if ( data.label ) { #>
-			<span class="customize-control-title">{{{ data.label }}}</span>
+			<span class="customize-control-label">{{{ data.label }}}</span>
 			<# } #>
 
 			<# if ( data.description ) { #>
@@ -95,22 +103,22 @@ class ColorMag_Radio_Image_Control extends ColorMag_Customize_Base_Additional_Co
 			<# } #>
 		</div>
 
-		<div id="input_{{ data.id }}" class="image image-col-{{{ data.image_col }}}">
+		<div id="input_{{ data.id }}" class="image image-col-{{{ data.image_col }}} {{{ data.class }}}">
 			<# for ( key in data.choices ) { #>
 			<input {{{ data.inputAttrs }}}
-				   class="image-select"
-				   type="radio"
-				   value="{{ key }}"
-				   name="_customize-radio-{{ data.id }}"
-				   id="{{ data.id }}{{ key }}"
-				   {{{ data.link }}}
+			       class="image-select"
+			       type="radio"
+			       value="{{ key }}"
+			       name="_customize-radio-{{ data.id }}"
+			       id="{{ data.id }}{{ key }}"
+			       {{{ data.link }}}
 			<# if ( data.value === key ) { #> checked="checked"<# } #>
 			>
 
 			<label for="{{ data.id }}{{ key }}" {{{ data.labelStyle }}} class="colormag-radio-image">
 				<img src="{{{ data.choices[ key ] }}}" alt="{{{ data.choices_titles[ key ] }}}">
 				<# if ( '' !== data.choices_titles[ key ] ) { #>
-					<span class="image-clickable tooltip-text">{{{ data.choices_titles[ key ] }}}</span>
+				<span class="image-clickable tooltip-text">{{{ data.choices_titles[ key ] }}}</span>
 				<# } #>
 			</label>
 			<# } #>

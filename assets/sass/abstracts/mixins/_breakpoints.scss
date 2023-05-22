@@ -1,18 +1,25 @@
+// Breakpoints.
+
 @mixin breakpoint($point) {
+
 	@if $point == xlrg {
-		@media screen and (min-width: 1200px) { @content ; }
+
+		@media screen and (min-width: 75em) { @content ; }
 	}
 	@else if $point == lrg {
-		@media screen and (min-width: 992px) { @content ; }
+
+		@media screen and (min-width: 62em) { @content ; }
 	}
 	@else if $point == mdm {
-		@media screen and (min-width: 768px) { @content ; }
+
+		@media screen and (min-width: 48em) { @content ; }
 	}
 	@else if $point == sml {
-		@media screen and (min-width: 600px)  { @content ; }
+
+		@media screen and (min-width: 37.5em)  { @content ; }
 	}
 	@else if $point == xsml {
-		@media screen and (max-width: 600px)  { @content ; }
 
+		@media screen and (max-width: 37.5em)  { @content ; }
 	}
 }

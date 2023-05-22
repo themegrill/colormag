@@ -1,0 +1,39 @@
+/* Style 5 widget.
+--------------------------------------------- */
+.cm-featured-posts--style-5 {
+
+	&.cm-highlighted-posts {
+
+		.cm-below-entry-meta {
+			display: none;
+		}
+
+		.cm-post {
+			margin-bottom: 0;
+		}
+	}
+
+	&.cm-featured-posts {
+
+		.cm-post-content .cm-entry-title a {
+			color: $color__white;
+
+			&:hover {
+				color: $color__primary;
+			}
+		}
+
+		img {
+			margin-bottom: 0;
+		}
+
+		.cm-post-content .cm-below-entry-meta {
+
+			.cm-post-date .fa,
+			.cm-author .fa,
+			.cm-comments-link .fa {
+				color: $color__white;
+			}
+		}
+	}
+}

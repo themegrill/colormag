@@ -8,752 +8,1218 @@
 (
 	function ( $ ) {
 
-		wp.customize.controlConstructor['colormag-group'] = wp.customize.Control.extend( {
+		wp.customize.controlConstructor[ 'colormag-group' ] = wp.customize.Control.extend(
+			{
 
-			ready : function () {
+				ready: function () {
 
-				'use strict';
+					'use strict';
 
-				var control = this;
+					let control = this;
 
-				control.registerToggleEvents();
-				this.container.on( 'colormag_settings_changed', control.onOptionChange );
+					control.registerToggleEvents();
+					this.container.on( 'colormag_settings_changed', control.onOptionChange );
 
-			},
+				},
 
-			registerToggleEvents : function () {
+				registerToggleEvents: function () {
 
-				var control = this;
+					let control = this;
 
-				/* Close popup when click outside on customize sidebar area */
-				$( '.wp-full-overlay-sidebar-content' ).click(
-					function ( e ) {
-						if ( ! $( e.target ).closest( '.colormag-field-settings-modal' ).length ) {
-							$( '.colormag-group-toggle-icon.open' ).trigger( 'click' );
-						}
-					}
-				);
-
-				control.container.on(
-					'click',
-					'.colormag-group-wrap .colormag-group-toggle-icon',
-					function ( e ) {
-
-						e.preventDefault();
-						e.stopPropagation();
-
-						var $this          = $( this ),
-						    parent_wrap    = $this.closest( '.customize-control-colormag-group' ),
-						    is_loaded      = parent_wrap.find( '.colormag-field-settings-modal' ).data( 'loaded' ),
-						    parent_section = parent_wrap.parents( '.control-section' );
-
-						if ( $this.hasClass( 'open' ) ) {
-							parent_wrap.find( '.colormag-field-settings-modal' ).hide();
-						} else {
-
-							/* Close popup when another popup is clicked */
-							var get_open_popup = parent_section.find( '.colormag-group-toggle-icon.open' );
-							if ( get_open_popup.length > 0 ) {
-								get_open_popup.trigger( 'click' );
+					/* Close popup when click outside on customize sidebar area */
+					$( '.wp-full-overlay-sidebar-content' ).click(
+						function ( e ) {
+							if ( ! $( e.target ).closest( '.colormag-field-settings-modal' ).length ) {
+								$( '.colormag-group-toggle-icon.open' ).trigger( 'click' );
 							}
+						}
+					);
 
-							if ( is_loaded ) {
-								parent_wrap.find( '.colormag-field-settings-modal' ).show();
+					control.container.on(
+						'click',
+						'.colormag-group-wrap .colormag-group-toggle-icon',
+						function ( e ) {
+
+							e.preventDefault();
+							e.stopPropagation();
+
+							let $this          = $( this ),
+								parent_wrap    = $this.closest( '.customize-control-colormag-group' ),
+								is_loaded      = parent_wrap.find( '.colormag-field-settings-modal' ).data( 'loaded' ),
+								parent_section = parent_wrap.parents( '.control-section' );
+
+							if ( $this.hasClass( 'open' ) ) {
+								parent_wrap.find( '.colormag-field-settings-modal' ).hide();
 							} else {
 
-								var fields     = control.params.colormag_fields,
-								    modal_wrap = $( ColorMagCustomizerControlGroup.group_modal_tmpl ),
-								    device     = $( '#customize-footer-actions .active' ).attr( 'data-device' );
+								/* Close popup when another popup is clicked */
+								let get_open_popup = parent_section.find( '.colormag-group-toggle-icon.open' );
+								if ( get_open_popup.length > 0 ) {
+									get_open_popup.trigger( 'click' );
+								}
 
-								parent_wrap.find( '.colormag-field-settings-wrap' ).append( modal_wrap );
-								parent_wrap.find( '.colormag-fields-wrap' ).attr( 'data-control', control.params.name );
-								control.colormag_render_field( parent_wrap, fields, control );
-								parent_wrap.find( '.colormag-field-settings-modal' ).show();
-
-								if ( 'mobile' === device ) {
-									$( '.control-wrap.mobile' ).addClass( 'active' );
-									$( '.responsive-switchers .preview-mobile' ).addClass( 'active' );
-
-									$( '.control-wrap.tablet, .control-wrap.desktop' ).removeClass( 'active' );
-									$( '.responsive-switchers .preview-tablet, .responsive-switchers .preview-desktop' ).removeClass( 'active' );
-								} else if ( 'tablet' === device ) {
-									$( '.control-wrap.tablet' ).addClass( 'active' );
-									$( '.responsive-switchers .preview-tablet' ).addClass( 'active' );
-
-									$( '.control-wrap.mobile, .control-wrap.desktop' ).removeClass( 'active' );
-									$( '.responsive-switchers .preview-mobile, .responsive-switchers .preview-desktop' ).removeClass( 'active' );
+								if ( is_loaded ) {
+									parent_wrap.find( '.colormag-field-settings-modal' ).show();
 								} else {
-									$( '.control-wrap.desktop' ).addClass( 'active' );
-									$( '.responsive-switchers .preview-desktop' ).addClass( 'active' );
 
-									$( '.control-wrap.mobile, .control-wrap.tablet' ).removeClass( 'active' );
-									$( '.responsive-switchers .preview-mobile, .responsive-switchers .preview-tablet' ).removeClass( 'active' );
+									let fields     = control.params.colormag_fields,
+										modal_wrap = $( ColorMagCustomizerControlGroup.group_modal_tmpl ),
+										device     = $( '#customize-footer-actions .active' ).attr( 'data-device' );
+
+									parent_wrap.find( '.colormag-field-settings-wrap' ).append( modal_wrap );
+									parent_wrap.find( '.colormag-fields-wrap' ).attr( 'data-control', control.params.name );
+									control.colormag_render_field( parent_wrap, fields, control );
+									parent_wrap.find( '.colormag-field-settings-modal' ).show();
+
+									if ( 'mobile' === device ) {
+										$( '.control-wrap.mobile' ).addClass( 'active' );
+										$( '.responsive-switchers .preview-mobile' ).addClass( 'active' );
+
+										$( '.control-wrap.tablet, .control-wrap.desktop' ).removeClass( 'active' );
+										$( '.responsive-switchers .preview-tablet, .responsive-switchers .preview-desktop' ).removeClass( 'active' );
+									} else if ( 'tablet' === device ) {
+										$( '.control-wrap.tablet' ).addClass( 'active' );
+										$( '.responsive-switchers .preview-tablet' ).addClass( 'active' );
+
+										$( '.control-wrap.mobile, .control-wrap.desktop' ).removeClass( 'active' );
+										$( '.responsive-switchers .preview-mobile, .responsive-switchers .preview-desktop' ).removeClass( 'active' );
+									} else {
+										$( '.control-wrap.desktop' ).addClass( 'active' );
+										$( '.responsive-switchers .preview-desktop' ).addClass( 'active' );
+
+										$( '.control-wrap.mobile, .control-wrap.tablet' ).removeClass( 'active' );
+										$( '.responsive-switchers .preview-mobile, .responsive-switchers .preview-tablet' ).removeClass( 'active' );
+									}
+
 								}
 
 							}
 
-						}
+							$this.toggleClass( 'open' );
 
-						$this.toggleClass( 'open' );
-
-					}
-				);
-
-				control.container.on(
-					'click',
-					'.colormag-group-wrap > .customizer-text',
-					function ( e ) {
-
-						e.preventDefault();
-						e.stopPropagation();
-
-						$( this ).find( '.colormag-group-toggle-icon' ).trigger( 'click' );
-
-					}
-				);
-
-			},
-
-			colormag_render_field : function ( wrap, fields, control_element ) {
-
-				var control             = this;
-				var colormag_field_wrap = wrap.find( '.colormag-fields-wrap' );
-				var fields_html         = '';
-				var control_types       = [];
-				var field_values        = control.isJSONString( control_element.params.value ) ? JSON.parse( control_element.params.value ) : {};
-
-				if ( 'undefined' != typeof fields.tabs ) {
-
-					var counter = 0;
-					fields_html += '<div id="' + control_element.params.name + '-tabs" class="colormag-group-tabs">';
-
-					fields_html += '<ul class="colormag-group-list">';
-					_.each(
-						fields.tabs,
-						function ( value, key ) {
-							var li_class = '';
-
-							if ( 0 === counter ) {
-								li_class = "active";
-							}
-
-							fields_html += '<li class="' + li_class + '"><a href="#tab-' + key.replace( ' ','-' ) + '"><span>' + key + '</span></a></li>';
-							counter ++;
 						}
 					);
-					fields_html += '</ul>';
 
-					fields_html += '<div class="colormag-tab-content" >';
+					control.container.on(
+						'click',
+						'.colormag-group-wrap > .customizer-text',
+						function ( e ) {
+
+							e.preventDefault();
+							e.stopPropagation();
+
+							$( this ).find( '.colormag-group-toggle-icon' ).trigger( 'click' );
+
+						}
+					);
+
+				},
+
+				colormag_render_field: function ( wrap, fields, control_element ) {
+
+					let control = this;
+					let colormag_field_wrap = wrap.find( '.colormag-fields-wrap' );
+					let fields_html = '';
+					let control_types = [];
+					let field_values = control.isJSONString( control_element.params.value ) ? JSON.parse( control_element.params.value ) : {};
+
+					if ( 'undefined' != typeof fields.tabs ) {
+
+						let counter = 0;
+						fields_html += '<div id="' + control_element.params.name + '-tabs" class="colormag-group-tabs">';
+
+						fields_html += '<ul class="colormag-group-list">';
+						_.each(
+							fields.tabs,
+							function ( value, key ) {
+								let li_class = '';
+
+								if ( 0 === counter ) {
+									li_class = "active";
+								}
+
+								fields_html += '<li class="' + li_class + '"><a href="#tab-' + key.replace( ' ', '-' ) + '"><span>' + key + '</span></a></li>';
+								counter++;
+							}
+						);
+						fields_html += '</ul>';
+
+						fields_html += '<div class="colormag-tab-content" >';
+						_.each(
+							fields.tabs,
+							function ( fields_data, key ) {
+
+								let result = control.generateFieldHtml( fields_data, field_values );
+
+								fields_html += '<div id="tab-' + key.replace( ' ', '-' ) + '" class="tab">';
+								fields_html += result.html;
+
+								_.each(
+									result.controls,
+									function ( control_value, control_key ) {
+										control_types.push(
+											{
+												key: control_value.key,
+												value: control_value.value,
+												name: control_value.name
+											}
+										);
+									}
+								);
+
+								fields_html += '</div>';
+
+							}
+						);
+						fields_html += '</div>';
+
+						fields_html += '</div>';
+
+						colormag_field_wrap.html( fields_html );
+
+						$( '#' + control_element.params.name + '-tabs' ).tabs();
+
+					} else {
+
+						let result = control.generateFieldHtml( fields, field_values );
+
+						fields_html += result.html;
+
+						_.each(
+							result.controls,
+							function ( control_value, control_key ) {
+								control_types.push(
+									{
+										key: control_value.key,
+										value: control_value.value,
+										name: control_value.name
+									}
+								);
+							}
+						);
+
+						colormag_field_wrap.html( fields_html );
+
+					}
+
 					_.each(
-						fields.tabs,
-						function ( fields_data, key ) {
+						control_types,
+						function ( control_type, index ) {
 
-							var result = control.generateFieldHtml( fields_data, field_values );
+							switch ( control_type.key ) {
 
-							fields_html += '<div id="tab-' + key.replace( ' ','-' ) + '" class="tab">';
-							fields_html += result.html;
+								case 'colormag-color':
+									control.initColorControl( colormag_field_wrap, control_element, control_type.name );
+									break;
 
+								case 'colormag-background':
+									control.initBackgroundControl( control_element, control_type, control_type.name );
+									break;
+
+								case 'colormag-typography':
+									control.initTypographyControl( control_element, control_type, control_type.name );
+									break;
+
+							}
+
+						}
+					);
+
+					wrap.find( '.colormag-field-settings-modal' ).data( 'loaded', true );
+
+				},
+
+				isJSONString: function ( string ) {
+
+					try {
+						JSON.parse( string );
+					} catch ( e ) {
+						return false;
+					}
+
+					return true;
+
+				},
+
+				generateFieldHtml: function ( fields_data, field_values ) {
+
+					let fields_html = '';
+					let control_types = [];
+
+					_.each(
+						fields_data,
+						function ( attr, index ) {
+
+							let new_value   = (
+									wp.customize.control( attr.name ) ? wp.customize.control( attr.name ).params.value : ''
+								),
+								control     = attr.control,
+								template_id = 'customize-control-' + control + '-content',
+								template    = wp.template( template_id ),
+								value       = new_value || attr.default,
+								dataAtts    = '',
+								input_attrs = '';
+
+							attr.value = value;
+							attr.title = attr.label;
+
+							// Data attributes.
 							_.each(
-								result.controls,
-								function ( control_value, control_key ) {
-									control_types.push(
-										{
-											key   : control_value.key,
-											value : control_value.value,
-											name  : control_value.name
-										}
-									);
+								attr.data_attrs,
+								function ( value, name ) {
+									dataAtts += ' data-' + name + ' ="' + value + '"';
 								}
 							);
 
-							fields_html += '</div>';
+							// Input attributes.
+							_.each(
+								attr.input_attrs,
+								function ( value, name ) {
+									input_attrs += name + ' ="' + value + '"';
+								}
+							);
 
-						}
-					);
-					fields_html += '</div>';
+							attr.dataAttrs = dataAtts;
+							attr.inputAttrs = input_attrs;
 
-					fields_html += '</div>';
-
-					colormag_field_wrap.html( fields_html );
-
-					$( '#' + control_element.params.name + '-tabs' ).tabs();
-
-				} else {
-
-					var result = control.generateFieldHtml( fields, field_values );
-
-					fields_html += result.html;
-
-					_.each(
-						result.controls,
-						function ( control_value, control_key ) {
 							control_types.push(
 								{
-									key   : control_value.key,
-									value : control_value.value,
-									name  : control_value.name
+									key: control,
+									value: value,
+									name: attr.name
 								}
 							);
+
+							let responsive_switchers = '',
+								controlsType         = [
+									'colormag-typography'
+								];
+
+							if ( (
+								'colormag-typography' === attr.control
+							) && controlsType.includes( attr.control ) ) {
+								attr.languages = ColorMagCustomizerControlTypographySubsets;
+							}
+
+							if ( controlsType.includes( attr.control ) ) {
+								responsive_switchers = 'has-responsive-switchers';
+							}
+
+
+							attr.suffix = window[ attr.name ].suffix;
+							attr.default_suffix = window[ attr.name ].default_suffix;
+							attr.input_attrs = window[ attr.name ].input_attrs;
+
+							fields_html += '<li id="customize-control-' + attr.name + '" class="customize-control ' + responsive_switchers + ' customize-control-' + attr.control + '" >';
+							fields_html += template( attr );
+							fields_html += '</li>';
+
 						}
 					);
 
-					colormag_field_wrap.html( fields_html );
+					let result = new Object();
 
-				}
+					result.controls = control_types;
+					result.html = fields_html;
 
-				_.each(
-					control_types,
-					function ( control_type, index ) {
+					return result;
 
-						switch ( control_type.key ) {
+				},
 
-							case 'colormag-color':
-								control.initColorControl( colormag_field_wrap, control_element, control_type.name );
-								break;
+				onOptionChange: function ( e, control, element, value, name ) {
 
-							case 'colormag-background':
-								control.initBackgroundControl( control_element, control_type, control_type.name );
-								break;
+					let control_id = $( '.hidden-field-' + name );
+					control_id.val( value );
 
-							case 'colormag-typography':
-								control.initTypographyControl( control_element, control_type, control_type.name );
-								break;
+					let sub_control = wp.customize.control( name );
+					sub_control.setting.set( value );
 
-						}
+				},
 
-					}
-				);
+				initColorControl: function ( wrap, control_elem, name ) {
 
-				wrap.find( '.colormag-field-settings-modal' ).data( 'loaded', true );
+					let control = this;
+					let colorpicker = wrap.find( '.customize-control-colormag-color .colormag-color-picker-alpha' );
 
-			},
+					colorpicker.wpColorPicker(
+						{
+							change: function ( event, ui ) {
 
-			isJSONString : function ( string ) {
+								if ( 'undefined' != typeof event.originalEvent || 'undefined' != typeof ui.color._alpha ) {
 
-				try {
-					JSON.parse( string );
-				} catch ( e ) {
-					return false;
-				}
+									let element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[ 0 ];
+									name = $( element ).parents( '.customize-control' ).attr( 'id' );
+									let picker = $( '#' + name + '.customize-control-colormag-color .colormag-color-picker-alpha' );
+									name = name.replace( 'customize-control-', '' );
+									let current = picker.iris( 'color' );
 
-				return true;
+									$( element ).val( current );
 
-			},
+									control.container.trigger(
+										'colormag_settings_changed',
+										[
+											control,
+											$( element ),
+											current,
+											name
+										]
+									);
+								}
 
-			generateFieldHtml : function ( fields_data, field_values ) {
+							},
 
-				var fields_html   = '';
-				var control_types = [];
+							clear: function ( event ) {
 
-				_.each(
-					fields_data,
-					function ( attr, index ) {
+								let element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[ 0 ];
+								name = $( element ).parents( '.customize-control' ).attr( 'id' );
+								name = name.replace( 'customize-control-', '' );
 
-						var new_value   = (
-							    wp.customize.control( attr.name ) ? wp.customize.control( attr.name ).params.value : ''
-						    ),
-						    control     = attr.control,
-						    template_id = 'customize-control-' + control + '-content',
-						    template    = wp.template( template_id ),
-						    value       = new_value || attr.default,
-						    dataAtts    = '',
-						    input_attrs = '';
-
-						attr.value = value;
-						attr.title = attr.label;
-
-						// Data attributes.
-						_.each(
-							attr.data_attrs,
-							function ( value, name ) {
-								dataAtts += ' data-' + name + ' ="' + value + '"';
-							}
-						);
-
-						// Input attributes.
-						_.each(
-							attr.input_attrs,
-							function ( value, name ) {
-								input_attrs += name + ' ="' + value + '"';
-							}
-						);
-
-						attr.dataAttrs  = dataAtts;
-						attr.inputAttrs = input_attrs;
-
-						control_types.push(
-							{
-								key   : control,
-								value : value,
-								name  : attr.name
-							}
-						);
-
-						var responsive_switchers = '',
-						    controlsType         = [
-							    'colormag-typography'
-						    ];
-
-						if ( (
-							     'colormag-typography' === attr.control
-						     ) && controlsType.includes( attr.control ) ) {
-							attr.languages = ColorMagCustomizerControlTypographySubsets;
-						}
-
-						if ( controlsType.includes( attr.control ) ) {
-							responsive_switchers = 'has-responsive-switchers';
-						}
-
-						fields_html += '<li id="customize-control-' + attr.name + '" class="customize-control ' + responsive_switchers + ' customize-control-' + attr.control + '" >';
-						fields_html += template( attr );
-						fields_html += '</li>';
-
-					}
-				);
-
-				var result = new Object();
-
-				result.controls = control_types;
-				result.html     = fields_html;
-
-				return result;
-
-			},
-
-			onOptionChange : function ( e, control, element, value, name ) {
-
-				var control_id = $( '.hidden-field-' + name );
-				control_id.val( value );
-
-				var sub_control = wp.customize.control( name );
-				sub_control.setting.set( value );
-
-			},
-
-			initColorControl : function ( wrap, control_elem, name ) {
-
-				var control     = this;
-				var colorpicker = wrap.find( '.customize-control-colormag-color .colormag-color-picker-alpha' );
-
-				colorpicker.wpColorPicker(
-					{
-						change : function ( event, ui ) {
-
-							if ( 'undefined' != typeof event.originalEvent || 'undefined' != typeof ui.color._alpha ) {
-
-								var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
-								name        = $( element ).parents( '.customize-control' ).attr( 'id' );
-								var picker  = $( '#' + name + '.customize-control-colormag-color .colormag-color-picker-alpha' );
-								name        = name.replace( 'customize-control-', '' );
-								var current = picker.iris( 'color' );
-
-								$( element ).val( current );
+								$( element ).val( '' );
 
 								control.container.trigger(
 									'colormag_settings_changed',
 									[
 										control,
 										$( element ),
-										current,
+										'',
 										name
 									]
 								);
+
+								wp.customize.previewer.refresh();
+
 							}
+						}
+					);
+				},
 
-						},
+				initBackgroundControl: function ( control, control_atts, name ) {
 
-						clear : function ( event ) {
+					let input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
+						value            = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						colorpicker      = control.container.find( '.colormag-color-picker-alpha' ),
+						controlContainer = control.container.find( '#customize-control-' + control_name );
 
-							var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
-							name        = $( element ).parents( '.customize-control' ).attr( 'id' );
-							name        = name.replace( 'customize-control-', '' );
+					// Hide unnecessary controls if the value doesn't have an image.
+					if ( _.isUndefined( value[ 'background-image' ] ) || '' === value[ 'background-image' ] ) {
+						controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
+						controlContainer.find( '.customize-control-content > .background-position' ).hide();
+						controlContainer.find( '.customize-control-content > .background-size' ).hide();
+						controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
+					}
 
-							$( element ).val( '' );
+					// Background color setting.
+					colorpicker.wpColorPicker(
+						{
+							change: function () {
 
-							control.container.trigger(
-								'colormag_settings_changed',
-								[
-									control,
-									$( element ),
-									'',
-									name
-								]
+								if ( $( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+									let $this = $( this );
+
+									setTimeout(
+										function () {
+											control.saveBackgroundValue( 'background-color', colorpicker.val(), $this, name );
+										},
+										100
+									);
+								}
+
+							},
+
+							clear: function ( event ) {
+
+								let element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[ 0 ];
+
+								if ( element ) {
+									control.saveBackgroundValue( 'background-color', '', $( element ), name );
+								}
+
+								wp.customize.previewer.refresh();
+
+							}
+						}
+					);
+
+					// Background image setting..
+					controlContainer.on(
+						'click',
+						'.background-image-upload-button, .thumbnail-image img',
+						function ( e ) {
+							let upload_img_btn = $( this );
+							let image = wp.media( { multiple: false } ).open().on(
+								'select',
+								function () {
+
+									// This will return the selected image from the Media Uploader, the result is an object.
+									let uploadedImage = image.state().get( 'selection' ).first(),
+										previewImage  = uploadedImage.toJSON().sizes.full.url,
+										imageUrl,
+										imageID,
+										imageWidth,
+										imageHeight,
+										preview,
+										removeButton;
+
+									if ( ! _.isUndefined( uploadedImage.toJSON().sizes.medium ) ) {
+										previewImage = uploadedImage.toJSON().sizes.medium.url;
+									} else if ( ! _.isUndefined( uploadedImage.toJSON().sizes.thumbnail ) ) {
+										previewImage = uploadedImage.toJSON().sizes.thumbnail.url;
+									}
+
+									imageUrl = uploadedImage.toJSON().sizes.full.url;
+									imageID = uploadedImage.toJSON().id;
+									imageWidth = uploadedImage.toJSON().width;
+									imageHeight = uploadedImage.toJSON().height;
+
+									// Show extra controls if the value has an image.
+									if ( '' !== imageUrl ) {
+										controlContainer.find( '.customize-control-content > .background-repeat, .customize-control-content > .background-position, .customize-control-content > .background-size, .customize-control-content > .background-attachment' ).show();
+									}
+
+									control.saveBackgroundValue( 'background-image', imageUrl, upload_img_btn, name );
+									preview = controlContainer.find( '.placeholder, .thumbnail' );
+									removeButton = controlContainer.find( '.background-image-upload-remove-button' );
+
+									if ( preview.length ) {
+										preview.removeClass().addClass( 'thumbnail thumbnail-image' ).html( '<img src="' + previewImage + '" alt="" />' );
+									}
+
+									if ( removeButton.length ) {
+										removeButton.show();
+									}
+								}
 							);
 
-							wp.customize.previewer.refresh();
+							e.preventDefault();
+						}
+					);
+
+					controlContainer.on(
+						'click',
+						'.background-image-upload-remove-button',
+						function ( e ) {
+
+							let preview,
+								removeButton;
+
+							e.preventDefault();
+
+							control.saveBackgroundValue( 'background-image', '', $( this ) );
+
+							preview = controlContainer.find( '.placeholder, .thumbnail' );
+							removeButton = controlContainer.find( '.background-image-upload-remove-button' );
+
+							// Hide unnecessary controls.
+							controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
+							controlContainer.find( '.customize-control-content > .background-position' ).hide();
+							controlContainer.find( '.customize-control-content > .background-size' ).hide();
+							controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
+
+							if ( preview.length ) {
+								preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
+							}
+
+							if ( removeButton.length ) {
+								removeButton.hide();
+							}
+						}
+					);
+
+					// Background repeat setting.
+					controlContainer.on(
+						'change',
+						'.background-repeat select',
+						function () {
+							control.saveBackgroundValue( 'background-repeat', $( this ).val(), $( this ), name );
+						}
+					);
+
+					// Background position setting.
+					controlContainer.on(
+						'change',
+						'.background-position select',
+						function () {
+							control.saveBackgroundValue( 'background-position', $( this ).val(), $( this ), name );
+						}
+					);
+
+					// Background size setting.
+					controlContainer.on(
+						'change',
+						'.background-size select',
+						function () {
+							control.saveBackgroundValue( 'background-size', $( this ).val(), $( this ), name );
+						}
+					);
+
+					// Background attachment setting.
+					controlContainer.on(
+						'change',
+						'.background-attachment select',
+						function () {
+							control.saveBackgroundValue( 'background-attachment', $( this ).val(), $( this ), name );
+						}
+					);
+
+				},
+
+				saveBackgroundValue: function ( property, value, element, name ) {
+
+					let control = this,
+						input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
+						val     = JSON.parse( input.val() );
+
+					val[ property ] = value;
+
+					$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+					name = $( element ).parents( '.customize-control' ).attr( 'id' );
+					name = name.replace( 'customize-control-', '' );
+
+					control.container.trigger(
+						'colormag_settings_changed',
+						[
+							control,
+							element,
+							val,
+							name
+						]
+					);
+
+				},
+
+				initTypographyControl: function ( control, control_atts, name ) {
+
+                    let value            = control.setting._value,
+                        control_name     = control_atts.name,
+                        controlContainer = control.container.find( '#customize-control-' + control_name );
+
+					control_atts.input_attrs = window[ control_atts.name ].input_attrs;
+
+					// On customizer load, render the available font options.
+					control.renderTypographyFontSelector( $( this ), name, control_atts );
+					control.renderTypographyVariantSelector( $( this ), name, control_atts );
+					control.renderTypographySubsetSelector( $( this ), name, control_atts );
+
+					// Font style setting.
+					controlContainer.on(
+						'change',
+						'.font-style select',
+						function () {
+							control.saveTypographyValue( 'font-style', $( this ).val(), $( this ), name );
+						}
+					);
+
+					// Text transform setting.
+					controlContainer.on(
+						'change',
+						'.text-transform select',
+						function () {
+							control.saveTypographyValue( 'text-transform', $( this ).val(), $( this ), name );
+						}
+					);
+
+					// Text decoration setting.
+					controlContainer.on(
+						'change',
+						'.text-decoration select',
+						function () {
+							control.saveTypographyValue( 'text-decoration', $( this ).val(), $( this ), name );
+						}
+					);
+
+					// Font size setting.
+					controlContainer.on(
+						'change keyup paste input',
+						'.font-size input',
+						function () {
+							let inputValue     = jQuery( this ),
+								value          = inputValue.val(),
+								maxVal         = inputValue.attr( 'max' ),
+								minVal         = inputValue.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100,
+								wrapper        = jQuery( this ).closest( '.slider-wrapper' ),
+								range          = wrapper.find( 'input[type=range]' ),
+								input          = wrapper.find( 'input[type=number]' ),
+								device         = input.data( 'device' ),
+								selector       = wrapper.find( '.colormag-font-size-' + device + '-warning' ),
+								setRangeValue  = range.val( value ),
+								sliderValue    = `linear-gradient(to right, #0073AA 0%, #0073AA ${convertedValue}%, #ebebeb ${convertedValue}%, #ebebeb 100%)`;
+
+							range.css( 'background', sliderValue );
+
+							let maxValInt = parseFloat( maxVal ),
+								minValInt = parseFloat( minVal ),
+								valInt    = parseFloat( value );
+
+							if ( minValInt > valInt || maxValInt < valInt ) {
+								selector.html( "Value must be between " + minVal + " and " + maxVal );
+								selector.addClass( "warning-visible" );
+								inputValue.addClass( "invalid-color" );
+							} else {
+								selector.removeClass( "warning-visible" );
+								inputValue.removeClass( "invalid-color" );
+							}
+
+							control.saveTypographyFontSize( $( this ), name, control_atts );
+						}
+					);
+
+					// Font size progress bar setting.
+					controlContainer.find( '.font-size .control-wrap' ).each(
+						function () {
+							let device = jQuery( this ).find( 'input[type=number]' ).data( 'device' );
+							let slider         = jQuery( this ).closest( '.font-size' ).find( '.' + device + ' ' + 'input[type=range]' ),
+								value          = slider.val(),
+								maxVal         = slider.attr( 'max' ),
+								minVal         = slider.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100;
+
+							let sliderValue = `linear-gradient(to right, #0073AA 0%, #0073AA ${convertedValue}%, #ebebeb ${convertedValue}%, #ebebeb 100%)`;
+
+							slider.css( 'background', sliderValue );
 
 						}
+					);
+
+					// Line height progress bar setting.
+					control.container.find( '.line-height .control-wrap' ).each(
+						function () {
+							let device = jQuery( this ).find( 'input[type=number]' ).data( 'device' );
+							let slider         = jQuery( this ).closest( '.line-height' ).find( '.' + device + ' ' + 'input[type=range]' ),
+								value          = slider.val(),
+								maxVal         = slider.attr( 'max' ),
+								minVal         = slider.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100;
+
+							let sliderValue = `linear-gradient(to right, #0073AA 0%, #0073AA ${convertedValue}%, #ebebeb ${convertedValue}%, #ebebeb 100%)`;
+
+							slider.css( 'background', sliderValue );
+
+						}
+					);
+
+					// Letter spacing progress bar setting.
+					control.container.find( '.letter-spacing .control-wrap' ).each(
+						function () {
+							let device = jQuery( this ).find( 'input[type=number]' ).data( 'device' );
+							let slider         = jQuery( this ).closest( '.letter-spacing' ).find( '.' + device + ' ' + 'input[type=range]' ),
+								value          = slider.val(),
+								maxVal         = slider.attr( 'max' ),
+								minVal         = slider.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100;
+
+							let sliderValue = `linear-gradient(to right, #0073AA 0%, #0073AA ${convertedValue}%, #ebebeb ${convertedValue}%, #ebebeb 100%)`;
+
+							slider.css( 'background', sliderValue );
+
+						}
+					);
+
+					// Font size unit setting.
+					controlContainer.on(
+						'change keyup paste input',
+						'.font-size select',
+						function () {
+
+							var wrapper = jQuery( this ).closest( '.control-wrap' ),
+								  slider  = wrapper.find( '.range input' );
+
+							wrapper.find( '.size input' ).val( '' );
+							wrapper.find( '.range input' ).val( '' );
+
+							let sliderValue = `linear-gradient(to right, #0073AA 0%, #0073AA 0%, #ebebeb 0%, #ebebeb 100%)`;
+							slider.css( 'background', sliderValue );
+
+							control.saveTypographyFontSizeUnit( $( this ), name, control_atts );
+
+						}
+					);
+
+					// Line height setting.
+					controlContainer.on(
+						'change keyup paste input',
+						'.line-height input',
+						function () {
+							let inputValue     = jQuery( this ),
+								value          = inputValue.val(),
+								maxVal         = inputValue.attr( 'max' ),
+								minVal         = inputValue.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100,
+								wrapper        = jQuery( this ).closest( '.slider-wrapper' ),
+								range          = wrapper.find( 'input[type=range]' ),
+								input          = wrapper.find( 'input[type=number]' ),
+								device         = input.data( 'device' ),
+								selector       = wrapper.find( '.colormag-line-height-' + device + '-warning' ),
+								setRangeValue  = range.val( value ),
+								sliderValue    = `linear-gradient(to right, #0073AA 0%, #0073AA ${convertedValue}%, #ebebeb ${convertedValue}%, #ebebeb 100%)`;
+
+							range.css( 'background', sliderValue );
+
+							let maxValInt = parseFloat( maxVal ),
+								minValInt = parseFloat( minVal ),
+								valInt    = parseFloat( value );
+
+							if ( minValInt > valInt || maxValInt < valInt ) {
+								selector.html( "Value must be between " + minVal + " and " + maxVal );
+								selector.addClass( "warning-visible" );
+								inputValue.addClass( "invalid-color" );
+							} else {
+								selector.removeClass( "warning-visible" );
+								inputValue.removeClass( "invalid-color" );
+							}
+
+							control.saveTypographyLineHeight( $( this ), name, control_atts );
+						}
+					);
+
+					// Line height unit setting.
+					controlContainer.on(
+						'change keyup paste input',
+						'.line-height select',
+						function () {
+
+							let wrapper = jQuery( this ).closest( '.control-wrap' ),
+								slider   = wrapper.find( '.range input' );
+
+							wrapper.find( '.size input' ).val( '' );
+							wrapper.find( '.range input' ).val( '' );
+
+							let sliderValue = `linear-gradient(to right, #0073AA 0%, #0073AA 0%, #ebebeb 0%, #ebebeb 100%)`;
+							slider.css( 'background', sliderValue );
+
+							control.saveTypographyLineHeightUnit( $( this ), name, control_atts );
+
+						}
+					);
+
+					// Letter spacing setting.
+					controlContainer.on(
+						'change keyup paste input',
+						'.letter-spacing input',
+						function () {
+							let inputValue     = jQuery( this ),
+								value          = inputValue.val(),
+								maxVal         = inputValue.attr( 'max' ),
+								minVal         = inputValue.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100,
+								wrapper        = jQuery( this ).closest( '.slider-wrapper' ),
+								range          = wrapper.find( 'input[type=range]' ),
+								input          = wrapper.find( 'input[type=number]' ),
+								device         = input.data( 'device' ),
+								selector       = wrapper.find( '.colormag-letter-spacing-' + device + '-warning' ),
+								setRangeValue  = range.val( value ),
+								sliderValue    = `linear-gradient(to right, #0073AA 0%, #0073AA ${convertedValue}%, #ebebeb ${convertedValue}%, #ebebeb 100%)`;
+
+							range.css( 'background', sliderValue );
+
+							let maxValInt = parseFloat( maxVal ),
+								minValInt = parseFloat( minVal ),
+								valInt    = parseFloat( value );
+
+							if ( minValInt > valInt || maxValInt < valInt ) {
+								selector.html( "Value must be between " + minVal + " and " + maxVal );
+								selector.addClass( "warning-visible" );
+								inputValue.addClass( "invalid-color" );
+							} else {
+								selector.removeClass( "warning-visible" );
+								inputValue.removeClass( "invalid-color" );
+							}
+
+							control.saveTypographyLetterSpacing( $( this ), name, control_atts );
+						}
+					);
+
+					// Letter spacing unit setting.
+					controlContainer.on(
+						'change keyup paste input',
+						'.letter-spacing select',
+						function () {
+							control.saveTypographyLetterSpacingUnit( $( this ), name, control_atts );
+						}
+					);
+
+					// On font size range input change.
+					this.container.find( '.font-size input[type=range]' ).on(
+						'input change',
+						function () {
+
+							let slider         = jQuery( this ),
+								value          = slider.val(),
+								maxVal         = slider.attr( 'max' ),
+								minVal         = slider.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100,
+								input_number   = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .input-wrapper input' ),
+								sliderValue    = `linear - gradient( to right, #0073AA 0 % , #0073AA ${convertedValue} % , #ebebeb ${convertedValue} % , #ebebeb 100 % )`;
+
+							slider.css( 'background', sliderValue );
+
+							input_number.val( value );
+							input_number.change();
+						}
+					);
+
+					// On line height range input change.
+					this.container.find( '.line-height input[type=range]' ).on(
+						'input change',
+						function () {
+
+							let slider         = jQuery( this ),
+								value          = slider.val(),
+								maxVal         = slider.attr( 'max' ),
+								minVal         = slider.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100,
+								input_number   = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .input-wrapper input' ),
+								sliderValue    = `linear - gradient( to right, #0073AA 0 % , #0073AA ${convertedValue} % , #ebebeb ${convertedValue} % , #ebebeb 100 % )`;
+
+							slider.css( 'background', sliderValue );
+
+							input_number.val( value );
+							input_number.change();
+						}
+					);
+
+					// On letter spacing range input change.
+					this.container.find( '.letter-spacing input[type=range]' ).on(
+						'input change',
+						function () {
+
+							let slider         = jQuery( this ),
+								value          = slider.val(),
+								maxVal         = slider.attr( 'max' ),
+								minVal         = slider.attr( 'min' ),
+								convertedValue = ( value - minVal ) / ( maxVal - minVal ) * 100,
+								input_number   = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .input-wrapper input' ),
+								sliderValue    = `linear - gradient( to right, #0073AA 0 % , #0073AA ${convertedValue} % , #ebebeb ${convertedValue} % , #ebebeb 100 % )`;
+
+							slider.css( 'background', sliderValue );
+
+							input_number.val( value );
+							input_number.change();
+						}
+					);
+
+					// Reset value.
+					function resetControlValues(controlType) {
+						control.container.find( `.${controlType} .control-wrap` ).each( function () {
+							const wrapper      = jQuery( this ),
+								  slider       = wrapper.find( '.range input' ),
+								  input        = wrapper.find( '.size input' ),
+								  unit         = wrapper.find( '.unit-wrapper select' ),
+								  defaultValue = slider.data( 'reset_value' ),
+								  defaultUnit  = slider.data( 'reset_unit' );
+
+							if ( defaultUnit ) {
+								let attr = control_atts.input_attrs.attributes_config[ controlType ][ defaultUnit ];
+
+								if ( attr ) {
+									jQuery( this ).find( 'input' ).each(
+										function () {
+											jQuery( this ).attr( 'min', attr.min );
+											jQuery( this ).attr( 'max', attr.max );
+											jQuery( this ).attr( 'step', attr.step );
+										}
+									)
+								}
+							}
+
+							unit.val(defaultUnit);
+							slider.val(defaultValue);
+							input.val(defaultValue);
+							input.change();
+						});
 					}
-				);
-			},
 
-			initBackgroundControl : function ( control, control_atts, name ) {
+					control.container.on('click', '.colormag-font-size-reset', function () {
+						resetControlValues('font-size');
+					});
 
-				var input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
-				    value            = JSON.parse( input.val() ),
-				    control_name     = control_atts.name,
-				    colorpicker      = control.container.find( '.colormag-color-picker-alpha' ),
-				    controlContainer = control.container.find( '#customize-control-' + control_name );
+					control.container.on('click', '.colormag-line-height-reset', function () {
+						resetControlValues('line-height');
+					});
 
-				// Hide unnecessary controls if the value doesn't have an image.
-				if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
-					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
-					controlContainer.find( '.customize-control-content > .background-position' ).hide();
-					controlContainer.find( '.customize-control-content > .background-size' ).hide();
-					controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
-				}
+					control.container.on('click', '.colormag-letter-spacing-reset', function () {
+						resetControlValues('letter-spacing');
+					});
 
-				// Background color setting.
-				colorpicker.wpColorPicker(
-					{
-						change : function () {
 
-							if ( $( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-								var $this = $( this );
+				},
 
-								setTimeout(
-									function () {
-										control.saveBackgroundValue( 'background-color', colorpicker.val(), $this, name );
-									},
-									100
+				renderTypographyFontSelector: function ( element, name, control_atts ) {
+
+					let control       = this,
+						selector      = control.selector + ' .font-family select',
+						standardFonts = [],
+						googleFonts   = [],
+						customFonts   = [],
+						input         = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						value         = JSON.parse( input.val() ),
+						fonts         = control.getTypographyFonts(),
+						fontSelect;
+
+					// Format standard fonts as an array.
+					if ( ! _.isUndefined( fonts.standard ) ) {
+						_.each(
+							fonts.standard,
+							function ( font ) {
+								standardFonts.push(
+									{
+										id: font.family.replace( /&quot;/g, '&#39' ),
+										text: font.label
+									}
 								);
 							}
+						);
+					}
 
-						},
-
-						clear : function ( event ) {
-
-							var element = $( event.target ).closest( '.wp-picker-input-wrap' ).find( '.wp-color-picker' )[0];
-
-							if ( element ) {
-								control.saveBackgroundValue( 'background-color', '', $( element ), name );
+					// Format Google fonts as an array.
+					if ( ! _.isUndefined( fonts.google ) ) {
+						_.each(
+							fonts.google,
+							function ( font ) {
+								googleFonts.push(
+									{
+										id: font.family,
+										text: font.label
+									}
+								);
 							}
-
-							wp.customize.previewer.refresh();
-
-						}
-					}
-				);
-
-				// Background image setting..
-				controlContainer.on( 'click', '.background-image-upload-button, .thumbnail-image img', function ( e ) {
-					var upload_img_btn = $( this );
-					var image          = wp.media( { multiple : false } ).open().on( 'select', function () {
-
-						// This will return the selected image from the Media Uploader, the result is an object.
-						var uploadedImage = image.state().get( 'selection' ).first(),
-						    previewImage  = uploadedImage.toJSON().sizes.full.url,
-						    imageUrl,
-						    imageID,
-						    imageWidth,
-						    imageHeight,
-						    preview,
-						    removeButton;
-
-						if ( ! _.isUndefined( uploadedImage.toJSON().sizes.medium ) ) {
-							previewImage = uploadedImage.toJSON().sizes.medium.url;
-						} else if ( ! _.isUndefined( uploadedImage.toJSON().sizes.thumbnail ) ) {
-							previewImage = uploadedImage.toJSON().sizes.thumbnail.url;
-						}
-
-						imageUrl    = uploadedImage.toJSON().sizes.full.url;
-						imageID     = uploadedImage.toJSON().id;
-						imageWidth  = uploadedImage.toJSON().width;
-						imageHeight = uploadedImage.toJSON().height;
-
-						// Show extra controls if the value has an image.
-						if ( '' !== imageUrl ) {
-							controlContainer.find( '.customize-control-content > .background-repeat, .customize-control-content > .background-position, .customize-control-content > .background-size, .customize-control-content > .background-attachment' ).show();
-						}
-
-						control.saveBackgroundValue( 'background-image', imageUrl, upload_img_btn, name );
-						preview      = controlContainer.find( '.placeholder, .thumbnail' );
-						removeButton = controlContainer.find( '.background-image-upload-remove-button' );
-
-						if ( preview.length ) {
-							preview.removeClass().addClass( 'thumbnail thumbnail-image' ).html( '<img src="' + previewImage + '" alt="" />' );
-						}
-
-						if ( removeButton.length ) {
-							removeButton.show();
-						}
-					} );
-
-					e.preventDefault();
-				} );
-
-				controlContainer.on( 'click', '.background-image-upload-remove-button', function ( e ) {
-
-					var preview,
-					    removeButton;
-
-					e.preventDefault();
-
-					control.saveBackgroundValue( 'background-image', '', $( this ) );
-
-					preview      = controlContainer.find( '.placeholder, .thumbnail' );
-					removeButton = controlContainer.find( '.background-image-upload-remove-button' );
-
-					// Hide unnecessary controls.
-					controlContainer.find( '.customize-control-content > .background-repeat' ).hide();
-					controlContainer.find( '.customize-control-content > .background-position' ).hide();
-					controlContainer.find( '.customize-control-content > .background-size' ).hide();
-					controlContainer.find( '.customize-control-content > .background-attachment' ).hide();
-
-					if ( preview.length ) {
-						preview.removeClass().addClass( 'placeholder' ).html( ColorMagCustomizerControlBackground.placeholder );
+						);
 					}
 
-					if ( removeButton.length ) {
-						removeButton.hide();
+					// Combine fonts and build the final data.
+					data = [
+						{
+							text: fonts.standardfontslabel,
+							children: standardFonts
+						},
+						{
+							text: fonts.googlefontslabel,
+							children: googleFonts
+						}
+					];
+
+					// Format custom fonts as an array.
+					if ( ! _.isUndefined( fonts.custom ) ) {
+						_.each(
+							fonts.custom,
+							function ( font ) {
+								customFonts.push(
+									{
+										id: font.family,
+										text: font.label
+									}
+								);
+							}
+						);
+
+						// Merge on `data` array.
+						data.push(
+							{
+								text: fonts.customfontslabel,
+								children: customFonts
+							}
+						);
 					}
-				} );
 
-				// Background repeat setting.
-				controlContainer.on( 'change', '.background-repeat select', function () {
-					control.saveBackgroundValue( 'background-repeat', $( this ).val(), $( this ), name );
-				} );
+					// Instantiate selectWoo with the data.
+					fontSelect = $( selector ).selectWoo(
+						{
+							data: data,
+							width: '100%'
+						}
+					);
 
-				// Background position setting.
-				controlContainer.on( 'change', '.background-position select', function () {
-					control.saveBackgroundValue( 'background-position', $( this ).val(), $( this ), name );
-				} );
+					// Set the initial value.
+					if ( value[ 'font-family' ] ) {
+						fontSelect.val( value[ 'font-family' ].replace( /'/g, '"' ) ).trigger( 'change' );
+					}
 
-				// Background size setting.
-				controlContainer.on( 'change', '.background-size select', function () {
-					control.saveBackgroundValue( 'background-size', $( this ).val(), $( this ), name );
-				} );
+					// When the font option value changes.
+					fontSelect.on(
+						'change',
+						function () {
 
-				// Background attachment setting.
-				controlContainer.on( 'change', '.background-attachment select', function () {
-					control.saveBackgroundValue( 'background-attachment', $( this ).val(), $( this ), name );
-				} );
+							// Set the value.
+							control.saveTypographyValue( 'font-family', $( this ).val(), $( this ), name );
 
-			},
+							// Render new list of selected font options.
+							control.renderTypographyVariantSelector( $( this ), name, control_atts );
+							control.renderTypographySubsetSelector( $( this ), name, control_atts );
 
-			saveBackgroundValue : function ( property, value, element, name ) {
+						}
+					);
 
-				var control = this,
-				    input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .background-hidden-value' ),
-				    val     = JSON.parse( input.val() );
+				},
 
-				val[property] = value;
+				getTypographyFonts: function () {
 
-				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+					let control = this;
 
-				name = $( element ).parents( '.customize-control' ).attr( 'id' );
-				name = name.replace( 'customize-control-', '' );
+					if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
+						return ColorMagCustomizerControlTypography;
+					}
 
-				control.container.trigger(
-					'colormag_settings_changed',
-					[
-						control,
-						element,
-						val,
-						name
-					]
-				);
+					return {
+						google: [],
+						standard: []
+					};
 
-			},
+				},
 
-			initTypographyControl : function ( control, control_atts, name ) {
+				renderTypographyVariantSelector: function ( element, name, control_atts ) {
 
-				var value            = control.setting._value,
-				    control_name     = control_atts.name,
-				    controlContainer = control.container.find( '#customize-control-' + control_name );
+					let control    = this,
+						input      = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						value      = JSON.parse( input.val() ),
+						fontFamily = value[ 'font-family' ],
+						variants   = control.getTypographyVariants( fontFamily ),
+						selector   = control.selector + ' .font-weight select',
+						data       = [],
+						isValid    = false,
+						variantSelector;
 
-				// On customizer load, render the available font options.
-				control.renderTypographyFontSelector( $( this ), name, control_atts );
-				control.renderTypographyVariantSelector( $( this ), name, control_atts );
-				control.renderTypographySubsetSelector( $( this ), name, control_atts );
+					if ( false !== variants ) {
 
-				// Font style setting.
-				controlContainer.on( 'change', '.font-style select', function () {
-					control.saveTypographyValue( 'font-style', $( this ).val(), $( this ), name );
-				} );
+						$( control.selector + ' .font-weight' ).show();
+						_.each(
+							variants,
+							function ( variant ) {
+								if ( value[ 'font-weight' ] === variant.id ) {
+									isValid = true;
+								}
 
-				// Text transform setting.
-				controlContainer.on( 'change', '.text-transform select', function () {
-					control.saveTypographyValue( 'text-transform', $( this ).val(), $( this ), name );
-				} );
+								data.push(
+									{
+										id: variant.id,
+										text: variant.label
+									}
+								);
+							}
+						);
 
-				// Text decoration setting.
-				controlContainer.on( 'change', '.text-decoration select', function () {
-					control.saveTypographyValue( 'text-decoration', $( this ).val(), $( this ), name );
-				} );
+						if ( ! isValid ) {
+							value[ 'font-weight' ] = 'regular';
+						}
 
-				// Font size setting.
-				controlContainer.on( 'change keyup paste input', '.font-size input', function () {
-					control.saveTypographyFontSize( $( this ), name, control_atts );
-				} );
+						if ( $( selector ).hasClass( 'select2-hidden-accessible' ) ) {
+							$( selector ).selectWoo( 'destroy' );
+							$( selector ).empty();
+						}
 
-				// Line height setting.
-				controlContainer.on( 'change keyup paste input', '.line-height input', function () {
-					control.saveTypographyLineHeight( $( this ), name, control_atts );
-				} );
+						// Instantiate selectWoo with the data.
+						variantSelector = $( selector ).selectWoo(
+							{
+								data: data,
+								width: '100%'
+							}
+						);
 
-				// Letter spacing setting.
-				controlContainer.on( 'change keyup paste input', '.letter-spacing input', function () {
-					control.saveTypographyLetterSpacing( $( this ), name, control_atts );
-				} );
+						variantSelector.val( value[ 'font-weight' ] ).trigger( 'change' );
+						variantSelector.on(
+							'change',
+							function () {
+								control.saveTypographyValue( 'font-weight', $( this ).val(), $( this ), name );
+							}
+						);
 
-			},
+					} else {
 
-			renderTypographyFontSelector : function ( element, name, control_atts ) {
+						$( control.selector + ' .font-weight' ).hide();
 
-				var control       = this,
-				    selector      = control.selector + ' .font-family select',
-				    standardFonts = [],
-				    googleFonts   = [],
-				    customFonts   = [],
-				    input         = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    value         = JSON.parse( input.val() ),
-				    fonts         = control.getTypographyFonts(),
-				    fontSelect;
+					}
 
-				// Format standard fonts as an array.
-				if ( ! _.isUndefined( fonts.standard ) ) {
+				},
+
+				getTypographyVariants: function ( fontFamily ) {
+
+					let control = this,
+						fonts   = control.getTypographyFonts();
+
+					let variants = false;
 					_.each(
 						fonts.standard,
 						function ( font ) {
-							standardFonts.push(
-								{
-									id   : font.family.replace( /&quot;/g, '&#39' ),
-									text : font.label
-								}
-							);
+							if ( fontFamily && font.family === fontFamily.replace( /'/g, '"' ) ) {
+								variants = font.variants;
+
+								return variants;
+							}
 						}
 					);
-				}
 
-				// Format Google fonts as an array.
-				if ( ! _.isUndefined( fonts.google ) ) {
 					_.each(
 						fonts.google,
 						function ( font ) {
-							googleFonts.push(
-								{
-									id   : font.family,
-									text : font.label
-								}
-							);
-						}
-					);
-				}
+							if ( font.family === fontFamily ) {
+								variants = font.variants;
 
-				// Combine fonts and build the final data.
-				data = [
-					{
-						text     : fonts.standardfontslabel,
-						children : standardFonts
-					},
-					{
-						text     : fonts.googlefontslabel,
-						children : googleFonts
-					}
-				];
-
-				// Format custom fonts as an array.
-				if ( ! _.isUndefined( fonts.custom ) ) {
-					_.each(
-						fonts.custom,
-						function ( font ) {
-							customFonts.push(
-								{
-									id   : font.family,
-									text : font.label
-								}
-							);
-						}
-					);
-
-					// Merge on `data` array.
-					data.push(
-						{
-							text     : fonts.customfontslabel,
-							children : customFonts
-						}
-					);
-				}
-
-				// Instantiate selectWoo with the data.
-				fontSelect = $( selector ).selectWoo(
-					{
-						data  : data,
-						width : '100%'
-					}
-				);
-
-				// Set the initial value.
-				if ( value['font-family'] ) {
-					fontSelect.val( value['font-family'].replace( /'/g, '"' ) ).trigger( 'change' );
-				}
-
-				// When the font option value changes.
-				fontSelect.on(
-					'change',
-					function () {
-
-						// Set the value.
-						control.saveTypographyValue( 'font-family', $( this ).val(), $( this ), name );
-
-						// Render new list of selected font options.
-						control.renderTypographyVariantSelector( $( this ), name, control_atts );
-						control.renderTypographySubsetSelector( $( this ), name, control_atts );
-
-					}
-				);
-
-			},
-
-			getTypographyFonts : function () {
-
-				var control = this;
-
-				if ( ! _.isUndefined( ColorMagCustomizerControlTypography ) ) {
-					return ColorMagCustomizerControlTypography;
-				}
-
-				return {
-					google   : [],
-					standard : []
-				};
-
-			},
-
-			renderTypographyVariantSelector : function ( element, name, control_atts ) {
-
-				var control    = this,
-				    input      = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    value      = JSON.parse( input.val() ),
-				    fontFamily = value['font-family'],
-				    variants   = control.getTypographyVariants( fontFamily ),
-				    selector   = control.selector + ' .font-weight select',
-				    data       = [],
-				    isValid    = false,
-				    variantSelector;
-
-				if ( false !== variants ) {
-
-					$( control.selector + ' .font-weight' ).show();
-					_.each(
-						variants,
-						function ( variant ) {
-							if ( value['font-weight'] === variant.id ) {
-								isValid = true;
+								return variants;
 							}
-
-							data.push(
-								{
-									id   : variant.id,
-									text : variant.label
-								}
-							);
 						}
 					);
 
-					if ( ! isValid ) {
-						value['font-weight'] = 'regular';
+					// For custom fonts.
+					if ( ! _.isUndefined( fonts.custom ) ) {
+						_.each(
+							fonts.custom,
+							function ( font ) {
+								if ( font.custom === fontFamily ) {
+									variants = font.variants;
+
+									return variants;
+								}
+							}
+						);
+					}
+
+					return variants;
+
+				},
+
+				renderTypographySubsetSelector: function ( element, name, control_atts ) {
+
+					let control    = this,
+						input      = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						value      = JSON.parse( input.val() ),
+						fontFamily = value[ 'font-family' ],
+						subsets    = control.getTypographySubsets( fontFamily ),
+						selector   = control.selector + ' .subsets select',
+						data       = [],
+						validValue = value.subsets,
+						subsetSelector;
+
+					if ( false !== subsets ) {
+
+						$( control.selector + ' .subsets' ).show();
+						_.each(
+							subsets,
+							function ( subset ) {
+								if ( _.isObject( validValue ) ) {
+									if ( -1 === validValue.indexOf( subset.id ) ) {
+										validValue = _.reject(
+											validValue,
+											function ( subValue ) {
+												return subValue === subset.id;
+											}
+										);
+									}
+								}
+
+								data.push(
+									{
+										id: subset.id,
+										text: subset.label
+									}
+								);
+							}
+						);
+
+					} else {
+
+						$( control.selector + ' .subsets' ).hide();
+
 					}
 
 					if ( $( selector ).hasClass( 'select2-hidden-accessible' ) ) {
@@ -762,309 +1228,429 @@
 					}
 
 					// Instantiate selectWoo with the data.
-					variantSelector = $( selector ).selectWoo(
+					subsetSelector = $( selector ).selectWoo(
 						{
-							data  : data,
-							width : '100%'
+							data: data,
+							width: '100%'
 						}
 					);
 
-					variantSelector.val( value['font-weight'] ).trigger( 'change' );
-					variantSelector.on(
+					subsetSelector.val( validValue ).trigger( 'change' );
+					subsetSelector.on(
 						'change',
 						function () {
-							control.saveTypographyValue( 'font-weight', $( this ).val(), $( this ), name );
+							control.saveTypographyValue( 'subsets', $( this ).val(), $( this ), name );
 						}
 					);
 
-				} else {
+				},
 
-					$( control.selector + ' .font-weight' ).hide();
+				getTypographySubsets: function ( fontFamily ) {
 
-				}
+					let control = this,
+						subsets = false,
+						fonts   = control.getTypographyFonts();
 
-			},
-
-			getTypographyVariants : function ( fontFamily ) {
-
-				var control = this,
-				    fonts   = control.getTypographyFonts();
-
-				var variants = false;
-				_.each(
-					fonts.standard,
-					function ( font ) {
-						if ( fontFamily && font.family === fontFamily.replace( /'/g, '"' ) ) {
-							variants = font.variants;
-
-							return variants;
-						}
-					}
-				);
-
-				_.each(
-					fonts.google,
-					function ( font ) {
-						if ( font.family === fontFamily ) {
-							variants = font.variants;
-
-							return variants;
-						}
-					}
-				);
-
-				// For custom fonts.
-				if ( ! _.isUndefined( fonts.custom ) ) {
 					_.each(
-						fonts.custom,
+						fonts.google,
 						function ( font ) {
-							if ( font.custom === fontFamily ) {
-								variants = font.variants;
+							if ( font.family === fontFamily ) {
+								subsets = font.subsets;
 
-								return variants;
+								return subsets;
 							}
 						}
 					);
-				}
 
-				return variants;
+					return subsets;
 
-			},
+				},
 
-			renderTypographySubsetSelector : function ( element, name, control_atts ) {
+				saveTypographyFontSize: function ( element, name, control_atts ) {
 
-				var control    = this,
-				    input      = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    value      = JSON.parse( input.val() ),
-				    fontFamily = value['font-family'],
-				    subsets    = control.getTypographySubsets( fontFamily ),
-				    selector   = control.selector + ' .subsets select',
-				    data       = [],
-				    validValue = value.subsets,
-				    subsetSelector;
+					let control          = this,
+						input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val              = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						controlContainer = control.container.find( '#customize-control-' + control_name ),
+						newValue         = {
+							'font-size': {
+								'desktop': {
+									'size': val[ 'font-size' ][ 'desktop' ][ 'size' ],
+									'unit': val[ 'font-size' ][ 'desktop' ][ 'unit' ]
 
-				if ( false !== subsets ) {
+								},
+								'tablet': {
+									'size': val[ 'font-size' ][ 'tablet' ][ 'size' ],
+									'unit': val[ 'font-size' ][ 'tablet' ][ 'unit' ]
+								},
+								'mobile': {
+									'size': val[ 'font-size' ][ 'mobile' ][ 'size' ],
+									'unit': val[ 'font-size' ][ 'mobile' ][ 'unit' ]
+								}
+							}
+						};
 
-					$( control.selector + ' .subsets' ).show();
-					_.each(
-						subsets,
-						function ( subset ) {
-							if ( _.isObject( validValue ) ) {
-								if ( - 1 === validValue.indexOf( subset.id ) ) {
-									validValue = _.reject(
-										validValue,
-										function ( subValue ) {
-											return subValue === subset.id;
+					controlContainer.find( '.font-size .control-wrap' ).each(
+						function () {
+							let controlValue = $( this ).find( 'input[type=number]' ).val();
+							let device = $( this ).find( 'input[type=number]' ).data( 'device' );
+
+							if ( ! newValue[ 'font-size' ][ device ] ) {
+								newValue[ 'font-size' ][ device ] = {};
+							}
+
+							newValue[ 'font-size' ][ device ][ 'size' ] = controlValue;
+						}
+					);
+
+					// Extend/Update the `val` object to include `newValue`'s new data as an object.
+					$.extend( val, newValue );
+
+					$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+					name = $( element ).parents( '.customize-control' ).attr( 'id' );
+					name = name.replace( 'customize-control-', '' );
+
+					control.container.trigger(
+						'colormag_settings_changed',
+						[
+							control,
+							element,
+							val,
+							name
+						]
+					);
+
+				},
+
+				saveTypographyFontSizeUnit: function ( element, name, control_atts ) {
+
+					let control          = this,
+						input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val              = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						controlContainer = control.container.find( '#customize-control-' + control_name ),
+						newValue         = {
+							'font-size': {
+								'desktop': {
+									'size': val[ 'font-size' ][ 'desktop' ][ 'size' ],
+									'unit': val[ 'font-size' ][ 'desktop' ][ 'unit' ]
+
+								},
+								'tablet': {
+									'size': val[ 'font-size' ][ 'tablet' ][ 'size' ],
+									'unit': val[ 'font-size' ][ 'tablet' ][ 'unit' ]
+								},
+								'mobile': {
+									'size': val[ 'font-size' ][ 'mobile' ][ 'size' ],
+									'unit': val[ 'font-size' ][ 'mobile' ][ 'unit' ]
+								}
+							}
+						};
+
+					controlContainer.find( '.font-size .control-wrap' ).each(
+						function () {
+							let controlValue = $( this ).find( 'select' ).val();
+							let device = $( this ).find( 'select' ).data( 'device' );
+
+							if ( ! newValue[ 'font-size' ][ device ] ) {
+								newValue[ 'font-size' ][ device ] = {};
+							}
+
+							control_atts.input_attrs = window[ control_atts.name ].input_attrs;
+
+							if ( controlValue ) {
+								let attr = control_atts.input_attrs.attributes_config[ 'font-size' ][ controlValue ];
+
+								if ( attr ) {
+									jQuery( this ).find( 'input' ).each(
+										function () {
+											jQuery( this ).attr( 'min', attr.min );
+											jQuery( this ).attr( 'max', attr.max );
+											jQuery( this ).attr( 'step', attr.step );
 										}
-									);
+									)
 								}
 							}
 
-							data.push(
-								{
-									id   : subset.id,
-									text : subset.label
-								}
-							);
+							newValue[ 'font-size' ][ device ][ 'unit' ] = controlValue;
 						}
 					);
 
-				} else {
+					// Extend/Update the `val` object to include `newValue`'s new data as an object.
+					$.extend( val, newValue );
 
-					$( control.selector + ' .subsets' ).hide();
+					$( input ).attr( 'value', JSON.stringify( val ) );
 
-				}
+				},
 
-				if ( $( selector ).hasClass( 'select2-hidden-accessible' ) ) {
-					$( selector ).selectWoo( 'destroy' );
-					$( selector ).empty();
-				}
+				saveTypographyLineHeight: function ( element, name, control_atts ) {
 
-				// Instantiate selectWoo with the data.
-				subsetSelector = $( selector ).selectWoo(
-					{
-						data  : data,
-						width : '100%'
-					}
-				);
+					let control          = this,
+						input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val              = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						controlContainer = control.container.find( '#customize-control-' + control_name ),
+						newValue         = {
+							'line-height': {
+								'desktop': {
+									'size': val[ 'line-height' ][ 'desktop' ][ 'size' ],
+									'unit': val[ 'line-height' ][ 'desktop' ][ 'unit' ]
 
-				subsetSelector.val( validValue ).trigger( 'change' );
-				subsetSelector.on(
-					'change',
-					function () {
-						control.saveTypographyValue( 'subsets', $( this ).val(), $( this ), name );
-					}
-				);
+								},
+								'tablet': {
+									'size': val[ 'line-height' ][ 'tablet' ][ 'size' ],
+									'unit': val[ 'line-height' ][ 'tablet' ][ 'unit' ]
+								},
+								'mobile': {
+									'size': val[ 'line-height' ][ 'mobile' ][ 'size' ],
+									'unit': val[ 'line-height' ][ 'mobile' ][ 'unit' ]
+								}
+							}
+						};
 
-			},
+					controlContainer.find( '.line-height .control-wrap' ).each(
+						function () {
+							let controlValue = $( this ).find( 'input[type=number]' ).val();
+							let device = $( this ).find( 'input[type=number]' ).data( 'device' );
 
-			getTypographySubsets : function ( fontFamily ) {
+							if ( ! newValue[ 'line-height' ][ device ] ) {
+								newValue[ 'line-height' ][ device ] = {};
+							}
 
-				var control = this,
-				    subsets = false,
-				    fonts   = control.getTypographyFonts();
+							newValue[ 'line-height' ][ device ][ 'size' ] = controlValue;
 
-				_.each(
-					fonts.google,
-					function ( font ) {
-						if ( font.family === fontFamily ) {
-							subsets = font.subsets;
-
-							return subsets;
 						}
-					}
-				);
+					);
 
-				return subsets;
+					// Extend/Update the `val` object to include `newValue`'s new data as an object.
+					$.extend( val, newValue );
 
-			},
+					$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 
-			saveTypographyFontSize : function ( element, name, control_atts ) {
+					name = $( element ).parents( '.customize-control' ).attr( 'id' );
+					name = name.replace( 'customize-control-', '' );
 
-				var control          = this,
-				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    val              = JSON.parse( input.val() ),
-				    control_name     = control_atts.name,
-				    controlContainer = control.container.find( '#customize-control-' + control_name ),
-				    newValue         = {
-					    'font-size' : {}
-				    };
+					control.container.trigger(
+						'colormag_settings_changed',
+						[
+							control,
+							element,
+							val,
+							name
+						]
+					);
 
-				controlContainer.find( '.font-size .control-wrap' ).each(
-					function () {
-						var controlValue = $( this ).find( 'input' ).val();
-						var device       = $( this ).find( 'input' ).data( 'device' );
+				},
 
-						newValue['font-size'][device] = controlValue;
-					}
-				);
+				saveTypographyLineHeightUnit: function ( element, name, control_atts ) {
 
-				// Extend/Update the `val` object to include `newValue`'s new data as an object.
-				$.extend( val, newValue );
+					let control          = this,
+						input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val              = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						controlContainer = control.container.find( '#customize-control-' + control_name ),
+						newValue         = {
+							'line-height': {
+								'desktop': {
+									'size': val[ 'line-height' ][ 'desktop' ][ 'size' ],
+									'unit': val[ 'line-height' ][ 'desktop' ][ 'unit' ]
 
-				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+								},
+								'tablet': {
+									'size': val[ 'line-height' ][ 'tablet' ][ 'size' ],
+									'unit': val[ 'line-height' ][ 'tablet' ][ 'unit' ]
+								},
+								'mobile': {
+									'size': val[ 'line-height' ][ 'mobile' ][ 'size' ],
+									'unit': val[ 'line-height' ][ 'mobile' ][ 'unit' ]
+								}
+							}
+						};
 
-				name = $( element ).parents( '.customize-control' ).attr( 'id' );
-				name = name.replace( 'customize-control-', '' );
+					controlContainer.find( '.line-height .control-wrap' ).each(
+						function () {
+							let controlValue = $( this ).find( 'select' ).val();
+							let device = $( this ).find( 'select' ).data( 'device' );
 
-				control.container.trigger(
-					'colormag_settings_changed',
-					[
-						control,
-						element,
-						val,
-						name
-					]
-				);
+							if ( ! newValue[ 'line-height' ][ device ] ) {
+								newValue[ 'line-height' ][ device ] = {};
+							}
 
-			},
+							control_atts.input_attrs = window[ control_atts.name ].input_attrs;
 
-			saveTypographyLineHeight : function ( element, name, control_atts ) {
+							if ( controlValue ) {
+								let attr = control_atts.input_attrs.attributes_config[ 'line-height' ][ controlValue ];
 
-				var control          = this,
-				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    val              = JSON.parse( input.val() ),
-				    control_name     = control_atts.name,
-				    controlContainer = control.container.find( '#customize-control-' + control_name ),
-				    newValue         = {
-					    'line-height' : {}
-				    };
+								if ( attr ) {
+									jQuery( this ).find( 'input' ).each(
+										function () {
+											jQuery( this ).attr( 'min', attr.min );
+											jQuery( this ).attr( 'max', attr.max );
+											jQuery( this ).attr( 'step', attr.step );
+										}
+									)
+								}
+							}
 
-				controlContainer.find( '.line-height .control-wrap' ).each(
-					function () {
-						var controlValue = $( this ).find( 'input' ).val();
-						var device       = $( this ).find( 'input' ).data( 'device' );
+							newValue[ 'line-height' ][ device ][ 'unit' ] = controlValue;
 
-						newValue['line-height'][device] = controlValue;
-					}
-				);
+						}
+					);
 
-				// Extend/Update the `val` object to include `newValue`'s new data as an object.
-				$.extend( val, newValue );
+					// Extend/Update the `val` object to include `newValue`'s new data as an object.
+					$.extend( val, newValue );
 
-				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+					$( input ).attr( 'value', JSON.stringify( val ) );
 
-				name = $( element ).parents( '.customize-control' ).attr( 'id' );
-				name = name.replace( 'customize-control-', '' );
+				},
 
-				control.container.trigger(
-					'colormag_settings_changed',
-					[
-						control,
-						element,
-						val,
-						name
-					]
-				);
+				saveTypographyLetterSpacing: function ( element, name, control_atts ) {
 
-			},
+					let control          = this,
+						input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val              = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						controlContainer = control.container.find( '#customize-control-' + control_name ),
+						newValue         = {
+							'letter-spacing': {
+								'desktop': {
+									'size': val[ 'letter-spacing' ][ 'desktop' ][ 'size' ],
+									'unit': val[ 'letter-spacing' ][ 'desktop' ][ 'unit' ]
 
-			saveTypographyLetterSpacing : function ( element, name, control_atts ) {
+								},
+								'tablet': {
+									'size': val[ 'letter-spacing' ][ 'tablet' ][ 'size' ],
+									'unit': val[ 'letter-spacing' ][ 'tablet' ][ 'unit' ]
+								},
+								'mobile': {
+									'size': val[ 'letter-spacing' ][ 'mobile' ][ 'size' ],
+									'unit': val[ 'letter-spacing' ][ 'mobile' ][ 'unit' ]
+								}
+							}
+						};
 
-				var control          = this,
-				    input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    val              = JSON.parse( input.val() ),
-				    control_name     = control_atts.name,
-				    controlContainer = control.container.find( '#customize-control-' + control_name ),
-				    newValue         = {
-					    'letter-spacing' : {}
-				    };
+					controlContainer.find( '.letter-spacing .control-wrap' ).each(
+						function () {
+							let controlValue = $( this ).find( 'input[type=number]' ).val();
+							let device = $( this ).find( 'input[type=number]' ).data( 'device' );
 
-				controlContainer.find( '.letter-spacing .control-wrap' ).each(
-					function () {
-						var controlValue = $( this ).find( 'input' ).val();
-						var device       = $( this ).find( 'input' ).data( 'device' );
+							if ( ! newValue[ 'letter-spacing' ][ device ] ) {
+								newValue[ 'letter-spacing' ][ device ] = {};
+							}
 
-						newValue['letter-spacing'][device] = controlValue;
-					}
-				);
+							newValue[ 'letter-spacing' ][ device ][ 'size' ] = controlValue;
 
-				// Extend/Update the `val` object to include `newValue`'s new data as an object.
-				$.extend( val, newValue );
+						}
+					);
 
-				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+					// Extend/Update the `val` object to include `newValue`'s new data as an object.
+					$.extend( val, newValue );
 
-				name = $( element ).parents( '.customize-control' ).attr( 'id' );
-				name = name.replace( 'customize-control-', '' );
+					$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
 
-				control.container.trigger(
-					'colormag_settings_changed',
-					[
-						control,
-						element,
-						val,
-						name
-					]
-				);
+					name = $( element ).parents( '.customize-control' ).attr( 'id' );
+					name = name.replace( 'customize-control-', '' );
 
-			},
+					control.container.trigger(
+						'colormag_settings_changed',
+						[
+							control,
+							element,
+							val,
+							name
+						]
+					);
 
-			saveTypographyValue : function ( property, value, element, name ) {
+				},
 
-				var control = this,
-				    input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
-				    val     = JSON.parse( input.val() );
+				saveTypographyLetterSpacingUnit: function ( element, name, control_atts ) {
 
-				val[property] = value;
+					let control          = this,
+						input            = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val              = JSON.parse( input.val() ),
+						control_name     = control_atts.name,
+						controlContainer = control.container.find( '#customize-control-' + control_name ),
+						newValue         = {
+							'letter-spacing': {
+								'desktop': {
+									'size': val[ 'letter-spacing' ][ 'desktop' ][ 'size' ],
+									'unit': val[ 'letter-spacing' ][ 'desktop' ][ 'unit' ]
 
-				$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+								},
+								'tablet': {
+									'size': val[ 'letter-spacing' ][ 'tablet' ][ 'size' ],
+									'unit': val[ 'letter-spacing' ][ 'tablet' ][ 'unit' ]
+								},
+								'mobile': {
+									'size': val[ 'letter-spacing' ][ 'mobile' ][ 'size' ],
+									'unit': val[ 'letter-spacing' ][ 'mobile' ][ 'unit' ]
+								}
+							}
+						};
 
-				name = $( element ).parents( '.customize-control' ).attr( 'id' );
-				name = name.replace( 'customize-control-', '' );
+					controlContainer.find( '.letter-spacing .control-wrap' ).each(
+						function () {
+							let controlValue = $( this ).find( 'select' ).val();
+							let device = $( this ).find( 'select' ).data( 'device' );
 
-				control.container.trigger(
-					'colormag_settings_changed',
-					[
-						control,
-						element,
-						val,
-						name
-					]
-				);
+							if ( ! newValue[ 'letter-spacing' ][ device ] ) {
+								newValue[ 'letter-spacing' ][ device ] = {};
+							}
 
-			},
+							newValue[ 'letter-spacing' ][ device ][ 'unit' ] = controlValue;
 
-		} );
+						}
+					);
+
+					// Extend/Update the `val` object to include `newValue`'s new data as an object.
+					$.extend( val, newValue );
+
+					$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+					name = $( element ).parents( '.customize-control' ).attr( 'id' );
+					name = name.replace( 'customize-control-', '' );
+
+					control.container.trigger(
+						'colormag_settings_changed',
+						[
+							control,
+							element,
+							val,
+							name
+						]
+					);
+
+				},
+
+				saveTypographyValue: function ( property, value, element, name ) {
+
+					let control = this,
+						input   = $( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .typography-hidden-value' ),
+						val     = JSON.parse( input.val() );
+
+					val[ property ] = value;
+
+					$( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+
+					name = $( element ).parents( '.customize-control' ).attr( 'id' );
+					name = name.replace( 'customize-control-', '' );
+
+					control.container.trigger(
+						'colormag_settings_changed',
+						[
+							control,
+							element,
+							val,
+							name
+						]
+					);
+
+				},
+
+			}
+		);
 
 	}
 )( jQuery );

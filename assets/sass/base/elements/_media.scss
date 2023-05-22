@@ -10,12 +10,12 @@ img {
 	max-width: 100%;
 	height: auto;
 	vertical-align: top;
-	margin-bottom: 18px;
 }
 
-.entry-content,
+.cm-entry-summary,
 .comment-content,
 .widget {
+
 	img {
 		max-width: 100%; /* Fluid images for posts, comments, and widgets */
 	}
@@ -44,8 +44,10 @@ img {
 	}
 }
 
-.entry-content {
+.cm-entry-summary {
+
 	img {
+
 		&.wp-smiley {
 			border: none;
 			margin-bottom: 0;
@@ -67,7 +69,7 @@ img {
 		max-width: 98%;
 	}
 
-	#colophon & {
+	#cm-footer & {
 		border: 1px solid #444444;
 	}
 
@@ -146,6 +148,7 @@ img {
 }
 
 .gallery-icon {
+
 	img {
 		margin: 0 auto;
 	}

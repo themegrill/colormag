@@ -13,10 +13,15 @@
 			$( '.tg-navigate a' ).on( 'click', function ( e ) {
 				e.preventDefault();
 
-				var targetSection = $( this ).data( 'section' );
+				var targetContainer = $( this ).data( 'target' );
+				var targetSection   = $( this ).data( 'section' );
 
 				if ( targetSection ) {
-					wp.customize.section( targetSection ).focus();
+					if ( 'panel' === targetContainer ) {
+						wp.customize.panel( targetSection ).focus();
+					} else {
+						wp.customize.section( targetSection ).focus();
+					}
 				}
 			} );
 

@@ -1,0 +1,17 @@
+/* Plugin: Headroom.
+--------------------------------------------- */
+.headroom {
+	will-change: transform;
+	transition: transform 200ms linear;
+}
+
+#cm-primary-nav {
+
+	&.headroom--pinned {
+		transform: translateY(0%);
+	}
+
+	&.headroom--unpinned {
+		transform: translateY(-100%);
+	}
+}

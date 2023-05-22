@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.0.0
+ * @since      ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -18,6 +18,32 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class ColorMag_Meta_Box_Page_Settings
  */
 class ColorMag_Meta_Box_Page_Settings {
+
+	/**
+	 * Meta box render content callback for video post format only.
+	 *
+	 * @param WP_Post $post Current post object.
+	 */
+	public static function render_video_url( $post ) {
+
+		// Add nonce for security and authentication.
+		wp_nonce_field( 'colormag_save_data', 'colormag_meta_nonce' );
+
+		global $post;
+
+		// Video URL.
+		$colormag_video_url = get_post_meta( $post->ID, 'video_url', true );
+		?>
+
+		<p>
+			<input type="text" class="widefat" name="video_url" id="video_url"
+			       value="<?php echo esc_url( $colormag_video_url ); ?>"
+			/>
+		</p>
+
+		<?php
+
+	}
 
 	/**
 	 * Meta box render content callback.
@@ -76,11 +102,12 @@ class ColorMag_Meta_Box_Page_Settings {
 							'id'      => 'colormag_page_layout',
 							'label'   => esc_html__( 'Select Layout', 'colormag' ),
 							'choices' => array(
-								'default_layout'              => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
-								'right_sidebar'               => COLORMAG_ADMIN_IMAGES_URL . '/right-sidebar.png',
-								'left_sidebar'                => COLORMAG_ADMIN_IMAGES_URL . '/left-sidebar.png',
-								'no_sidebar_full_width'       => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-								'no_sidebar_content_centered' => COLORMAG_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
+								'default_layout'              => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
+								'right_sidebar'               => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
+								'left_sidebar'                => COLORMAG_PARENT_URL . '/assets/img/left-sidebar.png',
+								'no_sidebar_full_width'       => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-full-width-layout.png',
+								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-content-centered-layout.png',
+								'two_sidebars'                => COLORMAG_PARENT_URL . '/assets/img/two-sidebars.png'
 							),
 						)
 					);
@@ -115,23 +142,32 @@ class ColorMag_Meta_Box_Page_Settings {
 	public static function save( $post_id ) {
 
 		$colormag_page_layout = isset( $_POST['colormag_page_layout'] ) ? sanitize_key( $_POST['colormag_page_layout'] ) : 'default_layout';
+		$colormag_video_url   = isset( $_POST['video_url'] ) ? esc_url_raw( $_POST['video_url'] ) : '';
 
 		// Site layout.
 		if (
-		in_array(
-			$colormag_page_layout,
-			array(
-				'right_sidebar',
-				'left_sidebar',
-				'no_sidebar_full_width',
-				'no_sidebar_content_centered',
-			),
-			true
-		)
+			in_array(
+				$colormag_page_layout,
+				array(
+					'right_sidebar',
+					'left_sidebar',
+					'no_sidebar_full_width',
+					'no_sidebar_content_centered',
+					'two_sidebars',
+				),
+				true
+			)
 		) {
 			update_post_meta( $post_id, 'colormag_page_layout', $colormag_page_layout );
 		} else {
 			delete_post_meta( $post_id, 'colormag_page_layout' );
+		}
+
+		// Video post format video URL.
+		if ( $colormag_video_url ) {
+			update_post_meta( $post_id, 'video_url', $colormag_video_url );
+		} else {
+			delete_post_meta( $post_id, 'video_url' );
 		}
 
 		/**

@@ -90,7 +90,7 @@ class ColorMag_Color_Control extends ColorMag_Customize_Base_Additional_Control 
 		<div class="customizer-wrapper">
 			<div class="customizer-text">
 				<# if ( data.label ) { #>
-				<span class="customize-control-title">{{{ data.label }}}</span>
+				<span class="customize-control-label">{{{ data.label }}}</span>
 				<# } #>
 
 				<# if ( data.description ) { #>

@@ -67,11 +67,11 @@ class ColorMag_Fonts {
 
 			self::$system_fonts = array(
 
-				'default'                                                                                                                              => array(
+				'default'                               => array(
 					'family' => 'default',
 					'label'  => 'Default',
 				),
-				'Georgia,Times,"Times New Roman",serif'                                                                                                 => array(
+				'Georgia,Times,"Times New Roman",serif' => array(
 					'family' => 'Georgia,Times,"Times New Roman",serif',
 					'label'  => 'serif',
 				),
@@ -79,7 +79,7 @@ class ColorMag_Fonts {
 					'family' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif',
 					'label'  => 'sans-serif',
 				),
-				'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace'                                                   => array(
+				'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace' => array(
 					'family' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace',
 					'label'  => 'monospace',
 				),
@@ -88,6 +88,11 @@ class ColorMag_Fonts {
 
 		endif;
 
+		/**
+		 * Filter for system fonts.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_system_fonts', self::$system_fonts );
 
 	}
@@ -103,9 +108,15 @@ class ColorMag_Fonts {
 		if ( empty( self::$google_fonts ) ) :
 
 			global $wp_filesystem;
-			$google_fonts_file = apply_filters( 'colormag_google_fonts_json_file', dirname(__FILE__) . '/custom-controls/typography/google-fonts.json' );
 
-			if ( ! file_exists( dirname(__FILE__) . '/custom-controls/typography/google-fonts.json' ) ) {
+			/**
+			 * Filter for google fonts json file.
+			 *
+			 * @since   1.0.0
+			 */
+			$google_fonts_file = apply_filters( 'colormag_google_fonts_json_file', dirname( __FILE__ ) . '/custom-controls/typography/google-fonts.json' );
+
+			if ( ! file_exists( dirname( __FILE__ ) . '/custom-controls/typography/google-fonts.json' ) ) {
 				return array();
 			}
 
@@ -137,6 +148,11 @@ class ColorMag_Fonts {
 
 		endif;
 
+		/**
+		 * Filter for system fonts.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_system_fonts', self::$google_fonts );
 
 	}
@@ -148,6 +164,11 @@ class ColorMag_Fonts {
 	 */
 	public static function get_custom_fonts() {
 
+		/**
+		 * Filter for custom fonts.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_custom_fonts', self::$custom_fonts );
 
 	}
@@ -184,6 +205,11 @@ class ColorMag_Fonts {
 
 		endif;
 
+		/**
+		 * Filter for font variants.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_font_variants', self::$font_variants );
 
 	}
@@ -230,6 +256,11 @@ class ColorMag_Fonts {
 
 		endif;
 
+		/**
+		 * Filter for font variants.
+		 *
+		 * @since   1.0.0
+		 */
 		return apply_filters( 'colormag_font_variants', self::$google_font_subsets );
 
 	}

@@ -1,0 +1,50 @@
+/* Style 4 widget.
+--------------------------------------------- */
+.cm-featured-posts--style-4 {
+
+	.cm-post {
+		display: flex;
+		flex-direction: column;
+
+		.cm-post-content {
+			flex-basis: 100%;
+			padding: length( 'l-8', px );
+		}
+	}
+
+	&.cm-featured-posts {
+
+		.cm-entry-title {
+			@include font-size("font-size-xl");
+		}
+
+		.cm-entry-header-meta {
+			display: flex;
+		}
+
+		.cm-posts {
+
+			.cm-author {
+				display: flex;
+			}
+		}
+	}
+
+	.fluid-width-video-wrapper {
+		margin-bottom: length( 'l-10' );
+		padding: 0 !important;
+
+		iframe {
+			width: 390px;
+			height: 205px;
+			margin-right: length( 'l-10' );
+			margin-bottom: 0;
+			position: relative;
+			float: left;
+		}
+	}
+
+	.cm-featured-image {
+		flex-basis: 100%;
+	}
+}

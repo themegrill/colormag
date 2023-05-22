@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+17.0 JetPack Infinite Scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+
+.infinite-scroll {
+	.default-wp-page, &.neverending #cm-footer {
+		/* Theme Footer (when set to scrolling) */
+		display: none;
+	}
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+
+.infinity-end.neverending #cm-footer {
+	display: block;
+}

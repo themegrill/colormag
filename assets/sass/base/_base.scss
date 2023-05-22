@@ -1,14 +1,21 @@
+/* Container
+--------------------------------------------- */
+@import "elements/container";
+@import "elements/grid";
+
 /* Typography
 --------------------------------------------- */
-@import "typography/typography";
+@import "typography/copy";
+@import "typography/headings";
 
 /* Elements
 --------------------------------------------- */
-@import "elements/link";
-@import "elements/container";
-@import "elements/columns";
 @import "elements/body";
+@import "elements/columns";
+@import "elements/common";
+@import "elements/fields";
+@import "elements/link";
 @import "elements/list";
 @import "elements/media";
 @import "elements/table";
-@import "elements/fields";
+@import "elements/icons";

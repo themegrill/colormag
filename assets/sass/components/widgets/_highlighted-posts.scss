@@ -1,0 +1,86 @@
+/* Highlighted posts widget.
+--------------------------------------------- */
+.cm-highlighted-posts {
+
+	.cm-posts {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: length( 'l-6' );
+	}
+
+	.cm-post {
+		position: relative;
+		overflow: hidden;
+		border-radius: 4px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.cm-post-content {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: grid;
+		align-items: end;
+		grid-template-rows: repeat(1, 1fr);
+		padding: length( 'l-8' );
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+		height: calc(100% - 32px);
+	}
+
+	.cm-below-entry-meta {
+		margin-bottom: 0;
+	}
+
+	.cm-author,
+	.cm-comments-link,
+	.cm-entry-header-meta {
+		display: none;
+	}
+
+	.cm-post-date,
+	.cm-author,
+	.cm-comments-link {
+		svg {
+			fill: $color__white;
+		}
+	}
+
+	.cm-post-date a,
+	.cm-author a,
+	.reading-time,
+	.reading-time::before,
+	.human-diff-time-display {
+		color: $color__white;
+	}
+
+	.cm-entry-title {
+		margin-bottom: length( 'l-4' );
+		@include font-size("font-size-sm");
+		font-weight: 500;
+
+		a {
+			color: $color__white;
+			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+			&:hover {
+				color: $color__white;
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+
+@include breakpoint("mdm") {
+
+	.cm-highlighted-posts {
+
+		.cm-posts {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}

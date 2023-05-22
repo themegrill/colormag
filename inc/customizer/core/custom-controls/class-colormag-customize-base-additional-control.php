@@ -37,6 +37,14 @@ class ColorMag_Customize_Base_Additional_Control extends WP_Customize_Control {
 			COLORMAG_THEME_VERSION
 		);
 
+		wp_enqueue_style(
+			'jquery-ui',
+			$this->get_assets_url() . '/assets/css/jquery-ui/jquery-ui' . $suffix . '.css',
+			array(),
+			COLORMAG_THEME_VERSION
+		);
+		wp_style_add_data( 'jquery-ui', 'rtl', 'replace' );
+
 		// Main CSS file.
 		wp_enqueue_style(
 			'colormag-customize-controls',
@@ -75,6 +83,8 @@ class ColorMag_Customize_Base_Additional_Control extends WP_Customize_Control {
 			$this->get_assets_url() . '/assets/js/customize-controls' . $suffix . '.js',
 			array(
 				'jquery',
+				'jquery-ui-datepicker',
+				'wp-tinymce',
 			),
 			COLORMAG_THEME_VERSION,
 			true
