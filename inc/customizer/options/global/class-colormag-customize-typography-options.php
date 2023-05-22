@@ -45,61 +45,6 @@ class ColorMag_Customize_Typography_options extends ColorMag_Customize_Base_Opti
 				'priority' => 10,
 			),
 
-			array(
-				'name'      => 'colormag_base_typography',
-				'default'   => array(
-					'font-family'    => 'default',
-					'font-weight'    => 'regular',
-					'subsets'        => array( 'latin' ),
-					'font-size'      => array(
-						'desktop' => array(
-							'size' => '15',
-							'unit' => 'px',
-						),
-						'tablet'  => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-						'mobile'  => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-					),
-					'line-height'    => array(
-						'desktop' => array(
-							'size' => '1.6',
-							'unit' => '-',
-						),
-						'tablet'  => array(
-							'size' => '',
-							'unit' => '-',
-						),
-						'mobile'  => array(
-							'size' => '',
-							'unit' => '-',
-						),
-					),
-					'letter-spacing' => array(
-						'desktop' => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-						'tablet'  => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-						'mobile'  => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-					),
-				),
-				'type'      => 'control',
-				'control'   => 'colormag-typography',
-				'transport' => 'postMessage',
-				'section'   => 'colormag_global_typography_section',
-				'priority'  => 20,
-			),
 
 			/**
 			 * Headings.

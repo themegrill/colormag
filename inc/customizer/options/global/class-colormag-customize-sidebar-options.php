@@ -33,84 +33,6 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 		$configs = array(
 
-			// General title.
-			array(
-				'name'     => 'colormag_sidebar_general_title',
-				'type'     => 'control',
-				'control'  => 'colormag-title',
-				'label'    => esc_html__( 'General', 'colormag' ),
-				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 10,
-			),
-
-			// Widget Title subtitle.
-			array(
-				'name'     => 'colormag_widget_title_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Widget Title', 'colormag' ),
-				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 40,
-			),
-
-			// Sidebar widget title color option.
-			array(
-				'name'     => 'colormag_sidebar_widget_title_color_group',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'label'    => esc_html__( 'Color', 'colormag' ),
-				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 50,
-			),
-
-			array(
-				'name'     => 'colormag_sidebar_widget_title_color',
-				'default'  => '#ffffff',
-				'type'     => 'sub-control',
-				'control'  => 'colormag-color',
-				'parent'   => 'colormag_sidebar_widget_title_color_group',
-				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 60,
-			),
-
-			// Widget title typography group.
-			array(
-				'name'     => 'colormag_widget_title_typography_group',
-				'label'    => esc_html__( 'Typography', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 70,
-			),
-
-			// Widget title typography option.
-			array(
-				'name'      => 'colormag_widget_title_typography',
-				'default'   => array(
-					'font-size' => array(
-						'desktop' => array(
-							'size' => '18',
-							'unit' => 'px',
-						),
-						'tablet'  => array(
-							'size' => '',
-							'unit' => '',
-						),
-						'mobile'  => array(
-							'size' => '',
-							'unit' => '',
-						),
-					),
-				),
-				'type'      => 'sub-control',
-				'control'   => 'colormag-typography',
-				'parent'    => 'colormag_widget_title_typography_group',
-				'section'   => 'colormag_global_sidebar_section',
-				'transport' => 'postMessage',
-				'priority'  => 80,
-			),
-
 			// Layout title.
 			array(
 				'name'     => 'colormag_sidebar_layout_title',
@@ -118,7 +40,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Layout', 'colormag' ),
 				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 90,
+				'priority' => 10,
 			),
 
 			// Default layout heading.
@@ -128,7 +50,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Default Layout', 'colormag' ),
 				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 100,
+				'priority' => 20,
 			),
 
 			// Default layout option.
@@ -161,7 +83,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 					),
 				),
 				'image_col' => 2,
-				'priority'  => 110,
+				'priority'  => 30,
 			),
 
 			// Default layout pages heading.
@@ -171,7 +93,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Default layout for pages only', 'colormag' ),
 				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 120,
+				'priority' => 40,
 			),
 
 			// Default layout for pages only option.
@@ -204,7 +126,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 					),
 				),
 				'image_col' => 2,
-				'priority'  => 130,
+				'priority'  => 50,
 			),
 
 			// Default layout post heading.
@@ -214,7 +136,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Default layout for single posts only', 'colormag' ),
 				'section'  => 'colormag_global_sidebar_section',
-				'priority' => 140,
+				'priority' => 60,
 			),
 
 			// Default layout for single posts page only option.
@@ -247,7 +169,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 					),
 				),
 				'image_col' => 2,
-				'priority'  => 150,
+				'priority'  => 70,
 			),
 
 		);

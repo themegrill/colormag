@@ -86,7 +86,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$heading_h4_font_size            = get_theme_mod( 'colormag_heading_h4_font_size', '24' );
 			$heading_h5_font_size            = get_theme_mod( 'colormag_heading_h5_font_size', '22' );
 			$heading_h6_font_size            = get_theme_mod( 'colormag_heading_h6_font_size', '18' );
-			$widget_title_font_size          = get_theme_mod( 'colormag_widget_title_font_size', '18' );
 			$comment_title_font_size         = get_theme_mod( 'colormag_comment_title_font_size', '24' );
 			$footer_widget_title_font_size   = get_theme_mod( 'colormag_footer_widget_title_font_size', '18' );
 			$footer_widget_content_font_size = get_theme_mod( 'colormag_footer_widget_content_font_size', '14' );
@@ -370,34 +369,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			/**
 			 * Typography options.
 			 */
-			// Base fonts.
-			if ( 'Open Sans' !== $content_font || '15' !== $content_font_size ) {
-				set_theme_mod(
-					'colormag_base_typography_setting',
-					array(
-						'font-family'    => $content_font,
-						'font-weight'    => 'regular',
-						'subsets'        => array( 'latin' ),
-						'font-size'      => array(
-							'desktop' => $content_font_size,
-							'tablet'  => '',
-							'mobile'  => '',
-						),
-						'line-height'    => array(
-							'desktop' => '1.6',
-							'tablet'  => '',
-							'mobile'  => '',
-						),
-						'letter-spacing' => array(
-							'desktop' => '',
-							'tablet'  => '',
-							'mobile'  => '',
-						),
-						'font-style'     => 'normal',
-						'text-transform' => 'none',
-					)
-				);
-			}
 
 			// All title fonts.
 			if ( 'Open Sans' !== $all_titles_font ) {
@@ -567,19 +538,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				);
 			}
 
-			// Widget title fonts.
-			if ( '18' !== $widget_title_font_size ) {
-				set_theme_mod(
-					'colormag_widget_title_typography_setting',
-					array(
-						'font-size' => array(
-							'desktop' => $widget_title_font_size,
-							'tablet'  => '',
-							'mobile'  => '',
-						),
-					)
-				);
-			}
 
 			// Comment title fonts.
 			if ( '24' !== $comment_title_font_size ) {
@@ -1729,14 +1687,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			};
 
 			$typography_options = array(
-				array(
-					'old_key' => 'colormag_widget_title_typography_setting',
-					'new_key' => 'colormag_widget_title_typography',
-				),
-				array(
-					'old_key' => 'colormag_base_typography_setting',
-					'new_key' => 'colormag_base_typography',
-				),
 				array(
 					'old_key' => 'colormag_headings_typography_setting',
 					'new_key' => 'colormag_headings_typography',

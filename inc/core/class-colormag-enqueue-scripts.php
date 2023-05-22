@@ -309,10 +309,6 @@ function colormag_get_fonts() {
 	/**
 	 * Typography options.
 	 */
-	$base_typography_default          = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
 	$headings_typography_default      = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
@@ -334,7 +330,6 @@ function colormag_get_fonts() {
 		'font-weight' => 'regular',
 	);
 
-	$base_typography                  = get_theme_mod( 'colormag_base_typography', $base_typography_default );
 	$headings_typography              = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
 	$heading_h1_typography            = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
 	$heading_h2_typography            = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
@@ -372,9 +367,6 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $button_typography['font-family'], $button_typography_font_weight );
 
 	// Typography options.
-	if ( 'default' === $base_typography['font-family'] ) {
-		$base_typography['font-family'] = 'Open Sans';
-	}
 	if ( 'default' === $headings_typography['font-family'] ) {
 		$headings_typography['font-family'] = 'Open Sans';
 	}
@@ -397,20 +389,17 @@ function colormag_get_fonts() {
 
 	$breaking_news_label_typography_font_weight   = isset( $breaking_news_label_typography['font-weight'] ) ? $breaking_news_label_typography['font-weight'] : 'regular';
 	$breaking_news_content_typography_font_weight = isset( $breaking_news_content_typography['font-weight'] ) ? $breaking_news_content_typography['font-weight'] : 'regular';
-	$base_typography_font_weight                  = isset( $base_typography['font-weight'] ) ? $base_typography['font-weight'] : 'regular';
 	$heading_typography_font_weight               = isset( $headings_typography['font-weight'] ) ? $headings_typography['font-weight'] : 'regular';
 	$heading_h1_typography_font_weight            = isset( $heading_h1_typography['font-weight'] ) ? $heading_h1_typography['font-weight'] : 'regular';
 	$heading_h2_base_typography_font_weight       = isset( $heading_h2_typography['font-weight'] ) ? $heading_h2_typography['font-weight'] : 'regular';
 	$heading_h3_typography_font_weight            = isset( $heading_h3_typography['font-weight'] ) ? $heading_h3_typography['font-weight'] : 'regular';
 
-	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $breaking_news_label_typography['font-family'], $breaking_news_label_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $breaking_news_content_typography['font-family'], $breaking_news_content_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $heading_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_base_typography_font_weight );
@@ -440,17 +429,6 @@ function colormag_font_subset() {
 	/**
 	 * Typography options.
 	 */
-	// Base typography.
-	$base_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-
-	$base_typography = get_theme_mod( 'colormag_base_typography', $base_typography_default );
-
-	if ( isset( $base_typography['subsets'] ) && is_array( $base_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $base_typography['subsets'], $google_font_subsets );
-	}
-
 	// Breaking news typography.
 	$breaking_news_typography_default = array(
 		'subsets' => array( 'latin' ),

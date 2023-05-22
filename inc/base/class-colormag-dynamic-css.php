@@ -387,8 +387,6 @@ class ColorMag_Dynamic_CSS {
 		 * Color options.
 		 */
 
-		$sidebar_widget_title_color = get_theme_mod( 'colormag_sidebar_widget_title_color', '#ffffff' );
-
 		/**
 		 * Button.
 		 */
@@ -396,55 +394,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Typography options.
 		 */
-		$base_typography_default                  = array(
-			'font-family'    => 'default',
-			'font-weight'    => 'regular',
-			'subsets'        => array( 'latin' ),
-			'font-size'      => array(
-				'desktop' => array(
-					'size' => '15',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'line-height'    => array(
-				'desktop' => array(
-					'size' => '1.6',
-					'unit' => '-',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'letter-spacing' => array(
-				'desktop' => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'font-style'     => 'normal',
-			'text-transform' => 'none',
-		);
 		$headings_typography_default              = array(
 			'font-family'    => 'default',
 			'font-weight'    => 'regular',
@@ -717,22 +666,7 @@ class ColorMag_Dynamic_CSS {
 				),
 			),
 		);
-		$widget_title_typography_default          = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '18',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
+
 		$comment_title_typography_default         = array(
 			'font-size' => array(
 				'desktop' => array(
@@ -781,7 +715,6 @@ class ColorMag_Dynamic_CSS {
 				),
 			),
 		);
-		$base_typography                          = get_theme_mod( 'colormag_base_typography', $base_typography_default );
 		$headings_typography                      = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
 		$heading_h1_typography                    = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
 		$heading_h2_typography                    = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
@@ -789,7 +722,6 @@ class ColorMag_Dynamic_CSS {
 		$heading_h4_typography                    = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
 		$heading_h5_typography                    = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
 		$heading_h6_typography                    = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
-		$widget_title_typography                  = get_theme_mod( 'colormag_widget_title_typography', $widget_title_typography_default );
 		$comment_title_typography                 = get_theme_mod( 'colormag_comment_title_typography', $comment_title_typography_default );
 		$footer_widget_title_typography           = get_theme_mod( 'colormag_footer_widget_title_typography', $footer_widget_title_typography_default );
 		$footer_widget_content_typography         = get_theme_mod( 'colormag_footer_widget_content_typography', $footer_widget_content_typography_default );
@@ -1535,19 +1467,6 @@ class ColorMag_Dynamic_CSS {
 		// Footer upper sidebar area background.
 		$parse_css .= colormag_parse_background_css( $footer_upper_sidebar_area_background_default, $footer_upper_sidebar_area_background, '#cm-footer .cm-upper-footer-cols .widget' );
 
-		/**
-		 * Color options.
-		 */
-		// Sidebar widget title color.
-		$sidebar_widget_title_color_css = array(
-			'.cm-secondary .cm-widget-title span,
-			#tertiary .cm-widget-title span' => array(
-				'color' => esc_html( $sidebar_widget_title_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#ffffff', $sidebar_widget_title_color, $sidebar_widget_title_color_css );
-
 		// Footer widget title color.
 		$footer_widget_title_color_css = array(
 			'.cm-footer-cols .cm-row .cm-widget-title span' => array(
@@ -1674,34 +1593,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Typography.
 		 */
-		// Base typography.
-		$parse_css .= colormag_parse_typography_css(
-			$base_typography_default,
-			$base_typography,
-			'body,
-			button,
-			input,
-			select,
-			textarea,
-			blockquote p,
-			.entry-meta,
-			.cm-entry-button,
-			dl,
-			.previous a,
-			.next a,
-			.nav-previous a,
-			.nav-next a,
-			#respond h3#reply-title #cancel-comment-reply-link,
-			#respond form input[type="text"],
-			#respond form textarea,
-			.cm-secondary .widget,
-			.cm-error-404 .widget',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
 		// Headings typography.
 		$parse_css .= colormag_parse_typography_css(
 			$headings_typography_default,
@@ -1779,17 +1670,6 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
-		// Widget title typography.
-		$parse_css .= colormag_parse_typography_css(
-			$widget_title_typography_default,
-			$widget_title_typography,
-			'.cm-secondary .cm-widget-title,
-			#tertiary .cm-widget-title',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
 
 		// Comment title typography.
 		$parse_css .= colormag_parse_typography_css(
