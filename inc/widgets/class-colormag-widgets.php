@@ -334,18 +334,6 @@ function colormag_widgets_init() {
 
 add_action( 'widgets_init', 'colormag_widgets_init' );
 
-if ( ! function_exists( 'colormag_front_page_widget_post_title_markup' ) ) :
-
-	/**
-	 * Widget Title Markup.
-	 */
-	function colormag_front_page_widget_post_title_markup( $markup ) {
-		return get_theme_mod( 'colormag_front_page_widget_post_title_markup', 'h3' );
-	}
-endif;
-
-add_filter( 'colormag_front_page_widget_post_title_markup', 'colormag_front_page_widget_post_title_markup' );
-
 // Abstract class for widgets.
 require COLORMAG_WIDGETS_DIR . '/abstract-colormag-widget.php';
 

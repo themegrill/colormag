@@ -31,15 +31,6 @@ class ColorMag_Customizer_Partials {
 	}
 
 	/**
-	 * Render the view all button text for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_view_all_button_text() {
-		echo esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) );
-	}
-
-	/**
 	 * Render the you may also like text for selective refresh partial.
 	 *
 	 * @return void

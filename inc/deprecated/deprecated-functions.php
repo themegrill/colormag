@@ -340,22 +340,6 @@ if ( ! function_exists( 'colormag_read_next_text' ) ) :
 endif;
 
 
-if ( ! function_exists( 'colormag_view_all_button_text' ) ) :
-
-	/**
-	 * Deprecate view all text refresh function.
-	 */
-	function colormag_view_all_button_text() {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Partials::render_view_all_button_text()' );
-
-		ColorMag_Customizer_Partials::render_view_all_button_text();
-
-	}
-
-endif;
-
-
 if ( ! function_exists( 'colormag_you_may_also_like_text' ) ) :
 
 	/**
