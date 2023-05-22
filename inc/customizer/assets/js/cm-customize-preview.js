@@ -8,8 +8,6 @@
 colormagGenerateCSS( 'colormag_site_title_color', '.cm-site-title a', 'color' )
 colormagGenerateCSS( 'colormag_site_title_hover_color', '.cm-site-title a:hover', 'color' )
 colormagGenerateCSS( 'colormag_site_tagline_color', '.cm-site-description', 'color' )
-colormagGenerateCSS( 'colormag_link_color', '.entry-summary a, .mzb-featured-categories .mzb-post-title a, .mzb-tab-post .mzb-post-title a, .mzb-post-list .mzb-post-title a, .mzb-featured-posts .mzb-post-title a, .mzb-featured-categories .mzb-post-title a', 'color' )
-colormagGenerateCSS( 'colormag_link_hover_color', '.post .entry-summary a:hover, .mzb-featured-categories .mzb-post-title a:hover, .mzb-tab-post .mzb-post-title a:hover, .mzb-post-list .mzb-post-title a:hover, .mzb-featured-posts .mzb-post-title a:hover, .mzb-featured-categories .mzb-post-title a:hover', 'color' )
 colormagGenerateCSS( 'colormag_button_color', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link span', 'color' )
 colormagGenerateCSS( 'colormag_button_background_color', '.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'background-color' )
 colormagGenerateCSS( 'colormag_top_bar_border_bottom_color', '.cm-top-bar', 'border-bottom-color' )

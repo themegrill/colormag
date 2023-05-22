@@ -1025,41 +1025,6 @@ class ColorMag_Dynamic_CSS {
 		}
 
 		/**
-		 * Link options.
-		 */
-		// Link color.
-		$link_color = get_theme_mod( 'colormag_link_color', '#207daf' );
-
-		$link_color_css = array(
-			'.cm-entry-summary a,
-			.mzb-featured-categories .mzb-post-title a,
-			.mzb-tab-post .mzb-post-title a,
-			.mzb-post-list .mzb-post-title a,
-			.mzb-featured-posts .mzb-post-title a,
-			.mzb-featured-categories .mzb-post-title a' => array(
-				'color' => esc_html( $link_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#207daf', $link_color, $link_color_css );
-
-		// Link hover color.
-		$link_hover_color = get_theme_mod( 'colormag_link_hover_color', '#207daf' );
-
-		$link_hover_color_css = array(
-			'.post .cm-entry-summary a:hover,
-			.mzb-featured-categories .mzb-post-title a:hover,
-			.mzb-tab-post .mzb-post-title a:hover,
-			.mzb-post-list .mzb-post-title a:hover,
-			.mzb-featured-posts .mzb-post-title a:hover,
-			.mzb-featured-categories .mzb-post-title a:hover' => array(
-				'color' => esc_html( $link_hover_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#207daf', $link_hover_color, $link_hover_color_css );
-
-		/**
 		 * Top bar options.
 		 */
 		// Top bar border bottom color.
