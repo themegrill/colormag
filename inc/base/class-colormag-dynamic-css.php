@@ -972,20 +972,6 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
-		$container_width_default = array(
-			'size' => 1140,
-			'unit' => 'px',
-		);
-
-		$container_width = get_theme_mod( 'colormag_container_width', $container_width_default );
-
-		$parse_css .= colormag_parse_slider_css(
-			$container_width_default,
-			$container_width,
-			'.inner-wrap, .cm-container',
-			'max-width'
-		);
-
 		// Primary color for Elementor.
 		if ( defined( 'ELEMENTOR_VERSION' ) ) {
 
@@ -1440,20 +1426,6 @@ class ColorMag_Dynamic_CSS {
 				'mobile' => 600,
 			)
 		);
-
-		// Post content background.
-		$post_content_background_default = array(
-			'background-color'      => '#ffffff',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-
-		$post_content_background = get_theme_mod( 'colormag_inside_container_background', $post_content_background_default );
-
-		$parse_css .= colormag_parse_background_css( $post_content_background_default, $post_content_background, '.cm-content' );
 
 		// Button text color.
 		$button_text_color = get_theme_mod( 'colormag_button_color', '#ffffff' );

@@ -276,21 +276,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				);
 			}
 
-			// Post content background.
-			if ( '#ffffff' !== $post_content_color ) {
-				set_theme_mod(
-					'colormag_inside_container_background',
-					array(
-						'background-color'      => $post_content_color,
-						'background-image'      => '',
-						'background-position'   => 'center center',
-						'background-size'       => 'auto',
-						'background-attachment' => 'scroll',
-						'background-repeat'     => 'repeat',
-					)
-				);
-			}
-
 			/**
 			 * Footer options.
 			 */
