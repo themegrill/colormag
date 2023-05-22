@@ -124,50 +124,6 @@ if ( ! function_exists( 'colormag_reading_time' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_exclude_duplicate_posts' ) ) :
-
-	/**
-	 * Unique Post Display function.
-	 *
-	 * The following sets of fucntions help in removing the duplicate posts from being shown in a page.
-	 *
-	 * colormag_exclude_duplicate_posts() - Excluding the Duplicate posts in featured posts widget.
-	 * colormag_append_excluded_duplicate_posts() - Appending the duplicate posts.
-	 */
-	function colormag_exclude_duplicate_posts() {
-		global $colormag_duplicate_posts;
-
-		if ( true == get_theme_mod( 'colormag_enable_unique_post_system', false ) ) {
-			$post__not_in = $colormag_duplicate_posts;
-		} else {
-			$post__not_in = array();
-		}
-
-		return $post__not_in;
-	}
-
-endif;
-
-if ( ! function_exists( 'colormag_append_excluded_duplicate_posts' ) ) :
-
-	/**
-	 * Add the post id's in an array to not duplicate the posts within the theme bundled widgets.
-	 *
-	 * @param array $featured_posts Duplicated posts ids within the theme bundled widgets.
-	 */
-	function colormag_append_excluded_duplicate_posts( $featured_posts ) {
-		global $colormag_duplicate_posts;
-
-		if ( true == get_theme_mod( 'colormag_enable_unique_post_system', false ) ) {
-			$post_ids                 = wp_list_pluck( $featured_posts->posts, 'ID' );
-			$colormag_duplicate_posts = array_unique( array_merge( $colormag_duplicate_posts, $post_ids ) );
-		} else {
-			return;
-		}
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_category_color' ) ) :
 
 	/**

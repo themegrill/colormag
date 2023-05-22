@@ -46,17 +46,6 @@ class ColorMag_Customize_Front_Page_General_Options extends ColorMag_Customize_B
 				'section'  => 'colormag_front_page_general_section',
 				'priority' => 10,
 			),
-
-			// Unique posts enable/disable option.
-			array(
-				'name'     => 'colormag_enable_unique_post_system',
-				'default'  => false,
-				'type'     => 'control',
-				'control'  => 'colormag-toggle',
-				'label'    => esc_html__( 'Unique Post System', 'colormag' ),
-				'section'  => 'colormag_front_page_general_section',
-				'priority' => 20,
-			),
 		);
 
 		$options = array_merge( $options, $configs );

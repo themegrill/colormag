@@ -107,10 +107,6 @@ class ColorMag_Elementor_Widgets_Grid_2 extends Colormag_Elementor_Widget_Base
 
         // Create the posts query.
         $get_featured_posts = $this->query_posts($posts_number, $display_type, $categories_selected, $tags_selected, $authors_selected, $posts_sort_orderby, $posts_sort_order, $offset_posts_number, $show_pagination);
-
-        if (empty($offset_posts_number)) {
-            colormag_append_excluded_duplicate_posts($get_featured_posts);
-        }
         ?>
 
         <div class="tg-module-grid tg-module-grid--style-2 tg-module-wrapper tg-fade-in">

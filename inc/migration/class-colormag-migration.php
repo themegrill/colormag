@@ -572,14 +572,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			remove_theme_mod( 'colormag_hide_blog_front' );
 
 			// Unique Post System.
-			$enable_unique_post_system = get_theme_mod( 'colormag_unique_post_system' );
-
-			if ( $enable_unique_post_system ) {
-				set_theme_mod( 'colormag_enable_unique_post_system', true );
-			}
-			remove_theme_mod( 'colormag_unique_post_system' );
-
-			// Unique Post System.
 			$enable_header_image_link_home = get_theme_mod( 'colormag_header_image_link' );
 
 			if ( $enable_header_image_link_home ) {

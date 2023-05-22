@@ -58,21 +58,15 @@ class colormag_random_post_widget extends ColorMag_Widget {
 		$title  = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 		$number = empty( $instance['number'] ) ? 4 : $instance['number'];
 
-		// Adding the excluding post function.
-		$post__not_in = colormag_exclude_duplicate_posts();
-
 		$query_args = array(
 			'posts_per_page'      => $number,
 			'post_type'           => 'post',
 			'ignore_sticky_posts' => true,
 			'orderby'             => 'rand',
 			'no_found_rows'       => true,
-			'post__not_in'        => $post__not_in,
 		);
 
 		$get_featured_posts = new WP_Query( $query_args );
-
-		colormag_append_excluded_duplicate_posts( $get_featured_posts );
 
 		$this->widget_start( $args );
 		?>

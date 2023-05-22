@@ -518,10 +518,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		// Offset the posts.
 		if ( ! empty( $offset_posts_number ) ) {
 			$query_args['offset'] = $offset_posts_number;
-		} else {
-			// adding the excluding post function.
-			$post__not_in               = colormag_exclude_duplicate_posts();
-			$query_args['post__not_in'] = $post__not_in;
 		}
 
 		// If no pagination enabled, set no_found_rows to true for better query handling and faster query execution.

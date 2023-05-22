@@ -131,8 +131,6 @@ class colormag_featured_posts_vertical_widget extends ColorMag_Widget {
 		// Create the posts query.
 		$get_featured_posts = $this->query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category );
 
-		colormag_append_excluded_duplicate_posts( $get_featured_posts );
-
 		$this->widget_start( $args );
 		?>
 

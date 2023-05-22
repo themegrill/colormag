@@ -175,8 +175,6 @@ class colormag_news_in_picture_widget extends ColorMag_Widget {
 		// Create the posts query.
 		$get_featured_posts = $this->query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category );
 
-		colormag_append_excluded_duplicate_posts( $get_featured_posts );
-
 		$this->widget_start( $args );
 		?>
 
@@ -197,7 +195,7 @@ class colormag_news_in_picture_widget extends ColorMag_Widget {
 		}
 		?>
 
-		
+
 		<div id="style5_slider_<?php echo esc_attr( $this->id ); ?>" class="<?php echo esc_attr( $class ); ?>"
 			<?php
 				echo $extra_field; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped

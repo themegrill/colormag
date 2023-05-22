@@ -775,15 +775,11 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 */
 	public function query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category, $video_post_format_args = false ) {
 
-		// Adding the excluding post function.
-		$post__not_in = colormag_exclude_duplicate_posts();
-
 		$args = array(
 			'posts_per_page'      => $number,
 			'post_type'           => 'post',
 			'ignore_sticky_posts' => true,
 			'no_found_rows'       => true,
-			'post__not_in'        => $post__not_in,
 		);
 
 		// Displays from tag chosen.

@@ -120,9 +120,6 @@ class ColorMag_Elementor_Widgets_Trending_News extends Colormag_Elementor_Widget
         // Create the posts query.
         $get_featured_posts = $this->query_posts($posts_number, $display_type, $categories_selected, $tags_selected, $authors_selected, $posts_sort_orderby, $posts_sort_order, $offset_posts_number);
 
-        if (empty($offset_posts_number)) {
-            colormag_append_excluded_duplicate_posts($get_featured_posts);
-        }
         ?>
 
         <div class="clearfix tg-module-block tg-module-wrapper swiper-container tg-trending-news"
