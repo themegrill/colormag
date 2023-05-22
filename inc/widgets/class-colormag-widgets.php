@@ -28,8 +28,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at Right side.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 
 		)
 	);
@@ -42,8 +42,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at Left side.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -55,8 +55,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets in header section just above the main navigation menu.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -68,8 +68,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Show widget just below menu.', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -81,8 +81,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Show widget just below menu. Suitable for TG: Featured Cat Slider.', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -94,8 +94,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Show widget beside the slider. Suitable for TG: Highlighted Posts.', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -107,8 +107,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Content Top Section', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -120,8 +120,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Content Middle Left Section', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -133,8 +133,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Content Middle Right Section', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -146,8 +146,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Content Middle Bottom Section', 'colormag' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -159,8 +159,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets on Contact Page Template.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -172,8 +172,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets on Error 404 page.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -185,8 +185,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets Just Above The Footer, suitable for TG: 728x90 widget.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -198,8 +198,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar one in upper.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -211,8 +211,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar two in upper.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -224,8 +224,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar three in upper.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -237,8 +237,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar one.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -250,8 +250,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar two.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -263,8 +263,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar three.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -276,8 +276,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets at footer sidebar four.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -289,8 +289,8 @@ function colormag_widgets_init() {
 			'description'   => esc_html__( 'Shows widgets just above footer copyright area.', 'colormag' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
+			'after_title'   => '</span></h3>',
 		)
 	);
 
@@ -304,8 +304,8 @@ function colormag_widgets_init() {
 				'description'   => esc_html__( 'Shows widgets at WooCommerce Right sidebar.', 'colormag' ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 				'after_widget'  => '</aside>',
-				'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-				'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+				'before_title'  => '<h3 class="cm-widget-title"><span>',
+				'after_title'   => '</span></h3>',
 			)
 		);
 
@@ -317,8 +317,8 @@ function colormag_widgets_init() {
 				'description'   => esc_html__( 'Shows widgets at WooCommerce Left sidebar.', 'colormag' ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 				'after_widget'  => '</aside>',
-				'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-				'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+				'before_title'  => '<h3 class="cm-widget-title"><span>',
+				'after_title'   => '</span></h3>',
 			)
 		);
 	}
@@ -350,21 +350,6 @@ function colormag_widgets_init() {
 }
 
 add_action( 'widgets_init', 'colormag_widgets_init' );
-
-if ( ! function_exists( 'widget_title_markup' ) ) :
-
-	/**
-	 * Widget Title Markup.
-	 */
-	function widget_title_markup( $markup ) {
-
-		$markup = get_theme_mod( 'colormag_widget_markup', 'h3' );
-
-		return $markup;
-	}
-endif;
-
-add_filter( 'colormag_widget_title_markup', 'widget_title_markup' );
 
 if ( ! function_exists( 'colormag_front_page_widget_post_title_markup' ) ) :
 

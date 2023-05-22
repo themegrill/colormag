@@ -739,7 +739,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 		}
 
 		// Display the title.
-		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . $category_link . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo '<h3 class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . $category_link . '</h3>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 	}
 
