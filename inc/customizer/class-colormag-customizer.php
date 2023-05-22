@@ -69,7 +69,6 @@ class ColorMag_Customizer {
 
 		// Front Page.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/front-page/class-colormag-customize-front-page-general-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/front-page/class-colormag-customize-front-page-layout-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/front-page/class-colormag-customize-front-page-widget-options.php';
 
 		// Header.

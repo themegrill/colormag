@@ -422,7 +422,7 @@ if ( ! function_exists( 'colormag_front_page_full_width_sidebar' ) ) :
 
 		if ( ( is_front_page() || is_page_template( 'page-templates/magazine.php' ) ) && ! is_page_template( 'page-templates/page-builder.php' ) ) :
 			?>
-			<div class="top-full-width-sidebar inner-wrap clearfix <?php echo colormag_top_full_width_area_class(); ?>">
+			<div class="top-full-width-sidebar inner-wrap clearfix">
 				<?php
 				if ( is_active_sidebar( 'colormag_front_page_top_full_width_area' ) ) {
 					dynamic_sidebar( 'colormag_front_page_top_full_width_area' );

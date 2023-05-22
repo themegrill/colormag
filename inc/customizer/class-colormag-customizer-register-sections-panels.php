@@ -182,14 +182,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			array(
-				'name'     => 'colormag_front_page_layout_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Layout', 'colormag' ),
-				'panel'    => 'colormag_front_page_panel',
-				'priority' => 10,
-			),
-
-			array(
 				'name'     => 'colormag_front_page_widget_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Widget', 'colormag' ),

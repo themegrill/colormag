@@ -12,28 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'colormag_top_full_width_area_class' ) ) :
-
-	/**
-	 * Function to return the classname for top full width area class.
-	 *
-	 * @return string CSS classname.
-	 */
-	function colormag_top_full_width_area_class() {
-
-		// Add the header area display type dynamic class.
-		$colormag_top_full_width_area_class = get_theme_mod( 'colormag_top_full_width_container', 'boxed' );
-		$class_name                         = '';
-
-		if ( 'stretch' === $colormag_top_full_width_area_class ) {
-			$class_name = 'tg-full-width';
-		}
-
-		return $class_name;
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_top_bar_full_width_area_class' ) ) :
 
 	/**
