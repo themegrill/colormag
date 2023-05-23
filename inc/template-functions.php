@@ -595,28 +595,6 @@ function colormag_extra_user_field_save_option( $user_id ) {
 add_action( 'personal_options_update', 'colormag_extra_user_field_save_option' );
 add_action( 'edit_user_profile_update', 'colormag_extra_user_field_save_option' );
 
-
-
-/**
- * Adds image-to-reveal-style-* class to all the image element in the document that is uploaded using media upload.
- *
- * @param array $attr attributes of image element.
- *
- * @return array Image element attributes.
- */
-function colormag_images_to_reveal_class( $attr ) {
-
-	$image_load_style = get_theme_mod( 'colormag_smooth_image_loading_animation', 'fade-in' );
-
-	if ( in_array( $image_load_style, array( 'fade-in', 'fade-in-down', 'fade-in-up' ), true ) && ! strpos( $attr['class'], 'tg-image-to-reveal-' . $image_load_style ) && 1 === get_theme_mod( 'colormag_enable_smooth_image_loading', 0 ) ) {
-		$attr['class'] .= ' tg-image-to-reveal-' . $image_load_style;
-	}
-
-	return $attr;
-}
-
-add_filter( 'wp_get_attachment_image_attributes', 'colormag_images_to_reveal_class', 10, 1 );
-
 if ( ! function_exists( 'colormag_get_icon' ) ) :
 
 	/**
