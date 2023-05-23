@@ -87,7 +87,7 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 		if ( ! $hide_blog_front ) :
 			?>
 
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col . ' ' ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
@@ -125,8 +125,6 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 			?>
 
 		<?php endif; ?>
-
-		?>
 	</div>
 
 

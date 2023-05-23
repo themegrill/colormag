@@ -43,7 +43,7 @@ get_header();
 			do_action( 'colormag_action_archive_header' );
 			?>
 
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col . ' ' ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
