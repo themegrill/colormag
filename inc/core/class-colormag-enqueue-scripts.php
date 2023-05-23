@@ -151,12 +151,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
 			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
-			// Enqueue the Google Maps API key if it exits.
-			$google_maps_api_key = get_theme_mod( 'colormag_googlemap_api_key' );
-			if ( $google_maps_api_key ) {
-				wp_enqueue_script( 'GoogleMaps', '//maps.googleapis.com/maps/api/js?key=' . esc_attr( $google_maps_api_key ), array(), COLORMAG_THEME_VERSION, true );
-			}
-
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
 

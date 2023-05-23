@@ -297,15 +297,6 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel'    => 'colormag_additional_panel',
 				'priority' => 20,
 			),
-
-			array(
-				'name'     => 'colormag_integrations_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Integrations', 'colormag' ),
-				'panel'    => 'colormag_additional_panel',
-				'priority' => 30,
-			),
-
 			array(
 				'name'     => 'colormag_optimization_section',
 				'type'     => 'section',

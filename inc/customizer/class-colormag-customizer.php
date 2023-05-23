@@ -86,7 +86,6 @@ class ColorMag_Customizer {
 
 		// Additional.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-icons-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-integrations-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-optimization-options.php';
 
 		// Footer.
