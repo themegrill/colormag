@@ -97,15 +97,6 @@ class ColorMag_Customizer_Partials {
 	}
 
 	/**
-	 * Render the breaking news title display for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_breaking_news_text() {
-		echo esc_html( get_theme_mod( 'colormag_news_ticker_label', __( 'Latest:', 'colormag' ) ) );
-	}
-
-	/**
 	 * Render the date in the header for selective refresh partial.
 	 *
 	 * @return void

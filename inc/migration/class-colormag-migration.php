@@ -81,11 +81,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			 */
 			$color_options = array(
 				array(
-					'old_key' => 'colormag_breaking_news_label_background_color',
-					'new_key' => 'colormag_news_ticker_label_background_color',
-					'default' => '#55ac55',
-				),
-				array(
 					'old_key' => 'colormag_progress_bar_bgcolor',
 					'new_key' => 'colormag_progress_bar_indicator_color',
 					'default' => '#222222',
@@ -166,57 +161,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 				set_theme_mod( 'colormag_header_media_position', $new_header_media_position );
 				remove_theme_mod( 'colormag_header_image_position' );
-			}
-
-			// News Ticker position.
-			$old_news_ticker_position = get_theme_mod( 'colormag_breaking_news_position_options' );
-
-			if ( $old_news_ticker_position ) {
-
-				if ( 'header' === $old_news_ticker_position ) {
-					$new_news_ticker_position = 'top-bar';
-				} elseif ( 'main' === $old_news_ticker_position ) {
-					$new_news_ticker_position = 'below-header';
-				} else {
-					$new_news_ticker_position = 'top-bar';
-				}
-
-				set_theme_mod( 'colormag_news_ticker_position', $new_news_ticker_position );
-				remove_theme_mod( 'colormag_breaking_news_position_options' );
-			}
-
-			// News Ticker query.
-			$old_news_ticker_query = get_theme_mod( 'colormag_breaking_news_category_option' );
-
-			if ( $old_news_ticker_query ) {
-
-				if ( 'latest' === $old_news_ticker_query ) {
-					$new_news_ticker_query = 'latest';
-				} elseif ( 'category' === $old_news_ticker_query ) {
-					$new_news_ticker_query = 'category';
-				} else {
-					$new_news_ticker_query = 'latest';
-				}
-
-				set_theme_mod( 'colormag_news_ticker_query', $new_news_ticker_query );
-				remove_theme_mod( 'colormag_breaking_news_category_option' );
-			}
-
-			// News Ticker animation.
-			$old_news_ticker_animation = get_theme_mod( 'colormag_breaking_news_setting_animation_options' );
-
-			if ( $old_news_ticker_animation ) {
-
-				if ( 'up' === $old_news_ticker_animation ) {
-					$new_news_ticker_animation = 'up';
-				} elseif ( 'down' === $old_news_ticker_animation ) {
-					$new_news_ticker_animation = 'down';
-				} else {
-					$new_news_ticker_animation = 'down';
-				}
-
-				set_theme_mod( 'colormag_news_ticker_animation_direction', $new_news_ticker_animation );
-				remove_theme_mod( 'colormag_breaking_news_setting_animation_options' );
 			}
 
 			// Blog layout.
@@ -842,172 +786,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				);
 			};
 
-			$typography_options = array(
-				array(
-					'old_key' => 'colormag_breaking_news_label_typography_setting',
-					'new_key' => 'colormag_news_ticker_label_typography',
-				),
-				array(
-					'old_key' => 'colormag_breaking_news_content_typography_setting',
-					'new_key' => 'colormag_news_ticker_content_typography',
-				),
-				array(
-					'old_key' => 'colormag_primary_menu_typography_setting',
-					'new_key' => 'colormag_primary_menu_typography',
-				),
-				array(
-					'old_key' => 'colormag_primary_sub_menu_typography_setting',
-					'new_key' => 'colormag_primary_sub_menu_typography',
-				),
-				array(
-					'old_key' => 'colormag_post_title_typography_setting',
-					'new_key' => 'colormag_post_title_typography',
-				),
-				array(
-					'old_key' => 'colormag_comment_title_typography_setting',
-					'new_key' => 'colormag_comment_title_typography',
-				),
-				array(
-					'old_key' => 'colormag_post_meta_typography_setting',
-					'new_key' => 'colormag_post_meta_typography',
-				),
-				array(
-					'old_key' => 'colormag_page_title_typography_setting',
-					'new_key' => 'colormag_page_title_typography',
-				),
-				array(
-					'old_key' => 'colormag_footer_widget_title_typography_setting',
-					'new_key' => 'colormag_footer_widget_title_typography',
-				),
-				array(
-					'old_key' => 'colormag_footer_widget_content_typography_setting',
-					'new_key' => 'colormag_footer_widget_content_typography',
-				),
-				array(
-					'old_key' => 'colormag_footer_copyright_typography_setting',
-					'new_key' => 'colormag_footer_copyright_typography',
-				),
-				array(
-					'old_key' => 'colormag_footer_menu_typography_setting',
-					'new_key' => 'colormag_footer_menu_typography',
-				),
-			);
-
-			foreach ( $typography_options as $option ) {
-				$old_value = get_theme_mod( $option['old_key'] );
-
-				if ( $old_value ) {
-					$new_desktop_font = isset( $old_value['font-size']['desktop'] ) ? $extractsizeandunit( $old_value['font-size']['desktop'] ) : array(
-						'size' => '',
-						'unit' => 'px',
-					);
-
-					$new_tablet_font = isset( $old_value['font-size']['tablet'] ) ? $extractsizeandunit( $old_value['font-size']['tablet'] ) : array(
-						'size' => '',
-						'unit' => 'px',
-					);
-
-					$new_mobile_font = isset( $old_value['font-size']['mobile'] ) ? $extractsizeandunit( $old_value['font-size']['mobile'] ) : array(
-						'size' => '',
-						'unit' => 'px',
-					);
-
-					$new_desktop_line_height = isset( $old_value['line-height']['desktop'] ) ? $extractsizeandunit( $old_value['line-height']['desktop'] ) : array(
-						'size' => '',
-						'unit' => '-',
-					);
-
-					if ( empty( $new_desktop_line_height['unit'] ) ) {
-						$new_desktop_line_height['unit'] = '-';
-					}
-
-					$new_tablet_line_height = isset( $old_value['line-height']['tablet'] ) ? $extractsizeandunit( $old_value['line-height']['tablet'] ) : array(
-						'size' => '',
-						'unit' => '-',
-					);
-
-					if ( empty( $new_tablet_line_height['unit'] ) ) {
-						$new_tablet_line_height['unit'] = '-';
-					}
-
-					$new_mobile_line_height = isset( $old_value['line-height']['mobile'] ) ? $extractsizeandunit( $old_value['line-height']['mobile'] ) : array(
-						'size' => '',
-						'unit' => '-',
-					);
-
-					if ( empty( $new_mobile_line_height['unit'] ) ) {
-						$new_mobile_line_height['unit'] = '-';
-					}
-
-					$new_desktop_letter_spacing = isset( $old_value['letter-spacing']['desktop'] ) ? $extractsizeandunit( $old_value['letter-spacing']['desktop'] ) : array(
-						'size' => '',
-						'unit' => 'px',
-					);
-
-					$new_tablet_letter_spacing = isset( $old_value['letter-spacing']['tablet'] ) ? $extractsizeandunit( $old_value['letter-spacing']['tablet'] ) : array(
-						'size' => '',
-						'unit' => 'px',
-					);
-
-					$new_mobile_letter_spacing = isset( $old_value['letter-spacing']['mobile'] ) ? $extractsizeandunit( $old_value['letter-spacing']['mobile'] ) : array(
-						'size' => '',
-						'unit' => 'px',
-					);
-
-					$new_value = array(
-						'font-family'    => $old_value['font-family'],
-						'font-weight'    => $old_value['font-weight'],
-						'font-size'      => array(
-							'desktop' => array(
-								'size' => $new_desktop_font['size'],
-								'unit' => $new_desktop_font['unit'],
-							),
-							'tablet'  => array(
-								'size' => $new_tablet_font['size'],
-								'unit' => $new_tablet_font['unit'],
-							),
-							'mobile'  => array(
-								'size' => $new_mobile_font['size'],
-								'unit' => $new_mobile_font['unit'],
-							),
-						),
-						'line-height'    => array(
-							'desktop' => array(
-								'size' => $new_desktop_line_height['size'],
-								'unit' => $new_desktop_line_height['unit'],
-							),
-							'tablet'  => array(
-								'size' => $new_tablet_line_height['size'],
-								'unit' => $new_tablet_line_height['unit'],
-							),
-							'mobile'  => array(
-								'size' => $new_mobile_line_height['size'],
-								'unit' => $new_mobile_line_height['unit'],
-							),
-						),
-						'letter-spacing' => array(
-							'desktop' => array(
-								'size' => $new_desktop_letter_spacing['size'],
-								'unit' => $new_desktop_letter_spacing['unit'],
-							),
-							'tablet'  => array(
-								'size' => $new_tablet_letter_spacing['size'],
-								'unit' => $new_tablet_letter_spacing['unit'],
-							),
-							'mobile'  => array(
-								'size' => $new_mobile_letter_spacing['size'],
-								'unit' => $new_mobile_letter_spacing['unit'],
-							),
-						),
-						'font-style'     => $old_value['font-style'],
-						'text-transform' => $old_value['text-transform'],
-					);
-
-					set_theme_mod( $option['new_key'], $new_value );
-					remove_theme_mod( $option['old_key'] );
-				}
-			}
-
 			/**
 			 * Radio image control migration.
 			 */
@@ -1076,10 +854,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				array(
 					'old_key' => 'colormag_primary_menu_background_setting',
 					'new_key' => 'colormag_primary_menu_background',
-				),
-				array(
-					'old_key' => 'colormag_breaking_news_label_background_color',
-					'new_key' => 'colormag_news_ticker_label_background',
 				),
 			);
 

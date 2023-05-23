@@ -203,45 +203,6 @@ if ( ! function_exists( 'colormag_excerpt_length_sanitize' ) ) :
 
 endif;
 
-
-if ( ! function_exists( 'colormag_news_ticker_animation_duration_sanitize' ) ) :
-
-	/**
-	 * Deprecate function for number sanitization.
-	 *
-	 * @param string               $val     Input from the customize controls.
-	 * @param WP_Customize_Setting $setting Setting instance.
-	 */
-	function colormag_news_ticker_animation_duration_sanitize( $val, $setting = array() ) {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Sanitizes::sanitize_number( $val, $setting )' );
-
-		return ColorMag_Customizer_Sanitizes::sanitize_number( $val, $setting );
-
-	}
-
-endif;
-
-
-if ( ! function_exists( 'colormag_news_ticker_animation_speed_sanitize' ) ) :
-
-	/**
-	 * Deprecate function for number sanitization.
-	 *
-	 * @param string               $val     Input from the customize controls.
-	 * @param WP_Customize_Setting $setting Setting instance.
-	 */
-	function colormag_news_ticker_animation_speed_sanitize( $val, $setting = array() ) {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Sanitizes::sanitize_number( $val, $setting )' );
-
-		return ColorMag_Customizer_Sanitizes::sanitize_number( $val, $setting );
-
-	}
-
-endif;
-
-
 if ( ! function_exists( 'colormag_footer_editor_sanitize' ) ) :
 
 	/**
@@ -306,23 +267,6 @@ if ( ! function_exists( 'colormag_date_display_type' ) ) :
 	}
 
 endif;
-
-
-if ( ! function_exists( 'colormag_breaking_news_content' ) ) :
-
-	/**
-	 * Deprecate breaking news content refresh function.
-	 */
-	function colormag_breaking_news_content() {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Partials::render_breaking_news_text()' );
-
-		ColorMag_Customizer_Partials::render_breaking_news_text();
-
-	}
-
-endif;
-
 
 if ( ! function_exists( 'colormag_read_next_text' ) ) :
 

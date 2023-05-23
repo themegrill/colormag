@@ -35,51 +35,6 @@ class ColorMag_Dynamic_CSS {
 		 * Variable declarations.
 		 */
 
-		// Top bar color options
-		$breaking_news_label_background_color = get_theme_mod( 'colormag_news_ticker_label_background', '#55ac55' );
-
-		$breaking_news_label_typography_default = array(
-			'font-family' => 'default',
-			'font-weight' => 600,
-			'font-size'   => array(
-				'desktop' => array(
-					'size' => '14',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
-
-		$breaking_news_content_typography_default = array(
-			'font-family' => 'default',
-			'font-weight' => 600,
-			'font-size'   => array(
-				'desktop' => array(
-					'size' => '14',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
-
-		// Top bar typography option.
-		$breaking_news_label_typography   = get_theme_mod( 'colormag_news_ticker_label_typography', $breaking_news_label_typography_default );
-		$breaking_news_content_typography = get_theme_mod( 'colormag_news_ticker_content_typography', $breaking_news_content_typography_default );
-
 		// Header options.
 
 		$primary_menu_text_color                  = get_theme_mod( 'colormag_primary_menu_text_color', '' );
@@ -570,35 +525,6 @@ class ColorMag_Dynamic_CSS {
 			$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_elementor_css );
 
 		}
-
-		//Top bar breaking news label background color.
-		$breaking_news_label_background_color_css = array(
-			'#main .breaking-news-latest' => array(
-				'background-color' => esc_html( $breaking_news_label_background_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#55ac55', $breaking_news_label_background_color, $breaking_news_label_background_color_css );
-
-		$parse_css .= colormag_parse_typography_css(
-			$breaking_news_content_typography_default,
-			$breaking_news_content_typography,
-			'.breaking-news ul li a',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
-		$parse_css .= colormag_parse_typography_css(
-			$breaking_news_label_typography_default,
-			$breaking_news_label_typography,
-			'.breaking-news .breaking-news-latest',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
 
 		/**
 		 * Header options.

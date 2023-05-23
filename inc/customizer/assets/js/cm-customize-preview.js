@@ -9,9 +9,6 @@
 colormagGenerateDimensionCSS( 'colormag_primary_menu_dimension_padding', '.cm-primary-nav a', 'padding' );
 colormagGenerateDimensionCSS( 'colormag_main_header_dimension_padding', '.cm-primary-nav', 'padding' );
 
-
-colormagGenerateTypographyCSS( 'colormag_news_ticker_label_typography', '.breaking-news .breaking-news-latest');
-colormagGenerateTypographyCSS( 'colormag_news_ticker_content_typography', '.breaking-news ul li a');
 colormagGenerateTypographyCSS( 'colormag_primary_menu_typography', '.cm-primary-nav ul li a');
 colormagGenerateTypographyCSS( 'colormag_primary_sub_menu_typography', '.cm-primary-nav ul li ul li a');
 colormagGenerateTypographyCSS( 'colormag_post_title_typography', '.cm-posts .post .entry-title');

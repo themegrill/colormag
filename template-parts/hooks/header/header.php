@@ -392,27 +392,6 @@ endif;
 
 add_action( 'colormag_action_before_content', 'colormag_main_section_start', 10 );
 
-if ( ! function_exists( 'colormag_before_content_breaking_news' ) ) :
-
-	/**
-	 * Before content breaking news.
-	 */
-	function colormag_before_content_breaking_news() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_news_ticker', 0 ) && 'below-header' === get_theme_mod( 'colormag_news_ticker_position', 'header' ) ) :
-			?>
-			<div class="breaking-news-main inner-wrap clearfix">
-				<?php colormag_breaking_news(); ?>
-			</div>
-			<?php
-		endif;
-
-	}
-
-endif;
-
-	add_action( 'colormag_action_before_content', 'colormag_before_content_breaking_news', 15 );
-
 if ( ! function_exists( 'colormag_front_page_full_width_sidebar' ) ) :
 
 	/**
