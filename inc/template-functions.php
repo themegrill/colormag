@@ -457,35 +457,6 @@ function colormag_posts_custom_column_views( $column_name, $post_id ) {
 
 add_action( 'manage_posts_custom_column', 'colormag_posts_custom_column_views', 5, 2 );
 
-
-/**
- * Filters the CSS classes applied to a menu item’s list item element to add the category ID on menu class.
- *
- * @param array  $classes Array of the CSS classes that are applied to the menu item's <li> element.
- * @param object $item    The current menu item.
- *
- * @return array $classes
- */
-function colormag_category_id_on_menu( $classes, $item ) {
-
-	// Bail out if category color in menu is not set.
-	if ( '' == get_theme_mod( 'colormag_enable_category_color', '' ) ) {
-		return $classes;
-	}
-
-	if ( 'category' !== $item->object ) {
-		return $classes;
-	}
-
-	$classes[] = 'menu-item-category-' . $item->object_id;
-
-	return $classes;
-
-}
-
-add_filter( 'nav_menu_css_class', 'colormag_category_id_on_menu', 10, 2 );
-
-
 /**
  * Adding the custom generated user field.
  *

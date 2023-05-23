@@ -718,11 +718,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			// Category color.
 			$enable_category_color = get_theme_mod( 'colormag_category_menu_color' );
 
-			if ( $enable_category_color ) {
-				set_theme_mod( 'colormag_enable_category_color', true );
-			}
-			remove_theme_mod( 'colormag_category_menu_color' );
-
 			// Featured image caption.
 			$enable_category_color = get_theme_mod( 'colormag_featured_image_caption_show' );
 
@@ -846,14 +841,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				array(
 					'old_key' => 'colormag_footer_background_setting',
 					'new_key' => 'colormag_footer_background',
-				),
-				array(
-					'old_key' => 'colormag_primary_sub_menu_background_setting',
-					'new_key' => 'colormag_primary_sub_menu_background',
-				),
-				array(
-					'old_key' => 'colormag_primary_menu_background_setting',
-					'new_key' => 'colormag_primary_menu_background',
 				),
 			);
 

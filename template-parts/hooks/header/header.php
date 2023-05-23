@@ -297,9 +297,6 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 				<?php } ?>
 
 							<?php
-							if ( 'logo' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
-								colormag_menu_logo();
-							}
 
 							if ( 1 == $random_post_icon || 1 == $search_icon || ( 1 == $social_links_enable && 1 == $social_links_header_visibility && 'menu' === $social_links_header_location ) ) {
 								?>

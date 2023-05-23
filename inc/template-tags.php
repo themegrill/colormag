@@ -1040,24 +1040,6 @@ function colormag_get_image_src_by_url( $image_url, $image_size ) {
 	}
 }
 
-if ( ! function_exists( 'colormag_menu_logo' ) ) :
-	function colormag_menu_logo() {
-		$menu_logo = colormag_get_image_src_by_url( get_theme_mod( 'colormag_primary_menu_logo' ), 'full' );
-
-		if ( isset( $menu_logo[0] ) ) :
-			?>
-			<div class="menu-logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				   title="<?php esc_attr( bloginfo( 'name' ) ); ?>">
-					<img src="<?php echo esc_url( $menu_logo[0] ); ?>"
-						 alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
-				</a>
-			</div>
-			<?php
-		endif;
-	}
-endif;
-
 if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
 
 	/**

@@ -251,11 +251,7 @@ function colormag_get_fonts() {
 	/**
 	 * Header options.
 	 */
-	$primary_menu_typography_default = array(
-		'font-family' => 'default',
-		'font-weight' => '600',
-	);
-	$primary_menu_typography         = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
+
 
 	/**
 	 * Typography options.
@@ -268,14 +264,6 @@ function colormag_get_fonts() {
 	/**
 	 * Enqueue required Google fonts.
 	 */
-	// Header options.
-	if ( 'default' === $primary_menu_typography['font-family'] ) {
-		$primary_menu_typography['font-family'] = 'Open Sans';
-	}
-
-	$primary_menu_typography_font_weight = isset( $primary_menu_typography['font-weight'] ) ? $primary_menu_typography['font-weight'] : 'regular';
-
-	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
