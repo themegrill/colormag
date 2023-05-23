@@ -438,22 +438,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_breadcrumb_display' );
 			}
 
-			// Sticky menu type.
-			$old_sticky_menu_style = get_theme_mod( 'colormag_primary_sticky_menu_type' );
-
-			if ( $old_sticky_menu_style ) {
-				if ( 'sticky' === $old_sticky_menu_style ) {
-					$new_sticky_menu_style = 'style-1';
-				} elseif ( 'reveal_on_scroll' === $old_sticky_menu_style ) {
-					$new_sticky_menu_style = 'style-2';
-				} else {
-					$new_sticky_menu_style = 'style-1';
-				}
-
-				set_theme_mod( 'colormag_sticky_menu_type', $new_sticky_menu_style );
-				remove_theme_mod( 'colormag_primary_sticky_menu_type' );
-			}
-
 			// Blog content excerpt type.
 			$old_blog_content_excerpt_type = get_theme_mod( 'colormag_archive_content_excerpt_display' );
 

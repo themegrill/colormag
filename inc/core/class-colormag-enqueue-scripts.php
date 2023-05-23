@@ -114,13 +114,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Sticky Menu.
 			if ( 1 == get_theme_mod( 'colormag_enable_sticky_menu', 0 ) ) {
 				// Sticky JS enqueue.
-				if ( 'sticky' == get_theme_mod( 'colormag_sticky_menu_type', 'sticky' ) ) {
-					wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL . '/sticky/jquery.sticky' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-				} elseif ( 'reveal_on_scroll' == get_theme_mod( 'colormag_sticky_menu_type', 'sticky' ) ) {
-					// Headroomjs enqueue.
-					wp_enqueue_script( 'Headroom', COLORMAG_JS_URL . '/headroom/Headroom' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
-					wp_enqueue_script( 'jQuery-headroom', COLORMAG_JS_URL . '/headroom/jQuery.headroom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-				}
+				wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL . '/sticky/jquery.sticky' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 			}
 
 			// News Ticker.
