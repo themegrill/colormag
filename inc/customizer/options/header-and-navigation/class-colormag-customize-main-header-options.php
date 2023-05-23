@@ -60,7 +60,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 				'choices'  => array(
 					'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
 					'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
-					'layout-3' => esc_html__( 'Layout 3', 'colormag' ),
 				),
 			),
 
@@ -78,10 +77,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 						'style-1' => array(
 							'label' => '',
 							'url'   => COLORMAG_IMG_URL . '/main-header/layout-1/style-1.svg',
-						),
-						'style-2' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/main-header/layout-1/style-2.svg',
 						),
 					)
 				),
@@ -108,10 +103,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 							'label' => '',
 							'url'   => COLORMAG_IMG_URL . '/main-header/layout-2/style-1.svg',
 						),
-						'style-2' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/main-header/layout-2/style-2.svg',
-						),
 					)
 				),
 				'image_col'  => 1,
@@ -119,31 +110,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 					'colormag_main_header_layout',
 					'==',
 					'layout-2',
-				),
-			),
-
-			array(
-				'name'       => 'colormag_main_header_layout_3_style',
-				'default'    => 'style-1',
-				'type'       => 'control',
-				'control'    => 'colormag-radio-image',
-				'label'      => esc_html__( 'Advanced Style', 'colormag' ),
-				'section'    => 'colormag_primary_header_section',
-				'priority'   => 30,
-				'choices'    => apply_filters(
-					'colormag_main_header_layout_1_style_choices',
-					array(
-						'style-1' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/main-header/layout-3/style-1.svg',
-						),
-					)
-				),
-				'image_col'  => 1,
-				'dependency' => array(
-					'colormag_main_header_layout',
-					'==',
-					'layout-3',
 				),
 			),
 
