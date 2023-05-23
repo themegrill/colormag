@@ -186,8 +186,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					$new_main_footer_layout = 'layout-1';
 				} elseif ( 'type_two' === $old_main_footer_layout ) {
 					$new_main_footer_layout = 'layout-2';
-				} elseif ( 'type_three' === $old_main_footer_layout ) {
-					$new_main_footer_layout = 'layout-3';
 				} else {
 					$new_main_footer_layout = 'layout-1';
 				}
@@ -462,10 +460,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				array(
 					'old_key' => 'colormag_footer_copyright_background_setting',
 					'new_key' => 'colormag_footer_copyright_background',
-				),
-				array(
-					'old_key' => 'colormag_footer_background_setting',
-					'new_key' => 'colormag_footer_background',
 				),
 			);
 

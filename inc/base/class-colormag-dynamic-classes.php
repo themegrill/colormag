@@ -26,8 +26,6 @@ if ( ! function_exists( 'colormag_footer_layout_class' ) ) :
 
 		if ( 'layout-2' === $colormag_footer_layout_class ) {
 			$class_name = 'colormag-footer--classic';
-		} elseif ( 'layout-3' === $colormag_footer_layout_class ) {
-			$class_name = 'colormag-footer--classic-bordered';
 		}
 
 		return $class_name;

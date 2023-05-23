@@ -52,18 +52,7 @@ class ColorMag_Dynamic_CSS {
 		$footer_copyright_link_color                  = get_theme_mod( 'colormag_footer_copyright_link_text_color', '#289dcc' );
 		$footer_menu_color                            = get_theme_mod( 'colormag_footer_menu_color', '#b1b6b6' );
 		$footer_menu_hover_color                      = get_theme_mod( 'colormag_footer_menu_hover_color', '#207daf' );
-		$footer_widget_title_color                    = get_theme_mod( 'colormag_footer_widget_title_color', '#ffffff' );
-		$footer_widget_content_color                  = get_theme_mod( 'colormag_footer_widget_content_color', '#ffffff' );
-		$footer_widget_content_link_text_color        = get_theme_mod( 'colormag_footer_widget_content_link_text_color', '#ffffff' );
-		$footer_widget_content_link_text_hover_color  = get_theme_mod( 'colormag_footer_widget_content_link_text_hover_color', '#207daf' );
-		$footer_background_default                    = array(
-			'background-color'      => '',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
+
 		$footer_copyright_background_default          = array(
 			'background-color'      => '',
 			'background-image'      => '',
@@ -120,58 +109,13 @@ class ColorMag_Dynamic_CSS {
 			'background-attachment' => 'scroll',
 			'background-repeat'     => 'repeat',
 		);
-		$footer_background                            = get_theme_mod( 'colormag_footer_background', $footer_background_default );
 		$footer_copyright_background                  = get_theme_mod( 'colormag_footer_copyright_background', $footer_copyright_background_default );
 		$footer_copyright_typography                  = get_theme_mod( 'colormag_footer_copyright_typography', $footer_copyright_typography_default );
 		$footer_menu_typography                       = get_theme_mod( 'colormag_footer_menu_typography', $footer_menu_typography_default );
 		$footer_sidebar_area_background               = get_theme_mod( 'colormag_footer_sidebar_area_background_setting', $footer_sidebar_area_background_default );
 		$footer_upper_sidebar_area_background         = get_theme_mod( 'colormag_footer_upper_sidebar_area_background_setting', $footer_upper_sidebar_area_background_default );
 
-		/**
-		 * Color options.
-		 */
 
-		/**
-		 * Button.
-		 */
-
-		/**
-		 * Typography options.
-		 */
-		$footer_widget_title_typography_default   = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '18',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
-		$footer_widget_content_typography_default = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '14',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
-		$footer_widget_title_typography           = get_theme_mod( 'colormag_footer_widget_title_typography', $footer_widget_title_typography_default );
-		$footer_widget_content_typography         = get_theme_mod( 'colormag_footer_widget_content_typography', $footer_widget_content_typography_default );
 
 		// Generate dynamic CSS.
 		$parse_css = '';
@@ -416,9 +360,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Footer options.
 		 */
-		// Background.
-		$parse_css .= colormag_parse_background_css( $footer_background_default, $footer_background, '#cm-footer, .cm-footer-cols' );
-
 		// Footer copyright background.
 		$parse_css .= colormag_parse_background_css( $footer_copyright_background_default, $footer_copyright_background, '.cm-footer-bar' );
 
@@ -489,74 +430,6 @@ class ColorMag_Dynamic_CSS {
 		// Footer upper sidebar area background.
 		$parse_css .= colormag_parse_background_css( $footer_upper_sidebar_area_background_default, $footer_upper_sidebar_area_background, '#cm-footer .cm-upper-footer-cols .widget' );
 
-		// Footer widget title color.
-		$footer_widget_title_color_css = array(
-			'.cm-footer-cols .cm-row .cm-widget-title span' => array(
-				'color' => esc_html( $footer_widget_title_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#ffffff', $footer_widget_title_color, $footer_widget_title_color_css );
-
-		// Footer widget content color.
-		$footer_widget_content_color_css = array(
-			'.cm-footer-cols .cm-row,
-			.cm-footer-cols .cm-row p' => array(
-				'color' => esc_html( $footer_widget_content_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#ffffff', $footer_widget_content_color, $footer_widget_content_color_css );
-
-		// Footer widget content link text color.
-		$footer_widget_content_link_text_color_css = array(
-			'.cm-footer-cols .cm-row a' => array(
-				'color' => esc_html( $footer_widget_content_link_text_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#ffffff', $footer_widget_content_link_text_color, $footer_widget_content_link_text_color_css );
-
-		// Footer widget content link text hover color.
-		$footer_widget_content_link_text_hover_color_css = array(
-			'.cm-footer-cols .cm-row a:hover' => array(
-				'color' => esc_html( $footer_widget_content_link_text_hover_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#207daf', $footer_widget_content_link_text_hover_color, $footer_widget_content_link_text_hover_color_css );
-
-		$button_border_radius_default = array(
-			'size' => 3,
-			'unit' => 'px',
-		);
-
-		/**
-		 * Typography.
-		 */
-		// Footer widget title typography.
-		$parse_css .= colormag_parse_typography_css(
-			$footer_widget_title_typography_default,
-			$footer_widget_title_typography,
-			'.cm-footer-cols .cm-row .cm-widget-title',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
-		// Footer widget content typography.
-		$parse_css .= colormag_parse_typography_css(
-			$footer_widget_content_typography_default,
-			$footer_widget_content_typography,
-			'#cm-footer,
-			#cm-footer p',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
 		// Add the custom CSS rendered dynamically, which is static.
 		$parse_css .= self::render_custom_output();
 
@@ -585,17 +458,6 @@ class ColorMag_Dynamic_CSS {
 		$colormag_category_entry_meta_remove = get_theme_mod( 'colormag_category_entry_meta_remove', 0 );
 		$colormag_comments_entry_meta_remove = get_theme_mod( 'colormag_comments_entry_meta_remove', 0 );
 		$colormag_tags_entry_meta_remove     = get_theme_mod( 'colormag_tags_entry_meta_remove', 0 );
-
-		// Footer options.
-		$footer_background_default = array(
-			'background-color'      => '',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-		$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
 
 		// Generate dynamic CSS.
 		$colormag_custom_css = '';
@@ -631,15 +493,6 @@ class ColorMag_Dynamic_CSS {
 		// Tags remove from post meta.
 		if ( 1 == $colormag_tags_entry_meta_remove ) {
 			$colormag_custom_css .= '.cm-below-entry-meta .tag-links{display:none}';
-		}
-
-		/**
-		 * Footer options.
-		 */
-
-		// Footer background image.
-		if ( $footer_background['background-image'] ) {
-			$colormag_custom_css .= '.cm-footer-cols, .cm-footer-bar, .colormag-footer--classic .cm-footer-bar{background-color:transparent}';
 		}
 
 		return $colormag_custom_css;
