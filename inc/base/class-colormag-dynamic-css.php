@@ -47,46 +47,6 @@ class ColorMag_Dynamic_CSS {
 
 		$header_background           = get_theme_mod( 'colormag_main_header_background', $header_background_default );
 
-		// Post/Page/Blog options.
-		$page_title_color = get_theme_mod( 'colormag_page_title_color', '#333333' );
-		$post_meta_color  = get_theme_mod( 'colormag_post_meta_color', '#71717A' );
-
-		$page_title_typography_default = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '34',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
-		$post_meta_typography_default  = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '12',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
-
-		$page_title_typography = get_theme_mod( 'colormag_page_title_typography', $page_title_typography_default );
-		$post_meta_typography  = get_theme_mod( 'colormag_post_meta_typography', $post_meta_typography_default );
-
 		// Footer options.
 		$footer_copyright_color                       = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
 		$footer_copyright_link_color                  = get_theme_mod( 'colormag_footer_copyright_link_text_color', '#289dcc' );
@@ -453,65 +413,6 @@ class ColorMag_Dynamic_CSS {
 			'padding'
 		);
 
-		// Page title color.
-		$page_title_color_css = array(
-			'.type-page .cm-entry-title,
-			.type-page .cm-entry-title a' => array(
-				'color' => esc_html( $page_title_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $page_title_color, $page_title_color_css );
-
-		// Page title typography.
-		$parse_css .= colormag_parse_typography_css(
-			$page_title_typography_default,
-			$page_title_typography,
-			'.type-page .cm-entry-title',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
-		// Post meta typography.
-		$parse_css .= colormag_parse_typography_css(
-			$post_meta_typography_default,
-			$post_meta_typography,
-			'.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-date a,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-author,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-author a,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-views a,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-tag-links a,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-comments-link a,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-edit-link a,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-edit-link i,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-views,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .reading-time,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .reading-time::before',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
-		// Post meta color.
-		$post_meta_color_css = array(
-			'.cm-post-date a,
-			.human-diff-time .human-diff-time-display,
-			.cm-total-views,
-			.cm-author a,
-			cm-post-views,
-			.total-views,
-			.cm-edit-link a,
-			.cm-comments-link a,
-			.reading-time' => array(
-				'color' => esc_html( $post_meta_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#888888', $post_meta_color, $post_meta_color_css );
-
 		/**
 		 * Footer options.
 		 */
@@ -773,15 +674,6 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
-		// Post meta color.
-		$post_meta_color     = get_theme_mod( 'colormag_post_meta_color', '#71717A' );
-		$post_meta_color_css = array(
-			'body' => array(
-				'--color--gray' => esc_html( $post_meta_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#888888', $post_meta_color, $post_meta_color_css );
 		return $parse_css;
 
 	}

@@ -70,10 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="entry-footer">
 		<?php
-		// Edit button remove option add.
-		if ( 0 == get_theme_mod( 'colormag_edit_button_entry_meta_remove', 0 ) ) :
-			edit_post_link( esc_html__( 'Edit', 'colormag' ), '<span class="cm-edit-link"><i class="fa fa-edit"></i>', '</span>' );
-		endif;
+			edit_post_link( esc_html__( 'Edit', 'colormag' ), '<span class="cm-edit-link"><i class="fa fa-edit"></i>', '</span>' );;
 		?>
 	</div>
 

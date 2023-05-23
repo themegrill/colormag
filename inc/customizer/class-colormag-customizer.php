@@ -82,7 +82,6 @@ class ColorMag_Customizer {
 
 		// Content.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-single-post-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-post-meta-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-page-options.php';
 
 		// Additional.

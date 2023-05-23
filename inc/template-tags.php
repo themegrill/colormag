@@ -22,20 +22,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	 */
 	function colormag_entry_meta( $full_post_meta = true, $reading_time_display = false ) {
 
-		$meta_orders = get_theme_mod(
-			'colormag_post_meta_structure',
+		$meta_orders =
 			array(
 				'categories',
 				'author',
 				'date',
-			)
-		);
+			);
 
 		$human_diff_time = '';
-
-		if ( get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) == 'style-2' ) {
-			$human_diff_time = 'human-diff-time';
-		}
 
 		echo '<div class="cm-below-entry-meta ' . esc_attr( $human_diff_time ) . '">';
 
@@ -70,9 +64,7 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 			// Edit button remove option add.
 			if ( $full_post_meta ) {
-				if ( 0 == get_theme_mod( 'colormag_edit_button_entry_meta_remove', 0 ) ) {
 					edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link"><i class="fa fa-edit"></i>', '</span>' );
-				}
 			}
 
 			echo '</div>';
@@ -164,8 +156,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 		global $post;
 
-		$meta_structure = get_theme_mod(
-			'colormag_post_meta_structure',
+		$meta_structure =
 			array(
 				'categories',
 				'date',
@@ -174,8 +165,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 				'comments',
 				'tags',
 				'read-time',
-			)
-		);
+			);
 
 		$categories = get_the_category();
 		$output     = '';
@@ -637,7 +627,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 								<div class="comment-metadata">
 									<?php
 										printf(
-											'<div class="comment-date-time"' . colormag_schema_markup( 'comment_time' ) . '> ' . colormag_get_icon( 'calendar-fill', false) . '%1$s</div>',
+											'<div class="comment-date-time"' . colormag_schema_markup( 'comment_time' ) . '> ' . colormag_get_icon( 'calendar-fill', false ) . '%1$s</div>',
 											sprintf(
 												/* Translators: 1. Comment date, 2. Comment time */
 												esc_html__( '%1$s at %2$s', 'colormag' ),
@@ -697,7 +687,7 @@ if ( ! function_exists( 'colormag_post_view_display' ) ) :
 
 		$count_key = 'total_number_of_views';
 		$count     = get_post_meta( $post_id, $count_key, true );
-		$icon      = $show_icon ? colormag_get_icon( 'eye', false): '';
+		$icon      = $show_icon ? colormag_get_icon( 'eye', false ) : '';
 
 		if ( '' === $count ) {
 			delete_post_meta( $post_id, $count_key );
@@ -919,17 +909,6 @@ if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
 			colormag_get_icon( 'calendar-fill', false ),
 			$time_string
 		); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-		if ( 'style-2' == get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) ) {
-			printf(
-				/* Translators: %s Timestamp */
-				_x( '<span class="cm-post-date human-diff-time-display">%s ago</span>', '%s = human-readable time difference', 'colormag' ),
-				human_time_diff(
-					get_the_time( 'U' ),
-					current_time( 'timestamp' )
-				)
-			); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-		}
 	}
 endif;
 
@@ -973,7 +952,7 @@ if ( ! function_exists( 'colormag_comment_meta_markup' ) ) :
 			<span class="cm-comments-link">
 				<?php
 
-				$icon = colormag_get_icon('comment', false);
+				$icon = colormag_get_icon( 'comment', false );
 				if ( $full_post_meta ) {
 					comments_popup_link(
 						$icon . __( ' 0 Comments', 'colormag' ),
@@ -982,7 +961,7 @@ if ( ! function_exists( 'colormag_comment_meta_markup' ) ) :
 					);
 				} else {
 
-					colormag_get_icon('comment');
+					colormag_get_icon( 'comment' );
 					comments_popup_link( '0', '1', '%' );
 				}
 				?>

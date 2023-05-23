@@ -196,23 +196,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_main_footer_layout_display_type' );
 			}
 
-			// Post Meta date style.
-			$old_post_meta_date_style = get_theme_mod( 'colormag_post_meta_date_setting' );
-
-			if ( $old_post_meta_date_style ) {
-
-				if ( 'post_date' === $old_post_meta_date_style ) {
-					$new_post_meta_date_style = 'style-1';
-				} elseif ( 'post_human_readable_date' === $old_post_meta_date_style ) {
-					$new_post_meta_date_style = 'style-2';
-				} else {
-					$new_post_meta_date_style = 'style-1';
-				}
-
-				set_theme_mod( 'colormag_post_meta_date_style', $new_post_meta_date_style );
-				remove_theme_mod( 'colormag_post_meta_date_setting' );
-			}
-
 			// Related post flyout query.
 			$old_related_post_query = get_theme_mod( 'colormag_related_posts' );
 
