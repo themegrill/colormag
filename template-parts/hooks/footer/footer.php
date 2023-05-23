@@ -70,7 +70,7 @@ if ( ! function_exists( 'colormag_footer_start' ) ) :
 	 */
 	function colormag_footer_start() {
 		?>
-		<footer id="cm-footer" class="cm-footer <?php echo esc_attr( colormag_footer_layout_class() ); ?>"<?php echo colormag_schema_markup( 'footer' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+		<footer id="cm-footer" class="cm-footer <?php echo esc_attr( colormag_footer_layout_class() ); ?>">
 		<?php
 	}
 

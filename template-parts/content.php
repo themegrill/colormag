@@ -19,8 +19,7 @@ $archive_search_layout = 'layout-1';
 ?>
 
 <article id="post-<?php the_ID(); ?>"
-	<?php post_class( array( $class_name_layout_two ) ); ?>
-	<?php echo colormag_schema_markup( 'entry' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<?php post_class( array( $class_name_layout_two ) ); ?>>
 	<?php
 	/**
 	 * Hook: colormag_before_post_content.

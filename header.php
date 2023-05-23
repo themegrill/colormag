@@ -31,7 +31,7 @@ do_action( 'colormag_action_doctype' );
 
 </head>
 
-<body <?php body_class(); ?><?php echo colormag_schema_markup( 'body' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+<body <?php body_class(); ?>>
 
 <?php
 

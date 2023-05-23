@@ -16,7 +16,7 @@ $image_popup_id  = get_post_thumbnail_id();
 $image_popup_url = wp_get_attachment_url( $image_popup_id );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo colormag_schema_markup( 'entry' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**
 	 * Hook: colormag_before_post_content.
@@ -34,7 +34,7 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 
 		if ( true == get_theme_mod( 'colormag_enable_featured_image', true ) && has_post_thumbnail() ) :
 			?>
-			<div class="cm-featured-image"<?php echo colormag_schema_markup( 'image' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+			<div class="cm-featured-image">
 				<?php if ( 1 == get_theme_mod( 'colormag_enable_lightbox', 0 ) ) : ?>
 					<a href="<?php echo esc_url( $image_popup_url ); ?>" class="image-popup"><?php the_post_thumbnail( 'colormag-featured-image' ); ?></a>
 					<?php

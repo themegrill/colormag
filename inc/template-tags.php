@@ -612,7 +612,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 				// Proceed with normal comments.
 				global $post;
 				?>
-				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"<?php echo colormag_schema_markup( 'comment' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 					<article id="comment-<?php comment_ID(); ?>" class="comment">
 						<footer class="comment-meta">
 							<div class="comment-author vcard">
@@ -627,7 +627,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 								<div class="comment-metadata">
 									<?php
 										printf(
-											'<div class="comment-date-time"' . colormag_schema_markup( 'comment_time' ) . '> ' . colormag_get_icon( 'calendar-fill', false ) . '%1$s</div>',
+											'<div class="comment-date-time"' . '> ' . colormag_get_icon( 'calendar-fill', false ) . '%1$s</div>',
 											sprintf(
 												/* Translators: 1. Comment date, 2. Comment time */
 												esc_html__( '%1$s at %2$s', 'colormag' ),
@@ -646,7 +646,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
 						<?php endif; ?>
 
-						<section class="comment-content comment"<?php echo colormag_schema_markup( 'comment_content' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+						<section class="comment-content comment">
 							<?php
 							comment_text();
 
@@ -886,11 +886,11 @@ if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
 	function colormag_date_meta_markup() {
 
 		// Displays the same published and updated date if the post is never updated.
-		$time_string = '<time class="entry-date published updated" datetime="%1$s"' . colormag_schema_markup( 'entry_time' ) . '>%2$s</time>';
+		$time_string = '<time class="entry-date published updated" datetime="%1$s"' . '>%2$s</time>';
 
 		// Displays the different published and updated date if the post is updated.
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s"' . colormag_schema_markup( 'entry_time' ) . '>%2$s</time><time class="updated" datetime="%3$s"' . colormag_schema_markup( 'entry_time_modified' ) . '>%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s"' . '>%2$s</time><time class="updated" datetime="%3$s"' . '>%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -981,7 +981,7 @@ if ( ! function_exists( 'colormag_tags_meta_markup' ) ) :
 	 * @return void
 	 */
 	function colormag_tags_meta_markup() {
-		$tags_list = get_the_tag_list( '<span class="tag-links"' . colormag_schema_markup( 'tag' ) . '><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
+		$tags_list = get_the_tag_list( '<span class="tag-links"' . '><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
 
 		if ( $tags_list ) {
 			echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped

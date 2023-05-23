@@ -17,13 +17,12 @@ defined( 'ABSPATH' ) || exit;
 		$date_display_enable            = get_theme_mod( 'colormag_date_display', 0 );
 		$social_links_enable            = get_theme_mod( 'colormag_enable_social_icons', 0 );
 		$social_links_header_visibility = get_theme_mod( 'colormag_enable_social_icons_header', 1 );
-		$social_links_header_location   = get_theme_mod( 'colormag_social_icons_header_location', 'top-bar' );
 
 if (
 			( 1 == $top_bar_enable ) && (
 				( 1 == $date_display_enable ) ||
 				( 1 == $breaking_news_enable ) ||
-				( 1 == $social_links_enable && 1 == $social_links_header_visibility && 'top-bar' === $social_links_header_location ) )
+				( 1 == $social_links_enable && 1 == $social_links_header_visibility ) )
 		) :
 	if ( 1 == $top_bar_enable ) {
 		?>
@@ -49,7 +48,7 @@ if (
 				<?php
 
 				// Social icons.
-				if ( 1 == $social_links_header_visibility && 'top-bar' === $social_links_header_location ) {
+				if ( 1 == $social_links_header_visibility ) {
 					colormag_social_links();
 				}
 				?>

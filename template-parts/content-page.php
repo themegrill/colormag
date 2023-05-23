@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo colormag_schema_markup( 'entry' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**
 	 * Hook: colormag_before_post_content.
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 	<?php if ( 1 == get_theme_mod( 'colormag_enable_page_featured_image', 1 ) && has_post_thumbnail() ) : ?>
-		<div class="cm-featured-image"<?php echo colormag_schema_markup( 'image' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+		<div class="cm-featured-image">
 			<?php the_post_thumbnail( 'colormag-featured-image' ); ?>
 		</div>
 	<?php endif; ?>
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$markup = is_front_page() ? 'h1' : 'h2';
 		?>
 		<header class="cm-entry-header">
-			<<?php echo esc_attr( $markup ); ?> class="cm-entry-title"<?php echo colormag_schema_markup( 'entry_title' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+			<<?php echo esc_attr( $markup ); ?> class="cm-entry-title">
 				<?php the_title(); ?>
 			</<?php echo esc_attr( $markup ); ?> >
 		</header>
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	?>
 
-	<div class="cm-entry-summary"<?php echo colormag_schema_markup( 'entry_content' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<div class="cm-entry-summary">
 		<?php
 		the_content();
 

@@ -179,7 +179,7 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	 */
 	function colormag_header_start() {
 		?>
-	<header id="cm-masthead" class="<?php colormag_css_class( 'colormag_header_class' ); ?>"<?php echo colormag_schema_markup( 'header' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<header id="cm-masthead" class="<?php colormag_css_class( 'colormag_header_class' ); ?>">
 		<?php
 	}
 
@@ -251,11 +251,8 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 	 */
 	function colormag_header_two() {
 
-		$random_post_icon               = get_theme_mod( 'colormag_enable_random_post', 0 );
-		$search_icon                    = get_theme_mod( 'colormag_enable_search', 0 );
-		$social_links_enable            = get_theme_mod( 'colormag_enable_social_icons', true );
-		$social_links_header_visibility = get_theme_mod( 'colormag_enable_social_icons_header', 1 );
-		$social_links_header_location   = get_theme_mod( 'colormag_social_icons_header_location', 'top-bar' );
+		$random_post_icon = get_theme_mod( 'colormag_enable_random_post', 0 );
+		$search_icon      = get_theme_mod( 'colormag_enable_search', 0 );
 
 		if ( function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ) ) :
 			?>
@@ -275,7 +272,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 		<?php else : ?>
 
 <div id="cm-header-2" class="cm-header-2">
-	<nav id="cm-primary-nav" class="cm-primary-nav"<?php echo colormag_schema_markup( 'nav' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<nav id="cm-primary-nav" class="cm-primary-nav">
 		<div class="cm-container">
 			<div class="cm-row">
 				<?php
@@ -298,14 +295,10 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 
 							<?php
 
-							if ( 1 == $random_post_icon || 1 == $search_icon || ( 1 == $social_links_enable && 1 == $social_links_header_visibility && 'menu' === $social_links_header_location ) ) {
+							if ( 1 == $random_post_icon || 1 == $search_icon ) {
 								?>
 				<div class="cm-header-actions">
 								<?php
-								// Displays the social links in header.
-								if ( 1 == $social_links_header_visibility && 'menu' === $social_links_header_location ) {
-									colormag_social_links();
-								}
 
 								// Displays the random post.
 								if ( 1 == $random_post_icon ) {
@@ -381,7 +374,7 @@ if ( ! function_exists( 'colormag_main_section_start' ) ) :
 	 */
 	function colormag_main_section_start() {
 		?>
-	<div id="cm-content" class="cm-content"<?php echo colormag_schema_markup( 'content' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<div id="cm-content" class="cm-content">
 		<?php
 	}
 

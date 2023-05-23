@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 if ( is_singular() ) :
 	?>
 
-<div class="cm-entry-summary"<?php echo colormag_schema_markup( 'entry_content' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+<div class="cm-entry-summary">
 	<?php
 	the_content();
 
@@ -40,7 +40,7 @@ if ( is_singular() ) :
 	<?php
 else :
 	?>
-<div class="cm-entry-summary"<?php echo colormag_schema_markup( 'entry_summary' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+<div class="cm-entry-summary">
 			<?php the_excerpt(); ?>
 
 	<a class="cm-entry-button" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
