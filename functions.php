@@ -119,9 +119,6 @@ require COLORMAG_PARENT_DIR . '/template-parts/hooks/content/content.php';
 
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/footer/footer.php';
 
-/** Schema markup file include. */
-require_once COLORMAG_INCLUDES_DIR . '/schema-markup.php';
-
 /** WP_Query functions files. */
 require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
 

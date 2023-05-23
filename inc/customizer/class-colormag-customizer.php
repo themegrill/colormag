@@ -85,7 +85,6 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-page-options.php';
 
 		// Additional.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-additional-general-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-icons-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-integrations-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-optimization-options.php';
@@ -93,7 +92,6 @@ class ColorMag_Customizer {
 		// Footer.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-column-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-bar-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-scroll-to-top-options.php';
 
 		// WooCommerce.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php';

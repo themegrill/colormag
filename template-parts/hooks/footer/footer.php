@@ -233,13 +233,9 @@ if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
 	 * Scroll to top button.
 	 */
 	function colormag_scroll_top_button() {
-
-		if ( get_theme_mod( 'colormag_enable_scroll_to_top', 0 ) ) :
 			?>
 			<a href="#cm-masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 		<?php
-		endif;
-
 	}
 
 endif;
@@ -268,10 +264,7 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 	 */
 	function colormag_footer_copyright() {
 
-		$default_footer_value      = get_theme_mod(
-			'colormag_footer_editor',
-			esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag') . '[tg-link]' .  esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].'
-		);
+		$default_footer_value      = esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag') . '[tg-link]' .  esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].';
 		$colormag_footer_copyright = $default_footer_value;
 
 		echo do_shortcode( $colormag_footer_copyright );

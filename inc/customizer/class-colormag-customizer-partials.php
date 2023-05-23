@@ -22,21 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class ColorMag_Customizer_Partials {
 
 	/**
-	 * Render the footer copyright information for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_footer_copyright_text() {
-		$default_footer_value      = get_theme_mod(
-			'colormag_footer_editor',
-			esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag') . '[tg-link]' .  esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].'
-		);
-		$colormag_footer_copyright = $default_footer_value;
-
-		echo do_shortcode( $colormag_footer_copyright );
-	}
-
-	/**
 	 * Render the date in the header for selective refresh partial.
 	 *
 	 * @return void

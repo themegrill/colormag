@@ -28,13 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( 1 == get_theme_mod( 'colormag_enable_page_featured_image', 1 ) && has_post_thumbnail() ) : ?>
 		<div class="cm-featured-image"<?php echo colormag_schema_markup( 'image' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
-			<?php
-			the_post_thumbnail( 'colormag-featured-image' );
-
-			if ( 1 == get_theme_mod( 'colormag_enable_schema_markup', '' ) ) :
-				?>
-				<meta itemprop="url" content="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID, 'full' ) ); ?>">
-			<?php endif; ?>
+			<?php the_post_thumbnail( 'colormag-featured-image' ); ?>
 		</div>
 	<?php endif; ?>
 

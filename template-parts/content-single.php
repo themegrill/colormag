@@ -40,12 +40,7 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 					<?php
 				else :
 					the_post_thumbnail( 'colormag-featured-image' );
-				endif;
-
-				if ( 1 == get_theme_mod( 'colormag_enable_schema_markup', '' ) ) :
-					?>
-					<meta itemprop="url" content="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID, 'full' ) ); ?>">
-				<?php endif; ?>
+				endif; ?>
 			</div>
 
 			<?php

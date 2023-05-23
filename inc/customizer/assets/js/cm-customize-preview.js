@@ -11,5 +11,3 @@ colormagGenerateDimensionCSS( 'colormag_main_header_dimension_padding', '.cm-pri
 
 colormagGenerateTypographyCSS( 'colormag_primary_menu_typography', '.cm-primary-nav ul li a');
 colormagGenerateTypographyCSS( 'colormag_primary_sub_menu_typography', '.cm-primary-nav ul li ul li a');
-colormagGenerateTypographyCSS( 'colormag_footer_copyright_typography', '.footer-socket-wrapper .copyright');
-colormagGenerateTypographyCSS( 'colormag_footer_menu_typography', '.footer-menu a');

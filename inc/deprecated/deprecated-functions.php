@@ -203,24 +203,6 @@ if ( ! function_exists( 'colormag_excerpt_length_sanitize' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_footer_editor_sanitize' ) ) :
-
-	/**
-	 * Deprecate function for footer copyright sanitization.
-	 *
-	 * @param string $input Input from the customize controls.
-	 */
-	function colormag_footer_editor_sanitize( $input ) {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Sanitizes::sanitize_html( $input )' );
-
-		return ColorMag_Customizer_Sanitizes::sanitize_html( $input );
-
-	}
-
-endif;
-
-
 if ( ! function_exists( 'colormag_customize_partial_blogname' ) ) :
 
 	/**
