@@ -106,11 +106,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// BxSlider JS.
 			wp_register_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			// Related post carousel.
-			if ( 'style-4' == get_theme_mod( 'colormag_related_posts_style', 'style-1' ) ) {
-				wp_enqueue_script( 'colormag-bxslider' );
-			}
-
 			// Sticky Menu.
 			if ( 1 == get_theme_mod( 'colormag_enable_sticky_menu', 0 ) ) {
 				// Sticky JS enqueue.
@@ -156,11 +151,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
 			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
-			// prognroll JS enqueue.
-			if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) {
-				wp_enqueue_script( 'prognroll', COLORMAG_JS_URL . '/prognroll/prognroll' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-			}
-
 			// Enqueue the Google Maps API key if it exits.
 			$google_maps_api_key = get_theme_mod( 'colormag_googlemap_api_key' );
 			if ( $google_maps_api_key ) {
@@ -172,17 +162,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-			if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) {
-				$progress_bar_bgcolor = get_theme_mod( 'colormag_progress_bar_indicator_color', '#222222' );
-				wp_localize_script(
-					'colormag-custom',
-					'colormag_progress_bar_indicator_color',
-					array(
-						'bg_color' => $progress_bar_bgcolor,
-					)
-				);
-			}
 
 			// Enqueue bxslider if post has gallery post format.
 			if ( has_post_format( 'gallery' ) || is_home() || is_search() || is_archive() ) {

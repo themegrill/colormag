@@ -246,42 +246,6 @@ endif;
 
 add_action( 'colormag_action_after_footer', 'colormag_scroll_top_button', 15 );
 
-if ( ! function_exists( 'colormag_reading_progress_bar' ) ) :
-
-	/**
-	 * Reading progress bar.
-	 */
-	function colormag_reading_progress_bar() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) :
-			?>
-			<div class="reading-progress-bar"></div>
-		<?php
-		endif;
-
-	}
-
-endif;
-
-add_action( 'colormag_action_after_footer', 'colormag_reading_progress_bar', 20 );
-
-if ( ! function_exists( 'colormag_flyout_related_post' ) ) :
-
-	/**
-	 * Flyout related posts.
-	 */
-	function colormag_flyout_related_post() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_flyout_related_posts', 0 ) && is_single() ) :
-			get_template_part( 'template-parts/footer/flyout-related-posts' );
-		endif;
-
-	}
-
-endif;
-
-add_action( 'colormag_action_after_footer', 'colormag_flyout_related_post', 25 );
-
 if ( ! function_exists( 'colormag_page_end' ) ) :
 
 	/**

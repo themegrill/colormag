@@ -32,16 +32,13 @@ if ( have_posts() ) :
 		do_action( 'alnp_load_after_loop' );
 
 		if ( true === apply_filters( 'colormag_single_post_page_navigation_filter', true ) ) :
-			if ( 0 == get_theme_mod( 'colormag_enable_post_navigation', 0 ) ) :
 				get_template_part( 'navigation', 'single' );
-			endif;
 		endif;
 
 		/**
 		 * Functions hooked into colormag_action_after_single_post_content action.
 		 *
 		 * @hooked colormag_author_bio - 10
-		 * @hooked colormag_social_share - 15
 		 * @hooked colormag_related_posts - 20
 		 */
 		do_action( 'colormag_action_after_single_post_content' );

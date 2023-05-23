@@ -268,37 +268,6 @@ if ( ! function_exists( 'colormag_date_display_type' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_read_next_text' ) ) :
-
-	/**
-	 * Deprecate read next text refresh function.
-	 */
-	function colormag_read_next_text() {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Partials::render_read_next_text()' );
-
-		ColorMag_Customizer_Partials::render_read_next_text();
-
-	}
-
-endif;
-
-
-if ( ! function_exists( 'colormag_you_may_also_like_text' ) ) :
-
-	/**
-	 * Deprecate you may also like refresh function.
-	 */
-	function colormag_you_may_also_like_text() {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Partials::render_you_may_also_like_text()' );
-
-		ColorMag_Customizer_Partials::render_you_may_also_like_text();
-
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_background_image' ) ) :
 
 	/**

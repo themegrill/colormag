@@ -48,26 +48,9 @@ class ColorMag_Dynamic_CSS {
 		$header_background           = get_theme_mod( 'colormag_main_header_background', $header_background_default );
 
 		// Post/Page/Blog options.
-		$post_title_color = get_theme_mod( 'colormag_post_title_color', '#333333' );
 		$page_title_color = get_theme_mod( 'colormag_page_title_color', '#333333' );
 		$post_meta_color  = get_theme_mod( 'colormag_post_meta_color', '#71717A' );
 
-		$post_title_typography_default = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '32',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
 		$page_title_typography_default = array(
 			'font-size' => array(
 				'desktop' => array(
@@ -101,7 +84,6 @@ class ColorMag_Dynamic_CSS {
 			),
 		);
 
-		$post_title_typography = get_theme_mod( 'colormag_post_title_typography', $post_title_typography_default );
 		$page_title_typography = get_theme_mod( 'colormag_page_title_typography', $page_title_typography_default );
 		$post_meta_typography  = get_theme_mod( 'colormag_post_meta_typography', $post_meta_typography_default );
 
@@ -196,22 +178,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Typography options.
 		 */
-		$comment_title_typography_default         = array(
-			'font-size' => array(
-				'desktop' => array(
-					'size' => '24',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-		);
 		$footer_widget_title_typography_default   = array(
 			'font-size' => array(
 				'desktop' => array(
@@ -244,7 +210,6 @@ class ColorMag_Dynamic_CSS {
 				),
 			),
 		);
-		$comment_title_typography                 = get_theme_mod( 'colormag_comment_title_typography', $comment_title_typography_default );
 		$footer_widget_title_typography           = get_theme_mod( 'colormag_footer_widget_title_typography', $footer_widget_title_typography_default );
 		$footer_widget_content_typography         = get_theme_mod( 'colormag_footer_widget_content_typography', $footer_widget_content_typography_default );
 
@@ -488,32 +453,6 @@ class ColorMag_Dynamic_CSS {
 			'padding'
 		);
 
-		/**
-		 * Post/Page/Blog options.
-		 */
-		// Post title color.
-		$post_title_color_css = array(
-			'.post .cm-entry-title,
-			.cm-posts .post .cm-post-content .cm-entry-title a,
-			.cm-posts .post .single-title-above .cm-entry-title a' => array(
-				'color' => esc_html( $post_title_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $post_title_color, $post_title_color_css );
-
-		// Post title typography.
-		$parse_css .= colormag_parse_typography_css(
-			$post_title_typography_default,
-			$post_title_typography,
-			'.cm-posts .post .entry-title',
-
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
 		// Page title color.
 		$page_title_color_css = array(
 			'.type-page .cm-entry-title,
@@ -694,19 +633,6 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Typography.
 		 */
-		// Comment title typography.
-		$parse_css .= colormag_parse_typography_css(
-			$comment_title_typography_default,
-			$comment_title_typography,
-			'.comments-title,
-			.comment-reply-title,
-			#respond h3#reply-title',
-			array(
-				'tablet' => 768,
-				'mobile' => 600,
-			)
-		);
-
 		// Footer widget title typography.
 		$parse_css .= colormag_parse_typography_css(
 			$footer_widget_title_typography_default,

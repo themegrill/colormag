@@ -621,17 +621,6 @@ jQuery( document ).ready(
 			);
 		}
 
-		// Scroll Reading Progress JS Setting.
-		if ( typeof jQuery.fn.prognroll !== 'undefined' ) {
-			jQuery( 'body' ).prognroll(
-				{
-					height : 5,
-					color  : colormag_progress_bar_indicator_color.bg_color,
-					custom : false,
-				}
-			);
-		}
-
 		// Google Maps Settings.
 		if ( typeof google !== 'undefined' && typeof colormag_google_maps_widget_settings !== 'undefined' ) {
 

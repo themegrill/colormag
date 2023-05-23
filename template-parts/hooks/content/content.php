@@ -149,61 +149,18 @@ if ( ! function_exists( 'colormag_author_bio' ) ) :
 	 */
 	function colormag_author_bio() {
 
-		if ( true == get_theme_mod( 'colormag_enable_author_bio', 0 ) && get_the_author_meta( 'description' ) ) :
+		if ( get_the_author_meta( 'description' ) ) :
 
-			$author_layout       = get_theme_mod( 'colormag_author_bio_style', 'style-1' );
-			$author_class        = str_replace( '_', '-', $author_layout );
-			$author_class        = 'author-bio-' . $author_class;
-			$social_sites_enable = get_theme_mod( 'colormag_enable_author_bio_profile', 0 );
-			$avatar_image_size   = apply_filters( 'colormag_author_bio_avatar_size_filter', 100 );
+			$avatar_image_size = apply_filters( 'colormag_author_bio_avatar_size_filter', 100 );
 			?>
 
-			<div class="author-box <?php echo esc_attr( $author_class ); ?>">
-				<div class="author-description-wrapper">
-					<h4 class="author-name"><?php the_author_meta( 'display_name' ); ?></h4>
-
-					<?php
-					if ( 1 == $social_sites_enable && ( 'style-2' === $author_layout || 'style-3' === $author_layout ) ) {
-						colormag_author_social_link();
-					}
-					?>
-
-					<p class="author-description"><?php the_author_meta( 'description' ); ?></p>
-
-					<?php
-					if ( 1 == $social_sites_enable && 'style-1' === $author_layout ) {
-						colormag_author_social_link();
-					}
-					?>
-
-					<?php if ( 1 == get_theme_mod( 'colormag_enable_author_bio_link', 0 ) ) : ?>
-						<p class="author-url">
-							<?php
-							printf(
-							/* Translators: %1$s: Author display name, %2$s: Author id */
-								esc_html__( '%1$s has %2$s posts and counting.', 'colormag' ),
-								esc_html( get_the_author_meta( 'display_name' ) ),
-								absint( count_user_posts( get_the_author_meta( 'ID' ) ) )
-							);
-							?>
-
-							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-								<?php
-								printf(
-								/* Translators: %1$s: Author display name */
-									esc_html__( 'See all posts by %1$s', 'colormag' ),
-									esc_html( get_the_author_meta( 'display_name' ) )
-								);
-								?>
-							</a>
-						</p>
-					<?php endif; ?>
-				</div>
-
+			<div class="author-box">
 				<div class="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), $avatar_image_size ); ?></div>
+				<h4 class="author-name"><?php the_author_meta( 'display_name' ); ?></h4>
+				<p class="author-description"><?php the_author_meta( 'description' ); ?></p>
 			</div>
 
-			<?php
+		<?php
 
 		endif;
 
@@ -212,23 +169,6 @@ if ( ! function_exists( 'colormag_author_bio' ) ) :
 endif;
 
 add_action( 'colormag_action_after_single_post_content', 'colormag_author_bio', 10 );
-
-if ( ! function_exists( 'colormag_social_share' ) ) :
-
-	/**
-	 * Social share.
-	 */
-	function colormag_social_share() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_social_share', 0 ) ) {
-			get_template_part( 'template-parts/content/share' );
-		}
-
-	}
-
-endif;
-
-add_action( 'colormag_action_after_single_post_content', 'colormag_social_share', 15 );
 
 if ( ! function_exists( 'colormag_related_posts' ) ) :
 

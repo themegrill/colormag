@@ -26,13 +26,9 @@ get_header();
 	<?php colormag_two_sidebar_select(); ?>
 
 	<div id="cm-primary" class="cm-primary">
-		<div class="cm-posts" class="clearfix<?php echo 1 === get_theme_mod( 'colormag_enable_autoload_posts', 0 ) ? esc_attr( ' tg-autoload-posts' ) : ''; ?>">
+		<div class="cm-posts" class="clearfix">
 
 			<?php
-			if ( get_theme_mod( 'colormag_enable_autoload_posts', 0 ) ) {
-				echo '<div class="tg-post">';
-			}
-
 			/**
 			 * Hook: colormag_before_single_post_page_loop.
 			 */
@@ -53,9 +49,7 @@ get_header();
 		<?php
 
 		if (true === apply_filters('colormag_single_post_page_navigation_filter', true)) :
-			if (0 == get_theme_mod('colormag_enable_post_navigation', 0)) :
 				get_template_part('navigation', 'single');
-			endif;
 		endif;
 
 		if (!class_exists('Auto_Load_Next_Post')) :
@@ -64,7 +58,6 @@ get_header();
 			 * Functions hooked into colormag_action_after_single_post_content action.
 			 *
 			 * @hooked colormag_author_bio - 10
-			 * @hooked colormag_social_share - 15
 			 * @hooked colormag_related_posts - 20
 			 */
 			do_action('colormag_action_after_single_post_content');
@@ -87,15 +80,6 @@ get_header();
 		 * Hook: colormag_after_comments_template.
 		 */
 		do_action('colormag_after_comments_template');
-
-		if (get_theme_mod('colormag_enable_autoload_posts', 0)) {
-			echo '</div>';
-		}
-
-
-		if ( get_theme_mod( 'colormag_enable_autoload_posts', 0 ) && is_single() ) {
-			colormag_next_post_load();
-		}
 		?>
 	</div><!-- #cm-primary -->
 

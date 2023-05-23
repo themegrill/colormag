@@ -22,27 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class ColorMag_Customizer_Partials {
 
 	/**
-	 * Render the Read Next text for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_read_next_text() {
-		echo '<span>' . esc_html( get_theme_mod( 'colormag_read_next_text', __( 'Read Next', 'colormag' ) ) ) . '</span>';
-	}
-
-	/**
-	 * Render the you may also like text for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_you_may_also_like_text() {
-		?>
-		<i class="fa fa-thumbs-up"></i>
-		<span><?php echo esc_html( get_theme_mod( 'colormag_you_may_also_like_text', __( 'You May Also Like', 'colormag' ) ) ); ?></span>
-		<?php
-	}
-
-	/**
 	 * Render the footer copyright information for selective refresh partial.
 	 *
 	 * @return void
