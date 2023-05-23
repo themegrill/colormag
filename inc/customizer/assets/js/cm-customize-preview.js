@@ -5,12 +5,10 @@
  *
  */
 
-colormagGenerateCSS( 'colormag_top_bar_border_bottom_color', '.cm-top-bar', 'border-bottom-color' )
 
 colormagGenerateDimensionCSS( 'colormag_primary_menu_dimension_padding', '.cm-primary-nav a', 'padding' );
 colormagGenerateDimensionCSS( 'colormag_main_header_dimension_padding', '.cm-primary-nav', 'padding' );
 
-colormagGenerateSliderCSS( 'colormag_top_bar_border_bottom_size', '.cm-top-bar', 'border-bottom-width');
 
 colormagGenerateTypographyCSS( 'colormag_news_ticker_label_typography', '.breaking-news .breaking-news-latest');
 colormagGenerateTypographyCSS( 'colormag_news_ticker_content_typography', '.breaking-news ul li a');

@@ -36,11 +36,6 @@ class ColorMag_Dynamic_CSS {
 		 */
 
 		// Top bar color options
-		$top_bar_background_color             = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
-		$top_bar_text_color                   = get_theme_mod( 'colormag_top_bar_text_color', '#555' );
-		$top_bar_link_color                   = get_theme_mod( 'colormag_top_bar_link_color', '#207daf' );
-		$top_bar_link_hover_color             = get_theme_mod( 'colormag_top_bar_link_hover_color', '' );
-		$top_bar_label_color                  = get_theme_mod( 'colormag_top_bar_label_color', '#555' );
 		$breaking_news_label_background_color = get_theme_mod( 'colormag_news_ticker_label_background', '#55ac55' );
 
 		$breaking_news_label_typography_default = array(
@@ -575,80 +570,6 @@ class ColorMag_Dynamic_CSS {
 			$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_elementor_css );
 
 		}
-
-		/**
-		 * Top bar options.
-		 */
-		// Top bar border bottom color.
-		$top_bar_border_bottom_color = get_theme_mod( 'colormag_top_bar_border_bottom_color', '' );
-
-		$top_bar_border_bottom_color_css = array(
-			'.cm-top-bar' => array(
-				'border-bottom-color' => esc_html( $top_bar_border_bottom_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '', $top_bar_border_bottom_color, $top_bar_border_bottom_color_css );
-
-		$top_bar_border_bottom_size_default = array(
-			'size' => '',
-			'unit' => 'px',
-		);
-
-		$top_bar_border_bottom_size = get_theme_mod( 'colormag_top_bar_border_bottom_size', '' );
-
-		$parse_css .= colormag_parse_slider_css(
-			$top_bar_border_bottom_size_default,
-			$top_bar_border_bottom_size,
-			'.cm-top-bar',
-			'border-bottom-width'
-		);
-
-		// Top bar background color.
-		$top_bar_background_color_css = array(
-			'.cm-top-bar' => array(
-				'background-color' => esc_html( $top_bar_background_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
-
-		// Top bar border text color.
-		$top_bar_text_color_css = array(
-			'.cm-top-bar,
-			.date-in-header' => array(
-				'color' => esc_html( $top_bar_text_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#555', $top_bar_text_color, $top_bar_text_color_css );
-
-		// Top bar border link color.
-		$top_bar_link_color_css = array(
-			'.cm-top-bar a' => array(
-				'color' => esc_html( $top_bar_link_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#207daf', $top_bar_link_color, $top_bar_link_color_css );
-
-		// Top bar link hover color.
-		$top_bar_link_hover_color_css = array(
-			'.cm-top-bar a:hover' => array(
-				'color' => esc_html( $top_bar_link_hover_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '', $top_bar_link_hover_color, $top_bar_link_hover_color_css );
-
-		// Top bar border label color.
-		$top_bar_label_color_css = array(
-			'.breaking-news-latest' => array(
-				'color' => esc_html( $top_bar_label_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#555', $top_bar_label_color, $top_bar_label_color_css );
 
 		//Top bar breaking news label background color.
 		$breaking_news_label_background_color_css = array(

@@ -67,116 +67,6 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 				'priority' => 30,
 			),
 
-			array(
-				'name'       => 'colormag_top_bar_full_width',
-				'default'    => 0,
-				'type'       => 'control',
-				'control'    => 'colormag-toggle',
-				'label'      => esc_html__( 'Full Width', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 40,
-			),
-
-			array(
-				'name'       => 'colormag_style_divider',
-				'default'    => 0,
-				'type'       => 'control',
-				'control'    => 'colormag-divider',
-				'style'      => 'dashed',
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 50,
-			),
-
-			array(
-				'name'     => 'colormag_top_bar_style_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Style', 'colormag' ),
-				'section'  => 'colormag_top_bar_section',
-				'priority' => 60,
-			),
-
-			array(
-				'name'     => 'colormag_top_bar_background_color_group',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'label'    => esc_html__( 'Background', 'colormag' ),
-				'section'  => 'colormag_top_bar_section',
-				'priority' => 70,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_background_color',
-				'default'    => '#fff',
-				'type'       => 'sub-control',
-				'control'    => 'colormag-color',
-				'parent'     => 'colormag_top_bar_background_color_group',
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 80,
-			),
-
-
-			/**
-			 * Top bar border bottom styling options.
-			 */
-			array(
-				'name'        => 'colormag_top_bar_border_bottom_size',
-				'default'     => array(
-					'size' => '',
-					'unit' => 'px',
-				),
-				'suffix'      => array( 'px' ),
-				'type'        => 'control',
-				'control'     => 'colormag-slider',
-				'label'       => esc_html__( 'Border Bottom Size', 'colormag' ),
-				'section'     => 'colormag_top_bar_section',
-				'input_attrs' => array(
-					'px' => array(
-						'min'  => 0,
-						'max'  => 20,
-						'step' => 1,
-					),
-				),
-				'dependency'  => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'transport'   => 'postMessage',
-				'priority'    => 80,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_border_bottom_color',
-				'default'    => '',
-				'type'       => 'control',
-				'control'    => 'colormag-color',
-				'label'      => esc_html__( 'Border Bottom Color', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'transport'  => 'postMessage',
-				'priority'   => 90,
-			),
-
 			/**
 			 * Show Date.
 			 */
@@ -191,7 +81,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 100,
+				'priority'   => 40,
 			),
 
 			// Date in header display option.
@@ -216,7 +106,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'    => 110,
+				'priority'    => 50,
 			),
 
 			// Date in header display type option.
@@ -245,7 +135,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'!=',
 					0,
 				),
-				'priority'    => 120,
+				'priority'    => 60,
 			),
 
 			/**
@@ -262,7 +152,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 130,
+				'priority'   => 70,
 			),
 
 			array(
@@ -279,7 +169,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'      => 140,
+				'priority'      => 80,
 			),
 
 			// Social Icons.
@@ -294,7 +184,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 150,
+				'priority'   => 90,
 			),
 
 			array(
@@ -311,206 +201,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'      => 160,
-			),
-
-			// Menu.
-			array(
-				'name'       => 'colormag_top_bar_menu_heading',
-				'type'       => 'control',
-				'control'    => 'colormag-title',
-				'label'      => esc_html__( 'Menu', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 170,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_menu_enable',
-				'type'       => 'control',
-				'default'    => 0,
-				'control'    => 'colormag-toggle',
-				'label'      => esc_html__( 'Enable', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 180,
-			),
-
-			array(
-				'name'          => 'colormag_top_bar_menu',
-				'default'       => 0,
-				'type'          => 'control',
-				'control'       => 'colormag-navigate',
-				'section'       => 'colormag_top_bar_section',
-				'navigate_info' => array(
-					'target_id'    => 'add_menu',
-					'target_label' => esc_html__( 'Menus', 'colormag' ),
-				),
-				'priority'      => 190,
-				'dependency'    => array(
-					'colormag_top_bar_menu_enable',
-					'==',
-					'1',
-				),
-			),
-
-			/**
-			 * Top bar color styling options.
-			 */
-			array(
-				'name'       => 'colormag_top_bar_text_heading',
-				'type'       => 'control',
-				'control'    => 'colormag-title',
-				'label'      => esc_html__( 'Text', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 200,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_text_color_group',
-				'type'       => 'control',
-				'control'    => 'colormag-group',
-				'label'      => esc_html__( 'Color', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 210,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_text_color',
-				'default'    => '#555',
-				'type'       => 'sub-control',
-				'control'    => 'colormag-color',
-				'parent'     => 'colormag_top_bar_text_color_group',
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 220,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_label_heading',
-				'type'       => 'control',
-				'control'    => 'colormag-title',
-				'label'      => esc_html__( 'Label', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 230,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_label_color_group',
-				'type'       => 'control',
-				'control'    => 'colormag-group',
-				'label'      => esc_html__( 'Color', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 240,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_label_color',
-				'default'    => '#555',
-				'type'       => 'sub-control',
-				'control'    => 'colormag-color',
-				'parent'     => 'colormag_top_bar_label_color_group',
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 250,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_links_heading',
-				'type'       => 'control',
-				'control'    => 'colormag-title',
-				'label'      => esc_html__( 'Links', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 260,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_link_color_group',
-				'label'      => esc_html__( 'Color', 'colormag' ),
-				'default'    => '',
-				'type'       => 'control',
-				'control'    => 'colormag-group',
-				'section'    => 'colormag_top_bar_section',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 270,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_link_color',
-				'default'    => '#207daf',
-				'type'       => 'sub-control',
-				'control'    => 'colormag-color',
-				'tab'        => esc_html__( 'Normal', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'parent'     => 'colormag_top_bar_link_color_group',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 280,
-			),
-
-			array(
-				'name'       => 'colormag_top_bar_link_hover_color',
-				'default'    => '',
-				'type'       => 'sub-control',
-				'control'    => 'colormag-color',
-				'label'      => esc_html__( 'Color', 'colormag' ),
-				'tab'        => esc_html__( 'Hover', 'colormag' ),
-				'section'    => 'colormag_top_bar_section',
-				'parent'     => 'colormag_top_bar_link_color_group',
-				'dependency' => array(
-					'colormag_enable_top_bar',
-					'==',
-					true,
-				),
-				'priority'   => 290,
+				'priority'      => 100,
 			),
 		);
 
