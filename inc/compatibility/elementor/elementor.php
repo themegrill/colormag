@@ -7,6 +7,17 @@
  * @since      ColorMag 1.2.3
  */
 
+use elementor\widgets\ColorMag_Elementor_Global_Widgets_Title;
+use elementor\widgets\ColorMag_Elementor_Widgets_Block_1;
+use elementor\widgets\ColorMag_Elementor_Widgets_Block_2;
+use elementor\widgets\ColorMag_Elementor_Widgets_Block_4;
+use elementor\widgets\ColorMag_Elementor_Widgets_Block_6;
+use elementor\widgets\ColorMag_Elementor_Widgets_Block_9;
+use elementor\widgets\ColorMag_Elementor_Widgets_Grid_2;
+use elementor\widgets\ColorMag_Elementor_Widgets_Grid_3;
+use elementor\widgets\ColorMag_Elementor_Widgets_Grid_4;
+use elementor\widgets\ColorMag_Elementor_Widgets_Grid_5;
+
 if ( ! function_exists( 'colormag_elementor_widget_render_filter' ) ) :
 
 	/**

@@ -35,9 +35,9 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 <div class="cm-row">
 	<?php
 
-	$grid_layout = 'layout-1';
+	$grid_layout = 'layout-2';
 
-	$style = 'style-1';
+	$style = 'cm-layout-2-style-1';
 
 	$col = 'col-2';
 

@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.2.3
+ * @since      ColorMag 1.2.3
  */
 
 namespace elementor\widgets;
@@ -89,13 +89,6 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
     }
 
     /**
-     * Disable posts pagination control for this widget.
-     */
-    public function posts_pagination_controls()
-    {
-    }
-
-    /**
      * Render ColorMag_Elementor_Global_Widgets_Title widget output on the frontend.
      *
      * Written in PHP and used to generate the final HTML.
@@ -106,9 +99,6 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
     {
 
         $widget_title = $this->get_settings('widget_title');
-        $widget_title_link = $this->get_settings('widget_title_link');
-        $widget_title_link_url = $widget_title_link['url'];
-        $widget_title_link_target = $widget_title_link['is_external'] ? 'target="_blank"' : '';
 
         if (!empty($widget_title)) :
             ?>
@@ -116,7 +106,7 @@ class ColorMag_Elementor_Global_Widgets_Title extends Colormag_Elementor_Widget_
             <div class="tg-module-wrapper">
                 <?php
                 // Displays the widget title.
-                $this->widget_title($widget_title, $widget_title_link_url, $widget_title_link_target);
+                $this->widget_title($widget_title);
                 ?>
             </div>
 

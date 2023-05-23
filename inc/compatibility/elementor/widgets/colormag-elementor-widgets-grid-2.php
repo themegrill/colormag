@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 2.2.3
+ * @since      ColorMag 1.2.3
  */
 
 namespace elementor\widgets;
@@ -95,24 +95,16 @@ class ColorMag_Elementor_Widgets_Grid_2 extends Colormag_Elementor_Widget_Base
         $posts_number = $this->get_settings('posts_number');
         $display_type = $this->get_settings('display_type');
         $offset_posts_number = $this->get_settings('offset_posts_number');
-        $posts_sort_orderby = $this->get_settings('posts_sort_orderby');
-        $posts_sort_order = $this->get_settings('posts_sort_order');
         $categories_selected = $this->get_settings('categories_selected');
-        $tags_selected = $this->get_settings('tags_selected');
-        $authors_selected = $this->get_settings('authors_selected');
-        $show_pagination = $this->get_settings('show_pagination');
-        $widget_title_link = $this->get_settings('widget_title_link');
-        $widget_title_link_url = $widget_title_link['url'];
-        $widget_title_link_target = $widget_title_link['is_external'] ? 'target="_blank"' : '';
 
         // Create the posts query.
-        $get_featured_posts = $this->query_posts($posts_number, $display_type, $categories_selected, $tags_selected, $authors_selected, $posts_sort_orderby, $posts_sort_order, $offset_posts_number, $show_pagination);
+        $get_featured_posts = $this->query_posts($posts_number, $display_type, $categories_selected, $offset_posts_number);
         ?>
 
-        <div class="tg-module-grid tg-module-grid--style-2 tg-module-wrapper tg-fade-in">
+        <div class="tg-module-grid tg-module-grid--style-2 tg-module-wrapper">
             <?php
             // Displays the widget title.
-            $this->widget_title($widget_title, $widget_title_link_url, $widget_title_link_target);
+            $this->widget_title($widget_title);
             ?>
 
             <div class="tg-row thinner">
@@ -169,9 +161,6 @@ class ColorMag_Elementor_Widgets_Grid_2 extends Colormag_Elementor_Widget_Base
                     echo '</div>';
                     echo '</div>';
                 }
-
-                // Display the pagination link if enabled.
-                $this->paginate_links($show_pagination, $get_featured_posts->max_num_pages);
 
                 // Reset the postdata.
                 wp_reset_postdata();
