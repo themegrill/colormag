@@ -118,7 +118,7 @@ var paths = {
 // Start browserSync.
 function browserSyncStart( cb ) {
 	browserSync.init( {
-		proxy : 'colormagpro.local/colormag-pro'
+		proxy : 'colormag.local/colormag'
 	}, cb );
 }
 

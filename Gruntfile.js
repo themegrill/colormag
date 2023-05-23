@@ -84,7 +84,7 @@ module.exports = function ( grunt ) {
 				options : {
 					type        : 'wp-theme',
 					domainPath  : 'languages',
-					potFilename : 'colormag-pro.pot',
+					potFilename : 'colormag.pot',
 					potHeaders  : {
 						'report-msgid-bugs-to' : 'themegrill@gmail.com',
 						'language-team'        : 'LANGUAGE <EMAIL@ADDRESS>'
@@ -150,7 +150,7 @@ module.exports = function ( grunt ) {
 			theme   : {
 				options : {
 					textdomain  : 'colormag',
-					slug        : 'themes/colormag-pro',
+					slug        : 'themes/colormag',
 					file_format : '%domainPath%/%wp_locale%.%format%'
 				}
 			}
@@ -159,7 +159,7 @@ module.exports = function ( grunt ) {
 		// Compress files and folders.
 		compress : {
 			options : {
-				archive : 'dist/colormag-pro.zip'
+				archive : 'dist/colormag.zip'
 			},
 			files   : {
 				src    : [
@@ -176,7 +176,7 @@ module.exports = function ( grunt ) {
 					'!node_modules/**',
 					'!package-lock.json'
 				],
-				dest   : 'colormag-pro',
+				dest   : 'colormag',
 				expand : true
 			}
 		},
