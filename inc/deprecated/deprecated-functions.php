@@ -299,23 +299,6 @@ if ( ! function_exists( 'colormag_you_may_also_like_text' ) ) :
 
 endif;
 
-
-if ( ! function_exists( 'colormag_featured_image_caption_display' ) ) :
-
-	/**
-	 * Deprecate featured image caption display refresh function.
-	 */
-	function colormag_featured_image_caption_display() {
-
-		_deprecated_function( __FUNCTION__, '3.0.0', 'ColorMag_Customizer_Partials::render_featured_image_caption()' );
-
-		ColorMag_Customizer_Partials::render_featured_image_caption();
-
-	}
-
-endif;
-
-
 if ( ! function_exists( 'colormag_background_image' ) ) :
 
 	/**

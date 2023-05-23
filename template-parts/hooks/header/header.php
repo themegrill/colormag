@@ -429,63 +429,6 @@ endif;
 
 add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner_start', 10 );
 
-if ( ! function_exists( 'colormag_breadcrumb' ) ) :
-
-	/**
-	 * Display the breadcrumbs provided via Yoast or BreadCrumb NavXT plugin,
-	 * where BreadCrumb NavXT plugin takes precedence.
-	 */
-	function colormag_breadcrumb() {
-
-		// Bail out if breadcrumb is not selected.
-		if ( 'none' == get_theme_mod( 'colormag_breadcrumb_display', 'none' ) ) {
-			return;
-		}
-		?>
-
-		<!-- Breadcrumb display -->
-		<div id="breadcrumb-wrap" class="breadcrumb-wrap" typeof="BreadcrumbList">
-			<div class="inner-wrap">
-			<?php
-			if ( 'yoast_seo_navxt' === get_theme_mod( 'colormag_breadcrumb_display', 'none' ) ) {
-
-				$display_breadcrumb_label = '<span class="breadcrumb-title">' . get_theme_mod( 'colormag_breadcrumb_label', esc_html__( 'You are here:', 'colormag' ) ) . '</span>';
-
-				if ( function_exists( 'bcn_display' ) ) {
-					echo $display_breadcrumb_label;
-
-					bcn_display();
-				} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
-					echo $display_breadcrumb_label;
-
-					yoast_breadcrumb();
-				}
-			} elseif ( function_exists( 'breadcrumb_trail' ) && 'colormag_breadcrumb' === get_theme_mod( 'colormag_breadcrumb_display', 'none' ) ) {
-				if ( ColorMag_Utils::colormag_is_woocommerce_active() && function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
-
-					// Make WC breadcrumb with the theme.
-					woocommerce_breadcrumb(
-						array(
-							'wrap_before' => '<nav role="navigation" aria-label="' . esc_html__( 'Breadcrumbs', 'colormag' ) . '" class="breadcrumb-trail breadcrumbs">' . '<span class="breadcrumb-title">' . get_theme_mod( 'colormag_breadcrumb_label', esc_html__( 'You are here: ', 'colormag' ) ) . '</span>' . '<ul class="trail-items">',
-							'wrap_after'  => '</ul></nav>',
-							'before'      => '<li class="trail-item">',
-							'after'       => '</li>',
-							'delimiter'   => '',
-						)
-					);
-				} else {
-					do_action( 'colormag_action_breadcrumb' );
-				}
-			}
-			?>
-			</div>
-		</div>
-		<?php
-	}
-endif;
-
-	add_action( 'colormag_action_before_content', 'colormag_breadcrumb', 15 );
-
 if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
 	/**
 	 * Container starts.

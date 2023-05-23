@@ -24,38 +24,6 @@ function colormag_pingback_header() {
 
 add_action( 'wp_head', 'colormag_pingback_header' );
 
-
-/**
- * Sets the post excerpt length to 20 words.
- *
- * Function tied to the excerpt_length filter hook.
- *
- * @param int $length The excerpt length.
- *
- * @return int The filtered excerpt length.
- * @uses filter excerpt_length
- */
-function colormag_excerpt_length( $length ) {
-	$excerpt_length = get_theme_mod( 'colormag_excerpt_length_setting', 20 );
-
-	return $excerpt_length;
-}
-
-add_filter( 'excerpt_length', 'colormag_excerpt_length' );
-
-
-/**
- * Returns a "Continue Reading" link for excerpts.
- */
-function colormag_continue_reading() {
-	$excerpt_more = get_theme_mod( 'colormag_excerpt_more_text', '' );
-
-	return $excerpt_more;
-}
-
-add_filter( 'excerpt_more', 'colormag_continue_reading' );
-
-
 /**
  * Removing the default style of WordPress gallery.
  */

@@ -43,45 +43,6 @@ class ColorMag_Customizer_Partials {
 	}
 
 	/**
-	 * Render the read more text for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_read_more_text() {
-		?>
-		<span><?php echo esc_html( get_theme_mod( 'colormag_read_more_text', __( 'Read more', 'colormag' ) ) ); ?></span>
-		<?php
-	}
-
-	/**
-	 * Render the breadcrumb text for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_breadcrumb_label() {
-		echo get_theme_mod( 'colormag_breadcrumb_label', esc_html__( 'You are here:', 'colormag' ) );
-	}
-
-	/**
-	 * Render the featured image caption for selective refresh partial.
-	 *
-	 * @return void
-	 */
-	public static function render_featured_image_caption() {
-
-		// Bail out if featured image caption display is not enabled.
-		if ( 0 == get_theme_mod( 'colormag_enable_featured_image_caption', 0 ) ) {
-			return;
-		}
-
-		// Display the featured image caption.
-		if ( get_post( get_post_thumbnail_id() )->post_excerpt ) {
-			echo wp_kses_post( get_post( get_post_thumbnail_id() )->post_excerpt );
-		}
-
-	}
-
-	/**
 	 * Render the footer copyright information for selective refresh partial.
 	 *
 	 * @return void

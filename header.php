@@ -94,6 +94,5 @@ do_action( 'colormag_action_before_content' );
  * Functions hooked into colormag_action_before_inner_content action.
  *
  * @hooked colormag_main_section_inner_start - 10
- * @hooked colormag_breadcrumb - 15
  */
 do_action( 'colormag_action_before_inner_content' );

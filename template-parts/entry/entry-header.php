@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php else : ?>
 		<h2 class="cm-entry-title"<?php echo colormag_schema_markup( 'entry_title' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				<?php echo wp_kses_post( colormag_get_the_title( get_the_title() ) ); ?>
+				<?php echo wp_kses_post( get_the_title() ); ?>
 			</a>
 		</h2>
 		<?php endif; ?>

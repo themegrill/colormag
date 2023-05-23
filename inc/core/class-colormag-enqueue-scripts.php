@@ -173,19 +173,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			// Theme reveal image on scroll JS.
-			if ( 1 === get_theme_mod( 'colormag_enable_smooth_image_loading', 0 ) ) {
-
-				wp_enqueue_script( 'colormag-reveal-on-scroll', COLORMAG_JS_URL . '/colormag-reveal-on-scroll' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-				$image_loading_styles = get_theme_mod( 'colormag_smooth_image_loading_animation', 'fade-in' );
-				$infinite_load_status = get_theme_mod( 'colormag_pagination_type', 'default' );
-
-				if ( in_array( $image_loading_styles, array( 'fade-in', 'fade-in-down', 'fade-in-up' ), true ) ) {
-					wp_localize_script( 'colormag-reveal-on-scroll', 'revealOnScrollData', array( $image_loading_styles, $infinite_load_status ) );
-				}
-			}
-
 			if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) {
 				$progress_bar_bgcolor = get_theme_mod( 'colormag_progress_bar_indicator_color', '#222222' );
 				wp_localize_script(
@@ -200,20 +187,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Enqueue bxslider if post has gallery post format.
 			if ( has_post_format( 'gallery' ) || is_home() || is_search() || is_archive() ) {
 				wp_enqueue_script( 'colormag-bxslider' );
-			}
-
-			if ( 'infinite_scroll' === get_theme_mod( 'colormag_pagination_type', 'default' ) || get_theme_mod( 'colormag_enable_autoload_posts', 0 ) ) {
-				wp_enqueue_script( 'infinite-scroll', get_template_directory_uri() . '/assets/js/infinite-scroll/infinite-scroll.pkgd' . $suffix . '.js', array(), '3.0.0', true );
-				wp_enqueue_script( 'colormag-infinite-scroll', get_template_directory_uri() . '/assets/js/infinite-scroll' . $suffix . '.js', array( 'infinite-scroll' ), COLORMAG_THEME_VERSION, true );
-				wp_localize_script(
-					'colormag-infinite-scroll',
-					'colormagInfiniteScrollParams',
-					array(
-						'infiniteScrollEvent' => get_theme_mod( 'colormag_infinite_scroll_type', 'button' ),
-						'autoLoadEvent'       => get_theme_mod( 'colormag_autoload_posts_type', 'button' ),
-						'autoLoadThreshold'   => get_theme_mod( 'colormag_enable_autoload_posts', 2 ),
-					)
-				);
 			}
 		}
 

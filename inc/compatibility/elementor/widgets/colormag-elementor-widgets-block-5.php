@@ -132,7 +132,7 @@ class ColorMag_Elementor_Widgets_Block_5 extends Colormag_Elementor_Widget_Base 
 							?>
 						</div>
 
-						<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html( get_theme_mod( 'colormag_read_more_text', __( 'Read More', 'colormag' ) ) ); ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html( 'Read More' ); ?></a>
 					</div>
 				</div>
 

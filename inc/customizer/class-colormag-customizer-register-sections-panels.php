@@ -240,26 +240,10 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 50,
 			),
 
-			array(
-				'name'     => 'colormag_breadcrumb_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Breadcrumb', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 50,
-			),
-
 
 			/**
 			 * Content.
 			 */
-			array(
-				'name'     => 'colormag_blog_archive_section',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Blog', 'colormag' ),
-				'panel'    => 'colormag_content_panel',
-				'priority' => 10,
-			),
-
 			array(
 				'name'     => 'colormag_single_post_section',
 				'type'     => 'section',

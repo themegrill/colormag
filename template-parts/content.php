@@ -14,11 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $featured_image_size   = 'colormag-featured-image';
 $class_name_layout_two = '';
-$archive_search_layout = get_theme_mod( 'colormag_blog_layout', 'layout-1' );
+$archive_search_layout = 'layout-1';
 
-if ( 'layout-1' === get_theme_mod( 'colormag_blog_layout_1_style', 'layout-1' ) || 'layout-2' === get_theme_mod( 'colormag_blog_layout_2_style', 'layout-1' ) ) {
-	$featured_image_size = 'colormag-featured-post-medium';
-}
 ?>
 
 <article id="post-<?php the_ID(); ?>"
@@ -55,14 +52,7 @@ if ( 'layout-1' === get_theme_mod( 'colormag_blog_layout_1_style', 'layout-1' ) 
 				}
 				?>
 			</div>
-
-			<?php if ( 1 == get_theme_mod( 'colormag_enable_featured_image_caption', 0 ) && get_post( get_post_thumbnail_id() )->post_excerpt ) : ?>
-
-			<span class="featured-image-caption">
-						<?php echo wp_kses_post( get_post( get_post_thumbnail_id() )->post_excerpt ); ?>
-				</span>
 				<?php
-			endif;
 		endif;
 
 	endif;

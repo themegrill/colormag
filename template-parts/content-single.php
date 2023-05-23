@@ -62,13 +62,6 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 				<?php endif; ?>
 			</div>
 
-			<?php if ( 1 == get_theme_mod( 'colormag_enable_featured_image_caption', 0 ) && get_post( get_post_thumbnail_id() )->post_excerpt ) : ?>
-				<span class="featured-image-caption">
-					<?php echo wp_kses_post( get_post( get_post_thumbnail_id() )->post_excerpt ); ?>
-				</span>
-				<?php
-			endif;
-			?>
 			<?php
 		endif;
 	endif;

@@ -830,7 +830,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	public function the_title() {
 		echo '<h3 class="cm-entry-title">' ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-			<?php echo wp_kses_post( colormag_get_the_title( get_the_title() ) ); ?>
+			<?php echo wp_kses_post( get_the_title() ); ?>
 			</a>
 		<?php echo '</h3>';
 	}

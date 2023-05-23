@@ -49,15 +49,8 @@ get_header();
 					?>
 
 					<?php
-					$pagination_type  = get_theme_mod( 'colormag_pagination_type', 'default' );
-					$pagination_class = '';
-
-					if ( 'infinite_scroll' === $pagination_type ) {
-						$pagination_class .= 'tg-infinite-scroll-container';
-					}
 					?>
 
-					<?php echo esc_attr( $pagination_class ); ?>
 						<?php
 						while ( have_posts() ) :
 							the_post();
@@ -87,7 +80,6 @@ get_header();
 				?>
 			</div><!-- .cm-posts -->
 
-			<?php colormag_infinite_scroll(); ?>
 		</div><!-- #cm-primary -->
 
 	<?php

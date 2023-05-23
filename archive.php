@@ -29,27 +29,11 @@ get_header();
 
 			<?php
 
-			$grid_layout = get_theme_mod( 'colormag_blog_layout', 'layout-1' );
+			$grid_layout = 'layout-1';
 
-			$layout1_style = get_theme_mod( 'colormag_blog_layout_1_style', 'style-1' );
+			$style = 'style-1';
 
-			$layout2_style = get_theme_mod( 'colormag_blog_layout_2_style', 'style-1' );
-
-			$grid_col = get_theme_mod( 'colormag_grid_layout_column', '2' );
-
-			$style = '';
-
-			if ( 'layout-1' === $grid_layout ) {
-				$style = 'cm-' . $grid_layout . '-' . $layout1_style;
-			} elseif ( 'layout-2' === $grid_layout ) {
-				$style = 'cm-' . $grid_layout . '-' . $layout2_style;
-			}
-
-			$col = '';
-
-			if ( 'layout-2' === $grid_layout ) {
-				$col = 'col-' . $grid_col;
-			}
+			$col = 'col-2';
 
 			/**
 			 * Functions hooked into colormag_action_archive_header action.
@@ -58,15 +42,8 @@ get_header();
 			 */
 			do_action( 'colormag_action_archive_header' );
 			?>
-			<?php
-			$pagination_type  = get_theme_mod( 'colormag_pagination_type', 'default' );
-			$pagination_class = '';
 
-			if ( 'infinite_scroll' === $pagination_type ) {
-				$pagination_class .= 'tg-infinite-scroll-container';
-			}
-			?>
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col . ' ' . $pagination_class ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col . ' ' ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
@@ -75,16 +52,6 @@ get_header();
 					 */
 					do_action( 'colormag_before_archive_page_loop' );
 					?>
-
-					<?php
-					$pagination_type  = get_theme_mod( 'colormag_pagination_type', 'default' );
-					$pagination_class = '';
-
-					if ( 'infinite_scroll' === $pagination_type ) {
-						$pagination_class .= 'tg-infinite-scroll-container';
-					}
-					?>
-					<?php echo esc_attr( $pagination_class ); ?>
 						<?php
 						while ( have_posts() ) :
 							the_post();
@@ -113,8 +80,6 @@ get_header();
 				endif; // if ( have_posts() ) :
 				?>
 			</div><!-- .cm-posts -->
-
-			<?php colormag_infinite_scroll(); ?>
 		</div><!-- #cm-primary -->
 
 	<?php
