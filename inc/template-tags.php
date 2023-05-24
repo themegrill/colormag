@@ -1013,3 +1013,25 @@ if ( ! function_exists( 'colormag_read_time_meta_markup' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'colormag_get_the_title' ) ) :
+
+	/**
+	 * Function to set length of the post title, depending upon the number of words user enters from the customizer pane.
+	 *
+	 * @param string $title get_the_title().
+	 *
+	 * @return string $title.
+	 */
+	function colormag_get_the_title( $title ) {
+
+		$title_length = get_theme_mod( 'colormag_blog_post_title_length', '' );
+
+		if ( is_int( $title_length ) ) {
+			$title = wp_trim_words( $title, $title_length );
+		}
+
+		return $title;
+
+	}
+endif;

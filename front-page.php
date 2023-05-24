@@ -61,6 +61,7 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 
 			if ( is_active_sidebar( 'colormag_front_page_content_middle_left_section' ) || is_active_sidebar( 'colormag_front_page_content_middle_right_section' ) ) {
 				?>
+			<div class="cm-column-half">
 				<div class="cm-one-half">
 					<?php
 					dynamic_sidebar( 'colormag_front_page_content_middle_left_section' );
@@ -72,6 +73,7 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 					dynamic_sidebar( 'colormag_front_page_content_middle_right_section' );
 					?>
 				</div>
+			</div>
 
 				<?php
 			}

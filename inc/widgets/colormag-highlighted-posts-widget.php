@@ -24,28 +24,50 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 	 */
 	public function __construct() {
 
-		$this->widget_cssclass    = 'widget_highlighted_posts widget_featured_meta';
+		$this->widget_cssclass    = 'cm-highlighted-posts';
 		$this->widget_description = esc_html__( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' );
 		$this->widget_name        = esc_html__( 'TG: Highlighted Posts', 'colormag' );
 		$this->settings           = array(
-			'number'   => array(
+			'number'         => array(
 				'type'    => 'number',
 				'default' => 4,
 				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
 			),
-			'type'     => array(
+			'type'           => array(
 				'type'    => 'radio',
 				'default' => 'latest',
 				'label'   => '',
 				'choices' => array(
 					'latest'   => esc_html__( 'Show latest Posts', 'colormag' ),
 					'category' => esc_html__( 'Show posts from a category', 'colormag' ),
+					'tag'      => esc_html__( 'Show posts from a tag', 'colormag' ),
+					'author'   => esc_html__( 'Show posts from an author', 'colormag' ),
 				),
 			),
-			'category' => array(
+			'category'       => array(
 				'type'    => 'dropdown_categories',
 				'default' => '',
 				'label'   => esc_html__( 'Select category', 'colormag' ),
+			),
+			'tag'            => array(
+				'type'    => 'dropdown_tags',
+				'default' => '',
+				'label'   => esc_html__( 'Select tag', 'colormag' ),
+			),
+			'author'         => array(
+				'type'    => 'dropdown_users',
+				'default' => '',
+				'label'   => esc_html__( 'Select author', 'colormag' ),
+			),
+			'random_posts'   => array(
+				'type'    => 'checkbox',
+				'default' => '0',
+				'label'   => esc_html__( 'Check to display the random post from either the chosen category or from latest post.', 'colormag' ),
+			),
+			'child_category' => array(
+				'type'    => 'checkbox',
+				'default' => '0',
+				'label'   => esc_html__( 'Check to display the posts from child category of the chosen category.', 'colormag' ),
 			),
 		);
 
@@ -64,38 +86,40 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 	public function widget( $args, $instance ) {
 
 		global $post;
-		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
-		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
-		$category = isset( $instance['category'] ) ? $instance['category'] : '';
+		$number         = empty( $instance['number'] ) ? 4 : $instance['number'];
+		$type           = isset( $instance['type'] ) ? $instance['type'] : 'latest';
+		$category       = isset( $instance['category'] ) ? $instance['category'] : '';
+		$random_posts   = ! empty( $instance['random_posts'] ) ? 'true' : 'false';
+		$child_category = ! empty( $instance['child_category'] ) ? 'true' : 'false';
+		$tag            = isset( $instance['tag'] ) ? $instance['tag'] : '';
+		$author         = isset( $instance['author'] ) ? $instance['author'] : '';
 
 		// Create the posts query.
-		$get_featured_posts = $this->query_posts( $number, $type, $category );
+		$get_featured_posts = $this->query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category );
 
 		$this->widget_start( $args );
 		?>
 
-		<div class="widget_highlighted_post_area">
+		<div class="cm-posts">
 			<?php
 			$featured = 'colormag-highlighted-post';
 			while ( $get_featured_posts->have_posts() ) :
 				$get_featured_posts->the_post();
 				?>
 
-				<div class="single-article">
+				<div class="cm-post">
 					<?php
 					if ( has_post_thumbnail() ) {
-						$this->the_post_thumbnail( $post->ID, $featured, 'highlights-featured-image' );
+						$this->the_post_thumbnail( $post->ID, $featured, 'cm-featured-image' );
 					} else {
 						?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<img
-								src="<?php echo esc_url( get_template_directory_uri() . '/img/highlights-featured-image.png' ); ?>"
-								alt=""
-							/>
-						</a>
+						<img
+							src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/highlights-featured-image.png' ); ?>"
+							alt=""
+						/>
 					<?php } ?>
 
-					<div class="article-content">
+					<div class="cm-post-content">
 						<?php
 						colormag_colored_category();
 
@@ -106,9 +130,9 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 						$this->entry_meta();
 						?>
 					</div>
-
 				</div>
-			<?php
+
+				<?php
 			endwhile;
 			// Reset Post Data.
 			wp_reset_postdata();
@@ -117,6 +141,7 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 
 		<?php
 		$this->widget_end( $args );
+
 	}
 
 }

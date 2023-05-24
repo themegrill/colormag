@@ -2,6 +2,11 @@
 --------------------------------------------- */
 .cm-featured-posts--style-1 {
 
+    p {
+        display: inline-block;
+        width: 100%;
+    }
+
     .cm-entry-title {
         margin-bottom: length( 'l-4' );
     }

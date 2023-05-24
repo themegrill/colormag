@@ -2,17 +2,11 @@
  * Columns.
  */
 
-/* 2 Columns. */
-.cm-one-half {
-	float: left;
-	width: 48.684210%;
-	margin: 0 2.631579% 0 0;
-	padding: 0 0 30px;
-}
-
-.cm-one-half-last {
-	float: right;
-	margin: 0;
+.cm-column-half {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom:  length( 'l-15' );
 }
 
 /* 4 Columns. */
@@ -24,4 +18,11 @@
 
 .tg-one-fourth-last {
 	margin: 0;
+}
+
+@include breakpoint("mdm") {
+
+	.cm-column-half {
+		flex-direction: row;
+	}
 }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Theme Name: ColorMag
+Theme Name: ColorMag Pro
 Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com/wordpress-themes/
@@ -537,17 +537,16 @@ body.clickable-background-image .site {
 /**
  * Columns.
  */
-/* 2 Columns. */
-.cm-one-half {
-	float: right;
-	width: 48.684210%;
-	margin: 0 0 0 2.631579%;
-	padding: 0 0 30px;
-}
-
-.cm-one-half-last {
-	float: left;
-	margin: 0;
+.cm-column-half {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 30px;
 }
 
 /* 4 Columns. */
@@ -559,6 +558,15 @@ body.clickable-background-image .site {
 
 .tg-one-fourth-last {
 	margin: 0;
+}
+
+@media screen and (min-width: 48em) {
+	.cm-column-half {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+	}
 }
 
 /* width */
@@ -3362,6 +3370,11 @@ i.fa-arrow-up, i.fa-arrow-down {
 
 /* Style 1 widget.
 --------------------------------------------- */
+.cm-featured-posts--style-1 p {
+	display: inline-block;
+	width: 100%;
+}
+
 .cm-featured-posts--style-1 .cm-entry-title {
 	margin-bottom: 8px;
 }
@@ -5156,13 +5169,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 	width: 100%;
 	padding-bottom: 0;
 	margin-left: 0;
-	float: right;
-}
-
-.cm-content .cm-row .cm-one-half-last {
-	float: left;
-	margin-top: 30px;
-	margin-bottom: 30px;
 }
 
 .top-full-width-sidebar .cm-widget-title {
@@ -5185,12 +5191,6 @@ i.fa-arrow-up, i.fa-arrow-down {
 		-webkit-box-direction: normal;
 		-ms-flex-direction: row;
 		flex-direction: row;
-	}
-	.cm-content .cm-row .cm-one-half {
-		width: 48.75%;
-	}
-	.cm-content .cm-row .cm-one-half-last {
-		margin-top: 0;
 	}
 	.cm-primary {
 		width: calc(100% - 30%);
