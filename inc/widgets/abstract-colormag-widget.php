@@ -765,57 +765,27 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * @param int    $number                 The number of posts to display.
 	 * @param string $type                   The display posts from the widget setting.
 	 * @param int    $category               The category id of the widget setting.
-	 * @param int    $tag                    The tag id of the widget setting.
-	 * @param int    $author                 The author id of the widget setting.
-	 * @param string $random_posts           Random posts enable data of the widget.
-	 * @param string $child_category         Child category enable for query of the widget.
-	 * @param bool   $video_post_format_args Video post format option for query of the widget.
 	 *
 	 * @return \WP_Query
 	 */
-	public function query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category, $video_post_format_args = false ) {
+	public function query_posts( $number, $type, $category ) {
+
+		$post_status = 'publish';
+		if ( 1 == get_option( 'fresh_site' ) ) {
+			$post_status = array( 'auto-draft', 'publish' );
+		}
 
 		$args = array(
 			'posts_per_page'      => $number,
 			'post_type'           => 'post',
 			'ignore_sticky_posts' => true,
 			'no_found_rows'       => true,
+			'post_status'         => $post_status,
 		);
 
-		// Displays from tag chosen.
-		if ( 'tag' == $type ) {
-			$args['tag__in'] = $tag;
-		}
-
-		// Displays from author chosen.
-		if ( 'author' == $type ) {
-			$args['author__in'] = $author;
-		}
-
-		// Display from category chosen.
-		if ( 'category' == $type && 'false' == $child_category ) {
-			$args['category__in'] = $category;
-		}
-
-		// Displays random posts.
-		if ( 'true' == $random_posts ) {
-			$args['orderby'] = 'rand';
-		}
-
-		// Displays post from parent as well as child category.
-		if ( 'category' == $type && 'true' == $child_category ) {
-			$args['cat'] = $category;
-		}
-
-		// Displays the posts from video post format.
-		if ( $video_post_format_args ) {
-			$args['tax_query'] = array(
-				array(
-					'taxonomy' => 'post_format',
-					'field'    => 'slug',
-					'terms'    => array( 'post-format-video' ),
-				),
-			);
+		// Display posts from category.
+		if ( 'category' == $type ) {
+			$query_args['category__in'] = $category;
 		}
 
 		$get_featured_posts = new WP_Query( $args );
