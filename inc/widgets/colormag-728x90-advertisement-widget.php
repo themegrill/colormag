@@ -48,11 +48,6 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 				'default' => '',
 				'label'   => esc_html__( 'Advertisement Image ', 'colormag' ),
 			),
-			'rel_value'            => array(
-				'type'    => 'checkbox',
-				'default' => '0',
-				'label'   => esc_html__( 'Check to make dofollow link.', 'colormag' ),
-			),
 		);
 
 		parent::__construct();
@@ -70,7 +65,6 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 	public function widget( $args, $instance ) {
 
 		$title      = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
-		$rel_value  = ! empty( $instance['rel_value'] ) ? true : false;
 		$image_link = isset( $instance['728x90_image_link'] ) ? $instance['728x90_image_link'] : '';
 		$image_url  = isset( $instance['728x90_image_url'] ) ? $instance['728x90_image_url'] : '';
 
@@ -105,9 +99,8 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 
 				$output .= '<div class="cm-advertisement-content">';
 				if ( ! empty( $image_link ) ) {
-					$value = $rel_value ? '' : 'rel="nofollow"';
 
-					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" ' . $value . '>';
+					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" rel="nofollow">';
 					$output .= '<img src="' . $image_url . '" width="728" height="90" alt="' . $image_alt . '">';
 					$output .= '</a>';
 				} else {
