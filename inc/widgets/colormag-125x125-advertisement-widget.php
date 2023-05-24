@@ -98,11 +98,6 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 				'default' => '',
 				'label'   => esc_html__( 'Advertisement Image ', 'colormag' ) . 6,
 			),
-			'rel_value'            => array(
-				'type'    => 'checkbox',
-				'default' => '0',
-				'label'   => esc_html__( 'Check to make dofollow link.', 'colormag' ),
-			),
 		);
 
 		parent::__construct();
@@ -120,7 +115,6 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 	public function widget( $args, $instance ) {
 
 		$title       = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
-		$rel_value   = ! empty( $instance['rel_value'] ) ? true : false;
 		$image_array = array();
 		$link_array  = array();
 
@@ -130,14 +124,6 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 			$image_url  = isset( $instance[ '125x125_image_url_' . $i ] ) ? $instance[ '125x125_image_url_' . $i ] : '';
 			array_push( $link_array, $image_link );
 			array_push( $image_array, $image_url );
-
-			// For WPML plugin compatibility, register string.
-			if ( function_exists( 'icl_register_string' ) ) {
-				icl_register_string( 'ColorMag Pro', 'TG: 125x125 Image Link' . $this->id . $j, $image_array[ $j ] );
-				icl_register_string( 'ColorMag Pro', 'TG: 125x125 Image URL' . $this->id . $j, $link_array[ $j ] );
-			}
-
-			$j ++;
 		}
 
 		$this->widget_start( $args );
@@ -170,9 +156,8 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 						}
 
 						if ( ! empty( $link_array[ $j ] ) ) {
-							$value = $rel_value ? '' : 'rel="nofollow"';
 
-							$output .= '<a href="' . $link_array[ $j ] . '" class="cm-single_ad_125x125" target="_blank" ' . $value . '>';
+							$output .= '<a href="' . $link_array[ $j ] . '" class="cm-single_ad_125x125" target="_blank" ' . '>';
 							$output .= '<img src="' . $image_array[ $j ] . '" width="125" height="125" alt="' . $image_alt . '">';
 							$output .= '</a>';
 						} else {
