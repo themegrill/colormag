@@ -715,9 +715,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * @param string $title           The widget title.
 	 * @param string $type            The display posts from the widget setting.
 	 * @param int    $category        The category id of the widget setting.
-	 * @param string $view_all_button View all button data of the widget.
 	 */
-	public function widget_title( $title, $type, $category, $view_all_button ) {
+	public function widget_title( $title, $type, $category ) {
 
 		// Return if $title is empty.
 		if ( ! $title ) {
@@ -734,7 +733,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 		// Assign the view all link to be displayed in the widget title.
 		$category_link = '';
-		if ( 'true' == $view_all_button && ( ! empty( $category ) && 'latest' != $type ) ) {
+		if ( ( ! empty( $category ) && 'latest' != $type ) ) {
 			$category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
 		}
 
