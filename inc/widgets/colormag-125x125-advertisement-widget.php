@@ -157,7 +157,7 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 
 						if ( ! empty( $link_array[ $j ] ) ) {
 
-							$output .= '<a href="' . $link_array[ $j ] . '" class="cm-single_ad_125x125" target="_blank" ' . '>';
+							$output .= '<a href="' . $link_array[ $j ] . '" class="cm-single_ad_125x125" target="_blank" rel="nofollow">';
 							$output .= '<img src="' . $image_array[ $j ] . '" width="125" height="125" alt="' . $image_alt . '">';
 							$output .= '</a>';
 						} else {
