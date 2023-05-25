@@ -220,3 +220,122 @@ a.colormag-message-close:before {
 	justify-content: center;
 	align-items: center;
 }
+
+/* Dashboard */
+.appearance_page_colormag-options .wrap {
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+.appearance_page_colormag-options #wpcontent, .appearance_page_colormag-options #wpbody-content .metabox-holder {
+	padding: 0;
+}
+.colormag-container {
+	max-width: 1150px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.colormag-container a {
+	text-decoration: none;
+	font-size: 13px;
+}
+.colormag-container ul {
+	margin: 0;
+	padding: 0;
+}
+.colormag-container .postbox {
+	box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+	border: 0;
+	min-width: initial;
+	margin-bottom: 40px;
+}
+.colormag-container .postbox .hndle {
+	cursor: inherit;
+	border-bottom: 1px solid #ccd0d4;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.colormag-container .postbox .hndle .dashicons {
+	padding-right: 5px;
+}
+.colormag-header {
+	background-color: #fff;
+	text-align: center;
+	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+	margin-bottom: 40px;
+	padding: 20px;
+}
+.colormag-header > .colormag-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.colormag-header .colormag-title {
+	display: flex;
+	align-items: center;
+}
+.colormag-header .colormag-title + div {
+	float: right;
+	align-items: center;
+}
+.colormag-header .colormag-title + div a {
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: middle;
+}
+.colormag-icon {
+	width: 130px;
+	height: 60px;
+}
+.colormag-version {
+	color: #000;
+	margin-left: 5px;
+	background: #efefef;
+	padding: 1px 3px;
+}
+.pro-feature {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	margin: 0;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+}
+.pro-feature > a {
+	font-weight: bold;
+}
+.col-30 .postbox:first-child {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 7px 12px 7px 0;
+}
+@media (min-width: 768px) {
+	.col-70 {
+		float: left;
+		width: 70%;
+		box-sizing: border-box;
+		padding-right: 20px;
+	}
+	.col-30 {
+		float: left;
+		width: 30%;
+		box-sizing: border-box;
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.colormag-header {
+		margin: 20px;
+	}
+	.colormag-header > .colormag-container {
+		display: block;
+	}
+	.colormag-header .colormag-title {
+		justify-content: center;
+	}
+	.colormag-header .colormag-title + div {
+		float: none;
+		margin-top: 20px;
+	}
+}

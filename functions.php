@@ -22,6 +22,7 @@ require get_template_directory() . '/inc/base/class-colormag-constants.php';
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
+	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
 	require get_template_directory() . '/inc/admin/class-colormag-welcome-notice.php';
 }
 
