@@ -19,6 +19,8 @@
     }
 
     .cm-posts {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         gap: length( 'l-6' );
 
