@@ -731,14 +731,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 			$title_color  = 'style="background-color:' . $category_color . ';"';
 		}
 
-		// Assign the view all link to be displayed in the widget title.
-		$category_link = '';
-		if ( ( ! empty( $category ) && 'latest' != $type ) ) {
-			$category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
-		}
+//		// Assign the view all link to be displayed in the widget title.
+//		$category_link = '';
+//		if ( ( ! empty( $category ) && 'latest' != $type ) ) {
+//			$category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
+//		}
 
 		// Display the title.
-		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . $category_link . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 	}
 
