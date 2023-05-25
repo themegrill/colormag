@@ -784,7 +784,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 		// Display posts from category.
 		if ( 'category' == $type ) {
-			$query_args['category__in'] = $category;
+			$args['category__in'] = $category;
 		}
 
 		$get_featured_posts = new WP_Query( $args );
