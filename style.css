@@ -3291,11 +3291,13 @@ i.fa-arrow-up, i.fa-arrow-down {
 	position: relative;
 	border-radius: 4px;
 	overflow: hidden;
+	height: 350px;
 }
 
 .cm-featured-category-slider img {
 	width: 100%;
 	margin-bottom: 0;
+	height: 100%;
 }
 
 .cm-featured-category-slider .cm-below-entry-meta {
@@ -3384,6 +3386,13 @@ i.fa-arrow-up, i.fa-arrow-down {
 }
 
 .cm-featured-posts--style-1 .cm-posts {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	width: 100%;
 	gap: 12px;
 }
