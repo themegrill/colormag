@@ -18,6 +18,14 @@ defined( 'ABSPATH' ) || exit;
 require get_template_directory() . '/inc/base/class-colormag-constants.php';
 
 /**
+ * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
+ */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
+	require get_template_directory() . '/inc/admin/class-colormag-welcome-notice.php';
+}
+
+/**
  * Base.
  */
 // Generate WordPress filter hook dynamically.
@@ -48,12 +56,6 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
  * Customizer.
  */
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
-
-/**
- * Demo Importer.
- */
-//Load ColorMag Pro Demo Importer compatibility file.
-require get_template_directory() . '/inc/demo-importer/class-demo-importer.php';
 
 /**
  * Deprecated.
