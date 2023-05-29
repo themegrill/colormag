@@ -7,7 +7,8 @@
 
 
 (function ($) {
-// Site Layout Option.
+
+	// Site Layout Option.
 	wp.customize(
 		'colormag_container_layout',
 		function (value) {
@@ -19,6 +20,24 @@
 						$('body').removeClass('boxed').addClass('wide');
 					} else if ('boxed' === site_layout) {
 						$('body').removeClass('wide').addClass('boxed');
+					}
+				}
+			);
+		}
+	);
+
+	// Footer Main Area Display Type.
+	wp.customize(
+		'colormag_main_footer_layout',
+		function ( value ) {
+			value.bind(
+				function ( layout ) {
+					var display_type = layout;
+
+					if ( display_type === 'layout-2' ) {
+						$( '.cm-footer' ).addClass( 'colormag-footer--classic' );
+					}  else if ( display_type === 'layout-1' ) {
+						$( '.cm-footer' ).removeClass( 'colormag-footer--classic' );
 					}
 				}
 			);
