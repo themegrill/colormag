@@ -286,10 +286,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<input type="text"
-						       class="widefat <?php echo esc_attr( $class ); ?>"
-						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-						       value="<?php echo esc_attr( $value ); ?>"
+							   class="widefat <?php echo esc_attr( $class ); ?>"
+							   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+							   value="<?php echo esc_attr( $value ); ?>"
 						/>
 					</p>
 					<?php
@@ -303,10 +303,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<input type="url"
-						       class="widefat <?php echo esc_attr( $class ); ?>"
-						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-						       value="<?php echo esc_attr( $value ); ?>"
+							   class="widefat <?php echo esc_attr( $class ); ?>"
+							   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+							   value="<?php echo esc_attr( $value ); ?>"
 						/>
 					</p>
 					<?php
@@ -320,10 +320,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<textarea class="widefat <?php echo esc_attr( $class ); ?>"
-						          rows="5"
-						          cols="20"
-						          id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						          name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+								  rows="5"
+								  cols="20"
+								  id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+								  name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
 						><?php echo esc_textarea( $value ); ?></textarea>
 					</p>
 					<?php
@@ -342,25 +342,25 @@ abstract class ColorMag_Widget extends WP_Widget {
 							<div class="custom_media_preview">
 								<?php if ( $value != '' ) : ?>
 									<img class="custom_media_preview_default"
-									     src="<?php echo esc_url( $value ); ?>"
-									     style="max-width:100%;"
+										 src="<?php echo esc_url( $value ); ?>"
+										 style="max-width:100%;"
 									/>
 								<?php endif; ?>
 							</div>
 
 							<input type="text"
-							       class="widefat custom_media_input"
-							       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-							       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-							       value="<?php echo esc_attr( $value ); ?>"
-							       style="margin-top:5px;"
+								   class="widefat custom_media_input"
+								   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+								   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+								   value="<?php echo esc_attr( $value ); ?>"
+								   style="margin-top:5px;"
 							/>
 
 							<button class="custom_media_upload button button-secondary button-large"
-							        id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-							        data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>"
-							        data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>"
-							        style="width:100%;margin-top:6px;margin-right:30px;"
+									id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+									data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>"
+									data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>"
+									style="width:100%;margin-top:6px;margin-right:30px;"
 							>
 								<?php esc_html_e( 'Select an Image', 'colormag' ); ?>
 							</button>
@@ -373,9 +373,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 					?>
 					<p>
 						<input class="checkbox"
-						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-						       type="checkbox"
+							   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+							   type="checkbox"
 							<?php echo esc_attr( ( $value == 1 ) ? 'checked' : '' ); ?>
 						/>
 
@@ -394,10 +394,10 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<input class="widefat <?php echo esc_attr( $class ); ?>"
-						       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-						       type="number"
-						       value="<?php echo esc_attr( $value ); ?>"
+							   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+							   type="number"
+							   value="<?php echo esc_attr( $value ); ?>"
 							<?php if ( isset( $setting['input_attrs']['step'] ) ) { ?>
 								step="<?php echo esc_attr( $setting['input_attrs']['step'] ); ?>"
 							<?php } ?>
@@ -428,9 +428,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 							?>
 
 							<input type="radio"
-							       id="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>"
-							       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
-							       value="<?php echo esc_attr( $choices_key ); ?>"
+								   id="<?php echo esc_attr( $this->get_field_id( $choices_key ) ); ?>"
+								   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+								   value="<?php echo esc_attr( $choices_key ); ?>"
 								<?php echo esc_attr( ( $choices_key == $value ) ? 'checked' : '' ); ?>
 							/>
 
@@ -453,8 +453,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<select class="widefat <?php echo esc_attr( $class ); ?>"
-						        id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						        name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
+								id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
 						>
 							<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
 								<option value="<?php echo esc_attr( $choices_key ); ?>"
@@ -566,14 +566,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 					<p>
 						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
 							<label class="alignleft"
-							       style="width:50%;display:block;margin-bottom:5px"
-							       for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+								   style="width:50%;display:block;margin-bottom:5px"
+								   for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
 							>
 
 								<input type="checkbox"
-								       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
-								       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_attr( $choices_key ); ?>]"
-								       value="1"
+									   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+									   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_attr( $choices_key ); ?>]"
+									   value="1"
 									<?php
 									if ( isset( $value[ $choices_key ] ) ) {
 										checked( 1, $value[ $choices_key ], true );
@@ -597,14 +597,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 					<p>
 						<?php foreach ( $setting['choices'] as $choices_key => $choices_value ) { ?>
 							<label class="alignleft"
-							       style="width:50%;display:block;margin-bottom:5px"
-							       for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+								   style="width:50%;display:block;margin-bottom:5px"
+								   for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
 							>
 
 								<input type="number"
-								       id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
-								       name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_attr( $choices_key ); ?>]"
-								       value="<?php echo esc_attr( $value[ $choices_key ] ); ?>"
+									   id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>_<?php echo esc_attr( $choices_key ); ?>"
+									   name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[<?php echo esc_attr( $choices_key ); ?>]"
+									   value="<?php echo esc_attr( $value[ $choices_key ] ); ?>"
 									<?php if ( isset( $setting['input_attrs']['step'] ) ) { ?>
 										step="<?php echo esc_attr( $setting['input_attrs']['step'] ); ?>"
 									<?php } ?>
@@ -731,11 +731,11 @@ abstract class ColorMag_Widget extends WP_Widget {
 			$title_color  = 'style="background-color:' . $category_color . ';"';
 		}
 
-//		// Assign the view all link to be displayed in the widget title.
-//		$category_link = '';
-//		if ( ( ! empty( $category ) && 'latest' != $type ) ) {
-//			$category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
-//		}
+		//      // Assign the view all link to be displayed in the widget title.
+		//      $category_link = '';
+		//      if ( ( ! empty( $category ) && 'latest' != $type ) ) {
+		//          $category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
+		//      }
 
 		// Display the title.
 		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
@@ -862,7 +862,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 				'date',
 				'author',
 				'tags',
-		);
+			);
 
 		$human_diff_time = '';
 		if ( 'style-2' == get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) ) {
