@@ -856,8 +856,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 */
 	public function entry_meta() {
 
-		$meta_orders = get_theme_mod(
-			'colormag_post_meta_structure',
+		$meta_orders =
 			array(
 				'categories',
 				'date',
@@ -865,8 +864,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 				'views',
 				'comments',
 				'tags',
-				'read-time',
-			)
 		);
 
 		$human_diff_time = '';
@@ -888,10 +885,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 			if ( 'comments' === $meta_order ) {
 				colormag_comment_meta_markup( true );
-			}
-
-			if ( 'read-time' === $meta_order ) {
-				colormag_read_time_meta_markup( true, false );
 			}
 		}
 

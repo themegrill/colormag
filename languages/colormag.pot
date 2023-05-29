@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.5.0\n"
+"Project-Id-Version: ColorMag 2.1.8\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-05-23 11:34:18+00:00\n"
+"POT-Creation-Date: 2023-05-29 05:56:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,21 +13,21 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: 404.php:36
+#: 404.php:34
 msgid "404"
 msgstr ""
 
-#: 404.php:34
+#: 404.php:32
 msgid "oops ! Page Not Found"
 msgstr ""
 
-#: 404.php:40
+#: 404.php:38
 msgid ""
 "We are sorry for the inconvenience. The page you’re trying to access does "
 "not exist or has been removed."
 msgstr ""
 
-#: 404.php:45
+#: 404.php:43
 msgid "Back to Home"
 msgstr ""
 
@@ -50,6 +50,150 @@ msgstr ""
 
 #: comments.php:88 inc/ajax.php:237
 msgid "Comments are closed."
+msgstr ""
+
+#: inc/admin/class-colormag-admin.php:38
+msgid "Processing..."
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:32
+#. translators: %s: Theme Name.
+msgid "%s Options"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:50
+msgid "Activate ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:52
+msgid "Install ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:54
+msgid "Demo Library"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:73
+msgid "Header Top Bar"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "ColorMag"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:89
+msgid "Theme Info"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:90
+msgid "Demos"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:91
+msgid "Premium"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:92
+msgid "Support"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:93
+msgid "Documentation"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:102
+msgid "Premium Features"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:109
+msgid "Learn More"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:121
+msgid "Get Started"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:123
+msgid "Learn Basics &#129066;"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:126
+msgid "Starter Demos"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:132
+#. translators: 1: Theme Name, 2: Demo Link.
+msgid ""
+"You do not need to build your site from scratch, %1$s provides a variety of "
+"%2$s"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:134
+msgid "Demos."
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:138
+msgid "Import demo site and start editing as your liking."
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:149
+#. translators: %s: Theme Name.
+msgid "%s Community"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:160
+#. translators: %s: Theme Name.
+msgid "Connect with us and other helpful %s users like you."
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:165
+msgid "Join Now &#129066;"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:169
+msgid "Review"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:175
+#. translators: 1: Theme Name, 2: Review Link.
+msgid "Love using %1$s? Help us by leaving a review %2$s"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:177
+msgid "here &#129066;"
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:26
+msgid "Get started with ColorMag"
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:46
+msgid "Colormag"
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:54
+#. translators: 1: welcome page link starting html tag, 2: welcome page link
+#. ending html tag.
+msgid ""
+"Welcome! Thank you for choosing ColorMag! To fully take advantage of the "
+"best our theme can offer please make sure you visit our %1$swelcome "
+"page%2$s."
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:63
+msgid ""
+"Clicking the button will install and activate the ThemeGrill demo importer "
+"plugin."
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:77
+#: inc/migration/demo-import-migration.php:64
+#: inc/migration/demo-import-migration.php:82
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:81
+msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: inc/ajax.php:37
@@ -847,12 +991,12 @@ msgid "Header"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:142
-#: inc/template-functions.php:449
+#: inc/template-functions.php:441
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:147
-#: inc/template-functions.php:439
+#: inc/template-functions.php:431
 msgid "Twitter"
 msgstr ""
 
@@ -861,7 +1005,7 @@ msgid "Google-Plus"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:157
-#: inc/template-functions.php:489
+#: inc/template-functions.php:481
 msgid "Instagram"
 msgstr ""
 
@@ -883,32 +1027,32 @@ msgid "Additional Social Icons"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:256
-#: inc/template-tags.php:348
+#: inc/template-tags.php:293
 msgid "Additional Social Link One"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:261
-#: inc/template-tags.php:349
+#: inc/template-tags.php:294
 msgid "Additional Social Link Two"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:266
-#: inc/template-tags.php:350
+#: inc/template-tags.php:295
 msgid "Additional Social Link Three"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:271
-#: inc/template-tags.php:351
+#: inc/template-tags.php:296
 msgid "Additional Social Link Four"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:276
-#: inc/template-tags.php:352
+#: inc/template-tags.php:297
 msgid "Additional Social Link Five"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:281
-#: inc/template-tags.php:353
+#: inc/template-tags.php:298
 msgid "Additional Social Link Six"
 msgstr ""
 
@@ -1153,31 +1297,6 @@ msgstr ""
 msgid "WooCommerce Single Product Page Layout"
 msgstr ""
 
-#: inc/demo-importer/class-demo-importer.php:68
-#: inc/demo-importer/includes/views/html-admin-page-importer.php:29
-msgid "Demo Importer"
-msgstr ""
-
-#: inc/demo-importer/includes/views/html-admin-page-importer.php:18
-msgid "Install ThemeGrill Demo importer"
-msgstr ""
-
-#: inc/demo-importer/includes/views/html-admin-page-importer.php:22
-msgid "Activate ThemeGrill Demo importer"
-msgstr ""
-
-#: inc/demo-importer/includes/views/html-admin-page-importer.php:40
-msgid "Ready to start importing available demos with just a single click?"
-msgstr ""
-
-#: inc/demo-importer/includes/views/html-admin-page-importer.php:45
-msgid "ThemeGrill Demo Importer"
-msgstr ""
-
-#: inc/demo-importer/includes/views/html-admin-page-importer.php:55
-msgid "Learn more about demo importer!"
-msgstr ""
-
 #: inc/freemius/freemius-migration.php:205
 #: inc/freemius/freemius-migration.php:206
 msgid "License Manager"
@@ -1210,44 +1329,39 @@ msgstr ""
 msgid "Any confusion?"
 msgstr ""
 
-#: inc/migration/demo-import-migration.php:64
-#: inc/migration/demo-import-migration.php:82
-msgid "Action failed. Please refresh the page and retry."
-msgstr ""
-
-#: inc/template-functions.php:382
+#: inc/template-functions.php:374
 msgid "WordPress"
 msgstr ""
 
-#: inc/template-functions.php:391
+#: inc/template-functions.php:383
 msgid "ColorMag Pro"
 msgstr ""
 
-#: inc/template-functions.php:404
+#: inc/template-functions.php:396
 msgid "Total Views"
 msgstr ""
 
-#: inc/template-functions.php:435
+#: inc/template-functions.php:427
 msgid "User Social Links"
 msgstr ""
 
-#: inc/template-functions.php:459
+#: inc/template-functions.php:451
 msgid "Google Plus"
 msgstr ""
 
-#: inc/template-functions.php:469
+#: inc/template-functions.php:461
 msgid "Flickr"
 msgstr ""
 
-#: inc/template-functions.php:479
+#: inc/template-functions.php:471
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/template-functions.php:499
+#: inc/template-functions.php:491
 msgid "Tumblr"
 msgstr ""
 
-#: inc/template-functions.php:509
+#: inc/template-functions.php:501
 msgid "Youtube"
 msgstr ""
 
@@ -1259,204 +1373,197 @@ msgstr ""
 msgid "min read"
 msgstr ""
 
-#: inc/template-tags.php:542
+#: inc/template-tags.php:487
 msgid "Euro Member Countries"
 msgstr ""
 
-#: inc/template-tags.php:543
+#: inc/template-tags.php:488
 msgid "Australian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:544
+#: inc/template-tags.php:489
 msgid "Bulgarian Lev"
 msgstr ""
 
-#: inc/template-tags.php:545
+#: inc/template-tags.php:490
 msgid "Brazilian Real"
 msgstr ""
 
-#: inc/template-tags.php:546
+#: inc/template-tags.php:491
 msgid "Canadian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:547
+#: inc/template-tags.php:492
 msgid "Swiss Franc"
 msgstr ""
 
-#: inc/template-tags.php:548
+#: inc/template-tags.php:493
 msgid "Chinese Yuan Renminbi"
 msgstr ""
 
-#: inc/template-tags.php:549
+#: inc/template-tags.php:494
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: inc/template-tags.php:550
+#: inc/template-tags.php:495
 msgid "Danish Krone"
 msgstr ""
 
-#: inc/template-tags.php:551
+#: inc/template-tags.php:496
 msgid "British Pound"
 msgstr ""
 
-#: inc/template-tags.php:552
+#: inc/template-tags.php:497
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: inc/template-tags.php:553
+#: inc/template-tags.php:498
 msgid "Croatian Kuna"
 msgstr ""
 
-#: inc/template-tags.php:554
+#: inc/template-tags.php:499
 msgid "Hungarian Forint"
 msgstr ""
 
-#: inc/template-tags.php:555
+#: inc/template-tags.php:500
 msgid "Indonesian Rupiah"
 msgstr ""
 
-#: inc/template-tags.php:556
+#: inc/template-tags.php:501
 msgid "Israeli Shekel"
 msgstr ""
 
-#: inc/template-tags.php:557
+#: inc/template-tags.php:502
 msgid "Indian Rupee"
 msgstr ""
 
-#: inc/template-tags.php:558
+#: inc/template-tags.php:503
 msgid "Japanese Yen"
 msgstr ""
 
-#: inc/template-tags.php:559
+#: inc/template-tags.php:504
 msgid "Korean (South) Won"
 msgstr ""
 
-#: inc/template-tags.php:560
+#: inc/template-tags.php:505
 msgid "Mexican Peso"
 msgstr ""
 
-#: inc/template-tags.php:561
+#: inc/template-tags.php:506
 msgid "Malaysian Ringgit"
 msgstr ""
 
-#: inc/template-tags.php:562
+#: inc/template-tags.php:507
 msgid "Norwegian Krone"
 msgstr ""
 
-#: inc/template-tags.php:563
+#: inc/template-tags.php:508
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: inc/template-tags.php:564
+#: inc/template-tags.php:509
 msgid "Philippine Peso"
 msgstr ""
 
-#: inc/template-tags.php:565
+#: inc/template-tags.php:510
 msgid "Polish Zloty"
 msgstr ""
 
-#: inc/template-tags.php:566
+#: inc/template-tags.php:511
 msgid "Romanian (New) Leu"
 msgstr ""
 
-#: inc/template-tags.php:567
+#: inc/template-tags.php:512
 msgid "Russian Ruble"
 msgstr ""
 
-#: inc/template-tags.php:568
+#: inc/template-tags.php:513
 msgid "Swedish Krona"
 msgstr ""
 
-#: inc/template-tags.php:569
+#: inc/template-tags.php:514
 msgid "Singapore Dollar"
 msgstr ""
 
-#: inc/template-tags.php:570
+#: inc/template-tags.php:515
 msgid "Thai Baht"
 msgstr ""
 
-#: inc/template-tags.php:571
+#: inc/template-tags.php:516
 msgid "Turkish Lira"
 msgstr ""
 
-#: inc/template-tags.php:572
+#: inc/template-tags.php:517
 msgid "United States Dollar"
 msgstr ""
 
-#: inc/template-tags.php:573
+#: inc/template-tags.php:518
 msgid "South African Rand"
 msgstr ""
 
-#: inc/template-tags.php:604
+#: inc/template-tags.php:549
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:606
+#: inc/template-tags.php:551
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:633
+#: inc/template-tags.php:578
 #. Translators: 1. Comment date, 2. Comment time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:646
+#: inc/template-tags.php:591
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:657
+#: inc/template-tags.php:602
 msgid "Reply"
 msgstr ""
 
-#: inc/template-tags.php:696
+#: inc/template-tags.php:641
 msgid "0 View"
 msgstr ""
 
-#: inc/template-tags.php:699
+#: inc/template-tags.php:644
 #. Translators: %s Post view count
 msgid "%s Views"
 msgstr ""
 
-#: inc/template-tags.php:906
+#: inc/template-tags.php:851
 #. Translators: 1. Post link, 2. Post time, 3. Post date
 msgid ""
 "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" "
 "rel=\"bookmark\">%3$s %4$s</a></span>"
 msgstr ""
 
-#: inc/template-tags.php:958
+#: inc/template-tags.php:903
 msgid " 0 Comments"
 msgstr ""
 
-#: inc/template-tags.php:959
+#: inc/template-tags.php:904
 msgid " 1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:960
+#: inc/template-tags.php:905
 msgid " % Comments"
 msgstr ""
 
-#: inc/template-tags.php:984
+#: inc/template-tags.php:929
 msgid ", "
 msgstr ""
 
-#: inc/widgets/abstract-colormag-widget.php:359
+#: inc/widgets/abstract-colormag-widget.php:361
 msgid "Choose an image"
 msgstr ""
 
-#: inc/widgets/abstract-colormag-widget.php:360
+#: inc/widgets/abstract-colormag-widget.php:362
 msgid "Use image"
 msgstr ""
 
-#: inc/widgets/abstract-colormag-widget.php:363
+#: inc/widgets/abstract-colormag-widget.php:365
 msgid "Select an Image"
-msgstr ""
-
-#: inc/widgets/abstract-colormag-widget.php:871
-#. Translators: 1. Post link, 2. Post time, 3. Post date
-msgid ""
-"<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" "
-"rel=\"bookmark\"><i class=\"fa fa-calendar-o\"></i> %3$s</a></span>"
 msgstr ""
 
 #: inc/widgets/class-colormag-widgets.php:26
@@ -1467,126 +1574,180 @@ msgstr ""
 msgid "Shows widgets at Right side."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:39
+#: inc/widgets/class-colormag-widgets.php:40
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:41
+#: inc/widgets/class-colormag-widgets.php:42
 msgid "Shows widgets at Left side."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:52
+#: inc/widgets/class-colormag-widgets.php:53
 msgid "Header Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:54
+#: inc/widgets/class-colormag-widgets.php:55
 msgid "Shows widgets in header section just above the main navigation menu."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:65
+#: inc/widgets/class-colormag-widgets.php:66
+msgid "Front Page: Top Full Width Area"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:68
+msgid "Show widget just below menu."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:79
 msgid "Front Page: Slider Area"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:67
-msgid "Show widget just below menu. Suitable for TG: Featured Category Slider."
+#: inc/widgets/class-colormag-widgets.php:81
+msgid "Show widget just below menu. Suitable for TG: Featured Cat Slider."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:78
+#: inc/widgets/class-colormag-widgets.php:92
 msgid "Front Page: Area beside slider"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:80
+#: inc/widgets/class-colormag-widgets.php:94
 msgid "Show widget beside the slider. Suitable for TG: Highlighted Posts."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:91
+#: inc/widgets/class-colormag-widgets.php:105
 msgid "Front Page: Content Top Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:93
+#: inc/widgets/class-colormag-widgets.php:107
 msgid "Content Top Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:104
+#: inc/widgets/class-colormag-widgets.php:118
 msgid "Front Page: Content Middle Left Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:106
+#: inc/widgets/class-colormag-widgets.php:120
 msgid "Content Middle Left Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:117
+#: inc/widgets/class-colormag-widgets.php:131
 msgid "Front Page: Content Middle Right Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:119
+#: inc/widgets/class-colormag-widgets.php:133
 msgid "Content Middle Right Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:130
+#: inc/widgets/class-colormag-widgets.php:144
 msgid "Front Page: Content Bottom Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:132
-msgid "Content Bottom Section"
+#: inc/widgets/class-colormag-widgets.php:146
+msgid "Content Middle Bottom Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:143
+#: inc/widgets/class-colormag-widgets.php:157
 msgid "Contact Page Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:145
+#: inc/widgets/class-colormag-widgets.php:159
 msgid "Shows widgets on Contact Page Template."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:156
+#: inc/widgets/class-colormag-widgets.php:170
 msgid "Error 404 Page Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:158
+#: inc/widgets/class-colormag-widgets.php:172
 msgid "Shows widgets on Error 404 page."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:169
+#: inc/widgets/class-colormag-widgets.php:183
 msgid "Advertisement Above The Footer"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:171
-msgid ""
-"Shows widgets just above the footer, suitable for TG: 728x90 Advertisement "
-"widget."
+#: inc/widgets/class-colormag-widgets.php:185
+msgid "Shows widgets Just Above The Footer, suitable for TG: 728x90 widget."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:182
-msgid "Footer Sidebar One"
+#: inc/widgets/class-colormag-widgets.php:196
+msgid "Footer Sidebar One ( Upper )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:184
+#: inc/widgets/class-colormag-widgets.php:198
+msgid "Shows widgets at footer sidebar one in upper."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:209
+msgid "Footer Sidebar Two ( Upper )"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:211
+msgid "Shows widgets at footer sidebar two in upper."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:222
+msgid "Footer Sidebar Three ( Upper )"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:224
+msgid "Shows widgets at footer sidebar three in upper."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:235
+msgid "Footer Sidebar One ( Lower )"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:237
 msgid "Shows widgets at footer sidebar one."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:195
-msgid "Footer Sidebar Two"
+#: inc/widgets/class-colormag-widgets.php:248
+msgid "Footer Sidebar Two ( Lower )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:197
+#: inc/widgets/class-colormag-widgets.php:250
 msgid "Shows widgets at footer sidebar two."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:208
-msgid "Footer Sidebar Three"
+#: inc/widgets/class-colormag-widgets.php:261
+msgid "Footer Sidebar Three ( Lower )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:210
+#: inc/widgets/class-colormag-widgets.php:263
 msgid "Shows widgets at footer sidebar three."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:221
-msgid "Footer Sidebar Four"
+#: inc/widgets/class-colormag-widgets.php:274
+msgid "Footer Sidebar Four ( Lower )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:223
+#: inc/widgets/class-colormag-widgets.php:276
 msgid "Shows widgets at footer sidebar four."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:287
+msgid "Footer Sidebar Full Width"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:289
+msgid "Shows widgets just above footer copyright area."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:302
+msgid "WooCommerce Right Sidebar"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:304
+msgid "Shows widgets at WooCommerce Right sidebar."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:315
+msgid "WooCommerce Left Sidebar"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:317
+msgid "Shows widgets at WooCommerce Left sidebar."
 msgstr ""
 
 #: inc/widgets/colormag-125x125-advertisement-widget.php:28
@@ -1671,10 +1832,24 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-slider-widget.php:49
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:64
-#: inc/widgets/colormag-featured-posts-widget.php:64
-#: inc/widgets/colormag-highlighted-posts-widget.php:48
+#: inc/widgets/colormag-featured-posts-slider-widget.php:44
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:59
+#: inc/widgets/colormag-featured-posts-widget.php:59
+#: inc/widgets/colormag-highlighted-posts-widget.php:43
+msgid "Show posts from a tag"
+msgstr ""
+
+#: inc/widgets/colormag-featured-posts-slider-widget.php:45
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:60
+#: inc/widgets/colormag-featured-posts-widget.php:60
+#: inc/widgets/colormag-highlighted-posts-widget.php:44
+msgid "Show posts from an author"
+msgstr ""
+
+#: inc/widgets/colormag-featured-posts-slider-widget.php:51
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:66
+#: inc/widgets/colormag-featured-posts-widget.php:66
+#: inc/widgets/colormag-highlighted-posts-widget.php:50
 msgid "Select category"
 msgstr ""
 
@@ -1732,7 +1907,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: search.php:36
+#: search.php:34
 #. Translators: %s: Search query.
 msgid "Search Results for: %s"
 msgstr ""
@@ -1859,16 +2034,27 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "ColorMag"
-msgstr ""
-
 #. Theme URI of the plugin/theme
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "ColorMag Pro is the pro version of ColorMag free theme."
+msgid ""
+"ColorMag is always the best choice when it comes to magazine, news, and "
+"blog WordPress themes. You can create elegant and modern websites for news "
+"portals, online magazines, and publishing sites. With ColorMag’s 8 and "
+"counting free starter demos for health, food, entertainment, sports, and "
+"fashion industries, building a magazine style website is super easy. Best "
+"of all, the ColorMag WordPress theme offers multiple ad spaces in its "
+"layout. So, you can monetize your website by displaying ads in these slots "
+"without any fuss. And if you plan to sell products and services online, you "
+"can rely on the theme’s compatibility with WooCommerce. Some of its key "
+"features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser "
+"Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, "
+"download the free ColorMag theme and create professional magazine websites "
+"quickly. You can get free support for ColorMag at "
+"https://themegrill.com/contact/ and check our demos at "
+"https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1876,7 +2062,7 @@ msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://themegrill.com/wordpress-themes/"
+msgid "https://themegrill.com"
 msgstr ""
 
 #. Template Name of the plugin/theme
