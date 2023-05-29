@@ -319,145 +319,23 @@ jQuery( document ).ready(
 		if ( typeof jQuery.fn.bxSlider !== 'undefined' ) {
 
 			// Category slider widget slider setting.
-			var category_init = function ( category_slider, category_mode, category_speed, category_pause, category_auto, category_hover ) {
-				jQuery( category_slider ).bxSlider(
-					{
-						mode           : category_mode,
-						speed          : category_speed,
-						auto           : category_auto,
-						pause          : category_pause,
-						autoHover      : category_hover,
-						adaptiveHeight : true,
-						nextText       : '<div class="cm-category-slide-next"><i class="fa fa-angle-right"></i></div>',
-						prevText       : '<div class="cm-category-slide-prev"><i class="fa fa-angle-left"></i></div>',
-						pager          : false,
-						tickerHover    : true,
-						onSliderLoad   : function () {
-							jQuery( '.cm-slider-area-rotate' ).css( 'visibility', 'visible' );
-							jQuery( '.cm-slider-area-rotate' ).css( 'height', 'auto' );
-						}
+			jQuery( '.cm-slider-area-rotate' ).bxSlider(
+				{
+					mode           : 'horizontal',
+					speed          : 1500,
+					auto           : true,
+					pause          : 5000,
+					adaptiveHeight : true,
+					nextText       : '',
+					prevText       : '',
+					nextSelector   : '.slide-next',
+					prevSelector   : '.slide-prev',
+					pager          : false,
+					tickerHover    : true,
+					onSliderLoad   : function () {
+						jQuery( '.cm-slider-area-rotate' ).css( 'visibility', 'visible' );
+						jQuery( '.cm-slider-area-rotate' ).css( 'height', 'auto' );
 					}
-				);
-			};
-
-			var category_slider_wrapper = jQuery( '.cm-featured-category-slider ' );
-			jQuery( category_slider_wrapper ).each(
-				function () {
-					var category_slider = jQuery( this ).children( '.cm-slider-area-rotate' );
-					var category_mode   = jQuery( this ).children( '.cm-slider-area-rotate' ).data( 'mode' );
-					var category_speed  = jQuery( this ).children( '.cm-slider-area-rotate' ).data( 'speed' );
-					var category_pause  = jQuery( this ).children( '.cm-slider-area-rotate' ).data( 'pause' );
-					var category_auto   = jQuery( this ).children( '.cm-slider-area-rotate' ).data( 'auto' );
-					var category_hover  = jQuery( this ).children( '.cm-slider-area-rotate' ).data( 'hover' );
-
-					category_init( category_slider, category_mode, category_speed, category_pause, category_auto, category_hover );
-				}
-			);
-
-			// Style 5 widget JS Setting.
-			var style5_slider_init = function ( style5_slider, style5_speed, style5_pause, style5_auto, style5_hover ) {
-				jQuery( style5_slider ).bxSlider(
-					{
-						minSlides      : 1,
-						maxSlides      : 2,
-						slideWidth     : 390,
-						slideMargin    : 20,
-						speed          : style5_speed,
-						pause          : style5_pause,
-						auto           : style5_auto,
-						autoHover      : style5_hover,
-						adaptiveHeight : true,
-						nextText       : '<div class="slide-next"><i class="fa fa-angle-right"></i></div>',
-						prevText       : '<div class="slide-prev"><i class="fa fa-angle-left"></i></div>',
-						pager          : false,
-						captions       : false,
-						onSliderLoad   : function () {
-							jQuery( '.cm-featured-posts--style-5 .cm-highlighted-post' ).css( 'visibility', 'visible' );
-							jQuery( '.cm-featured-posts--style-5 .cm-highlighted-post' ).css( 'height', 'auto' );
-						}
-					}
-				);
-			};
-
-			var style5_slider_wrapper = jQuery( '.cm-posts' );
-			jQuery( style5_slider_wrapper ).each(
-				function () {
-					var style5_slider = jQuery( this ).children( '.cm-featured-posts--style-5 .cm-highlighted-post' );
-					var style5_speed  = jQuery( this ).children( '.cm-featured-posts--style-5 .cm-highlighted-post' ).data( 'speed' );
-					var style5_pause  = jQuery( this ).children( '.cm-featured-posts--style-5 .cm-highlighted-post' ).data( 'pause' );
-					var style5_auto   = jQuery( this ).children( '.cm-featured-posts--style-5 .cm-highlighted-post' ).data( 'auto' );
-					var style5_hover  = jQuery( this ).children( '.cm-featured-posts--style-5 .cm-highlighted-post' ).data( 'hover' );
-
-					style5_slider_init( style5_slider, style5_speed, style5_pause, style5_auto, style5_hover );
-				}
-			);
-
-			// Style 6 widget JS Setting.
-			var style6_slider_init = function ( style6_slider_class, style6_pager_class, style6_mode, style6_speed, style6_pause, style6_auto, style6_hover ) {
-				jQuery( style6_slider_class ).bxSlider(
-					{
-						mode         : style6_mode,
-						speed        : style6_speed,
-						pause        : style6_pause,
-						auto         : style6_auto,
-						pagerCustom  : style6_pager_class,
-						autoHover    : style6_hover,
-						controls     : false,
-						nextText     : '',
-						prevText     : '',
-						nextSelector : '',
-						prevSelector : '',
-						captions     : false,
-						onSliderLoad : function () {
-							jQuery( '.thumbnail-big-sliders' ).css( 'visibility', 'visible' );
-							jQuery( '.thumbnail-big-sliders' ).css( 'height', 'auto' );
-						}
-					}
-				);
-			};
-
-			var style6_slider_wrapper = jQuery( '.cm-thumbnail-slider-news' );
-			jQuery( style6_slider_wrapper ).each(
-				function () {
-					var style6_slider_class = jQuery( this ).children( '.thumbnail-big-sliders' );
-					var style6_pager_class  = jQuery( this ).children( '.cm-thumbnail-slider' );
-					var style6_mode         = jQuery( this ).children( '.thumbnail-big-sliders' ).data( 'mode' );
-					var style6_speed        = jQuery( this ).children( '.thumbnail-big-sliders' ).data( 'speed' );
-					var style6_pause        = jQuery( this ).children( '.thumbnail-big-sliders' ).data( 'pause' );
-					var style6_auto         = jQuery( this ).children( '.thumbnail-big-sliders' ).data( 'auto' );
-					var style6_hover        = jQuery( this ).children( '.thumbnail-big-sliders' ).data( 'hover' );
-
-					style6_slider_init( style6_slider_class, style6_pager_class, style6_mode, style6_speed, style6_pause, style6_auto, style6_hover );
-				}
-			);
-
-			// Style 7 widget JS Setting.
-			var style7_slider_init = function ( style7_slider, style7_speed ) {
-				jQuery( style7_slider ).bxSlider(
-					{
-						minSlides    : 5,
-						maxSlides    : 8,
-						slideWidth   : 150,
-						slideMargin  : 12,
-						ticker       : true,
-						speed        : style7_speed,
-						tickerHover  : true,
-						useCSS       : false,
-						onSliderLoad : function () {
-							jQuery( '.cm-image-ticker-news' ).css( 'visibility', 'visible' );
-							jQuery( '.cm-image-ticker-news' ).css( 'height', 'auto' );
-						}
-					}
-				);
-			};
-
-			var style7_slider_wrapper = jQuery( '.cm-featured-posts--style-7' );
-			jQuery( style7_slider_wrapper ).each(
-				function () {
-					var style7_slider = jQuery( this ).children( '.cm-image-ticker-news' );
-					var style7_speed  = jQuery( this ).children( '.cm-image-ticker-news' ).data( 'speed' );
-
-					style7_slider_init( style7_slider, style7_speed );
 				}
 			);
 
@@ -477,31 +355,6 @@ jQuery( document ).ready(
 				}
 			);
 
-			// Related post carousel.
-			jQuery( window ).on( 'load colormagAjaxSinglePostLoaded', function() {
-
-				jQuery( '.related-post-carousel' ).bxSlider(
-					{
-						minSlides    : 1,
-						maxSlides    : 2,
-						auto         : true,
-						slideWidth   : 390,
-						slideMargin  : 20,
-						moveSlides   : 1,
-						shrinkItems  : true,
-						speed        : 3000,
-						autoHover    : true,
-						nextText     : '<div class="slide-next"><i class="fa fa-angle-right"></i></div>',
-						prevText     : '<div class="slide-prev"><i class="fa fa-angle-left"></i></div>',
-						pager        : false,
-						captions     : false,
-						onSliderLoad : function () {
-							jQuery( '.related-post-carousel' ).css( 'visibility', 'visible' );
-							jQuery( '.related-post-carousel' ).css( 'height', 'auto' );
-						}
-					}
-				);
-			});
 		}
 
 		// Tabbed widget.

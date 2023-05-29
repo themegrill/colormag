@@ -66,11 +66,6 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		// Enqueue the required JS for this widget.
-		if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() || ColorMag_Utils::colormag_elementor_active_page_check() ) {
-			wp_enqueue_script( 'colormag-bxslider' );
-		}
-
 		global $post;
 		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
 		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
