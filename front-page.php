@@ -47,8 +47,6 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 	do_action( 'colormag_before_body_content' );
 	?>
 
-	<?php colormag_two_sidebar_select(); ?>
-
 	<div id="cm-primary" class="cm-primary">
 
 		<?php

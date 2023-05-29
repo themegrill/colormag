@@ -107,7 +107,6 @@ class ColorMag_Meta_Box_Page_Settings {
 								'left_sidebar'                => COLORMAG_PARENT_URL . '/assets/img/left-sidebar.png',
 								'no_sidebar_full_width'       => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-full-width-layout.png',
 								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-content-centered-layout.png',
-								'two_sidebars'                => COLORMAG_PARENT_URL . '/assets/img/two-sidebars.png'
 							),
 						)
 					);
@@ -153,7 +152,6 @@ class ColorMag_Meta_Box_Page_Settings {
 					'left_sidebar',
 					'no_sidebar_full_width',
 					'no_sidebar_content_centered',
-					'two_sidebars',
 				),
 				true
 			)

@@ -376,8 +376,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 						$new_value = 'no_sidebar_full_width';
 					} elseif ( 'no_sidebar_content_centered' === $old_value ) {
 						$new_value = 'no_sidebar_content_centered';
-					} elseif ( 'two_sidebars' === $old_value ) {
-						$new_value = 'two_sidebars';
 					} else {
 						$new_value = 'right_sidebar';
 					}

@@ -23,8 +23,6 @@ get_header();
 	do_action( 'colormag_before_body_content' );
 	?>
 
-		<?php colormag_two_sidebar_select(); ?>
-
 		<div id="cm-primary" class="cm-primary">
 			<div class="cm-posts">
 				<section class="cm-error-404 cm-not-found">
@@ -62,7 +60,7 @@ get_header();
 	 * Hook: colormag_after_body_content.
 	 */
 	do_action( 'colormag_after_body_content' );
-	
+
 	?>
 </div>
 

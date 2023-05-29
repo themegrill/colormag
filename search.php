@@ -22,8 +22,6 @@ get_header();
 	 */
 	do_action( 'colormag_before_body_content' );
 	?>
-		<?php colormag_two_sidebar_select(); ?>
-
 		<div id="cm-primary" class="cm-primary">
 			<div class="cm-posts">
 				<?php if ( have_posts() ) : ?>

@@ -232,8 +232,6 @@ function colormag_body_class( $classes ) {
 					$classes[] = 'no-sidebar-full-width';
 				} elseif ( 'no_sidebar_content_centered' === $colormag_default_page_layout ) {
 					$classes[] = 'no-sidebar';
-				} elseif ( 'two_sidebars' === $colormag_default_page_layout ) {
-					$classes[] = 'tg-site-layout--2-sidebars';
 				}
 			} elseif ( is_single() ) {
 				if ( 'right_sidebar' === $colormag_default_post_layout ) {
@@ -244,8 +242,6 @@ function colormag_body_class( $classes ) {
 					$classes[] = 'no-sidebar-full-width';
 				} elseif ( 'no_sidebar_content_centered' === $colormag_default_post_layout ) {
 					$classes[] = 'no-sidebar';
-				} elseif ( 'two_sidebars' === $colormag_default_post_layout ) {
-					$classes[] = 'tg-site-layout--2-sidebars';
 				}
 			} elseif ( 'right_sidebar' === $colormag_default_layout ) {
 				$classes[] = '';
@@ -255,8 +251,6 @@ function colormag_body_class( $classes ) {
 				$classes[] = 'no-sidebar-full-width';
 			} elseif ( 'no_sidebar_content_centered' === $colormag_default_layout ) {
 				$classes[] = 'no-sidebar';
-			} elseif ( 'two_sidebars' === $colormag_default_layout ) {
-				$classes[] = 'tg-site-layout--2-sidebars';
 			}
 		} elseif ( 'right_sidebar' === $layout_meta ) {
 			$classes[] = '';
@@ -266,8 +260,6 @@ function colormag_body_class( $classes ) {
 			$classes[] = 'no-sidebar-full-width';
 		} elseif ( 'no_sidebar_content_centered' === $layout_meta ) {
 			$classes[] = 'no-sidebar';
-		} elseif ( 'two_sidebars' === $layout_meta ) {
-			$classes[] = 'tg-site-layout--2-sidebars';
 		}
 
 	endif;
