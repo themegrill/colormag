@@ -229,35 +229,6 @@ function colormag_widgets_init() {
 		)
 	);
 
-	// Registering sidebar for WooCommerce pages.
-	if ( ( get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 ) == 1 ) && class_exists( 'WooCommerce' ) ) {
-		// Registering WooCommerce Right Sidebar.
-		register_sidebar(
-			array(
-				'name'          => esc_html__( 'WooCommerce Right Sidebar', 'colormag' ),
-				'id'            => 'colormag_woocommerce_right_sidebar',
-				'description'   => esc_html__( 'Shows widgets at WooCommerce Right sidebar.', 'colormag' ),
-				'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-				'after_widget'  => '</aside>',
-				'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-				'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
-			)
-		);
-
-		// Registering WooCommerce Left Sidebar.
-		register_sidebar(
-			array(
-				'name'          => esc_html__( 'WooCommerce Left Sidebar', 'colormag' ),
-				'id'            => 'colormag_woocommerce_left_sidebar',
-				'description'   => esc_html__( 'Shows widgets at WooCommerce Left sidebar.', 'colormag' ),
-				'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-				'after_widget'  => '</aside>',
-				'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
-				'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
-			)
-		);
-	}
-
 	register_widget( 'colormag_featured_posts_slider_widget' );
 	register_widget( 'colormag_highlighted_posts_widget' );
 	register_widget( 'colormag_featured_posts_widget' );
