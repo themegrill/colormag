@@ -205,42 +205,6 @@ jQuery( document ).ready(
 
 			}
 
-			// Breaking news widget.
-			var breaking_news_widget_init = function ( breaking_news_slider, breaking_news_slider_up, breaking_news_slider_down, breaking_news_slider_direction, breaking_news_slider_duration, breaking_news_slider_row_height, breaking_news_slider_max_row ) {
-				jQuery( breaking_news_slider ).newsTicker(
-					{
-						row_height : breaking_news_slider_row_height,
-						max_rows   : breaking_news_slider_max_row,
-						duration   : breaking_news_slider_duration,
-						direction  : breaking_news_slider_direction,
-						prevButton : jQuery( breaking_news_slider_up ),
-						nextButton : jQuery( breaking_news_slider_down ),
-						start      : function () {
-							jQuery( '.cm-breaking-news-slider-widget' ).css(
-								{
-									'visibility' : 'visible',
-								}
-							);
-						}
-					}
-				);
-			};
-
-			var breaking_news_widget_wrapper = jQuery( '.cm-breaking-news' );
-			jQuery( breaking_news_widget_wrapper ).each(
-				function () {
-					var breaking_news_slider            = jQuery( this ).children( '.cm-breaking-news-slider-widget' );
-					var breaking_news_slider_up         = jQuery( this ).children( '.fa-arrow-up' );
-					var breaking_news_slider_down       = jQuery( this ).children( '.fa-arrow-down' );
-					var breaking_news_slider_direction  = jQuery( this ).children( '.cm-breaking-news-slider-widget' ).data( 'direction' );
-					var breaking_news_slider_duration   = jQuery( this ).children( '.cm-breaking-news-slider-widget' ).data( 'duration' );
-					var breaking_news_slider_row_height = jQuery( this ).children( '.cm-breaking-news-slider-widget' ).data( 'rowheight' );
-					var breaking_news_slider_max_row    = jQuery( this ).children( '.cm-breaking-news-slider-widget' ).data( 'maxrows' );
-
-					breaking_news_widget_init( breaking_news_slider, breaking_news_slider_up, breaking_news_slider_down, breaking_news_slider_direction, breaking_news_slider_duration, breaking_news_slider_row_height, breaking_news_slider_max_row );
-				}
-			);
-
 		}
 
 		// Settings of the sticky menu.
