@@ -114,15 +114,15 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
-				'name'      => 'colormag_header_display_type',
-				'default'   => 'type_one',
-				'type'      => 'control',
-				'class'     => 'alignment',
-				'control'   => 'colormag-radio-image',
-				'label'     => esc_html__( 'Alignment', 'colormag' ),
-				'section'   => 'colormag_primary_header_section',
-				'priority'  => 40,
-				'choices'   => apply_filters(
+				'name'       => 'colormag_header_display_type',
+				'default'    => 'type_one',
+				'type'       => 'control',
+				'class'      => 'alignment',
+				'control'    => 'colormag-radio-image',
+				'label'      => esc_html__( 'Alignment', 'colormag' ),
+				'section'    => 'colormag_primary_header_section',
+				'priority'   => 40,
+				'choices'    => apply_filters(
 					'colormag_header_display_type_choices',
 					array(
 						'type_one'   => array(
@@ -139,7 +139,12 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 						),
 					)
 				),
-				'image_col' => 3,
+				'image_col'  => 3,
+				'dependency' => array(
+					'colormag_main_header_layout',
+					'!=',
+					'layout-2',
+				),
 			),
 
 			array(
