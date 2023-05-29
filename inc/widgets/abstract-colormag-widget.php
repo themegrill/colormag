@@ -861,8 +861,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 				'categories',
 				'date',
 				'author',
-				'views',
-				'comments',
 				'tags',
 		);
 
@@ -881,10 +879,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 			if ( 'author' === $meta_order ) {
 				colormag_author_meta_markup();
-			}
-
-			if ( 'comments' === $meta_order ) {
-				colormag_comment_meta_markup( true );
 			}
 		}
 
