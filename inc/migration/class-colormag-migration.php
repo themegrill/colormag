@@ -169,6 +169,22 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			/**
 			 * Toggle control migration.
 			 */
+			// Top bar.
+			$top_bar_date_enable        = get_theme_mod( 'colormag_date_display' );
+			$top_bar_news_ticker_enable = get_theme_mod( 'colormag_enable_news_ticker' );
+
+			if ( $top_bar_date_enable || $top_bar_news_ticker_enable ) {
+				set_theme_mod( 'colormag_enable_top_bar', true );
+			}
+
+			// Search.
+			$search_enable        = get_theme_mod( 'colormag_search_icon_in_menu' );
+
+			if ( $search_enable ) {
+				set_theme_mod('colormag_enable_search', true);
+			}
+			remove_theme_mod( 'colormag_search_icon_in_menu' );
+
 			// Hide Blog/Static page posts.
 			$blog_static_page_posts = get_theme_mod( 'colormag_hide_blog_front' );
 
@@ -417,7 +433,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 
 			// Set flag not to repeat the migration process, run it only once.
-			update_option( 'colormag_major_update_customizer_migration_v3', true );
+			update_option( 'colormag_free_major_update_customizer_migration_v1', true );
 		}
 	}
 
