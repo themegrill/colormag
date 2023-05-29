@@ -195,6 +195,32 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 endif;
 
+/**
+ * Sets the post excerpt length to 20 words.
+ *
+ * Function tied to the excerpt_length filter hook.
+ *
+ * @param int $length The excerpt length.
+ *
+ * @return int The filtered excerpt length.
+ * @uses filter excerpt_length
+ */
+function colormag_excerpt_length( $length ) {
+	return 20;
+}
+
+add_filter( 'excerpt_length', 'colormag_excerpt_length' );
+
+/**
+ * Returns a "Continue Reading" link for excerpts.
+ */
+function colormag_continue_reading() {
+	return '';
+}
+
+add_filter( 'excerpt_more', 'colormag_continue_reading' );
+
+
 if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 
 	/**
