@@ -47,6 +47,18 @@ class ColorMag_Dynamic_CSS {
 
 		$header_background           = get_theme_mod( 'colormag_main_header_background', $header_background_default );
 
+		// Header options.
+		$outside_container_background_default       = array(
+			'background-color'      => '#ffffff',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+
+		$outside_container_background         = get_theme_mod( 'colormag_outside_container_background', $outside_container_background_default );
+
 		$footer_sidebar_area_background_default       = array(
 			'background-color'      => '',
 			'background-image'      => '',
@@ -289,6 +301,9 @@ class ColorMag_Dynamic_CSS {
 		 */
 		// Background.
 		$parse_css .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header' );
+
+		// Background.
+		$parse_css .= colormag_parse_background_css( $outside_container_background_default, $outside_container_background, 'body' );
 
 		// Main Header
 		$main_header_dimension_padding_default = array(
