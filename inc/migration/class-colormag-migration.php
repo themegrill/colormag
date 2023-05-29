@@ -178,10 +178,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 
 			// Search.
-			$search_enable        = get_theme_mod( 'colormag_search_icon_in_menu' );
+			$search_enable = get_theme_mod( 'colormag_search_icon_in_menu' );
 
 			if ( $search_enable ) {
-				set_theme_mod('colormag_enable_search', true);
+				set_theme_mod( 'colormag_enable_search', true );
 			}
 			remove_theme_mod( 'colormag_search_icon_in_menu' );
 
