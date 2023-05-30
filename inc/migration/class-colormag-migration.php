@@ -82,13 +82,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			// Container Layout.
 			$container_layout = get_theme_mod( 'colormag_site_layout', 'wide_layout' );
 
-			switch ( $container_layout ) {
-				case 'boxed_layout':
-					$container_layout_new = 'boxed';
-					break;
-				case 'wide_layout':
-					$container_layout_new = 'wide';
-					break;
+			if ( 'boxed_layout' === $container_layout ) {
+				$container_layout_new = 'boxed';
+			} elseif ( 'wide_layout' === $container_layout ) {
+				$container_layout_new = 'wide';
 			}
 
 			set_theme_mod( 'colormag_container_layout', $container_layout_new );
