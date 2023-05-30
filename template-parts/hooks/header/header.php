@@ -276,7 +276,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 		<div class="cm-container">
 			<div class="cm-row">
 				<?php
-				if ( 'home_icon' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
+				if ( 'home-icon' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
 					$home_icon_class = 'cm-home-icon';
 
 					if ( is_front_page() ) {

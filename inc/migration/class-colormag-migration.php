@@ -87,6 +87,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			set_theme_mod( 'colormag_container_layout', $new_container_layout );
 			remove_theme_mod( 'colormag_site_layout' );
 
+			// Container Layout.
+			$home_icon = get_theme_mod( 'colormag_home_icon_display', '0' );
+
+			if ( $home_icon ) {
+				set_theme_mod( 'colormag_menu_icon_logo', 'home-icon' );
+			}
+			remove_theme_mod( 'colormag_home_icon_display' );
+
 			// Site identity placement.
 			$header_logo_placement = get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' );
 

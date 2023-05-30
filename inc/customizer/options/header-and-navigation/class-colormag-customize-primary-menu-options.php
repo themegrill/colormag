@@ -58,7 +58,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'priority' => 120,
 				'choices'  => array(
 					'none'      => esc_html__( 'None', 'colormag' ),
-					'home_icon' => esc_html__( 'Home Icon', 'colormag' ),
+					'home-icon' => esc_html__( 'Home Icon', 'colormag' ),
 				),
 			),
 		);
