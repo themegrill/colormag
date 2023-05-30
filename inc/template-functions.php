@@ -266,7 +266,7 @@ function colormag_body_class( $classes ) {
 
 	// For site layout option.
 	$site_layout = get_theme_mod( 'colormag_container_layout', 'wide' );
-	$classes[]   = ( 'wide' === $site_layout ) ? 'wide' : 'boxed';
+	$classes[]   = ( 'wide' == $site_layout ) ? 'wide' : 'boxed';
 
 	// Add body class for header display type.
 	$header_display_type = get_theme_mod( 'colormag_header_display_type', 'type_one' );

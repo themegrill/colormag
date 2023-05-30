@@ -70,20 +70,3 @@ function colormag_demo_import_migration_notice_dismiss() {
 
 add_action( 'admin_init', 'colormag_demo_import_migration_notice_dismiss' );
 
-
-/**
- * Return the value for customize migration on demo import.
- *
- * @return bool
- */
-function colormag_demo_import_migration() {
-	if ( isset( $_GET['demo-import-migration'] ) && isset( $_GET['_demo_import_migration_nonce'] ) ) {
-		if ( ! wp_verify_nonce( $_GET['_demo_import_migration_nonce'], 'demo_import_migration' ) ) {
-			wp_die( __( 'Action failed. Please refresh the page and retry.', 'colormag' ) );
-		}
-
-		return true;
-	}
-
-	return false;
-}

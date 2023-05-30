@@ -13,9 +13,14 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'ColorMag_Migration' ) ) {
 	class ColorMag_Migration {
 
+		private $old_theme_mods;
+
 		public function __construct() {
 			add_action( 'after_setup_theme', array( $this, 'colormag_social_icons_control_migrate' ) );
-			add_action( 'after_setup_theme', array( $this, 'colormag_major_update_customizer_migration_v3' ) );
+
+			if ( self::maybe_run_migration() || self::colormag_demo_import_migration() ) {
+				add_action( 'after_setup_theme', array( $this, 'colormag_free_major_update_customizer_migration_v1' ) );
+			}
 		}
 
 		/**
@@ -63,25 +68,13 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		 *
 		 * @since ColorMag 3.0.0
 		 */
-		public function colormag_major_update_customizer_migration_v3() {
-
-			$demo_import_migration = colormag_demo_import_migration();
-
-			// Migrate the customize option if migration is done manually.
-			if ( ! $demo_import_migration ) {
-
-				// Bail out if the migration is already done.
-				if ( get_option( 'colormag_major_update_customizer_migration_v3' ) ) {
-					return;
-				}
-			}
+		public function colormag_free_major_update_customizer_migration_v1() {
 
 			/**
 			 * Select control migration.
 			 */
 			// Container Layout.
-			$container_layout     = get_theme_mod( 'colormag_site_layout', 'wide_layout' );
-			$new_container_layout = '';
+			$container_layout = get_theme_mod( 'colormag_site_layout', 'wide_layout' );
 
 			if ( $container_layout ) {
 				if ( 'boxed_layout' === $container_layout ) {
@@ -431,6 +424,61 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			// Set flag not to repeat the migration process, run it only once.
 			update_option( 'colormag_free_major_update_customizer_migration_v1', true );
+		}
+
+		/**
+		 * Return the value for customize migration on demo import.
+		 *
+		 * @return bool
+		 */
+		function colormag_demo_import_migration() {
+			if ( isset( $_GET['demo-import-migration'] ) && isset( $_GET['_demo_import_migration_nonce'] ) ) {
+				if ( ! wp_verify_nonce( $_GET['_demo_import_migration_nonce'], 'demo_import_migration' ) ) {
+					wp_die( __( 'Action failed. Please refresh the page and retry.', 'colormag' ) );
+				}
+
+				return true;
+			}
+
+			return false;
+		}
+
+
+		/**
+		 * @return bool
+		 */
+		public static function maybe_run_migration() {
+
+			/**
+			 * Check migration is already run or not.
+			 * If migration is already run then return false.
+			 *
+			 */
+			$migrated = get_option( 'colormag_free_major_update_customizer_migration_v1' );
+
+			if ( $migrated ) {
+
+				return false;
+			}
+
+			/**
+			 * If user don't import the demo and upgrade the theme.
+			 * Then we need to run the migration.
+			 *
+			 */
+			$result     = false;
+			$theme_mods = get_theme_mods();
+
+			foreach ( $theme_mods as $key => $_ ) {
+
+				if ( strpos( $key, 'colormag_' ) !== false ) {
+
+					$result = true;
+					break;
+				}
+			}
+
+			return $result;
 		}
 	}
 

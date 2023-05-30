@@ -26,8 +26,8 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-welcome-notice.php';
 }
 
-/** ColorMag setup file, hooked for `after_setup_theme`. */
-require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
+///** ColorMag setup file, hooked for `after_setup_theme`. */
+//require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 
 /**
  * Base.
@@ -89,9 +89,6 @@ require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-box-page-s
 /**
  * Migration
  */
-// Migrating customize options.
-require COLORMAG_INCLUDES_DIR . '/migration/class-colormag-options-migrate.php';
-
 // Load demo import migration scripts.
 require_once COLORMAG_INCLUDES_DIR . '/migration/demo-import-migration.php';
 
