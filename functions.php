@@ -26,6 +26,9 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-welcome-notice.php';
 }
 
+/** ColorMag setup file, hooked for `after_setup_theme`. */
+require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
+
 /**
  * Base.
  */
