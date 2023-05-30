@@ -80,15 +80,18 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			 * Select control migration.
 			 */
 			// Container Layout.
-			$container_layout = get_theme_mod( 'colormag_site_layout', 'wide_layout' );
+			$container_layout     = get_theme_mod( 'colormag_site_layout', 'wide_layout' );
+			$new_container_layout = '';
 
-			if ( 'boxed_layout' == $container_layout ) {
-				$container_layout_new = 'boxed';
-			} elseif ( 'wide_layout' == $container_layout ) {
-				$container_layout_new = 'wide';
+			if ( $container_layout ) {
+				if ( 'boxed_layout' === $container_layout ) {
+					$new_container_layout = 'boxed';
+				} elseif ( 'wide_layout' === $container_layout ) {
+					$new_container_layout = 'wide';
+				}
 			}
 
-			set_theme_mod( 'colormag_container_layout', $container_layout_new );
+			set_theme_mod( 'colormag_container_layout', $new_container_layout );
 			remove_theme_mod( 'colormag_site_layout' );
 
 			// Site identity placement.
@@ -106,9 +109,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					set_theme_mod( 'colormag_enable_site_tagline', 1 );
 					break;
 			}
-
-			set_theme_mod( 'colormag_container_layout', $container_layout_new );
-			remove_theme_mod( 'colormag_site_layout' );
 
 			// Header media position.
 			$old_header_media_position = get_theme_mod( 'colormag_header_image_position' );
