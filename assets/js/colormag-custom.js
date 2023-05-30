@@ -177,34 +177,22 @@ jQuery( document ).ready(
 			jQuery( '.fitvids-video' ).fitVids();
 		}
 
-		// NewsTicker JS Settings.
+		// Settings of the ticker.
 		if ( typeof jQuery.fn.newsTicker !== 'undefined' ) {
-
-			/* global colormag_ticker_settings */
-			if ( typeof colormag_ticker_settings !== 'undefined' ) {
-
-				// Settings of the ticker.
-				var breaking_news_slide_effect = colormag_ticker_settings.breaking_news_slide_effect;
-				var breaking_news_duration     = parseInt( colormag_ticker_settings.breaking_news_duration, 10 );
-				var breaking_news_speed        = parseInt( colormag_ticker_settings.breaking_news_speed, 10 );
-
-				jQuery( '.newsticker' ).newsTicker(
-					{
-						row_height   : 20,
-						max_rows     : 1,
-						direction    : breaking_news_slide_effect,
-						speed        : breaking_news_speed,
-						duration     : breaking_news_duration,
-						autostart    : 1,
-						pauseOnHover : 1,
-						start        : function () {
-							jQuery( '.newsticker' ).css( 'visibility', 'visible' );
-						}
+			jQuery( '.newsticker' ).newsTicker(
+				{
+					row_height   : 20,
+					max_rows     : 1,
+					speed        : 1000,
+					direction    : 'down',
+					duration     : 4000,
+					autostart    : 1,
+					pauseOnHover : 1,
+					start        : function () {
+						jQuery( '.newsticker' ).css( 'visibility', 'visible' );
 					}
-				);
-
-			}
-
+				}
+			);
 		}
 
 		// Settings of the sticky menu.
