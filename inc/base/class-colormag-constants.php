@@ -61,7 +61,7 @@ if ( ! class_exists( 'ColorMag_Constants' ) ) {
 				/**
 				 * Define Directory Location Constants
 				 */
-				'COLORMAG_THEME_VERSION'         => wp_get_theme( get_template() )->get( 'Version' ),
+				'COLORMAG_THEME_VERSION'         => '3.0.0',
 				'COLORMAG_PARENT_DIR'            => get_template_directory(),
 				'COLORMAG_INCLUDES_DIR'          => get_template_directory() . '/inc',
 				'COLORMAG_CSS_DIR'               => get_template_directory() . '/assets/css',
