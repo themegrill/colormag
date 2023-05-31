@@ -46,8 +46,7 @@ get_header();
 					do_action( 'colormag_before_search_results_page_loop' );
 					?>
 
-					<?php
-					?>
+					<div class="article-container">
 
 						<?php
 						while ( have_posts() ) :
@@ -58,9 +57,11 @@ get_header();
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 							 */
-							get_template_part( 'content', 'archive' );
+							get_template_part( '/template-parts/content', 'archive' );
 						endwhile;
-					?>
+						?>
+
+					</div>
 
 					<?php
 					/**
