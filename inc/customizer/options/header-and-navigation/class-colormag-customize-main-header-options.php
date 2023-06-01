@@ -188,36 +188,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 				'priority' => 70,
 			),
 
-			/**
-			 * Dimension.
-			 */
-			array(
-				'name'     => 'colormag_main_header_dimension_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Padding', 'colormag' ),
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 80,
-			),
-
-			array(
-				'name'      => 'colormag_main_header_dimension_padding',
-				'default'   => array(
-					'top'    => '',
-					'right'  => '',
-					'bottom' => '',
-					'left'   => '',
-					'unit'   => 'px',
-				),
-				'suffix'    => array( 'px' ),
-				'type'      => 'control',
-				'control'   => 'colormag-dimensions',
-				'label'     => esc_html__( 'Padding', 'colormag' ),
-				'transport' => 'postMessage',
-				'section'   => 'colormag_primary_header_section',
-				'priority'  => 90,
-			),
-
 			array(
 				'name'     => 'colormag_main_header_style_subtitle',
 				'type'     => 'control',
