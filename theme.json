@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "spacing": {
+      "blockGap": true,
+      "margin": true,
+      "padding": true
+    }
+  }
+}
