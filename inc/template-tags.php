@@ -297,7 +297,6 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 		$colormag_social_links = array(
 			'colormag_social_facebook'    => 'Facebook',
 			'colormag_social_twitter'     => 'Twitter',
-			'colormag_social_googleplus'  => 'Google-Plus',
 			'colormag_social_instagram'   => 'Instagram',
 			'colormag_social_pinterest'   => 'Pinterest',
 			'colormag_social_youtube'     => 'YouTube',
@@ -771,14 +770,6 @@ if ( ! function_exists( 'colormag_author_social_link' ) ) :
 					</a>
 				</li>
 			<?php } // End check for facebook. ?>
-
-			<?php if ( get_the_author_meta( 'colormag_google_plus' ) ) { ?>
-				<li class="google_plus-link">
-					<a href="https://plus.google.com/<?php the_author_meta( 'colormag_google_plus' ); ?>">
-						<i class="fa fa-google-plus"></i>
-					</a>
-				</li>
-			<?php } // End check for google_plus. ?>
 
 			<?php if ( get_the_author_meta( 'colormag_flickr' ) ) { ?>
 				<li class="flickr-link">

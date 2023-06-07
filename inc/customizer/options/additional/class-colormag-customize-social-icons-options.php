@@ -147,11 +147,6 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 				'title'   => esc_html__( 'Twitter', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_googleplus'  => array(
-				'id'      => 'colormag_social_googleplus',
-				'title'   => esc_html__( 'Google-Plus', 'colormag' ),
-				'default' => '',
-			),
 			'colormag_social_instagram'   => array(
 				'id'      => 'colormag_social_instagram',
 				'title'   => esc_html__( 'Instagram', 'colormag' ),
