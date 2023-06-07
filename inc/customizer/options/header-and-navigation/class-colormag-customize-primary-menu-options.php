@@ -61,6 +61,17 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 					'home-icon' => esc_html__( 'Home Icon', 'colormag' ),
 				),
 			),
+
+			array(
+				'name'        => 'colormag_primary_menu_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_primary_menu_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

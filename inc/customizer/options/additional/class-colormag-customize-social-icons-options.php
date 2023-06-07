@@ -130,6 +130,16 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 				'priority'   => 60,
 			),
 
+			array(
+				'name'        => 'colormag_social_icons_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_social_icons_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );
@@ -137,27 +147,27 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 		// Social links lists.
 		$social_links_count    = 70;
 		$colormag_social_links = array(
-			'colormag_social_facebook'    => array(
+			'colormag_social_facebook'  => array(
 				'id'      => 'colormag_social_facebook',
 				'title'   => esc_html__( 'Facebook', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_twitter'     => array(
+			'colormag_social_twitter'   => array(
 				'id'      => 'colormag_social_twitter',
 				'title'   => esc_html__( 'Twitter', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_instagram'   => array(
+			'colormag_social_instagram' => array(
 				'id'      => 'colormag_social_instagram',
 				'title'   => esc_html__( 'Instagram', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_pinterest'   => array(
+			'colormag_social_pinterest' => array(
 				'id'      => 'colormag_social_pinterest',
 				'title'   => esc_html__( 'Pinterest', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_youtube'     => array(
+			'colormag_social_youtube'   => array(
 				'id'      => 'colormag_social_youtube',
 				'title'   => esc_html__( 'YouTube', 'colormag' ),
 				'default' => '',

@@ -172,6 +172,16 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 				'priority'  => 70,
 			),
 
+			array(
+				'name'        => 'colormag_sidebar_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_global_sidebar_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

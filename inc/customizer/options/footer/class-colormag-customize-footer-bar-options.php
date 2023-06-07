@@ -58,6 +58,16 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 				'priority'      => 20,
 			),
 
+			array(
+				'name'        => 'colormag_footer_bar_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_footer_bar_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

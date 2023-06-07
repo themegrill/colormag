@@ -46,6 +46,17 @@ class ColorMag_Customize_Front_Page_General_Options extends ColorMag_Customize_B
 				'section'  => 'colormag_front_page_general_section',
 				'priority' => 10,
 			),
+
+			array(
+				'name'        => 'colormag_front_page_general_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_front_page_general_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

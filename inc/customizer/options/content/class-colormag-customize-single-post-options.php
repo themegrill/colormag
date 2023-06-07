@@ -119,6 +119,17 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				),
 				'priority'   => 60,
 			),
+
+			array(
+				'name'        => 'colormag_single_post_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_single_post_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

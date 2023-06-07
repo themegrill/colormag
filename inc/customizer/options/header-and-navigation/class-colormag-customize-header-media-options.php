@@ -131,6 +131,16 @@ class ColorMag_Customize_Header_Media_Options extends ColorMag_Customize_Base_Op
 				'priority'   => 30,
 			),
 
+			array(
+				'name'        => 'colormag_header_media_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'header_image',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

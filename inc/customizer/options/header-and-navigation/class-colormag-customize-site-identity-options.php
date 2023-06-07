@@ -100,6 +100,17 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'section'  => 'title_tagline',
 				'priority' => 100,
 			),
+
+			array(
+				'name'        => 'colormag_site_identity_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'title_tagline',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );
