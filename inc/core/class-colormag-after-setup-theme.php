@@ -80,8 +80,6 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			register_nav_menus(
 				array(
 					'primary' => esc_html__( 'Primary Menu', 'colormag' ),
-					'footer'  => esc_html__( 'Footer Menu', 'colormag' ),
-					'top-bar' => esc_html__( 'Top Bar Menu', 'colormag' ),
 				)
 			);
 
