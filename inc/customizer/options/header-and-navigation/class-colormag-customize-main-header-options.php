@@ -114,40 +114,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
-				'name'       => 'colormag_header_display_type',
-				'default'    => 'type_one',
-				'type'       => 'control',
-				'class'      => 'alignment',
-				'control'    => 'colormag-radio-image',
-				'label'      => esc_html__( 'Alignment', 'colormag' ),
-				'section'    => 'colormag_primary_header_section',
-				'priority'   => 40,
-				'choices'    => apply_filters(
-					'colormag_header_display_type_choices',
-					array(
-						'type_one'   => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/alignment/align-left.svg',
-						),
-						'type_three' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/alignment/align-center.svg',
-						),
-						'type_two'   => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/alignment/align-right.svg',
-						),
-					)
-				),
-				'image_col'  => 3,
-				'dependency' => array(
-					'colormag_main_header_layout',
-					'!=',
-					'layout-2',
-				),
-			),
-
-			array(
 				'name'       => 'colormag_main_header_width_subtitle',
 				'type'       => 'control',
 				'control'    => 'colormag-subtitle',
@@ -177,53 +143,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 					'==',
 					'layout-1',
 				),
-			),
-
-			array(
-				'name'     => 'colormag_main_header_divider',
-				'type'     => 'control',
-				'control'  => 'colormag-divider',
-				'style'    => 'dashed',
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 70,
-			),
-
-			array(
-				'name'     => 'colormag_main_header_style_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Style', 'colormag' ),
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 100,
-			),
-
-			// Header background group.
-			array(
-				'name'     => 'colormag_main_header_background_group',
-				'label'    => esc_html__( 'Background', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 110,
-			),
-
-			// Header background option.
-			array(
-				'name'     => 'colormag_main_header_background',
-				'default'  => array(
-					'background-color'      => '#ffffff',
-					'background-image'      => '',
-					'background-position'   => 'center center',
-					'background-size'       => 'auto',
-					'background-attachment' => 'scroll',
-					'background-repeat'     => 'repeat',
-				),
-				'type'     => 'sub-control',
-				'control'  => 'colormag-background',
-				'parent'   => 'colormag_main_header_background_group',
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 120,
 			),
 
 			array(
