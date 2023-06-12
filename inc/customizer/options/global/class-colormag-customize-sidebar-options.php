@@ -77,10 +77,6 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 						'label' => '',
 						'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/centered.svg',
 					),
-					'two_sidebars'                => array(
-						'label' => '',
-						'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/both-sidebar.svg',
-					),
 				),
 				'image_col' => 2,
 				'priority'  => 30,
@@ -120,10 +116,6 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 						'label' => '',
 						'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/centered.svg',
 					),
-					'two_sidebars'                => array(
-						'label' => '',
-						'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/both-sidebar.svg',
-					),
 				),
 				'image_col' => 2,
 				'priority'  => 50,
@@ -162,10 +154,6 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 					'no_sidebar_content_centered' => array(
 						'label' => '',
 						'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/centered.svg',
-					),
-					'two_sidebars'                => array(
-						'label' => '',
-						'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/both-sidebar.svg',
 					),
 				),
 				'image_col' => 2,
