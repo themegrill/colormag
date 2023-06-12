@@ -59,14 +59,13 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 			),
 
 			array(
-				'name'        => 'colormag_enable_sticky_menu',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to enable the sticky behavior of the primary menu', 'colormag' ),
-				'section'     => 'colormag_sticky_header_section',
-				'priority'    => 30,
+				'name'     => 'colormag_enable_sticky_menu',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'colormag-toggle',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_sticky_header_section',
+				'priority' => 30,
 			),
 
 			array(

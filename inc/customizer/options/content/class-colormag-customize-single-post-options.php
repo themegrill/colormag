@@ -49,14 +49,13 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
-				'name'        => 'colormag_enable_featured_image',
-				'default'     => true,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to hide the featured image in single post page.', 'colormag' ),
-				'section'     => 'colormag_single_post_section',
-				'priority'    => 20,
+				'name'     => 'colormag_enable_featured_image',
+				'default'  => true,
+				'type'     => 'control',
+				'control'  => 'colormag-toggle',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_single_post_section',
+				'priority' => 20,
 			),
 
 			array(
@@ -87,18 +86,17 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
-				'name'        => 'colormag_enable_related_posts',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to activate the related posts', 'colormag' ),
-				'section'     => 'colormag_single_post_section',
-				'transport'   => $customizer_selective_refresh,
-				'partial'     => array(
+				'name'      => 'colormag_enable_related_posts',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Enable', 'colormag' ),
+				'section'   => 'colormag_single_post_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
 					'selector' => '.related-posts',
 				),
-				'priority'    => 50,
+				'priority'  => 50,
 			),
 
 			array(

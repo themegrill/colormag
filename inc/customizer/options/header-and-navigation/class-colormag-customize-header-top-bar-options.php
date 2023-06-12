@@ -86,56 +86,54 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 
 			// Date in header display option.
 			array(
-				'name'        => 'colormag_date_display',
-				'default'     => false,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to show the date in header', 'colormag' ),
-				'section'     => 'colormag_top_bar_section',
-				'transport'   => $customizer_selective_refresh,
-				'partial'     => array(
+				'name'       => 'colormag_date_display',
+				'default'    => false,
+				'type'       => 'control',
+				'control'    => 'colormag-toggle',
+				'label'      => esc_html__( 'Enable', 'colormag' ),
+				'section'    => 'colormag_top_bar_section',
+				'transport'  => $customizer_selective_refresh,
+				'partial'    => array(
 					'selector'        => '.date-in-header',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_current_date',
 					),
 				),
-				'dependency'  => array(
+				'dependency' => array(
 					'colormag_enable_top_bar',
 					'==',
 					true,
 				),
-				'priority'    => 50,
+				'priority'   => 50,
 			),
 
 			// Date in header display type option.
 			array(
-				'name'        => 'colormag_date_display_type',
-				'default'     => 'theme_default',
-				'type'        => 'control',
-				'control'     => 'select',
-				'label'       => esc_html__( 'Date Format', 'colormag' ),
-				'description' => esc_html__( 'Date in header display type:', 'colormag' ),
-				'section'     => 'colormag_top_bar_section',
-				'transport'   => $customizer_selective_refresh,
-				'choices'     => array(
+				'name'       => 'colormag_date_display_type',
+				'default'    => 'theme_default',
+				'type'       => 'control',
+				'control'    => 'select',
+				'label'      => esc_html__( 'Date Format', 'colormag' ),
+				'section'    => 'colormag_top_bar_section',
+				'transport'  => $customizer_selective_refresh,
+				'choices'    => array(
 					'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
 					'wordpress_date_setting' => esc_html__( 'From WordPress Date Setting', 'colormag' ),
 				),
-				'partial'     => array(
+				'partial'    => array(
 					'selector'        => '.date-in-header',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_date_display_type',
 					),
 				),
-				'dependency'  => array(
+				'dependency' => array(
 					'colormag_date_display',
 					'!=',
 					0,
 				),
-				'priority'    => 60,
+				'priority'   => 60,
 			),
 
 			/**

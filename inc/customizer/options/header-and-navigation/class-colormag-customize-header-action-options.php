@@ -47,14 +47,13 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 			),
 
 			array(
-				'name'        => 'colormag_enable_search',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to display the Search Icon in the primary menu', 'colormag' ),
-				'section'     => 'colormag_header_action_section',
-				'priority'    => 20,
+				'name'     => 'colormag_enable_search',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'colormag-toggle',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_header_action_section',
+				'priority' => 20,
 			),
 
 			// Random Post.
@@ -68,22 +67,21 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 			),
 
 			array(
-				'name'        => 'colormag_enable_random_post',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to display the Random Post Icon in the primary menu', 'colormag' ),
-				'section'     => 'colormag_header_action_section',
-				'transport'   => $customizer_selective_refresh,
-				'partial'     => array(
+				'name'      => 'colormag_enable_random_post',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Enable', 'colormag' ),
+				'section'   => 'colormag_header_action_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
 					'selector'        => '.cm-random-post',
 					'render_callback' => array(
 						'ColorMag_Customizer_Partials',
 						'render_random_post',
 					),
 				),
-				'priority'    => 40,
+				'priority'  => 40,
 			),
 		);
 

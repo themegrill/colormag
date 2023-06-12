@@ -44,14 +44,13 @@ class ColorMag_Customize_Page_Options extends ColorMag_Customize_Base_Option {
 
 			// Featured image display in single page option.
 			array(
-				'name'        => 'colormag_enable_page_featured_image',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to display the featured image in single page.', 'colormag' ),
-				'section'     => 'colormag_page_section',
-				'priority'    => 20,
+				'name'     => 'colormag_enable_page_featured_image',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'colormag-toggle',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_page_section',
+				'priority' => 20,
 			),
 
 			array(

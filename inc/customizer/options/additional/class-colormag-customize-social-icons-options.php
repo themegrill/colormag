@@ -50,18 +50,17 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 
 			// Social links enable/disable option.
 			array(
-				'name'        => 'colormag_enable_social_icons',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to activate social links area', 'colormag' ),
-				'section'     => 'colormag_social_icons_section',
-				'transport'   => $customizer_selective_refresh,
-				'partial'     => array(
+				'name'      => 'colormag_enable_social_icons',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Enable', 'colormag' ),
+				'section'   => 'colormag_social_icons_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
 					'selector' => '.social-links',
 				),
-				'priority'    => 10,
+				'priority'  => 10,
 			),
 
 			array(

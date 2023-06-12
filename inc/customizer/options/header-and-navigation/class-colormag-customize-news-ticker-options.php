@@ -60,14 +60,13 @@ class ColorMag_Customize_News_Ticker_Options extends ColorMag_Customize_Base_Opt
 
 			// Breaking news in header enable/disable option.
 			array(
-				'name'        => 'colormag_enable_news_ticker',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to enable the breaking news section', 'colormag' ),
-				'section'     => 'colormag_news_ticker_section',
-				'priority'    => 30,
+				'name'     => 'colormag_enable_news_ticker',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'colormag-toggle',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_news_ticker_section',
+				'priority' => 30,
 			),
 
 			array(
