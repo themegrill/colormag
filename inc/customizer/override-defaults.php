@@ -15,10 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Override Sections.
  */
-// Header media section.
-$wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_and_navigation_panel';
-$wp_customize->get_section( 'header_image' )->priority = 15;
-
 /**
  * Override controls.
  */
@@ -55,7 +51,7 @@ $wp_customize->get_control( 'blogname' )->priority        = 60;
 $wp_customize->get_control( 'blogdescription' )->priority = 90;
 
 $wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_and_navigation_panel';
-$wp_customize->get_section( 'header_image' )->priority = 10;
+$wp_customize->get_section( 'header_image' )->priority = 100;
 
 // Override Settings.
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';

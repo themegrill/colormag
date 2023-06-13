@@ -185,19 +185,11 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 * Header.
 			 */
 			array(
-				'name'     => 'title_tagline',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Site Identity', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 5,
-			),
-
-			array(
 				'name'     => 'colormag_top_bar_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Top Bar', 'colormag' ),
 				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 20,
+				'priority' => 10,
 			),
 
 			array(
@@ -205,7 +197,23 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'News Ticker', 'colormag' ),
 				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 30,
+				'priority' => 20,
+			),
+
+			array(
+				'name'             => 'colormag_top_bar_section_separator',
+				'type'             => 'section',
+				'panel'            => 'colormag_header_and_navigation_panel',
+				'priority'         => 30,
+				'section_callback' => 'ColorMag_WP_Customize_Separator',
+			),
+
+			array(
+				'name'     => 'title_tagline',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Site Identity', 'colormag' ),
+				'panel'    => 'colormag_header_and_navigation_panel',
+				'priority' => 40,
 			),
 
 			array(
@@ -213,7 +221,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'Main Header', 'colormag' ),
 				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 30,
+				'priority' => 50,
 			),
 
 			array(
@@ -221,7 +229,15 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'Primary Menu', 'colormag' ),
 				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 40,
+				'priority' => 60,
+			),
+
+			array(
+				'name'             => 'colormag_primary_menu_section_separator',
+				'type'             => 'section',
+				'panel'            => 'colormag_header_and_navigation_panel',
+				'priority'         => 70,
+				'section_callback' => 'ColorMag_WP_Customize_Separator',
 			),
 
 			array(
@@ -229,7 +245,23 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'Header Action', 'colormag' ),
 				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 50,
+				'priority' => 80,
+			),
+
+			array(
+				'name'             => 'colormag_header_media_section_separator',
+				'type'             => 'section',
+				'panel'            => 'colormag_header_and_navigation_panel',
+				'priority'         => 90,
+				'section_callback' => 'ColorMag_WP_Customize_Separator',
+			),
+
+			array(
+				'name'             => 'colormag_sticky_header_section_separator',
+				'type'             => 'section',
+				'panel'            => 'colormag_header_and_navigation_panel',
+				'priority'         => 120,
+				'section_callback' => 'ColorMag_WP_Customize_Separator',
 			),
 
 			array(
@@ -237,9 +269,8 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'type'     => 'section',
 				'title'    => esc_html__( 'Sticky Header', 'colormag' ),
 				'panel'    => 'colormag_header_and_navigation_panel',
-				'priority' => 50,
+				'priority' => 130,
 			),
-
 
 			/**
 			 * Content.
