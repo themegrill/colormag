@@ -52,20 +52,24 @@ class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 				'section'  => 'colormag_global_container_section',
 				'priority' => 20,
 			),
-
-			// Site layout option.
+// Site layout option.
 			array(
 				'name'      => 'colormag_container_layout',
 				'default'   => 'wide',
 				'type'      => 'control',
-				'control'   => 'select',
-				'label'     => esc_html__( 'Layout', 'colormag' ),
+				'control'   => 'colormag-radio-image',
 				'section'   => 'colormag_global_container_section',
-				'transport' => 'postMessage',
 				'choices'   => array(
-					'boxed' => esc_html__( 'Boxed Layout', 'colormag' ),
-					'wide'  => esc_html__( 'Wide Layout', 'colormag' ),
+					'wide'  => array(
+						'label' => 'Wide',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/container-layout/wide.svg',
+					),
+					'boxed' => array(
+						'label' => 'Boxed',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/container-layout/box.svg',
+					),
 				),
+				'image_col' => 2,
 				'priority'  => 30,
 			),
 
