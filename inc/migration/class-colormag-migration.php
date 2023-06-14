@@ -209,11 +209,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_breaking_news' );
 
-			// Footer Social Icons.
-			$enable_social_icon = get_theme_mod( 'colormag_social_icons_activate' );
+			// Social Icons.
+			$enable_social_icons = get_theme_mod( 'colormag_social_icons_activate' );
 
-			if ( $enable_social_icon ) {
-				set_theme_mod( 'colormag_enable_social_icons', true );
+			if ( $enable_social_icons ) {
+				set_theme_mod( 'colormag_enable_social_icon', true );
 			}
 			remove_theme_mod( 'colormag_social_icons_activate' );
 
@@ -222,16 +222,20 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			if ( $enable_header_social_icons ) {
 				set_theme_mod( 'colormag_enable_social_icons_header', true );
+			} else {
+				set_theme_mod( 'colormag_enable_social_icons_header', false );
 			}
 			remove_theme_mod( 'colormag_social_icons_header_activate' );
 
-			// Social Icons.
-			$enable_social_icons = get_theme_mod( 'colormag_social_icons_activate' );
+			// Header Social Icons.
+			$enable_footer_social_icons = get_theme_mod( 'colormag_social_icons_footer_activate' );
 
-			if ( $enable_social_icons ) {
-				set_theme_mod( 'colormag_enable_social_icon', true );
+			if ( $enable_footer_social_icons ) {
+				set_theme_mod( 'colormag_enable_social_icons_footer', true );
+			} else {
+				set_theme_mod( 'colormag_enable_social_icons_footer', false );
 			}
-			remove_theme_mod( 'colormag_social_icons_activate' );
+			remove_theme_mod( 'colormag_social_icons_header_activate' );
 
 			// Single Post Featured Image.
 			$enable_post_featured_image = get_theme_mod( 'colormag_featured_image_show' );
