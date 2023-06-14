@@ -213,7 +213,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$enable_social_icons = get_theme_mod( 'colormag_social_icons_activate' );
 
 			if ( $enable_social_icons ) {
-				set_theme_mod( 'colormag_enable_social_icon', true );
+				set_theme_mod( 'colormag_enable_social_icons', true );
 			}
 			remove_theme_mod( 'colormag_social_icons_activate' );
 
