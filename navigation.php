@@ -46,7 +46,7 @@ if ( is_single() ) :
 
 	if ( is_attachment() ) :
 		?>
-		<ul class="default-wp-page clearfix">
+		<ul class="default-wp-page">
 			<li class="previous"><?php previous_image_link( false, esc_html__( '&larr; Previous', 'colormag' ) ); ?></li>
 			<li class="next"><?php next_image_link( false, esc_html__( 'Next &rarr;', 'colormag' ) ); ?></li>
 		</ul>
@@ -54,7 +54,7 @@ if ( is_single() ) :
 	else :
 		?>
 
-		<ul class="default-wp-page clearfix">
+		<ul class="default-wp-page">
 			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . esc_html_x( '&larr;', 'Previous post link', 'colormag' ) . '</span> %title' ); ?></li>
 			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . esc_html_x( '&rarr;', 'Next post link', 'colormag' ) . '</span>' ); ?></li>
 		</ul>
