@@ -1,7 +1,7 @@
 /* Comments.
 --------------------------------------------- */
 .comment-navigation {
-	margin-bottom: 15px;
+	margin-bottom: length( 'l-8' );
 }
 
 .bypostauthor {
@@ -10,10 +10,10 @@
 
 .avatar {
 	border-radius: 50%;
-	float: left;
 }
 
 .comments-area {
+	margin-top: length( 'l-30' );
 
 	.comments-title {
 		@include font-size("font-size-xl");
@@ -24,6 +24,7 @@
 		display: flex;
 		align-items: center;
 		gap: 12px;
+		margin-left: length( 'l-30' );
 	}
 
 	#comment:focus-visible {
@@ -48,11 +49,12 @@
 	}
 
 	.comment-content {
-		margin-top: 16px;
-		margin-left: 56px;
+		margin-top:length( 'l-8' );
+		margin-left: length( 'l-30' );
+
 
 		p {
-			line-height: $line-height__body;
+			line-height: 1.8;
 			margin-bottom: length( 'l-6' );
 		}
 
@@ -67,7 +69,7 @@
 		gap: 6px;
 		@include font-size("font-size-xxs");
 		font-weight: 400;
-		line-height: $line-height__body;
+		line-height: 1.8;
 		color: $color__gray-500;
 	}
 
@@ -75,7 +77,6 @@
 		margin-top: 12px;
 		@include font-size("font-size-xs");
 		font-weight: 600;
-		text-decoration: underline;
 	}
 }
 
@@ -89,6 +90,12 @@
 
 	ul {
 		list-style: square outside none;
+	}
+
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -106,26 +113,29 @@
 }
 
 .comment-edit-link {
-	@include font-size("font-size-xs");
+	@include font-size("font-size-xxs");
 }
 
 /* Comments Form.
 --------------------------------------------- */
 .comment-respond {
-	margin-top: length( 'l-30' );
 
 	.comment-reply-title{
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+		margin-top: length( 'l-3' );
 		margin-bottom: length( 'l-4' );
 		@include font-size("font-size-xl");
 
 		#cancel-comment-reply-link {
-			margin-left: length( 'l-5' );
 			font-weight: normal;
 			@include font-size("font-size-sm");
 		}
 	}
 
-	.logged-in-as {
+	.logged-in-as,
+	.comment-notes {
 		margin-bottom: length( 'l-16' );
 		@include font-size("font-size-sm");
 	}
@@ -140,27 +150,22 @@
 
 			label {
 				display: inline-block;
+				font-weight: 400;
+				margin-top: length( l-5 );
+				margin-bottom: length( l-16 );
 			}
-		}
-
-		label {
-			display: block;
-			@include font-size("font-size-sm");
-			color: $color__gray-600;
-			margin-bottom: length( 'l-4' );
-			line-height: $line-height__body;
 		}
 
 		input[type="text"],
 		textarea,
 		input[type="email"],
 		input[type="url"] {
-			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			@include font-size("font-size-sm");
 			line-height: 1.5;
 			padding: 10px;
 			width: 100%;
+			margin-bottom: length( l-7 );
 		}
 
 		p.form-allowed-tags {
@@ -169,6 +174,19 @@
 			line-height: 1;
 			color: #5e5e5e;
 		}
+	}
+
+	label {
+		display: block;
+		@include font-size("font-size-sm");
+		font-weight: 600;
+		color: $color__gray-600;
+		margin-bottom: length( 'l-4' );
+		line-height: 1.8;
+	}
+
+	p {
+		margin-bottom: 0;
 	}
 }
 

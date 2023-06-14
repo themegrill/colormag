@@ -6,14 +6,14 @@
 
 	.post {
 		overflow: hidden;
-		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.16);
+		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
 		border-radius: 4px;
 
 	}
 }
 
 .cm-post {
-	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.16);
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
 	border-radius: 4px;
 
 	&:hover {
@@ -34,7 +34,7 @@
 	}
 }
 
-.reading-time::before {
+.cm-reading-time::before {
 	color: #71717a;
 }
 
@@ -52,7 +52,7 @@
 
 .cm-post-categories {
     display: inline-flex;
-	gap: 4px;
+	gap: 10px;
     flex-wrap: wrap;
     align-items: center;
 
@@ -64,7 +64,7 @@
 		font-size: 10px;
 		text-transform: uppercase;
 		border-radius: 2px;
-		line-height: $line-height__body;
+		line-height: 1.8;
 	}
 }
 
@@ -95,7 +95,7 @@
 	}
 }
 
-.tag-links a,
+.cm-tag-links a,
 .cm-edit-link a {
 	color: $color__gray-500;
 }

@@ -135,9 +135,10 @@ jQuery( document ).ready(
 				}
 			}
 		);
-
+		
 		// add widget block title class.
 		jQuery( '.wp-block-group__inner-container h2' ).wrap( '<div class="block-title"></div>' );
+		jQuery( '.wp-block-heading' ).wrap( '<div class="block-title"></div>' );
 
 		// Magnific Popup Setting.
 		if ( typeof jQuery.fn.magnificPopup !== 'undefined' ) {

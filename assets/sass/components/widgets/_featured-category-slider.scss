@@ -7,13 +7,11 @@
 		position: relative;
 		border-radius: 4px;
 		overflow: hidden;
-		height: 350px;
 	}
 
 	img {
 		width: 100%;
 		margin-bottom: 0;
-		height: 100%;
 	}
 
 	.cm-below-entry-meta {
@@ -69,8 +67,8 @@
 
 	.cm-post-date a,
 	.cm-author a,
-	.reading-time,
-	.reading-time::before,
+	.cm-reading-time,
+	.cm-reading-time::before,
 	.human-diff-time-display {
 		color: $color__white;
 	}

@@ -1,0 +1,13 @@
+$border-radius: (
+	'br-1': 2px,
+	'br-2': 4px,
+);
+
+@function br($size) {
+
+	@if not map-has-key($border-radius, $size) {
+		@error "Invalid border radius size '#{$size}'. Must be one of: #{map-keys($border-radius)}.";
+	}
+
+	@return map-get($border-radius, $size);
+}

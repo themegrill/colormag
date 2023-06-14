@@ -1,16 +1,50 @@
 .tg-site-layout--2-sidebars {
-
-	.cm-primary {
-		width: 45.6140352%;
+	.cm-primary,
+	.cm-secondary,
+	#cm-tertiary {
+		width: 100%;
 	}
+}
 
-	#tertiary {
-		float: left;
-		width: 27.19298245%;
-		padding-right: length( 'l-15', px );
+@include breakpoint("mdm") {
+
+	.tg-site-layout--2-sidebars {
+
+		.cm-content .cm-row {
+			flex-direction: row;
+		}
+		.cm-primary {
+			width: 40%;
+			padding-right: length( 'l-15', px );
+		}
+	
+		#cm-tertiary {
+			float: left;
+			width: 20%;
+			padding-right: length( 'l-15', px );
+		}
+	
+		.cm-secondary {
+			width: 20%;
+		}
 	}
+}
 
-	.cm-secondary {
-		width: 27.19298245%;
+@include breakpoint("lrg") {
+
+	.tg-site-layout--2-sidebars {
+		.cm-primary {
+			width: 45.6140352%;
+		}
+	
+		#cm-tertiary {
+			float: left;
+			width: 27.19298245%;
+			padding-right: length( 'l-15', px );
+		}
+	
+		.cm-secondary {
+			width: 27.19298245%;
+		}
 	}
 }

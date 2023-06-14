@@ -1,6 +1,6 @@
 .breadcrumb-wrap {
 	color: $color__gray-six;
-	font-size: 14px;
+	@include font-size("font-size-sm");
 	margin-bottom: length( 'l-15' );
 	padding-bottom: length( 'l-10' );
 

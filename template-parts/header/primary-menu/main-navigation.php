@@ -19,5 +19,13 @@ if ( has_nav_menu( 'primary' ) ) {
 		)
 	);
 } else {
-	wp_page_menu();
+	require get_template_directory() . '/inc/class-colormag-walker-page.php';
+	wp_page_menu(
+
+		array(
+			'walker'             => new Colormag_Walker_Page(),
+			'has_children_class' => 'menu-item-has-children',
+			'current_class'      => 'current-menu-item',
+		)
+	);
 }

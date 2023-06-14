@@ -46,9 +46,24 @@
 	input.s {
         width: 100%;
         @include font-size("font-size-xs");
-        padding: length( 'l-6' );
         border: 1px solid #E4E4E7;
         border-radius: 4px 0 0 4px;
+    }
+}
+
+.search-no-results {
+    .cm-posts {
+        display: block;
+    }
+}
+
+.tg-site-layout--2-sidebars {
+
+    .cm-no-results {
+
+        .search-form {
+            width: 100%;
+        }
     }
 }
 
@@ -57,6 +72,7 @@
 	.cm-no-results {
 
         .cm-page-content {
+
             p {
                 width: 430px;
             }

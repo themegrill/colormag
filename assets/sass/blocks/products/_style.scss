@@ -1,0 +1,110 @@
+.wc-block-product-new,
+.wc-block-product-best-sellers,
+.wp-block-product-top-rated,
+.wc-block-handpicked-products {
+
+    .wc-block-grid__product-title,
+    .wc-block-grid__product-add-to-cart {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .wc-block-grid__product-title {
+        margin-bottom: length( 'l-4' );
+        color: $color__gray-700;
+        @include font-size('font-size-sm');
+		font-weight: 600;
+        line-height: 1.8;
+    }
+
+    .wc-block-grid__product-rating {
+        margin-bottom: 0;
+
+        .star-rating {
+            display: flex;
+            justify-content: flex-start;
+            margin: unset;
+        }
+    }
+
+    .wc-block-grid__product {
+        position: relative;
+        margin-left: -1em;
+        margin-right: -1em;
+
+       &-add-to-cart{ 
+
+            .search-icon {
+                all: unset;
+            }
+
+            .wp-block-button__link {
+
+                &.wp-element-button {
+                    display: block;
+                    text-align: center;
+                    margin-top: 16px;
+                    padding: length( 'l-4' ) length( 'l-12' );
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    border-radius: 4px;
+                }
+            }
+       }
+
+       .wc-block-grid__product-image {
+            margin-bottom: length( 'l-8' );
+        }
+    }
+
+    ul {
+
+        &.wc-block-grid__products {
+            padding: 0;
+            gap: 30px;
+        }
+    }
+
+    .price {
+
+        ins {
+
+            .amount {
+                color: $color__gray-500;
+            }
+        }
+
+        del {
+
+            span {
+                font-weight: 600;
+                color: $color__gray-700;
+            }
+        }
+    }
+
+    .wc-block-grid__product-image {
+        margin-bottom: length( 'l-8' );
+
+        img {
+			width: 100%;
+            border-radius: 4px;
+        }
+    }
+
+    .wc-block-grid__product-onsale {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0 length( 'l-7' );
+        background-color: $color__blue-900;
+        color: $color__white;
+        @include font-size('font-size-xs');
+        text-transform: initial;
+        border-radius: 2px;
+    }
+}
