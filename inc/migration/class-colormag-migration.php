@@ -250,6 +250,29 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_featured_image_popup' );
 
+			// Related posts.
+			$enable_related_post = get_theme_mod( 'colormag_related_posts_activate' );
+
+			if ( $enable_related_post ) {
+				set_theme_mod( 'colormag_enable_related_posts', true );
+			}
+			remove_theme_mod( 'colormag_related_posts_activate' );
+
+			// Related post flyout query.
+			$old_related_post_query = get_theme_mod( 'colormag_related_posts' );
+
+			if ( $old_related_post_query ) {
+
+				if ( 'categories' === $old_related_post_query ) {
+					$new_related_post_query = 'categories';
+				} elseif ( 'tags' === $old_related_post_query ) {
+					$new_related_post_query = 'tags';
+				}
+
+				set_theme_mod( 'colormag_related_posts_query', $new_related_post_query );
+				remove_theme_mod( 'colormag_related_posts' );
+			}
+
 			// Page Featured Image.
 			$enable_page_featured_image = get_theme_mod( 'colormag_featured_image_single_page_show' );
 
