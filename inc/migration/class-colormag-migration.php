@@ -242,6 +242,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				set_theme_mod( 'colormag_enable_featured_image', true );
 			}
 
+			// Lightbox.
+			$enable_lightbox = get_theme_mod( 'colormag_featured_image_popup' );
+
+			if ( $enable_lightbox ) {
+				set_theme_mod( 'colormag_enable_lightbox', true );
+			}
+			remove_theme_mod( 'colormag_featured_image_popup' );
+
 			// Page Featured Image.
 			$enable_page_featured_image = get_theme_mod( 'colormag_featured_image_single_page_show' );
 
