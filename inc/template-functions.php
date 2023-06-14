@@ -200,9 +200,9 @@ function colormag_body_class( $classes ) {
 	}
 
 	$woocommerce_widgets_enabled  = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
-	$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-	$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
+	$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 	/**
 	 * Header styles.
@@ -224,13 +224,13 @@ function colormag_body_class( $classes ) {
 	if ( 0 == $woocommerce_widgets_enabled || ( 1 == $woocommerce_widgets_enabled && ( function_exists( 'is_woocommerce' ) && ( ! is_woocommerce() ) ) ) ) :
 		if ( 'default_layout' === $layout_meta ) {
 			if ( is_page() ) {
-				if ( 'right_sidebar' === $colormag_default_page_layout ) {
+				if ( 'right_sidebar' === $colormag_page_sidebar_layout ) {
 					$classes[] = '';
-				} elseif ( 'left_sidebar' === $colormag_default_page_layout ) {
+				} elseif ( 'left_sidebar' === $colormag_page_sidebar_layout ) {
 					$classes[] = 'left-sidebar';
-				} elseif ( 'no_sidebar_full_width' === $colormag_default_page_layout ) {
+				} elseif ( 'no_sidebar_full_width' === $colormag_page_sidebar_layout ) {
 					$classes[] = 'no-sidebar-full-width';
-				} elseif ( 'no_sidebar_content_centered' === $colormag_default_page_layout ) {
+				} elseif ( 'no_sidebar_content_centered' === $colormag_page_sidebar_layout ) {
 					$classes[] = 'no-sidebar';
 				}
 			} elseif ( is_single() ) {
@@ -243,13 +243,13 @@ function colormag_body_class( $classes ) {
 				} elseif ( 'no_sidebar_content_centered' === $colormag_default_post_layout ) {
 					$classes[] = 'no-sidebar';
 				}
-			} elseif ( 'right_sidebar' === $colormag_default_layout ) {
+			} elseif ( 'right_sidebar' === $colormag_default_sidebar_layout ) {
 				$classes[] = '';
-			} elseif ( 'left_sidebar' === $colormag_default_layout ) {
+			} elseif ( 'left_sidebar' === $colormag_default_sidebar_layout ) {
 				$classes[] = 'left-sidebar';
-			} elseif ( 'no_sidebar_full_width' === $colormag_default_layout ) {
+			} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$classes[] = 'no-sidebar-full-width';
-			} elseif ( 'no_sidebar_content_centered' === $colormag_default_layout ) {
+			} elseif ( 'no_sidebar_content_centered' === $colormag_default_sidebar_layout ) {
 				$classes[] = 'no-sidebar';
 			}
 		} elseif ( 'right_sidebar' === $layout_meta ) {

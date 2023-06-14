@@ -217,13 +217,13 @@ function colormag_content_width() {
 		$layout_meta = 'default_layout';
 	}
 
-	$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-	$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
+	$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 	if ( 'default_layout' === $layout_meta ) {
 		if ( is_page() ) {
-			if ( 'no_sidebar_full_width' === $colormag_default_page_layout ) {
+			if ( 'no_sidebar_full_width' === $colormag_page_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
 			}
 		} elseif ( is_single() ) {
@@ -231,7 +231,7 @@ function colormag_content_width() {
 				$content_width = 1140; /* pixels */
 			}
 		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_layout ) {
+			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
 			}
 		}
