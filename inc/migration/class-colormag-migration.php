@@ -166,23 +166,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_main_footer_layout_display_type' );
 			}
 
-			// Related post flyout query.
-			$old_related_post_query = get_theme_mod( 'colormag_related_posts' );
-
-			if ( $old_related_post_query ) {
-
-				if ( 'categories' === $old_related_post_query ) {
-					$new_related_post_query = 'categories';
-				} elseif ( 'tags' === $old_related_post_query ) {
-					$new_related_post_query = 'tags';
-				} else {
-					$new_related_post_query = 'categories';
-				}
-
-				set_theme_mod( 'colormag_related_posts_query', $new_related_post_query );
-				remove_theme_mod( 'colormag_related_posts' );
-			}
-
 			/**
 			 * Toggle control migration.
 			 */
@@ -210,7 +193,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_hide_blog_front' );
 
-			// Unique Post System.
+			// Header media link home.
 			$enable_header_image_link_home = get_theme_mod( 'colormag_header_image_link' );
 
 			if ( $enable_header_image_link_home ) {
@@ -258,14 +241,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			} else {
 				set_theme_mod( 'colormag_enable_featured_image', true );
 			}
-
-			// Lightbox.
-			$enable_lightbox = get_theme_mod( 'colormag_featured_image_popup' );
-
-			if ( $enable_lightbox ) {
-				set_theme_mod( 'colormag_enable_lightbox', true );
-			}
-			remove_theme_mod( 'colormag_featured_image_popup' );
 
 			// Page Featured Image.
 			$enable_page_featured_image = get_theme_mod( 'colormag_featured_image_single_page_show' );
