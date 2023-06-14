@@ -288,7 +288,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 					   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 					>
-						<i class="fa fa-home"></i>
+						<?php colormag_get_icon( 'home' ); ?>
 					</a>
 				</div>
 				<?php } ?>
