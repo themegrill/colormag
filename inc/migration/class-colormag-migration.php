@@ -250,38 +250,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_social_icons_activate' );
 
-			// Post Featured Image.
+			// Single Post Featured Image.
 			$enable_post_featured_image = get_theme_mod( 'colormag_featured_image_show' );
 
-			if ( $enable_post_featured_image ) {
+			if ( ! empty( $enable_post_featured_image ) ) {
+				set_theme_mod( 'colormag_enable_featured_image', false );
+			} else {
 				set_theme_mod( 'colormag_enable_featured_image', true );
 			}
-			remove_theme_mod( 'colormag_featured_image_show' );
-
-			// Page Featured Image.
-			$enable_page_featured_image = get_theme_mod( 'colormag_featured_image_single_page_show' );
-
-			if ( $enable_page_featured_image ) {
-				set_theme_mod( 'colormag_enable_page_featured_image', true );
-			}
-			remove_theme_mod( 'colormag_featured_image_single_page_show' );
-
-			// Progress bar indicator.
-			$enable_progress_bar_indicator = get_theme_mod( 'colormag_prognroll_indicator' );
-
-			// Flyout related posts.
-			$enable_fly_out_related_post = get_theme_mod( 'colormag_related_post_flyout_setting' );
-
-			// Related posts.
-			$enable_related_post = get_theme_mod( 'colormag_related_posts_activate' );
-
-			if ( $enable_related_post ) {
-				set_theme_mod( 'colormag_enable_related_posts', true );
-			}
-			remove_theme_mod( 'colormag_related_posts_activate' );
-
-			// Post Navigation.
-			$enable_post_navigation = get_theme_mod( 'colormag_post_navigation_hide' );
 
 			// Lightbox.
 			$enable_lightbox = get_theme_mod( 'colormag_featured_image_popup' );
@@ -291,13 +267,13 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_featured_image_popup' );
 
-			// Sticky Menu.
-			$enable_sticky_menu = get_theme_mod( 'colormag_primary_sticky_menu' );
+			// Page Featured Image.
+			$enable_page_featured_image = get_theme_mod( 'colormag_featured_image_single_page_show' );
 
-			if ( $enable_sticky_menu ) {
-				set_theme_mod( 'colormag_enable_sticky_menu', true );
+			if ( $enable_page_featured_image ) {
+				set_theme_mod( 'colormag_enable_page_featured_image', true );
 			}
-			remove_theme_mod( 'colormag_primary_sticky_menu' );
+			remove_theme_mod( 'colormag_featured_image_single_page_show' );
 
 			// Search in menu.
 			$enable_search_in_menu = get_theme_mod( 'colormag_enable_search' );
@@ -314,67 +290,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				set_theme_mod( 'colormag_enable_random_post', true );
 			}
 			remove_theme_mod( 'colormag_random_post_in_menu' );
-
-			// Category color.
-			$enable_category_color = get_theme_mod( 'colormag_category_menu_color' );
-
-			// Featured image caption.
-			$enable_category_color = get_theme_mod( 'colormag_featured_image_caption_show' );
-
-			/**
-			 * Typography control migration.
-			 */
-			// Migrate the typography options.
-			$extractsizeandunit = function ( $value ) {
-				$unit_list = array( 'px', 'em', 'rem', '%', '-', 'vw', 'vh', 'pt', 'pc' );
-
-				if ( ! $value ) {
-					return array(
-						'size' => '',
-						'unit' => 'px',
-					);
-				}
-
-				preg_match( '/^(\d+(?:\.\d+)?)(.*)$/', $value, $matches );
-
-				$size = (float) $matches[1];
-				$unit = $matches[2];
-
-				if ( 'px' !== $unit ) {
-					switch ( $unit ) {
-						case 'em':
-						case 'pc':
-						case 'rem':
-							$size *= 16;
-							$unit  = 'px';
-							break;
-						case 'vw':
-							$size *= 19.2;
-							$unit  = 'px';
-							break;
-						case 'vh':
-							$size *= 10.8;
-							$unit  = 'px';
-							break;
-						case '%':
-							$size *= 1.6;
-							$unit  = 'px';
-							break;
-						case 'pt':
-							$size *= 1.333;
-							$unit  = 'px';
-							break;
-						default:
-							// Do nothing if the unit is not recognized
-							break;
-					}
-				}
-
-				return array(
-					'size' => $size,
-					'unit' => $unit,
-				);
-			};
 
 			/**
 			 * Radio image control migration.
@@ -417,40 +332,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					remove_theme_mod( $option['old_key'] );
 				}
 			}
-
-			/**
-			 * Background control migration.
-			 */
-			// Background Migration.
-			$background_option = array(
-				array(
-					'old_key' => 'colormag_header_background_setting',
-					'new_key' => 'colormag_main_header_background',
-				),
-			);
-
-			foreach ( $background_option as $option ) {
-
-				$old_value = get_theme_mod( $option['old_key'] );
-
-				if ( $old_value ) {
-
-					$new_value = array(
-						'background-color'      => $old_value['background-color'],
-						'background-image'      => $old_value['background-image'],
-						'background-repeat'     => $old_value['background-repeat'],
-						'background-position'   => $old_value['background-position'],
-						'background-size'       => $old_value['background-size'],
-						'background-attachment' => $old_value['background-attachment'],
-					);
-
-					set_theme_mod( $option['new_key'], $new_value );
-					remove_theme_mod( $option['old_key'] );
-				}
-			}
-
-			// Set flag not to repeat the migration process, run it only once.
-			update_option( 'colormag_free_major_update_customizer_migration_v1', true );
 		}
 
 		/**
