@@ -52,7 +52,7 @@ class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 				'section'  => 'colormag_global_container_section',
 				'priority' => 20,
 			),
-// Site layout option.
+			// Site layout option.
 			array(
 				'name'      => 'colormag_container_layout',
 				'default'   => 'wide',
@@ -80,42 +80,6 @@ class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 				'style'    => 'dashed',
 				'section'  => 'colormag_global_container_section',
 				'priority' => 50,
-			),
-
-			array(
-				'name'     => 'colormag_container_outside_background_divider',
-				'type'     => 'control',
-				'control'  => 'colormag-divider',
-				'style'    => 'dashed',
-				'section'  => 'colormag_global_container_section',
-				'priority' => 80,
-			),
-
-			// Site layout heading.
-			array(
-				'name'     => 'colormag_container_outside_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Outside', 'colormag' ),
-				'section'  => 'colormag_global_container_section',
-				'priority' => 90,
-			),
-
-			array(
-				'name'      => 'colormag_outside_container_background',
-				'default'   => array(
-					'background-color'      => '#ffffff',
-					'background-image'      => '',
-					'background-position'   => 'center center',
-					'background-size'       => 'auto',
-					'background-attachment' => 'scroll',
-					'background-repeat'     => 'repeat',
-				),
-				'type'      => 'control',
-				'control'   => 'colormag-background',
-				'section'   => 'colormag_global_container_section',
-				'transport' => 'postMessage',
-				'priority'  => 100,
 			),
 
 			array(

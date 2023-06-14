@@ -19,30 +19,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Override controls.
  */
 // Outside container > background control.
-//$wp_customize->get_control( 'background_color' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_color' )->priority = 60;
-//$wp_customize->get_control( 'background_color' )->type = 'sub-control';
-//$wp_customize->get_control( 'background_color' )->control = 'colormag-color';
-//$wp_customize->get_control( 'background_color' )->parent = 'colormag_container_background_group';
-//$wp_customize->get_control( 'background_color' )->tab = esc_html__( 'Outside Container', 'colormag' );
-//
-//$wp_customize->get_control( 'background_image' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_image' )->priority = 70;
-//
-//$wp_customize->get_control( 'background_preset' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_preset' )->priority = 80;
-//
-//$wp_customize->get_control( 'background_position' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_position' )->priority = 90;
-//
-//$wp_customize->get_control( 'background_size' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_size' )->priority = 100;
-//
-//$wp_customize->get_control( 'background_repeat' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_repeat' )->priority = 110;
-//
-//$wp_customize->get_control( 'background_attachment' )->section  = 'colormag_global_container_section';
-//$wp_customize->get_control( 'background_attachment' )->priority = 120;
+$wp_customize->get_control( 'background_color' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_color' )->priority = 90;
+$wp_customize->get_control( 'background_color' )->type = 'colormag-color';
+
+$wp_customize->get_control( 'background_image' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_image' )->priority = 100;
+
+$wp_customize->get_control( 'background_preset' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_preset' )->priority = 110;
+
+$wp_customize->get_control( 'background_position' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_position' )->priority = 120;
+
+$wp_customize->get_control( 'background_size' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_size' )->priority = 130;
+
+$wp_customize->get_control( 'background_repeat' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_repeat' )->priority = 140;
+
+$wp_customize->get_control( 'background_attachment' )->section  = 'colormag_global_container_section';
+$wp_customize->get_control( 'background_attachment' )->priority = 150;
+
 
 // Site Identity.
 $wp_customize->get_control( 'custom_logo' )->priority     = 20;
