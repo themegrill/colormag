@@ -51,7 +51,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			array(
-				'name'     => 'colormag_header_and_navigation_panel',
+				'name'     => 'colormag_header_panel',
 				'type'     => 'panel',
 				'title'    => esc_html__( 'Header & Navigation', 'colormag' ),
 				'priority' => 30,
@@ -188,7 +188,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_top_bar_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Top Bar', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 10,
 			),
 
@@ -196,14 +196,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_news_ticker_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'News Ticker', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 20,
 			),
 
 			array(
 				'name'             => 'colormag_top_bar_section_separator',
 				'type'             => 'section',
-				'panel'            => 'colormag_header_and_navigation_panel',
+				'panel'            => 'colormag_header_panel',
 				'priority'         => 30,
 				'section_callback' => 'ColorMag_WP_Customize_Separator',
 			),
@@ -212,7 +212,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'title_tagline',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Site Identity', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 40,
 			),
 
@@ -220,7 +220,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_primary_header_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Main Header', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 50,
 			),
 
@@ -228,14 +228,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_primary_menu_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Primary Menu', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 60,
 			),
 
 			array(
 				'name'             => 'colormag_primary_menu_section_separator',
 				'type'             => 'section',
-				'panel'            => 'colormag_header_and_navigation_panel',
+				'panel'            => 'colormag_header_panel',
 				'priority'         => 70,
 				'section_callback' => 'ColorMag_WP_Customize_Separator',
 			),
@@ -244,14 +244,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_header_action_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Header Action', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 80,
 			),
 
 			array(
 				'name'             => 'colormag_header_media_section_separator',
 				'type'             => 'section',
-				'panel'            => 'colormag_header_and_navigation_panel',
+				'panel'            => 'colormag_header_panel',
 				'priority'         => 90,
 				'section_callback' => 'ColorMag_WP_Customize_Separator',
 			),
@@ -259,7 +259,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			array(
 				'name'             => 'colormag_sticky_header_section_separator',
 				'type'             => 'section',
-				'panel'            => 'colormag_header_and_navigation_panel',
+				'panel'            => 'colormag_header_panel',
 				'priority'         => 120,
 				'section_callback' => 'ColorMag_WP_Customize_Separator',
 			),
@@ -268,7 +268,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'name'     => 'colormag_sticky_header_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Sticky Header', 'colormag' ),
-				'panel'    => 'colormag_header_and_navigation_panel',
+				'panel'    => 'colormag_header_panel',
 				'priority' => 130,
 			),
 
