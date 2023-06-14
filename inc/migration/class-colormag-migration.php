@@ -87,7 +87,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			remove_theme_mod( 'colormag_site_layout' );
 
-			// Container Layout.
+			// Home Icon.
 			$home_icon = get_theme_mod( 'colormag_home_icon_display', '0' );
 
 			if ( $home_icon ) {
@@ -158,8 +158,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					$new_main_footer_layout = 'layout-1';
 				} elseif ( 'type_two' === $old_main_footer_layout ) {
 					$new_main_footer_layout = 'layout-2';
-				} else {
-					$new_main_footer_layout = 'layout-1';
 				}
 
 				set_theme_mod( 'colormag_main_footer_layout', $new_main_footer_layout );
@@ -262,7 +260,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_related_posts_activate' );
 
-			// Related post flyout query.
+			// Related post query.
 			$old_related_post_query = get_theme_mod( 'colormag_related_posts' );
 
 			if ( $old_related_post_query ) {
