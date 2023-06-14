@@ -5,7 +5,7 @@
 }
 
 .cm-top-bar {
-	background-color: $color__gray-ten;
+	background-color: $color__gray-100;
 	padding: 10px 0;
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	font-size: 14px;
@@ -15,7 +15,7 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		gap: 15px;
+		gap: 10px;
 	}
 
 	.tg-full-width {
@@ -26,32 +26,41 @@
 
 .cm-top-bar__2 {
 	display: flex;
+	flex-direction: column;
 	flex: 1;
-	gap: 15px;
+	gap: 10px;
 	align-items: center;
 }
 
 @include breakpoint("mdm") {
 
-	.cm-top-bar__1{
+	.cm-top-bar__1 {
 		display: flex;
 		gap: 15px;
 		align-items: center;
 	}
+
+	.cm-top-bar__2 {
+		flex-direction: row;
+		justify-content: flex-end;
+		gap: 16px;
+	}
+
+	.cm-top-bar {
+
+		.cm-row {
+			gap: 15px;
+		}
+	}
 }
 
 @include breakpoint("lrg") {
-
-	.cm-top-bar__2 {
-		justify-content: flex-end;
-	}
 
 	.cm-top-bar {
 		padding: 8px;
 
 		.cm-row {
 			flex-direction: row;
-			gap: 15px;
 		}
 	}
 }

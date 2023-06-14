@@ -94,7 +94,7 @@ if ( ! function_exists( 'colormag_random_post' ) ) :
 				$get_random_post->the_post();
 				?>
 				<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e( 'View a random post', 'colormag' ); ?>">
-					<i class="fa fa-random"></i>
+					<?php colormag_get_icon( 'random-fill' ); ?>
 				</a>
 			<?php endwhile; ?>
 		</div>

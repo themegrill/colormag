@@ -1,0 +1,23 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button .wp-block-button__link,
+.wp-element-button,
+.cm-button {
+	display: inline-block;
+	padding: 6px 10px;
+	background-color: $color__primary;
+	color: $color__white;
+	font-size: 16px;
+    font-weight: 600;
+	border: 1px solid $color__primary;
+	transition: background-color 0.3s linear 0s;
+	border-radius: 2px;
+	cursor: pointer;
+
+	&:hover {
+		color: $color__primary;
+		background-color: transparent;
+	}
+}

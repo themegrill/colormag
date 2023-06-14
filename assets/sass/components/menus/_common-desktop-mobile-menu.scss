@@ -1,0 +1,22 @@
+// Common styles for desktop and mobile menu.
+.cm-primary-nav {
+
+	li {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// Submenu toggle button.
+	.cm-submenu-toggle {
+		display: flex;
+		align-items: center;
+		padding-left: length( 'l-4' );
+		cursor: pointer;
+
+		.cm-icon {
+			width: length( 'l-7' );
+			height: length( 'l-7' );
+			fill: $color__white;
+		}
+	}
+}

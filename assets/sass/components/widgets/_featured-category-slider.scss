@@ -12,8 +12,8 @@
 
 	img {
 		width: 100%;
-		margin-bottom: 0;
 		height: 100%;
+		margin-bottom: 0;
 	}
 
 	.cm-below-entry-meta {
@@ -69,8 +69,8 @@
 
 	.cm-post-date a,
 	.cm-author a,
-	.reading-time,
-	.reading-time::before,
+	.cm-reading-time,
+	.cm-reading-time::before,
 	.human-diff-time-display {
 		color: $color__white;
 	}

@@ -840,6 +840,8 @@
 
 .wp-block {
 	max-width: 1140px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {

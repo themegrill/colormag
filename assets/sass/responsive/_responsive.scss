@@ -1,40 +1,5 @@
 /* Responsive.
 --------------------------------------------- */
-@media screen and (max-width: 1200px) {
-
-	.no-sidebar-full-width {
-
-		.cm-primary {
-
-			.cm-entry-summary {
-
-				> .alignwide {
-					margin-left: -20px;
-					margin-right: -20px;
-				}
-			}
-		}
-	}
-
-	.no-sidebar {
-
-		.cm-primary {
-
-			.cm-entry-summary {
-
-				> .alignwide {
-					margin-left: -50px;
-					margin-right: -50px;
-				}
-
-				> .alignfull {
-					margin-left: -100px;
-					margin-right: -100px;
-				}
-			}
-		}
-	}
-}
 
 @media screen and (min-width: 980px) {
 	.weather-location .owf {
@@ -53,15 +18,6 @@
 	}
 	.weather-current-temp {
 		font-size: 60px;
-	}
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail {
-				width: 50%;
-			}
-		}
 	}
 }
 
@@ -109,29 +65,6 @@
 			width: 70.5%;
 		}
 	}
-
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail {
-				width: 50%;
-			}
-		}
-	}
-}
-
-@media (min-width: 601px) and (max-width: 800px) {
-
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail {
-				width: 50%;
-			}
-		}
-	}
 }
 
 @media screen and (max-width: 800px) {
@@ -166,12 +99,6 @@
 		display: block;
 	}
 
-	.cm-primary,
-	.cm-secondary {
-		float: none;
-		width: 100%;
-	}
-
 	.video-player--vertical {
 
 		.video-playing,
@@ -192,53 +119,6 @@
 	.video-player.video-player--horizontal .video-playlist .video-playlist-item {
 		width: 35%;
 	}
-
-	.no-sidebar-full-width,
-	.no-sidebar {
-
-		.cm-primary {
-
-			.cm-entry-summary {
-
-				> .alignwide {
-					margin-left: -15px;
-					margin-right: -15px;
-				}
-			}
-		}
-
-		&.box-layout {
-
-			.cm-primary {
-
-				.cm-entry-summary {
-
-					> .alignwide {
-						margin-left: -15px;
-						margin-right: -15px;
-					}
-
-					> .alignfull {
-						margin-left: -30px;
-						margin-right: -30px;
-					}
-				}
-			}
-		}
-	}
-
-	.no-sidebar {
-		.cm-primary {
-
-			.cm-entry-summary {
-
-				> .alignfull {
-					margin-left: -15px;
-					margin-right: -15px;
-				}
-			}
-		}
-	}
 }
 
 @media screen and (max-width: 767px) {
@@ -252,42 +132,12 @@
 }
 
 @media screen and (max-width: 600px) {
-	.date-in-header {
-		float: none;
-		max-width: 100%;
-	}
-
-	.breaking-news::after {
-		visibility: hidden;
-		display: block;
-		font-size: 0;
-		content: " ";
-		clear: both;
-		height: 0;
-	}
-
-	.breaking-news-latest {
-		position: static;
-		vertical-align: top;
-	}
 
 	.cm-image-ticker-news .cm-post-content .cm-entry-title {
 		display: none;
 	}
 	.logged-in #cm-masthead #cm-primary-nav {
 		top: 0 !important;
-	}
-
-	.related-posts-wrapper {
-
-		&.style-two {
-
-			.related-posts-thumbnail,
-			.cm-post-content {
-				width: 100%;
-				float: none;
-			}
-		}
 	}
 
 	.gallery-columns-4 .gallery-item,
@@ -388,10 +238,6 @@
 
 @media screen and (max-width: 420px) {
 
-	.single-related-posts {
-		margin-right: 0;
-		width: 100%;
-	}
 	.gallery-columns-4 .gallery-item,
 	.gallery-columns-5 .gallery-item,
 	.gallery-columns-6 .gallery-item,
@@ -414,27 +260,20 @@
 	}
 }
 
-@media screen and (max-width: 767px) {
-
-	.tg-site-layout--2-sidebars .cm-primary,
-	.tg-site-layout--2-sidebars .cm-secondary,
-	.tg-site-layout--2-sidebars #tertiary {
-		float: none;
-		width: 100%;
-	}
-
-}
-
 /* CSS cod efor not displaying the content of slider/news until page loads */
 /* Newsticker */
 
-.newsticker, .cm-breaking-news-slider-widget {
+.newsticker,
+.cm-breaking-news-slider-widget {
 	visibility: hidden;
 }
 
 /* Sliders */
 
-.cm-slider-area-rotate, .cm-featured-posts--style-5 .cm-highlighted-post, .thumbnail-big-sliders, .cm-image-ticker-news {
+.cm-slider-area-rotate,
+.cm-featured-posts--style-5 .cm-highlighted-post,
+.thumbnail-big-sliders,
+.cm-image-ticker-news {
 	visibility: hidden;
 	height: 0;
 }
@@ -442,12 +281,20 @@
 /* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
 
 .mega-menu {
-	.cm-slider-area-rotate, .cm-featured-posts--style-5 .cm-highlighted-post, .thumbnail-big-sliders, .cm-image-ticker-news, .cm-breaking-news-slider-widget {
+	.cm-slider-area-rotate,
+	.cm-featured-posts--style-5 .cm-highlighted-post,
+	.thumbnail-big-sliders,
+	.cm-image-ticker-news,
+	.cm-breaking-news-slider-widget {
 		visibility: hidden !important;
 	}
 
 	.mega-toggle-on {
-		.cm-slider-area-rotate, .cm-featured-posts--style-5 .cm-highlighted-post, .thumbnail-big-sliders, .cm-image-ticker-news, .cm-breaking-news-slider-widget {
+		.cm-slider-area-rotate,
+		.cm-featured-posts--style-5 .cm-highlighted-post,
+		.thumbnail-big-sliders,
+		.cm-image-ticker-news,
+		.cm-breaking-news-slider-widget {
 			visibility: visible !important;
 		}
 	}

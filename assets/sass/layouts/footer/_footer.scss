@@ -86,6 +86,9 @@
 	background-color: $color__gray-700;
 
 	.cm-row {
+		display: flex;
+		flex-direction: column;
+		gap: length("l-20");
 		padding-top: length("l-20", px);
 		padding-bottom: length("l-20", px);
 		color: $color__gray-200;
@@ -117,7 +120,7 @@
 		list-style: none;
 	}
 
-	.reading-time {
+	.cm-reading-time {
 		color: $color__white;
 	}
 
@@ -133,12 +136,10 @@
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
-	padding-top: 60px;
-	padding-bottom: 100px;
 
 	.cm-post-date a,
 	.cm-author a,
-	.tag-links a,
+	.cm-tag-links a,
 	.cm-edit-link a,
 	.cm-comments-link a {
 		color: $color__white;
@@ -321,7 +322,6 @@ Classic Bordered Layout
 /* Footer Menu.
 --------------------------------------------- */
 .cm-footer-menu {
-	margin-top: 8px;
 
 	ul {
 		display: flex;

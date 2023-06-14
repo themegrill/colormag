@@ -3,17 +3,17 @@ blockquote,
 .wp-block-quote.is-style-large,
 .wp-block-quote.has-text-align-right {
 	padding: 20px 30px 20px 82px;
-	margin-bottom: 30px;
-	margin-top: 15px;
+	margin-bottom: length( 'l-15' );
+	margin-top: length( 'l-8' );
 	background-color: $color__primary;
 	color: $color__white;
-	border-radius: 5px;
+	border-radius: 4px;
 	border-left: 0;
 
 	p {
 		position: relative;
 		font-family: "Open Sans", serif;
-		line-height: $line-height__body;
+		line-height: 1.8;
 		padding-top: 0;
 		margin-bottom: 0;
 
@@ -28,7 +28,7 @@ blockquote,
 			font-weight: normal;
 			text-decoration: inherit;
 			color: $color__white;
-			font-size: 32px;
+			@include font-size("font-size-xxl");
 		}
 	}
 

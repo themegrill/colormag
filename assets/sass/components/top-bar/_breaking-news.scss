@@ -1,14 +1,15 @@
 .breaking-news {
 	position: relative;
 	display: flex;
-	background-color: $color__gray-200;
-	line-height: 20px;
+	margin-top: length( 'l-5' );
 	padding-left: length( 'l-4' );
 	padding-right: length( 'l-4' );
+	background-color: $color__gray-50;
+	font-size: 14px;
+	line-height: 20px;
 	word-wrap: break-word;
-	font-size: 14px; // For Below Navigation options.
 
-	.breaking-news-main & { /* Below Navigation */
+	.breaking-news-main & {
 		display: inline-flex;
 	}
 

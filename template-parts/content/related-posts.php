@@ -23,7 +23,7 @@ if ( $related_posts->have_posts() ) :
 			<i class="fa fa-thumbs-up"></i><span><?php echo esc_html( __( 'You May Also Like', 'colormag' ) ); ?></span>
 		</h4>
 
-		<div class="related-posts clearfix">
+		<div class="related-posts">
 
 			<?php
 			while ( $related_posts->have_posts() ) :

@@ -35,10 +35,14 @@
 }
 
 
-.advertisement_728x90 img {
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-	padding: 24px 36px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.advertisement_728x90 {
+
+	img {
+		width: calc(100% - 50px);
+		display: block;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+		padding: 24px 26px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }

@@ -17,8 +17,9 @@
         position: relative;
         @include font-size("font-size-xs");
         padding: length( 'l-6' );
-        border: 1px solid #E4E4E7;
+        border: 1px solid $color__gray-300;
         border-radius: 4px 0 0 4px;
+        line-height: 1.6;
 
         &:focus-visible {
             outline: none;
@@ -32,8 +33,7 @@
     button {
         background-color: $color__primary;
         border-radius: 0 4px 4px 0;
-        padding: 0 15px;
-        font-size: unset;
-        border: unset;
+        padding: length( l-7 );
+        line-height: 0.8;
     }
 }
