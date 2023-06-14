@@ -3361,10 +3361,12 @@ i.fa-arrow-up, i.fa-arrow-down {
 	position: relative;
 	border-radius: 4px;
 	overflow: hidden;
+	height: 350px;
 }
 
 .cm-featured-category-slider img {
 	width: 100%;
+	height: 100%;
 	margin-bottom: 0;
 }
 
