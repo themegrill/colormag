@@ -225,7 +225,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_social_icons_header_activate' );
 
-			// Header Social Icons.
+			// Footer Social Icons.
 			$enable_footer_social_icons = get_theme_mod( 'colormag_social_icons_footer_activate' );
 
 			if ( $enable_footer_social_icons ) {
@@ -283,7 +283,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 			remove_theme_mod( 'colormag_featured_image_single_page_show' );
 
-			// Search in menu.
+			// Search.
 			$enable_search_in_menu = get_theme_mod( 'colormag_enable_search' );
 
 			if ( $enable_search_in_menu ) {
