@@ -271,10 +271,21 @@
 			}
 		}
 
-		.cm-submenu-toggle {
+		.cm-submenu-toggle,
+		.cm-home-icon,
+		.cm-menu-toggle {
 
 			svg {
 				fill: $color__gray-700
+			}
+		}
+
+		.cm-random-post {
+
+			a {
+				svg {
+					fill: $color__gray-700
+				}
 			}
 		}
 	}
