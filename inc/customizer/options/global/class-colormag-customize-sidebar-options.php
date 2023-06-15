@@ -45,7 +45,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 			// Default layout heading.
 			array(
-				'name'     => 'colormag_default_layout_heading',
+				'name'     => 'colormag_default_sidebar_layout_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Default Layout', 'colormag' ),
@@ -55,7 +55,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 			// Default layout option.
 			array(
-				'name'      => 'colormag_default_layout',
+				'name'      => 'colormag_default_sidebar_layout',
 				'default'   => 'right_sidebar',
 				'type'      => 'control',
 				'control'   => 'colormag-radio-image',
@@ -84,7 +84,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 			// Default layout pages heading.
 			array(
-				'name'     => 'colormag_default_layout_pages_heading',
+				'name'     => 'colormag_default_sidebar_layout_pages_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Default layout for pages only', 'colormag' ),
@@ -94,7 +94,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 			// Default layout for pages only option.
 			array(
-				'name'      => 'colormag_default_page_layout',
+				'name'      => 'colormag_page_sidebar_layout',
 				'default'   => 'right_sidebar',
 				'type'      => 'control',
 				'control'   => 'colormag-radio-image',
@@ -123,7 +123,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 			// Default layout post heading.
 			array(
-				'name'     => 'colormag_default_layout_post_heading',
+				'name'     => 'colormag_default_sidebar_layout_post_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Default layout for single posts only', 'colormag' ),
@@ -133,7 +133,7 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 			// Default layout for single posts page only option.
 			array(
-				'name'      => 'colormag_default_single_posts_layout',
+				'name'      => 'colormag_post_sidebar_layout',
 				'default'   => 'right_sidebar',
 				'type'      => 'control',
 				'control'   => 'colormag-radio-image',

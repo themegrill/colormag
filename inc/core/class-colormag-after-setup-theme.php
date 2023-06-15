@@ -94,15 +94,15 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			add_image_size( 'colormag-featured-image-large', 1400, 600, true );
 
 			// Setup the WordPress core custom background feature.
-//			add_theme_support(
-//				'custom-background',
-//				apply_filters(
-//					'colormag_custom_background_args',
-//					array(
-//						'default-color' => 'eaeaea',
-//					)
-//				)
-//			);
+			add_theme_support(
+				'custom-background',
+				apply_filters(
+					'colormag_custom_background_args',
+					array(
+						'default-color' => 'eaeaea',
+					)
+				)
+			);
 
 			/**
 			 * Let WordPress manage the document title.
