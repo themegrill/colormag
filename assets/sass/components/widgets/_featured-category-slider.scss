@@ -7,12 +7,13 @@
 		position: relative;
 		border-radius: 4px;
 		overflow: hidden;
-		height: 350px;
+		height: 300px;
 	}
 
 	img {
 		width: 100%;
 		height: 100%;
+		object-fit: cover;
 		margin-bottom: 0;
 	}
 
@@ -94,6 +95,10 @@
 
 		.cm-slide-content {
 			padding: length( 'l-12' );
+		}
+
+		.cm-single-slide {
+			height: 350px;
 		}
 	}
 }

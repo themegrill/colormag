@@ -3378,12 +3378,14 @@ i.fa-arrow-up, i.fa-arrow-down {
 	position: relative;
 	border-radius: 4px;
 	overflow: hidden;
-	height: 350px;
+	height: 300px;
 }
 
 .cm-featured-category-slider img {
 	width: 100%;
 	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
 	margin-bottom: 0;
 }
 
@@ -3454,6 +3456,9 @@ i.fa-arrow-up, i.fa-arrow-down {
 	}
 	.cm-featured-category-slider .cm-slide-content {
 		padding: 24px;
+	}
+	.cm-featured-category-slider .cm-single-slide {
+		height: 350px;
 	}
 }
 
