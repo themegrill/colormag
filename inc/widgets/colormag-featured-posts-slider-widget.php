@@ -78,7 +78,7 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 		?>
 
 		<div class="cm-featured-category-slider">
-			<?php $featured = 'colormag-featured-image-large'; ?>
+			<?php $featured = 'colormag-featured-image'; ?>
 
 			<div class="cm-slider-area-rotate">
 				<?php

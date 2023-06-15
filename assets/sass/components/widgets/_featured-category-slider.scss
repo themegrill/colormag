@@ -7,14 +7,11 @@
 		position: relative;
 		border-radius: 4px;
 		overflow: hidden;
-		height: 300px;
 	}
 
 	img {
 		width: 100%;
-		height: 100%;
 		margin-bottom: 0;
-		object-fit: cover;
 	}
 
 	.cm-below-entry-meta {
@@ -95,10 +92,6 @@
 
 		.cm-slide-content {
 			padding: length( 'l-12' );
-		}
-
-		.cm-single-slide {
-			height: 350px;
 		}
 	}
 }
