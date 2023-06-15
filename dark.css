@@ -212,6 +212,21 @@ body {
 	box-shadow: 0 0 0 0 transparent;
 }
 
+.dark-skin .previous svg,
+.dark-skin .next svg {
+	fill: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg,
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-home-icon svg,
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-menu-toggle svg {
+	fill: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-random-post a svg {
+	fill: #f4f4f5;
+}
+
 .dark-skin .single-related-posts {
 	-webkit-box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.24);
 	box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.24);

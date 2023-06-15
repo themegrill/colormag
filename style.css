@@ -3903,7 +3903,13 @@ Styles for separating single posts loaded from ajax call.
 	color: #fff;
 }
 
-.cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg {
+.cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg,
+.cm-layout-2 .cm-mobile-nav .cm-home-icon svg,
+.cm-layout-2 .cm-mobile-nav .cm-menu-toggle svg {
+	fill: #3f3f46;
+}
+
+.cm-layout-2 .cm-mobile-nav .cm-random-post a svg {
 	fill: #3f3f46;
 }
 
