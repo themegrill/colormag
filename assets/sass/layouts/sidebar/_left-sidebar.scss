@@ -3,12 +3,24 @@
 	.cm-content {
 
 		.cm-row {
-			flex-direction: row-reverse;
+			flex-direction: column-reverse;
 		}
+	}
+}
+
+@include breakpoint("mdm") {
+	.left-sidebar {
+
+		.cm-content {
 	
-		.cm-primary {
-			padding-right: 0;
-			padding-left: length( 'l-15', em );
+			.cm-row {
+				flex-direction: row-reverse;
+			}
+		
+			.cm-primary {
+				padding-right: 0;
+				padding-left: length( 'l-15', em );
+			}
 		}
 	}
 }

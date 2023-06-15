@@ -4650,15 +4650,23 @@ ul.wp-block-gallery img {
 /* Sidebar.
 --------------------------------------------- */
 .left-sidebar .cm-content .cm-row {
-	-webkit-box-orient: horizontal;
+	-webkit-box-orient: vertical;
 	-webkit-box-direction: reverse;
-	-ms-flex-direction: row-reverse;
-	flex-direction: row-reverse;
+	-ms-flex-direction: column-reverse;
+	flex-direction: column-reverse;
 }
 
-.left-sidebar .cm-content .cm-primary {
-	padding-right: 0;
-	padding-left: 1.875em;
+@media screen and (min-width: 48em) {
+	.left-sidebar .cm-content .cm-row {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse;
+	}
+	.left-sidebar .cm-content .cm-primary {
+		padding-right: 0;
+		padding-left: 1.875em;
+	}
 }
 
 .no-sidebar .cm-primary {
