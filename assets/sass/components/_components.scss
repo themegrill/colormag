@@ -20,17 +20,12 @@
 /* Page header.
 --------------------------------------------- */
 @import "page-header/page-header";
-@import "page-header/breadcrumbs";
 
 /* Navigation.
 --------------------------------------------- */
 @import "menus/common-desktop-mobile-menu";
 @import "menus/navigation";
 @import "menus/primary-menu";
-
-/* Smooth image.
---------------------------------------------- */
-@import "smooth-image/smooth-image";
 
 /* Comments.
 --------------------------------------------- */
@@ -43,22 +38,12 @@
 /* Widgets.
 --------------------------------------------- */
 @import "widgets/advertisement";
-@import "widgets/breaking-news";
 @import "widgets/call-to-action";
 @import "widgets/category-slider";
-@import "widgets/currency-exchange";
 @import "widgets/featured-category-slider";
 @import "widgets/featured-post-style-1";
 @import "widgets/featured-post-style-2";
-@import "widgets/featured-post-style-3";
-@import "widgets/featured-post-style-4";
-@import "widgets/featured-post-style-5";
-@import "widgets/featured-post-style-6";
-@import "widgets/featured-post-style-7";
 @import "widgets/highlighted-posts";
 @import "widgets/random-post";
 @import "widgets/search";
-@import "widgets/tabbed";
-@import "widgets/video-playlist";
-@import "widgets/weather";
 @import "widgets/widgets";

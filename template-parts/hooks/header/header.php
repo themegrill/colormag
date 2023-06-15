@@ -316,12 +316,15 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 					</div>
 					<?php } ?>
 				</div>
-							<?php } ?>
+				<?php } ?>
 
-					<p class="cm-menu-toggle"></p>
-						<?php
-							get_template_part( 'template-parts/header/primary-menu/main-navigation' );
-						?>
+					<p class="cm-menu-toggle" aria-expanded="false">
+						<?php colormag_get_icon( 'bars' ); ?>
+						<?php colormag_get_icon( 'x-mark' ); ?>
+					</p>
+					<?php
+						get_template_part( 'template-parts/header/primary-menu/main-navigation' );
+				?>
 
 			</div>
 		</div>

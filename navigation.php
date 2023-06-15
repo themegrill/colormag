@@ -55,8 +55,8 @@ if ( is_single() ) :
 		?>
 
 		<ul class="default-wp-page">
-			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . esc_html_x( '&larr;', 'Previous post link', 'colormag' ) . '</span> %title' ); ?></li>
-			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . esc_html_x( '&rarr;', 'Next post link', 'colormag' ) . '</span>' ); ?></li>
+			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . colormag_get_icon( 'arrow-left-long', false ) . '</span> %title' ); ?></li>
+			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . colormag_get_icon( 'arrow-right-long', false ) . '</span>' ); ?></li>
 		</ul>
 
 	<?php
