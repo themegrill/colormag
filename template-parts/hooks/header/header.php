@@ -392,13 +392,11 @@ if ( ! function_exists( 'colormag_front_page_full_width_sidebar' ) ) :
 	 */
 	function colormag_front_page_full_width_sidebar() {
 
-		if ( ( is_front_page() || is_page_template( 'page-templates/magazine.php' ) ) && ! is_page_template( 'page-templates/page-builder.php' ) ) :
+		if ( ( is_front_page() || is_page_template( 'page-templates/magazine.php' ) ) && ! is_page_template( 'page-templates/page-builder.php' ) && is_active_sidebar( 'colormag_front_page_top_full_width_area' ) ) :
 			?>
 			<div class="top-full-width-sidebar inner-wrap clearfix">
 				<?php
-				if ( is_active_sidebar( 'colormag_front_page_top_full_width_area' ) ) {
 					dynamic_sidebar( 'colormag_front_page_top_full_width_area' );
-				}
 				?>
 			</div>
 			<?php
