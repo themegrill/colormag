@@ -212,6 +212,11 @@ body {
 	box-shadow: 0 0 0 0 transparent;
 }
 
+.dark-skin .previous svg,
+.dark-skin .next svg {
+	fill: #f4f4f5;
+}
+
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg,
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-home-icon svg,
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-menu-toggle svg {

@@ -279,6 +279,15 @@ body {
 		box-shadow: 0 0 0 0 transparent;
 	}
 
+	.previous,
+	.next {
+
+		svg {
+			fill: $color__gray-100
+		}
+
+	}
+
 	.cm-layout-2 {
 
 		.cm-mobile-nav {
