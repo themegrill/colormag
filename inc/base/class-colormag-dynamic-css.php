@@ -853,7 +853,6 @@ class ColorMag_Dynamic_CSS {
 			.top-full-width-sidebar .cm-widget-title span,
 			.wp-block-quote, .wp-block-quote.is-style-large,
 			.wp-block-quote.has-text-align-right,
-			.page-numbers .current, .search-wrap button,
 			.cm-error-404 .cm-btn, .widget .wp-block-heading, .wp-block-search button,
 			.widget a::before, .cm-post-date a::before,
 			.byline a::before,
