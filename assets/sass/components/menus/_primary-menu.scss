@@ -388,8 +388,15 @@ li.default-menu {
 
 	.cm-random-post a {
 		display: flex;
-		padding: length( 'l-6' );
+		padding: length( 'l-4' );
+		height: 48px;
 		line-height: 1.8;
+
+		svg {
+			display: block;
+			fill: #fff;
+			font-size: 32px;
+		}
 	}
 
 	li {

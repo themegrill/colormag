@@ -1242,8 +1242,18 @@ table td {
 }
 
 .fa.search-top {
-	padding: 12px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 8px;
 	width: 48px;
+	height: 48px;
 	color: #fff;
 	font-size: 2.4rem;
 	cursor: pointer;
@@ -2245,8 +2255,15 @@ li.default-menu {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	padding: 12px;
+	padding: 8px;
+	height: 48px;
 	line-height: 1.8;
+}
+
+.cm-mobile-nav .cm-random-post a svg {
+	display: block;
+	fill: #fff;
+	font-size: 32px;
 }
 
 .cm-mobile-nav li {
