@@ -154,7 +154,7 @@ class ColorMag_Dashboard {
 											echo sprintf(
 											/* translators: %s: Theme Name. */
 												esc_html__( '%s Community', 'colormag' ),
-												$theme->Name
+												'ThemeGrill'
 											);
 											?>
 										</span>

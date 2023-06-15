@@ -65,8 +65,70 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== TBD ==
-* Add - Review link section on customizer.
+== Version 3.0 - 2023-06-15 ==
+* Enhancement - Overall UI/UX improvements of frontend side of the theme
+
+* Enhancement - Responsiveness and mobile-first design
+* Enhancement - Introduced SVG icons for speed and better design
+* Enhancement - Improvements and issues fixes in dark mode design
+
+* Enhancement - Blog, Post content, meta, CTA button
+* Fix - Design issues in post comments section
+* Enhancement - Related posts slider
+* Enhancement - Search no result found page design 
+* Enhancement - Fixed design issues in 404 page and improved for the betterment
+* Enhancement - Improved design for forms fields
+
+* Enhancement - Overall layout/design improvement in header area
+* Enhancement - Mobile menu design
+* Enhancement - Improved header search
+* Fix         - News ticker alignment issue in mobile devices
+* Fix         - Top bar responsive issues
+
+* Enhancement - Overall layout/design improvement in footer area
+* Fix         - Footer area responsive issues
+
+* Enhancement - WordPress default blocks/widgets design
+* Enhancement - Improved Block Editor design
+* Fix         - Search widget design issue
+* Enhancement - ColorMag custom widgets design: consistency, spacing, responsiveness
+
+* Enhancement - Overall accessibility improvements as per WordPress standards
+* Enhancement - More accessible styles for links
+* Enhancement - Maintained contrast of elements via Color, sizes, spacing
+* Enhancement - Attention to typography for readability by applying hierarchy, consistency, and white spaces
+
+* Enhancement - WooCommerce pages design revamp
+* Enhancement - Improved product boxes
+* Fix         - Various design issues including responsiveness in WooCommerce pages
+
+* Enhancement - Overall UI/UX of customizer controls
+
+* Enhancement - Improved design of icons used in radio image control
+* Enhancement - Use toggle control instead of checkboxes
+* Enhancement - Introduced unit selector, slider in typography control
+* Enhancement - UX improvement in responsive switcher setting
+* Enhancement - Use of toogle instead of eye icon inside sortable control
+* Enhancement - Use of toggle instead of eye icon inside sortable control
+* Enhancement - Introduced unit selector and progress bar indicator in the slider control
+* Feature     - Option of unsortable items inside sortable control
+* Feature     - Introduced input binding setting in dimension control
+* Feature     - Introduced input binding and unit selector setting in dimension control
+* Added       - Introduced new subheadings control
+
+* Enhancement - Refactored options arrangements for better user experience
+* Enhancement - Consistency on layout and style options
+* Enhancement - Updated strings used for customizer options for clarity
+
+* Enhancement - Better file/folder organization
+* Tweak       - Improved Coding Standards
+* Tweak       - PHP OOP way code implementation
+
+* Enhancement - Mobile-first CSS
+* Enhancement - Proper CSS Reusability implementation for less code
+* Enhancement - Use of CSS flex/grid properties instead of float
+* Enhancement - Use of CSS variables
+* Enhancement - Overall CSS transition on events
 
 = Version - 2.1.8 - 2023-01-11 ==
 * Fix - Php error.
