@@ -274,10 +274,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			if ( $old_related_post_query ) {
 
-				if ( 'categories' === $old_related_post_query ) {
-					$new_related_post_query = 'categories';
-				} elseif ( 'tags' === $old_related_post_query ) {
+				if ( 'tags' === $old_related_post_query ) {
 					$new_related_post_query = 'tags';
+				} else {
+					$new_related_post_query = 'categories';
 				}
 
 				set_theme_mod( 'colormag_related_posts_query', $new_related_post_query );
