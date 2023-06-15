@@ -20,17 +20,12 @@
 /* Page header.
 --------------------------------------------- */
 @import "page-header/page-header";
-@import "page-header/breadcrumbs";
 
 /* Navigation.
 --------------------------------------------- */
 @import "menus/common-desktop-mobile-menu";
 @import "menus/navigation";
 @import "menus/primary-menu";
-
-/* Smooth image.
---------------------------------------------- */
-@import "smooth-image/smooth-image";
 
 /* Comments.
 --------------------------------------------- */
@@ -43,7 +38,6 @@
 /* Widgets.
 --------------------------------------------- */
 @import "widgets/advertisement";
-@import "widgets/breaking-news";
 @import "widgets/call-to-action";
 @import "widgets/category-slider";
 @import "widgets/featured-category-slider";
