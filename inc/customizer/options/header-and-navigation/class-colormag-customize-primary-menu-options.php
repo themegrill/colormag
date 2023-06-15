@@ -45,7 +45,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Home Icon/Logo', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
-				'priority' => 110,
+				'priority' => 10,
 			),
 
 			// Home icon in menu heading separator.
@@ -55,11 +55,32 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'select',
 				'section'  => 'colormag_primary_menu_section',
-				'priority' => 120,
+				'priority' => 20,
 				'choices'  => array(
 					'none'      => esc_html__( 'None', 'colormag' ),
 					'home-icon' => esc_html__( 'Home Icon', 'colormag' ),
 				),
+			),
+
+			// Responsive menu heading separator.
+			array(
+				'name'     => 'colormag_responsive_menu_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Responsive Menu Style', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 30,
+			),
+
+			// New responsive menu enable/disable option.
+			array(
+				'name'        => 'colormag_responsive_menu',
+				'default'     => 0,
+				'type'        => 'control',
+				'control'     => 'colormag-toggle',
+				'label'       => esc_html__( 'Enable', 'colormag' ),
+				'section'     => 'colormag_primary_menu_section',
+				'priority'    => 40,
 			),
 
 			array(
