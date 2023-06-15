@@ -149,6 +149,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_main_total_header_area_display_type' );
 			}
 
+			// Sticky Menu.
+			$enable_sticky_menu = get_theme_mod( 'colormag_primary_sticky_menu' );
+
+			if ( $enable_sticky_menu ) {
+				set_theme_mod( 'colormag_enable_sticky_menu', true );
+			}
+			remove_theme_mod( 'colormag_primary_sticky_menu' );
+
 			// Main footer layout.
 			$old_main_footer_layout = get_theme_mod( 'colormag_main_footer_layout_display_type' );
 
