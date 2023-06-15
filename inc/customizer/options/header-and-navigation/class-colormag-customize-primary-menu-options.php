@@ -62,27 +62,6 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				),
 			),
 
-			// Responsive menu heading separator.
-			array(
-				'name'     => 'colormag_responsive_menu_heading',
-				'type'     => 'control',
-				'control'  => 'colormag-title',
-				'label'    => esc_html__( 'Responsive Menu Style', 'colormag' ),
-				'section'  => 'colormag_primary_menu_section',
-				'priority' => 30,
-			),
-
-			// New responsive menu enable/disable option.
-			array(
-				'name'        => 'colormag_responsive_menu',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'section'     => 'colormag_primary_menu_section',
-				'priority'    => 40,
-			),
-
 			array(
 				'name'        => 'colormag_primary_menu_upgrade',
 				'type'        => 'control',
