@@ -64,7 +64,7 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 			// Edit button remove option add.
 			if ( $full_post_meta ) {
-					edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link"><i class="fa fa-edit"></i>', '</span>' );
+				edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link">'. colormag_get_icon( 'edit', false) .' ', '</span>' );
 			}
 
 			echo '</div>';

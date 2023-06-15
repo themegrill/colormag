@@ -62,9 +62,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 	</div>
 
-	<div class="entry-footer">
+	<div class="cm-entry-footer">
 		<?php
-			edit_post_link( esc_html__( 'Edit', 'colormag' ), '<span class="cm-edit-link"><i class="fa fa-edit"></i>', '</span>' );;
+			edit_post_link(__('Edit', 'colormag'), '<span class="cm-edit-link">' . colormag_get_icon('edit', false) . ' ', '</span>');
 		?>
 	</div>
 
