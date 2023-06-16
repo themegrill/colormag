@@ -65,6 +65,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+== Version 3.0.0.2 - 2023-06-16 ==
+* Tweak - Minor change.
+
+== Version 3.0.0.1 - 2023-06-16 ==
+* Fix - Footer copyright text issue.
+
 == Version 3.0 - 2023-06-16 ==
 * Enhancement - Overall UI/UX improvements of frontend side of the theme
 

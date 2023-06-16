@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.0\n"
+"Project-Id-Version: ColorMag 3.0.0.2\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-06-16 05:56:42+00:00\n"
+"POT-Creation-Date: 2023-06-16 06:23:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1921,20 +1921,23 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:267
-msgid "Copyright &copy; "
+#: template-parts/hooks/footer/footer.php:269
+msgid "WordPress"
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:267
-msgid "All rights reserved."
+#: template-parts/hooks/footer/footer.php:273
+#. Translators: %1$s: Current year, %2$s: Site link
+msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:267
-msgid "Theme: "
+#: template-parts/hooks/footer/footer.php:273
+#. Translators: %1$s: Theme name, %2$s: ThemeGrill site link
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:267
-msgid " by ThemeGrill. Powered by "
+#: template-parts/hooks/footer/footer.php:273
+#. Translators: %s: WordPress link
+msgid "Powered by %s."
 msgstr ""
 
 #: template-parts/hooks/header/header.php:85
@@ -1946,7 +1949,22 @@ msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "ColorMag Pro is the pro version of ColorMag free theme."
+msgid ""
+"ColorMag is always the best choice when it comes to magazine, news, and "
+"blog WordPress themes. You can create elegant and modern websites for news "
+"portals, online magazines, and publishing sites. With ColorMag’s 8 and "
+"counting free starter demos for health, food, entertainment, sports, and "
+"fashion industries, building a magazine style website is super easy. Best "
+"of all, the ColorMag WordPress theme offers multiple ad spaces in its "
+"layout. So, you can monetize your website by displaying ads in these slots "
+"without any fuss. And if you plan to sell products and services online, you "
+"can rely on the theme’s compatibility with WooCommerce. Some of its key "
+"features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser "
+"Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, "
+"download the free ColorMag theme and create professional magazine websites "
+"quickly. You can get free support for ColorMag at "
+"https://themegrill.com/contact/ and check our demos at "
+"https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1954,7 +1972,7 @@ msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://themegrill.com/wordpress-themes/"
+msgid "https://themegrill.com"
 msgstr ""
 
 #. Template Name of the plugin/theme
