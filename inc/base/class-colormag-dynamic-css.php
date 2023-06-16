@@ -868,7 +868,8 @@ class ColorMag_Dynamic_CSS {
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor,
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item,
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus,
-			.search-wrap button' => array(
+			.search-wrap button,
+			.page-numbers .current' => array(
 				'background-color' => esc_html( $primary_color ),
 			),
 

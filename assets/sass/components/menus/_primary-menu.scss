@@ -516,6 +516,63 @@ li.default-menu {
 	}
 }
 
+/* Posts Pagination.
+--------------------------------------------- */
+.page-numbers {
+	display: flex;
+	align-content: space-between;
+	gap: 6px;
+	text-align: center;
+
+	a,
+	span {
+		display: block;
+	}
+
+	li {
+		display: inline-block;
+
+		&:hover {
+			& > a {
+				background-color: #ebebec;
+			}
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		& > a,
+		& > span {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			width: 32px;
+			height: 32px;
+			border-radius: 4px;
+			border: 1px solid $color__gray-100;
+			background-color: $color__white;
+			color: $color__gray-700;
+			font-size: 14px;
+			padding: 8px;
+			font-weight: 400;
+		}
+
+		.fa {
+			color: $color__gray-700;
+		}
+	}
+
+	.current {
+		background-color: $color__primary;
+		color: $color__white;
+	}
+}
+
 /*--------------------------------------------------------------
 Styles for separating single posts loaded from ajax call.
 --------------------------------------------------------------*/
