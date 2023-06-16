@@ -66,7 +66,7 @@ class Colormag_Major_Update_Notice {
 						<?php
 						printf(
 						/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'This is a major release with significant changes. It wouldn&#39;t break anything off your site but improves its UI/UX. Even though if you&#39;re experiencing any problems with your site due to this update, you can contact our support by clicking the button below:', 'colormag' ),
+							esc_html__( 'This is a major release with significant changes. It wouldn&#39;t break anything off your site but improves its UI/UX. Even though if you&#39;re experiencing any problems with your site due to this update, you can contact our support by clicking the button below:', 'colormag' )
 						);
 						?>
 					</h2>
