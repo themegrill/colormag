@@ -867,7 +867,8 @@ class ColorMag_Dynamic_CSS {
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover,
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor,
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item,
-			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus' => array(
+			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus,
+			.search-wrap button' => array(
 				'background-color' => esc_html( $primary_color ),
 			),
 
@@ -2144,18 +2145,27 @@ class ColorMag_Dynamic_CSS {
 		$wc_primary_color = get_theme_mod( 'colormag_primary_color', '#207daf' );
 
 		$wc_primary_color_css = array(
-			'.woocommerce-cart .actions .button' => array(
+			'.woocommerce-cart .actions .button,
+			li.product .added_to_cart:hover' => array(
 				'border-color' => esc_html( $wc_primary_color ),
 			),
-
+	
+			'li.product .added_to_cart,
+			.woocommerce-MyAccount-navigation ul .is-active a' => array(
+				'background-color' => esc_html( $wc_primary_color ),
+			),
+	
 			'.woocommerce-cart .actions .button[aria-disabled="true"]' => array(
 				'background-color' => esc_html( $wc_primary_color ),
 				'border-color' => esc_html( $wc_primary_color ),
 			),
-
+	
 			'.product-subtotal,
-		.woocommerce-cart .actions .button,
-		li.product .added_to_cart:hover' => array(
+			.woocommerce-cart .actions .button,
+			li.product .added_to_cart:hover,
+			.stock.in-stock,
+			.woocommerce-MyAccount-navigation ul li a:hover,
+			.woocommerce-MyAccount-navigation ul li a:focus' => array(
 				'color' => esc_html( $wc_primary_color ),
 			),
 		);
