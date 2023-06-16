@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+TBD
+* Tweak - Minor change.
+
 == Version 3.0.0.2 - 2023-06-16 ==
 * Tweak - Minor change.
 
