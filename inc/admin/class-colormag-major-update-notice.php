@@ -39,7 +39,7 @@ class Colormag_Major_Update_Notice {
 	 */
 	public function major_update_notice_markup() {
 		$dismiss_url = wp_nonce_url(
-			remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'major-update' ) ),
+			remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'major_update' ) ),
 			'colormag_hide_notices_nonce',
 			'_colormag_notice_nonce'
 		);
@@ -97,7 +97,7 @@ class Colormag_Major_Update_Notice {
 			$hide_notice = sanitize_text_field( wp_unslash( $_GET['colormag-hide-notice'] ) );
 
 			// Hide.
-			if ( 'major-update' === $_GET['colormag-hide-notice'] ) {
+			if ( 'major_update' === $hide_notice ) {
 				update_option( 'colormag_admin_notice_' . $hide_notice, 1 );
 			} else { // Show.
 				delete_option( 'colormag_admin_notice_' . $hide_notice );
