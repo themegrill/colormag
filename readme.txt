@@ -73,8 +73,7 @@ and we will include it within the theme from next version update.
 * Enhancement - Improvements and issues fixes in dark mode design
 
 * Enhancement - Blog, Post content, meta, CTA button
-* Fix - Design issues in post comments section
-* Enhancement - Related posts slider
+* Fix         - Design issues in post comments section
 * Enhancement - Search no result found page design 
 * Enhancement - Fixed design issues in 404 page and improved for the betterment
 * Enhancement - Improved design for forms fields
