@@ -71,10 +71,6 @@ require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php';
 require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php';
 
 /**
- * Freemius.
- */
-
-/**
  * Helper.
  */
 // Load utils & helper functions.

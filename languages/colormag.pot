@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 3.0\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-06-15 13:36:08+00:00\n"
+"POT-Creation-Date: 2023-06-16 05:56:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Back to Home"
 msgstr ""
 
-#: comments.php:39 inc/ajax.php:200
+#: comments.php:39 inc/ajax.php:53
 #. Translators: %1$s: Post title
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:88 inc/ajax.php:237
+#: comments.php:88 inc/ajax.php:90
 msgid "Comments are closed."
 msgstr ""
 
@@ -139,7 +139,7 @@ msgid "Premium Features"
 msgstr ""
 
 #: inc/admin/class-colormag-dashboard.php:116
-#: inc/admin/class-colormag-major-update-notice.php:26
+#: inc/admin/class-colormag-major-update-notice.php:25
 msgid "Learn More"
 msgstr ""
 
@@ -184,27 +184,27 @@ msgstr ""
 msgid "Join Now &#129066;"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:26
+#: inc/admin/class-colormag-major-update-notice.php:25
 msgid "Learn about ColorMag 3.0"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:32
+#: inc/admin/class-colormag-major-update-notice.php:31
 msgid "Contact Support"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:53
-#: inc/admin/class-colormag-major-update-notice.php:64
+#: inc/admin/class-colormag-major-update-notice.php:52
+#: inc/admin/class-colormag-major-update-notice.php:63
 #: inc/admin/class-colormag-welcome-notice.php:46
 msgid "Colormag"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:61
+#: inc/admin/class-colormag-major-update-notice.php:60
 #. translators: 1: welcome page link starting html tag, 2: welcome page link
 #. ending html tag.
 msgid "Introducing ColorMag 3.0 !!"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:70
+#: inc/admin/class-colormag-major-update-notice.php:69
 #. translators: 1: welcome page link starting html tag, 2: welcome page link
 #. ending html tag.
 msgid ""
@@ -214,14 +214,14 @@ msgid ""
 "contact our support by clicking the button below:"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:91
+#: inc/admin/class-colormag-major-update-notice.php:90
 #: inc/admin/class-colormag-welcome-notice.php:77
-#: inc/migration/class-colormag-migration.php:357
+#: inc/migration/class-colormag-migration.php:362
 #: inc/migration/demo-import-migration.php:64
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:95
+#: inc/admin/class-colormag-major-update-notice.php:94
 #: inc/admin/class-colormag-welcome-notice.php:81
 msgid "Cheatin&#8217; huh?"
 msgstr ""
@@ -245,19 +245,11 @@ msgid ""
 "plugin."
 msgstr ""
 
-#: inc/ajax.php:37
-msgid "Permissions check failed."
-msgstr ""
-
-#: inc/ajax.php:153
-msgid "No more post"
-msgstr ""
-
-#: inc/ajax.php:169 navigation.php:32 navigation.php:50
+#: inc/ajax.php:22 navigation.php:32 navigation.php:50
 msgid "&larr; Previous"
 msgstr ""
 
-#: inc/ajax.php:170 navigation.php:33 navigation.php:51
+#: inc/ajax.php:23 navigation.php:33 navigation.php:51
 msgid "Next &rarr;"
 msgstr ""
 
@@ -1041,17 +1033,17 @@ msgid "Unlock more features available in Pro version."
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:151
-#: inc/template-functions.php:441
+#: inc/template-functions.php:383
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:156
-#: inc/template-functions.php:431
+#: inc/template-functions.php:373
 msgid "Twitter"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:161
-#: inc/template-functions.php:481
+#: inc/template-functions.php:423
 msgid "Instagram"
 msgstr ""
 
@@ -1281,11 +1273,6 @@ msgstr ""
 msgid "WooCommerce Single Product Page Layout"
 msgstr ""
 
-#: inc/freemius/freemius-migration.php:205
-#: inc/freemius/freemius-migration.php:206
-msgid "License Manager"
-msgstr ""
-
 #: inc/meta-boxes/class-colormag-meta-box-page-settings.php:103
 msgid "Select Layout"
 msgstr ""
@@ -1313,39 +1300,31 @@ msgstr ""
 msgid "Any confusion?"
 msgstr ""
 
-#: inc/template-functions.php:374
-msgid "WordPress"
-msgstr ""
-
-#: inc/template-functions.php:383
-msgid "ColorMag Pro"
-msgstr ""
-
-#: inc/template-functions.php:396
+#: inc/template-functions.php:338
 msgid "Total Views"
 msgstr ""
 
-#: inc/template-functions.php:427
+#: inc/template-functions.php:369
 msgid "User Social Links"
 msgstr ""
 
-#: inc/template-functions.php:451
+#: inc/template-functions.php:393
 msgid "Google Plus"
 msgstr ""
 
-#: inc/template-functions.php:461
+#: inc/template-functions.php:403
 msgid "Flickr"
 msgstr ""
 
-#: inc/template-functions.php:471
+#: inc/template-functions.php:413
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/template-functions.php:491
+#: inc/template-functions.php:433
 msgid "Tumblr"
 msgstr ""
 
-#: inc/template-functions.php:501
+#: inc/template-functions.php:443
 msgid "Youtube"
 msgstr ""
 
@@ -1357,184 +1336,184 @@ msgstr ""
 msgid "min read"
 msgstr ""
 
-#: inc/template-tags.php:512
+#: inc/template-tags.php:478
 msgid "Euro Member Countries"
 msgstr ""
 
-#: inc/template-tags.php:513
+#: inc/template-tags.php:479
 msgid "Australian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:514
+#: inc/template-tags.php:480
 msgid "Bulgarian Lev"
 msgstr ""
 
-#: inc/template-tags.php:515
+#: inc/template-tags.php:481
 msgid "Brazilian Real"
 msgstr ""
 
-#: inc/template-tags.php:516
+#: inc/template-tags.php:482
 msgid "Canadian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:517
+#: inc/template-tags.php:483
 msgid "Swiss Franc"
 msgstr ""
 
-#: inc/template-tags.php:518
+#: inc/template-tags.php:484
 msgid "Chinese Yuan Renminbi"
 msgstr ""
 
-#: inc/template-tags.php:519
+#: inc/template-tags.php:485
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: inc/template-tags.php:520
+#: inc/template-tags.php:486
 msgid "Danish Krone"
 msgstr ""
 
-#: inc/template-tags.php:521
+#: inc/template-tags.php:487
 msgid "British Pound"
 msgstr ""
 
-#: inc/template-tags.php:522
+#: inc/template-tags.php:488
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: inc/template-tags.php:523
+#: inc/template-tags.php:489
 msgid "Croatian Kuna"
 msgstr ""
 
-#: inc/template-tags.php:524
+#: inc/template-tags.php:490
 msgid "Hungarian Forint"
 msgstr ""
 
-#: inc/template-tags.php:525
+#: inc/template-tags.php:491
 msgid "Indonesian Rupiah"
 msgstr ""
 
-#: inc/template-tags.php:526
+#: inc/template-tags.php:492
 msgid "Israeli Shekel"
 msgstr ""
 
-#: inc/template-tags.php:527
+#: inc/template-tags.php:493
 msgid "Indian Rupee"
 msgstr ""
 
-#: inc/template-tags.php:528
+#: inc/template-tags.php:494
 msgid "Japanese Yen"
 msgstr ""
 
-#: inc/template-tags.php:529
+#: inc/template-tags.php:495
 msgid "Korean (South) Won"
 msgstr ""
 
-#: inc/template-tags.php:530
+#: inc/template-tags.php:496
 msgid "Mexican Peso"
 msgstr ""
 
-#: inc/template-tags.php:531
+#: inc/template-tags.php:497
 msgid "Malaysian Ringgit"
 msgstr ""
 
-#: inc/template-tags.php:532
+#: inc/template-tags.php:498
 msgid "Norwegian Krone"
 msgstr ""
 
-#: inc/template-tags.php:533
+#: inc/template-tags.php:499
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: inc/template-tags.php:534
+#: inc/template-tags.php:500
 msgid "Philippine Peso"
 msgstr ""
 
-#: inc/template-tags.php:535
+#: inc/template-tags.php:501
 msgid "Polish Zloty"
 msgstr ""
 
-#: inc/template-tags.php:536
+#: inc/template-tags.php:502
 msgid "Romanian (New) Leu"
 msgstr ""
 
-#: inc/template-tags.php:537
+#: inc/template-tags.php:503
 msgid "Russian Ruble"
 msgstr ""
 
-#: inc/template-tags.php:538
+#: inc/template-tags.php:504
 msgid "Swedish Krona"
 msgstr ""
 
-#: inc/template-tags.php:539
+#: inc/template-tags.php:505
 msgid "Singapore Dollar"
 msgstr ""
 
-#: inc/template-tags.php:540
+#: inc/template-tags.php:506
 msgid "Thai Baht"
 msgstr ""
 
-#: inc/template-tags.php:541
+#: inc/template-tags.php:507
 msgid "Turkish Lira"
 msgstr ""
 
-#: inc/template-tags.php:542
+#: inc/template-tags.php:508
 msgid "United States Dollar"
 msgstr ""
 
-#: inc/template-tags.php:543
+#: inc/template-tags.php:509
 msgid "South African Rand"
 msgstr ""
 
-#: inc/template-tags.php:574
+#: inc/template-tags.php:540
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:576
+#: inc/template-tags.php:542
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:603
+#: inc/template-tags.php:569
 #. Translators: 1. Comment date, 2. Comment time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:616
+#: inc/template-tags.php:582
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:627
+#: inc/template-tags.php:593
 msgid "Reply"
 msgstr ""
 
-#: inc/template-tags.php:666
+#: inc/template-tags.php:632
 msgid "0 View"
 msgstr ""
 
-#: inc/template-tags.php:669
+#: inc/template-tags.php:635
 #. Translators: %s Post view count
 msgid "%s Views"
 msgstr ""
 
-#: inc/template-tags.php:868
+#: inc/template-tags.php:834
 #. Translators: 1. Post link, 2. Post time, 3. Post date
 msgid ""
 "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" "
 "rel=\"bookmark\">%3$s %4$s</a></span>"
 msgstr ""
 
-#: inc/template-tags.php:920
+#: inc/template-tags.php:886
 msgid " 0 Comments"
 msgstr ""
 
-#: inc/template-tags.php:921
+#: inc/template-tags.php:887
 msgid " 1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:922
+#: inc/template-tags.php:888
 msgid " % Comments"
 msgstr ""
 
-#: inc/template-tags.php:946
+#: inc/template-tags.php:912
 msgid ", "
 msgstr ""
 
@@ -1990,7 +1969,7 @@ msgstr ""
 msgid "Gutenberg Block / Page Builder (ColorMag)"
 msgstr ""
 
-#: comments.php:45 inc/ajax.php:207
+#: comments.php:45 inc/ajax.php:60
 #. Translators: %1$s: Comment count, %2$s: Post title
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"

@@ -56,7 +56,7 @@ class ColorMag_Date_Control extends ColorMag_Customize_Base_Additional_Control {
 			<# if ( data.label ) { #><span class="customize-control-label">{{{ data.label }}}</span><# } #>
 			<# if ( data.description ) { #><span class="description customize-control-description">{{{ data.description }}}</span><# } #>
 			<div class="customize-control-content">
-				<input class="datepicker" type="text" name="_customize-date-{{ data.id }}" value="{{ data.value }}" placeholder="<?php esc_html_e( 'Select Date', 'colormag' ); ?>" readonly/>
+				<input class="datepicker" type="text" name="_customize-date-{{ data.id }}" value="{{ data.value }}" placeholder="<?php esc_attr_e( 'Select Date', 'colormag' ); ?>" readonly/>
 			</div>
 		</label>
 		<?php

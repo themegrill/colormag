@@ -264,10 +264,17 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 	 */
 	function colormag_footer_copyright() {
 
-		$default_footer_value      = esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag') . '[tg-link]' .  esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].';
-		$colormag_footer_copyright = $default_footer_value;
+		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 
-		echo do_shortcode( $colormag_footer_copyright );
+		$wp_link = '<a href="https://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'colormag' ) . '" rel="nofollow"><span>' . esc_html__( 'WordPress', 'colormag' ) . '</span></a>';
+
+		$tg_link = '<a href="https://themegrill.com/themes/colormag" target="_blank" title="' . esc_attr__( 'ColorMag', 'colormag' ) . '" rel="nofollow"><span>' . esc_html__( 'ColorMag', 'colormag' ) . '</span></a>';
+
+		$default_footer_value = sprintf( /* Translators: %1$s: Current year, %2$s: Site link */ esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ) . '<br>' . sprintf( /* Translators: %1$s: Theme name, %2$s: ThemeGrill site link */ esc_html__( 'Theme: %1$s by %2$s.', 'colormag' ),  $tg_link, 'ThemeGrill' ) . ' ' . sprintf( /* Translators: %s: WordPress link */ esc_html__( 'Powered by %s.', 'colormag' ), $wp_link );
+
+		$colormag_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
+
+		echo $colormag_footer_copyright; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 	}
 

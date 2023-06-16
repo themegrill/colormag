@@ -420,40 +420,6 @@ if ( ! function_exists( 'colormag_date_display' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_get_embed_data' ) ) :
-
-	/**
-	 * Get Thumbnails and Embed URL from Youtube and Vimeo Link.
-	 *
-	 * @param string $video_url Video link.
-	 *
-	 * @return array $embed_data
-	 */
-	function colormag_get_embed_data( $video_url ) {
-
-		$embed_data = array();
-
-		$youtube_thumbnail_base = 'https://i.ytimg.com/vi/';
-		$youtube_player_base    = 'https://www.youtube.com/embed/';
-		$vimeo_thumbnail_base   = 'https://i.vimeocdn.com/video/';
-		$vimeo_player_base      = 'https://player.vimeo.com/video/';
-
-		if ( preg_match( "#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $video_url, $matches ) ) {
-			$embed_data['id']    = $matches[0];
-			$embed_data['thumb'] = $youtube_thumbnail_base . $embed_data['id'] . '/default.jpg';
-			$embed_data['url']   = $youtube_player_base . $embed_data['id'] . '?enablejsapi=1&amp;rel=0&amp;showinfo=0';
-		} elseif ( preg_match( '/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/', $video_url, $matches ) ) {
-			$embed_data['id']    = $matches[5];
-			$embed_data['thumb'] = $vimeo_thumbnail_base . $embed_data['id'];
-			$embed_data['url']   = $vimeo_player_base . $embed_data['id'] . '?api=1&amp;title=0&amp;byline=0';
-		}
-
-		return $embed_data;
-
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_get_weather_color' ) ) :
 
 	/**

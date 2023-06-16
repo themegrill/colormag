@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== Version 3.0 - 2023-06-15 ==
+== Version 3.0 - 2023-06-16 ==
 * Enhancement - Overall UI/UX improvements of frontend side of the theme
 
 * Enhancement - Responsiveness and mobile-first design
