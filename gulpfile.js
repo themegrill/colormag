@@ -93,6 +93,10 @@ var paths = {
 			src  : [ './style.css' ],
 			dest : './'
 		},
+		woocommerceStyle             : {
+			src  : [ './woocommerce.css' ],
+			dest : './'
+		},
 		blockStyle        : {
 			src  : [ './style-editor-block.css' ],
 			dest : './'

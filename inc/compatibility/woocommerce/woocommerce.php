@@ -147,3 +147,110 @@ function colormag_wrapper_end() {
 }
 
 add_action( 'woocommerce_after_main_content', 'colormag_wrapper_end', 10 );
+
+
+function colormag_is_wc_shop() {
+
+	return ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() );
+}
+
+if ( ! function_exists( 'colormag_woocommerce_main_section_inner_end' ) ) :
+
+	/**
+	 *  Main section inner ends.
+	 */
+	function colormag_woocommerce_main_section_inner_end() {
+
+		if ( colormag_is_wc_shop() || is_product() ) {
+
+			echo '</div>';
+		}
+	}
+
+endif;
+
+add_action( 'colormag_action_after_inner_content', 'colormag_woocommerce_main_section_inner_end',11 );
+
+if ( ! function_exists( 'colormag_woocommerce_main_section_inner_start' ) ) :
+
+	/**
+	 * Main section inner starts.
+	 */
+	function colormag_woocommerce_main_section_inner_start() {
+
+		if ( colormag_is_wc_shop() || is_product() ) {
+
+			echo '<div class="cm-row">';
+		}
+	}
+
+endif;
+
+add_action( 'colormag_action_before_inner_content', 'colormag_woocommerce_main_section_inner_start', 11 );
+
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+function colormag_enqueue_wc_scripts() {
+
+	wp_enqueue_style( 'colormag-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array( 'colormag_style' ), COLORMAG_THEME_VERSION );
+
+	add_filter( 'colormag_dynamic_theme_wc_css', array( 'ColorMag_Dynamic_CSS', 'render_wc_output' ) );
+
+	// Generate dynamic CSS to add inline styles for the theme.
+	$theme_dynamic_css = apply_filters( 'colormag_dynamic_theme_wc_css', '' );
+
+	wp_add_inline_style( 'colormag-woocommerce-style', $theme_dynamic_css );
+
+	$font_path   = WC()->plugin_url() . '/assets/fonts/';
+	$inline_font = '
+	@font-face {
+		font-family: "star";
+		src: url("' . $font_path . 'star.eot");
+		src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
+			url("' . $font_path . 'star.woff") format("woff"),
+			url("' . $font_path . 'star.ttf") format("truetype"),
+			url("' . $font_path . 'star.svg#star") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "WooCommerce";
+		src: url("' . $font_path . 'WooCommerce.eot");
+		src: url("' . $font_path . 'WooCommerce.eot?#iefix") format("embedded-opentype"),
+			url("' . $font_path . 'WooCommerce.woff") format("woff"),
+			url("' . $font_path . 'WooCommerce.ttf") format("truetype"),
+			url("' . $font_path . 'WooCommerce.svg#star") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}
+	';
+
+	wp_add_inline_style( 'colormag-woocommerce-style', $inline_font );
+}
+add_action( 'wp_enqueue_scripts', 'colormag_enqueue_wc_scripts', 11 );
+
+/**
+ * Opening element for filter wrapper at the top of WC pages.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+	 */
+function colormag_woocommerce_filter_wrapper_before() {
+		echo '<div class="cm-wc-filter">';
+}
+
+/**
+ * Closing element for filter wrapper at the top of WC pages.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function colormag_woocommerce_filter_wrapper_after() {
+	echo '</div><!-- /.cm-wc-filter -->';
+}
+
+// Add filter wrapper.
+add_action( 'woocommerce_before_shop_loop', 'colormag_woocommerce_filter_wrapper_before', 10 );
+add_action( 'woocommerce_before_shop_loop', 'colormag_woocommerce_filter_wrapper_after', 30 );

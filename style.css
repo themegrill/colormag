@@ -2155,6 +2155,69 @@ li.default-menu {
 	transform: translateX(0);
 }
 
+/* Posts Pagination.
+--------------------------------------------- */
+.page-numbers {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-line-pack: justify;
+	align-content: space-between;
+	gap: 6px;
+	text-align: center;
+}
+
+.page-numbers a,
+.page-numbers span {
+	display: block;
+}
+
+.page-numbers li {
+	display: inline-block;
+}
+
+.page-numbers li:hover > a {
+	background-color: #ebebec;
+}
+
+.page-numbers li:first-child {
+	margin-left: 0;
+}
+
+.page-numbers li:last-child {
+	margin-right: 0;
+}
+
+.page-numbers li > a,
+.page-numbers li > span {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	width: 32px;
+	height: 32px;
+	border-radius: 4px;
+	border: 1px solid #f4f4f5;
+	background-color: #fff;
+	color: #3f3f46;
+	font-size: 14px;
+	padding: 8px;
+	font-weight: 400;
+}
+
+.page-numbers li .fa {
+	color: #3f3f46;
+}
+
+.page-numbers .current {
+	background-color: #207daf;
+	color: #fff;
+}
+
 /*--------------------------------------------------------------
 Styles for separating single posts loaded from ajax call.
 --------------------------------------------------------------*/
