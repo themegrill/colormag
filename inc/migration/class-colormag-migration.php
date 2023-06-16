@@ -349,6 +349,9 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					remove_theme_mod( $option['old_key'] );
 				}
 			}
+
+			// Set flag to not repeat the migration process, ie, run it only once.
+			update_option( 'colormag_free_major_update_customizer_migration_v1', true );
 		}
 
 		/**
