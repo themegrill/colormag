@@ -65,8 +65,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-TBD
+== Version TBD ==
 * Fix - Missing commenter author name.
+* Fix - Gutenberg editor skin color.
+
+== Version 3.0.0.3 - 2023-06-16 ==
+* Tweak - Minor change.
 
 == Version 3.0.0.2 - 2023-06-16 ==
 * Tweak - Minor change.
