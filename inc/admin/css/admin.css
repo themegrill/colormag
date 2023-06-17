@@ -431,3 +431,16 @@ a.colormag-message-close:before {
 		flex-direction: row;
 	}
 }
+
+.demo-import-migrate-notice .colormag-message__image .colormag-screenshot {
+	height: 100px;
+	width: 100px;
+}
+
+.demo-import-migrate-notice .colormag-message__content .colormag-message__image {
+	flex: 0;
+}
+
+.demo-import-migrate-notice .colormag-message__content {
+	max-width: 768px;
+}

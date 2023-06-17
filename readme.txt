@@ -65,10 +65,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== Version TBD ==
+== Version 3.0.0.4 - 2023-06-17 ==
 * Fix - Missing commenter author name.
 * Fix - Gutenberg editor skin color.
 * Fix - Comment & Tag meta missing on post meta section.
+* Fix - Dashboard notice dismiss button issue.
 
 == Version 3.0.0.3 - 2023-06-16 ==
 * Tweak - Minor change.

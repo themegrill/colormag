@@ -16,18 +16,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Display the admin notice for demo import customize migration.
  */
 function colormag_demo_import_migration_notice() {
-	$demo_imported  = get_option( 'themegrill_demo_importer_activated_id' );
+	//  $demo_imported  = get_option( 'themegrill_demo_importer_activated_id' );
 	$notice_dismiss = get_option( 'colormag_demo_import_migration_notice_dismiss' );
 
 	if ( ! $notice_dismiss ) :
-
-		if ( $demo_imported && ( strpos( $demo_imported, 'colormag' ) !== false ) ) :
-			?>
+		//
+		//      if ( $demo_imported && ( strpos( $demo_imported, 'colormag' ) !== false ) ) :
+		?>
 			<div class="notice notice-success colormag-notice demo-import-migrate-notice" style="position:relative;">
+				<div class="colormag-message__content">
+					<div class="colormag-message__image">
+						<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/colormag-logo-square.jpg" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+					</div>
+					<div class="colormag-message__text">
 				<p>
 					<?php
 					esc_html_e(
-						'It looks like you have imported one of the demos recently. Please check your site, if fonts and background are not the same as in the demo. Please click the \'Fix Imported Demo\' button below.',
+						'It seems you&#39;ve either imported ColorMag demos recently or updated ColorMag to 3.0 version. After these actions, if you&#39;ve seen any design issues in your site, please try clicking the button below:',
 						'colormag'
 					);
 					?>
@@ -37,19 +42,22 @@ function colormag_demo_import_migration_notice() {
 					<a href="<?php echo wp_nonce_url( add_query_arg( 'demo-import-migration', 'true' ), 'demo_import_migration', '_demo_import_migration_nonce' ); ?>"
 					   class="btn button-primary"
 					>
-						<span><?php esc_html_e( 'Fix Imported Demo', 'colormag' ); ?></span>
+						<span><?php esc_html_e( 'Fix Migration Issues', 'colormag' ); ?></span>
 					</a>
 
 					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" class="btn button-secondary" target="_blank">
-						<span><?php esc_html_e( 'Any confusion?', 'colormag' ); ?></span>
+						<span><?php esc_html_e( 'Contact Support', 'colormag' ); ?></span>
 					</a>
 				</p>
 
 				<a class="notice-dismiss" href="<?php echo wp_nonce_url( add_query_arg( 'demo-import-migration-notice-dismiss', 'true' ), 'demo_import_migration_notice_dismiss', '_demo_import_migration_notice_dismiss_nonce' ); ?>"></a>
 			</div>
+			</div>
+			</div>
+
 			<?php
 		endif;
-	endif;
+	//  endif;
 }
 
 add_action( 'admin_notices', 'colormag_demo_import_migration_notice' );
