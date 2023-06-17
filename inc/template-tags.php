@@ -553,11 +553,17 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 						<footer class="comment-meta">
 							<div class="comment-author vcard">
 								<?php
-								echo get_avatar( $comment, 74 );
+									echo get_avatar( $comment, 74 );
 								?>
 
 								<b class="fn">
-									<a href="https://wordpress.org/" rel="external nofollow ugc" class="url">A WordPress Commenter</a>
+								<?php
+									printf(
+									get_comment_author_link(),
+									// If current post author is also comment author, make it known visually.
+									( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'colormag' ) . '</span>' : ''
+									);
+									?>
 								</b>
 
 								<div class="comment-metadata">

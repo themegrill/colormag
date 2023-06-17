@@ -2376,6 +2376,11 @@ Styles for separating single posts loaded from ajax call.
 	font-size: 1.2rem;
 }
 
+.comment-awaiting-moderation {
+	margin-top: 16px;
+	margin-left: 60px;
+}
+
 /* Comments Form.
 --------------------------------------------- */
 .comment-respond .comment-reply-title {
