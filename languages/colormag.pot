@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 3.0.0.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-06-17 14:26:03+00:00\n"
+"POT-Creation-Date: 2023-06-17 15:07:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -189,12 +189,14 @@ msgid "Learn about ColorMag 3.0"
 msgstr ""
 
 #: inc/admin/class-colormag-major-update-notice.php:31
+#: inc/migration/demo-import-migration.php:49
 msgid "Contact Support"
 msgstr ""
 
 #: inc/admin/class-colormag-major-update-notice.php:52
 #: inc/admin/class-colormag-major-update-notice.php:63
 #: inc/admin/class-colormag-welcome-notice.php:46
+#: inc/migration/demo-import-migration.php:29
 msgid "Colormag"
 msgstr ""
 
@@ -217,7 +219,7 @@ msgstr ""
 #: inc/admin/class-colormag-major-update-notice.php:90
 #: inc/admin/class-colormag-welcome-notice.php:77
 #: inc/migration/class-colormag-migration.php:365
-#: inc/migration/demo-import-migration.php:64
+#: inc/migration/demo-import-migration.php:72
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
@@ -1285,19 +1287,15 @@ msgstr ""
 msgid "Video URL"
 msgstr ""
 
-#: inc/migration/demo-import-migration.php:29
+#: inc/migration/demo-import-migration.php:34
 msgid ""
-"It looks like you have imported one of the demos recently. Please check "
-"your site, if fonts and background are not the same as in the demo. Please "
-"click the 'Fix Imported Demo' button below."
+"It seems you&#39;ve either imported ColorMag demos recently or updated "
+"ColorMag to 3.0 version. After these actions, if you&#39;ve seen any design "
+"issues in your site, please try clicking the button below:"
 msgstr ""
 
-#: inc/migration/demo-import-migration.php:40
-msgid "Fix Imported Demo"
-msgstr ""
-
-#: inc/migration/demo-import-migration.php:44
-msgid "Any confusion?"
+#: inc/migration/demo-import-migration.php:45
+msgid "Fix Migration Issues"
 msgstr ""
 
 #: inc/template-functions.php:327
