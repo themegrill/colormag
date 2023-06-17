@@ -27,6 +27,8 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 				'categories',
 				'author',
 				'date',
+				'comments',
+				'tags',
 			);
 
 		$human_diff_time = '';
@@ -915,7 +917,7 @@ if ( ! function_exists( 'colormag_tags_meta_markup' ) ) :
 	 * @return void
 	 */
 	function colormag_tags_meta_markup() {
-		$tags_list = get_the_tag_list( '<span class="tag-links"' . '><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
+		$tags_list = get_the_tag_list( '<span class="cm-tag-links"' . '>'. colormag_get_icon( 'tag', false) .' ', __( ', ', 'colormag' ), '</span>' );
 
 		if ( $tags_list ) {
 			echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
