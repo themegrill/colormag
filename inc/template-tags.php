@@ -302,18 +302,6 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 			'colormag_social_instagram'   => 'Instagram',
 			'colormag_social_pinterest'   => 'Pinterest',
 			'colormag_social_youtube'     => 'YouTube',
-			'colormag_social_vimeo'       => 'Vimeo-Square',
-			'colormag_social_linkedin'    => 'LinkedIn',
-			'colormag_social_delicious'   => 'Delicious',
-			'colormag_social_flickr'      => 'Flickr',
-			'colormag_social_skype'       => 'Skype',
-			'colormag_social_soundcloud'  => 'SoundCloud',
-			'colormag_social_vine'        => 'Vine',
-			'colormag_social_stumbleupon' => 'StumbleUpon',
-			'colormag_social_tumblr'      => 'Tumblr',
-			'colormag_social_reddit'      => 'Reddit',
-			'colormag_social_xing'        => 'Xing',
-			'colormag_social_vk'          => 'VK',
 		);
 
 		$colormag_additional_social_link = array(
