@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+== TBD ==
+* Fix - Missing deprecated functions issue.
+
 == Version 3.0.0.4 - 2023-06-17 ==
 * Fix - Missing commenter author name.
 * Fix - Gutenberg editor skin color.
