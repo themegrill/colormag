@@ -66,7 +66,7 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 			// Edit button remove option add.
 			if ( $full_post_meta ) {
-				edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link">'. colormag_get_icon( 'edit', false) .' ', '</span>' );
+				edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link">' . colormag_get_icon( 'edit', false ) . ' ', '</span>' );
 			}
 
 			echo '</div>';
@@ -249,9 +249,9 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 			$layout_meta = 'default_layout';
 		}
 
-		$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
-		$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
-		$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
+		$colormag_default_sidebar_layout = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+		$colormag_page_sidebar_layout    = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+		$colormag_default_post_layout    = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 		if ( 'default_layout' === $layout_meta ) {
 
@@ -297,32 +297,11 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 		}
 
 		$colormag_social_links = array(
-			'colormag_social_facebook'    => 'Facebook',
-			'colormag_social_twitter'     => 'Twitter',
-			'colormag_social_instagram'   => 'Instagram',
-			'colormag_social_pinterest'   => 'Pinterest',
-			'colormag_social_youtube'     => 'YouTube',
-			'colormag_social_vimeo'       => 'Vimeo-Square',
-			'colormag_social_linkedin'    => 'LinkedIn',
-			'colormag_social_delicious'   => 'Delicious',
-			'colormag_social_flickr'      => 'Flickr',
-			'colormag_social_skype'       => 'Skype',
-			'colormag_social_soundcloud'  => 'SoundCloud',
-			'colormag_social_vine'        => 'Vine',
-			'colormag_social_stumbleupon' => 'StumbleUpon',
-			'colormag_social_tumblr'      => 'Tumblr',
-			'colormag_social_reddit'      => 'Reddit',
-			'colormag_social_xing'        => 'Xing',
-			'colormag_social_vk'          => 'VK',
-		);
-
-		$colormag_additional_social_link = array(
-			'user_custom_social_links_one'   => __( 'Additional Social Link One', 'colormag' ),
-			'user_custom_social_links_two'   => __( 'Additional Social Link Two', 'colormag' ),
-			'user_custom_social_links_three' => __( 'Additional Social Link Three', 'colormag' ),
-			'user_custom_social_links_four'  => __( 'Additional Social Link Four', 'colormag' ),
-			'user_custom_social_links_five'  => __( 'Additional Social Link Five', 'colormag' ),
-			'user_custom_social_links_six'   => __( 'Additional Social Link Six', 'colormag' ),
+			'colormag_social_facebook'  => 'Facebook',
+			'colormag_social_twitter'   => 'Twitter',
+			'colormag_social_instagram' => 'Instagram',
+			'colormag_social_pinterest' => 'Pinterest',
+			'colormag_social_youtube'   => 'YouTube',
 		);
 		?>
 
@@ -353,38 +332,6 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 
 				// Displays the social links which is set static via theme customize option.
 				echo $colormag_links_output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-				/**
-				 * Social links set which is dynamic via the theme customize option.
-				 */
-				$i                                = 0;
-				$colormag_additional_links_output = '';
-				foreach ( $colormag_additional_social_link as $key => $value ) {
-					$link  = get_theme_mod( $key, '' );
-					$color = get_theme_mod( $key . '_color' );
-
-					if ( ! empty( $link ) ) {
-						$new_tab    = '';
-						$color_code = '';
-
-						// For opening link in new tab.
-						if ( 1 == get_theme_mod( $key . '_checkbox', 0 ) ) {
-							$new_tab = 'target="_blank"';
-						}
-
-						// For color set in customize option.
-						if ( ! empty( $color ) ) {
-							$color_code = ' style="color:' . $color . '"';
-						}
-
-						$colormag_additional_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( get_theme_mod( $key . '_fontawesome' ) ) . '"' . $color_code . '></i></a></li>';
-					}
-
-					$i ++;
-				}
-
-				// Displays the social links which is set dynamic via theme customize option.
-				echo $colormag_additional_links_output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 				?>
 			</ul>
 		</div><!-- .social-links -->
@@ -561,11 +508,11 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 								<b class="fn">
 								<?php
 									printf(
-									get_comment_author_link(),
-									// If current post author is also comment author, make it known visually.
-									( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'colormag' ) . '</span>' : ''
+										get_comment_author_link(),
+										// If current post author is also comment author, make it known visually.
+										( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'colormag' ) . '</span>' : ''
 									);
-									?>
+								?>
 								</b>
 
 								<div class="comment-metadata">
@@ -917,7 +864,7 @@ if ( ! function_exists( 'colormag_tags_meta_markup' ) ) :
 	 * @return void
 	 */
 	function colormag_tags_meta_markup() {
-		$tags_list = get_the_tag_list( '<span class="cm-tag-links"' . '>'. colormag_get_icon( 'tag', false) .' ', __( ', ', 'colormag' ), '</span>' );
+		$tags_list = get_the_tag_list( '<span class="cm-tag-links"' . '>' . colormag_get_icon( 'tag', false ) . ' ', __( ', ', 'colormag' ), '</span>' );
 
 		if ( $tags_list ) {
 			echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped

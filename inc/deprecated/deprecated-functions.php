@@ -12,6 +12,77 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
+
+	/**
+	 * Deprecated function to return the colored category.
+	 */
+	function colormag_top_header_bar_display() {
+
+		_deprecated_function( __FUNCTION__, '4.0.0', 'colormag_header_top()' );
+
+		colormag_header_top();
+
+	}
+
+endif;
+
+if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
+
+	/**
+	 * Deprecated function to return the colored category.
+	 */
+	function colormag_middle_header_bar_display() {
+
+		_deprecated_function( __FUNCTION__, '4.0.0', 'colormag_header_one()' );
+
+		colormag_header_one();
+
+	}
+
+endif;
+
+if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
+
+	/**
+	 * Deprecated function to return the colored category.
+	 */
+	function colormag_below_header_bar_display() {
+
+		_deprecated_function( __FUNCTION__, '4.0.0', 'colormag_header_two()' );
+
+		colormag_header_two();
+
+	}
+
+endif;
+
+if ( ! function_exists( 'colormag_header_nav_container_start' ) ) :
+
+	/**
+	 * Deprecated function to return the colored category.
+	 */
+	function colormag_header_nav_container_start() {
+
+		_deprecated_function( __FUNCTION__, '4.0.0', '' );
+
+	}
+
+endif;
+
+if ( ! function_exists( 'colormag_header_nav_container_end' ) ) :
+
+	/**
+	 * Deprecated function to return the colored category.
+	 */
+	function colormag_header_nav_container_end() {
+
+		_deprecated_function( __FUNCTION__, '4.0.0', '' );
+
+	}
+
+endif;
+
 if ( ! function_exists( 'colormag_colored_category_return' ) ) :
 
 	/**
