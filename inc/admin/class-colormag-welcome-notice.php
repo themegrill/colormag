@@ -11,7 +11,7 @@ class Colormag_Welcome_Notice {
 	}
 
 	public function welcome_notice() {
-		if ( ! get_option( 'colormag_admin_notice_welcome' ) ) {
+		if ( ! get_option( 'colormag_admin_noticewelcome' ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice_markup' ) ); // Show notice.
 		}
 	}
@@ -85,9 +85,9 @@ class Colormag_Welcome_Notice {
 
 			// Hide.
 			if ( 'welcome' === $_GET['colormag-hide-notice'] ) {
-				update_option( 'colormag_admin_notice_' . $hide_notice, 1 );
+				update_option( 'colormag_admin_notice' . $hide_notice, 1 );
 			} else { // Show.
-				delete_option( 'colormag_admin_notice_' . $hide_notice );
+				delete_option( 'colormag_admin_notice' . $hide_notice );
 			}
 		}
 	}
