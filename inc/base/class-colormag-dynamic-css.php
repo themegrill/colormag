@@ -31,112 +31,15 @@ class ColorMag_Dynamic_CSS {
 	 */
 	public static function render_output( $dynamic_css, $dynamic_css_filtered = '' ) {
 
-		/**
-		 * Variable declarations.
-		 */
-		// Header options.
-
-		$primary_menu_text_color                  = get_theme_mod( 'colormag_primary_menu_text_color', '' );
-		$primary_menu_selected_hovered_text_color = get_theme_mod( 'colormag_primary_menu_selected_hovered_text_color', '' );
-		$primary_menu_top_border_color            = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
-
-		$header_background_default       = array(
-			'background-color'      => '#ffffff',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-
-		$primary_menu_background_default     = array(
-			'background-color'      => '#27272A',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-		$primary_sub_menu_background_default = array(
-			'background-color'      => '#232323',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-
-		$header_background           = get_theme_mod( 'colormag_main_header_background', $header_background_default );
-		$primary_menu_background     = get_theme_mod( 'colormag_primary_menu_background', $primary_menu_background_default );
-		$primary_sub_menu_background = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
-		$primary_menu_logo_height    = get_theme_mod( 'colormag_primary_menu_logo_height', '' );
-		$primary_menu_logo_spacing   = get_theme_mod( 'colormag_primary_menu_logo_spacing', '' );
-
-		// Post/Page/Blog options.
-		$post_title_color = get_theme_mod( 'colormag_post_title_color', '#333333' );
-		$page_title_color = get_theme_mod( 'colormag_page_title_color', '#333333' );
-		$post_meta_color  = get_theme_mod( 'colormag_post_meta_color', '#71717A' );
-
-		// Footer options.
-		$footer_copyright_color                       = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
-		$footer_copyright_link_color                  = get_theme_mod( 'colormag_footer_copyright_link_text_color', '#289dcc' );
-		$footer_menu_color                            = get_theme_mod( 'colormag_footer_menu_color', '#b1b6b6' );
-		$footer_menu_hover_color                      = get_theme_mod( 'colormag_footer_menu_hover_color', '#207daf' );
-		$footer_widget_title_color                    = get_theme_mod( 'colormag_footer_widget_title_color', '#ffffff' );
-		$footer_widget_content_color                  = get_theme_mod( 'colormag_footer_widget_content_color', '#ffffff' );
-		$footer_widget_content_link_text_color        = get_theme_mod( 'colormag_footer_widget_content_link_text_color', '#ffffff' );
-		$footer_widget_content_link_text_hover_color  = get_theme_mod( 'colormag_footer_widget_content_link_text_hover_color', '#207daf' );
-		$footer_background_default                    = array(
-			'background-color'      => '',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-		$footer_copyright_background_default          = array(
-			'background-color'      => '',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-		$footer_sidebar_area_background_default       = array(
-			'background-color'      => '',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-		$footer_upper_sidebar_area_background_default = array(
-			'background-color'      => '#2c2e34',
-			'background-image'      => '',
-			'background-position'   => 'center center',
-			'background-size'       => 'auto',
-			'background-attachment' => 'scroll',
-			'background-repeat'     => 'repeat',
-		);
-		$footer_background                            = get_theme_mod( 'colormag_footer_background', $footer_background_default );
-		$footer_copyright_background                  = get_theme_mod( 'colormag_footer_copyright_background', $footer_copyright_background_default );
-		$footer_sidebar_area_background               = get_theme_mod( 'colormag_footer_sidebar_area_background_setting', $footer_sidebar_area_background_default );
-		$footer_upper_sidebar_area_background         = get_theme_mod( 'colormag_footer_upper_sidebar_area_background_setting', $footer_upper_sidebar_area_background_default );
-
-		/**
-		 * Color options.
-		 */
-
-		$sidebar_widget_title_color = get_theme_mod( 'colormag_sidebar_widget_title_color', '#ffffff' );
-
-		/**
-		 * Button.
-		 */
-
 		// Generate dynamic CSS.
 		$parse_css = '';
 
-		// For primary color option.
+
+		/**
+		 * Global.
+		 */
+
+		// Primary Color.
 		$primary_color = get_theme_mod( 'colormag_primary_color', '#207daf' );
 
 		$primary_color_css = array(
@@ -333,6 +236,108 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
+
+		/**
+		 * Variable declarations.
+		 */
+		// Header options.
+
+		$primary_menu_text_color                  = get_theme_mod( 'colormag_primary_menu_text_color', '' );
+		$primary_menu_selected_hovered_text_color = get_theme_mod( 'colormag_primary_menu_selected_hovered_text_color', '' );
+		$primary_menu_top_border_color            = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
+
+		$header_background_default       = array(
+			'background-color'      => '#ffffff',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+
+		$primary_menu_background_default     = array(
+			'background-color'      => '#27272A',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$primary_sub_menu_background_default = array(
+			'background-color'      => '#232323',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+
+		$header_background           = get_theme_mod( 'colormag_main_header_background', $header_background_default );
+		$primary_menu_background     = get_theme_mod( 'colormag_primary_menu_background', $primary_menu_background_default );
+		$primary_sub_menu_background = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
+		$primary_menu_logo_height    = get_theme_mod( 'colormag_primary_menu_logo_height', '' );
+		$primary_menu_logo_spacing   = get_theme_mod( 'colormag_primary_menu_logo_spacing', '' );
+
+		// Post/Page/Blog options.
+		$post_title_color = get_theme_mod( 'colormag_post_title_color', '#333333' );
+		$page_title_color = get_theme_mod( 'colormag_page_title_color', '#333333' );
+		$post_meta_color  = get_theme_mod( 'colormag_post_meta_color', '#71717A' );
+
+		// Footer options.
+		$footer_copyright_color                       = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
+		$footer_copyright_link_color                  = get_theme_mod( 'colormag_footer_copyright_link_text_color', '#289dcc' );
+		$footer_menu_color                            = get_theme_mod( 'colormag_footer_menu_color', '#b1b6b6' );
+		$footer_menu_hover_color                      = get_theme_mod( 'colormag_footer_menu_hover_color', '#207daf' );
+		$footer_widget_title_color                    = get_theme_mod( 'colormag_footer_widget_title_color', '#ffffff' );
+		$footer_widget_content_color                  = get_theme_mod( 'colormag_footer_widget_content_color', '#ffffff' );
+		$footer_widget_content_link_text_color        = get_theme_mod( 'colormag_footer_widget_content_link_text_color', '#ffffff' );
+		$footer_widget_content_link_text_hover_color  = get_theme_mod( 'colormag_footer_widget_content_link_text_hover_color', '#207daf' );
+		$footer_background_default                    = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$footer_copyright_background_default          = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$footer_sidebar_area_background_default       = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$footer_upper_sidebar_area_background_default = array(
+			'background-color'      => '#2c2e34',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$footer_background                            = get_theme_mod( 'colormag_footer_background', $footer_background_default );
+		$footer_copyright_background                  = get_theme_mod( 'colormag_footer_copyright_background', $footer_copyright_background_default );
+		$footer_sidebar_area_background               = get_theme_mod( 'colormag_footer_sidebar_area_background_setting', $footer_sidebar_area_background_default );
+		$footer_upper_sidebar_area_background         = get_theme_mod( 'colormag_footer_upper_sidebar_area_background_setting', $footer_upper_sidebar_area_background_default );
+
+		/**
+		 * Color options.
+		 */
+
+		$sidebar_widget_title_color = get_theme_mod( 'colormag_sidebar_widget_title_color', '#ffffff' );
+
+		/**
+		 * Button.
+		 */
 
 		$container_width_default = array(
 			'size' => 1140,
