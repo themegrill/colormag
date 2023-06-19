@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== TBD ==
+== Version 3.0.0.6 - 2023-06-19 ==
 * Fix - Featured Category Slider missing issue.
 
 == Version 3.0.0.5 - 2023-06-18 ==
