@@ -393,6 +393,7 @@ textarea {
 p {
 	margin-bottom: 16px;
 	line-height: 1.8;
+	word-break: break-word;
 }
 
 strong {

@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+== Version TBD =
+* Fix - Word break issue.
+
 == Version 3.0.0.3 - 2023-06-16 ==
 * Tweak - Minor change.
 
