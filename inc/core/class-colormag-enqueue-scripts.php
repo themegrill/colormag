@@ -104,7 +104,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			}
 
 			// BxSlider JS.
-			wp_register_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+			wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 			// Sticky Menu.
 			if ( 1 == get_theme_mod( 'colormag_enable_sticky_menu', 0 ) ) {
@@ -157,10 +157,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			// Enqueue bxslider if post has gallery post format.
-			if ( has_post_format( 'gallery' ) || is_home() || is_search() || is_archive() ) {
-				wp_enqueue_script( 'colormag-bxslider' );
-			}
 		}
 
 		/**
@@ -191,7 +187,6 @@ function colormag_get_fonts() {
 	/**
 	 * Header options.
 	 */
-
 
 	/**
 	 * Typography options.
