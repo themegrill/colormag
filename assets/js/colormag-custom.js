@@ -3,7 +3,6 @@
  *
  * @package ColorMag
  */
-
 jQuery( document ).ready(
 	function () {
 
@@ -135,7 +134,7 @@ jQuery( document ).ready(
 				}
 			}
 		);
-		
+
 		// add widget block title class.
 		jQuery( '.wp-block-group__inner-container h2' ).wrap( '<div class="block-title"></div>' );
 		jQuery( '.wp-block-heading' ).wrap( '<div class="block-title"></div>' );
@@ -546,40 +545,6 @@ jQuery( document ).ready(
 				}
 
 			}()
-		);
-
-	}
-);
-
-/**
- * Flyout related posts featured JS setting.
- */
-jQuery(
-	function () {
-
-		// Flyout related post.
-		var related_posts_flyout_wrapper = jQuery( '#related-posts-wrapper-flyout' );
-
-		function colormag_flyout_posts_window_scroll() {
-			var primary_height = jQuery( '#cm-primary' ).outerHeight();
-			var window_height  = jQuery( this ).scrollTop() + jQuery( this ).height();
-			var window_bottom  = jQuery( document ).height() - window_height;
-
-			if ( window_height > window_bottom ) {
-				related_posts_flyout_wrapper.addClass( 'flyout' );
-			} else {
-				related_posts_flyout_wrapper.removeClass( 'flyout' );
-			}
-		}
-
-		jQuery( window ).on( 'scroll', colormag_flyout_posts_window_scroll );
-
-		jQuery( '#flyout-related-post-close' ).click(
-			function () {
-				related_posts_flyout_wrapper.removeClass( 'flyout' );
-
-				jQuery( window ).off( 'scroll', colormag_flyout_posts_window_scroll );
-			}
 		);
 
 	}
