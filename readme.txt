@@ -65,9 +65,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== Version TBD =
+== Version 3.0.0.7 - 2023-06-19 ==
 * Fix - Word break issue.
 * Fix - Featured Category slider issue on refresh.
+* Fix - Dashboard notice dismiss button.
 
 == Version 3.0.0.6 - 2023-06-19 ==
 * Fix - Featured Category Slider not appearing.
