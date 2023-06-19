@@ -2875,6 +2875,11 @@ Styles for separating single posts loaded from ajax call.
 	color: #fff;
 }
 
+.cm-slider-area-rotate {
+	visibility: hidden;
+	height: 0;
+}
+
 @media screen and (min-width: 48em) {
 	.cm-featured-category-slider .cm-entry-title {
 		font-size: 2.4rem;

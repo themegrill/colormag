@@ -67,9 +67,10 @@ and we will include it within the theme from next version update.
 == Changelog ==
 == Version TBD =
 * Fix - Word break issue.
+* Fix - Featured Category slider issue on refresh.
 
 == Version 3.0.0.6 - 2023-06-19 ==
-* Fix - Featured Category Slider missing issue.
+* Fix - Featured Category Slider not appearing.
 
 == Version 3.0.0.5 - 2023-06-18 ==
 * Fix - Missing deprecated functions issue.
