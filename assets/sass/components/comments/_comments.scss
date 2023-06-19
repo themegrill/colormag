@@ -116,6 +116,11 @@
 	@include font-size("font-size-xxs");
 }
 
+.comment-awaiting-moderation {
+	margin-top:length( 'l-8' );
+	margin-left: length( 'l-30' );
+}
+
 /* Comments Form.
 --------------------------------------------- */
 .comment-respond {

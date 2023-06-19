@@ -25,12 +25,12 @@ var paths = {
 
 	js : {
 		src  : [
-			'assets/js/*.js',
-			'!assets/js/*.min.js',
-			'assets/js/**/*.js',
-			'!assets/js/**/*.min.js'
+			'./assets/js/*.js',
+			'!./assets/js/*.min.js',
+			'./assets/js/**/*.js',
+			'!./assets/js/**/*.min.js'
 		],
-		dest : 'assets/js/'
+		dest : './assets/js/'
 	},
 
 	customizePreviewJS : {

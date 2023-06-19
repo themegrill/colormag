@@ -269,10 +269,6 @@
 }
 
 /* Sliders */
-
-.cm-slider-area-rotate,
-.cm-featured-posts--style-5 .cm-highlighted-post,
-.thumbnail-big-sliders,
 .cm-image-ticker-news {
 	visibility: hidden;
 	height: 0;
@@ -281,18 +277,13 @@
 /* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
 
 .mega-menu {
-	.cm-slider-area-rotate,
-	.cm-featured-posts--style-5 .cm-highlighted-post,
-	.thumbnail-big-sliders,
 	.cm-image-ticker-news,
 	.cm-breaking-news-slider-widget {
 		visibility: hidden !important;
 	}
 
 	.mega-toggle-on {
-		.cm-slider-area-rotate,
-		.cm-featured-posts--style-5 .cm-highlighted-post,
-		.thumbnail-big-sliders,
+		.cm-slider-area-rotate
 		.cm-image-ticker-news,
 		.cm-breaking-news-slider-widget {
 			visibility: visible !important;

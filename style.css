@@ -5,7 +5,7 @@ Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
-Version: 3.0.0.3
+Version: 3.0.0.6
 Tested up to: 5.5
 Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
@@ -2375,6 +2375,11 @@ Styles for separating single posts loaded from ajax call.
 
 .comment-edit-link {
 	font-size: 1.2rem;
+}
+
+.comment-awaiting-moderation {
+	margin-top: 16px;
+	margin-left: 60px;
 }
 
 /* Comments Form.
@@ -6196,27 +6201,19 @@ blockquote.wp-block-quote.has-text-align-right {
 }
 
 /* Sliders */
-.cm-slider-area-rotate,
-.cm-featured-posts--style-5 .cm-highlighted-post,
-.thumbnail-big-sliders,
 .cm-image-ticker-news {
 	visibility: hidden;
 	height: 0;
 }
 
 /* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
-.mega-menu .cm-slider-area-rotate,
-.mega-menu .cm-featured-posts--style-5 .cm-highlighted-post,
-.mega-menu .thumbnail-big-sliders,
 .mega-menu .cm-image-ticker-news,
 .mega-menu .cm-breaking-news-slider-widget {
 	visibility: hidden !important;
 }
 
-.mega-menu .mega-toggle-on .cm-slider-area-rotate,
-.mega-menu .mega-toggle-on .cm-featured-posts--style-5 .cm-highlighted-post,
-.mega-menu .mega-toggle-on .thumbnail-big-sliders,
-.mega-menu .mega-toggle-on .cm-image-ticker-news,
+.mega-menu .mega-toggle-on .cm-slider-area-rotate
+.cm-image-ticker-news,
 .mega-menu .mega-toggle-on .cm-breaking-news-slider-widget {
 	visibility: visible !important;
 }

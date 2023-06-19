@@ -298,17 +298,6 @@ function colormag_body_class( $classes ) {
 
 add_filter( 'body_class', 'colormag_body_class' );
 
-function gutenberg_editor_layout_class( $classes ) {
-
-	if ( 'dark' === get_theme_mod( 'colormag_color_skin_setting', 'white' ) ) {
-		$classes .= ' dark-skin';
-	}
-
-	return $classes;
-
-}
-add_filter( 'admin_body_class', 'gutenberg_editor_layout_class' );
-
 /**
  * List of allowed social protocols in HTML attributes.
  *
