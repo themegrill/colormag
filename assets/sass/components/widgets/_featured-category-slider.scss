@@ -82,6 +82,11 @@
 	}
 }
 
+.cm-slider-area-rotate {
+	visibility: hidden;
+	height: 0
+}
+
 @include breakpoint("mdm") {
 
 	.cm-featured-category-slider {
