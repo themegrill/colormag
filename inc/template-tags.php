@@ -527,7 +527,13 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 											)
 										); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
+										printf(
+											'<a class="comment-permalink" href="%1$s">' . colormag_get_icon( 'permalink', false ) . esc_html__( 'Permalink', 'colormag' ) . '</a>',
+											esc_url( get_comment_link( $comment->comment_ID ) )
+										); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+
 										edit_comment_link();
+
 									?>
 								</div>
 							</div>

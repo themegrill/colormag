@@ -23,7 +23,7 @@
 	.comment-metadata {
 		display: flex;
 		align-items: center;
-		gap: 12px;
+		gap: 8px;
 		margin-left: length( 'l-30' );
 	}
 
@@ -63,7 +63,8 @@
 		}
 	}
 
-	.comment-date-time {
+	.comment-date-time,
+	.comment-permalink {
 		display: flex;
 		align-items: center;
 		gap: 6px;
@@ -71,6 +72,13 @@
 		font-weight: 400;
 		line-height: 1.8;
 		color: $color__gray-500;
+	}
+
+	.comment-permalink {
+
+		&:hover {
+			color: $color__primary;
+		}
 	}
 
 	.comment-reply-link {

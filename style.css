@@ -2288,7 +2288,7 @@ Styles for separating single posts loaded from ajax call.
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 12px;
+	gap: 8px;
 	margin-left: 60px;
 }
 
@@ -2324,7 +2324,8 @@ Styles for separating single posts loaded from ajax call.
 	word-wrap: break-word;
 }
 
-.comments-area .comment-date-time {
+.comments-area .comment-date-time,
+.comments-area .comment-permalink {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2336,6 +2337,10 @@ Styles for separating single posts loaded from ajax call.
 	font-weight: 400;
 	line-height: 1.8;
 	color: #71717a;
+}
+
+.comments-area .comment-permalink:hover {
+	color: #207daf;
 }
 
 .comments-area .comment-reply-link {

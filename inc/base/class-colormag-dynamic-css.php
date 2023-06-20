@@ -172,7 +172,8 @@ class ColorMag_Dynamic_CSS {
 			.wp-block-button .wp-block-button__link:hover,
 			.cm-button:hover,
 			.wp-element-button:hover,
-			li.product .added_to_cart:hover'
+			li.product .added_to_cart:hover,
+			.comments-area .comment-permalink:hover'
 			=> array(
 				'color' => esc_html( $primary_color ),
 			),
