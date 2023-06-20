@@ -86,13 +86,6 @@
 				cursor: not-allowed;
 			}
 		}
-
-		.search-icon {
-			all: unset;
-			display: flex;
-			width: 100%;
-			justify-content: flex-end;
-		}
 	}
 
 	.coupon {
@@ -196,14 +189,11 @@
 
 		.actions {
 
-			.search-icon {
-				float: right;
-				width: unset;
-			}
-
 			.button {
 
 				&[aria-disabled="true"] {
+					float: right;
+					width: unset;
 					margin-top: 0;
 				}
 			}
@@ -216,10 +206,6 @@
 
 	.cart-collaterals {
 		flex-basis: 50%;
-
-		.search-icon {
-			all: unset;
-		}
 	}
 }
 

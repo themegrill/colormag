@@ -1277,6 +1277,7 @@ table td {
 	padding: 14px;
 	color: #fff;
 	background-color: #207daf;
+	font-size: 1.4rem;
 	border-radius: 4px 0 0 4px;
 	line-height: 0.8;
 }
@@ -3119,22 +3120,21 @@ Styles for separating single posts loaded from ajax call.
 }
 
 /* Widget Search.
---------------------------------------------- */
+	--------------------------------------------- */
 .wp-block-search .wp-block-search__label {
 	display: none;
 }
 
 .wp-block-search .wp-block-search__button {
 	border: 0;
-	padding: 5px 10px;
 	margin-right: 0;
 	border-radius: 4px 0 0 4px;
 }
 
 .wp-block-search .wp-block-search__input {
 	position: relative;
-	font-size: 1.4rem;
 	padding: 12px;
+	font-size: 1.4rem;
 	border: 1px solid #d4d4d8;
 	border-radius: 0 4px 4px 0;
 	line-height: 1.6;
@@ -3145,14 +3145,33 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .wp-block-search .wp-element-button {
-	display: none;
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 48px;
+	padding: 0;
+	color: transparent;
 }
 
-.wp-block-search button {
+.wp-block-search .wp-element-button::before {
+	position: absolute;
+	content: "\f002";
+	color: #fff;
+	font-size: 2rem;
+	font-family: FontAwesome;
+	font-weight: 400;
+}
+
+.wp-block-search .wp-element-button:hover {
 	background-color: #207daf;
-	border-radius: 4px 0 0 4px;
-	padding: 14px;
-	line-height: 0.8;
+	color: transparent;
 }
 
 /* Widget Title.
@@ -5613,11 +5632,6 @@ blockquote.wp-block-quote.has-text-align-right {
 	display: none;
 }
 
-.wp-block-button button {
-	background-color: transparent;
-	padding: 0;
-}
-
 .wp-block-search__inside-wrapper .search-icon::before,
 .search-wrap .search-icon::before {
 	content: "\f002";
@@ -5690,13 +5704,6 @@ blockquote.wp-block-quote.has-text-align-right {
 	position: relative;
 	margin-right: -1em;
 	margin-left: -1em;
-}
-
-.wc-block-product-new .wc-block-grid__product-add-to-cart .search-icon,
-.wc-block-product-best-sellers .wc-block-grid__product-add-to-cart .search-icon,
-.wp-block-product-top-rated .wc-block-grid__product-add-to-cart .search-icon,
-.wc-block-handpicked-products .wc-block-grid__product-add-to-cart .search-icon {
-	all: unset;
 }
 
 .wc-block-product-new .wc-block-grid__product-add-to-cart .wp-block-button__link.wp-element-button,
