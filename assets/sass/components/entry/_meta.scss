@@ -57,6 +57,10 @@
 	}
 }
 
+.cm-tag-links {
+	flex-wrap: wrap;
+}
+
 .cm-total-views {
 	color: $color__gray-500;
 	@include font-size('font-size-xxs');

@@ -2584,6 +2584,11 @@ Styles for separating single posts loaded from ajax call.
 	font-size: 1.2rem;
 }
 
+.cm-tag-links {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
 .cm-total-views {
 	color: #71717a;
 	font-size: 1.2rem;
