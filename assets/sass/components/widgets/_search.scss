@@ -1,39 +1,51 @@
 /* Widget Search.
---------------------------------------------- */
+	--------------------------------------------- */
 .wp-block-search {
 
-    .wp-block-search__label {
-        display: none;
-    }
+	.wp-block-search__label {
+		display: none;
+	}
 
 	.wp-block-search__button {
-        border: 0;
-        padding: 5px 10px;
-        margin-left: 0;
-        border-radius: 0 4px 4px 0;
-    }
+		border: 0;
+		margin-left: 0;
+		border-radius: 0 4px 4px 0;
+	}
 
-    .wp-block-search__input{
-        position: relative;
-        @include font-size("font-size-xs");
-        padding: length( 'l-6' );
-        border: 1px solid $color__gray-300;
-        border-radius: 4px 0 0 4px;
-        line-height: 1.6;
+	.wp-block-search__input{
+		position: relative;
+		padding: length( 'l-6' );
+		@include font-size("font-size-xs");
+		border: 1px solid $color__gray-300;
+		border-radius: 4px 0 0 4px;
+		line-height: 1.6;
 
-        &:focus-visible {
-            outline: none;
-        }
-    }
+		&:focus-visible {
+			outline: none;
+		}
+	}
 
-    .wp-element-button {
-        display: none;
-    }
+	.wp-element-button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		padding: 0;
+		color: transparent;
 
-    button {
-        background-color: $color__primary;
-        border-radius: 0 4px 4px 0;
-        padding: length( l-7 );
-        line-height: 0.8;
-    }
+		&::before {
+			position: absolute;
+			content: "\f002";
+			color: $color__white;
+			@include font-size("font-size-lg");
+			font-family: FontAwesome;
+			font-weight: 400;
+		}
+
+		&:hover {
+			background-color: $color__primary;
+			color: transparent;
+		}
+	}
 }
