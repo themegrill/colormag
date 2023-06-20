@@ -67,6 +67,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 == Version TBD =
 * Fix - Single post navigation width issue.
+* Fix - Highlighted post widget clickable issue.
 
 == Version 3.0.0.7 - 2023-06-19 ==
 * Fix - Word break issue.
