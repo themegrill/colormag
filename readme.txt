@@ -69,6 +69,8 @@ and we will include it within the theme from next version update.
 * Fix - Single post navigation width issue.
 * Fix - Highlighted post widget clickable issue.
 * Fix - Permalink not appearing on comment section.
+* Fix - Various design issue in button block.
+* Fix - Tag links design issue.
 
 == Version 3.0.0.7 - 2023-06-19 ==
 * Fix - Word break issue.

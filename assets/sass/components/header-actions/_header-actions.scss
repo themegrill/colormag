@@ -50,6 +50,7 @@
 		padding: length( 'l-7' );
 		color: $color__white;
 		background-color: $color__primary;
+		@include font-size("font-size-xs");
 		border-radius: 0 4px 4px 0;
 		line-height: 0.8;
 	}

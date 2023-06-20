@@ -1,7 +1,4 @@
 .woocommerce {
-	.search-icon {
-		all: unset;
-	}
 
 	.woocommerce-pagination {
 		display: flex;
@@ -15,10 +12,6 @@
 		gap: 30px;
 		margin: 0;
 		padding: 0;
-
-		.search-icon {
-			all: unset;
-		}
 
 		.product {
 
