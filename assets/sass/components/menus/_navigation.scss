@@ -2,9 +2,19 @@
 --------------------------------------------- */
 .default-wp-page {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	gap: 20px;
 	margin-top: length( 'l-15' );
+
+	.previous,
+	.next {
+		flex: 1;
+	}
+
+	.next {
+		text-align: right;
+	}
 }
 
 .wp-block-query-pagination-numbers {
@@ -176,5 +186,12 @@
 		a {
 			font-size: 15px;
 		}
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.default-wp-page {
+		flex-direction: row;
 	}
 }
