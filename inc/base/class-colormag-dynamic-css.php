@@ -109,13 +109,9 @@ class ColorMag_Dynamic_CSS {
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item,
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus,
 			.search-wrap button,
-<<<<<<< HEAD
-			.page-numbers .current'
-			=> array(
-=======
+			.page-numbers .current
 			.page-numbers .current,
 			.wp-block-search .wp-element-button:hover' => array(
->>>>>>> c73a1a9a8efc6883f99b98899e478b770df06bbf
 				'background-color' => esc_html( $primary_color ),
 			),
 
