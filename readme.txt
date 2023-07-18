@@ -1,4 +1,4 @@
-== COLORMAG  ==
+=== COLORMAG  ===
 
 ColorMag is reponsive magazine style theme for 2015.
 
@@ -65,40 +65,40 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-== Version 3.0.1 - 2023-06-20 ==
+= Version 3.0.1 - 2023-06-20 =
 * Fix - Single post navigation width issue.
 * Fix - Highlighted post widget clickable issue.
 * Fix - Permalink not appearing on comment section.
 * Fix - Various design issue in button block.
 * Fix - Tag links design issue.
 
-== Version 3.0.0.7 - 2023-06-19 ==
+= Version 3.0.0.7 - 2023-06-19 =
 * Fix - Word break issue.
 * Fix - Featured Category slider issue on refresh.
 * Fix - Dashboard notice dismiss button.
 
-== Version 3.0.0.6 - 2023-06-19 ==
+= Version 3.0.0.6 - 2023-06-19 =
 * Fix - Featured Category Slider not appearing.
 
-== Version 3.0.0.5 - 2023-06-18 ==
+= Version 3.0.0.5 - 2023-06-18 =
 * Fix - Missing deprecated functions issue.
 
-== Version 3.0.0.4 - 2023-06-17 ==
+= Version 3.0.0.4 - 2023-06-17 =
 * Fix - Missing commenter author name.
 * Fix - Gutenberg editor skin color.
 * Fix - Comment & Tag meta missing on post meta section.
 * Fix - Dashboard notice dismiss button issue.
 
-== Version 3.0.0.3 - 2023-06-16 ==
+= Version 3.0.0.3 - 2023-06-16 =
 * Tweak - Minor change.
 
-== Version 3.0.0.2 - 2023-06-16 ==
+= Version 3.0.0.2 - 2023-06-16 =
 * Tweak - Minor change.
 
-== Version 3.0.0.1 - 2023-06-16 ==
+= Version 3.0.0.1 - 2023-06-16 =
 * Fix - Footer copyright text issue.
 
-== Version 3.0 - 2023-06-16 ==
+= Version 3.0 - 2023-06-16 =
 * Enhancement - Overall UI/UX improvements of frontend side of the theme
 
 * Enhancement - Responsiveness and mobile-first design
@@ -162,25 +162,25 @@ and we will include it within the theme from next version update.
 * Enhancement - Use of CSS variables
 * Enhancement - Overall CSS transition on events
 
-= Version - 2.1.8 - 2023-01-11 ==
+= Version - 2.1.8 - 2023-01-11 =
 * Fix - Php error.
 
-= Version - 2.1.7 - 2023-01-09 ==
+= Version - 2.1.7 - 2023-01-09 =
 * Fix - Php error.
 
-= Version - 2.1.6 - 2023-01-04 ==
+= Version - 2.1.6 - 2023-01-04 =
 * Integration - Magazine Blocks plugin.
 * Tweak       - Improvements on page builder template.
 * Fix         - Logo alignment issue in header clean layout.
 * Fix         - Alignment issue in header classic layout.
 
-= Version - 2.1.5 - 2022-11-17 ==
+= Version - 2.1.5 - 2022-11-17 =
 * Fix - Primary menu expanded by default when responsive menu is enabled.
 * Fix - Primary menu hover color issue.
 * Fix - Top header enlarge issue on page load.
 * Fix - Primary menu not centered while 3rd header style.
 
-= Version - 2.1.4 - 2022-10-18 ==
+= Version - 2.1.4 - 2022-10-18 =
 * Improvements - Header top bar design and CSS code refactor.
 
 = Version - 2.1.3 - 2022-06-22 =
