@@ -1,6 +1,6 @@
 === COLORMAG  ===
 
-ColorMag is reponsive magazine style theme for 2015.
+ColorMag is responsive magazine style theme for 2015.
 
 /**********************************************************/
 
