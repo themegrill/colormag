@@ -16,6 +16,11 @@
 	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
 	border-radius: 4px;
 
+	a {
+		position: relative;
+		display: block;
+	}
+
 	&:hover {
 
 		.play-button-wrapper {
