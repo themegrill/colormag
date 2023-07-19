@@ -626,10 +626,13 @@ class ColorMag_Customizer_FrameWork_Sanitizes {
 				$min  = isset( $font_size_input_attrs[ $unit ][ 'min' ] ) ? (float) $font_size_input_attrs[ $unit ][ 'min' ] : 0;
 				$max  = isset( $font_size_input_attrs[ $unit ][ 'max' ] ) ? (float) $font_size_input_attrs[ $unit ][ 'max' ] : 200;
 
-				if ( $size < $min ) {
-					$size = $min;
-				} elseif ( $size > $max ) {
-					$size = $max;
+				if ( ! empty( $size ) ) {
+
+					if ( $size < $min ) {
+						$size = $min;
+					} elseif ( $size > $max ) {
+						$size = $max;
+					}
 				}
 
 				$font_size_values[ $key ] = array(

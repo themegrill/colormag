@@ -62,7 +62,7 @@ class ColorMag_Slider_Control extends ColorMag_Customize_Base_Additional_Control
 
 		$slider_attribute = $this->input_attrs;
 
-		$slider_unit      = isset( $this->value()['unit'] ) ? $this->value()['unit'] : 'px';
+		$slider_unit      = isset( $this->value()['unit'] ) ? $this->value()['unit'] : array_keys( $slider_attribute )[0];
 
 		$this->json['input_attrs'] = array_merge(
 			$this->input_attrs,

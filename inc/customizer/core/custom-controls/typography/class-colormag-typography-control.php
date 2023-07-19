@@ -784,7 +784,7 @@ class ColorMag_Typography_Control extends ColorMag_Customize_Base_Additional_Con
 											<# } else { #>
 												<# if ( data.default_suffix['line-height'] == suffix ) { #> Selected <# } #>
 											<# } #>
-										>{{suffix}}s
+										>{{suffix}}
 								  </option>
 								  <# }) #>
 							  </select>
