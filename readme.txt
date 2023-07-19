@@ -65,11 +65,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 3.0.2 - 2023-07-19 =
 * Fix - Left sidebar content responsive issue.
 * Fix - Post Video format play button position issue.
 
-= Version 3.0.1 - 2023-06-20 =4
+= Version 3.0.1 - 2023-06-20 =
 * Fix - Single post navigation width issue.
 * Fix - Highlighted post widget clickable issue.
 * Fix - Permalink not appearing on comment section.
