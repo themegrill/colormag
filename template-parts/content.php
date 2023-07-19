@@ -40,16 +40,17 @@ $archive_search_layout = 'layout-1';
 			<div class="cm-featured-image">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php the_post_thumbnail( $featured_image_size ); ?>
-				</a>
+
 				<?php
-				if ( has_post_format( 'video' ) ) {
-					?>
-					<span class="play-button-wrapper">
+					if ( has_post_format( 'video' ) ) {
+						?>
+						<span class="play-button-wrapper">
 								<i class="fa fa-play" aria-hidden="true"></i>
-					</span>
-					<?php
-				}
+						</span>
+						<?php
+					}
 				?>
+				</a>
 			</div>
 				<?php
 		endif;

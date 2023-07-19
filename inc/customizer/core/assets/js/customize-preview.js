@@ -109,13 +109,69 @@ function colormagGenerateSliderCSS( controlId, selector, cssProperty  ) {
 	wp.customize( controlId, function ( value ) {
 
 		value.bind( function ( slider ) {
-			var sizeCSS = ( '' !== slider.size ) ? slider.size : 0;
+
+			if ( 'string' === typeof slider ) {
+				try {
+					slider = JSON.parse( slider );
+				} catch ( e ) {
+					return;
+				}
+			}
+			var cssText = '';
+			var sizeCSS = slider.size;
 			var unit = ( '' !== slider.unit ) ? slider.unit : 'px';
 
 			jQuery( `style#${controlId}` ).remove();
 
+			if ( null !== unit ) {
+
+				if ( Array.isArray( cssProperty ) ) {
+
+					cssProperty.forEach( function ( property ) {
+						cssText += `${ property } : ${ sizeCSS + unit  };`;
+					} );
+				} else {
+					cssText += `${ cssProperty } : ${ sizeCSS + unit  };`;
+				}
+			} else {
+				cssText += `${ cssProperty } : ${ sizeCSS + unit  };`;
+			}
+
 			jQuery( 'head' ).append(
-				`<style id="${ controlId }">${selector}{ ${ cssProperty } : ${ sizeCSS + unit  } }</style>`
+				`<style id="${ controlId }">${selector}{ ${ cssText } }</style>`
+			);
+		} );
+	} );
+}
+
+/**
+ * @param {string} controlId
+ * @param {string} selector
+ * @param {string} cssProperty
+ */
+function colormagGenerateSliderWidthCss( controlId, selector, secondarySelector, cssProperty ) {
+
+	wp.customize( controlId, function ( value ) {
+
+		value.bind( function ( slider ) {
+			if ( 'string' === typeof slider ) {
+				try {
+					slider = JSON.parse( slider );
+				} catch ( e ) {
+					return;
+				}
+			}
+
+			var sizeCSS  = ( '' !== slider.size ) ? slider.size : 0;
+			var secondaryCSS = 100 - sizeCSS;
+			var unit       = ( '' !== slider.unit ) ? slider.unit : 'px';
+
+			jQuery( `style#${controlId}` ).remove();
+
+			jQuery( 'head' ).append(
+				`<style id="${controlId}">${selector}{ ${cssProperty} : ${sizeCSS + unit} }
+							${secondarySelector}{ ${cssProperty} : ${secondaryCSS + unit} }
+							</style>`
 			);
 		} );
 	} );
@@ -151,19 +207,16 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 
 		value.bind( function ( typography ) {
 			var	link              = '',
-				fontFamily        = '',
-				fontWeight        = '',
-				fontStyle         = '',
-				fontTransform     = '',
-				desktopFontSize   = '',
-				tabletFontSize    = '',
-				mobileFontSize    = '',
-				desktopLineHeight = '',
-				tabletLineHeight  = '',
-				mobileLineHeight  = '',
-				desktopLetterSpacing = '',
-				tabletLetterSpacing  = '',
-				mobileLetterSpacing  = '';
+				   fontFamily        = '',
+				   fontWeight        = '',
+				   fontStyle         = '',
+				   fontTransform     = '',
+				   desktopFontSize   = '',
+				   tabletFontSize    = '',
+				   mobileFontSize    = '',
+				   desktopLineHeight = '',
+				   tabletLineHeight  = '',
+				   mobileLineHeight  = '';
 
 			if ( 'object' == typeof typography ) {
 
@@ -197,24 +250,6 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 					if ( undefined !== typography['line-height']['mobile']['size'] && '' !== typography['line-height']['mobile']['size'] ) {
 						const mobileLineHeightUnit = ('-' !== typography['line-height']['mobile']['unit']) ? typography['line-height']['mobile']['unit'] : '';
 						mobileLineHeight = typography['line-height']['mobile']['size'] + mobileLineHeightUnit;
-					}
-				}
-
-				if ( undefined !== typography['letter-spacing'] ) {
-
-					if ( undefined !== typography['letter-spacing']['desktop']['size'] && '' !== typography['letter-spacing']['desktop']['size'] ) {
-						const desktopLetterSpacingUnit = ('-' !== typography['letter-spacing']['desktop']['unit']) ? typography['letter-spacing']['desktop']['unit'] : '';
-						desktopLetterSpacing           = typography['letter-spacing']['desktop']['size'] + desktopLetterSpacingUnit;
-					}
-
-					if ( undefined !== typography['letter-spacing']['tablet']['size'] && '' !== typography['letter-spacing']['tablet']['size'] ) {
-						const tabletLetterSpacingUnit = ('-' !== typography['letter-spacing']['tablet']['unit']) ? typography['letter-spacing']['tablet']['unit'] : '';
-						tabletLetterSpacing           = typography['letter-spacing']['tablet']['size'] + tabletLetterSpacingUnit;
-					}
-
-					if ( undefined !== typography['letter-spacing']['mobile']['size'] && '' !== typography['letter-spacing']['mobile']['size'] ) {
-						const mobileLetterSpacingUnit = ('-' !== typography['letter-spacing']['mobile']['unit']) ? typography['letter-spacing']['mobile']['unit'] : '';
-						mobileLetterSpacing           = typography['letter-spacing']['mobile']['size'] + mobileLetterSpacingUnit;
 					}
 				}
 
@@ -258,22 +293,19 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 						font-weight: ${ fontWeight };
 						font-style: ${ fontStyle };
 						text-transform: ${ fontTransform };
-						font-size: ${ desktopFontSize };
+						font-size: ${ desktopFontSize }; 
 						line-height: ${ desktopLineHeight };
-						letter-spacing: ${ desktopLetterSpacing };
 					}
 					@media (max-width: 768px) {
 						${ selector } {
 							font-size: ${ tabletFontSize };
 							line-height: ${ tabletLineHeight };
-							letter-spacing: ${ tabletLetterSpacing };
-						}
+						} 
 					}
 					@media (max-width: 600px) {
 						${ selector }{
 							font-size: ${ mobileFontSize };
 							line-height:${ mobileLineHeight };
-							letter-spacing: ${ mobileLetterSpacing };
 						}
 					}
 				</style>${ link }`
@@ -298,107 +330,3 @@ function colormagIsNumeric( str ) {
 
 	return null !== matches;
 }
-
-( function ( $ ) {
-
-	// Site title.
-	wp.customize(
-		'blogname',
-		function ( value ) {
-			value.bind(
-				function ( to ) {
-					$( '#site-title a' ).text( to );
-				}
-			);
-		}
-	);
-
-	// Site description.
-	wp.customize(
-		'blogdescription',
-		function ( value ) {
-			value.bind(
-				function ( to ) {
-					$( '#site-description' ).text( to );
-				}
-			);
-		}
-	);
-
-	// Header display type.
-	wp.customize(
-		'colormag_header_display_type',
-		function ( value ) {
-			value.bind(
-				function ( layout ) {
-					var display_type = layout;
-
-					if ( display_type === 'type_two' ) {
-						$( 'body' ).removeClass( 'header_display_type_two' ).addClass( 'header_display_type_one' );
-					} else if ( display_type === 'type_three' ) {
-						$( 'body' ).removeClass( 'header_display_type_one' ).addClass( 'header_display_type_two' );
-					} else if ( display_type === 'type_one' ) {
-						$( 'body' ).removeClass( 'header_display_type_one header_display_type_two' );
-					}
-				}
-			);
-		}
-	);
-
-	// Site Layout Option.
-	wp.customize(
-		'colormag_site_layout',
-		function ( value ) {
-			value.bind(
-				function ( layout ) {
-					var site_layout = layout;
-
-					if ( 'wide_layout' === site_layout ) {
-						$( 'body' ).removeClass( 'box-layout' ).addClass( 'wide' );
-					} else if ( 'boxed_layout' === site_layout ) {
-						$( 'body' ).removeClass( 'wide' ).addClass( 'box-layout' );
-					}
-				}
-			);
-		}
-	);
-
-	// Footer copyright alignment.
-	wp.customize(
-		'colormag_footer_copyright_alignment_setting',
-		function ( value ) {
-			value.bind(
-				function ( alignment ) {
-					var alignment_type = alignment;
-
-					if ( alignment_type === 'left' ) {
-						$( '#colophon' ).removeClass( 'copyright-right copyright-center' );
-					} else if ( alignment_type === 'right' ) {
-						$( '#colophon' ).removeClass( 'copyright-center' ).addClass( 'copyright-right' );
-					} else if ( alignment_type === 'center' ) {
-						$( '#colophon' ).removeClass( 'copyright-right' ).addClass( 'copyright-center' );
-					}
-				}
-			);
-		}
-	);
-
-	// Footer Main Area Display Type.
-	wp.customize(
-		'colormag_main_footer_layout_display_type',
-		function ( value ) {
-			value.bind(
-				function ( layout ) {
-					var display_type = layout;
-
-					if ( display_type === 'layout-2' ) {
-						$( '#colophon' ).removeClass( 'colormag-footer--classic-bordered' ).addClass( 'colormag-footer--classic' );
-					} else if ( display_type === 'layout-1' ) {
-						$( '#colophon' ).removeClass( 'colormag-footer--classic colormag-footer--classic-bordered' );
-					}
-				}
-			);
-		}
-	);
-
-} )( jQuery );

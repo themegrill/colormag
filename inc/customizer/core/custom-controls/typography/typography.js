@@ -258,10 +258,10 @@ wp.customize.controlConstructor[ 'colormag-typography' ] = wp.customize.Control.
 						}
 					}
 
-					unit.val( defaultUnit );
-					slider.val( defaultValue );
-					input.val( defaultValue );
-					input.change();
+					unit.val(defaultUnit);
+					slider.val(defaultValue);
+					input.val(defaultValue);
+					control.setting.set( { size : defaultValue, unit : defaultUnit } );
 				} );
 			}
 
@@ -802,6 +802,7 @@ wp.customize.controlConstructor[ 'colormag-typography' ] = wp.customize.Control.
 					let device = jQuery( this ).find( '.unit-wrapper .font-size-unit' ).data( 'device' );
 
 					newValue[ 'font-size' ][ device ][ 'unit' ] = controlValue;
+					newValue[ 'font-size' ][ device ][ 'size' ] = '';
 
 				}
 			);
