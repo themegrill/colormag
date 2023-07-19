@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+== Version TBD ==
+* Fix - Left sidebar content responsive issue.
+
 == Version 3.0.1 - 2023-06-20 ==
 * Fix - Single post navigation width issue.
 * Fix - Highlighted post widget clickable issue.

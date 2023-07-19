@@ -4108,7 +4108,7 @@ Styles for separating single posts loaded from ajax call.
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	row-gap: 40px;
+	row-gap: 60px;
 }
 
 .cm-content .cm-row .cm-one-half {
@@ -4779,13 +4779,6 @@ ul.wp-block-gallery img {
 
 /* Sidebar.
 --------------------------------------------- */
-.left-sidebar .cm-content .cm-row {
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: reverse;
-	-ms-flex-direction: column-reverse;
-	flex-direction: column-reverse;
-}
-
 @media screen and (min-width: 48em) {
 	.left-sidebar .cm-content .cm-row {
 		-webkit-box-orient: horizontal;
@@ -4795,7 +4788,7 @@ ul.wp-block-gallery img {
 	}
 	.left-sidebar .cm-content .cm-primary {
 		padding-left: 0;
-		padding-right: 1.875em;
+		padding-right: 30px;
 	}
 }
 
