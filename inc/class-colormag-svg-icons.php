@@ -105,7 +105,7 @@ if ( ! class_exists( 'ColorMag_SVG_Icons' ) ) {
 
 			if ( array_key_exists( $icon, $icons ) ) {
 
-				$repl = sprintf( '<svg class="cm-icon coloramg-icon--%1$s" %2$s', $icon, $atts );
+				$repl = sprintf( '<svg class="cm-icon cm-icon--%1$s" %2$s', $icon, $atts );
 				$svg  = preg_replace( '/^<svg /', $repl, trim( $icons[ $icon ] ) );
 				$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg );
 				$svg  = preg_replace( '/>\s*</', '><', $svg );
