@@ -161,11 +161,15 @@
 }
 
 .cm-lower-footer-cols {
-	display: flex;
-	flex-direction: column;
 	gap: 30px;
 	@include font-size("font-size-xs");
 	width: 100%;
+}
+
+.cm-lower-footer-col,
+.cm-lower-footer-cols {
+	display: flex;
+	flex-direction: column;
 }
 
 .cm-upper-footer-col--1,

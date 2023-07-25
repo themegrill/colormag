@@ -5309,6 +5309,13 @@ ul.wp-block-gallery img {
 }
 
 .cm-lower-footer-cols {
+	gap: 30px;
+	font-size: 1.4rem;
+	width: 100%;
+}
+
+.cm-lower-footer-col,
+.cm-lower-footer-cols {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -5316,9 +5323,6 @@ ul.wp-block-gallery img {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	gap: 30px;
-	font-size: 1.4rem;
-	width: 100%;
 }
 
 .cm-upper-footer-col--1,
