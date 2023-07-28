@@ -34,7 +34,6 @@
 
 .cm-author,
 .cm-post-views,
-.cm-tag-links,
 .cm-edit-link,
 .cm-comments-link,
 .cm-post-date,
@@ -43,6 +42,16 @@
 	align-items: center;
 	gap: 4px;
 	@include font-size('font-size-xxs');
+}
+
+.cm-tag-links {
+	display: flex;
+	align-items: center;
+	@include font-size('font-size-xxs');
+}
+
+.cm-icon--tag {
+	margin-right: 4px;
 }
 
 .cm-post-date,
