@@ -216,9 +216,6 @@ jQuery( document ).ready(
 			}
 		}
 
-		// Adds placeholder in search input.
-		jQuery( '.wp-block-search__input' ).attr("placeholder", "Search posts");
-
 		// Menu reveal on scroll.
 		if ( typeof jQuery.fn.headroom !== 'undefined' ) {
 			var offset_value = jQuery( '#cm-primary-nav' ).offset().top;
