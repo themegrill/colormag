@@ -2565,7 +2565,6 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-author,
 .cm-post-views,
-.cm-tag-links,
 .cm-edit-link,
 .cm-comments-link,
 .cm-post-date,
@@ -2578,6 +2577,20 @@ Styles for separating single posts loaded from ajax call.
 	align-items: center;
 	gap: 4px;
 	font-size: 1.2rem;
+}
+
+.cm-tag-links {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 1.2rem;
+}
+
+.cm-icon--tag {
+	margin-left: 4px;
 }
 
 .cm-post-date a,
