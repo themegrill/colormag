@@ -238,58 +238,70 @@ class ColorMag_Dynamic_CSS {
 			),
 		);
 
-		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
+	$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
-		// Primary color for Elementor.
-		if ( defined( 'ELEMENTOR_VERSION' ) ) {
+	// Footer options.
+	$footer_background_default = array(
+		'background-color'      => '',
+		'background-image'      => '',
+		'background-position'   => 'center center',
+		'background-size'       => 'auto',
+		'background-attachment' => 'scroll',
+		'background-repeat'     => 'repeat',
+	);
+	$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
+	$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
 
-			$primary_color_elementor_css = array(
-				'.elementor .elementor-widget-wrap .tg-module-wrapper .module-title span,
-				.elementor .elementor-widget-wrap .tg-module-wrapper .tg-post-category,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-5 .tg_module_block .read-more,
-				 .elementor .elementor-widget-wrap .tg-module-wrapper tg-module-block.tg-module-block--style-10 .tg_module_block.tg_module_block--list-small:before'
-				=> array(
-					'background-color' => esc_html( $primary_color ),
-				),
+	// Primary color for Elementor.
+	if ( defined( 'ELEMENTOR_VERSION' ) ) {
 
-				'.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-meta .tg-module-comments a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-meta .tg-post-auther-name a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-meta .tg-post-date a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-title:hover a,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-module-comments a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-post-auther-name a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-post-date a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-grid .tg_module_grid .tg-module-info .tg-module-meta a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-module-title a:hover,
-				.elementor .elementor-widget-wrap .tg-trending-news .trending-news-wrapper a:hover,
-				.elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-next:hover, .elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-prev:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-module-title a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-post-auther-name a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-post-date a:hover,
-				.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-module-comments a:hover'
-				=> array(
-					'color' => esc_html( $primary_color ),
-				),
+		$primary_color_elementor_css = array(
+			'.elementor .elementor-widget-wrap .tg-module-wrapper .module-title span,
+			.elementor .elementor-widget-wrap .tg-module-wrapper .tg-post-category,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-5 .tg_module_block .read-more,
+				.elementor .elementor-widget-wrap .tg-module-wrapper tg-module-block.tg-module-block--style-10 .tg_module_block.tg_module_block--list-small:before'
+			=> array(
+				'background-color' => esc_html( $primary_color ),
+			),
 
-				'.elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-next:hover,
-				.elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-prev:hover'
-				=> array(
-					'border-color' => esc_html( $primary_color ),
-				),
-			);
+			'.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-meta .tg-module-comments a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-meta .tg-post-auther-name a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-meta .tg-post-date a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper .tg-module-title:hover a,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-module-comments a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-post-auther-name a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-post-date a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-grid .tg_module_grid .tg-module-info .tg-module-meta a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-7 .tg_module_block--white .tg-module-title a:hover,
+			.elementor .elementor-widget-wrap .tg-trending-news .trending-news-wrapper a:hover,
+			.elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-next:hover, .elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-prev:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-module-title a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-post-auther-name a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-post-date a:hover,
+			.elementor .elementor-widget-wrap .tg-module-wrapper.tg-module-block.tg-module-block--style-10 .tg_module_block--white .tg-module-comments a:hover'
+			=> array(
+				'color' => esc_html( $primary_color ),
+			),
 
-			$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_elementor_css );
+			'.elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-next:hover,
+			.elementor .elementor-widget-wrap .tg-trending-news .swiper-controls .swiper-button-prev:hover'
+			=> array(
+				'border-color' => esc_html( $primary_color ),
+			),
+		);
 
-		}
+		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_elementor_css );
 
-		// Add the custom CSS rendered dynamically, which is static.
-		$parse_css .= self::render_custom_output();
+	}
 
-		$parse_css .= $dynamic_css;
+	// Add the custom CSS rendered dynamically, which is static.
+	$parse_css .= self::render_custom_output();
 
-		$parse_css .= self::colormag_editor_block_css();
+	$parse_css .= $dynamic_css;
 
-		return apply_filters( 'colormag_theme_dynamic_css', $parse_css );
+	$parse_css .= self::colormag_editor_block_css();
+
+	return apply_filters( 'colormag_theme_dynamic_css', $parse_css );
 
 	}
 

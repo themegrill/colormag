@@ -68,6 +68,52 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 			),
 
 			array(
+				'name'     => 'colormag_footer_style_divider',
+				'type'     => 'control',
+				'control'  => 'colormag-divider',
+				'style'    => 'dashed',
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_footer_style_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 50,
+			),
+
+			array(
+				'name'     => 'colormag_footer_background_group',
+				'label'    => esc_html__( 'Background', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 60,
+			),
+
+			// Footer background option.
+			array(
+				'name'     => 'colormag_footer_background',
+				'default'  => array(
+					'background-color'      => '',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				),
+				'type'     => 'sub-control',
+				'control'  => 'colormag-background',
+				'parent'   => 'colormag_footer_background_group',
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 70,
+			),
+
+			array(
 				'name'        => 'colormag_footer_column_upgrade',
 				'type'        => 'control',
 				'control'     => 'colormag-upgrade',
