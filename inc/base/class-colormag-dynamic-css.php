@@ -241,6 +241,18 @@ class ColorMag_Dynamic_CSS {
 	$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
 	// Footer options.
+	$header_background_default = array(
+		'background-color'      => '',
+		'background-image'      => '',
+		'background-position'   => 'center center',
+		'background-size'       => 'auto',
+		'background-attachment' => 'scroll',
+		'background-repeat'     => 'repeat',
+	);
+	$header_background         = get_theme_mod( 'colormag_main_header_background', $header_background_default );
+	$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header, .dark-skin .cm-main-header' );
+
+	// Footer options.
 	$footer_background_default = array(
 		'background-color'      => '',
 		'background-image'      => '',
