@@ -177,6 +177,45 @@ function colormag_widgets_init() {
 		)
 	);
 
+	// Registering footer sidebar one upper.
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar One ( Upper )', 'colormag' ),
+			'id'            => 'colormag_footer_sidebar_one_upper',
+			'description'   => esc_html__( 'Shows widgets at footer sidebar one in upper.', 'colormag' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
+			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+		)
+	);
+
+	// Registering footer sidebar two upper.
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar Two ( Upper )', 'colormag' ),
+			'id'            => 'colormag_footer_sidebar_two_upper',
+			'description'   => esc_html__( 'Shows widgets at footer sidebar two in upper.', 'colormag' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
+			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+		)
+	);
+
+	// Registering footer sidebar three upper.
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar Three ( Upper )', 'colormag' ),
+			'id'            => 'colormag_footer_sidebar_three_upper',
+			'description'   => esc_html__( 'Shows widgets at footer sidebar three in upper.', 'colormag' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
+			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+		)
+	);
+
 	// Registering footer sidebar one.
 	register_sidebar(
 		array(
