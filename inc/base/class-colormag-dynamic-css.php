@@ -240,6 +240,15 @@ class ColorMag_Dynamic_CSS {
 
 	$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
+	// Top bar options.
+	$top_bar_background_color             = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
+	$top_bar_background_color_css = array(
+		'.cm-top-bar' => array(
+			'background-color' => esc_html( $top_bar_background_color ),
+		),
+	);
+	$parse_css .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
+
 	// Post content background.
 	$post_content_background_default = array(
 		'background-color'      => '#ffffff',
