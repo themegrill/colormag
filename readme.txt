@@ -66,7 +66,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
-* Fix - Footer column design issue.
+* Feature - Footer column background color option.
+* Fix     - Footer column design issue.
 
 = Version 3.0.2 - 2023-07-19 =
 * Fix - Left sidebar content responsive issue.
