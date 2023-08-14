@@ -33,6 +33,51 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 
 		$configs = array(
 
+			array(
+				'name'     => 'colormag_footer_bar_title',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Footer Bar', 'colormag' ),
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_footer_bar_style_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_footer_copyright_background_group',
+				'label'    => esc_html__( 'Background', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_footer_copyright_background',
+				'default'  => array(
+					'background-color'      => '',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				),
+				'type'     => 'sub-control',
+				'control'  => 'colormag-background',
+				'parent'   => 'colormag_footer_copyright_background_group',
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 40,
+			),
+
 			/**
 			 * Social Icons.
 			 */
@@ -42,7 +87,7 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Social Icons', 'colormag' ),
 				'section'  => 'colormag_footer_bar_section',
-				'priority' => 10,
+				'priority' => 50,
 			),
 
 			array(
@@ -55,7 +100,7 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 					'target_id'    => 'colormag_social_icons_section',
 					'target_label' => esc_html__( 'Social Icons', 'colormag' ),
 				),
-				'priority'      => 20,
+				'priority'      => 60,
 			),
 
 			array(

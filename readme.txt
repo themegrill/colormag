@@ -69,6 +69,7 @@ and we will include it within the theme from next version update.
 * Feature - Main header background color option.
 * Feature - Footer column background color option.
 * Feature - Container inside background color option.
+* Feature - Footer bar background color option.
 * Fix     - Footer column design issue.
 
 = Version 3.0.2 - 2023-07-19 =
