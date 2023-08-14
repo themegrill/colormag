@@ -264,7 +264,7 @@ class ColorMag_Dynamic_CSS {
 	$header_background         = get_theme_mod( 'colormag_main_header_background', $header_background_default );
 	$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header, .dark-skin .cm-main-header' );
 
-	// Footer options.
+	// Footer column.
 	$footer_background_default = array(
 		'background-color'      => '',
 		'background-image'      => '',
@@ -275,6 +275,18 @@ class ColorMag_Dynamic_CSS {
 	);
 	$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
 	$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
+
+	// Footer bar.
+	$footer_copyright_background_default = array(
+		'background-color'      => '',
+		'background-image'      => '',
+		'background-position'   => 'center center',
+		'background-size'       => 'auto',
+		'background-attachment' => 'scroll',
+		'background-repeat'     => 'repeat',
+	);
+	$footer_copyright_background = get_theme_mod( 'colormag_footer_copyright_background', $footer_copyright_background_default );
+	$parse_css                  .= colormag_parse_background_css( $footer_copyright_background_default, $footer_copyright_background, '.cm-footer-bar' );
 
 	// Primary color for Elementor.
 	if ( defined( 'ELEMENTOR_VERSION' ) ) {

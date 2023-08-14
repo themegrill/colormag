@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 3.0.2\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-07-19 08:53:47+00:00\n"
+"POT-Creation-Date: 2023-08-14 06:20:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -898,6 +898,8 @@ msgid "Letter Spacing"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1113
+#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:83
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:152
 msgid "Style"
 msgstr ""
 
@@ -1000,14 +1002,14 @@ msgstr ""
 #: inc/customizer/options/content/class-colormag-customize-page-options.php:60
 #: inc/customizer/options/content/class-colormag-customize-single-post-options.php:125
 #: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:65
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:74
+#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:120
 #: inc/customizer/options/front-page/class-colormag-customize-front-page-general-options.php:54
 #: inc/customizer/options/global/class-colormag-customize-colors-options.php:89
 #: inc/customizer/options/global/class-colormag-customize-container-options.php:89
 #: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:167
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:138
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:209
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:152
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:190
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:76
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:69
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:108
@@ -1019,14 +1021,14 @@ msgstr ""
 #: inc/customizer/options/content/class-colormag-customize-page-options.php:61
 #: inc/customizer/options/content/class-colormag-customize-single-post-options.php:126
 #: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:66
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:75
+#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:121
 #: inc/customizer/options/front-page/class-colormag-customize-front-page-general-options.php:55
 #: inc/customizer/options/global/class-colormag-customize-colors-options.php:90
 #: inc/customizer/options/global/class-colormag-customize-container-options.php:90
 #: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:168
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:139
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:210
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:153
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:191
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:77
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:70
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:109
@@ -1098,6 +1100,11 @@ msgstr ""
 msgid "Layout 2"
 msgstr ""
 
+#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:90
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:160
+msgid "Background"
+msgstr ""
+
 #: inc/customizer/options/front-page/class-colormag-customize-front-page-general-options.php:45
 msgid "Hide blog posts/static page"
 msgstr ""
@@ -1120,6 +1127,10 @@ msgstr ""
 
 #: inc/customizer/options/global/class-colormag-customize-colors-options.php:80
 msgid "Dark Skin"
+msgstr ""
+
+#: inc/customizer/options/global/class-colormag-customize-container-options.php:101
+msgid "Inside"
 msgstr ""
 
 #: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:51
