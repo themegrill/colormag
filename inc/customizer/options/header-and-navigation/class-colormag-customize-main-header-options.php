@@ -146,6 +146,44 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
+				'name'     => 'colormag_main_header_style_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_primary_header_section',
+				'priority' => 70,
+			),
+
+			// Header background group.
+			array(
+				'name'     => 'colormag_main_header_background_group',
+				'label'    => esc_html__( 'Background', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_header_section',
+				'priority' => 80,
+			),
+
+			// Header background option.
+			array(
+				'name'     => 'colormag_main_header_background',
+				'default'  => array(
+					'background-color'      => '#ffffff',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				),
+				'type'     => 'sub-control',
+				'control'  => 'colormag-background',
+				'parent'   => 'colormag_main_header_background_group',
+				'section'  => 'colormag_primary_header_section',
+				'priority' => 90,
+			),
+
+			array(
 				'name'        => 'colormag_main_header_upgrade',
 				'type'        => 'control',
 				'control'     => 'colormag-upgrade',
