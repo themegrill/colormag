@@ -92,6 +92,32 @@ class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 				'section'     => 'colormag_global_container_section',
 				'priority'    => 1000,
 			),
+
+			// Site layout heading.
+			array(
+				'name'     => 'colormag_container_inside_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
+				'label'    => esc_html__( 'Inside', 'colormag' ),
+				'section'  => 'colormag_global_container_section',
+				'priority' => 60,
+			),
+
+			array(
+				'name'      => 'colormag_inside_container_background',
+				'default'   => array(
+					'background-color'      => '#ffffff',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				),
+				'type'      => 'control',
+				'control'   => 'colormag-background',
+				'section'   => 'colormag_global_container_section',
+				'priority'  => 70,
+			),
 		);
 
 		$options = array_merge( $options, $configs );

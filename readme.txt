@@ -67,6 +67,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Feature - Footer column background color option.
+* Feature - Container inside background color option.
 * Fix     - Footer column design issue.
 
 = Version 3.0.2 - 2023-07-19 =
