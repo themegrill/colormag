@@ -271,7 +271,7 @@ class ColorMag_Dynamic_CSS {
 		'background-repeat'     => 'repeat',
 	);
 	$header_background         = get_theme_mod( 'colormag_main_header_background', $header_background_default );
-	$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header, .dark-skin .cm-main-header' );
+	$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header-1, .dark-skin .cm-header-1' );
 
 	// Footer column.
 	$footer_background_default = array(
