@@ -67,6 +67,49 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 				'priority' => 30,
 			),
 
+			array(
+				'name'       => 'colormag_top_bar_style_subtitle',
+				'type'       => 'control',
+				'control'    => 'colormag-subtitle',
+				'label'      => esc_html__( 'Style', 'colormag' ),
+				'section'    => 'colormag_top_bar_section',
+				'dependency' => array(
+					'colormag_enable_top_bar',
+					'==',
+					true,
+				),
+				'priority'   => 40,
+			),
+
+			array(
+				'name'       => 'colormag_top_bar_background_color_group',
+				'type'       => 'control',
+				'control'    => 'colormag-group',
+				'label'      => esc_html__( 'Background', 'colormag' ),
+				'section'    => 'colormag_top_bar_section',
+				'dependency' => array(
+					'colormag_enable_top_bar',
+					'==',
+					true,
+				),
+				'priority'   => 50,
+			),
+
+			array(
+				'name'       => 'colormag_top_bar_background_color',
+				'default'    => '#fff',
+				'type'       => 'sub-control',
+				'control'    => 'colormag-color',
+				'parent'     => 'colormag_top_bar_background_color_group',
+				'section'    => 'colormag_top_bar_section',
+				'dependency' => array(
+					'colormag_enable_top_bar',
+					'==',
+					true,
+				),
+				'priority'   => 60,
+			),
+
 			/**
 			 * Show Date.
 			 */
@@ -81,7 +124,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 40,
+				'priority'   => 70,
 			),
 
 			// Date in header display option.
@@ -105,7 +148,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 50,
+				'priority'   => 80,
 			),
 
 			// Date in header display type option.
@@ -133,7 +176,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'!=',
 					0,
 				),
-				'priority'   => 60,
+				'priority'   => 90,
 			),
 
 			/**
@@ -150,7 +193,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 70,
+				'priority'   => 100,
 			),
 
 			array(
@@ -167,7 +210,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'      => 80,
+				'priority'      => 110,
 			),
 
 			// Social Icons.
@@ -182,7 +225,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'   => 90,
+				'priority'   => 120,
 			),
 
 			array(
@@ -199,7 +242,7 @@ class ColorMag_Customize_Header_Top_Bar_Options extends ColorMag_Customize_Base_
 					'==',
 					true,
 				),
-				'priority'      => 100,
+				'priority'      => 130,
 			),
 
 			array(

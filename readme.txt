@@ -66,6 +66,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Feature - Top bar background color option.
 * Feature - Main header background color option.
 * Feature - Footer column background color option.
 * Feature - Container inside background color option.
