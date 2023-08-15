@@ -72,6 +72,7 @@ and we will include it within the theme from next version update.
 * Feature - Container inside background color option.
 * Feature - Footer bar background color option.
 * Fix     - Footer column design issue.
+* Fix     - navigation menu responsive icon issue.
 
 = Version 3.0.2 - 2023-07-19 =
 * Fix - Left sidebar content responsive issue.
