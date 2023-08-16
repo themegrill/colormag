@@ -79,6 +79,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-sticky-header-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-news-ticker-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-action-options.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-drawer-menu-options.php';
 
 		// Content.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-single-post-options.php';
