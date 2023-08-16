@@ -1688,6 +1688,23 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	margin-top: 32px;
 }
 
+.cm-drawer-toggle,
+.cm-menu-toggle {
+	display: block;
+	line-height: 0;
+}
+
+.cm-drawer-toggle .cm-icon,
+.cm-menu-toggle .cm-icon {
+	width: 24px;
+	height: 24px;
+	fill: #fff;
+}
+
+.cm-drawer-box .cm-icon {
+	fill: #fff;
+}
+
 @media screen and (max-width: 767px) {
 	.thumbnail-pagination li {
 		width: 100%;
