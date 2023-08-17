@@ -272,6 +272,22 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 130,
 			),
 
+			array(
+				'name'             => 'colormag_drawer_toggle_section_separator',
+				'type'             => 'section',
+				'panel'            => 'colormag_header_panel',
+				'priority'         => 140,
+				'section_callback' => 'ColorMag_WP_Customize_Separator',
+			),
+
+			array(
+				'name'     => 'colormag_drawer_toggle_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Drawer Toggle', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 150,
+			),
+
 			/**
 			 * Content.
 			 */

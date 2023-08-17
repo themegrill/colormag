@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 3.0.3 - 2023-08-15 =
 * Feature - Top bar background color option.
 * Feature - Main header background color option.
 * Feature - Footer column background color option.
@@ -74,6 +74,7 @@ and we will include it within the theme from next version update.
 * Fix     - Footer column design issue.
 * Fix     - Navigation menu responsive icon issue.
 * Add     - Footer upper column sidebars.
+* Added   - New Demo (ColorMag MagazineX) -  Gutenberg-based WordPress Template Site to publish articles for your newspaper, magazine, or blog.
 
 = Version 3.0.2 - 2023-07-19 =
 * Fix - Left sidebar content responsive issue.

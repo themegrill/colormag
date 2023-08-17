@@ -166,8 +166,27 @@
 }
 
 .tg-numbered-pagination {
-	margin-top: length( 'l-16' );	
+	margin-top: length( 'l-16' );
 }
+
+.cm-drawer-toggle,
+.cm-menu-toggle {
+	display: block;
+	line-height: 0;
+
+	.cm-icon {
+		width: 24px;
+		height: 24px;
+		fill: #fff;
+	}
+}
+
+.cm-drawer-box{
+	.cm-icon {
+		fill: #fff;
+	}
+}
+
 
 @media screen and (max-width: 767px) {
 

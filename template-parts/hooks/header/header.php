@@ -276,6 +276,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 		<div class="cm-container">
 			<div class="cm-row">
 				<?php
+				colormag_header_drawer_markup();
 				if ( 'home-icon' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
 					$home_icon_class = 'cm-home-icon';
 
@@ -480,3 +481,44 @@ if ( ! function_exists( 'colormag_add_submenu_icon' ) ) :
 endif;
 
 add_filter( 'walker_nav_menu_start_el', 'colormag_add_submenu_icon', 10, 4 );
+
+if ( ! function_exists( 'colormag_header_drawer_markup' ) ) {
+
+	/**
+	 * Adds MagazineX header drawer toggle markup.
+	 *
+	 * @return void
+	 */
+	function colormag_header_drawer_markup() {
+		$drawer_menu = get_theme_mod( 'colormag_enable_header_drawer_toggle', 0 );
+
+		if ( 1 === $drawer_menu ) :
+			?>
+			<div id="cm-header-drawer" class="cm-header-drawer">
+				<a href="#" class="cm-drawer-toggle" aria-controls="cm-drawer-box" aria-expanded="false">
+					<?php colormag_get_icon( 'drawer' ); ?>
+					<!-- Toggle button for mobile menu. -->
+				</a>
+
+				<div id="cm-drawer-box" class="cm-drawer-box">
+					<!-- Close button for secondary menu. -->
+					<a href="#" class="close-secondary-menu" aria-controls="cm-drawer-box" aria-expanded="false">
+						<?php colormag_get_icon( 'close-circle' ); ?>
+					</a>
+					<div class="cm-drawer-content">
+						<?php
+						$sidebar_id = 'cm-drawer-sidebar';
+
+						if ( is_active_sidebar( $sidebar_id ) ) :
+							dynamic_sidebar( $sidebar_id );
+						endif;
+						?>
+					</div>
+				</div><!-- #drawer -->
+			</div>
+			<?php
+		endif;
+	}
+
+	add_action( 'colormag_header_drawer', 'colormag_header_drawer_markup' );
+}
