@@ -1721,7 +1721,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 .cm-drawer-box {
 	position: fixed;
-	padding: em_value(30, 1.4);
+	padding: 2.14286em;
 	top: 0;
 	left: 0;
 	width: 296px;
@@ -1767,7 +1767,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 .cm-drawer-box .cm-secondary-menu {
-	padding-top: em_value(90, 1.4);
+	padding-top: 6.42857em;
 }
 
 .cm-drawer-box .cm-secondary-menu li a {
@@ -1797,7 +1797,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	right: 0;
 	top: 0;
 	line-height: 0;
-	padding: em_value(8, 1.4) em_value(16, 1.4);
+	padding: 0.57143em 1.14286em;
 }
 
 .cm-drawer-box .close-secondary-menu {
@@ -1808,7 +1808,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
-	padding: em_value(6, 1.4);
+	padding: 0.42857em;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1865,7 +1865,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	width: 24px;
 	border-bottom: 2px solid #207daf;
 	border-radius: 2px;
-	margin-bottom: em_value(4, 1.6);
+	margin-bottom: 0.25em;
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
@@ -1925,8 +1925,8 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	line-height: 50px;
 	color: #111111;
 	text-decoration: none;
-	padding-left: em_value(15, 1.4);
-	padding-right: em_value(4, 1.4);
+	padding-left: 1.07143em;
+	padding-right: 0.28571em;
 	width: calc(100% - 52px);
 }
 
@@ -1935,11 +1935,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 .cm-mobile-nav li li a {
-	padding-left: em_value(30, 1.4);
+	padding-left: 2.14286em;
 }
 
 .cm-mobile-nav li li li a {
-	padding-left: em_value(45, 1.4);
+	padding-left: 3.21429em;
 }
 
 .cm-mobile-nav .menu-item-has-children {
@@ -1955,7 +1955,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	line-height: 0;
 	vertical-align: middle;
 	display: inline-block;
-	padding: em_value(16, 1.4);
+	padding: 1.14286em;
 	border-left: 1px solid #E5e5e5;
 }
 
@@ -1994,6 +1994,9 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 		-webkit-box-direction: normal;
 		-ms-flex-direction: row;
 		flex-direction: row;
+	}
+	.cm-drawer-box {
+		width: 400px;
 	}
 }
 

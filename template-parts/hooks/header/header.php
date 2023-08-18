@@ -507,7 +507,7 @@ if ( ! function_exists( 'colormag_header_drawer_markup' ) ) {
 					</a>
 					<div class="cm-drawer-content">
 						<?php
-						$sidebar_id = 'cm-drawer-sidebar';
+						$sidebar_id = 'colormag_drawer_sidebar';
 
 						if ( is_active_sidebar( $sidebar_id ) ) :
 							dynamic_sidebar( $sidebar_id );

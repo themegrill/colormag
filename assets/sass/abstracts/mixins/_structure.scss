@@ -11,3 +11,7 @@ $border-radius: (
 
 	@return map-get($border-radius, $size);
 }
+
+@function em_value($px, $fontSize) {
+	@return $px / ($fontSize * 10) + em;
+}

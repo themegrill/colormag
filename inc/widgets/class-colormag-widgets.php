@@ -60,6 +60,19 @@ function colormag_widgets_init() {
 		)
 	);
 
+	// Registering Drawer sidebar.
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Drawer Sidebar', 'colormag' ),
+			'id'            => 'colormag_drawer_sidebar',
+			'description'   => esc_html__( 'Shows widgets in header section just above the main navigation menu.', 'colormag' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
+			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
+		)
+	);
+
 	// Registering the Front Page: Slider Area Sidebar.
 	register_sidebar(
 		array(
