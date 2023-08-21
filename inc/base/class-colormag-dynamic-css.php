@@ -364,7 +364,7 @@ class ColorMag_Dynamic_CSS {
 	$footer_upper_background = get_theme_mod( 'colormag_upper_footer_background', $footer_upper_background_default );
 	$parse_css               .= colormag_parse_background_css( $footer_upper_background_default, $footer_upper_background, '.cm-footer .cm-upper-footer-cols .widget' );
 
-	// Footer bar.
+	// Footer bar options.
 	$footer_copyright_background_default = array(
 		'background-color'      => '',
 		'background-image'      => '',
@@ -375,6 +375,22 @@ class ColorMag_Dynamic_CSS {
 	);
 	$footer_copyright_background = get_theme_mod( 'colormag_footer_copyright_background', $footer_copyright_background_default );
 	$parse_css                  .= colormag_parse_background_css( $footer_copyright_background_default, $footer_copyright_background, '.cm-footer-bar' );
+
+	$footer_copyright_color     = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
+	$footer_copyright_color_css = array(
+		'.cm-footer-bar-area .cm-footer-bar__2' => array(
+			'color' => esc_html( $footer_copyright_color ),
+		),
+	);
+	$parse_css .= colormag_parse_css( '#F4F4F5', $footer_copyright_color, $footer_copyright_color_css );
+
+	$footer_copyright_link_color     = get_theme_mod( 'colormag_footer_copyright_link_text_color', '#207daf' );
+	$footer_copyright_link_color_css = array(
+		'.cm-footer-bar-area .cm-footer-bar__2 a' => array(
+			'color'         => esc_html( $footer_copyright_link_color ),
+		),
+	);
+	$parse_css .= colormag_parse_css( '##207daf', $footer_copyright_link_color, $footer_copyright_link_color_css );
 
 	// Primary color for Elementor.
 	if ( defined( 'ELEMENTOR_VERSION' ) ) {
