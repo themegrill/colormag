@@ -171,7 +171,8 @@ class ColorMag_Dynamic_CSS {
 			.cm-button:hover,
 			.wp-element-button:hover,
 			li.product .added_to_cart:hover,
-			.comments-area .comment-permalink:hover'
+			.comments-area .comment-permalink:hover,
+			.cm-footer-bar-area .cm-footer-bar__2 a'
 			=> array(
 				'color' => esc_html( $primary_color ),
 			),
