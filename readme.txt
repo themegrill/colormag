@@ -72,6 +72,8 @@ and we will include it within the theme from next version update.
 * Feature - Main menu hover color option.
 * Feature - Sub menu background color option.
 * Feature - Upper footer widget background color option.
+* Feature - Footer copyright content color option.
+* Feature - Footer copyright link color option.
 
 = Version 3.0.3 - 2023-08-15 =
 * Feature - Top bar background color option.
