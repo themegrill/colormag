@@ -68,7 +68,7 @@ and we will include it within the theme from next version update.
 = Version TBD =
 * Feature - Primary menu background color option.
 * Feature - Primary menu border color option.
-* Feature - Main menu color options.
+* Feature - Main menu color option.
 * Feature - Main menu hover color option.
 * Feature - Sub menu background color option.
 
