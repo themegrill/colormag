@@ -79,6 +79,49 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 			),
 
 			/**
+			 * Footer Copyright.
+			 */
+			array(
+				'name'     => 'colormag_footer_copyright_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Footer Copyright', 'colormag' ),
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 50,
+			),
+
+			array(
+				'name'     => 'colormag_footer_copyright_color_group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 60,
+			),
+
+			array(
+				'name'     => 'colormag_footer_copyright_text_color',
+				'tab'      => esc_html__( 'Color', 'colormag' ),
+				'default'  => '#f4f4f5',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_footer_copyright_color_group',
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 70,
+			),
+
+			array(
+				'name'     => 'colormag_footer_copyright_link_text_color',
+				'tab'      => esc_html__( 'Link Color', 'colormag' ),
+				'default'  => '#207dafc',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_footer_copyright_color_group',
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 80,
+			),
+
+			/**
 			 * Social Icons.
 			 */
 			array(
@@ -87,7 +130,7 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Social Icons', 'colormag' ),
 				'section'  => 'colormag_footer_bar_section',
-				'priority' => 50,
+				'priority' => 90,
 			),
 
 			array(
@@ -100,7 +143,7 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 					'target_id'    => 'colormag_social_icons_section',
 					'target_label' => esc_html__( 'Social Icons', 'colormag' ),
 				),
-				'priority'      => 60,
+				'priority'      => 100,
 			),
 
 			array(
