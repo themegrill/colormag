@@ -271,6 +271,76 @@ class ColorMag_Dynamic_CSS {
 	$header_background         = get_theme_mod( 'colormag_main_header_background', $header_background_default );
 	$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header-1, .dark-skin .cm-header-1' );
 
+	// Primary menu options.
+	$primary_menu_background_default = array(
+		'background-color'      => '#27272A',
+		'background-image'      => '',
+		'background-position'   => 'center center',
+		'background-size'       => 'auto',
+		'background-attachment' => 'scroll',
+		'background-repeat'     => 'repeat',
+	);
+	$primary_menu_background = get_theme_mod( 'colormag_primary_menu_background', $primary_menu_background_default );
+	$parse_css              .= colormag_parse_background_css( $primary_menu_background_default, $primary_menu_background, '#cm-primary-nav, .cm-layout-2 #cm-primary-nav' );
+
+	$primary_menu_top_border_color            = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
+	$primary_menu_top_border_color_css = array(
+		'#cm-primary-nav' => array(
+			'border-top-color' => esc_html( $primary_menu_top_border_color ),
+		),
+	);
+	$parse_css .= colormag_parse_css( '#207daf', $primary_menu_top_border_color, $primary_menu_top_border_color_css );
+
+	$primary_menu_text_color = get_theme_mod( 'colormag_primary_menu_text_color', '' );
+	$primary_menu_text_color_css = array(
+		'.cm-primary-nav a,
+		.cm-primary-nav ul li ul li a,
+		.cm-primary-nav ul li.current-menu-item ul li a,
+		.cm-primary-nav ul li ul li.current-menu-item a,
+		.cm-primary-nav ul li.current_page_ancestor ul li a,
+		.cm-primary-nav ul li.current-menu-ancestor ul li a,
+		.cm-primary-nav ul li.current_page_item ul li a,
+		.cm-primary-nav li.menu-item-has-children>a::after,
+		.cm-primary-nav li.page_item_has_children>a::after,
+		.cm-layout-2-style-1 .cm-primary-nav a,
+		.cm-layout-2-style-1 .cm-primary-nav ul > li > a' => array(
+			'color' => esc_html( $primary_menu_text_color ),
+		),
+		'.cm-layout-2 .cm-primary-nav .cm-submenu-toggle .cm-icon,
+		.cm-primary-nav .cm-submenu-toggle .cm-icon'=> array(
+			'fill' => esc_html( $primary_menu_text_color ),
+		),
+	);
+	$parse_css .= colormag_parse_css( '', $primary_menu_text_color, $primary_menu_text_color_css );
+
+	$primary_menu_selected_hovered_text_color     = get_theme_mod( 'colormag_primary_menu_selected_hovered_text_color', '' );
+	$primary_menu_selected_hovered_text_color_css = array(
+		'.cm-primary-nav a:hover,
+		.cm-primary-nav ul li.current-menu-item a,
+		.cm-primary-nav ul li ul li.current-menu-item a,
+		.cm-primary-nav ul li.current_page_ancestor a,
+		.cm-primary-nav ul li.current-menu-ancestor a,
+		.cm-primary-nav ul li.current_page_item a, .cm-primary-nav ul li:hover>a,
+		.cm-primary-nav ul li ul li a:hover, .cm-primary-nav ul li ul li:hover>a,
+		.cm-primary-nav ul li.current-menu-item ul li a:hover,
+		.cm-primary-nav li.page_item_has_children.current-menu-item>a::after,
+		.cm-layout-2-style-1 .cm-primary-nav ul li:hover > a' => array(
+			'color' => esc_html( $primary_menu_selected_hovered_text_color ),
+		),
+	);
+	$parse_css .= colormag_parse_css( '', $primary_menu_selected_hovered_text_color, $primary_menu_selected_hovered_text_color_css );
+
+	$primary_sub_menu_background_default = array(
+		'background-color'      => '#232323',
+		'background-image'      => '',
+		'background-position'   => 'center center',
+		'background-size'       => 'auto',
+		'background-attachment' => 'scroll',
+		'background-repeat'     => 'repeat',
+	);
+	$primary_sub_menu_background = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
+	$parse_css .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
+
 	// Footer column.
 	$footer_background_default = array(
 		'background-color'      => '',

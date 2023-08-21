@@ -36,6 +36,63 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 
 		$configs = array(
 
+			array(
+				'name'     => 'colormag_primary_menu_style_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_background_group',
+				'label'    => esc_html__( 'Background', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_background',
+				'default'  => array(
+					'background-color'      => '#27272A',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				),
+				'type'     => 'sub-control',
+				'control'  => 'colormag-background',
+				'parent'   => 'colormag_primary_menu_background_group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 30,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_border_top_group',
+				'label'    => esc_html__( 'Border Top', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_top_border_color',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'default'  => '#207daf',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_primary_menu_border_top_group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 50,
+			),
+
 			/**
 			 * Home icon options.
 			 */
@@ -45,7 +102,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Home Icon/Logo', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
-				'priority' => 10,
+				'priority' => 60,
 			),
 
 			// Home icon in menu heading separator.
@@ -55,11 +112,92 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'type'     => 'control',
 				'control'  => 'select',
 				'section'  => 'colormag_primary_menu_section',
-				'priority' => 20,
+				'priority' => 70,
 				'choices'  => array(
 					'none'      => esc_html__( 'None', 'colormag' ),
 					'home-icon' => esc_html__( 'Home Icon', 'colormag' ),
 				),
+			),
+
+			// Main Menu.
+			array(
+				'name'     => 'colormag_main_menu_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Main Menu', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 80,
+			),
+
+			// Primary Menu.
+			array(
+				'name'     => 'colormag_primary_menu_color_group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 90,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_text_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_primary_menu_color_group',
+				'tab'      => esc_html__( 'Normal', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 100,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_selected_hovered_text_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_primary_menu_color_group',
+				'tab'      => esc_html__( 'Hover/Selected', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 110,
+			),
+
+			// Sub Menu.
+			array(
+				'name'     => 'colormag_sub_menu_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Sub Menu', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 120,
+			),
+
+			// Background.
+			array(
+				'name'     => 'colormag_sub_menu_background_group',
+				'label'    => esc_html__( 'Background', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 130,
+			),
+
+			array(
+				'name'     => 'colormag_primary_sub_menu_background',
+				'default'  => array(
+					'background-color'      => '#232323',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				),
+				'type'     => 'sub-control',
+				'control'  => 'colormag-background',
+				'parent'   => 'colormag_sub_menu_background_group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 140,
 			),
 
 			array(
