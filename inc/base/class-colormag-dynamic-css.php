@@ -341,7 +341,7 @@ class ColorMag_Dynamic_CSS {
 	$primary_sub_menu_background = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
 	$parse_css .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
 
-	// Footer column.
+	// Footer column options.
 	$footer_background_default = array(
 		'background-color'      => '',
 		'background-image'      => '',
@@ -352,6 +352,17 @@ class ColorMag_Dynamic_CSS {
 	);
 	$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
 	$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
+
+	$footer_upper_background_default = array(
+		'background-color'      => '',
+		'background-image'      => '',
+		'background-position'   => 'center center',
+		'background-size'       => 'auto',
+		'background-attachment' => 'scroll',
+		'background-repeat'     => 'repeat',
+	);
+	$footer_upper_background = get_theme_mod( 'colormag_upper_footer_background', $footer_upper_background_default );
+	$parse_css               .= colormag_parse_background_css( $footer_upper_background_default, $footer_upper_background, '.cm-footer .cm-upper-footer-cols .widget' );
 
 	// Footer bar.
 	$footer_copyright_background_default = array(
