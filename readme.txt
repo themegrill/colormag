@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 3.0.4 - 2023-08-22 =
 * Feature - Primary menu background color option.
 * Feature - Primary menu border color option.
 * Feature - Main menu color option.
