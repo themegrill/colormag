@@ -328,6 +328,11 @@ class ColorMag_Dynamic_CSS {
 		.cm-layout-2-style-1 .cm-primary-nav ul li:hover > a' => array(
 			'color' => esc_html( $primary_menu_selected_hovered_text_color ),
 			),
+			'.cm-layout-2 .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon,
+			.cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon
+		'      => array(
+				'fill' => esc_html( $primary_menu_selected_hovered_text_color ),
+			),
 		);
 		$parse_css                                   .= colormag_parse_css( '', $primary_menu_selected_hovered_text_color, $primary_menu_selected_hovered_text_color_css );
 
@@ -362,8 +367,8 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $header_action_icon_hover_color ),
 			),
 
-			'.cm-primary-nav .cm-random-post a svg:hover,
-			.cm-mobile-nav .cm-random-post a svg:hover' => array(
+			'.cm-primary-nav .cm-random-post a:hover > svg,
+			.cm-mobile-nav .cm-random-post a:hover > svg' => array(
 				'fill' => esc_html( $header_action_icon_hover_color ),
 			),
 		);
