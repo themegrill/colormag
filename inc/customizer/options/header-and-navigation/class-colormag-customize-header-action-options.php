@@ -36,6 +36,26 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 
 		$configs = array(
 
+			// Style.
+			array(
+				'name'     => 'colormag_header_action_style_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Style', 'colormag' ),
+				'section'  => 'colormag_header_action_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'     => 'colormag_header_action_icon_color',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'default'  => '#fff',
+				'type'     => 'control',
+				'control'  => 'colormag-color',
+				'section'  => 'colormag_header_action_section',
+				'priority' => 10,
+			),
+
 			// Search Icon.
 			array(
 				'name'     => 'colormag_search_icon_in_menu_heading',
