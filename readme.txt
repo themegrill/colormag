@@ -76,6 +76,7 @@ and we will include it within the theme from next version update.
 * Feature - Upper footer widget background color option.
 * Feature - Footer copyright content color option.
 * Feature - Footer copyright link color option.
+* Added   - New Demo (ColorMag NewsHive) - Gutenberg-based WordPress Template Site for Blog, Newspaper & Magazine.
 
 = Version 3.0.3 - 2023-08-15 =
 * Feature - Top bar background color option.
