@@ -342,6 +342,19 @@ class ColorMag_Dynamic_CSS {
 	$primary_sub_menu_background = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
 	$parse_css .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
 
+	// Header action color option
+		$header_action_icon_color             = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
+		$header_action_icon_color_css = array(
+			'.fa.search-top' => array(
+				'color' => esc_html( $header_action_icon_color ),
+			),
+
+			'.cm-primary-nav .cm-random-post a svg' => array(
+				'fill' => esc_html( $header_action_icon_color ),
+			),
+		);
+		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_color, $header_action_icon_color_css );
+
 	// Footer column options.
 	$footer_background_default = array(
 		'background-color'      => '',
