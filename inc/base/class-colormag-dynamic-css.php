@@ -349,7 +349,8 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $header_action_icon_color ),
 			),
 
-			'.cm-primary-nav .cm-random-post a svg' => array(
+			'.cm-primary-nav .cm-random-post a svg,
+			.cm-mobile-nav .cm-random-post a svg' => array(
 				'fill' => esc_html( $header_action_icon_color ),
 			),
 		);
@@ -372,8 +373,7 @@ class ColorMag_Dynamic_CSS {
 
 		$mobile_menu_toggle_color_css = array(
 			'.cm-header .cm-menu-toggle svg,
-			.cm-header .cm-menu-toggle svg,
-			.cm-mobile-nav .cm-random-post a svg' => array(
+			.cm-header .cm-menu-toggle svg' => array(
 			'fill' => esc_html( $mobile_menu_toggle_color ),
 			),
 		);
