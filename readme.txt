@@ -72,6 +72,7 @@ and we will include it within the theme from next version update.
 * Feature - Main menu hover color option.
 * Feature - Sub menu background color option.
 * Feature - Header action icon color option.
+* Feature - Mobile menu toggle icon color option.
 * Feature - Upper footer widget background color option.
 * Feature - Footer copyright content color option.
 * Feature - Footer copyright link color option.
