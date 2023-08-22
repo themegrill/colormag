@@ -53,7 +53,7 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 				'type'     => 'control',
 				'control'  => 'colormag-color',
 				'section'  => 'colormag_header_action_section',
-				'priority' => 10,
+				'priority' => 20,
 			),
 
 			// Search Icon.
@@ -63,7 +63,7 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Search', 'colormag' ),
 				'section'  => 'colormag_header_action_section',
-				'priority' => 10,
+				'priority' => 30,
 			),
 
 			array(
@@ -73,7 +73,7 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 				'control'  => 'colormag-toggle',
 				'label'    => esc_html__( 'Enable', 'colormag' ),
 				'section'  => 'colormag_header_action_section',
-				'priority' => 20,
+				'priority' => 40,
 			),
 
 			// Random Post.
@@ -83,7 +83,7 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Random Post', 'colormag' ),
 				'section'  => 'colormag_header_action_section',
-				'priority' => 30,
+				'priority' => 50,
 			),
 
 			array(
@@ -101,7 +101,7 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 						'render_random_post',
 					),
 				),
-				'priority'  => 40,
+				'priority'  => 60,
 			),
 		);
 
