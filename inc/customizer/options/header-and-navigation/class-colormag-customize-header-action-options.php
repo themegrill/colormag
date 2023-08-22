@@ -47,12 +47,34 @@ class ColorMag_Customize_Header_Action_Options extends ColorMag_Customize_Base_O
 			),
 
 			array(
-				'name'     => 'colormag_header_action_icon_color',
+				'name'     => 'colormag_header_action_icon_color_group',
 				'label'    => esc_html__( 'Color', 'colormag' ),
 				'default'  => '#fff',
 				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_header_action_section',
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_header_action_icon_color',
+				'default'  => '#fff',
+				'type'     => 'sub-control',
 				'control'  => 'colormag-color',
 				'section'  => 'colormag_header_action_section',
+				'parent'   => 'colormag_header_action_icon_color_group',
+				'tab'      => esc_html__( 'Normal', 'colormag' ),
+				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_header_action_icon_hover_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'section'  => 'colormag_header_action_section',
+				'parent'   => 'colormag_header_action_icon_color_group',
+				'tab'      => esc_html__( 'Hover', 'colormag' ),
 				'priority' => 20,
 			),
 

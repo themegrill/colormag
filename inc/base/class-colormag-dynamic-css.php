@@ -349,11 +349,25 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $header_action_icon_color ),
 			),
 
-			'.cm-primary-nav .cm-random-post a svg' => array(
+			'.cm-primary-nav .cm-random-post a svg,
+			.cm-mobile-nav .cm-random-post a svg' => array(
 				'fill' => esc_html( $header_action_icon_color ),
 			),
 		);
 		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_color, $header_action_icon_color_css );
+
+		$header_action_icon_hover_color             = get_theme_mod( 'colormag_header_action_icon_hover_color', '' );
+		$header_action_icon_hover_color_css = array(
+			'.fa.search-top:hover' => array(
+				'color' => esc_html( $header_action_icon_hover_color ),
+			),
+
+			'.cm-primary-nav .cm-random-post a svg:hover,
+			.cm-mobile-nav .cm-random-post a svg:hover' => array(
+				'fill' => esc_html( $header_action_icon_hover_color ),
+			),
+		);
+		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_hover_color, $header_action_icon_hover_color_css );
 
 	// Footer column options.
 	$footer_background_default = array(
