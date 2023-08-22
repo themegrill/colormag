@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 3.0.3\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-08-22 04:26:27+00:00\n"
+"POT-Creation-Date: 2023-08-22 04:42:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -911,6 +911,7 @@ msgid "Style"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1118
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:66
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:186
 msgid "Normal"
 msgstr ""
@@ -986,8 +987,8 @@ msgstr ""
 #: inc/customizer/options/content/class-colormag-customize-page-options.php:51
 #: inc/customizer/options/content/class-colormag-customize-single-post-options.php:56
 #: inc/customizer/options/content/class-colormag-customize-single-post-options.php:93
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:74
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:94
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:96
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:116
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:65
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:136
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:67
@@ -1178,12 +1179,16 @@ msgstr ""
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:64
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:77
+msgid "Hover"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:86
 #: searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:84
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:106
 msgid "Random Post"
 msgstr ""
 

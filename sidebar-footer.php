@@ -64,9 +64,6 @@ if ( ! is_active_sidebar( 'colormag_footer_sidebar_one' ) &&
 			</div>
 			<?php endif; ?>
 
-			<div class="cm-footer-full-width-sidebar inner-wrap">
-				<?php dynamic_sidebar( 'colormag_footer_sidebar_full_width' ); ?>
-			</div>
 		</div>
 	</div>
 </div>
