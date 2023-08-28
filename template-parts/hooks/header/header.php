@@ -423,20 +423,6 @@ endif;
 
 add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner_start', 10 );
 
-if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
-	/**
-	 * Container starts.
-	 */
-	function colormag_theme_breadcrumb() {
-		breadcrumb_trail(
-			array(
-				'show_browse' => false,
-			)
-		);
-	}
-endif;
-
-add_action( 'colormag_action_breadcrumb', 'colormag_theme_breadcrumb', 10 );
 
 if ( ! function_exists( 'colormag_add_submenu_icon' ) ) :
 
@@ -480,3 +466,62 @@ if ( ! function_exists( 'colormag_add_submenu_icon' ) ) :
 endif;
 
 add_filter( 'walker_nav_menu_start_el', 'colormag_add_submenu_icon', 10, 4 );
+
+if ( ! function_exists( 'colormag_breadcrumb' ) ) :
+
+	/**
+	 * Display the breadcrumbs provided via Yoast or BreadCrumb NavXT plugin,
+	 * where BreadCrumb NavXT plugin takes precedence.
+	 */
+	function colormag_breadcrumb() {
+
+		// Bail out if breadcrumb is not selected.
+		if ( 0 == get_theme_mod( 'colormag_breadcrumb_enable', 0 ) ) {
+			return;
+		}
+		?>
+
+		<!-- Breadcrumb display -->
+		<div id="breadcrumb-wrap" class="breadcrumb-wrap" typeof="BreadcrumbList">
+			<div class="inner-wrap">
+			<?php
+			if ( function_exists( 'breadcrumb_trail' ) ) {
+				if ( ColorMag_Utils::colormag_is_woocommerce_active() && function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+
+					// Make WC breadcrumb with the theme.
+					woocommerce_breadcrumb(
+						array(
+							'wrap_before' => '<nav role="navigation" aria-label="' . esc_html__( 'Breadcrumbs', 'colormag' ) . '" class="breadcrumb-trail breadcrumbs">' . '<span class="breadcrumb-title">' . get_theme_mod( 'colormag_breadcrumb_label', esc_html__( 'You are here: ', 'colormag' ) ) . '</span>' . '<ul class="trail-items">',
+							'wrap_after'  => '</ul></nav>',
+							'before'      => '<li class="trail-item">',
+							'after'       => '</li>',
+							'delimiter'   => '',
+						)
+					);
+				} else {
+					do_action( 'colormag_action_breadcrumb' );
+				}
+			}
+			?>
+			</div>
+		</div>
+		<?php
+	}
+endif;
+
+	add_action( 'colormag_action_before_content', 'colormag_breadcrumb', 15 );
+
+	if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
+	/**
+	 * Container starts.
+	 */
+	function colormag_theme_breadcrumb() {
+		breadcrumb_trail(
+			array(
+				'show_browse' => false,
+			)
+		);
+	}
+endif;
+
+add_action( 'colormag_action_breadcrumb', 'colormag_theme_breadcrumb', 10 );

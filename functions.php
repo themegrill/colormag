@@ -122,6 +122,9 @@ require COLORMAG_PARENT_DIR . '/template-parts/hooks/footer/footer.php';
 /** WP_Query functions files. */
 require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
 
+/** Breadcrumb class. */
+require_once COLORMAG_INCLUDES_DIR . '/class-breadcrumb-trail.php';
+
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/ajax.php';
 
