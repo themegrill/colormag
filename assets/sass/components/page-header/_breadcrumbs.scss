@@ -1,0 +1,44 @@
+.breadcrumb-wrap {
+	color: $color__gray-six;
+	@include font-size("font-size-sm");
+	margin-bottom: length( 'l-15' );
+	padding-bottom: length( 'l-10' );
+
+	.inner-wrap {
+
+		& > span {
+			margin: 0 2px;
+		}
+	}
+}
+
+.breadcrumb-trail {
+	margin: 0;
+	padding: 0;
+
+	ul {
+		display: inline-flex;
+		list-style-type: none;
+		flex-wrap: wrap;
+
+		li {
+
+			a, &:last-child {
+				margin: 0 2px;
+			}
+
+			&::after {
+				content: " > ";
+				white-space: pre;
+				font-family: FontAwesome;
+			}
+
+			&:last-child {
+
+				&::after {
+					content: none;
+				}
+			}
+		}
+	}
+}

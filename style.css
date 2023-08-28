@@ -1460,6 +1460,45 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	padding: 0;
 }
 
+.breadcrumb-wrap {
+	color: #888888;
+	font-size: 1.6rem;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+}
+
+.breadcrumb-wrap .inner-wrap > span {
+	margin: 0 2px;
+}
+
+.breadcrumb-trail {
+	margin: 0;
+	padding: 0;
+}
+
+.breadcrumb-trail ul {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	list-style-type: none;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.breadcrumb-trail ul li a, .breadcrumb-trail ul li:last-child {
+	margin: 0 2px;
+}
+
+.breadcrumb-trail ul li::after {
+	content: " > ";
+	white-space: pre;
+	font-family: FontAwesome;
+}
+
+.breadcrumb-trail ul li:last-child::after {
+	content: none;
+}
+
 /* Navigation.
 --------------------------------------------- */
 .cm-primary-nav li {
