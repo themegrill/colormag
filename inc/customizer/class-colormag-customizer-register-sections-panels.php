@@ -257,6 +257,22 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			array(
+				'name'             => 'colormag_breadcrumb_section_separator',
+				'type'             => 'section',
+				'panel'            => 'colormag_header_panel',
+				'priority'         => 100,
+				'section_callback' => 'ColorMag_WP_Customize_Separator',
+			),
+
+			array(
+				'name'     => 'colormag_breadcrumb_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Breadcrumb', 'colormag' ),
+				'panel'    => 'colormag_header_panel',
+				'priority' => 110,
+			),
+
+			array(
 				'name'             => 'colormag_sticky_header_section_separator',
 				'type'             => 'section',
 				'panel'            => 'colormag_header_panel',
