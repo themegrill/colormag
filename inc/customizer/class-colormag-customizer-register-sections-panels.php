@@ -276,6 +276,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			 * Content.
 			 */
 			array(
+				'name'     => 'colormag_blog_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Blog', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 10,
+			),
+
+			array(
 				'name'     => 'colormag_single_post_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Single Post', 'colormag' ),
