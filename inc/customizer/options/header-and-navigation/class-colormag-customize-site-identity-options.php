@@ -45,6 +45,15 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'priority' => 10,
 			),
 
+			array(
+				'name'     => 'colormag_retina_logo',
+				'type'     => 'control',
+				'control'  => 'image',
+				'label'    => esc_html__( 'Retina Logo', 'colormag' ),
+				'section'  => 'title_tagline',
+				'priority' => 15,
+			),
+
 			/**
 			 *  Site Icon.
 			 */
