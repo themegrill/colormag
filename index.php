@@ -31,6 +31,11 @@ get_header();
 
 		<div id="cm-primary" class="cm-primary">
 
+			<?php
+			$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
+			$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
+			?>
+
 			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col ); ?>" >
 				<?php
 				if ( have_posts() ) :
@@ -56,8 +61,6 @@ get_header();
 					 */
 					do_action( 'colormag_after_index_page_loop' );
 
-					colormag_pagination();
-
 				else :
 
 					if ( true === apply_filters( 'colormag_index_page_no_results_filter', true ) ) :
@@ -67,6 +70,12 @@ get_header();
 				endif;
 				?>
 			</div><!-- .cm-posts -->
+
+			<?php
+			if ( 1 == $pagination_enable ) :
+				colormag_pagination();
+			endif;
+			?>
 
 		</div><!-- #cm-primary -->
 

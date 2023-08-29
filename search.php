@@ -44,6 +44,9 @@ get_header();
 					 * Hook: colormag_before_search_results_page_loop.
 					 */
 					do_action( 'colormag_before_search_results_page_loop' );
+
+					$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
+					$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
 					?>
 
 					<div class="article-container">
@@ -69,8 +72,6 @@ get_header();
 					 */
 					do_action( 'colormag_after_search_results_page_loop' );
 
-					colormag_pagination();
-
 				else :
 					if ( true === apply_filters( 'colormag_search_results_page_no_results_filter', true ) ) {
 						get_template_part( 'no-results', 'archive' );
@@ -78,6 +79,12 @@ get_header();
 				endif;
 				?>
 			</div><!-- .cm-posts -->
+
+			<?php
+			if ( 1 == $pagination_enable ) :
+				colormag_pagination();
+			endif;
+			?>
 
 		</div><!-- #cm-primary -->
 
