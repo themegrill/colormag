@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Feature -Numbered pagination option.
+
 = Version 3.0.4 - 2023-08-22 =
 * Feature - Primary menu background color option.
 * Feature - Primary menu border color option.
