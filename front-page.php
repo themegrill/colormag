@@ -85,9 +85,12 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 		$hide_blog_front = get_theme_mod( 'colormag_hide_blog_static_page_post', false );
 
 		if ( ! $hide_blog_front ) :
+
+			$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
+			$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
 			?>
 
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
@@ -121,7 +124,9 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 			</div>
 
 			<?php
+			if ( 1 == $pagination_enable ) {
 				colormag_pagination();
+			}
 			?>
 
 		<?php endif; ?>

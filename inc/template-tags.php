@@ -750,9 +750,34 @@ if ( ! function_exists( 'colormag_pagination' ) ) :
 		/**
 		 * Hook: colormag_after_archive_page_loop.
 		 */
-		if ( true === apply_filters( 'colormag_page_navigation_filter', true ) ) :
-			get_template_part( 'navigation', 'none' );
+		if ( 'default' === get_theme_mod( 'colormag_pagination_type', 'default' ) ) :
+			if ( true === apply_filters( 'colormag_page_navigation_filter', true ) ) :
+				get_template_part( 'navigation', 'none' );
+			endif;
 		endif;
+
+		if ( 'numbered_pagination' === get_theme_mod( 'colormag_pagination_type', 'default' ) ) :
+			colormag_numbered_pagination();
+		endif;
+	}
+endif;
+
+if ( ! function_exists( 'colormag_numbered_pagination' ) ) :
+	function colormag_numbered_pagination() {
+		?>
+
+		<div class="tg-numbered-pagination">
+			<?php
+			$args = array(
+				'type'      => 'list',
+				'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+				'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+			);
+
+			the_posts_pagination( $args );
+			?>
+		</div>
+		<?php
 	}
 endif;
 
