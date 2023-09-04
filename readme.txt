@@ -68,6 +68,7 @@ and we will include it within the theme from next version update.
 = TBD =
 * Feature - Breadcrumb option.
 * Feature - Numbered pagination option.
+* Feature - Retina logo option.
 
 = Version 3.0.4 - 2023-08-22 =
 * Feature - Primary menu background color option.
