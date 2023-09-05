@@ -69,9 +69,9 @@ class ColorMag_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 14 days.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-//		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-14 day' ) ) || ( $ignored_notice_partially > strtotime( '-14 day' ) ) || ( $ignored_notice ) ) {
-//			return;
-//		}
+		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-14 day' ) ) || ( $ignored_notice_partially > strtotime( '-14 day' ) ) || ( $ignored_notice ) ) {
+			return;
+		}
 		?>
 		<div class="notice notice-success colormag-notice theme-review-notice" style="position:relative;">
 		<div class="colormag-message__content">
