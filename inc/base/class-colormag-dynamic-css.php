@@ -309,8 +309,8 @@ class ColorMag_Dynamic_CSS {
 ),
 			'.cm-layout-2 .cm-primary-nav .cm-submenu-toggle .cm-icon,
 		.cm-primary-nav .cm-submenu-toggle .cm-icon'      => array(
-			'fill' => esc_html( $primary_menu_text_color ),
-			),
+		'fill' => esc_html( $primary_menu_text_color ),
+		),
 		);
 		$parse_css                  .= colormag_parse_css( '', $primary_menu_text_color, $primary_menu_text_color_css );
 
@@ -326,13 +326,13 @@ class ColorMag_Dynamic_CSS {
 		.cm-primary-nav ul li.current-menu-item ul li a:hover,
 		.cm-primary-nav li.page_item_has_children.current-menu-item>a::after,
 		.cm-layout-2-style-1 .cm-primary-nav ul li:hover > a' => array(
-			'color' => esc_html( $primary_menu_selected_hovered_text_color ),
-			),
+		'color' => esc_html( $primary_menu_selected_hovered_text_color ),
+		),
 			'.cm-layout-2 .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon,
 			.cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon
-		'      => array(
-				'fill' => esc_html( $primary_menu_selected_hovered_text_color ),
-			),
+		' => array(
+		'fill' => esc_html( $primary_menu_selected_hovered_text_color ),
+		),
 		);
 		$parse_css                                   .= colormag_parse_css( '', $primary_menu_selected_hovered_text_color, $primary_menu_selected_hovered_text_color_css );
 
@@ -347,44 +347,44 @@ class ColorMag_Dynamic_CSS {
 		$primary_sub_menu_background         = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
 		$parse_css                          .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
 
-	// Header action color option
-		$header_action_icon_color             = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
+		// Header action color option
+		$header_action_icon_color     = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
 		$header_action_icon_color_css = array(
-			'.fa.search-top' => array(
+			'.fa.search-top'                      => array(
 				'color' => esc_html( $header_action_icon_color ),
 			),
 
 			'.cm-primary-nav .cm-random-post a svg,
 			.cm-mobile-nav .cm-random-post a svg' => array(
-				'fill' => esc_html( $header_action_icon_color ),
-			),
+		'fill' => esc_html( $header_action_icon_color ),
+		),
 		);
 		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_color, $header_action_icon_color_css );
 
-		$header_action_icon_hover_color             = get_theme_mod( 'colormag_header_action_icon_hover_color', '' );
+		$header_action_icon_hover_color     = get_theme_mod( 'colormag_header_action_icon_hover_color', '' );
 		$header_action_icon_hover_color_css = array(
-			'.fa.search-top:hover' => array(
+			'.fa.search-top:hover'                        => array(
 				'color' => esc_html( $header_action_icon_hover_color ),
 			),
 
 			'.cm-primary-nav .cm-random-post a:hover > svg,
 			.cm-mobile-nav .cm-random-post a:hover > svg' => array(
-				'fill' => esc_html( $header_action_icon_hover_color ),
-			),
+		'fill' => esc_html( $header_action_icon_hover_color ),
+		),
 		);
 		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_hover_color, $header_action_icon_hover_color_css );
 
-	// Footer column options.
-	$footer_background_default = array(
-		'background-color'      => '',
-		'background-image'      => '',
-		'background-position'   => 'center center',
-		'background-size'       => 'auto',
-		'background-attachment' => 'scroll',
-		'background-repeat'     => 'repeat',
-	);
-	$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
-	$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
+		// Footer column options.
+		$footer_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
+		$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
 
 		// Mobile menu toggle color.
 		$mobile_menu_toggle_color = get_theme_mod( 'colormag_mobile_menu_toggle_icon_color', '#fff' );
@@ -392,8 +392,8 @@ class ColorMag_Dynamic_CSS {
 		$mobile_menu_toggle_color_css = array(
 			'.cm-header .cm-menu-toggle svg,
 			.cm-header .cm-menu-toggle svg' => array(
-			'fill' => esc_html( $mobile_menu_toggle_color ),
-			),
+		'fill' => esc_html( $mobile_menu_toggle_color ),
+		),
 		);
 
 		$parse_css .= colormag_parse_css( '#333333', $mobile_menu_toggle_color, $mobile_menu_toggle_color_css );
