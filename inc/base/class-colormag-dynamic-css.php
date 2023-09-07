@@ -239,16 +239,7 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
-		// Top bar options.
-		$top_bar_background_color     = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
-		$top_bar_background_color_css = array(
-			'.cm-top-bar' => array(
-				'background-color' => esc_html( $top_bar_background_color ),
-			),
-		);
-		$parse_css                   .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
-
-		// Post content background.
+		// Inside container background.
 		$post_content_background_default = array(
 			'background-color'      => '#ffffff',
 			'background-image'      => '',
@@ -260,7 +251,16 @@ class ColorMag_Dynamic_CSS {
 		$post_content_background         = get_theme_mod( 'colormag_inside_container_background', $post_content_background_default );
 		$parse_css                      .= colormag_parse_background_css( $post_content_background_default, $post_content_background, '.cm-content' );
 
-		// Main header options.
+		// Top bar background option.
+		$top_bar_background_color     = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
+		$top_bar_background_color_css = array(
+			'.cm-top-bar' => array(
+				'background-color' => esc_html( $top_bar_background_color ),
+			),
+		);
+		$parse_css                   .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
+
+		// Main header background option.
 		$header_background_default = array(
 			'background-color'      => '',
 			'background-image'      => '',
@@ -272,7 +272,7 @@ class ColorMag_Dynamic_CSS {
 		$header_background         = get_theme_mod( 'colormag_main_header_background', $header_background_default );
 		$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header-1, .dark-skin .cm-header-1' );
 
-		// Primary menu options.
+		// Primary menu background option.
 		$primary_menu_background_default = array(
 			'background-color'      => '#27272A',
 			'background-image'      => '',
@@ -284,6 +284,7 @@ class ColorMag_Dynamic_CSS {
 		$primary_menu_background         = get_theme_mod( 'colormag_primary_menu_background', $primary_menu_background_default );
 		$parse_css                      .= colormag_parse_background_css( $primary_menu_background_default, $primary_menu_background, '#cm-primary-nav, .cm-layout-2 #cm-primary-nav' );
 
+		// Primary menu top border color option.
 		$primary_menu_top_border_color     = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
 		$primary_menu_top_border_color_css = array(
 			'#cm-primary-nav' => array(
@@ -292,6 +293,17 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_css                        .= colormag_parse_css( '#207daf', $primary_menu_top_border_color, $primary_menu_top_border_color_css );
 
+		// Mobile menu toggle icon color option.
+		$mobile_menu_toggle_color = get_theme_mod( 'colormag_mobile_menu_toggle_icon_color', '#fff' );
+		$mobile_menu_toggle_color_css = array(
+			'.cm-header .cm-menu-toggle svg,
+			.cm-header .cm-menu-toggle svg' => array(
+				'fill' => esc_html( $mobile_menu_toggle_color ),
+			),
+		);
+		$parse_css .= colormag_parse_css( '#333333', $mobile_menu_toggle_color, $mobile_menu_toggle_color_css );
+
+		// Primary menu text color option.
 		$primary_menu_text_color     = get_theme_mod( 'colormag_primary_menu_text_color', '' );
 		$primary_menu_text_color_css = array(
 			'.cm-primary-nav a,
@@ -305,15 +317,16 @@ class ColorMag_Dynamic_CSS {
 		.cm-primary-nav li.page_item_has_children>a::after,
 		.cm-layout-2-style-1 .cm-primary-nav a,
 		.cm-layout-2-style-1 .cm-primary-nav ul > li > a' => array(
-	'color' => esc_html( $primary_menu_text_color ),
-),
+				'color' => esc_html( $primary_menu_text_color ),
+			),
 			'.cm-layout-2 .cm-primary-nav .cm-submenu-toggle .cm-icon,
 		.cm-primary-nav .cm-submenu-toggle .cm-icon'      => array(
-		'fill' => esc_html( $primary_menu_text_color ),
-		),
+				'fill' => esc_html( $primary_menu_text_color ),
+			),
 		);
 		$parse_css                  .= colormag_parse_css( '', $primary_menu_text_color, $primary_menu_text_color_css );
 
+		// Primary menu text hover/selected color option.
 		$primary_menu_selected_hovered_text_color     = get_theme_mod( 'colormag_primary_menu_selected_hovered_text_color', '' );
 		$primary_menu_selected_hovered_text_color_css = array(
 			'.cm-primary-nav a:hover,
@@ -336,6 +349,7 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_css                                   .= colormag_parse_css( '', $primary_menu_selected_hovered_text_color, $primary_menu_selected_hovered_text_color_css );
 
+		// Sub menu background option.
 		$primary_sub_menu_background_default = array(
 			'background-color'      => '#232323',
 			'background-image'      => '',
@@ -386,17 +400,6 @@ class ColorMag_Dynamic_CSS {
 		$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
 		$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
 
-		// Mobile menu toggle color.
-		$mobile_menu_toggle_color = get_theme_mod( 'colormag_mobile_menu_toggle_icon_color', '#fff' );
-
-		$mobile_menu_toggle_color_css = array(
-			'.cm-header .cm-menu-toggle svg,
-			.cm-header .cm-menu-toggle svg' => array(
-		'fill' => esc_html( $mobile_menu_toggle_color ),
-		),
-		);
-
-		$parse_css .= colormag_parse_css( '#333333', $mobile_menu_toggle_color, $mobile_menu_toggle_color_css );
 
 		// Footer column options.
 		$footer_background_default = array(
