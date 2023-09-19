@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.0.4\n"
+"Project-Id-Version: ColorMag 3.0.5\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2023-09-04 04:32:31+00:00\n"
+"POT-Creation-Date: 2023-09-05 04:39:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,7 +142,6 @@ msgid "Premium Features"
 msgstr ""
 
 #: inc/admin/class-colormag-dashboard.php:116
-#: inc/admin/class-colormag-major-update-notice.php:25
 msgid "Learn More"
 msgstr ""
 
@@ -187,48 +186,59 @@ msgstr ""
 msgid "Join Now &#129066;"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:25
-msgid "Learn about ColorMag 3.0"
-msgstr ""
-
-#: inc/admin/class-colormag-major-update-notice.php:31
-#: inc/migration/demo-import-migration.php:49
-msgid "Contact Support"
-msgstr ""
-
-#: inc/admin/class-colormag-major-update-notice.php:52
-#: inc/admin/class-colormag-major-update-notice.php:63
+#: inc/admin/class-colormag-theme-review-notice.php:79
 #: inc/admin/class-colormag-welcome-notice.php:46
 #: inc/migration/demo-import-migration.php:29
 msgid "Colormag"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:60
-#. translators: 1: welcome page link starting html tag, 2: welcome page link
-#. ending html tag.
-msgid "Introducing ColorMag 3.0 !!"
+#: inc/admin/class-colormag-theme-review-notice.php:87
+#. translators: %s: Smile icon
+msgid "The above word is just to draw your attention. %s"
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:69
-#. translators: 1: welcome page link starting html tag, 2: welcome page link
-#. ending html tag.
+#: inc/admin/class-colormag-theme-review-notice.php:96
+#. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing
+#. of strong tag
 msgid ""
-"This is a major release with significant changes. It wouldn&#39;t break "
-"anything off your site but improves its UI/UX. Even though if you&#39;re "
-"experiencing any problems with your site due to this update, you can "
-"contact our support by clicking the button below:"
+"Hope you are having a nice experience with %1$s %2$s %3$s theme. Please "
+"provide this theme a nice review."
 msgstr ""
 
-#: inc/admin/class-colormag-major-update-notice.php:90
+#: inc/admin/class-colormag-theme-review-notice.php:104
+msgid "What benefit would you have?"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:110
+#. translators: %s: Smiley icon
+msgid ""
+"Basically, it would encourage us to release updates regularly with new "
+"features & bug fixes so that you can keep on using the theme without any "
+"issues and also to provide free support like we have been doing. %s"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:119
+msgid "Sure, I'd love to!"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:124
+msgid "I already did!"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:129
+msgid "Maybe later"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:134
+msgid "I have a query"
+msgstr ""
+
+#: inc/admin/class-colormag-theme-review-notice.php:154
+#: inc/admin/class-colormag-theme-review-notice.php:172
 #: inc/admin/class-colormag-welcome-notice.php:77
 #: inc/migration/class-colormag-migration.php:365
 #: inc/migration/demo-import-migration.php:72
 msgid "Action failed. Please refresh the page and retry."
-msgstr ""
-
-#: inc/admin/class-colormag-major-update-notice.php:94
-#: inc/admin/class-colormag-welcome-notice.php:81
-msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:26
@@ -248,6 +258,10 @@ msgstr ""
 msgid ""
 "Clicking the button will install and activate the ThemeGrill demo importer "
 "plugin."
+msgstr ""
+
+#: inc/admin/class-colormag-welcome-notice.php:81
+msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: inc/ajax.php:22 navigation.php:32 navigation.php:50
@@ -1047,8 +1061,8 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:65
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:136
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:67
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:74
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:96
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:83
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:105
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:66
 msgid "Enable"
 msgstr ""
@@ -1076,7 +1090,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:190
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:76
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:244
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:108
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:117
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:75
 msgid "Learn more"
 msgstr ""
@@ -1095,7 +1109,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:191
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:77
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:245
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:109
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:118
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:76
 msgid "Unlock more features available in Pro version."
 msgstr ""
@@ -1344,15 +1358,19 @@ msgstr ""
 msgid "Site Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:55
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:52
+msgid "Retina Logo"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:64
 msgid "Site Icon"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:67
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:76
 msgid "Site Title"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:89
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:98
 msgid "Site Tagline"
 msgstr ""
 
@@ -1393,6 +1411,10 @@ msgstr ""
 
 #: inc/migration/demo-import-migration.php:45
 msgid "Fix Migration Issues"
+msgstr ""
+
+#: inc/migration/demo-import-migration.php:49
+msgid "Contact Support"
 msgstr ""
 
 #: inc/template-functions.php:327
@@ -2067,11 +2089,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: template-parts/hooks/header/header.php:494
+#: template-parts/hooks/header/header.php:528
 msgid "Breadcrumbs"
 msgstr ""
 
-#: template-parts/hooks/header/header.php:494
+#: template-parts/hooks/header/header.php:528
 msgid "You are here: "
 msgstr ""
 
