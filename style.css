@@ -1780,6 +1780,9 @@ nav li > ol {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 	color: #fff;
 	font-size: 14px;
 	font-weight: 600;
@@ -3969,7 +3972,9 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu li {
 	border-bottom: 1px solid #F4F4F5;
-	display: block;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu li a {
