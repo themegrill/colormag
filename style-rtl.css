@@ -3989,7 +3989,7 @@ Styles for separating single posts loaded from ajax call.
 	background-color: #207daf;
 }
 
-.cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus a {
+.cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover > a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor > a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item > a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus > a {
 	color: #fff;
 }
 
