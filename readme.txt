@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD ==
+* Fix - Sub menu design issue.
+
 = Version 3.0.5 - 2023-09-05 =
 * Feature - Breadcrumb option.
 * Feature - Numbered pagination option.
