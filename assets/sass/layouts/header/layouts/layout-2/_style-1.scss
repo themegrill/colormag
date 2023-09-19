@@ -125,7 +125,7 @@
 
 				li {
 					border-bottom: 1px solid #F4F4F5;
-					display: block;
+					display: flex;
 
 					a {
 						width: auto;
@@ -140,7 +140,7 @@
 						border-color: $color__primary;
 						background-color: $color__primary;
 						
-						a {
+						> a {
 							color: $color__white;
 						}
 					}
