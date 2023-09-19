@@ -66,7 +66,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD ==
-* Fix - Sub menu design issue.
+* Fix   - Sub menu design issue.
+* Added - New Demo (ColorMag 02) - Gutenberg-based WordPress Template Site for Best News Magazine.
 
 = Version 3.0.5 - 2023-09-05 =
 * Feature - Breadcrumb option.
