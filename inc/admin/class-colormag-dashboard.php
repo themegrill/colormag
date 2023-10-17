@@ -70,13 +70,13 @@ class ColorMag_Dashboard {
 		$support_link = 'https://themegrill.com/contact/';
 
 		$pro_feature_links = array(
-			__( 'Top Bar', 'colormag' )       => 'https://docs.themegrill.com/colormag/customize-top-bar',
-			__( 'Main Header', 'colormag' )   => 'https://docs.themegrill.com/colormag/manage-main-header-layout-and-styles',
-			__( 'Primary Menu', 'colormag' )  => 'https://docs.themegrill.com/colormag/customize-the-primary-menu-of-the-site',
-			__( 'Blog', 'colormag' )          => 'https://docs.themegrill.com/colormag/manage-blog-page-layout',
-			__( 'Meta', 'colormag' )          => 'https://docs.themegrill.com/colormag/customize-the-post-meta',
-			__( 'Footer Column', 'colormag' ) => 'https://docs.themegrill.com/colormag/customize-footer-column',
-			__( 'Footer Bar', 'colormag' )    => 'https://docs.themegrill.com/colormag/customize-footer-bar-layout-styles',
+			__( 'Top Bar', 'colormag' )       => 'https://docs.themegrill.com/colormag/docs/customize-top-bar/',
+			__( 'Main Header', 'colormag' )   => 'https://docs.themegrill.com/colormag/docs/manage-main-header-layout-and-styles',
+			__( 'Primary Menu', 'colormag' )  => 'https://docs.themegrill.com/colormag/docs/customize-the-primary-menu-of-the-site',
+			__( 'Blog', 'colormag' )          => 'https://docs.themegrill.com/colormag/docs/manage-blog-page-layout',
+			__( 'Meta', 'colormag' )          => 'https://docs.themegrill.com/colormag/docs/customize-the-post-meta',
+			__( 'Footer Column', 'colormag' ) => 'https://docs.themegrill.com/colormag/docs/customize-footer-column',
+			__( 'Footer Bar', 'colormag' )    => 'https://docs.themegrill.com/colormag/docs/customize-footer-bar-layout-styles',
 		);
 
 		?>
