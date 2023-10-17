@@ -21,6 +21,10 @@ get_header();
 	 * Hook: colormag_before_body_content.
 	 */
 	do_action( 'colormag_before_body_content' );
+
+	$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
+	$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
+
 	?>
 		<div id="cm-primary" class="cm-primary">
 			<div class="cm-posts">
@@ -44,9 +48,6 @@ get_header();
 					 * Hook: colormag_before_search_results_page_loop.
 					 */
 					do_action( 'colormag_before_search_results_page_loop' );
-
-					$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
-					$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
 					?>
 
 					<div class="article-container">
