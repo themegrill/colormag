@@ -67,6 +67,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Fix - Spacing issue in editor.
+* Fix - Php error on search results page.
 
 = Version 3.0.6 - 2023-09-20 =
 * Fix   - Sub menu design issue.
