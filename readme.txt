@@ -65,7 +65,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD ==
+= Version TBD =
+* Fix - Spacing issue in editor.
+
+= Version 3.0.6 - 2023-09-20 =
 * Fix   - Sub menu design issue.
 * Added - New Demo (ColorMag 02) - Gutenberg-based WordPress Template Site for Best News Magazine.
 

@@ -935,6 +935,11 @@
 	}
 }
 
+.wp-embed-responsive .editor-styles-wrapper {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
 @media only screen and (max-width: 420px) {
 	.editor-styles-wrapper .wp-block .gallery-columns-4 .gallery-item {
 		width: 33.33%;
