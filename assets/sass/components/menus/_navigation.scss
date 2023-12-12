@@ -55,7 +55,6 @@
 		cursor: pointer;
 		@include font-size('font-size-sm');
 		font-weight: 600;
-		word-break: break-all;
 
 		&:hover {
 			color: $color__primary;
@@ -166,7 +165,7 @@
 }
 
 .tg-numbered-pagination {
-	margin-top: length( 'l-16' );	
+	margin-top: length( 'l-16' );
 }
 
 @media screen and (max-width: 767px) {

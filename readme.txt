@@ -65,6 +65,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Fix - Header background color issue on dark mode.
+* Fix - Navigation  post title word break issue.
+
 = Version 3.0.7 - 2023-10-18 =
 * Fix - Spacing issue in editor.
 * Fix - PHP error on search results page.
