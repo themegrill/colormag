@@ -169,7 +169,7 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 			array(
 				'name'     => 'colormag_main_header_background',
 				'default'  => array(
-					'background-color'      => '#ffffff',
+					'background-color'      => '',
 					'background-image'      => '',
 					'background-position'   => 'center center',
 					'background-size'       => 'auto',
