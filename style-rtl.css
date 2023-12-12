@@ -1602,7 +1602,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	cursor: pointer;
 	font-size: 1.6rem;
 	font-weight: 600;
-	word-break: break-all;
 }
 
 .previous a:hover,

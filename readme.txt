@@ -67,6 +67,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Fix - Header background color issue on dark mode.
+* Fix - Navigation  post title word break issue.
 
 = Version TBD =
 * Fix - Spacing issue in editor.
