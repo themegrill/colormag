@@ -19,9 +19,9 @@ if ( $related_posts->have_posts() ) :
 
 	<div class="related-posts-wrapper">
 
-		<h4 class="related-posts-main-title">
+		<h3 class="related-posts-main-title">
 			<i class="fa fa-thumbs-up"></i><span><?php echo esc_html( __( 'You May Also Like', 'colormag' ) ); ?></span>
-		</h4>
+		</h3>
 
 		<div class="related-posts">
 
