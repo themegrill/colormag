@@ -66,6 +66,9 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Fix - Breadcrumb option visible even when disabled.
+
+= Version TBD =
 * Fix - Image caption alignment issue in editor.
 * Fix - Single post headings tag issue.
 * Fix - Page title tag issue.
