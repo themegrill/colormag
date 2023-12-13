@@ -998,6 +998,15 @@
 	}
 }
 
+.wp-block-image .aligncenter,
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image.aligncenter,
+.wp-block-image.alignleft,
+.wp-block-image.alignright {
+    display: table;
+}
+
 .wp-embed-responsive {
 
 	.editor-styles-wrapper {

@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version TBD =
+* Fix - Image caption alignment issue in editor.
+
 = Version 3.0.8 - 2023-12-12 =
 * Fix - Header background color issue on dark mode.
 * Fix - Navigation  post title word break issue.
