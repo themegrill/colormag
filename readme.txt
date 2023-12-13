@@ -67,6 +67,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 TBD
 * Fix - Single post headings tag issue.
+* Fix - Page title tag issue.
 
 = Version 3.0.8 - 2023-12-12 =
 * Fix - Header background color issue on dark mode.
