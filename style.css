@@ -4508,6 +4508,10 @@ ul.wp-block-gallery img {
 
 /* Related Posts.
 --------------------------------------------- */
+.related-posts-wrapper h3 {
+	font-size: 2rem;
+}
+
 .related-posts-main-title {
 	margin-bottom: 30px;
 }

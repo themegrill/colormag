@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 	if ( ( ! is_page_template( 'page-templates/page-builder.php' ) ) ) {
 
-		$markup = is_front_page() ? 'h1' : 'h2';
+		$markup = is_front_page() ? 'h2' : 'h1';
 		?>
 		<header class="cm-entry-header">
 			<<?php echo esc_attr( $markup ); ?> class="cm-entry-title">
