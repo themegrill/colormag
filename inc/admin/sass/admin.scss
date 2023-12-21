@@ -45,12 +45,15 @@ $border-left-color_1: #6547DB;
 }
 .colormag-message__cta {
 	.button.button-hero {
-		min-height: 45px;
-		padding: 8px 24px;
-		font-size: 16px;
-		border-radius: 4px;
-		line-height: 1.8;
-		border: 0;
+		display: flex;
+		padding: 10px 20px;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		border-radius: 3px;
+		background: #2563EB;
+		box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.50);
+		line-height: unset;
 	}
 	.button.button-secondary.button-hero {
 		background: rgba(15, 103, 173, 0.04);
@@ -86,7 +89,8 @@ $border-left-color_1: #6547DB;
 /* Notices. */
 .colormag-notice {
 	position: relative;
-	padding: 16px 40px 16px 20px;
+	padding: 20px 20px 0 20px;
+	border-left-color: #2563EB;
 	.links {
 		margin: 1.2em 0;
 		display: flex;
@@ -110,8 +114,13 @@ $border-left-color_1: #6547DB;
 }
 
 /* Welcome notice. */
+.notice-dismiss:before {
+	color: #111;
+}
+
 .colormag-message__content {
 	display: flex;
+	justify-content: space-between;
 	gap: 24px;
 	.colormag-message__image {
 		display: flex;
@@ -125,17 +134,51 @@ $border-left-color_1: #6547DB;
 			object-fit: cover;
 		}
 	}
+	.colormag-message__head {
+		max-width: 540px;
+		margin-bottom: 24px;
+	}
+
+	h3 {
+		color: var(--Grey-grey-400, #383838);
+		font-family: Segoe UI;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin: unset;
+	}
+
 	.colormag-message__heading {
-		margin-top: 0;
-		line-height: 1.8;
-		padding: 0;
+		color: var(--Grey-grey-400, #383838);
+		font-family: Segoe UI;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 4px;
+		margin-bottom: 16px;
+	}
+
+	p {
+		color: #6B6B6B;
+		font-family: Segoe UI;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 19.3px; /* 148.462% */
 	}
 	.colormag-message__cta {
 		display: flex;
 		align-items: center;
 		gap: 16px;
 		.plugin-install-notice {
-			line-height: 1.4;
+			color: #A1A1A1;
+			font-family: Segoe UI;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 19.3px; /* 148.462% */
 		}
 		a {
 			&:before {
@@ -181,6 +224,7 @@ a.colormag-message-close {
 		width: 50px;
 	}
 	align-self: center;
+	margin-bottom: 24px;
 }
 
 /* Colormag review notice */

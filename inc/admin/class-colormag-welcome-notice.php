@@ -23,7 +23,7 @@ class Colormag_Welcome_Notice {
 	 *
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started with ColorMag', 'colormag' ) . '">' . esc_html__( 'Get started with ColorMag', 'colormag' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
 
 		return $html;
 	}
@@ -42,7 +42,7 @@ class Colormag_Welcome_Notice {
 		$current_user = wp_get_current_user();
 
 		// Check if the user is logged in
-		if ($current_user->ID != 0) {
+		if ( $current_user->ID != 0 ) {
 			// Get the username
 			$username = $current_user->user_login;
 		}
@@ -51,26 +51,46 @@ class Colormag_Welcome_Notice {
 			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 
 			<div class="colormag-message__content">
-				<div class="colormag-message__image">
-					<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
-				</div>
+<!--				<div class="colormag-message__image">-->
+<!--					<img class="colormag-screenshot" src="--><?php //echo esc_url( get_template_directory_uri() ); ?><!--/screenshot.jpg" alt="--><?php //esc_attr_e( 'Colormag', 'colormag' ); ?><!--" />--><?php //// phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+<!--				</div>-->
 
 				<div class="colormag-message__text">
-					<h2 class="colormag-message__heading">
-						<?php
-						printf(
+					<div class="colormag-message__head">
+						<h3>
+							<?php
+							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'Welcome '. $username .'! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'colormag' ),
-							'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
-							'</a>'
-						);
-						?>
-					</h2>
-
+								esc_html__( 'Welcome ' . $username . '!', 'colormag' ),
+							);
+							?>
+						</h3>
+						<h2 class="colormag-message__heading">
+							<?php
+							printf(
+							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
+								esc_html__( 'Get Started with ColorMag', 'colormag' ),
+								'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
+								'</a>'
+							);
+							?>
+						</h2>
+						<p>
+							<?php
+							printf(
+							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
+								esc_html__( 'You do not need to build your site from scretch, ColorMag provides a variety of demos. Import demo site and start editing as your liking.', 'colormag' ),
+							);
+							?>
+						</p>
+					</div>
 					<div class="colormag-message__cta">
 						<?php echo $this->import_button_html(); ?>
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking "Get Started" button will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
 					</div>
+				</div>
+				<div class="colormag-message__image">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/colormag-welcome-banner.png" alt="ColorMag Templates">
 				</div>
 			</div>
 		</div> <!-- /.colormag-message__content -->
