@@ -8,12 +8,6 @@ $background-color_2: #fff;
 $border-color_1: #6547DB;
 $border-left-color_1: #6547DB;
 
-/* Notices. */
-/* Welcome notice. */
-/* Dashboard page. */
-/* Responsive. */
-/* Colormag review notice */
-/* Dashboard */
 .colormag-update {
 	background-color: $background-color_1;
 	.colormag-message__heading {
@@ -33,6 +27,8 @@ $border-left-color_1: #6547DB;
 		flex: 1;
 	}
 }
+
+/* Dashboard page. */
 .wrap {
 	.colormag-header {
 		background-color: $background-color_2;
@@ -67,6 +63,8 @@ $border-left-color_1: #6547DB;
 		line-height: 1.4;
 	}
 }
+
+/* Dashboard */
 .appearance_page_colormag-options {
 	.wrap {
 		margin-top: 0;
@@ -84,6 +82,8 @@ $border-left-color_1: #6547DB;
 		}
 	}
 }
+
+/* Notices. */
 .colormag-notice {
 	position: relative;
 	padding: 16px 40px 16px 20px;
@@ -108,6 +108,8 @@ $border-left-color_1: #6547DB;
 		text-decoration: none;
 	}
 }
+
+/* Welcome notice. */
 .colormag-message__content {
 	display: flex;
 	gap: 24px;
@@ -180,6 +182,8 @@ a.colormag-message-close {
 	}
 	align-self: center;
 }
+
+/* Colormag review notice */
 .colormag-notice.theme-review-notice {
 	border-left-color: $border-left-color_1;
 	padding: 20px 15px;
@@ -357,6 +361,8 @@ a.colormag-message-close {
 		max-width: 768px;
 	}
 }
+
+/* Responsive. */
 @media screen and (max-width: 768px) {
 	.colormag-message__content {
 		.colormag-message__image {

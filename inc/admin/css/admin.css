@@ -1,9 +1,3 @@
-/* Notices. */
-/* Welcome notice. */
-/* Dashboard page. */
-/* Responsive. */
-/* Colormag review notice */
-/* Dashboard */
 .colormag-update {
 	background-color: #FAFDFF;
 }
@@ -36,6 +30,7 @@
 	flex: 1;
 }
 
+/* Dashboard page. */
 .wrap .colormag-header {
 	background-color: #fff;
 	padding: 12px 20px;
@@ -70,6 +65,7 @@
 	line-height: 1.4;
 }
 
+/* Dashboard */
 .appearance_page_colormag-options .wrap {
 	margin-top: 0;
 	margin-top: 0;
@@ -86,6 +82,7 @@
 	padding: 0;
 }
 
+/* Notices. */
 .colormag-notice {
 	position: relative;
 	padding: 16px 40px 16px 20px;
@@ -117,6 +114,7 @@
 	text-decoration: none;
 }
 
+/* Welcome notice. */
 .colormag-message__content {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -213,6 +211,7 @@ a.colormag-message-close:before {
 	width: 50px;
 }
 
+/* Colormag review notice */
 .colormag-notice.theme-review-notice {
 	border-left-color: #6547DB;
 	padding: 20px 15px;
@@ -449,6 +448,7 @@ a.colormag-message-close:before {
 	flex: 0;
 }
 
+/* Responsive. */
 @media screen and (max-width: 768px) {
 	.colormag-message__content .colormag-message__image {
 		display: none;
