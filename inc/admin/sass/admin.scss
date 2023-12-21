@@ -1,0 +1,429 @@
+$color_1: #232323;
+$color_2: #000;
+$color_3: #3C434A;
+$color_4: #fff;
+$color_5: #6547DB;
+$background-color_1: #FAFDFF;
+$background-color_2: #fff;
+$border-color_1: #6547DB;
+$border-left-color_1: #6547DB;
+
+/* Notices. */
+/* Welcome notice. */
+/* Dashboard page. */
+/* Responsive. */
+/* Colormag review notice */
+/* Dashboard */
+.colormag-update {
+	background-color: $background-color_1;
+	.colormag-message__heading {
+		max-width: 768px;
+		display: flex;
+		align-items: center;
+	}
+	.colormag-message__content {
+		flex-wrap: wrap;
+		.colormag-message__image {
+			flex-basis: 320px;
+			height: 214px;
+			min-height: 100px;
+		}
+	}
+	.colormag-message__text {
+		flex: 1;
+	}
+}
+.wrap {
+	.colormag-header {
+		background-color: $background-color_2;
+		padding: 12px 20px;
+		border-bottom: 1px solid #ccd0d4;
+		margin-left: -20px;
+		margin-right: -20px;
+		background-color: $background-color_2;
+		padding: 12px 20px;
+		border-bottom: 1px solid #ccd0d4;
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+.colormag-message__cta {
+	.button.button-hero {
+		min-height: 45px;
+		padding: 8px 24px;
+		font-size: 16px;
+		border-radius: 4px;
+		line-height: 1.8;
+		border: 0;
+	}
+	.button.button-secondary.button-hero {
+		background: rgba(15, 103, 173, 0.04);
+		border: 1px solid #0F67AD;
+		border-radius: 4px;
+		padding: 8px 16px;
+		line-height: 1.6;
+	}
+	.btn-contact-support {
+		line-height: 1.4;
+	}
+}
+.appearance_page_colormag-options {
+	.wrap {
+		margin-top: 0;
+		margin-top: 0;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	#wpcontent {
+		padding: 0;
+	}
+	#wpbody-content {
+		.metabox-holder {
+			padding: 0;
+		}
+	}
+}
+.colormag-notice {
+	position: relative;
+	padding: 16px 40px 16px 20px;
+	.links {
+		margin: 1.2em 0;
+		display: flex;
+		flex-wrap: wrap;
+		a {
+			margin-right: 10px;
+			>span {
+				vertical-align: middle;
+				padding-right: 5px;
+			}
+		}
+	}
+	.notice-text {
+		.coupon-code {
+			display: inline-block;
+		}
+	}
+	.notice-dismiss {
+		text-decoration: none;
+	}
+}
+.colormag-message__content {
+	display: flex;
+	gap: 24px;
+	.colormag-message__image {
+		display: flex;
+		flex: 0 0 160px;
+		object-fit: cover;
+		.colormag-screenshot {
+			width: 100%;
+			margin: 0;
+			float: none;
+			border-radius: 4px;
+			object-fit: cover;
+		}
+	}
+	.colormag-message__heading {
+		margin-top: 0;
+		line-height: 1.8;
+		padding: 0;
+	}
+	.colormag-message__cta {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		.plugin-install-notice {
+			line-height: 1.4;
+		}
+		a {
+			&:before {
+				margin: 5px;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+h1.colormag-message__heading {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 37px;
+	color: $color_1;
+	margin-bottom: 12px;
+}
+h2.colormag-message__heading {
+	margin-bottom: 24px;
+	font-weight: 400;
+	color: $color_1;
+	font-size: 16px;
+	line-height: 180%;
+}
+a.colormag-message-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 15px 10px 21px;
+	font-size: 13px;
+	line-height: 1.23076923;
+	text-decoration: none;
+	&:before {
+		position: absolute;
+		top: 8px;
+		left: 0;
+		-webkit-transition: all .1s ease-in-out;
+		transition: all .1s ease-in-out;
+	}
+}
+.colormag-message__text {
+	img {
+		height: 50px;
+		width: 50px;
+	}
+	align-self: center;
+}
+.colormag-notice.theme-review-notice {
+	border-left-color: $border-left-color_1;
+	padding: 20px 15px;
+	.colormag-message__image {
+		flex: 0;
+		min-height: auto;
+		margin-right: 35px;
+		margin-left: 10px;
+		padding-right: 0;
+		border-right: none;
+	}
+	.colormag-logo--png {
+		width: 80px;
+		height: 80px;
+	}
+	h3 {
+		font-size: 21px;
+		margin: 0;
+		line-height: 1;
+		color: $color_2;
+	}
+	p {
+		font-size: 14px;
+		line-height: 21px;
+		color: $color_3;
+		margin: 0 0 6px 0;
+		max-width: 720px;
+		padding: 2px 0;
+	}
+	span.dashicons.dashicons-smiley.smile-icon {
+		background: #f7e143;
+		border-radius: 50%;
+		font-size: 15px;
+		border: 1px solid;
+		width: 17px;
+		height: 17px;
+	}
+	.button-primary {
+		background: #6547DB;
+		border-color: $border-color_1;
+		box-shadow: none;
+		color: $color_4;
+	}
+	.button-secondary {
+		color: $color_5;
+		border-color: $border-color_1;
+		background: #f6f7f7;
+		vertical-align: top;
+	}
+	strong {
+		color: $color_2;
+	}
+	.links {
+		margin: 1.2em 0 5px 0;
+	}
+	a.btn {
+		display: flex;
+		max-width: fit-content;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.colormag-container {
+	max-width: 1150px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+	a {
+		text-decoration: none;
+		font-size: 13px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	.postbox {
+		box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+		border: 0;
+		min-width: initial;
+		margin-bottom: 40px;
+		.hndle {
+			cursor: inherit;
+			border-bottom: 1px solid #ccd0d4;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			.dashicons {
+				padding-right: 5px;
+			}
+		}
+	}
+}
+.colormag-header {
+	background-color: $background-color_2;
+	text-align: center;
+	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+	margin-bottom: 40px;
+	padding: 20px;
+	>.colormag-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.colormag-title {
+		display: flex;
+		align-items: center;
+		+ {
+			div {
+				float: right;
+				align-items: center;
+				a {
+					display: inline-block;
+					margin: 0 10px;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+.colormag-icon {
+	width: 100%;
+	height: 60px;
+}
+.colormag-version {
+	color: $color_2;
+	margin-left: 5px;
+	background: #efefef;
+	padding: 1px 3px;
+}
+.pro-feature {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	margin: 0;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+	>a {
+		font-weight: bold;
+	}
+}
+.col-30 {
+	.postbox {
+		&:first-child {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 7px 12px 7px 0;
+		}
+	}
+}
+.postbox-container {
+	.colormag-update {
+		.colormag-message__content {
+			.colormag-message__image {
+				flex-basis: 242px;
+			}
+		}
+	}
+	.colormag-message__content {
+		.colormag-message__cta {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}
+.demo-import-migrate-notice {
+	.colormag-message__image {
+		.colormag-screenshot {
+			height: 100px;
+			width: 100px;
+		}
+	}
+	.colormag-message__content {
+		.colormag-message__image {
+			flex: 0;
+		}
+		max-width: 768px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.colormag-message__content {
+		.colormag-message__image {
+			display: none;
+		}
+	}
+	.colormag-notice.theme-review-notice {
+		.colormag-message__content {
+			display: flex;
+			flex-direction: column;
+		}
+		.button-primary {
+			margin-bottom: 10px;
+		}
+		.button-secondary {
+			margin-bottom: 10px;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.colormag-message__content {
+		.colormag-screenshot {
+			display: none;
+		}
+		.colormag-message__text {
+			padding: 0;
+			width: 100%;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.col-70 {
+		float: left;
+		width: 70%;
+		box-sizing: border-box;
+		padding-right: 20px;
+	}
+	.col-30 {
+		float: left;
+		width: 30%;
+		box-sizing: border-box;
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.colormag-header {
+		margin: 20px;
+		>.colormag-container {
+			display: block;
+		}
+		.colormag-title {
+			justify-content: center;
+			+ {
+				div {
+					float: none;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1236px) {
+	.postbox-container {
+		.colormag-message__content {
+			.colormag-message__cta {
+				flex-direction: row;
+			}
+		}
+	}
+}
