@@ -37,6 +37,15 @@ class Colormag_Welcome_Notice {
 			'colormag_hide_notices_nonce',
 			'_colormag_notice_nonce'
 		);
+
+		// Get the current user object
+		$current_user = wp_get_current_user();
+
+		// Check if the user is logged in
+		if ($current_user->ID != 0) {
+			// Get the username
+			$username = $current_user->user_login;
+		}
 		?>
 		<div id="message" class="notice notice-success colormag-notice">
 			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
@@ -51,7 +60,7 @@ class Colormag_Welcome_Notice {
 						<?php
 						printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'colormag' ),
+							esc_html__( 'Welcome '. $username .'! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'colormag' ),
 							'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
 							'</a>'
 						);
