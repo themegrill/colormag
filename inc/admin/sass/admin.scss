@@ -139,7 +139,7 @@ $border-left-color_1: #6547DB;
 		margin-bottom: 24px;
 	}
 
-	h3 {
+	.colormag-message__subheading {
 		color: var(--Grey-grey-400, #383838);
 		font-family: Segoe UI;
 		font-size: 12px;
@@ -160,7 +160,7 @@ $border-left-color_1: #6547DB;
 		margin-bottom: 16px;
 	}
 
-	p {
+	.colormag-message__description {
 		color: #6B6B6B;
 		font-family: Segoe UI;
 		font-size: 13px;

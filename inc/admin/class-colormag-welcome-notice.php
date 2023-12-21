@@ -51,20 +51,16 @@ class Colormag_Welcome_Notice {
 			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 
 			<div class="colormag-message__content">
-<!--				<div class="colormag-message__image">-->
-<!--					<img class="colormag-screenshot" src="--><?php //echo esc_url( get_template_directory_uri() ); ?><!--/screenshot.jpg" alt="--><?php //esc_attr_e( 'Colormag', 'colormag' ); ?><!--" />--><?php //// phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
-<!--				</div>-->
-
 				<div class="colormag-message__text">
 					<div class="colormag-message__head">
-						<h3>
+						<p class="colormag-message__subheading">
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
 								esc_html__( 'Welcome ' . $username . '!', 'colormag' ),
 							);
 							?>
-						</h3>
+						</p>
 						<h2 class="colormag-message__heading">
 							<?php
 							printf(
@@ -75,7 +71,7 @@ class Colormag_Welcome_Notice {
 							);
 							?>
 						</h2>
-						<p>
+						<p class="colormag-message__description">
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
