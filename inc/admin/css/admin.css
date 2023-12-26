@@ -521,6 +521,7 @@ h1.hndle {
 	align-items: flex-start;
 }
 
+/* Products Page */
 .products-page .postbox {
 	background: unset;
 	-webkit-box-shadow: unset;
@@ -618,6 +619,168 @@ h1.hndle {
 	margin: 0;
 }
 
+/* Help page */
+.help-page .cm-help-top-row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 20px;
+}
+
+.help-page .cm-help-top-row .postbox {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 32px 24px;
+}
+
+.help-page .cm-help-top-row h3 {
+	color: #383838;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 24px 0 12px !important;
+}
+
+.help-page .cm-help-top-row p {
+	color: #6B6B6B;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.9;
+	padding: 0 0 32px 0;
+}
+
+.help-page .cm-help-top-row a {
+	color: #2563EB;
+	font-size: 14px;
+	font-weight: 400;
+	-webkit-text-decoration-line: underline;
+	text-decoration-line: underline;
+}
+
+.help-page .cm-help-top-row span {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	padding: 10px 14px;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 3px;
+	border: 1px solid var(--bA-blue-B300-primary, #2563EB);
+}
+
+.help-page h2 {
+	margin: 0 0 20px 0;
+}
+
+.help-page .postbox.cm-community {
+	padding: 16px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 30px;
+}
+
+.help-page .postbox.cm-community img {
+	max-width: 348px;
+}
+
+.help-page .postbox.cm-community .cm-content {
+	padding: 8px 0;
+}
+
+.help-page .postbox.cm-community h3 {
+	color: #383838;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 2.4;
+	margin: 0;
+}
+
+.help-page .postbox.cm-community p {
+	margin: 0 0 20px 0;
+}
+
+.help-page .postbox.cm-community span {
+	color: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 98px;
+	height: 30px;
+	padding: 4px 16px;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 2px;
+	border-radius: 4px;
+	background: #2563EB;
+}
+
+/* Free Vs Pro */
+.free-vs-pro-page table {
+	width: 100%;
+	margin-bottom: 32px;
+}
+
+.free-vs-pro-page .fvp-table tbody tr.fvp-heading td {
+	background: #F4F4F4;
+	color: #6B6B6B;
+	font-weight: 600;
+}
+
+.free-vs-pro-page .fvp-table tbody tr td:first-child {
+	width: 50%;
+	text-align: left;
+}
+
+.free-vs-pro-page .fvp-table tbody tr td {
+	width: 25%;
+	background: #fff;
+	color: #383838;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 2.2;
+	padding: 12px;
+	text-align: center;
+	border-left: 0;
+	border-right: 0;
+}
+
+.free-vs-pro-page .postbox {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 32px;
+}
+
+/* Responsive */
 @media (min-width: 768px) {
 	.col-70 {
 		float: left;

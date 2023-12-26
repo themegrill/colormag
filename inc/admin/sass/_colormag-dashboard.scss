@@ -412,6 +412,7 @@ h1.hndle{
 	}
 }
 
+/* Products Page */
 .products-page {
 	.postbox {
 		background: unset;
@@ -490,6 +491,146 @@ h1.hndle{
 	}
 }
 
+/* Help page */
+.help-page {
+	.cm-help-top-row {
+		display: flex;
+		gap: 20px;
+
+		.postbox {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			align-items: center;
+			padding: 32px 24px;
+		}
+
+		h3 {
+			color: #383838;
+			font-size: 16px;
+			font-weight: 600;
+			padding: 24px 0 12px !important;
+		}
+
+		p {
+			color: #6B6B6B;
+			text-align: center;
+			font-size: 13px;
+			font-weight: 400;
+			line-height: 1.9;
+			padding: 0 0 32px 0;
+		}
+
+		a {
+			color: #2563EB;
+			font-size: 14px;
+			font-weight: 400;
+			text-decoration-line: underline;
+		}
+
+		span{
+			display: inline-flex;
+			padding: 10px 14px;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			border-radius: 3px;
+			border: 1px solid var(--bA-blue-B300-primary, #2563EB);
+		}
+	}
+
+	h2 {
+		margin: 0 0 20px 0;
+	}
+
+	.postbox.cm-community {
+		padding: 16px;
+		display: flex;
+		gap: 30px;
+
+		img {
+			max-width: 348px;
+		}
+
+		.cm-content {
+			padding: 8px 0;
+		}
+
+		h3 {
+			color: #383838;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 2.4;
+			margin: 0;
+		}
+
+		p {
+			margin: 0 0 20px 0;
+		}
+
+		span {
+			color: #fff;
+			display: flex;
+			width: 98px;
+			height: 30px;
+			padding: 4px 16px;
+			justify-content: center;
+			align-items: center;
+			gap: 2px;
+			border-radius: 4px;
+			background: #2563EB;
+		}
+	}
+}
+
+/* Free Vs Pro */
+.free-vs-pro-page {
+	table {
+		width: 100%;
+		margin-bottom: 32px;
+	}
+	.fvp-table {
+		tbody {
+			tr.fvp-heading {
+				td {
+					background: #F4F4F4;
+					color: #6B6B6B;
+					font-weight: 600;
+				}
+			}
+
+			tr {
+				td:first-child {
+					width:50%;
+					text-align: left;
+				}
+
+				td {
+					width: 25%;
+					background: #fff;
+					color:#383838;
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 2.2;
+					padding: 12px;
+					text-align: center;
+					border-left: 0;
+					border-right: 0;
+				}
+			}
+		}
+	}
+	.postbox {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 32px;
+	}
+}
+
+
+/* Responsive */
 @media (min-width: 768px) {
 	.col-70 {
 		float: left;
