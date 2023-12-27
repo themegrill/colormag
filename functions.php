@@ -25,6 +25,11 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
 	require get_template_directory() . '/inc/admin/class-colormag-welcome-notice.php';
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
+
+	require get_template_directory() . '/inc/admin/dashboard-pages/class-colormag-dashboard-page.php';
+	require get_template_directory() . '/inc/admin/dashboard-pages/class-colormag-products-page.php';
+	require get_template_directory() . '/inc/admin/dashboard-pages/class-colormag-free-vs-pro-page.php';
+	require get_template_directory() . '/inc/admin/dashboard-pages/class-colormag-help-page.php';
 }
 
 ///** ColorMag setup file, hooked for `after_setup_theme`. */

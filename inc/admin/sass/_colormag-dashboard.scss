@@ -677,6 +677,22 @@ h1.hndle{
 	}
 }
 
+/* Dialog */
+.cm-dialog {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 200px;
+	background: #fff;
+	transform: translateX(100%);
+	transition: transform 0.3s;
+
+	&.open {
+		transform: translateX(0%);
+	}
+}
 
 /* Responsive */
 @media (min-width: 768px) {

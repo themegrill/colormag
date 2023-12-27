@@ -45,22 +45,14 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 } );
 
-// jQuery(document).ready(function( $ ) {
-// 	$( '#cm-dashboard-menu a').click( function ( e ) {
-// 		e.preventDefault(); // Prevent the default behavior of the anchor tag
-//
-// 		console.log('products-page clicked');
-//
-// 		// Get the current URL
-// 		var currentURL = window.location.href;
-//
-// 		// Add additional parameters
-// 		var anchorId = $(this).attr('id');
-//
-// 		// Construct the new URL with additional parameters
-// 		var newURL = currentURL + '&dashboard-page=' + anchorId;
-//
-// 		// Redirect to the new URL
-// 		window.location.href = newURL;
-// 	});
-// });
+jQuery(document).ready(function ( $ ) {
+	$('.cm-notification').click(function () {
+		// Add the 'open' class to the cm-dialog element
+		$('.cm-dialog').addClass('open');
+	});
+
+	// Remove 'open' class when clicking on cm-dialog-close
+	$('.cm-dialog-close').click(function () {
+		$('.cm-dialog').removeClass('open');
+	});
+});
