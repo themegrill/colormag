@@ -69,7 +69,6 @@
 		padding: 0;
 	}
 	.postbox {
-		box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
 		border: 0;
 		min-width: initial;
 		margin-bottom: 24px;
@@ -295,6 +294,7 @@ h1.hndle{
 .colormag-icon {
 	height: 38px;
 }
+
 .colormag-version {
 	color: #2563EB;
 	display: flex;
@@ -307,6 +307,7 @@ h1.hndle{
 	background: #F8FAFF;
 	margin-left: 5px;
 }
+
 .pro-feature {
 	display: flex;
 	justify-content: space-between;
@@ -317,6 +318,7 @@ h1.hndle{
 		font-weight: bold;
 	}
 }
+
 .col-30 {
 	a {
 		color: #2563EB;
@@ -359,6 +361,23 @@ h1.hndle{
 		}
 	}
 
+	.ratings {
+		display: flex;
+		gap: 12px;
+
+		span {
+			color: #999;
+			font-size: 11px;
+			font-weight: 400;
+			display: flex;
+			align-items: center;
+		}
+
+		svg {
+			padding-right: 4px;
+		}
+	}
+
 	.cm-useful-plugins {
 		.hndle {
 			margin-bottom :24px;
@@ -396,6 +415,7 @@ h1.hndle{
 		}
 	}
 }
+
 .postbox-container {
 	.colormag-update {
 		.colormag-message__content {
@@ -588,6 +608,7 @@ h1.hndle{
 	table {
 		width: 100%;
 		margin-bottom: 32px;
+		-webkit-border-horizontal-spacing: 0;
 	}
 	.fvp-table {
 		tbody {
@@ -626,6 +647,33 @@ h1.hndle{
 		flex-direction: column;
 		align-items: center;
 		padding: 32px;
+		background: #F4F4F4;
+
+		h3 {
+			padding: 16px 0 12px 0;
+		}
+
+		p {
+			margin: 0;
+			color: #6B6B6B;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.8;
+		}
+
+		span {
+			margin-top: 24px;
+			color: #fff;
+			display: flex;
+			padding: 10px 16px;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			border-radius: 3px;
+			background: #2563EB;
+			box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.50);
+		}
 	}
 }
 

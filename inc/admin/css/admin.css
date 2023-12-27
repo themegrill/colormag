@@ -78,8 +78,6 @@
 }
 
 .colormag-container .postbox {
-	-webkit-box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
-	box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
 	border: 0;
 	min-width: initial;
 	margin-bottom: 24px;
@@ -462,6 +460,29 @@ h1.hndle {
 	/* 24px */
 }
 
+.col-30 .ratings {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 12px;
+}
+
+.col-30 .ratings span {
+	color: #999;
+	font-size: 11px;
+	font-weight: 400;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.col-30 .ratings svg {
+	padding-right: 4px;
+}
+
 .col-30 .cm-useful-plugins .hndle {
 	margin-bottom: 24px;
 }
@@ -739,6 +760,7 @@ h1.hndle {
 .free-vs-pro-page table {
 	width: 100%;
 	margin-bottom: 32px;
+	-webkit-border-horizontal-spacing: 0;
 }
 
 .free-vs-pro-page .fvp-table tbody tr.fvp-heading td {
@@ -778,6 +800,40 @@ h1.hndle {
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 32px;
+	background: #F4F4F4;
+}
+
+.free-vs-pro-page .postbox h3 {
+	padding: 16px 0 12px 0;
+}
+
+.free-vs-pro-page .postbox p {
+	margin: 0;
+	color: #6B6B6B;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.8;
+}
+
+.free-vs-pro-page .postbox span {
+	margin-top: 24px;
+	color: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 10px 16px;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 3px;
+	background: #2563EB;
+	-webkit-box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.5);
+	box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.5);
 }
 
 /* Responsive */
