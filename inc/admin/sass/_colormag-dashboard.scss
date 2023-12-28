@@ -1033,17 +1033,10 @@ body {
 }
 
 /* Starter Templates - Blank State */
-/**
- * demo-importer.scss
- * General Demo Importer admin styles.
- */
-
-/**
- * Styling begins.
- */
 .themegrill-demo-importer-BlankState {
 	padding: 5em 0 0;
 	text-align: center;
+	background: url("../images/starter-templates-background.jpg");
 
 	.themegrill-demo-importer-BlankState-icon {
 		fill: #ddd;
@@ -1060,14 +1053,16 @@ body {
 		max-width: 500px;
 	}
 
-	.themegrill-demo-importer-BlankState-cta {
-		margin: 0 .25em;
-
-		&.installed::before,
-		&.installing::before,
-		&.updating-message::before {
-			margin-top: 11px;
-		}
+	span {
+		color: #fff;
+		display: flex;
+		padding: 16px;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		align-self: stretch;
+		border-radius: 4px;
+		background: #2563EB;
 	}
 }
 

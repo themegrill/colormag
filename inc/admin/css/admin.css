@@ -1182,16 +1182,10 @@ body.demo-import-message-popup {
 }
 
 /* Starter Templates - Blank State */
-/**
- * demo-importer.scss
- * General Demo Importer admin styles.
- */
-/**
- * Styling begins.
- */
 .themegrill-demo-importer-BlankState {
 	padding: 5em 0 0;
 	text-align: center;
+	background: url("../images/starter-templates-background.jpg");
 }
 
 .themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-icon {
@@ -1209,12 +1203,23 @@ body.demo-import-message-popup {
 	max-width: 500px;
 }
 
-.themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-cta {
-	margin: 0 .25em;
-}
-
-.themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-cta.installed::before, .themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-cta.installing::before, .themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-cta.updating-message::before {
-	margin-top: 11px;
+.themegrill-demo-importer-BlankState span {
+	color: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 16px;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 8px;
+	-ms-flex-item-align: stretch;
+	align-self: stretch;
+	border-radius: 4px;
+	background: #2563EB;
 }
 
 @media (min-width: 1050px) {

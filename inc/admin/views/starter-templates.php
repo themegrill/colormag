@@ -16,31 +16,21 @@ if ( current_user_can( 'install_plugins' ) ) {
 ?>
 	<div class="wrap demo-importer">
 		<div class="themegrill-demo-importer-BlankState">
-			<svg aria-hidden="true" class="octicon octicon-desktop-download themegrill-demo-importer-BlankState-icon"
-				 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
-			>
-				<path fill-rule="evenodd"
-					  d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"
-				></path>
-			</svg>
 
-			<h2 class="themegrill-demo-importer-BlankState-message"><?php esc_html_e( 'Ready to start importing available demos with just a single click?', 'colormag' ); ?></h2>
+			<div class="themegrill-demo-importer-BlankState-info">
+				<h2 class="themegrill-demo-importer-BlankState-message"><?php echo __( 'In order to be able to import any starter sites for <br> ColorMag you need to install ThemeGrill demo <br> importer plugin active.', 'colormag' ); ?></h2>
 
-			<?php if ( $action ) : ?>
-				<a class="themegrill-demo-importer-BlankState-cta button button-primary button-hero<?php echo esc_attr( $classes ); ?>"
-				   href="<?php echo esc_url( $url ); ?>"
-				   data-name="<?php esc_attr_e( 'ThemeGrill Demo Importer', 'colormag' ); ?>"
-				   data-slug="themegrill-demo-importer"
-				>
-					<?php echo esc_html( $action ); ?>
-				</a>
-			<?php endif; ?>
+				<?php if ( $action ) : ?>
+					<a <?php echo esc_attr( $classes ); ?>"
+					href="<?php echo esc_url( $url ); ?>"
+					data-name="<?php esc_attr_e( 'ThemeGrill Demo Importer', 'colormag' ); ?>"
+					data-slug="themegrill-demo-importer"
+					>
+					<span><?php echo esc_html( $action ); ?></span>
+					</a>
+				<?php endif; ?>
+			</div>
 
-			<a class="themegrill-demo-importer-BlankState-cta button button-secondary button-hero" target="_blank"
-			   href="https://docs.themegrill.com/knowledgebase/importing-demo-content/"
-			>
-				<?php esc_html_e( 'Learn more about demo importer!', 'colormag' ); ?>
-			</a>
 		</div>
 	</div>
 <?php
