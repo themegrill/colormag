@@ -39,15 +39,15 @@
 	line-height: 1.4;
 }
 
-.appearance_page_colormag-dashboard .wrap {
+.appearance_page_colormag .wrap {
 	margin: 0 0 0 0;
 }
 
-.appearance_page_colormag-dashboard #wpcontent {
+.appearance_page_colormag #wpcontent {
 	padding: 0;
 }
 
-.appearance_page_colormag-dashboard #wpbody-content .metabox-holder {
+.appearance_page_colormag #wpbody-content .metabox-holder {
 	padding: 0;
 }
 
@@ -857,6 +857,304 @@ h1.hndle {
 	font-weight: 600;
 	line-height: 2.4;
 	margin: 0;
+}
+
+/* Starter Templates */
+/**
+ * demo-importer.scss
+ * General ThemeGrill Demo Importer admin styles.
+ */
+/**
+ * Styling begins.
+ */
+.appearance_page_colormag .demo-importer .wp-filter {
+	padding: 0 20px;
+}
+
+.appearance_page_colormag .demo-importer .wp-filter .search-form {
+	margin-left: 1em;
+}
+
+.appearance_page_colormag .demo-importer .wp-filter .filter-section {
+	float: left;
+}
+
+.appearance_page_colormag .demo-importer .wp-filter .filter-section.right {
+	float: right;
+}
+
+.appearance_page_colormag .demo-importer .wp-filter .filter-links li > a:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.appearance_page_colormag .demo-importer .theme-browser .theme .premium-demo-banner {
+	position: absolute;
+	top: 15px;
+	right: -16px;
+	color: #fff;
+	padding: 0 20px;
+	font-weight: 600;
+	min-height: 30px;
+	line-height: 28px;
+	background: #5fbd0a;
+	text-transform: uppercase;
+}
+
+.appearance_page_colormag .demo-importer .theme-browser .theme .premium-demo-banner::before, .appearance_page_colormag .demo-importer .theme-browser .theme .premium-demo-banner::after {
+	content: '';
+	position: absolute;
+}
+
+.appearance_page_colormag .demo-importer .theme-browser .theme .premium-demo-banner::before {
+	left: -15px;
+	color: #fff;
+	border: 15px solid #5fbd0a;
+	border-left-color: transparent;
+}
+
+.appearance_page_colormag .demo-importer .theme-browser .theme .premium-demo-banner::after {
+	top: 30px;
+	right: 0;
+	border: 8px solid #478d07;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.appearance_page_colormag .demo-importer .theme-browser .theme .theme-screenshot img {
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-header {
+	background-color: #eee;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content {
+	z-index: 1;
+	bottom: 132px;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info .theme-version {
+	margin-top: 0;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info .theme-screenshot {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info .premium-demo-tag {
+	color: #fff;
+	font-size: 13px;
+	font-weight: 400;
+	margin-left: 5px;
+	padding: 0px 10px;
+	line-height: 22px;
+	border-radius: 3px;
+	background: #67c016;
+	display: inline-block;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info table.plugins-list-table {
+	margin-bottom: 1em;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info table.plugins-list-table .plugin-status {
+	float: right;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info table.plugins-list-table .plugin-status span {
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	border-radius: 50%;
+	position: relative;
+	vertical-align: top;
+	white-space: nowrap;
+	text-indent: -9999px;
+	display: inline-block;
+	border: 2px solid #bfbfbf;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info table.plugins-list-table .plugin-status span.active {
+	border-color: #5cb85c;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info table.plugins-list-table .plugin-status span.active::after {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	opacity: 1;
+	width: 25%;
+	height: 50%;
+	content: '';
+	-webkit-transform-origin: left top;
+	transform-origin: left top;
+	border-top: 2px solid #5cb85c;
+	border-right: 2px solid #5cb85c;
+	-webkit-transform: scaleX(-1) rotate(135deg) translate(-58%, -40%);
+	transform: scaleX(-1) rotate(135deg) translate(-58%, -40%);
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-sidebar-content .install-theme-info table.plugins-list-table .plugin-status span.updating-message {
+	border-left-color: #5cb85c;
+	-webkit-animation: spin .75s linear infinite;
+	animation: spin .75s linear infinite;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer {
+	height: 132px;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer .devices button:hover, .appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer .devices button:focus {
+	background-color: transparent;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer .demo-import-actions {
+	padding: 20px;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer .demo-import-actions .button {
+	width: 100%;
+	text-align: center;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer .demo-import-actions .button.updated-message::before, .appearance_page_colormag .demo-importer .theme-install-overlay .wp-full-overlay-footer .demo-import-actions .button.updating-message::before {
+	margin-top: 11px;
+}
+
+.appearance_page_colormag .demo-importer .theme-install-overlay.expanded .wp-full-overlay-footer {
+	left: initial;
+}
+
+/**
+ * Tooltips
+ */
+.tips {
+	cursor: help;
+	text-decoration: none;
+}
+
+img.tips {
+	padding: 5px 0 0;
+}
+
+#tiptip_holder {
+	display: none;
+	z-index: 8675309;
+	position: absolute;
+	top: 0;
+	/*rtl:ignore*/
+	left: 0;
+}
+
+#tiptip_holder.tip_top {
+	padding-bottom: 5px;
+}
+
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+	margin-top: -7px;
+	margin-left: -6px;
+	border-top-color: #333;
+}
+
+#tiptip_holder.tip_bottom {
+	padding-top: 5px;
+}
+
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+	margin-top: -5px;
+	margin-left: -6px;
+	border-bottom-color: #333;
+}
+
+#tiptip_holder.tip_right {
+	padding-left: 5px;
+}
+
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+	margin-top: -6px;
+	margin-left: -5px;
+	border-right-color: #333;
+}
+
+#tiptip_holder.tip_left {
+	padding-right: 5px;
+}
+
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+	margin-top: -6px;
+	margin-left: -7px;
+	border-left-color: #333;
+}
+
+#tiptip_content {
+	color: #fff;
+	font-size: 0.8em;
+	max-width: 150px;
+	background: #333;
+	text-align: center;
+	border-radius: 3px;
+	padding: 0.618em 1em;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#tiptip_content code {
+	padding: 1px;
+	background: #888;
+}
+
+#tiptip_arrow,
+#tiptip_arrow_inner {
+	position: absolute;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 6px;
+	height: 0;
+	width: 0;
+}
+
+/*rtl:raw:
+#tiptip_arrow {
+	right: 50%;
+	margin-right: -6px;
+}
+*/
+/**
+ * Demo Import message CSS.
+ */
+.demo-import-confirm-message {
+	font-size: 14px;
+	padding: 10px 10px 0;
+}
+
+.demo-import-confirm-message ol {
+	margin-left: 20px;
+}
+
+.demo-import-confirm-message ol .warning {
+	color: #f00000;
+}
+
+.jconfirm-buttons .demo-import-confirm-button {
+	background: #f00000;
+	color: #ffffff;
+}
+
+.jconfirm-buttons .demo-import-cancel-button {
+	background: #eeeeee;
+	border-color: #999999;
+	color: #23282d;
+}
+
+body.demo-import-message-popup {
+	overflow: visible;
+	visibility: visible;
 }
 
 /* Responsive */
