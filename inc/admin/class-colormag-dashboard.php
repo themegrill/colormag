@@ -117,15 +117,21 @@ class ColorMag_Dashboard {
 				),
 				'products'          => array(
 					'name'     => esc_html__( 'Products', 'colormag' ),
-					'callback' => null,
+					'callback' => function() {
+						include __DIR__ . '/views/products.php';
+					},
 				),
 				'free-vs-pro'       => array(
 					'name'     => esc_html__( 'Free Vs Pro', 'colormag' ),
-					'callback' => null,
+					'callback' => function() {
+						include __DIR__ . '/views/free-vs-pro.php';
+					},
 				),
 				'help'              => array(
 					'name'     => esc_html__( 'Help', 'colormag' ),
-					'callback' => null,
+					'callback' => function() {
+						include __DIR__ . '/views/help.php';
+					},
 				),
 			)
 		)
