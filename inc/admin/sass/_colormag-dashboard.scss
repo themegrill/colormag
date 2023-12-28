@@ -701,8 +701,13 @@ h1.hndle{
 /**
  * Styling begins.
  */
+.wrap demo-importer {
+	max-width: 1280px;
+}
 .appearance_page_colormag {
 	.demo-importer {
+		max-width: 1280px;
+		margin: 0 auto;
 		.wp-filter {
 			padding: 0 20px;
 

@@ -867,6 +867,15 @@ h1.hndle {
 /**
  * Styling begins.
  */
+.wrap demo-importer {
+	max-width: 1280px;
+}
+
+.appearance_page_colormag .demo-importer {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
 .appearance_page_colormag .demo-importer .wp-filter {
 	padding: 0 20px;
 }
