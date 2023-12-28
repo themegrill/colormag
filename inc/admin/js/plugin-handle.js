@@ -46,13 +46,13 @@ jQuery( document ).ready( function ( $ ) {
 } );
 
 jQuery(document).ready(function ( $ ) {
-	$('.cm-notification').click(function () {
+	$('#cm-notification').click(function () {
 		// Add the 'open' class to the cm-dialog element
-		$('.cm-dialog').addClass('open');
+		$('#cm-dialog').addClass('open');
 	});
 
 	// Remove 'open' class when clicking on cm-dialog-close
-	$('.cm-dialog-close').click(function () {
-		$('.cm-dialog').removeClass('open');
+	$('#dialog-close').click(function () {
+		$('#cm-dialog').removeClass('open');
 	});
 });

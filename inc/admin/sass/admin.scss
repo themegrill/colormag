@@ -84,8 +84,7 @@ $border-left-color_1: #6547DB;
 	}
 
 	.colormag-message__subheading {
-		color: var(--Grey-grey-400, #383838);
-		font-family: Segoe UI;
+		color: #383838;
 		font-size: 12px;
 		font-style: normal;
 		font-weight: 600;
@@ -94,8 +93,7 @@ $border-left-color_1: #6547DB;
 	}
 
 	.colormag-message__heading {
-		color: var(--Grey-grey-400, #383838);
-		font-family: Segoe UI;
+		color: #383838;
 		font-size: 26px;
 		font-style: normal;
 		font-weight: 600;
@@ -106,23 +104,22 @@ $border-left-color_1: #6547DB;
 
 	.colormag-message__description {
 		color: #6B6B6B;
-		font-family: Segoe UI;
 		font-size: 13px;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 19.3px; /* 148.462% */
+		line-height: 1.9;
 	}
 	.colormag-message__cta {
 		display: flex;
 		align-items: center;
 		gap: 16px;
+
 		.plugin-install-notice {
 			color: #A1A1A1;
-			font-family: Segoe UI;
 			font-size: 13px;
 			font-style: normal;
 			font-weight: 400;
-			line-height: 19.3px; /* 148.462% */
+			line-height: 1.9;
 		}
 		a {
 			&:before {

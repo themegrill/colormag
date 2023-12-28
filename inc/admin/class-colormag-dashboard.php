@@ -135,7 +135,7 @@ class ColorMag_Dashboard
 								<?php esc_html_e('Upgrade to Pro', 'colormag'); ?>
 							</span>
 							</a>
-							<span class="cm-notification">
+							<span id="cm-notification" class="cm-notification">
 								<img class="colormag-notification"
 									 src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/notification-button.png'); ?>"
 									 alt="<?php esc_attr_e('ColorMag', 'colormag'); ?>">
@@ -176,16 +176,16 @@ class ColorMag_Dashboard
 				?>
 			</div><!--/.metabox-holder-->
 		</div><!--/.wrap-->
-		<div class="cm-dialog">
-			<div class="cm-dialog-close">
-				<br>
-				<br>
-				<br>
-				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-					<path d="M10.052 9.34082L16.277 3.11582C16.577 2.81582 16.577 2.36582 16.277 2.06582C15.977 1.76582 15.5269 1.76582 15.227 2.06582L9.00195 8.29082L2.77695 2.06582C2.47695 1.76582 2.02695 1.76582 1.72695 2.06582C1.42695 2.36582 1.42695 2.81582 1.72695 3.11582L7.95195 9.34082L1.72695 15.5658C1.42695 15.8658 1.42695 16.3158 1.72695 16.6158C1.87695 16.7658 2.02695 16.8408 2.25195 16.8408C2.47695 16.8408 2.62695 16.7658 2.77695 16.6158L9.00195 10.3908L15.227 16.6158C15.377 16.7658 15.602 16.8408 15.752 16.8408C15.902 16.8408 16.127 16.7658 16.277 16.6158C16.577 16.3158 16.577 15.8658 16.277 15.5658L10.052 9.34082Z" fill="#999999"/>
-				</svg>
-			</div>
+		<div id ="cm-dialog" class="cm-dialog">
+			<div class="dialog-head">
+				<h3><?php esc_html_e( 'Latest Updates');?></h3>
 
+				<div id="dialog-close" class="dialog-close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+						<path d="M10.052 9.34082L16.277 3.11582C16.577 2.81582 16.577 2.36582 16.277 2.06582C15.977 1.76582 15.5269 1.76582 15.227 2.06582L9.00195 8.29082L2.77695 2.06582C2.47695 1.76582 2.02695 1.76582 1.72695 2.06582C1.42695 2.36582 1.42695 2.81582 1.72695 3.11582L7.95195 9.34082L1.72695 15.5658C1.42695 15.8658 1.42695 16.3158 1.72695 16.6158C1.87695 16.7658 2.02695 16.8408 2.25195 16.8408C2.47695 16.8408 2.62695 16.7658 2.77695 16.6158L9.00195 10.3908L15.227 16.6158C15.377 16.7658 15.602 16.8408 15.752 16.8408C15.902 16.8408 16.127 16.7658 16.277 16.6158C16.577 16.3158 16.577 15.8658 16.277 15.5658L10.052 9.34082Z" fill="#999999"/>
+					</svg>
+				</div>
+			</div>
 		</div>
 		<?php
 	}

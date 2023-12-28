@@ -5,11 +5,7 @@
 	border-bottom: 1px solid #ccd0d4;
 	margin-left: -20px;
 	margin-right: -20px;
-	background-color: #fff;
-	padding: 12px 20px;
 	border-bottom: 1px solid #ccd0d4;
-	margin-left: -20px;
-	margin-right: -20px;
 }
 
 .colormag-message__cta .button.button-hero {
@@ -26,8 +22,8 @@
 	gap: 10px;
 	border-radius: 3px;
 	background: #2563EB;
-	-webkit-box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.5);
-	box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.5);
+	-webkit-box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
+	box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
 	line-height: unset;
 }
 
@@ -44,11 +40,7 @@
 }
 
 .appearance_page_colormag-dashboard .wrap {
-	margin-top: 0;
-	margin-top: 0;
-	margin-top: 0;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0 0 0 0;
 }
 
 .appearance_page_colormag-dashboard #wpcontent {
@@ -60,7 +52,7 @@
 }
 
 .colormag-container {
-	max-width: 1150px;
+	max-width: 1280px;
 	margin: 0 auto;
 	padding: 0 20px;
 	-webkit-box-sizing: border-box;
@@ -161,8 +153,7 @@
 }
 
 .postbox p {
-	color: var(--Grey-grey-300, #6B6B6B);
-	font-family: Segoe UI;
+	color: #6B6B6B;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
@@ -172,7 +163,6 @@
 
 h1.hndle {
 	color: var(--Grey-grey-400, #383838);
-	font-family: Segoe UI;
 	font-size: 26px;
 	font-style: normal;
 	font-weight: 600;
@@ -205,7 +195,6 @@ h1.hndle {
 
 .cm-quick-settings .cm-quick-settings-title a {
 	color: #2563EB;
-	font-family: Segoe UI;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 600;
@@ -215,8 +204,7 @@ h1.hndle {
 }
 
 .cm-quick-settings h4 {
-	color: var(--Grey-grey-400, #383838);
-	font-family: Segoe UI;
+	color: #383838;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 600;
@@ -259,7 +247,6 @@ h1.hndle {
 	color: #7A7A7A;
 	-webkit-font-feature-settings: 'clig' off, 'liga' off;
 	font-feature-settings: 'clig' off, 'liga' off;
-	font-family: Segoe UI;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 400;
@@ -285,7 +272,6 @@ h1.hndle {
 
 .cm-premium-features .cm-premium-features-title a {
 	color: #2563EB;
-	font-family: Segoe UI;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 600;
@@ -295,8 +281,7 @@ h1.hndle {
 }
 
 .cm-premium-features h4 {
-	color: var(--Grey-grey-400, #383838);
-	font-family: Segoe UI;
+	color: #383838;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 600;
@@ -341,7 +326,6 @@ h1.hndle {
 	color: #7A7A7A;
 	-webkit-font-feature-settings: 'clig' off, 'liga' off;
 	font-feature-settings: 'clig' off, 'liga' off;
-	font-family: Segoe UI;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 400;
@@ -363,12 +347,10 @@ h1.hndle {
 
 .cm-upgrade-to-pro {
 	color: var(--BlockArt-Primary-primary-500, #2563EB);
-	font-family: Segoe UI;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 150%;
-	/* 18px */
+	line-height: 1.8;
 	letter-spacing: 0.24px;
 	margin-left: 17px;
 }
@@ -432,7 +414,6 @@ h1.hndle {
 
 .col-30 .postbox .inside p {
 	color: #6B6B6B;
-	font-family: Segoe UI;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 400;
@@ -452,12 +433,10 @@ h1.hndle {
 
 .col-30 h3.hndle span {
 	color: #383838;
-	font-family: Segoe UI;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 150%;
-	/* 24px */
+	line-height: 2.4;
 }
 
 .col-30 .ratings {
@@ -499,7 +478,7 @@ h1.hndle {
 }
 
 .col-30 .cm-useful-plugins .inside:nth-child(2) {
-	border-radius: 4px 4px 0px 0px;
+	border-radius: 4px 4px 0 0;
 	border-bottom: 1px solid #F4F4F4;
 	background: #FFF;
 }
@@ -553,7 +532,7 @@ h1.hndle {
 
 .products-page .item {
 	background: #fff;
-	min-width: 0px;
+	min-width: 0;
 }
 
 .products-page .inside {
@@ -832,18 +811,18 @@ h1.hndle {
 	gap: 10px;
 	border-radius: 3px;
 	background: #2563EB;
-	-webkit-box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.5);
-	box-shadow: 0px 1px 0px 0px rgba(204, 204, 204, 0.5);
+	-webkit-box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
+	box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
 }
 
 /* Dialog */
 .cm-dialog {
 	position: fixed;
 	right: 0;
-	top: 0;
+	top: 32px;
 	bottom: 0;
 	width: 100%;
-	max-width: 200px;
+	max-width: 386px;
 	background: #fff;
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
@@ -858,6 +837,28 @@ h1.hndle {
 	transform: translateX(0%);
 }
 
+.cm-dialog .dialog-head {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 24px 20px;
+	border-bottom: 1px solid #E9E9E9;
+}
+
+.cm-dialog .dialog-head h3 {
+	color: #383838;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 2.4;
+	margin: 0;
+}
+
 /* Responsive */
 @media (min-width: 768px) {
 	.col-70 {
@@ -865,7 +866,6 @@ h1.hndle {
 		width: 70%;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-		padding-right: 20px;
 	}
 	.col-30 {
 		float: left;
@@ -995,8 +995,7 @@ h1.hndle {
 }
 
 .colormag-message__content .colormag-message__subheading {
-	color: var(--Grey-grey-400, #383838);
-	font-family: Segoe UI;
+	color: #383838;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 600;
@@ -1005,8 +1004,7 @@ h1.hndle {
 }
 
 .colormag-message__content .colormag-message__heading {
-	color: var(--Grey-grey-400, #383838);
-	font-family: Segoe UI;
+	color: #383838;
 	font-size: 26px;
 	font-style: normal;
 	font-weight: 600;
@@ -1017,12 +1015,10 @@ h1.hndle {
 
 .colormag-message__content .colormag-message__description {
 	color: #6B6B6B;
-	font-family: Segoe UI;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 19.3px;
-	/* 148.462% */
+	line-height: 1.9;
 }
 
 .colormag-message__content .colormag-message__cta {
@@ -1037,12 +1033,10 @@ h1.hndle {
 
 .colormag-message__content .colormag-message__cta .plugin-install-notice {
 	color: #A1A1A1;
-	font-family: Segoe UI;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 19.3px;
-	/* 148.462% */
+	line-height: 1.9;
 }
 
 .colormag-message__content .colormag-message__cta a:before {
