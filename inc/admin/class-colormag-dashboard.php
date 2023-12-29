@@ -105,7 +105,6 @@ class ColorMag_Dashboard {
 				'dashboard'         => array(
 					'name'     => esc_html__( 'Dashboard', 'colormag' ),
 					'callback' => function() {
-						$sakar = 'asdfasdf';
 						include __DIR__ . '/views/dashbaord.php';
 					},
 				),
