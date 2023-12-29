@@ -15,6 +15,18 @@ $link_icon = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns=
 $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
   						<path d="M4.62151 3.66996L1.43151 4.13246L1.37501 4.14396C1.28947 4.16667 1.2115 4.21167 1.14905 4.27436C1.0866 4.33706 1.04191 4.41521 1.01954 4.50082C0.997165 4.58644 0.997919 4.67647 1.02172 4.7617C1.04552 4.84693 1.09151 4.92432 1.155 4.98596L3.46601 7.23546L2.92101 10.413L2.91451 10.468C2.90927 10.5564 2.92764 10.6447 2.96773 10.7237C3.00782 10.8027 3.0682 10.8697 3.14267 10.9177C3.21715 10.9657 3.30305 10.9931 3.39158 10.997C3.48011 11.0009 3.56809 10.9812 3.64651 10.94L6.49951 9.43996L9.346 10.94L9.396 10.963C9.47854 10.9955 9.56823 11.0054 9.65588 10.9918C9.74354 10.9782 9.826 10.9416 9.8948 10.8856C9.96361 10.8296 10.0163 10.7563 10.0474 10.6733C10.0786 10.5902 10.087 10.5004 10.072 10.413L9.5265 7.23546L11.8385 4.98546L11.8775 4.94296C11.9332 4.87435 11.9697 4.79219 11.9834 4.70486C11.997 4.61753 11.9872 4.52815 11.955 4.44583C11.9229 4.3635 11.8695 4.29118 11.8002 4.23622C11.731 4.18126 11.6485 4.14563 11.561 4.13296L8.37101 3.66996L6.94501 0.779961C6.90374 0.696229 6.83986 0.625719 6.7606 0.576414C6.68134 0.527108 6.58985 0.500977 6.49651 0.500977C6.40316 0.500977 6.31167 0.527108 6.23241 0.576414C6.15315 0.625719 6.08927 0.696229 6.04801 0.779961L4.62151 3.66996Z" fill="#222222"/>
 						</svg>';
+
+function create_button_html() {
+
+	$colormag_btn_texts = __('Create a new page', 'colormag');
+
+	$admin_url = admin_url();
+
+	$html = '<a class="btn-create-new-page" href="' . $admin_url . 'post-new.php?post_type=page" aria-label="' . esc_attr($colormag_btn_texts) . '">' . esc_html($colormag_btn_texts) . '</a>';
+
+	return $html;
+}
+
 ?>
 	<div class="colormag-container">
 		<div class="postbox-container" style="float: none;">
@@ -24,7 +36,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					<h1 class="hndle"><?php esc_html_e( 'Welcome to ColorMag', 'colormag' ); ?></h1>
 					<div class="inside" style="padding: 0;margin: 0;">
 						<p><?php esc_html_e( 'Watch our "Getting Started" video series for better understanding of ColorMag Theme. It will guide you through the steps needed to create your website. Then click to create your first page.', 'colormag' ); ?></p>
-<!--						--><?php //echo $this->create_button_html(); ?>
+						<?php echo create_button_html(); ?>
 					</div>
 				</div>
 				<div class="postbox cm-quick-settings">
