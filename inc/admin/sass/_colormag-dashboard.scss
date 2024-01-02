@@ -1263,7 +1263,7 @@ body {
 .themegrill-demo-importer-BlankState {
 	padding: 5em 0 0;
 	text-align: center;
-	background: url("../images/starter-templates-background.jpg");
+	background: url("../images/starter-templates-background.png");
 
 	.themegrill-demo-importer-BlankState-icon {
 		fill: #ddd;
@@ -1272,12 +1272,21 @@ body {
 		margin: 0 0 .875em;
 	}
 
-	.themegrill-demo-importer-BlankState-message {
-		color: #aaa;
-		margin: 0 auto 1.5em;
-		line-height: 1.5em;
-		font-size: 1.2em;
+	.themegrill-demo-importer-BlankState-info {
+		margin: 0 auto;
+		background: #fff;
 		max-width: 500px;
+		padding: 50px 70px 55px 70px;
+		border-radius: 9px;
+	}
+
+	h2.themegrill-demo-importer-BlankState-message {
+			color: #383838;
+			text-align: center;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 1.6;
 	}
 
 	span {
