@@ -27,6 +27,9 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
 
+require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.php';
+
+
 ///** ColorMag setup file, hooked for `after_setup_theme`. */
 //require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 

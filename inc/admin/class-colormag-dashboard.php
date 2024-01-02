@@ -146,7 +146,7 @@ class ColorMag_Dashboard {
 									 src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>"
 									 alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</a>
-								<div>
+								<div class="menu-list">
 									<?php
 									foreach ( $tabs as $id => $tab ) :
 										if ( ! is_callable( $tab['callback'] ) ) {
@@ -226,6 +226,47 @@ class ColorMag_Dashboard {
 						<path d="M10.052 9.34082L16.277 3.11582C16.577 2.81582 16.577 2.36582 16.277 2.06582C15.977 1.76582 15.5269 1.76582 15.227 2.06582L9.00195 8.29082L2.77695 2.06582C2.47695 1.76582 2.02695 1.76582 1.72695 2.06582C1.42695 2.36582 1.42695 2.81582 1.72695 3.11582L7.95195 9.34082L1.72695 15.5658C1.42695 15.8658 1.42695 16.3158 1.72695 16.6158C1.87695 16.7658 2.02695 16.8408 2.25195 16.8408C2.47695 16.8408 2.62695 16.7658 2.77695 16.6158L9.00195 10.3908L15.227 16.6158C15.377 16.7658 15.602 16.8408 15.752 16.8408C15.902 16.8408 16.127 16.7658 16.277 16.6158C16.577 16.3158 16.577 15.8658 16.277 15.5658L10.052 9.34082Z" fill="#999999"/>
 					</svg>
 				</div>
+			</div>
+
+			<div class="dialog-content">
+				<?php
+
+				$changelog = new ColorMagChangelogController();
+
+					// Fetch changelog data.
+					$changelog_data = $changelog->get_items();
+
+					// Check if the response contains data
+					if ( $changelog_data ) {
+						// Output the changelog data
+						echo '<div class="cm-changelog">';
+							foreach ($changelog_data as $entry) {
+								echo '<div class="cm-changelog__list-item">';
+									echo '<div class="cm-changelog__list-head">';
+										echo '<h4 class="cm-changelog__version">Version: ' . esc_html($entry['version']) . '</h4>';
+										echo '<p class="cm-changelog__date">' . esc_html($entry['date']) . '</p>';
+									echo '</div>'; // cm-changelog__list-head
+
+									// Display each change
+									echo '<div class="cm-changelog__change">';
+										foreach ($entry['changes'] as $tag => $changes) {
+											echo '<div class="cm-changelog__change-item item--' . esc_html(strtolower($tag)) . '">';echo '<span class="cm-changelog__change-type">' . esc_html($tag) . '</span>';
+												echo '<div class="cm-changelog__change-list">';
+													foreach ($changes as $change) {
+														echo '<p class="cm-changelog__change-desc">' . esc_html($change) . '</p>';
+													}
+												echo '</div>'; // cm-changelog__change-list
+											echo '</div >'; // cm-changelog__change-item
+										}
+									echo '</div>'; // cm-changelog__change
+								echo '</div>'; // cm-changelog__list-item
+							}
+						echo '</div>'; // cm-changelog
+					} else {
+						echo '<p>No changelog data available.</p>';
+					}
+
+				?>
 			</div>
 		</div>
 		<?php

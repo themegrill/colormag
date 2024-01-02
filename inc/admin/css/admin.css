@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Dashboard */
 .wrap .colormag-header {
 	background-color: #fff;
@@ -817,6 +818,7 @@ h1.hndle {
 
 /* Dialog */
 .cm-dialog {
+	overflow: scroll;
 	position: fixed;
 	right: 0;
 	top: 32px;
@@ -830,6 +832,7 @@ h1.hndle {
 	transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
 	transition: transform 0.3s, -webkit-transform 0.3s;
+	z-index: 9999;
 }
 
 .cm-dialog.open {
@@ -857,6 +860,188 @@ h1.hndle {
 	font-weight: 600;
 	line-height: 2.4;
 	margin: 0;
+}
+
+.cm-dialog .dialog-content .cm-changelog {
+	padding: 20px;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 0px;
+	flex: 1 1 0;
+	overflow: auto;
+}
+
+.cm-dialog .dialog-content .cm-changelog__list-item {
+	margin-bottom: 28px;
+}
+
+.cm-dialog .dialog-content .cm-changelog__list-head {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+.cm-dialog .dialog-content .cm-changelog__list-head h4 {
+	margin: 0;
+	line-height: 1.33;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.cm-dialog .dialog-content .cm-changelog__list-head p {
+	font-size: 11px;
+	line-height: 1;
+	margin: 0;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item {
+	position: relative;
+	margin: 20px 0;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item::after {
+	background-color: #e8eefd;
+	bottom: 0;
+	content: "";
+	height: 100%;
+	left: 12px;
+	position: absolute;
+	top: 0;
+	width: 2px;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item span {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	vertical-align: top;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	max-width: 100%;
+	line-height: 1.7;
+	outline: transparent solid 2px;
+	outline-offset: 2px;
+	border-radius: 0.375em;
+	font-size: 14px;
+	padding: 0 8px;
+	position: sticky;
+	z-index: 2;
+	top: 0;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item .cm-changelog__change-list {
+	padding-top: 10px;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item p {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	padding-left: 40px;
+	position: relative;
+	margin-bottom: 16px;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item p::before {
+	content: "✓";
+	position: absolute;
+	left: 9px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 10px;
+	z-index: 999;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item p::after {
+	background-color: #e8eefd;
+	background-position: 50% center;
+	border-radius: 50%;
+	content: "";
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	left: 2px;
+	z-index: 99;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--fix span {
+	color: #555cff;
+	background: #efefff;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--fix p::before {
+	color: #555cff;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--fix p::after {
+	background: #efefff;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--feature span {
+	color: #22543d;
+	background: #c6f6d5;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--feature p::before {
+	color: #22543d;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--feature p::after {
+	background: #c6f6d5;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--added span {
+	color: #1a202c;
+	background: #edf2f7;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--added p::before {
+	color: #1a202c;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--added p::after {
+	background: #edf2f7;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--tweak span {
+	color: #44337a;
+	background: #e9d8fd;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--tweak p::before {
+	color: #44337a;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--tweak p::after {
+	background: #e9d8fd;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--enhancement span {
+	color: #234e52;
+	background: #b2f5ea;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--enhancement p::before {
+	color: #234e52;
+}
+
+.cm-dialog .dialog-content .cm-changelog__change-item.item--enhancement p::after {
+	background: #b2f5ea;
 }
 
 /* Starter Templates */

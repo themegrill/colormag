@@ -660,6 +660,7 @@ h1.hndle{
 
 /* Dialog */
 .cm-dialog {
+	overflow: scroll;
 	position: fixed;
 	right: 0;
 	top: 32px;
@@ -669,6 +670,7 @@ h1.hndle{
 	background: #fff;
 	transform: translateX(100%);
 	transition: transform 0.3s;
+	z-index: 9999;
 
 	&.open {
 		transform: translateX(0%);
@@ -687,6 +689,195 @@ h1.hndle{
 			font-weight: 600;
 			line-height: 2.4;
 			margin: 0;
+		}
+	}
+
+	.dialog-content {
+		.cm-changelog {
+			padding: 20px;
+			flex: 1 1 0;
+			overflow: auto;
+		}
+
+		.cm-changelog__list-item {
+			margin-bottom: 28px;
+		}
+
+		.cm-changelog__list-head{
+			display: flex;
+			-webkit-box-align: center;
+			align-items: center;
+			-webkit-box-pack: justify;
+			justify-content: space-between;
+			flex-direction: row;
+			gap: 0.5rem;
+
+			h4 {
+				margin: 0;
+				line-height: 1.33;
+				font-size: 14px;
+				font-weight: 600;
+			}
+
+			p {
+				font-size: 11px;
+				line-height: 1;
+				margin: 0;
+			}
+		}
+
+		.cm-changelog__change-item {
+			position: relative;
+			margin: 20px 0;
+
+			&::after {
+				background-color: #e8eefd;
+				bottom: 0;
+				content: "";
+				height: 100%;
+				left: 12px;
+				position: absolute;
+				top: 0;
+				width: 2px;
+			}
+
+			span {
+				display: inline-flex;
+				vertical-align: top;
+				align-items: center;
+				max-width: 100%;
+				line-height: 1.7;
+				outline: transparent solid 2px;
+				outline-offset: 2px;
+				border-radius: 0.375em;
+				font-size: 14px;
+				padding: 0 8px;
+				position: sticky;
+				z-index: 2;
+				top: 0;
+			}
+
+			.cm-changelog__change-list {
+				padding-top: 10px;
+			}
+
+			p {
+				margin-top: 0px;
+				margin-right: 0px;
+				margin-left: 0px;
+				padding-left: 40px;
+				position: relative;
+				margin-bottom: 16px;
+
+				&::before {
+					content: "✓";
+					position: absolute;
+					left: 9px;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 10px;
+					z-index: 999;
+				}
+
+				&::after {
+					background-color:#e8eefd;
+					background-position: 50% center;
+					border-radius: 50%;
+					content: "";
+					height: 20px;
+					width: 20px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 2px;
+					z-index: 99;
+				}
+			}
+
+			&.item--fix {
+				span {
+					color: #555cff;
+					background: #efefff;
+				}
+
+				p {
+					&::before {
+						color: #555cff;
+					}
+
+					&::after {
+						background: #efefff;
+					}
+				}
+			}
+
+			&.item--feature {
+				span {
+					color: #22543d;
+					background: #c6f6d5;
+				}
+
+				p {
+					&::before {
+						color: #22543d;
+					}
+
+					&::after {
+						background: #c6f6d5;
+					}
+				}
+			}
+
+			&.item--added {
+				span {
+					color: #1a202c;
+					background: #edf2f7;
+				}
+
+				p {
+					&::before {
+						color: #1a202c;
+					}
+
+					&::after {
+						background: #edf2f7;
+					}
+				}
+			}
+
+			&.item--tweak {
+				span {
+					color: #44337a;
+					background: #e9d8fd;
+				}
+
+				p {
+					&::before {
+						color: #44337a;
+					}
+
+					&::after {
+						background: #e9d8fd;
+					}
+				}
+			}
+
+			&.item--enhancement {
+				span {
+					color: #234e52;
+					background: #b2f5ea;
+				}
+
+				p {
+					&::before {
+						color: #234e52;
+					}
+
+					&::after {
+						background: #b2f5ea;
+					}
+				}
+			}
 		}
 	}
 }
