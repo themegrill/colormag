@@ -146,15 +146,20 @@ class ColorMag_Dashboard {
 									 src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>"
 									 alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</a>
-								<div class="menu-list">
+								<div class="cm-dashboard-menu-container">
+									<ul id="dashboard-menu-primary" class="dashboard-menu-primary">
 									<?php
 									foreach ( $tabs as $id => $tab ) :
 										if ( ! is_callable( $tab['callback'] ) ) {
 											continue;
 										}
 										?>
+									<li class="menu-item menu-item-<?php echo esc_attr( $id );?>">
 										<a id="<?php echo esc_attr( $id );?>" href=<?php echo esc_url( "{$admin_url}themes.php?page=colormag&tab=$id" ); ?>><?php echo esc_html( $tab['name'] ) ?></a>
+
+									</li>
 									<?php endforeach; ?>
+									</ul>
 								</div>
 						</div>
 						<div class="cm-dashboard-head-left">

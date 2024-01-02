@@ -85,6 +85,42 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+
+		ul {
+			display: flex;
+			margin-left: 26px;
+			gap: 16px;
+
+			li {
+				position: relative;
+				margin: 0;
+
+				a {
+					color: #383838;
+					margin: 0 8px;
+					text-align: center;
+					font-size: 14px;
+					font-weight: 600;
+				}
+
+				&.active {
+					a {
+						color: #2563EB;
+					}
+
+					&::before {
+						height: 3px;
+						width: 100%;
+						bottom: 0;
+						background-color: #2563EB;
+						content: "";
+						position: absolute;
+						top: 40px;
+						box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+					}
+				}
+			}
+		}
 	}
 
 	.cm-dashboard-head-left {

@@ -56,3 +56,18 @@ jQuery(document).ready(function ( $ ) {
 		$('#cm-dialog').removeClass('open');
 	});
 });
+
+jQuery(document).ready(function( $ ) {
+	// Get the current page URL
+	var currentPage = window.location.href;
+
+	// Loop through each menu item and check if it corresponds to the current page
+	$('.cm-dashboard-menu-container ul li').each(function() {
+		var pageURL = $(this).find('a').attr('href');
+		$
+		// If the page URL matches the current URL, add the 'active' class
+		if (currentPage === pageURL) {
+			$(this).addClass('active');
+		}
+	});
+});
