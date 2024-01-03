@@ -196,6 +196,60 @@ function colormag_set_content_width() {
 
 }
 
+add_action('wp_ajax_install_plugin', 'plugin_action_callback');
+add_action('wp_ajax_activate_plugin', 'plugin_action_callback');
+
+function plugin_action_callback()
+{
+	check_ajax_referer('plugin_action_nonce', 'security');
+
+	$plugin = sanitize_text_field($_POST['plugin']);
+	$plugin_path = $plugin . '/' . $plugin . '.php';
+
+	if (is_plugin_installed($plugin_path)) {
+		if ( is_plugin_active($plugin_path)) {
+			wp_send_json_success(array('message' => 'Plugin is already activated.'));
+			error_log( print_r( 'Activated' , true )
+		); } else {
+			// Activate the plugin
+			$result = activate_plugin($plugin_path);
+			error_log( print_r( 'Activate' , true ) );
+
+			if (is_wp_error($result)) {
+				wp_send_json_error(array('message' => 'Error activating the plugin.'));
+			} else {
+				wp_send_json_success(array('message' => 'Plugin activated successfully!'));
+			}
+		}
+
+	} else {
+		// Install and activate the plugin
+		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		$plugin_info = plugins_api('plugin_information', array('slug' => $plugin));
+		error_log( print_r( $plugin_info , true ) );
+		$upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
+		$result = $upgrader->install($plugin_info->download_link);
+
+		if (is_wp_error($result)) {
+			wp_send_json_error(array('message' => 'Error installing the plugin.'));
+		}
+
+		$result = activate_plugin($plugin_path);
+
+		if (is_wp_error($result)) {
+			wp_send_json_error(array('message' => 'Error activating the plugin.'));
+		} else {
+			wp_send_json_success(array('message' => 'Plugin installed and activated successfully!'));
+		}
+	}
+}
+
+function is_plugin_installed($plugin_path) {
+	$plugins = get_plugins();
+	return isset($plugins[$plugin_path]);
+}
+
 add_action( 'after_setup_theme', 'colormag_set_content_width', 0 );
 
 /**
