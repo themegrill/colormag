@@ -31,7 +31,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 		public function enqueue_scripts() {
 			wp_enqueue_style( 'colormag-admin-style', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), COLORMAG_THEME_VERSION );
 
-			wp_enqueue_script( 'colormag-plugin-install-helper', get_template_directory_uri() . '/inc/admin/js/plugin-handle.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+			wp_enqueue_script( 'colormag-plugin-install-helper', get_template_directory_uri() . '/inc/admin/js/admin.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 			$welcome_data = array(
 				'uri'      => esc_url( admin_url( '/themes.php?page=colormag&tab=starter-templates' ) ),
