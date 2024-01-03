@@ -71,4 +71,10 @@ jQuery(document).ready(function( $ ) {
 			$(this).addClass('active');
 		}
 	});
+
+	// Check if the current page URL matches the specific URL
+	if (currentPage === 'http://localhost/themes/wp-admin/themes.php?page=colormag') {
+		// Add the 'active' class to the first li
+		$('.cm-dashboard-menu-container ul li:first').addClass('active');
+	}
 });
