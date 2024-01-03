@@ -29,6 +29,22 @@ function create_button_html() {
 	return $html;
 }
 
+function import_button_html() {
+
+	// Check if TDI is installed but not activated or not installed at all or installed and activated.
+	if ( file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php' ) && is_plugin_inactive( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+		$colormag_btn_texts = __( 'Activate ThemeGrill Demo Importer Plugin', 'colormag' );
+	} elseif ( ! file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php' ) && is_plugin_inactive( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+		$colormag_btn_texts = __( 'Install ThemeGrill Demo Importer Plugin', 'colormag' );
+	} else {
+		$colormag_btn_texts = __( 'View Starter Templates', 'colormag' );
+	}
+
+	$html = '<a class="btn-get-started" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr( $colormag_btn_texts ) . '">' . esc_html( $colormag_btn_texts . ' &#129066;' ) . '</a>';
+
+	return $html;
+}
+
 ?>
 	<div class="colormag-container">
 		<div class="postbox-container" style="float: none;">
@@ -266,8 +282,9 @@ function create_button_html() {
 					</h3>
 					<div class="inside">
 						<p><?php echo __( 'Use ColorMags diverse demos instead of starting your site from scratch. <br> <br> Simply import a demo and customize it to your preferences.', 'your-text-domain' ); ?></p>
-						<a href=<?php echo esc_url( "{$admin_url}themes.php?page=colormag&tab=starter-templates" ); ?>
-						   ><?php esc_html_e( 'View Starter Templates', 'colormag' ); ?></a>
+<!--						<a href=--><?php //echo esc_url( "{$admin_url}themes.php?page=colormag&tab=starter-templates" ); ?>
+<!--						   >--><?php //esc_html_e( 'View Starter Templates', 'colormag' ); ?><!--</a>-->
+						<?php echo import_button_html(); ?>
 					</div>
 				</div>
 				<div class="postbox">

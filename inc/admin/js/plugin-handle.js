@@ -35,7 +35,8 @@ jQuery( document ).ready( function ( $ ) {
 					extraUri     = '&_colormag_notice_nonce=' + dismissNonce;
 				}
 
-				redirectUri          = response.redirect + extraUri;
+				redirectUri          = response.redirect;
+				console.log( redirectUri )
 				window.location.href = redirectUri;
 			},
 			error   : function( xhr, ajaxOptions, thrownError ){

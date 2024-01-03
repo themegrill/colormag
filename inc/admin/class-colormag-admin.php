@@ -34,7 +34,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			wp_enqueue_script( 'colormag-plugin-install-helper', get_template_directory_uri() . '/inc/admin/js/plugin-handle.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 			$welcome_data = array(
-				'uri'      => esc_url( admin_url( '/themes.php?page=demo-importer&browse=all&colormag-hide-notice=welcome' ) ),
+				'uri'      => esc_url( admin_url( '/themes.php?page=colormag&tab=starter-templates' ) ),
 				'btn_text' => esc_html__( 'Processing...', 'colormag' ),
 				'nonce'    => wp_create_nonce( 'colormag_demo_import_nonce' ),
 			);
