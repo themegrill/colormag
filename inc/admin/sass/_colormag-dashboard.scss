@@ -78,7 +78,7 @@
 	background-color: $background-color_2;
 	text-align: center;
 	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
-	//margin-bottom: 40px;
+	margin-bottom: 40px;
 	padding: 20px;
 
 	.cm-dashboard-head-right {
@@ -533,6 +533,7 @@ h1.hndle{
 	.cm-help-top-row {
 		display: flex;
 		gap: 20px;
+		flex-direction: column;
 
 		.postbox {
 			display: flex;
@@ -584,9 +585,10 @@ h1.hndle{
 		padding: 16px;
 		display: flex;
 		gap: 30px;
+		flex-direction: column;
 
 		img {
-			max-width: 348px;
+			max-width: 100%;
 		}
 
 		.cm-content {
@@ -1235,6 +1237,68 @@ body {
 	}
 }
 
+/* Starter Templates - Blank State */
+.themegrill-demo-importer-BlankState {
+	padding-top: 200px;
+	padding-bottom: 400px;
+	text-align: center;
+	background: url("../images/starter-templates-background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.themegrill-demo-importer-BlankState-icon {
+		fill: #ddd;
+		width: 128px;
+		height: 128px;
+		margin: 0 0 .875em;
+	}
+
+	.themegrill-demo-importer-BlankState-info {
+		margin: 20px 10px;
+		background: #fff;
+		max-width: 100%;
+		padding: 10px 20px;
+		border-radius: 9px;
+	}
+
+	h2.themegrill-demo-importer-BlankState-message {
+		color: #383838;
+		text-align: center;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.6;
+	}
+
+	span {
+		color: #fff;
+		display: flex;
+		padding: 10px;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		align-self: stretch;
+		border-radius: 4px;
+		background: #2563EB;
+	}
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+	.themegrill-demo-importer-BlankState {
+		padding-bottom: 695px;
+
+
+		.themegrill-demo-importer-BlankState-info {
+			margin: 20px auto;
+			padding: 40px 50px;
+		}
+
+		span {
+			padding: 16px;
+		}
+	}
+}
 
 /* Responsive */
 @media (min-width: 768px) {
@@ -1257,50 +1321,56 @@ body {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
-}
 
-/* Starter Templates - Blank State */
-.themegrill-demo-importer-BlankState {
-	padding-top: 200px;
-	padding-bottom: 695px;
-	text-align: center;
-	background: url("../images/starter-templates-background.png");
-	background-size: contain;
-
-	.themegrill-demo-importer-BlankState-icon {
-		fill: #ddd;
-		width: 128px;
-		height: 128px;
-		margin: 0 0 .875em;
+	.help-page {
+		.cm-help-top-row {
+			flex-direction: row;
+		}
 	}
 
-	.themegrill-demo-importer-BlankState-info {
-		margin: 0 auto;
-		background: #fff;
-		max-width: 500px;
-		padding: 50px 70px 55px 70px;
-		border-radius: 9px;
-	}
+	.themegrill-demo-importer-BlankState {
+		padding-top: 200px;
+		padding-bottom: 695px;
+		text-align: center;
+		background: url("../images/starter-templates-background.png");
+		background-size: cover;
+		background-repeat: no-repeat;
 
-	h2.themegrill-demo-importer-BlankState-message {
+		.themegrill-demo-importer-BlankState-icon {
+			fill: #ddd;
+			width: 128px;
+			height: 128px;
+			margin: 0 0 .875em;
+		}
+
+		.themegrill-demo-importer-BlankState-info {
+			margin: 0 auto;
+			background: #fff;
+			max-width: 500px;
+			padding: 50px 70px 55px 70px;
+			border-radius: 9px;
+		}
+
+		h2.themegrill-demo-importer-BlankState-message {
 			color: #383838;
 			text-align: center;
 			font-size: 16px;
 			font-style: normal;
 			font-weight: 400;
 			line-height: 1.6;
-	}
+		}
 
-	span {
-		color: #fff;
-		display: flex;
-		padding: 16px;
-		justify-content: center;
-		align-items: center;
-		gap: 8px;
-		align-self: stretch;
-		border-radius: 4px;
-		background: #2563EB;
+		span {
+			color: #fff;
+			display: flex;
+			padding: 16px;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+			align-self: stretch;
+			border-radius: 4px;
+			background: #2563EB;
+		}
 	}
 }
 
@@ -1309,5 +1379,15 @@ body {
 		display: grid;
 		gap: 24px;
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.help-page {
+		.postbox.cm-community {
+			flex-direction: row;
+
+			img {
+				max-width: 348px;
+			}
+		}
 	}
 }
