@@ -78,7 +78,7 @@
 	background-color: $background-color_2;
 	text-align: center;
 	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
-	margin-bottom: 40px;
+	//margin-bottom: 40px;
 	padding: 20px;
 
 	.cm-dashboard-head-right {
@@ -1261,9 +1261,11 @@ body {
 
 /* Starter Templates - Blank State */
 .themegrill-demo-importer-BlankState {
-	padding: 5em 0 0;
+	padding-top: 200px;
+	padding-bottom: 695px;
 	text-align: center;
 	background: url("../images/starter-templates-background.png");
+	background-size: contain;
 
 	.themegrill-demo-importer-BlankState-icon {
 		fill: #ddd;
