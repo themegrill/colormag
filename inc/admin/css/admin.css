@@ -863,11 +863,17 @@ h1.hndle {
 
 /* Dialog */
 .cm-dialog {
-	overflow: scroll;
 	position: fixed;
 	right: 0;
 	top: 32px;
 	bottom: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	width: 100%;
 	max-width: 386px;
 	background: #fff;
@@ -907,12 +913,15 @@ h1.hndle {
 	margin: 0;
 }
 
+.cm-dialog .dialog-content {
+	overflow: auto;
+}
+
 .cm-dialog .dialog-content .cm-changelog {
 	padding: 20px;
 	-webkit-box-flex: 1;
 	-ms-flex: 1 1 0px;
 	flex: 1 1 0;
-	overflow: auto;
 }
 
 .cm-dialog .dialog-content .cm-changelog__list-item {
@@ -981,7 +990,7 @@ h1.hndle {
 	font-size: 14px;
 	padding: 0 8px;
 	position: sticky;
-	z-index: 2;
+	z-index: 999;
 	top: 0;
 }
 

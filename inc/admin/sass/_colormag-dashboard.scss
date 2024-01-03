@@ -698,11 +698,12 @@ h1.hndle{
 
 /* Dialog */
 .cm-dialog {
-	overflow: scroll;
 	position: fixed;
 	right: 0;
 	top: 32px;
 	bottom: 0;
+	display: flex;
+	flex-direction: column;
 	width: 100%;
 	max-width: 386px;
 	background: #fff;
@@ -731,10 +732,11 @@ h1.hndle{
 	}
 
 	.dialog-content {
+		overflow: auto;
+
 		.cm-changelog {
 			padding: 20px;
 			flex: 1 1 0;
-			overflow: auto;
 		}
 
 		.cm-changelog__list-item {
@@ -791,7 +793,7 @@ h1.hndle{
 				font-size: 14px;
 				padding: 0 8px;
 				position: sticky;
-				z-index: 2;
+				z-index: 999;
 				top: 0;
 			}
 
