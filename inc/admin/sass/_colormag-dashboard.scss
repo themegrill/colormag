@@ -404,6 +404,7 @@ h1.hndle{
 			display: flex;
 			justify-content: space-between;
 			padding-bottom: 18px;
+			align-items: center;
 		}
 
 		.inside:nth-child(2) {
@@ -414,6 +415,10 @@ h1.hndle{
 
 		.inside:nth-child(3) {
 			padding: 18px 0;
+		}
+
+		a {
+			color: #2563EB;
 		}
 	}
 

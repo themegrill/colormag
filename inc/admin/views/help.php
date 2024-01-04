@@ -141,44 +141,109 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 			</div>
 			<div class="postbox cm-useful-plugins">
 				<h3 class="hndle">
-					<span><?php esc_html_e('Useful Plugins', 'colormag') ?></span>
+					<span><?php esc_html_e('Useful Plugins', 'colormag'); ?></span>
 				</h3>
-				<div class="inside">
-					<div class=" content-left">
-						<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"
-							 fill="none">
-							<rect x="0.5" width="40" height="40" rx="3.63636" fill="#5317AA"/>
-							<path d="M27.309 11.1045H22.9999L24.3223 13.3268H28.6186L27.309 11.1045Z"
-								  fill="white"/>
-							<path d="M30.0183 15.5527H25.7156L27.1025 17.7751H31.4085L30.0183 15.5527Z"
-								  fill="white"/>
-							<path
-								d="M29.9506 26.6704H13.5493L20.4292 15.4136L23.2772 20.0002H20.4292L19.11 22.2225H27.2412L20.4292 11.2432L9.5885 28.8959H31.3408L29.9506 26.6704Z"
-								fill="white"/>
-						</svg>
-						<div class="content-info">
-							<h4><?php esc_html_e('Everest Forms', 'colormag') ?></h4>
-							<p><?php esc_html_e('Form Builder Plugin', 'colormag') ?></p>
+				<?php
+				$plugins = array(
+					array(
+						'name' => 'Everest Forms',
+						'file'  => 'everest-forms/everest-forms.php',
+						'slug'  => 'everest-forms',
+						'description' => 'Form Builder Plugin',
+						'color' => '#5317AA',
+						'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+								 fill="none">
+								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#5317AA"/>
+								<path d="M27.309 11.1045H22.9999L24.3223 13.3268H28.6186L27.309 11.1045Z"
+									  fill="white"/>
+								<path d="M30.0183 15.5527H25.7156L27.1025 17.7751H31.4085L30.0183 15.5527Z"
+									  fill="white"/>
+								<path
+									d="M29.9506 26.6704H13.5493L20.4292 15.4136L23.2772 20.0002H20.4292L19.11 22.2225H27.2412L20.4292 11.2432L9.5885 28.8959H31.3408L29.9506 26.6704Z"
+									fill="white"/>
+							</svg>',
+					),
+					array(
+						'name' => 'BlockArt',
+						'file'  => 'blockart-blocks/blockart.php',
+						'slug'  => 'blockart',
+						'description' => 'Page Builder Plugin',
+						'color' => '#2563EB',
+						'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+								 fill="none">
+								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#2563EB"/>
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									  d="M8.5 31.2027H32.5V8.5H8.5V31.2027ZM31.2027 29.9054H9.79728V9.7973H31.2027V29.9054ZM20.7109 11.7432L22.3204 17.1421L19.094 17.1563L20.7109 11.7432ZM18.0383 20.7249H23.3909L24.3433 25.5563L24.4319 27.3107H16.8496L16.9161 25.5351L18.0383 20.7249Z"
+									  fill="white"/>
+							</svg>',
+					),
+					// Add more plugins as needed
+				);
+
+				// Loop through the plugins
+				foreach ($plugins as $plugin) {
+					$plugin_file = $plugin['file'];
+					$plugin_slug = $plugin['slug'];
+					$is_plugin_installed = is_plugin_installed( $plugin_file );
+					$is_plugin_activated = is_plugin_active( $plugin_file );
+					?>
+					<div class="inside">
+						<div class="content-left">
+							<?php echo $plugin['svg']; ?>
+							<div class="content-info">
+								<h4><?php echo esc_html($plugin['name']); ?></h4>
+								<p><?php echo esc_html($plugin['description']); ?></p>
+							</div>
 						</div>
+						<?php if ($is_plugin_installed) : ?>
+							<?php if ( $is_plugin_activated ) : ?>
+								<span><?php esc_html_e('Activated'); ?></span>
+							<?php else : ?>
+								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Activate'); ?></span></a>
+							<?php endif; ?>
+						<?php else : ?>
+							<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Install'); ?></span></a>
+						<?php endif; ?>
 					</div>
-					<a><?php esc_html_e('Install') ?></a>
-				</div>
-				<div class="inside">
-					<div class=" content-left">
-						<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"
-							 fill="none">
-							<rect x="0.5" width="40" height="40" rx="3.63636" fill="#2563EB"/>
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								  d="M8.5 31.2027H32.5V8.5H8.5V31.2027ZM31.2027 29.9054H9.79728V9.7973H31.2027V29.9054ZM20.7109 11.7432L22.3204 17.1421L19.094 17.1563L20.7109 11.7432ZM18.0383 20.7249H23.3909L24.3433 25.5563L24.4319 27.3107H16.8496L16.9161 25.5351L18.0383 20.7249Z"
-								  fill="white"/>
-						</svg>
-						<div class="content-info">
-							<h4><?php esc_html_e('BlockArt', 'colormag') ?></h4>
-							<p><?php esc_html_e('Page Builder Plugin', 'colormag') ?></p>
-						</div>
-					</div>
-					<a><?php esc_html_e('Install') ?></a>
-				</div>
+					<?php
+				}
+				?>
+				<!--					<div class="inside">-->
+				<!--						<div class=" content-left">-->
+				<!--							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+				<!--								 fill="none">-->
+				<!--								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#5317AA"/>-->
+				<!--								<path d="M27.309 11.1045H22.9999L24.3223 13.3268H28.6186L27.309 11.1045Z"-->
+				<!--									  fill="white"/>-->
+				<!--								<path d="M30.0183 15.5527H25.7156L27.1025 17.7751H31.4085L30.0183 15.5527Z"-->
+				<!--									  fill="white"/>-->
+				<!--								<path-->
+				<!--									d="M29.9506 26.6704H13.5493L20.4292 15.4136L23.2772 20.0002H20.4292L19.11 22.2225H27.2412L20.4292 11.2432L9.5885 28.8959H31.3408L29.9506 26.6704Z"-->
+				<!--									fill="white"/>-->
+				<!--							</svg>-->
+				<!--							<div class="content-info">-->
+				<!--								<h4>--><?php //esc_html_e('Everest Forms', 'colormag'); ?><!--</h4>-->
+				<!--								<p>--><?php //esc_html_e('Form Builder Plugin', 'colormag'); ?><!--</p>-->
+				<!--							</div>-->
+				<!--						</div>-->
+				<!--						<a>--><?php //esc_html_e('Install'); ?><!--</a>-->
+				<!--					</div>-->
+				<!--					<div class="inside">-->
+				<!--						<div class=" content-left">-->
+				<!--							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+				<!--								 fill="none">-->
+				<!--								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#2563EB"/>-->
+				<!--								<path fill-rule="evenodd" clip-rule="evenodd"-->
+				<!--									  d="M8.5 31.2027H32.5V8.5H8.5V31.2027ZM31.2027 29.9054H9.79728V9.7973H31.2027V29.9054ZM20.7109 11.7432L22.3204 17.1421L19.094 17.1563L20.7109 11.7432ZM18.0383 20.7249H23.3909L24.3433 25.5563L24.4319 27.3107H16.8496L16.9161 25.5351L18.0383 20.7249Z"-->
+				<!--									  fill="white"/>-->
+				<!--							</svg>-->
+				<!--							<div class="content-info">-->
+				<!--								<h4>--><?php //esc_html_e('BlockArt', 'colormag'); ?><!--</h4>-->
+				<!--								<p>--><?php //esc_html_e('Page Builder Plugin', 'colormag'); ?><!--</p>-->
+				<!--							</div>-->
+				<!--						</div>-->
+				<!--						<a>--><?php //esc_html_e('Install'); ?><!--</a>-->
+				<!--					</div>-->
 			</div>
 			<div class="postbox">
 				<h3 class="hndle">
