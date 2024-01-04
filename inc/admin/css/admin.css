@@ -137,8 +137,8 @@
 	content: "";
 	position: absolute;
 	top: 44px;
-	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .colormag-header .cm-dashboard-head-left {
@@ -275,28 +275,6 @@ h1.hndle {
 	flex-flow: column nowrap;
 }
 
-.cm-quick-settings .cm-quick-settings-content .cm-quick-settings-item a {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	text-align: center;
-	color: #7A7A7A;
-	-webkit-font-feature-settings: 'clig' off, 'liga' off;
-	font-feature-settings: 'clig' off, 'liga' off;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 18px;
-	text-transform: capitalize;
-}
-
-.cm-quick-settings .cm-quick-settings-content .cm-quick-settings-item a svg {
-	margin-right: 4px;
-}
-
 .cm-premium-features .cm-premium-features-title {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -354,7 +332,11 @@ h1.hndle {
 	align-items: center;
 }
 
-.cm-premium-features .cm-premium-features-content .cm-premium-features-item a {
+.cm-premium-features .cm-premium-features-content .cm-premium-features-item .colormag-icon {
+	height: 18px;
+}
+
+.cm-quick-settings-item a, .cm-premium-features-item a {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -372,12 +354,8 @@ h1.hndle {
 	text-transform: capitalize;
 }
 
-.cm-premium-features .cm-premium-features-content .cm-premium-features-item a svg {
+.cm-quick-settings-item a svg, .cm-premium-features-item a svg {
 	margin-right: 4px;
-}
-
-.cm-premium-features .cm-premium-features-content .cm-premium-features-item .colormag-icon {
-	height: 18px;
 }
 
 .cm-notification {
@@ -1018,12 +996,9 @@ h1.hndle {
 }
 
 .cm-dialog .dialog-content .cm-changelog__change-item p {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-left: 0px;
+	margin: 0 0 16px 0;
 	padding-left: 40px;
 	position: relative;
-	margin-bottom: 16px;
 }
 
 .cm-dialog .dialog-content .cm-changelog__change-item p::before {
@@ -1118,10 +1093,6 @@ h1.hndle {
 }
 
 /* Starter Templates */
-.wrap demo-importer {
-	max-width: 1280px;
-}
-
 .appearance_page_colormag .demo-importer {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -1210,7 +1181,7 @@ h1.hndle {
 	font-size: 13px;
 	font-weight: 400;
 	margin-left: 5px;
-	padding: 0px 10px;
+	padding: 0 10px;
 	line-height: 22px;
 	border-radius: 3px;
 	background: #67c016;
