@@ -186,39 +186,6 @@ class ColorMag_Dashboard {
 				$current_tab = in_array( $current_tab, array_keys( $tabs ), true ) ? $current_tab : 'dashboard';
 				$callback = $tabs[ $current_tab ]['callback'];
 				call_user_func( $callback );
-				// Check for additional parameters in the URL
-//				if ( ! empty( $_GET['dashboard-page'] ) ) {
-//					$dashboardPage = sanitize_text_field( wp_unslash( $_GET['dashboard-page'] ) );
-//
-//					// Display content based on the custom parameter
-//					switch ( $dashboardPage ) {
-//						case 'starter-templates':
-//							$instance = new ColorMag_Starter_Templates_Page();
-//							$instance->starter_templates();
-//							break;
-//						case 'products':
-//							$instance = new ColorMag_Products_Page();
-//							$instance->products();
-//							break;
-//						case 'free-vs-pro':
-//							$instance = new ColorMag_Free_vs_Pro_Page();
-//							$instance->free_vs_pro();
-//							break;
-//						case 'help':
-//							$instance = new ColorMag_Help_Page();
-//							$instance->help();
-//							break;
-//						// Add more cases as needed for different parameters
-//						default:
-//							// Default content if no matching parameter is found
-//							$instance = new ColorMag_Dashboard_Page();
-//							$instance->dashboard();
-//					}
-//				} else {
-//					// Default content if no additional parameters are present
-//					$instance = new ColorMag_Dashboard_Page();
-//					$instance->dashboard();
-//				}
 				?>
 			</div><!--/.metabox-holder-->
 		</div><!--/.wrap-->
