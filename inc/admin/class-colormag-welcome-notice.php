@@ -64,10 +64,7 @@ class Colormag_Welcome_Notice {
 						<h2 class="colormag-message__heading">
 							<?php
 							printf(
-							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Get Started with ColorMag', 'colormag' ),
-								'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
-								'</a>'
+								esc_html__( 'Start Building with ColorMag!', 'colormag' ),
 							);
 							?>
 						</h2>
@@ -75,14 +72,14 @@ class Colormag_Welcome_Notice {
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'You do not need to build your site from scretch, ColorMag provides a variety of demos. Import demo site and start editing as your liking.', 'colormag' ),
+								esc_html__( 'Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!', 'colormag' ),
 							);
 							?>
 						</p>
 					</div>
 					<div class="colormag-message__cta">
 						<?php echo $this->import_button_html(); ?>
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking "Get Started" button will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos.', 'colormag' ); ?></span>
 					</div>
 				</div>
 				<div class="colormag-message__image">

@@ -70,7 +70,6 @@
 		}
 	}
 	.colormag-message__head {
-		max-width: 540px;
 		margin-bottom: 24px;
 	}
 
@@ -94,23 +93,21 @@
 	}
 
 	.colormag-message__description {
-		color: #6B6B6B;
+		color: #383838;
 		font-size: 13px;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 1.9;
 	}
 	.colormag-message__cta {
 		display: flex;
 		align-items: center;
-		gap: 16px;
+		gap: 24px;
 
 		.plugin-install-notice {
-			color: #A1A1A1;
+			color: #727374;
 			font-size: 13px;
 			font-style: normal;
 			font-weight: 400;
-			line-height: 1.9;
 		}
 		a {
 			&:before {
@@ -151,6 +148,8 @@ a.colormag-message-close {
 	}
 }
 .colormag-message__text {
+	max-width: 660px;
+
 	img {
 		height: 50px;
 		width: 50px;
