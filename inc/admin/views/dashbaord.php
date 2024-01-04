@@ -53,9 +53,12 @@ function import_button_html()
 			<div class="col-70">
 				<h2 style="height:0;margin:0;"><!-- admin notices below this element --></h2>
 				<div class="postbox">
-					<h1 class="hndle"><?php esc_html_e('Welcome to ColorMag', 'colormag'); ?></h1>
+					<div class="dashboard-title">
+						<h1 class="hndle"><?php esc_html_e('Welcome to ColorMag', 'colormag'); ?></h1>
+						<span><?php esc_html_e('Free', 'colormag'); ?></span>
+					</div>
 					<div class="inside" style="padding: 0;margin: 0;">
-						<p><?php esc_html_e('Watch our "Getting Started" video series for better understanding of ColorMag Theme. It will guide you through the steps needed to create your website. Then click to create your first page.', 'colormag'); ?></p>
+						<p><?php esc_html_e('Experience a seamless magazine-themed website building experience with ColorMag! Explore all the settings and features right here and get started with your first page.', 'colormag'); ?></p>
 						<?php echo create_button_html(); ?>
 					</div>
 				</div>
@@ -308,7 +311,7 @@ function import_button_html()
 						<span><?php esc_html_e('Starter Templates', 'colormag'); ?></span>
 					</h3>
 					<div class="inside">
-						<p><?php echo __('Use ColorMags diverse demos instead of starting your site from scratch. <br> <br> Simply import a demo and customize it to your preferences.', 'your-text-domain'); ?></p>
+						<p><?php echo __('Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'your-text-domain'); ?></p>
 						<?php echo import_button_html(); ?>
 					</div>
 				</div>
@@ -335,7 +338,7 @@ function import_button_html()
 							<?php
 							echo sprintf(
 							/* translators: 1: Theme Name, 2: Demo Link. */
-								esc_html__('Need more details? Please check out basic documentation for detailed information on how to use %1$s', 'colormag'),
+								esc_html__('Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!', 'colormag'),
 								$theme->Name,
 							);
 							?>
@@ -373,7 +376,7 @@ function import_button_html()
 
 							echo sprintf(
 							/* translators: %s: Theme Name. */
-								esc_html__('Sharing your review is a valuable way to help us enhance your experience.', 'colormag'),
+								esc_html__('What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!', 'colormag'),
 								$theme->Name
 							);
 							?>
@@ -564,7 +567,7 @@ function import_button_html()
 							<?php
 							echo sprintf(
 							/* translators: %s: Theme Name. */
-								esc_html__('Join our facebook group of ColorMag users for creating beautiful websites!', 'colormag'),
+								esc_html__('Join our Facebook group filled with ThemeGrill themes users, including ColorMag users to discuss anything about the theme!', 'colormag'),
 							);
 							?>
 						</p>

@@ -67,7 +67,7 @@
 			.dashicons {
 				padding-right: 5px;
 			}
-			margin-bottom: 16px;
+			margin-bottom: 12px;
 		}
 	}
 }
@@ -154,12 +154,11 @@
 
 .postbox {
 	p {
-		color: #6B6B6B;
+		color: #383838;
 		font-size: 14px;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 19.3px;
-		margin-bottom: 20px;
+		margin: 0 0 20px 0;
 	}
 }
 h1.hndle{
@@ -168,6 +167,27 @@ h1.hndle{
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
+}
+.dashboard-title {
+	display: flex;
+
+	span {
+		display: flex;
+		padding: 4px 6px;
+		justify-content: center;
+		align-items: center;
+		gap: 2px;
+		position: absolute;
+		left: 295.5px;
+		top: 39.5px;
+		border-radius: 2px;
+		background: rgba(32, 125, 175, 0.10);
+		color: #2563EB;
+		text-align: center;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 600;
+	}
 }
 .btn-create-new-page{
 	display: inline-block;
