@@ -203,16 +203,17 @@ function plugin_action_callback()
 {
 	check_ajax_referer('plugin_action_nonce', 'security');
 
-	$plugin = sanitize_text_field($_POST['plugin']);
-	$plugin_path = $plugin . '/' . $plugin . '.php';
+	$plugin      = sanitize_text_field($_POST['plugin']);
+	$pluginSlug = sanitize_text_field($_POST['slug']);
 
-	if (is_plugin_installed($plugin_path)) {
-		if ( is_plugin_active($plugin_path)) {
+
+	if (is_plugin_installed($plugin)) {
+		if ( is_plugin_active($plugin)) {
 			wp_send_json_success(array('message' => 'Plugin is already activated.'));
 			error_log( print_r( 'Activated' , true )
 		); } else {
 			// Activate the plugin
-			$result = activate_plugin($plugin_path);
+			$result = activate_plugin($plugin);
 			error_log( print_r( 'Activate' , true ) );
 
 			if (is_wp_error($result)) {
@@ -226,7 +227,7 @@ function plugin_action_callback()
 		// Install and activate the plugin
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-		$plugin_info = plugins_api('plugin_information', array('slug' => $plugin));
+		$plugin_info = plugins_api('plugin_information', array('slug' => $pluginSlug));
 		error_log( print_r( $plugin_info , true ) );
 		$upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
 		$result = $upgrader->install($plugin_info->download_link);
@@ -235,7 +236,7 @@ function plugin_action_callback()
 			wp_send_json_error(array('message' => 'Error installing the plugin.'));
 		}
 
-		$result = activate_plugin($plugin_path);
+		$result = activate_plugin($plugin);
 
 		if (is_wp_error($result)) {
 			wp_send_json_error(array('message' => 'Error activating the plugin.'));

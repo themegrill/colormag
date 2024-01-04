@@ -48,42 +48,45 @@
 				$plugins_data = array(
 					'ur' => array(
 						'name'  => 'User Registration',
+						'file'  => 'user-registration/user-registration.php',
 						'slug'  => 'user-registration',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/ur.webp',
 					),
 					'evf'    => array(
 						'name'  => 'Everest Forms',
+						'file'  => 'everest-forms/everest-forms.php',
 						'slug'  => 'everest-forms',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/evf.webp',
 					),
 					'masteriyo'    => array(
 						'name'  => 'Masteriyo',
-						'slug'  => 'learning-management-system',
-						'file' => 'lms',
+						'file'  => 'learning-management-system/lms.php',
+						'slug'  => 'lms',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/masteriyo.webp',
 					),
 					'mzb'    => array(
 						'name'  => 'Magazine Blocks',
+						'file'  => 'magazine-blocks/magazine-blocks.php',
 						'slug'  => 'magazine-blocks',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/magazine-blocks.webp',
 					),
 					'blockart-blocks'    => array(
 						'name'  => 'BlockArt',
-						'slug'  => 'blockart-blocks',
-						'file' => 'blockart',
+						'file'  => 'blockart-blocks/blockart.php',
+						'slug'  => 'blockart',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/blockart-blocks.webp',
 					),
 					// Add more themes as needed
 				);
 
 				foreach ($plugins_data as $plugin_info) :
+					$plugin_file = $plugin_info['file'];
 					$plugin_slug = $plugin_info['slug'];
-					$plugin_file = isset($plugin_info['file']) ? $plugin_info['file'] : $plugin_info['slug'];
-					$is_plugin_installed = is_plugin_installed( $plugin_slug . '/' . $plugin_file . '.php' );
-					$is_plugin_activated = is_plugin_active($plugin_slug . '/' . $plugin_file . '.php');
+					$is_plugin_installed = is_plugin_installed( $plugin_file );
+					$is_plugin_activated = is_plugin_active( $plugin_file );
 					?>
-					<div class="item item-<?php echo esc_attr($plugin_file); ?>">
-						<img class="<?php echo esc_attr($plugin_file); ?>-logo" src="<?php echo esc_url($plugin_info['image']); ?>" alt="<?php echo esc_attr($plugin_info['name']); ?>">
+					<div class="item item-<?php echo esc_attr($plugin_slug); ?>">
+						<img class="<?php echo esc_attr( $plugin_slug ); ?>-logo" src="<?php echo esc_url($plugin_info['image']); ?>" alt="<?php echo esc_attr($plugin_info['name']); ?>">
 						<div class="content">
 							<h3><?php echo esc_html($plugin_info['name']); ?></h3>
 							<p><?php esc_html_e('Lorem ipsum dolor sit amet, consectetr adipiscing elit, sed do smod tempoore aliqua temor dolor imet sed.'); ?></p>
@@ -98,10 +101,10 @@
 									<?php if ( $is_plugin_activated ) : ?>
 										<span><?php esc_html_e('Activated'); ?></span>
 									<?php else : ?>
-								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>"><?php esc_html_e('Activate'); ?></span></a>
+								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Activate'); ?></span></a>
 									<?php endif; ?>
 								<?php else : ?>
-									<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>"><?php esc_html_e('Install'); ?></span></a>
+									<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Install'); ?></span></a>
 								<?php endif; ?>
 							</div>
 						</div>
@@ -119,10 +122,12 @@
 			e.preventDefault();
 			var button = $(this);
 			var plugin = button.data('plugin');
+			var pluginSlug = button.data('slug');
 			var action = button.hasClass('install-plugin') ? 'install_plugin' : 'activate_plugin';
 			var data = {
 				'action': action,
 				'plugin': plugin,
+				'slug': pluginSlug,
 				'security': '<?php echo wp_create_nonce('plugin_action_nonce'); ?>'
 			};
 
