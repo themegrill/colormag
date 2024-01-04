@@ -653,6 +653,13 @@ h1.hndle {
 	background: #2563EB;
 }
 
+.products-page .inside span a {
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	margin: 0 auto;
+}
+
 .products-page .inside h3 {
 	margin: 0;
 }
