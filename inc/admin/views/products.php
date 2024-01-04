@@ -61,7 +61,7 @@
 					'masteriyo'    => array(
 						'name'  => 'Masteriyo',
 						'file'  => 'learning-management-system/lms.php',
-						'slug'  => 'lms',
+						'slug'  => 'learning-management-system',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/masteriyo.webp',
 					),
 					'mzb'    => array(
@@ -73,7 +73,7 @@
 					'blockart-blocks'    => array(
 						'name'  => 'BlockArt',
 						'file'  => 'blockart-blocks/blockart.php',
-						'slug'  => 'blockart',
+						'slug'  => 'blockart-blocks',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/blockart-blocks.webp',
 					),
 					// Add more themes as needed
@@ -115,44 +115,3 @@
 		<!-- Add other postboxes as needed -->
 	</div>
 </div>
-
-<script>
-	jQuery(document).ready(function ($) {
-		$('.install-plugin, .activate-plugin').on('click', function (e) {
-			e.preventDefault();
-			var button = $(this);
-			var plugin = button.data('plugin');
-			var pluginSlug = button.data('slug');
-			var action = button.hasClass('install-plugin') ? 'install_plugin' : 'activate_plugin';
-			var data = {
-				'action': action,
-				'plugin': plugin,
-				'slug': pluginSlug,
-				'security': '<?php echo wp_create_nonce('plugin_action_nonce'); ?>'
-			};
-
-			// Add loading animation and update text
-			var originalText = button.html();
-			button.html('<i class="fa fa-spinner fa-spin"></i> <?php esc_html_e('Processing...'); ?>');
-
-			$.post(ajaxurl, data, function (response) {
-				// Restore the button text after completion
-				button.html('Activated');
-
-				if (response.success) {
-					// Optional: You can perform additional actions here if needed.
-					if (button.hasClass('activate-plugin') || button.hasClass('install-plugin')) {
-						a.removeClass('activate-plugin install-plugin');
-					}
-				} else {
-
-				}
-			});
-		});
-	});
-</script>
-
-
-
-
-

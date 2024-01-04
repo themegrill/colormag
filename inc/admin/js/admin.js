@@ -78,3 +78,37 @@ jQuery(document).ready(function( $ ) {
 		$('.cm-dashboard-menu-container ul li:first').addClass('active');
 	}
 });
+
+jQuery(document).ready(function ($) {
+	$('.install-plugin, .activate-plugin').on('click', function (e) {
+		e.preventDefault();
+		var button = $(this);
+		var plugin = button.data('plugin');
+		var pluginSlug = button.data('slug');
+		var action = button.hasClass('install-plugin') ? 'install_plugin' : 'activate_plugin';
+		var data = {
+			'action': action,
+			'plugin': plugin,
+			'slug': pluginSlug,
+			'security': colormagRedirectDemoPage.nonce,
+		};
+
+		// Add loading animation and update text
+		var originalText = button.html();
+		button.html('<i class="fa fa-spinner fa-spin"></i> ' + colormagRedirectDemoPage.btn_text);
+
+		$.post(colormagRedirectDemoPage.ajaxurl, data, function (response) {
+			// Restore the button text after completion
+			button.html('Activated');
+
+			if (response.success) {
+				// Optional: You can perform additional actions here if needed.
+				if (button.hasClass('activate-plugin') || button.hasClass('install-plugin')) {
+					button.removeClass('activate-plugin install-plugin');
+				}
+			} else {
+				// Handle the case when the response is not successful
+			}
+		});
+	});
+});

@@ -201,20 +201,17 @@ add_action('wp_ajax_activate_plugin', 'plugin_action_callback');
 
 function plugin_action_callback()
 {
-	check_ajax_referer('plugin_action_nonce', 'security');
+	check_ajax_referer('colormag_demo_import_nonce', 'security');
 
 	$plugin      = sanitize_text_field($_POST['plugin']);
 	$pluginSlug = sanitize_text_field($_POST['slug']);
 
-
-	if (is_plugin_installed($plugin)) {
-		if ( is_plugin_active($plugin)) {
-			wp_send_json_success(array('message' => 'Plugin is already activated.'));
-			error_log( print_r( 'Activated' , true )
-		); } else {
+	if (is_plugin_installed( $plugin ) ) {
+		if ( is_plugin_active( $plugin ) ) {
+			wp_send_json_success(array('message' => 'Plugin is already activated.')) ;
+		} else {
 			// Activate the plugin
-			$result = activate_plugin($plugin);
-			error_log( print_r( 'Activate' , true ) );
+			$result = activate_plugin( $plugin );
 
 			if (is_wp_error($result)) {
 				wp_send_json_error(array('message' => 'Error activating the plugin.'));
@@ -228,7 +225,6 @@ function plugin_action_callback()
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 		$plugin_info = plugins_api('plugin_information', array('slug' => $pluginSlug));
-		error_log( print_r( $plugin_info , true ) );
 		$upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
 		$result = $upgrader->install($plugin_info->download_link);
 
