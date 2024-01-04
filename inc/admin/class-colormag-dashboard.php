@@ -36,7 +36,7 @@ class ColorMag_Dashboard
 		}
 
 		/* translators: %s: Theme Name. */
-		$theme_page_name = sprintf(esc_html__('%s Options', 'colormag'), $theme->Name);
+		$theme_page_name = sprintf(esc_html__('%s', 'colormag'), $theme->Name);
 
 		add_theme_page(
 			$theme_page_name,
