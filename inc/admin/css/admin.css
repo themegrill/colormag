@@ -614,7 +614,12 @@ h1.hndle {
 	padding: 20px 16px;
 }
 
+.products-page .inside .content {
+	min-height: 145px;
+}
+
 .products-page .inside .cta {
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -648,11 +653,11 @@ h1.hndle {
 .products-page .inside a:nth-child(2):before {
 	height: 12px;
 	width: 1px;
-	bottom: 34px;
+	bottom: 24px;
 	background-color: #7A7A7A;
 	content: "";
 	position: absolute;
-	left: 82px;
+	left: 83px;
 }
 
 .products-page .inside span {
@@ -681,7 +686,11 @@ h1.hndle {
 }
 
 .products-page .inside h3 {
-	margin: 0;
+	margin: 0 0 8px 0;
+}
+
+.products-page .inside__plugins a:nth-child(2):before {
+	bottom: 34px;
 }
 
 /* Help page */
