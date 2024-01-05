@@ -52,7 +52,7 @@ function import_button_html()
 		<div class="postbox-container" style="float: none;">
 			<div class="col-70">
 				<h2 style="height:0;margin:0;"><!-- admin notices below this element --></h2>
-				<div class="postbox">
+				<div class="postbox postbox-title">
 					<div class="dashboard-title">
 						<h1 class="hndle"><?php esc_html_e('Welcome to ColorMag', 'colormag'); ?></h1>
 						<span><?php esc_html_e('Free', 'colormag'); ?></span>
@@ -118,7 +118,7 @@ function import_button_html()
 				</div>
 				<div class="postbox cm-premium-features">
 					<div class="cm-premium-features-title">
-						<h2><?php esc_html_e('Quick Settings', 'colormag'); ?></h2>
+						<h2><?php esc_html_e('Premium Features', 'colormag'); ?></h2>
 						<a href="<?php echo esc_url('https://themegrill.com/colormag-pricing/'); ?>" target="_blank">
 						<?php esc_html_e('Upgrade Now', 'colormag'); ?></a>
 					</div>

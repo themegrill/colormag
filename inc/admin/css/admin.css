@@ -70,8 +70,8 @@
 .colormag-container .postbox {
 	border: 0;
 	min-width: initial;
-	margin-bottom: 24px;
-	padding: 24px;
+	margin-bottom: 20px;
+	padding: 16px;
 }
 
 .colormag-container .postbox .hndle {
@@ -81,6 +81,10 @@
 
 .colormag-container .postbox .hndle .dashicons {
 	padding-right: 5px;
+}
+
+.colormag-container .postbox-title {
+	padding: 24px 24px 32px 24px;
 }
 
 .colormag-header {
@@ -249,6 +253,19 @@ h1.hndle {
 	box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
 }
 
+.cm-quick-settings-title, .cm-premium-features-title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
 .cm-quick-settings .cm-quick-settings-title {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -259,6 +276,7 @@ h1.hndle {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	margin-bottom: 24px;
 }
 
 .cm-quick-settings .cm-quick-settings-title a {
@@ -365,7 +383,7 @@ h1.hndle {
 	height: 18px;
 }
 
-.cm-quick-settings-item a, .cm-premium-features-item a {
+.cm-quick-settings a, .cm-premium-features a {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -383,8 +401,12 @@ h1.hndle {
 	text-transform: capitalize;
 }
 
-.cm-quick-settings-item a svg, .cm-premium-features-item a svg {
+.cm-quick-settings a svg, .cm-premium-features a svg {
 	margin-right: 4px;
+}
+
+.cm-quick-settings h2, .cm-premium-features h2 {
+	margin: 0;
 }
 
 .cm-notification {

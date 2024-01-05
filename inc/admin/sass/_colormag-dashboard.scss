@@ -60,8 +60,9 @@
 	.postbox {
 		border: 0;
 		min-width: initial;
-		margin-bottom: 24px;
-		padding: 24px;
+		margin-bottom: 20px;
+		padding: 16px;
+
 		.hndle {
 			cursor: inherit;
 			.dashicons {
@@ -69,6 +70,10 @@
 			}
 			margin-bottom: 12px;
 		}
+	}
+
+	.postbox-title {
+		padding: 24px 24px 32px 24px;
 	}
 }
 .colormag-header {
@@ -199,11 +204,20 @@ h1.hndle{
 	line-height: 1.6;
 	box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.50);
 }
+
+.cm-quick-settings-title, .cm-premium-features-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
 .cm-quick-settings {
 	.cm-quick-settings-title {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin-bottom: 24px;
 
 		a{
 			color: $color__primary;
@@ -280,7 +294,7 @@ h1.hndle{
 	}
 }
 
-.cm-quick-settings-item, .cm-premium-features-item {
+.cm-quick-settings, .cm-premium-features {
 	a {
 		display: flex;
 		align-items: center;
@@ -296,6 +310,10 @@ h1.hndle{
 		svg {
 			margin-right: 4px;
 		}
+	}
+
+	h2 {
+		margin: 0;
 	}
 }
 
