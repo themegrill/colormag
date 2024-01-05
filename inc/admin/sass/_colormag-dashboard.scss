@@ -83,10 +83,10 @@
 	margin-bottom: 40px;
 	padding: 20px;
 
-	.cm-dashboard-head-right {
+	.cm-dashboard-menu-container {
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: flex-start;
 
 		ul {
 			display: flex;
@@ -118,7 +118,7 @@
 						background-color: $color__primary;
 						content: "";
 						position: absolute;
-						top: 34px;
+						top: 40px;
 						box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 					}
 				}
@@ -138,7 +138,6 @@
 
 	>.colormag-container {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 	}
 	.colormag-title {
@@ -1378,6 +1377,87 @@ body {
 		.cm-dashboard-head-left {
 			display: flex;
 			align-items: center;
+			margin-left: auto;
+
+			img {
+				width: 42px;
+			}
+		}
+
+		>.colormag-container {
+			display: flex;
+			align-items: center;
+		}
+		.colormag-title {
+			display: flex;
+			align-items: center;
+			flex-basis: 20%;
+			+ {
+				div {
+					float: right;
+					align-items: center;
+					a {
+						display: inline-block;
+						margin: 0 10px;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+	.colormag-header {
+		background-color: $background-color_2;
+		text-align: center;
+		box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+		margin-bottom: 40px;
+		padding: 20px;
+
+		.cm-dashboard-menu-container {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				margin-left: 26px;
+				gap:  32px;
+
+				li {
+					position: relative;
+					margin: 0;
+
+					a {
+						color: #383838;
+						margin: 0 8px;
+						text-align: center;
+						font-size: 14px;
+						font-weight: 600;
+					}
+
+					&.active {
+						a {
+							color: $color__primary;
+						}
+
+						&::before {
+							height: 3px;
+							width: 100%;
+							bottom: 0;
+							background-color: $color__primary;
+							content: "";
+							position: absolute;
+							top: 44px;
+							box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+						}
+					}
+				}
+			}
+		}
+
+		.cm-dashboard-head-left {
+			display: flex;
+			align-items: center;
 			justify-content: flex-end;
 
 			img {
@@ -1387,7 +1467,6 @@ body {
 
 		>.colormag-container {
 			display: flex;
-			justify-content: space-between;
 			align-items: center;
 		}
 		.colormag-title {

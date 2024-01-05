@@ -145,8 +145,8 @@ class ColorMag_Dashboard
 		<div class="wrap">
 			<div class="metabox-holder">
 				<div class="colormag-header">
-					<div class="colormag-container">
-						<div class="cm-dashboard-head-right" id="cm-dashboard-menu">
+					<div class="colormag-container" id="cm-dashboard-menu">
+<!--						<div class="cm-dashboard-head-right" id="cm-dashboard-menu">-->
 							<a class="colormag-title"
 							   href="<?php echo esc_url('https://themegrill.com/themes/colormag/'); ?>" target="_blank">
 								<img class="colormag-icon"
@@ -169,7 +169,7 @@ class ColorMag_Dashboard
 									<?php endforeach; ?>
 								</ul>
 							</div>
-						</div>
+<!--						</div>-->
 						<div class="cm-dashboard-head-left">
 							<span class="colormag-version">
 									<?php

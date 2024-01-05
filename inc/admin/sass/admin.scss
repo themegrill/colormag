@@ -269,19 +269,39 @@ a.colormag-message-close {
 	}
 }
 
+.colormag-header {
+	.colormag-title {
+		flex-basis: unset;
+	}
+}
+
 @media screen and (max-width: 767px) {
 	.colormag-header {
 		>.colormag-container {
-			display: block;
+			display: flex;
+			flex-wrap: wrap;
 		}
 		.colormag-title {
 			justify-content: center;
+			flex-basis: 20%;
+			order: 1;
 			+ {
 				div {
 					float: none;
 					margin-top: 20px;
+					margin-bottom: 20px;
 				}
 			}
+		}
+
+		.cm-dashboard-head-left {
+			flex-basis: 80%;
+			order: 2;
+		}
+
+		.cm-dashboard-menu-container {
+			flex-basis: 100%;
+			order: 3;
 		}
 	}
 }
