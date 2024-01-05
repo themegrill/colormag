@@ -298,6 +298,19 @@ function colormag_content_width() {
 
 add_action( 'template_redirect', 'colormag_content_width' );
 
+function localize_admin_url() {
+	// Enqueue your JavaScript file
+	wp_enqueue_script('your-script-handle', get_template_directory_uri() . '/js/your-script.js', array('jquery'), null, true);
+
+	// Pass data to the script
+	wp_localize_script('your-script-handle', 'your_script_vars', array(
+		'admin_url' => admin_url(),
+	));
+}
+
+// Hook the function to the wp_enqueue_scripts action
+add_action('wp_enqueue_scripts', 'localize_admin_url');
+
 /**
  * Detect plugin. For use on Front End only.
  */

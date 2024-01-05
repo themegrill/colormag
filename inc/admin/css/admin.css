@@ -494,6 +494,7 @@ h1.hndle {
 	display: -ms-flexbox;
 	display: flex;
 	gap: 12px;
+	margin-bottom: 14px;
 }
 
 .col-30 .ratings span {
@@ -1527,7 +1528,7 @@ body.demo-import-message-popup {
 	.themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-info {
 		margin: 0 auto;
 		background: #fff;
-		max-width: 500px;
+		max-width: 400px;
 		padding: 50px 70px 55px 70px;
 		border-radius: 9px;
 	}

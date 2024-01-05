@@ -37,6 +37,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				'uri'      => esc_url(admin_url('/themes.php?page=colormag&tab=starter-templates')),
 				'btn_text' => esc_html__('Processing...', 'colormag'),
 				'nonce'    => wp_create_nonce('colormag_demo_import_nonce'),
+				'admin_url' => esc_url(admin_url()),
 				'ajaxurl'  => admin_url('admin-ajax.php'), // Include this line for using admin-ajax.php
 			);
 
