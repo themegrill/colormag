@@ -971,6 +971,10 @@ h1.hndle {
 	margin: 0;
 }
 
+.cm-dialog .dialog-head .dialog-close:hover {
+	cursor: pointer;
+}
+
 .cm-dialog .dialog-content {
 	overflow: auto;
 }
