@@ -2,7 +2,7 @@
 /* Dashboard */
 .wrap .colormag-header {
 	background-color: #fff;
-	padding: 12px 20px;
+	padding: 0;
 	border-bottom: 1px solid #ccd0d4;
 }
 
@@ -112,8 +112,10 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 	margin-left: 26px;
-	gap: 16px;
+	gap: 32px;
 }
 
 .colormag-header .cm-dashboard-head-right ul li {
@@ -140,7 +142,7 @@
 	background-color: #2563EB;
 	content: "";
 	position: absolute;
-	top: 44px;
+	top: 34px;
 	-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
@@ -1522,6 +1524,59 @@ body.demo-import-message-popup {
 
 /* Responsive */
 @media (min-width: 768px) {
+	.wrap .colormag-header {
+		padding: 12px 20px;
+	}
+	.colormag-header .cm-dashboard-head-right ul {
+		gap: 16px;
+	}
+	.colormag-header .cm-dashboard-head-right ul li.active::before {
+		top: 44px;
+	}
+	.colormag-header .cm-dashboard-head-left {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	}
+	.colormag-header .cm-dashboard-head-left img {
+		width: 42px;
+	}
+	.colormag-header > .colormag-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	.colormag-header .colormag-title {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	.colormag-header .colormag-title + div {
+		float: right;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	.colormag-header .colormag-title + div a {
+		display: inline-block;
+		margin: 0 10px;
+		vertical-align: middle;
+	}
 	.col-70 {
 		float: left;
 		width: 70%;
@@ -1943,9 +1998,6 @@ a.colormag-message-close:before {
 }
 
 @media screen and (max-width: 767px) {
-	.colormag-header {
-		margin: 20px;
-	}
 	.colormag-header > .colormag-container {
 		display: block;
 	}
