@@ -1551,7 +1551,7 @@ body.demo-import-message-popup {
 		padding-bottom: 695px;
 		text-align: center;
 		background: url("../images/starter-templates-background.png");
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 	}
 	.themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-icon {
