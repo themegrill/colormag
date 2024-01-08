@@ -13,12 +13,16 @@
 						'slug' => 'colormag',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/colormag.webp',
 						'description' => 'Modern and professional WordPress magazine-styled theme perfect for creating websites for magazines, news portals, and so on.',
+						'learn_more_link' => 'https://themegrill.com/themes/colormag/',
+						'live_demo_link' => 'https://themegrilldemos.com/#/themes/colormag',
 					),
 					'zakra' => array(
 						'name' => 'Zakra',
 						'slug' => 'zakra',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/zakra.webp',
 						'description' => 'Multipurpose WordPress theme loaded with intuitive features and powerful customization options to create professional websites of any kind.',
+						'learn_more_link' => 'https://zakratheme.com/',
+						'live_demo_link' => 'https://zakratheme.com/demos/#/',
 					),
 					// Add more themes as needed
 				);
@@ -36,8 +40,8 @@
 						</div>
 						<div class="cta">
 							<div class="cta-text">
-								<a href="#"><?php esc_html_e('Learn More'); ?></a>
-								<a href="#"><?php esc_html_e('Live demo'); ?></a>
+								<a href="<?php echo esc_url($theme_info['learn_more_link']); ?>" target="_blank"><?php esc_html_e('Learn More'); ?></a>
+								<a href="<?php echo esc_url($theme_info['live_demo_link']); ?>" target="_blank"><?php esc_html_e('Live demo'); ?></a>
 							</div>
 						</div>
 					</div>
@@ -54,35 +58,45 @@
 						'file' => 'user-registration/user-registration.php',
 						'slug' => 'user-registration',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/ur.webp',
-						'description' => 'Ultimate WordPress user registration plugin to streamline the user signup process. Create registration & login forms, manage users, and more.'
+						'description' => 'Ultimate WordPress user registration plugin to streamline the user signup process. Create registration & login forms, manage users, and more.',
+						'learn_more_link' => 'https://wpuserregistration.com/',
+						'live_demo_link' => 'https://wpuserregistration.com/',
 					),
 					'evf' => array(
 						'name' => 'Everest Forms',
 						'file' => 'everest-forms/everest-forms.php',
 						'slug' => 'everest-forms',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/evf.webp',
-						'description' => 'Feature-rich and highly customizable WordPress form builder plugin to create different types of professional forms for your website.'
+						'description' => 'Feature-rich and highly customizable WordPress form builder plugin to create different types of professional forms for your website.',
+						'learn_more_link' => 'https://everestforms.net/',
+						'live_demo_link' => 'https://everestforms.net/',
 					),
 					'masteriyo' => array(
 						'name' => 'Masteriyo',
 						'file' => 'learning-management-system/lms.php',
 						'slug' => 'learning-management-system',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/masteriyo.webp',
-						'description' => 'Easy-to-use LMS plugin loaded with powerful features to create and sell courses online through your website effortlessly. '
+						'description' => 'Easy-to-use LMS plugin loaded with powerful features to create and sell courses online through your website effortlessly.',
+						'learn_more_link' => 'https://masteriyo.com/',
+						'live_demo_link' => 'https://masteriyo.com/',
 					),
 					'mzb' => array(
 						'name' => 'Magazine Blocks',
 						'file' => 'magazine-blocks/magazine-blocks.php',
 						'slug' => 'magazine-blocks',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/magazine-blocks.webp',
-						'description' => 'Powerful WordPress Gutenberg block plugin with the perfect blocks and editing options to create magazine-themed websites.'
+						'description' => 'Powerful WordPress Gutenberg block plugin with the perfect blocks and editing options to create magazine-themed websites.',
+						'learn_more_link' => 'https://wpblockart.com/magazine-blocks/',
+						'live_demo_link' => 'https://wpblockart.com/magazine-blocks/',
 					),
 					'blockart-blocks' => array(
 						'name' => 'BlockArt',
 						'file' => 'blockart-blocks/blockart.php',
 						'slug' => 'blockart-blocks',
 						'image' => COLORMAG_PARENT_URL . '/inc/admin/images/blockart-blocks.webp',
-						'description' => 'Highly customizable WordPress Gutenberg block plugin with pre-made templates to create websites of any niche in no time. '
+						'description' => 'Highly customizable WordPress Gutenberg block plugin with pre-made templates to create websites of any niche in no time.',
+						'learn_more_link' => 'https://wpblockart.com/blockart-blocks/',
+						'live_demo_link' => 'https://wpblockart.com/blockart-blocks/',
 					),
 					// Add more themes as needed
 				);
@@ -103,10 +117,8 @@
 						</div>
 						<div class="cta">
 							<div class="cta-text">
-								<a href="#" class="learn-more"
-								   data-plugin="<?php echo esc_attr($plugin_file); ?>"><?php esc_html_e('Learn More'); ?></a>
-								<a href="#" class="live-demo"
-								   data-plugin="<?php echo esc_attr($plugin_file); ?>"><?php esc_html_e('Live demo'); ?></a>
+								<a href="<?php echo esc_url($plugin_info['learn_more_link']); ?>" target="_blank"><?php esc_html_e('Learn More'); ?></a>
+								<a href="<?php echo esc_url($plugin_info['live_demo_link']); ?>" target="_blank"><?php esc_html_e('Live demo'); ?></a>
 							</div>
 							<div class="cta-button">
 								<?php if ($is_plugin_installed) : ?>
