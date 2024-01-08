@@ -241,7 +241,7 @@ function plugin_action_callback() {
 	 check_ajax_referer( 'colormag_demo_import_nonce', 'security' );
 
 	$plugin     = sanitize_text_field( $_POST['plugin'] );
-	$pluginSlug = sanitize_text_field( $_POST['slug'] );
+	$plugin_slug = sanitize_text_field( $_POST['slug'] );
 
 	if ( is_plugin_installed( $plugin ) ) {
 		if ( is_plugin_active( $plugin ) ) {
@@ -260,7 +260,7 @@ function plugin_action_callback() {
 		// Install and activate the plugin
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-		$plugin_info = plugins_api( 'plugin_information', array( 'slug' => $pluginSlug ) );
+		$plugin_info = plugins_api( 'plugin_information', array( 'slug' => $plugin_slug ) );
 		$upgrader    = new Plugin_Upgrader( new WP_Ajax_Upgrader_Skin() );
 		$result      = $upgrader->install( $plugin_info->download_link );
 
