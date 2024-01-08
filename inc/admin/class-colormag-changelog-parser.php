@@ -1,8 +1,10 @@
 <?php
 /**
- * ColorMag Changelog Parser.
+ * ColorMag Changelog Parser Class.
  *
+ * @author  ThemeGrill
  * @package ColorMag
+ * @since   1.3.9
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -10,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * ColorMag Changelog Parser.
  */
-class ColorMagChangelogController {
+class ColorMag_Changelog_Parser {
 
 	/**
 	 * Get item.
@@ -49,8 +51,8 @@ class ColorMagChangelogController {
 	 *
 	 */
 	public function get_items() {
-		$changelog  = $this->read_changelog();
-		$changelog  = $this->parse_changelog( $changelog );
+		$changelog = $this->read_changelog();
+		$changelog = $this->parse_changelog( $changelog );
 
 		return $changelog;
 	}

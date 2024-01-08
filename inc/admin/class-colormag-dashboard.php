@@ -1,6 +1,6 @@
 <?php
 // Exit if accessed directly.
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
 class ColorMag_Dashboard {
 
@@ -8,36 +8,32 @@ class ColorMag_Dashboard {
 
 	public $demo_packages;
 
-	public static function instance()
-	{
-		if (is_null(self::$instance)) {
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
 		}
 
 		return self::$instance;
 	}
 
-	private function __construct()
-	{
+	private function __construct() {
 		$this->setup_hooks();
 	}
 
-	private function setup_hooks()
-	{
-		add_action('admin_menu', array($this, 'create_menu'));
-		add_action('in_admin_header', array($this, 'hide_admin_notices'));
+	private function setup_hooks() {
+		add_action( 'admin_menu', array( $this, 'create_menu' ) );
+		add_action( 'in_admin_header', array( $this, 'hide_admin_notices' ) );
 	}
 
-	public function create_menu()
-	{
-		if (!is_child_theme()) {
+	public function create_menu() {
+		if ( ! is_child_theme() ) {
 			$theme = wp_get_theme();
 		} else {
 			$theme = wp_get_theme()->parent();
 		}
 
 		/* translators: %s: Theme Name. */
-		$theme_page_name = sprintf(esc_html__('%s', 'colormag'), $theme->Name);
+		$theme_page_name = sprintf( esc_html__( '%s', 'colormag' ), $theme->Name );
 
 		add_theme_page(
 			$theme_page_name,
@@ -56,73 +52,70 @@ class ColorMag_Dashboard {
 	 *
 	 * @since 1.0.0
 	 */
-	public function hide_admin_notices()
-	{
+	public function hide_admin_notices() {
 		// Bail if we're not on a ColorMag screen or page.
-		if (empty($_REQUEST['page']) || false === strpos(sanitize_text_field(wp_unslash($_REQUEST['page'])), 'colormag')) { // phpcs:ignore WordPress.Security.NonceVerification
+		if ( empty( $_REQUEST['page'] ) || false === strpos( sanitize_text_field( wp_unslash( $_REQUEST['page'] ) ), 'colormag' ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return;
 		}
 
 		global $wp_filter;
-		$ignore_notices = apply_filters('colormag_ignore_hide_admin_notices', array());
+		$ignore_notices = apply_filters( 'colormag_ignore_hide_admin_notices', array() );
 
-		foreach (array('user_admin_notices', 'admin_notices', 'all_admin_notices') as $wp_notice) {
-			if (empty($wp_filter[$wp_notice])) {
+		foreach ( array( 'user_admin_notices', 'admin_notices', 'all_admin_notices' ) as $wp_notice ) {
+			if ( empty( $wp_filter[ $wp_notice ] ) ) {
 				continue;
 			}
 
-			$hook_callbacks = $wp_filter[$wp_notice]->callbacks;
+			$hook_callbacks = $wp_filter[ $wp_notice ]->callbacks;
 
-			if (empty($hook_callbacks) || !is_array($hook_callbacks)) {
+			if ( empty( $hook_callbacks ) || ! is_array( $hook_callbacks ) ) {
 				continue;
 			}
 
-			foreach ($hook_callbacks as $priority => $hooks) {
-				foreach ($hooks as $name => $callback) {
-					if (!empty($name) && in_array($name, $ignore_notices, true)) {
+			foreach ( $hook_callbacks as $priority => $hooks ) {
+				foreach ( $hooks as $name => $callback ) {
+					if ( ! empty( $name ) && in_array( $name, $ignore_notices, true ) ) {
 						continue;
 					}
 					if (
-						!empty($callback['function']) &&
-						!is_a($callback['function'], '\Closure') &&
-						isset($callback['function'][0], $callback['function'][1]) &&
-						is_object($callback['function'][0]) &&
-						in_array($callback['function'][1], $ignore_notices, true)
+						! empty( $callback['function'] ) &&
+						! is_a( $callback['function'], '\Closure' ) &&
+						isset( $callback['function'][0], $callback['function'][1] ) &&
+						is_object( $callback['function'][0] ) &&
+						in_array( $callback['function'][1], $ignore_notices, true )
 					) {
 						continue;
 					}
-					unset($wp_filter[$wp_notice]->callbacks[$priority][$name]);
+					unset( $wp_filter[ $wp_notice ]->callbacks[ $priority ][ $name ] );
 				}
 			}
 		}
 	}
 
-	public function dashboard_page()
-	{
-
-		if (!is_child_theme()) {
+	public function dashboard_page() {
+		if ( ! is_child_theme() ) {
 			$theme = wp_get_theme();
 		} else {
 			$theme = wp_get_theme()->parent();
 		}
 
 		$admin_url = admin_url();
-		$tabs = apply_filters(
+		$tabs      = apply_filters(
 			'colormag_dashboard_tabs',
 			array(
-				'dashboard' => array(
-					'name' => esc_html__('Dashboard', 'colormag'),
+				'dashboard'         => array(
+					'name'     => esc_html__( 'Dashboard', 'colormag' ),
 					'callback' => function () {
 						include __DIR__ . '/views/dashbaord.php';
 					},
 				),
 				'starter-templates' => array(
-					'name' => esc_html__('Starter Templates', 'colormag'),
+					'name'     => esc_html__( 'Starter Templates', 'colormag' ),
 					'callback' => function () {
-						if (is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' )) {
+						if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
 							wp_enqueue_style( 'tg-demo-importer' );
 							wp_enqueue_script( 'tg-demo-importer' );
-							$this->demo_packages = get_transient( 'themegrill_demo_importer_packages');
+							$this->demo_packages = get_transient( 'themegrill_demo_importer_packages' );
 							include_once plugin_dir_path( TGDM_PLUGIN_FILE ) . '/includes/admin/views/html-admin-page-importer.php';
 						} else {
 							include __DIR__ . '/views/starter-templates.php';
@@ -130,20 +123,20 @@ class ColorMag_Dashboard {
 
 					},
 				),
-				'products' => array(
-					'name' => esc_html__('Products', 'colormag'),
+				'products'          => array(
+					'name'     => esc_html__( 'Products', 'colormag' ),
 					'callback' => function () {
 						include __DIR__ . '/views/products.php';
 					},
 				),
-				'free-vs-pro' => array(
-					'name' => esc_html__('Free Vs Pro', 'colormag'),
+				'free-vs-pro'       => array(
+					'name'     => esc_html__( 'Free Vs Pro', 'colormag' ),
 					'callback' => function () {
 						include __DIR__ . '/views/free-vs-pro.php';
 					},
 				),
-				'help' => array(
-					'name' => esc_html__('Help', 'colormag'),
+				'help'              => array(
+					'name'     => esc_html__( 'Help', 'colormag' ),
 					'callback' => function () {
 						include __DIR__ . '/views/help.php';
 					},
@@ -156,23 +149,19 @@ class ColorMag_Dashboard {
 				<div class="colormag-header">
 					<div class="colormag-container" id="cm-dashboard-menu">
 <!--						<div class="cm-dashboard-head-right" id="cm-dashboard-menu">-->
-							<a class="colormag-title"
-							   href="<?php echo esc_url('https://themegrill.com/themes/colormag/'); ?>" target="_blank">
-								<img class="colormag-icon"
-									 src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png'); ?>"
-									 alt="<?php esc_attr_e('ColorMag', 'colormag'); ?>">
+							<a class="colormag-title" href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/' ); ?>" target="_blank">
+								<img class="colormag-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</a>
 							<div class="cm-dashboard-menu-container">
 								<ul id="dashboard-menu-primary" class="dashboard-menu-primary">
 									<?php
-									foreach ($tabs as $id => $tab) :
-										if (!is_callable($tab['callback'])) {
+									foreach ( $tabs as $id => $tab ) :
+										if ( ! is_callable( $tab['callback'] ) ) {
 											continue;
 										}
 										?>
-										<li class="menu-item menu-item-<?php echo esc_attr($id); ?>">
-											<a id="<?php echo esc_attr($id); ?>"
-											   href=<?php echo esc_url("{$admin_url}themes.php?page=colormag&tab=$id"); ?>><?php echo esc_html($tab['name']) ?></a>
+										<li class="menu-item menu-item-<?php echo esc_attr( $id ); ?>">
+											<a id="<?php echo esc_attr( $id ); ?>" href=<?php echo esc_url( "{$admin_url}themes.php?page=colormag&tab=$id" ); ?>><?php echo esc_html( $tab['name'] ); ?></a>
 
 										</li>
 									<?php endforeach; ?>
@@ -182,33 +171,31 @@ class ColorMag_Dashboard {
 						<div class="cm-dashboard-head-left">
 							<span class="colormag-version">
 									<?php
-									echo $theme->Version;
+									echo esc_html( $theme->Version );
 									?>
 							</span>
-							<a href="<?php echo esc_url('https://themegrill.com/pricing/'); ?>" target="_blank">
+							<a href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank">
 								<span class="cm-upgrade-to-pro">
-								<?php esc_html_e('Upgrade to Pro', 'colormag'); ?>
+								<?php esc_html_e( 'Upgrade to Pro', 'colormag' ); ?>
 							</span>
 							</a>
 							<span id="cm-notification" class="cm-notification">
-								<img class="colormag-notification"
-									 src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/notification-button.gif'); ?>"
-									 alt="<?php esc_attr_e('ColorMag', 'colormag'); ?>">
+								<img class="colormag-notification" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/notification-button.gif' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</span>
 						</div>
 					</div><!--/.colormag-container-->
 				</div> <!--/.colormag-header-->
 				<?php
-				$current_tab = isset($_GET['tab']) ? sanitize_text_field(wp_unslash($_GET['tab'])) : 'dashboard';
-				$current_tab = in_array($current_tab, array_keys($tabs), true) ? $current_tab : 'dashboard';
-				$callback = $tabs[$current_tab]['callback'];
-				call_user_func($callback);
+				$current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'dashboard';
+				$current_tab = in_array( $current_tab, array_keys( $tabs ), true ) ? $current_tab : 'dashboard';
+				$callback    = $tabs[ $current_tab ]['callback'];
+				call_user_func( $callback );
 				?>
 			</div><!--/.metabox-holder-->
 		</div><!--/.wrap-->
 		<div id="cm-dialog" class="cm-dialog">
 			<div class="dialog-head">
-				<h3><?php esc_html_e('Latest Updates'); ?></h3>
+				<h3><?php esc_html_e( 'Latest Updates' ); ?></h3>
 
 				<div id="dialog-close" class="dialog-close">
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -222,30 +209,30 @@ class ColorMag_Dashboard {
 			<div class="dialog-content">
 				<?php
 
-				$changelog = new ColorMagChangelogController();
+				$changelog = new ColorMag_Changelog_Parser();
 
 				// Fetch changelog data.
 				$changelog_data = $changelog->get_items();
 
 				// Check if the response contains data
-				if ($changelog_data) {
+				if ( $changelog_data ) {
 					// Output the changelog data
 					echo '<div class="cm-changelog">';
-					foreach ($changelog_data as $entry) {
+					foreach ( $changelog_data as $entry ) {
 						echo '<div class="cm-changelog__list-item">';
 						echo '<div class="cm-changelog__list-head">';
-						echo '<h4 class="cm-changelog__version">Version: ' . esc_html($entry['version']) . '</h4>';
-						echo '<p class="cm-changelog__date">' . esc_html($entry['date']) . '</p>';
+						echo '<h4 class="cm-changelog__version">Version: ' . esc_html( $entry['version'] ) . '</h4>';
+						echo '<p class="cm-changelog__date">' . esc_html( $entry['date'] ) . '</p>';
 						echo '</div>'; // cm-changelog__list-head
 
 						// Display each change
 						echo '<div class="cm-changelog__change">';
-						foreach ($entry['changes'] as $tag => $changes) {
-							echo '<div class="cm-changelog__change-item item--' . esc_html(strtolower($tag)) . '">';
-							echo '<span class="cm-changelog__change-type">' . esc_html($tag) . '</span>';
+						foreach ( $entry['changes'] as $tag => $changes ) {
+							echo '<div class="cm-changelog__change-item item--' . esc_html( strtolower( $tag ) ) . '">';
+							echo '<span class="cm-changelog__change-type">' . esc_html( $tag ) . '</span>';
 							echo '<div class="cm-changelog__change-list">';
-							foreach ($changes as $change) {
-								echo '<p class="cm-changelog__change-desc">' . esc_html($change) . '</p>';
+							foreach ( $changes as $change ) {
+								echo '<p class="cm-changelog__change-desc">' . esc_html( $change ) . '</p>';
 							}
 							echo '</div>'; // cm-changelog__change-list
 							echo '</div >'; // cm-changelog__change-item

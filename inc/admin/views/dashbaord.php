@@ -1,6 +1,6 @@
 <?php
 
-if (!is_child_theme()) {
+if ( ! is_child_theme() ) {
 	$theme = wp_get_theme();
 } else {
 	$theme = wp_get_theme()->parent();
@@ -18,31 +18,27 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 
 $admin_url = admin_url();
 
-function create_button_html()
-{
-
-	$colormag_btn_texts = __('Create a new page', 'colormag');
+function create_button_html() {
+	$colormag_btn_texts = __( 'Create a new page', 'colormag' );
 
 	$admin_url = admin_url();
 
-	$html = '<a class="btn-create-new-page" href="' . $admin_url . 'post-new.php?post_type=page" aria-label="' . esc_attr($colormag_btn_texts) . '">' . esc_html($colormag_btn_texts) . '</a>';
+	$html = '<a class="btn-create-new-page" href="' . $admin_url . 'post-new.php?post_type=page" aria-label="' . esc_attr( $colormag_btn_texts ) . '">' . esc_html( $colormag_btn_texts ) . '</a>';
 
 	return $html;
 }
 
-function import_button_html()
-{
-
+function import_button_html() {
 	// Check if TDI is installed but not activated or not installed at all or installed and activated.
-	if (file_exists(WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php') && is_plugin_inactive('themegrill-demo-importer/themegrill-demo-importer.php')) {
-		$colormag_btn_texts = __('Activate ThemeGrill Demo Importer Plugin', 'colormag');
-	} elseif (!file_exists(WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php') && is_plugin_inactive('themegrill-demo-importer/themegrill-demo-importer.php')) {
-		$colormag_btn_texts = __('Install ThemeGrill Demo Importer Plugin', 'colormag');
+	if ( file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php' ) && is_plugin_inactive( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+		$colormag_btn_texts = __( 'Activate ThemeGrill Demo Importer Plugin', 'colormag' );
+	} elseif ( ! file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php' ) && is_plugin_inactive( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+		$colormag_btn_texts = __( 'Install ThemeGrill Demo Importer Plugin', 'colormag' );
 	} else {
-		$colormag_btn_texts = __('View Starter Templates', 'colormag');
+		$colormag_btn_texts = __( 'View Starter Templates', 'colormag' );
 	}
 
-	$html = '<a class="btn-get-started" href="#" data-name="' . esc_attr('themegrill-demo-importer') . '" data-slug="' . esc_attr('themegrill-demo-importer') . '" aria-label="' . esc_attr($colormag_btn_texts) . '">' . esc_html($colormag_btn_texts) . '</a>';
+	$html = '<a class="btn-get-started" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr( $colormag_btn_texts ) . '">' . esc_html( $colormag_btn_texts ) . '</a>';
 
 	return $html;
 }
@@ -54,61 +50,62 @@ function import_button_html()
 				<h2 style="height:0;margin:0;"><!-- admin notices below this element --></h2>
 				<div class="postbox postbox-title">
 					<div class="dashboard-title">
-						<h1 class="hndle"><?php esc_html_e('Welcome to ColorMag', 'colormag'); ?></h1>
-						<span><?php esc_html_e('Free', 'colormag'); ?></span>
+						<h1 class="hndle"><?php esc_html_e( 'Welcome to ColorMag', 'colormag' ); ?></h1>
+						<span><?php esc_html_e( 'Free', 'colormag' ); ?></span>
 					</div>
 					<div class="inside" style="padding: 0;margin: 0;">
-						<p><?php esc_html_e('Experience a seamless magazine-themed website building experience with ColorMag! Explore all the settings and features right here and get started with your first page.', 'colormag'); ?></p>
+						<p><?php esc_html_e( 'Experience a seamless magazine-themed website building experience with ColorMag! Explore all the settings and features right here and get started with your first page.', 'colormag' ); ?></p>
 						<?php echo create_button_html(); ?>
 					</div>
 				</div>
 				<div class="postbox cm-quick-settings">
 					<div class="cm-quick-settings-title">
-						<h2><?php esc_html_e('Quick Settings', 'colormag'); ?></h2>
-						<a href="<?php echo esc_url(' ' . $admin_url . 'customize.php?'); ?>"
-						   target="_blank"><?php esc_html_e('Go to Customizer', 'colormag'); ?></a>
+						<h2><?php esc_html_e( 'Quick Settings', 'colormag' ); ?></h2>
+						<a href="<?php echo esc_url( ' ' . $admin_url . 'customize.php?' ); ?>" target="_blank"><?php esc_html_e( 'Go to Customizer', 'colormag' ); ?></a>
 					</div>
 					<div class="cm-quick-settings-content" style="padding: 0;margin: 0;">
 						<?php
 						// Array of settings items
 						$settings_items = array(
 							array(
-								'title' => esc_html__('Site Identity', 'colormag'),
+								'title'   => esc_html__( 'Site Identity', 'colormag' ),
 								'section' => 'title_tagline',
 							),
 							array(
-								'title' => esc_html__('Header Options', 'colormag'),
+								'title'   => esc_html__( 'Header Options', 'colormag' ),
 								'section' => 'colormag_header_panel',
 							),
 							array(
-								'title' => esc_html__('Footer Options', 'colormag'),
+								'title'   => esc_html__( 'Footer Options', 'colormag' ),
 								'section' => 'colormag_footer_panel',
 							),
 							array(
-								'title' => esc_html__('Global Colors', 'colormag'),
+								'title'   => esc_html__( 'Global Colors', 'colormag' ),
 								'section' => 'colormag_global_colors_section',
 							),
 							array(
-								'title' => esc_html__('Sidebar Options', 'colormag'),
+								'title'   => esc_html__( 'Sidebar Options', 'colormag' ),
 								'section' => 'colormag_global_sidebar_section',
 							),
 							array(
-								'title' => esc_html__('Blog', 'colormag'),
+								'title'   => esc_html__( 'Blog', 'colormag' ),
 								'section' => 'colormag_blog_section',
 							),
 						);
 
 						// Loop through the settings items
-						foreach ($settings_items as $item) {
+						foreach ( $settings_items as $item ) {
 							?>
 							<div class="cm-quick-settings-item">
-								<h4><?php echo $item['title']; ?></h4>
-								<a href="<?php
-								if (isset($item['section'])) {
-									echo esc_url(admin_url('customize.php?autofocus[section]=' . $item['section']));
+								<h4><?php echo esc_html( $item['title'] ); ?></h4>
+								<a href="
+								<?php
+								if ( isset( $item['section'] ) ) {
+									echo esc_url( admin_url( 'customize.php?autofocus[section]=' . $item['section'] ) );
 								}
-								?>" target="_blank">
-									<?php echo $link_icon . 'Customize' ?>
+								?>
+								" target="_blank">
+									<?php echo $link_icon . 'Customize'; ?>
 								</a>
 							</div>
 							<?php
@@ -118,233 +115,109 @@ function import_button_html()
 				</div>
 				<div class="postbox cm-premium-features">
 					<div class="cm-premium-features-title">
-						<h2><?php esc_html_e('Premium Features', 'colormag'); ?></h2>
-						<a href="<?php echo esc_url('https://themegrill.com/colormag-pricing/'); ?>" target="_blank">
-						<?php esc_html_e('Upgrade Now', 'colormag'); ?></a>
+						<h2><?php esc_html_e( 'Premium Features', 'colormag' ); ?></h2>
+						<a href="<?php echo esc_url( 'https://themegrill.com/colormag-pricing/' ); ?>" target="_blank">
+						<?php esc_html_e( 'Upgrade Now', 'colormag' ); ?></a>
 					</div>
 					<div class="cm-premium-features-content" style="padding: 0;margin: 0;">
 						<?php
 						// Array of premium features items
 						$premium_features_items = array(
 							array(
-								'title' => esc_html__('Top Bar', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/customize-top-bar/',
+								'title' => esc_html__( 'Top Bar', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/customize-top-bar/',
 							),
 							array(
-								'title' => esc_html__('Main Header', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/manage-main-header-layout-and-styles/',
+								'title' => esc_html__( 'Main Header', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/manage-main-header-layout-and-styles/',
 							),
 							array(
-								'title' => esc_html__('Primary Menu', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/customize-the-primary-menu-of-the-site/',
+								'title' => esc_html__( 'Primary Menu', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/customize-the-primary-menu-of-the-site/',
 							),
 							array(
-								'title' => esc_html__('Blog', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/manage-blog-page-layout/',
+								'title' => esc_html__( 'Blog', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/manage-blog-page-layout/',
 							),
 							array(
-								'title' => esc_html__('Meta', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/customize-the-post-meta/',
+								'title' => esc_html__( 'Meta', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/customize-the-post-meta/',
 							),
 							array(
-								'title' => esc_html__('Footer Column', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/customize-footer-column/',
+								'title' => esc_html__( 'Footer Column', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/customize-footer-column/',
 							),
 							array(
-								'title' => esc_html__('Footer Bar', 'colormag'),
-								'link' => 'https://docs.themegrill.com/colormag/docs/customize-footer-bar-layout-styles/',
+								'title' => esc_html__( 'Footer Bar', 'colormag' ),
+								'link'  => 'https://docs.themegrill.com/colormag/docs/customize-footer-bar-layout-styles/',
 							),
 							// Add more items as needed
 						);
 
 						// Loop through the premium features items
-						foreach ($premium_features_items as $item) {
+						foreach ( $premium_features_items as $item ) {
 							?>
 							<div class="cm-premium-features-item">
 								<div class="item-content-left">
-									<h4><?php echo $item['title']; ?></h4>
-									<a href="<?php
-									if (isset($item['link'])) {
-										echo esc_url($item['link']);
+									<h4><?php echo esc_html( $item['title'] ); ?></h4>
+									<a href="
+									<?php
+									if ( isset( $item['link'] ) ) {
+										echo esc_url( $item['link'] );
 									}
-									?>" target="_blank">
+									?>
+									" target="_blank">
 										<?php
 										echo $link_icon . 'Documentation';
 										?>
 									</a>
 								</div>
 								<div class="item-content-right">
-									<img class="colormag-icon"
-										 src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?>"
-										 alt="<?php esc_attr_e('ColorMag', 'colormag'); ?>">
+									<img class="colormag-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 								</div>
 							</div>
 							<?php
 						}
 						?>
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Top Bar', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Main Header', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Primary Menu', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Blog', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Meta', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Footer Column', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="cm-premium-features-item">-->
-<!--							<div class="item-content-left">-->
-<!--								<h4>--><?php //esc_html_e('Footer Bar', 'colormag'); ?><!--</h4>-->
-<!--								<a>-->
-<!--									--><?php
-//									echo $link_icon;
-//									esc_html_e('Documentation', 'colormag');
-//									?>
-<!--								</a>-->
-<!--							</div>-->
-<!--							<div class="item-content-right">-->
-<!--								<img class="colormag-icon"-->
-<!--									 src="--><?php //echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png'); ?><!--"-->
-<!--									 alt="--><?php //esc_attr_e('ColorMag', 'colormag'); ?><!--">-->
-<!--							</div>-->
-<!--						</div>-->
 					</div>
 				</div>
 			</div> <!--/.col-70-->
 			<div class="col-30">
 				<div class="postbox">
 					<h3 class="hndle">
-						<svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-							 xmlns="http://www.w3.org/2000/svg">
+						<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g id="download">
-								<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd"
-									  d="M10.5 2.5C10.9602 2.5 11.3333 2.8731 11.3333 3.33333V11.3215L14.0774 8.57741C14.4028 8.25197 14.9305 8.25197 15.2559 8.57741C15.5814 8.90285 15.5814 9.43049 15.2559 9.75592L11.0893 13.9226C10.7638 14.248 10.2362 14.248 9.91074 13.9226L5.74408 9.75592C5.41864 9.43049 5.41864 8.90285 5.74408 8.57741C6.06951 8.25197 6.59715 8.25197 6.92259 8.57741L9.66667 11.3215V3.33333C9.66667 2.8731 10.0398 2.5 10.5 2.5ZM3.83333 13.3333C4.29357 13.3333 4.66667 13.7064 4.66667 14.1667V15.8333C4.66667 16.0543 4.75446 16.2663 4.91074 16.4226C5.06702 16.5789 5.27899 16.6667 5.5 16.6667H15.5C15.721 16.6667 15.933 16.5789 16.0893 16.4226C16.2455 16.2663 16.3333 16.0543 16.3333 15.8333V14.1667C16.3333 13.7064 16.7064 13.3333 17.1667 13.3333C17.6269 13.3333 18 13.7064 18 14.1667V15.8333C18 16.4964 17.7366 17.1323 17.2678 17.6011C16.7989 18.0699 16.163 18.3333 15.5 18.3333H5.5C4.83696 18.3333 4.20107 18.0699 3.73223 17.6011C3.26339 17.1323 3 16.4964 3 15.8333V14.1667C3 13.7064 3.3731 13.3333 3.83333 13.3333Z"
-									  fill="#2563EB"/>
+								<path id="Vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M10.5 2.5C10.9602 2.5 11.3333 2.8731 11.3333 3.33333V11.3215L14.0774 8.57741C14.4028 8.25197 14.9305 8.25197 15.2559 8.57741C15.5814 8.90285 15.5814 9.43049 15.2559 9.75592L11.0893 13.9226C10.7638 14.248 10.2362 14.248 9.91074 13.9226L5.74408 9.75592C5.41864 9.43049 5.41864 8.90285 5.74408 8.57741C6.06951 8.25197 6.59715 8.25197 6.92259 8.57741L9.66667 11.3215V3.33333C9.66667 2.8731 10.0398 2.5 10.5 2.5ZM3.83333 13.3333C4.29357 13.3333 4.66667 13.7064 4.66667 14.1667V15.8333C4.66667 16.0543 4.75446 16.2663 4.91074 16.4226C5.06702 16.5789 5.27899 16.6667 5.5 16.6667H15.5C15.721 16.6667 15.933 16.5789 16.0893 16.4226C16.2455 16.2663 16.3333 16.0543 16.3333 15.8333V14.1667C16.3333 13.7064 16.7064 13.3333 17.1667 13.3333C17.6269 13.3333 18 13.7064 18 14.1667V15.8333C18 16.4964 17.7366 17.1323 17.2678 17.6011C16.7989 18.0699 16.163 18.3333 15.5 18.3333H5.5C4.83696 18.3333 4.20107 18.0699 3.73223 17.6011C3.26339 17.1323 3 16.4964 3 15.8333V14.1667C3 13.7064 3.3731 13.3333 3.83333 13.3333Z" fill="#2563EB"/>
 							</g>
 						</svg>
-						<span><?php esc_html_e('Starter Templates', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'Starter Templates', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
-						<p><?php echo __('Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'your-text-domain'); ?></p>
+						<p><?php echo __( 'Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'your-text-domain' ); ?></p>
 						<?php echo import_button_html(); ?>
 					</div>
 				</div>
 				<div class="postbox">
 					<h3 class="hndle">
-						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-							 fill="none">
+						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
 							<path
 								d="M12.584 1.66602H5.50065C5.05862 1.66602 4.6347 1.84161 4.32214 2.15417C4.00958 2.46673 3.83398 2.89065 3.83398 3.33268V16.666C3.83398 17.108 4.00958 17.532 4.32214 17.8445C4.6347 18.1571 5.05862 18.3327 5.50065 18.3327H15.5006C15.9427 18.3327 16.3666 18.1571 16.6792 17.8445C16.9917 17.532 17.1673 17.108 17.1673 16.666V6.24935L12.584 1.66602Z"
 								stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M12.166 1.66602V6.66602H17.166" stroke="#2563EB" stroke-width="1.5"
-								  stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M13.8327 10.833H7.16602" stroke="#2563EB" stroke-width="1.5"
-								  stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M13.8327 14.166H7.16602" stroke="#2563EB" stroke-width="1.5"
-								  stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M8.83268 7.5H7.16602" stroke="#2563EB" stroke-width="1.5"
-								  stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M12.166 1.66602V6.66602H17.166" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M13.8327 10.833H7.16602" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M13.8327 14.166H7.16602" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M8.83268 7.5H7.16602" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<span><?php esc_html_e('Documentation', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'Documentation', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
 						<p>
 							<?php
-							echo sprintf(
-							/* translators: 1: Theme Name, 2: Demo Link. */
-								esc_html__('Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!', 'colormag'),
-								$theme->Name,
-							);
+							echo esc_html__( 'Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!', 'colormag' );
 							?>
 						</p>
-						<a href="<?php echo esc_url('https://docs.themegrill.com/colormag/'); ?>"
-						   target="_blank"><?php esc_html_e('Documentation', 'colormag'); ?></a>
+						<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>"
+						   target="_blank"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox">
@@ -356,7 +229,7 @@ function import_button_html()
 								stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
 								stroke-linejoin="round"/>
 						</svg>
-						<span><?php esc_html_e('Leave us a Review', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'Leave us a Review', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
 						<div class="ratings">
@@ -369,20 +242,20 @@ function import_button_html()
 										echo $star_icon;
 										?>
 								</span>
-							<span><?php esc_html_e('Based on 1430+ Reviews', 'colormag'); ?></span>
+							<span><?php esc_html_e( 'Based on 1430+ Reviews', 'colormag' ); ?></span>
 						</div>
 						<p>
 							<?php
 
 							echo sprintf(
 							/* translators: %s: Theme Name. */
-								esc_html__('What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!', 'colormag'),
+								esc_html__( 'What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!', 'colormag' ),
 								$theme->Name
 							);
 							?>
 						</p>
-						<a href="<?php echo esc_url('https://wordpress.org/support/theme/colormag/reviews/?rate=5#new-post'); ?>"
-						   target="_blank"><?php esc_html_e('Submit a Review', 'colormag'); ?></a>
+						<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/colormag/reviews/?rate=5#new-post' ); ?>"
+						   target="_blank"><?php esc_html_e( 'Submit a Review', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox">
@@ -398,19 +271,19 @@ function import_button_html()
 							<path d="M8.83325 18.333H12.1666" stroke="#2563EB" stroke-width="1.66667"
 								  stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<span><?php esc_html_e('Feature Request', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'Feature Request', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
 						<p>
 							<?php
 							echo sprintf(
 							/* translators: %s: Theme Name. */
-								esc_html__('Please take a moment to suggest any features that could enhance our product.', 'colormag'),
+								esc_html__( 'Please take a moment to suggest any features that could enhance our product.', 'colormag' ),
 							);
 							?>
 						</p>
-						<a href="<?php echo esc_url('https://themegrill.com/contact/'); ?>"
-						   target="_blank"><?php esc_html_e('Request a Feature', 'colormag'); ?></a>
+						<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
+						   target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox">
@@ -422,34 +295,34 @@ function import_button_html()
 								stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
 								stroke-linejoin="round"/>
 						</svg>
-						<span><?php esc_html_e('Support', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'Support', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
 						<p>
 							<?php
 							echo sprintf(
 							/* translators: %s: Theme Name. */
-								esc_html__('Get in touch with our support team. You can always submit a support ticket for help.', 'colormag'),
+								esc_html__( 'Get in touch with our support team. You can always submit a support ticket for help.', 'colormag' ),
 							);
 							?>
 						</p>
-						<a href="<?php echo esc_url('https://themegrill.com/contact/'); ?>"
-						   target="_blank"><?php esc_html_e('Create a Ticket', 'colormag'); ?></a>
+						<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
+						   target="_blank"><?php esc_html_e( 'Create a Ticket', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox cm-useful-plugins">
 					<h3 class="hndle">
-						<span><?php esc_html_e('Useful Plugins', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'Useful Plugins', 'colormag' ); ?></span>
 					</h3>
 					<?php
 					$plugins = array(
-					array(
-					'name' => 'Everest Forms',
-					'file'  => 'everest-forms/everest-forms.php',
-					'slug'  => 'everest-forms',
-					'description' => 'Form Builder Plugin',
-					'color' => '#5317AA',
-					'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+						array(
+							'name'        => 'Everest Forms',
+							'file'        => 'everest-forms/everest-forms.php',
+							'slug'        => 'everest-forms',
+							'description' => 'Form Builder Plugin',
+							'color'       => '#5317AA',
+							'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
 								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#5317AA"/>
 								<path d="M27.309 11.1045H22.9999L24.3223 13.3268H28.6186L27.309 11.1045Z"
@@ -460,93 +333,56 @@ function import_button_html()
 									d="M29.9506 26.6704H13.5493L20.4292 15.4136L23.2772 20.0002H20.4292L19.11 22.2225H27.2412L20.4292 11.2432L9.5885 28.8959H31.3408L29.9506 26.6704Z"
 									fill="white"/>
 							</svg>',
-					),
-					array(
-					'name' => 'BlockArt',
-					'file'  => 'blockart-blocks/blockart.php',
-					'slug'  => 'blockart',
-					'description' => 'Page Builder Plugin',
-					'color' => '#2563EB',
-					'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+						),
+						array(
+							'name'        => 'BlockArt',
+							'file'        => 'blockart-blocks/blockart.php',
+							'slug'        => 'blockart',
+							'description' => 'Page Builder Plugin',
+							'color'       => '#2563EB',
+							'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
 								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#2563EB"/>
 								<path fill-rule="evenodd" clip-rule="evenodd"
 									  d="M8.5 31.2027H32.5V8.5H8.5V31.2027ZM31.2027 29.9054H9.79728V9.7973H31.2027V29.9054ZM20.7109 11.7432L22.3204 17.1421L19.094 17.1563L20.7109 11.7432ZM18.0383 20.7249H23.3909L24.3433 25.5563L24.4319 27.3107H16.8496L16.9161 25.5351L18.0383 20.7249Z"
 									  fill="white"/>
 							</svg>',
-					),
+						),
 					// Add more plugins as needed
 					);
 
 					// Loop through the plugins
-					foreach ($plugins as $plugin) {
-						$plugin_file = $plugin['file'];
-						$plugin_slug = $plugin['slug'];
+					foreach ( $plugins as $plugin ) {
+						$plugin_file         = $plugin['file'];
+						$plugin_slug         = $plugin['slug'];
 						$is_plugin_installed = is_plugin_installed( $plugin_file );
 						$is_plugin_activated = is_plugin_active( $plugin_file );
-					?>
+						?>
 					<div class="inside">
 						<div class="content-left">
 							<?php echo $plugin['svg']; ?>
 							<div class="content-info">
-								<h4><?php echo esc_html($plugin['name']); ?></h4>
-								<p><?php echo esc_html($plugin['description']); ?></p>
+								<h4><?php echo esc_html( $plugin['name'] ); ?></h4>
+								<p><?php echo esc_html( $plugin['description'] ); ?></p>
 							</div>
 						</div>
-							<?php if ($is_plugin_installed) : ?>
+							<?php if ( $is_plugin_installed ) : ?>
 								<?php if ( $is_plugin_activated ) : ?>
-									<span><?php esc_html_e('Activated'); ?></span>
+									<span><?php esc_html_e( 'Activated' ); ?></span>
 								<?php else : ?>
-									<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Activate'); ?></span></a>
+									<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate' ); ?></span></a>
 								<?php endif; ?>
 							<?php else : ?>
-								<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Install'); ?></span></a>
+								<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install' ); ?></span></a>
 							<?php endif; ?>
 					</div>
-					<?php
-}
-?>
-<!--					<div class="inside">-->
-<!--						<div class=" content-left">-->
-<!--							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
-<!--								 fill="none">-->
-<!--								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#5317AA"/>-->
-<!--								<path d="M27.309 11.1045H22.9999L24.3223 13.3268H28.6186L27.309 11.1045Z"-->
-<!--									  fill="white"/>-->
-<!--								<path d="M30.0183 15.5527H25.7156L27.1025 17.7751H31.4085L30.0183 15.5527Z"-->
-<!--									  fill="white"/>-->
-<!--								<path-->
-<!--									d="M29.9506 26.6704H13.5493L20.4292 15.4136L23.2772 20.0002H20.4292L19.11 22.2225H27.2412L20.4292 11.2432L9.5885 28.8959H31.3408L29.9506 26.6704Z"-->
-<!--									fill="white"/>-->
-<!--							</svg>-->
-<!--							<div class="content-info">-->
-<!--								<h4>--><?php //esc_html_e('Everest Forms', 'colormag'); ?><!--</h4>-->
-<!--								<p>--><?php //esc_html_e('Form Builder Plugin', 'colormag'); ?><!--</p>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<a>--><?php //esc_html_e('Install'); ?><!--</a>-->
-<!--					</div>-->
-<!--					<div class="inside">-->
-<!--						<div class=" content-left">-->
-<!--							<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
-<!--								 fill="none">-->
-<!--								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#2563EB"/>-->
-<!--								<path fill-rule="evenodd" clip-rule="evenodd"-->
-<!--									  d="M8.5 31.2027H32.5V8.5H8.5V31.2027ZM31.2027 29.9054H9.79728V9.7973H31.2027V29.9054ZM20.7109 11.7432L22.3204 17.1421L19.094 17.1563L20.7109 11.7432ZM18.0383 20.7249H23.3909L24.3433 25.5563L24.4319 27.3107H16.8496L16.9161 25.5351L18.0383 20.7249Z"-->
-<!--									  fill="white"/>-->
-<!--							</svg>-->
-<!--							<div class="content-info">-->
-<!--								<h4>--><?php //esc_html_e('BlockArt', 'colormag'); ?><!--</h4>-->
-<!--								<p>--><?php //esc_html_e('Page Builder Plugin', 'colormag'); ?><!--</p>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<a>--><?php //esc_html_e('Install'); ?><!--</a>-->
-<!--					</div>-->
+						<?php
+					}
+					?>
 				</div>
 				<div class="postbox">
 					<h3 class="hndle">
-						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-							 fill="none">
+						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
 							<path
 								d="M13.8327 17.5V15.8333C13.8327 14.9493 13.4815 14.1014 12.8564 13.4763C12.2313 12.8512 11.3834 12.5 10.4993 12.5H5.49935C4.61529 12.5 3.76745 12.8512 3.14233 13.4763C2.51721 14.1014 2.16602 14.9493 2.16602 15.8333V17.5"
 								stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -560,19 +396,15 @@ function import_button_html()
 								d="M13.834 2.6084C14.551 2.79198 15.1865 3.20898 15.6403 3.79366C16.0942 4.37833 16.3405 5.09742 16.3405 5.83757C16.3405 6.57771 16.0942 7.2968 15.6403 7.88147C15.1865 8.46615 14.551 8.88315 13.834 9.06673"
 								stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<span><?php esc_html_e('ThemeGrill Community', 'colormag'); ?></span>
+						<span><?php esc_html_e( 'ThemeGrill Community', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
 						<p>
 							<?php
-							echo sprintf(
-							/* translators: %s: Theme Name. */
-								esc_html__('Join our Facebook group filled with ThemeGrill themes users, including ColorMag users to discuss anything about the theme!', 'colormag'),
-							);
+							echo esc_html__( 'Join our Facebook group filled with ThemeGrill themes users, including ColorMag users to discuss anything about the theme!', 'colormag' );
 							?>
 						</p>
-						<a href="<?php echo esc_url('https://www.facebook.com/groups/themegrill'); ?>"
-						   target="_blank"><?php esc_html_e('Join our Facebook Group', 'colormag'); ?></a>
+						<a href="<?php echo esc_url( 'https://www.facebook.com/groups/themegrill' ); ?>" target="_blank"><?php esc_html_e( 'Join our Facebook Group', 'colormag' ); ?></a>
 					</div>
 				</div>
 			</div><!--/.col-30-->

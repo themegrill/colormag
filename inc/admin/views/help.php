@@ -1,5 +1,5 @@
 <?php
-if (!is_child_theme()) {
+if ( ! is_child_theme() ) {
 	$theme = wp_get_theme();
 } else {
 	$theme = wp_get_theme()->parent();
@@ -22,53 +22,53 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						<path d="M21.8332 23.0098H11.1665" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						<path d="M13.8332 12.3428H11.1665" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-					<h3><?php esc_html_e( 'Need Some Help?');?></h3>
-					<p><?php esc_html_e( 'Please check out basic documentation for detailed information on how to use ColorMag.');?></p>
-					<a><?php esc_html_e( 'View Now');?></a>
+					<h3><?php esc_html_e( 'Need Some Help?' ); ?></h3>
+					<p><?php esc_html_e( 'Please check out basic documentation for detailed information on how to use ColorMag.' ); ?></p>
+					<a><?php esc_html_e( 'View Now' ); ?></a>
 				</div>
 				<div class="postbox">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 33" fill="none">
 						<path d="M19.1667 20.3428V23.0094C19.1667 23.3631 19.0262 23.7022 18.7761 23.9523C18.5261 24.2023 18.187 24.3428 17.8333 24.3428H8.5L4.5 28.3428V15.0094C4.5 14.6558 4.64048 14.3167 4.89052 14.0666C5.14057 13.8166 5.47971 13.6761 5.83333 13.6761H8.5M28.5 19.0094L24.5 15.0094H15.1667C14.813 15.0094 14.4739 14.869 14.2239 14.6189C13.9738 14.3689 13.8333 14.0297 13.8333 13.6761V5.67611C13.8333 5.32248 13.9738 4.98335 14.2239 4.7333C14.4739 4.48325 14.813 4.34277 15.1667 4.34277H27.1667C27.5203 4.34277 27.8594 4.48325 28.1095 4.7333C28.3595 4.98335 28.5 5.32248 28.5 5.67611V19.0094Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-					<h3><?php esc_html_e( 'Support');?></h3>
-					<p><?php esc_html_e( 'We would be happy to guide any of your issues and queries');?></p>
-					<a><span><?php esc_html_e( 'Contact Support');?></span></a>
+					<h3><?php esc_html_e( 'Support' ); ?></h3>
+					<p><?php esc_html_e( 'We would be happy to guide any of your issues and queries' ); ?></p>
+					<a><span><?php esc_html_e( 'Contact Support' ); ?></span></a>
 				</div>
 			</div>
-			<h2><?php  esc_html_e( 'Join Our Community' );?></h2>
+			<h2><?php esc_html_e( 'Join Our Community' ); ?></h2>
 			<div class="postbox cm-community">
 				<div class="cm-image">
 					<img
-						src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/facebook.webp'); ?>"
-						alt="<?php esc_attr_e('Facebook', 'colormag'); ?>">
+						src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/facebook.webp' ); ?>"
+						alt="<?php esc_attr_e( 'Facebook', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
 					<h3><?php esc_html_e( 'Facebook Community' ); ?></h3>
-					<p><?php esc_html_e( 'Join our Facebook haven, where the latest news and updates eagerly await your arrival.' ) ?></p>
+					<p><?php esc_html_e( 'Join our Facebook haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
 					<a><span><?php esc_html_e( 'Join Group' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox cm-community">
 				<div class="cm-image">
 					<img
-						src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/x.webp'); ?>"
-						alt="<?php esc_attr_e('Facebook', 'colormag'); ?>">
+						src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/x.webp' ); ?>"
+						alt="<?php esc_attr_e( 'Facebook', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
 					<h3><?php esc_html_e( 'X Community' ); ?></h3>
-					<p><?php esc_html_e( 'Join our Twitter haven, where the latest news and updates eagerly await your arrival.' ) ?></p>
+					<p><?php esc_html_e( 'Join our Twitter haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
 					<a><span><?php esc_html_e( 'Join Group' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox cm-community">
 				<div class="cm-image">
 					<img
-						src="<?php echo esc_url(COLORMAG_PARENT_URL . '/inc/admin/images/youtube.webp'); ?>"
-						alt="<?php esc_attr_e('Facebook', 'colormag'); ?>">
+						src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/youtube.webp' ); ?>"
+						alt="<?php esc_attr_e( 'Facebook', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
 					<h3><?php esc_html_e( 'Youtube Community' ); ?></h3>
-					<p><?php esc_html_e( 'Join our YouTube haven, where the latest news and updates eagerly await your arrival.' ) ?></p>
+					<p><?php esc_html_e( 'Join our YouTube haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
 					<a><span><?php esc_html_e( 'Join Group' ); ?></span></a>
 				</div>
 			</div>
@@ -76,14 +76,13 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 		<div class="col-30">
 			<div class="postbox">
 				<h3 class="hndle">
-					<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-						 fill="none">
+					<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
 						<path
 							d="M10.5001 1.66699L13.0751 6.88366L18.8334 7.72533L14.6667 11.7837L15.6501 17.517L10.5001 14.8087L5.35008 17.517L6.33341 11.7837L2.16675 7.72533L7.92508 6.88366L10.5001 1.66699Z"
 							stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
 							stroke-linejoin="round"/>
 					</svg>
-					<span><?php esc_html_e('Leave us a Review', 'colormag') ?></span>
+					<span><?php esc_html_e( 'Leave us a Review', 'colormag' ); ?></span>
 				</h3>
 				<div class="inside">
 					<div class="ratings">
@@ -96,19 +95,19 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 										echo $star_icon;
 										?>
 								</span>
-						<span><?php esc_html_e('Based on 1430+ Reviews', 'colormag') ?></span>
+						<span><?php esc_html_e( 'Based on 1430+ Reviews', 'colormag' ); ?></span>
 					</div>
 					<p>
 						<?php
 						echo sprintf(
 						/* translators: %s: Theme Name. */
-							esc_html__('Sharing your review is a valuable way to help us enhance your experience.', 'colormag'),
+							esc_html__( 'Sharing your review is a valuable way to help us enhance your experience.', 'colormag' ),
 							$theme->Name
 						);
 						?>
 					</p>
-					<a href="<?php echo esc_url('https://wordpress.org/support/theme/colormag/reviews/?rate=5#new-post'); ?>"
-					   target="_blank"><?php esc_html_e('Submit a Review', 'colormag'); ?></a>
+					<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/colormag/reviews/?rate=5#new-post' ); ?>"
+					   target="_blank"><?php esc_html_e( 'Submit a Review', 'colormag' ); ?></a>
 				</div>
 			</div>
 			<div class="postbox">
@@ -124,34 +123,34 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						<path d="M8.83325 18.333H12.1666" stroke="#2563EB" stroke-width="1.66667"
 							  stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-					<span><?php esc_html_e('Feature Request', 'colormag') ?></span>
+					<span><?php esc_html_e( 'Feature Request', 'colormag' ); ?></span>
 				</h3>
 				<div class="inside">
 					<p>
 						<?php
 						echo sprintf(
 						/* translators: %s: Theme Name. */
-							esc_html__('Please take a moment to suggest any features that could enhance our product.', 'colormag'),
+							esc_html__( 'Please take a moment to suggest any features that could enhance our product.', 'colormag' ),
 						);
 						?>
 					</p>
-					<a href="<?php echo esc_url('https://themegrill.com/contact/'); ?>"
-					   target="_blank"><?php esc_html_e('Request a Feature', 'colormag'); ?></a>
+					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
+					   target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
 				</div>
 			</div>
 			<div class="postbox cm-useful-plugins">
 				<h3 class="hndle">
-					<span><?php esc_html_e('Useful Plugins', 'colormag'); ?></span>
+					<span><?php esc_html_e( 'Useful Plugins', 'colormag' ); ?></span>
 				</h3>
 				<?php
 				$plugins = array(
 					array(
-						'name' => 'Everest Forms',
-						'file'  => 'everest-forms/everest-forms.php',
-						'slug'  => 'everest-forms',
+						'name'        => 'Everest Forms',
+						'file'        => 'everest-forms/everest-forms.php',
+						'slug'        => 'everest-forms',
 						'description' => 'Form Builder Plugin',
-						'color' => '#5317AA',
-						'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+						'color'       => '#5317AA',
+						'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
 								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#5317AA"/>
 								<path d="M27.309 11.1045H22.9999L24.3223 13.3268H28.6186L27.309 11.1045Z"
@@ -164,12 +163,12 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 							</svg>',
 					),
 					array(
-						'name' => 'BlockArt',
-						'file'  => 'blockart-blocks/blockart.php',
-						'slug'  => 'blockart',
+						'name'        => 'BlockArt',
+						'file'        => 'blockart-blocks/blockart.php',
+						'slug'        => 'blockart',
 						'description' => 'Page Builder Plugin',
-						'color' => '#2563EB',
-						'svg' => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
+						'color'       => '#2563EB',
+						'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
 								<rect x="0.5" width="40" height="40" rx="3.63636" fill="#2563EB"/>
 								<path fill-rule="evenodd" clip-rule="evenodd"
@@ -181,9 +180,9 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 				);
 
 				// Loop through the plugins
-				foreach ($plugins as $plugin) {
-					$plugin_file = $plugin['file'];
-					$plugin_slug = $plugin['slug'];
+				foreach ( $plugins as $plugin ) {
+					$plugin_file         = $plugin['file'];
+					$plugin_slug         = $plugin['slug'];
 					$is_plugin_installed = is_plugin_installed( $plugin_file );
 					$is_plugin_activated = is_plugin_active( $plugin_file );
 					?>
@@ -191,18 +190,18 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						<div class="content-left">
 							<?php echo $plugin['svg']; ?>
 							<div class="content-info">
-								<h4><?php echo esc_html($plugin['name']); ?></h4>
-								<p><?php echo esc_html($plugin['description']); ?></p>
+								<h4><?php echo esc_html( $plugin['name'] ); ?></h4>
+								<p><?php echo esc_html( $plugin['description'] ); ?></p>
 							</div>
 						</div>
-						<?php if ($is_plugin_installed) : ?>
+						<?php if ( $is_plugin_installed ) : ?>
 							<?php if ( $is_plugin_activated ) : ?>
-								<span><?php esc_html_e('Activated'); ?></span>
+								<span><?php esc_html_e( 'Activated' ); ?></span>
 							<?php else : ?>
-								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Activate'); ?></span></a>
+								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate' ); ?></span></a>
 							<?php endif; ?>
 						<?php else : ?>
-							<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr($plugin_file); ?>" data-slug="<?php echo esc_attr($plugin_slug); ?> "><?php esc_html_e('Install'); ?></span></a>
+							<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install' ); ?></span></a>
 						<?php endif; ?>
 					</div>
 					<?php
@@ -262,19 +261,19 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 							d="M13.834 2.6084C14.551 2.79198 15.1865 3.20898 15.6403 3.79366C16.0942 4.37833 16.3405 5.09742 16.3405 5.83757C16.3405 6.57771 16.0942 7.2968 15.6403 7.88147C15.1865 8.46615 14.551 8.88315 13.834 9.06673"
 							stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-					<span><?php esc_html_e('ThemeGrill Community', 'colormag') ?></span>
+					<span><?php esc_html_e( 'ThemeGrill Community', 'colormag' ); ?></span>
 				</h3>
 				<div class="inside">
 					<p>
 						<?php
 						echo sprintf(
 						/* translators: %s: Theme Name. */
-							esc_html__('Join our facebook group of ColorMag users for creating beautiful websites!', 'colormag'),
+							esc_html__( 'Join our facebook group of ColorMag users for creating beautiful websites!', 'colormag' ),
 						);
 						?>
 					</p>
-					<a href="<?php echo esc_url('https://www.facebook.com/groups/themegrill'); ?>"
-					   target="_blank"><?php esc_html_e('Join our Facebook Group', 'colormag'); ?></a>
+					<a href="<?php echo esc_url( 'https://www.facebook.com/groups/themegrill' ); ?>"
+					   target="_blank"><?php esc_html_e( 'Join our Facebook Group', 'colormag' ); ?></a>
 				</div>
 			</div>
 		</div><!--/.col-30-->

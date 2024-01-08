@@ -42,7 +42,7 @@ class Colormag_Welcome_Notice {
 		$current_user = wp_get_current_user();
 
 		// Check if the user is logged in
-		if ( $current_user->ID != 0 ) {
+		if ( 0 !== $current_user->ID ) {
 			// Get the username
 			$username = $current_user->user_login;
 		}

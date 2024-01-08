@@ -1,5 +1,5 @@
 <?php
-if (!is_child_theme()) {
+if ( ! is_child_theme() ) {
 	$theme = wp_get_theme();
 } else {
 	$theme = wp_get_theme()->parent();
@@ -18,218 +18,218 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 		<table class="fvp-table">
 			<tbody>
 			<?php
-			$showFreePro = true; // Set to false to hide the Free/Pro column
+			$show_free_pro = true; // Set to false to hide the Free/Pro column
 
 			$features = array(
-				'General Features' => array(
-				'showFreePro' => true,
-					'items' => array(
-					array('Hook For Developers', $tick_mark, $tick_mark),
-					array('WooCommerce Compatible', $tick_mark, $tick_mark),
-					array('Gutenberg Compatible', $tick_mark, $tick_mark),
-					array('Button Customization', $tick_mark, $tick_mark),
-					array('Typography(Font Size, Font Family, Font Weight,...)', $tick_mark, $tick_mark),
-					array('Styling Options', 'Limited', $tick_mark),
-					array('Background Options', 'Limited', $tick_mark),
-					array('Pre Built Demos', 7, 17),
-				)
-				),
-				'Colors' => array(
+				'General Features'          => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Primary Colors', $tick_mark, $tick_mark),
-						array('Heading Colors', $cross_mark, $tick_mark),
-						array('Skin Color', $tick_mark, $tick_mark),
-						array('Link Color', $cross_mark, $tick_mark),
-						array('Category Colors', $tick_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Hook For Developers', $tick_mark, $tick_mark ),
+						array( 'WooCommerce Compatible', $tick_mark, $tick_mark ),
+						array( 'Gutenberg Compatible', $tick_mark, $tick_mark ),
+						array( 'Button Customization', $tick_mark, $tick_mark ),
+						array( 'Typography(Font Size, Font Family, Font Weight,...)', $tick_mark, $tick_mark ),
+						array( 'Styling Options', 'Limited', $tick_mark ),
+						array( 'Background Options', 'Limited', $tick_mark ),
+						array( 'Pre Built Demos', 7, 17 ),
+					),
 				),
-				'Header Features' => array(
+				'Colors'                    => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Site Identity Customization', 'Limited', $tick_mark),
-						array('Header Layouts', 3, 6),
-						array('Sticky Header', 'Limited', $tick_mark),
-						array('Header Content Align', $cross_mark, $tick_mark),
-						array('Customize Date', $tick_mark, $tick_mark),
-						array('News Ticker', 'Limited', $tick_mark),
-						array('Primary Menu Styling Options', $cross_mark, $tick_mark),
-						array('Responsive Menu Style', $tick_mark, $tick_mark),
-						array('Menu in Top Bar', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Primary Colors', $tick_mark, $tick_mark ),
+						array( 'Heading Colors', $cross_mark, $tick_mark ),
+						array( 'Skin Color', $tick_mark, $tick_mark ),
+						array( 'Link Color', $cross_mark, $tick_mark ),
+						array( 'Category Colors', $tick_mark, $tick_mark ),
+					),
 				),
-				'WooCommerce' => array(
+				'Header Features'           => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Dedicated Sidebar', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Site Identity Customization', 'Limited', $tick_mark ),
+						array( 'Header Layouts', 3, 6 ),
+						array( 'Sticky Header', 'Limited', $tick_mark ),
+						array( 'Header Content Align', $cross_mark, $tick_mark ),
+						array( 'Customize Date', $tick_mark, $tick_mark ),
+						array( 'News Ticker', 'Limited', $tick_mark ),
+						array( 'Primary Menu Styling Options', $cross_mark, $tick_mark ),
+						array( 'Responsive Menu Style', $tick_mark, $tick_mark ),
+						array( 'Menu in Top Bar', $cross_mark, $tick_mark ),
+					),
 				),
-				'Container Layout' => array(
+				'WooCommerce'               => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Boxed', $tick_mark, $tick_mark),
-						array('Wide', $tick_mark, $tick_mark),
-						array('Sidebar Layout', 4, 5),
-						array('Front Page: Top Full Width', $cross_mark, 2),
-					)
+					'items'       => array(
+						array( 'Dedicated Sidebar', $cross_mark, $tick_mark ),
+					),
 				),
-				'Blog' => array(
+				'Container Layout'          => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Default Blog Layout', $tick_mark, $tick_mark),
-						array('One Column Layout', $cross_mark, $tick_mark),
-						array('Full Width Layout', $cross_mark, $tick_mark),
-						array('Grid Layout', $cross_mark, $tick_mark),
-						array('Breadcrumb', $cross_mark, $tick_mark),
-						array('Breadcrumb Label', $cross_mark, $tick_mark),
-						array('Featured Image', $cross_mark, $tick_mark),
-						array('Excerpt', $cross_mark, $tick_mark),
-						array('Excerpt Length', $cross_mark, $tick_mark),
-						array('Read More Text', $cross_mark, $tick_mark),
-						array('Infinite Scroll', $cross_mark, $tick_mark),
-						array('Pagination', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Boxed', $tick_mark, $tick_mark ),
+						array( 'Wide', $tick_mark, $tick_mark ),
+						array( 'Sidebar Layout', 4, 5 ),
+						array( 'Front Page: Top Full Width', $cross_mark, 2 ),
+					),
 				),
-				'Content' => array(
+				'Blog'                      => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Author Bio', $cross_mark, $tick_mark),
-						array('Lightbox For Images', $cross_mark, $tick_mark),
-						array('Post Navigation Style', 1, 3),
-						array('Related Posts', $tick_mark, $tick_mark),
-						array('Reading Post Indicator', $cross_mark, $tick_mark),
-						array('Show or hide Post Meta Like Author, Comment, Date, Categories etc', $cross_mark, $tick_mark),
-						array('Post Date Format', 1, 2),
-						array('Sticky Sidebar', $cross_mark, $tick_mark),
-						array('Sidebar Styling Options', $cross_mark, $tick_mark),
-						array('Featured Image in Single Post', $cross_mark, $tick_mark),
-						array('Social Share Button', $cross_mark, $tick_mark),
-						array('Reading Progress Indicator', $cross_mark, $tick_mark),
-						array('Flyout Related Posts', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Default Blog Layout', $tick_mark, $tick_mark ),
+						array( 'One Column Layout', $cross_mark, $tick_mark ),
+						array( 'Full Width Layout', $cross_mark, $tick_mark ),
+						array( 'Grid Layout', $cross_mark, $tick_mark ),
+						array( 'Breadcrumb', $cross_mark, $tick_mark ),
+						array( 'Breadcrumb Label', $cross_mark, $tick_mark ),
+						array( 'Featured Image', $cross_mark, $tick_mark ),
+						array( 'Excerpt', $cross_mark, $tick_mark ),
+						array( 'Excerpt Length', $cross_mark, $tick_mark ),
+						array( 'Read More Text', $cross_mark, $tick_mark ),
+						array( 'Infinite Scroll', $cross_mark, $tick_mark ),
+						array( 'Pagination', $cross_mark, $tick_mark ),
+					),
 				),
-				'Footer' => array(
+				'Content'                   => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Footer Area Style', 2, 3),
-						array('Scroll To Top Button', $cross_mark, $tick_mark),
-						array('Footer Widgets Area', $tick_mark, $tick_mark),
-						array('Footer Widgets Styling Options', $cross_mark, $tick_mark),
-						array('Footer Copyright Editor', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Author Bio', $cross_mark, $tick_mark ),
+						array( 'Lightbox For Images', $cross_mark, $tick_mark ),
+						array( 'Post Navigation Style', 1, 3 ),
+						array( 'Related Posts', $tick_mark, $tick_mark ),
+						array( 'Reading Post Indicator', $cross_mark, $tick_mark ),
+						array( 'Show or hide Post Meta Like Author, Comment, Date, Categories etc', $cross_mark, $tick_mark ),
+						array( 'Post Date Format', 1, 2 ),
+						array( 'Sticky Sidebar', $cross_mark, $tick_mark ),
+						array( 'Sidebar Styling Options', $cross_mark, $tick_mark ),
+						array( 'Featured Image in Single Post', $cross_mark, $tick_mark ),
+						array( 'Social Share Button', $cross_mark, $tick_mark ),
+						array( 'Reading Progress Indicator', $cross_mark, $tick_mark ),
+						array( 'Flyout Related Posts', $cross_mark, $tick_mark ),
+					),
 				),
-				'Additional' => array(
+				'Footer'                    => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Schema Markup', $cross_mark, $tick_mark),
-						array('Social Icons', 6, '18+6 (Custom)'),
-						array('Social Icons Position', $cross_mark, 3),
-					)
+					'items'       => array(
+						array( 'Footer Area Style', 2, 3 ),
+						array( 'Scroll To Top Button', $cross_mark, $tick_mark ),
+						array( 'Footer Widgets Area', $tick_mark, $tick_mark ),
+						array( 'Footer Widgets Styling Options', $cross_mark, $tick_mark ),
+						array( 'Footer Copyright Editor', $cross_mark, $tick_mark ),
+					),
 				),
-				'API Integrations' => array(
+				'Additional'                => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('OpenWeatherMap API Integration', $cross_mark, $tick_mark),
-						array('GoogleMaps API Integration', $cross_mark, $tick_mark),
-						array('Exchange Rate API Integration', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Schema Markup', $cross_mark, $tick_mark ),
+						array( 'Social Icons', 6, '18+6 (Custom)' ),
+						array( 'Social Icons Position', $cross_mark, 3 ),
+					),
 				),
-				'Widgets' => array(
+				'API Integrations'          => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Widget Areas', 16, '20+'),
-					)
+					'items'       => array(
+						array( 'OpenWeatherMap API Integration', $cross_mark, $tick_mark ),
+						array( 'GoogleMaps API Integration', $cross_mark, $tick_mark ),
+						array( 'Exchange Rate API Integration', $cross_mark, $tick_mark ),
+					),
 				),
-				'TG Widgets' => array(
+				'Widgets'                   => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('TG: 125x125 Advertisement', $tick_mark, $tick_mark),
-						array('TG: 300x250 Advertisement', $tick_mark, $tick_mark),
-						array('TG: 728x90 Advertisement', $tick_mark, $tick_mark),
-						array('TG: Breaking News Widget', $cross_mark, $tick_mark),
-						array('TG: Call To Action', $cross_mark, $tick_mark),
-						array('TG: Currency Exchange', $cross_mark, $tick_mark),
-						array('TG: Featured Category Slider', $tick_mark, $tick_mark),
-						array('TG: Featured Posts (Style 1)', $tick_mark, $tick_mark),
-						array('TG: Featured Posts (Style 2)', $tick_mark, $tick_mark),
-						array('TG: Featured Posts (Style 3)', $cross_mark, $tick_mark),
-						array('TG: Featured Posts (Style 4)', $cross_mark, $tick_mark),
-						array('TG: Featured Posts (Style 5)', $cross_mark, $tick_mark),
-						array('TG: Featured Posts (Style 6)', $cross_mark, $tick_mark),
-						array('TG: Featured Posts (Style 7)', $cross_mark, $tick_mark),
-						array('TG: Featured Video Playlist', $cross_mark, $tick_mark),
-						array('TG: Google Maps', $cross_mark, $tick_mark),
-						array('TG: Highlighted Posts', $tick_mark, $tick_mark),
-						array('TG: Random Posts Widget', $cross_mark, $tick_mark),
-						array('TG: Tabbed Widget', $cross_mark, $tick_mark),
-						array('TG: Videos', $cross_mark, $tick_mark),
-						array('TG: Weather', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Widget Areas', 16, '20+' ),
+					),
+				),
+				'TG Widgets'                => array(
+					'showFreePro' => true,
+					'items'       => array(
+						array( 'TG: 125x125 Advertisement', $tick_mark, $tick_mark ),
+						array( 'TG: 300x250 Advertisement', $tick_mark, $tick_mark ),
+						array( 'TG: 728x90 Advertisement', $tick_mark, $tick_mark ),
+						array( 'TG: Breaking News Widget', $cross_mark, $tick_mark ),
+						array( 'TG: Call To Action', $cross_mark, $tick_mark ),
+						array( 'TG: Currency Exchange', $cross_mark, $tick_mark ),
+						array( 'TG: Featured Category Slider', $tick_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 1)', $tick_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 2)', $tick_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 3)', $cross_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 4)', $cross_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 5)', $cross_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 6)', $cross_mark, $tick_mark ),
+						array( 'TG: Featured Posts (Style 7)', $cross_mark, $tick_mark ),
+						array( 'TG: Featured Video Playlist', $cross_mark, $tick_mark ),
+						array( 'TG: Google Maps', $cross_mark, $tick_mark ),
+						array( 'TG: Highlighted Posts', $tick_mark, $tick_mark ),
+						array( 'TG: Random Posts Widget', $cross_mark, $tick_mark ),
+						array( 'TG: Tabbed Widget', $cross_mark, $tick_mark ),
+						array( 'TG: Videos', $cross_mark, $tick_mark ),
+						array( 'TG: Weather', $cross_mark, $tick_mark ),
+					),
 				),
 				'Premium Elementor Widgets' => array(
 					'showFreePro' => false,
 				),
-				'ColorMag Widget Blocks' => array(
+				'ColorMag Widget Blocks'    => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Block Style 1', $tick_mark, $tick_mark),
-						array('Block Style 2', $tick_mark, $tick_mark),
-						array('Block Style 3', $cross_mark, $tick_mark),
-						array('Block Style 4', $tick_mark, $tick_mark),
-						array('Block Style 5', $cross_mark, $tick_mark),
-						array('Block Style 6', $tick_mark, $tick_mark),
-						array('Block Style 7', $cross_mark, $tick_mark),
-						array('Block Style 8', $cross_mark, $tick_mark),
-						array('Block Style 9', $tick_mark, $tick_mark),
-						array('Block Style 10', $cross_mark, $tick_mark),
-						array('Pagination', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Block Style 1', $tick_mark, $tick_mark ),
+						array( 'Block Style 2', $tick_mark, $tick_mark ),
+						array( 'Block Style 3', $cross_mark, $tick_mark ),
+						array( 'Block Style 4', $tick_mark, $tick_mark ),
+						array( 'Block Style 5', $cross_mark, $tick_mark ),
+						array( 'Block Style 6', $tick_mark, $tick_mark ),
+						array( 'Block Style 7', $cross_mark, $tick_mark ),
+						array( 'Block Style 8', $cross_mark, $tick_mark ),
+						array( 'Block Style 9', $tick_mark, $tick_mark ),
+						array( 'Block Style 10', $cross_mark, $tick_mark ),
+						array( 'Pagination', $cross_mark, $tick_mark ),
+					),
 				),
-				'ColorMag Widget Grid' => array(
+				'ColorMag Widget Grid'      => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Grid Style 1', $cross_mark, $tick_mark),
-						array('Grid Style 2', $tick_mark, $tick_mark),
-						array('Grid Style 3', $tick_mark, $tick_mark),
-						array('Grid Style 4', $tick_mark, $tick_mark),
-						array('Grid Style 5', $tick_mark, $tick_mark),
-						array('Grid Style 6', $cross_mark, $tick_mark),
-						array('Grid Style 7', $cross_mark, $tick_mark),
-						array('Grid Style 8', $cross_mark, $tick_mark),
-						array('Grid Style 9', $tick_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Grid Style 1', $cross_mark, $tick_mark ),
+						array( 'Grid Style 2', $tick_mark, $tick_mark ),
+						array( 'Grid Style 3', $tick_mark, $tick_mark ),
+						array( 'Grid Style 4', $tick_mark, $tick_mark ),
+						array( 'Grid Style 5', $tick_mark, $tick_mark ),
+						array( 'Grid Style 6', $cross_mark, $tick_mark ),
+						array( 'Grid Style 7', $cross_mark, $tick_mark ),
+						array( 'Grid Style 8', $cross_mark, $tick_mark ),
+						array( 'Grid Style 9', $tick_mark, $tick_mark ),
+					),
 				),
-				'ColorMag Global Widgets' => array(
+				'ColorMag Global Widgets'   => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Title Widget', $tick_mark, $tick_mark),
-						array('Trending News', $cross_mark, $tick_mark),
-					)
+					'items'       => array(
+						array( 'Title Widget', $tick_mark, $tick_mark ),
+						array( 'Trending News', $cross_mark, $tick_mark ),
+					),
 				),
-				'ColorMag Support Widgets' => array(
+				'ColorMag Support Widgets'  => array(
 					'showFreePro' => true,
-					'items' => array(
-						array('Support', 'WordPress.org Forum', 'Dedicated Support'),
-					)
+					'items'       => array(
+						array( 'Support', 'WordPress.org Forum', 'Dedicated Support' ),
+					),
 				),
 			);
 
-			foreach ($features as $category => $feature) :
-				$showFreePro = $feature['showFreePro'];
+			foreach ( $features as $category => $feature ) :
+				$show_free_pro = $feature['showFreePro'];
 				?>
 				<tr class="fvp-heading" >
-					<td ><?php esc_html_e($category); ?></td>
-					<?php if ($showFreePro) : ?>
-						<td><?php esc_html_e('Free'); ?></td>
-						<td><?php esc_html_e('Pro'); ?></td>
+					<td ><?php esc_html( $category ); ?></td>
+					<?php if ( $show_free_pro ) : ?>
+						<td><?php esc_html_e( 'Free' ); ?></td>
+						<td><?php esc_html_e( 'Pro' ); ?></td>
 					<?php endif; ?>
 				</tr>
 
-				<?php foreach ( $feature['items'] as $item) : ?>
+				<?php foreach ( $feature['items'] as $item ) : ?>
 				<tr>
-					<td><?php esc_html_e($item[0]); ?></td>
-					<td><?php echo $item[1]; ?></td>
-					<td><?php echo $item[2]; ?></td>
+					<td><?php echo esc_html( $item[0] ); ?></td>
+					<td><?php echo ( $item[1] ); ?></td>
+					<td><?php echo ( $item[2] ); ?></td>
 				</tr>
 			<?php endforeach; ?>
 
@@ -290,9 +290,9 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 						fill="#4A7EEE"/>
 				</svg>
 			</div>
-			<h3><?php esc_html_e('Upgrade Now'); ?></h3>
-			<p><?php echo __('Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.'); ?></p>
-			<a  href="<?php echo esc_url('https://themegrill.com/pricing/'); ?>" target="_blank"><span><?php esc_html_e('Get ColorMag Pro Now'); ?></span></a>
+			<h3><?php esc_html_e( 'Upgrade Now' ); ?></h3>
+			<p><?php echo __( 'Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.' ); ?></p>
+			<a  href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank"><span><?php esc_html_e( 'Get ColorMag Pro Now' ); ?></span></a>
 		</div>
 	</div>
 </div>
