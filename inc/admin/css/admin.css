@@ -439,7 +439,6 @@ h1.hndle {
 	font-weight: 400;
 	line-height: 1.8;
 	letter-spacing: 0.24px;
-	margin-left: 17px;
 }
 
 .colormag-icon {
@@ -919,8 +918,11 @@ h1.hndle {
 	line-height: 1.8;
 }
 
-.free-vs-pro-page .postbox span {
+.free-vs-pro-page .postbox a {
 	margin-top: 24px;
+}
+
+.free-vs-pro-page .postbox span {
 	color: #fff;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1561,8 +1563,13 @@ body.demo-import-message-popup {
 		align-items: center;
 		margin-left: auto;
 	}
+	.colormag-header .cm-dashboard-head-left a {
+		margin-left: 17px;
+	}
 	.colormag-header .cm-dashboard-head-left img {
 		width: 42px;
+		border-radius: 20px;
+		border: 1px solid rgba(211, 211, 211, 0.4);
 	}
 	.colormag-header > .colormag-container {
 		display: -webkit-box;
@@ -1656,9 +1663,6 @@ body.demo-import-message-popup {
 		-webkit-box-pack: end;
 		-ms-flex-pack: end;
 		justify-content: flex-end;
-	}
-	.colormag-header .cm-dashboard-head-left img {
-		width: 42px;
 	}
 	.colormag-header > .colormag-container {
 		display: -webkit-box;

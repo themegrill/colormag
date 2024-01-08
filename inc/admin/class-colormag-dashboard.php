@@ -176,7 +176,7 @@ class ColorMag_Dashboard
 									echo $theme->Version;
 									?>
 							</span>
-							<a href=<?php echo esc_url('https://themegrill.com/pricing/'); ?>>
+							<a href="<?php echo esc_url('https://themegrill.com/pricing/'); ?>" target="_blank">
 								<span class="cm-upgrade-to-pro">
 								<?php esc_html_e('Upgrade to Pro', 'colormag'); ?>
 							</span>

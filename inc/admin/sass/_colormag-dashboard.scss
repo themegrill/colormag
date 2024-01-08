@@ -347,7 +347,6 @@ h1.hndle{
 	font-weight: 400;
 	line-height: 1.8;
 	letter-spacing: 0.24px;
-	margin-left: 17px
 }
 
 .colormag-icon {
@@ -751,8 +750,11 @@ h1.hndle{
 			line-height: 1.8;
 		}
 
-		span {
+		a {
 			margin-top: 24px;
+		}
+
+		span {
 			color: #fff;
 			display: flex;
 			padding: 10px 16px;
@@ -1399,8 +1401,14 @@ body {
 			align-items: center;
 			margin-left: auto;
 
+			a{
+				margin-left: 17px;
+			}
+
 			img {
 				width: 42px;
+				border-radius: 20px;
+				border: 1px solid rgba(211, 211, 211, 0.40);
 			}
 		}
 
@@ -1479,10 +1487,6 @@ body {
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
-
-			img {
-				width: 42px;
-			}
 		}
 
 		>.colormag-container {
