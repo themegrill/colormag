@@ -2,8 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-class ColorMag_Dashboard
-{
+class ColorMag_Dashboard {
 
 	private static $instance;
 
@@ -264,8 +263,6 @@ class ColorMag_Dashboard
 		</div>
 		<?php
 	}
-
-
 }
 
 ColorMag_Dashboard::instance();
