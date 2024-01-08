@@ -108,7 +108,7 @@ function import_button_html()
 									echo esc_url(admin_url('customize.php?autofocus[section]=' . $item['section']));
 								}
 								?>" target="_blank">
-									<?php echo $link_icon . 'Customizer' ?>
+									<?php echo $link_icon . 'Customize' ?>
 								</a>
 							</div>
 							<?php
