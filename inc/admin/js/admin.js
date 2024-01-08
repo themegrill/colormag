@@ -50,11 +50,13 @@ jQuery(document).ready(function ( $ ) {
 	$('#cm-notification').click(function () {
 		// Add the 'open' class to the cm-dialog element
 		$('#cm-dialog').addClass('open');
+		$('.wrap').addClass('overlay');
 	});
 
 	// Remove 'open' class when clicking on cm-dialog-close
 	$('#dialog-close').click(function () {
 		$('#cm-dialog').removeClass('open');
+		$('.wrap').removeClass('overlay');
 	});
 });
 

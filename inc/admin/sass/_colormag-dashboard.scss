@@ -5,7 +5,13 @@
 		padding:0;
 		border-bottom: 1px solid #ccd0d4;
 	}
+
+	&.overlay {
+		background: rgba(0, 0, 0, 0.05);
+		filter: blur(1px);
+	}
 }
+
 .colormag-message__cta {
 	.button.button-hero {
 		display: flex;
@@ -158,6 +164,10 @@
 }
 
 .postbox {
+	border-radius: 4px;
+	border: 1px solid var(--Grey-grey-25, #F4F4F4);
+	background: #FFF;
+
 	p {
 		color: #383838;
 		font-size: 14px;
@@ -203,6 +213,10 @@ h1.hndle{
 	font-size: 13px;
 	line-height: 1.6;
 	box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.50);
+
+	&:hover{
+		color: #fff;
+	}
 }
 
 .cm-quick-settings-title, .cm-premium-features-title {
@@ -502,6 +516,7 @@ h1.hndle{
 
 		img {
 			max-width: -webkit-fill-available;
+			border-radius: 4px 4px 0px 0px;
 		}
 
 		.content, .cta {
@@ -517,6 +532,10 @@ h1.hndle{
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
+			.activated {
+				background: #ACACAC;
+			}
 		}
 
 		p{
@@ -828,7 +847,7 @@ h1.hndle{
 				bottom: 0;
 				content: "";
 				height: 100%;
-				left: 12px;
+				left: 11px;
 				position: absolute;
 				top: 0;
 				width: 2px;
@@ -848,6 +867,7 @@ h1.hndle{
 				position: sticky;
 				z-index: 9999;
 				top: 0;
+				margin-bottom: 20px;
 			}
 
 			.cm-changelog__change-list {

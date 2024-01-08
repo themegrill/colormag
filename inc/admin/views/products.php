@@ -123,7 +123,7 @@
 							<div class="cta-button">
 								<?php if ($is_plugin_installed) : ?>
 									<?php if ($is_plugin_activated) : ?>
-										<span><?php esc_html_e('Activated'); ?></span>
+										<span class="activated"><?php esc_html_e('Activated'); ?></span>
 									<?php else : ?>
 										<span><a href="#" class="activate-plugin"
 												 data-plugin="<?php echo esc_attr($plugin_file); ?>"
