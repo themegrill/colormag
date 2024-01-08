@@ -292,8 +292,7 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 			</div>
 			<h3><?php esc_html_e('Upgrade Now'); ?></h3>
 			<p><?php echo __('Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.'); ?></p>
-			<a><span><?php esc_html_e('Get ColorMag Pro Now'); ?></span></a>
-
+			<a  href="<?php echo esc_url('https://themegrill.com/pricing/'); ?>" target="_blank"><span><?php esc_html_e('Get ColorMag Pro Now'); ?></span></a>
 		</div>
 	</div>
 </div>
