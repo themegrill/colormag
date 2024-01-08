@@ -196,6 +196,35 @@ function colormag_set_content_width() {
 
 }
 
+add_filter('themegrill_demo_importer_show_main_menu', '__return_false');
+
+add_filter( 'themegrill_demo_importer_routes', 'colormag_demo_importer_routes', 10, 1 );
+
+function colormag_demo_importer_routes ( $routes ) {
+	// Remove the existing routes from the TDI
+	unset( $routes['themes.php?page=demo-importer&demo=:slug'] );
+	unset( $routes['themes.php?page=demo-importer&browse=:sort'] );
+	unset( $routes['themes.php?page=demo-importer&search=:query'] );
+	unset( $routes['themes.php?page=demo-importer'] );
+
+	// Add the new routes
+	$routes['themes.php?page=colormag&tab=starter-templates&demo=:slug']   = 'preview';
+	$routes['themes.php?page=colormag&tab=starter-templates&browse=:sort'] = 'sort';
+	$routes['themes.php?page=colormag&tab=starter-templates&search=:query']= 'search';
+	$routes['themes.php?page=colormag&tab=starter-templates']              = 'sort';
+
+	return $routes;
+}
+
+add_filter( 'themegrill_demo_importer_baseURL', 'colormag_demo_importer_baseURL', 10, 1 );
+
+function colormag_demo_importer_baseURL( $baseURL ) {
+	// Update the base URL in the demo importer.
+	$baseURL = 'themes.php?page=colormag&tab=starter-templates';
+
+	return $baseURL;
+}
+
 add_action('wp_ajax_install_plugin', 'plugin_action_callback');
 add_action('wp_ajax_activate_plugin', 'plugin_action_callback');
 

@@ -7,6 +7,8 @@ class ColorMag_Dashboard
 
 	private static $instance;
 
+	public $demo_packages;
+
 	public static function instance()
 	{
 		if (is_null(self::$instance)) {
@@ -118,7 +120,15 @@ class ColorMag_Dashboard
 				'starter-templates' => array(
 					'name' => esc_html__('Starter Templates', 'colormag'),
 					'callback' => function () {
-						include __DIR__ . '/views/starter-templates.php';
+						if (is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' )) {
+							wp_enqueue_style( 'tg-demo-importer' );
+							wp_enqueue_script( 'tg-demo-importer' );
+							$this->demo_packages = get_transient( 'themegrill_demo_importer_packages');
+							include_once plugin_dir_path( TGDM_PLUGIN_FILE ) . '/includes/admin/views/html-admin-page-importer.php';
+						} else {
+							include __DIR__ . '/views/starter-templates.php';
+						}
+
 					},
 				),
 				'products' => array(
