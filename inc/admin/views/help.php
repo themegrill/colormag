@@ -24,7 +24,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					</svg>
 					<h3><?php esc_html_e( 'Need Some Help?' ); ?></h3>
 					<p><?php esc_html_e( 'Please check out basic documentation for detailed information on how to use ColorMag.' ); ?></p>
-					<a><?php esc_html_e( 'View Now' ); ?></a>
+					<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" target="_blank"><?php esc_html_e( 'View Now' ); ?></a>
 				</div>
 				<div class="postbox">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 33" fill="none">
@@ -32,44 +32,38 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					</svg>
 					<h3><?php esc_html_e( 'Support' ); ?></h3>
 					<p><?php esc_html_e( 'We would be happy to guide any of your issues and queries' ); ?></p>
-					<a><span><?php esc_html_e( 'Contact Support' ); ?></span></a>
+					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" target="_blank"><span><?php esc_html_e( 'Contact Support' ); ?></span></a>
 				</div>
 			</div>
 			<h2><?php esc_html_e( 'Join Our Community' ); ?></h2>
 			<div class="postbox cm-community">
 				<div class="cm-image">
-					<img
-						src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/facebook.webp' ); ?>"
-						alt="<?php esc_attr_e( 'Facebook', 'colormag' ); ?>">
+					<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/facebook.webp' ); ?>" alt="<?php esc_attr_e( 'facebook', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
 					<h3><?php esc_html_e( 'Facebook Community' ); ?></h3>
 					<p><?php esc_html_e( 'Join our Facebook haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
-					<a><span><?php esc_html_e( 'Join Group' ); ?></span></a>
+					<a href="<?php echo esc_url( 'https://www.facebook.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join Group' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox cm-community">
 				<div class="cm-image">
-					<img
-						src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/x.webp' ); ?>"
-						alt="<?php esc_attr_e( 'Facebook', 'colormag' ); ?>">
+					<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/x.webp' ); ?>" alt="<?php esc_attr_e( 'x', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
 					<h3><?php esc_html_e( 'X Community' ); ?></h3>
 					<p><?php esc_html_e( 'Join our Twitter haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
-					<a><span><?php esc_html_e( 'Join Group' ); ?></span></a>
+					<a href="<?php echo esc_url( 'https://twitter.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join Group' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox cm-community">
 				<div class="cm-image">
-					<img
-						src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/youtube.webp' ); ?>"
-						alt="<?php esc_attr_e( 'Facebook', 'colormag' ); ?>">
+					<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/youtube.webp' ); ?>" alt="<?php esc_attr_e( 'youtube', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
 					<h3><?php esc_html_e( 'Youtube Community' ); ?></h3>
 					<p><?php esc_html_e( 'Join our YouTube haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
-					<a><span><?php esc_html_e( 'Join Group' ); ?></span></a>
+					<a href="<?php echo esc_url( 'https://www.youtube.com/@ThemeGrillOfficial' ); ?>" target="_blank"><span><?php esc_html_e( 'Subscribe' ); ?></span></a>
 				</div>
 			</div>
 		</div> <!--/.col-70-->
