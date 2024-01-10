@@ -178,7 +178,7 @@
 	align-items: center;
 }
 
-.colormag-header .colormag-title {
+.colormag-header .cm-title {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -187,14 +187,14 @@
 	align-items: center;
 }
 
-.colormag-header .colormag-title + div {
+.colormag-header .cm-title + div {
 	float: right;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 }
 
-.colormag-header .colormag-title + div a {
+.colormag-header .cm-title + div a {
 	display: inline-block;
 	margin: 0 10px;
 	vertical-align: middle;
@@ -1579,7 +1579,7 @@ body.demo-import-message-popup {
 		-ms-flex-align: center;
 		align-items: center;
 	}
-	.colormag-header .colormag-title {
+	.colormag-header .cm-title {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -1589,13 +1589,13 @@ body.demo-import-message-popup {
 		-ms-flex-preferred-size: 20%;
 		flex-basis: 20%;
 	}
-	.colormag-header .colormag-title + div {
+	.colormag-header .cm-title + div {
 		float: right;
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
 	}
-	.colormag-header .colormag-title + div a {
+	.colormag-header .cm-title + div a {
 		display: inline-block;
 		margin: 0 10px;
 		vertical-align: middle;
@@ -1672,7 +1672,7 @@ body.demo-import-message-popup {
 		-ms-flex-align: center;
 		align-items: center;
 	}
-	.colormag-header .colormag-title {
+	.colormag-header .cm-title {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -1680,13 +1680,13 @@ body.demo-import-message-popup {
 		-ms-flex-align: center;
 		align-items: center;
 	}
-	.colormag-header .colormag-title + div {
+	.colormag-header .cm-title + div {
 		float: right;
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
 	}
-	.colormag-header .colormag-title + div a {
+	.colormag-header .cm-title + div a {
 		display: inline-block;
 		margin: 0 10px;
 		vertical-align: middle;
@@ -2111,7 +2111,7 @@ a.colormag-message-close:before {
 	}
 }
 
-.colormag-header .colormag-title {
+.colormag-header .cm-title {
 	-ms-flex-preferred-size: unset;
 	flex-basis: unset;
 }
@@ -2124,7 +2124,7 @@ a.colormag-message-close:before {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 	}
-	.colormag-header .colormag-title {
+	.colormag-header .cm-title {
 		-webkit-box-pack: center;
 		-ms-flex-pack: center;
 		justify-content: center;
@@ -2134,7 +2134,7 @@ a.colormag-message-close:before {
 		-ms-flex-order: 1;
 		order: 1;
 	}
-	.colormag-header .colormag-title + div {
+	.colormag-header .cm-title + div {
 		float: none;
 		margin-top: 20px;
 		margin-bottom: 20px;

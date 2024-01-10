@@ -270,7 +270,7 @@ a.colormag-message-close {
 }
 
 .colormag-header {
-	.colormag-title {
+	.cm-title {
 		flex-basis: unset;
 	}
 }
@@ -281,7 +281,7 @@ a.colormag-message-close {
 			display: flex;
 			flex-wrap: wrap;
 		}
-		.colormag-title {
+		.cm-title {
 			justify-content: center;
 			flex-basis: 20%;
 			order: 1;
