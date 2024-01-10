@@ -169,7 +169,7 @@ class ColorMag_Dashboard {
 							</div>
 <!--						</div>-->
 						<div class="cm-dashboard-head-left">
-							<span class="colormag-version">
+							<span class="cm-version">
 									<?php
 									echo esc_html( $theme->Version );
 									?>
