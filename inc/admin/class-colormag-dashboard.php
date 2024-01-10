@@ -180,7 +180,7 @@ class ColorMag_Dashboard {
 							</span>
 							</a>
 							<span id="cm-notification" class="cm-notification">
-								<img class="colormag-notification" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/notification-button.gif' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
+								<img class="cm-notification-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/notification-button.gif' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</span>
 						</div>
 					</div><!--/.cm-container-->
