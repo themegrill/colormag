@@ -55,7 +55,7 @@
 	padding: 0;
 }
 
-.colormag-container {
+.cm-container {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 0 20px;
@@ -63,33 +63,33 @@
 	box-sizing: border-box;
 }
 
-.colormag-container a {
+.cm-container a {
 	text-decoration: none;
 	font-size: 13px;
 }
 
-.colormag-container ul {
+.cm-container ul {
 	margin: 0;
 	padding: 0;
 }
 
-.colormag-container .postbox {
+.cm-container .postbox {
 	border: 0;
 	min-width: initial;
 	margin-bottom: 20px;
 	padding: 16px;
 }
 
-.colormag-container .postbox .hndle {
+.cm-container .postbox .hndle {
 	cursor: inherit;
 	margin-bottom: 12px;
 }
 
-.colormag-container .postbox .hndle .dashicons {
+.cm-container .postbox .hndle .dashicons {
 	padding-right: 5px;
 }
 
-.colormag-container .postbox-title {
+.cm-container .postbox-title {
 	padding: 24px 24px 32px 24px;
 }
 
@@ -169,7 +169,7 @@
 	width: 42px;
 }
 
-.colormag-header > .colormag-container {
+.colormag-header > .cm-container {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1571,7 +1571,7 @@ body.demo-import-message-popup {
 		border-radius: 20px;
 		border: 1px solid rgba(211, 211, 211, 0.4);
 	}
-	.colormag-header > .colormag-container {
+	.colormag-header > .cm-container {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -1664,7 +1664,7 @@ body.demo-import-message-popup {
 		-ms-flex-pack: end;
 		justify-content: flex-end;
 	}
-	.colormag-header > .colormag-container {
+	.colormag-header > .cm-container {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -2117,7 +2117,7 @@ a.colormag-message-close:before {
 }
 
 @media screen and (max-width: 767px) {
-	.colormag-header > .colormag-container {
+	.colormag-header > .cm-container {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;

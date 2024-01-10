@@ -1,4 +1,4 @@
-<div class="colormag-container products-page">
+<div class="cm-container products-page">
 	<div class="postbox-container" style="float: none;">
 		<div class="postbox">
 			<h1 class="hndle">

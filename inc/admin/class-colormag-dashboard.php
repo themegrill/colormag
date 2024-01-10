@@ -147,7 +147,7 @@ class ColorMag_Dashboard {
 		<div class="wrap">
 			<div class="metabox-holder">
 				<div class="colormag-header">
-					<div class="colormag-container" id="cm-dashboard-menu">
+					<div class="cm-container" id="cm-dashboard-menu">
 <!--						<div class="cm-dashboard-head-right" id="cm-dashboard-menu">-->
 							<a class="colormag-title" href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/' ); ?>" target="_blank">
 								<img class="colormag-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
@@ -183,7 +183,7 @@ class ColorMag_Dashboard {
 								<img class="colormag-notification" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/notification-button.gif' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</span>
 						</div>
-					</div><!--/.colormag-container-->
+					</div><!--/.cm-container-->
 				</div> <!--/.colormag-header-->
 				<?php
 				$current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'dashboard';

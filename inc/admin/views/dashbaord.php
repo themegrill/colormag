@@ -44,7 +44,7 @@ function import_button_html() {
 }
 
 ?>
-	<div class="colormag-container">
+	<div class="cm-container">
 		<div class="postbox-container" style="float: none;">
 			<div class="col-70">
 				<h2 style="height:0;margin:0;"><!-- admin notices below this element --></h2>
@@ -409,5 +409,5 @@ function import_button_html() {
 				</div>
 			</div><!--/.col-30-->
 		</div><!--/.postbox-container-->
-	</div><!--/.colormag-container-->
+	</div><!--/.cm-container-->
 <?php

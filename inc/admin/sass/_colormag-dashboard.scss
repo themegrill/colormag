@@ -50,7 +50,7 @@
 	}
 }
 
-.colormag-container {
+.cm-container {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 0 20px;
@@ -142,7 +142,7 @@
 		}
 	}
 
-	>.colormag-container {
+	>.cm-container {
 		display: flex;
 		align-items: center;
 	}
@@ -1412,7 +1412,7 @@ body {
 			}
 		}
 
-		>.colormag-container {
+		>.cm-container {
 			display: flex;
 			align-items: center;
 		}
@@ -1489,7 +1489,7 @@ body {
 			justify-content: flex-end;
 		}
 
-		>.colormag-container {
+		>.cm-container {
 			display: flex;
 			align-items: center;
 		}
