@@ -153,7 +153,7 @@ class ColorMag_Dashboard {
 								<img class="cm-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</a>
 							<div class="cm-dashboard-menu-container">
-								<ul id="dashboard-menu-primary" class="dashboard-menu-primary">
+								<ul id="cm-dashboard-menu-primary" class="cm-dashboard-menu-primary">
 									<?php
 									foreach ( $tabs as $id => $tab ) :
 										if ( ! is_callable( $tab['callback'] ) ) {
