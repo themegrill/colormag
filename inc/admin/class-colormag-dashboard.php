@@ -150,7 +150,7 @@ class ColorMag_Dashboard {
 					<div class="cm-container" id="cm-dashboard-menu">
 <!--						<div class="cm-dashboard-head-right" id="cm-dashboard-menu">-->
 							<a class="cm-title" href="<?php echo esc_url( 'https://themegrill.com/themes/colormag/' ); ?>" target="_blank">
-								<img class="colormag-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
+								<img class="cm-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-logo.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 							</a>
 							<div class="cm-dashboard-menu-container">
 								<ul id="dashboard-menu-primary" class="dashboard-menu-primary">

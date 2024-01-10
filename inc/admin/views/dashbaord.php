@@ -173,7 +173,7 @@ function import_button_html() {
 									</a>
 								</div>
 								<div class="item-content-right">
-									<img class="colormag-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
+									<img class="cm-icon" src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-premium.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 								</div>
 							</div>
 							<?php
