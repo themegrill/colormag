@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version - 3.1.1 - 2023-01-11 =
+* Tweak - Update screenshot image.
+
 = Version 3.1.0 - 2023-12-27 =
 * Fix - Breadcrumb option visible even when disabled.
 * Fix - Migration notice issue.
