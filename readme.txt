@@ -15,17 +15,17 @@ Resources packed within the theme.
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * Images used in the screenshot are licensed under Creative Commons Zero (CC0):
 
-  https://pxhere.com/en/photo/417780
-  https://pxhere.com/en/photo/1388277
-  https://pxhere.com/en/photo/1081493
-  https://pxhere.com/en/photo/1271368
-  https://pxhere.com/en/photo/1170427
-  https://pxhere.com/en/photo/118490
-  https://pxhere.com/en/photo/1151290
-  https://pxhere.com/en/photo/597908
-  https://pxhere.com/en/photo/1250568
-  https://pxhere.com/en/photo/893081
-  https://pxhere.com/en/photo/622393
+  https://pxhere.com/en/photo/613031
+  https://pxhere.com/en/photo/1558211
+  https://pxhere.com/en/photo/1333828
+  https://pxhere.com/en/photo/1439011
+  https://pxhere.com/en/photo/657926
+  https://pxhere.com/en/photo/1608817
+  https://pxhere.com/en/photo/805572
+  https://pxhere.com/en/photo/1085512
+  https://pxhere.com/en/photo/1575625
+  https://pxhere.com/en/photo/1548565
+  https://pxhere.com/en/photo/510089
   
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed
