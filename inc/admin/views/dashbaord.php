@@ -193,6 +193,9 @@ function import_button_html() {
 						<span><?php esc_html_e( 'Starter Templates', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
+						<div class="cm-starter-templates">
+							<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-starter-templates.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
+						</div>
 						<p><?php echo __( 'Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'your-text-domain' ); ?></p>
 						<?php echo import_button_html(); ?>
 					</div>
