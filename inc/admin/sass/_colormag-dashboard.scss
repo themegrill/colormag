@@ -85,7 +85,6 @@
 .colormag-header {
 	background-color: $background-color_2;
 	text-align: center;
-	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
 	margin-bottom: 40px;
 	padding: 20px;
 
@@ -125,7 +124,6 @@
 						content: "";
 						position: absolute;
 						top: 40px;
-						box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 					}
 				}
 			}
@@ -1444,7 +1442,6 @@ body {
 	.colormag-header {
 		background-color: $background-color_2;
 		text-align: center;
-		box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
 		margin-bottom: 40px;
 		padding: 20px;
 
@@ -1484,7 +1481,6 @@ body {
 							content: "";
 							position: absolute;
 							top: 44px;
-							box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 						}
 					}
 				}

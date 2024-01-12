@@ -96,8 +96,6 @@
 .colormag-header {
 	background-color: #fff;
 	text-align: center;
-	-webkit-box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
-	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
 	margin-bottom: 40px;
 	padding: 20px;
 }
@@ -149,8 +147,6 @@
 	content: "";
 	position: absolute;
 	top: 40px;
-	-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .colormag-header .cm-dashboard-head-left {
@@ -1611,8 +1607,6 @@ body.demo-import-message-popup {
 	.colormag-header {
 		background-color: #fff;
 		text-align: center;
-		-webkit-box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
-		box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
 		margin-bottom: 40px;
 		padding: 20px;
 	}
@@ -1658,8 +1652,6 @@ body.demo-import-message-popup {
 		content: "";
 		position: absolute;
 		top: 44px;
-		-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 	}
 	.colormag-header .cm-dashboard-head-left {
 		display: -webkit-box;
