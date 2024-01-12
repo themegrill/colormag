@@ -507,6 +507,10 @@ h1.hndle{
 		box-shadow: unset;
 		padding: 0;
 		margin-bottom: 32px;
+
+		.hndle {
+			margin-bottom: 24px;
+		}
 	}
 	.item {
 		background: #fff;
@@ -537,6 +541,7 @@ h1.hndle{
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			border-top: 1px solid #F4F4F4;
 
 			.activated {
 				background: #ACACAC;
@@ -593,6 +598,9 @@ h1.hndle{
 		h3 {
 			margin: 0 0 8px 0;
 		}
+	}
+	.inside__themes{
+		margin-bottom: 32px;
 	}
 	.inside__plugins {
 		a {

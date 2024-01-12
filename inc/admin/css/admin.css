@@ -628,6 +628,10 @@ h1.hndle {
 	margin-bottom: 32px;
 }
 
+.products-page .postbox .hndle {
+	margin-bottom: 24px;
+}
+
 .products-page .item {
 	background: #fff;
 	min-width: 0;
@@ -670,6 +674,7 @@ h1.hndle {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	border-top: 1px solid #F4F4F4;
 }
 
 .products-page .inside .cta .activated {
@@ -732,6 +737,10 @@ h1.hndle {
 
 .products-page .inside h3 {
 	margin: 0 0 8px 0;
+}
+
+.products-page .inside__themes {
+	margin-bottom: 32px;
 }
 
 .products-page .inside__plugins a:nth-child(2):before {
