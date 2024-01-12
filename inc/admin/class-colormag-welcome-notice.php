@@ -46,6 +46,11 @@ class Colormag_Welcome_Notice {
 			// Get the username
 			$username = $current_user->user_login;
 		}
+
+
+		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+			return;
+		}
 		?>
 		<div id="message" class="notice notice-success colormag-notice">
 			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
