@@ -233,6 +233,13 @@ h1.hndle{
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 24px;
+
+		a {
+			&:hover{
+				text-decoration-line: none;
+				opacity: 0.9;
+			}
+		}
 	}
 
 	a {
@@ -275,11 +282,6 @@ h1.hndle{
 			font-weight: 600;
 			line-height: 20px;
 			text-decoration-line: underline;
-
-			&:hover{
-				text-decoration-line: none;
-				opacity: 0.9;
-			}
 		}
 	}
 	h4 {
@@ -559,7 +561,12 @@ h1.hndle{
 			border-top: 1px solid #F4F4F4;
 
 			.activated {
+				cursor: default;
 				background: #ACACAC;
+
+				&:hover {
+					opacity: unset;
+				}
 			}
 		}
 
@@ -607,6 +614,11 @@ h1.hndle{
 				font-size: 13px;
 				text-decoration: none;
 				margin: 0 auto;
+			}
+
+			&:hover{
+				color: #fff;
+				opacity: 0.9;
 			}
 		}
 
@@ -663,8 +675,20 @@ h1.hndle{
 			font-weight: 400;
 			text-decoration-line: underline;
 
+			span {
+				&:hover {
+					border-color: rgba(37, 99, 235, 0.9);
+					opacity: 0.9;
+				}
+			}
+
 			&.help-box {
 				padding: 10px 14px;
+
+				&:hover {
+					text-decoration-line: none;
+					opacity: 0.9;
+				}
 			}
 		}
 
@@ -720,6 +744,10 @@ h1.hndle{
 			gap: 2px;
 			border-radius: 4px;
 			background: $color__primary;
+
+			&:hover{
+				opacity: 0.9;
+			}
 		}
 	}
 }

@@ -168,6 +168,7 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 				),
 				'Premium Elementor Widgets' => array(
 					'showFreePro' => false,
+					'items'       => array(),
 				),
 				'ColorMag Widget Blocks'    => array(
 					'showFreePro' => true,

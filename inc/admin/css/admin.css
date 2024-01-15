@@ -286,6 +286,12 @@ h1.hndle {
 	margin-bottom: 24px;
 }
 
+.cm-quick-settings .cm-quick-settings-title a:hover, .cm-quick-settings .cm-premium-features-title a:hover, .cm-premium-features .cm-quick-settings-title a:hover, .cm-premium-features .cm-premium-features-title a:hover {
+	-webkit-text-decoration-line: none;
+	text-decoration-line: none;
+	opacity: 0.9;
+}
+
 .cm-quick-settings a, .cm-premium-features a {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -337,12 +343,6 @@ h1.hndle {
 	line-height: 20px;
 	-webkit-text-decoration-line: underline;
 	text-decoration-line: underline;
-}
-
-.cm-quick-settings .cm-quick-settings-title a:hover {
-	-webkit-text-decoration-line: none;
-	text-decoration-line: none;
-	opacity: 0.9;
 }
 
 .cm-quick-settings h4 {
@@ -692,7 +692,12 @@ h1.hndle {
 }
 
 .products-page .inside .cta .activated {
+	cursor: default;
 	background: #ACACAC;
+}
+
+.products-page .inside .cta .activated:hover {
+	opacity: unset;
 }
 
 .products-page .inside p {
@@ -747,6 +752,11 @@ h1.hndle {
 	font-size: 13px;
 	text-decoration: none;
 	margin: 0 auto;
+}
+
+.products-page .inside span:hover {
+	color: #fff;
+	opacity: 0.9;
 }
 
 .products-page .inside h3 {
@@ -814,8 +824,19 @@ h1.hndle {
 	text-decoration-line: underline;
 }
 
+.help-page .cm-help-top-row a span:hover {
+	border-color: rgba(37, 99, 235, 0.9);
+	opacity: 0.9;
+}
+
 .help-page .cm-help-top-row a.help-box {
 	padding: 10px 14px;
+}
+
+.help-page .cm-help-top-row a.help-box:hover {
+	-webkit-text-decoration-line: none;
+	text-decoration-line: none;
+	opacity: 0.9;
 }
 
 .help-page .cm-help-top-row span {
@@ -887,6 +908,10 @@ h1.hndle {
 	gap: 2px;
 	border-radius: 4px;
 	background: #2563EB;
+}
+
+.help-page .postbox.cm-community span:hover {
+	opacity: 0.9;
 }
 
 /* Free Vs Pro */
