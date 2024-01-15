@@ -31,7 +31,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						<path d="M19.1667 20.3428V23.0094C19.1667 23.3631 19.0262 23.7022 18.7761 23.9523C18.5261 24.2023 18.187 24.3428 17.8333 24.3428H8.5L4.5 28.3428V15.0094C4.5 14.6558 4.64048 14.3167 4.89052 14.0666C5.14057 13.8166 5.47971 13.6761 5.83333 13.6761H8.5M28.5 19.0094L24.5 15.0094H15.1667C14.813 15.0094 14.4739 14.869 14.2239 14.6189C13.9738 14.3689 13.8333 14.0297 13.8333 13.6761V5.67611C13.8333 5.32248 13.9738 4.98335 14.2239 4.7333C14.4739 4.48325 14.813 4.34277 15.1667 4.34277H27.1667C27.5203 4.34277 27.8594 4.48325 28.1095 4.7333C28.3595 4.98335 28.5 5.32248 28.5 5.67611V19.0094Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 					<h3><?php esc_html_e( 'Support' ); ?></h3>
-					<p><?php esc_html_e( 'We would be happy to guide any of your issues and queries' ); ?></p>
+					<p><?php esc_html_e( 'We would be happy to guide you through any issues and queries you have regarding ColorMag!' ); ?></p>
 					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" target="_blank"><span><?php esc_html_e( 'Contact Support' ); ?></span></a>
 				</div>
 			</div>
