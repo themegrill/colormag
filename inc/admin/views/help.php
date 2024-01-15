@@ -128,7 +128,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						);
 						?>
 					</p>
-					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
+					<a href="<?php echo esc_url( 'https://themegrill.com/contact/#tg-query' ); ?>"
 					   target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
 				</div>
 			</div>

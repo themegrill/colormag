@@ -285,7 +285,7 @@ function import_button_html() {
 							);
 							?>
 						</p>
-						<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
+						<a href="<?php echo esc_url( 'https://themegrill.com/contact/#tg-query' ); ?>"
 						   target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
 					</div>
 				</div>

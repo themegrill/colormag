@@ -46,17 +46,27 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 } );
 
-jQuery(document).ready(function ( $ ) {
-	$('#cm-notification').click(function () {
+jQuery(document).ready(function($) {
+	$('#cm-notification').click(function(e) {
 		// Add the 'open' class to the cm-dialog element
+		e.stopPropagation(); // Prevent the click event from reaching the document
 		$('#cm-dialog').addClass('open');
 		$('.wrap').addClass('overlay');
 	});
 
 	// Remove 'open' class when clicking on cm-dialog-close
-	$('#dialog-close').click(function () {
+	$('#dialog-close').click(function(e) {
+		e.stopPropagation(); // Prevent the click event from reaching the overlay
 		$('#cm-dialog').removeClass('open');
 		$('.wrap').removeClass('overlay');
+	});
+
+	// Close the dialog when clicking outside the dialog area
+	$(document).on('click', function(e) {
+		if (!$('#cm-dialog').is(e.target) && $('#cm-dialog').has(e.target).length === 0) {
+			$('#cm-dialog').removeClass('open');
+			$('.wrap').removeClass('overlay');
+		}
 	});
 });
 
