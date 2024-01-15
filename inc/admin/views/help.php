@@ -24,7 +24,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					</svg>
 					<h3><?php esc_html_e( 'Need Some Help?' ); ?></h3>
 					<p><?php esc_html_e( 'Please check out basic documentation for detailed information on how to use ColorMag.' ); ?></p>
-					<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" target="_blank"><?php esc_html_e( 'View Now' ); ?></a>
+					<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" class="help-box" target="_blank"><?php esc_html_e( 'View Now' ); ?></a>
 				</div>
 				<div class="postbox">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 33" fill="none">

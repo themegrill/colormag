@@ -662,6 +662,10 @@ h1.hndle{
 			font-size: 14px;
 			font-weight: 400;
 			text-decoration-line: underline;
+
+			&.help-box {
+				padding: 10px 14px;
+			}
 		}
 
 		span{

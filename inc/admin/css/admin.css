@@ -814,6 +814,10 @@ h1.hndle {
 	text-decoration-line: underline;
 }
 
+.help-page .cm-help-top-row a.help-box {
+	padding: 10px 14px;
+}
+
 .help-page .cm-help-top-row span {
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
