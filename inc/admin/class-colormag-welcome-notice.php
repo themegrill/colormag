@@ -60,8 +60,9 @@ class Colormag_Welcome_Notice {
 						<p class="colormag-message__subheading">
 							<?php
 							printf(
-							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Welcome ' . $username . '!', 'colormag' ),
+							/* translators: 1: Username */
+								esc_html__( 'Welcome %1$s!', 'colormag' ),
+								$username,
 							);
 							?>
 						</p>

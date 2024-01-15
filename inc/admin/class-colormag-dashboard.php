@@ -195,7 +195,7 @@ class ColorMag_Dashboard {
 		</div><!--/.wrap-->
 		<div id="cm-dialog" class="cm-dialog">
 			<div class="dialog-head">
-				<h3><?php esc_html_e( 'Latest Updates' ); ?></h3>
+				<h3><?php esc_html_e( 'Latest Updates', 'colormag' ); ?></h3>
 
 				<div id="dialog-close" class="dialog-close">
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

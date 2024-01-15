@@ -22,28 +22,28 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						<path d="M21.8332 23.0098H11.1665" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						<path d="M13.8332 12.3428H11.1665" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-					<h3><?php esc_html_e( 'Need Some Help?' ); ?></h3>
-					<p><?php esc_html_e( 'Please check out basic documentation for detailed information on how to use ColorMag.' ); ?></p>
-					<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" class="help-box" target="_blank"><?php esc_html_e( 'View Now' ); ?></a>
+					<h3><?php esc_html_e( 'Need Some Help?', 'colormag' ); ?></h3>
+					<p><?php esc_html_e( 'Please check out basic documentation for detailed information on how to use ColorMag.', 'colormag' ); ?></p>
+					<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>" class="help-box" target="_blank"><?php esc_html_e( 'View Now', 'colormag' ); ?></a>
 				</div>
 				<div class="postbox">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 33" fill="none">
 						<path d="M19.1667 20.3428V23.0094C19.1667 23.3631 19.0262 23.7022 18.7761 23.9523C18.5261 24.2023 18.187 24.3428 17.8333 24.3428H8.5L4.5 28.3428V15.0094C4.5 14.6558 4.64048 14.3167 4.89052 14.0666C5.14057 13.8166 5.47971 13.6761 5.83333 13.6761H8.5M28.5 19.0094L24.5 15.0094H15.1667C14.813 15.0094 14.4739 14.869 14.2239 14.6189C13.9738 14.3689 13.8333 14.0297 13.8333 13.6761V5.67611C13.8333 5.32248 13.9738 4.98335 14.2239 4.7333C14.4739 4.48325 14.813 4.34277 15.1667 4.34277H27.1667C27.5203 4.34277 27.8594 4.48325 28.1095 4.7333C28.3595 4.98335 28.5 5.32248 28.5 5.67611V19.0094Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-					<h3><?php esc_html_e( 'Support' ); ?></h3>
-					<p><?php esc_html_e( 'We would be happy to guide you through any issues and queries you have regarding ColorMag!' ); ?></p>
-					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" target="_blank"><span><?php esc_html_e( 'Contact Support' ); ?></span></a>
+					<h3><?php esc_html_e( 'Support', 'colormag' ); ?></h3>
+					<p><?php esc_html_e( 'We would be happy to guide you through any issues and queries you have regarding ColorMag!', 'colormag' ); ?></p>
+					<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" target="_blank"><span><?php esc_html_e( 'Contact Support', 'colormag' ); ?></span></a>
 				</div>
 			</div>
-			<h2><?php esc_html_e( 'Join Our Community' ); ?></h2>
+			<h2><?php esc_html_e( 'Join Our Community', 'colormag' ); ?></h2>
 			<div class="postbox cm-community">
 				<div class="cm-image">
 					<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/facebook.webp' ); ?>" alt="<?php esc_attr_e( 'facebook', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
-					<h3><?php esc_html_e( 'Facebook Community' ); ?></h3>
-					<p><?php esc_html_e( 'Join our Facebook haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
-					<a href="<?php echo esc_url( 'https://www.facebook.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join Group' ); ?></span></a>
+					<h3><?php esc_html_e( 'Facebook Community', 'colormag' ); ?></h3>
+					<p><?php esc_html_e( 'Join our Facebook haven, where the latest news and updates eagerly await your arrival.', 'colormag' ); ?></p>
+					<a href="<?php echo esc_url( 'https://www.facebook.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join Group', 'colormag' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox cm-community">
@@ -51,9 +51,9 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/x.webp' ); ?>" alt="<?php esc_attr_e( 'x', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
-					<h3><?php esc_html_e( 'X Community' ); ?></h3>
-					<p><?php esc_html_e( 'Join our Twitter haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
-					<a href="<?php echo esc_url( 'https://twitter.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join Group' ); ?></span></a>
+					<h3><?php esc_html_e( 'X Community', 'colormag' ); ?></h3>
+					<p><?php esc_html_e( 'Join our Twitter haven, where the latest news and updates eagerly await your arrival.', 'colormag' ); ?></p>
+					<a href="<?php echo esc_url( 'https://twitter.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join Group', 'colormag' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox cm-community">
@@ -61,9 +61,9 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/youtube.webp' ); ?>" alt="<?php esc_attr_e( 'youtube', 'colormag' ); ?>">
 				</div>
 				<div class="cm-content">
-					<h3><?php esc_html_e( 'Youtube Community' ); ?></h3>
-					<p><?php esc_html_e( 'Join our YouTube haven, where the latest news and updates eagerly await your arrival.' ); ?></p>
-					<a href="<?php echo esc_url( 'https://www.youtube.com/@ThemeGrillOfficial' ); ?>" target="_blank"><span><?php esc_html_e( 'Subscribe' ); ?></span></a>
+					<h3><?php esc_html_e( 'Youtube Community', 'colormag' ); ?></h3>
+					<p><?php esc_html_e( 'Join our YouTube haven, where the latest news and updates eagerly await your arrival.', 'colormag' ); ?></p>
+					<a href="<?php echo esc_url( 'https://www.youtube.com/@ThemeGrillOfficial' ); ?>" target="_blank"><span><?php esc_html_e( 'Subscribe', 'colormag' ); ?></span></a>
 				</div>
 			</div>
 		</div> <!--/.col-70-->
@@ -190,12 +190,12 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						</div>
 						<?php if ( $is_plugin_installed ) : ?>
 							<?php if ( $is_plugin_activated ) : ?>
-								<span><?php esc_html_e( 'Activated' ); ?></span>
+								<span><?php esc_html_e( 'Activated', 'colormag' ); ?></span>
 							<?php else : ?>
-								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate' ); ?></span></a>
+								<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></span></a>
 							<?php endif; ?>
 						<?php else : ?>
-							<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install' ); ?></span></a>
+							<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></span></a>
 						<?php endif; ?>
 					</div>
 					<?php

@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-TBD
+= Version - 3.1.2 - 2023-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
 = Version - 3.1.1 - 2023-01-11 =

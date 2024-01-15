@@ -38,8 +38,8 @@
 						</div>
 						<div class="cta">
 							<div class="cta-text">
-								<a href="<?php echo esc_url( $theme_info['learn_more_link'] ); ?>" target="_blank"><?php esc_html_e( 'Learn More' ); ?></a>
-								<a href="<?php echo esc_url( $theme_info['live_demo_link'] ); ?>" target="_blank"><?php esc_html_e( 'Live demo' ); ?></a>
+								<a href="<?php echo esc_url( $theme_info['learn_more_link'] ); ?>" target="_blank"><?php esc_html_e( 'Learn More', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( $theme_info['live_demo_link'] ); ?>" target="_blank"><?php esc_html_e( 'Live demo', 'colormag'); ?></a>
 							</div>
 						</div>
 					</div>
@@ -111,26 +111,26 @@
 							 alt="<?php echo esc_attr( $plugin_info['name'] ); ?>">
 						<div class="content">
 							<h3><?php echo esc_html( $plugin_info['name'] ); ?></h3>
-							<p><?php esc_html_e( $plugin_info['description'] ); ?></p>
+							<p><?php esc_html_e( $plugin_info['description'], 'colormag' ); ?></p>
 						</div>
 						<div class="cta">
 							<div class="cta-text">
-								<a href="<?php echo esc_url( $plugin_info['learn_more_link'] ); ?>" target="_blank"><?php esc_html_e( 'Learn More' ); ?></a>
-								<a href="<?php echo esc_url( $plugin_info['live_demo_link'] ); ?>" target="_blank"><?php esc_html_e( 'Live demo' ); ?></a>
+								<a href="<?php echo esc_url( $plugin_info['learn_more_link'] ); ?>" target="_blank"><?php esc_html_e( 'Learn More', 'colormag' ); ?></a>
+								<a href="<?php echo esc_url( $plugin_info['live_demo_link'] ); ?>" target="_blank"><?php esc_html_e( 'Live Demo', 'colormag' ); ?></a>
 							</div>
 							<div class="cta-button">
 								<?php if ( $is_plugin_installed ) : ?>
 									<?php if ( $is_plugin_activated ) : ?>
-										<span class="activated"><?php esc_html_e( 'Activated' ); ?></span>
+										<span class="activated"><?php esc_html_e( 'Activated', 'colormag' ); ?></span>
 									<?php else : ?>
 										<span><a href="#" class="activate-plugin"
 												 data-plugin="<?php echo esc_attr( $plugin_file ); ?>"
-												 data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate' ); ?></span></a>
+												 data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></span></a>
 									<?php endif; ?>
 								<?php else : ?>
 									<span><a href="#" class="install-plugin"
 											 data-plugin="<?php echo esc_attr( $plugin_file ); ?>"
-											 data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install' ); ?></span></a>
+											 data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></span></a>
 								<?php endif; ?>
 							</div>
 						</div>

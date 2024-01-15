@@ -202,7 +202,7 @@ function import_button_html() {
 						<div class="cm-starter-templates">
 							<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-starter-templates.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 						</div>
-						<p><?php echo __( 'Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'your-text-domain' ); ?></p>
+						<p><?php echo __( 'Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'colormag' ); ?></p>
 						<?php echo import_button_html(); ?>
 					</div>
 				</div>
@@ -377,12 +377,12 @@ function import_button_html() {
 						</div>
 							<?php if ( $is_plugin_installed ) : ?>
 								<?php if ( $is_plugin_activated ) : ?>
-									<?php esc_html_e( 'Activated' ); ?>
+									<?php esc_html_e( 'Activated', 'colormag' ); ?>
 								<?php else : ?>
-									<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate' ); ?></span></a>
+									<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></span></a>
 								<?php endif; ?>
 							<?php else : ?>
-								<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install' ); ?></span></a>
+								<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></span></a>
 							<?php endif; ?>
 					</div>
 						<?php

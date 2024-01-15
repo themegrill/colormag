@@ -219,10 +219,10 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 				$show_free_pro = $feature['showFreePro'];
 				?>
 				<tr class="fvp-heading" >
-					<td ><?php esc_html_e( $category ); ?></td>
+					<td ><?php esc_html_e( $category, 'colormag' ); ?></td>
 					<?php if ( $show_free_pro ) : ?>
-						<td><?php esc_html_e( 'Free' ); ?></td>
-						<td><?php esc_html_e( 'Pro' ); ?></td>
+						<td><?php esc_html_e( 'Free', 'colormag' ); ?></td>
+						<td><?php esc_html_e( 'Pro', 'colormag' ); ?></td>
 					<?php endif; ?>
 				</tr>
 
@@ -291,9 +291,9 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 						fill="#4A7EEE"/>
 				</svg>
 			</div>
-			<h3><?php esc_html_e( 'Upgrade Now' ); ?></h3>
+			<h3><?php esc_html_e( 'Upgrade Now', 'colormag' ); ?></h3>
 			<p><?php echo __( 'Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.' ); ?></p>
-			<a  href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank"><span><?php esc_html_e( 'Get ColorMag Pro Now' ); ?></span></a>
+			<a  href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank"><span><?php esc_html_e( 'Get ColorMag Pro Now', 'colormag' ); ?></span></a>
 		</div>
 	</div>
 </div>

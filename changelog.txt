@@ -1,5 +1,5 @@
 == Changelog ==
-TBD
+= Version - 3.1.2 - 2023-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
 = 3.0.9 - 2023-12-13 =
