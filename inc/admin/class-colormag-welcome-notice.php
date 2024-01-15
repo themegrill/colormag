@@ -47,7 +47,6 @@ class Colormag_Welcome_Notice {
 			$username = $current_user->user_login;
 		}
 
-
 		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
 			return;
 		}
