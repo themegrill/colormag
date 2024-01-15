@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+TBD
+* Enhancement - Overall theme dashboard UI/UX.
+
 = Version 3.0.9 - 2023-12-13 =
 * Fix - Image caption alignment issue in editor.
 * Fix - Single post headings tag issue.
