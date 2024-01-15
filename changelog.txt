@@ -1,6 +1,13 @@
 == Changelog ==
-= Version - 3.1.2 - 2023-01-15 =
+= 3.1.2 - 2023-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
+
+= 3.1.1 - 2023-01-11 =
+* Tweak - Update screenshot image.
+
+= 3.1.0 - 2023-12-27 =
+* Fix - Breadcrumb option visible even when disabled.
+* Fix - Migration notice issue.
 
 = 3.0.9 - 2023-12-13 =
 * Fix - Image caption alignment issue in editor.
