@@ -47,6 +47,8 @@ function demo_importer_plugin_check_html() {
 				<?php echo demo_importer_plugin_check_html(); ?>
 			</div>
 
+			<div class="starter-template-overlay"></div>
+
 		</div>
 	</div>
 <?php

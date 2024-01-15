@@ -85,7 +85,7 @@
 .colormag-header {
 	background-color: $background-color_2;
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 24px;
 	padding: 20px;
 
 	.cm-dashboard-menu-container {
@@ -843,6 +843,7 @@ h1.hndle{
 	transform: translateX(100%);
 	transition: transform 0.3s;
 	z-index: 9999;
+	box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.05);
 
 	&.open {
 		transform: translateX(0%);
@@ -1371,6 +1372,7 @@ body {
 
 /* Starter Templates - Blank State */
 .themegrill-demo-importer-BlankState {
+	position: relative;
 	padding-top: 200px;
 	padding-bottom: 400px;
 	text-align: center;
@@ -1386,11 +1388,20 @@ body {
 	}
 
 	.themegrill-demo-importer-BlankState-info {
+		position: relative;
 		margin: 20px 10px;
 		background: #fff;
 		max-width: 100%;
 		padding: 10px 20px;
 		border-radius: 9px;
+		z-index: 99;
+	}
+
+	.starter-template-overlay {
+		position: absolute;
+		inset: 0;
+		background: #F0F0F1;
+		opacity: 0.5;
 	}
 
 	h2.themegrill-demo-importer-BlankState-message {
@@ -1497,7 +1508,7 @@ body {
 	.colormag-header {
 		background-color: $background-color_2;
 		text-align: center;
-		margin-bottom: 40px;
+		margin-bottom: 32px;
 		padding: 20px;
 
 		.cm-dashboard-menu-container {
@@ -1598,9 +1609,7 @@ body {
 		padding-top: 200px;
 		padding-bottom: 695px;
 		text-align: center;
-		background: url("../images/starter-templates-background.png");
 		background-size: contain;
-		background-repeat: no-repeat;
 
 		.themegrill-demo-importer-BlankState-icon {
 			fill: #ddd;
@@ -1638,6 +1647,7 @@ body {
 			background: $color__primary;
 		}
 	}
+
 }
 
 @media (min-width: 1050px) {

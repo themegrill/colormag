@@ -120,24 +120,3 @@ jQuery(document).ready(function ($) {
 		});
 	});
 });
-
-jQuery(document).ready(function( $ ) {
-
-	// Access the admin URL from the localized script vars
-	var adminUrl = colormagRedirectDemoPage.admin_url;
-
-	var targetUrl = adminUrl + 'themes.php?page=colormag&tab=starter-templates';
-
-
-	// Check if the current URL matches the specified condition
-	if (window.location.href === targetUrl) {
-		// Select the element with the class colormag-header
-		var colormagHeader = $('.colormag-header');
-
-		// Check if the element exists before modifying its style
-		if (colormagHeader.length > 0) {
-			// Unset the margin-bottom property
-			colormagHeader.css('margin-bottom', '0');
-		}
-	}
-});

@@ -96,7 +96,7 @@
 .colormag-header {
 	background-color: #fff;
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 24px;
 	padding: 20px;
 }
 
@@ -1020,6 +1020,8 @@ h1.hndle {
 	transition: transform 0.3s;
 	transition: transform 0.3s, -webkit-transform 0.3s;
 	z-index: 9999;
+	-webkit-box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
 .cm-dialog.open {
@@ -1534,6 +1536,7 @@ body.demo-import-message-popup {
 
 /* Starter Templates - Blank State */
 .themegrill-demo-importer-BlankState {
+	position: relative;
 	padding-top: 200px;
 	padding-bottom: 400px;
 	text-align: center;
@@ -1550,11 +1553,20 @@ body.demo-import-message-popup {
 }
 
 .themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-info {
+	position: relative;
 	margin: 20px 10px;
 	background: #fff;
 	max-width: 100%;
 	padding: 10px 20px;
 	border-radius: 9px;
+	z-index: 99;
+}
+
+.themegrill-demo-importer-BlankState .starter-template-overlay {
+	position: absolute;
+	inset: 0;
+	background: #F0F0F1;
+	opacity: 0.5;
 }
 
 .themegrill-demo-importer-BlankState h2.themegrill-demo-importer-BlankState-message {
@@ -1659,7 +1671,7 @@ body.demo-import-message-popup {
 	.colormag-header {
 		background-color: #fff;
 		text-align: center;
-		margin-bottom: 40px;
+		margin-bottom: 32px;
 		padding: 20px;
 	}
 	.colormag-header .cm-dashboard-menu-container {
@@ -1771,9 +1783,7 @@ body.demo-import-message-popup {
 		padding-top: 200px;
 		padding-bottom: 695px;
 		text-align: center;
-		background: url("../images/starter-templates-background.png");
 		background-size: contain;
-		background-repeat: no-repeat;
 	}
 	.themegrill-demo-importer-BlankState .themegrill-demo-importer-BlankState-icon {
 		fill: #ddd;
