@@ -105,18 +105,18 @@
 					$is_plugin_installed = is_plugin_installed( $plugin_file );
 					$is_plugin_activated = is_plugin_active( $plugin_file );
 					?>
-					<div class="item item-<?php echo esc_attr( $plugin_slug ); ?>">
-						<img class="<?php echo esc_attr( $plugin_slug ); ?>-logo"
-							 src="<?php echo esc_url( $plugin_info['image'] ); ?>"
-							 alt="<?php echo esc_attr( $plugin_info['name'] ); ?>">
+					<div class="item item-<?php echo  $plugin_slug; ?>">
+						<img class="<?php echo  $plugin_slug; ?>-logo"
+							 src="<?php echo $plugin_info['image']; ?>"
+							 alt="<?php echo  $plugin_info['name']; ?>">
 						<div class="content">
-							<h3><?php echo esc_html( $plugin_info['name'] ); ?></h3>
-							<p><?php esc_html_e( $plugin_info['description'], 'colormag' ); ?></p>
+							<h3><?php echo $plugin_info['name']; ?></h3>
+							<p><?php $plugin_info['description']; ?></p>
 						</div>
 						<div class="cta">
 							<div class="cta-text">
-								<a href="<?php echo esc_url( $plugin_info['learn_more_link'] ); ?>" target="_blank"><?php esc_html_e( 'Learn More', 'colormag' ); ?></a>
-								<a href="<?php echo esc_url( $plugin_info['live_demo_link'] ); ?>" target="_blank"><?php esc_html_e( 'Live Demo', 'colormag' ); ?></a>
+								<a href="<?php echo $plugin_info['learn_more_link']; ?>" target="_blank"><?php esc_html_e( 'Learn More', 'colormag' ); ?></a>
+								<a href="<?php echo $plugin_info['live_demo_link']; ?>" target="_blank"><?php esc_html_e( 'Live Demo', 'colormag' ); ?></a>
 							</div>
 							<div class="cta-button">
 								<?php if ( $is_plugin_installed ) : ?>
@@ -124,13 +124,13 @@
 										<span class="activated"><?php esc_html_e( 'Activated', 'colormag' ); ?></span>
 									<?php else : ?>
 										<span><a href="#" class="activate-plugin"
-												 data-plugin="<?php echo esc_attr( $plugin_file ); ?>"
-												 data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></span></a>
+												 data-plugin="<?php echo $plugin_file; ?>"
+												 data-slug="<?php echo $plugin_slug; ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></span></a>
 									<?php endif; ?>
 								<?php else : ?>
 									<span><a href="#" class="install-plugin"
-											 data-plugin="<?php echo esc_attr( $plugin_file ); ?>"
-											 data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></span></a>
+											 data-plugin="<?php echo $plugin_file; ?>"
+											 data-slug="<?php echo $plugin_slug; ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></span></a>
 								<?php endif; ?>
 							</div>
 						</div>

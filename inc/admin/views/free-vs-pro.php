@@ -219,7 +219,7 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 				$show_free_pro = $feature['showFreePro'];
 				?>
 				<tr class="fvp-heading" >
-					<td ><?php esc_html_e( $category, 'colormag' ); ?></td>
+					<td ><?php $category; ?></td>
 					<?php if ( $show_free_pro ) : ?>
 						<td><?php esc_html_e( 'Free', 'colormag' ); ?></td>
 						<td><?php esc_html_e( 'Pro', 'colormag' ); ?></td>
@@ -229,8 +229,8 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 				<?php foreach ( $feature['items'] as $item ) : ?>
 				<tr>
 					<td><?php echo esc_html( $item[0] ); ?></td>
-					<td><?php echo ( $item[1] ); ?></td>
-					<td><?php echo ( $item[2] ); ?></td>
+					<td><?php echo $item[1]; ?></td>
+					<td><?php echo $item[2]; ?></td>
 				</tr>
 			<?php endforeach; ?>
 
@@ -292,7 +292,7 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 				</svg>
 			</div>
 			<h3><?php esc_html_e( 'Upgrade Now', 'colormag' ); ?></h3>
-			<p><?php echo __( 'Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.' ); ?></p>
+			<p><?php echo __( 'Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.', 'colormag' ); ?></p>
 			<a  href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank"><span><?php esc_html_e( 'Get ColorMag Pro Now', 'colormag' ); ?></span></a>
 		</div>
 	</div>
