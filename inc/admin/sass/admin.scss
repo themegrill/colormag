@@ -1,0 +1,317 @@
+@import "variables/colors";
+@import "colormag-dashboard";
+
+.colormag-update {
+	background-color: $background-color_1;
+	.colormag-message__heading {
+		max-width: 768px;
+		display: flex;
+		align-items: center;
+	}
+	.colormag-message__content {
+		flex-wrap: wrap;
+		.colormag-message__image {
+			flex-basis: 320px;
+			height: 214px;
+			min-height: 100px;
+		}
+	}
+	.colormag-message__text {
+		flex: 1;
+	}
+}
+
+/* Notices. */
+.colormag-notice {
+	position: relative;
+	padding: 20px 20px 0 20px;
+	border-left-color: #2563EB;
+	.links {
+		margin: 1.2em 0;
+		display: flex;
+		flex-wrap: wrap;
+		a {
+			margin-right: 10px;
+			>span {
+				vertical-align: middle;
+				padding-right: 5px;
+			}
+		}
+	}
+	.notice-text {
+		.coupon-code {
+			display: inline-block;
+		}
+	}
+	.notice-dismiss {
+		text-decoration: none;
+	}
+}
+
+/* Welcome notice. */
+.notice-dismiss:before {
+	color: #111;
+}
+
+.colormag-message__content {
+	display: flex;
+	justify-content: space-between;
+	gap: 24px;
+	.colormag-message__image {
+		display: flex;
+		flex: 0 0 160px;
+		object-fit: cover;
+		.colormag-screenshot {
+			width: 100%;
+			margin: 0;
+			float: none;
+			border-radius: 4px;
+			object-fit: cover;
+		}
+	}
+	.colormag-message__head {
+		margin-bottom: 24px;
+	}
+
+	.colormag-message__subheading {
+		color: #383838;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin: unset;
+	}
+
+	.colormag-message__heading {
+		color: #383838;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 4px;
+		margin-bottom: 16px;
+	}
+
+	.colormag-message__description {
+		color: #383838;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 400;
+	}
+	.colormag-message__cta {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+
+		.plugin-install-notice {
+			color: #727374;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+		}
+		a {
+			&:before {
+				margin: 5px;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+h1.colormag-message__heading {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 37px;
+	color: $color_1;
+	margin-bottom: 12px;
+}
+h2.colormag-message__heading {
+	margin-bottom: 24px;
+	font-weight: 400;
+	color: $color_1;
+	font-size: 16px;
+	line-height: 180%;
+}
+a.colormag-message-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 15px 10px 21px;
+	font-size: 13px;
+	line-height: 1.23076923;
+	text-decoration: none;
+	&:before {
+		position: absolute;
+		top: 8px;
+		left: 0;
+		-webkit-transition: all .1s ease-in-out;
+		transition: all .1s ease-in-out;
+	}
+}
+.colormag-message__text {
+	max-width: 660px;
+
+	img {
+		height: 50px;
+		width: 50px;
+	}
+	align-self: center;
+	margin-bottom: 24px;
+}
+
+/* Colormag review notice */
+.colormag-notice.theme-review-notice {
+	border-left-color: $border-left-color_1;
+	padding: 20px 15px;
+	.colormag-message__image {
+		flex: 0;
+		min-height: auto;
+		margin-right: 35px;
+		margin-left: 10px;
+		padding-right: 0;
+		border-right: none;
+	}
+	.colormag-logo--png {
+		width: 80px;
+		height: 80px;
+	}
+	h3 {
+		font-size: 21px;
+		margin: 0;
+		line-height: 1;
+		color: $color_2;
+	}
+	p {
+		font-size: 14px;
+		line-height: 21px;
+		color: $color_3;
+		margin: 0 0 6px 0;
+		max-width: 720px;
+		padding: 2px 0;
+	}
+	span.dashicons.dashicons-smiley.smile-icon {
+		background: #f7e143;
+		border-radius: 50%;
+		font-size: 15px;
+		border: 1px solid;
+		width: 17px;
+		height: 17px;
+	}
+	.button-primary {
+		background: #6547DB;
+		border-color: $border-color_1;
+		box-shadow: none;
+		color: $color_4;
+	}
+	.button-secondary {
+		color: $color_5;
+		border-color: $border-color_1;
+		background: #f6f7f7;
+		vertical-align: top;
+	}
+	strong {
+		color: $color_2;
+	}
+	.links {
+		margin: 1.2em 0 5px 0;
+	}
+	a.btn {
+		display: flex;
+		max-width: fit-content;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.demo-import-migrate-notice {
+	.colormag-message__image {
+		.colormag-screenshot {
+			height: 100px;
+			width: 100px;
+		}
+	}
+	.colormag-message__content {
+		.colormag-message__image {
+			flex: 0;
+		}
+		max-width: 768px;
+	}
+}
+
+/* Responsive. */
+@media screen and (max-width: 768px) {
+	.colormag-message__content {
+		.colormag-message__image {
+			display: none;
+		}
+	}
+	.colormag-notice.theme-review-notice {
+		.colormag-message__content {
+			display: flex;
+			flex-direction: column;
+		}
+		.button-primary {
+			margin-bottom: 10px;
+		}
+		.button-secondary {
+			margin-bottom: 10px;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.colormag-message__content {
+		.colormag-screenshot {
+			display: none;
+		}
+		.colormag-message__text {
+			padding: 0;
+			width: 100%;
+		}
+	}
+}
+
+.colormag-header {
+	.cm-title {
+		flex-basis: unset;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.colormag-header {
+		>.cm-container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.cm-title {
+			justify-content: center;
+			flex-basis: 20%;
+			order: 1;
+			+ {
+				div {
+					float: none;
+					margin-top: 20px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		.cm-dashboard-head-left {
+			flex-basis: 80%;
+			order: 2;
+		}
+
+		.cm-dashboard-menu-container {
+			flex-basis: 100%;
+			order: 3;
+		}
+	}
+}
+
+@media (min-width: 1236px) {
+	.postbox-container {
+		.colormag-message__content {
+			.colormag-message__cta {
+				flex-direction: row;
+			}
+		}
+	}
+}

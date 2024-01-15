@@ -23,6 +23,11 @@ var paths = {
 		dest : './'
 	},
 
+	adminStyles : {
+		src  : './inc/admin/sass/*.scss',
+		dest : './inc/admin/css/'
+	},
+
 	js : {
 		src  : [
 			'./assets/js/*.js',
@@ -149,6 +154,25 @@ function sassCompile() {
 	           ] ) )
 	           .pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 	           .pipe( gulp.dest( paths.styles.dest ) );
+}
+
+// Compiles Admin SASS into CSS.
+function adminSassCompile() {
+	return gulp.src( paths.adminStyles.src )
+		.pipe( sass( {
+			indentType  : 'tab',
+			indentWidth : 1,
+			outputStyle : 'expanded',
+			linefeed    : 'crlf'
+		} ).on( 'error', sass.logError ) )
+		.pipe( postcss( [
+			autoprefixer( {
+				browsers : [ 'last 2 versions' ],
+				cascade  : false
+			} )
+		] ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( gulp.dest( paths.adminStyles.dest ) );
 }
 
 function elementorStylesCompile() {
@@ -301,6 +325,7 @@ function generateMetaBoxesRTLCSS() {
 // Watch for file changes.
 function watch() {
 	gulp.watch( paths.styles.src, sassCompile );
+	gulp.watch( paths.adminStyles.src, adminSassCompile );
 	gulp.watch( paths.elementorStyles.scss.src, elementorStylesCompile );
 	gulp.watch( paths.elementorStyles.cssmin.src, minifyelementorStyles );
 	gulp.watch( paths.elementorJS.jsmin.src, minifyelementorJs );
@@ -317,7 +342,7 @@ function watch() {
 
 // Define series of tasks.
 var server            = gulp.series( browserSyncStart, watch ),
-    styles            = gulp.series( sassCompile, generateRTLCSS, generateBlockStyleRTLCSS ),
+	styles            = gulp.series( sassCompile, adminSassCompile, generateRTLCSS, generateBlockStyleRTLCSS ),
     scripts           = gulp.series( minifyJs ),
     elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, minifyelementorJs, generateElementorRTLCSS ),
     metaBoxes         = gulp.series( compileMetaBoxSass, minifyMetaBoxCSS, minifyMetaBoxJs, generateMetaBoxesRTLCSS ),
@@ -326,6 +351,7 @@ var server            = gulp.series( browserSyncStart, watch ),
 exports.browserSyncStart                = browserSyncStart;
 exports.browserSyncReload               = browserSyncReload;
 exports.sassCompile                     = sassCompile;
+exports.adminSassCompile                = adminSassCompile;
 exports.elementorStylesCompile          = elementorStylesCompile;
 exports.minifyelementorStyles           = minifyelementorStyles;
 exports.minifyelementorJs               = minifyelementorJs;

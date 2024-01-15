@@ -27,6 +27,9 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
 
+require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.php';
+
+
 ///** ColorMag setup file, hooked for `after_setup_theme`. */
 //require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 
@@ -193,6 +196,93 @@ function colormag_set_content_width() {
 
 }
 
+add_filter( 'themegrill_demo_importer_show_main_menu', '__return_false' );
+
+add_filter( 'themegrill_demo_importer_routes', 'colormag_demo_importer_routes', 10, 1 );
+
+function colormag_demo_importer_routes( $routes ) {
+	// Remove the existing routes from the TDI
+	unset( $routes['themes.php?page=demo-importer&demo=:slug'] );
+	unset( $routes['themes.php?page=demo-importer&browse=:sort'] );
+	unset( $routes['themes.php?page=demo-importer&search=:query'] );
+	unset( $routes['themes.php?page=demo-importer'] );
+
+	// Add the new routes
+	$routes['themes.php?page=colormag&tab=starter-templates&demo=:slug']    = 'preview';
+	$routes['themes.php?page=colormag&tab=starter-templates&browse=:sort']  = 'sort';
+	$routes['themes.php?page=colormag&tab=starter-templates&search=:query'] = 'search';
+	$routes['themes.php?page=colormag&tab=starter-templates']               = 'sort';
+
+	return $routes;
+}
+
+add_filter( 'themegrill_demo_importer_baseURL', 'colormag_demo_importer_baseURL', 10, 1 );
+
+function colormag_demo_importer_baseURL( $base_url ) {
+	// Update the base URL in the demo importer.
+	$base_url = 'themes.php?page=colormag&tab=starter-templates';
+
+	return $base_url;
+}
+
+add_filter( 'themegrill_demo_importer_redirect_link', 'colormag_demo_importer_redirect_url' );
+
+function colormag_demo_importer_redirect_url( $redirect_url ) {
+	// Update the base URL in the demo importer.
+	$redirect_url = admin_url( 'themes.php?page=colormag&tab=starter-templates&browse=all' );
+
+	return $redirect_url;
+}
+
+add_action( 'wp_ajax_install_plugin', 'plugin_action_callback' );
+add_action( 'wp_ajax_activate_plugin', 'plugin_action_callback' );
+
+function plugin_action_callback() {
+	 check_ajax_referer( 'colormag_demo_import_nonce', 'security' );
+
+	$plugin     = sanitize_text_field( $_POST['plugin'] );
+	$plugin_slug = sanitize_text_field( $_POST['slug'] );
+
+	if ( is_plugin_installed( $plugin ) ) {
+		if ( is_plugin_active( $plugin ) ) {
+			wp_send_json_success( array( 'message' => 'Plugin is already activated.' ) );
+		} else {
+			// Activate the plugin
+			$result = activate_plugin( $plugin );
+
+			if ( is_wp_error( $result ) ) {
+				wp_send_json_error( array( 'message' => 'Error activating the plugin.' ) );
+			} else {
+				wp_send_json_success( array( 'message' => 'Plugin activated successfully!' ) );
+			}
+		}
+	} else {
+		// Install and activate the plugin
+		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		$plugin_info = plugins_api( 'plugin_information', array( 'slug' => $plugin_slug ) );
+		$upgrader    = new Plugin_Upgrader( new WP_Ajax_Upgrader_Skin() );
+		$result      = $upgrader->install( $plugin_info->download_link );
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => 'Error installing the plugin.' ) );
+		}
+
+		$result = activate_plugin( $plugin );
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => 'Error activating the plugin.' ) );
+		} else {
+			wp_send_json_success( array( 'message' => 'Plugin installed and activated successfully!' ) );
+		}
+	}
+}
+
+function is_plugin_installed( $plugin_path ) {
+	$plugins = get_plugins();
+	return isset( $plugins[ $plugin_path ] );
+}
+
 add_action( 'after_setup_theme', 'colormag_set_content_width', 0 );
 
 /**
@@ -216,9 +306,9 @@ function colormag_content_width() {
 		$layout_meta = 'default_layout';
 	}
 
-	$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
-	$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
+	$colormag_default_sidebar_layout = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_page_sidebar_layout    = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout    = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 	if ( 'default_layout' === $layout_meta ) {
 		if ( is_page() ) {
@@ -247,4 +337,4 @@ add_action( 'template_redirect', 'colormag_content_width' );
 /**
  * Detect plugin. For use on Front End only.
  */
-include_once ABSPATH . 'wp-admin/includes/plugin.php';
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
