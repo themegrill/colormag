@@ -111,7 +111,7 @@
 							 alt="<?php echo  $plugin_info['name']; ?>">
 						<div class="content">
 							<h3><?php echo $plugin_info['name']; ?></h3>
-							<p><?php $plugin_info['description']; ?></p>
+							<p><?php echo $plugin_info['description']; ?></p>
 						</div>
 						<div class="cta">
 							<div class="cta-text">
