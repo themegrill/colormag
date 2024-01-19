@@ -102,7 +102,7 @@
 				foreach ( $plugins_data as $plugin_info ) :
 					$plugin_file         = $plugin_info['file'];
 					$plugin_slug         = $plugin_info['slug'];
-					$is_plugin_installed = is_plugin_installed( $plugin_file );
+					$is_plugin_installed = colormag_is_plugin_installed( $plugin_file );
 					$is_plugin_activated = is_plugin_active( $plugin_file );
 					?>
 					<div class="item item-<?php echo  $plugin_slug; ?>">

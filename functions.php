@@ -234,16 +234,21 @@ function colormag_demo_importer_redirect_url( $redirect_url ) {
 	return $redirect_url;
 }
 
-add_action( 'wp_ajax_install_plugin', 'plugin_action_callback' );
-add_action( 'wp_ajax_activate_plugin', 'plugin_action_callback' );
+add_action( 'wp_ajax_install_plugin', 'colormag_plugin_action_callback' );
+add_action( 'wp_ajax_activate_plugin', 'colormag_plugin_action_callback' );
 
-function plugin_action_callback() {
-	 check_ajax_referer( 'colormag_demo_import_nonce', 'security' );
+function colormag_plugin_action_callback() {
+	if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'colormag_demo_import_nonce' ) ) {
+		wp_send_json_error( array( 'message' => 'Security check failed.' ) );
+	}
+	if ( ! current_user_can( 'manage_options' ) ) {
+		wp_send_json_error( array( 'message' => 'You are not allowed to perform this action.' ) );
+	}
 
-	$plugin     = sanitize_text_field( $_POST['plugin'] );
+	$plugin      = sanitize_text_field( $_POST['plugin'] );
 	$plugin_slug = sanitize_text_field( $_POST['slug'] );
 
-	if ( is_plugin_installed( $plugin ) ) {
+	if ( colormag_is_plugin_installed( $plugin ) ) {
 		if ( is_plugin_active( $plugin ) ) {
 			wp_send_json_success( array( 'message' => 'Plugin is already activated.' ) );
 		} else {
@@ -278,7 +283,7 @@ function plugin_action_callback() {
 	}
 }
 
-function is_plugin_installed( $plugin_path ) {
+function colormag_is_plugin_installed( $plugin_path ) {
 	$plugins = get_plugins();
 	return isset( $plugins[ $plugin_path ] );
 }

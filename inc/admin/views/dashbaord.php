@@ -364,7 +364,7 @@ function import_button_html() {
 					foreach ( $plugins as $plugin ) {
 						$plugin_file         = $plugin['file'];
 						$plugin_slug         = $plugin['slug'];
-						$is_plugin_installed = is_plugin_installed( $plugin_file );
+						$is_plugin_installed = colormag_is_plugin_installed( $plugin_file );
 						$is_plugin_activated = is_plugin_active( $plugin_file );
 						?>
 					<div class="inside">
