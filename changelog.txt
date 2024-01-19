@@ -1,4 +1,7 @@
 == Changelog ==
+= 3.1.3 - 2023-01-19 =
+* Enhancement - Theme Dashboard.
+
 = 3.1.2 - 2023-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
