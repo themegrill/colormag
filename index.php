@@ -17,26 +17,11 @@ get_header();
 <div class="cm-row">
 	<?php
 
-	$grid_layout = get_theme_mod( 'colormag_blog_layout', 'layout-1' );
+	$grid_layout = 'layout-2';
 
-	$layout1_style = get_theme_mod( 'colormag_blog_layout_1_style', 'style-1' );
+	$style = 'cm-layout-2-style-1';
 
-	$layout2_style = get_theme_mod( 'colormag_blog_layout_2_style', 'style-1' );
-
-	$grid_col = get_theme_mod( 'colormag_grid_layout_column', '2' );
-
-	$style = '';
-	if ( 'layout-1' === $grid_layout ) {
-		$style = 'cm-' . $grid_layout . '-' . $layout1_style;
-	} elseif ( 'layout-2' === $grid_layout ) {
-		$style = 'cm-' . $grid_layout . '-' . $layout2_style;
-	}
-
-	$col = '';
-
-	if ( 'layout-2' === $grid_layout ) {
-		$col = 'col-' . $grid_col;
-	}
+	$col = 'col-2';
 
 	/**
 	 * Hook: colormag_before_body_content.
@@ -44,19 +29,9 @@ get_header();
 	do_action( 'colormag_before_body_content' );
 	?>
 
-		<?php colormag_two_sidebar_select(); ?>
-
 		<div id="cm-primary" class="cm-primary">
-			<?php
-			$pagination_type  = get_theme_mod( 'colormag_pagination_type', 'default' );
-			$pagination_class = '';
 
-			if ( 'infinite_scroll' === $pagination_type ) {
-				$pagination_class .= 'tg-infinite-scroll-container';
-			}
-			?>
-
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col . ' ' . $pagination_class ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
@@ -93,7 +68,6 @@ get_header();
 				?>
 			</div><!-- .cm-posts -->
 
-			<?php colormag_infinite_scroll(); ?>
 		</div><!-- #cm-primary -->
 
 	<?php

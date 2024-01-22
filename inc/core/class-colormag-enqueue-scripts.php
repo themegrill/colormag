@@ -106,27 +106,16 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// BxSlider JS.
 			wp_register_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			// Related post carousel.
-			if ( 'style-4' == get_theme_mod( 'colormag_related_posts_style', 'style-1' ) ) {
-				wp_enqueue_script( 'colormag-bxslider' );
-			}
-
 			// Sticky Menu.
 			if ( 1 == get_theme_mod( 'colormag_enable_sticky_menu', 0 ) ) {
 				// Sticky JS enqueue.
-				if ( 'sticky' == get_theme_mod( 'colormag_sticky_menu_type', 'sticky' ) ) {
-					wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL . '/sticky/jquery.sticky' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-				} elseif ( 'reveal_on_scroll' == get_theme_mod( 'colormag_sticky_menu_type', 'sticky' ) ) {
-					// Headroomjs enqueue.
-					wp_enqueue_script( 'Headroom', COLORMAG_JS_URL . '/headroom/Headroom' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
-					wp_enqueue_script( 'jQuery-headroom', COLORMAG_JS_URL . '/headroom/jQuery.headroom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-				}
+				wp_enqueue_script( 'colormag-sticky-menu', COLORMAG_JS_URL . '/sticky/jquery.sticky' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 			}
 
 			// News Ticker.
 			wp_register_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 			if ( 1 == get_theme_mod( 'colormag_enable_news_ticker', 0 ) ) {
-				wp_enqueue_script( 'colormag-news-ticker' );
+				wp_enqueue_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 			}
 
 			// MagnificPopup JS.
@@ -162,101 +151,15 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
 			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
-			// Theia Sticky Sidebar enqueue.
-			if ( 1 === get_theme_mod( 'colormag_enable_sticky_sidebar', 0 ) ) {
-				wp_enqueue_script( 'theia-sticky-sidebar', COLORMAG_JS_URL . '/theia-sticky-sidebar/theia-sticky-sidebar' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-				wp_enqueue_script( 'ResizeSensor', COLORMAG_JS_URL . '/theia-sticky-sidebar/ResizeSensor' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-			}
-
-			// prognroll JS enqueue.
-			if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) {
-				wp_enqueue_script( 'prognroll', COLORMAG_JS_URL . '/prognroll/prognroll' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-			}
-
-			// Enqueue the Google Maps API key if it exits.
-			$google_maps_api_key = get_theme_mod( 'colormag_googlemap_api_key' );
-			if ( $google_maps_api_key ) {
-				wp_enqueue_script( 'GoogleMaps', '//maps.googleapis.com/maps/api/js?key=' . esc_attr( $google_maps_api_key ), array(), COLORMAG_THEME_VERSION, true );
-			}
-
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
 
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			// Theme reveal image on scroll JS.
-			if ( 1 === get_theme_mod( 'colormag_enable_smooth_image_loading', 0 ) ) {
-
-				wp_enqueue_script( 'colormag-reveal-on-scroll', COLORMAG_JS_URL . '/colormag-reveal-on-scroll' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-				$image_loading_styles = get_theme_mod( 'colormag_smooth_image_loading_animation', 'fade-in' );
-				$infinite_load_status = get_theme_mod( 'colormag_pagination_type', 'default' );
-
-				if ( in_array( $image_loading_styles, array( 'fade-in', 'fade-in-down', 'fade-in-up' ), true ) ) {
-					wp_localize_script( 'colormag-reveal-on-scroll', 'revealOnScrollData', array( $image_loading_styles, $infinite_load_status ) );
-				}
-			}
-
-			if ( 1 == get_theme_mod( 'colormag_enable_news_ticker', 0 ) ) {
-				$breaking_news_slide_effect = get_theme_mod( 'colormag_news_ticker_animation_direction', 'down' );
-				$breaking_news_duration     = get_theme_mod( 'colormag_news_ticker_animation_duration', 4 );
-				$breaking_news_speed        = get_theme_mod( 'colormag_news_ticker_animation_speed', 1 );
-
-				$breaking_news_duration = intval( $breaking_news_duration );
-				$breaking_news_speed    = intval( $breaking_news_speed );
-
-				if ( 0 != $breaking_news_duration ) {
-					$breaking_news_duration = $breaking_news_duration * 1000;
-				} else {
-					$breaking_news_duration = 4000;
-				}
-
-				if ( 0 != $breaking_news_speed ) {
-					$breaking_news_speed = $breaking_news_speed * 1000;
-				} else {
-					$breaking_news_speed = 1000;
-				}
-
-				wp_localize_script(
-					'colormag-custom',
-					'colormag_ticker_settings',
-					array(
-						'breaking_news_slide_effect' => $breaking_news_slide_effect,
-						'breaking_news_duration'     => $breaking_news_duration,
-						'breaking_news_speed'        => $breaking_news_speed,
-					)
-				);
-			}
-
-			if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) {
-				$progress_bar_bgcolor = get_theme_mod( 'colormag_progress_bar_indicator_color', '#222222' );
-				wp_localize_script(
-					'colormag-custom',
-					'colormag_progress_bar_indicator_color',
-					array(
-						'bg_color' => $progress_bar_bgcolor,
-					)
-				);
-			}
-
 			// Enqueue bxslider if post has gallery post format.
 			if ( has_post_format( 'gallery' ) || is_home() || is_search() || is_archive() ) {
 				wp_enqueue_script( 'colormag-bxslider' );
-			}
-
-			if ( 'infinite_scroll' === get_theme_mod( 'colormag_pagination_type', 'default' ) || get_theme_mod( 'colormag_enable_autoload_posts', 0 ) ) {
-				wp_enqueue_script( 'infinite-scroll', get_template_directory_uri() . '/assets/js/infinite-scroll/infinite-scroll.pkgd' . $suffix . '.js', array(), '3.0.0', true );
-				wp_enqueue_script( 'colormag-infinite-scroll', get_template_directory_uri() . '/assets/js/infinite-scroll' . $suffix . '.js', array( 'infinite-scroll' ), COLORMAG_THEME_VERSION, true );
-				wp_localize_script(
-					'colormag-infinite-scroll',
-					'colormagInfiniteScrollParams',
-					array(
-						'infiniteScrollEvent' => get_theme_mod( 'colormag_infinite_scroll_type', 'button' ),
-						'autoLoadEvent'       => get_theme_mod( 'colormag_autoload_posts_type', 'button' ),
-						'autoLoadThreshold'   => get_theme_mod( 'colormag_enable_autoload_posts', 2 ),
-					)
-				);
 			}
 		}
 
@@ -288,139 +191,19 @@ function colormag_get_fonts() {
 	/**
 	 * Header options.
 	 */
-	$site_title_typography_default   = array(
-		'font-family' => 'default',
-	);
-	$site_tagline_typography_default = array(
-		'font-family' => 'default',
-	);
-	$primary_menu_typography_default = array(
-		'font-family' => 'default',
-		'font-weight' => '600',
-	);
-	$site_title_typography           = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
-	$site_tagline_typography         = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
-	$primary_menu_typography         = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
 
-	/**
-	 * Global.
-	 */
-
-	$button_typography_default = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$button_typography         = get_theme_mod( 'colormag_button_typography', $button_typography_default );
 
 	/**
 	 * Typography options.
 	 */
-	$base_typography_default          = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$headings_typography_default      = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$heading_h1_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$heading_h2_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-	$heading_h3_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
 	$breaking_news_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
-	$base_typography                  = get_theme_mod( 'colormag_base_typography', $base_typography_default );
-	$headings_typography              = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
-	$heading_h1_typography            = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
-	$heading_h2_typography            = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
-	$heading_h3_typography            = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
-	$breaking_news_label_typography   = get_theme_mod( 'colormag_news_ticker_label_typography', $breaking_news_typography_default );
-	$breaking_news_content_typography = get_theme_mod( 'colormag_news_ticker_content_typography', $breaking_news_typography_default );
-
 	/**
 	 * Enqueue required Google fonts.
 	 */
-	// Header options.
-	if ( 'default' === $site_title_typography['font-family'] ) {
-		$site_title_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $site_tagline_typography['font-family'] ) {
-		$site_tagline_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $primary_menu_typography['font-family'] ) {
-		$primary_menu_typography['font-family'] = 'Open Sans';
-	}
-
-	$primary_menu_typography_font_weight = isset( $primary_menu_typography['font-weight'] ) ? $primary_menu_typography['font-weight'] : 'regular';
-
-	ColorMag_Generate_Fonts::add_font( $site_title_typography['font-family'] );
-	ColorMag_Generate_Fonts::add_font( $site_tagline_typography['font-family'] );
-	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );
-
-	// Global.
-	if ( 'default' === $button_typography['font-family'] ) {
-		$button_typography['font-family'] = 'Open Sans';
-	}
-
-	$button_typography_font_weight = isset( $button_typography['font-weight'] ) ? $button_typography['font-weight'] : 'regular';
-
-	ColorMag_Generate_Fonts::add_font( $button_typography['font-family'], $button_typography_font_weight );
-
-	// Typography options.
-	if ( 'default' === $base_typography['font-family'] ) {
-		$base_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $headings_typography['font-family'] ) {
-		$headings_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $heading_h1_typography['font-family'] ) {
-		$heading_h1_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $heading_h2_typography['font-family'] ) {
-		$heading_h2_typography['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $heading_h3_typography['font-family'] ) {
-		$heading_h3_typography['font-family'] = 'Open Sans';
-	}
-
-	if ( 'default' === $breaking_news_label_typography['font-family'] ) {
-		$breaking_news_label_typography ['font-family'] = 'Open Sans';
-	}
-	if ( 'default' === $breaking_news_content_typography['font-family'] ) {
-		$breaking_news_content_typography ['font-family'] = 'Open Sans';
-	}
-
-	$breaking_news_label_typography_font_weight   = isset( $breaking_news_label_typography['font-weight'] ) ? $breaking_news_label_typography['font-weight'] : 'regular';
-	$breaking_news_content_typography_font_weight = isset( $breaking_news_content_typography['font-weight'] ) ? $breaking_news_content_typography['font-weight'] : 'regular';
-	$base_typography_font_weight                  = isset( $base_typography['font-weight'] ) ? $base_typography['font-weight'] : 'regular';
-	$heading_typography_font_weight               = isset( $headings_typography['font-weight'] ) ? $headings_typography['font-weight'] : 'regular';
-	$heading_h1_typography_font_weight            = isset( $heading_h1_typography['font-weight'] ) ? $heading_h1_typography['font-weight'] : 'regular';
-	$heading_h2_base_typography_font_weight       = isset( $heading_h2_typography['font-weight'] ) ? $heading_h2_typography['font-weight'] : 'regular';
-	$heading_h3_typography_font_weight            = isset( $heading_h3_typography['font-weight'] ) ? $heading_h3_typography['font-weight'] : 'regular';
-
-	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography['font-weight'] );
-	ColorMag_Generate_Fonts::add_font( $breaking_news_label_typography['font-family'], $breaking_news_label_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $breaking_news_content_typography['font-family'], $breaking_news_content_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $heading_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_base_typography_font_weight );
-	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
@@ -433,87 +216,9 @@ function colormag_font_subset() {
 
 	$google_font_subsets = array();
 
-	// Button.
-	$button_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$button_typography         = get_theme_mod( 'colormag_button_typography', $button_typography_default );
-
-	if ( isset( $button_typography['subsets'] ) && is_array( $button_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $button_typography['subsets'], $google_font_subsets );
-	}
-
 	/**
 	 * Typography options.
 	 */
-	// Base typography.
-	$base_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-
-	$base_typography = get_theme_mod( 'colormag_base_typography', $base_typography_default );
-
-	if ( isset( $base_typography['subsets'] ) && is_array( $base_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $base_typography['subsets'], $google_font_subsets );
-	}
-
-	// Breaking news typography.
-	$breaking_news_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-
-	$breaking_news_label_typography = get_theme_mod( 'colormag_news_ticker_label_typography', $breaking_news_typography_default );
-
-	if ( isset( $breaking_news_label_typography['subsets'] ) && is_array( $breaking_news_label_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $breaking_news_label_typography['subsets'], $google_font_subsets );
-	}
-
-	$breaking_news_content_typography = get_theme_mod( 'colormag_news_ticker_content_typography', $breaking_news_typography_default );
-
-	if ( isset( $breaking_news_label_typography['subsets'] ) && is_array( $breaking_news_label_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $breaking_news_content_typography['subsets'], $google_font_subsets );
-	}
-
-	// Headings typography.
-	$headings_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$headings_typography         = get_theme_mod( 'colormag_headings_typographys', $headings_typography_default );
-
-	if ( isset( $headings_typography['subsets'] ) && is_array( $headings_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $headings_typography['subsets'], $google_font_subsets );
-	}
-
-	// Heading H1 typography.
-	$heading_h1_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$heading_h1_typography         = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
-
-	if ( isset( $heading_h1_typography['subsets'] ) && is_array( $heading_h1_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $heading_h1_typography['subsets'], $google_font_subsets );
-	}
-
-	// Heading H2 typography.
-	$heading_h2_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$heading_h2_typography         = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
-
-	if ( isset( $heading_h2_typography['subsets'] ) && is_array( $heading_h2_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $heading_h2_typography['subsets'], $google_font_subsets );
-	}
-
-	// Heading H3 typography.
-	$heading_h3_typography_default = array(
-		'subsets' => array( 'latin' ),
-	);
-	$heading_h3_typography         = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
-
-	if ( isset( $heading_h3_typography['subsets'] ) && is_array( $heading_h3_typography['subsets'] ) ) {
-		$google_font_subsets = array_merge( $heading_h3_typography['subsets'], $google_font_subsets );
-	}
-
 	return $google_font_subsets;
 }
 
@@ -739,22 +444,22 @@ if ( ! function_exists( 'colormag_parse_dimension_css' ) ) {
 
 		$parse_css = $selector . '{';
 
-		$unit = isset( $output_value[ 'unit' ] ) ? $output_value[ 'unit' ] : ( isset( $default_value[ 'unit' ] ) ? $default_value[ 'unit' ] : 'px' );
+		$unit = isset( $output_value['unit'] ) ? $output_value['unit'] : ( isset( $default_value['unit'] ) ? $default_value['unit'] : 'px' );
 
-		if ( isset( $output_value[ 'top' ] ) && ! empty( $output_value[ 'top' ] ) && ( $output_value[ 'top' ] !== $default_value[ 'top' ] ) ) {
-			$parse_css .= $property . '-top:' . $output_value[ 'top' ] . $unit . ';';
+		if ( isset( $output_value['top'] ) && ! empty( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+			$parse_css .= $property . '-top:' . $output_value['top'] . $unit . ';';
 		}
 
-		if ( isset( $output_value[ 'top' ] ) && ! empty( $output_value[ 'top' ] ) && ( $output_value[ 'right' ] !== $default_value[ 'right' ] ) ) {
-			$parse_css .= $property . '-right:' . $output_value[ 'right' ] . $unit . ';';
+		if ( isset( $output_value['top'] ) && ! empty( $output_value['top'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+			$parse_css .= $property . '-right:' . $output_value['right'] . $unit . ';';
 		}
 
-		if ( isset( $output_value[ 'bottom' ] ) && ! empty( $output_value[ 'bottom' ] ) && ( $output_value[ 'bottom' ] !== $default_value[ 'bottom' ] ) ) {
-			$parse_css .= $property . '-bottom:' . $output_value[ 'bottom' ] . $unit . ';';
+		if ( isset( $output_value['bottom'] ) && ! empty( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+			$parse_css .= $property . '-bottom:' . $output_value['bottom'] . $unit . ';';
 		}
 
-		if ( isset( $output_value[ 'left' ] ) && ! empty( $output_value[ 'left' ] ) && ( $output_value[ 'left' ] !== $default_value[ 'left' ] ) ) {
-			$parse_css .= $property . '-left:' . $output_value[ 'left' ] . $unit . ';';
+		if ( isset( $output_value['left'] ) && ! empty( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+			$parse_css .= $property . '-left:' . $output_value['left'] . $unit . ';';
 		}
 
 		$parse_css .= '}';
@@ -972,12 +677,12 @@ if ( ! function_exists( 'colormag_parse_slider_css' ) ) :
 
 		$parse_css = '';
 
-		if ( isset( $output_value[ 'size' ] ) ) {
+		if ( isset( $output_value['size'] ) ) {
 
 			$parse_css = $selector . '{';
 
-			$unit      = isset( $output_value[ 'unit' ] ) ? $output_value[ 'unit' ] : ( isset( $default_value[ 'unit' ] ) ? $default_value[ 'unit' ] : 'px' );
-			$parse_css .= $property . ':' . $output_value[ 'size' ] . $unit . ';';
+			$unit       = isset( $output_value['unit'] ) ? $output_value['unit'] : ( isset( $default_value['unit'] ) ? $default_value['unit'] : 'px' );
+			$parse_css .= $property . ':' . $output_value['size'] . $unit . ';';
 
 			$parse_css .= '}';
 		}

@@ -24,38 +24,6 @@ function colormag_pingback_header() {
 
 add_action( 'wp_head', 'colormag_pingback_header' );
 
-
-/**
- * Sets the post excerpt length to 20 words.
- *
- * Function tied to the excerpt_length filter hook.
- *
- * @param int $length The excerpt length.
- *
- * @return int The filtered excerpt length.
- * @uses filter excerpt_length
- */
-function colormag_excerpt_length( $length ) {
-	$excerpt_length = get_theme_mod( 'colormag_excerpt_length_setting', 20 );
-
-	return $excerpt_length;
-}
-
-add_filter( 'excerpt_length', 'colormag_excerpt_length' );
-
-
-/**
- * Returns a "Continue Reading" link for excerpts.
- */
-function colormag_continue_reading() {
-	$excerpt_more = get_theme_mod( 'colormag_excerpt_more_text', '' );
-
-	return $excerpt_more;
-}
-
-add_filter( 'excerpt_more', 'colormag_continue_reading' );
-
-
 /**
  * Removing the default style of WordPress gallery.
  */
@@ -189,13 +157,9 @@ function colormag_header_image_markup( $html, $header, $attr ) {
 			$output .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
 		}
 
-		if ( 0 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) && '' != get_theme_mod( 'colormag_header_image_custom_link', '' ) ) {
-			$output .= '<a href="' . esc_url( get_theme_mod( 'colormag_header_image_custom_link', '' ) ) . '">';
-		}
-
 		$output .= '<img src="' . esc_url( $header_image ) . '" class="header-image" width="' . absint( get_custom_header()->width ) . '" height="' . absint( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 
-		if ( 1 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) || '' != get_theme_mod( 'colormag_header_image_custom_link', '' ) ) {
+		if ( 1 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) ) {
 			$output .= '</a>';
 		}
 
@@ -236,9 +200,9 @@ function colormag_body_class( $classes ) {
 	}
 
 	$woocommerce_widgets_enabled  = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
-	$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-	$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
+	$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 	/**
 	 * Header styles.
@@ -260,16 +224,14 @@ function colormag_body_class( $classes ) {
 	if ( 0 == $woocommerce_widgets_enabled || ( 1 == $woocommerce_widgets_enabled && ( function_exists( 'is_woocommerce' ) && ( ! is_woocommerce() ) ) ) ) :
 		if ( 'default_layout' === $layout_meta ) {
 			if ( is_page() ) {
-				if ( 'right_sidebar' === $colormag_default_page_layout ) {
+				if ( 'right_sidebar' === $colormag_page_sidebar_layout ) {
 					$classes[] = '';
-				} elseif ( 'left_sidebar' === $colormag_default_page_layout ) {
+				} elseif ( 'left_sidebar' === $colormag_page_sidebar_layout ) {
 					$classes[] = 'left-sidebar';
-				} elseif ( 'no_sidebar_full_width' === $colormag_default_page_layout ) {
+				} elseif ( 'no_sidebar_full_width' === $colormag_page_sidebar_layout ) {
 					$classes[] = 'no-sidebar-full-width';
-				} elseif ( 'no_sidebar_content_centered' === $colormag_default_page_layout ) {
+				} elseif ( 'no_sidebar_content_centered' === $colormag_page_sidebar_layout ) {
 					$classes[] = 'no-sidebar';
-				} elseif ( 'two_sidebars' === $colormag_default_page_layout ) {
-					$classes[] = 'tg-site-layout--2-sidebars';
 				}
 			} elseif ( is_single() ) {
 				if ( 'right_sidebar' === $colormag_default_post_layout ) {
@@ -280,19 +242,15 @@ function colormag_body_class( $classes ) {
 					$classes[] = 'no-sidebar-full-width';
 				} elseif ( 'no_sidebar_content_centered' === $colormag_default_post_layout ) {
 					$classes[] = 'no-sidebar';
-				} elseif ( 'two_sidebars' === $colormag_default_post_layout ) {
-					$classes[] = 'tg-site-layout--2-sidebars';
 				}
-			} elseif ( 'right_sidebar' === $colormag_default_layout ) {
+			} elseif ( 'right_sidebar' === $colormag_default_sidebar_layout ) {
 				$classes[] = '';
-			} elseif ( 'left_sidebar' === $colormag_default_layout ) {
+			} elseif ( 'left_sidebar' === $colormag_default_sidebar_layout ) {
 				$classes[] = 'left-sidebar';
-			} elseif ( 'no_sidebar_full_width' === $colormag_default_layout ) {
+			} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$classes[] = 'no-sidebar-full-width';
-			} elseif ( 'no_sidebar_content_centered' === $colormag_default_layout ) {
+			} elseif ( 'no_sidebar_content_centered' === $colormag_default_sidebar_layout ) {
 				$classes[] = 'no-sidebar';
-			} elseif ( 'two_sidebars' === $colormag_default_layout ) {
-				$classes[] = 'tg-site-layout--2-sidebars';
 			}
 		} elseif ( 'right_sidebar' === $layout_meta ) {
 			$classes[] = '';
@@ -302,15 +260,13 @@ function colormag_body_class( $classes ) {
 			$classes[] = 'no-sidebar-full-width';
 		} elseif ( 'no_sidebar_content_centered' === $layout_meta ) {
 			$classes[] = 'no-sidebar';
-		} elseif ( 'two_sidebars' === $layout_meta ) {
-			$classes[] = 'tg-site-layout--2-sidebars';
 		}
 
 	endif;
 
 	// For site layout option.
 	$site_layout = get_theme_mod( 'colormag_container_layout', 'wide' );
-	$classes[]   = ( 'wide' === $site_layout ) ? 'wide' : 'boxed';
+	$classes[]   = ( 'wide' == $site_layout ) ? 'wide' : 'boxed';
 
 	// Add body class for header display type.
 	$header_display_type = get_theme_mod( 'colormag_header_display_type', 'type_one' );
@@ -460,35 +416,6 @@ function colormag_posts_custom_column_views( $column_name, $post_id ) {
 }
 
 add_action( 'manage_posts_custom_column', 'colormag_posts_custom_column_views', 5, 2 );
-
-
-/**
- * Filters the CSS classes applied to a menu item’s list item element to add the category ID on menu class.
- *
- * @param array  $classes Array of the CSS classes that are applied to the menu item's <li> element.
- * @param object $item    The current menu item.
- *
- * @return array $classes
- */
-function colormag_category_id_on_menu( $classes, $item ) {
-
-	// Bail out if category color in menu is not set.
-	if ( '' == get_theme_mod( 'colormag_enable_category_color', '' ) ) {
-		return $classes;
-	}
-
-	if ( 'category' !== $item->object ) {
-		return $classes;
-	}
-
-	$classes[] = 'menu-item-category-' . $item->object_id;
-
-	return $classes;
-
-}
-
-add_filter( 'nav_menu_css_class', 'colormag_category_id_on_menu', 10, 2 );
-
 
 /**
  * Adding the custom generated user field.
@@ -659,28 +586,6 @@ function colormag_extra_user_field_save_option( $user_id ) {
 
 add_action( 'personal_options_update', 'colormag_extra_user_field_save_option' );
 add_action( 'edit_user_profile_update', 'colormag_extra_user_field_save_option' );
-
-
-
-/**
- * Adds image-to-reveal-style-* class to all the image element in the document that is uploaded using media upload.
- *
- * @param array $attr attributes of image element.
- *
- * @return array Image element attributes.
- */
-function colormag_images_to_reveal_class( $attr ) {
-
-	$image_load_style = get_theme_mod( 'colormag_smooth_image_loading_animation', 'fade-in' );
-
-	if ( in_array( $image_load_style, array( 'fade-in', 'fade-in-down', 'fade-in-up' ), true ) && ! strpos( $attr['class'], 'tg-image-to-reveal-' . $image_load_style ) && 1 === get_theme_mod( 'colormag_enable_smooth_image_loading', 0 ) ) {
-		$attr['class'] .= ' tg-image-to-reveal-' . $image_load_style;
-	}
-
-	return $attr;
-}
-
-add_filter( 'wp_get_attachment_image_attributes', 'colormag_images_to_reveal_class', 10, 1 );
 
 if ( ! function_exists( 'colormag_get_icon' ) ) :
 

@@ -1,8 +1,12 @@
 .cm-entry-summary {
-    margin-top: length( 'l-6' );
+	margin-top: length( 'l-6' );
 
-    p {
-        margin-bottom: 0;
-        @include font-size("font-size-xs");
-    }
+	p {
+		margin-bottom: length( 'l-12', em );
+		@include font-size("font-size-xs");
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

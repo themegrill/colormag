@@ -22,8 +22,6 @@ get_header();
 	 */
 	do_action( 'colormag_before_body_content' );
 	?>
-		<?php colormag_two_sidebar_select(); ?>
-
 		<div id="cm-primary" class="cm-primary">
 			<div class="cm-posts">
 				<?php if ( have_posts() ) : ?>
@@ -48,16 +46,8 @@ get_header();
 					do_action( 'colormag_before_search_results_page_loop' );
 					?>
 
-					<?php
-					$pagination_type  = get_theme_mod( 'colormag_pagination_type', 'default' );
-					$pagination_class = '';
+					<div class="article-container">
 
-					if ( 'infinite_scroll' === $pagination_type ) {
-						$pagination_class .= 'tg-infinite-scroll-container';
-					}
-					?>
-
-					<?php echo esc_attr( $pagination_class ); ?>
 						<?php
 						while ( have_posts() ) :
 							the_post();
@@ -67,9 +57,11 @@ get_header();
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 							 */
-							get_template_part( 'content', 'archive' );
+							get_template_part( '/template-parts/content', 'archive' );
 						endwhile;
-					?>
+						?>
+
+					</div>
 
 					<?php
 					/**
@@ -87,7 +79,6 @@ get_header();
 				?>
 			</div><!-- .cm-posts -->
 
-			<?php colormag_infinite_scroll(); ?>
 		</div><!-- #cm-primary -->
 
 	<?php

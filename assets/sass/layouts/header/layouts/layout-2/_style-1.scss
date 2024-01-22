@@ -44,14 +44,6 @@
 
 		}
 
-
-		.cm-menu-toggle {
-
-			&::before {
-				color: #3F3F46;
-			}
-		}
-
 		.cm-home-icon {
 
 			&.front_page_on {
@@ -88,11 +80,8 @@
 				&.current_page_item,
 				&:hover,
 				&.focus {
-
-					& > a {
-						color: $color__primary;
-						background-color: transparent;
-					}
+					color: $color__primary;
+					background-color: transparent;
 				}
 
 				&.current-menu-item ul li a,
@@ -105,8 +94,6 @@
 			}
 
 			> li {
-				float: none;
-				display: inline-block;
 				vertical-align: top;
 
 				> a {
@@ -142,7 +129,6 @@
 
 					a {
 						width: auto;
-						padding: $spacing_12px $spacing_16px;
 						transition: all 0.5s ease;
 						border-color: transparent;
 					}
@@ -152,9 +138,9 @@
 					&.current-menu-item,
 					&.focus {
 						border-color: $color__primary;
-
-						> a {
-							background-color: $color__primary;
+						background-color: $color__primary;
+						
+						a {
 							color: $color__white;
 						}
 					}
@@ -218,6 +204,22 @@
 				}
 			}
 		}
+
+		.cm-submenu-toggle {
+
+			.cm-icon {
+				fill: $color__gray-700
+			}
+		}
+
+		.cm-menu-toggle,
+		.cm-home-icon,
+		.cm-random-post {
+
+			svg {
+				fill: #3F3F46;
+			}
+		}
 	}
 
 	.cm-mobile-nav {
@@ -261,7 +263,7 @@
 			&.current-menu-ancestor,
 			&.current-page-item,
 			&.current-menu-item {
-				> .cm-sub-toggle {
+				> .cm-submenu-toggle {
 					i {
 						color: $color__white;
 					}
@@ -269,10 +271,21 @@
 			}
 		}
 
-		.cm-sub-toggle {
+		.cm-submenu-toggle,
+		.cm-home-icon,
+		.cm-menu-toggle {
 
-			.fa {
-				color: #3F3F46;
+			svg {
+				fill: $color__gray-700
+			}
+		}
+
+		.cm-random-post {
+
+			a {
+				svg {
+					fill: $color__gray-700
+				}
 			}
 		}
 	}
@@ -285,8 +298,8 @@
 		}
 	}
 
-    .cm-menu-primary-container {
-        flex-grow: 1;
+	.cm-menu-primary-container {
+		flex-grow: 1;
     }
 }
 
@@ -294,11 +307,11 @@
 
 	.cm-layout-2 {
 
-        .cm-layout-2-style-1 {
+		.cm-layout-2-style-1 {
 
-            #cm-primary-nav {
-                border-top: 4px solid #207daf;
-            }
-        }
-    }
+			#cm-primary-nav {
+				border-top: 4px solid #207daf;
+			}
+		}
+	}
 }

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="cm-secondary" class="cm-secondary"<?php echo colormag_schema_markup( 'sidebar' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+<div id="cm-secondary" class="cm-secondary">
 	<?php do_action( 'colormag_before_sidebar' ); ?>
 
 	<?php

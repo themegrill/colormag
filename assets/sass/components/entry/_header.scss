@@ -1,14 +1,14 @@
 .cm-entry-title {
 	margin-bottom: length( 'l-6' );
-    @include font-size("font-size-xl");
-    font-weight: 500;
+	@include font-size("font-size-xl");
+	font-weight: 500;
 
-    a {
-        color: $color__gray-800;
+	a {
+		color: $color__gray-800;
 
-        &:hover {
-            color: $color__primary;
-            text-decoration: underline;
-        }
-    }
+		&:hover {
+			color: $color__primary;
+			text-decoration: underline;
+		}
+	}
 }

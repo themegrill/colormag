@@ -179,7 +179,7 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	 */
 	function colormag_header_start() {
 		?>
-	<header id="cm-masthead" class="<?php colormag_css_class( 'colormag_header_class' ); ?>"<?php echo colormag_schema_markup( 'header' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<header id="cm-masthead" class="<?php colormag_css_class( 'colormag_header_class' ); ?>">
 		<?php
 	}
 
@@ -251,11 +251,8 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 	 */
 	function colormag_header_two() {
 
-		$random_post_icon               = get_theme_mod( 'colormag_enable_random_post', 0 );
-		$search_icon                    = get_theme_mod( 'colormag_enable_search', 0 );
-		$social_links_enable            = get_theme_mod( 'colormag_enable_social_icons', true );
-		$social_links_header_visibility = get_theme_mod( 'colormag_enable_social_icons_header', 1 );
-		$social_links_header_location   = get_theme_mod( 'colormag_social_icons_header_location', 'top-bar' );
+		$random_post_icon = get_theme_mod( 'colormag_enable_random_post', 0 );
+		$search_icon      = get_theme_mod( 'colormag_enable_search', 0 );
 
 		if ( function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ) ) :
 			?>
@@ -275,11 +272,11 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 		<?php else : ?>
 
 <div id="cm-header-2" class="cm-header-2">
-	<nav id="cm-primary-nav" class="cm-primary-nav"<?php echo colormag_schema_markup( 'nav' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<nav id="cm-primary-nav" class="cm-primary-nav">
 		<div class="cm-container">
 			<div class="cm-row">
 				<?php
-				if ( 'home_icon' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
+				if ( 'home-icon' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
 					$home_icon_class = 'cm-home-icon';
 
 					if ( is_front_page() ) {
@@ -291,24 +288,17 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 					   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 					>
-						<i class="fa fa-home"></i>
+						<?php colormag_get_icon( 'home' ); ?>
 					</a>
 				</div>
 				<?php } ?>
 
 							<?php
-							if ( 'logo' === get_theme_mod( 'colormag_menu_icon_logo', 'none' ) ) {
-								colormag_menu_logo();
-							}
 
-							if ( 1 == $random_post_icon || 1 == $search_icon || ( 1 == $social_links_enable && 1 == $social_links_header_visibility && 'menu' === $social_links_header_location ) ) {
+							if ( 1 == $random_post_icon || 1 == $search_icon ) {
 								?>
 				<div class="cm-header-actions">
 								<?php
-								// Displays the social links in header.
-								if ( 1 == $social_links_header_visibility && 'menu' === $social_links_header_location ) {
-									colormag_social_links();
-								}
 
 								// Displays the random post.
 								if ( 1 == $random_post_icon ) {
@@ -326,12 +316,15 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 					</div>
 					<?php } ?>
 				</div>
-							<?php } ?>
+				<?php } ?>
 
-					<p class="cm-menu-toggle"></p>
-						<?php
-							get_template_part( 'template-parts/header/primary-menu/main-navigation' );
-						?>
+					<p class="cm-menu-toggle" aria-expanded="false">
+						<?php colormag_get_icon( 'bars' ); ?>
+						<?php colormag_get_icon( 'x-mark' ); ?>
+					</p>
+					<?php
+						get_template_part( 'template-parts/header/primary-menu/main-navigation' );
+				?>
 
 			</div>
 		</div>
@@ -384,34 +377,13 @@ if ( ! function_exists( 'colormag_main_section_start' ) ) :
 	 */
 	function colormag_main_section_start() {
 		?>
-	<div id="cm-content" class="cm-content"<?php echo colormag_schema_markup( 'content' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<div id="cm-content" class="cm-content">
 		<?php
 	}
 
 endif;
 
 add_action( 'colormag_action_before_content', 'colormag_main_section_start', 10 );
-
-if ( ! function_exists( 'colormag_before_content_breaking_news' ) ) :
-
-	/**
-	 * Before content breaking news.
-	 */
-	function colormag_before_content_breaking_news() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_news_ticker', 0 ) && 'below-header' === get_theme_mod( 'colormag_news_ticker_position', 'header' ) ) :
-			?>
-			<div class="breaking-news-main inner-wrap clearfix">
-				<?php colormag_breaking_news(); ?>
-			</div>
-			<?php
-		endif;
-
-	}
-
-endif;
-
-	add_action( 'colormag_action_before_content', 'colormag_before_content_breaking_news', 15 );
 
 if ( ! function_exists( 'colormag_front_page_full_width_sidebar' ) ) :
 
@@ -420,13 +392,11 @@ if ( ! function_exists( 'colormag_front_page_full_width_sidebar' ) ) :
 	 */
 	function colormag_front_page_full_width_sidebar() {
 
-		if ( ( is_front_page() || is_page_template( 'page-templates/magazine.php' ) ) && ! is_page_template( 'page-templates/page-builder.php' ) ) :
+		if ( ( is_front_page() || is_page_template( 'page-templates/magazine.php' ) ) && ! is_page_template( 'page-templates/page-builder.php' ) && is_active_sidebar( 'colormag_front_page_top_full_width_area' ) ) :
 			?>
-			<div class="top-full-width-sidebar inner-wrap clearfix <?php echo colormag_top_full_width_area_class(); ?>">
+			<div class="top-full-width-sidebar inner-wrap clearfix">
 				<?php
-				if ( is_active_sidebar( 'colormag_front_page_top_full_width_area' ) ) {
 					dynamic_sidebar( 'colormag_front_page_top_full_width_area' );
-				}
 				?>
 			</div>
 			<?php
@@ -453,63 +423,6 @@ endif;
 
 add_action( 'colormag_action_before_inner_content', 'colormag_main_section_inner_start', 10 );
 
-if ( ! function_exists( 'colormag_breadcrumb' ) ) :
-
-	/**
-	 * Display the breadcrumbs provided via Yoast or BreadCrumb NavXT plugin,
-	 * where BreadCrumb NavXT plugin takes precedence.
-	 */
-	function colormag_breadcrumb() {
-
-		// Bail out if breadcrumb is not selected.
-		if ( 'none' == get_theme_mod( 'colormag_breadcrumb_display', 'none' ) ) {
-			return;
-		}
-		?>
-
-		<!-- Breadcrumb display -->
-		<div id="breadcrumb-wrap" class="breadcrumb-wrap" typeof="BreadcrumbList">
-			<div class="inner-wrap">
-			<?php
-			if ( 'yoast_seo_navxt' === get_theme_mod( 'colormag_breadcrumb_display', 'none' ) ) {
-
-				$display_breadcrumb_label = '<span class="breadcrumb-title">' . get_theme_mod( 'colormag_breadcrumb_label', esc_html__( 'You are here:', 'colormag' ) ) . '</span>';
-
-				if ( function_exists( 'bcn_display' ) ) {
-					echo $display_breadcrumb_label;
-
-					bcn_display();
-				} elseif ( function_exists( 'yoast_breadcrumb' ) ) {
-					echo $display_breadcrumb_label;
-
-					yoast_breadcrumb();
-				}
-			} elseif ( function_exists( 'breadcrumb_trail' ) && 'colormag_breadcrumb' === get_theme_mod( 'colormag_breadcrumb_display', 'none' ) ) {
-				if ( ColorMag_Utils::colormag_is_woocommerce_active() && function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
-
-					// Make WC breadcrumb with the theme.
-					woocommerce_breadcrumb(
-						array(
-							'wrap_before' => '<nav role="navigation" aria-label="' . esc_html__( 'Breadcrumbs', 'colormag' ) . '" class="breadcrumb-trail breadcrumbs">' . '<span class="breadcrumb-title">' . get_theme_mod( 'colormag_breadcrumb_label', esc_html__( 'You are here: ', 'colormag' ) ) . '</span>' . '<ul class="trail-items">',
-							'wrap_after'  => '</ul></nav>',
-							'before'      => '<li class="trail-item">',
-							'after'       => '</li>',
-							'delimiter'   => '',
-						)
-					);
-				} else {
-					do_action( 'colormag_action_breadcrumb' );
-				}
-			}
-			?>
-			</div>
-		</div>
-		<?php
-	}
-endif;
-
-	add_action( 'colormag_action_before_content', 'colormag_breadcrumb', 15 );
-
 if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
 	/**
 	 * Container starts.
@@ -523,38 +436,47 @@ if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
 	}
 endif;
 
-	add_action( 'colormag_action_breadcrumb', 'colormag_theme_breadcrumb', 10 );
+add_action( 'colormag_action_breadcrumb', 'colormag_theme_breadcrumb', 10 );
 
-if ( ! function_exists( 'colormag_change_logo_attr' ) ) :
+if ( ! function_exists( 'colormag_add_submenu_icon' ) ) :
 
 	/**
-	 * Change the image attributes while retina logo is set.
+	 * Add submenu toggle icon after the menu items with submenus.
 	 *
-	 * @param $attr
-	 * @param $attachment
-	 * @param $size
+	 * @param string $item_output The menu item's starting HTML output.
+	 * @param WP_Post $item Menu item data object.
+	 * @param int $depth Depth of menu item. Used for padding.
+	 * @param stdClass $args An object of wp_nav_menu() arguments.
 	 *
-	 * @return mixed
+	 * @return array|mixed|string|string[]
+	 *
+	 * TODO @since.
+	 *
 	 */
-	function colormag_change_logo_attr( $attr, $attachment, $size ) {
-		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+	function colormag_add_submenu_icon( $item_output, $item, $depth, $args ) {
 
-		if ( ! empty( $custom_logo ) ) {
-			$custom_logo = $custom_logo[0];
-		}
+		if ( 'primary' === $args->theme_location ) {
 
-		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
-			$retina_logo    = get_theme_mod( 'colormag_retina_logo', '' );
-			$attr['srcset'] = '';
+			if (
+				in_array( 'menu-item-has-children', $item->classes, true ) ||
+				in_array( 'page_item_has_children', $item->classes, true )
+			) {
 
-			if ( $retina_logo ) {
-				$attr['srcset'] = $custom_logo . ' 1x,' . $retina_logo . ' 2x';
+				$submenu_toggle_markup = '<span role="button" tabindex="0" class="cm-submenu-toggle" onkeypress="">' .
+										 '<svg class="cm-icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 17.5c-.3 0-.5-.1-.7-.3l-9-9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l8.3 8.3 8.3-8.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-9 9c-.2.2-.4.3-.7.3z"/></svg>' .
+										 '</span>';
+
+				$item_output = str_replace(
+					$args->link_after . '</a>',
+					$args->link_after . '</a>' . $submenu_toggle_markup,
+					$item_output
+				);
 			}
 		}
 
-		return $attr;
+		return $item_output;
 	}
 
 endif;
 
-	add_filter( 'wp_get_attachment_image_attributes', 'colormag_change_logo_attr', 10, 3 );
+add_filter( 'walker_nav_menu_start_el', 'colormag_add_submenu_icon', 10, 4 );

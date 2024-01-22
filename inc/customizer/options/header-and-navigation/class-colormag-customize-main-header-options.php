@@ -60,7 +60,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 				'choices'  => array(
 					'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
 					'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
-					'layout-3' => esc_html__( 'Layout 3', 'colormag' ),
 				),
 			),
 
@@ -78,10 +77,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 						'style-1' => array(
 							'label' => '',
 							'url'   => COLORMAG_IMG_URL . '/main-header/layout-1/style-1.svg',
-						),
-						'style-2' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/main-header/layout-1/style-2.svg',
 						),
 					)
 				),
@@ -108,10 +103,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 							'label' => '',
 							'url'   => COLORMAG_IMG_URL . '/main-header/layout-2/style-1.svg',
 						),
-						'style-2' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/main-header/layout-2/style-2.svg',
-						),
 					)
 				),
 				'image_col'  => 1,
@@ -120,60 +111,6 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 					'==',
 					'layout-2',
 				),
-			),
-
-			array(
-				'name'       => 'colormag_main_header_layout_3_style',
-				'default'    => 'style-1',
-				'type'       => 'control',
-				'control'    => 'colormag-radio-image',
-				'label'      => esc_html__( 'Advanced Style', 'colormag' ),
-				'section'    => 'colormag_primary_header_section',
-				'priority'   => 30,
-				'choices'    => apply_filters(
-					'colormag_main_header_layout_1_style_choices',
-					array(
-						'style-1' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/main-header/layout-3/style-1.svg',
-						),
-					)
-				),
-				'image_col'  => 1,
-				'dependency' => array(
-					'colormag_main_header_layout',
-					'==',
-					'layout-3',
-				),
-			),
-
-			array(
-				'name'      => 'colormag_header_display_type',
-				'default'   => 'type_one',
-				'type'      => 'control',
-				'class'     => 'alignment',
-				'control'   => 'colormag-radio-image',
-				'label'     => esc_html__( 'Alignment', 'colormag' ),
-				'section'   => 'colormag_primary_header_section',
-				'priority'  => 40,
-				'choices'   => apply_filters(
-					'colormag_header_display_type_choices',
-					array(
-						'type_one'   => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/alignment/align-left.svg',
-						),
-						'type_three' => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/alignment/align-center.svg',
-						),
-						'type_two'   => array(
-							'label' => '',
-							'url'   => COLORMAG_IMG_URL . '/alignment/align-right.svg',
-						),
-					)
-				),
-				'image_col' => 3,
 			),
 
 			array(
@@ -209,82 +146,15 @@ class ColorMag_Customize_Main_Header_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
-				'name'     => 'colormag_main_header_divider',
-				'type'     => 'control',
-				'control'  => 'colormag-divider',
-				'style'    => 'dashed',
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 70,
+				'name'        => 'colormag_main_header_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_primary_header_section',
+				'priority'    => 1000,
 			),
-
-			/**
-			 * Dimension.
-			 */
-			array(
-				'name'     => 'colormag_main_header_dimension_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Padding', 'colormag' ),
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 80,
-			),
-
-			array(
-				'name'      => 'colormag_main_header_dimension_padding',
-				'default'   => array(
-					'top'    => '',
-					'right'  => '',
-					'bottom' => '',
-					'left'   => '',
-					'unit'   => 'px',
-				),
-				'suffix'    => array( 'px' ),
-				'type'      => 'control',
-				'control'   => 'colormag-dimensions',
-				'label'     => esc_html__( 'Padding', 'colormag' ),
-				'transport' => 'postMessage',
-				'section'   => 'colormag_primary_header_section',
-				'priority'  => 90,
-			),
-
-			array(
-				'name'     => 'colormag_main_header_style_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Style', 'colormag' ),
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 100,
-			),
-
-			// Header background group.
-			array(
-				'name'     => 'colormag_main_header_background_group',
-				'label'    => esc_html__( 'Background', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 110,
-			),
-
-			// Header background option.
-			array(
-				'name'     => 'colormag_main_header_background',
-				'default'  => array(
-					'background-color'      => '#ffffff',
-					'background-image'      => '',
-					'background-position'   => 'center center',
-					'background-size'       => 'auto',
-					'background-attachment' => 'scroll',
-					'background-repeat'     => 'repeat',
-				),
-				'type'     => 'sub-control',
-				'control'  => 'colormag-background',
-				'parent'   => 'colormag_main_header_background_group',
-				'section'  => 'colormag_primary_header_section',
-				'priority' => 120,
-			),
-
 		);
 
 		$options = array_merge( $options, $configs );

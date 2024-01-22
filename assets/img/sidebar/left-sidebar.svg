@@ -1,16 +1,15 @@
-<svg width="120" height="84" viewBox="0 0 120 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="119" height="83" rx="3.5" fill="#F9FAFB"/>
-<rect x="8" y="8" width="30" height="67" fill="#71717A"/>
-<rect x="44" y="8" width="42" height="3" rx="1.5" fill="#A1A1AA"/>
-<rect x="44" y="16" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="22" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="28" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="34" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="43" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="49" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="55" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="61" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="67" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="44" y="73" width="68" height="3" rx="1.5" fill="#D1D5DB"/>
-<rect x="0.5" y="0.5" width="119" height="83" rx="3.5" stroke="#D1D5DB"/>
+<svg width="120" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="100" rx="4" fill="#E4E4E7"/>
+  <rect x=".5" y="12.5" width="119" height="75" rx="3.5" fill="#FAFAFA"/>
+  <path fill="#71717A" d="M8 20h30v60H8z"/>
+  <rect x="44" y="22" width="42" height="3" rx="1.5" fill="#A1A1AA"/>
+  <rect x="44" y="30" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="36" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="42" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="48" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="57" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="63" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="69" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x="44" y="75" width="68" height="3" rx="1.5" fill="#E4E4E7"/>
+  <rect x=".5" y="12.5" width="119" height="75" rx="3.5" stroke="#71717A"/>
 </svg>

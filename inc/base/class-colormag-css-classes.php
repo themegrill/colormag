@@ -44,23 +44,15 @@ if ( ! class_exists( 'ColorMag_Css_Classes' ) ) :
 
 			$layout2_style = get_theme_mod( 'colormag_main_header_layout_2_style', 'style-1' );
 
-			$layout3_style = get_theme_mod( 'colormag_main_header_layout_3_style', 'style-1' );
-
-			$layout4_style = get_theme_mod( 'colormag_main_header_layout_4_style', 'style-1' );
-
 			if ( 'layout-1' === $layout ) {
 				$classes[] = 'cm-' . $layout . '-' . $layout1_style;
 			} elseif ( 'layout-2' === $layout ) {
 				$classes[] = 'cm-' . $layout . '-' . $layout2_style;
-			} elseif ( 'layout-3' === $layout ) {
-				$classes[] = 'cm-' . $layout . '-' . $layout3_style;
-			} elseif ( 'layout-4' === $layout ) {
-				$classes[] = 'cm-' . $layout . '-' . $layout4_style;
 			}
 
-			if ('full-width' === $width && 'layout-1' === $layout ) {
+			if ( 'full-width' === $width && 'layout-1' === $layout ) {
 				$classes[] = 'cm-' . $width;
-			} elseif ('contained' === $width && 'layout-1' === $layout ) {
+			} elseif ( 'contained' === $width && 'layout-1' === $layout ) {
 				$classes[] = 'cm-' . $width;
 			}
 

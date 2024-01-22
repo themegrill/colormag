@@ -27,9 +27,9 @@
 }
 
 .cm-site-description {
-	line-height: $line-height__body;
+	line-height: 1.8;
 	font-size: 16px;
-	color: $color__gray-800;
+	color: $color__gray-600;
 	margin: length( 'l-2' ) 0 0 0;
 	font-family: "Open Sans", serif;
 	word-break: break-word;
@@ -58,7 +58,7 @@
 		.cm-widget-title {
 			font-size: 18px;
 			line-height: 1.2;
-			padding-bottom: $spacing_5;
+			padding-bottom: length( 'l-2' );
 		}
 	}
 

@@ -1,0 +1,50 @@
+
+
+// WooCommerce color variables
+$woocommerce__color-error: #e2401c;
+$woocommerce__color-success: #c7ab62;
+$woocommerce__color-info: #ebebec;
+
+/* Import variables and mixins.
+--------------------------------------------- */
+@import "abstracts/abstracts";
+
+/**
+ * Products.
+ */
+ @import "plugins/woocommerce/products";
+
+ /**
+ * Single product.
+ */
+@import "plugins/woocommerce/single-product";
+
+/**
+ * General WooCommerce components.
+ */
+ @import "plugins/woocommerce/components";
+
+/**
+ * Cart.
+ */
+ @import "plugins/woocommerce/cart";
+ 
+ /**
+ * Shop tables.
+ */
+@import "plugins/woocommerce/tables";
+
+/**
+ * Checkout.
+ */
+ @import "plugins/woocommerce/checkout";
+
+ /**
+ * Account Page.
+ */
+ @import "plugins/woocommerce/account-page";
+ 
+  /**
+ * Account Page.
+ */
+ @import "plugins/woocommerce/login-page";

@@ -1,6 +1,5 @@
 .cm-entry-button {
 	display: inline-block;
-	margin-top: length( 'l-12', em );
 	background-color: $color__primary;
 	border-radius: 2px;
 
@@ -11,7 +10,7 @@
 		@include font-size('font-size-xs');
 		font-weight: 600;
 		cursor: pointer;
-		line-height: $line-height__body;
+		line-height: 1.8;
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.1);

@@ -50,18 +50,17 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 
 			// Social links enable/disable option.
 			array(
-				'name'        => 'colormag_enable_social_icons',
-				'default'     => 0,
-				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to activate social links area', 'colormag' ),
-				'section'     => 'colormag_social_icons_section',
-				'transport'   => $customizer_selective_refresh,
-				'partial'     => array(
+				'name'      => 'colormag_enable_social_icons',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'colormag-toggle',
+				'label'     => esc_html__( 'Enable', 'colormag' ),
+				'section'   => 'colormag_social_icons_section',
+				'transport' => $customizer_selective_refresh,
+				'partial'   => array(
 					'selector' => '.social-links',
 				),
-				'priority'    => 10,
+				'priority'  => 10,
 			),
 
 			array(
@@ -98,24 +97,6 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 			),
 
 			array(
-				'name'       => 'colormag_social_icons_header_location',
-				'default'    => 'top-bar',
-				'type'       => 'control',
-				'control'    => 'select',
-				'section'    => 'colormag_social_icons_section',
-				'choices'    => array(
-					'top-bar' => esc_html__( 'Top Bar', 'colormag' ),
-					'menu'    => esc_html__( 'Menu', 'colormag' ),
-				),
-				'dependency' => array(
-					'colormag_enable_social_icons_header',
-					'!=',
-					0,
-				),
-				'priority'   => 40,
-			),
-
-			array(
 				'name'       => 'colormag_enable_social_icons_footer',
 				'default'    => 1,
 				'type'       => 'control',
@@ -148,6 +129,16 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 				'priority'   => 60,
 			),
 
+			array(
+				'name'        => 'colormag_social_icons_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_social_icons_section',
+				'priority'    => 1000,
+			),
 		);
 
 		$options = array_merge( $options, $configs );
@@ -155,94 +146,29 @@ class ColorMag_Customize_Social_Icons_Options extends ColorMag_Customize_Base_Op
 		// Social links lists.
 		$social_links_count    = 70;
 		$colormag_social_links = array(
-			'colormag_social_facebook'    => array(
+			'colormag_social_facebook'  => array(
 				'id'      => 'colormag_social_facebook',
 				'title'   => esc_html__( 'Facebook', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_twitter'     => array(
+			'colormag_social_twitter'   => array(
 				'id'      => 'colormag_social_twitter',
 				'title'   => esc_html__( 'Twitter', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_googleplus'  => array(
-				'id'      => 'colormag_social_googleplus',
-				'title'   => esc_html__( 'Google-Plus', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_instagram'   => array(
+			'colormag_social_instagram' => array(
 				'id'      => 'colormag_social_instagram',
 				'title'   => esc_html__( 'Instagram', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_pinterest'   => array(
+			'colormag_social_pinterest' => array(
 				'id'      => 'colormag_social_pinterest',
 				'title'   => esc_html__( 'Pinterest', 'colormag' ),
 				'default' => '',
 			),
-			'colormag_social_youtube'     => array(
+			'colormag_social_youtube'   => array(
 				'id'      => 'colormag_social_youtube',
 				'title'   => esc_html__( 'YouTube', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_vimeo'       => array(
-				'id'      => 'colormag_social_vimeo',
-				'title'   => esc_html__( 'Vimeo-Square', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_linkedin'    => array(
-				'id'      => 'colormag_social_linkedin',
-				'title'   => esc_html__( 'LinkedIn', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_delicious'   => array(
-				'id'      => 'colormag_social_delicious',
-				'title'   => esc_html__( 'Delicious', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_flickr'      => array(
-				'id'      => 'colormag_social_flickr',
-				'title'   => esc_html__( 'Flickr', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_skype'       => array(
-				'id'      => 'colormag_social_skype',
-				'title'   => esc_html__( 'Skype', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_soundcloud'  => array(
-				'id'      => 'colormag_social_soundcloud',
-				'title'   => esc_html__( 'SoundCloud', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_vine'        => array(
-				'id'      => 'colormag_social_vine',
-				'title'   => esc_html__( 'Vine', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_stumbleupon' => array(
-				'id'      => 'colormag_social_stumbleupon',
-				'title'   => esc_html__( 'StumbleUpon', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_tumblr'      => array(
-				'id'      => 'colormag_social_tumblr',
-				'title'   => esc_html__( 'Tumblr', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_reddit'      => array(
-				'id'      => 'colormag_social_reddit',
-				'title'   => esc_html__( 'Reddit', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_xing'        => array(
-				'id'      => 'colormag_social_xing',
-				'title'   => esc_html__( 'Xing', 'colormag' ),
-				'default' => '',
-			),
-			'colormag_social_vk'          => array(
-				'id'      => 'colormag_social_vk',
-				'title'   => esc_html__( 'VK', 'colormag' ),
 				'default' => '',
 			),
 		);

@@ -4,15 +4,6 @@
 Dark CSS
 --------------------------------------------------------------*/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: $color__white;
-}
-
 body {
 	background-color: $color__background-dark;
 	color: $color__gray-seven;
@@ -33,6 +24,15 @@ body {
 }
 
 .dark-skin {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $color__white;
+	}
 
 	#page,
 	.cm-main-header,
@@ -79,6 +79,7 @@ body {
 	input.s {
 		background-color: #161616;
 		border: 1px solid #343434;
+		color: #E3E2E2;
 	}
 
 	.cm-featured-posts {
@@ -101,7 +102,7 @@ body {
 
 			.cm-entry-title {
 				a {
-					color: $color__white;
+					color: #F4F4F5;
 				}
 			}
 
@@ -143,7 +144,7 @@ body {
 		.cm-post-date,
 		.cm-author,
 		.cm-comments-link {
-	
+
 			a {
 				color: $color__gray-100;
 			}
@@ -204,14 +205,14 @@ body {
 			.cm-post-content {
 
 				.cm-entry-title a {
-					color: $color__white;
+					color: #F4F4F5;
 				}
 
 				.cm-below-entry-meta {
 
 					.cm-author,
 					.cm-comments-link,
-					.tag-links,
+					.cm-tag-links,
 					.cm-edit-link,
 					.cm-post-date,
 					.cm-post-views {
@@ -245,7 +246,7 @@ body {
 
 			.cm-entry-title {
 				a {
-					color: $color__white;
+					color: #F4F4F5;
 				}
 			}
 
@@ -268,7 +269,7 @@ body {
 		.cm-entry-title {
 
 			a {
-				color: $color__white;
+				color: #F4F4F5;
 			}
 		}
 
@@ -276,6 +277,38 @@ body {
 
 	.cm-random-posts {
 		box-shadow: 0 0 0 0 transparent;
+	}
+
+	.previous,
+	.next {
+
+		svg {
+			fill: $color__gray-100
+		}
+
+	}
+
+	.cm-layout-2 {
+
+		.cm-mobile-nav {
+			.cm-submenu-toggle,
+			.cm-home-icon,
+			.cm-menu-toggle {
+		
+				svg {
+					fill: $color__gray-100
+				}
+			}
+		
+			.cm-random-post {
+		
+				a {
+					svg {
+						fill: $color__gray-100
+					}
+				}
+			}
+		}
 	}
 
 	.single-related-posts {
@@ -292,7 +325,7 @@ body {
 	#cm-footer .cm-upper-footer-cols .widget {
 		border: 0 none;
 
-		.cm-post, 
+		.cm-post,
 		.cm-random-posts {
 			box-shadow: none;
 		}
@@ -314,6 +347,59 @@ body {
 	/*--------------------------------------------------------------
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
+
+	.cm-layout-2 {
+
+		.cm-primary-nav {
+
+			ul > li > a {
+				color: $color__gray-100;
+			}
+
+			.cm-home-icon,
+			.cm-submenu-toggle,
+			.cm-menu-toggle,
+			.cm-random-post {
+				svg,
+				.cm-icon {
+					fill: $color__gray-100;
+				}
+			}
+
+			ul ul.sub-menu li a {
+				color: $color__gray-700;
+			}
+
+		}
+
+		.is-sticky #cm-primary-nav {
+			background-color: #111111;
+		}
+
+		.cm-mobile-nav {
+
+			.cm-submenu-toggle {
+
+				svg{
+					fill: $color__gray-100;
+				}
+			}
+		}
+
+		#cm-primary-nav {
+
+			.fa {
+				color: $color__gray-100;
+			}
+		}
+
+		.cm-mobile-nav li {
+			border-color: #3F3F46;
+			a {
+				color: $color__gray-100;
+			}
+		}
+	}
 
 	&.colormag-header-clean {
 
@@ -438,6 +524,31 @@ body {
 			}
 		}
 	}
+
+	.cm-entry-summary p {
+		color: #E3E2E2;
+	}
+
+	.previous a,
+	.next a {
+		color: #F4F4F5;
+
+		&:hover {
+			color: #F4F4F5;
+		}
+	}
+
+	.cm-entry-title {
+
+		a {
+			color: #F4F4F5;
+
+			&:hover {
+				color: #F4F4F5;
+			}
+		}
+	}
+
 }
 
 .cm-breaking-news i.fa-arrow-up::before,

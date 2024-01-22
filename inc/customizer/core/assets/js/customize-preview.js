@@ -391,11 +391,9 @@ function colormagIsNumeric( str ) {
 				function ( layout ) {
 					var display_type = layout;
 
-					if ( display_type === 'type_two' ) {
+					if ( display_type === 'layout-2' ) {
 						$( '#colophon' ).removeClass( 'colormag-footer--classic-bordered' ).addClass( 'colormag-footer--classic' );
-					} else if ( display_type === 'type_three' ) {
-						$( '#colophon' ).removeClass( 'colormag-footer--classic' ).addClass( 'colormag-footer--classic-bordered' );
-					} else if ( display_type === 'type_one' ) {
+					} else if ( display_type === 'layout-1' ) {
 						$( '#colophon' ).removeClass( 'colormag-footer--classic colormag-footer--classic-bordered' );
 					}
 				}

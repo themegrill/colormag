@@ -52,79 +52,25 @@ class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 				'section'  => 'colormag_global_container_section',
 				'priority' => 20,
 			),
-
 			// Site layout option.
 			array(
 				'name'      => 'colormag_container_layout',
 				'default'   => 'wide',
 				'type'      => 'control',
-				'control'   => 'select',
-				'label'     => esc_html__( 'Layout', 'colormag' ),
+				'control'   => 'colormag-radio-image',
 				'section'   => 'colormag_global_container_section',
-				'transport' => 'postMessage',
 				'choices'   => array(
-					'boxed' => esc_html__( 'Boxed Layout', 'colormag' ),
-					'wide'  => esc_html__( 'Wide Layout', 'colormag' ),
-				),
-				'priority'  => 30,
-			),
-
-			array(
-				'name'        => 'colormag_container_width',
-				'default'     => array(
-					'size' => '1140',
-					'unit' => 'px',
-				),
-				'suffix'      => array( 'px' ),
-				'type'        => 'control',
-				'control'     => 'colormag-slider',
-				'label'       => esc_html__( 'Width', 'colormag' ),
-				'section'     => 'colormag_global_container_section',
-				'priority'    => 40,
-				'transport'   => 'postMessage',
-				'input_attrs' => array(
-					'px' => array(
-						'min'  => 768,
-						'max'  => 1920,
-						'step' => 1,
+					'wide'  => array(
+						'label' => 'Wide',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/container-layout/wide.svg',
+					),
+					'boxed' => array(
+						'label' => 'Boxed',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/container-layout/box.svg',
 					),
 				),
-			),
-
-			array(
-				'name'     => 'colormag_container_inside_background_divider',
-				'type'     => 'control',
-				'control'  => 'colormag-divider',
-				'style'    => 'dashed',
-				'section'  => 'colormag_global_container_section',
-				'priority' => 50,
-			),
-
-			// Site layout heading.
-			array(
-				'name'     => 'colormag_container_inside_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Inside', 'colormag' ),
-				'section'  => 'colormag_global_container_section',
-				'priority' => 60,
-			),
-
-			array(
-				'name'      => 'colormag_inside_container_background',
-				'default'   => array(
-					'background-color'      => '#ffffff',
-					'background-image'      => '',
-					'background-position'   => 'center center',
-					'background-size'       => 'auto',
-					'background-attachment' => 'scroll',
-					'background-repeat'     => 'repeat',
-				),
-				'type'      => 'control',
-				'control'   => 'colormag-background',
-				'section'   => 'colormag_global_container_section',
-				'transport' => 'postMessage',
-				'priority'  => 70,
+				'image_col' => 2,
+				'priority'  => 30,
 			),
 
 			array(
@@ -133,34 +79,18 @@ class ColorMag_Customize_Layout_Options extends ColorMag_Customize_Base_Option {
 				'control'  => 'colormag-divider',
 				'style'    => 'dashed',
 				'section'  => 'colormag_global_container_section',
-				'priority' => 80,
-			),
-
-			// Site layout heading.
-			array(
-				'name'     => 'colormag_container_outside_subtitle',
-				'type'     => 'control',
-				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Outside', 'colormag' ),
-				'section'  => 'colormag_global_container_section',
-				'priority' => 90,
+				'priority' => 50,
 			),
 
 			array(
-				'name'      => 'colormag_outside_container_background',
-				'default'   => array(
-					'background-color'      => '#ffffff',
-					'background-image'      => '',
-					'background-position'   => 'center center',
-					'background-size'       => 'auto',
-					'background-attachment' => 'scroll',
-					'background-repeat'     => 'repeat',
-				),
-				'type'      => 'control',
-				'control'   => 'colormag-background',
-				'section'   => 'colormag_global_container_section',
-				'transport' => 'postMessage',
-				'priority'  => 100,
+				'name'        => 'colormag_container_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_global_container_section',
+				'priority'    => 1000,
 			),
 		);
 

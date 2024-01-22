@@ -7,15 +7,6 @@ body {
 /*--------------------------------------------------------------
 Dark CSS
 --------------------------------------------------------------*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: #fff;
-}
-
 body {
 	background-color: #151515;
 	color: #cccccc;
@@ -39,6 +30,15 @@ body {
 	/*--------------------------------------------------------------
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
+}
+
+.dark-skin h1,
+.dark-skin h2,
+.dark-skin h3,
+.dark-skin h4,
+.dark-skin h5,
+.dark-skin h6 {
+	color: #fff;
 }
 
 .dark-skin #page,
@@ -78,6 +78,7 @@ body {
 .dark-skin input.s {
 	background-color: #161616;
 	border: 1px solid #343434;
+	color: #E3E2E2;
 }
 
 .dark-skin .cm-featured-posts .cm-post {
@@ -98,7 +99,7 @@ body {
 }
 
 .dark-skin .cm-featured-posts .cm-post-content .cm-entry-title a {
-	color: #fff;
+	color: #F4F4F5;
 }
 
 .dark-skin .cm-featured-posts .cm-post-content .cm-below-entry-meta .cm-post-date svg,
@@ -172,12 +173,12 @@ body {
 }
 
 .dark-skin .cm-posts .post .cm-post-content .cm-entry-title a {
-	color: #fff;
+	color: #F4F4F5;
 }
 
 .dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-author svg,
 .dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-comments-link svg,
-.dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .tag-links svg,
+.dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-tag-links svg,
 .dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-edit-link svg,
 .dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-date svg,
 .dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-views svg {
@@ -193,7 +194,7 @@ body {
 }
 
 .dark-skin .single-related-posts .cm-post-content .cm-entry-title a {
-	color: #fff;
+	color: #F4F4F5;
 }
 
 .dark-skin .single-related-posts .cm-post-content .cm-below-entry-meta .cm-post-date .fa,
@@ -203,12 +204,27 @@ body {
 
 .dark-skin .post .cm-entry-title a,
 .dark-skin .search .cm-entry-title a {
-	color: #fff;
+	color: #F4F4F5;
 }
 
 .dark-skin .cm-random-posts {
 	-webkit-box-shadow: 0 0 0 0 transparent;
 	box-shadow: 0 0 0 0 transparent;
+}
+
+.dark-skin .previous svg,
+.dark-skin .next svg {
+	fill: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg,
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-home-icon svg,
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-menu-toggle svg {
+	fill: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-random-post a svg {
+	fill: #f4f4f5;
 }
 
 .dark-skin .single-related-posts {
@@ -245,6 +261,45 @@ body {
 
 .dark-skin .cm-view-all-link {
 	background: #0d0d0d;
+}
+
+.dark-skin .cm-layout-2 .cm-primary-nav ul > li > a {
+	color: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-home-icon svg,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-home-icon .cm-icon,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-submenu-toggle svg,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-submenu-toggle .cm-icon,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-menu-toggle svg,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-menu-toggle .cm-icon,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-random-post svg,
+.dark-skin .cm-layout-2 .cm-primary-nav .cm-random-post .cm-icon {
+	fill: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-primary-nav ul ul.sub-menu li a {
+	color: #3f3f46;
+}
+
+.dark-skin .cm-layout-2 .is-sticky #cm-primary-nav {
+	background-color: #111111;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg {
+	fill: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 #cm-primary-nav .fa {
+	color: #f4f4f5;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav li {
+	border-color: #3F3F46;
+}
+
+.dark-skin .cm-layout-2 .cm-mobile-nav li a {
+	color: #f4f4f5;
 }
 
 .dark-skin.colormag-header-clean .cm-primary-nav .sub-menu,
@@ -333,6 +388,28 @@ body {
 .dark-skin .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-5 .tg_module_block .tg-module-title,
 .dark-skin .elementor .tg-module-wrapper.tg-module-block.tg-module-block--style-5 .tg_module_block .block-content {
 	background: #0d0d0d;
+}
+
+.dark-skin .cm-entry-summary p {
+	color: #E3E2E2;
+}
+
+.dark-skin .previous a,
+.dark-skin .next a {
+	color: #F4F4F5;
+}
+
+.dark-skin .previous a:hover,
+.dark-skin .next a:hover {
+	color: #F4F4F5;
+}
+
+.dark-skin .cm-entry-title a {
+	color: #F4F4F5;
+}
+
+.dark-skin .cm-entry-title a:hover {
+	color: #F4F4F5;
 }
 
 .cm-breaking-news i.fa-arrow-up::before,

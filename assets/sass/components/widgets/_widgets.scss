@@ -6,16 +6,17 @@
 		margin-bottom: 0;
 	  }
 
-	h2 {
+	  .wp-block-heading {
 		display: inline-block;
 		background-color: $color__primary;
 		color: $color__white;
 		font-size: 16px;
 		font-weight: 600;
-		line-height: $line-height__body;
+		line-height: 1.8;
 		margin-bottom: 0;
 		padding: 4px 12px 2px;
 		border-radius: 2px 2px 0 0;
+		letter-spacing: 0.01em;
 	}
 
 	.block-title {
@@ -92,7 +93,7 @@
 	.cm-post-content {
 		flex: 1;
 		align-self: center;
-		padding: length( 'l-2', px) length( 'l-8', px);
+		padding: length( 'l-6', px) length( 'l-8', px);
 	}
 
 	img {
@@ -129,6 +130,13 @@
 		.cm-post {
 			overflow: visible;
 			box-shadow: none;
+		}
+	}
+
+	.cm-entry-summary {
+
+		p {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -180,24 +188,10 @@
 
 /* All Related to Featured Posts Widget.
 --------------------------------------------- */
-
-.reading-time {
-	color: $color__gray-500;
-	font-size: 12px;
-	padding-right: 10px;
-
-	&::before {
-		content: "\f251";
-		font-family: FontAwesome;
-		font-size: 11px;
-		padding-right: 5px;
-	}
-}
-
 .cm-post-date a:hover,
 .cm-author a:hover,
 .cm-comments-link a:hover,
-.tag-links a:hover,
+.cm-tag-links a:hover,
 .cm-edit-link a:hover {
 	color: $color__primary;
 }
@@ -228,7 +222,7 @@
 
 .cm-secondary,
 .cm-footer,
-#tertiary {
+#cm-tertiary {
 
 	.widget {
 
@@ -248,20 +242,26 @@
 }
 
 .cm-secondary,
-#tertiary {
+#cm-tertiary {
+	word-break: break-word;
 
 	.cm-widget-title {
 		display: flex;
 		justify-content: space-between;
 		border-bottom: 2px solid $color__primary;
-		font-size: 18px;
 		margin-bottom: 15px;
 
 		span {
+			display: inline-block;
 			background-color: $color__primary;
 			color: $color__white;
-			padding: 6px 12px;
-			display: inline-block;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 1.8;
+			margin-bottom: 0;
+			padding: 4px 12px 2px;
+			border-radius: 2px 2px 0 0;
+			letter-spacing: 0.01em;
 
 			.rsswidget {
 				color: $color__white;
@@ -283,7 +283,7 @@
 	}
 
 	.widget {
-		margin-bottom: 35px;
+		margin-bottom: length( l-16 );
 		@include font-size("font-size-xs");
 
 		p {

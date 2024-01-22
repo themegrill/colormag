@@ -28,12 +28,12 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 		$this->widget_description = esc_html__( 'Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar.', 'colormag' );
 		$this->widget_name        = esc_html__( 'TG: Highlighted Posts', 'colormag' );
 		$this->settings           = array(
-			'number'         => array(
+			'number'   => array(
 				'type'    => 'number',
 				'default' => 4,
 				'label'   => esc_html__( 'Number of posts to display:', 'colormag' ),
 			),
-			'type'           => array(
+			'type'     => array(
 				'type'    => 'radio',
 				'default' => 'latest',
 				'label'   => '',
@@ -44,30 +44,10 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 					'author'   => esc_html__( 'Show posts from an author', 'colormag' ),
 				),
 			),
-			'category'       => array(
+			'category' => array(
 				'type'    => 'dropdown_categories',
 				'default' => '',
 				'label'   => esc_html__( 'Select category', 'colormag' ),
-			),
-			'tag'            => array(
-				'type'    => 'dropdown_tags',
-				'default' => '',
-				'label'   => esc_html__( 'Select tag', 'colormag' ),
-			),
-			'author'         => array(
-				'type'    => 'dropdown_users',
-				'default' => '',
-				'label'   => esc_html__( 'Select author', 'colormag' ),
-			),
-			'random_posts'   => array(
-				'type'    => 'checkbox',
-				'default' => '0',
-				'label'   => esc_html__( 'Check to display the random post from either the chosen category or from latest post.', 'colormag' ),
-			),
-			'child_category' => array(
-				'type'    => 'checkbox',
-				'default' => '0',
-				'label'   => esc_html__( 'Check to display the posts from child category of the chosen category.', 'colormag' ),
 			),
 		);
 
@@ -86,18 +66,12 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 	public function widget( $args, $instance ) {
 
 		global $post;
-		$number         = empty( $instance['number'] ) ? 4 : $instance['number'];
-		$type           = isset( $instance['type'] ) ? $instance['type'] : 'latest';
-		$category       = isset( $instance['category'] ) ? $instance['category'] : '';
-		$random_posts   = ! empty( $instance['random_posts'] ) ? 'true' : 'false';
-		$child_category = ! empty( $instance['child_category'] ) ? 'true' : 'false';
-		$tag            = isset( $instance['tag'] ) ? $instance['tag'] : '';
-		$author         = isset( $instance['author'] ) ? $instance['author'] : '';
+		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
+		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
+		$category = isset( $instance['category'] ) ? $instance['category'] : '';
 
 		// Create the posts query.
-		$get_featured_posts = $this->query_posts( $number, $type, $category, $tag, $author, $random_posts, $child_category );
-
-		colormag_append_excluded_duplicate_posts( $get_featured_posts );
+		$get_featured_posts = $this->query_posts( $number, $type, $category );
 
 		$this->widget_start( $args );
 		?>

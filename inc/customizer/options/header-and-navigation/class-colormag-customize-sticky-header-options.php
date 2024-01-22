@@ -59,63 +59,24 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 			),
 
 			array(
-				'name'        => 'colormag_enable_sticky_menu',
-				'default'     => 0,
+				'name'     => 'colormag_enable_sticky_menu',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'colormag-toggle',
+				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'section'  => 'colormag_sticky_header_section',
+				'priority' => 30,
+			),
+
+			array(
+				'name'        => 'colormag_sticky_menu_upgrade',
 				'type'        => 'control',
-				'control'     => 'colormag-toggle',
-				'label'       => esc_html__( 'Enable', 'colormag' ),
-				'description' => esc_html__( 'Check to enable the sticky behavior of the primary menu', 'colormag' ),
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
 				'section'     => 'colormag_sticky_header_section',
-				'priority'    => 30,
-			),
-
-			array(
-				'name'       => 'colormag_sticky_header_divider',
-				'type'       => 'control',
-				'control'    => 'colormag-divider',
-				'style'      => 'dashed',
-				'section'    => 'colormag_sticky_header_section',
-				'dependency' => array(
-					'colormag_enable_sticky_menu',
-					'!=',
-					0,
-				),
-				'priority'   => 40,
-			),
-
-			array(
-				'name'       => 'colormag_sticky_header_style_subtitle',
-				'type'       => 'control',
-				'control'    => 'colormag-subtitle',
-				'label'      => esc_html__( 'Style', 'colormag' ),
-				'section'    => 'colormag_sticky_header_section',
-				'dependency' => array(
-					'colormag_enable_sticky_menu',
-					'!=',
-					0,
-				),
-				'priority'   => 50,
-			),
-
-			// Primary sticky menu type option.
-			array(
-				'name'        => 'colormag_sticky_menu_type',
-				'default'     => 'sticky',
-				'type'        => 'control',
-				'control'     => 'select',
-				'label'       => esc_html__( 'Effect', 'colormag' ),
-				'description' => esc_html__( 'Select the option you want:', 'colormag' ),
-				'section'     => 'colormag_sticky_header_section',
-				'choices'     => array(
-					'sticky'           => esc_html__( 'Default', 'colormag' ),
-					'reveal_on_scroll' => esc_html__( 'Scroll Up', 'colormag' ),
-				),
-				'dependency'  => array(
-					'colormag_enable_sticky_menu',
-					'!=',
-					0,
-				),
-				'priority'    => 50,
+				'priority'    => 1000,
 			),
 		);
 
@@ -123,7 +84,6 @@ class ColorMag_Customize_Sticky_Header_Options extends ColorMag_Customize_Base_O
 
 		return $options;
 	}
-
 }
 
 return new ColorMag_Customize_Sticky_Header_Options();

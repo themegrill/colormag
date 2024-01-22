@@ -1,0 +1,25 @@
+.add-to-wishlist-before_image {
+
+    .yith-wcwl-add-to-wishlist {
+        position: absolute;
+        top: 12px;
+        left: 0;
+        right: 8px;
+        display: flex;;
+        align-items: center;
+        justify-content: flex-end;
+        height: 30px;
+        color: $color__gray-700;
+        font-size: 1.4rem;
+    }
+
+    .yith-wcwl-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: $color__gray-50;
+        border-radius: 50px;
+    }
+}

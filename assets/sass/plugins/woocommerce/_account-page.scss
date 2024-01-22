@@ -1,0 +1,156 @@
+.woocommerce-account {
+
+	&.logged-in {
+
+		.woocommerce {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
+
+	.cm-entry-header {
+		margin-bottom: length( 'l-15' );
+	}
+
+	h2 {
+		margin-bottom: length( 'l-15' );
+		@include font-size('font-size-xl');
+	}
+
+	.col2-set {
+
+		&#customer_login {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			width: 100%;
+
+			.col-1,
+			.col-2 {
+				width: 100%;
+			}
+
+			.col-2 {
+				margin-top: 0;
+			}
+		}
+	}
+
+	label {
+		display: block;
+		margin-bottom: length( 'l-2' );
+		font-weight: 600;
+		line-height: 1.8;
+	}
+
+	.woocommerce-Addresses {
+		background: $color__gray-100;
+	}
+
+	.woocommerce-form-row--last,
+	.woocommerce-form-row--first {
+		margin-bottom: 0;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="url"],
+	input[type="tel"] {
+		margin-bottom: length( 'l-8') ;
+	}
+}
+
+.woocommerce-MyAccount-navigation {
+	background: $color__gray-100;
+	border-radius: 4px;
+	overflow: hidden;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+
+			a {
+				display: flex;
+				align-items: center;
+				height: 55px;
+				padding: 0 20px;
+				font-weight: 500;
+				color: $color__gray-800;
+				border-bottom: 1px solid $color__gray-300;
+
+				&:hover,
+				&:focus {
+					background: $color__gray-300;
+					color: $color__primary;
+				}
+			}
+
+			&:last-child {
+
+				a {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		.is-active {
+
+			a {
+				color: $color__white;
+				background-color: $color__primary;
+
+				&:hover,
+				&:focus {
+					background-color: $color__gray-400;
+					color: $color__white;
+				}
+			}
+		}
+	}
+}
+
+.woocommerce-MyAccount-content {
+	padding: length( 'l-10' );
+	background-color: $color__gray-100;
+	border-radius: 4px;
+
+	p {
+		margin-bottom: length( 'l-6' );
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.woocommerce-account {
+
+		&.logged-in {
+			.woocommerce {
+				flex-direction: row;
+			}
+		}
+
+		.col2-set {
+
+			&#customer_login {
+				flex-direction: row;
+			}
+		}
+	}
+
+	.woocommerce-MyAccount-navigation {
+		width: 35%;
+	}
+
+	.woocommerce-MyAccount-content {
+		width: 65%;
+	}
+}

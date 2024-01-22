@@ -26,15 +26,13 @@ get_header();
 	do_action( 'colormag_before_body_content' );
 	?>
 
-		<?php colormag_two_sidebar_select(); ?>
-
 		<div id="cm-primary" class="cm-primary">
 			<div class="cm-posts" class="clearfix">
 				<?php
 				while ( have_posts() ) :
 					the_post();
 
-					get_template_part( 'content', 'page' );
+					get_template_part( '/template-parts/content', 'page' );
 				endwhile;
 				?>
 			</div><!-- .cm-posts -->

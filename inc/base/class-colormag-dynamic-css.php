@@ -36,7 +36,6 @@ class ColorMag_Dynamic_CSS {
 		 */
 
 		// Top bar color options
-		$top_bar_background_color             = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
 		$top_bar_text_color                   = get_theme_mod( 'colormag_top_bar_text_color', '#555' );
 		$top_bar_link_color                   = get_theme_mod( 'colormag_top_bar_link_color', '#207daf' );
 		$top_bar_link_hover_color             = get_theme_mod( 'colormag_top_bar_link_hover_color', '' );
@@ -808,24 +807,20 @@ class ColorMag_Dynamic_CSS {
 			input[type=submit],
 			.cm-home-icon.front_page_on,
 			.cm-post-categories a,
-			.cm-primary-nav a:hover,
-			.cm-primary-nav ul li ul li a:hover,
-			.cm-primary-nav ul li ul li:hover>a,
-			.cm-primary-nav ul li.current-menu-ancestor>a,
-			.cm-primary-nav ul li.current-menu-item ul li a:hover,
-			.cm-primary-nav ul li.current-menu-item>a,
-			.cm-primary-nav ul li.current_page_ancestor>a,
-			.cm-primary-nav ul li.current_page_item>a,
-			.cm-primary-nav ul li:hover>a,
+			.cm-primary-nav ul li ul li:hover,
+			.cm-primary-nav ul li.current-menu-item,
+			.cm-primary-nav ul li.current_page_ancestor,
+			.cm-primary-nav ul li.current-menu-ancestor,
+			.cm-primary-nav ul li.current_page_item,
+			.cm-primary-nav ul li:hover,
+			.cm-primary-nav ul li.focus,
 			.cm-mobile-nav li a:hover,
-			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover > a,
-			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor > a,
-			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item > a,
 			.colormag-header-clean #cm-primary-nav .cm-menu-toggle:hover,
-			.cm-header .cm-mobile-nav li:hover > a, .cm-header .cm-mobile-nav li.current-page-ancestor > a,
-			.cm-header .cm-mobile-nav li.current-menu-ancestor > a,
-			.cm-header .cm-mobile-nav li.current-page-item > a,
-			.cm-header .cm-mobile-nav li.current-menu-item > a,
+			.cm-header .cm-mobile-nav li:hover,
+			.cm-header .cm-mobile-nav li.current-page-ancestor,
+			.cm-header .cm-mobile-nav li.current-menu-ancestor,
+			.cm-header .cm-mobile-nav li.current-page-item,
+			.cm-header .cm-mobile-nav li.current-menu-item,
 			.cm-primary-nav ul li.focus > a,
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus > a,
 			.cm-mobile-nav .current-menu-item>a, .cm-mobile-nav .current_page_item>a,
@@ -858,11 +853,21 @@ class ColorMag_Dynamic_CSS {
 			.top-full-width-sidebar .cm-widget-title span,
 			.wp-block-quote, .wp-block-quote.is-style-large,
 			.wp-block-quote.has-text-align-right,
-			.page-numbers .current, .search-wrap button,
-			.cm-error-404 .cm-btn, .widget h2, .wp-block-search button,
+			.cm-error-404 .cm-btn, .widget .wp-block-heading, .wp-block-search button,
 			.widget a::before, .cm-post-date a::before,
 			.byline a::before,
-			.colormag-footer--classic-bordered .cm-widget-title::before' => array(
+			.colormag-footer--classic-bordered .cm-widget-title::before,
+			.wp-block-button__link,
+			#cm-tertiary .cm-widget-title span,
+			.link-pagination .post-page-numbers.current,
+			.wp-block-query-pagination-numbers .page-numbers.current,
+			.wp-element-button,
+			.wp-block-button .wp-block-button__link,
+			.wp-element-button,
+			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover,
+			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor,
+			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item,
+			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus' => array(
 				'background-color' => esc_html( $primary_color ),
 			),
 
@@ -877,7 +882,7 @@ class ColorMag_Dynamic_CSS {
 			.cm-layout-2 .cm-primary-nav ul li.focus > a
 			.dark-skin .cm-layout-2-style-1 #cm-primary-nav.cm-primary-nav .cm-home-icon:hover .fa,
 			.byline a:hover, .comments a:hover, .cm-edit-link a:hover, .cm-post-date a:hover,
-			.social-links:not(.cm-header-actions .social-links) i.fa:hover, .tag-links a:hover,
+			.social-links:not(.cm-header-actions .social-links) i.fa:hover, .cm-tag-links a:hover,
 			.colormag-header-clean .social-links li:hover i.fa, .cm-layout-2-style-1 .social-links li:hover i.fa,
 			.colormag-header-clean .breaking-news .newsticker a:hover, .widget_featured_posts .article-content .cm-entry-title a:hover,
 			.widget_featured_slider .slide-content .cm-below-entry-meta .byline a:hover,
@@ -892,7 +897,7 @@ class ColorMag_Dynamic_CSS {
 			.cm-site-title a, #content .post .article-content .cm-entry-title a:hover, .entry-meta .byline i,
 			.entry-meta .cat-links i, .entry-meta a, .post .cm-entry-title a:hover, .search .cm-entry-title a:hover,
 			.entry-meta .comments-link a:hover, .entry-meta .cm-edit-link a:hover, .entry-meta .cm-post-date a:hover,
-			.entry-meta .tag-links a:hover, .single #content .tags a:hover, .count, .next a:hover, .previous a:hover,
+			.entry-meta .cm-tag-links a:hover, .single #content .tags a:hover, .count, .next a:hover, .previous a:hover,
 			.related-posts-main-title .fa, .single-related-posts .article-content .cm-entry-title a:hover,
 			.pagination a span:hover,
 			#content .comments-area a.comment-cm-edit-link:hover, #content .comments-area a.comment-permalink:hover,
@@ -909,14 +914,22 @@ class ColorMag_Dynamic_CSS {
 			.cm-post-date a:hover,
 			.cm-author a:hover,
 			.cm-comments-link a:hover,
-			.tag-links a:hover,
+			.cm-tag-links a:hover,
 			.cm-edit-link a:hover,
 			.cm-footer-bar .copyright a,
 			.cm-featured-posts .cm-entry-title a:hover,
 			.cm-posts .post .cm-post-content .cm-entry-title a:hover,
 			.cm-posts .post .single-title-above .cm-entry-title a:hover,
 			.cm-layout-2 .cm-primary-nav ul li:hover > a,
-			.cm-layout-2 #cm-primary-nav .fa:hover' => array(
+			.cm-layout-2 #cm-primary-nav .fa:hover,
+			.cm-entry-title a:hover,
+			button:hover, input[type="button"]:hover,
+			input[type="reset"]:hover,
+			input[type="submit"]:hover,
+			.wp-block-button .wp-block-button__link:hover,
+			.cm-button:hover,
+			.wp-element-button:hover,
+			li.product .added_to_cart:hover' => array(
 				'color' => esc_html( $primary_color ),
 			),
 
@@ -945,15 +958,22 @@ class ColorMag_Dynamic_CSS {
 			.single-post .cm-post-categories a::after,
 			.widget .block-title,
 			.cm-layout-2 .cm-primary-nav ul li.focus > a,
-			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover' => array(
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"],
+			.wp-block-button .wp-block-button__link,
+			.cm-button,
+			.wp-element-button,
+			li.product .added_to_cart' => array(
 				'border-color' => esc_html( $primary_color ),
 			),
 
 			'.cm-secondary .cm-widget-title,
-			#tertiary .cm-widget-title,
+			#cm-tertiary .cm-widget-title,
 			.widget_featured_posts .widget-title,
 			#secondary .widget-title,
-			#tertiary .widget-title,
+			#cm-tertiary .widget-title,
 			.cm-page-header .cm-page-title,
 			.cm-footer-cols .cm-row .widget-title,
 			.advertisement_above_footer .widget-title,
@@ -1087,15 +1107,6 @@ class ColorMag_Dynamic_CSS {
 			'border-bottom-width'
 		);
 
-		// Top bar background color.
-		$top_bar_background_color_css = array(
-			'.cm-top-bar' => array(
-				'background-color' => esc_html( $top_bar_background_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
-
 		// Top bar border text color.
 		$top_bar_text_color_css = array(
 			'.cm-top-bar,
@@ -1166,7 +1177,7 @@ class ColorMag_Dynamic_CSS {
 		 * Header options.
 		 */
 		// Background.
-		$parse_css .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header' );
+		$parse_css .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header, .dark-skin .cm-main-header' );
 
 		$site_title_color = get_theme_mod( 'colormag_site_title_color', '#207daf' );
 
@@ -1246,7 +1257,7 @@ class ColorMag_Dynamic_CSS {
 			'unit'   => 'px',
 		);
 
-		$main_header_dimension_padding = get_theme_mod( 'colormag_main_header_dimension_padding', $main_header_dimension_padding_default );
+		$main_header_dimension_padding = get_theme_mod( 'colormag_primary_menu_padding', $main_header_dimension_padding_default );
 
 		$parse_css .= colormag_parse_dimension_css(
 			$main_header_dimension_padding_default,
@@ -1328,24 +1339,6 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
-		// Dimentions.
-		$primary_menu_dimension_padding_default = array(
-			'top'    => '10',
-			'right'  => '16',
-			'bottom' => '10',
-			'left'   => '16',
-			'unit'   => 'px',
-		);
-
-		$primary_menu_dimension_padding = get_theme_mod( 'colormag_primary_menu_dimension_padding', $primary_menu_dimension_padding_default );
-
-		$parse_css .= colormag_parse_dimension_css(
-			$primary_menu_dimension_padding_default,
-			$primary_menu_dimension_padding,
-			'.cm-primary-nav a',
-			'padding'
-		);
-
 		// Primary sub menu typography.
 		$parse_css .= colormag_parse_typography_css(
 			$primary_sub_menu_typography_default,
@@ -1393,8 +1386,9 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$post_title_typography_default,
 			$post_title_typography,
-			'.cm-posts .post .entry-title',
-
+			'.post .cm-entry-header .cm-entry-title,
+			.cm-posts .post .cm-post-content .cm-entry-title a,
+			.cm-posts .post .single-title-above .cm-entry-title a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1426,7 +1420,8 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$post_meta_typography_default,
 			$post_meta_typography,
-			'.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-date a,
+			'.cm-posts .post .cm-post-content .human-diff-time .human-diff-time-display,
+			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-date a,
 			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-author,
 			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-author a,
 			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-views a,
@@ -1435,8 +1430,8 @@ class ColorMag_Dynamic_CSS {
 			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-edit-link a,
 			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-edit-link i,
 			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-post-views,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .reading-time,
-			.cm-posts .post .cm-post-content .cm-below-entry-meta .reading-time::before',
+			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-reading-time,
+			.cm-posts .post .cm-post-content .cm-below-entry-meta .cm-reading-time::before',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1453,7 +1448,7 @@ class ColorMag_Dynamic_CSS {
 			.total-views,
 			.cm-edit-link a,
 			.cm-comments-link a,
-			.reading-time' => array(
+			.cm-reading-time' => array(
 				'color' => esc_html( $post_meta_color ),
 			),
 		);
@@ -1490,6 +1485,20 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_background_css( $post_content_background_default, $post_content_background, '.cm-content' );
 
+		// Post content background.
+		$outside_container_default = array(
+			'background-color'      => '#ffffff',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+
+		$outside_container = get_theme_mod( 'colormag_outside_container_background', $outside_container_default );
+
+		$parse_css .= colormag_parse_background_css( $outside_container_default, $outside_container, 'body' );
+
 		// Button text color.
 		$button_text_color = get_theme_mod( 'colormag_button_color', '#ffffff' );
 
@@ -1499,7 +1508,8 @@ class ColorMag_Dynamic_CSS {
 			input[type="button"],
 			input[type="submit"],
 			button,
-			.cm-entry-button span' => array(
+			.cm-entry-button span,
+			.wp-block-button__link' => array(
 				'color' => esc_html( $button_text_color ),
 			),
 		);
@@ -1515,7 +1525,8 @@ class ColorMag_Dynamic_CSS {
 			input[type="button"],
 			input[type="submit"],
 			button,
-			.cm-entry-button' => array(
+			.cm-entry-button,
+			.wp-block-button__link' => array(
 				'background-color' => esc_html( $button_background_color ),
 			),
 		);
@@ -1533,7 +1544,7 @@ class ColorMag_Dynamic_CSS {
 
 		// Footer copyright color.
 		$footer_copyright_color_css = array(
-			'.cm-footer-bar .copyright' => array(
+			'.cm-footer-bar-area .cm-footer-bar__2' => array(
 				'color' => esc_html( $footer_copyright_color ),
 			),
 		);
@@ -1542,11 +1553,8 @@ class ColorMag_Dynamic_CSS {
 
 		// Footer copyright link color.
 		$footer_copyright_link_color_css = array(
-			'.cm-footer-bar .copyright a' => array(
+			'.cm-footer-bar-area .cm-footer-bar__2 a' => array(
 				'color'         => esc_html( $footer_copyright_link_color ),
-			),
-			'.cm-footer-bar .copyright a' => array(
-				'border-bottom-color' => esc_html( $footer_copyright_link_color ),
 			),
 		);
 
@@ -1554,7 +1562,7 @@ class ColorMag_Dynamic_CSS {
 
 		// Footer menu color.
 		$footer_menu_color_css = array(
-			'#cm-footer .cm-footer-menu ul li a' => array(
+			'.cm-footer-bar-area .cm-footer-bar__1 ul li a' => array(
 				'color' => esc_html( $footer_menu_color ),
 			),
 		);
@@ -1563,7 +1571,7 @@ class ColorMag_Dynamic_CSS {
 
 		// Footer menu hover color.
 		$footer_menu_hover_color_css = array(
-			'#cm-footer .cm-footer-menu ul li a:hover' => array(
+			'.cm-footer-bar-area .cm-footer-bar__1 ul li a:hover' => array(
 				'color' => esc_html( $footer_menu_hover_color ),
 			),
 		);
@@ -1574,7 +1582,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$footer_copyright_typography_default,
 			$footer_copyright_typography,
-			'.cm-footer-bar .copyright',
+			'.cm-footer-bar-area .cm-footer-bar__2',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1585,7 +1593,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$footer_menu_typography_default,
 			$footer_menu_typography,
-			'.cm-footer-menu a',
+			'.cm-footer-bar-area .cm-footer-bar__1 a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1625,7 +1633,13 @@ class ColorMag_Dynamic_CSS {
 			h3,
 			h4,
 			h5,
-			h6' => array(
+			h6,
+			.dark-skin h1,
+			.dark-skin h2,
+			.dark-skin h3,
+			.dark-skin h4,
+			.dark-skin h5,
+			.dark-skin h6' => array(
 				'color' => esc_html( $headings_color ),
 			),
 		);
@@ -1636,7 +1650,8 @@ class ColorMag_Dynamic_CSS {
 		$heading_h1_color = get_theme_mod( 'colormag_h1_color', '#333333' );
 
 		$heading_h1_color_css = array(
-			'h1' => array(
+			'h1,
+			.dark-skin h1' => array(
 				'color' => esc_html( $heading_h1_color ),
 			),
 		);
@@ -1647,7 +1662,8 @@ class ColorMag_Dynamic_CSS {
 		$heading_h2_color = get_theme_mod( 'colormag_h2_color', '#333333' );
 
 		$heading_h2_color_css = array(
-			'h2' => array(
+			'h2,
+			.dark-skin h2' => array(
 				'color' => esc_html( $heading_h2_color ),
 			),
 		);
@@ -1658,7 +1674,8 @@ class ColorMag_Dynamic_CSS {
 		$heading_h3_color = get_theme_mod( 'colormag_h3_color', '#333333' );
 
 		$heading_h3_color_css = array(
-			'h3' => array(
+			'h3,
+			.dark-skin h3' => array(
 				'color' => esc_html( $heading_h3_color ),
 			),
 		);
@@ -1668,7 +1685,9 @@ class ColorMag_Dynamic_CSS {
 		// Sidebar widget title color.
 		$sidebar_widget_title_color_css = array(
 			'.cm-secondary .cm-widget-title span,
-			#tertiary .cm-widget-title span' => array(
+			.cm-secondary .wp-block-heading,
+			#cm-tertiary .cm-widget-title span,
+			#cm-tertiary .wp-block-heading' => array(
 				'color' => esc_html( $sidebar_widget_title_color ),
 			),
 		);
@@ -1910,8 +1929,10 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$widget_title_typography_default,
 			$widget_title_typography,
-			'.cm-secondary .cm-widget-title,
-			#tertiary .cm-widget-title',
+			'.cm-secondary .cm-widget-title span,
+			.cm-secondary .wp-block-heading,
+			#cm-tertiary .cm-widget-title span,
+			#cm-tertiary .wp-block-heading',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1922,7 +1943,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$comment_title_typography_default,
 			$comment_title_typography,
-			'.comments-title,
+			'.comments-area .comments-title,
 			.comment-reply-title,
 			#respond h3#reply-title',
 			array(
@@ -1935,7 +1956,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$footer_widget_title_typography_default,
 			$footer_widget_title_typography,
-			'.cm-footer-cols .cm-row .cm-widget-title',
+			'.cm-footer-cols .cm-row .cm-widget-title span',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1947,7 +1968,8 @@ class ColorMag_Dynamic_CSS {
 			$footer_widget_content_typography_default,
 			$footer_widget_content_typography,
 			'#cm-footer,
-			#cm-footer p',
+			#cm-footer p,
+			#cm-footer .cm-lower-footer-cols',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2030,7 +2052,7 @@ class ColorMag_Dynamic_CSS {
 
 		// Tags remove from post meta.
 		if ( 1 == $colormag_tags_entry_meta_remove ) {
-			$colormag_custom_css .= '.cm-below-entry-meta .tag-links{display:none}';
+			$colormag_custom_css .= '.cm-below-entry-meta .cm-tag-links{display:none}';
 		}
 
 		/**
@@ -2107,4 +2129,39 @@ class ColorMag_Dynamic_CSS {
 
 	}
 
+	/**
+	 * Return dynamic CSS output.
+	 *
+	 * @param string $dynamic_css Dynamic CSS.
+	 * @param string $dynamic_css_filtered Dynamic CSS Filters.
+	 *
+	 * @return string Generated CSS.
+	 */
+	public static function render_wc_output( $dynamic_css, $dynamic_css_filtered = '' ) {
+
+		// Generate dynamic CSS.
+		$parse_wc_css = $dynamic_css;
+		$wc_primary_color = get_theme_mod( 'colormag_primary_color', '#207daf' );
+
+		$wc_primary_color_css = array(
+			'.woocommerce-cart .actions .button' => array(
+				'border-color' => esc_html( $wc_primary_color ),
+			),
+
+			'.woocommerce-cart .actions .button[aria-disabled="true"]' => array(
+				'background-color' => esc_html( $wc_primary_color ),
+				'border-color' => esc_html( $wc_primary_color ),
+			),
+
+			'.product-subtotal,
+		.woocommerce-cart .actions .button,
+		li.product .added_to_cart:hover' => array(
+				'color' => esc_html( $wc_primary_color ),
+			),
+		);
+
+		$parse_wc_css .= colormag_parse_css( '#207daf', $wc_primary_color, $wc_primary_color_css );
+
+		return $parse_wc_css;
+	}
 }

@@ -22,20 +22,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	 */
 	function colormag_entry_meta( $full_post_meta = true, $reading_time_display = false ) {
 
-		$meta_orders = get_theme_mod(
-			'colormag_post_meta_structure',
+		$meta_orders =
 			array(
 				'categories',
 				'author',
 				'date',
-			)
-		);
+			);
 
 		$human_diff_time = '';
-
-		if ( get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) == 'style-2' ) {
-			$human_diff_time = 'human-diff-time';
-		}
 
 		echo '<div class="cm-below-entry-meta ' . esc_attr( $human_diff_time ) . '">';
 
@@ -70,9 +64,7 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 			// Edit button remove option add.
 			if ( $full_post_meta ) {
-				if ( 0 == get_theme_mod( 'colormag_edit_button_entry_meta_remove', 0 ) ) {
-					edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link"><i class="fa fa-edit"></i>', '</span>' );
-				}
+				edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link">'. colormag_get_icon( 'edit', false) .' ', '</span>' );
 			}
 
 			echo '</div>';
@@ -124,50 +116,6 @@ if ( ! function_exists( 'colormag_reading_time' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_exclude_duplicate_posts' ) ) :
-
-	/**
-	 * Unique Post Display function.
-	 *
-	 * The following sets of fucntions help in removing the duplicate posts from being shown in a page.
-	 *
-	 * colormag_exclude_duplicate_posts() - Excluding the Duplicate posts in featured posts widget.
-	 * colormag_append_excluded_duplicate_posts() - Appending the duplicate posts.
-	 */
-	function colormag_exclude_duplicate_posts() {
-		global $colormag_duplicate_posts;
-
-		if ( true == get_theme_mod( 'colormag_enable_unique_post_system', false ) ) {
-			$post__not_in = $colormag_duplicate_posts;
-		} else {
-			$post__not_in = array();
-		}
-
-		return $post__not_in;
-	}
-
-endif;
-
-if ( ! function_exists( 'colormag_append_excluded_duplicate_posts' ) ) :
-
-	/**
-	 * Add the post id's in an array to not duplicate the posts within the theme bundled widgets.
-	 *
-	 * @param array $featured_posts Duplicated posts ids within the theme bundled widgets.
-	 */
-	function colormag_append_excluded_duplicate_posts( $featured_posts ) {
-		global $colormag_duplicate_posts;
-
-		if ( true == get_theme_mod( 'colormag_enable_unique_post_system', false ) ) {
-			$post_ids                 = wp_list_pluck( $featured_posts->posts, 'ID' );
-			$colormag_duplicate_posts = array_unique( array_merge( $colormag_duplicate_posts, $post_ids ) );
-		} else {
-			return;
-		}
-	}
-
-endif;
-
 if ( ! function_exists( 'colormag_category_color' ) ) :
 
 	/**
@@ -208,8 +156,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 		global $post;
 
-		$meta_structure = get_theme_mod(
-			'colormag_post_meta_structure',
+		$meta_structure =
 			array(
 				'categories',
 				'date',
@@ -218,8 +165,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 				'comments',
 				'tags',
 				'read-time',
-			)
-		);
+			);
 
 		$categories = get_the_category();
 		$output     = '';
@@ -249,60 +195,31 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_two_sidebar_select' ) ) :
+/**
+ * Sets the post excerpt length to 20 words.
+ *
+ * Function tied to the excerpt_length filter hook.
+ *
+ * @param int $length The excerpt length.
+ *
+ * @return int The filtered excerpt length.
+ * @uses filter excerpt_length
+ */
+function colormag_excerpt_length( $length ) {
+	return 20;
+}
 
-	/**
-	 * Function to display the two sidebar selected.
-	 */
-	function colormag_two_sidebar_select() {
+add_filter( 'excerpt_length', 'colormag_excerpt_length' );
 
-		if ( ( is_page_template( 'page-templates/page-builder.php' ) ) ) {
-			return;
-		}
+/**
+ * Returns a "Continue Reading" link for excerpts.
+ */
+function colormag_continue_reading() {
+	return '';
+}
 
-		global $post;
+add_filter( 'excerpt_more', 'colormag_continue_reading' );
 
-		if ( $post ) {
-			$layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true );
-		}
-
-		if ( is_home() ) {
-			$queried_id  = get_option( 'page_for_posts' );
-			$layout_meta = get_post_meta( $queried_id, 'colormag_page_layout', true );
-		}
-
-		if ( empty( $layout_meta ) || is_archive() || is_search() ) {
-			$layout_meta = 'default_layout';
-		}
-
-		$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-		$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-		$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
-
-		if ( 'default_layout' === $layout_meta ) {
-
-			if ( is_page() ) {
-				if ( 'two_sidebars' === $colormag_default_page_layout ) {
-					ColorMag_Utils::colormag_get_sidebar( 'two' );
-				}
-			} elseif ( is_single() ) {
-				if ( 'two_sidebars' === $colormag_default_post_layout ) {
-					ColorMag_Utils::colormag_get_sidebar( 'two' );
-				}
-			} else {
-				if ( 'two_sidebars' === $colormag_default_layout ) {
-					ColorMag_Utils::colormag_get_sidebar( 'two' );
-				}
-			}
-		} else {
-			if ( 'two_sidebars' === $layout_meta ) {
-				ColorMag_Utils::colormag_get_sidebar( 'two' );
-			}
-		}
-
-	}
-
-endif;
 
 if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 
@@ -330,17 +247,17 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 			$layout_meta = 'default_layout';
 		}
 
-		$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-		$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-		$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
+		$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+		$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+		$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 		if ( 'default_layout' === $layout_meta ) {
 
 			if ( is_page() ) {
 
-				if ( 'right_sidebar' === $colormag_default_page_layout || 'two_sidebars' === $colormag_default_page_layout ) {
-					ColorMag_Utils::colormag_get_sidebar( $colormag_default_page_layout );
-				} elseif ( 'left_sidebar' === $colormag_default_page_layout ) {
+				if ( 'right_sidebar' === $colormag_page_sidebar_layout || 'two_sidebars' === $colormag_page_sidebar_layout ) {
+					ColorMag_Utils::colormag_get_sidebar( $colormag_page_sidebar_layout );
+				} elseif ( 'left_sidebar' === $colormag_page_sidebar_layout ) {
 					ColorMag_Utils::colormag_get_sidebar( 'left' );
 				}
 			} elseif ( is_single() ) {
@@ -350,9 +267,9 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 				} elseif ( 'left_sidebar' === $colormag_default_post_layout ) {
 					ColorMag_Utils::colormag_get_sidebar( 'left' );
 				}
-			} elseif ( 'right_sidebar' === $colormag_default_layout || 'two_sidebars' === $colormag_default_layout ) {
-				ColorMag_Utils::colormag_get_sidebar( $colormag_default_layout );
-			} elseif ( 'left_sidebar' === $colormag_default_layout ) {
+			} elseif ( 'right_sidebar' === $colormag_default_sidebar_layout || 'two_sidebars' === $colormag_default_sidebar_layout ) {
+				ColorMag_Utils::colormag_get_sidebar( $colormag_default_sidebar_layout );
+			} elseif ( 'left_sidebar' === $colormag_default_sidebar_layout ) {
 				ColorMag_Utils::colormag_get_sidebar( 'left' );
 			}
 		} elseif ( 'right_sidebar' === $layout_meta || 'two_sidebars' === $layout_meta ) {
@@ -380,7 +297,6 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 		$colormag_social_links = array(
 			'colormag_social_facebook'    => 'Facebook',
 			'colormag_social_twitter'     => 'Twitter',
-			'colormag_social_googleplus'  => 'Google-Plus',
 			'colormag_social_instagram'   => 'Instagram',
 			'colormag_social_pinterest'   => 'Pinterest',
 			'colormag_social_youtube'     => 'YouTube',
@@ -666,7 +582,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 				// Proceed with normal comments.
 				global $post;
 				?>
-				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"<?php echo colormag_schema_markup( 'comment' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 					<article id="comment-<?php comment_ID(); ?>" class="comment">
 						<footer class="comment-meta">
 							<div class="comment-author vcard">
@@ -681,7 +597,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 								<div class="comment-metadata">
 									<?php
 										printf(
-											'<div class="comment-date-time"' . colormag_schema_markup( 'comment_time' ) . '> ' . colormag_get_icon( 'calendar-fill', false) . '%1$s</div>',
+											'<div class="comment-date-time"' . '> ' . colormag_get_icon( 'calendar-fill', false ) . '%1$s</div>',
 											sprintf(
 												/* Translators: 1. Comment date, 2. Comment time */
 												esc_html__( '%1$s at %2$s', 'colormag' ),
@@ -700,7 +616,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
 						<?php endif; ?>
 
-						<section class="comment-content comment"<?php echo colormag_schema_markup( 'comment_content' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+						<section class="comment-content comment">
 							<?php
 							comment_text();
 
@@ -741,7 +657,7 @@ if ( ! function_exists( 'colormag_post_view_display' ) ) :
 
 		$count_key = 'total_number_of_views';
 		$count     = get_post_meta( $post_id, $count_key, true );
-		$icon      = $show_icon ? colormag_get_icon( 'eye', false): '';
+		$icon      = $show_icon ? colormag_get_icon( 'eye', false ) : '';
 
 		if ( '' === $count ) {
 			delete_post_meta( $post_id, $count_key );
@@ -855,14 +771,6 @@ if ( ! function_exists( 'colormag_author_social_link' ) ) :
 				</li>
 			<?php } // End check for facebook. ?>
 
-			<?php if ( get_the_author_meta( 'colormag_google_plus' ) ) { ?>
-				<li class="google_plus-link">
-					<a href="https://plus.google.com/<?php the_author_meta( 'colormag_google_plus' ); ?>">
-						<i class="fa fa-google-plus"></i>
-					</a>
-				</li>
-			<?php } // End check for google_plus. ?>
-
 			<?php if ( get_the_author_meta( 'colormag_flickr' ) ) { ?>
 				<li class="flickr-link">
 					<a href="https://flickr.com/<?php the_author_meta( 'colormag_flickr' ); ?>">
@@ -909,169 +817,15 @@ if ( ! function_exists( 'colormag_author_social_link' ) ) :
 
 endif;
 
-if ( ! function_exists( 'colormag_get_the_title' ) ) :
-
-	/**
-	 * Function to set length of the post title, depending upon the number of words user enters from the customizer pane.
-	 *
-	 * @param string $title get_the_title().
-	 *
-	 * @return string $title.
-	 */
-	function colormag_get_the_title( $title ) {
-
-		$title_length = get_theme_mod( 'colormag_blog_post_title_length', '' );
-
-		if ( is_int( $title_length ) ) {
-			$title = wp_trim_words( $title, $title_length );
-		}
-
-		return $title;
-
-	}
-endif;
-
 if ( ! function_exists( 'colormag_pagination' ) ) :
 	function colormag_pagination() {
 
 		/**
 		 * Hook: colormag_after_archive_page_loop.
 		 */
-		if ( 'default' === get_theme_mod( 'colormag_pagination_type', 'default' ) ) :
-			if ( true === apply_filters( 'colormag_page_navigation_filter', true ) ) :
-				get_template_part( 'navigation', 'none' );
-			endif;
+		if ( true === apply_filters( 'colormag_page_navigation_filter', true ) ) :
+			get_template_part( 'navigation', 'none' );
 		endif;
-
-		if ( 'numbered_pagination' === get_theme_mod( 'colormag_pagination_type', 'default' ) ) :
-			colormag_numbered_pagination();
-		endif;
-	}
-endif;
-
-if ( ! function_exists( 'colormag_numbered_pagination' ) ) :
-	function colormag_numbered_pagination() {
-		?>
-
-		<div class="tg-numbered-pagination">
-			<?php
-			$args = array(
-				'type'      => 'list',
-				'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-				'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-			);
-
-			the_posts_pagination( $args );
-			?>
-		</div>
-		<?php
-	}
-endif;
-
-if ( ! function_exists( 'colormag_infinite_scroll' ) ) :
-
-	function colormag_infinite_scroll() {
-
-		global $wp_query;
-		$event      = get_theme_mod( 'colormag_infinite_scroll_type', 'button' );
-		$pagination = get_theme_mod( 'colormag_pagination_type', 'default' );
-		$args       = array(
-			'mid_size' => 3,
-			'end_size' => 0,
-			'type'     => 'array',
-			'total'    => $wp_query->max_num_pages,
-		);
-
-		$args['current'] = $wp_query->get( 'paged' );
-
-		if ( ! $args['current'] ) {
-			$args['current'] = 1;
-		}
-
-		if ( round( $args['current'] ) === round( $args['total'] ) ) {
-			return;
-		}
-
-		$paginate_links = paginate_links( $args );
-
-		if ( $wp_query->max_num_pages > 1 ) :
-			?>
-			<?php if ( 'infinite_scroll' === $pagination ) : ?>
-				<nav class="tg-infinite-pagination tg-infinite-pagination--<?php echo esc_attr( $event ); ?>">
-					<?php
-					if ( ! empty( $paginate_links ) ) {
-						foreach ( $paginate_links as $paginate_link ) {
-							echo wp_kses_post( $paginate_link );
-						}
-					}
-					?>
-					<div class="tg-load-more">
-						<div class="tg-load-more-icon">
-							<div class="spinner"></div>
-						</div>
-						<span class="tg-all-post-loaded-text" style="display: none"><?php esc_html_e( 'All Posts Loaded', 'colormag' ); ?></span>
-						<?php if ( 'button' === $event ) : ?>
-							<a href="#" class="tg-load-more-btn">
-								<span class="tg-load-more-text"><?php esc_html_e( 'Load More', 'colormag' ); ?></span>
-							</a>
-						<?php endif; ?>
-					</div>
-				</nav> <!-- /.tg-infinite-scroll -->
-				<?php
-			endif;
-		endif;
-		?>
-		<?php
-	}
-endif;
-
-if ( ! function_exists( 'colormag_next_post_load' ) ) :
-
-	function colormag_next_post_load() {
-
-		global $post;
-		$event          = get_theme_mod( 'colormag_autoload_posts_type', 'button' );
-		$limit          = get_theme_mod( 'colormag_autoload_posts_limit', 2 );
-		$filter         = get_theme_mod( 'colormag_autoload_posts_filter', 'previous_posts' );
-		$current_post   = $post;
-		$paginate_links = array();
-
-		for ( $i = 1; $i <= $limit; $i++ ) {
-			$post = 'next_posts' === $filter ? get_next_post() : get_previous_post(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-			setup_postdata( $post );
-
-			if ( $post instanceof WP_Post ) {
-				$paginate_links[] = get_permalink( $post->ID );
-			}
-		}
-
-		$post = $current_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-
-		if ( empty( $paginate_links ) ) {
-			return;
-		}
-
-		?>
-			<nav class="tg-infinite-pagination tg-infinite-pagination--<?php echo esc_attr( $event ); ?>">
-				<span class="page-numbers current">1</span>
-				<?php
-				foreach ( $paginate_links as $index => $paginate_link ) {
-					printf( '<a class="page-numbers" href="%s" data-index="%s">%s</a>', esc_url( $paginate_link ), absint( $index ) + 2, absint( $index ) + 2 );
-				}
-				printf( '<a class="page-numbers next" href="%s" data-index="%s">%s</a>', esc_url( $paginate_links[0] ), 2, 2 );
-				?>
-				<div class="tg-load-more">
-					<div class="tg-load-more-icon">
-						<div class="spinner"></div>
-					</div>
-					<?php if ( 'button' === $event ) : ?>
-						<a href="#" class="tg-load-more-btn">
-							<span class="tg-load-more-text"><?php esc_html_e( 'Load Post', 'colormag' ); ?></span>
-						</a>
-					<?php endif; ?>
-				</div>
-			</nav> <!-- /.tg-infinite-scroll -->
-		<?php
 	}
 endif;
 
@@ -1084,24 +838,6 @@ function colormag_get_image_src_by_url( $image_url, $image_size ) {
 	}
 }
 
-if ( ! function_exists( 'colormag_menu_logo' ) ) :
-	function colormag_menu_logo() {
-		$menu_logo = colormag_get_image_src_by_url( get_theme_mod( 'colormag_primary_menu_logo' ), 'full' );
-
-		if ( isset( $menu_logo[0] ) ) :
-			?>
-			<div class="menu-logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-				   title="<?php esc_attr( bloginfo( 'name' ) ); ?>">
-					<img src="<?php echo esc_url( $menu_logo[0] ); ?>"
-						 alt="<?php esc_attr( bloginfo( 'name' ) ); ?>">
-				</a>
-			</div>
-			<?php
-		endif;
-	}
-endif;
-
 if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
 
 	/**
@@ -1112,11 +848,11 @@ if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
 	function colormag_date_meta_markup() {
 
 		// Displays the same published and updated date if the post is never updated.
-		$time_string = '<time class="entry-date published updated" datetime="%1$s"' . colormag_schema_markup( 'entry_time' ) . '>%2$s</time>';
+		$time_string = '<time class="entry-date published updated" datetime="%1$s"' . '>%2$s</time>';
 
 		// Displays the different published and updated date if the post is updated.
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s"' . colormag_schema_markup( 'entry_time' ) . '>%2$s</time><time class="updated" datetime="%3$s"' . colormag_schema_markup( 'entry_time_modified' ) . '>%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s"' . '>%2$s</time><time class="updated" datetime="%3$s"' . '>%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -1135,17 +871,6 @@ if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
 			colormag_get_icon( 'calendar-fill', false ),
 			$time_string
 		); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-		if ( 'style-2' == get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) ) {
-			printf(
-				/* Translators: %s Timestamp */
-				_x( '<span class="cm-post-date human-diff-time-display">%s ago</span>', '%s = human-readable time difference', 'colormag' ),
-				human_time_diff(
-					get_the_time( 'U' ),
-					current_time( 'timestamp' )
-				)
-			); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-		}
 	}
 endif;
 
@@ -1189,7 +914,7 @@ if ( ! function_exists( 'colormag_comment_meta_markup' ) ) :
 			<span class="cm-comments-link">
 				<?php
 
-				$icon = colormag_get_icon('comment', false);
+				$icon = colormag_get_icon( 'comment', false );
 				if ( $full_post_meta ) {
 					comments_popup_link(
 						$icon . __( ' 0 Comments', 'colormag' ),
@@ -1198,7 +923,7 @@ if ( ! function_exists( 'colormag_comment_meta_markup' ) ) :
 					);
 				} else {
 
-					colormag_get_icon('comment');
+					colormag_get_icon( 'comment' );
 					comments_popup_link( '0', '1', '%' );
 				}
 				?>
@@ -1218,7 +943,7 @@ if ( ! function_exists( 'colormag_tags_meta_markup' ) ) :
 	 * @return void
 	 */
 	function colormag_tags_meta_markup() {
-		$tags_list = get_the_tag_list( '<span class="tag-links"' . colormag_schema_markup( 'tag' ) . '><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
+		$tags_list = get_the_tag_list( '<span class="tag-links"' . '><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
 
 		if ( $tags_list ) {
 			echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
@@ -1249,4 +974,26 @@ if ( ! function_exists( 'colormag_read_time_meta_markup' ) ) :
 		}
 	}
 
+endif;
+
+if ( ! function_exists( 'colormag_get_the_title' ) ) :
+
+	/**
+	 * Function to set length of the post title, depending upon the number of words user enters from the customizer pane.
+	 *
+	 * @param string $title get_the_title().
+	 *
+	 * @return string $title.
+	 */
+	function colormag_get_the_title( $title ) {
+
+		$title_length = get_theme_mod( 'colormag_blog_post_title_length', '' );
+
+		if ( is_int( $title_length ) ) {
+			$title = wp_trim_words( $title, $title_length );
+		}
+
+		return $title;
+
+	}
 endif;

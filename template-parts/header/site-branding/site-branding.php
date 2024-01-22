@@ -38,11 +38,11 @@ if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) || true ==
 		if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) ) {
 			if ( is_front_page() || is_home() ) :
 				?>
-						<h1 class="cm-site-title"<?php echo colormag_schema_markup( 'site-title' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+						<h1 class="cm-site-title">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 						</h1>
 					<?php else : ?>
-						<h3 class="cm-site-title"<?php echo colormag_schema_markup( 'site-title' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+						<h3 class="cm-site-title">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 						</h3>
 						<?php
@@ -54,7 +54,7 @@ if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) || true ==
 					if ( true == get_theme_mod( 'colormag_enable_site_tagline', 'true' ) ) {
 						if ( $description || is_customize_preview() ) :
 							?>
-						<p class="cm-site-description"<?php echo colormag_schema_markup( 'site-description' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+						<p class="cm-site-description">
 							<?php echo $description; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 						</p><!-- .cm-site-description -->
 							<?php

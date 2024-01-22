@@ -34,10 +34,11 @@
 
 .cm-author,
 .cm-post-views,
-.tag-links,
+.cm-tag-links,
 .cm-edit-link,
 .cm-comments-link,
-.cm-post-date {
+.cm-post-date,
+.cm-reading-time {
 	display: flex;
 	align-items: center;
 	gap: 4px;
@@ -46,7 +47,7 @@
 
 .cm-post-date,
 .cm-author,
-.tag-links,
+.cm-tag-links,
 .cm-edit-link,
 .cm-comments-link {
 

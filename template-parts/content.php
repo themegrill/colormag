@@ -14,16 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $featured_image_size   = 'colormag-featured-image';
 $class_name_layout_two = '';
-$archive_search_layout = get_theme_mod( 'colormag_blog_layout', 'layout-1' );
+$archive_search_layout = 'layout-1';
 
-if ( 'layout-1' === get_theme_mod( 'colormag_blog_layout_1_style', 'layout-1' ) || 'layout-2' === get_theme_mod( 'colormag_blog_layout_2_style', 'layout-1' ) ) {
-	$featured_image_size = 'colormag-featured-post-medium';
-}
 ?>
 
 <article id="post-<?php the_ID(); ?>"
-	<?php post_class( array( $class_name_layout_two ) ); ?>
-	<?php echo colormag_schema_markup( 'entry' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+	<?php post_class( array( $class_name_layout_two ) ); ?>>
 	<?php
 	/**
 	 * Hook: colormag_before_post_content.
@@ -55,14 +51,7 @@ if ( 'layout-1' === get_theme_mod( 'colormag_blog_layout_1_style', 'layout-1' ) 
 				}
 				?>
 			</div>
-
-			<?php if ( 1 == get_theme_mod( 'colormag_enable_featured_image_caption', 0 ) && get_post( get_post_thumbnail_id() )->post_excerpt ) : ?>
-
-			<span class="featured-image-caption">
-						<?php echo wp_kses_post( get_post( get_post_thumbnail_id() )->post_excerpt ); ?>
-				</span>
 				<?php
-			endif;
 		endif;
 
 	endif;

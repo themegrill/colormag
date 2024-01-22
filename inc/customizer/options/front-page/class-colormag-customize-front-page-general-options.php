@@ -47,15 +47,15 @@ class ColorMag_Customize_Front_Page_General_Options extends ColorMag_Customize_B
 				'priority' => 10,
 			),
 
-			// Unique posts enable/disable option.
 			array(
-				'name'     => 'colormag_enable_unique_post_system',
-				'default'  => false,
-				'type'     => 'control',
-				'control'  => 'colormag-toggle',
-				'label'    => esc_html__( 'Unique Post System', 'colormag' ),
-				'section'  => 'colormag_front_page_general_section',
-				'priority' => 20,
+				'name'        => 'colormag_front_page_general_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_front_page_general_section',
+				'priority'    => 1000,
 			),
 		);
 

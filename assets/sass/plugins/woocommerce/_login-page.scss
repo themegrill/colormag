@@ -1,0 +1,110 @@
+.woocommerce-form-login {
+
+	&__rememberme {
+		display: block;
+
+		input[type="checkbox"] {
+			margin-right: length( 'l-4' );;
+		}
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		margin-bottom: length( 'l-8' );
+	}
+
+	.woocommerce-button {
+		margin-top: length( 'l-8' );
+		margin-bottom: length( 'l-16' );
+		padding: length( 'l-4' ) length( 'l-27' );
+	}
+
+	.woocommerce-LostPassword {
+
+		a {
+			@include font-size('font-size-sm');
+		}
+	}
+
+	p.form-row {
+		margin-bottom: 0;
+	}
+}
+
+.woocommerce-lost-password  {
+
+	.woocommerce {
+
+		label {
+			display: block;
+			margin-bottom: length( 'l-2' );
+			font-weight: 600;
+			line-height: 1.8;
+		}
+	}
+
+	button {
+		background-color: transparent;
+		color: $color__primary;
+	}
+
+	.woocommerce-ResetPassword {
+		width: 288px;
+		margin-left: auto;
+		margin-right: auto;
+
+		p {
+			margin-bottom: length( 'l-8' );
+		}
+
+		input[type="text"] {
+			background-color: $color__white;
+			margin-bottom: length( 'l-8' );
+		}
+	}
+}
+
+.woocommerce-form-register {
+	display: flex;
+	flex-direction: column;
+
+	input[type="email"] {
+		margin-bottom: length( 'l-8' );
+	}
+
+	button.woocommerce-Button {
+		color: $color__primary;
+		background-color: transparent;
+		margin-top: length( 'l-8' );
+
+		&:hover {
+			background-color: $color__primary;
+			color: $color__white;
+		}
+	}
+}
+
+.woocommerce-form-register,
+.woocommerce-form-login {
+	padding: length( 'l-15' ) length( 'l-12' );
+	background-color: $color__gray-100;
+	border-radius: 4px;
+	border: 1px solid $color__gray-200;
+
+	label {
+		display: block;
+		margin-bottom: length( 'l-2' );
+		font-weight: 600;
+		line-height: 1.8;
+	}
+}
+
+@include breakpoint("mdm") {
+
+	.woocommerce-lost-password  {
+	
+		.woocommerce-ResetPassword {
+			width: 570px
+		}
+	}
+}

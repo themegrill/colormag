@@ -70,7 +70,7 @@ if ( ! function_exists( 'colormag_footer_start' ) ) :
 	 */
 	function colormag_footer_start() {
 		?>
-		<footer id="cm-footer" class="cm-footer <?php echo esc_attr( colormag_footer_layout_class() ); ?>"<?php echo colormag_schema_markup( 'footer' ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>>
+		<footer id="cm-footer" class="cm-footer <?php echo esc_attr( colormag_footer_layout_class() ); ?>">
 		<?php
 	}
 
@@ -233,54 +233,14 @@ if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
 	 * Scroll to top button.
 	 */
 	function colormag_scroll_top_button() {
-
-		if ( get_theme_mod( 'colormag_enable_scroll_to_top', 0 ) ) :
 			?>
 			<a href="#cm-masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 		<?php
-		endif;
-
 	}
 
 endif;
 
 add_action( 'colormag_action_after_footer', 'colormag_scroll_top_button', 15 );
-
-if ( ! function_exists( 'colormag_reading_progress_bar' ) ) :
-
-	/**
-	 * Reading progress bar.
-	 */
-	function colormag_reading_progress_bar() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_progress_bar_indicator', 0 ) && is_single() ) :
-			?>
-			<div class="reading-progress-bar"></div>
-		<?php
-		endif;
-
-	}
-
-endif;
-
-add_action( 'colormag_action_after_footer', 'colormag_reading_progress_bar', 20 );
-
-if ( ! function_exists( 'colormag_flyout_related_post' ) ) :
-
-	/**
-	 * Flyout related posts.
-	 */
-	function colormag_flyout_related_post() {
-
-		if ( 1 == get_theme_mod( 'colormag_enable_flyout_related_posts', 0 ) && is_single() ) :
-			get_template_part( 'template-parts/footer/flyout-related-posts' );
-		endif;
-
-	}
-
-endif;
-
-add_action( 'colormag_action_after_footer', 'colormag_flyout_related_post', 25 );
 
 if ( ! function_exists( 'colormag_page_end' ) ) :
 
@@ -304,10 +264,7 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 	 */
 	function colormag_footer_copyright() {
 
-		$default_footer_value      = get_theme_mod(
-			'colormag_footer_editor',
-			esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag') . '[tg-link]' .  esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].'
-		);
+		$default_footer_value      = esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag') . '[tg-link]' .  esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].';
 		$colormag_footer_copyright = $default_footer_value;
 
 		echo do_shortcode( $colormag_footer_copyright );

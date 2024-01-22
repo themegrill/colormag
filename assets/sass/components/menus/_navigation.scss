@@ -7,18 +7,54 @@
 	margin-top: length( 'l-15' );
 }
 
+.wp-block-query-pagination-numbers {
+	display: flex;
+	align-content: space-between;
+	gap: 6px;
+	text-align: center;
+
+	.page-numbers {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 14px;
+		height: 14px;
+		border-radius: 4px;
+		border: 1px solid $color__gray-100;
+		background-color: $color__white;
+		color: $color__gray-700;
+		font-size: 14px;
+		padding: 8px;
+		font-weight: 400;
+
+		&.current {
+			background-color: $color__primary;
+			color: $color__white;
+		}
+	}
+}
+
 .previous,
 .next {
 
 	a {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		color: $color__gray-700;
 		cursor: pointer;
-		@include font-size('font-size-md');
+		@include font-size('font-size-sm');
+		font-weight: 600;
 		word-break: break-all;
 
 		&:hover {
 			color: $color__primary;
 			text-decoration: underline;
 		}
+	}
+
+	svg {
+		fill: $color__gray-800;
 	}
 }
 
@@ -51,60 +87,30 @@
 	}
 }
 
-/*--------------------------------------------------------------
-18.0 single post pagination
---------------------------------------------------------------*/
+.link-pagination {
+	display: flex;
+	align-content: space-between;
+	gap: 6px;
+	text-align: center;
+	margin: length( 'l-8' ) 0;
 
-.thumbnail-pagination {
-	margin: 30px 0;
-}
+	.post-page-numbers  {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 14px;
+		height: 14px;
+		padding: length( 'l-4' );
+		background-color: $color__white;
+		color: $color__gray-700;
+		@include font-size("font-size-xs");
+		font-weight: 400;
+		border-radius: 4px;
+		border: 1px solid $color__gray-100;
 
-.thumbnail-pagination {
-
-	li {
-		width: 49.5%;
-		-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-		-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-		min-height: 90px;
-	}
-
-	img {
-		width: 20%;
-		display: inline-block;
-		vertical-align: top;
-		margin: 0;
-	}
-
-	.next {
-		text-align: right;
-	}
-
-	.previous a {
-		padding-left: 4%;
-	}
-
-	.next a {
-		padding-right: 4%;
-	}
-
-	a {
-		display: inline-block;
-		vertical-align: top;
-		width: 75%;
-		color: #67666a;
-		line-height: 28px;
-		position: relative;
-		text-transform: uppercase;
-		padding: 0;
-		font-weight: 700;
-
-		&:hover {
-			text-decoration: none;
-		}
-
-		span {
-			display: none;
+		&.current {
+			background-color: $color__primary;
+			color: $color__white;
 		}
 	}
 }
@@ -118,11 +124,18 @@
 	position: absolute;
 	top: 50%;
 	-ms-transform: translateY(-50%);
-	/* IE 9 */
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	z-index: 9;
-	border-radius: 3px;
+	border-radius: 2px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	.cm-icon {
+		fill: $color__white;
+	}
 }
 
 .slide-prev {
@@ -142,128 +155,8 @@
 	filter: alpha(opacity=100);
 }
 
-/* Infinite pagination */
-
-.tg-infinite-pagination {
-	text-align: center;
-
-	.page-numbers {
-		display: none;
-	}
-
-	.tg-load-more {
-		display: inline-block;
-		text-align: center;
-		font-size: 12px;
-		background-color: $color__primary;
-		padding: 8px 15px;
-		border-radius: 3px;
-
-		&.loading {
-			cursor: default;
-
-			.tg-load-more-icon {
-				display: inline-block;
-			}
-		}
-
-		.tg-load-more-icon {
-			vertical-align: middle;
-			display: none;
-			padding-right: 5px;
-		}
-
-		.tg-load-more-text {
-			vertical-align: middle;
-			display: inline-block;
-		}
-	}
-
-	a,
-	span {
-		color: $color__white;
-	}
-
-	.spinner {
-		width: 16px;
-		height: 16px;
-		border: 2px solid rgba(24, 24, 24, 0.3);
-		border-top-color: $color__white;
-		border-radius: 50%;
-		animation: spinner 2s linear infinite;
-	}
-
-	@keyframes spinner {
-
-		0% {
-			transform: rotate(0deg);
-		}
-
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-
-	.tg-no-more-post {
-		background-color: $color__primary;
-	}
-}
-
-.tg-infinite-pagination--scroll {
-
-	.tg-load-more {
-		text-align: center;
-		display: inline-block;
-		font-size: 12px;
-		background-color: transparent;
-		padding: 8px 15px;
-		border-radius: 3px;
-
-		&.loading {
-			cursor: default;
-			background: unset;
-
-			.tg-load-more-icon {
-				display: inline-block;
-			}
-		}
-
-		.tg-load-more-icon {
-			vertical-align: middle;
-			display: none;
-			padding-right: 5px;
-		}
-	}
-
-	.spinner {
-		width: 16px;
-		height: 16px;
-		border: 2px solid rgba(24, 24, 24, 0.3);
-		border-top-color: #808080;
-		border-radius: 50%;
-		animation: spinner 2s linear infinite;
-	}
-
-	@keyframes spinner {
-
-		0% {
-			transform: rotate(0deg);
-		}
-
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-
-	.tg-no-more-post {
-		background-color: $color__primary;
-	}
-
-	.spinner {
-		width: 24px;
-		height: 24px;
-		background: unset;
-	}
+.tg-numbered-pagination {
+	margin-top: length( 'l-16' );	
 }
 
 @media screen and (max-width: 767px) {

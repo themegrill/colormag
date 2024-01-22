@@ -42,9 +42,20 @@
 	position: absolute;
 	top: 92%;
 	z-index: 99;
+	display: flex;
+	align-items: center;
+	justify-content: center;
     transform: translateY(-92%);
 	background-color: $color__primary;
 	border-radius: 2px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	.cm-icon {
+		fill: $color__white;
+	}
 }
 
 .cm-category-slide-prev {

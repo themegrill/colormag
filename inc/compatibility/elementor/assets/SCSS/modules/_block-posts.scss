@@ -3,12 +3,11 @@
 
 		// common
 		.tg_module_block {
-			.tg-module-thumb,
-			.fitvids-video {
+			.tg-module-thumb {
 				position: relative;
 				margin-bottom: 13px;
 
-				.tg-cm-post-categories {
+				.tg-post-categories {
 					position: absolute;
 					bottom: 0;
 					left: 0;
@@ -34,8 +33,7 @@
 				position: relative;
 				margin-bottom: 15px;
 
-				.tg-module-thumb,
-				.fitvids-video {
+				.tg-module-thumb {
 					width: 100px;
 					float: left;
 					margin-right: 10px;
@@ -44,10 +42,10 @@
 				.tg-module-info {
 					min-height: 73px;
 
-					.cm-entry-title {
+					.entry-title {
 						font-size: 14px;
 					}
-					.cm-entry-summary {
+					.entry-content {
 						p {
 							margin-bottom: 0;
 						}
@@ -80,17 +78,17 @@
 				.tg-module-thumb {
 					&::before,
 					&::after {
-						content: '';
+						content: "";
 						position: absolute;
 						top: 0;
 						left: 0;
 						width: 100%;
 						height: 100%;
-						background: linear-gradient( to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 100%);
+						background: linear-gradient( to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.01) 1%, rgba(0,0,0,0.1) 100%);
 					}
 
 					&::after {
-						background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+						background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
 						bottom: 0;
 						top: auto;
 					}
@@ -98,11 +96,10 @@
 			}
 		}
 
-		&.tg-module-block {
 
+		&.tg-module-block {
 			&.tg-module-block--style-1,
 			&.tg-module-block--style-2,
-			&.tg-module-block--style-3,
 			&.tg-module-block--style-6,
 			&.tg-module-block--style-9 {
 				.tg-col-control {
@@ -111,7 +108,6 @@
 			}
 
 			&.tg-module-block--style-2,
-			&.tg-module-block--style-3,
 			&.tg-module-block--style-4 {
 				.tg-col-control {
 					margin-bottom: 30px;
@@ -125,129 +121,6 @@
 
 				.tg-module-info {
 					flex-basis: $column-8;
-				}
-			}
-
-			&.tg-module-block--style-5 {
-				.tg_module_block {
-					margin-bottom: 45px;
-
-					.tg-module-thumb {
-						margin-bottom: 0;
-					}
-
-					.tg-module-title {
-						background: $white;
-						padding-top:20px;
-						padding-left: 25px;
-						padding-right: 25px;
-						position: absolute;
-						bottom: 0;
-						margin: 0 auto;
-						width: auto;
-						left: 45px;
-						right: 45px;
-						font-size: 30px;
-						box-shadow: 0 -5px 3px 0 rgba(0, 0, 0, 0.03);
-					}
-
-					.block-content {
-						padding: 5px 70px 20px;
-					}
-
-					.read-more {
-						background-color: $primary;
-						color: $white;
-						margin-top: 10px;
-						display: inline-block;
-						padding: 7px 12px;
-
-					}
-				}
-			}
-
-			&.tg-module-block--style-7,
-			&.tg-module-block--style-10 {
-				.tg_module_block--white {
-					position: relative;
-					margin-bottom: 30px;
-
-					.tg-module-title {
-						margin-top: 10px;
-
-						a {
-							color: $white;
-						}
-					}
-
-					.tg-post-auther-name,
-					.tg-post-date,
-					.tg-module-comments {
-						span {
-							color: $white;
-						}
-						a {
-							color: $white;
-
-							&:hover {
-								color: $primary;
-							}
-						}
-					}
-
-					.human-diff-time-display {
-						color: $white;
-
-						&:hover {
-							color: $primary;
-						}
-					}
-
-					.reading-time {
-						color: $white;
-						padding-right: 0;
-					}
-
-					.tg-module-info {
-						position: absolute;
-						bottom: 0;
-						left: 0;
-						width: 100%;
-						padding: 20px;
-					}
-				}
-			}
-
-			&.tg-module-block--style-8 {
-
-				.tg-col-control {
-					flex-basis: $column-4;
-					margin-bottom: 30px;
-				}
-			}
-
-			&.tg-module-block--style-10 {
-
-				.tg_module_block.tg_module_block--list-small {
-
-					.tg-module-info {
-						margin-left: 0;
-						min-height: auto;
-						border-bottom: 1px solid #efefef;
-						padding: 0 10px 10px 30px;
-						position: relative;
-					}
-
-					&:before {
-						content: ' ';
-						position: absolute;
-						top: 5px;
-						left: 10px;
-						height: 8px;
-						width: 8px;
-						display: block;
-						background-color: $primary;
-					}
 				}
 			}
 		}

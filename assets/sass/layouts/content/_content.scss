@@ -34,18 +34,12 @@
 			width: 100%;
 			padding-bottom: 0;
 			margin-right: 0;
-			float: left;
-		}
-
-		.cm-one-half-last {
-			float: right;
-			margin-top:  length( 'l-15' );
-			margin-bottom:  length( 'l-15' );
 		}
 	}
 }
 
 .top-full-width-sidebar {
+	margin-bottom: length( 'l-15');
 
 	.cm-widget-title {
 		border-bottom: 2px solid $color__primary;
@@ -69,14 +63,6 @@
 
 		.cm-row {
 			flex-direction: row;
-
-			.cm-one-half {
-				width: 48.75%;
-			}
-
-			.cm-one-half-last {
-				margin-top: 0;
-			}
 		}
 	}
 

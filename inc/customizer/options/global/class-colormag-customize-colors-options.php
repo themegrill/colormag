@@ -67,27 +67,6 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 30,
 			),
 
-			// Base color option.
-			array(
-				'name'     => 'colormag_base_color_group',
-				'label'    => esc_html__( 'Base', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 40,
-			),
-
-			array(
-				'name'     => 'colormag_base_color',
-				'default'  => '#444444',
-				'type'     => 'sub-control',
-				'control'  => 'colormag-color',
-				'parent'   => 'colormag_base_color_group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 50,
-			),
-
 			// Skin color option.
 			array(
 				'name'     => 'colormag_color_skin_setting',
@@ -103,156 +82,16 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 60,
 			),
 
-			/**
-			 * Heading Colors.
-			 */
-			// Headings color heading.
 			array(
-				'name'     => 'colormag_headings_color_heading',
-				'type'     => 'control',
-				'control'  => 'colormag-title',
-				'label'    => esc_html__( 'Headings', 'colormag' ),
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 70,
+				'name'        => 'colormag_colors_upgrade',
+				'type'        => 'control',
+				'control'     => 'colormag-upgrade',
+				'label'       => esc_html__( 'Learn more', 'colormag' ),
+				'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
+				'section'     => 'colormag_global_colors_section',
+				'priority'    => 1000,
 			),
-
-			// Headings color option.
-			array(
-				'name'     => 'colormag_headings_color_group',
-				'label'    => esc_html__( 'Headings', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 80,
-			),
-
-			array(
-				'name'      => 'colormag_headings_color',
-				'default'   => '#333333',
-				'type'      => 'sub-control',
-				'control'   => 'colormag-color',
-				'parent'    => 'colormag_headings_color_group',
-				'section'   => 'colormag_global_colors_section',
-				'transport' => 'postMessage',
-				'priority'  => 90,
-			),
-
-			// Heading H1 color option.
-			array(
-				'name'     => 'colormag_h1_color_group',
-				'label'    => esc_html__( 'H1', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 100,
-			),
-
-			array(
-				'name'      => 'colormag_h1_color',
-				'default'   => '#333333',
-				'type'      => 'sub-control',
-				'control'   => 'colormag-color',
-				'parent'    => 'colormag_h1_color_group',
-				'section'   => 'colormag_global_colors_section',
-				'transport' => 'postMessage',
-				'priority'  => 110,
-			),
-
-			// Heading H2 color option.
-			array(
-				'name'     => 'colormag_h2_color_group',
-				'label'    => esc_html__( 'H2', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 120,
-			),
-
-			array(
-				'name'      => 'colormag_h2_color',
-				'default'   => '#333333',
-				'type'      => 'sub-control',
-				'control'   => 'colormag-color',
-				'parent'    => 'colormag_h2_color_group',
-				'section'   => 'colormag_global_colors_section',
-				'transport' => 'postMessage',
-				'priority'  => 130,
-			),
-
-			// Heading H3 color option.
-			array(
-				'name'     => 'colormag_h3_color_group',
-				'label'    => esc_html__( 'H3', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 140,
-			),
-
-			array(
-				'name'      => 'colormag_h3_color',
-				'default'   => '#333333',
-				'type'      => 'sub-control',
-				'control'   => 'colormag-color',
-				'parent'    => 'colormag_h3_color_group',
-				'section'   => 'colormag_global_colors_section',
-				'transport' => 'postMessage',
-				'priority'  => 150,
-			),
-
-			/**
-			 * Link Colors.
-			 */
-			// Links heading.
-			array(
-				'name'     => 'colormag_links_heading',
-				'type'     => 'control',
-				'control'  => 'colormag-title',
-				'label'    => esc_html__( 'Links', 'colormag' ),
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 160,
-			),
-
-			// Link color option.
-			array(
-				'name'     => 'colormag_link_color_group',
-				'label'    => esc_html__( 'Link', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 170,
-			),
-
-			array(
-				'name'      => 'colormag_link_color',
-				'default'   => '#207daf',
-				'type'      => 'sub-control',
-				'control'   => 'colormag-color',
-				'parent'    => 'colormag_link_color_group',
-				'tab'       => esc_html__( 'Color', 'colormag' ),
-				'section'   => 'colormag_global_colors_section',
-				'transport' => 'postMessage',
-				'priority'  => 180,
-			),
-
-			// Link Hover color option.
-			array(
-				'name'      => 'colormag_link_hover_color',
-				'default'   => '#207daf',
-				'type'      => 'sub-control',
-				'control'   => 'colormag-color',
-				'parent'    => 'colormag_link_color_group',
-				'tab'       => esc_html__( 'Hover Color', 'colormag' ),
-				'section'   => 'colormag_global_colors_section',
-				'transport' => 'postMessage',
-				'priority'  => 190,
-			),
-
 		);
 
 		$options = array_merge( $options, $configs );

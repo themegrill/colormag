@@ -31,14 +31,14 @@ i {
 
 pre {
 	overflow: auto;
-    padding: 30px 30px 84px 30px ;
-	background-color: #FAFAFA;
-	font-size: 14px;
-	font-style: italic;
-    line-height: 1.7;
-	margin-bottom: 20px;
     max-width: 100%;
     width: 798px;
+	margin-bottom: 20px;
+    padding: 30px 30px 84px 30px ;
+	background-color: $color__gray-50;
+	@include font-size("font-size-xs");
+	font-style: italic;
+    line-height: 1.7;
 }
 
 code,
@@ -47,7 +47,7 @@ var,
 samp,
 tt {
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 14px;
+	@include font-size("font-size-xs");
 	line-height: 1.4;
 	white-space: pre-wrap;
 }
@@ -55,18 +55,18 @@ tt {
 abbr,
 acronym,
 dfn {
-	border-bottom: 1px dotted #777777;
+	border-bottom: 1px dotted $color__gray-300;
 	cursor: help;
 }
 
 address {
 	display: block;
 	font-style: italic;
-	margin: 0 0 15px;
+	margin: 0 0 length( 'l-8' );
 }
 
 ins {
-	background: #f8f8f8;
+	background: $color__gray-100;
 }
 
 hr,
@@ -74,18 +74,18 @@ hr,
 	background-color: $color__gray-200;
 	border: 0;
 	height: 1px;
-	margin: 30px 0;
+	margin: length( 'l-15' ) 0;
 }
 
 dl {
-	font-size: 16px;
+	@include font-size("font-size-sm");
 }
 
 dt {
 	font-weight: bold;
-	margin-bottom: 5px;
+	margin-bottom: length( 'l-2' );
 }
 
 dd {
-	margin-bottom: 24px;
+	margin-bottom: length( 'l-12');
 }

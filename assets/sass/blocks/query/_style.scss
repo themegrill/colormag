@@ -1,0 +1,13 @@
+.wp-block-query {
+
+	.wp-block-post {
+
+		&.post {
+			box-shadow: none;
+		}
+	}
+
+	.wp-block-post-template {
+		padding: 0;
+	}
+}

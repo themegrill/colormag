@@ -1,0 +1,433 @@
+.colormag-update {
+	background-color: #FAFDFF;
+}
+
+.wrap .colormag-header {
+	background-color: #fff;
+	padding: 12px 20px;
+	border-bottom: 1px solid #ccd0d4;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.colormag-update .colormag-message__heading {
+	max-width: 768px;
+}
+
+.colormag-message__cta .button.button-hero {
+	min-height: 45px;
+	padding: 8px 24px;
+	font-size: 16px;
+	border-radius: 4px;
+	line-height: 1.8;
+	border: 0;
+}
+
+.colormag-message__cta .button.button-secondary.button-hero {
+	background: rgba(15, 103, 173, 0.04);
+	border: 1px solid #0F67AD;
+	border-radius: 4px;
+	padding: 8px 16px;
+	line-height: 1.6;
+}
+
+.appearance_page_colormag-options .wrap {
+	margin-top: 0;
+}
+
+/* Notices. */
+.colormag-notice {
+	position: relative;
+	padding: 16px 40px 16px 20px;
+}
+
+.colormag-notice .links {
+	margin: 1.2em 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.colormag-notice .links a {
+	margin-right: 10px;
+}
+
+.colormag-notice .links a > span {
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+.colormag-notice .notice-text .coupon-code {
+	display: inline-block;
+}
+
+.colormag-notice .notice-dismiss {
+	text-decoration: none;
+}
+
+/* Welcome notice. */
+.colormag-message__content {
+	display: flex;
+	gap: 24px;
+}
+
+.colormag-update .colormag-message__content {
+	flex-wrap: wrap;
+}
+
+.colormag-message__content .colormag-message__image {
+	display: flex;
+	flex: 0 0 160px;
+    object-fit: cover;
+}
+
+.colormag-update .colormag-message__content .colormag-message__image {
+	flex-basis: 320px;
+	height: 214px;
+	min-height: 100px;
+}
+
+.colormag-message__content .colormag-message__image .colormag-screenshot {
+	width: 100%;
+	margin: 0;
+	float: none;
+	border-radius: 4px;
+	object-fit: cover;
+}
+
+.colormag-message__content .colormag-message__heading {
+	margin-top: 0;
+	line-height: 1.8;
+	padding: 0;
+}
+
+.colormag-update .colormag-message__heading {
+	display: flex;
+	align-items: center;
+}
+
+.colormag-update .colormag-message__text {
+	flex: 1;
+}
+
+h1.colormag-message__heading {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 37px;
+	color: #232323;
+	margin-bottom: 12px;
+}
+
+h2.colormag-message__heading {
+	margin-bottom: 24px;
+	font-weight: 400;
+	color: #232323;
+	font-size: 16px;
+	line-height: 180%;
+}
+
+.colormag-message__content .colormag-message__cta {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.colormag-message__content .colormag-message__cta .plugin-install-notice {
+	line-height: 1.4;
+}
+
+.colormag-message__cta .btn-contact-support {
+	line-height: 1.4;
+}
+
+.colormag-message__content .colormag-message__cta a:before {
+	margin: 5px;
+	vertical-align: middle;
+}
+
+a.colormag-message-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px 15px 10px 21px;
+	font-size: 13px;
+	line-height: 1.23076923;
+	text-decoration: none;
+}
+
+a.colormag-message-close:before {
+	position: absolute;
+	top: 8px;
+	left: 0;
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+	.colormag-message__content .colormag-message__image {
+		display: none;
+	}
+}
+
+/* Dashboard page. */
+.wrap .colormag-header {
+	background-color: #fff;
+	padding: 12px 20px;
+	border-bottom: 1px solid #ccd0d4;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.colormag-message__text img {
+	height: 50px;
+	width: 50px;
+}
+
+.colormag-message__text {
+	align-self: center;
+}
+
+.appearance_page_colormag-options .wrap {
+	margin-top: 0;
+}
+
+/* Responsive. */
+@media (max-width: 768px) {
+	.colormag-message__content .colormag-screenshot {
+		display: none;
+	}
+	.colormag-message__content .colormag-message__text {
+		padding: 0;
+		width: 100%;
+	}
+}
+
+/* Colormag review notice */
+.colormag-notice.theme-review-notice {
+	border-left-color: #6547DB;
+	padding: 20px 15px;
+}
+
+@media screen and (max-width: 768px) {
+	.colormag-notice.theme-review-notice .colormag-message__content {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.colormag-notice.theme-review-notice .colormag-message__image {
+	flex: 0;
+	min-height: auto;
+	margin-right: 35px;
+	margin-left: 10px;
+	padding-right: 0;
+	border-right: none;
+}
+
+.colormag-notice.theme-review-notice .colormag-logo--png {
+	width: 80px;
+	height: 80px;
+}
+
+.colormag-notice.theme-review-notice h3 {
+	font-size: 21px;
+	margin: 0;
+	line-height: 1;
+	color: #000;
+}
+
+.colormag-notice.theme-review-notice p {
+	font-size: 14px;
+	line-height: 21px;
+	color: #3C434A;
+	margin: 0 0 6px 0;
+	max-width: 720px;
+	padding: 2px 0;
+}
+
+.colormag-notice.theme-review-notice span.dashicons.dashicons-smiley.smile-icon {
+	background: #f7e143;
+	border-radius: 50%;
+	font-size: 15px;
+	border: 1px solid;
+	width: 17px;
+	height: 17px;
+}
+
+.colormag-notice.theme-review-notice .button-primary {
+	background: #6547DB;
+	border-color: #6547DB;
+	box-shadow: none;
+	color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+	.colormag-notice.theme-review-notice .button-primary {
+		margin-bottom: 10px;
+	}
+}
+
+.colormag-notice.theme-review-notice .button-secondary {
+	color: #6547DB;
+	border-color: #6547DB;
+	background: #f6f7f7;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 768px) {
+	.colormag-notice.theme-review-notice .button-secondary {
+		margin-bottom: 10px;
+	}
+}
+
+.colormag-notice.theme-review-notice strong {
+	color: #000;
+}
+
+.colormag-notice.theme-review-notice .links {
+	margin: 1.2em 0 5px 0;
+}
+
+.colormag-notice.theme-review-notice a.btn {
+	display: flex;
+	max-width: fit-content;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Dashboard */
+.appearance_page_colormag-options .wrap {
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+.appearance_page_colormag-options #wpcontent, .appearance_page_colormag-options #wpbody-content .metabox-holder {
+	padding: 0;
+}
+.colormag-container {
+	max-width: 1150px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.colormag-container a {
+	text-decoration: none;
+	font-size: 13px;
+}
+.colormag-container ul {
+	margin: 0;
+	padding: 0;
+}
+.colormag-container .postbox {
+	box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+	border: 0;
+	min-width: initial;
+	margin-bottom: 40px;
+}
+.colormag-container .postbox .hndle {
+	cursor: inherit;
+	border-bottom: 1px solid #ccd0d4;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.colormag-container .postbox .hndle .dashicons {
+	padding-right: 5px;
+}
+.colormag-header {
+	background-color: #fff;
+	text-align: center;
+	box-shadow: 0 1px 0 rgba(200, 215, 225, 0.5), 0 1px 2px #ddd;
+	margin-bottom: 40px;
+	padding: 20px;
+}
+.colormag-header > .colormag-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.colormag-header .colormag-title {
+	display: flex;
+	align-items: center;
+}
+.colormag-header .colormag-title + div {
+	float: right;
+	align-items: center;
+}
+.colormag-header .colormag-title + div a {
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: middle;
+}
+.colormag-icon {
+	width: 100%;
+	height: 60px;
+}
+.colormag-version {
+	color: #000;
+	margin-left: 5px;
+	background: #efefef;
+	padding: 1px 3px;
+}
+.pro-feature {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	margin: 0;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+}
+.pro-feature > a {
+	font-weight: bold;
+}
+.col-30 .postbox:first-child {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 7px 12px 7px 0;
+}
+
+.postbox-container .colormag-update .colormag-message__content .colormag-message__image {
+	flex-basis: 242px;
+}
+
+@media (min-width: 768px) {
+	.col-70 {
+		float: left;
+		width: 70%;
+		box-sizing: border-box;
+		padding-right: 20px;
+	}
+	.col-30 {
+		float: left;
+		width: 30%;
+		box-sizing: border-box;
+		padding-left: 20px;
+	}
+}
+
+.postbox-container .colormag-message__content .colormag-message__cta {
+	flex-direction: column;
+}
+
+.postbox-container .colormag-message__content .colormag-message__cta {
+	align-items: flex-start;
+}
+@media screen and (max-width: 767px) {
+	.colormag-header {
+		margin: 20px;
+	}
+	.colormag-header > .colormag-container {
+		display: block;
+	}
+	.colormag-header .colormag-title {
+		justify-content: center;
+	}
+	.colormag-header .colormag-title + div {
+		float: none;
+		margin-top: 20px;
+	}
+}
+
+@media (min-width: 1236px) {
+	.postbox-container .colormag-message__content .colormag-message__cta {
+		flex-direction: row;
+	}
+}

@@ -18,6 +18,19 @@ defined( 'ABSPATH' ) || exit;
 require get_template_directory() . '/inc/base/class-colormag-constants.php';
 
 /**
+ * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
+ */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
+	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
+	require get_template_directory() . '/inc/admin/class-colormag-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-colormag-major-update-notice.php';
+}
+
+///** ColorMag setup file, hooked for `after_setup_theme`. */
+//require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
+
+/**
  * Base.
  */
 // Generate WordPress filter hook dynamically.
@@ -50,18 +63,16 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
 /**
- * Demo Importer.
- */
-//Load ColorMag Pro Demo Importer compatibility file.
-require get_template_directory() . '/inc/demo-importer/class-demo-importer.php';
-
-/**
  * Deprecated.
  */
 // Load deprecated functions.
 require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-filters.php';
 require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-functions.php';
 require_once COLORMAG_INCLUDES_DIR . '/deprecated/deprecated-hooks.php';
+
+/**
+ * Freemius.
+ */
 
 /**
  * Helper.
@@ -79,9 +90,6 @@ require_once COLORMAG_INCLUDES_DIR . '/meta-boxes/class-colormag-meta-box-page-s
 /**
  * Migration
  */
-// Migrating customize options.
-require COLORMAG_INCLUDES_DIR . '/migration/class-colormag-options-migrate.php';
-
 // Load demo import migration scripts.
 require_once COLORMAG_INCLUDES_DIR . '/migration/demo-import-migration.php';
 
@@ -115,14 +123,8 @@ require COLORMAG_PARENT_DIR . '/template-parts/hooks/content/content.php';
 
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/footer/footer.php';
 
-/** Schema markup file include. */
-require_once COLORMAG_INCLUDES_DIR . '/schema-markup.php';
-
 /** WP_Query functions files. */
 require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
-
-/** Breadcrumb class. */
-require_once COLORMAG_INCLUDES_DIR . '/class-breadcrumb-trail.php';
 
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/ajax.php';
@@ -215,13 +217,13 @@ function colormag_content_width() {
 		$layout_meta = 'default_layout';
 	}
 
-	$colormag_default_layout      = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
-	$colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
+	$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 	if ( 'default_layout' === $layout_meta ) {
 		if ( is_page() ) {
-			if ( 'no_sidebar_full_width' === $colormag_default_page_layout ) {
+			if ( 'no_sidebar_full_width' === $colormag_page_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
 			}
 		} elseif ( is_single() ) {
@@ -229,7 +231,7 @@ function colormag_content_width() {
 				$content_width = 1140; /* pixels */
 			}
 		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_layout ) {
+			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
 			}
 		}

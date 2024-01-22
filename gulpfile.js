@@ -25,12 +25,12 @@ var paths = {
 
 	js : {
 		src  : [
-			'./js/*.js',
-			'!./js/*.min.js',
-			'./js/**/*.js',
-			'!./js/**/*.min.js'
+			'assets/js/*.js',
+			'!assets/js/*.min.js',
+			'assets/js/**/*.js',
+			'!assets/js/**/*.min.js'
 		],
-		dest : './js/'
+		dest : 'assets/js/'
 	},
 
 	customizePreviewJS : {
@@ -118,7 +118,7 @@ var paths = {
 // Start browserSync.
 function browserSyncStart( cb ) {
 	browserSync.init( {
-		proxy : 'colormagpro.local/colormag-pro'
+		proxy : 'colormag.local/colormag'
 	}, cb );
 }
 

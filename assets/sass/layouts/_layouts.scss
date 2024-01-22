@@ -2,11 +2,7 @@
 --------------------------------------------- */
 @import "header/top-bar";
 @import "header/header";
-@import "header/layouts/layout-1/style-1";
-@import "header/layouts/layout-1/style-2";
 @import "header/layouts/layout-2/style-1";
-@import "header/layouts/layout-2/style-2";
-@import "header/layouts/layout-3/style-1";
 
 /* Page templates.
 --------------------------------------------- */
@@ -36,7 +32,7 @@
 @import "sidebar/right-sidebar";
 @import "sidebar/left-sidebar";
 @import "sidebar/no-sidebar";
-@import "sidebar/two-sidebars";
+@import "sidebar/sidebar";
 
 /* Pages.
 --------------------------------------------- */
