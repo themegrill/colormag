@@ -1,4 +1,7 @@
 == Changelog ==
+TBD
+* Add - Font awesome V6.2.4 support.
+
 = 3.1.2 - 2023-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
