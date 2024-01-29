@@ -65,14 +65,14 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD  =
+= Version - 3.1.4 - 2024-01-29 =
 * Add - Font awesome V6.2.4 support.
 * Fix - Page builder template responsive issue.
 
-= Version - 3.1.3 - 2023-01-19 =
+= Version - 3.1.3 - 2024-01-19 =
 * Enhancement - Theme Dashboard.
 
-= Version - 3.1.2 - 2023-01-15 =
+= Version - 3.1.2 - 2024-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
 = Version - 3.1.1 - 2023-01-11 =

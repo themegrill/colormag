@@ -1,15 +1,15 @@
 == Changelog ==
-= Version TBD  =
+= 3.1.4 - 2024-01-29 =
 * Add - Font awesome V6.2.4 support.
 * Fix - Page builder template responsive issue.
 
-= 3.1.3 - 2023-01-19 =
+= 3.1.3 - 2024-01-19 =
 * Enhancement - Theme Dashboard.
 
-= 3.1.2 - 2023-01-15 =
+= 3.1.2 - 2024-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
-= 3.1.1 - 2023-01-11 =
+= 3.1.1 - 2024-01-11 =
 * Tweak - Update screenshot image.
 
 = 3.1.0 - 2023-12-27 =
