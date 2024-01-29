@@ -4116,6 +4116,10 @@ Styles for separating single posts loaded from ajax call.
 	padding-bottom: 0;
 }
 
+.home.page-template-page-builder .cm-primary .cm-posts {
+	display: block;
+}
+
 /* Content.
 --------------------------------------------- */
 #page {
