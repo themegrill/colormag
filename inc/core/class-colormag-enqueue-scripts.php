@@ -136,7 +136,44 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'colormag-navigation', COLORMAG_JS_URL . '/navigation' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
 			// FontAwesome CSS.
-			wp_enqueue_style( 'colormag-fontawesome', get_template_directory_uri() . '/assets/library/fontawesome/css/font-awesome' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
+			// Font Awesome 4.
+			$font_awesome_styles = array(
+				array(
+					'handle'  => 'font-awesome-4',
+					'file'    => '/library/font-awesome/css/v4-shims',
+					'version' => '4.7.0',
+				),
+				array(
+					'handle'  => 'font-awesome-all',
+					'file'    => '/library/font-awesome/css/all',
+					'version' => '6.2.4',
+				),
+				array(
+					'handle'  => 'font-awesome-solid',
+					'file'    => '/library/font-awesome/css/solid',
+					'version' => '6.2.4',
+				),
+				array(
+					'handle'  => 'font-awesome-solid',
+					'file'    => '/library/font-awesome/css/regular',
+					'version' => '6.2.4',
+				),
+				array(
+					'handle'  => 'font-awesome-solid',
+					'file'    => '/library/font-awesome/css/brands',
+					'version' => '6.2.4',
+				),
+			);
+
+			foreach ( $font_awesome_styles as $style ) {
+				wp_register_style(
+					$style['handle'],
+					get_template_directory_uri() .'/assets' . $style['file'] . $suffix . '.css',
+					false,
+					$style['version']
+				);
+				wp_enqueue_style( $style['handle'] );
+			}
 
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );

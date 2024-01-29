@@ -324,7 +324,13 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 							$new_tab = 'target="_blank"';
 						}
 
-						$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
+						if ( "Twitter" == $value ) {
+							$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa-brands fa-x-twitter"></i></a></li>';
+						} else {
+							$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
+						}
+
+
 					}
 
 					$i ++;
