@@ -65,7 +65,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version - 3.1.3 - 2023-01-19 =
 * Enhancement - Theme Dashboard.
 
 = Version - 3.1.2 - 2023-01-15 =
