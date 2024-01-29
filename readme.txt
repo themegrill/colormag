@@ -66,7 +66,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD  =
-= Fix - Page builder template responsive issue.
+* Add - Font awesome V6.2.4 support.
+* Fix - Page builder template responsive issue.
 
 = Version - 3.1.3 - 2023-01-19 =
 * Enhancement - Theme Dashboard.

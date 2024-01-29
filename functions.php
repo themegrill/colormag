@@ -241,7 +241,7 @@ function colormag_plugin_action_callback() {
 	if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'colormag_demo_import_nonce' ) ) {
 		wp_send_json_error( array( 'message' => 'Security check failed.' ) );
 	}
-	if ( ! current_user_can( 'manage_options' ) ) {
+	if ( ! current_user_can( 'install_plugins' ) ) {
 		wp_send_json_error( array( 'message' => 'You are not allowed to perform this action.' ) );
 	}
 
