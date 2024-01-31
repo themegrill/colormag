@@ -75,7 +75,7 @@ and we will include it within the theme from next version update.
 = Version - 3.1.2 - 2024-01-15 =
 * Enhancement - Overall theme dashboard UI/UX.
 
-= Version - 3.1.1 - 2023-01-11 =
+= Version - 3.1.1 - 2024-01-11 =
 * Tweak - Update screenshot image.
 
 = Version 3.1.0 - 2023-12-27 =
