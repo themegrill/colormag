@@ -16,51 +16,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		private $old_theme_mods;
 
 		public function __construct() {
-			add_action( 'after_setup_theme', array( $this, 'colormag_social_icons_control_migrate' ) );
 
 			if ( self::maybe_run_migration() || self::colormag_demo_import_migration() ) {
 				add_action( 'after_setup_theme', array( $this, 'colormag_free_major_update_customizer_migration_v1' ) );
 			}
-		}
-
-		/**
-		 * Migrate the social icons control.
-		 *
-		 * @since ColorMag 2.0.6
-		 */
-		public function colormag_social_icons_control_migrate() {
-
-			$social_icon            = get_theme_mod( 'colormag_social_link_activate', 0 );
-			$social_icon_visibility = get_theme_mod( 'colormag_social_link_location_option', 'both' );
-
-			// Disable social icon on header if enabled on footer only.
-			if ( 0 !== $social_icon ) {
-				set_theme_mod( 'colormag_social_icons_activate', true );
-			}
-
-			// Disable social icon on header if enabled on footer only.
-			if ( 'footer' === $social_icon_visibility ) {
-				set_theme_mod( 'colormag_social_icons_header_activate', false );
-			}
-
-			// Disable social icon on footer if enabled on header only.
-			if ( 'header' === $social_icon_visibility ) {
-				set_theme_mod( 'colormag_social_icons_footer_activate', false );
-			}
-
-			$remove_theme_mod_settings = array(
-				'colormag_social_link_activate',
-				'colormag_social_link_location_option',
-			);
-
-			// Loop through the theme mods to remove them.
-			foreach ( $remove_theme_mod_settings as $remove_theme_mod_setting ) {
-				remove_theme_mod( $remove_theme_mod_setting );
-			}
-
-			// Set flag to not repeat the migration process, ie, run it only once.
-			update_option( 'colormag_social_icons_control_migrate', true );
-
 		}
 
 		/**
@@ -97,17 +56,12 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			// Site identity placement.
 			$header_logo_placement = get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' );
 
-			switch ( $header_logo_placement ) {
-				case 'disable':
-				case 'header_logo_only':
-					set_theme_mod( 'colormag_enable_site_identity', 0 );
-					set_theme_mod( 'colormag_enable_site_tagline', 0 );
-					break;
-				case 'show_both':
-				case 'header_text_only':
-					set_theme_mod( 'colormag_enable_site_identity', 1 );
-					set_theme_mod( 'colormag_enable_site_tagline', 1 );
-					break;
+			if ( 'disable' === $header_logo_placement || 'header_logo_only' === $header_logo_placement ) {
+				set_theme_mod( 'colormag_enable_site_identity', 0 );
+				set_theme_mod( 'colormag_enable_site_tagline', 0 );
+			} elseif ( 'show_both' === $header_logo_placement || 'header_text_only' === $header_logo_placement ) {
+				set_theme_mod('colormag_enable_site_identity', 1);
+				set_theme_mod('colormag_enable_site_tagline', 1);
 			}
 
 			// Header media position.
