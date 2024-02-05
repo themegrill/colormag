@@ -62,14 +62,14 @@ class Colormag_Welcome_Notice {
 							printf(
 							/* translators: 1: Username */
 								esc_html__( 'Welcome %1$s!', 'colormag' ),
-								$username,
+								$username
 							);
 							?>
 						</p>
 						<h2 class="colormag-message__heading">
 							<?php
 							printf(
-								esc_html__( 'Start Building with ColorMag!', 'colormag' ),
+								esc_html__( 'Start Building with ColorMag!', 'colormag' )
 							);
 							?>
 						</h2>
@@ -77,7 +77,7 @@ class Colormag_Welcome_Notice {
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!', 'colormag' ),
+								esc_html__( 'Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!', 'colormag' )
 							);
 							?>
 						</p>
