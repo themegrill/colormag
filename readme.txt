@@ -65,6 +65,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Fix - PHP error on v7.2.
+
 = Version - 3.1.4 - 2024-01-29 =
 * Add - Font awesome V6.2.4 support.
 * Fix - Page builder template responsive issue.
@@ -230,10 +233,10 @@ and we will include it within the theme from next version update.
 * Enhancement - Overall CSS transition on events
 
 = Version - 2.1.8 - 2023-01-11 =
-* Fix - Php error.
+* Fix - PHP error.
 
 = Version - 2.1.7 - 2023-01-09 =
-* Fix - Php error.
+* Fix - PHP error.
 
 = Version - 2.1.6 - 2023-01-04 =
 * Integration - Magazine Blocks plugin.
