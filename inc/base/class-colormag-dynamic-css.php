@@ -248,6 +248,35 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_css      .= colormag_parse_css( '', $text_color, $text_color_css );
 
+		// Box shadow color
+		$box_shadow_color     = get_theme_mod( 'colormag_box_shadow_color', '' );
+		$box_shadow_color_css = array(
+			'.cm-posts .post' => array(
+				'box-shadow' => '0px 0px 2px 0px ' . esc_html( $box_shadow_color ),
+			),
+		);
+		$parse_css      .= colormag_parse_css( '', $box_shadow_color, $box_shadow_color_css );
+
+		// Link colors.
+		$link_color_normal     = get_theme_mod( 'colormag_link_color', '' );
+		$link_color_normal_css = array(
+			'.cm-entry-summary a' => array(
+				'color' => esc_html( $link_color_normal ),
+			),
+		);
+		$parse_css             .= colormag_parse_css( '', $link_color_normal, $link_color_normal_css );
+
+		// Link hover color.
+		$link_color_hover     = get_theme_mod( 'colormag_link_hover_color', '' );
+		$link_color_hover_css = array(
+			'.cm-entry-summary a:hover,
+			.pagebuilder-content a:hover, .pagebuilder-content a:hover' => array(
+				'color' => esc_html( $link_color_hover ),
+			)
+		);
+		$parse_css            .= colormag_parse_css( '', $link_color_hover, $link_color_hover_css );
+
+
 		// Top bar options.
 		$top_bar_background_color     = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
 		$top_bar_background_color_css = array(

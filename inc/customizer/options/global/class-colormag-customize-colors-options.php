@@ -88,10 +88,10 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 35,
 			),
 
-			// Border color option.
+			// Box shadow color option.
 			array(
-				'name'     => 'colormag_border_color_group',
-				'label'    => esc_html__( 'Border Color', 'colormag' ),
+				'name'     => 'colormag_box_shadow_color_group',
+				'label'    => esc_html__( 'Box Shadow Color', 'colormag' ),
 				'default'  => '',
 				'type'     => 'control',
 				'control'  => 'colormag-group',
@@ -100,11 +100,11 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 			),
 
 			array(
-				'name'     => 'colormag_border_color',
+				'name'     => 'colormag_box_shadow_color',
 				'default'  => '',
 				'type'     => 'sub-control',
 				'control'  => 'colormag-color',
-				'parent'   => 'colormag_border_color_group',
+				'parent'   => 'colormag_box_shadow_color_group',
 				'section'  => 'colormag_global_colors_section',
 				'priority' => 40,
 			),
@@ -122,6 +122,47 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 					'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
 				),
 				'priority' => 60,
+			),
+
+			// Link color.
+			array(
+				'name'     => 'colormag_link_color_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Links', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 80,
+			),
+
+			array(
+				'name'     => 'colormag_link_color_group',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'label'    => esc_html__( 'Links', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 80,
+			),
+
+			array(
+				'name'     => 'colormag_link_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_link_color_group',
+				'tab'      => esc_html__( 'Normal', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 85,
+			),
+
+			array(
+				'name'     => 'colormag_link_hover_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_link_color_group',
+				'tab'      => esc_html__( 'Hover', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 85,
 			),
 
 			array(
