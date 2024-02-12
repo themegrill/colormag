@@ -228,14 +228,109 @@ function colormag_get_fonts() {
 	/**
 	 * Typography options.
 	 */
-	$breaking_news_typography_default = array(
+	$base_typography_default          = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$headings_typography_default      = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$heading_h1_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$heading_h2_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$heading_h3_typography_default    = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
+	$heading_h4_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$heading_h5_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$heading_h6_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$base_typography                  = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+	$headings_typography              = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+	$heading_h1_typography            = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
+	$heading_h2_typography            = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
+	$heading_h3_typography            = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
+	$heading_h4_typography            = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
+	$heading_h5_typography            = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
+	$heading_h6_typography            = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+
 	/**
 	 * Enqueue required Google fonts.
 	 */
+
+	// Typography options.
+	if ( 'default' === $base_typography['font-family'] ) {
+		$base_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $headings_typography['font-family'] ) {
+		$headings_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $heading_h1_typography['font-family'] ) {
+		$heading_h1_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $heading_h2_typography['font-family'] ) {
+		$heading_h2_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $heading_h3_typography['font-family'] ) {
+		$heading_h3_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $heading_h4_typography['font-family'] ) {
+		$heading_h3_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $heading_h5_typography['font-family'] ) {
+		$heading_h3_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $heading_h6_typography['font-family'] ) {
+		$heading_h3_typography['font-family'] = 'Open Sans';
+	}
+
+	$base_typography_font_weight                  = $base_typography[ 'font-weight' ] ?? 'regular';
+	$heading_typography_font_weight               = $headings_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h1_typography_font_weight            = $heading_h1_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h2_base_typography_font_weight       = $heading_h2_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h3_typography_font_weight            = $heading_h3_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h4_typography_font_weight            = $heading_h4_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h5_typography_font_weight            = $heading_h5_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h6_typography_font_weight            = $heading_h6_typography[ 'font-weight' ] ?? 'regular';
+
+	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h4_typography['font-family'], $heading_h4_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h5_typography['font-family'], $heading_h5_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $heading_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_base_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h4_typography['font-family'], $heading_h4_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h5_typography['font-family'], $heading_h5_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
@@ -251,6 +346,87 @@ function colormag_font_subset() {
 	/**
 	 * Typography options.
 	 */
+	// Base typography.
+	$base_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+
+	$base_typography = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+
+	if ( isset( $base_typography['subsets'] ) && is_array( $base_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $base_typography['subsets'], $google_font_subsets );
+	}
+
+	// Headings typography.
+	$headings_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$headings_typography         = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+
+	if ( isset( $headings_typography['subsets'] ) && is_array( $headings_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $headings_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H1 typography.
+	$heading_h1_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h1_typography         = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
+
+	if ( isset( $heading_h1_typography['subsets'] ) && is_array( $heading_h1_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h1_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H2 typography.
+	$heading_h2_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h2_typography         = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
+
+	if ( isset( $heading_h2_typography['subsets'] ) && is_array( $heading_h2_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h2_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H3 typography.
+	$heading_h3_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h3_typography         = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
+
+	if ( isset( $heading_h3_typography['subsets'] ) && is_array( $heading_h3_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h3_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H4 typography.
+	$heading_h4_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h4_typography         = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
+
+	if ( isset( $heading_h4_typography['subsets'] ) && is_array( $heading_h4_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h4_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H5 typography.
+	$heading_h5_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h5_typography         = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
+
+	if ( isset( $heading_h5_typography['subsets'] ) && is_array( $heading_h5_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h5_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H6 typography.
+	$heading_h6_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h6_typography         = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+
+	if ( isset( $heading_h6_typography['subsets'] ) && is_array( $heading_h6_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h6_typography['subsets'], $google_font_subsets );
+	}
+
 	return $google_font_subsets;
 }
 

@@ -70,7 +70,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 			// Base color option.
 			array(
 				'name'     => 'colormag_base_color_group',
-				'label'    => esc_html__( 'Base Color', 'colormag' ),
+				'label'    => esc_html__( 'Base', 'colormag' ),
 				'default'  => '',
 				'type'     => 'control',
 				'control'  => 'colormag-group',
@@ -80,7 +80,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 
 			array(
 				'name'     => 'colormag_base_color',
-				'default'  => '',
+				'default'  => '#444444',
 				'type'     => 'sub-control',
 				'control'  => 'colormag-color',
 				'parent'   => 'colormag_base_color_group',

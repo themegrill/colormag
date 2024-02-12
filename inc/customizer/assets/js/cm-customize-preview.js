@@ -4,6 +4,16 @@
  * @param {string} cssProperty
  *
  */
+
+colormagGenerateTypographyCSS( 'colormag_base_typography', 'body, button, input, select, textarea, blockquote p, .entry-meta, .more-link, dl, .previous a, .next a, .nav-previous a, .nav-next a, #respond h3#reply-title #cancel-comment-reply-link, #respond form input[type="text"], #respond form textarea, .cm-secondary .widget, .error-404 .widget, .cm-entry-summary p' );
+colormagGenerateTypographyCSS( 'colormag_headings_typography', 'h1, h2, h3 ,h4, h5, h6' );
+colormagGenerateTypographyCSS( 'colormag_h1_typography', 'h1' );
+colormagGenerateTypographyCSS( 'colormag_h2_typography', 'h2' );
+colormagGenerateTypographyCSS( 'colormag_h3_typography', 'h3' );
+colormagGenerateTypographyCSS( 'colormag_h4_typography', 'h4' );
+colormagGenerateTypographyCSS( 'colormag_h5_typography', 'h5' );
+colormagGenerateTypographyCSS( 'colormag_h6_typography', 'h6' );
+
 ( function ( $ ) {
 
 	// Site title.
