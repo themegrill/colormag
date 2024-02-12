@@ -67,6 +67,48 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 30,
 			),
 
+			// Base color option.
+			array(
+				'name'     => 'colormag_base_color_group',
+				'label'    => esc_html__( 'Base Color', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 35,
+			),
+
+			array(
+				'name'     => 'colormag_base_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_base_color_group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 35,
+			),
+
+			// Border color option.
+			array(
+				'name'     => 'colormag_border_color_group',
+				'label'    => esc_html__( 'Border Color', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_border_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_border_color_group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 40,
+			),
+
 			// Skin color option.
 			array(
 				'name'     => 'colormag_color_skin_setting',

@@ -239,6 +239,15 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
+		// Base color
+		$text_color     = get_theme_mod( 'colormag_base_color', '' );
+		$text_color_css = array(
+			'body' => array(
+				'color' => esc_html( $text_color ),
+			),
+		);
+		$parse_css      .= colormag_parse_css( '', $text_color, $text_color_css );
+
 		// Top bar options.
 		$top_bar_background_color     = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
 		$top_bar_background_color_css = array(
