@@ -82,8 +82,29 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 			),
 
 			array(
-				'name'     => 'colormag_primary_menu_border_top_group',
+				'name'     => 'colormag_button_border_divider',
+				'type'     => 'control',
+				'control'  => 'colormag-divider',
+				'style'    => 'dashed',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 45,
+			),
+
+			/**
+			 * Border options
+			 */
+			array(
+				'name'     => 'colormag_button_border_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Border Top', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 45,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_border_top_group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
 				'default'  => '',
 				'type'     => 'control',
 				'control'  => 'colormag-group',
@@ -100,6 +121,28 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'parent'   => 'colormag_primary_menu_border_top_group',
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 60,
+			),
+
+			array(
+				'name'        => 'colormag_primary_menu_top_border_width',
+				'default'     => array(
+					'size' => '4',
+					'unit' => 'px',
+				),
+				'suffix'      => array( 'px' ),
+				'type'        => 'control',
+				'control'     => 'colormag-slider',
+				'label'       => esc_html__( 'Width', 'colormag' ),
+				'section'     => 'colormag_primary_menu_section',
+				'transport'   => 'postMessage',
+				'priority'    => 65,
+				'input_attrs' => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 20,
+						'step' => 1,
+					),
+				),
 			),
 
 			array(

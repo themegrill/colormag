@@ -18,6 +18,7 @@ colormagGenerateTypographyCSS( 'colormag_h5_typography', 'h5' );
 colormagGenerateTypographyCSS( 'colormag_h6_typography', 'h6' );
 colormagGenerateTypographyCSS( 'colormag_site_title_typography', '.cm-site-title' );
 colormagGenerateTypographyCSS( 'colormag_site_tagline_typography', '.cm-site-description' );
+colormagGenerateSliderCSS( 'colormag_primary_menu_top_border_width', '#cm-primary-nav', 'border-top-width' );
 
 ( function ( $ ) {
 
