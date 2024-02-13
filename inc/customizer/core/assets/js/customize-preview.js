@@ -137,10 +137,6 @@ function colormagGenerateSliderCSS( controlId, selector, cssProperty  ) {
 				cssText += `${ cssProperty } : ${ sizeCSS + unit  };`;
 			}
 
-			console.log( controlId );
-			console.log( selector );
-			console.log( cssText );
-
 			jQuery( 'head' ).append(
 				`<style id="${ controlId }">${selector}{ ${ cssText } }</style>`
 			);

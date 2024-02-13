@@ -18,6 +18,8 @@ colormagGenerateTypographyCSS( 'colormag_h5_typography', 'h5' );
 colormagGenerateTypographyCSS( 'colormag_h6_typography', 'h6' );
 colormagGenerateTypographyCSS( 'colormag_site_title_typography', '.cm-site-title' );
 colormagGenerateTypographyCSS( 'colormag_site_tagline_typography', '.cm-site-description' );
+colormagGenerateTypographyCSS( 'colormag_primary_menu_typography', '.cm-primary-nav ul li a' );
+colormagGenerateTypographyCSS( 'colormag_primary_sub_menu_typography', '.cm-primary-nav ul li ul li a' );
 colormagGenerateSliderCSS( 'colormag_primary_menu_top_border_width', '#cm-primary-nav', 'border-top-width' );
 colormagGenerateCSS( 'colormag_button_color', '.cm-entry-button,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link span, .wp-block-button__link', 'color' );
 colormagGenerateCSS( 'colormag_button_background_color', '.cm-entry-button,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link, .wp-block-button__link', 'background-color' );

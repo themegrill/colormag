@@ -230,6 +230,10 @@ function colormag_get_fonts() {
 	$site_tagline_typography_default = array(
 		'font-family' => 'default',
 	);
+	$primary_menu_typography_default = array(
+		'font-family' => 'default',
+		'font-weight' => '600',
+	);;
 
 	/**
 	 * Typography options.
@@ -280,6 +284,7 @@ function colormag_get_fonts() {
 	$heading_h6_typography            = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
 	$site_title_typography           = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
 	$site_tagline_typography         = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
+	$primary_menu_typography         = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
 
 	/**
 	 * Enqueue required Google fonts.
@@ -290,6 +295,10 @@ function colormag_get_fonts() {
 	}
 	if ( 'default' === $site_tagline_typography['font-family'] ) {
 		$site_tagline_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $primary_menu_typography['font-family'] ) {
+		$primary_menu_typography['font-family'] = 'Open Sans';
 	}
 
 	// Typography options.
@@ -321,14 +330,16 @@ function colormag_get_fonts() {
 		$heading_h3_typography['font-family'] = 'Open Sans';
 	}
 
-	$base_typography_font_weight                  = $base_typography[ 'font-weight' ] ?? 'regular';
-	$heading_typography_font_weight               = $headings_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h1_typography_font_weight            = $heading_h1_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h2_base_typography_font_weight       = $heading_h2_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h3_typography_font_weight            = $heading_h3_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h4_typography_font_weight            = $heading_h4_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h5_typography_font_weight            = $heading_h5_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h6_typography_font_weight            = $heading_h6_typography[ 'font-weight' ] ?? 'regular';
+	$base_typography_font_weight            = $base_typography[ 'font-weight' ] ?? 'regular';
+	$heading_typography_font_weight         = $headings_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h1_typography_font_weight      = $heading_h1_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h2_base_typography_font_weight = $heading_h2_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h3_typography_font_weight      = $heading_h3_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h4_typography_font_weight      = $heading_h4_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h5_typography_font_weight      = $heading_h5_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h6_typography_font_weight      = $heading_h6_typography[ 'font-weight' ] ?? 'regular';
+	$primary_menu_typography_font_weight    = $primary_menu_typography[ 'font-weight' ] ?? 'regular';
+
 
 	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
@@ -348,6 +359,7 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $site_title_typography['font-family'] );
 	ColorMag_Generate_Fonts::add_font( $site_tagline_typography['font-family'] );
+	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
