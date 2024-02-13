@@ -37,12 +37,75 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 		$configs = array(
 
 			array(
+				'name'     => 'colormag_blog_post_title_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Post Title', 'colormag' ),
+				'section'  => 'colormag_blog_section',
+				'priority' => 5,
+			),
+
+			array(
+				'name'     => 'colormag_blog_post_title_typography_group',
+				'type'     => 'control',
+				'default'  => '',
+				'control'  => 'colormag-group',
+				'label'    => esc_html__( 'Typography', 'colormag' ),
+				'section'  => 'colormag_blog_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name' => 'colormag_blog_post_title_typography',
+				'default' => array(
+					'font-family'    => 'default',
+					'font-weight'    => '500',
+					'font-size' => array(
+						'desktop' => array(
+							'size' => '24',
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => 'px',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => 'px',
+						),
+					),
+					'line-height' => array(
+						'desktop' => array(
+							'size' => '1.3',
+							'unit' => '',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+					),
+					'font-style' => 'normal',
+					'text-transform' => 'none',
+				),
+				'type'     => 'sub-control',
+				'control'  => 'colormag-typography',
+				'parent'   => 'colormag_blog_post_title_typography_group',
+				'section'  => 'colormag_blog_section',
+				'transport' => 'postMessage',
+				'priority' => 20,
+			),
+
+			array(
 				'name'     => 'colormag_pagination_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Pagination', 'colormag' ),
 				'section'  => 'colormag_blog_section',
-				'priority' => 10,
+				'priority' => 25,
 			),
 
 			array(
@@ -52,7 +115,7 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 				'control'  => 'colormag-toggle',
 				'label'    => esc_html__( 'Enable', 'colormag' ),
 				'section'  => 'colormag_blog_section',
-				'priority' => 20,
+				'priority' => 30,
 			),
 
 			array(
