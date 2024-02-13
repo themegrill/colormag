@@ -900,7 +900,7 @@ class ColorMag_Dynamic_CSS
 		$button_text_color = get_theme_mod( 'colormag_button_color', '' );
 
 		$button_text_color_css = array(
-			'.cm-entry-button,.colormag-button,
+			'.colormag-button,
 			input[type="reset"],
 			input[type="button"],
 			input[type="submit"],
@@ -913,22 +913,56 @@ class ColorMag_Dynamic_CSS
 
 		$parse_css .= colormag_parse_css( '', $button_text_color, $button_text_color_css );
 
+		// Button text hover color.
+		$button_hover_text_color = get_theme_mod( 'colormag_button_hover_color', '' );
+
+		$button_hover_text_color_css = array(
+			'.colormag-button:hover,
+			input[type="reset"]:hover,
+			input[type="button"]:hover,
+			input[type="submit"]:hover,
+			button:hover,
+			.cm-entry-button span:hover,
+			.wp-block-button .wp-block-button__link:hover' => array(
+				'color' => esc_html( $button_hover_text_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $button_hover_text_color, $button_hover_text_color_css );
+
 		// Button background color.
 		$button_background_color = get_theme_mod( 'colormag_button_background_color', '' );
 
 		$button_background_color_css = array(
-			'.cm-entry-button,.colormag-button,
+			'.colormag-button,
 			input[type="reset"],
 			input[type="button"],
 			input[type="submit"],
 			button,
-			.cm-entry-button,
+			.cm-entry-button span,
 			.wp-block-button .wp-block-button__link' => array(
 				'background-color' => esc_html( $button_background_color ),
 			),
 		);
 
 		$parse_css .= colormag_parse_css( '#207daf', $button_background_color, $button_background_color_css );
+
+		// Button background hover color.
+		$button_background_hover_color = get_theme_mod( 'colormag_button_background_color', '' );
+
+		$button_background_hover_color_css = array(
+			'.colormag-button:hover,
+			input[type="reset"]:hover,
+			input[type="button"]:hover,
+			input[type="submit"]:hover,
+			button:hover,
+			.cm-entry-button span:hover,
+			.wp-block-button .wp-block-button__link:hover' => array(
+				'background-color' => esc_html( $button_background_hover_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $button_background_hover_color, $button_background_hover_color_css );
 
 		/**
 		 * Button.
@@ -946,12 +980,12 @@ class ColorMag_Dynamic_CSS
 		$parse_css .= colormag_parse_dimension_css(
 			$button_padding_default,
 			$button_padding,
-			'.cm-entry-button,.colormag-button,
+			'.colormag-button,
 			input[type="reset"],
 			input[type="button"],
 			input[type="submit"],
 			button,
-			.cm-entry-button,
+			.cm-entry-button span,
 			.wp-block-button .wp-block-button__link',
 			'padding'
 		);
@@ -967,7 +1001,7 @@ class ColorMag_Dynamic_CSS
 		$parse_css .= colormag_parse_slider_css(
 			$button_border_radius_default,
 			$button_border_radius,
-			'.cm-entry-button,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link, .wp-block-button .wp-block-button__link',
+			'.cm-entry-button span,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link, .wp-block-button .wp-block-button__link',
 			'border-radius'
 		);
 

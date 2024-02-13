@@ -2530,8 +2530,6 @@ Styles for separating single posts loaded from ajax call.
 --------------------------------------------- */
 .cm-entry-button {
 	display: inline-block;
-	background-color: #207daf;
-	border-radius: 2px;
 }
 
 .cm-entry-button span {
@@ -2542,6 +2540,8 @@ Styles for separating single posts loaded from ajax call.
 	font-weight: 600;
 	cursor: pointer;
 	line-height: 1.8;
+	background-color: #207daf;
+	border-radius: 2px;
 }
 
 .cm-entry-button span:hover {

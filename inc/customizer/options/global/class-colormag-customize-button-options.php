@@ -19,19 +19,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class ColorMag_Customize_Button_Options
  */
-
-class ColorMag_Customize_Button_Options extends ColorMag_Customize_Base_Option {
+class ColorMag_Customize_Button_Options extends ColorMag_Customize_Base_Option
+{
 
 
 	/**
 	 * Include customize options.
 	 *
-	 * @param array                 $options      Customize options provided via the theme.
+	 * @param array $options Customize options provided via the theme.
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
-	public function register_options( $options, $wp_customize ) {
+	public function register_options( $options, $wp_customize )
+	{
 
 		$configs = array(
 
@@ -64,6 +65,19 @@ class ColorMag_Customize_Button_Options extends ColorMag_Customize_Base_Option {
 				'parent'    => 'colormag_button_color_group',
 				'section'   => 'colormag_button_section',
 				'transport' => 'postMessage',
+				'tab'       => esc_html__( 'Normal', 'colormag' ),
+				'priority'  => 30,
+			),
+
+			array(
+				'name'      => 'colormag_button_hover_color',
+				'default'   => '',
+				'type'      => 'sub-control',
+				'control'   => 'colormag-color',
+				'parent'    => 'colormag_button_color_group',
+				'section'   => 'colormag_button_section',
+				'transport' => 'postMessage',
+				'tab'       => esc_html__( 'Hover', 'colormag' ),
 				'priority'  => 30,
 			),
 
@@ -75,6 +89,7 @@ class ColorMag_Customize_Button_Options extends ColorMag_Customize_Base_Option {
 				'section'  => 'colormag_button_section',
 				'priority' => 40,
 			),
+
 			array(
 				'name'      => 'colormag_button_background_color',
 				'default'   => '#207daf',
@@ -83,6 +98,19 @@ class ColorMag_Customize_Button_Options extends ColorMag_Customize_Base_Option {
 				'parent'    => 'colormag_button_background_color_group',
 				'section'   => 'colormag_button_section',
 				'transport' => 'postMessage',
+				'tab'       => esc_html__( 'Normal', 'colormag' ),
+				'priority'  => 50,
+			),
+
+			array(
+				'name'      => 'colormag_button_background_hover_color',
+				'default'   => '',
+				'type'      => 'sub-control',
+				'control'   => 'colormag-color',
+				'parent'    => 'colormag_button_background_color_group',
+				'section'   => 'colormag_button_section',
+				'transport' => 'postMessage',
+				'tab'       => esc_html__( 'Hover', 'colormag' ),
 				'priority'  => 50,
 			),
 
