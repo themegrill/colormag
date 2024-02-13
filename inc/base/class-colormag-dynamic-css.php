@@ -609,6 +609,40 @@ class ColorMag_Dynamic_CSS {
 				),
 			),
 		);
+		$site_title_typography_default   = array(
+			'font-family' => 'default',
+			'font-size'   => array(
+				'desktop' => array(
+					'size' => '40',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+		);
+		$site_tagline_typography_default = array(
+			'font-family' => 'default',
+			'font-size'   => array(
+				'desktop' => array(
+					'size' => '16',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+		);
 		$base_typography                          = get_theme_mod( 'colormag_base_typography', $base_typography_default );
 		$headings_typography                      = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
 		$heading_h1_typography                    = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
@@ -617,6 +651,8 @@ class ColorMag_Dynamic_CSS {
 		$heading_h4_typography                    = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
 		$heading_h5_typography                    = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
 		$heading_h6_typography                    = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+		$site_title_typography       = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
+		$site_tagline_typography     = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
 
 		/**
 		 * Typography.
@@ -726,6 +762,61 @@ class ColorMag_Dynamic_CSS {
 				'mobile' => 600,
 			)
 		);
+
+		// Site title typography.
+		$parse_css .= colormag_parse_typography_css(
+			$site_title_typography_default,
+			$site_title_typography,
+			'.cm-site-title',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Site tagline typography.
+		$parse_css .= colormag_parse_typography_css(
+			$site_tagline_typography_default,
+			$site_tagline_typography,
+			'.cm-site-description',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Site title color.
+		$site_title_color = get_theme_mod( 'colormag_site_title_color', '' );
+
+		$site_title_color_css = array(
+			'.cm-site-title a' => array(
+				'color' => esc_html( $site_title_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $site_title_color, $site_title_color_css );
+
+		// Site title hover color.
+		$site_title_hover_color = get_theme_mod( 'colormag_site_title_hover_color', '' );
+
+		$site_title_hover_color_css = array(
+			'.cm-site-title a:hover' => array(
+				'color' => esc_html( $site_title_hover_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $site_title_hover_color, $site_title_hover_color_css );
+
+		// Site tagline color.
+		$site_tagline_color = get_theme_mod( 'colormag_site_tagline_color', '' );
+
+		$site_tagline_color_css = array(
+			'.cm-site-description' => array(
+				'color' => esc_html( $site_tagline_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $site_tagline_color, $site_tagline_color_css );
 
 		// Top bar options.
 		$top_bar_background_color     = get_theme_mod( 'colormag_top_bar_background_color', '#fff' );
