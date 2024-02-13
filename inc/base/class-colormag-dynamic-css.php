@@ -821,7 +821,7 @@ class ColorMag_Dynamic_CSS
 		$parse_css .= colormag_parse_css( '', $site_tagline_color, $site_tagline_color_css );
 
 		/**
-		 * Primary menu top barder width.
+		 * Primary menu top border width.
 		 */
 		$primary_menu_width_default = array(
 			'size' => '4',
@@ -835,6 +835,81 @@ class ColorMag_Dynamic_CSS
 			$primary_menu_width,
 			'#cm-primary-nav',
 			'border-top-width'
+		);
+
+		// Button text color.
+		$button_text_color = get_theme_mod( 'colormag_button_color', '' );
+
+		$button_text_color_css = array(
+			'.cm-entry-button,.colormag-button,
+			input[type="reset"],
+			input[type="button"],
+			input[type="submit"],
+			button,
+			.cm-entry-button span,
+			.wp-block-button .wp-block-button__link' => array(
+				'color' => esc_html( $button_text_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $button_text_color, $button_text_color_css );
+
+		// Button background color.
+		$button_background_color = get_theme_mod( 'colormag_button_background_color', '' );
+
+		$button_background_color_css = array(
+			'.cm-entry-button,.colormag-button,
+			input[type="reset"],
+			input[type="button"],
+			input[type="submit"],
+			button,
+			.cm-entry-button,
+			.wp-block-button .wp-block-button__link' => array(
+				'background-color' => esc_html( $button_background_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '#207daf', $button_background_color, $button_background_color_css );
+
+		/**
+		 * Button.
+		 */
+		$button_padding_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$button_padding = get_theme_mod( 'colormag_button_dimension_padding', $button_padding_default );
+
+		$parse_css .= colormag_parse_dimension_css(
+			$button_padding_default,
+			$button_padding,
+			'.cm-entry-button,.colormag-button,
+			input[type="reset"],
+			input[type="button"],
+			input[type="submit"],
+			button,
+			.cm-entry-button,
+			.wp-block-button .wp-block-button__link',
+			'padding'
+		);
+
+		// Border radius.
+		$button_border_radius_default = array(
+			'size' => 3,
+			'unit' => 'px',
+		);
+
+		$button_border_radius = get_theme_mod( 'colormag_button_border_radius', '' );
+
+		$parse_css .= colormag_parse_slider_css(
+			$button_border_radius_default,
+			$button_border_radius,
+			'.cm-entry-button,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link, .wp-block-button .wp-block-button__link',
+			'border-radius'
 		);
 
 		// Top bar options.
