@@ -70,41 +70,6 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 			),
 
 			array(
-				'name'     => 'colormag_post_meta_elements_heading',
-				'type'     => 'control',
-				'control'  => 'colormag-title',
-				'label'    => esc_html__( 'Meta Elements', 'colormag' ),
-				'description' => esc_html__( 'Drag & Drop items to re-arrange the order', 'colormag' ),
-				'section'  => 'colormag_blog_section',
-				'priority' => 20,
-			),
-
-			array(
-				'name'        => 'colormag_blog_meta_elements',
-				'default'     => array(
-					'author',
-					'date',
-					'comments',
-					'tags',
-					'views',
-					'read-time',
-				),
-				'type'        => 'control',
-				'control'     => 'colormag-sortable',
-				'section'     => 'colormag_blog_section',
-				'choices'     => array(
-					'author'     => esc_attr__( 'Author', 'colormag' ),
-					'date'       => esc_attr__( 'Date', 'colormag' ),
-					'comments'   => esc_attr__( 'Comments', 'colormag' ),
-					'tags'       => esc_attr__( 'Tags', 'colormag' ),
-					'views'       => esc_attr__( 'Views', 'colormag' ),
-					'read-time'       => esc_attr__( 'Read Time', 'colormag' ),
-				),
-				'dependency'  => apply_filters( 'colormag_structure_archive_blog_order', false ),
-				'priority'    => 25,
-			),
-
-			array(
 				'name'     => 'colormag_blog_post_title_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-title',

@@ -1010,6 +1010,51 @@ class ColorMag_Dynamic_CSS
 
 		$parse_css .= colormag_parse_css( '', $button_background_hover_color, $button_background_hover_color_css );
 
+		// Footer widget title color.
+		$footer_widget_title_color = get_theme_mod( 'colormag_footer_widget_title_color', '' );
+
+		$footer_widget_title_color_css = array(
+			'.cm-footer-cols .cm-row .cm-widget-title span' => array(
+				'color' => esc_html( $footer_widget_title_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $footer_widget_title_color, $footer_widget_title_color_css );
+
+		// Footer content color.
+		$footer_widget_content_color = get_theme_mod( 'colormag_footer_widget_content_color', '' );
+
+		$footer_widget_content_color_css = array(
+			'.cm-footer-cols .cm-row,
+			.cm-footer-cols .cm-row p' => array(
+				'color' => esc_html( $footer_widget_content_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $footer_widget_content_color, $footer_widget_content_color_css );
+
+		// Footer Widget link color.
+		$footer_widget_link_color = get_theme_mod( 'colormag_footer_widget_content_link_text_color', '' );
+
+		$footer_widget_link_color_css = array(
+			'.cm-footer-cols .cm-row a' => array(
+				'color' => esc_html( $footer_widget_link_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $footer_widget_link_color, $footer_widget_link_color_css );
+
+		// Footer Widget link hover color.
+		$footer_widget_link_hover_color = get_theme_mod( 'colormag_footer_widget_content_link_text_hover_color', '' );
+
+		$footer_widget_link_hover_color_css = array(
+			'.cm-footer-cols .cm-row a:hover' => array(
+				'color' => esc_html( $footer_widget_link_hover_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '', $footer_widget_link_hover_color, $footer_widget_link_hover_color_css );
+
 		/**
 		 * Button.
 		 */
