@@ -88,27 +88,6 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 35,
 			),
 
-			// Box shadow color option.
-			array(
-				'name'     => 'colormag_box_shadow_color_group',
-				'label'    => esc_html__( 'Box Shadow Color', 'colormag' ),
-				'default'  => '',
-				'type'     => 'control',
-				'control'  => 'colormag-group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 40,
-			),
-
-			array(
-				'name'     => 'colormag_box_shadow_color',
-				'default'  => '',
-				'type'     => 'sub-control',
-				'control'  => 'colormag-color',
-				'parent'   => 'colormag_box_shadow_color_group',
-				'section'  => 'colormag_global_colors_section',
-				'priority' => 40,
-			),
-
 			// Skin color option.
 			array(
 				'name'     => 'colormag_color_skin_setting',
@@ -126,12 +105,43 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 
 			// Link color.
 			array(
+				'name'     => 'colormag_box_color_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Box', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 70,
+			),
+
+			// Box shadow color option.
+			array(
+				'name'     => 'colormag_box_shadow_color_group',
+				'label'    => esc_html__( 'Border Color', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 80,
+			),
+
+			array(
+				'name'     => 'colormag_box_shadow_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_box_shadow_color_group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 80,
+			),
+
+			// Link color.
+			array(
 				'name'     => 'colormag_link_color_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Links', 'colormag' ),
 				'section'  => 'colormag_global_colors_section',
-				'priority' => 80,
+				'priority' => 90,
 			),
 
 			array(
@@ -140,7 +150,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'control'  => 'colormag-group',
 				'label'    => esc_html__( 'Links', 'colormag' ),
 				'section'  => 'colormag_global_colors_section',
-				'priority' => 80,
+				'priority' => 100,
 			),
 
 			array(
@@ -151,7 +161,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'parent'   => 'colormag_link_color_group',
 				'tab'      => esc_html__( 'Normal', 'colormag' ),
 				'section'  => 'colormag_global_colors_section',
-				'priority' => 85,
+				'priority' => 110,
 			),
 
 			array(
@@ -162,7 +172,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'parent'   => 'colormag_link_color_group',
 				'tab'      => esc_html__( 'Hover', 'colormag' ),
 				'section'  => 'colormag_global_colors_section',
-				'priority' => 85,
+				'priority' => 120,
 			),
 
 			array(

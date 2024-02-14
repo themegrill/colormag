@@ -65,6 +65,31 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Option - To change global base color.
+* Option - To change global box border color.
+* Option - To change global links color.
+* Option - To change global body typography.
+* Option - To change global headings' typography.
+* Option - To change global H1,H2,H3,H4,H5 and H6 typography.
+* Option - To change global button color, background, padding and border radius.
+* Option - To change site title color and typography.
+* Option - To change site tagline color and typography.
+* Option - To change main header layout 1 alignment.
+* Option - To change main header layout 1 alignment.
+* Option - To change primary menu border top width.
+* Option - To change main menu typography.
+* Option - To change main sub menu typography.
+* Option - To change sortable of blog post elements.
+* Option - To change blog post title typography.
+* Option - To change blog excerpt type.
+* Option - To change sortable of single post element.
+* Option - To change sortable of post elements.
+* Option - To change widget title color.
+* Option - To change widget content color.
+* Option - To change widget link color.
+* Option - To change footer bar style.
+
 = Version - 3.1.4 - 2024-01-29 =
 * Add - Font awesome V6.2.4 support.
 * Fix - Page builder template responsive issue.
