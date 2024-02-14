@@ -316,6 +316,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			array(
+				'name'     => 'colormag_post_meta_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Post Meta', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 30,
+			),
+
+			array(
 				'name'     => 'colormag_page_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Page', 'colormag' ),
