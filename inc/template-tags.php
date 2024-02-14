@@ -22,14 +22,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	 */
 	function colormag_entry_meta( $full_post_meta = true, $reading_time_display = false ) {
 
-		$meta_orders =
+		$meta_orders = get_theme_mod( 'colormag_blog_meta_elements',
 			array(
 				'categories',
 				'author',
 				'date',
 				'comments',
 				'tags',
-			);
+			) );
 
 		$human_diff_time = '';
 
