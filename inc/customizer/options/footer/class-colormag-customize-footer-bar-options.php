@@ -43,6 +43,54 @@ class ColorMag_Customize_Footer_Bottom_Bar_Options extends ColorMag_Customize_Ba
 			),
 
 			array(
+				'name'     => 'colormag_footer_bar_general_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
+				'label'    => esc_html__( 'General', 'colormag' ),
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 20,
+			),
+
+			// Footer copyright alignment option.
+			array(
+				'name'      => 'colormag_footer_bar_alignment',
+				'default'   => 'left',
+				'type'      => 'control',
+				'control'   => 'colormag-radio-image',
+				'label'     => esc_html__( 'Alignment', 'colormag' ),
+				'section'   => 'colormag_footer_bar_section',
+				'choices'   => apply_filters(
+					'colormag_footer_bar_alignment_choices',
+					array(
+						'left'   => array(
+							'label' => '',
+							'url'   => COLORMAG_IMG_URL . '/footer-bar-alignment/left.svg',
+						),
+						'right'  => array(
+							'label' => '',
+							'url'   => COLORMAG_IMG_URL . '/footer-bar-alignment/right.svg',
+						),
+						'center' => array(
+							'label' => '',
+							'url'   => COLORMAG_IMG_URL . '/footer-bar-alignment/center.svg',
+						),
+					)
+				),
+				'image_col' => 2,
+				'transport' => 'postMessage',
+				'priority'  => 30,
+			),
+
+			array(
+				'name'     => 'colormag_footer_bar_style_divider',
+				'type'     => 'control',
+				'control'  => 'colormag-divider',
+				'style'    => 'dashed',
+				'section'  => 'colormag_footer_bar_section',
+				'priority' => 40,
+			),
+
+			array(
 				'name'     => 'colormag_footer_bar_style_subtitle',
 				'type'     => 'control',
 				'control'  => 'colormag-subtitle',

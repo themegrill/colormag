@@ -5206,6 +5206,52 @@ ul.wp-block-gallery img {
 	justify-content: center;
 }
 
+.cm-footer-bar-style-2 .cm-footer-bar-area {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+.cm-footer-bar-style-2 .cm-footer-bar__1 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-ordinal-group: 3;
+	-ms-flex-order: 2;
+	order: 2;
+}
+
+.cm-footer-bar-style-2 .cm-footer-bar__1 .cm-footer-menu:first-child {
+	padding-right: 0;
+}
+
+.cm-footer-bar-style-2 .social-links {
+	text-align: right;
+}
+
+.cm-footer-bar-style-2 .social-links ul {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.cm-footer-bar-style-3 .cm-footer-bar-area {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	text-align: center;
+}
+
+.cm-footer-bar-style-3 .cm-footer-bar__1 .social-links {
+	text-align: center;
+}
+
+.cm-footer-bar-style-3 .cm-footer-bar__1 .cm-footer-menu:first-child {
+	padding-right: 0;
+}
+
 @media screen and (min-width: 48em) {
 	.cm-footer-bar-area {
 		-webkit-box-orient: horizontal;

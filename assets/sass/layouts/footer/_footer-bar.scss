@@ -45,6 +45,55 @@
 	}
 }
 
+.cm-footer-bar-style-2 {
+
+	.cm-footer-bar-area {
+		flex-direction: row-reverse;
+	}
+
+	.cm-footer-bar__1 {
+		display: flex;
+		order: 2;
+
+		.cm-footer-menu {
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+
+	.social-links {
+		text-align: left;
+
+		ul {
+			justify-content: center;
+		}
+	}
+}
+
+.cm-footer-bar-style-3 {
+
+	.cm-footer-bar-area {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.cm-footer-bar__1 {
+
+		.social-links {
+			text-align: center;
+		}
+
+		.cm-footer-menu {
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
 @include breakpoint("mdm") {
 
     .cm-footer-bar-area {
@@ -55,7 +104,7 @@
 	.cm-footer-bar-style-1 {
 
 		.social-links  {
-	
+
 			ul {
 				justify-content: flex-end;
 			}
