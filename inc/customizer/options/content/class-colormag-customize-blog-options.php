@@ -100,12 +100,37 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 			),
 
 			array(
+				'name'        => 'colormag_blog_content_heading',
+				'type'        => 'control',
+				'control'     => 'colormag-title',
+				'label'       => esc_html__( 'Excerpt', 'colormag' ),
+				'description' => esc_html__( 'Choose to display the post content or excerpt:', 'colormag' ),
+				'section'     => 'colormag_blog_section',
+				'priority'    => 25,
+			),
+
+			// Archive pages content display type option.
+			array(
+				'name'     => 'colormag_blog_content_excerpt_type',
+				'default'  => 'excerpt',
+				'type'     => 'control',
+				'control'  => 'select',
+				'label'    => esc_html__( 'Type', 'colormag' ),
+				'section'  => 'colormag_blog_section',
+				'choices'  => array(
+					'excerpt' => esc_html__( 'Excerpt', 'colormag' ),
+					'content' => esc_html__( 'Full Content', 'colormag' ),
+				),
+				'priority' => 25,
+			),
+
+			array(
 				'name'     => 'colormag_pagination_heading',
 				'type'     => 'control',
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Pagination', 'colormag' ),
 				'section'  => 'colormag_blog_section',
-				'priority' => 25,
+				'priority' => 35,
 			),
 
 			array(
@@ -115,7 +140,7 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 				'control'  => 'colormag-toggle',
 				'label'    => esc_html__( 'Enable', 'colormag' ),
 				'section'  => 'colormag_blog_section',
-				'priority' => 30,
+				'priority' => 40,
 			),
 
 			array(
@@ -134,7 +159,7 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 					'==',
 					true,
 				),
-				'priority'   => 30,
+				'priority'   => 45,
 			),
 		);
 
