@@ -1888,6 +1888,7 @@ nav li > ol {
 	display: block;
 	text-align: right;
 	text-transform: none;
+	word-break: break-word;
 }
 
 .cm-primary-nav ul li ul li:hover {
