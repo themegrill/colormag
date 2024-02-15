@@ -203,6 +203,41 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 } );
 
+(
+	function ( $ ) {
+
+		wp.customize.controlConstructor['colormag-date'] = wp.customize.Control.extend( {
+
+			ready: function() {
+				'use strict';
+
+				var control  = this,
+					selector = control.selector,
+					input    = $( selector ).find( 'input' );
+
+				// Init the datepicker.
+				input.datepicker(
+					{
+						dateFormat : 'yy-mm-dd',
+						changeMonth: true,
+						changeYear : true,
+						showOn     : 'button',
+						buttonText : '',
+						beforeShow : function( input, obj ) {
+							$( input ).after( $( input ).datepicker( 'widget' ) );
+						}
+					}
+				);
+
+				// Save the changes.
+				input.on( 'change keyup paste', function() {
+					control.setting.set( $( this ).val() );
+				} );
+			},
+		} );
+	}
+)( jQuery );
+
 /**
  * Color picker control JS to handle color picker rendering within customize control.
  *
@@ -365,40 +400,29 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 	} );
 } )( jQuery, wp.customize );
 
-(
-	function ( $ ) {
+/**
+ * Dropdown categories control JS to handle the dropdown categories customize control.
+ *
+ * File `dropdown-categorie.js`.
+ *
+ * @package ColorMag
+ */
+wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
 
-		wp.customize.controlConstructor['colormag-date'] = wp.customize.Control.extend( {
+	ready : function () {
 
-			ready: function() {
-				'use strict';
+		'use strict';
 
-				var control  = this,
-					selector = control.selector,
-					input    = $( selector ).find( 'input' );
+		var control = this;
 
-				// Init the datepicker.
-				input.datepicker(
-					{
-						dateFormat : 'yy-mm-dd',
-						changeMonth: true,
-						changeYear : true,
-						showOn     : 'button',
-						buttonText : '',
-						beforeShow : function( input, obj ) {
-							$( input ).after( $( input ).datepicker( 'widget' ) );
-						}
-					}
-				);
-
-				// Save the changes.
-				input.on( 'change keyup paste', function() {
-					control.setting.set( $( this ).val() );
-				} );
-			},
+		// Change the value.
+		this.container.on( 'change', 'select', function () {
+			control.setting.set( jQuery( this ).val() );
 		} );
+
 	}
-)( jQuery );
+
+} );
 
 /**
  * Editor control JS to handle the editor rendering within customize control.
@@ -443,30 +467,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 
 	}
 );
-
-/**
- * Dropdown categories control JS to handle the dropdown categories customize control.
- *
- * File `dropdown-categorie.js`.
- *
- * @package ColorMag
- */
-wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize.Control.extend( {
-
-	ready : function () {
-
-		'use strict';
-
-		var control = this;
-
-		// Change the value.
-		this.container.on( 'change', 'select', function () {
-			control.setting.set( jQuery( this ).val() );
-		} );
-
-	}
-
-} );
 
 /**
  * Control: FontAwesome.
@@ -781,37 +781,6 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 			}
 		);
 
-	}
-)( jQuery );
-
-/**
- * Background image control JS to handle the navigate customize option.
- *
- * File `navigate.js`.
- *
- * @package ColorMag
- */
-(
-	function ( $ ) {
-
-		$( window ).on( 'load', function () {
-
-			$( '.tg-navigate a' ).on( 'click', function ( e ) {
-				e.preventDefault();
-
-				var targetContainer = $( this ).data( 'target' );
-				var targetSection   = $( this ).data( 'section' );
-
-				if ( targetSection ) {
-					if ( 'panel' === targetContainer ) {
-						wp.customize.panel( targetSection ).focus();
-					} else {
-						wp.customize.section( targetSection ).focus();
-					}
-				}
-			} );
-
-		} );
 	}
 )( jQuery );
 
@@ -2473,6 +2442,37 @@ wp.customize.controlConstructor[ 'colormag-dropdown-categories' ] = wp.customize
 )( jQuery );
 
 /**
+ * Background image control JS to handle the navigate customize option.
+ *
+ * File `navigate.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on( 'load', function () {
+
+			$( '.tg-navigate a' ).on( 'click', function ( e ) {
+				e.preventDefault();
+
+				var targetContainer = $( this ).data( 'target' );
+				var targetSection   = $( this ).data( 'section' );
+
+				if ( targetSection ) {
+					if ( 'panel' === targetContainer ) {
+						wp.customize.panel( targetSection ).focus();
+					} else {
+						wp.customize.section( targetSection ).focus();
+					}
+				}
+			} );
+
+		} );
+	}
+)( jQuery );
+
+/**
  * Radio image control JS to handle the toggle of radio images.
  *
  * File `radio-image.js`.
@@ -3086,12 +3086,12 @@ wp.customize.controlConstructor[ 'colormag-typography' ] = wp.customize.Control.
 
 					unit.val(defaultUnit ? defaultUnit : 'px').change(); // Trigger change event for unit
 					slider.val(defaultValue).change(); // Trigger change event for slider
-					inputValue.val(defaultValue).change(); // Trigger change event for inputValue
+					input.val(defaultValue).change(); // Trigger change event for inputValue
 
 					// Save the unit, slider, and inputValue values (optional)
 					var selectedUnit = unit.val();
 					var inputRangeValue = slider.val();
-					var inputValue = inputValue.val();
+					var inputValue = input.val();
 				} );
 			}
 
