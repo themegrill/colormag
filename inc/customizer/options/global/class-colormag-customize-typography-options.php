@@ -79,20 +79,8 @@ class ColorMag_Customize_Typography_options extends ColorMag_Customize_Base_Opti
 							'unit' => '-',
 						),
 					),
-					'letter-spacing' => array(
-						'desktop' => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-						'tablet'  => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-						'mobile'  => array(
-							'size' => '',
-							'unit' => 'px',
-						),
-					),
+					'font-style'     => 'normal',
+					'text-transform' => 'none',
 				),
 				'type'      => 'control',
 				'control'   => 'colormag-typography',
