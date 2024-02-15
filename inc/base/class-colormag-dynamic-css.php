@@ -348,7 +348,7 @@ class ColorMag_Dynamic_CSS
 					'unit' => '',
 				),
 			),
-			'font-style'     => 'normal',
+			'font-style'     => 'inherit',
 			'text-transform' => 'none',
 		);
 		$heading_h1_typography_default   = array(

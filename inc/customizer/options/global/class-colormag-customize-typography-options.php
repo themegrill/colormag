@@ -145,7 +145,7 @@ class ColorMag_Customize_Typography_options extends ColorMag_Customize_Base_Opti
 							'unit' => 'px',
 						),
 					),
-					'font-style'     => 'normal',
+					'font-style'     => 'inherit',
 					'text-transform' => 'none',
 				),
 				'type'      => 'sub-control',
@@ -294,7 +294,7 @@ class ColorMag_Customize_Typography_options extends ColorMag_Customize_Base_Opti
 					'font-size'      => array(
 						'desktop' => array(
 							'size' => '24',
-							'unit' => '',
+							'unit' => 'px',
 						),
 						'tablet'  => array(
 							'size' => '',
