@@ -1,8 +1,8 @@
 <?php
 /**
- * Extend WP_Customize_Control to add the heading control.
+ * Extend WP_Customize_Control to add the title control.
  *
- * Class ColorMag_Heading_Control
+ * Class ColorMag_Title_Control
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
@@ -15,18 +15,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class to extend WP_Customize_Control to add the heading customize control.
+ * Class to extend WP_Customize_Control to add the title customize control.
  *
- * Class ColorMag_Heading_Control
+ * Class ColorMag_Title_Control
  */
-class ColorMag_Heading_Control extends ColorMag_Customize_Base_Additional_Control {
+class ColorMag_Title_Control extends ColorMag_Customize_Base_Additional_Control {
 
 	/**
 	 * Control's Type.
 	 *
 	 * @var string
 	 */
-	public $type = 'colormag-heading';
+	public $type = 'colormag-title';
+	public $link = '';
 
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
@@ -39,6 +40,7 @@ class ColorMag_Heading_Control extends ColorMag_Customize_Base_Additional_Contro
 
 		$this->json['label']       = esc_html( $this->label );
 		$this->json['description'] = $this->description;
+		$this->json['link']        = esc_url( $this->link );
 
 	}
 
@@ -53,13 +55,16 @@ class ColorMag_Heading_Control extends ColorMag_Customize_Base_Additional_Contro
 	protected function content_template() {
 		?>
 
-		<div class="colormag-heading-wrapper">
+		<div class="colormag-title-wrapper">
 			<label class="customizer-text">
 				<# if ( data.label ) { #>
-				<span class="customize-control-title wp-ui-text-highlight">{{{ data.label }}}</span>
-				<# } #>
+				<span class="customize-control-title">{{{ data.label }}}</span>
 				<# if ( data.description ) { #>
-				<span class="description customize-control-description">{{{ data.description }}}</span>
+				<span class="tool-tip">
+                    <i class="dashicons dashicons-editor-help"></i>
+				<span class="tooltip-text">{{{ data.description }}}</span>
+				</span>
+				<# } #>
 				<# } #>
 			</label>
 		</div>

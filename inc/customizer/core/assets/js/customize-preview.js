@@ -293,14 +293,14 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 						font-weight: ${ fontWeight };
 						font-style: ${ fontStyle };
 						text-transform: ${ fontTransform };
-						font-size: ${ desktopFontSize };
+						font-size: ${ desktopFontSize }; 
 						line-height: ${ desktopLineHeight };
 					}
 					@media (max-width: 768px) {
 						${ selector } {
 							font-size: ${ tabletFontSize };
 							line-height: ${ tabletLineHeight };
-						}
+						} 
 					}
 					@media (max-width: 600px) {
 						${ selector }{
