@@ -1,31 +1,10 @@
-=== ColorMag  ===
+=== COLORMAG  ===
 
-Contributors: themegrill
-Author: ThemeGrill
-Version: 3.0.5
-Tested up to: 6.3
-Requires PHP: 5.6
-Requires at least: 4.7
-Stable tag: 3.0.5
+ColorMag is responsive magazine style theme for 2015.
 
-License: GNU General Public License, version 3 (GPLv3)
-License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats, footer-widgets, blog, e-commerce, news, rtl-language-support
+/**********************************************************/
 
-== Description ==
-ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
-
-For more information about ColorMag please go to https://themegrill.com/themes/colormag/
-
-== Installation ==
-
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in ColorMag in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://docs.themegrill.com/colormag/ for a guide on how to customize this theme.
-5. Navigate to Appearance > Customize in your admin panel and customize to taste.
-
-== Copyright And License ==
+== COPYRIGHT AND LICENSE ==
 
 External resources linked to the theme.
 * Open Sans by Steve Matteson http://www.google.com/fonts/specimen/Open+Sans
@@ -64,9 +43,26 @@ All other resources and theme elements are licensed under the [GNU GPL](http://w
 ColorMag WordPress Theme, Copyright 2015 ThemeGrill
 ColorMag is distributed under the terms of the GNU GPL
 
-== Translations ==
+/**********************************************************/
+
+== THEME USAGE ==
+
+= Theme Instruction =
+Get theme instruction at https://docs.themegrill.com/colormag/
+
+= Free Support =
+Get free support at https://themegrill.com/contact/
+
+= Theme Features Usage =
+All available options can be used from Appearance->Customize
+
+/**********************************************************/
+
+== TRANSLATIONS ==
 If you've translated this theme into your language, feel free to send the translation over to themegrill@gmail.com
 and we will include it within the theme from next version update.
+
+/**********************************************************/
 
 == Changelog ==
 = Version - 3.1.4 - 2024-01-29 =
