@@ -23,7 +23,7 @@ class Colormag_Welcome_Notice {
 	 *
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started with ColorMag', 'colormag' ) . '">' . esc_html__( 'Get started with ColorMag', 'colormag' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
 
 		return $html;
 	}
@@ -37,31 +37,58 @@ class Colormag_Welcome_Notice {
 			'colormag_hide_notices_nonce',
 			'_colormag_notice_nonce'
 		);
+
+		// Get the current user object
+		$current_user = wp_get_current_user();
+
+		// Check if the user is logged in
+		if ( 0 !== $current_user->ID ) {
+			// Get the username
+			$username = $current_user->user_login;
+		}
+
+		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+			return;
+		}
 		?>
 		<div id="message" class="notice notice-success colormag-notice">
 			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 
 			<div class="colormag-message__content">
-				<div class="colormag-message__image">
-					<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
-				</div>
-
 				<div class="colormag-message__text">
-					<h2 class="colormag-message__heading">
-						<?php
-						printf(
+					<div class="colormag-message__head">
+						<p class="colormag-message__subheading">
+							<?php
+							printf(
+							/* translators: 1: Username */
+								esc_html__( 'Welcome %1$s!', 'colormag' ),
+								$username,
+							);
+							?>
+						</p>
+						<h2 class="colormag-message__heading">
+							<?php
+							printf(
+								esc_html__( 'Start Building with ColorMag!', 'colormag' ),
+							);
+							?>
+						</h2>
+						<p class="colormag-message__description">
+							<?php
+							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'Welcome! Thank you for choosing ColorMag! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'colormag' ),
-							'<a href="' . esc_url( admin_url( 'themes.php?page=colormag-options' ) ) . '">',
-							'</a>'
-						);
-						?>
-					</h2>
-
+								esc_html__( 'Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!', 'colormag' ),
+							);
+							?>
+						</p>
+					</div>
 					<div class="colormag-message__cta">
 						<?php echo $this->import_button_html(); ?>
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button will install and activate the ThemeGrill demo importer plugin.', 'colormag' ); ?></span>
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos.', 'colormag' ); ?></span>
 					</div>
+				</div>
+				<div class="colormag-message__image">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/colormag-welcome-banner.png" alt="ColorMag Templates">
 				</div>
 			</div>
 		</div> <!-- /.colormag-message__content -->
@@ -107,9 +134,9 @@ class Colormag_Welcome_Notice {
 		}
 
 		if ( 'activated' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&colormag-hide-notice=welcome' );
+			$response['redirect'] = admin_url( '/themes.php?page=colormag&tab=starter-templates' );
 		} elseif ( 'installed' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&colormag-hide-notice=welcome' );
+			$response['redirect'] = admin_url( '/themes.php?page=colormag&tab=starter-templates' );
 			if ( current_user_can( 'activate_plugin' ) ) {
 				$result = activate_plugin( 'themegrill-demo-importer/themegrill-demo-importer.php' );
 
@@ -122,7 +149,7 @@ class Colormag_Welcome_Notice {
 			wp_enqueue_style( 'plugin-install' );
 			wp_enqueue_script( 'plugin-install' );
 
-			$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&colormag-hide-notice=welcome' );
+			$response['redirect'] = admin_url( '/themes.php?page=colormag&tab=starter-templates' );
 
 			/**
 			 * Install Plugin.

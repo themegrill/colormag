@@ -36,17 +36,17 @@ Resources packed within the theme.
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * Images used in the screenshot are licensed under Creative Commons Zero (CC0):
 
-  https://pxhere.com/en/photo/417780
-  https://pxhere.com/en/photo/1388277
-  https://pxhere.com/en/photo/1081493
-  https://pxhere.com/en/photo/1271368
-  https://pxhere.com/en/photo/1170427
-  https://pxhere.com/en/photo/118490
-  https://pxhere.com/en/photo/1151290
-  https://pxhere.com/en/photo/597908
-  https://pxhere.com/en/photo/1250568
-  https://pxhere.com/en/photo/893081
-  https://pxhere.com/en/photo/622393
+  https://pxhere.com/en/photo/613031
+  https://pxhere.com/en/photo/1558211
+  https://pxhere.com/en/photo/1333828
+  https://pxhere.com/en/photo/1439011
+  https://pxhere.com/en/photo/657926
+  https://pxhere.com/en/photo/1608817
+  https://pxhere.com/en/photo/805572
+  https://pxhere.com/en/photo/1085512
+  https://pxhere.com/en/photo/1575625
+  https://pxhere.com/en/photo/1548565
+  https://pxhere.com/en/photo/510089
   
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed
@@ -69,7 +69,37 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version TBD ==
+= Version - 3.1.4 - 2024-01-29 =
+* Add - Font awesome V6.2.4 support.
+* Fix - Page builder template responsive issue.
+
+= Version - 3.1.3 - 2024-01-19 =
+* Enhancement - Theme Dashboard.
+
+= Version - 3.1.2 - 2024-01-15 =
+* Enhancement - Overall theme dashboard UI/UX.
+
+= Version - 3.1.1 - 2024-01-11 =
+* Tweak - Update screenshot image.
+
+= Version 3.1.0 - 2023-12-27 =
+* Fix - Breadcrumb option visible even when disabled.
+* Fix - Migration notice issue.
+
+= Version 3.0.9 - 2023-12-13 =
+* Fix - Image caption alignment issue in editor.
+* Fix - Single post headings tag issue.
+* Fix - Page title tag issue.
+
+= Version 3.0.8 - 2023-12-12 =
+* Fix - Header background color issue on dark mode.
+* Fix - Navigation  post title word break issue.
+
+= Version 3.0.7 - 2023-10-18 =
+* Fix - Spacing issue in editor.
+* Fix - PHP error on search results page.
+
+= Version 3.0.6 - 2023-09-20 =
 * Fix   - Sub menu design issue.
 * Added - New Demo (ColorMag 02) - Gutenberg-based WordPress Template Site for Best News Magazine.
 

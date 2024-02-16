@@ -365,6 +365,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					wp_die( __( 'Action failed. Please refresh the page and retry.', 'colormag' ) );
 				}
 
+				update_option( 'colormag_demo_import_migration_notice_dismiss', true );
 				return true;
 			}
 

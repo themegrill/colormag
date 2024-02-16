@@ -108,6 +108,11 @@
 
 /* Related Posts.
 --------------------------------------------- */
+.related-posts-wrapper {
+	h3 {
+		font-size: 2rem;
+	}
+}
 .related-posts-main-title {
 	margin-bottom: length( 'l-15' );
 
@@ -399,7 +404,7 @@
 @include breakpoint("mdm") {
 
 	.related-posts-wrapper {
-	
+
 		.related-posts {
 			grid-template-columns: repeat(3, 1fr);
 		}
@@ -409,6 +414,6 @@
 			.single-related-posts {
 				grid-template-columns: 50% 50%;
 			}
-		}	
+		}
 	}
 }
