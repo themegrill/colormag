@@ -44,7 +44,14 @@ if ( ! function_exists( 'colormag_copyright_alignment_class' ) ) :
 	 */
 	function colormag_copyright_alignment_class() {
 
-		$class_name = 'cm-footer-bar-style-1';
+		$colormag_copyright_alignment_class = get_theme_mod( 'colormag_footer_bar_alignment', 'left' );
+		$class_name                         = 'cm-footer-bar-style-1';
+
+		if ( 'right' === $colormag_copyright_alignment_class ) {
+			$class_name = 'cm-footer-bar-style-2';
+		} elseif ( 'center' === $colormag_copyright_alignment_class ) {
+			$class_name = 'cm-footer-bar-style-3';
+		}
 
 		return $class_name;
 

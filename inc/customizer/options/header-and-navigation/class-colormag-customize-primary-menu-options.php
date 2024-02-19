@@ -82,8 +82,29 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 			),
 
 			array(
-				'name'     => 'colormag_primary_menu_border_top_group',
+				'name'     => 'colormag_button_border_divider',
+				'type'     => 'control',
+				'control'  => 'colormag-divider',
+				'style'    => 'dashed',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 45,
+			),
+
+			/**
+			 * Border options
+			 */
+			array(
+				'name'     => 'colormag_button_border_subtitle',
+				'type'     => 'control',
+				'control'  => 'colormag-subtitle',
 				'label'    => esc_html__( 'Border Top', 'colormag' ),
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 45,
+			),
+
+			array(
+				'name'     => 'colormag_primary_menu_border_top_group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
 				'default'  => '',
 				'type'     => 'control',
 				'control'  => 'colormag-group',
@@ -100,6 +121,28 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'parent'   => 'colormag_primary_menu_border_top_group',
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 60,
+			),
+
+			array(
+				'name'        => 'colormag_primary_menu_top_border_width',
+				'default'     => array(
+					'size' => '4',
+					'unit' => 'px',
+				),
+				'suffix'      => array( 'px' ),
+				'type'        => 'control',
+				'control'     => 'colormag-slider',
+				'label'       => esc_html__( 'Width', 'colormag' ),
+				'section'     => 'colormag_primary_menu_section',
+				'transport'   => 'postMessage',
+				'priority'    => 65,
+				'input_attrs' => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 20,
+						'step' => 1,
+					),
+				),
 			),
 
 			array(
@@ -199,6 +242,45 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'priority' => 150,
 			),
 
+			// Primary Menu.
+			array(
+				'name'     => 'colormag_primary_menu_typography_group',
+				'label'    => esc_html__( 'Typography', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 155,
+			),
+
+			array(
+				'name'      => 'colormag_primary_menu_typography',
+				'default'   => array(
+					'font-family' => 'default',
+					'font-weight' => '600',
+					'font-size'   => array(
+						'desktop' => array(
+							'size' => '14',
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+					),
+				),
+				'type'      => 'sub-control',
+				'control'   => 'colormag-typography',
+				'parent'    => 'colormag_primary_menu_typography_group',
+				'section'   => 'colormag_primary_menu_section',
+				'transport' => 'postMessage',
+				'priority'  => 155,
+			),
+
 			// Sub Menu.
 			array(
 				'name'     => 'colormag_sub_menu_heading',
@@ -235,6 +317,44 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'parent'   => 'colormag_sub_menu_background_group',
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 180,
+			),
+
+			// Sub Menu.
+			array(
+				'name'     => 'colormag_primary_sub_menu_typography_group',
+				'label'    => esc_html__( 'Typography', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_primary_menu_section',
+				'priority' => 190,
+			),
+
+			// Primary sub menu typography option.
+			array(
+				'name'      => 'colormag_primary_sub_menu_typography',
+				'default'   => array(
+					'font-size' => array(
+						'desktop' => array(
+							'size' => '14',
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+					),
+				),
+				'type'      => 'sub-control',
+				'control'   => 'colormag-typography',
+				'parent'    => 'colormag_primary_sub_menu_typography_group',
+				'section'   => 'colormag_primary_menu_section',
+				'transport' => 'postMessage',
+				'priority'  => 190,
 			),
 
 			array(

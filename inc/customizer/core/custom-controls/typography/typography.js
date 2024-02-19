@@ -258,10 +258,14 @@ wp.customize.controlConstructor[ 'colormag-typography' ] = wp.customize.Control.
 						}
 					}
 
-					unit.val(defaultUnit);
-					slider.val(defaultValue);
-					input.val(defaultValue);
-					control.setting.set( { size : defaultValue, unit : defaultUnit } );
+					unit.val(defaultUnit ? defaultUnit : 'px').change(); // Trigger change event for unit
+					slider.val(defaultValue).change(); // Trigger change event for slider
+					input.val(defaultValue).change(); // Trigger change event for inputValue
+
+					// Save the unit, slider, and inputValue values (optional)
+					var selectedUnit = unit.val();
+					var inputRangeValue = slider.val();
+					var inputValue = input.val();
 				} );
 			}
 

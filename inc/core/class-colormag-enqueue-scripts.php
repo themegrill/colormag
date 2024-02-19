@@ -224,18 +224,155 @@ function colormag_get_fonts() {
 	/**
 	 * Header options.
 	 */
+	$site_title_typography_default   = array(
+		'font-family' => 'default',
+	);
+	$site_tagline_typography_default = array(
+		'font-family' => 'default',
+	);
+	$primary_menu_typography_default = array(
+		'font-family' => 'default',
+		'font-weight' => '600',
+	);
+	$post_title_typography_default = array(
+		'font-family' => 'default',
+		'font-weight' => '500',
+	);
 
 	/**
 	 * Typography options.
 	 */
-	$breaking_news_typography_default = array(
+	$base_typography_default          = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$headings_typography_default      = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$heading_h1_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$heading_h2_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+	$heading_h3_typography_default    = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
+	$heading_h4_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$heading_h5_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$heading_h6_typography_default    = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$base_typography                  = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+	$headings_typography              = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+	$heading_h1_typography            = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
+	$heading_h2_typography            = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
+	$heading_h3_typography            = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
+	$heading_h4_typography            = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
+	$heading_h5_typography            = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
+	$heading_h6_typography            = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+	$site_title_typography           = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
+	$site_tagline_typography         = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
+	$primary_menu_typography         = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
+	$post_title_typography         = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
+
 	/**
 	 * Enqueue required Google fonts.
 	 */
+	// Header options.
+	if ( 'default' === $site_title_typography['font-family'] ) {
+		$site_title_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $site_tagline_typography['font-family'] ) {
+		$site_tagline_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $primary_menu_typography['font-family'] ) {
+		$primary_menu_typography['font-family'] = 'Open Sans';
+	}
+
+	// Typography options.
+	if ( 'default' === $base_typography['font-family'] ) {
+		$base_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $headings_typography['font-family'] ) {
+		$headings_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $heading_h1_typography['font-family'] ) {
+		$heading_h1_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $heading_h2_typography['font-family'] ) {
+		$heading_h2_typography['font-family'] = 'Open Sans';
+	}
+	if ( 'default' === $heading_h3_typography['font-family'] ) {
+		$heading_h3_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $heading_h4_typography['font-family'] ) {
+		$heading_h4_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $heading_h5_typography['font-family'] ) {
+		$heading_h5_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $heading_h6_typography['font-family'] ) {
+		$heading_h6_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $post_title_typography['font-family'] ) {
+		$post_title_typography['font-family'] = 'Open Sans';
+	}
+
+	$base_typography_font_weight            = $base_typography[ 'font-weight' ] ?? 'regular';
+	$heading_typography_font_weight         = $headings_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h1_typography_font_weight      = $heading_h1_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h2_base_typography_font_weight = $heading_h2_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h3_typography_font_weight      = $heading_h3_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h4_typography_font_weight      = $heading_h4_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h5_typography_font_weight      = $heading_h5_typography[ 'font-weight' ] ?? 'regular';
+	$heading_h6_typography_font_weight      = $heading_h6_typography[ 'font-weight' ] ?? 'regular';
+	$primary_menu_typography_font_weight    = $primary_menu_typography[ 'font-weight' ] ?? 'regular';
+	$post_title_typography_font_weight      = $post_title_typography[ 'font-weight' ] ?? 'regular';
+
+
+	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h4_typography['font-family'], $heading_h4_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h5_typography['font-family'], $heading_h5_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $post_title_typography['font-family'], $post_title_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $heading_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h2_typography['font-family'], $heading_h2_base_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h3_typography['font-family'], $heading_h3_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h4_typography['font-family'], $heading_h4_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h5_typography['font-family'], $heading_h5_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $post_title_typography['font-family'], $post_title_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $site_title_typography['font-family'] );
+	ColorMag_Generate_Fonts::add_font( $site_tagline_typography['font-family'] );
+	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
@@ -251,6 +388,87 @@ function colormag_font_subset() {
 	/**
 	 * Typography options.
 	 */
+	// Base typography.
+	$base_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+
+	$base_typography = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+
+	if ( isset( $base_typography['subsets'] ) && is_array( $base_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $base_typography['subsets'], $google_font_subsets );
+	}
+
+	// Headings typography.
+	$headings_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$headings_typography         = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+
+	if ( isset( $headings_typography['subsets'] ) && is_array( $headings_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $headings_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H1 typography.
+	$heading_h1_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h1_typography         = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
+
+	if ( isset( $heading_h1_typography['subsets'] ) && is_array( $heading_h1_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h1_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H2 typography.
+	$heading_h2_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h2_typography         = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
+
+	if ( isset( $heading_h2_typography['subsets'] ) && is_array( $heading_h2_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h2_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H3 typography.
+	$heading_h3_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h3_typography         = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
+
+	if ( isset( $heading_h3_typography['subsets'] ) && is_array( $heading_h3_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h3_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H4 typography.
+	$heading_h4_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h4_typography         = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
+
+	if ( isset( $heading_h4_typography['subsets'] ) && is_array( $heading_h4_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h4_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H5 typography.
+	$heading_h5_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h5_typography         = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
+
+	if ( isset( $heading_h5_typography['subsets'] ) && is_array( $heading_h5_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h5_typography['subsets'], $google_font_subsets );
+	}
+
+	// Heading H6 typography.
+	$heading_h6_typography_default = array(
+		'subsets' => array( 'latin' ),
+	);
+	$heading_h6_typography         = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+
+	if ( isset( $heading_h6_typography['subsets'] ) && is_array( $heading_h6_typography['subsets'] ) ) {
+		$google_font_subsets = array_merge( $heading_h6_typography['subsets'], $google_font_subsets );
+	}
+
 	return $google_font_subsets;
 }
 
@@ -549,27 +767,32 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		$parse_css = $selector . '{';
 
 		// For font family.
-		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value['font-family'] ) ) {
+		$default_value_font_family = isset( $default_value['font-family'] ) ? $default_value['font-family'] : '';
+		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) ) {
 			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
 		}
 
 		// For font style.
-		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value['font-style'] ) ) {
+		$default_value_font_style = isset( $default_value['font-style'] ) ? $default_value['font-style'] : '';
+		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value_font_style ) ) {
 			$parse_css .= 'font-style:' . $output_value['font-style'] . ';';
 		}
 
 		// For text transform.
-		if ( isset( $output_value['text-transform'] ) && ! empty( $output_value['text-transform'] ) && ( $output_value['text-transform'] !== $default_value['text-transform'] ) ) {
+		$default_value_text_transform = isset( $default_value['text-transform'] ) ? $default_value['text-transform'] : '';
+		if ( isset( $output_value['text-transform'] ) && ! empty( $output_value['text-transform'] ) && ( $output_value['text-transform'] !== $default_value_text_transform ) ) {
 			$parse_css .= 'text-transform:' . $output_value['text-transform'] . ';';
 		}
 
 		// For text decoration.
-		if ( isset( $output_value['text-decoration'] ) && ! empty( $output_value['text-decoration'] ) && ( $output_value['text-decoration'] !== $default_value['text-decoration'] ) ) {
+		$default_value_text_decoration = isset( $default_value['text-decoration'] ) ? $default_value['text-decoration'] : '';
+		if ( isset( $output_value['text-decoration'] ) && ! empty( $output_value['text-decoration'] ) && ( $output_value['text-decoration'] !== $default_value_text_decoration ) ) {
 			$parse_css .= 'text-decoration:' . $output_value['text-decoration'] . ';';
 		}
 
 		// For font weight.
-		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value['font-weight'] ) ) {
+		$default_value_font_weight = isset( $default_value['font-weight'] ) ? $default_value['font-weight'] : '';
+		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value_font_weight ) ) {
 			$font_weight_value = $output_value['font-weight'];
 
 			if ( 'italic' === $font_weight_value || 'regular' === $font_weight_value ) {
@@ -580,24 +803,26 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		}
 
 		// For font size on desktop.
-		$font_size_unit = isset( $output_value['font-size']['desktop']['unit'] ) ? $output_value['font-size']['desktop']['unit'] : 'px';
-
-		if ( isset( $output_value['font-size']['desktop']['size'] ) && ! empty( $output_value['font-size']['desktop']['size'] ) && ( $output_value['font-size']['desktop']['size'] !== $default_value['font-size']['desktop']['size'] ) ) {
+		$font_size_unit            = isset( $output_value['font-size']['desktop']['unit'] ) ? $output_value['font-size']['desktop']['unit'] : 'px';
+		$default_desktop_font_size = isset( $default_value['font-size']['desktop']['size'] ) ? $default_value['font-size']['desktop']['size'] : '';
+		if ( isset( $output_value['font-size']['desktop']['size'] ) && ! empty( $output_value['font-size']['desktop']['size'] ) && ( $output_value['font-size']['desktop']['size'] !== $default_desktop_font_size ) ) {
 			$parse_css .= 'font-size:' . $output_value['font-size']['desktop']['size'] . $font_size_unit . ';';
 		}
 
 		// For line height on desktop.
 		$line_height_unit_value = isset( $output_value['line-height']['desktop']['unit'] ) ? $output_value['line-height']['desktop']['unit'] : 'px';
 		$line_height_unit       = ( '-' !== $line_height_unit_value ) ? $line_height_unit_value : '';
+		$default_desktop_line_height = isset( $default_value['line-height']['desktop']['size'] ) ? $default_value['line-height']['desktop']['size'] : '';
 
-		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !== $default_value['line-height']['desktop']['size'] ) ) {
+		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !==  $default_desktop_line_height) ) {
 			$parse_css .= 'line-height:' . $output_value['line-height']['desktop']['size'] . $line_height_unit . ';';
 		}
 
 		// For letter spacing on desktop.
 		$letter_spacing_unit = isset( $output_value['letter-spacing']['desktop']['unit'] ) ? $output_value['letter-spacing']['desktop']['unit'] : 'px';
+		$default_desktop_letter_spacing = isset( $default_value['letter-spacing']['desktop']['size'] ) ? $default_value['letter-spacing']['desktop']['size'] : '';
 
-		if ( isset( $output_value['letter-spacing']['desktop']['size'] ) && ! empty( $output_value['letter-spacing']['desktop']['size'] ) && ( $output_value['letter-spacing']['desktop']['size'] !== $default_value['letter-spacing']['desktop']['size'] ) ) {
+		if ( isset( $output_value['letter-spacing']['desktop']['size'] ) && ! empty( $output_value['letter-spacing']['desktop']['size'] ) && ( $output_value['letter-spacing']['desktop']['size'] !== $default_desktop_letter_spacing ) ) {
 			$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['desktop']['size'] . $letter_spacing_unit . ';';
 		}
 
@@ -610,7 +835,8 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 				// For tablet devices.
 				if ( 'tablet' === $device && $size ) {
-					if ( isset( $output_value['font-size']['tablet']['size'] ) && ! empty( $output_value['font-size']['tablet']['size'] ) && $output_value['font-size']['tablet']['size'] !== $default_value['font-size']['tablet']['size'] ) {
+					$default_tablet_font_size_spacing = isset( $default_value['font-size']['tablet']['size'] ) ? $default_value['font-size']['tablet']['size'] : '';
+					if ( isset( $output_value['font-size']['tablet']['size'] ) && ! empty( $output_value['font-size']['tablet']['size'] ) && $output_value['font-size']['tablet']['size'] !== $default_tablet_font_size_spacing ) {
 
 						$font_size_tablet_unit = $output_value['font-size']['tablet']['unit'] ? $output_value['font-size']['tablet']['unit'] : 'px';
 
@@ -621,7 +847,8 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 						$parse_css .= '}';
 					}
 
-					if ( isset( $output_value['line-height']['tablet']['size'] ) && ! empty( $output_value['line-height']['tablet']['size'] ) && $output_value['line-height']['tablet']['size'] !== $default_value['line-height']['tablet']['size'] ) {
+					$default_tablet_line_height_spacing = isset( $default_value['line-height']['tablet']['size'] ) ? $default_value['line-height']['tablet']['size'] : '';
+					if ( isset( $output_value['line-height']['tablet']['size'] ) && ! empty( $output_value['line-height']['tablet']['size'] ) && $output_value['line-height']['tablet']['size'] !== $default_tablet_line_height_spacing ) {
 
 						$line_height_tablet_unit_value = $output_value['line-height']['tablet']['unit'] ? $output_value['line-height']['tablet']['unit'] : '';
 						$line_height_tablet_unit       = ( '-' !== $line_height_tablet_unit_value ) ? $line_height_tablet_unit_value : '';
@@ -633,7 +860,8 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 						$parse_css .= '}';
 					}
 
-					if ( isset( $output_value['letter-spacing']['tablet']['size'] ) && ! empty( $output_value['letter-spacing']['tablet']['size'] ) && $output_value['letter-spacing']['tablet']['size'] !== $default_value['letter-spacing']['tablet']['size'] ) {
+					$default_tablet_letter_spacing_spacing = isset( $default_value['letter-spacing']['tablet']['size'] ) ? $default_value['letter-spacing']['tablet']['size'] : '';
+					if ( isset( $output_value['letter-spacing']['tablet']['size'] ) && ! empty( $output_value['letter-spacing']['tablet']['size'] ) && $output_value['letter-spacing']['tablet']['size'] !== $default_tablet_letter_spacing_spacing ) {
 
 						$letter_spacing_tablet_unit = $output_value['letter-spacing']['tablet']['unit'] ? $output_value['letter-spacing']['tablet']['unit'] : 'px';
 
@@ -647,7 +875,8 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 				// For mobile devices.
 				if ( 'mobile' === $device && $size ) {
-					if ( isset( $output_value['font-size']['mobile']['size'] ) && ! empty( $output_value['font-size']['mobile']['size'] ) && $output_value['font-size']['mobile']['size'] !== $default_value['font-size']['mobile']['size'] ) {
+					$default_mobile_font_size_spacing = isset( $default_value['font-size']['mobile']['size'] ) ? $default_value['font-size']['mobile']['size'] : '';
+					if ( isset( $output_value['font-size']['mobile']['size'] ) && ! empty( $output_value['font-size']['mobile']['size'] ) && $output_value['font-size']['mobile']['size'] !== $default_mobile_font_size_spacing ) {
 
 						$font_size_mobile_unit = $output_value['font-size']['mobile']['unit'] ? $output_value['font-size']['mobile']['unit'] : 'px';
 
@@ -658,7 +887,8 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 						$parse_css .= '}';
 					}
 
-					if ( isset( $output_value['line-height']['mobile']['size'] ) && ! empty( $output_value['line-height']['mobile']['size'] ) && $output_value['line-height']['mobile']['size'] !== $default_value['line-height']['mobile']['size'] ) {
+					$default_mobile_line_height_spacing = isset( $default_value['line-height']['mobile']['size'] ) ? $default_value['line-height']['mobile']['size'] : '';
+					if ( isset( $output_value['line-height']['mobile']['size'] ) && ! empty( $output_value['line-height']['mobile']['size'] ) && $output_value['line-height']['mobile']['size'] !== $default_mobile_line_height_spacing ) {
 
 						$line_height_mobile_unit_value = $output_value['line-height']['mobile']['unit'] ? $output_value['line-height']['mobile']['unit'] : '';
 						$line_height_mobile_unit       = ( '-' !== $line_height_mobile_unit_value ) ? $line_height_mobile_unit_value : '';
@@ -670,7 +900,8 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 						$parse_css .= '}';
 					}
 
-					if ( isset( $output_value['letter-spacing']['mobile']['size'] ) && ! empty( $output_value['letter-spacing']['mobile']['size'] ) && $output_value['letter-spacing']['mobile']['size'] !== $default_value['letter-spacing']['mobile']['size'] ) {
+					$default_mobile_letter_spacing_spacing = isset( $default_value['letter-spacing']['mobile']['size'] ) ? $default_value['letter-spacing']['mobile']['size'] : '';
+					if ( isset( $output_value['letter-spacing']['mobile']['size'] ) && ! empty( $output_value['letter-spacing']['mobile']['size'] ) && $output_value['letter-spacing']['mobile']['size'] !== $default_mobile_letter_spacing_spacing ) {
 
 						$letter_spacing_mobile_unit = $output_value['letter-spacing']['mobile']['unit'] ? $output_value['letter-spacing']['mobile']['unit'] : 'px';
 

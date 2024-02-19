@@ -25,7 +25,7 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 	 * Include customize options.
 	 *
 	 * @param array                 $options      Customize options provided via the theme.
-	 * @param \WP_Customize_Manager $wp_customize Theme Customizer object.
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 *
 	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
 	 */
@@ -67,6 +67,27 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 				'priority' => 30,
 			),
 
+			// Base color option.
+			array(
+				'name'     => 'colormag_base_color_group',
+				'label'    => esc_html__( 'Base', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 35,
+			),
+
+			array(
+				'name'     => 'colormag_base_color',
+				'default'  => '#444444',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_base_color_group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 35,
+			),
+
 			// Skin color option.
 			array(
 				'name'     => 'colormag_color_skin_setting',
@@ -80,6 +101,78 @@ class ColorMag_Customize_Colors_Options extends ColorMag_Customize_Base_Option {
 					'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
 				),
 				'priority' => 60,
+			),
+
+			// Link color.
+			array(
+				'name'     => 'colormag_box_color_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Box', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 70,
+			),
+
+			// Box shadow color option.
+			array(
+				'name'     => 'colormag_box_shadow_color_group',
+				'label'    => esc_html__( 'Border Color', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 80,
+			),
+
+			array(
+				'name'     => 'colormag_box_shadow_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_box_shadow_color_group',
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 80,
+			),
+
+			// Link color.
+			array(
+				'name'     => 'colormag_link_color_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Links', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 90,
+			),
+
+			array(
+				'name'     => 'colormag_link_color_group',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'label'    => esc_html__( 'Links', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 100,
+			),
+
+			array(
+				'name'     => 'colormag_link_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_link_color_group',
+				'tab'      => esc_html__( 'Normal', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 110,
+			),
+
+			array(
+				'name'     => 'colormag_link_hover_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_link_color_group',
+				'tab'      => esc_html__( 'Hover', 'colormag' ),
+				'section'  => 'colormag_global_colors_section',
+				'priority' => 120,
 			),
 
 			array(

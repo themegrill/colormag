@@ -151,6 +151,65 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 			),
 
 			array(
+				'name'     => 'colormag_widget_title_title',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Widget Title', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 110,
+			),
+
+			array(
+				'name'     => 'colormag_footer_widget_title_color_group',
+				'default'  => '#ffffff',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 120,
+			),
+
+			array(
+				'name'     => 'colormag_footer_widget_title_color',
+				'label'    => esc_html__( 'Widget title color.', 'colormag' ),
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_footer_widget_title_color_group',
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 130,
+			),
+
+			array(
+				'name'     => 'colormag_widget_content_title',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Widget Content', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 135,
+			),
+
+			array(
+				'name'     => 'colormag_footer_widget_content_color_group',
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 140,
+			),
+
+			array(
+				'name'     => 'colormag_footer_widget_content_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_footer_widget_content_color_group',
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 150,
+			),
+
+			array(
 				'name'        => 'colormag_footer_column_upgrade',
 				'type'        => 'control',
 				'control'     => 'colormag-upgrade',
@@ -159,6 +218,50 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 				'url'         => esc_url( 'https://themegrill.com/colormag-pricing/' ),
 				'section'     => 'colormag_footer_column_section',
 				'priority'    => 1000,
+			),
+
+			array(
+				'name'     => 'colormag_widget_link_title',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Widget Link', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 180,
+			),
+
+			// Widget content typography group.
+			array(
+				'name'     => 'colormag_footer_widget_link_color_group',
+				'label'    => esc_html__( 'Color', 'colormag' ),
+				'default'  => '',
+				'type'     => 'control',
+				'control'  => 'colormag-group',
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 190,
+			),
+
+			// Widget content link text color option.
+			array(
+				'name'     => 'colormag_footer_widget_content_link_text_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_footer_widget_link_color_group',
+				'tab'      => esc_html__( 'Normal', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 200,
+			),
+
+			// Widget content link text hover color option.
+			array(
+				'name'     => 'colormag_footer_widget_content_link_text_hover_color',
+				'default'  => '',
+				'type'     => 'sub-control',
+				'control'  => 'colormag-color',
+				'parent'   => 'colormag_footer_widget_link_color_group',
+				'tab'      => esc_html__( 'Hover', 'colormag' ),
+				'section'  => 'colormag_footer_column_section',
+				'priority' => 210,
 			),
 		);
 

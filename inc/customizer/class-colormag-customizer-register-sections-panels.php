@@ -135,6 +135,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 			),
 
 			array(
+				'name'     => 'colormag_button_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Button', 'colormag' ),
+				'panel'    => 'colormag_global_panel',
+				'priority' => 51,
+			),
+
+			array(
 				'name'     => 'colormag_site_layout_section',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Site Layout', 'colormag' ),
@@ -305,6 +313,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'title'    => esc_html__( 'Single Post', 'colormag' ),
 				'panel'    => 'colormag_content_panel',
 				'priority' => 20,
+			),
+
+			array(
+				'name'     => 'colormag_post_meta_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Post Meta', 'colormag' ),
+				'panel'    => 'colormag_content_panel',
+				'priority' => 30,
 			),
 
 			array(

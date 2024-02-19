@@ -207,16 +207,19 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 
 		value.bind( function ( typography ) {
 			var	link              = '',
-				   fontFamily        = '',
-				   fontWeight        = '',
-				   fontStyle         = '',
-				   fontTransform     = '',
-				   desktopFontSize   = '',
-				   tabletFontSize    = '',
-				   mobileFontSize    = '',
-				   desktopLineHeight = '',
-				   tabletLineHeight  = '',
-				   mobileLineHeight  = '';
+				fontFamily = '',
+				fontWeight = '',
+				fontStyle = '',
+				fontTransform = '',
+				desktopFontSize = '',
+				tabletFontSize = '',
+				mobileFontSize = '',
+				desktopLineHeight = '',
+				tabletLineHeight = '',
+				mobileLineHeight = '',
+				desktopLetterSpacing = '',
+				tabletLetterSpacing = '',
+				mobileLetterSpacing = '';
 
 			if ( 'object' == typeof typography ) {
 
@@ -250,6 +253,24 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 					if ( undefined !== typography['line-height']['mobile']['size'] && '' !== typography['line-height']['mobile']['size'] ) {
 						const mobileLineHeightUnit = ('-' !== typography['line-height']['mobile']['unit']) ? typography['line-height']['mobile']['unit'] : '';
 						mobileLineHeight = typography['line-height']['mobile']['size'] + mobileLineHeightUnit;
+					}
+				}
+
+				if ( undefined !== typography['letter-spacing'] ) {
+
+					if ( undefined !== typography['letter-spacing']['desktop']['size'] && '' !== typography['letter-spacing']['desktop']['size'] ) {
+						const desktopLetterSpacingUnit = ('-' !== typography['letter-spacing']['desktop']['unit']) ? typography['letter-spacing']['desktop']['unit'] : '';
+						desktopLetterSpacing = typography['letter-spacing']['desktop']['size'] + desktopLetterSpacingUnit;
+					}
+
+					if ( undefined !== typography['letter-spacing']['tablet']['size'] && '' !== typography['letter-spacing']['tablet']['size'] ) {
+						const tabletLetterSpacingUnit = ('-' !== typography['letter-spacing']['tablet']['unit']) ? typography['letter-spacing']['tablet']['unit'] : '';
+						tabletLetterSpacing = typography['letter-spacing']['tablet']['size'] + tabletLetterSpacingUnit;
+					}
+
+					if ( undefined !== typography['letter-spacing']['mobile']['size'] && '' !== typography['letter-spacing']['mobile']['size'] ) {
+						const mobileLetterSpacingUnit = ('-' !== typography['letter-spacing']['mobile']['unit']) ? typography['letter-spacing']['mobile']['unit'] : '';
+						mobileLetterSpacing = typography['letter-spacing']['mobile']['size'] + mobileLetterSpacingUnit;
 					}
 				}
 
@@ -293,19 +314,22 @@ function colormagGenerateTypographyCSS( controlId, selector ) {
 						font-weight: ${ fontWeight };
 						font-style: ${ fontStyle };
 						text-transform: ${ fontTransform };
-						font-size: ${ desktopFontSize }; 
+						font-size: ${ desktopFontSize };
 						line-height: ${ desktopLineHeight };
+						letter-spacing: ${ desktopLetterSpacing };
 					}
 					@media (max-width: 768px) {
 						${ selector } {
 							font-size: ${ tabletFontSize };
 							line-height: ${ tabletLineHeight };
-						} 
+							letter-spacing: ${ tabletLetterSpacing };
+						}
 					}
 					@media (max-width: 600px) {
 						${ selector }{
 							font-size: ${ mobileFontSize };
 							line-height:${ mobileLineHeight };
+							letter-spacing: ${ mobileLetterSpacing };
 						}
 					}
 				</style>${ link }`

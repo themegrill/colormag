@@ -58,42 +58,61 @@ $archive_search_layout = 'layout-1';
 	endif;
 	?>
 
+	<?php $content_orders = get_theme_mod(
+		'colormag_blog_post_elements', array(
+			'post_format',
+			'category',
+			'meta',
+			'title',
+			'content',
+		)
+	); ?>
+
+
 	<div class="cm-post-content">
 		<?php
-		if ( get_post_format() ) :
-			if ( ! has_post_format( 'video' ) ) :
-				get_template_part( 'inc/post-formats' );
-			endif;
+		foreach ( $content_orders as $key => $content_order ) {
 
+			if ( 'post_format' === $content_order ) {
 
-			if ( has_post_format( 'video' ) && ! ( has_post_thumbnail() ) ) :
+				if ( get_post_format() ) :
+					if ( ! has_post_format( 'video' ) ) :
+						get_template_part( 'inc/post-formats' );
+					endif;
 
-				$video_post_url = get_post_meta( $post->ID, 'video_url', true );
+					if ( has_post_format( 'video' ) && ! ( has_post_thumbnail() ) ) :
 
-				if ( ! empty( $video_post_url ) ) :
-					?>
-					<div class="fitvids-video">
+						$video_post_url = get_post_meta( $post->ID, 'video_url', true );
+
+						if ( ! empty( $video_post_url ) ) :
+							?>
+							<div class="fitvids-video">
+								<?php
+								$embed_code = wp_oembed_get( $video_post_url );
+
+								echo $embed_code; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+								?>
+							</div>
 						<?php
-						$embed_code = wp_oembed_get( $video_post_url );
+						endif;
+					endif;
 
-						echo $embed_code; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
-						?>
-					</div>
-					<?php
 				endif;
-			endif;
+			} elseif ( 'category' === $content_order ) {
 
-		endif;
+				colormag_colored_category();
+			} elseif ( 'meta' === $content_order ) {
 
-		colormag_colored_category();
+				colormag_entry_meta();
+			} elseif ( 'title' === $content_order ) {
+
+				get_template_part( 'template-parts/entry/entry', 'header' );
+			} elseif ( 'content' === $content_order ) {
+
+				get_template_part( 'template-parts/entry/entry', 'summary' );
+			}
+		}
 		?>
-
-		<?php colormag_entry_meta(); ?>
-
-	<?php get_template_part( 'template-parts/entry/entry', 'header' ); ?>
-
-
-	<?php get_template_part( 'template-parts/entry/entry', 'summary' ); ?>
 
 	</div>
 
