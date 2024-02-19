@@ -46,7 +46,7 @@ $wp_customize->get_control( 'background_attachment' )->priority = 150;
 $wp_customize->get_control( 'custom_logo' )->priority     = 20;
 $wp_customize->get_control( 'site_icon' )->priority       = 40;
 $wp_customize->get_control( 'blogname' )->priority        = 60;
-$wp_customize->get_control( 'blogdescription' )->priority = 90;
+$wp_customize->get_control( 'blogdescription' )->priority = 145;
 
 $wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_panel';
 $wp_customize->get_section( 'header_image' )->priority = 100;

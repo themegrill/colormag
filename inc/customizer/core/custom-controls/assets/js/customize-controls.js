@@ -203,6 +203,41 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 } );
 
+(
+	function ( $ ) {
+
+		wp.customize.controlConstructor['colormag-date'] = wp.customize.Control.extend( {
+
+			ready: function() {
+				'use strict';
+
+				var control  = this,
+					selector = control.selector,
+					input    = $( selector ).find( 'input' );
+
+				// Init the datepicker.
+				input.datepicker(
+					{
+						dateFormat : 'yy-mm-dd',
+						changeMonth: true,
+						changeYear : true,
+						showOn     : 'button',
+						buttonText : '',
+						beforeShow : function( input, obj ) {
+							$( input ).after( $( input ).datepicker( 'widget' ) );
+						}
+					}
+				);
+
+				// Save the changes.
+				input.on( 'change keyup paste', function() {
+					control.setting.set( $( this ).val() );
+				} );
+			},
+		} );
+	}
+)( jQuery );
+
 /**
  * Color picker control JS to handle color picker rendering within customize control.
  *
@@ -253,41 +288,6 @@ wp.customize.controlConstructor[ 'colormag-buttonset' ] = wp.customize.Control.e
 
 		} );
 
-	}
-)( jQuery );
-
-(
-	function ( $ ) {
-
-		wp.customize.controlConstructor['colormag-date'] = wp.customize.Control.extend( {
-
-			ready: function() {
-				'use strict';
-
-				var control  = this,
-					selector = control.selector,
-					input    = $( selector ).find( 'input' );
-
-				// Init the datepicker.
-				input.datepicker(
-					{
-						dateFormat : 'yy-mm-dd',
-						changeMonth: true,
-						changeYear : true,
-						showOn     : 'button',
-						buttonText : '',
-						beforeShow : function( input, obj ) {
-							$( input ).after( $( input ).datepicker( 'widget' ) );
-						}
-					}
-				);
-
-				// Save the changes.
-				input.on( 'change keyup paste', function() {
-					control.setting.set( $( this ).val() );
-				} );
-			},
-		} );
 	}
 )( jQuery );
 
@@ -540,6 +540,247 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 				},
 			}
 		);
+	}
+)( jQuery );
+
+/**
+ * Background image control JS to handle the background customize option.
+ *
+ * File `background.js`.
+ *
+ * @package ColorMag
+ */
+(
+	function ( $ ) {
+
+		$( window ).on(
+			'load',
+			function () {
+				$( 'html' ).addClass( 'colorpicker-ready' );
+			}
+		);
+
+		wp.customize.controlConstructor['colormag-gradient'] = wp.customize.Control.extend(
+			{
+
+				ready : function () {
+
+					'use strict';
+
+					var control = this;
+
+					// Init controls.
+					control.initColorControl();
+					control.initColorStopControl();
+					control.initColor2Control();
+					control.initColorStop2Control();
+					control.initGradientAngleControl();
+
+					var selectedType = $( '.types select' ).find( ':selected' ).val();
+
+					if ( 'radial' === selectedType ) {
+						control.container.find( '.type > .type-linear' ).hide();
+						control.container.find( '.type > .type-radial' ).show();
+					}
+
+					if ( 'linear' === selectedType ) {
+						control.container.find( '.type > .type-radial' ).hide();
+						control.container.find( '.type > .type-linear' ).show();
+					}
+					control.container.on(
+						'change',
+						'.types select',
+						function () {
+							if ( 'radial' === $( this ).find( ':selected' ).val() ) {
+								control.container.find( '.type > .type-linear' ).hide();
+								control.container.find( '.type > .type-radial' ).show();
+							}
+
+							if ( 'linear' === $( this ).find( ':selected' ).val() ) {
+								control.container.find( '.type > .type-radial' ).hide();
+								control.container.find( '.type > .type-linear' ).show();
+							}
+
+							control.saveValue( 'gradient-type', jQuery( '.types select' ).val() );
+						}
+					);
+					control.container.on(
+						'change',
+						'.type-radial select',
+						function () {
+							control.saveValue( 'gradient-position', jQuery( '.type-radial select' ).val() );
+						}
+					);
+
+				},
+
+				initColorControl : function () {
+
+					var control     = this,
+						value       = control.setting._value,
+						colorpicker = control.container.find( '.color .colormag-color-picker-alpha' );
+
+					// Background color setting.
+					colorpicker.wpColorPicker(
+						{
+
+							change : function () {
+								if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+									setTimeout(
+										function () {
+											control.saveValue( 'color', colorpicker.val() );
+										},
+										100
+									);
+								}
+							},
+
+							clear : function ( event ) {
+								var element = jQuery( event.target ).closest( '.wp-picker-input-wrap' ).find( '.primary-color .wp-color-picker' )[0];
+
+								if ( element ) {
+									control.saveValue( 'color', '' );
+								}
+							}
+
+							}
+					);
+
+				},
+
+				initColorStopControl : function () {
+					'use strict';
+
+					var control = this,
+						value   = control.setting._value;
+
+					// Update the text value.
+					this.container.find( '.color-stop input[type=range]' ).on( 'input change', function () {
+						var value        = jQuery( this ).val(),
+							input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+
+						input_number.val( value );
+						input_number.change();
+					} );
+
+					// Save changes.
+					jQuery( '.color-stop .slider-wrapper' ).on(
+						'input change',
+						'input[type=number]',
+						function () {
+							var value = jQuery( this ).val();
+							jQuery( this ).closest( '.color-stop .slider-wrapper' ).find( 'input[type=range]' ).val( value );
+							control.saveValue( 'color-stop' , value );
+						}
+					);
+
+				},
+
+				initColor2Control : function () {
+
+					var control     = this,
+						value       = control.setting._value,
+						colorpicker = control.container.find( '.color-2 .colormag-color-picker-alpha' );
+
+					// Background color setting.
+					colorpicker.wpColorPicker(
+						{
+
+							change : function () {
+								if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
+									setTimeout(
+										function () {
+											control.saveValue( 'color-2', colorpicker.val() );
+										},
+										100
+									);
+								}
+							},
+
+							clear : function ( event ) {
+								var element = jQuery( event.target ).closest( '.wp-picker-input-wrap' ).find( '.secondary-color .wp-color-picker' )[0];
+
+								if ( element ) {
+									control.saveValue( 'color-2', '' );
+								}
+							}
+
+						}
+					);
+
+				},
+
+				initColorStop2Control : function () {
+					'use strict';
+
+					var control = this,
+						value   = control.setting._value;
+
+					// Update the text value.
+					this.container.find( '.color-stop-2 input[type=range]' ).on( 'input change', function () {
+						var value        = jQuery( this ).val(),
+							input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+
+						input_number.val( value );
+						input_number.change();
+					} );
+
+					// Save changes.
+					jQuery( '.color-stop-2 .slider-wrapper' ).on(
+						'input change',
+						'input[type=number]',
+						function () {
+							var value = jQuery( this ).val();
+							jQuery( this ).closest( '.color-stop-2 .slider-wrapper' ).find( 'input[type=range]' ).val( value );
+							control.saveValue( 'color-stop-2' , value );
+						}
+					);
+
+				},
+
+				initGradientAngleControl : function () {
+					'use strict';
+
+					var control = this,
+						value   = control.setting._value;
+
+					// Update the text value.
+					this.container.find( '.type-linear input[type=range]' ).on( 'input change', function () {
+						var value        = jQuery( this ).val(),
+							input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
+
+						input_number.val( value );
+						input_number.change();
+					} );
+
+					// Save changes.
+					jQuery( '.type-linear .slider-wrapper' ).on(
+						'input change',
+						'input[type=number]',
+						function () {
+							var value = jQuery( this ).val();
+							jQuery( this ).closest( '.type-linear .slider-wrapper' ).find( 'input[type=range]' ).val( value );
+							control.saveValue( 'gradient-angle' , value );
+						}
+					);
+
+				},
+
+					/**
+					 * Saves the value.
+					 */
+				saveValue : function ( property, value ) {
+					var control     = this,
+						input       = jQuery( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .gradient-hidden-value' ),
+						val         = control.setting._value;
+					val[ property ] = value;
+					jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
+					control.setting.set( val );
+				},
+
+			}
+		);
+
 	}
 )( jQuery );
 
@@ -2201,247 +2442,6 @@ wp.customize.controlConstructor[ 'colormag-editor' ] = wp.customize.Control.exte
 )( jQuery );
 
 /**
- * Background image control JS to handle the background customize option.
- *
- * File `background.js`.
- *
- * @package ColorMag
- */
-(
-	function ( $ ) {
-
-		$( window ).on(
-			'load',
-			function () {
-				$( 'html' ).addClass( 'colorpicker-ready' );
-			}
-		);
-
-		wp.customize.controlConstructor['colormag-gradient'] = wp.customize.Control.extend(
-			{
-
-				ready : function () {
-
-					'use strict';
-
-					var control = this;
-
-					// Init controls.
-					control.initColorControl();
-					control.initColorStopControl();
-					control.initColor2Control();
-					control.initColorStop2Control();
-					control.initGradientAngleControl();
-
-					var selectedType = $( '.types select' ).find( ':selected' ).val();
-
-					if ( 'radial' === selectedType ) {
-						control.container.find( '.type > .type-linear' ).hide();
-						control.container.find( '.type > .type-radial' ).show();
-					}
-
-					if ( 'linear' === selectedType ) {
-						control.container.find( '.type > .type-radial' ).hide();
-						control.container.find( '.type > .type-linear' ).show();
-					}
-					control.container.on(
-						'change',
-						'.types select',
-						function () {
-							if ( 'radial' === $( this ).find( ':selected' ).val() ) {
-								control.container.find( '.type > .type-linear' ).hide();
-								control.container.find( '.type > .type-radial' ).show();
-							}
-
-							if ( 'linear' === $( this ).find( ':selected' ).val() ) {
-								control.container.find( '.type > .type-radial' ).hide();
-								control.container.find( '.type > .type-linear' ).show();
-							}
-
-							control.saveValue( 'gradient-type', jQuery( '.types select' ).val() );
-						}
-					);
-					control.container.on(
-						'change',
-						'.type-radial select',
-						function () {
-							control.saveValue( 'gradient-position', jQuery( '.type-radial select' ).val() );
-						}
-					);
-
-				},
-
-				initColorControl : function () {
-
-					var control     = this,
-						value       = control.setting._value,
-						colorpicker = control.container.find( '.color .colormag-color-picker-alpha' );
-
-					// Background color setting.
-					colorpicker.wpColorPicker(
-						{
-
-							change : function () {
-								if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-									setTimeout(
-										function () {
-											control.saveValue( 'color', colorpicker.val() );
-										},
-										100
-									);
-								}
-							},
-
-							clear : function ( event ) {
-								var element = jQuery( event.target ).closest( '.wp-picker-input-wrap' ).find( '.primary-color .wp-color-picker' )[0];
-
-								if ( element ) {
-									control.saveValue( 'color', '' );
-								}
-							}
-
-							}
-					);
-
-				},
-
-				initColorStopControl : function () {
-					'use strict';
-
-					var control = this,
-						value   = control.setting._value;
-
-					// Update the text value.
-					this.container.find( '.color-stop input[type=range]' ).on( 'input change', function () {
-						var value        = jQuery( this ).val(),
-							input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
-
-						input_number.val( value );
-						input_number.change();
-					} );
-
-					// Save changes.
-					jQuery( '.color-stop .slider-wrapper' ).on(
-						'input change',
-						'input[type=number]',
-						function () {
-							var value = jQuery( this ).val();
-							jQuery( this ).closest( '.color-stop .slider-wrapper' ).find( 'input[type=range]' ).val( value );
-							control.saveValue( 'color-stop' , value );
-						}
-					);
-
-				},
-
-				initColor2Control : function () {
-
-					var control     = this,
-						value       = control.setting._value,
-						colorpicker = control.container.find( '.color-2 .colormag-color-picker-alpha' );
-
-					// Background color setting.
-					colorpicker.wpColorPicker(
-						{
-
-							change : function () {
-								if ( jQuery( 'html' ).hasClass( 'colorpicker-ready' ) ) {
-									setTimeout(
-										function () {
-											control.saveValue( 'color-2', colorpicker.val() );
-										},
-										100
-									);
-								}
-							},
-
-							clear : function ( event ) {
-								var element = jQuery( event.target ).closest( '.wp-picker-input-wrap' ).find( '.secondary-color .wp-color-picker' )[0];
-
-								if ( element ) {
-									control.saveValue( 'color-2', '' );
-								}
-							}
-
-						}
-					);
-
-				},
-
-				initColorStop2Control : function () {
-					'use strict';
-
-					var control = this,
-						value   = control.setting._value;
-
-					// Update the text value.
-					this.container.find( '.color-stop-2 input[type=range]' ).on( 'input change', function () {
-						var value        = jQuery( this ).val(),
-							input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
-
-						input_number.val( value );
-						input_number.change();
-					} );
-
-					// Save changes.
-					jQuery( '.color-stop-2 .slider-wrapper' ).on(
-						'input change',
-						'input[type=number]',
-						function () {
-							var value = jQuery( this ).val();
-							jQuery( this ).closest( '.color-stop-2 .slider-wrapper' ).find( 'input[type=range]' ).val( value );
-							control.saveValue( 'color-stop-2' , value );
-						}
-					);
-
-				},
-
-				initGradientAngleControl : function () {
-					'use strict';
-
-					var control = this,
-						value   = control.setting._value;
-
-					// Update the text value.
-					this.container.find( '.type-linear input[type=range]' ).on( 'input change', function () {
-						var value        = jQuery( this ).val(),
-							input_number = jQuery( this ).closest( '.slider-wrapper' ).find( '.colormag-range-value .value' );
-
-						input_number.val( value );
-						input_number.change();
-					} );
-
-					// Save changes.
-					jQuery( '.type-linear .slider-wrapper' ).on(
-						'input change',
-						'input[type=number]',
-						function () {
-							var value = jQuery( this ).val();
-							jQuery( this ).closest( '.type-linear .slider-wrapper' ).find( 'input[type=range]' ).val( value );
-							control.saveValue( 'gradient-angle' , value );
-						}
-					);
-
-				},
-
-					/**
-					 * Saves the value.
-					 */
-				saveValue : function ( property, value ) {
-					var control     = this,
-						input       = jQuery( '#customize-control-' + control.id.replace( '[', '-' ).replace( ']', '' ) + ' .gradient-hidden-value' ),
-						val         = control.setting._value;
-					val[ property ] = value;
-					jQuery( input ).attr( 'value', JSON.stringify( val ) ).trigger( 'change' );
-					control.setting.set( val );
-				},
-
-			}
-		);
-
-	}
-)( jQuery );
-
-/**
  * Background image control JS to handle the navigate customize option.
  *
  * File `navigate.js`.
@@ -2639,10 +2639,14 @@ wp.customize.controlConstructor[ 'colormag-slider' ] = wp.customize.Control.exte
 				}
 			}
 
-			unitSelect.val( default_unit ? default_unit : 'px' );
-			input_range.val( default_value );
-			input_number.val( default_value );
-			input_number.change();
+			unitSelect.val(default_unit ? default_unit : 'px').change(); // Trigger change event for unitSelect
+			input_range.val(default_value).change(); // Trigger change event for input_range
+			input_number.val(default_value).change(); // Trigger change event for input_number
+
+			// Save the unitSelect, input_range, and input_number values (optional)
+			var selectedUnit = unitSelect.val();
+			var inputRangeValue = input_range.val();
+			var inputValue = input_number.val();
 		} );
 	},
 
@@ -3080,10 +3084,14 @@ wp.customize.controlConstructor[ 'colormag-typography' ] = wp.customize.Control.
 						}
 					}
 
-					unit.val(defaultUnit);
-					slider.val(defaultValue);
-					input.val(defaultValue);
-					control.setting.set( { size : defaultValue, unit : defaultUnit } );
+					unit.val(defaultUnit ? defaultUnit : 'px').change(); // Trigger change event for unit
+					slider.val(defaultValue).change(); // Trigger change event for slider
+					input.val(defaultValue).change(); // Trigger change event for inputValue
+
+					// Save the unit, slider, and inputValue values (optional)
+					var selectedUnit = unit.val();
+					var inputRangeValue = slider.val();
+					var inputValue = input.val();
 				} );
 			}
 

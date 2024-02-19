@@ -36,6 +36,36 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 
 		$configs = array(
 
+			array(
+				'name'        => 'colormag_single_post_elements_heading',
+				'type'        => 'control',
+				'control'     => 'colormag-title',
+				'label'       => esc_html__( 'Post Elements', 'colormag' ),
+				'description' => esc_html__( 'Drag & Drop items to re-arrange the order', 'colormag' ),
+				'section'     => 'colormag_single_post_section',
+				'priority'    => 10,
+			),
+
+			array(
+				'name'     => 'colormag_single_post_elements',
+				'default'  => array(
+					'category',
+					'title',
+					'meta',
+					'content',
+				),
+				'type'     => 'control',
+				'control'  => 'colormag-sortable',
+				'section'  => 'colormag_single_post_section',
+				'choices'  => array(
+					'category'    => esc_attr__( 'Category', 'colormag' ),
+					'title'       => esc_attr__( 'Title', 'colormag' ),
+					'meta'        => esc_attr__( 'Meta Tags', 'colormag' ),
+					'content'     => esc_attr__( 'Content', 'colormag' ),
+				),
+				'priority' => 20,
+			),
+
 			/**
 			 * Featured Image.
 			 */
@@ -45,7 +75,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Featured Image', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
-				'priority' => 10,
+				'priority' => 50,
 			),
 
 			array(
@@ -55,7 +85,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'control'  => 'colormag-toggle',
 				'label'    => esc_html__( 'Enable', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
-				'priority' => 20,
+				'priority' => 60,
 			),
 
 			array(
@@ -70,7 +100,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 					'===',
 					true,
 				),
-				'priority'   => 30,
+				'priority'   => 70,
 			),
 
 			/**
@@ -82,7 +112,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Related Posts', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
-				'priority' => 40,
+				'priority' => 80,
 			),
 
 			array(
@@ -96,7 +126,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'partial'   => array(
 					'selector' => '.related-posts',
 				),
-				'priority'  => 50,
+				'priority'  => 90,
 			),
 
 			array(
@@ -115,7 +145,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 					'!=',
 					0,
 				),
-				'priority'   => 60,
+				'priority'   => 100,
 			),
 
 			array(

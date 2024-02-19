@@ -141,10 +141,14 @@ wp.customize.controlConstructor[ 'colormag-slider' ] = wp.customize.Control.exte
 				}
 			}
 
-			unitSelect.val( default_unit ? default_unit : 'px' );
-			input_range.val( default_value );
-			input_number.val( default_value );
-			input_number.change();
+			unitSelect.val(default_unit ? default_unit : 'px').change(); // Trigger change event for unitSelect
+			input_range.val(default_value).change(); // Trigger change event for input_range
+			input_number.val(default_value).change(); // Trigger change event for input_number
+
+			// Save the unitSelect, input_range, and input_number values (optional)
+			var selectedUnit = unitSelect.val();
+			var inputRangeValue = input_range.val();
+			var inputValue = input_number.val();
 		} );
 	},
 

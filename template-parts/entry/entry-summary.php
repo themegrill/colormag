@@ -41,11 +41,15 @@ if ( is_singular() ) :
 else :
 	?>
 <div class="cm-entry-summary">
-			<?php the_excerpt(); ?>
 
-	<a class="cm-entry-button" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
-		<span><?php echo esc_html( 'Read More' ); ?></span>
-	</a>
+	<?php if ( 'content' === get_theme_mod( 'colormag_blog_content_excerpt_type', 'excerpt' ) ): ?>
+		<?php the_content( '<span>' . esc_html( 'Read More' ) . '</span>' ); ?>
+	<?php else: ?>
+			<?php the_excerpt(); ?>
+		<a class="cm-entry-button" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
+			<span><?php echo esc_html( 'Read More' ); ?></span>
+		</a>
+	<?php endif; ?>
 </div>
 
 	<?php

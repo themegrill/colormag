@@ -16,7 +16,7 @@ $image_popup_id  = get_post_thumbnail_id();
 $image_popup_url = wp_get_attachment_url( $image_popup_id );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article sdfdfds id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**
 	 * Hook: colormag_before_post_content.
@@ -30,6 +30,14 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 	?>
 
 	<?php
+	$single_orders = get_theme_mod( 'colormag_single_post_elements',
+		array(
+			'category',
+			'title',
+			'meta',
+			'content',
+		) );
+
 	if ( ! has_post_format( array( 'gallery', 'video' ) ) ) :
 
 		if ( true == get_theme_mod( 'colormag_enable_featured_image', true ) && has_post_thumbnail() ) :
@@ -66,20 +74,27 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 
 	<div class="cm-post-content">
 		<?php
-		if ( get_post_format() && ! has_post_format( 'video' ) ) :
-			get_template_part( 'template-parts/content/post-formats' );
-		endif;
+		foreach ( $single_orders as $key => $single_order ) {
 
-			colormag_colored_category();
-			?>
+				if ( get_post_format() && ! has_post_format( 'video' ) ) :
+					get_template_part( 'template-parts/content/post-formats' );
+				endif;
 
-			<?php get_template_part( 'template-parts/entry/entry', 'header' ); ?>
+			if ( 'category' === $single_order ) {
 
-			<?php
-			colormag_entry_meta();
+				colormag_colored_category();
+			} elseif ( 'meta' === $single_order ) {
+
+				colormag_entry_meta();
+			} elseif ( 'title' === $single_order ) {
+
+				get_template_part( 'template-parts/entry/entry', 'header' );
+			} elseif ( 'content' === $single_order ) {
+
+				get_template_part( 'template-parts/entry/entry', 'summary' );
+			}
+		}
 		?>
-
-		<?php get_template_part( 'template-parts/entry/entry', 'summary' ); ?>
 
 	</div>
 

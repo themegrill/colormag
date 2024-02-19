@@ -88,6 +88,104 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'priority' => 70,
 			),
 
+			// Color.
+			array(
+				'name'       => 'colormag_site_title_color_group',
+				'label'      => esc_html__( 'Color', 'colormag' ),
+				'default'    => '',
+				'type'       => 'control',
+				'control'    => 'colormag-group',
+				'section'    => 'title_tagline',
+				'priority'   => 90,
+				'dependency' => array(
+					'colormag_enable_site_identity',
+					'!=',
+					0,
+				),
+			),
+
+			array(
+				'name'       => 'colormag_site_title_color',
+				'default'    => '',
+				'type'       => 'sub-control',
+				'control'    => 'colormag-color',
+				'parent'     => 'colormag_site_title_color_group',
+				'tab'        => esc_html__( 'Normal', 'colormag' ),
+				'section'    => 'title_tagline',
+				'transport'  => 'postMessage',
+				'priority'   => 100,
+				'dependency' => array(
+					'colormag_enable_site_identity',
+					'!=',
+					0,
+				),
+			),
+
+			array(
+				'name'       => 'colormag_site_title_hover_color',
+				'default'    => '',
+				'type'       => 'sub-control',
+				'control'    => 'colormag-color',
+				'parent'     => 'colormag_site_title_color_group',
+				'tab'        => esc_html__( 'Hover', 'colormag' ),
+				'section'    => 'title_tagline',
+				'transport'  => 'postMessage',
+				'priority'   => 110,
+				'dependency' => array(
+					'colormag_enable_site_identity',
+					'!=',
+					0,
+				),
+			),
+
+			// Typography.
+			array(
+				'name'       => 'colormag_site_title_typography_group',
+				'label'      => esc_html__( 'Typography', 'colormag' ),
+				'default'    => '',
+				'type'       => 'control',
+				'control'    => 'colormag-group',
+				'section'    => 'title_tagline',
+				'priority'   => 120,
+				'dependency' => array(
+					'colormag_enable_site_identity',
+					'!=',
+					0,
+				),
+			),
+
+			array(
+				'name'       => 'colormag_site_title_typography',
+				'default'    => array(
+					'font-family' => 'default',
+					'font-size'   => array(
+						'desktop' => array(
+							'size' => '40',
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => 'px',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => 'px',
+						),
+					),
+				),
+				'type'       => 'sub-control',
+				'control'    => 'colormag-typography',
+				'parent'     => 'colormag_site_title_typography_group',
+				'section'    => 'title_tagline',
+				'transport'  => 'postMessage',
+				'priority'   => 130,
+				'dependency' => array(
+					'colormag_enable_site_identity',
+					'!=',
+					0,
+				),
+			),
+
 			/**
 			 *  Tagline.
 			 */
@@ -97,7 +195,7 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'control'  => 'colormag-title',
 				'label'    => esc_html__( 'Site Tagline', 'colormag' ),
 				'section'  => 'title_tagline',
-				'priority' => 80,
+				'priority' => 140,
 			),
 
 			array(
@@ -107,7 +205,87 @@ class ColorMag_Customize_Site_Identity_Options extends ColorMag_Customize_Base_O
 				'type'     => 'control',
 				'control'  => 'colormag-toggle',
 				'section'  => 'title_tagline',
-				'priority' => 100,
+				'priority' => 150,
+			),
+
+			// Color.
+			array(
+				'name'       => 'colormag_site_tagline_color_group',
+				'label'      => esc_html__( 'Color', 'colormag' ),
+				'default'    => '',
+				'type'       => 'control',
+				'control'    => 'colormag-group',
+				'section'    => 'title_tagline',
+				'priority'   => 160,
+				'dependency' => array(
+					'colormag_enable_site_tagline',
+					'!=',
+					0,
+				),
+			),
+
+			array(
+				'name'       => 'colormag_site_tagline_color',
+				'default'    => '',
+				'type'       => 'sub-control',
+				'control'    => 'colormag-color',
+				'parent'     => 'colormag_site_tagline_color_group',
+				'section'    => 'title_tagline',
+				'transport'  => 'postMessage',
+				'priority'   => 170,
+				'dependency' => array(
+					'colormag_enable_site_tagline',
+					'!=',
+					0,
+				),
+			),
+
+			// Typography.
+			array(
+				'name'       => 'colormag_site_tagline_typography_group',
+				'label'      => esc_html__( 'Typography', 'colormag' ),
+				'default'    => '',
+				'type'       => 'control',
+				'control'    => 'colormag-group',
+				'section'    => 'title_tagline',
+				'priority'   => 180,
+				'dependency' => array(
+					'colormag_enable_site_tagline',
+					'!=',
+					0,
+				),
+			),
+
+			array(
+				'name'       => 'colormag_site_tagline_typography',
+				'default'    => array(
+					'font-family' => 'default',
+					'font-size'   => array(
+						'desktop' => array(
+							'size' => '16',
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => '',
+						),
+					),
+				),
+				'type'       => 'sub-control',
+				'control'    => 'colormag-typography',
+				'parent'     => 'colormag_site_tagline_typography_group',
+				'section'    => 'title_tagline',
+				'transport'  => 'postMessage',
+				'priority'   => 190,
+				'dependency' => array(
+					'colormag_enable_site_tagline',
+					'!=',
+					0,
+				),
 			),
 
 			array(

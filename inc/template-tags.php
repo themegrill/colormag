@@ -22,14 +22,12 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	 */
 	function colormag_entry_meta( $full_post_meta = true, $reading_time_display = false ) {
 
-		$meta_orders =
+		$meta_orders = get_theme_mod( 'colormag_post_meta_structure',
 			array(
 				'categories',
-				'author',
 				'date',
-				'comments',
-				'tags',
-			);
+				'author',
+			) );
 
 		$human_diff_time = '';
 
@@ -62,16 +60,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 				if ( 'read-time' === $meta_order ) {
 					colormag_read_time_meta_markup( $full_post_meta, $reading_time_display );
 				}
-			}
 
-			// Edit button remove option add.
-			if ( $full_post_meta ) {
-				edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link">' . colormag_get_icon( 'edit', false ) . ' ', '</span>' );
+				if ( 'edit-button' === $meta_order && $full_post_meta ) {
+					edit_post_link( __( 'Edit', 'colormag' ), '<span class="cm-edit-link">' . colormag_get_icon( 'edit', false ) . ' ', '</span>' );
+				}
 			}
-
-			echo '</div>';
 
 		endif;
+		echo '</div>';
 
 	}
 
@@ -924,7 +920,7 @@ if ( ! function_exists( 'colormag_read_time_meta_markup' ) ) :
 		if ( $full_post_meta || ( ! $full_post_meta && $reading_time_display ) ) {
 			?>
 
-			<span class="reading-time">
+			<span class="reading-time cm-reading-time">
 				<span class="eta"></span> <?php echo esc_html( colormag_reading_time() ); ?>
 			</span>
 

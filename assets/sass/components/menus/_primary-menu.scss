@@ -39,7 +39,7 @@ nav li {
 	}
 
 	.cm-home-icon {
-	
+
 		a {
 			padding: length( 'l-4' );
 
@@ -48,7 +48,7 @@ nav li {
 			}
 		}
 	}
-	
+
 	a:hover {
 		color: $color__white;
 	}
@@ -153,6 +153,7 @@ nav li {
 						display: block;
 						text-align: left;
 						text-transform: none;
+						word-break: break-word;
 					}
 				}
 			}
@@ -294,17 +295,17 @@ li.default-menu {
 		line-height: 1.2;
 		width: 48px;
 		height: 48px;
-	
+
 		&:hover {
 			color: $color__white;
 		}
-	
+
 		svg {
 			width: 48px;
 			height: 48px;
 			fill: $color__white;
 			padding: length( 'l-4');
-		
+
 			&:hover {
 				color: $color__white;
 			}
