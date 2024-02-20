@@ -168,7 +168,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			foreach ( $font_awesome_styles as $style ) {
 				wp_register_style(
 					$style['handle'],
-					get_template_directory_uri() .'/assets' . $style['file'] . $suffix . '.css',
+					get_template_directory_uri() . '/assets' . $style['file'] . $suffix . '.css',
 					false,
 					$style['version']
 				);
@@ -193,7 +193,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
 		}
 
 		/**
@@ -207,9 +206,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
 			wp_enqueue_style( 'colormag-block-editor-dark-styles', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag-block-editor-styles', 'rtl', 'replace' );
-
 		}
-
 	}
 
 }
@@ -234,7 +231,7 @@ function colormag_get_fonts() {
 		'font-family' => 'default',
 		'font-weight' => '600',
 	);
-	$post_title_typography_default = array(
+	$post_title_typography_default   = array(
 		'font-family' => 'default',
 		'font-weight' => '500',
 	);
@@ -242,54 +239,54 @@ function colormag_get_fonts() {
 	/**
 	 * Typography options.
 	 */
-	$base_typography_default          = array(
+	$base_typography_default       = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
-	$headings_typography_default      = array(
+	$headings_typography_default   = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
-	$heading_h1_typography_default    = array(
+	$heading_h1_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
-	$heading_h2_typography_default    = array(
+	$heading_h2_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
-	$heading_h3_typography_default    = array(
-		'font-family' => 'default',
-		'font-weight' => 'regular',
-	);
-
-	$heading_h4_typography_default    = array(
+	$heading_h3_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
-	$heading_h5_typography_default    = array(
+	$heading_h4_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
-	$heading_h6_typography_default    = array(
+	$heading_h5_typography_default = array(
 		'font-family' => 'default',
 		'font-weight' => 'regular',
 	);
 
-	$base_typography                  = get_theme_mod( 'colormag_base_typography', $base_typography_default );
-	$headings_typography              = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
-	$heading_h1_typography            = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
-	$heading_h2_typography            = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
-	$heading_h3_typography            = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
-	$heading_h4_typography            = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
-	$heading_h5_typography            = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
-	$heading_h6_typography            = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
-	$site_title_typography           = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
-	$site_tagline_typography         = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
-	$primary_menu_typography         = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
-	$post_title_typography         = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
+	$heading_h6_typography_default = array(
+		'font-family' => 'default',
+		'font-weight' => 'regular',
+	);
+
+	$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+	$headings_typography     = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+	$heading_h1_typography   = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
+	$heading_h2_typography   = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
+	$heading_h3_typography   = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
+	$heading_h4_typography   = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
+	$heading_h5_typography   = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
+	$heading_h6_typography   = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+	$site_title_typography   = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
+	$site_tagline_typography = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
+	$primary_menu_typography = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
+	$post_title_typography   = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
 
 	/**
 	 * Enqueue required Google fonts.
@@ -339,17 +336,16 @@ function colormag_get_fonts() {
 		$post_title_typography['font-family'] = 'Open Sans';
 	}
 
-	$base_typography_font_weight            = $base_typography[ 'font-weight' ] ?? 'regular';
-	$heading_typography_font_weight         = $headings_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h1_typography_font_weight      = $heading_h1_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h2_base_typography_font_weight = $heading_h2_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h3_typography_font_weight      = $heading_h3_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h4_typography_font_weight      = $heading_h4_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h5_typography_font_weight      = $heading_h5_typography[ 'font-weight' ] ?? 'regular';
-	$heading_h6_typography_font_weight      = $heading_h6_typography[ 'font-weight' ] ?? 'regular';
-	$primary_menu_typography_font_weight    = $primary_menu_typography[ 'font-weight' ] ?? 'regular';
-	$post_title_typography_font_weight      = $post_title_typography[ 'font-weight' ] ?? 'regular';
-
+	$base_typography_font_weight            = $base_typography['font-weight'] ?? 'regular';
+	$heading_typography_font_weight         = $headings_typography['font-weight'] ?? 'regular';
+	$heading_h1_typography_font_weight      = $heading_h1_typography['font-weight'] ?? 'regular';
+	$heading_h2_base_typography_font_weight = $heading_h2_typography['font-weight'] ?? 'regular';
+	$heading_h3_typography_font_weight      = $heading_h3_typography['font-weight'] ?? 'regular';
+	$heading_h4_typography_font_weight      = $heading_h4_typography['font-weight'] ?? 'regular';
+	$heading_h5_typography_font_weight      = $heading_h5_typography['font-weight'] ?? 'regular';
+	$heading_h6_typography_font_weight      = $heading_h6_typography['font-weight'] ?? 'regular';
+	$primary_menu_typography_font_weight    = $primary_menu_typography['font-weight'] ?? 'regular';
+	$post_title_typography_font_weight      = $post_title_typography['font-weight'] ?? 'regular';
 
 	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
@@ -484,7 +480,6 @@ function colormag_image_uploader() {
 
 	wp_enqueue_media();
 	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
-
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
@@ -528,7 +523,6 @@ if ( ! function_exists( 'colormag_darkcolor' ) ) :
 		}
 
 		return $return;
-
 	}
 
 endif;
@@ -576,7 +570,7 @@ if ( ! function_exists( 'colormag_parse_css' ) ) :
 						continue;
 					}
 
-					$properties_added ++;
+					++$properties_added;
 					$temp_parse_css .= $property . ':' . $value . ';';
 				}
 
@@ -670,7 +664,6 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 		$parse_css .= '}';
 
 		return $parse_css;
-
 	}
 
 endif;
@@ -810,16 +803,16 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		}
 
 		// For line height on desktop.
-		$line_height_unit_value = isset( $output_value['line-height']['desktop']['unit'] ) ? $output_value['line-height']['desktop']['unit'] : 'px';
-		$line_height_unit       = ( '-' !== $line_height_unit_value ) ? $line_height_unit_value : '';
+		$line_height_unit_value      = isset( $output_value['line-height']['desktop']['unit'] ) ? $output_value['line-height']['desktop']['unit'] : 'px';
+		$line_height_unit            = ( '-' !== $line_height_unit_value ) ? $line_height_unit_value : '';
 		$default_desktop_line_height = isset( $default_value['line-height']['desktop']['size'] ) ? $default_value['line-height']['desktop']['size'] : '';
 
-		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !==  $default_desktop_line_height) ) {
+		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !== $default_desktop_line_height ) ) {
 			$parse_css .= 'line-height:' . $output_value['line-height']['desktop']['size'] . $line_height_unit . ';';
 		}
 
 		// For letter spacing on desktop.
-		$letter_spacing_unit = isset( $output_value['letter-spacing']['desktop']['unit'] ) ? $output_value['letter-spacing']['desktop']['unit'] : 'px';
+		$letter_spacing_unit            = isset( $output_value['letter-spacing']['desktop']['unit'] ) ? $output_value['letter-spacing']['desktop']['unit'] : 'px';
 		$default_desktop_letter_spacing = isset( $default_value['letter-spacing']['desktop']['size'] ) ? $default_value['letter-spacing']['desktop']['size'] : '';
 
 		if ( isset( $output_value['letter-spacing']['desktop']['size'] ) && ! empty( $output_value['letter-spacing']['desktop']['size'] ) && ( $output_value['letter-spacing']['desktop']['size'] !== $default_desktop_letter_spacing ) ) {
