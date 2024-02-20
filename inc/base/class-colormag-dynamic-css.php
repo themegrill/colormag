@@ -911,6 +911,32 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_css( '', $site_tagline_color, $site_tagline_color_css );
 
 		/**
+		 * Sidebar width.
+		 */
+		$sidebar_width_default = array(
+			'size' => 30,
+			'unit' => '%',
+		);
+
+		$sidebar_width = get_theme_mod( 'colormag_sidebar_width', $sidebar_width_default );
+
+		$content_width_css = array(
+			'.cm-primary' => array(
+				'width' => ( 100 - (float) $sidebar_width['size'] ) . '%',
+			),
+		);
+
+		$parse_css .= '@media screen and (min-width: 992px) {';
+		$parse_css .= colormag_parse_css( 70, ( 100 - (float) $sidebar_width['size'] ), $content_width_css );
+		$parse_css .= colormag_parse_slider_css(
+			$sidebar_width_default,
+			$sidebar_width,
+			'.cm-secondary ',
+			'width'
+		);
+		$parse_css .= '}';
+
+		/**
 		 * Primary menu top border width.
 		 */
 		$primary_menu_width_default = array(

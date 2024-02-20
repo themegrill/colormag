@@ -33,6 +33,38 @@ class ColorMag_Customize_Sidebar_Options extends ColorMag_Customize_Base_Option 
 
 		$configs = array(
 
+			// General title.
+			array(
+				'name'     => 'colormag_sidebar_general_title',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'General', 'colormag' ),
+				'section'  => 'colormag_global_sidebar_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'        => 'colormag_sidebar_width',
+				'default'     => array(
+					'size' => 30,
+					'unit' => '%',
+				),
+				'suffix'      => array( '%' ),
+				'type'        => 'control',
+				'control'     => 'colormag-slider',
+				'label'       => esc_html__( 'Width', 'colormag' ),
+				'section'     => 'colormag_global_sidebar_section',
+				'transport'   => 'postMessage',
+				'priority'    => 10,
+				'input_attrs' => array(
+					'%' => array(
+						'min'  => 15,
+						'max'  => 80,
+						'step' => 1,
+					),
+				),
+			),
+
 			// Layout title.
 			array(
 				'name'     => 'colormag_sidebar_layout_title',
