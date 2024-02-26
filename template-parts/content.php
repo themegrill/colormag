@@ -42,13 +42,13 @@ $archive_search_layout = 'layout-1';
 					<?php the_post_thumbnail( $featured_image_size ); ?>
 
 				<?php
-					if ( has_post_format( 'video' ) ) {
-						?>
+				if ( has_post_format( 'video' ) ) {
+					?>
 						<span class="play-button-wrapper">
 								<i class="fa fa-play" aria-hidden="true"></i>
 						</span>
-						<?php
-					}
+					<?php
+				}
 				?>
 				</a>
 			</div>
@@ -58,15 +58,18 @@ $archive_search_layout = 'layout-1';
 	endif;
 	?>
 
-	<?php $content_orders = get_theme_mod(
-		'colormag_blog_post_elements', array(
+	<?php
+	$content_orders = get_theme_mod(
+		'colormag_blog_post_elements',
+		array(
 			'post_format',
 			'category',
 			'meta',
 			'title',
 			'content',
 		)
-	); ?>
+	);
+	?>
 
 
 	<div class="cm-post-content">
@@ -93,7 +96,7 @@ $archive_search_layout = 'layout-1';
 								echo $embed_code; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 								?>
 							</div>
-						<?php
+							<?php
 						endif;
 					endif;
 

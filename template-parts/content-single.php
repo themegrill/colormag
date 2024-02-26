@@ -30,13 +30,15 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 	?>
 
 	<?php
-	$single_orders = get_theme_mod( 'colormag_single_post_elements',
+	$single_orders = get_theme_mod(
+		'colormag_single_post_elements',
 		array(
 			'category',
 			'title',
 			'meta',
 			'content',
-		) );
+		)
+	);
 
 	if ( ! has_post_format( array( 'gallery', 'video' ) ) ) :
 
@@ -48,7 +50,8 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 					<?php
 				else :
 					the_post_thumbnail( 'colormag-featured-image' );
-				endif; ?>
+				endif;
+				?>
 			</div>
 
 			<?php
@@ -76,8 +79,8 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 		<?php
 		foreach ( $single_orders as $key => $single_order ) {
 
-				if ( get_post_format() && ! has_post_format( 'video' ) ) :
-					get_template_part( 'template-parts/content/post-formats' );
+			if ( get_post_format() && ! has_post_format( 'video' ) ) :
+				get_template_part( 'template-parts/content/post-formats' );
 				endif;
 
 			if ( 'category' === $single_order ) {

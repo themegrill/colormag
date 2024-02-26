@@ -1005,7 +1005,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_css( '#207daf', $button_background_color, $button_background_color_css );
 
 		// Button background hover color.
-		$button_background_hover_color = get_theme_mod( 'colormag_button_background_color', '' );
+		$button_background_hover_color = get_theme_mod( 'colormag_button_background_hover_color', '' );
 
 		$button_background_hover_color_css = array(
 			'.colormag-button:hover,
