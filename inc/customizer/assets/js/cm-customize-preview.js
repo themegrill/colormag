@@ -28,6 +28,7 @@ colormagGenerateCSS( 'colormag_button_background_color', '.cm-entry-button span,
 colormagGenerateCSS( 'colormag_button_background_hover_color', '.cm-entry-button span:hover,.colormag-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover, .more-link:hover, .wp-block-button__link:hover', 'background-color' );
 colormagGenerateDimensionCSS( 'colormag_button_dimension_padding', '.cm-entry-button span,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'padding' );
 colormagGenerateSliderCSS( 'colormag_button_border_radius', '.cm-entry-button span,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link', 'border-radius' );
+colormagGenerateSliderWidthCss( 'colormag_sidebar_width', '.cm-secondary', '.cm-primary', 'width' );
 
 ( function ( $ ) {
 
