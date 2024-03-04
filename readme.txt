@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = TBD =
 * Fix - Primary menu background on contained main header.
+* Fix - Post meta categories issue.
 * Option - To change sidebar width.
 
 = Version - 3.1.5 - 2024-02-20 =
