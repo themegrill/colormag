@@ -154,7 +154,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 		global $post;
 
-		$meta_structure =
+		$meta_structure = get_theme_mod( 'colormag_post_meta_structure',
 			array(
 				'categories',
 				'date',
@@ -163,7 +163,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 				'comments',
 				'tags',
 				'read-time',
-			);
+			));
 
 		$categories = get_the_category();
 		$output     = '';
