@@ -169,8 +169,11 @@ function colormagGenerateSliderWidthCss( controlId, selector, secondarySelector,
 			jQuery( `style#${controlId}` ).remove();
 
 			jQuery( 'head' ).append(
-				`<style id="${controlId}">${selector}{ ${cssProperty} : ${sizeCSS + unit} }
+				`<style id="${controlId}">
+							@media screen and (min-width: 992px) {
+							${selector}{ ${cssProperty} : ${sizeCSS + unit} }
 							${secondarySelector}{ ${cssProperty} : ${secondaryCSS + unit} }
+							}
 							</style>`
 			);
 		} );

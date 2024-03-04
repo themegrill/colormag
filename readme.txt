@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = TBD =
 * Fix - Primary menu background on contained main header.
+* Option - To change sidebar width.
 
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
