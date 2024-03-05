@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.1.5
+Version: 3.1.6
 Tested up to: 6.4
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,11 +69,11 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= TBD =
-* Fix - Primary menu background on contained main header.
-* Fix - Post meta categories issue.
+= Version - 3.1.6 - 2024-03-05 =
 * Option - To change sidebar width.
-
+* Fix    - Primary menu background on contained main header.
+* Fix    - Post meta categories issue.
+ 
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.

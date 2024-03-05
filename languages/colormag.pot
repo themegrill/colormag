@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.1.5\n"
+"Project-Id-Version: ColorMag 3.1.6\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-02-19 15:06:46+00:00\n"
+"POT-Creation-Date: 2024-03-05 03:14:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -791,6 +791,7 @@ msgstr ""
 #: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:49
 #: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:49
 #: inc/customizer/options/global/class-colormag-customize-container-options.php:51
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:41
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-breadcrumb-options.php:43
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:55
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:47
@@ -1371,7 +1372,7 @@ msgstr ""
 #: inc/customizer/options/global/class-colormag-customize-button-options.php:182
 #: inc/customizer/options/global/class-colormag-customize-colors-options.php:182
 #: inc/customizer/options/global/class-colormag-customize-container-options.php:89
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:167
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:199
 #: inc/customizer/options/global/class-colormag-customize-typography-options.php:505
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:138
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:252
@@ -1392,7 +1393,7 @@ msgstr ""
 #: inc/customizer/options/global/class-colormag-customize-button-options.php:183
 #: inc/customizer/options/global/class-colormag-customize-colors-options.php:183
 #: inc/customizer/options/global/class-colormag-customize-container-options.php:90
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:168
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:200
 #: inc/customizer/options/global/class-colormag-customize-typography-options.php:506
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:139
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:253
@@ -1581,7 +1582,7 @@ msgid "Link Color"
 msgstr ""
 
 #: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:60
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:41
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:73
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:57
 msgid "Layout"
 msgstr ""
@@ -1675,15 +1676,21 @@ msgstr ""
 msgid "Inside"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:51
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:55
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:153
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:135
+msgid "Width"
+msgstr ""
+
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:83
 msgid "Default Layout"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:90
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:122
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:129
+#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:161
 msgid "Default layout for single posts only"
 msgstr ""
 
@@ -1760,11 +1767,6 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:71
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:96
 msgid "Advanced Style"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:153
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:135
-msgid "Width"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:170

@@ -1,4 +1,9 @@
 == Changelog ==
+= 3.1.6 - 2024-03-05 =
+* Option - To change sidebar width.
+* Fix    - Primary menu background on contained main header.
+* Fix    - Post meta categories issue.
+
 = 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.
