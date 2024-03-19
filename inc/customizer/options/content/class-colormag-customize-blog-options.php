@@ -152,7 +152,7 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 					'post-date'     => esc_html__( 'Post Date', 'colormag' ),
 					'modified-date' => esc_html__( 'Modified Date', 'colormag' ),
 				),
-				'priority' => 50,
+				'priority' => 40,
 			),
 
 			array(
