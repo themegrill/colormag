@@ -93,7 +93,7 @@ $archive_search_layout = 'layout-1';
 								<?php
 								$embed_code = wp_oembed_get( $video_post_url );
 
-								echo $embed_code; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+								echo wp_kses_post( $embed_code );
 								?>
 							</div>
 							<?php
