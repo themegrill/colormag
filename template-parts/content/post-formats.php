@@ -35,7 +35,7 @@ if ( has_post_format( 'gallery' ) ) :
 
 			$output .= '</ul>';
 
-			echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $output );
 			?>
 		</div>
 		<?php
@@ -56,7 +56,7 @@ if ( has_post_format( 'video' ) && ! ( has_post_thumbnail() ) ) :
 			<?php
 			$embed_code = wp_oembed_get( $video_post_url );
 
-			echo $embed_code; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $embed_code );
 			?>
 		</div>
 	<?php

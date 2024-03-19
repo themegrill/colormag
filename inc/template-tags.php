@@ -22,12 +22,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	 */
 	function colormag_entry_meta( $full_post_meta = true, $reading_time_display = false ) {
 
-		$meta_orders = get_theme_mod( 'colormag_post_meta_structure',
+		$meta_orders = get_theme_mod(
+			'colormag_post_meta_structure',
 			array(
 				'categories',
 				'date',
 				'author',
-			) );
+			)
+		);
 
 		$human_diff_time = '';
 
@@ -46,7 +48,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 				}
 
 				if ( 'views' === $meta_order && $full_post_meta ) {
-					echo colormag_post_view_display( get_the_ID() ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+					echo wp_kses(
+						colormag_post_view_display( get_the_ID() ),
+						array(
+							'span' => array(
+								'class' => true,
+							),
+						) + ColorMag_SVG_Icons::$allowed_html
+					);
 				}
 
 				if ( 'comments' === $meta_order ) {
@@ -68,7 +77,6 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 		endif;
 		echo '</div>';
-
 	}
 
 endif;
@@ -109,7 +117,6 @@ if ( ! function_exists( 'colormag_reading_time' ) ) :
 		$total_reading_time  = $reading_time . ' ' . $reading_time_suffix;
 
 		return $total_reading_time;
-
 	}
 
 endif;
@@ -136,7 +143,6 @@ if ( ! function_exists( 'colormag_category_color' ) ) :
 
 			return $color;
 		}
-
 	}
 
 endif;
@@ -154,7 +160,8 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 		global $post;
 
-		$meta_structure = get_theme_mod( 'colormag_post_meta_structure',
+		$meta_structure = get_theme_mod(
+			'colormag_post_meta_structure',
 			array(
 				'categories',
 				'date',
@@ -163,7 +170,8 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 				'comments',
 				'tags',
 				'read-time',
-			));
+			)
+		);
 
 		$categories = get_the_category();
 		$output     = '';
@@ -183,12 +191,11 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 			$output .= '</div></div>';
 
 			if ( $echo ) {
-				echo trim( $output ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $output );
 			} else {
 				return trim( $output );
 			}
 		}
-
 	}
 
 endif;
@@ -275,7 +282,6 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 		} elseif ( 'left_sidebar' === $layout_meta ) {
 			ColorMag_Utils::colormag_get_sidebar( 'left' );
 		}
-
 	}
 
 endif;
@@ -320,25 +326,22 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 							$new_tab = 'target="_blank"';
 						}
 
-						if ( "Twitter" == $value ) {
+						if ( 'Twitter' == $value ) {
 							$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa-brands fa-x-twitter"></i></a></li>';
 						} else {
 							$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
 						}
-
-
 					}
 
-					$i ++;
+					++$i;
 				}
 
 				// Displays the social links which is set static via theme customize option.
-				echo $colormag_links_output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $colormag_links_output );
 				?>
 			</ul>
 		</div><!-- .social-links -->
 		<?php
-
 	}
 
 endif;
@@ -411,7 +414,6 @@ if ( ! function_exists( 'colormag_get_weather_color' ) ) :
 		}
 
 		return $output;
-
 	}
 
 endif;
@@ -461,7 +463,6 @@ if ( ! function_exists( 'colormag_get_available_currencies' ) ) :
 		);
 
 		return $available_currencies;
-
 	}
 
 endif;
@@ -568,7 +569,6 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 				break;
 
 		endswitch; // End comment_type check.
-
 	}
 
 endif;
@@ -599,7 +599,6 @@ if ( ! function_exists( 'colormag_post_view_display' ) ) :
 		}
 
 		return $output;
-
 	}
 
 endif;
@@ -620,10 +619,9 @@ if ( ! function_exists( 'colormag_post_view_setup' ) ) :
 			delete_post_meta( $post_id, $count_key );
 			add_post_meta( $post_id, $count_key, '0' );
 		} else {
-			$count ++;
+			++$count;
 			update_post_meta( $post_id, $count_key, $count );
 		}
-
 	}
 
 endif;
@@ -641,7 +639,7 @@ if ( ! function_exists( 'colormag_font_size_range_generator' ) ) :
 	function colormag_font_size_range_generator( $start_range, $end_range ) {
 		$range_string = array();
 
-		for ( $i = $start_range; $i <= $end_range; $i ++ ) {
+		for ( $i = $start_range; $i <= $end_range; $i++ ) {
 			$range_string[ $i ] = $i;
 		}
 
@@ -842,7 +840,7 @@ if ( ! function_exists( 'colormag_author_meta_markup' ) ) :
 			<?php colormag_get_icon( 'user' ); ?>
 			<a class="url fn n"
 			href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
-			title="<?php echo get_the_author(); ?>"
+			title="<?php echo esc_attr( get_the_author() ); ?>"
 			>
 				<?php echo esc_html( get_the_author() ); ?>
 			</a>
@@ -900,7 +898,18 @@ if ( ! function_exists( 'colormag_tags_meta_markup' ) ) :
 		$tags_list = get_the_tag_list( '<span class="cm-tag-links"' . '>' . colormag_get_icon( 'tag', false ) . ' ', __( ', ', 'colormag' ), '</span>' );
 
 		if ( $tags_list ) {
-			echo $tags_list; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			echo wp_kses(
+				$tags_list,
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+					'a'    => array(
+						'href' => array(),
+						'rel'  => array(),
+					),
+				) + ColorMag_SVG_Icons::$allowed_html
+			);
 		}
 	}
 
@@ -948,6 +957,5 @@ if ( ! function_exists( 'colormag_get_the_title' ) ) :
 		}
 
 		return $title;
-
 	}
 endif;

@@ -274,7 +274,7 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 
 		$colormag_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
 
-		echo $colormag_footer_copyright; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $colormag_footer_copyright );
 
 	}
 

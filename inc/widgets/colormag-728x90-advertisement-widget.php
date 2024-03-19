@@ -86,7 +86,7 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 		<div class="advertisement_728x90">
 			<?php if ( ! empty( $title ) ) { ?>
 				<div class="cm-advertisement-title">
-					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
+					<?php echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] ); ?>
 				</div>
 				<?php
 			}
@@ -108,7 +108,7 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 				}
 				$output .= '</div>';
 
-				echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $output );
 			}
 			?>
 		</div>

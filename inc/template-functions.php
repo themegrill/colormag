@@ -339,11 +339,9 @@ add_filter( 'manage_posts_columns', 'colormag_posts_column_views' );
  * @param int    $post_id     The current post ID.
  */
 function colormag_posts_custom_column_views( $column_name, $post_id ) {
-
 	if ( 'post_views' === $column_name ) {
-		echo colormag_post_view_display( get_the_ID(), false );  // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( colormag_post_view_display( get_the_ID(), false ) );
 	}
-
 }
 
 add_action( 'manage_posts_custom_column', 'colormag_posts_custom_column_views', 5, 2 );
