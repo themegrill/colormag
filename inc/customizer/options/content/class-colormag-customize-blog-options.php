@@ -146,7 +146,7 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 				'default'  => 'post-date',
 				'type'     => 'control',
 				'control'  => 'select',
-				'label'    => esc_html__( 'Date Type', 'colormag' ),
+				'label'    => esc_html__( 'Type', 'colormag' ),
 				'section'  => 'colormag_blog_section',
 				'choices'  => array(
 					'post-date'     => esc_html__( 'Post Date', 'colormag' ),
