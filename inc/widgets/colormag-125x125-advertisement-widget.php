@@ -101,7 +101,6 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 		);
 
 		parent::__construct();
-
 	}
 
 	/**
@@ -119,7 +118,7 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 		$link_array  = array();
 
 		$j = 0;
-		for ( $i = 1; $i < 7; $i ++ ) {
+		for ( $i = 1; $i < 7; $i++ ) {
 			$image_link = isset( $instance[ '125x125_image_link_' . $i ] ) ? $instance[ '125x125_image_link_' . $i ] : '';
 			$image_url  = isset( $instance[ '125x125_image_url_' . $i ] ) ? $instance[ '125x125_image_url_' . $i ] : '';
 			array_push( $link_array, $image_link );
@@ -132,7 +131,7 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 		<div class="cm-advertisement_125x125">
 			<?php if ( ! empty( $title ) ) { ?>
 				<div class="cm-advertisement-title">
-					<?php echo esc_html( $args['before_title'] ) . esc_html( $title ) . esc_html( $args['after_title'] ); ?>
+					<?php echo wp_kses_post( $args['before_title'] ) . esc_html( $title ) . wp_kses_post( $args['after_title'] ); ?>
 				</div>
 				<?php
 			}
@@ -142,7 +141,7 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 			if ( ! empty( $image_array ) ) {
 				$output .= '<div class="cm-advertisement-content">';
 
-				for ( $i = 1; $i < 7; $i ++ ) {
+				for ( $i = 1; $i < 7; $i++ ) {
 					$j = $i - 1;
 
 					if ( ! empty( $image_array[ $j ] ) ) {
@@ -175,7 +174,5 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 
 		<?php
 		$this->widget_end( $args );
-
 	}
-
 }

@@ -1,4 +1,7 @@
 == Changelog ==
+= 3.1.7.1 - 2024-03-20 =
+* Fix - TG Advertisement issue.
+
 = 3.1.7 - 2024-03-19 =
 * Fix - Page title tag issue.
 
