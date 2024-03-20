@@ -86,7 +86,7 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 		<div class="advertisement_728x90">
 			<?php if ( ! empty( $title ) ) { ?>
 				<div class="cm-advertisement-title">
-					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; ?>
+					<?php echo wp_kses_post( $args['before_title'] ) . esc_html( $title ) . wp_kses_post ( $args['after_title'] ); ?>
 				</div>
 				<?php
 			}
