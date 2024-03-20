@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.1.7
+Version: 3.1.7.1
 Tested up to: 6.4
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 3.1.7
+Stable tag: 3.1.7.1
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version - 3.1.7.1 - 2024-03-20 =
+* Fix - TG Advertisement issue.
+
 = Version - 3.1.7 - 2024-03-19 =
 * Fix - Page title tag issue.
 
