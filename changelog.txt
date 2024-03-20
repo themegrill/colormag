@@ -1,4 +1,7 @@
 == Changelog ==
+= 3.1.7 - 2024-03-19 =
+* Fix - Page title tag issue.
+
 = 3.1.6 - 2024-03-05 =
 * Option - To change sidebar width.
 * Fix    - Primary menu background on contained main header.

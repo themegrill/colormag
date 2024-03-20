@@ -51,7 +51,6 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 		);
 
 		parent::__construct();
-
 	}
 
 	/**
@@ -74,7 +73,7 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 		<div class="advertisement_300x250">
 			<?php if ( ! empty( $title ) ) { ?>
 				<div class="cm-advertisement-title">
-					<?php echo wp_kses_post( $args['before_title'] ) . esc_html( $title ) . wp_kses_post ( $args['after_title'] ); ?>
+					<?php echo wp_kses_post( $args['before_title'] ) . esc_html( $title ) . wp_kses_post( $args['after_title'] ); ?>
 				</div>
 				<?php
 			}
@@ -96,15 +95,13 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 				}
 				$output .= '</div>';
 
-				echo $output; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $output );
 			}
 			?>
 		</div>
 
 		<?php
 		$this->widget_end( $args );
-
 	}
-
 }
 

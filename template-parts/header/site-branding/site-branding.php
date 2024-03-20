@@ -55,7 +55,7 @@ if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) || true ==
 						if ( $description || is_customize_preview() ) :
 							?>
 						<p class="cm-site-description">
-							<?php echo $description; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
+							<?php echo esc_html( $description ); ?>
 						</p><!-- .cm-site-description -->
 							<?php
 					endif;

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.1.6\n"
+"Project-Id-Version: ColorMag 3.1.7\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-03-05 03:14:59+00:00\n"
+"POT-Creation-Date: 2024-03-19 11:20:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1406,17 +1406,17 @@ msgid "Unlock more features available in Pro version."
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:151
-#: inc/template-functions.php:372
+#: inc/template-functions.php:370
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:156
-#: inc/template-functions.php:362
+#: inc/template-functions.php:360
 msgid "Twitter"
 msgstr ""
 
 #: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:161
-#: inc/template-functions.php:412
+#: inc/template-functions.php:410
 msgid "Instagram"
 msgstr ""
 
@@ -1872,192 +1872,192 @@ msgstr ""
 msgid "Total Views"
 msgstr ""
 
-#: inc/template-functions.php:358
+#: inc/template-functions.php:356
 msgid "User Social Links"
 msgstr ""
 
-#: inc/template-functions.php:382
+#: inc/template-functions.php:380
 msgid "Google Plus"
 msgstr ""
 
-#: inc/template-functions.php:392
+#: inc/template-functions.php:390
 msgid "Flickr"
 msgstr ""
 
-#: inc/template-functions.php:402
+#: inc/template-functions.php:400
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/template-functions.php:422
+#: inc/template-functions.php:420
 msgid "Tumblr"
 msgstr ""
 
-#: inc/template-functions.php:432
+#: inc/template-functions.php:430
 msgid "Youtube"
 msgstr ""
 
-#: inc/template-tags.php:65 template-parts/content-page.php:67
+#: inc/template-tags.php:74 template-parts/content-page.php:67
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:108
+#: inc/template-tags.php:116
 msgid "min read"
 msgstr ""
 
-#: inc/template-tags.php:429
+#: inc/template-tags.php:431
 msgid "Euro Member Countries"
 msgstr ""
 
-#: inc/template-tags.php:430
+#: inc/template-tags.php:432
 msgid "Australian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:431
+#: inc/template-tags.php:433
 msgid "Bulgarian Lev"
 msgstr ""
 
-#: inc/template-tags.php:432
+#: inc/template-tags.php:434
 msgid "Brazilian Real"
 msgstr ""
 
-#: inc/template-tags.php:433
+#: inc/template-tags.php:435
 msgid "Canadian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:434
+#: inc/template-tags.php:436
 msgid "Swiss Franc"
 msgstr ""
 
-#: inc/template-tags.php:435
+#: inc/template-tags.php:437
 msgid "Chinese Yuan Renminbi"
 msgstr ""
 
-#: inc/template-tags.php:436
+#: inc/template-tags.php:438
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: inc/template-tags.php:437
+#: inc/template-tags.php:439
 msgid "Danish Krone"
 msgstr ""
 
-#: inc/template-tags.php:438
+#: inc/template-tags.php:440
 msgid "British Pound"
 msgstr ""
 
-#: inc/template-tags.php:439
+#: inc/template-tags.php:441
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: inc/template-tags.php:440
+#: inc/template-tags.php:442
 msgid "Croatian Kuna"
 msgstr ""
 
-#: inc/template-tags.php:441
+#: inc/template-tags.php:443
 msgid "Hungarian Forint"
 msgstr ""
 
-#: inc/template-tags.php:442
+#: inc/template-tags.php:444
 msgid "Indonesian Rupiah"
 msgstr ""
 
-#: inc/template-tags.php:443
+#: inc/template-tags.php:445
 msgid "Israeli Shekel"
 msgstr ""
 
-#: inc/template-tags.php:444
+#: inc/template-tags.php:446
 msgid "Indian Rupee"
 msgstr ""
 
-#: inc/template-tags.php:445
+#: inc/template-tags.php:447
 msgid "Japanese Yen"
 msgstr ""
 
-#: inc/template-tags.php:446
+#: inc/template-tags.php:448
 msgid "Korean (South) Won"
 msgstr ""
 
-#: inc/template-tags.php:447
+#: inc/template-tags.php:449
 msgid "Mexican Peso"
 msgstr ""
 
-#: inc/template-tags.php:448
+#: inc/template-tags.php:450
 msgid "Malaysian Ringgit"
 msgstr ""
 
-#: inc/template-tags.php:449
+#: inc/template-tags.php:451
 msgid "Norwegian Krone"
 msgstr ""
 
-#: inc/template-tags.php:450
+#: inc/template-tags.php:452
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: inc/template-tags.php:451
+#: inc/template-tags.php:453
 msgid "Philippine Peso"
 msgstr ""
 
-#: inc/template-tags.php:452
+#: inc/template-tags.php:454
 msgid "Polish Zloty"
 msgstr ""
 
-#: inc/template-tags.php:453
+#: inc/template-tags.php:455
 msgid "Romanian (New) Leu"
 msgstr ""
 
-#: inc/template-tags.php:454
+#: inc/template-tags.php:456
 msgid "Russian Ruble"
 msgstr ""
 
-#: inc/template-tags.php:455
+#: inc/template-tags.php:457
 msgid "Swedish Krona"
 msgstr ""
 
-#: inc/template-tags.php:456
+#: inc/template-tags.php:458
 msgid "Singapore Dollar"
 msgstr ""
 
-#: inc/template-tags.php:457
+#: inc/template-tags.php:459
 msgid "Thai Baht"
 msgstr ""
 
-#: inc/template-tags.php:458
+#: inc/template-tags.php:460
 msgid "Turkish Lira"
 msgstr ""
 
-#: inc/template-tags.php:459
+#: inc/template-tags.php:461
 msgid "United States Dollar"
 msgstr ""
 
-#: inc/template-tags.php:460
+#: inc/template-tags.php:462
 msgid "South African Rand"
 msgstr ""
 
-#: inc/template-tags.php:491
+#: inc/template-tags.php:492
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:493
+#: inc/template-tags.php:494
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:515
+#: inc/template-tags.php:516
 msgid "Post author"
 msgstr ""
 
-#: inc/template-tags.php:526
+#: inc/template-tags.php:527
 #. Translators: 1. Comment date, 2. Comment time
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:533
+#: inc/template-tags.php:534
 msgid "Permalink"
 msgstr ""
 
-#: inc/template-tags.php:545
+#: inc/template-tags.php:546
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:556
+#: inc/template-tags.php:557
 msgid "Reply"
 msgstr ""
 
@@ -2070,26 +2070,26 @@ msgstr ""
 msgid "%s Views"
 msgstr ""
 
-#: inc/template-tags.php:822
+#: inc/template-tags.php:820
 #. Translators: 1. Post link, 2. Post time, 3. Post date
 msgid ""
 "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" "
 "rel=\"bookmark\">%3$s %4$s</a></span>"
 msgstr ""
 
-#: inc/template-tags.php:874
+#: inc/template-tags.php:872
 msgid " 0 Comments"
 msgstr ""
 
-#: inc/template-tags.php:875
+#: inc/template-tags.php:873
 msgid " 1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:876
+#: inc/template-tags.php:874
 msgid " % Comments"
 msgstr ""
 
-#: inc/template-tags.php:900
+#: inc/template-tags.php:898
 msgid ", "
 msgstr ""
 
