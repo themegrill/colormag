@@ -74,7 +74,7 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 		<div class="advertisement_300x250">
 			<?php if ( ! empty( $title ) ) { ?>
 				<div class="cm-advertisement-title">
-					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
+					<?php echo $args['before_title'] . esc_html( $title ) . $args['after_title']; ?>
 				</div>
 				<?php
 			}
