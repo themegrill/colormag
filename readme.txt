@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= TBD =
+* Option - To change post date type.
+
 = Version - 3.1.7.1 - 2024-03-20 =
 * Fix - TG Advertisement issue.
 

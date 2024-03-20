@@ -4385,10 +4385,6 @@ Styles for separating single posts loaded from ajax call.
 	padding: 20px;
 }
 
-.cm-below-entry-meta .updated:not(.published) {
-	display: none;
-}
-
 .cm-entry-summary ul {
 	padding: 0 0 0 30px;
 	margin-bottom: 30px;

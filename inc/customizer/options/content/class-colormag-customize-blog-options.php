@@ -133,6 +133,29 @@ class ColorMag_Customize_Blog_Archive_Options extends ColorMag_Customize_Base_Op
 			),
 
 			array(
+				'name'     => 'colormag_blog_post_date_heading',
+				'type'     => 'control',
+				'control'  => 'colormag-title',
+				'label'    => esc_html__( 'Post Date', 'colormag' ),
+				'section'  => 'colormag_blog_section',
+				'priority' => 40,
+			),
+
+			array(
+				'name'     => 'colormag_blog_post_date_type',
+				'default'  => 'post-date',
+				'type'     => 'control',
+				'control'  => 'select',
+				'label'    => esc_html__( 'Type', 'colormag' ),
+				'section'  => 'colormag_blog_section',
+				'choices'  => array(
+					'post-date'     => esc_html__( 'Post Date', 'colormag' ),
+					'modified-date' => esc_html__( 'Modified Date', 'colormag' ),
+				),
+				'priority' => 40,
+			),
+
+			array(
 				'name'        => 'colormag_blog_content_heading',
 				'type'        => 'control',
 				'control'     => 'colormag-title',
