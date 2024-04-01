@@ -45,7 +45,7 @@ class ColorMag_Customize_Scroll_To_Top_Options extends ColorMag_Customize_Base_O
 			// Scroll to top button enable/disable option.
 			array(
 				'name'     => 'colormag_enable_scroll_to_top',
-				'default'  => 0,
+				'default'  => 1,
 				'type'     => 'control',
 				'control'  => 'colormag-toggle',
 				'label'    => esc_html__( 'Enable', 'colormag' ),

@@ -233,9 +233,11 @@ if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
 	 * Scroll to top button.
 	 */
 	function colormag_scroll_top_button() {
+		if ( get_theme_mod( 'colormag_enable_scroll_to_top', 0 ) ) :
 			?>
 			<a href="#cm-masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 		<?php
+		endif;
 	}
 
 endif;
