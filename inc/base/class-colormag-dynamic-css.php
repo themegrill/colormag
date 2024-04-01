@@ -17,7 +17,8 @@ defined( 'ABSPATH' ) || exit;
  *
  * Class ColorMag_Dynamic_CSS
  */
-class ColorMag_Dynamic_CSS {
+class ColorMag_Dynamic_CSS
+{
 
 
 	/**
@@ -28,7 +29,8 @@ class ColorMag_Dynamic_CSS {
 	 *
 	 * @return string Generated CSS.
 	 */
-	public static function render_output( $dynamic_css, $dynamic_css_filtered = '' ) {
+	public static function render_output( $dynamic_css, $dynamic_css_filtered = '' )
+	{
 
 		// Generate dynamic CSS.
 		$parse_css = '';
@@ -112,7 +114,7 @@ class ColorMag_Dynamic_CSS {
 			.search-wrap button,
 			.page-numbers .current,
 			.wp-block-search .wp-element-button:hover' => array(
-			'background-color' => esc_html( $primary_color ),
+				'background-color' => esc_html( $primary_color ),
 			),
 
 			'a,
@@ -247,7 +249,7 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $text_color ),
 			),
 		);
-		$parse_css     .= colormag_parse_css( '', $text_color, $text_color_css );
+		$parse_css      .= colormag_parse_css( '', $text_color, $text_color_css );
 
 		// Box shadow color
 		$box_shadow_color     = get_theme_mod( 'colormag_box_shadow_color', '' );
@@ -256,7 +258,7 @@ class ColorMag_Dynamic_CSS {
 				'box-shadow' => '0px 0px 2px 0px ' . esc_html( $box_shadow_color ),
 			),
 		);
-		$parse_css           .= colormag_parse_css( '', $box_shadow_color, $box_shadow_color_css );
+		$parse_css            .= colormag_parse_css( '', $box_shadow_color, $box_shadow_color_css );
 
 		// Link colors.
 		$link_color_normal     = get_theme_mod( 'colormag_link_color', '' );
@@ -265,17 +267,17 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $link_color_normal ),
 			),
 		);
-		$parse_css            .= colormag_parse_css( '', $link_color_normal, $link_color_normal_css );
+		$parse_css             .= colormag_parse_css( '', $link_color_normal, $link_color_normal_css );
 
 		// Link hover color.
 		$link_color_hover     = get_theme_mod( 'colormag_link_hover_color', '' );
 		$link_color_hover_css = array(
 			'.cm-entry-summary a:hover,
 			.pagebuilder-content a:hover, .pagebuilder-content a:hover' => array(
-	'color' => esc_html( $link_color_hover ),
-),
+				'color' => esc_html( $link_color_hover ),
+			),
 		);
-		$parse_css           .= colormag_parse_css( '', $link_color_hover, $link_color_hover_css );
+		$parse_css            .= colormag_parse_css( '', $link_color_hover, $link_color_hover_css );
 
 		/**
 		 * Typography options.
@@ -922,12 +924,12 @@ class ColorMag_Dynamic_CSS {
 
 		$content_width_css = array(
 			'.cm-primary' => array(
-				'width' => ( 100 - (float) $sidebar_width['size'] ) . '%',
+				'width' => ( 100 - (float)$sidebar_width[ 'size' ] ) . '%',
 			),
 		);
 
 		$parse_css .= '@media screen and (min-width: 992px) {';
-		$parse_css .= colormag_parse_css( 70, ( 100 - (float) $sidebar_width['size'] ), $content_width_css );
+		$parse_css .= colormag_parse_css( 70, ( 100 - (float)$sidebar_width[ 'size' ] ), $content_width_css );
 		$parse_css .= colormag_parse_slider_css(
 			$sidebar_width_default,
 			$sidebar_width,
@@ -964,7 +966,7 @@ class ColorMag_Dynamic_CSS {
 			button,
 			.cm-entry-button span,
 			.wp-block-button .wp-block-button__link' => array(
-			'color' => esc_html( $button_text_color ),
+				'color' => esc_html( $button_text_color ),
 			),
 		);
 
@@ -981,7 +983,7 @@ class ColorMag_Dynamic_CSS {
 			button:hover,
 			.cm-entry-button span:hover,
 			.wp-block-button .wp-block-button__link:hover' => array(
-			'color' => esc_html( $button_hover_text_color ),
+				'color' => esc_html( $button_hover_text_color ),
 			),
 		);
 
@@ -998,7 +1000,7 @@ class ColorMag_Dynamic_CSS {
 			button,
 			.cm-entry-button span,
 			.wp-block-button .wp-block-button__link' => array(
-			'background-color' => esc_html( $button_background_color ),
+				'background-color' => esc_html( $button_background_color ),
 			),
 		);
 
@@ -1015,7 +1017,7 @@ class ColorMag_Dynamic_CSS {
 			button:hover,
 			.cm-entry-button span:hover,
 			.wp-block-button .wp-block-button__link:hover' => array(
-			'background-color' => esc_html( $button_background_hover_color ),
+				'background-color' => esc_html( $button_background_hover_color ),
 			),
 		);
 
@@ -1038,7 +1040,7 @@ class ColorMag_Dynamic_CSS {
 		$footer_widget_content_color_css = array(
 			'.cm-footer-cols .cm-row,
 			.cm-footer-cols .cm-row p' => array(
-			'color' => esc_html( $footer_widget_content_color ),
+				'color' => esc_html( $footer_widget_content_color ),
 			),
 		);
 
@@ -1114,7 +1116,7 @@ class ColorMag_Dynamic_CSS {
 				'background-color' => esc_html( $top_bar_background_color ),
 			),
 		);
-		$parse_css                   .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
+		$parse_css                    .= colormag_parse_css( '#fff', $top_bar_background_color, $top_bar_background_color_css );
 
 		// Post content background.
 		$post_content_background_default = array(
@@ -1126,7 +1128,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$post_content_background         = get_theme_mod( 'colormag_inside_container_background', $post_content_background_default );
-		$parse_css                      .= colormag_parse_background_css( $post_content_background_default, $post_content_background, '.cm-content' );
+		$parse_css                       .= colormag_parse_background_css( $post_content_background_default, $post_content_background, '.cm-content' );
 
 		// Main header options.
 		$header_background_default = array(
@@ -1138,7 +1140,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$header_background         = get_theme_mod( 'colormag_main_header_background', $header_background_default );
-		$parse_css                .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header-1, .dark-skin .cm-header-1' );
+		$parse_css                 .= colormag_parse_background_css( $header_background_default, $header_background, '.cm-header-1, .dark-skin .cm-header-1' );
 
 		// Primary menu options.
 		$primary_menu_background_default = array(
@@ -1150,7 +1152,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$primary_menu_background         = get_theme_mod( 'colormag_primary_menu_background', $primary_menu_background_default );
-		$parse_css                      .= colormag_parse_background_css( $primary_menu_background_default, $primary_menu_background, '#cm-primary-nav, .cm-layout-2 #cm-primary-nav, .cm-header .cm-main-header .cm-primary-nav .cm-row, .cm-home-icon.front_page_on' );
+		$parse_css                       .= colormag_parse_background_css( $primary_menu_background_default, $primary_menu_background, '#cm-primary-nav, .cm-layout-2 #cm-primary-nav, .cm-header .cm-main-header .cm-primary-nav .cm-row, .cm-home-icon.front_page_on' );
 
 		$primary_menu_top_border_color     = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
 		$primary_menu_top_border_color_css = array(
@@ -1158,7 +1160,7 @@ class ColorMag_Dynamic_CSS {
 				'border-top-color' => esc_html( $primary_menu_top_border_color ),
 			),
 		);
-		$parse_css                        .= colormag_parse_css( '#207daf', $primary_menu_top_border_color, $primary_menu_top_border_color_css );
+		$parse_css                         .= colormag_parse_css( '#207daf', $primary_menu_top_border_color, $primary_menu_top_border_color_css );
 
 		$primary_menu_text_color     = get_theme_mod( 'colormag_primary_menu_text_color', '' );
 		$primary_menu_text_color_css = array(
@@ -1172,15 +1174,15 @@ class ColorMag_Dynamic_CSS {
 		.cm-primary-nav li.menu-item-has-children>a::after,
 		.cm-primary-nav li.page_item_has_children>a::after,
 		.cm-layout-2-style-1 .cm-primary-nav a,
-		.cm-layout-2-style-1 .cm-primary-nav ul > li > a' => array(
-			'color' => esc_html( $primary_menu_text_color ),
+		.cm-layout-2-style-1 .cm-primary-nav ul > li > a'        => array(
+				'color' => esc_html( $primary_menu_text_color ),
 			),
 			'.cm-layout-2 .cm-primary-nav .cm-submenu-toggle .cm-icon,
-		.cm-primary-nav .cm-submenu-toggle .cm-icon'      => array(
-			'fill' => esc_html( $primary_menu_text_color ),
+		.cm-primary-nav .cm-submenu-toggle .cm-icon' => array(
+				'fill' => esc_html( $primary_menu_text_color ),
 			),
 		);
-		$parse_css                  .= colormag_parse_css( '', $primary_menu_text_color, $primary_menu_text_color_css );
+		$parse_css                   .= colormag_parse_css( '', $primary_menu_text_color, $primary_menu_text_color_css );
 
 		$primary_menu_selected_hovered_text_color     = get_theme_mod( 'colormag_primary_menu_selected_hovered_text_color', '' );
 		$primary_menu_selected_hovered_text_color_css = array(
@@ -1194,15 +1196,15 @@ class ColorMag_Dynamic_CSS {
 		.cm-primary-nav ul li.current-menu-item ul li a:hover,
 		.cm-primary-nav li.page_item_has_children.current-menu-item>a::after,
 		.cm-layout-2-style-1 .cm-primary-nav ul li:hover > a' => array(
-			'color' => esc_html( $primary_menu_selected_hovered_text_color ),
+				'color' => esc_html( $primary_menu_selected_hovered_text_color ),
 			),
 			'.cm-layout-2 .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon,
 			.cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon
-		' => array(
-			'fill' => esc_html( $primary_menu_selected_hovered_text_color ),
+		'                                         => array(
+				'fill' => esc_html( $primary_menu_selected_hovered_text_color ),
 			),
 		);
-		$parse_css                                   .= colormag_parse_css( '', $primary_menu_selected_hovered_text_color, $primary_menu_selected_hovered_text_color_css );
+		$parse_css                                    .= colormag_parse_css( '', $primary_menu_selected_hovered_text_color, $primary_menu_selected_hovered_text_color_css );
 
 		$primary_sub_menu_background_default = array(
 			'background-color'      => '#232323',
@@ -1213,34 +1215,34 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$primary_sub_menu_background         = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
-		$parse_css                          .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
+		$parse_css                           .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
 
 		// Header action color option
 		$header_action_icon_color     = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
 		$header_action_icon_color_css = array(
-			'.fa.search-top'                      => array(
+			'.fa.search-top' => array(
 				'color' => esc_html( $header_action_icon_color ),
 			),
 
 			'.cm-primary-nav .cm-random-post a svg,
 			.cm-mobile-nav .cm-random-post a svg' => array(
-			'fill' => esc_html( $header_action_icon_color ),
+				'fill' => esc_html( $header_action_icon_color ),
 			),
 		);
-		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_color, $header_action_icon_color_css );
+		$parse_css                    .= colormag_parse_css( '#fff', $header_action_icon_color, $header_action_icon_color_css );
 
 		$header_action_icon_hover_color     = get_theme_mod( 'colormag_header_action_icon_hover_color', '' );
 		$header_action_icon_hover_color_css = array(
-			'.fa.search-top:hover'                        => array(
+			'.fa.search-top:hover' => array(
 				'color' => esc_html( $header_action_icon_hover_color ),
 			),
 
 			'.cm-primary-nav .cm-random-post a:hover > svg,
 			.cm-mobile-nav .cm-random-post a:hover > svg' => array(
-			'fill' => esc_html( $header_action_icon_hover_color ),
+				'fill' => esc_html( $header_action_icon_hover_color ),
 			),
 		);
-		$parse_css .= colormag_parse_css( '#fff', $header_action_icon_hover_color, $header_action_icon_hover_color_css );
+		$parse_css                          .= colormag_parse_css( '#fff', $header_action_icon_hover_color, $header_action_icon_hover_color_css );
 
 		// Footer column options.
 		$footer_background_default = array(
@@ -1252,7 +1254,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
-		$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
+		$parse_css                 .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
 
 		// Mobile menu toggle color.
 		$mobile_menu_toggle_color = get_theme_mod( 'colormag_mobile_menu_toggle_icon_color', '#fff' );
@@ -1260,7 +1262,7 @@ class ColorMag_Dynamic_CSS {
 		$mobile_menu_toggle_color_css = array(
 			'.cm-header .cm-menu-toggle svg,
 			.cm-header .cm-menu-toggle svg' => array(
-			'fill' => esc_html( $mobile_menu_toggle_color ),
+				'fill' => esc_html( $mobile_menu_toggle_color ),
 			),
 		);
 
@@ -1276,7 +1278,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$footer_background         = get_theme_mod( 'colormag_footer_background', $footer_background_default );
-		$parse_css                .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
+		$parse_css                 .= colormag_parse_background_css( $footer_background_default, $footer_background, '.cm-footer-cols' );
 
 		$footer_upper_background_default = array(
 			'background-color'      => '',
@@ -1287,7 +1289,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$footer_upper_background         = get_theme_mod( 'colormag_upper_footer_background', $footer_upper_background_default );
-		$parse_css                      .= colormag_parse_background_css( $footer_upper_background_default, $footer_upper_background, '.cm-footer .cm-upper-footer-cols .widget' );
+		$parse_css                       .= colormag_parse_background_css( $footer_upper_background_default, $footer_upper_background, '.cm-footer .cm-upper-footer-cols .widget' );
 
 		// Footer bar options.
 		$footer_copyright_background_default = array(
@@ -1299,7 +1301,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$footer_copyright_background         = get_theme_mod( 'colormag_footer_copyright_background', $footer_copyright_background_default );
-		$parse_css                          .= colormag_parse_background_css( $footer_copyright_background_default, $footer_copyright_background, '.cm-footer-bar' );
+		$parse_css                           .= colormag_parse_background_css( $footer_copyright_background_default, $footer_copyright_background, '.cm-footer-bar' );
 
 		$footer_copyright_color     = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
 		$footer_copyright_color_css = array(
@@ -1307,7 +1309,7 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $footer_copyright_color ),
 			),
 		);
-		$parse_css                 .= colormag_parse_css( '#F4F4F5', $footer_copyright_color, $footer_copyright_color_css );
+		$parse_css                  .= colormag_parse_css( '#F4F4F5', $footer_copyright_color, $footer_copyright_color_css );
 
 		$footer_copyright_link_color     = get_theme_mod( 'colormag_footer_copyright_link_text_color', '#207daf' );
 		$footer_copyright_link_color_css = array(
@@ -1315,7 +1317,40 @@ class ColorMag_Dynamic_CSS {
 				'color' => esc_html( $footer_copyright_link_color ),
 			),
 		);
-		$parse_css                      .= colormag_parse_css( '##207daf', $footer_copyright_link_color, $footer_copyright_link_color_css );
+		$parse_css                       .= colormag_parse_css( '##207daf', $footer_copyright_link_color, $footer_copyright_link_color_css );
+
+		// Scroll to top options.
+		$scroll_to_top_normal_background_color     = get_theme_mod( 'colormag_scroll_to_top_background', '' );
+		$scroll_to_top_normal_background_color_css = array(
+			'#scroll-up' => array(
+				'background-color' => esc_html( $scroll_to_top_normal_background_color ),
+			),
+		);
+		$parse_css                                 .= colormag_parse_css( '#16181a', $scroll_to_top_normal_background_color, $scroll_to_top_normal_background_color_css );
+
+		$scroll_to_top_hover_background_color     = get_theme_mod( 'colormag_scroll_to_top_hover_background', '' );
+		$scroll_to_top_hover_background_color_css = array(
+			'#scroll-up:hover' => array(
+				'background-color' => esc_html( $scroll_to_top_hover_background_color ),
+			),
+		);
+		$parse_css                                .= colormag_parse_css( '', $scroll_to_top_hover_background_color, $scroll_to_top_hover_background_color_css );
+
+		$scroll_to_top_normal_color     = get_theme_mod( 'colormag_scroll_to_top_icon_color', '' );
+		$scroll_to_top_normal_color_css = array(
+			'a#scroll-up i' => array(
+				'color' => esc_html( $scroll_to_top_normal_color ),
+			)
+		);
+		$parse_css                      .= colormag_parse_css( '', $scroll_to_top_normal_color, $scroll_to_top_normal_color_css );
+
+		$scroll_to_top_hover_color     = get_theme_mod( 'colormag_scroll_to_top_icon_hover_color', '' );
+		$scroll_to_top_hover_color_css = array(
+			'a#scroll-up i:hover' => array(
+				'color' => esc_html( $scroll_to_top_hover_color ),
+			)
+		);
+		$parse_css                     .= colormag_parse_css( '', $scroll_to_top_hover_color, $scroll_to_top_hover_color_css );
 
 		// Primary color for Elementor.
 		if ( defined( 'ELEMENTOR_VERSION' ) ) {
@@ -1374,7 +1409,8 @@ class ColorMag_Dynamic_CSS {
 	 *
 	 * @return string
 	 */
-	public static function render_custom_output() {
+	public static function render_custom_output()
+	{
 
 		// Generate dynamic CSS.
 		$colormag_custom_css = '';
@@ -1391,7 +1427,8 @@ class ColorMag_Dynamic_CSS {
 	 *
 	 * @return string|void Generated CSS for background CSS property.
 	 */
-	public static function colormag_editor_block_css() {
+	public static function colormag_editor_block_css()
+	{
 		$parse_css = '';
 
 		// Primary color.
@@ -1422,7 +1459,8 @@ class ColorMag_Dynamic_CSS {
 	 *
 	 * @return string Generated CSS.
 	 */
-	public static function render_wc_output( $dynamic_css, $dynamic_css_filtered = '' ) {
+	public static function render_wc_output( $dynamic_css, $dynamic_css_filtered = '' )
+	{
 
 		// Generate dynamic CSS.
 		$parse_wc_css     = $dynamic_css;

@@ -358,6 +358,14 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'priority' => 20,
 			),
 
+			array(
+				'name'     => 'colormag_scroll_to_top_section',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Scroll to Top', 'colormag' ),
+				'panel'    => 'colormag_footer_panel',
+				'priority' => 30,
+			),
+
 			/**
 			 * Additional.
 			 */
@@ -368,6 +376,7 @@ class ColorMag_Customize_Register_Section_Panels extends ColorMag_Customize_Base
 				'panel'    => 'colormag_additional_panel',
 				'priority' => 20,
 			),
+
 
 			/**
 			 * WooCommerce.

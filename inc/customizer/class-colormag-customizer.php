@@ -95,6 +95,7 @@ class ColorMag_Customizer {
 		// Footer.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-column-options.php';
 		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-bar-options.php';
+		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-scroll-to-top-options.php';
 
 		// WooCommerce.
 		require COLORMAG_CUSTOMIZER_DIR . '/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php';
