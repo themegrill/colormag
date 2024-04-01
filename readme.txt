@@ -70,7 +70,9 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Option - To change post date type.
+* Feature - To change post date type.
+* Feature - To change enable scroll to top.
+* Feature - To change scroll to top background and color.
 
 = Version - 3.1.7.1 - 2024-03-20 =
 * Fix - TG Advertisement issue.
