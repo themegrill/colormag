@@ -790,7 +790,7 @@ function colormag_get_image_src_by_url( $image_url, $image_size ) {
 	}
 }
 
-if ( ! function_exists( 'colormag_date_entry_meta_markup' ) ) :
+if ( ! function_exists( 'colormag_date_meta_markup' ) ) :
 
 	/**
 	 * Prints post meta markup for date of post published or updated.
