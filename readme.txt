@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version - 3.1.8 - 2024-04-25 =
 * Fix - `colormag_date_meta_markup` function override.
+* Option - To change post date type.
 
 = Version - 3.1.7.1 - 2024-03-20 =
 * Fix - TG Advertisement issue.
