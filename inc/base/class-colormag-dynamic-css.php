@@ -82,7 +82,7 @@ class ColorMag_Dynamic_CSS {
 			.cm-posts .wp-pagenavi a:hover, .cm-secondary .cm-widget-title span,
 			.cm-posts .post .cm-post-content .cm-entry-header-meta .cm-post-categories a,
 			.cm-page-header .cm-page-title span, .entry-meta .post-format i,
-			.format-link, .cm-entry-button, .infinite-scroll .tg-infinite-scroll,
+			.format-link .cm-entry-summary a, .cm-entry-button, .infinite-scroll .tg-infinite-scroll,
 			.no-more-post-text, .pagination span,
 			.comments-area .comment-author-link span,
 			.cm-footer-cols .cm-row .cm-widget-title span,
