@@ -97,7 +97,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 				'name'     => 'colormag_button_border_subtitle',
 				'type'     => 'control',
 				'control'  => 'colormag-subtitle',
-				'label'    => esc_html__( 'Border Topsss', 'colormag' ),
+				'label'    => esc_html__( 'Border Top', 'colormag' ),
 				'section'  => 'colormag_primary_menu_section',
 				'priority' => 45,
 			),
@@ -373,6 +373,7 @@ class ColorMag_Customize_Primary_Menu_Options extends ColorMag_Customize_Base_Op
 
 		return $options;
 	}
+
 }
 
 return new ColorMag_Customize_Primary_Menu_Options();
