@@ -803,8 +803,8 @@ if ( ! function_exists( 'colormag_date_meta_markup' ) ) :
 		$time_string = '<time class="entry-date published updated" datetime="%1$s"' . '>%2$s</time>';
 
 		// Displays the different published and updated date if the post is updated.
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s"' . '>%2$s</time><time class="updated" datetime="%3$s"' . '>%4$s</time>';
+		if ( ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) && 'modified-date' === get_theme_mod( 'colormag_blog_post_date_type', 'post-date' ) ) {
+			$time_string = '<time class="cm-modified-date updated" datetime="%3$s"' . '>%4$s</time>';
 		}
 
 		$time_string = sprintf(
