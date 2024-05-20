@@ -66,7 +66,35 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 				'transport' => 'postMessage',
 				'priority'  => 30,
 			),
+			array(
+				'name'      => 'colormag_footer_column_layout',
+				'default'   => 'style-4',
+				'type'      => 'control',
+				'control'   => 'colormag-radio-image',
+				'label'     => esc_html__( 'Footer Column Layout', 'colormag' ),
+				'section'   => 'colormag_footer_column_section',
+				'choices'   => array(
+					'style-1' => array(
+						'label' => '',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/footer-column/footer-column-one.svg',
+					),
+					'style-2' => array(
+						'label' => '',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/footer-column/footer-column-two.svg',
+					),
+					'style-3' => array(
+						'label' => '',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/footer-column/footer-column-three.svg',
+					),
+					'style-4' => array(
+						'label' => '',
+						'url'   => COLORMAG_PARENT_URL . '/assets/img/footer-column/footer-column-four.svg',
+					),
+				),
 
+				'image_col' => 2,
+				'priority'  => 35,
+			),
 			array(
 				'name'     => 'colormag_footer_style_divider',
 				'type'     => 'control',
@@ -269,7 +297,6 @@ class ColorMag_Customize_Footer_General_Options extends ColorMag_Customize_Base_
 
 		return $options;
 	}
-
 }
 
 return new ColorMag_Customize_Footer_General_Options();
