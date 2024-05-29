@@ -18,16 +18,27 @@ if ( ! defined( 'ABSPATH' ) ) {
  * If none of the sidebars have widgets, then let's bail early.
  */
 if ( ! is_active_sidebar( 'colormag_footer_sidebar_one' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_two' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_three' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_four' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_one_upper' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_two_upper' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_three_upper' ) &&
-     ! is_active_sidebar( 'colormag_footer_sidebar_full_width' ) ) {
+	! is_active_sidebar( 'colormag_footer_sidebar_two' ) &&
+	! is_active_sidebar( 'colormag_footer_sidebar_three' ) &&
+	! is_active_sidebar( 'colormag_footer_sidebar_four' ) &&
+	! is_active_sidebar( 'colormag_footer_sidebar_one_upper' ) &&
+	! is_active_sidebar( 'colormag_footer_sidebar_two_upper' ) &&
+	! is_active_sidebar( 'colormag_footer_sidebar_three_upper' ) &&
+	! is_active_sidebar( 'colormag_footer_sidebar_full_width' ) ) {
 	return;
 }
+
+$footer_column_layout = get_theme_mod( 'colormag_footer_column_layout', 'style-4' );
+$number_of_cols       = preg_replace( '/\D/', '', $footer_column_layout );
+$col_mapper           = array(
+	1 => 'one',
+	2 => 'two',
+	3 => 'three',
+	4 => 'four',
+);
+
 ?>
+
 
 <div class="cm-footer-cols">
 	<div class="cm-container">
@@ -48,19 +59,11 @@ if ( ! is_active_sidebar( 'colormag_footer_sidebar_one' ) &&
 
 			<?php if ( is_active_sidebar( 'colormag_footer_sidebar_one' ) || is_active_sidebar( 'colormag_footer_sidebar_two' ) || is_active_sidebar( 'colormag_footer_sidebar_three' ) || is_active_sidebar( 'colormag_footer_sidebar_four' ) ) : ?>
 			<div class="cm-lower-footer-cols">
-				<div class="cm-lower-footer-col cm-lower-footer-col--1">
-					<?php dynamic_sidebar( 'colormag_footer_sidebar_one' ); ?>
-				</div>
-
-				<div class="cm-lower-footer-col cm-lower-footer-col--2">
-					<?php dynamic_sidebar( 'colormag_footer_sidebar_two' ); ?>
-				</div>
-				<div class="cm-lower-footer-col cm-lower-footer-col--3">
-					<?php dynamic_sidebar( 'colormag_footer_sidebar_three' ); ?>
-				</div>
-				<div class="cm-lower-footer-col cm-lower-footer-col--4">
-					<?php dynamic_sidebar( 'colormag_footer_sidebar_four' ); ?>
-				</div>
+				<?php for ( $i = 1; $i <= $number_of_cols; ++$i ) : ?>
+					<div class="cm-lower-footer-col cm-lower-footer-col--<?php echo esc_attr( $i ); ?>">
+						<?php dynamic_sidebar( "colormag_footer_sidebar_{$col_mapper[$i]}" ); ?>
+					</div>
+				<?php endfor; ?>
 			</div>
 			<?php endif; ?>
 
