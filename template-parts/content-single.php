@@ -67,7 +67,22 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 				<?php
 				$embed_code = wp_oembed_get( $video_post_url );
 
-				echo wp_kses_post( $embed_code );
+
+				echo wp_kses(
+					$embed_code,
+					array(
+						'iframe' => array(
+							'title'           => true,
+							'width'           => true,
+							'height'          => true,
+							'src'             => true,
+							'frameborder'     => true,
+							'allow'           => true,
+							'referrerpolicy'  => true,
+							'allowfullscreen' => true,
+						),
+					)
+				);
 				?>
 			</div>
 			<?php
