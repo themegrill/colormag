@@ -27,7 +27,7 @@ get_header();
 	?>
 
 		<div id="cm-primary" class="cm-primary">
-			<div class="cm-posts" class="clearfix">
+			<div class="cm-posts clearfix">
 				<?php
 				while ( have_posts() ) :
 					the_post();
