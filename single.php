@@ -24,7 +24,7 @@ get_header();
 	?>
 
 	<div id="cm-primary" class="cm-primary">
-		<div class="cm-posts" class="clearfix">
+		<div class="cm-posts clearfix">
 
 			<?php
 			/**
@@ -46,11 +46,11 @@ get_header();
 		</div><!-- .cm-posts -->
 		<?php
 
-		if (true === apply_filters('colormag_single_post_page_navigation_filter', true)) :
-				get_template_part('navigation', 'single');
+		if ( true === apply_filters( 'colormag_single_post_page_navigation_filter', true ) ) :
+				get_template_part( 'navigation', 'single' );
 		endif;
 
-		if (!class_exists('Auto_Load_Next_Post')) :
+		if ( ! class_exists( 'Auto_Load_Next_Post' ) ) :
 
 			/**
 			 * Functions hooked into colormag_action_after_single_post_content action.
@@ -58,26 +58,26 @@ get_header();
 			 * @hooked colormag_author_bio - 10
 			 * @hooked colormag_related_posts - 20
 			 */
-			do_action('colormag_action_after_single_post_content');
+			do_action( 'colormag_action_after_single_post_content' );
 
 		endif;
 
 		/**
 		 * Hook: colormag_before_comments_template.
 		 */
-		do_action('colormag_before_comments_template');
+		do_action( 'colormag_before_comments_template' );
 
 		/**
 		 * Functions hooked into colormag_action_after_inner_content action.
 		 *
 		 * @hooked colormag_render_comments - 10
 		 */
-		do_action('colormag_action_comments');
+		do_action( 'colormag_action_comments' );
 
 		/**
 		 * Hook: colormag_after_comments_template.
 		 */
-		do_action('colormag_after_comments_template');
+		do_action( 'colormag_after_comments_template' );
 		?>
 	</div><!-- #cm-primary -->
 
