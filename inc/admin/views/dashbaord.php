@@ -111,7 +111,7 @@ function import_button_html() {
 								}
 								?>
 								" target="_blank">
-									<?php echo $link_icon . 'Customize'; ?>
+									<?php echo $link_icon . esc_html__( 'Customize', 'colormag' ); ?>
 								</a>
 							</div>
 							<?php
@@ -174,7 +174,7 @@ function import_button_html() {
 									?>
 									" target="_blank">
 										<?php
-										echo $link_icon . 'Documentation';
+										echo $link_icon . esc_html__( 'Documentation', 'colormag' );
 										?>
 									</a>
 								</div>
