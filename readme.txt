@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.1.8
+Version: 3.1.9
 Tested up to: 6.5
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 3.1.8
+Stable tag: 3.1.9
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,6 +69,12 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version - 3.1.9 - 2024-06-27 =
+* Option - To change footer column layout.
+* Fix - Link post format while using custom primary color.
+* Fix - Primary menu background color on responsive device.
+* Fix - Post format video URL issue.
+
 = Version - 3.1.8 - 2024-04-25 =
 * Fix - `colormag_date_meta_markup` function override.
 * Option - To change post date type.
