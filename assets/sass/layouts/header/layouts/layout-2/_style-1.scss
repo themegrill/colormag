@@ -8,6 +8,13 @@
 		}
 	}
 
+	.cm-header-2 {
+		.cm-row {
+			flex-direction: row;
+			-ms-flex-direction: row;
+		}
+	}
+
 	.cm-row {
 		justify-content: center;
 
