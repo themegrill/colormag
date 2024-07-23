@@ -286,6 +286,7 @@ function colormag_get_fonts() {
 	$site_title_typography   = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
 	$site_tagline_typography = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
 	$primary_menu_typography = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
+	$mobile_menu_typography  = get_theme_mod( 'colormag_mobile_menu_typography', $primary_menu_typography_default );
 	$post_title_typography   = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
 
 	/**
@@ -301,6 +302,10 @@ function colormag_get_fonts() {
 
 	if ( 'default' === $primary_menu_typography['font-family'] ) {
 		$primary_menu_typography['font-family'] = 'Open Sans';
+	}
+
+	if ( 'default' === $mobile_menu_typography['font-family'] ) {
+		$mobile_menu_typography['font-family'] = 'Open Sans';
 	}
 
 	// Typography options.
@@ -345,6 +350,7 @@ function colormag_get_fonts() {
 	$heading_h5_typography_font_weight      = $heading_h5_typography['font-weight'] ?? 'regular';
 	$heading_h6_typography_font_weight      = $heading_h6_typography['font-weight'] ?? 'regular';
 	$primary_menu_typography_font_weight    = $primary_menu_typography['font-weight'] ?? 'regular';
+	$mobile_menu_typography_font_weight     = $mobile_menu_typography['font-weight'] ?? 'regular';
 	$post_title_typography_font_weight      = $post_title_typography['font-weight'] ?? 'regular';
 
 	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
@@ -369,6 +375,7 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $site_title_typography['font-family'] );
 	ColorMag_Generate_Fonts::add_font( $site_tagline_typography['font-family'] );
 	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $mobile_menu_typography['font-family'], $mobile_menu_typography_font_weight );
 }
 
 add_action( 'colormag_get_fonts', 'colormag_get_fonts' );
