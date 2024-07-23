@@ -193,7 +193,6 @@ function colormag_set_content_width() {
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'colormag_set_content_width', 800 );
-
 }
 
 add_filter( 'themegrill_demo_importer_show_main_menu', '__return_false' );
@@ -324,17 +323,12 @@ function colormag_content_width() {
 			if ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
 				$content_width = 1140; /* pixels */
 			}
-		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
+		} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
-			}
 		}
-	} else {
-		if ( 'no_sidebar_full_width' === $layout_meta ) {
+	} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
 			$content_width = 1140; /* pixels */
-		}
 	}
-
 }
 
 add_action( 'template_redirect', 'colormag_content_width' );
@@ -343,3 +337,15 @@ add_action( 'template_redirect', 'colormag_content_width' );
  * Detect plugin. For use on Front End only.
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+add_action(
+	'after_setup_theme',
+	function () {
+		$background = sanitize_hex_color_no_hash( get_theme_mod( 'background_color', '' ) );
+		if ( empty( $background ) ) {
+			return;
+		}
+		set_theme_mod( 'background_color', $background );
+	},
+	10
+);
