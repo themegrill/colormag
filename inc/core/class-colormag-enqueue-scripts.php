@@ -236,6 +236,11 @@ function colormag_get_fonts() {
 		'font-weight' => '500',
 	);
 
+	$mobile_sub_menu_typography_default = array(
+		'font-family' => 'default',
+		'font-weight' => '500',
+	);
+
 	/**
 	 * Typography options.
 	 */
@@ -275,19 +280,20 @@ function colormag_get_fonts() {
 		'font-weight' => 'regular',
 	);
 
-	$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
-	$headings_typography     = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
-	$heading_h1_typography   = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
-	$heading_h2_typography   = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
-	$heading_h3_typography   = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
-	$heading_h4_typography   = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
-	$heading_h5_typography   = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
-	$heading_h6_typography   = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
-	$site_title_typography   = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
-	$site_tagline_typography = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
-	$primary_menu_typography = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
-	$mobile_menu_typography  = get_theme_mod( 'colormag_mobile_menu_typography', $primary_menu_typography_default );
-	$post_title_typography   = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
+	$base_typography            = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+	$headings_typography        = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+	$heading_h1_typography      = get_theme_mod( 'colormag_h1_typography', $heading_h1_typography_default );
+	$heading_h2_typography      = get_theme_mod( 'colormag_h2_typography', $heading_h2_typography_default );
+	$heading_h3_typography      = get_theme_mod( 'colormag_h3_typography', $heading_h3_typography_default );
+	$heading_h4_typography      = get_theme_mod( 'colormag_h4_typography', $heading_h4_typography_default );
+	$heading_h5_typography      = get_theme_mod( 'colormag_h5_typography', $heading_h5_typography_default );
+	$heading_h6_typography      = get_theme_mod( 'colormag_h6_typography', $heading_h6_typography_default );
+	$site_title_typography      = get_theme_mod( 'colormag_site_title_typography', $site_title_typography_default );
+	$site_tagline_typography    = get_theme_mod( 'colormag_site_tagline_typography', $site_tagline_typography_default );
+	$primary_menu_typography    = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
+	$mobile_menu_typography     = get_theme_mod( 'colormag_mobile_menu_typography', $primary_menu_typography_default );
+	$post_title_typography      = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
+	$mobile_sub_menu_typography = get_theme_mod( 'colormag_mobile_sub_menu_typography', $mobile_sub_menu_typography_default );
 
 	/**
 	 * Enqueue required Google fonts.
@@ -341,6 +347,10 @@ function colormag_get_fonts() {
 		$post_title_typography['font-family'] = 'Open Sans';
 	}
 
+	if ( 'default' === $mobile_sub_menu_typography['font-family'] ) {
+		$mobile_sub_menu_typography['font-family'] = 'Open Sans';
+	}
+
 	$base_typography_font_weight            = $base_typography['font-weight'] ?? 'regular';
 	$heading_typography_font_weight         = $headings_typography['font-weight'] ?? 'regular';
 	$heading_h1_typography_font_weight      = $heading_h1_typography['font-weight'] ?? 'regular';
@@ -352,6 +362,7 @@ function colormag_get_fonts() {
 	$primary_menu_typography_font_weight    = $primary_menu_typography['font-weight'] ?? 'regular';
 	$mobile_menu_typography_font_weight     = $mobile_menu_typography['font-weight'] ?? 'regular';
 	$post_title_typography_font_weight      = $post_title_typography['font-weight'] ?? 'regular';
+	$mobile_sub_menu_typography_font_weight = $mobile_sub_menu_typography['font-weight'] ?? 'regular';
 
 	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $headings_typography['font-weight'] );
@@ -363,6 +374,7 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $post_title_typography['font-family'], $post_title_typography['font-weight'] );
+	ColorMag_Generate_Fonts::add_font( $mobile_sub_menu_typography['font-family'], $mobile_sub_menu_typography['font-weight'] );
 	ColorMag_Generate_Fonts::add_font( $base_typography['font-family'], $base_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $headings_typography['font-family'], $heading_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $heading_h1_typography['font-family'], $heading_h1_typography_font_weight );
@@ -372,6 +384,7 @@ function colormag_get_fonts() {
 	ColorMag_Generate_Fonts::add_font( $heading_h5_typography['font-family'], $heading_h5_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $heading_h6_typography['font-family'], $heading_h6_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $post_title_typography['font-family'], $post_title_typography_font_weight );
+	ColorMag_Generate_Fonts::add_font( $mobile_sub_menu_typography['font-family'], $mobile_sub_menu_typography_font_weight );
 	ColorMag_Generate_Fonts::add_font( $site_title_typography['font-family'] );
 	ColorMag_Generate_Fonts::add_font( $site_tagline_typography['font-family'] );
 	ColorMag_Generate_Fonts::add_font( $primary_menu_typography['font-family'], $primary_menu_typography_font_weight );

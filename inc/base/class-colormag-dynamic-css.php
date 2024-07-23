@@ -712,6 +712,7 @@ class ColorMag_Dynamic_CSS {
 		$primary_menu_typography     = get_theme_mod( 'colormag_primary_menu_typography', $primary_menu_typography_default );
 		$mobile_menu_typography     = get_theme_mod( 'colormag_mobile_menu_typography', $primary_menu_typography_default );
 		$primary_sub_menu_typography = get_theme_mod( 'colormag_primary_sub_menu_typography', $primary_sub_menu_typography_default );
+		$mobile_sub_menu_typography = get_theme_mod( 'colormag_mobile_sub_menu_typography', $primary_sub_menu_typography_default );
 		$post_title_typography       = get_theme_mod( 'colormag_blog_post_title_typography', $post_title_typography_default );
 
 		/**
@@ -883,6 +884,17 @@ class ColorMag_Dynamic_CSS {
 			$primary_sub_menu_typography_default,
 			$primary_sub_menu_typography,
 			'.cm-primary-nav ul li ul li a',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Mobile menu typography.
+		$parse_css .= colormag_parse_typography_css(
+			$primary_sub_menu_typography_default,
+			$mobile_sub_menu_typography,
+			'.cm-mobile-nav ul li ul li a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -1226,6 +1238,17 @@ class ColorMag_Dynamic_CSS {
 		);
 		$primary_sub_menu_background         = get_theme_mod( 'colormag_primary_sub_menu_background', $primary_sub_menu_background_default );
 		$parse_css                          .= colormag_parse_background_css( $primary_sub_menu_background_default, $primary_sub_menu_background, '.cm-primary-nav .sub-menu, .cm-primary-nav .children' );
+
+		$mobile_sub_menu_background_default = array(
+			'background-color'      => '#232323',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$mobile_sub_menu_background         = get_theme_mod( 'colormag_mobile_sub_menu_background', $mobile_sub_menu_background_default );
+		$parse_css                          .= colormag_parse_background_css( $mobile_sub_menu_background_default, $mobile_sub_menu_background, '.cm-mobile-nav .sub-menu,.cm-mobile-nav .sub-menu li, .cm-mobile-nav .children' );
 
 		// Header action color option
 		$header_action_icon_color     = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
