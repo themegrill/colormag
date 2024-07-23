@@ -2,6 +2,19 @@
 --------------------------------------------- */
 .cm-layout-2 {
 
+	.cm-header-1 {
+		.cm-row {
+			flex-direction: column;
+		}
+	}
+
+	.cm-header-2 {
+		.cm-row {
+			flex-direction: row;
+			-ms-flex-direction: row;
+		}
+	}
+
 	.cm-row {
 		justify-content: center;
 
@@ -93,10 +106,10 @@
 				}
 			}
 
-			> li {
+			>li {
 				vertical-align: top;
 
-				> a {
+				>a {
 					border-bottom: 2px solid transparent;
 					transition: border 0.5s ease;
 					color: #3F3F46;
@@ -106,7 +119,7 @@
 				&.current-menu-item,
 				&.current-menu-ancestor {
 
-					> a {
+					>a {
 						background-color: transparent;
 						border-bottom: 2px solid $color__primary;
 					}
@@ -139,8 +152,8 @@
 					&.focus {
 						border-color: $color__primary;
 						background-color: $color__primary;
-						
-						> a {
+
+						>a {
 							color: $color__white;
 						}
 					}
@@ -161,7 +174,7 @@
 
 				&:hover {
 
-					> ul.sub-menu {
+					>ul.sub-menu {
 						opacity: 1;
 						visibility: visible;
 					}
@@ -177,11 +190,11 @@
 
 			li.focus {
 
-				> a {
+				>a {
 					border-color: $color__primary;
 				}
 
-				> ul.sub-menu {
+				>ul.sub-menu {
 					opacity: 1;
 					visibility: visible;
 				}
@@ -263,7 +276,7 @@
 			&.current-menu-ancestor,
 			&.current-page-item,
 			&.current-menu-item {
-				> .cm-submenu-toggle {
+				>.cm-submenu-toggle {
 					i {
 						color: $color__white;
 					}
@@ -300,7 +313,7 @@
 
 	.cm-menu-primary-container {
 		flex-grow: 1;
-    }
+	}
 }
 
 @include breakpoint("mdm") {
