@@ -66,7 +66,7 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
 // Load customind.
-require_once COLORMAG_CUSTOMIZER_DIR . '/customizer/customind/init.php';
+require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
 //require __DIR__ . '/../customind/init.php';
 global $customind;
 $customind->set_css_var_prefix( 'colormag' );

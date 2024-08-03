@@ -40,7 +40,6 @@ class ColorMag_Customizer {
 
 	public function on_customizer_register( $wp_customize ) {
 		$this->includes();
-		$this->register_wp_core_controls( $wp_customize );
 		do_action( 'colormag_customize_register', $wp_customize );
 	}
 
@@ -69,7 +68,7 @@ class ColorMag_Customizer {
 		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-partials.php';
 
 		// Include the required customize section and panels register file.
-		require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-register-sections-panels.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer-register-sections-panels.php';
 
 		/**
 		 * Include the required customize options file.
