@@ -87,6 +87,14 @@ $options = apply_filters(
 			),
 			'collapsible'  => apply_filters( 'colormag_global_sidebar_heading_accordion_collapsible', false ),
 		),
+		'colormag_sidebar_upgrade'       => array(
+			'type'        => 'customind-upsell',
+			'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+			'title'       => esc_html__( 'Learn more', 'colormag' ),
+			'url'         => esc_url( 'https://themegrill.com/colormag-pricing' ),
+			'section'     => 'colormag_global_sidebar_section',
+			'priority'    => 100,
+		),
 	)
 );
 
