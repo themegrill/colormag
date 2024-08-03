@@ -65,6 +65,12 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
  */
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
+// Load customind.
+require_once COLORMAG_CUSTOMIZER_DIR . '/customizer/customind/init.php';
+//require __DIR__ . '/../customind/init.php';
+global $customind;
+$customind->set_css_var_prefix( 'colormag' );
+
 /**
  * Deprecated.
  */
@@ -193,7 +199,6 @@ function colormag_set_content_width() {
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'colormag_set_content_width', 800 );
-
 }
 
 add_filter( 'themegrill_demo_importer_show_main_menu', '__return_false' );
@@ -324,17 +329,12 @@ function colormag_content_width() {
 			if ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
 				$content_width = 1140; /* pixels */
 			}
-		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
+		} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
-			}
 		}
-	} else {
-		if ( 'no_sidebar_full_width' === $layout_meta ) {
+	} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
 			$content_width = 1140; /* pixels */
-		}
 	}
-
 }
 
 add_action( 'template_redirect', 'colormag_content_width' );

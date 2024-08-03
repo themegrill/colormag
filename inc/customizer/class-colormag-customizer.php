@@ -15,8 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the customizer framework files.
-require( dirname( __FILE__ ) . '/core/class-colormag-customizer-framework.php' );
+require __DIR__ . '/core/class-colormag-customizer-framework.php';
 
+require_once __DIR__ . '/functions.php';
 /**
  * ColorMag customizer class.
  *
@@ -29,10 +30,23 @@ class ColorMag_Customizer {
 		// Include the required files for Customize option.
 		add_action( 'customize_register', array( $this, 'customize_register' ) );
 
+		add_action( 'customize_register', array( $this, 'on_customizer_register' ) );
+
 		// Include the required files for Customize option.
 		add_action( 'customize_register', array( $this, 'customize_options_file_include' ), 1 );
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_dynamic_css' ) );
+	}
+
+	public function on_customizer_register( $wp_customize ) {
+		$this->includes();
+		$this->register_wp_core_controls( $wp_customize );
+		do_action( 'colormag_customize_register', $wp_customize );
+	}
+
+	protected function includes() {
+		require_once __DIR__ . '/panels-sections/panels-sections.php';
+		require_once __DIR__ . '/options/options.php';
 	}
 
 	/**
@@ -44,7 +58,6 @@ class ColorMag_Customizer {
 
 		// Override default.
 		require COLORMAG_CUSTOMIZER_DIR . '/override-defaults.php';
-
 	}
 
 	/**
@@ -62,42 +75,42 @@ class ColorMag_Customizer {
 		 * Include the required customize options file.
 		 */
 		// Global.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-colors-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-category-colors-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-container-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-sidebar-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-typography-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-button-options.php';
-
-		// Front Page.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/front-page/class-colormag-customize-front-page-general-options.php';
-
-		// Header.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-site-identity-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-media-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-main-header-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-primary-menu-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-sticky-header-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-news-ticker-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-action-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-breadcrumb-options.php';
-
-		// Content.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-blog-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-single-post-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-page-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-post-meta-options.php';
-
-		// Additional.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-icons-options.php';
-
-		// Footer.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-column-options.php';
-		require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-bar-options.php';
-
-		// WooCommerce.
-		require COLORMAG_CUSTOMIZER_DIR . '/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-colors-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-category-colors-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-container-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-sidebar-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-typography-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-button-options.php';
+		//
+		//      // Front Page.
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/front-page/class-colormag-customize-front-page-general-options.php';
+		//
+		//      // Header.
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-site-identity-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-media-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-main-header-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-primary-menu-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-sticky-header-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-news-ticker-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-header-action-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/header-and-navigation/class-colormag-customize-breadcrumb-options.php';
+		//
+		//      // Content.
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-blog-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-single-post-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-page-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/content/class-colormag-customize-post-meta-options.php';
+		//
+		//      // Additional.
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/additional/class-colormag-customize-social-icons-options.php';
+		//
+		//      // Footer.
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-column-options.php';
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/footer/class-colormag-customize-footer-bar-options.php';
+		//
+		//      // WooCommerce.
+		//      require COLORMAG_CUSTOMIZER_DIR . '/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php';
 	}
 
 	/**
@@ -120,7 +133,6 @@ class ColorMag_Customizer {
 	 */
 	public function get_css() {
 	}
-
 }
 
 return new ColorMag_Customizer();
