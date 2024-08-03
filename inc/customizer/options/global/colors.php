@@ -173,16 +173,15 @@ $options = apply_filters(
 			'priority'     => 15,
 			'collapsible'  => apply_filters( 'colormag_link_colors_accordion_collapsible', false ),
 		),
+		'colormag_colors_upgrade'     => array(
+			'type'        => 'customind-upsell',
+			'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+			'title'       => esc_html__( 'Learn more', 'colormag' ),
+			'url'         => esc_url( 'https://themegrill.com/colormag-pricing' ),
+			'section'     => 'colormag_global_colors_section',
+			'priority'    => 100,
+		),
 	)
 );
 
-	$options['colormag_colors_upgrade'] = array(
-		'type'        => 'customind-upsell',
-		'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
-		'title'       => esc_html__( 'Learn more', 'colormag' ),
-		'url'         => esc_url( 'https://themegrill.com/colormag-pricing' ),
-		'section'     => 'colormag_global_colors_section',
-		'priority'    => 100,
-	);
-
-	colormag_customind()->add_controls( $options );
+colormag_customind()->add_controls( $options );
