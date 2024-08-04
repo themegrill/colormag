@@ -63,6 +63,46 @@ $section_option_id = array(
 		'panel'    => 'colormag_front_page_panel',
 		'priority' => 10,
 	),
+	'colormag_top_bar_section'            => array(
+		'title'    => esc_html__( 'Top Bar', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 10,
+	),
+	'colormag_news_ticker_section'        => array(
+		'title'    => esc_html__( 'News Ticker', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 20,
+	),
+	'title_tagline'                       => array(
+		'title'    => esc_html__( 'Site Identity', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 30,
+	),
+	'colormag_primary_header_section'     => array(
+		'title'    => esc_html__( 'Primary Header', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 40,
+	),
+	'colormag_primary_menu_section'       => array(
+		'title'    => esc_html__( 'Primary Menu', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 50,
+	),
+	'colormag_header_action_section'      => array(
+		'title'    => esc_html__( 'Header Action', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 60,
+	),
+	'colormag_breadcrumb_section'         => array(
+		'title'    => esc_html__( 'Breadcrumb', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 70,
+	),
+	'colormag_sticky_header_section'      => array(
+		'title'    => esc_html__( 'Sticky Header', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 80,
+	),
 );
 
 colormag_customind()->add_panels( $panel_options_id );
