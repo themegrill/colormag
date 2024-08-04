@@ -158,6 +158,14 @@ $options = apply_filters(
 			),
 			'collapsible'  => apply_filters( 'colormag_pagination_accordion_collapsible', false ),
 		),
+		'colormag_blog_upgrade'            => array(
+			'type'        => 'customind-upsell',
+			'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+			'title'       => esc_html__( 'Learn more', 'colormag' ),
+			'url'         => esc_url( 'https://themegrill.com/colormag-pricing' ),
+			'section'     => 'colormag_blog_section',
+			'priority'    => 100,
+		),
 	)
 );
 
