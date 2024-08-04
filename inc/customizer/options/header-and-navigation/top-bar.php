@@ -46,22 +46,14 @@ $options = apply_filters(
 						),
 					),
 					'colormag_top_bar_background_color' => array(
-						'default'   => array(
-							'background-color'      => '#fff',
-							'background-image'      => '',
-							'background-repeat'     => 'repeat',
-							'background-position'   => 'center center',
-							'background-size'       => 'contain',
-							'background-attachment' => 'scroll',
-						),
-						'type'      => 'customind-background',
-						'title'     => esc_html__( 'Background', 'colormag' ),
-						'transport' => 'postMessage',
+						'title'     => esc_html__( 'Color', 'zakra' ),
+						'default'   => '#fff',
+						'type'      => 'customind-color',
 						'section'   => 'colormag_top_bar_section',
+						'priority'  => 30,
 						'condition' => array(
 							'colormag_enable_top_bar' => true,
 						),
-						'priority'  => 30,
 					),
 				)
 			),
