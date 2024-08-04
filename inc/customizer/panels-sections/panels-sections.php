@@ -103,6 +103,26 @@ $section_option_id = array(
 		'panel'    => 'colormag_header_panel',
 		'priority' => 80,
 	),
+	'colormag_blog_section'               => array(
+		'title'    => esc_html__( 'Blog', 'colormag' ),
+		'panel'    => 'colormag_content_panel',
+		'priority' => 10,
+	),
+	'colormag_single_post_section'        => array(
+		'title'    => esc_html__( 'Single Post', 'colormag' ),
+		'panel'    => 'colormag_content_panel',
+		'priority' => 20,
+	),
+	'colormag_post_meta_section'          => array(
+		'title'    => esc_html__( 'Post Meta', 'colormag' ),
+		'panel'    => 'colormag_content_panel',
+		'priority' => 30,
+	),
+	'colormag_page_section'               => array(
+		'title'    => esc_html__( 'Page', 'colormag' ),
+		'panel'    => 'colormag_content_panel',
+		'priority' => 40,
+	),
 );
 
 colormag_customind()->add_panels( $panel_options_id );
