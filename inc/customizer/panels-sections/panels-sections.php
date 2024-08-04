@@ -79,7 +79,7 @@ $section_option_id = array(
 		'priority' => 30,
 	),
 	'colormag_primary_header_section'     => array(
-		'title'    => esc_html__( 'Primary Header', 'colormag' ),
+		'title'    => esc_html__( 'Main Header', 'colormag' ),
 		'panel'    => 'colormag_header_panel',
 		'priority' => 40,
 	),

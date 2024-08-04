@@ -174,7 +174,7 @@ $options = apply_filters(
 			'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
 			'title'       => esc_html__( 'Learn more', 'colormag' ),
 			'url'         => esc_url( 'https://themegrill.com/colormag-pricing' ),
-			'section'     => 'colormag_top_bar_section',
+			'section'     => 'title_tagline',
 			'priority'    => 100,
 		),
 	)
