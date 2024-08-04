@@ -123,6 +123,16 @@ $section_option_id = array(
 		'panel'    => 'colormag_content_panel',
 		'priority' => 40,
 	),
+	'colormag_footer_column_section'      => array(
+		'title'    => esc_html__( 'Footer Column', 'colormag' ),
+		'panel'    => 'colormag_footer_panel',
+		'priority' => 10,
+	),
+	'colormag_footer_bar_section'         => array(
+		'title'    => esc_html__( 'Footer Bar', 'colormag' ),
+		'panel'    => 'colormag_footer_panel',
+		'priority' => 20,
+	),
 );
 
 colormag_customind()->add_panels( $panel_options_id );

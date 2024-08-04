@@ -20,3 +20,5 @@ require __DIR__ . '/content/blog.php';
 require __DIR__ . '/content/page.php';
 require __DIR__ . '/content/post-meta.php';
 require __DIR__ . '/content/single-post.php';
+require __DIR__ . '/footer/footer-column.php';
+require __DIR__ . '/footer/footer-bar.php';
