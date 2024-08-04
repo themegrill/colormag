@@ -22,3 +22,4 @@ require __DIR__ . '/content/post-meta.php';
 require __DIR__ . '/content/single-post.php';
 require __DIR__ . '/footer/footer-column.php';
 require __DIR__ . '/footer/footer-bar.php';
+require __DIR__ . '/additional/social-icons.php';
