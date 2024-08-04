@@ -23,3 +23,4 @@ require __DIR__ . '/content/single-post.php';
 require __DIR__ . '/footer/footer-column.php';
 require __DIR__ . '/footer/footer-bar.php';
 require __DIR__ . '/additional/social-icons.php';
+require __DIR__ . '/woocommerce/woocomerce.php';
