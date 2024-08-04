@@ -157,6 +157,14 @@ $options = apply_filters(
 				'colormag_enable_top_bar' => true,
 			),
 		),
+		'colormag_top_bar_upgrade'              => array(
+			'type'        => 'customind-upsell',
+			'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
+			'title'       => esc_html__( 'Learn more', 'colormag' ),
+			'url'         => esc_url( 'https://themegrill.com/colormag-pricing' ),
+			'section'     => 'colormag_top_bar_section',
+			'priority'    => 100,
+		),
 	)
 );
 
