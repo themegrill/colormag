@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version TBD - 2024-08-16 =
+* Fix - Compatibility of ColorMag with Elementor Pro.
+
 = Version - 3.1.9 - 2024-06-27 =
 * Option - To change footer column layout.
 * Fix - Link post format while using custom primary color.
