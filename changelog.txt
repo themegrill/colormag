@@ -1,4 +1,16 @@
 == Changelog ==
+= 3.1.10 - 2024-07-23 =
+* Feature - Option to change mobile menu color and typography.
+* Feature - Option to change mobile sub menu background color and typography.
+* Fix     - Header layout 2 style issue.
+* Fix     - WordPress 6.6 issue.
+
+= 3.1.9 - 2024-06-27 =
+* Option - To change footer column layout.
+* Fix - Link post format while using custom primary color.
+* Fix - Primary menu background color on responsive device.
+* Fix - Post format video URL issue.
+
 = 3.1.8 - 2024-04-25 =
 * Fix - `colormag_date_meta_markup` function override.
 
