@@ -323,11 +323,15 @@ function colormag_content_width() {
 			if ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
 				$content_width = 1140; /* pixels */
 			}
-		} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
+		} else {
+			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
+			}
 		}
-	} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
+	} else {
+		if ( 'no_sidebar_full_width' === $layout_meta ) {
 			$content_width = 1140; /* pixels */
+		}
 	}
 }
 
