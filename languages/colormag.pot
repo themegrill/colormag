@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 3.1.9\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-06-27 04:28:45+00:00\n"
+"POT-Creation-Date: 2024-08-23 09:50:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -304,15 +304,16 @@ msgstr ""
 msgid "Footer Bar"
 msgstr ""
 
+#: inc/admin/views/dashbaord.php:177 inc/admin/views/dashbaord.php:220
+#: inc/admin/views/dashbaord.php:229
+msgid "Documentation"
+msgstr ""
+
 #: inc/admin/views/dashbaord.php:205
 msgid ""
 "Explore diverse demos from ColorMag theme to get your site running in no "
 "time! <br> <br> Simply choose the demo that fits your requirements, import "
 "it, and give it some of your personal touch! "
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:220 inc/admin/views/dashbaord.php:229
-msgid "Documentation"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:225
@@ -370,6 +371,10 @@ msgstr ""
 
 #: inc/admin/views/dashbaord.php:324 inc/admin/views/help.php:137
 msgid "Useful Plugins"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:329
+msgid "Everest Forms"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:380 inc/admin/views/help.php:193
