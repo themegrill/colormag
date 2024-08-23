@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.1.9
-Tested up to: 6.5
+Version: 3.1.10
+Tested up to: 6.6
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 3.1.9
+Stable tag: 3.1.10
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,6 +69,15 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version TBD - 2024-08-16 =
+* Fix - Compatibility of ColorMag with Elementor Pro.
+
+= Version - 3.1.10 - 2024-07-23 =
+* Feature - Option to change mobile menu color and typography.
+* Feature - Option to change mobile sub menu background color and typography.
+* Fix     - Header layout 2 style issue.
+* Fix     - WordPress 6.6 issue.
+
 = Version - 3.1.9 - 2024-06-27 =
 * Option - To change footer column layout.
 * Fix - Link post format while using custom primary color.
