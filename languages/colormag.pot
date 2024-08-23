@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 3.1.9\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-06-27 04:28:45+00:00\n"
+"POT-Creation-Date: 2024-08-23 10:29:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:113 inc/admin/views/dashbaord.php:199
+#: inc/admin/class-colormag-dashboard.php:113 inc/admin/views/dashbaord.php:202
 msgid "Starter Templates"
 msgstr ""
 
@@ -256,148 +256,169 @@ msgstr ""
 msgid "Sidebar Options"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:96 inc/admin/views/dashbaord.php:145
+#: inc/admin/views/dashbaord.php:96 inc/admin/views/dashbaord.php:148
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:305
 msgid "Blog"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:124
+#: inc/admin/views/dashbaord.php:115
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:127
 msgid "Premium Features"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:126 inc/admin/views/free-vs-pro.php:294
+#: inc/admin/views/dashbaord.php:129 inc/admin/views/free-vs-pro.php:294
 msgid "Upgrade Now"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:133
+#: inc/admin/views/dashbaord.php:136
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:198
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:46
 msgid "Top Bar"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:137
+#: inc/admin/views/dashbaord.php:140
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:230
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:38
 msgid "Main Header"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:141 inc/colormag-setup.php:39
+#: inc/admin/views/dashbaord.php:144 inc/colormag-setup.php:39
 #: inc/core/class-colormag-after-setup-theme.php:82
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:238
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:43
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:149
+#: inc/admin/views/dashbaord.php:152
 msgid "Meta"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:153
+#: inc/admin/views/dashbaord.php:156
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:348
 #: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:40
 msgid "Footer Column"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:157
+#: inc/admin/views/dashbaord.php:160
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:356
 #: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:40
 msgid "Footer Bar"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:205
+#: inc/admin/views/dashbaord.php:180 inc/admin/views/dashbaord.php:223
+#: inc/admin/views/dashbaord.php:232
+msgid "Documentation"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:208
 msgid ""
 "Explore diverse demos from ColorMag theme to get your site running in no "
 "time! <br> <br> Simply choose the demo that fits your requirements, import "
 "it, and give it some of your personal touch! "
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:220 inc/admin/views/dashbaord.php:229
-msgid "Documentation"
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:225
+#: inc/admin/views/dashbaord.php:228
 msgid ""
 "Stuck due to an issue? Our detailed documentation will surely clear up any "
 "confusions you have!"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:241 inc/admin/views/help.php:79
+#: inc/admin/views/dashbaord.php:244 inc/admin/views/help.php:79
 msgid "Leave us a Review"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:254 inc/admin/views/help.php:92
+#: inc/admin/views/dashbaord.php:257 inc/admin/views/help.php:92
 msgid "Based on 1430+ Reviews"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:261
+#: inc/admin/views/dashbaord.php:264
 #. translators: %s: Theme Name.
 msgid ""
 "What do you think of our theme? Was it a good experience and did it match "
 "your expectations? Let us know so we can improve!"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:267 inc/admin/views/help.php:104
+#: inc/admin/views/dashbaord.php:270 inc/admin/views/help.php:104
 msgid "Submit a Review"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:283 inc/admin/views/help.php:120
+#: inc/admin/views/dashbaord.php:286 inc/admin/views/help.php:120
 msgid "Feature Request"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:290 inc/admin/views/help.php:127
+#: inc/admin/views/dashbaord.php:293 inc/admin/views/help.php:127
 #. translators: %s: Theme Name.
 msgid "Please take a moment to suggest any features that could enhance our product."
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:295 inc/admin/views/help.php:132
+#: inc/admin/views/dashbaord.php:298 inc/admin/views/help.php:132
 msgid "Request a Feature"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:307 inc/admin/views/help.php:33
+#: inc/admin/views/dashbaord.php:310 inc/admin/views/help.php:33
 msgid "Support"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:314
+#: inc/admin/views/dashbaord.php:317
 #. translators: %s: Theme Name.
 msgid ""
 "Get in touch with our support team. You can always submit a support ticket "
 "for help."
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:319
+#: inc/admin/views/dashbaord.php:322
 msgid "Create a Ticket"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:324 inc/admin/views/help.php:137
+#: inc/admin/views/dashbaord.php:327 inc/admin/views/help.php:137
 msgid "Useful Plugins"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:380 inc/admin/views/help.php:193
+#: inc/admin/views/dashbaord.php:332
+msgid "Everest Forms"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:335
+msgid "Form Builder Plugin"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:350
+msgid "BlockArt"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:353
+msgid "Page Builder Plugin"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:383 inc/admin/views/help.php:193
 #: inc/admin/views/products.php:124
 msgid "Activated"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:382 inc/admin/views/help.php:195
+#: inc/admin/views/dashbaord.php:385 inc/admin/views/help.php:195
 #: inc/admin/views/products.php:128
 msgid "Activate"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:385 inc/admin/views/help.php:198
+#: inc/admin/views/dashbaord.php:388 inc/admin/views/help.php:198
 #: inc/admin/views/products.php:133
 msgid "Install"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:408 inc/admin/views/help.php:222
+#: inc/admin/views/dashbaord.php:411 inc/admin/views/help.php:222
 msgid "ThemeGrill Community"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:413
+#: inc/admin/views/dashbaord.php:416
 msgid ""
 "Join our Facebook group filled with ThemeGrill themes users, including "
 "ColorMag users to discuss anything about the theme!"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:416 inc/admin/views/help.php:234
+#: inc/admin/views/dashbaord.php:419 inc/admin/views/help.php:234
 msgid "Join our Facebook Group"
 msgstr ""
 

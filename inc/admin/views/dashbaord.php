@@ -107,11 +107,14 @@ function import_button_html() {
 								<a href="
 								<?php
 								if ( isset( $item['type'] ) ) {
-									echo admin_url( 'customize.php?autofocus[' . $item['type'] .']=' . $item['id'] );
+									echo admin_url( 'customize.php?autofocus[' . $item['type'] . ']=' . $item['id'] );
 								}
 								?>
 								" target="_blank">
-									<?php echo $link_icon . esc_html__( 'Customize', 'colormag' ); ?>
+									<?php
+									echo wp_kses_post( $link_icon ) . ' ' . esc_html__( 'Customize', 'colormag' );
+
+									?>
 								</a>
 							</div>
 							<?php
@@ -173,9 +176,9 @@ function import_button_html() {
 									}
 									?>
 									" target="_blank">
-										<?php
-										echo $link_icon . esc_html__( 'Documentation', 'colormag' );
-										?>
+									<?php
+									echo wp_kses_post( $link_icon ) . ' ' . esc_html__( 'Documentation', 'colormag' );
+									?>
 									</a>
 								</div>
 								<div class="item-content-right">
@@ -226,13 +229,13 @@ function import_button_html() {
 							?>
 						</p>
 						<a href="<?php echo esc_url( 'https://docs.themegrill.com/colormag/' ); ?>"
-						   target="_blank"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
+							target="_blank"><?php esc_html_e( 'Documentation', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox">
 					<h3 class="hndle">
 						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-							 fill="none">
+							fill="none">
 							<path
 								d="M10.5001 1.66699L13.0751 6.88366L18.8334 7.72533L14.6667 11.7837L15.6501 17.517L10.5001 14.8087L5.35008 17.517L6.33341 11.7837L2.16675 7.72533L7.92508 6.88366L10.5001 1.66699Z"
 								stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
@@ -256,7 +259,7 @@ function import_button_html() {
 						<p>
 							<?php
 
-							echo sprintf(
+							printf(
 							/* translators: %s: Theme Name. */
 								esc_html__( 'What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!', 'colormag' ),
 								$theme->Name
@@ -264,41 +267,41 @@ function import_button_html() {
 							?>
 						</p>
 						<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/colormag/reviews/?rate=5#new-post' ); ?>"
-						   target="_blank"><?php esc_html_e( 'Submit a Review', 'colormag' ); ?></a>
+							target="_blank"><?php esc_html_e( 'Submit a Review', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox">
 					<h3 class="hndle">
 						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-							 fill="none">
+							fill="none">
 							<path
 								d="M12.9998 11.667C13.1664 10.8337 13.5831 10.2503 14.2498 9.58366C15.0831 8.83366 15.4998 7.75033 15.4998 6.66699C15.4998 5.34091 14.973 4.06914 14.0353 3.13146C13.0976 2.19378 11.8258 1.66699 10.4998 1.66699C9.17367 1.66699 7.9019 2.19378 6.96422 3.13146C6.02654 4.06914 5.49976 5.34091 5.49976 6.66699C5.49976 7.50033 5.66642 8.50033 6.74976 9.58366C7.33309 10.167 7.83309 10.8337 7.99976 11.667"
 								stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
 								stroke-linejoin="round"/>
 							<path d="M7.99988 15H12.9999" stroke="#2563EB" stroke-width="1.66667"
-								  stroke-linecap="round" stroke-linejoin="round"/>
+									stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M8.83325 18.333H12.1666" stroke="#2563EB" stroke-width="1.66667"
-								  stroke-linecap="round" stroke-linejoin="round"/>
+									stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 						<span><?php esc_html_e( 'Feature Request', 'colormag' ); ?></span>
 					</h3>
 					<div class="inside">
 						<p>
 							<?php
-							echo sprintf(
+							printf(
 							/* translators: %s: Theme Name. */
 								esc_html__( 'Please take a moment to suggest any features that could enhance our product.', 'colormag' ),
 							);
 							?>
 						</p>
 						<a href="<?php echo esc_url( 'https://themegrill.com/contact/#tg-query' ); ?>"
-						   target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
+							target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox">
 					<h3 class="hndle">
 						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-							 fill="none">
+							fill="none">
 							<path
 								d="M3 11.6667H5.5C5.94203 11.6667 6.36595 11.8423 6.67851 12.1548C6.99107 12.4674 7.16667 12.8913 7.16667 13.3333V15.8333C7.16667 16.2754 6.99107 16.6993 6.67851 17.0118C6.36595 17.3244 5.94203 17.5 5.5 17.5H4.66667C4.22464 17.5 3.80072 17.3244 3.48816 17.0118C3.17559 16.6993 3 16.2754 3 15.8333V10C3 8.01088 3.79018 6.10322 5.1967 4.6967C6.60322 3.29018 8.51088 2.5 10.5 2.5C12.4891 2.5 14.3968 3.29018 15.8033 4.6967C17.2098 6.10322 18 8.01088 18 10V15.8333C18 16.2754 17.8244 16.6993 17.5118 17.0118C17.1993 17.3244 16.7754 17.5 16.3333 17.5H15.5C15.058 17.5 14.634 17.3244 14.3215 17.0118C14.0089 16.6993 13.8333 16.2754 13.8333 15.8333V13.3333C13.8333 12.8913 14.0089 12.4674 14.3215 12.1548C14.634 11.8423 15.058 11.6667 15.5 11.6667H18"
 								stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
@@ -309,14 +312,14 @@ function import_button_html() {
 					<div class="inside">
 						<p>
 							<?php
-							echo sprintf(
+							printf(
 							/* translators: %s: Theme Name. */
 								esc_html__( 'Get in touch with our support team. You can always submit a support ticket for help.', 'colormag' ),
 							);
 							?>
 						</p>
 						<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
-						   target="_blank"><?php esc_html_e( 'Create a Ticket', 'colormag' ); ?></a>
+							target="_blank"><?php esc_html_e( 'Create a Ticket', 'colormag' ); ?></a>
 					</div>
 				</div>
 				<div class="postbox cm-useful-plugins">
@@ -326,10 +329,10 @@ function import_button_html() {
 					<?php
 					$plugins = array(
 						array(
-							'name'        => 'Everest Forms',
+							'name'        => esc_html__( 'Everest Forms', 'colormag' ),
 							'file'        => 'everest-forms/everest-forms.php',
 							'slug'        => 'everest-forms',
-							'description' => 'Form Builder Plugin',
+							'description' => esc_html__( 'Form Builder Plugin', 'colormag' ),
 							'color'       => '#5317AA',
 							'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
@@ -344,10 +347,10 @@ function import_button_html() {
 							</svg>',
 						),
 						array(
-							'name'        => 'BlockArt',
+							'name'        => esc_html__( 'BlockArt', 'colormag' ),
 							'file'        => 'blockart-blocks/blockart.php',
 							'slug'        => 'blockart',
-							'description' => 'Page Builder Plugin',
+							'description' => esc_html__( 'Page Builder Plugin', 'colormag' ),
 							'color'       => '#2563EB',
 							'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
