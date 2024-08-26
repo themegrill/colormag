@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.1.9\n"
+"Project-Id-Version: ColorMag 3.1.11\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-06-27 04:28:45+00:00\n"
+"POT-Creation-Date: 2024-08-26 04:23:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -261,6 +261,10 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
+#: inc/admin/views/dashbaord.php:114
+msgid "Customize"
+msgstr ""
+
 #: inc/admin/views/dashbaord.php:124
 msgid "Premium Features"
 msgstr ""
@@ -304,15 +308,16 @@ msgstr ""
 msgid "Footer Bar"
 msgstr ""
 
+#: inc/admin/views/dashbaord.php:177 inc/admin/views/dashbaord.php:220
+#: inc/admin/views/dashbaord.php:229
+msgid "Documentation"
+msgstr ""
+
 #: inc/admin/views/dashbaord.php:205
 msgid ""
 "Explore diverse demos from ColorMag theme to get your site running in no "
 "time! <br> <br> Simply choose the demo that fits your requirements, import "
 "it, and give it some of your personal touch! "
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:220 inc/admin/views/dashbaord.php:229
-msgid "Documentation"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:225
@@ -761,8 +766,10 @@ msgstr ""
 
 #: inc/customizer/class-colormag-customizer-register-sections-panels.php:132
 #: inc/customizer/options/content/class-colormag-customize-blog-options.php:86
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:248
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:325
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:230
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:314
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:420
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:497
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:144
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:246
 msgid "Typography"
@@ -796,6 +803,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:55
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:47
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:56
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:161
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:56
 #: inc/meta-boxes/class-colormag-meta-box-page-settings.php:77
 msgid "General"
@@ -1255,7 +1263,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:74
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:185
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:52
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:161
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:189
 msgid "Style"
 msgstr ""
 
@@ -1265,7 +1273,8 @@ msgstr ""
 #: inc/customizer/options/global/class-colormag-customize-button-options.php:101
 #: inc/customizer/options/global/class-colormag-customize-colors-options.php:162
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:66
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:229
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:211
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:401
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:113
 msgid "Normal"
 msgstr ""
@@ -1296,7 +1305,7 @@ msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1143
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1171
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:197
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:369
 msgid "None"
 msgstr ""
 
@@ -1378,7 +1387,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:252
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:223
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:76
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:364
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:536
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:295
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:75
 msgid "Learn more"
@@ -1399,7 +1408,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:253
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:224
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:77
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:365
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:537
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:296
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:76
 msgid "Unlock more features available in Pro version."
@@ -1564,7 +1573,8 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:88
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:193
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:59
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:297
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:286
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:469
 msgid "Background"
 msgstr ""
 
@@ -1581,7 +1591,8 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:51
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:107
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:117
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:215
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:197
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:387
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:94
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:214
 msgid "Color"
@@ -1803,24 +1814,26 @@ msgstr ""
 msgid "Icon Color"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:183
-msgid "Home Icon/Logo"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:198
-msgid "Home Icon"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:207
-msgid "Main Menu"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:240
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:222
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:412
 msgid "Hover/Selected"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:289
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:278
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:461
 msgid "Sub Menu"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:355
+msgid "Home Icon/Logo"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:370
+msgid "Home Icon"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:379
+msgid "Main Menu"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:43
@@ -2489,6 +2502,12 @@ msgstr ""
 
 #: template-parts/content-page.php:56 template-parts/entry/entry-summary.php:32
 msgid "Pages:"
+msgstr ""
+
+#: template-parts/entry/entry-summary.php:25
+#: template-parts/entry/entry-summary.php:46
+#: template-parts/entry/entry-summary.php:50
+msgid "Read More"
 msgstr ""
 
 #: template-parts/hooks/content/content.php:47
