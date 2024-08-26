@@ -32,33 +32,6 @@ $options = array(
 					'columns'   => 2,
 					'priority'  => 10,
 				),
-			//              'colormag_container_outside_background_divider' => array(
-			//                  'variant' => 'dashed',
-			//                  'type'    => 'customind-divider',
-			//                  'section' => 'colormag_global_container_section',
-			//              ),
-			//              'colormag_container_width_style_heading' => array(
-			//                  'type'    => 'customind-title',
-			//                  'title'   => esc_html__( 'Style', 'colormag' ),
-			//                  'section' => 'colormag_global_container_section',
-			//              ),
-			//              'colormag_container_width'               => array(
-			//                  'default'     => array(
-			//                      'size' => 1170,
-			//                      'unit' => 'px',
-			//                  ),
-			//                  'type'        => 'customind-slider',
-			//                  'title'       => esc_html__( 'Width', 'colormag' ),
-			//                  'section'     => 'colormag_global_container_section',
-			//                  'transport'   => 'postMessage',
-			//                  'units'       => array( 'px' ),
-			//                  'defaultUnit' => 'px',
-			//                  'input_attrs' => array(
-			//                      'min'  => 768,
-			//                      'max'  => 1920,
-			//                      'step' => 1,
-			//                  ),
-			//              ),
 			)
 		),
 		'collapsible'  => apply_filters( 'colormag_container_accordion_collapsible', false ),

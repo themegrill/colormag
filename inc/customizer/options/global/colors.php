@@ -116,10 +116,11 @@ $options = apply_filters(
 						'transport' => 'postMessage',
 					),
 					'colormag_box_shadow_color'   => array(
-						'title'   => esc_html__( 'Box Border Color', 'colormag' ),
-						'default' => '#E4E4E7',
-						'type'    => 'customind-color',
-						'section' => 'colormag_global_colors_section',
+						'title'     => esc_html__( 'Box Border Color', 'colormag' ),
+						'default'   => '#E4E4E7',
+						'transport' => 'postMessage',
+						'type'      => 'customind-color',
+						'section'   => 'colormag_global_colors_section',
 					),
 					'colormag_color_skin_setting' => array(
 						'default' => 'white',
@@ -131,7 +132,7 @@ $options = apply_filters(
 							'dark'  => esc_html__( 'Dark Skin', 'colormag' ),
 						),
 					),
-				),
+				)
 			),
 			'priority'     => 5,
 			'collapsible'  => apply_filters( 'colormag_theme_colors_accordion_collapsible', false ),
