@@ -53,17 +53,21 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 					'title',
 					'meta',
 					'content',
+					'feature_image',
+
 				),
 				'type'     => 'control',
 				'control'  => 'colormag-sortable',
 				'section'  => 'colormag_single_post_section',
 				'choices'  => array(
-					'category'    => esc_attr__( 'Category', 'colormag' ),
-					'title'       => esc_attr__( 'Title', 'colormag' ),
-					'meta'        => esc_attr__( 'Meta Tags', 'colormag' ),
-					'content'     => esc_attr__( 'Content', 'colormag' ),
+					'category'      => esc_attr__( 'Category', 'colormag' ),
+					'title'         => esc_attr__( 'Title', 'colormag' ),
+					'meta'          => esc_attr__( 'Meta Tags', 'colormag' ),
+					'content'       => esc_attr__( 'Content', 'colormag' ),
+					'feature_image' => esc_attr__( 'Featured Image', 'colormag' ),
 				),
 				'priority' => 20,
+
 			),
 
 			/**
@@ -79,28 +83,13 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 			),
 
 			array(
-				'name'     => 'colormag_enable_featured_image',
-				'default'  => true,
+				'name'     => 'colormag_enable_lightbox',
+				'default'  => 0,
 				'type'     => 'control',
 				'control'  => 'colormag-toggle',
-				'label'    => esc_html__( 'Enable', 'colormag' ),
+				'label'    => esc_html__( 'LightBox', 'colormag' ),
 				'section'  => 'colormag_single_post_section',
-				'priority' => 60,
-			),
-
-			array(
-				'name'       => 'colormag_enable_lightbox',
-				'default'    => 0,
-				'type'       => 'control',
-				'control'    => 'colormag-toggle',
-				'label'      => esc_html__( 'LightBox', 'colormag' ),
-				'section'    => 'colormag_single_post_section',
-				'dependency' => array(
-					'colormag_enable_featured_image',
-					'===',
-					true,
-				),
-				'priority'   => 70,
+				'priority' => 70,
 			),
 
 			/**
@@ -164,7 +153,6 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 
 		return $options;
 	}
-
 }
 
 return new ColorMag_Customize_Single_Post_Options();
