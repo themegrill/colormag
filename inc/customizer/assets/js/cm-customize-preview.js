@@ -723,101 +723,6 @@
 					);
 					break;
 
-// 				case "colormag_page_header_background":
-// 					css = colormagGenerateBackgroundCSS(
-// 						".zak-page-header, .zak-container--separate .zak-page-header",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_page_header_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".has-page-header .zak-page-header",
-// 						"padding",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_post_page_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-page-header .zak-page-title, .colormag-single-article .zak-entry-header .entry-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_post_page_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".zak-page-header .zak-page-title, .colormag-single-article .zak-entry-header .entry-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_breadcrumb_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".zak-page-header .breadcrumb-trail ul li",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_breadcrumbs_text_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-page-header .breadcrumb-trail ul li",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_breadcrumb_separator_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-page-header .breadcrumb-trail ul li::after",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_breadcrumbs_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-page-header .breadcrumb-trail ul li a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_breadcrumbs_link_hover_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-page-header .breadcrumb-trail ul li a:hover",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_blog_post_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".entry-title:not(.zak-page-title)",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".zak-secondary .widget .widget-title, .zak-secondary .widget .wp-block-heading",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".zak-secondary .widget, .zak-secondary .widget li a",
-// 						value,
-// 					);
-// 					break;
-
 				case "colormag_footer_background":
 					css = colormagGenerateBackgroundCSS(".cm-footer-cols", value);
 					break;
@@ -826,22 +731,6 @@
 					css = colormagGenerateBackgroundCSS(".cm-footer .cm-upper-footer-cols .widget", value);
 					break;
 
-// 				case "colormag_footer_column_border_top_width":
-// 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-cols",
-// 						"border-top-width",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_column_border_top_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-cols",
-// 						"border-top-color",
-// 						value,
-// 					);
-// 					break;
-//
 				case "colormag_footer_widget_title_color":
 					css = colormagGenerateCommonCSS(
 						".cm-footer-cols .cm-row .cm-widget-title span",
