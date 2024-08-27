@@ -16,11 +16,12 @@ $options = apply_filters(
 						'section' => 'colormag_footer_column_section',
 					),
 					'colormag_main_footer_layout'      => array(
-						'default' => 'layout-1',
-						'type'    => 'customind-select',
-						'title'   => esc_html__( 'Layout', 'zakra' ),
-						'section' => 'colormag_footer_column_section',
-						'choices' => array(
+						'default'   => 'layout-1',
+						'type'      => 'customind-select',
+						'title'     => esc_html__( 'Layout', 'zakra' ),
+						'section'   => 'colormag_footer_column_section',
+						'transport' => 'postMessage',
+						'choices'   => array(
 							'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
 							'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
 						),

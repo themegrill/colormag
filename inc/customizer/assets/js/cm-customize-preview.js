@@ -712,10 +712,17 @@
 					);
 					break;
 
-// 				case "colormag_mobile_menu_typography":
-// 					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
-// 					break;
-//
+				case "colormag_blog_post_title_typography":
+					css = colormagGenerateTypographyCSS(id, ".cm-entry-title", value);
+					break;
+
+				case "colormag_footer_copyright_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-footer-bar",
+						value,
+					);
+					break;
+
 // 				case "colormag_page_header_background":
 // 					css = colormagGenerateBackgroundCSS(
 // 						".zak-page-header, .zak-container--separate .zak-page-header",
@@ -810,11 +817,15 @@
 // 						value,
 // 					);
 // 					break;
-//
-// 				case "colormag_footer_column_background":
-// 					css = colormagGenerateBackgroundCSS(".zak-footer-cols", value);
-// 					break;
-//
+
+				case "colormag_footer_background":
+					css = colormagGenerateBackgroundCSS(".cm-footer-cols", value);
+					break;
+
+					case "colormag_upper_footer_background":
+					css = colormagGenerateBackgroundCSS(".cm-footer .cm-upper-footer-cols .widget", value);
+					break;
+
 // 				case "colormag_footer_column_border_top_width":
 // 					css = colormagGenerateSliderCSS(
 // 						".zak-footer-cols",
@@ -831,13 +842,37 @@
 // 					);
 // 					break;
 //
-// 				case "colormag_footer_column_widget_text_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-footer .zak-footer-cols, .zak-footer .zak-footer-cols p",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
+				case "colormag_footer_widget_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-cols .cm-row .cm-widget-title span",
+						"color",
+						value,
+					);
+					break;
+
+					case "colormag_footer_widget_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-cols .cm-row, .cm-footer-cols .cm-row p",
+						"color",
+						value,
+					);
+					break;
+
+					case "colormag_footer_widget_content_link_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-cols .cm-row a",
+						"color",
+						value,
+					);
+					break;
+
+					case "colormag_footer_widget_content_link_text_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-cols .cm-row a:hover",
+						"color",
+						value,
+					);
+					break;
 //
 // 				case "colormag_footer_column_widget_link_color":
 // 					css = colormagGenerateCommonCSS(
@@ -2224,22 +2259,22 @@
 // 					);
 // 					break;
 //
-// 				case "colormag_footer_copyright_text_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-copyright",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_copyright_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-copyright a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
+				case "colormag_footer_copyright_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-bar-area .cm-footer-bar__2",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_copyright_link_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-bar-area .cm-footer-bar__2 a",
+						"color",
+						value,
+					);
+					break;
+
 // 				case "colormag_footer_copyright_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
 // 						".zak-footer-builder .zak-copyright a:hover",
@@ -2500,57 +2535,35 @@
 	);
 
 	wp.hooks.addAction(
-		"customind.change.colormag_page_header_layout",
+		"customind.change.colormag_footer_bar_alignment",
 		"customind",
-		(value) => {
-			if ("style-1" === value) {
-				$(".zak-page-header")
-					.removeClass("zak-style-2")
-					.removeClass("zak-style-3")
-					.removeClass("zak-style-4")
-					.removeClass("zak-style-5")
-					.addClass("zak-style-1");
-			} else if ("style-2" === value) {
-				$(".zak-page-header")
-					.removeClass("zak-style-1")
-					.removeClass("zak-style-3")
-					.removeClass("zak-style-4")
-					.removeClass("zak-style-5")
-					.addClass("zak-style-2");
-			} else if ("style-3" === value) {
-				$(".zak-page-header")
-					.removeClass("zak-style-1")
-					.removeClass("zak-style-2")
-					.removeClass("zak-style-4")
-					.removeClass("zak-style-5")
-					.addClass("zak-style-3");
-			} else if ("style-4" === value) {
-				$(".zak-page-header")
-					.removeClass("zak-style-1")
-					.removeClass("zak-style-2")
-					.removeClass("zak-style-3")
-					.removeClass("zak-style-5")
-					.addClass("zak-style-4");
-			} else if ("style-5" === value) {
-				$(".zak-page-header")
-					.removeClass("zak-style-1")
-					.removeClass("zak-style-2")
-					.removeClass("zak-style-3")
-					.removeClass("zak-style-4")
-					.addClass("zak-style-5");
+		(alignment) => {
+			var alignment_type = alignment;
+
+			if (alignment_type === 'left') {
+				$('.cm-footer-bar').removeClass('cm-footer-bar-style-2 cm-footer-bar-style-3').addClass('cm-footer-bar-style-1');
+			} else if (alignment_type === 'right') {
+				$('.cm-footer-bar').removeClass('cm-footer-bar-style-1 cm-footer-bar-style-3').addClass('cm-footer-bar-style-2');
+			} else if (alignment_type === 'center') {
+				$('.cm-footer-bar').removeClass('cm-footer-bar-style-1 cm-footer-bar-style-2').addClass('cm-footer-bar-style-3');
 			}
 		},
 	);
 
 	wp.hooks.addAction(
-		"customind.change.colormag_footer_bar_style",
+		"customind.change.colormag_main_footer_layout",
 		"customind",
-		(value) => {
-			if ("style-1" === value) {
-				$(".zak-footer-bar").removeClass("zak-style-2").addClass("zak-style-1");
-			} else if ("style-2" === value) {
-				$(".zak-footer-bar").removeClass("zak-style-1").addClass("zak-style-2");
+		(layout) => {
+			var display_type = layout;
+
+			if (display_type === 'layout-2') {
+				$('#cm-footer').removeClass('colormag-footer--classic-bordered').addClass('colormag-footer--classic');
+			} else if (display_type === 'layout-3') {
+				$('#cm-footer').removeClass('colormag-footer--classic').addClass('colormag-footer--classic-bordered');
+			} else if (display_type === 'layout-1') {
+				$('#cm-footer').removeClass('colormag-footer--classic colormag-footer--classic-bordered');
 			}
 		},
 	);
+
 })(jQuery);
