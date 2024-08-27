@@ -686,6 +686,32 @@
 					);
 					break;
 
+				case "colormag_header_action_icon_color":
+					css = colormagGenerateCommonCSS(
+						".fa.search-top:hover",
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-primary-nav .cm-random-post a:hover > svg, .cm-mobile-nav .cm-random-post a:hover > svg",
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_header_action_icon_hover_color":
+					css = colormagGenerateCommonCSS(
+						".fa.search-top",
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-primary-nav .cm-random-post a svg,.cm-mobile-nav .cm-random-post a svg",
+						"fill",
+						value,
+					);
+					break;
+
 // 				case "colormag_mobile_menu_typography":
 // 					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
 // 					break;
