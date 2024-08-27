@@ -33,6 +33,10 @@ $panel_options_id = array(
 		'title'    => esc_html__( 'Header Builder', 'colormag' ),
 		'priority' => 10,
 	),
+	'colormag_footer_builder'   => array(
+		'title'    => esc_html__( 'Footer Builder', 'colormag' ),
+		'priority' => 10,
+	),
 );
 
 $section_option_id = array(
@@ -239,6 +243,86 @@ $section_option_id = array(
 	'colormag_header_builder_cart'            => array(
 		'title'    => esc_html__( 'Cart', 'colormag' ),
 		'panel'    => 'colormag_header_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_section'         => array(
+		'title'    => esc_html__( 'Footer Builder', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 15,
+	),
+	'colormag_footer_builder_socials'         => array(
+		'title'    => esc_html__( 'Socials', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 45,
+	),
+	'colormag_footer_builder_copyright'       => array(
+		'title'    => esc_html__( 'Copyright', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 45,
+	),
+	'colormag_footer_builder_footer_menu'     => array(
+		'title'    => esc_html__( 'Menu 1', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_footer_menu_2'   => array(
+		'title'    => esc_html__( 'Menu 2', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_widget_1'        => array(
+		'title'    => esc_html__( 'Widget 1', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_widget_2'        => array(
+		'title'    => esc_html__( 'Widget 2', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_widget_3'        => array(
+		'title'    => esc_html__( 'Widget 3', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_widget_4'        => array(
+		'title'    => esc_html__( 'Widget 4', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_widget_5'        => array(
+		'title'    => esc_html__( 'Widget 5', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_widget_6'        => array(
+		'title'    => esc_html__( 'Widget 6', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_top_area'        => array(
+		'title'    => esc_html__( 'Top Area', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_main_area'       => array(
+		'title'    => esc_html__( 'Main Area', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_bottom_area'     => array(
+		'title'    => esc_html__( 'Bottom Area', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_html_1'          => array(
+		'title'    => esc_html__( 'HTML 1', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
+	'colormag_footer_builder_html_2'          => array(
+		'title'    => esc_html__( 'HTML 2', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
 		'priority' => 10,
 	),
 );
