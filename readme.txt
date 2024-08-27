@@ -69,6 +69,10 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version - TBD=
+* Fix - Single Post Post Elements Swap on Feature Image.
+
+
 = Version - 3.1.11 - 2024-08-26 =
 * Fix - Compatibility of ColorMag with Elementor Pro.
 * Fix - Outside container background issue.
