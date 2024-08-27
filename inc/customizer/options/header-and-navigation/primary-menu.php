@@ -61,156 +61,6 @@ $options = apply_filters(
 			),
 			'collapsible'  => apply_filters( 'colormag_primary_menu_accordion_collapsible', false ),
 		),
-		'colormag_mobile_menu_heading'       => array(
-			'type'         => 'customind-accordion',
-			'title'        => esc_html__( 'Mobile Menu', 'colormag' ),
-			'section'      => 'colormag_primary_menu_section',
-			'sub_controls' => apply_filters(
-				'colormag_mobile_menu_sub_controls',
-				array(
-					'colormag_mobile_menu_general_subtitle' => array(
-						'type'    => 'customind-title',
-						'title'   => esc_html__( 'General', 'colormag' ),
-						'section' => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_menu_toggle_icon_color' => array(
-						'title'   => esc_html__( 'Icon Color', 'colormag' ),
-						'default' => '#fff',
-						'type'    => 'customind-color',
-						'section' => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_menu_style_subtitle_divider' => array(
-						'type'    => 'customind-divider',
-						'variant' => 'dashed',
-						'section' => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_menu_style_subtitle' => array(
-						'type'    => 'customind-title',
-						'title'   => esc_html__( 'Style', 'colormag' ),
-						'section' => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_menu_color_group'    => array(
-						'type'         => 'customind-color-group',
-						'title'        => esc_html__( 'Color', 'zakra' ),
-						'section'      => 'colormag_primary_menu_section',
-						'sub_controls' => apply_filters(
-							'colormag_mobile_menu_color_sub_controls',
-							array(
-								'colormag_mobile_menu_text_color' => array(
-									'default'   => '',
-									'type'      => 'customind-color',
-									'title'     => esc_html__( 'Normal', 'zakra' ),
-									'transport' => 'postMessage',
-									'section'   => 'colormag_primary_menu_section',
-								),
-								'colormag_mobile_menu_selected_hovered_text_color' => array(
-									'default'   => '',
-									'type'      => 'customind-color',
-									'title'     => esc_html__( 'Hover/Selected', 'zakra' ),
-									'transport' => 'postMessage',
-									'section'   => 'colormag_primary_menu_section',
-								),
-							),
-						),
-					),
-					'colormag_mobile_menu_typography'     => array(
-						'default'   => array(
-							'font-family' => 'default',
-							'font-weight' => '600',
-							'font-size'   => array(
-								'desktop' => array(
-									'size' => '14',
-									'unit' => 'px',
-								),
-								'tablet'  => array(
-									'size' => '',
-									'unit' => '',
-								),
-								'mobile'  => array(
-									'size' => '',
-									'unit' => '',
-								),
-							),
-						),
-						'type'      => 'customind-typography',
-						'title'     => esc_html__( 'Typography', 'colormag' ),
-						'transport' => 'postMessage',
-						'section'   => 'colormag_primary_menu_section',
-						'condition' => array(
-							'colormag_enable_primary_menu' => true,
-						),
-					),
-					'colormag_mobile_sub_menu_style_subtitle_divider' => array(
-						'type'    => 'customind-divider',
-						'variant' => 'dashed',
-						'section' => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_sub_menu_style_subtitle' => array(
-						'type'    => 'customind-title',
-						'title'   => esc_html__( 'Sub Menu', 'colormag' ),
-						'section' => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_sub_menu_background' => array(
-						'default'   => array(
-							'background-color'      => '#232323',
-							'background-image'      => '',
-							'background-position'   => 'center center',
-							'background-size'       => 'auto',
-							'background-attachment' => 'scroll',
-							'background-repeat'     => 'repeat',
-						),
-						'type'      => 'customind-background',
-						'title'     => esc_html__( 'Background', 'zakra' ),
-						'transport' => 'postMessage',
-						'section'   => 'colormag_primary_menu_section',
-					),
-					'colormag_mobile_sub_menu_typography' => array(
-						'default'   => array(
-							'font-size' => array(
-								'desktop' => array(
-									'size' => '14',
-									'unit' => 'px',
-								),
-								'tablet'  => array(
-									'size' => '',
-									'unit' => '',
-								),
-								'mobile'  => array(
-									'size' => '',
-									'unit' => '',
-								),
-							),
-						),
-						'type'      => 'customind-typography',
-						'title'     => esc_html__( 'Typography', 'zakra' ),
-						'transport' => 'postMessage',
-						'section'   => 'colormag_primary_menu_section',
-					),
-				)
-			),
-			'collapsible'  => apply_filters( 'colormag_mobile_menu_accordion_collapsible', false ),
-		),
-		'colormag_icon_logo_display_heading' => array(
-			'type'         => 'customind-accordion',
-			'title'        => esc_html__( 'Home Icon/Logo', 'colormag' ),
-			'section'      => 'colormag_primary_menu_section',
-			'sub_controls' => apply_filters(
-				'colormag_icon_logo_display_sub_controls',
-				array(
-					'colormag_menu_icon_logo' => array(
-						'default' => 'none',
-						'type'    => 'customind-select',
-						'title'   => esc_html__( 'Home Icon/Logo', 'zakra' ),
-						'section' => 'colormag_primary_menu_section',
-						'choices' => array(
-							'none'      => esc_html__( 'None', 'colormag' ),
-							'home-icon' => esc_html__( 'Home Icon', 'colormag' ),
-						),
-					),
-				)
-			),
-			'collapsible'  => apply_filters( 'colormag_icon_logo_display_accordion_collapsible', false ),
-		),
 		'colormag_main_menu_heading'         => array(
 			'type'         => 'customind-accordion',
 			'title'        => esc_html__( 'Main Menu', 'colormag' ),
@@ -316,6 +166,156 @@ $options = apply_filters(
 				)
 			),
 			'collapsible'  => apply_filters( 'colormag_sub_menu_accordion_collapsible', false ),
+		),
+		'colormag_mobile_menu_heading'       => array(
+			'type'         => 'customind-accordion',
+			'title'        => esc_html__( 'Mobile Menu', 'colormag' ),
+			'section'      => 'colormag_primary_menu_section',
+			'sub_controls' => apply_filters(
+				'colormag_mobile_menu_sub_controls',
+				array(
+					'colormag_mobile_menu_general_subtitle' => array(
+						'type'    => 'customind-title',
+						'title'   => esc_html__( 'General', 'colormag' ),
+						'section' => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_menu_toggle_icon_color' => array(
+						'title'   => esc_html__( 'Icon Color', 'colormag' ),
+						'default' => '#fff',
+						'type'    => 'customind-color',
+						'section' => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_menu_style_subtitle_divider' => array(
+						'type'    => 'customind-divider',
+						'variant' => 'dashed',
+						'section' => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_menu_style_subtitle' => array(
+						'type'    => 'customind-title',
+						'title'   => esc_html__( 'Style', 'colormag' ),
+						'section' => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_menu_color_group'    => array(
+						'type'         => 'customind-color-group',
+						'title'        => esc_html__( 'Color', 'zakra' ),
+						'section'      => 'colormag_primary_menu_section',
+						'sub_controls' => apply_filters(
+							'colormag_mobile_menu_color_sub_controls',
+							array(
+								'colormag_mobile_menu_text_color' => array(
+									'default'   => '',
+									'type'      => 'customind-color',
+									'title'     => esc_html__( 'Normal', 'zakra' ),
+									'transport' => 'postMessage',
+									'section'   => 'colormag_primary_menu_section',
+								),
+								'colormag_mobile_menu_selected_hovered_text_color' => array(
+									'default'   => '',
+									'type'      => 'customind-color',
+									'title'     => esc_html__( 'Hover/Selected', 'zakra' ),
+									'transport' => 'postMessage',
+									'section'   => 'colormag_primary_menu_section',
+								),
+							)
+						),
+					),
+					'colormag_mobile_menu_typography'     => array(
+						'default'   => array(
+							'font-family' => 'default',
+							'font-weight' => '600',
+							'font-size'   => array(
+								'desktop' => array(
+									'size' => '14',
+									'unit' => 'px',
+								),
+								'tablet'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+								'mobile'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+							),
+						),
+						'type'      => 'customind-typography',
+						'title'     => esc_html__( 'Typography', 'colormag' ),
+						'transport' => 'postMessage',
+						'section'   => 'colormag_primary_menu_section',
+						'condition' => array(
+							'colormag_enable_primary_menu' => true,
+						),
+					),
+					'colormag_mobile_sub_menu_style_subtitle_divider' => array(
+						'type'    => 'customind-divider',
+						'variant' => 'dashed',
+						'section' => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_sub_menu_style_subtitle' => array(
+						'type'    => 'customind-title',
+						'title'   => esc_html__( 'Sub Menu', 'colormag' ),
+						'section' => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_sub_menu_background' => array(
+						'default'   => array(
+							'background-color'      => '#232323',
+							'background-image'      => '',
+							'background-position'   => 'center center',
+							'background-size'       => 'auto',
+							'background-attachment' => 'scroll',
+							'background-repeat'     => 'repeat',
+						),
+						'type'      => 'customind-background',
+						'title'     => esc_html__( 'Background', 'zakra' ),
+						'transport' => 'postMessage',
+						'section'   => 'colormag_primary_menu_section',
+					),
+					'colormag_mobile_sub_menu_typography' => array(
+						'default'   => array(
+							'font-size' => array(
+								'desktop' => array(
+									'size' => '14',
+									'unit' => 'px',
+								),
+								'tablet'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+								'mobile'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+							),
+						),
+						'type'      => 'customind-typography',
+						'title'     => esc_html__( 'Typography', 'zakra' ),
+						'transport' => 'postMessage',
+						'section'   => 'colormag_primary_menu_section',
+					),
+				)
+			),
+			'collapsible'  => apply_filters( 'colormag_mobile_menu_accordion_collapsible', false ),
+		),
+		'colormag_icon_logo_display_heading' => array(
+			'type'         => 'customind-accordion',
+			'title'        => esc_html__( 'Home Icon/Logo', 'colormag' ),
+			'section'      => 'colormag_primary_menu_section',
+			'sub_controls' => apply_filters(
+				'colormag_icon_logo_display_sub_controls',
+				array(
+					'colormag_menu_icon_logo' => array(
+						'default' => 'none',
+						'type'    => 'customind-select',
+						'title'   => esc_html__( 'Home Icon/Logo', 'zakra' ),
+						'section' => 'colormag_primary_menu_section',
+						'choices' => array(
+							'none'      => esc_html__( 'None', 'colormag' ),
+							'home-icon' => esc_html__( 'Home Icon', 'colormag' ),
+						),
+					),
+				)
+			),
+			'collapsible'  => apply_filters( 'colormag_icon_logo_display_accordion_collapsible', false ),
 		),
 		'colormag_primary_menu_upgrade'      => array(
 			'type'        => 'customind-upsell',

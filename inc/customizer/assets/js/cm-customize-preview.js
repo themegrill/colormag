@@ -556,83 +556,136 @@
 						value,
 					);
 					break;
-//
-// 				case "colormag_primary_menu_border_bottom_width":
-// 					css = colormagGenerateSliderCSS(
-// 						".zak-header .main-navigation",
-// 						"border-bottom-width",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_primary_menu_border_bottom_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-header .main-navigation",
-// 						"border-bottom-color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_main_menu_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-primary-nav ul li > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a",
-// 						"color",
-// 						value,
-// 					);
-// 					css += colormagGenerateCommonCSS(
-// 						".zak-primary-nav ul li > a .zak-icon, zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
-// 						"fill",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_main_menu_hover_color":
-// 					css = colormagGenerateCommonCSS(
-// 						`.zak-primary-nav ul li:hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-primary-nav ul li:hover > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a`,
-// 						"color",
-// 						value,
-// 					);
-// 					css += colormagGenerateCommonCSS(
-// 						`.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon`,
-// 						"fill",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_main_menu_active_color":
-// 					css = colormagGenerateCommonCSS(
-// 						`.zak-primary-nav ul li:active > a, .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a`,
-// 						"color",
-// 						value,
-// 					);
-// 					css += colormagGenerateCommonCSS(
-// 						`.zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current-menu-ancestor > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current-menu-ancestor > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current-menu-ancestor > a::before`,
-// 						"background-color",
-// 						value,
-// 					);
-// 					css += colormagGenerateCommonCSS(
-// 						`.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li span`,
-// 						"fill",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_main_menu_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".zak-primary-nav ul li a",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_sub_menu_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".zak-primary-nav ul li ul li a",
-// 						value,
-// 					);
-// 					break;
-//
+
+					case "colormag_primary_menu_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-mobile-nav li, #cm-primary-nav, .cm-layout-2 #cm-primary-nav, .cm-header .cm-main-header .cm-primary-nav .cm-row, .cm-home-icon.front_page_on",
+						value,
+					);
+					break;
+
+				case "colormag_primary_menu_top_border_width":
+					css = colormagGenerateSliderCSS(
+						"#cm-primary-nav",
+						"border-top-width",
+						value,
+					);
+					break;
+
+				case "colormag_primary_menu_top_border_color":
+					css = colormagGenerateCommonCSS(
+						"#cm-primary-nav",
+						"border-top-color",
+						value,
+					);
+					break;
+
+				case "colormag_primary_menu_text_color":
+					css = colormagGenerateCommonCSS(
+						`.cm-primary-nav a, .cm-primary-nav ul li ul li a, .cm-primary-nav ul li.current-menu-item ul li a, .cm-primary-nav ul li ul li.current-menu-item a, .cm-primary-nav ul li.current_page_ancestor ul li a, .cm-primary-nav ul li.current-menu-ancestor ul li a, .cm-primary-nav ul li.current_page_item ul li a, .cm-primary-nav li.menu-item-has-children>a::after, .cm-primary-nav li.page_item_has_children>a::after, .cm-layout-2-style-1 .cm-primary-nav a, .cm-layout-2-style-1 .cm-primary-nav ul > li > a`,
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						`.cm-layout-2 .cm-primary-nav .cm-submenu-toggle .cm-icon, .cm-primary-nav .cm-submenu-toggle .cm-icon`,
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_primary_menu_selected_hovered_text_color":
+					css = colormagGenerateCommonCSS(
+						`.cm-primary-nav a:hover, .cm-primary-nav ul li.current-menu-item a, .cm-primary-nav ul li ul li.current-menu-item a, .cm-primary-nav ul li.current_page_ancestor a, .cm-primary-nav ul li.current-menu-ancestor a, .cm-primary-nav ul li.current_page_item a, .cm-primary-nav ul li:hover>a, .cm-primary-nav ul li ul li a:hover, .cm-primary-nav ul li ul li:hover>a, .cm-primary-nav ul li.current-menu-item ul li a:hover, .cm-primary-nav li.page_item_has_children.current-menu-item>a::after, .cm-layout-2-style-1 .cm-primary-nav ul li:hover > a`,
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						`.cm-layout-2 .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon, .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon `,
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_primary_menu_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-primary-nav ul li a",
+						value,
+					);
+					break;
+
+				case "colormag_mobile_menu_toggle_icon_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header .cm-menu-toggle svg, .cm-header .cm-menu-toggle svg",
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_mobile_menu_text_color":
+					css = colormagGenerateCommonCSS(
+						`.cm-mobile-nav a, .cm-mobile-nav ul li ul li a, .cm-mobile-nav ul li.current-menu-item ul li a, .cm-mobile-nav ul li ul li.current-menu-item a, .cm-mobile-nav ul li.current_page_ancestor ul li a, .cm-mobile-nav ul li.current-menu-ancestor ul li a, .cm-mobile-nav ul li.current_page_item ul li a, .cm-mobile-nav li.menu-item-has-children>a::after, .cm-mobile-nav li.page_item_has_children>a::after, .cm-layout-2-style-1 .cm-mobile-nav a, .cm-layout-2-style-1 .cm-mobile-nav ul > li > a`,
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						`.cm-layout-2 .cm-mobile-nav .cm-submenu-toggle .cm-icon, .cm-mobile-nav .cm-submenu-toggle .cm-icon`,
+						"fill",
+						value,
+					);
+					break;
+
+					case "colormag_mobile_menu_selected_hovered_text_color":
+					css = colormagGenerateCommonCSS(
+						`.cm-mobile-nav a:hover, .cm-mobile-nav ul li.current-menu-item a, .cm-mobile-nav ul li ul li.current-menu-item a, .cm-mobile-nav ul li.current_page_ancestor a, .cm-mobile-nav ul li.current-menu-ancestor a, .cm-mobile-nav ul li.current_page_item a, .cm-mobile-nav ul li:hover>a, .cm-mobile-nav ul li ul li a:hover, .cm-mobile-nav ul li ul li:hover>a, .cm-mobile-nav ul li.current-menu-item ul li a:hover, .cm-mobile-nav li.page_item_has_children.current-menu-item>a::after, .cm-layout-2-style-1 .cm-mobile-nav ul li:hover > a`,
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						`.cm-layout-2 .cm-mobile-nav li:hover > .cm-submenu-toggle .cm-icon, .cm-mobile-nav li:hover > .cm-submenu-toggle .cm-icon `,
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_mobile_menu_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-mobile-nav ul li a",
+						value,
+					);
+					break;
+
+					case "colormag_mobile_sub_menu_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-mobile-nav .sub-menu,.cm-mobile-nav .sub-menu li, .cm-mobile-nav .children",
+						value,
+					);
+					break;
+
+				case "colormag_mobile_sub_menu_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-mobile-nav ul li ul li a",
+						value,
+					);
+					break;
+
+				case "colormag_primary_sub_menu_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-primary-nav .sub-menu, .cm-primary-nav .children",
+						value,
+					);
+					break;
+
+				case "colormag_primary_sub_menu_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-primary-nav ul li ul li a",
+						value,
+					);
+					break;
+
 // 				case "colormag_mobile_menu_typography":
 // 					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
 // 					break;
