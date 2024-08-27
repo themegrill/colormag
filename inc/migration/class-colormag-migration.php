@@ -71,7 +71,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				return;
 			}
 
-			$enable_featured_image = get_theme_mod( 'colormag_enable_featured_image', true );
+			$enable_featured_image = get_theme_mod( 'colormag_enable_featured_image' );
 
 			error_log( print_r( $enable_featured_image, true ) );
 
