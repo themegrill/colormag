@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.1.10
+Version: 3.1.11
 Tested up to: 6.6
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 3.1.10
+Stable tag: 3.1.11
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,8 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version TBD - 2024-08-16 =
+= Version - 3.1.11 - 2024-08-26 =
 * Fix - Compatibility of ColorMag with Elementor Pro.
+* Fix - Outside container background issue.
 
 = Version - 3.1.10 - 2024-07-23 =
 * Feature - Option to change mobile menu color and typography.
