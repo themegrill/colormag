@@ -53,6 +53,7 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 					'title',
 					'meta',
 					'content',
+					'feature_image',
 
 				),
 				'type'     => 'control',
