@@ -73,14 +73,6 @@ class ColorMag_Customizer {
 		/**
 		 * Include the required customize options file.
 		 */
-		// Global.
-		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-colors-options.php';
-		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-category-colors-options.php';
-		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-container-options.php';
-		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-sidebar-options.php';
-		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-typography-options.php';
-		//      require COLORMAG_CUSTOMIZER_DIR . '/options/global/class-colormag-customize-button-options.php';
-		//
 		//      // Front Page.
 		//      require COLORMAG_CUSTOMIZER_DIR . '/options/front-page/class-colormag-customize-front-page-general-options.php';
 		//
