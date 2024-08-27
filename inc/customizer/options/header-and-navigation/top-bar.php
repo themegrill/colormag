@@ -46,9 +46,10 @@ $options = apply_filters(
 						),
 					),
 					'colormag_top_bar_background_color' => array(
-						'title'     => esc_html__( 'Color', 'zakra' ),
+						'title'     => esc_html__( 'Background', 'zakra' ),
 						'default'   => '#fff',
 						'type'      => 'customind-color',
+						'transport' => 'postMessage',
 						'section'   => 'colormag_top_bar_section',
 						'priority'  => 30,
 						'condition' => array(

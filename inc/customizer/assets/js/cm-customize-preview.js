@@ -542,1841 +542,1841 @@
 					);
 					break;
 
-				case "colormag_top_bar_color":
+				case "colormag_top_bar_background_color":
 					css = colormagGenerateCommonCSS(
-						".zak-header .zak-top-bar",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_top_bar_background":
-					css = colormagGenerateBackgroundCSS(".zak-header .zak-top-bar", value);
-					break;
-
-				case "colormag_main_header_background_color":
-					css = colormagGenerateBackgroundCSS(
-						".zak-header .zak-main-header",
-						value,
-					);
-					break;
-
-				case "colormag_primary_menu_border_bottom_width":
-					css = colormagGenerateSliderCSS(
-						".zak-header .main-navigation",
-						"border-bottom-width",
-						value,
-					);
-					break;
-
-				case "colormag_primary_menu_border_bottom_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header .main-navigation",
-						"border-bottom-color",
-						value,
-					);
-					break;
-
-				case "colormag_main_menu_color":
-					css = colormagGenerateCommonCSS(
-						".zak-primary-nav ul li > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-primary-nav ul li > a .zak-icon, zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_main_menu_hover_color":
-					css = colormagGenerateCommonCSS(
-						`.zak-primary-nav ul li:hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-primary-nav ul li:hover > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a`,
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						`.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon`,
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_main_menu_active_color":
-					css = colormagGenerateCommonCSS(
-						`.zak-primary-nav ul li:active > a, .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a`,
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						`.zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current-menu-ancestor > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current-menu-ancestor > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current-menu-ancestor > a::before`,
-						"background-color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						`.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li span`,
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_main_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-primary-nav ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_sub_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-primary-nav ul li ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_mobile_menu_typography":
-					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
-					break;
-
-				case "colormag_page_header_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-page-header, .zak-container--separate .zak-page-header",
-						value,
-					);
-					break;
-
-				case "colormag_page_header_padding":
-					css = colormagGenerateDimnesionCSS(
-						".has-page-header .zak-page-header",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_post_page_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-page-header .zak-page-title, .colormag-single-article .zak-entry-header .entry-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_post_page_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-page-header .zak-page-title, .colormag-single-article .zak-entry-header .entry-title",
-						value,
-					);
-					break;
-
-				case "colormag_breadcrumb_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-page-header .breadcrumb-trail ul li",
-						value,
-					);
-					break;
-
-				case "colormag_breadcrumbs_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-page-header .breadcrumb-trail ul li",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_breadcrumb_separator_color":
-					css = colormagGenerateCommonCSS(
-						".zak-page-header .breadcrumb-trail ul li::after",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_breadcrumbs_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-page-header .breadcrumb-trail ul li a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_breadcrumbs_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-page-header .breadcrumb-trail ul li a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_blog_post_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".entry-title:not(.zak-page-title)",
-						value,
-					);
-					break;
-
-				case "colormag_widget_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-secondary .widget .widget-title, .zak-secondary .widget .wp-block-heading",
-						value,
-					);
-					break;
-
-				case "colormag_widget_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-secondary .widget, .zak-secondary .widget li a",
-						value,
-					);
-					break;
-
-				case "colormag_footer_column_background":
-					css = colormagGenerateBackgroundCSS(".zak-footer-cols", value);
-					break;
-
-				case "colormag_footer_column_border_top_width":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-cols",
-						"border-top-width",
-						value,
-					);
-					break;
-
-				case "colormag_footer_column_border_top_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-cols",
-						"border-top-color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_column_widget_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer .zak-footer-cols, .zak-footer .zak-footer-cols p",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_column_widget_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer .zak-footer-cols a, .zak-footer-col .widget ul a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_column_widget_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer .zak-footer-cols a:hover, .zak-footer-col .widget ul a:hover, .zak-footer .zak-footer-cols a:focus",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widgets_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer .zak-footer-cols .widget-title, .zak-footer-cols h1, .zak-footer-cols h2, .zak-footer-cols h3, .zak-footer-cols h4, .zak-footer-cols h5, .zak-footer-cols h6",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widgets_item_border_bottom_width":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-cols ul li, .zak-footer-builder .zak-footer-main-row ul li",
-						"border-bottom-width",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widgets_item_border_bottom_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-cols ul li, .zak-footer-builder .zak-footer-main-row ul li",
-						"border-bottom-color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bar_background":
-					css = colormagGenerateBackgroundCSS(".zak-footer-bar", value);
-					break;
-
-				case "colormag_footer_bar_border_top_width":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-bar",
-						"border-top-width",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bar_border_top_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-bar",
-						"border-top-color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bar_text_color":
-					css = colormagGenerateCommonCSS(".zak-footer-bar", "color", value);
-					break;
-
-				case "colormag_footer_bar_link_color":
-					css = colormagGenerateCommonCSS(".zak-footer-bar a", "color", value);
-					break;
-
-				case "colormag_footer_bar_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-bar a:hover, .zak-footer-bar a:focus",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_scroll_to_top_background":
-					css = colormagGenerateCommonCSS(
-						".zak-scroll-to-top",
+						`.cm-top-bar`,
 						"background-color",
 						value,
 					);
 					break;
-
-				case "colormag_scroll_to_top_hover_background":
-					css = colormagGenerateCommonCSS(
-						".zak-scroll-to-top:hover",
-						"background-color",
-						value,
-					);
-					break;
-
-				case "colormag_scroll_to_top_icon_color":
-					css = colormagGenerateCommonCSS(".zak-scroll-to-top", "color", value);
-					css += colormagGenerateCommonCSS(
-						".zak-scroll-to-top .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_scroll_to_top_icon_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-scroll-to-top:hover",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-scroll-to-top:hover .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				// Builder options.
-				case "colormag_header_top_area_height":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-top-row",
-						"height",
-						value,
-					);
-					break;
-
-				case "colormag_header_top_area_container":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-header-top-row .zak-container",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_top_area_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-header-builder .zak-header-top-row",
-						value,
-					);
-					break;
-
-				case "colormag_header_top_area_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-top-row",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_header_top_area_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-top-row",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-top-row",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_header_top_area_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-top-row",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_top_area_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-top-row",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_height":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-main-row",
-						"height",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_container":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-header-main-row .zak-container",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-header-builder .zak-header-main-row",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-main-row",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-main-row",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-main-row",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-main-row",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_header_main_area_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-main-row",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_area_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-main-row",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_height":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-bottom-row",
-						"height",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_container":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-header-bottom-row .zak-container",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_header_bottom_area_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_bottom_area_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-bottom-row",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_menu_border_bottom_width":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-main-nav",
-						"border-bottom-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_menu_border_bottom_width":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-secondary-nav",
-						"border-bottom-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_tertiary_menu_border_bottom_width":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-tertiary-nav",
-						"border-bottom-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_menu_border_bottom_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-main-nav",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_menu_border_bottom_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_tertiary_menu_border_bottom_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_menu_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-primary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-primary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_menu_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu > li > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_tertiary_menu_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu > li > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_quaternary_menu_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-quaternary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu > li > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-quaternary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_menu_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-primary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_menu_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li:hover > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_tertiary_menu_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li:hover > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_quaternary_menu_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li:hover > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-quaternary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_menu_active_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-primary-nav ul li:active > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-primary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li.current-menu-item .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_menu_active_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav ul li:active > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-secondary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li.current-menu-item .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_tertiary_menu_active_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav ul li:active > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-tertiary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li.current-menu-item .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_quaternary_menu_active_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-quaternary-nav ul li:active > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-quaternary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li.current-menu-item .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_main_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .zak-primary-nav ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .zak-secondary-nav ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_header_tertiary_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .zak-tertiary-nav ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_header_quaternary_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .zak-quaternary-nav ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_header_sub_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .zak-primary-nav ul li ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_header_secondary_sub_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .zak-secondary-nav ul li ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_header_search_icon_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-search .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_search_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-header-builder .zak-main-header.zak-header-search--opened",
-						value,
-					);
-					break;
-
-				case "colormag_header_search_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-search .zak-search-field, .zak-header-builder .zak-header-search .zak-search-field:focus",
-						"color",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-search .zak-icon--close::after , .zak-header-builder .zak-header-search .zak-icon--close::before",
-						"background",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-search .zak-icon--search .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_background_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-						"background-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_background_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover",
-						"background-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_border_radius":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-						"border-radius",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-						"border-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_button_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_1_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-html-1 *",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_1_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-html-1 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_1_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-html-1 a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_1_font_size":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-html-1 *",
-						"font-size",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_1_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-html-1",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_2_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-html-2 *",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_2_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-html-2 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_2_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .zak-html-2 a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_2_font_size":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .zak-html-2 p",
-						"font-size",
-						value,
-					);
-					break;
-
-				case "colormag_header_html_2_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder .zak-html-2",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_height":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-top-row",
-						"height",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_container":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-footer-top-row .zak-container",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_footer_top_area_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_height":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-main-row",
-						"height",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_container":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-footer-main-row .zak-container",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_footer_main_area_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_height":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-bottom-row",
-						"height",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_container":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-footer-bottom-row .zak-container",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_background":
-					css = colormagGenerateBackgroundCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_padding":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						"padding",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_footer_bottom_area_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_site_logo_height":
-					css = colormagGenerateSliderCSS(
-						".site-branding .custom-logo-link img",
-						"max-width",
-						value,
-					);
-					break;
-
-				case "colormag_site_identity_color":
-					css = colormagGenerateCommonCSS(".site-title", "color", value);
+////////////////////////
+// 				case "colormag_main_header_background_color":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-header .zak-main-header",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_primary_menu_border_bottom_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header .main-navigation",
+// 						"border-bottom-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_primary_menu_border_bottom_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header .main-navigation",
+// 						"border-bottom-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_main_menu_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-primary-nav ul li > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-primary-nav ul li > a .zak-icon, zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_main_menu_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						`.zak-primary-nav ul li:hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-primary-nav ul li:hover > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a`,
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						`.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon`,
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_main_menu_active_color":
+// 					css = colormagGenerateCommonCSS(
+// 						`.zak-primary-nav ul li:active > a, .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a`,
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						`.zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-2 ul > li:not(.zak-header-button).current-menu-ancestor > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-3 ul > li:not(.zak-header-button).current-menu-ancestor > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current_page_item > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current_page_ancestor > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current-menu-item > a::before, .zak-primary-nav.zak-layout-1-style-4 ul > li:not(.zak-header-button).current-menu-ancestor > a::before`,
+// 						"background-color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						`.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li span`,
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_main_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-primary-nav ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_sub_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-primary-nav ul li ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_mobile_menu_typography":
+// 					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
+// 					break;
+//
+// 				case "colormag_page_header_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-page-header, .zak-container--separate .zak-page-header",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_page_header_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".has-page-header .zak-page-header",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_post_page_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-page-header .zak-page-title, .colormag-single-article .zak-entry-header .entry-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_post_page_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-page-header .zak-page-title, .colormag-single-article .zak-entry-header .entry-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_breadcrumb_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-page-header .breadcrumb-trail ul li",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_breadcrumbs_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-page-header .breadcrumb-trail ul li",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_breadcrumb_separator_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-page-header .breadcrumb-trail ul li::after",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_breadcrumbs_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-page-header .breadcrumb-trail ul li a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_breadcrumbs_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-page-header .breadcrumb-trail ul li a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_blog_post_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".entry-title:not(.zak-page-title)",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-secondary .widget .widget-title, .zak-secondary .widget .wp-block-heading",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-secondary .widget, .zak-secondary .widget li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_column_background":
+// 					css = colormagGenerateBackgroundCSS(".zak-footer-cols", value);
+// 					break;
+//
+// 				case "colormag_footer_column_border_top_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-cols",
+// 						"border-top-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_column_border_top_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-cols",
+// 						"border-top-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_column_widget_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer .zak-footer-cols, .zak-footer .zak-footer-cols p",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_column_widget_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer .zak-footer-cols a, .zak-footer-col .widget ul a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_column_widget_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer .zak-footer-cols a:hover, .zak-footer-col .widget ul a:hover, .zak-footer .zak-footer-cols a:focus",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widgets_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer .zak-footer-cols .widget-title, .zak-footer-cols h1, .zak-footer-cols h2, .zak-footer-cols h3, .zak-footer-cols h4, .zak-footer-cols h5, .zak-footer-cols h6",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widgets_item_border_bottom_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-cols ul li, .zak-footer-builder .zak-footer-main-row ul li",
+// 						"border-bottom-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widgets_item_border_bottom_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-cols ul li, .zak-footer-builder .zak-footer-main-row ul li",
+// 						"border-bottom-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bar_background":
+// 					css = colormagGenerateBackgroundCSS(".zak-footer-bar", value);
+// 					break;
+//
+// 				case "colormag_footer_bar_border_top_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-bar",
+// 						"border-top-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bar_border_top_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-bar",
+// 						"border-top-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bar_text_color":
+// 					css = colormagGenerateCommonCSS(".zak-footer-bar", "color", value);
+// 					break;
+//
+// 				case "colormag_footer_bar_link_color":
+// 					css = colormagGenerateCommonCSS(".zak-footer-bar a", "color", value);
+// 					break;
+//
+// 				case "colormag_footer_bar_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-bar a:hover, .zak-footer-bar a:focus",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_scroll_to_top_background":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-scroll-to-top",
+// 						"background-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_scroll_to_top_hover_background":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-scroll-to-top:hover",
+// 						"background-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_scroll_to_top_icon_color":
+// 					css = colormagGenerateCommonCSS(".zak-scroll-to-top", "color", value);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-scroll-to-top .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_scroll_to_top_icon_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-scroll-to-top:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-scroll-to-top:hover .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				// Builder options.
+// 				case "colormag_header_top_area_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-top-row",
+// 						"height",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_top_area_container":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-header-top-row .zak-container",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_top_area_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-header-builder .zak-header-top-row",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_top_area_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-top-row",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_top_area_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-top-row",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-top-row",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_header_top_area_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-top-row",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_top_area_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-top-row",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-main-row",
+// 						"height",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_container":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-header-main-row .zak-container",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_area_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-main-row",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-bottom-row",
+// 						"height",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_container":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-header-bottom-row .zak-container",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_bottom_area_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-bottom-row",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_menu_border_bottom_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-main-nav",
+// 						"border-bottom-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_menu_border_bottom_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-secondary-nav",
+// 						"border-bottom-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_tertiary_menu_border_bottom_width":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-tertiary-nav",
+// 						"border-bottom-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_menu_border_bottom_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-main-nav",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_menu_border_bottom_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_tertiary_menu_border_bottom_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_menu_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-primary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-primary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_menu_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu > li > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_tertiary_menu_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu > li > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_quaternary_menu_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-quaternary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu > li > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-quaternary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_menu_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-primary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_menu_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li:hover > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_tertiary_menu_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li:hover > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_quaternary_menu_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li:hover > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-quaternary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_menu_active_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-primary-nav ul li:active > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-primary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li.current-menu-item .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_menu_active_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav ul li:active > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-secondary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li.current-menu-item .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_tertiary_menu_active_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav ul li:active > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-tertiary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li.current-menu-item .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_quaternary_menu_active_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-quaternary-nav ul li:active > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-quaternary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li.current-menu-item .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_main_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .zak-primary-nav ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .zak-secondary-nav ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_tertiary_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .zak-tertiary-nav ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_quaternary_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .zak-quaternary-nav ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_sub_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .zak-primary-nav ul li ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_secondary_sub_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .zak-secondary-nav ul li ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_search_icon_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-search .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_search_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-header-builder .zak-main-header.zak-header-search--opened",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_search_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-search .zak-search-field, .zak-header-builder .zak-header-search .zak-search-field:focus",
+// 						"color",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-search .zak-icon--close::after , .zak-header-builder .zak-header-search .zak-icon--close::before",
+// 						"background",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-search .zak-icon--search .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_background_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
+// 						"background-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_background_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover",
+// 						"background-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_border_radius":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
+// 						"border-radius",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
+// 						"border-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_button_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_1_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-html-1 *",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_1_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-html-1 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_1_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-html-1 a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_1_font_size":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-html-1 *",
+// 						"font-size",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_1_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-html-1",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_2_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-html-2 *",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_2_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-html-2 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_2_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .zak-html-2 a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_2_font_size":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .zak-html-2 p",
+// 						"font-size",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_html_2_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder .zak-html-2",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-top-row",
+// 						"height",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_container":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-footer-top-row .zak-container",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-main-row",
+// 						"height",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_container":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-footer-main-row .zak-container",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-bottom-row",
+// 						"height",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_container":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row .zak-container",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_background":
+// 					css = colormagGenerateBackgroundCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_padding":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						"padding",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_site_logo_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".site-branding .custom-logo-link img",
+// 						"max-width",
+// 						value,
+// 					);
+// 					break;
+//
+				case "colormag_site_title_color":
+					css = colormagGenerateCommonCSS(".cm-site-title a", "color", value);
+					break;
+
+				case "colormag_site_title_hover_color":
+					css = colormagGenerateCommonCSS(".cm-site-title a:hover", "color", value);
 					break;
 
 				case "colormag_site_title_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
-						".site-branding .site-title",
+						".cm-site-title",
 						value,
 					);
 					break;
 
 				case "colormag_site_tagline_color":
-					css = colormagGenerateCommonCSS(".site-description", "color", value);
+					css = colormagGenerateCommonCSS(".cm-site-description", "color", value);
 					break;
 
 				case "colormag_site_tagline_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
-						".site-branding .site-description",
-						value,
-					);
-					break;
-
-				case "colormag_widget_1_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_widget_1_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_widget_1_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .widget.widget-top-bar-col-1-sidebar",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_widget_1_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .widget.widget-top-bar-col-1-sidebar a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_widget_1_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .widget.widget-top-bar-col-1-sidebar",
-						value,
-					);
-					break;
-
-				case "colormag_widget_2_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_widget_2_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_widget_2_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .widget.widget-top-bar-col-2-sidebar",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_widget_2_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .widget.widget-top-bar-col-2-sidebar a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_widget_2_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .widget.widget-top-bar-col-2-sidebar",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_item_color":
-					css = colormagGenerateCommonCSS(".zak-mobile-nav a", "color", value);
-					css += colormagGenerateCommonCSS(
-						".zak-mobile-nav li.page_item_has_children .zak-submenu-toggle .zak-icon, .zak-mobile-nav li.menu-item-has-children .zak-submenu-toggle .zak-icon",
-						"fill",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_item_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-mobile-nav li:hover > a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_item_active_color":
-					css = colormagGenerateCommonCSS(
-						".zak-mobile-nav .current_page_item a, .zak-mobile-nav > .menu ul li.current-menu-item > a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_background":
-					css = colormagGenerateCommonCSS(
-						".zak-mobile-nav, .zak-search-form .zak-search-field",
-						"background-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_item_border_bottom":
-					css = colormagGenerateSliderCSS(
-						".zak-mobile-nav li:not(:last-child)",
-						"border-bottom-width",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_item_border_bottom_style":
-					css = colormagGenerateCommonCSS(
-						".zak-mobile-nav li",
-						"border-bottom-style",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_item_border_bottom_color":
-					css = colormagGenerateCommonCSS(
-						".zak-mobile-nav li",
-						"border-color",
-						value,
-					);
-					break;
-
-				case "colormag_header_mobile_menu_typography":
-					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
-					break;
-
-				case "colormag_footer_html_1_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-html-1 *",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_1_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-html-1 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_1_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-html-1 a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_1_font_size":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-html-1 *",
-						"font-size",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_1_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-html-1",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_2_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-html-2 *",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_2_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-html-2 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_2_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-html-2 a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_2_font_size":
-					css = colormagGenerateSliderCSS(
-						".zak-footer-builder .zak-html-2 *",
-						"font-size",
-						value,
-					);
-					break;
-
-				case "colormag_footer_html_2_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-html-2",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_1_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_1_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_1_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-1",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_1_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-1 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_1_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-1",
-						value,
-					);
-					break;
-				//
-				case "colormag_footer_widget_2_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_2_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_2_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-2",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_2_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-2 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_2_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-2",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_3_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_3_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_3_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-3",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_3_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-3 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_3_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-3",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_4_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_4_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_4_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-4",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_4_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.widget-footer-sidebar-4 a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_4_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.widget-footer-sidebar-4",
-						value,
-					);
-					break;
-
-				case "colormag_footer_menu_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-nav ul li a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_menu_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-nav ul li a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_menu_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .zak-footer-nav ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_footer_menu_2_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-nav-2 ul li a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_menu_2_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-nav-2 ul li a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_menu_2_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .zak-footer-nav-2 ul li a",
-						value,
-					);
-					break;
-
-				case "colormag_footer_copyright_text_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-copyright",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_copyright_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-copyright a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_copyright_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-copyright a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_copyright_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .zak-copyright",
-						value,
-					);
-					break;
-
-				case "colormag_footer_copyright_margin":
-					css = colormagGenerateDimnesionCSS(
-						".zak-footer-builder .zak-copyright",
-						"margin",
-						value,
-					);
-					break;
-
-				case "colormag_header_site_logo_height":
-					css = colormagGenerateSliderCSS(
-						".zak-header-builder .site-branding .custom-logo-link img",
-						"width",
-						value,
-					);
-					break;
-
-				case "colormag_header_site_identity_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .site-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_site_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .site-title",
-						value,
-					);
-					break;
-
-				case "colormag_header_site_tagline_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder .site-description",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_site_tagline_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-header-builder .site-description",
-						value,
-					);
-					break;
-
-				case "colormag_footer_bottom_area_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-bottom-row",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_top_area_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-top-row",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-main-row",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-main-row a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_link_hover_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-main-row a:hover",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_main_area_widget_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .zak-footer-main-row .widget-title, .zak-footer-builder .zak-footer-main-row h1, .zak-footer-builder .zak-footer-main-row h2, .zak-footer-builder .zak-footer-main-row h3, .zak-footer-builder .zak-footer-main-row h4, .zak-footer-builder .zak-footer-main-row h5, .zak-footer-builder .zak-footer-main-row h6",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_header_builder_background":
-					css = colormagGenerateBackgroundCSS(".zak-header-builder", value);
-					break;
-
-				case "colormag_header_builder_border_width":
-					css = colormagGenerateDimnesionCSS(
-						".zak-header-builder",
-						"border-width",
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						".zak-header-builder",
-						"border-style",
-						"solid",
-					);
-					break;
-
-				case "colormag_header_builder_border_color":
-					css = colormagGenerateCommonCSS(
-						".zak-header-builder",
-						"border-color",
-						value,
-					);
-					break;
-				//
-				case "colormag_footer_widget_5_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_5_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_5_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.footer-bar-col-1-sidebar",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_5_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.footer-bar-col-1-sidebar a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_5_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.footer-bar-col-1-sidebar",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_6_title_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_6_title_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_6_content_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.footer-bar-col-2-sidebar",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_6_link_color":
-					css = colormagGenerateCommonCSS(
-						".zak-footer-builder .widget.footer-bar-col-2-sidebar a",
-						"color",
-						value,
-					);
-					break;
-
-				case "colormag_footer_widget_6_content_typography":
-					css = colormagGenerateTypographyCSS(
-						id,
-						".zak-footer-builder .widget.footer-bar-col-2-sidebar",
-						value,
-					);
-					break;
+						".cm-site-description",
+						value,
+					);
+					break;
+
+// 				case "colormag_widget_1_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_1_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_1_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_1_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_1_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_2_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_2_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_2_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_2_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_widget_2_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_item_color":
+// 					css = colormagGenerateCommonCSS(".zak-mobile-nav a", "color", value);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-mobile-nav li.page_item_has_children .zak-submenu-toggle .zak-icon, .zak-mobile-nav li.menu-item-has-children .zak-submenu-toggle .zak-icon",
+// 						"fill",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_item_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-mobile-nav li:hover > a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_item_active_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-mobile-nav .current_page_item a, .zak-mobile-nav > .menu ul li.current-menu-item > a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_background":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-mobile-nav, .zak-search-form .zak-search-field",
+// 						"background-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_item_border_bottom":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-mobile-nav li:not(:last-child)",
+// 						"border-bottom-width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_item_border_bottom_style":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-mobile-nav li",
+// 						"border-bottom-style",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_item_border_bottom_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-mobile-nav li",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_mobile_menu_typography":
+// 					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
+// 					break;
+//
+// 				case "colormag_footer_html_1_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-html-1 *",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_1_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-html-1 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_1_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-html-1 a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_1_font_size":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-html-1 *",
+// 						"font-size",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_1_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-html-1",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_2_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-html-2 *",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_2_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-html-2 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_2_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-html-2 a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_2_font_size":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-footer-builder .zak-html-2 *",
+// 						"font-size",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_html_2_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-html-2",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_1_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_1_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_1_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-1",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_1_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-1 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_1_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-1",
+// 						value,
+// 					);
+// 					break;
+// 				//
+// 				case "colormag_footer_widget_2_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_2_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_2_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-2",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_2_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-2 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_2_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-2",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_3_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_3_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_3_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-3",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_3_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-3 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_3_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-3",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_4_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_4_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_4_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-4",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_4_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.widget-footer-sidebar-4 a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_4_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.widget-footer-sidebar-4",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_menu_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-nav ul li a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_menu_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-nav ul li a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_menu_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .zak-footer-nav ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_menu_2_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-nav-2 ul li a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_menu_2_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-nav-2 ul li a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_menu_2_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .zak-footer-nav-2 ul li a",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_copyright_text_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-copyright",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_copyright_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-copyright a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_copyright_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-copyright a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_copyright_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .zak-copyright",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_copyright_margin":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-footer-builder .zak-copyright",
+// 						"margin",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_site_logo_height":
+// 					css = colormagGenerateSliderCSS(
+// 						".zak-header-builder .site-branding .custom-logo-link img",
+// 						"width",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_site_identity_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .site-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_site_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .site-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_site_tagline_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder .site-description",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_site_tagline_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-header-builder .site-description",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_bottom_area_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_top_area_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-top-row",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-main-row",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-main-row a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_link_hover_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-main-row a:hover",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_main_area_widget_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .zak-footer-main-row .widget-title, .zak-footer-builder .zak-footer-main-row h1, .zak-footer-builder .zak-footer-main-row h2, .zak-footer-builder .zak-footer-main-row h3, .zak-footer-builder .zak-footer-main-row h4, .zak-footer-builder .zak-footer-main-row h5, .zak-footer-builder .zak-footer-main-row h6",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_header_builder_background":
+// 					css = colormagGenerateBackgroundCSS(".zak-header-builder", value);
+// 					break;
+//
+// 				case "colormag_header_builder_border_width":
+// 					css = colormagGenerateDimnesionCSS(
+// 						".zak-header-builder",
+// 						"border-width",
+// 						value,
+// 					);
+// 					css += colormagGenerateCommonCSS(
+// 						".zak-header-builder",
+// 						"border-style",
+// 						"solid",
+// 					);
+// 					break;
+//
+// 				case "colormag_header_builder_border_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-header-builder",
+// 						"border-color",
+// 						value,
+// 					);
+// 					break;
+// 				//
+// 				case "colormag_footer_widget_5_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_5_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_5_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_5_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_5_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_6_title_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_6_title_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_6_content_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_6_link_color":
+// 					css = colormagGenerateCommonCSS(
+// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar a",
+// 						"color",
+// 						value,
+// 					);
+// 					break;
+//
+// 				case "colormag_footer_widget_6_content_typography":
+// 					css = colormagGenerateTypographyCSS(
+// 						id,
+// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar",
+// 						value,
+// 					);
+// 					break;
 			}
 			return css;
 		},
