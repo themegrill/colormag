@@ -92,6 +92,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 				set_theme_mod( 'colormag_single_post_elements', $updated_value );
 			} else {
+				error_log( print_r( '====================', true ) );
 				error_log( print_r( $single_post_elements, true ) );
 				set_theme_mod( 'colormag_single_post_elements', $single_post_elements );
 			}
