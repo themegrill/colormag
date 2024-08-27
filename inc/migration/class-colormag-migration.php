@@ -88,10 +88,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 				$updated_value = array_merge( [ 'feature_image' ], $single_post_elements );
 
-				error_log( print_r( '===========================', true ) );
-				error_log( print_r( $updated_value, true ) );
-
 				set_theme_mod( 'colormag_single_post_elements', $updated_value );
+				remove_theme_mod( 'colormag_enable_featured_image' );
+			} else {
+				set_theme_mod( 'colormag_single_post_elements', $single_post_elements );
 				remove_theme_mod( 'colormag_enable_featured_image' );
 			}
 
