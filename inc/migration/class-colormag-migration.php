@@ -71,8 +71,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			$enable_featured_image = get_theme_mod( 'colormag_enable_featured_image' );
 
-			error_log( print_r( $enable_featured_image, true ) );
-
 			$single_post_elements = get_theme_mod(
 				'colormag_single_post_elements',
 				array(

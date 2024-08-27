@@ -82,16 +82,6 @@ class ColorMag_Customize_Single_Post_Options extends ColorMag_Customize_Base_Opt
 				'priority' => 50,
 			),
 
-			// array(
-			//  'name'     => 'colormag_enable_featured_image',
-			//  'default'  => true,
-			//  'type'     => 'control',
-			//  'control'  => 'colormag-toggle',
-			//  'label'    => esc_html__( 'Enable', 'colormag' ),
-			//  'section'  => 'colormag_single_post_section',
-			//  'priority' => 60,
-			// ),
-
 			array(
 				'name'     => 'colormag_enable_lightbox',
 				'default'  => 0,
