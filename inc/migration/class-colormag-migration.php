@@ -70,7 +70,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 
 			$enable_featured_image = get_theme_mod( 'colormag_enable_featured_image', true );
-			error_log( print_r( $enable_featured_image, true ) );
 
 			$single_post_elements = get_theme_mod(
 				'colormag_single_post_elements',
@@ -81,9 +80,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					'content',
 				)
 			);
+			error_log( print_r( 'ssss', true ) );
+			error_log( print_r( $single_post_elements, true ) );
 
 			if ( $enable_featured_image ) {
-				error_log( print_r( 'ssss', true ) );
+
 				set_theme_mod( 'colormag_single_post_elements', array_merge( 'feature_image', $single_post_elements ) );
 				remove_theme_mod( 'colormag_enable_featured_image' );
 			}
