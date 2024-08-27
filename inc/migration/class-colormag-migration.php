@@ -83,6 +83,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			);
 
 			if ( $enable_featured_image ) {
+				error_log( print_r( 'ssss', true ) );
 				set_theme_mod( 'colormag_single_post_elements', array_merge( 'feature_image', $single_post_elements ) );
 				remove_theme_mod( 'colormag_enable_featured_image' );
 			}
