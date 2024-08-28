@@ -959,3 +959,191 @@ if ( ! function_exists( 'colormag_get_the_title' ) ) :
 		return $title;
 	}
 endif;
+
+function colormag_header_default_builder() {
+	return array(
+		'desktop' => array(
+			'top'    => array(
+				'left'   => array(),
+				'center' => array(),
+				'right'  => array(),
+			),
+			'main'   => array(
+				'left'   => array(
+					'logo',
+				),
+				'center' => array(),
+				'right'  => array(
+					'primary-menu',
+					'search',
+				),
+			),
+			'bottom' => array(
+				'left'   => array(),
+				'center' => array(),
+				'right'  => array(),
+			),
+		),
+		'mobile'  => array(
+			'top'    => array(
+				'left'   => array(),
+				'center' => array(),
+				'right'  => array(),
+			),
+			'main'   => array(
+				'left'   => array(
+					'logo',
+				),
+				'centre' => array(),
+				'right'  => array(
+					'toggle-button',
+				),
+			),
+			'bottom' => array(
+				'left'   => array(),
+				'center' => array(),
+				'right'  => array(),
+			),
+		),
+		'offset'  => array(
+			'mobile-menu',
+		),
+	);
+}
+
+function colormag_get_area_class( $id ) {
+	return str_replace( 'colormag-builder-', '', str_replace( '_', '-', $id ) );
+}
+
+function colormag_render_header_cols( $cols, $cols_area ) {
+	echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $cols_area ) ) . '-col">';
+	foreach ( $cols as $element ) {
+		get_template_part( "template-parts/header-builder-elements/$element", '' );
+	}
+	echo '</div>';
+}
+
+function colormag_header_builder_markup() {
+	$builder = get_theme_mod( 'colormag_header_builder', colormag_header_default_builder() );
+	echo '<header id="cm-masthead" class="cm-header-builder" >';
+	echo '<div class="cm-main-header">';
+	echo '<div class="cm-row cm-desktop-row">';
+	$filter_areas    = function ( $device ) use ( $builder ) {
+		return array_filter(
+			$builder[ $device ],
+			function ( $row ) {
+				$result = false;
+				foreach ( $row as $cols ) {
+					if ( ! empty( $cols ) ) {
+						$result = true;
+						break;
+					}
+				}
+
+				return $result;
+			}
+		);
+	};
+	$desktop_builder = $filter_areas( 'desktop' );
+	$mobile_builder  = $filter_areas( 'mobile' );
+	foreach ( $desktop_builder as $area => $row ) {
+		echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $area ) ) . '-row" >';
+		echo '<div class="cm-container" >';
+		echo '<div class="cm-' . esc_attr( colormag_get_area_class( $area ) ) . '-row">';
+		foreach ( $row as $cols_area => $cols ) {
+			colormag_render_header_cols( $cols, $cols_area );
+		}
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
+	echo '</div>';
+	echo '<div class="cm-row cm-mobile-row">';
+	foreach ( $mobile_builder as $area => $row ) {
+		echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $area ) ) . '-row" >';
+		echo '<div class="cm-container" >';
+		echo '<div class="cm-' . esc_attr( colormag_get_area_class( $area ) ) . '-row">';
+		foreach ( $row as $cols_area => $cols ) {
+			colormag_render_header_cols( $cols, $cols_area );
+		}
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
+	echo '</div>';
+	echo '</div>';
+	echo '</header>';
+}
+
+// Footer builder markup.
+function colormag_footer_builder_default() {
+	return array(
+		'desktop' => array(
+			'top'    => array(
+				'top-1' => array(),
+				'top-2' => array(),
+				'top-3' => array(),
+				'top-4' => array(),
+				'top-5' => array(),
+			),
+			'main'   => array(
+				'main-1' => array(),
+				'main-2' => array(),
+				'main-3' => array(),
+				'main-4' => array(),
+				'main-5' => array(),
+			),
+			'bottom' => array(
+				'bottom-1' => array(),
+				'bottom-2' => array(),
+				'bottom-3' => array(),
+				'bottom-4' => array(),
+				'bottom-5' => array( 'copyright' ),
+			),
+		),
+		'offset'  => array(
+			'mobile-menu',
+		),
+	);
+}
+
+function colormag_footer_get_area_class( $id ) {
+	return str_replace( 'colormag-builder-', '', str_replace( '_', '-', $id ) );
+}
+
+function colormag_render_footer_cols( $cols, $cols_area ) {
+	echo '<div class="cm-footer-' . esc_attr( colormag_footer_get_area_class( $cols_area ) ) . '-col">';
+	foreach ( $cols as $element ) {
+		get_template_part( "template-parts/footer-builder-elements/$element", '' );
+	}
+	echo '</div>';
+}
+
+function colormag_footer_builder_markup() {
+	$footer_builder = get_theme_mod( 'colormag_footer_builder', colormag_footer_builder_default() );
+
+	if ( empty( $footer_builder ) ) {
+		return;
+	}
+	echo '<footer id="cm-footer" class="cm-footer cm-footer-builder' . colormag_footer_class() . '">';
+	echo '<div class="cm-row cm-footer-desktop-row">';
+	foreach ( $footer_builder['desktop'] as $area => $row ) {
+		echo '<div class="cm-footer-' . esc_attr( colormag_footer_get_area_class( $area ) ) . '-row" >';
+		echo '<div class="cm-container" >';
+		echo '<div class="cm-' . esc_attr( colormag_footer_get_area_class( $area ) ) . '-row">';
+		$i       = 1;
+		$top_row = get_theme_mod( 'colormag_footer_' . $area . '_area_cols', 3 );
+
+		foreach ( $row as $cols_area => $cols ) {
+			if ( $i <= $top_row ) {
+				colormag_render_footer_cols( $cols, $cols_area );
+			}
+			++$i;
+		}
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
+	echo '</div>';
+	echo '</footer>';
+}
