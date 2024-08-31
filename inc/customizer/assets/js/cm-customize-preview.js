@@ -762,6 +762,18 @@
 						value,
 					);
 					break;
+
+				case "colormag_date_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .date-in-header",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_date_typography":
+					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .date-in-header", value);
+					break;
 //
 // 				case "colormag_footer_column_widget_link_color":
 // 					css = colormagGenerateCommonCSS(

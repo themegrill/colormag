@@ -1428,6 +1428,7 @@ class ColorMag_Dynamic_CSS {
 
 		// Add the custom CSS rendered dynamically, which is static.
 		$parse_css .= self::render_custom_output();
+		$parse_css .= self::render_builder_output($parse_css);
 
 		$parse_css .= $dynamic_css;
 
@@ -1528,5 +1529,76 @@ class ColorMag_Dynamic_CSS {
 		$parse_wc_css .= colormag_parse_css( '#207daf', $wc_primary_color, $wc_primary_color_css );
 
 		return $parse_wc_css;
+	}
+
+	/**
+	 * Return dynamic CSS output.
+	 *
+	 * @param string $dynamic_css Dynamic CSS.
+	 * @param string $dynamic_css_filtered Dynamic CSS Filters.
+	 *
+	 * @return string Generated CSS.
+	 */
+	public static function render_builder_output( $dynamic_css, $dynamic_css_filtered = '' ) {
+
+		// Generate dynamic CSS.
+		$parse_builder_css = $dynamic_css;
+
+		$date_color = get_theme_mod('colormag_date_color', '');
+
+		$date_color_css = array(
+			'.cm-header-builder .date-in-header' => array(
+				'color' => esc_html( $date_color ),
+			),
+		);
+		$parse_builder_css           .= colormag_parse_css( '', $date_color, $date_color_css );
+
+		$date_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => 'regular',
+			'subsets'        => array( 'latin' ),
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '-',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '-',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+		$date_typography             = get_theme_mod( 'colormag_date_typography', $date_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
+			$date_typography_default,
+			$date_typography,
+			'.cm-header-builder .date-in-header',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		return $parse_builder_css;
 	}
 }
