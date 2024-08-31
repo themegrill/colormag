@@ -973,13 +973,12 @@ function colormag_header_default_builder() {
 					'logo',
 				),
 				'center' => array(),
-				'right'  => array(
-					'primary-menu',
-					'search',
-				),
+				'right'  => array(),
 			),
 			'bottom' => array(
-				'left'   => array(),
+				'left'   => array(
+					'primary-menu',
+				),
 				'center' => array(),
 				'right'  => array(),
 			),

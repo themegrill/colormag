@@ -11,17 +11,26 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<nav id="cm-primary-nav" class="">
+<nav id="cm-primary-nav" class="cm-primary-nav">
 	<?php
-	wp_nav_menu(
-		array(
-			'theme_location' => 'menu-primary',
-			'menu_id'        => 'cm-primary-menu',
-			'menu_class'     => 'cm-primary-menu',
-			'container'      => '',
-			'fallback_cb'    => 'colormag_menu_fallback',
-		)
-	);
+	if ( has_nav_menu( 'primary' ) ) {
+		wp_nav_menu(
+			array(
+				'theme_location'  => 'primary',
+				'container_class' => 'cm-menu-primary-container',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			)
+		);
+	} else {
+		require get_template_directory() . '/inc/class-colormag-walker-page.php';
+		wp_page_menu(
+			array(
+				'walker'             => new Colormag_Walker_Page(),
+				'has_children_class' => 'menu-item-has-children',
+				'current_class'      => 'current-menu-item',
+			)
+		);
+	}
 	?>
 </nav><!-- #cm-primary-nav -->
 
