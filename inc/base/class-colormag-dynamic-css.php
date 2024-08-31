@@ -1599,6 +1599,69 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		$news_ticker_color = get_theme_mod('colormag_news_ticker_color', '');
+
+		$news_ticker_color_css = array(
+			'.cm-header-builder .breaking-news-latest' => array(
+				'color' => esc_html( $news_ticker_color ),
+			),
+		);
+		$parse_builder_css           .= colormag_parse_css( '', $news_ticker_color, $news_ticker_color_css );
+
+		$news_ticker_link_color = get_theme_mod('colormag_news_ticker_link_color', '');
+		$news_ticker_link_color_css = array(
+			'.cm-header-builder .newsticker li a' => array(
+				'color' => esc_html( $news_ticker_link_color ),
+			),
+		);
+		$parse_builder_css           .= colormag_parse_css( '', $news_ticker_link_color, $news_ticker_link_color_css );
+
+		$news_ticker_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => 'regular',
+			'subsets'        => array( 'latin' ),
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '-',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '-',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+		$news_ticker_typography             = get_theme_mod( 'colormag_news_ticker_typography', $news_ticker_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
+			$news_ticker_typography_default,
+			$news_ticker_typography,
+			'.cm-header-builder .breaking-news-latest',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
 		return $parse_builder_css;
 	}
 }

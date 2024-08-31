@@ -250,6 +250,11 @@ $section_option_id = array(
 		'panel'    => 'colormag_header_builder',
 		'priority' => 10,
 	),
+	'colormag_header_builder_news_ticker'     => array(
+		'title'    => esc_html__( 'News Ticker', 'colormag' ),
+		'panel'    => 'colormag_header_builder',
+		'priority' => 10,
+	),
 	'colormag_footer_builder_section'         => array(
 		'title'    => esc_html__( 'Footer Builder', 'colormag' ),
 		'panel'    => 'colormag_footer_builder',

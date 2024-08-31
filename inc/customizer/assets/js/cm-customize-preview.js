@@ -771,8 +771,28 @@
 					);
 					break;
 
+					case "colormag_news_ticker_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .breaking-news-latest",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_news_ticker_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .newsticker li a",
+						"color",
+						value,
+					);
+					break;
+
 				case "colormag_date_typography":
 					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .date-in-header", value);
+					break;
+
+				case "colormag_news_ticker_typography":
+					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .breaking-news-latest", value);
 					break;
 //
 // 				case "colormag_footer_column_widget_link_color":

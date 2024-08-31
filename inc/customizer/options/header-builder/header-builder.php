@@ -72,6 +72,11 @@ function customind_get_header_components() {
 					'section' => 'colormag_header_builder_date',
 					'id'      => 'date',
 				),
+				array(
+					'name'    => __( 'News Ticker', 'colormag' ),
+					'section' => 'colormag_header_builder_news_ticker',
+					'id'      => 'news-ticker',
+				),
 			)
 		),
 		'mobile'  => array_filter(
@@ -147,6 +152,11 @@ function customind_get_header_components() {
 					'name'    => __( 'Date', 'colormag' ),
 					'section' => 'colormag_header_builder_date',
 					'id'      => 'date',
+				),
+				array(
+					'name'    => __( 'News Ticker', 'colormag' ),
+					'section' => 'colormag_header_builder_news_ticker',
+					'id'      => 'news-ticker',
 				),
 			)
 		),

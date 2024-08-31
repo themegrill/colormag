@@ -43,6 +43,7 @@ require __DIR__ . '/header-builder/widget-1.php';
 require __DIR__ . '/header-builder/widget-2.php';
 require __DIR__ . '/header-builder/logo.php';
 require __DIR__ . '/header-builder/date.php';
+require __DIR__ . '/header-builder/news-ticker.php';
 require __DIR__ . '/footer-builder/top-area.php';
 require __DIR__ . '/footer-builder/main-area.php';
 require __DIR__ . '/footer-builder/bottom-area.php';
