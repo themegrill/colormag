@@ -13,7 +13,6 @@ $args = array(
 );
 
 $get_featured_posts = new WP_Query( $args );
-error_log( print_r( $get_featured_posts, true ) );
 ?>
 
 	<div class="breaking-news">
