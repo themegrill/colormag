@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<nav id="cm-primary-nav" class="<?php colormag_css_class( 'colormag_nav_class' ); ?> <?php colormag_primary_menu_class(); ?>">
+<nav id="cm-primary-nav" class="">
 	<?php
 	wp_nav_menu(
 		array(

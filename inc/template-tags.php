@@ -1094,11 +1094,11 @@ function colormag_footer_builder_default() {
 				'main-5' => array(),
 			),
 			'bottom' => array(
-				'bottom-1' => array(),
+				'bottom-1' => array( 'copyright' ),
 				'bottom-2' => array(),
 				'bottom-3' => array(),
 				'bottom-4' => array(),
-				'bottom-5' => array( 'copyright' ),
+				'bottom-5' => array(),
 			),
 		),
 		'offset'  => array(
@@ -1125,7 +1125,7 @@ function colormag_footer_builder_markup() {
 	if ( empty( $footer_builder ) ) {
 		return;
 	}
-	echo '<footer id="cm-footer" class="cm-footer cm-footer-builder' . colormag_footer_class() . '">';
+	echo '<footer id="cm-footer" class="cm-footer cm-footer-builder">';
 	echo '<div class="cm-row cm-footer-desktop-row">';
 	foreach ( $footer_builder['desktop'] as $area => $row ) {
 		echo '<div class="cm-footer-' . esc_attr( colormag_footer_get_area_class( $area ) ) . '-row" >';

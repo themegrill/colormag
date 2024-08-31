@@ -18,14 +18,12 @@ wp_nav_menu(
 		'container'      => '',
 
 		'fallback_cb'    => function () {
-			require get_template_directory() . '/inc/class-zakra-walker-page.php';
 			$output = '<ul id="cm-mobile-menu" class="cm-mobile-menu">';
 
 			$output .= wp_list_pages(
 				array(
 					'echo'               => false,
 					'title_li'           => false,
-					'walker'             => new Zakra_Walker_Page(),
 					'has_children_class' => 'menu-item-has-children',
 					'current_class'      => 'current-menu-item',
 				)
