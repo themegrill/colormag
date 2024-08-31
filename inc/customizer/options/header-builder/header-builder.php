@@ -67,6 +67,11 @@ function customind_get_header_components() {
 					'section' => 'colormag_header_builder_socials',
 					'id'      => 'socials',
 				),
+				array(
+					'name'    => __( 'Date', 'colormag' ),
+					'section' => 'colormag_header_builder_date',
+					'id'      => 'date',
+				),
 			)
 		),
 		'mobile'  => array_filter(
@@ -137,6 +142,11 @@ function customind_get_header_components() {
 					'name'    => __( 'Toggle Button', 'colormag' ),
 					'section' => 'colormag_header_builder_toggle_button',
 					'id'      => 'toggle-button',
+				),
+				array(
+					'name'    => __( 'Date', 'colormag' ),
+					'section' => 'colormag_header_builder_date',
+					'id'      => 'date',
 				),
 			)
 		),

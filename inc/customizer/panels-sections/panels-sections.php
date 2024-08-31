@@ -245,6 +245,11 @@ $section_option_id = array(
 		'panel'    => 'colormag_header_builder',
 		'priority' => 10,
 	),
+	'colormag_header_builder_date'            => array(
+		'title'    => esc_html__( 'Date', 'colormag' ),
+		'panel'    => 'colormag_header_builder',
+		'priority' => 10,
+	),
 	'colormag_footer_builder_section'         => array(
 		'title'    => esc_html__( 'Footer Builder', 'colormag' ),
 		'panel'    => 'colormag_footer_builder',
