@@ -1662,6 +1662,66 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Header html 1 color.
+		$header_html_1_text_color     = get_theme_mod( 'colormag_header_html_1_text_color', '' );
+		$header_html_1_text_color_css = array(
+			'.cm-header-builder .cm-html-1 *' => array(
+				'color' => esc_html( $header_html_1_text_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $header_html_1_text_color, $header_html_1_text_color_css );
+
+		// Header html 1 link color.
+		$header_html_1_link_color     = get_theme_mod( 'colormag_header_html_1_link_color', '' );
+		$header_html_1_link_color_css = array(
+			'.cm-header-builder .cm-html-1 a' => array(
+				'color' => esc_html( $header_html_1_link_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $header_html_1_link_color, $header_html_1_link_color_css );
+
+		// Header html 1 link hover color.
+		$header_html_1_link_hover_color     = get_theme_mod( 'colormag_header_html_1_link_hover_color', '' );
+		$header_html_1_link_hover_color_css = array(
+			'.cm-header-builder .cm-html-1 a:hover' => array(
+				'color' => esc_html( $header_html_1_link_hover_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $header_html_1_link_hover_color, $header_html_1_link_hover_color_css );
+
+		// Header html 1 font size.
+		$header_html_1_font_size_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+
+		$header_html_1_font_size = get_theme_mod( 'colormag_header_html_1_font_size', $header_html_1_font_size_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_html_1_font_size_default,
+			$header_html_1_font_size,
+			'.cm-header-builder .cm-html-1 *',
+			'font-size'
+		);
+
+		// Header html 1 margin.
+		$header_html_1_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$header_html_1_margin = get_theme_mod( 'colormag_header_html_1_margin', $header_html_1_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_html_1_margin_default,
+			$header_html_1_margin,
+			'.cm-header-builder .cm-html-1',
+			'margin'
+		);
+
 		return $parse_builder_css;
 	}
 }

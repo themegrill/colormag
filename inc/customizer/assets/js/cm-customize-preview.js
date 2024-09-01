@@ -794,6 +794,46 @@
 				case "colormag_news_ticker_typography":
 					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .breaking-news-latest", value);
 					break;
+
+				case "colormag_header_html_1_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-html-1 *",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_html_1_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-html-1 a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_html_1_link_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-html-1 a:hover",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_html_1_font_size":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-html-1 *",
+						"font-size",
+						value,
+					);
+					break;
+
+				case "colormag_header_html_1_margin":
+					css = colormagGenerateDimnesionCSS(
+						".cm-header-builder .cm-html-1",
+						"margin",
+						value,
+					);
+					break;
 //
 // 				case "colormag_footer_column_widget_link_color":
 // 					css = colormagGenerateCommonCSS(
