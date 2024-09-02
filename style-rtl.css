@@ -931,6 +931,10 @@ table td {
 	border-width: 0 0 1px 0;
 }
 
+.cm-header-builder .cm-header-button a {
+	font-weight: 400;
+}
+
 .cm-header-builder .cm-row {
 	display: block;
 }

@@ -408,7 +408,7 @@
 		return css;
 	}
 
-	function colormagGenerateDimnesionCSS(selector, property, value) {
+	function colormagGenerateDimensionCSS(selector, property, value) {
 		let topCSS = value.top ? value.top : 0,
 			rightCSS = value.right ? value.right : 0,
 			bottomCSS = value.bottom ? value.bottom : 0,
@@ -527,7 +527,7 @@
 					break;
 
 				case "colormag_button_dimension_padding":
-					css = colormagGenerateDimnesionCSS(
+					css = colormagGenerateDimensionCSS(
 						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .wp-block-button .wp-block-button__link`,
 						"padding",
 						value,
@@ -828,7 +828,7 @@
 					break;
 
 				case "colormag_header_html_1_margin":
-					css = colormagGenerateDimnesionCSS(
+					css = colormagGenerateDimensionCSS(
 						".cm-header-builder .cm-html-1",
 						"margin",
 						value,
@@ -837,7 +837,7 @@
 //
 // 				case "colormag_footer_column_widget_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer .zak-footer-cols a, .zak-footer-col .widget ul a",
+// 						".cm-footer .cm-footer-cols a, .cm-footer-col .widget ul a",
 // 						"color",
 // 						value,
 // 					);
@@ -845,7 +845,7 @@
 //
 // 				case "colormag_footer_column_widget_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer .zak-footer-cols a:hover, .zak-footer-col .widget ul a:hover, .zak-footer .zak-footer-cols a:focus",
+// 						".cm-footer .cm-footer-cols a:hover, .cm-footer-col .widget ul a:hover, .cm-footer .cm-footer-cols a:focus",
 // 						"color",
 // 						value,
 // 					);
@@ -853,7 +853,7 @@
 //
 // 				case "colormag_footer_widgets_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer .zak-footer-cols .widget-title, .zak-footer-cols h1, .zak-footer-cols h2, .zak-footer-cols h3, .zak-footer-cols h4, .zak-footer-cols h5, .zak-footer-cols h6",
+// 						".cm-footer .cm-footer-cols .widget-title, .cm-footer-cols h1, .cm-footer-cols h2, .cm-footer-cols h3, .cm-footer-cols h4, .cm-footer-cols h5, .cm-footer-cols h6",
 // 						"color",
 // 						value,
 // 					);
@@ -861,7 +861,7 @@
 //
 // 				case "colormag_footer_widgets_item_border_bottom_width":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-cols ul li, .zak-footer-builder .zak-footer-main-row ul li",
+// 						".cm-footer-cols ul li, .cm-footer-builder .cm-footer-main-row ul li",
 // 						"border-bottom-width",
 // 						value,
 // 					);
@@ -869,19 +869,19 @@
 //
 // 				case "colormag_footer_widgets_item_border_bottom_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-cols ul li, .zak-footer-builder .zak-footer-main-row ul li",
+// 						".cm-footer-cols ul li, .cm-footer-builder .cm-footer-main-row ul li",
 // 						"border-bottom-color",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_bar_background":
-// 					css = colormagGenerateBackgroundCSS(".zak-footer-bar", value);
+// 					css = colormagGenerateBackgroundCSS(".cm-footer-bar", value);
 // 					break;
 //
 // 				case "colormag_footer_bar_border_top_width":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-bar",
+// 						".cm-footer-bar",
 // 						"border-top-width",
 // 						value,
 // 					);
@@ -889,23 +889,23 @@
 //
 // 				case "colormag_footer_bar_border_top_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-bar",
+// 						".cm-footer-bar",
 // 						"border-top-color",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_bar_text_color":
-// 					css = colormagGenerateCommonCSS(".zak-footer-bar", "color", value);
+// 					css = colormagGenerateCommonCSS(".cm-footer-bar", "color", value);
 // 					break;
 //
 // 				case "colormag_footer_bar_link_color":
-// 					css = colormagGenerateCommonCSS(".zak-footer-bar a", "color", value);
+// 					css = colormagGenerateCommonCSS(".cm-footer-bar a", "color", value);
 // 					break;
 //
 // 				case "colormag_footer_bar_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-bar a:hover, .zak-footer-bar a:focus",
+// 						".cm-footer-bar a:hover, .cm-footer-bar a:focus",
 // 						"color",
 // 						value,
 // 					);
@@ -913,7 +913,7 @@
 //
 // 				case "colormag_scroll_to_top_background":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-scroll-to-top",
+// 						".cm-scroll-to-top",
 // 						"background-color",
 // 						value,
 // 					);
@@ -921,16 +921,16 @@
 //
 // 				case "colormag_scroll_to_top_hover_background":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-scroll-to-top:hover",
+// 						".cm-scroll-to-top:hover",
 // 						"background-color",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_scroll_to_top_icon_color":
-// 					css = colormagGenerateCommonCSS(".zak-scroll-to-top", "color", value);
+// 					css = colormagGenerateCommonCSS(".cm-scroll-to-top", "color", value);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-scroll-to-top .zak-icon",
+// 						".cm-scroll-to-top .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -938,12 +938,12 @@
 //
 // 				case "colormag_scroll_to_top_icon_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-scroll-to-top:hover",
+// 						".cm-scroll-to-top:hover",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-scroll-to-top:hover .zak-icon",
+// 						".cm-scroll-to-top:hover .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -952,7 +952,7 @@
 // 				// Builder options.
 // 				case "colormag_header_top_area_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-top-row",
+// 						".cm-header-builder .cm-top-row",
 // 						"height",
 // 						value,
 // 					);
@@ -960,7 +960,7 @@
 //
 // 				case "colormag_header_top_area_container":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-header-top-row .zak-container",
+// 						".cm-header-builder .cm-header-top-row .cm-container",
 // 						"max-width",
 // 						value,
 // 					);
@@ -968,27 +968,27 @@
 //
 // 				case "colormag_header_top_area_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-header-builder .zak-header-top-row",
+// 						".cm-header-builder .cm-header-top-row",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_top_area_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-top-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-top-row",
 // 						"padding",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_top_area_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-top-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-top-row",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-top-row",
+// 						".cm-header-builder .cm-header-top-row",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -996,7 +996,7 @@
 //
 // 				case "colormag_header_top_area_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-top-row",
+// 						".cm-header-builder .cm-header-top-row",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1004,7 +1004,7 @@
 //
 // 				case "colormag_header_top_area_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-top-row",
+// 						".cm-header-builder .cm-header-top-row",
 // 						"color",
 // 						value,
 // 					);
@@ -1012,7 +1012,7 @@
 //
 // 				case "colormag_header_main_area_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-main-row",
+// 						".cm-header-builder .cm-main-row",
 // 						"height",
 // 						value,
 // 					);
@@ -1020,7 +1020,7 @@
 //
 // 				case "colormag_header_main_area_container":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-header-main-row .zak-container",
+// 						".cm-header-builder .cm-header-main-row .cm-container",
 // 						"max-width",
 // 						value,
 // 					);
@@ -1028,35 +1028,35 @@
 //
 // 				case "colormag_header_main_area_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 						".cm-header-builder .cm-header-main-row",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_main_area_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-main-row",
 // 						"padding",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_main_area_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-main-row",
 // 						"margin",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_main_area_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-main-row",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 						".cm-header-builder .cm-header-main-row",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -1064,7 +1064,7 @@
 //
 // 				case "colormag_header_main_area_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 						".cm-header-builder .cm-header-main-row",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1072,7 +1072,7 @@
 //
 // 				case "colormag_header_main_area_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-main-row",
+// 						".cm-header-builder .cm-header-main-row",
 // 						"color",
 // 						value,
 // 					);
@@ -1080,7 +1080,7 @@
 //
 // 				case "colormag_header_bottom_area_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-bottom-row",
+// 						".cm-header-builder .cm-bottom-row",
 // 						"height",
 // 						value,
 // 					);
@@ -1088,7 +1088,7 @@
 //
 // 				case "colormag_header_bottom_area_container":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-header-bottom-row .zak-container",
+// 						".cm-header-builder .cm-header-bottom-row .cm-container",
 // 						"max-width",
 // 						value,
 // 					);
@@ -1096,35 +1096,35 @@
 //
 // 				case "colormag_header_bottom_area_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_bottom_area_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						"padding",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_bottom_area_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						"margin",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_bottom_area_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -1132,7 +1132,7 @@
 //
 // 				case "colormag_header_bottom_area_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1140,7 +1140,7 @@
 //
 // 				case "colormag_header_bottom_area_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-bottom-row",
+// 						".cm-header-builder .cm-header-bottom-row",
 // 						"color",
 // 						value,
 // 					);
@@ -1148,7 +1148,7 @@
 //
 // 				case "colormag_header_menu_border_bottom_width":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-main-nav",
+// 						".cm-header-builder .cm-main-nav",
 // 						"border-bottom-width",
 // 						value,
 // 					);
@@ -1156,7 +1156,7 @@
 //
 // 				case "colormag_header_secondary_menu_border_bottom_width":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-secondary-nav",
+// 						".cm-header-builder .cm-secondary-nav",
 // 						"border-bottom-width",
 // 						value,
 // 					);
@@ -1164,7 +1164,7 @@
 //
 // 				case "colormag_header_tertiary_menu_border_bottom_width":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-tertiary-nav",
+// 						".cm-header-builder .cm-tertiary-nav",
 // 						"border-bottom-width",
 // 						value,
 // 					);
@@ -1172,7 +1172,7 @@
 //
 // 				case "colormag_header_menu_border_bottom_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-main-nav",
+// 						".cm-header-builder .cm-main-nav",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1180,7 +1180,7 @@
 //
 // 				case "colormag_header_secondary_menu_border_bottom_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav",
+// 						".cm-header-builder .cm-secondary-nav",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1188,7 +1188,7 @@
 //
 // 				case "colormag_header_tertiary_menu_border_bottom_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav",
+// 						".cm-header-builder .cm-tertiary-nav",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1196,12 +1196,12 @@
 //
 // 				case "colormag_header_main_menu_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-primary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						".cm-header-builder .cm-primary-nav ul li > a, .cm-header-builder .cm-main-nav.cm-primary-nav ul.cm-primary-menu > li > a, .cm-header-builder .cm-primary-nav.cm-menu-item--layout-2 > ul > li > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-primary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						".cm-header-builder .cm-primary-nav ul li > a .cm-icon, .cm-header-builder .cm-main-nav.cm-primary-nav ul.cm-primary-menu li .cm-icon, .cm-header-builder .cm-primary-nav.cm-menu-item--layout-2 > ul > li > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1209,12 +1209,12 @@
 //
 // 				case "colormag_header_secondary_menu_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu > li > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						".cm-header-builder .cm-secondary-nav ul li > a, .cm-header-builder .cm-main-nav.cm-secondary-nav ul.cm-secondary-menu > li > a, .cm-header-builder .cm-secondary-nav.cm-menu-item--layout-2 > ul > li > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						".cm-header-builder .cm-secondary-nav ul li > a .cm-icon, .cm-header-builder .cm-main-nav.cm-secondary-nav ul.cm-secondary-menu li .cm-icon, .cm-header-builder .cm-secondary-nav.cm-menu-item--layout-2 > ul > li > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1222,12 +1222,12 @@
 //
 // 				case "colormag_header_tertiary_menu_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu > li > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						".cm-header-builder .cm-tertiary-nav ul li > a, .cm-header-builder .cm-main-nav.cm-tertiary-nav ul.cm-tertiary-menu > li > a, .cm-header-builder .cm-tertiary-nav.cm-menu-item--layout-2 > ul > li > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						".cm-header-builder .cm-tertiary-nav ul li > a .cm-icon, .cm-header-builder .cm-main-nav.cm-tertiary-nav ul.cm-tertiary-menu li .cm-icon, .cm-header-builder .cm-tertiary-nav.cm-menu-item--layout-2 > ul > li > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1235,12 +1235,12 @@
 //
 // 				case "colormag_header_quaternary_menu_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-quaternary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu > li > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > a",
+// 						".cm-header-builder .cm-quaternary-nav ul li > a, .cm-header-builder .cm-main-nav.cm-quaternary-nav ul.cm-quaternary-menu > li > a, .cm-header-builder .cm-quaternary-nav.cm-menu-item--layout-2 > ul > li > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-quaternary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon",
+// 						".cm-header-builder .cm-quaternary-nav ul li > a .cm-icon, .cm-header-builder .cm-main-nav.cm-quaternary-nav ul.cm-quaternary-menu li .cm-icon, .cm-header-builder .cm-quaternary-nav.cm-menu-item--layout-2 > ul > li > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1248,12 +1248,12 @@
 //
 // 				case "colormag_header_main_menu_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a",
+// 						".cm-header-builder .cm-primary-nav ul li:hover > a, .cm-header-builder .cm-primary-nav.cm-menu-item--layout-2 > ul > li:hover > a, .cm-header-builder .cm-primary-nav ul li:hover > a, .cm-header-builder .cm-main-nav.cm-primary-nav ul.cm-primary-menu li:hover > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-primary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						".cm-header-builder .cm-primary-nav ul li:hover > .cm-icon, .cm-header-builder .cm-primary-nav.cm-menu-item--layout-2 > ul > li:hover > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1261,12 +1261,12 @@
 //
 // 				case "colormag_header_secondary_menu_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li:hover > a",
+// 						".cm-header-builder .cm-secondary-nav ul li:hover > a, .cm-header-builder .cm-secondary-nav.cm-menu-item--layout-2 > ul > li:hover > a, .cm-header-builder .cm-secondary-nav ul li:hover > a, .cm-header-builder .cm-main-nav.cm-secondary-nav ul.cm-secondary-menu li:hover > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						".cm-header-builder .cm-secondary-nav ul li:hover > .cm-icon, .cm-header-builder .cm-secondary-nav.cm-menu-item--layout-2 > ul > li:hover > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1274,12 +1274,12 @@
 //
 // 				case "colormag_header_tertiary_menu_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li:hover > a",
+// 						".cm-header-builder .cm-tertiary-nav ul li:hover > a, .cm-header-builder .cm-tertiary-nav.cm-menu-item--layout-2 > ul > li:hover > a, .cm-header-builder .cm-tertiary-nav ul li:hover > a, .cm-header-builder .cm-main-nav.cm-tertiary-nav ul.cm-tertiary-menu li:hover > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						".cm-header-builder .cm-tertiary-nav ul li:hover > .cm-icon, .cm-header-builder .cm-tertiary-nav.cm-menu-item--layout-2 > ul > li:hover > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1287,12 +1287,12 @@
 //
 // 				case "colormag_header_quaternary_menu_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li:hover > a",
+// 						".cm-header-builder .cm-quaternary-nav ul li:hover > a, .cm-header-builder .cm-quaternary-nav.cm-menu-item--layout-2 > ul > li:hover > a, .cm-header-builder .cm-quaternary-nav ul li:hover > a, .cm-header-builder .cm-main-nav.cm-quaternary-nav ul.cm-quaternary-menu li:hover > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-quaternary-nav ul li:hover > .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon",
+// 						".cm-header-builder .cm-quaternary-nav ul li:hover > .cm-icon, .cm-header-builder .cm-quaternary-nav.cm-menu-item--layout-2 > ul > li:hover > .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1300,12 +1300,12 @@
 //
 // 				case "colormag_header_main_menu_active_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-primary-nav ul li:active > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						".cm-header-builder .cm-primary-nav ul li:active > a, .cm-header-builder .cm-primary-nav ul > li:not(.cm-header-button).current_page_item > a, .cm-header-builder .cm-primary-nav ul > li:not(.cm-header-button).current_page_ancestor > a, .cm-header-builder .cm-primary-nav ul > li:not(.cm-header-button).current-menu-item > a, .cm-header-builder .cm-primary-nav ul > li:not(.cm-header-button).current-menu-ancestor > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-primary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li.current-menu-item .zak-icon",
+// 						".cm-header-builder .cm-primary-nav ul li.current-menu-item > a .cm-icon, .cm-header-builder .cm-main-nav.cm-primary-nav ul.cm-primary-menu li.current-menu-item .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1313,12 +1313,12 @@
 //
 // 				case "colormag_header_secondary_menu_active_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav ul li:active > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						".cm-header-builder .cm-secondary-nav ul li:active > a, .cm-header-builder .cm-secondary-nav ul > li:not(.cm-header-button).current_page_item > a, .cm-header-builder .cm-secondary-nav ul > li:not(.cm-header-button).current_page_ancestor > a, .cm-header-builder .cm-secondary-nav ul > li:not(.cm-header-button).current-menu-item > a, .cm-header-builder .cm-secondary-nav ul > li:not(.cm-header-button).current-menu-ancestor > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-secondary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li.current-menu-item .zak-icon",
+// 						".cm-header-builder .cm-secondary-nav ul li.current-menu-item > a .cm-icon, .cm-header-builder .cm-main-nav.cm-secondary-nav ul.cm-secondary-menu li.current-menu-item .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1326,12 +1326,12 @@
 //
 // 				case "colormag_header_tertiary_menu_active_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav ul li:active > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						".cm-header-builder .cm-tertiary-nav ul li:active > a, .cm-header-builder .cm-tertiary-nav ul > li:not(.cm-header-button).current_page_item > a, .cm-header-builder .cm-tertiary-nav ul > li:not(.cm-header-button).current_page_ancestor > a, .cm-header-builder .cm-tertiary-nav ul > li:not(.cm-header-button).current-menu-item > a, .cm-header-builder .cm-tertiary-nav ul > li:not(.cm-header-button).current-menu-ancestor > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-tertiary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li.current-menu-item .zak-icon",
+// 						".cm-header-builder .cm-tertiary-nav ul li.current-menu-item > a .cm-icon, .cm-header-builder .cm-main-nav.cm-tertiary-nav ul.cm-tertiary-menu li.current-menu-item .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1339,12 +1339,12 @@
 //
 // 				case "colormag_header_quaternary_menu_active_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-quaternary-nav ul li:active > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a",
+// 						".cm-header-builder .cm-quaternary-nav ul li:active > a, .cm-header-builder .cm-quaternary-nav ul > li:not(.cm-header-button).current_page_item > a, .cm-header-builder .cm-quaternary-nav ul > li:not(.cm-header-button).current_page_ancestor > a, .cm-header-builder .cm-quaternary-nav ul > li:not(.cm-header-button).current-menu-item > a, .cm-header-builder .cm-quaternary-nav ul > li:not(.cm-header-button).current-menu-ancestor > a",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-quaternary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li.current-menu-item .zak-icon",
+// 						".cm-header-builder .cm-quaternary-nav ul li.current-menu-item > a .cm-icon, .cm-header-builder .cm-main-nav.cm-quaternary-nav ul.cm-quaternary-menu li.current-menu-item .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1353,7 +1353,7 @@
 // 				case "colormag_header_main_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .zak-primary-nav ul li a",
+// 						".cm-header-builder .cm-primary-nav ul li a",
 // 						value,
 // 					);
 // 					break;
@@ -1361,7 +1361,7 @@
 // 				case "colormag_header_secondary_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .zak-secondary-nav ul li a",
+// 						".cm-header-builder .cm-secondary-nav ul li a",
 // 						value,
 // 					);
 // 					break;
@@ -1369,7 +1369,7 @@
 // 				case "colormag_header_tertiary_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .zak-tertiary-nav ul li a",
+// 						".cm-header-builder .cm-tertiary-nav ul li a",
 // 						value,
 // 					);
 // 					break;
@@ -1377,7 +1377,7 @@
 // 				case "colormag_header_quaternary_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .zak-quaternary-nav ul li a",
+// 						".cm-header-builder .cm-quaternary-nav ul li a",
 // 						value,
 // 					);
 // 					break;
@@ -1385,7 +1385,7 @@
 // 				case "colormag_header_sub_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .zak-primary-nav ul li ul li a",
+// 						".cm-header-builder .cm-primary-nav ul li ul li a",
 // 						value,
 // 					);
 // 					break;
@@ -1393,14 +1393,14 @@
 // 				case "colormag_header_secondary_sub_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .zak-secondary-nav ul li ul li a",
+// 						".cm-header-builder .cm-secondary-nav ul li ul li a",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_search_icon_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-search .zak-icon",
+// 						".cm-header-builder .cm-header-search .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1408,96 +1408,292 @@
 //
 // 				case "colormag_header_search_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-header-builder .zak-main-header.zak-header-search--opened",
+// 						".cm-header-builder .cm-main-header.cm-header-search--opened",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_search_text_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-search .zak-search-field, .zak-header-builder .zak-header-search .zak-search-field:focus",
+// 						".cm-header-builder .cm-header-search .cm-search-field, .cm-header-builder .cm-header-search .cm-search-field:focus",
 // 						"color",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-search .zak-icon--close::after , .zak-header-builder .zak-header-search .zak-icon--close::before",
+// 						".cm-header-builder .cm-header-search .cm-icon--close::after , .cm-header-builder .cm-header-search .cm-icon--close::before",
 // 						"background",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-search .zak-icon--search .zak-icon",
+// 						".cm-header-builder .cm-header-search .cm-icon--search .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
 // 					break;
-//
-// 				case "colormag_header_button_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_hover_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_background_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-// 						"background-color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_background_hover_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover",
-// 						"background-color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-// 						"padding",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_border_radius":
-// 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-// 						"border-radius",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-// 						"border-width",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_button_border_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-header-buttons .zak-header-button .zak-button",
-// 						"border-color",
-// 						value,
-// 					);
-// 					break;
-//
+
+				case "colormag_header_button_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button:hover",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_background_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button",
+						"background-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_background_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button:hover",
+						"background-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_padding":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button",
+						"padding",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_border_radius":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button",
+						"border-radius",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_border_width":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button",
+						"border-width",
+						value,
+					);
+					break;
+
+				case "colormag_header_button_border_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-buttons .cm-header-button .cm-button",
+						"border-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_top_area_height":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-top-row",
+						"height",
+						value,
+					);
+					break;
+
+				case "colormag_header_top_area_container":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-header-top-row .cm-container",
+						"max-width",
+						value,
+					);
+					break;
+
+				case "colormag_header_top_area_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-header-builder .cm-header-top-row",
+						value,
+					);
+					break;
+
+				case "colormag_header_top_area_padding":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-top-row",
+						"padding",
+						value,
+					);
+					break;
+
+				case "colormag_header_top_area_border_width":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-top-row",
+						"border-width",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-top-row",
+						"border-style",
+						"solid",
+					);
+					break;
+
+				case "colormag_header_top_area_border_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-top-row",
+						"border-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_top_area_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-top-row",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_height":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-main-row",
+						"height",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_container":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-header-main-row .cm-container",
+						"max-width",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-header-builder .cm-header-main-row",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_padding":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-main-row",
+						"padding",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_margin":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-main-row",
+						"margin",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_border_width":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-main-row",
+						"border-width",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-main-row",
+						"border-style",
+						"solid",
+					);
+					break;
+
+				case "colormag_header_main_area_border_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-main-row",
+						"border-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_main_area_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-main-row",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_height":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-bottom-row",
+						"height",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_container":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-header-bottom-row .cm-container",
+						"max-width",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_background":
+					css = colormagGenerateBackgroundCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_padding":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						"padding",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_margin":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						"margin",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_border_width":
+					css = colormagGenerateDimensionCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						"border-width",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						"border-style",
+						"solid",
+					);
+					break;
+
+				case "colormag_header_bottom_area_border_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						"border-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_bottom_area_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-header-bottom-row",
+						"color",
+						value,
+					);
+					break;
+
 // 				case "colormag_header_html_1_text_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-html-1 *",
+// 						".cm-header-builder .cm-html-1 *",
 // 						"color",
 // 						value,
 // 					);
@@ -1505,7 +1701,7 @@
 //
 // 				case "colormag_header_html_1_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-html-1 a",
+// 						".cm-header-builder .cm-html-1 a",
 // 						"color",
 // 						value,
 // 					);
@@ -1513,7 +1709,7 @@
 //
 // 				case "colormag_header_html_1_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-html-1 a:hover",
+// 						".cm-header-builder .cm-html-1 a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -1521,15 +1717,15 @@
 //
 // 				case "colormag_header_html_1_font_size":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-html-1 *",
+// 						".cm-header-builder .cm-html-1 *",
 // 						"font-size",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_html_1_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-html-1",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-html-1",
 // 						"margin",
 // 						value,
 // 					);
@@ -1537,7 +1733,7 @@
 //
 // 				case "colormag_header_html_2_text_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-html-2 *",
+// 						".cm-header-builder .cm-html-2 *",
 // 						"color",
 // 						value,
 // 					);
@@ -1545,7 +1741,7 @@
 //
 // 				case "colormag_header_html_2_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-html-2 a",
+// 						".cm-header-builder .cm-html-2 a",
 // 						"color",
 // 						value,
 // 					);
@@ -1553,7 +1749,7 @@
 //
 // 				case "colormag_header_html_2_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .zak-html-2 a:hover",
+// 						".cm-header-builder .cm-html-2 a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -1561,15 +1757,15 @@
 //
 // 				case "colormag_header_html_2_font_size":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .zak-html-2 p",
+// 						".cm-header-builder .cm-html-2 p",
 // 						"font-size",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_html_2_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder .zak-html-2",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder .cm-html-2",
 // 						"margin",
 // 						value,
 // 					);
@@ -1577,7 +1773,7 @@
 //
 // 				case "colormag_footer_top_area_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-top-row",
+// 						".cm-footer-builder .cm-top-row",
 // 						"height",
 // 						value,
 // 					);
@@ -1585,7 +1781,7 @@
 //
 // 				case "colormag_footer_top_area_container":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-footer-top-row .zak-container",
+// 						".cm-footer-builder .cm-footer-top-row .cm-container",
 // 						"max-width",
 // 						value,
 // 					);
@@ -1593,35 +1789,35 @@
 //
 // 				case "colormag_footer_top_area_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_top_area_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						"padding",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_top_area_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						"margin",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_top_area_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -1629,7 +1825,7 @@
 //
 // 				case "colormag_footer_top_area_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1637,7 +1833,7 @@
 //
 // 				case "colormag_footer_main_area_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-main-row",
+// 						".cm-footer-builder .cm-main-row",
 // 						"height",
 // 						value,
 // 					);
@@ -1645,7 +1841,7 @@
 //
 // 				case "colormag_footer_main_area_container":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-footer-main-row .zak-container",
+// 						".cm-footer-builder .cm-footer-main-row .cm-container",
 // 						"max-width",
 // 						value,
 // 					);
@@ -1653,35 +1849,35 @@
 //
 // 				case "colormag_footer_main_area_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_main_area_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						"padding",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_main_area_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						"margin",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_main_area_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -1689,7 +1885,7 @@
 //
 // 				case "colormag_footer_main_area_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1697,7 +1893,7 @@
 //
 // 				case "colormag_footer_bottom_area_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-bottom-row",
+// 						".cm-footer-builder .cm-bottom-row",
 // 						"height",
 // 						value,
 // 					);
@@ -1705,7 +1901,7 @@
 //
 // 				case "colormag_footer_bottom_area_container":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row .zak-container",
+// 						".cm-footer-builder .cm-footer-bottom-row .cm-container",
 // 						"max-width",
 // 						value,
 // 					);
@@ -1713,35 +1909,35 @@
 //
 // 				case "colormag_footer_bottom_area_background":
 // 					css = colormagGenerateBackgroundCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_bottom_area_padding":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						"padding",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_bottom_area_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						"margin",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_bottom_area_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -1749,7 +1945,7 @@
 //
 // 				case "colormag_footer_bottom_area_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						"border-color",
 // 						value,
 // 					);
@@ -1793,7 +1989,7 @@
 
 // 				case "colormag_widget_1_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
+// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -1802,14 +1998,14 @@
 // 				case "colormag_widget_1_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
+// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_widget_1_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar",
+// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar",
 // 						"color",
 // 						value,
 // 					);
@@ -1817,7 +2013,7 @@
 //
 // 				case "colormag_widget_1_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar a",
+// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar a",
 // 						"color",
 // 						value,
 // 					);
@@ -1826,14 +2022,14 @@
 // 				case "colormag_widget_1_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .widget.widget-top-bar-col-1-sidebar",
+// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_widget_2_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
+// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -1842,14 +2038,14 @@
 // 				case "colormag_widget_2_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
+// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_widget_2_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar",
+// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar",
 // 						"color",
 // 						value,
 // 					);
@@ -1857,7 +2053,7 @@
 //
 // 				case "colormag_widget_2_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar a",
+// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar a",
 // 						"color",
 // 						value,
 // 					);
@@ -1866,15 +2062,15 @@
 // 				case "colormag_widget_2_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .widget.widget-top-bar-col-2-sidebar",
+// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_mobile_menu_item_color":
-// 					css = colormagGenerateCommonCSS(".zak-mobile-nav a", "color", value);
+// 					css = colormagGenerateCommonCSS(".cm-mobile-nav a", "color", value);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-mobile-nav li.page_item_has_children .zak-submenu-toggle .zak-icon, .zak-mobile-nav li.menu-item-has-children .zak-submenu-toggle .zak-icon",
+// 						".cm-mobile-nav li.page_item_has_children .cm-submenu-toggle .cm-icon, .cm-mobile-nav li.menu-item-has-children .cm-submenu-toggle .cm-icon",
 // 						"fill",
 // 						value,
 // 					);
@@ -1882,7 +2078,7 @@
 //
 // 				case "colormag_header_mobile_menu_item_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-mobile-nav li:hover > a",
+// 						".cm-mobile-nav li:hover > a",
 // 						"color",
 // 						value,
 // 					);
@@ -1890,7 +2086,7 @@
 //
 // 				case "colormag_header_mobile_menu_item_active_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-mobile-nav .current_page_item a, .zak-mobile-nav > .menu ul li.current-menu-item > a",
+// 						".cm-mobile-nav .current_page_item a, .cm-mobile-nav > .menu ul li.current-menu-item > a",
 // 						"color",
 // 						value,
 // 					);
@@ -1898,7 +2094,7 @@
 //
 // 				case "colormag_header_mobile_menu_background":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-mobile-nav, .zak-search-form .zak-search-field",
+// 						".cm-mobile-nav, .cm-search-form .cm-search-field",
 // 						"background-color",
 // 						value,
 // 					);
@@ -1906,7 +2102,7 @@
 //
 // 				case "colormag_header_mobile_menu_item_border_bottom":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-mobile-nav li:not(:last-child)",
+// 						".cm-mobile-nav li:not(:last-child)",
 // 						"border-bottom-width",
 // 						value,
 // 					);
@@ -1914,7 +2110,7 @@
 //
 // 				case "colormag_header_mobile_menu_item_border_bottom_style":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-mobile-nav li",
+// 						".cm-mobile-nav li",
 // 						"border-bottom-style",
 // 						value,
 // 					);
@@ -1922,19 +2118,19 @@
 //
 // 				case "colormag_header_mobile_menu_item_border_bottom_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-mobile-nav li",
+// 						".cm-mobile-nav li",
 // 						"border-color",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_mobile_menu_typography":
-// 					css = colormagGenerateTypographyCSS(id, ".zak-mobile-menu a", value);
+// 					css = colormagGenerateTypographyCSS(id, ".cm-mobile-menu a", value);
 // 					break;
 //
 // 				case "colormag_footer_html_1_text_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-html-1 *",
+// 						".cm-footer-builder .cm-html-1 *",
 // 						"color",
 // 						value,
 // 					);
@@ -1942,7 +2138,7 @@
 //
 // 				case "colormag_footer_html_1_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-html-1 a",
+// 						".cm-footer-builder .cm-html-1 a",
 // 						"color",
 // 						value,
 // 					);
@@ -1950,7 +2146,7 @@
 //
 // 				case "colormag_footer_html_1_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-html-1 a:hover",
+// 						".cm-footer-builder .cm-html-1 a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -1958,15 +2154,15 @@
 //
 // 				case "colormag_footer_html_1_font_size":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-html-1 *",
+// 						".cm-footer-builder .cm-html-1 *",
 // 						"font-size",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_html_1_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-html-1",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-html-1",
 // 						"margin",
 // 						value,
 // 					);
@@ -1974,7 +2170,7 @@
 //
 // 				case "colormag_footer_html_2_text_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-html-2 *",
+// 						".cm-footer-builder .cm-html-2 *",
 // 						"color",
 // 						value,
 // 					);
@@ -1982,7 +2178,7 @@
 //
 // 				case "colormag_footer_html_2_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-html-2 a",
+// 						".cm-footer-builder .cm-html-2 a",
 // 						"color",
 // 						value,
 // 					);
@@ -1990,7 +2186,7 @@
 //
 // 				case "colormag_footer_html_2_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-html-2 a:hover",
+// 						".cm-footer-builder .cm-html-2 a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -1998,15 +2194,15 @@
 //
 // 				case "colormag_footer_html_2_font_size":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-footer-builder .zak-html-2 *",
+// 						".cm-footer-builder .cm-html-2 *",
 // 						"font-size",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_html_2_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-html-2",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-html-2",
 // 						"margin",
 // 						value,
 // 					);
@@ -2014,7 +2210,7 @@
 //
 // 				case "colormag_footer_widget_1_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2023,14 +2219,14 @@
 // 				case "colormag_footer_widget_1_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_1_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-1",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-1",
 // 						"color",
 // 						value,
 // 					);
@@ -2038,7 +2234,7 @@
 //
 // 				case "colormag_footer_widget_1_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-1 a",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-1 a",
 // 						"color",
 // 						value,
 // 					);
@@ -2047,14 +2243,14 @@
 // 				case "colormag_footer_widget_1_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-1",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-1",
 // 						value,
 // 					);
 // 					break;
 // 				//
 // 				case "colormag_footer_widget_2_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2063,14 +2259,14 @@
 // 				case "colormag_footer_widget_2_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_2_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-2",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-2",
 // 						"color",
 // 						value,
 // 					);
@@ -2078,7 +2274,7 @@
 //
 // 				case "colormag_footer_widget_2_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-2 a",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-2 a",
 // 						"color",
 // 						value,
 // 					);
@@ -2087,14 +2283,14 @@
 // 				case "colormag_footer_widget_2_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-2",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-2",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_3_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2103,14 +2299,14 @@
 // 				case "colormag_footer_widget_3_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_3_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-3",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-3",
 // 						"color",
 // 						value,
 // 					);
@@ -2118,7 +2314,7 @@
 //
 // 				case "colormag_footer_widget_3_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-3 a",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-3 a",
 // 						"color",
 // 						value,
 // 					);
@@ -2127,14 +2323,14 @@
 // 				case "colormag_footer_widget_3_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-3",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-3",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_4_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2143,14 +2339,14 @@
 // 				case "colormag_footer_widget_4_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_4_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-4",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-4",
 // 						"color",
 // 						value,
 // 					);
@@ -2158,7 +2354,7 @@
 //
 // 				case "colormag_footer_widget_4_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.widget-footer-sidebar-4 a",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-4 a",
 // 						"color",
 // 						value,
 // 					);
@@ -2167,14 +2363,14 @@
 // 				case "colormag_footer_widget_4_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.widget-footer-sidebar-4",
+// 						".cm-footer-builder .widget.widget-footer-sidebar-4",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_menu_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-nav ul li a",
+// 						".cm-footer-builder .cm-footer-nav ul li a",
 // 						"color",
 // 						value,
 // 					);
@@ -2182,7 +2378,7 @@
 //
 // 				case "colormag_footer_menu_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-nav ul li a:hover",
+// 						".cm-footer-builder .cm-footer-nav ul li a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -2191,14 +2387,14 @@
 // 				case "colormag_footer_menu_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .zak-footer-nav ul li a",
+// 						".cm-footer-builder .cm-footer-nav ul li a",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_menu_2_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-nav-2 ul li a",
+// 						".cm-footer-builder .cm-footer-nav-2 ul li a",
 // 						"color",
 // 						value,
 // 					);
@@ -2206,7 +2402,7 @@
 //
 // 				case "colormag_footer_menu_2_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-nav-2 ul li a:hover",
+// 						".cm-footer-builder .cm-footer-nav-2 ul li a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -2215,7 +2411,7 @@
 // 				case "colormag_footer_menu_2_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .zak-footer-nav-2 ul li a",
+// 						".cm-footer-builder .cm-footer-nav-2 ul li a",
 // 						value,
 // 					);
 // 					break;
@@ -2238,7 +2434,7 @@
 
 // 				case "colormag_footer_copyright_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-copyright a:hover",
+// 						".cm-footer-builder .cm-copyright a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -2247,14 +2443,14 @@
 // 				case "colormag_footer_copyright_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .zak-copyright",
+// 						".cm-footer-builder .cm-copyright",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_copyright_margin":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-footer-builder .zak-copyright",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-footer-builder .cm-copyright",
 // 						"margin",
 // 						value,
 // 					);
@@ -2262,7 +2458,7 @@
 //
 // 				case "colormag_header_site_logo_height":
 // 					css = colormagGenerateSliderCSS(
-// 						".zak-header-builder .site-branding .custom-logo-link img",
+// 						".cm-header-builder .site-branding .custom-logo-link img",
 // 						"width",
 // 						value,
 // 					);
@@ -2270,7 +2466,7 @@
 //
 // 				case "colormag_header_site_identity_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .site-title",
+// 						".cm-header-builder .site-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2279,14 +2475,14 @@
 // 				case "colormag_header_site_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .site-title",
+// 						".cm-header-builder .site-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_site_tagline_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder .site-description",
+// 						".cm-header-builder .site-description",
 // 						"color",
 // 						value,
 // 					);
@@ -2295,14 +2491,14 @@
 // 				case "colormag_header_site_tagline_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-header-builder .site-description",
+// 						".cm-header-builder .site-description",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_bottom_area_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-bottom-row",
+// 						".cm-footer-builder .cm-footer-bottom-row",
 // 						"color",
 // 						value,
 // 					);
@@ -2310,7 +2506,7 @@
 //
 // 				case "colormag_footer_top_area_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-top-row",
+// 						".cm-footer-builder .cm-footer-top-row",
 // 						"color",
 // 						value,
 // 					);
@@ -2318,7 +2514,7 @@
 //
 // 				case "colormag_footer_main_area_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-main-row",
+// 						".cm-footer-builder .cm-footer-main-row",
 // 						"color",
 // 						value,
 // 					);
@@ -2326,7 +2522,7 @@
 //
 // 				case "colormag_footer_main_area_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-main-row a",
+// 						".cm-footer-builder .cm-footer-main-row a",
 // 						"color",
 // 						value,
 // 					);
@@ -2334,7 +2530,7 @@
 //
 // 				case "colormag_footer_main_area_link_hover_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-main-row a:hover",
+// 						".cm-footer-builder .cm-footer-main-row a:hover",
 // 						"color",
 // 						value,
 // 					);
@@ -2342,24 +2538,24 @@
 //
 // 				case "colormag_footer_main_area_widget_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .zak-footer-main-row .widget-title, .zak-footer-builder .zak-footer-main-row h1, .zak-footer-builder .zak-footer-main-row h2, .zak-footer-builder .zak-footer-main-row h3, .zak-footer-builder .zak-footer-main-row h4, .zak-footer-builder .zak-footer-main-row h5, .zak-footer-builder .zak-footer-main-row h6",
+// 						".cm-footer-builder .cm-footer-main-row .widget-title, .cm-footer-builder .cm-footer-main-row h1, .cm-footer-builder .cm-footer-main-row h2, .cm-footer-builder .cm-footer-main-row h3, .cm-footer-builder .cm-footer-main-row h4, .cm-footer-builder .cm-footer-main-row h5, .cm-footer-builder .cm-footer-main-row h6",
 // 						"color",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_header_builder_background":
-// 					css = colormagGenerateBackgroundCSS(".zak-header-builder", value);
+// 					css = colormagGenerateBackgroundCSS(".cm-header-builder", value);
 // 					break;
 //
 // 				case "colormag_header_builder_border_width":
-// 					css = colormagGenerateDimnesionCSS(
-// 						".zak-header-builder",
+// 					css = colormagGenerateDimensionCSS(
+// 						".cm-header-builder",
 // 						"border-width",
 // 						value,
 // 					);
 // 					css += colormagGenerateCommonCSS(
-// 						".zak-header-builder",
+// 						".cm-header-builder",
 // 						"border-style",
 // 						"solid",
 // 					);
@@ -2367,7 +2563,7 @@
 //
 // 				case "colormag_header_builder_border_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-header-builder",
+// 						".cm-header-builder",
 // 						"border-color",
 // 						value,
 // 					);
@@ -2375,7 +2571,7 @@
 // 				//
 // 				case "colormag_footer_widget_5_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
+// 						".cm-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2384,14 +2580,14 @@
 // 				case "colormag_footer_widget_5_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
+// 						".cm-footer-builder .widget.footer-bar-col-1-sidebar .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_5_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar",
+// 						".cm-footer-builder .widget.footer-bar-col-1-sidebar",
 // 						"color",
 // 						value,
 // 					);
@@ -2399,7 +2595,7 @@
 //
 // 				case "colormag_footer_widget_5_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar a",
+// 						".cm-footer-builder .widget.footer-bar-col-1-sidebar a",
 // 						"color",
 // 						value,
 // 					);
@@ -2408,14 +2604,14 @@
 // 				case "colormag_footer_widget_5_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.footer-bar-col-1-sidebar",
+// 						".cm-footer-builder .widget.footer-bar-col-1-sidebar",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_6_title_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
+// 						".cm-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
 // 						"color",
 // 						value,
 // 					);
@@ -2424,14 +2620,14 @@
 // 				case "colormag_footer_widget_6_title_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
+// 						".cm-footer-builder .widget.footer-bar-col-2-sidebar .widget-title",
 // 						value,
 // 					);
 // 					break;
 //
 // 				case "colormag_footer_widget_6_content_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar",
+// 						".cm-footer-builder .widget.footer-bar-col-2-sidebar",
 // 						"color",
 // 						value,
 // 					);
@@ -2439,7 +2635,7 @@
 //
 // 				case "colormag_footer_widget_6_link_color":
 // 					css = colormagGenerateCommonCSS(
-// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar a",
+// 						".cm-footer-builder .widget.footer-bar-col-2-sidebar a",
 // 						"color",
 // 						value,
 // 					);
@@ -2448,7 +2644,7 @@
 // 				case "colormag_footer_widget_6_content_typography":
 // 					css = colormagGenerateTypographyCSS(
 // 						id,
-// 						".zak-footer-builder .widget.footer-bar-col-2-sidebar",
+// 						".cm-footer-builder .widget.footer-bar-col-2-sidebar",
 // 						value,
 // 					);
 // 					break;

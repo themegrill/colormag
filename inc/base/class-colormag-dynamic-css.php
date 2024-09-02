@@ -1722,6 +1722,435 @@ class ColorMag_Dynamic_CSS {
 			'margin'
 		);
 
+		// Header button text color.
+		$header_button_text_color     = get_theme_mod( 'colormag_header_button_color', '#ffffff' );
+		$header_button_text_color_css = array(
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button' => array(
+				'color' => esc_html( $header_button_text_color ),
+			),
+		);
+		$parse_builder_css                    .= colormag_parse_css( '#ffffff', $header_button_text_color, $header_button_text_color_css );
+
+		// Header button hover text color.
+		$header_button_hover_text_color     = get_theme_mod( 'colormag_header_button_hover_color', '#ffffff' );
+		$header_button_hover_text_color_css = array(
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button:hover' => array(
+				'color' => esc_html( $header_button_hover_text_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '#ffffff', $header_button_hover_text_color, $header_button_hover_text_color_css );
+
+		// Header background color.
+		$header_button_background_color     = get_theme_mod( 'colormag_header_button_background_color', '#027abb' );
+		$header_button_background_color_css = array(
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button' => array(
+				'background-color' => esc_html( $header_button_background_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '#027abb', $header_button_background_color, $header_button_background_color_css );
+
+		// Header button hover background color.
+		$header_button_background_hover_color     = get_theme_mod( 'colormag_header_button_background_hover_color', '' );
+		$header_button_background_hover_color_css = array(
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button:hover' => array(
+				'background-color' => esc_html( $header_button_background_hover_color ),
+			),
+		);
+		$parse_builder_css                                .= colormag_parse_css( '#ffffff', $header_button_background_hover_color, $header_button_background_hover_color_css );
+
+		// Header button padding.
+		$header_button_padding_default = array(
+			'top'    => '5',
+			'right'  => '10',
+			'bottom' => '5',
+			'left'   => '10',
+			'unit'   => 'px',
+		);
+
+		$header_button_padding = get_theme_mod( 'colormag_header_button_padding', $header_button_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_button_padding_default,
+			$header_button_padding,
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+			'padding'
+		);
+
+		// Header button border width.
+		$header_button_border_width_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$header_button_border_width = get_theme_mod( 'colormag_header_button_border_width', $header_button_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_button_border_width_default,
+			$header_button_border_width,
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+			'border-width'
+		);
+
+		// Header button border color.
+		$header_button_border_color     = get_theme_mod( 'colormag_header_button_border_color', '' );
+		$header_button_border_color_css = array(
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button' => array(
+				'border-color' => esc_html( $header_button_border_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $header_button_border_color, $header_button_border_color_css );
+
+		// Header button radius.
+		$header_button_border_radius_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_button_border_radius = get_theme_mod( 'colormag_header_button_border_radius', $header_button_border_radius_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_button_border_radius_default,
+			$header_button_border_radius,
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+			'border-radius'
+		);
+
+		/**
+		 * Header top area height.
+		 */
+		$header_top_area_height_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_top_area_height = get_theme_mod( 'colormag_header_top_area_height', $header_top_area_height_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_top_area_height_default,
+			$header_top_area_height,
+			'.cm-header-builder .cm-top-row',
+			'height'
+		);
+
+		/**
+		 * Header top area container.
+		 */
+		$header_top_area_container_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_top_area_container = get_theme_mod( 'colormag_header_top_area_container', $header_top_area_container_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_top_area_container_default,
+			$header_top_area_container,
+			'.cm-header-builder .cm-header-top-row .cm-container',
+			'max-width'
+		);
+
+		// Header top area background.
+		$header_top_area_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$header_top_area_background         = get_theme_mod( 'colormag_header_top_area_background', $header_top_area_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $header_top_area_background_default, $header_top_area_background, '.cm-header-builder .cm-header-top-row' );
+
+		// Header top area padding.
+		$header_top_area_padding_default = array(
+			'top'    => '14',
+			'right'  => '0',
+			'bottom' => '14',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$header_top_area_padding = get_theme_mod( 'colormag_header_top_area_padding', $header_top_area_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_top_area_padding_default,
+			$header_top_area_padding,
+			'.cm-header-builder .cm-header-top-row',
+			'padding'
+		);
+
+		// Header top area border width.
+		$header_top_area_border_width_default = array(
+			'top'    => '0',
+			'right'  => '0',
+			'bottom' => '0',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$header_top_area_border_width = get_theme_mod( 'colormag_header_top_area_border_width', $header_top_area_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_top_area_border_width_default,
+			$header_top_area_border_width,
+			'.cm-header-builder .cm-header-top-row',
+			'border-width'
+		);
+
+		$header_top_area_border_color     = get_theme_mod( 'colormag_header_top_area_border_color', '#FAFAFA' );
+		$header_top_area_border_color_css = array(
+			'.cm-header-builder .cm-header-top-row' => array(
+				'border-color' => esc_html( $header_top_area_border_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '#FAFAFA', $header_top_area_border_color, $header_top_area_border_color_css );
+
+		// Header top area color.
+		$header_top_area_color     = get_theme_mod( 'colormag_header_top_area_color', '' );
+		$header_top_area_color_css = array(
+			'.cm-header-builder .cm-header-top-row' => array(
+				'color' => esc_html( $header_top_area_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $header_top_area_color, $header_top_area_color_css );
+
+		/**
+		 * Header main area height.
+		 */
+		$header_main_area_height_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_main_area_height = get_theme_mod( 'colormag_header_main_area_height', $header_main_area_height_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_main_area_height_default,
+			$header_main_area_height,
+			'.cm-header-builder .cm-main-row',
+			'height'
+		);
+
+		/**
+		 * Header main area container.
+		 */
+		$header_main_area_container_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_main_area_container = get_theme_mod( 'colormag_header_main_area_container', $header_main_area_container_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_main_area_container_default,
+			$header_main_area_container,
+			'.cm-header-builder .cm-header-main-row .cm-container',
+			'max-width'
+		);
+
+		// Header main area background.
+		$header_main_area_background_default = array(
+			'background-color'      => '#FAFAFA',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$header_main_area_background         = get_theme_mod( 'colormag_header_main_area_background', $header_main_area_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $header_main_area_background_default, $header_main_area_background, '.cm-header-builder .cm-header-main-row' );
+
+		// Header main area padding.
+		$header_main_area_padding_default = array(
+			'top'    => '20',
+			'right'  => '20',
+			'bottom' => '20',
+			'left'   => '20',
+			'unit'   => 'px',
+		);
+
+		$header_main_area_padding = get_theme_mod( 'colormag_header_main_area_padding', $header_main_area_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_main_area_padding_default,
+			$header_main_area_padding,
+			'.cm-header-builder .cm-header-main-row',
+			'padding'
+		);
+
+		// Header main area padding.
+		$header_main_area_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$header_main_area_margin = get_theme_mod( 'colormag_header_main_area_margin', $header_main_area_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_main_area_margin_default,
+			$header_main_area_margin,
+			'.cm-header-builder .cm-header-main-row',
+			'margin'
+		);
+
+		// Header main area padding.
+		$header_main_area_border_width_default = array(
+			'top'    => '0',
+			'right'  => '0',
+			'bottom' => '1',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$header_main_area_border_width = get_theme_mod( 'colormag_header_main_area_border_width', $header_main_area_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_main_area_border_width_default,
+			$header_main_area_border_width,
+			'.cm-header-builder .cm-header-main-row',
+			'border-width'
+		);
+
+		$header_main_area_border_color     = get_theme_mod( 'colormag_header_main_area_border_color', '#E4E4E7' );
+		$header_main_area_border_color_css = array(
+			'.cm-header-builder .cm-header-main-row' => array(
+				'border-color' => esc_html( $header_main_area_border_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '#E4E4E7', $header_main_area_border_color, $header_main_area_border_color_css );
+
+		$header_main_area_color     = get_theme_mod( 'colormag_header_main_area_color', '' );
+		$header_main_area_color_css = array(
+			'.cm-header-builder .cm-header-main-row' => array(
+				'color' => esc_html( $header_main_area_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $header_main_area_color, $header_main_area_color_css );
+
+		/**
+		 * Header bottom area height.
+		 */
+		$header_bottom_area_height_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_bottom_area_height = get_theme_mod( 'colormag_header_bottom_area_height', $header_bottom_area_height_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_bottom_area_height_default,
+			$header_bottom_area_height,
+			'.cm-header-builder .cm-bottom-row',
+			'height'
+		);
+
+		/**
+		 * Header bottom area container.
+		 */
+		$header_bottom_area_container_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$header_bottom_area_container = get_theme_mod( 'colormag_header_bottom_area_container', $header_bottom_area_container_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_bottom_area_container_default,
+			$header_bottom_area_container,
+			'.cm-header-builder .cm-header-bottom-row .cm-container',
+			'max-width'
+		);
+
+		// Header bottom area background.
+		$header_bottom_area_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$header_bottom_area_background         = get_theme_mod( 'colormag_header_bottom_area_background', $header_bottom_area_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, '.cm-header-builder .cm-header-bottom-row' );
+
+		// Header bottom area padding.
+		$header_bottom_area_padding_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$header_bottom_area_padding = get_theme_mod( 'colormag_header_bottom_area_padding', $header_bottom_area_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_bottom_area_padding_default,
+			$header_bottom_area_padding,
+			'.cm-header-builder .cm-header-bottom-row',
+			'padding'
+		);
+
+		// Header bottom area padding.
+		$header_bottom_area_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$header_bottom_area_margin = get_theme_mod( 'colormag_header_bottom_area_margin', $header_bottom_area_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_bottom_area_margin_default,
+			$header_bottom_area_margin,
+			'.cm-header-builder .cm-header-bottom-row',
+			'margin'
+		);
+
+		// Header bottom area padding.
+		$header_bottom_area_border_width_default = array(
+			'top'    => '0',
+			'right'  => '0',
+			'bottom' => '0',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$header_bottom_area_border_width = get_theme_mod( 'colormag_header_bottom_area_border_width', $header_bottom_area_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$header_bottom_area_border_width_default,
+			$header_bottom_area_border_width,
+			'.cm-header-builder .cm-header-bottom-row',
+			'border-width'
+		);
+
+		$header_bottom_area_border_color     = get_theme_mod( 'colormag_header_bottom_area_border_color', '' );
+		$header_bottom_area_border_color_css = array(
+			'.cm-header-builder .cm-header-bottom-row' => array(
+				'border-color' => esc_html( $header_bottom_area_border_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $header_bottom_area_border_color, $header_bottom_area_border_color_css );
+
+		// Header bottom area color.
+		$header_bottom_area_color     = get_theme_mod( 'colormag_header_bottom_area_color', '' );
+		$header_bottom_area_color_css = array(
+			'.cm-header-builder .cm-header-bottom-row' => array(
+				'color' => esc_html( $header_bottom_area_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $header_bottom_area_color, $header_bottom_area_color_css );
+
+
 		return $parse_builder_css;
 	}
 }

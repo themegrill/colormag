@@ -31,7 +31,6 @@ require __DIR__ . '/header-builder/bottom-area.php';
 require __DIR__ . '/header-builder/mobile-menu.php';
 require __DIR__ . '/header-builder/header-button.php';
 require __DIR__ . '/header-builder/html-1.php';
-require __DIR__ . '/header-builder/html-2.php';
 require __DIR__ . '/header-builder/primary-menu.php';
 require __DIR__ . '/header-builder/secondary-menu.php';
 require __DIR__ . '/header-builder/cart.php';

@@ -14,20 +14,14 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_header_primary_menu_sub_controls',
 			array(
-				'colormag_header_primary_menu_navigation'  => array(
+				'colormag_header_primary_menu_navigation' => array(
 					'title'    => esc_html__( 'Select Menu Navigation', 'colormag' ),
 					'type'     => 'customind-navigation',
 					'section'  => 'colormag_header_builder_primary_menu',
 					'to'       => 'menu_locations',
 					'nav_type' => 'section',
 				),
-				'colormag_primary_menu_extra'              => array(
-					'title'   => esc_html__( 'Priority plus navigation', 'colormag' ),
-					'default' => false,
-					'type'    => 'customind-toggle',
-					'section' => 'colormag_header_builder_primary_menu',
-				),
-				'colormag_header_menu_border_bottom_width' => array(
+				'colormag_primary_menu_top_border_width'  => array(
 					'default'     => array(
 						'size'  => '',
 						'units' => 'px',
@@ -44,9 +38,9 @@ $options = array(
 						'max'  => 20,
 					),
 				),
-				'colormag_header_menu_border_bottom_color' => array(
+				'colormag_primary_menu_top_border_color'  => array(
 					'title'     => esc_html__( 'Border Bottom Color', 'colormag' ),
-					'default'   => '#e9ecef',
+					'default'   => '#207daf',
 					'type'      => 'customind-color',
 					'transport' => 'postMessage',
 					'section'   => 'colormag_header_builder_primary_menu',

@@ -46,11 +46,6 @@ function customind_get_header_components() {
 					'id'      => 'html-1',
 				),
 				array(
-					'name'    => __( 'HTML 2', 'colormag' ),
-					'section' => 'colormag_header_builder_html_2',
-					'id'      => 'html-2',
-				),
-				array(
 					'name'     => __( 'Widget 1', 'colormag' ),
 					'section'  => 'colormag_header_builder_widget_1',
 					'id'       => 'widget-1',
@@ -125,11 +120,6 @@ function customind_get_header_components() {
 					'name'    => __( 'HTML 1', 'colormag' ),
 					'section' => 'colormag_header_builder_html_1',
 					'id'      => 'html-1',
-				),
-				array(
-					'name'    => __( 'HTML 2', 'colormag' ),
-					'section' => 'colormag_header_builder_html_2',
-					'id'      => 'html-2',
 				),
 				array(
 					'name'     => __( 'Widget 1', 'colormag' ),

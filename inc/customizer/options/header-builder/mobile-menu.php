@@ -42,7 +42,7 @@ $options = array(
 								'transport' => 'postMessage',
 								'section'   => 'colormag_header_builder_mobile_menu',
 							),
-						),
+						)
 					),
 				),
 				'colormag_header_mobile_menu_item_border_bottom' => array(

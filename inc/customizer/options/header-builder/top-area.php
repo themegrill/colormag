@@ -47,7 +47,7 @@ $options = apply_filters(
 					),
 					'colormag_header_top_area_background' => array(
 						'default'   => array(
-							'background-color'      => '#18181B',
+							'background-color'      => '#f4f4f5',
 							'background-image'      => '',
 							'background-repeat'     => 'repeat',
 							'background-position'   => 'center center',
