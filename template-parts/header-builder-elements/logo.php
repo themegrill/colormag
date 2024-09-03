@@ -15,7 +15,8 @@ defined( 'ABSPATH' ) || exit;
 	<?php
 
 	// Check for meta logo.
-	$meta_logo_id = ! is_home() ? intval( get_post_meta( colormag_get_post_id(), 'colormag_logo', true ) ) : '';
+	$post_id      = get_the_ID();
+	$meta_logo_id = ! is_home() ? intval( get_post_meta( $post_id, 'colormag_logo', true ) ) : '';
 
 	if ( $meta_logo_id ) {
 

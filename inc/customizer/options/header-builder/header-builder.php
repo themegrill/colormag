@@ -21,16 +21,6 @@ function customind_get_header_components() {
 					'id'      => 'secondary-menu',
 				),
 				array(
-					'name'    => __( 'Tertiary Menu', 'colormag' ),
-					'section' => 'colormag_header_builder_tertiary_menu',
-					'id'      => 'tertiary-menu',
-				),
-				array(
-					'name'    => __( 'Quaternary Menu', 'colormag' ),
-					'section' => 'colormag_header_builder_quaternary_menu',
-					'id'      => 'quaternary-menu',
-				),
-				array(
 					'name'    => __( 'Button 1', 'colormag' ),
 					'section' => 'colormag_header_builder_button_1',
 					'id'      => 'button',
@@ -90,16 +80,6 @@ function customind_get_header_components() {
 					'name'    => __( 'Secondary Menu', 'colormag' ),
 					'section' => 'colormag_header_builder_secondary_menu',
 					'id'      => 'secondary-menu',
-				),
-				array(
-					'name'    => __( 'Tertiary Menu', 'colormag' ),
-					'section' => 'colormag_header_builder_tertiary_menu',
-					'id'      => 'tertiary-menu',
-				),
-				array(
-					'name'    => __( 'Quaternary Menu', 'colormag' ),
-					'section' => 'colormag_header_builder_quaternary_menu',
-					'id'      => 'quaternary-menu',
 				),
 				array(
 					'name'    => __( 'Mobile Menu', 'colormag' ),
