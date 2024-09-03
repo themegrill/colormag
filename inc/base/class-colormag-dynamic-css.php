@@ -2251,6 +2251,108 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Secondary menu.
+		$header_secondary_menu_text_color     = get_theme_mod( 'colormag_header_secondary_menu_text_color', '' );
+		$header_secondary_menu_text_color_css = array(
+			'.cm-header-builder .cm-secondary-nav ul li a' => array(
+				'color' => esc_html( $header_secondary_menu_text_color ),
+			),
+			'.cm-header-builder .cm-secondary-nav .cm-submenu-toggle .cm-icon'      => array(
+				'fill' => esc_html( $header_secondary_menu_text_color ),
+			),
+		);
+		$parse_builder_css                  .= colormag_parse_css( '', $header_secondary_menu_text_color, $header_secondary_menu_text_color_css );
+
+		$header_secondary_menu_selected_hovered_text_color     = get_theme_mod( 'colormag_header_secondary_menu_selected_hovered_text_color', '' );
+		$header_secondary_menu_selected_hovered_text_color_css = array(
+			'.cm-header-builder .cm-secondary-nav ul li a:hover' => array(
+				'color' => esc_html( $header_secondary_menu_selected_hovered_text_color ),
+			),
+			'.cm-header-builder .cm-secondary-nav li:hover > .cm-submenu-toggle .cm-icon' => array(
+				'fill' => esc_html( $header_secondary_menu_selected_hovered_text_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_secondary_menu_selected_hovered_text_color, $header_secondary_menu_selected_hovered_text_color_css );
+
+		$header_secondary_menu_selected_hover_bg     = get_theme_mod( 'colormag_header_secondary_menu_hover_background', '' );
+		$header_secondary_menu_selected_hover_bg_css = array(
+			'.cm-header-builder .cm-secondary-nav ul li:hover' => array(
+				'color' => esc_html( $header_secondary_menu_selected_hover_bg ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_secondary_menu_selected_hover_bg, $header_secondary_menu_selected_hover_bg_css );
+
+
+		$header_secondary_sub_menu_background_default = array(
+			'background-color'      => '#232323',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$header_secondary_sub_menu_background         = get_theme_mod( 'colormag_header_secondary_sub_menu_background', $header_secondary_sub_menu_background_default );
+		$parse_builder_css                          .= colormag_parse_background_css( $header_secondary_sub_menu_background_default, $header_secondary_sub_menu_background, '.cm-header-builder .cm-secondary-nav .sub-menu, .cm-header-builder .cm-secondary-nav .children' );
+
+		$header_secondary_menu_typography_default     = array(
+			'font-family' => 'default',
+			'font-weight' => '600',
+			'font-size'   => array(
+				'desktop' => array(
+					'size' => '14',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+		);
+		$header_secondary_sub_menu_typography_default = array(
+			'font-size' => array(
+				'desktop' => array(
+					'size' => '14',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+		);
+		$header_secondary_menu_typography     = get_theme_mod( 'colormag_header_secondary_menu_typography', $header_secondary_menu_typography_default );
+		$header_secondary_sub_menu_typography = get_theme_mod( 'colormag_header_secondary_sub_menu_typography', $header_secondary_sub_menu_typography_default );
+
+		// secondary menu typography.
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_secondary_menu_typography_default,
+			$header_secondary_menu_typography,
+			'.cm-header-builder .cm-secondary-nav ul li a',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// secondary sub menu typography.
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_secondary_sub_menu_typography_default,
+			$header_secondary_sub_menu_typography,
+			'.cm-header-builder .cm-secondary-nav ul li ul li a',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
 		return $parse_builder_css;
 	}
 }

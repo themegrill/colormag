@@ -82,6 +82,11 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( 'colormag_dark_style', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			}
 
+			$host_fonts_locally = get_theme_mod( 'colormag_load_google_fonts_locally', false );
+
+			// Local Google fonts locally.
+			wp_enqueue_style( 'colormag_googlefonts', \Customind\Core\get_google_fonts_url( $host_fonts_locally ), array(), COLORMAG_THEME_VERSION, 'all' );
+
 			/**
 			 * Inline CSS from customizer.
 			 */

@@ -15,7 +15,8 @@ if ( ! function_exists( 'colormag_doctype' ) ) :
 	/**
 	 * Header doctype
 	 */
-	function colormag_doctype() { ?>
+	function colormag_doctype() {
+		?>
 		<!doctype html>
 		<html <?php language_attributes(); ?>>
 		<?php
@@ -53,7 +54,6 @@ if ( ! function_exists( 'colormag_background_image_clickable' ) ) :
 		if ( $background_image_url_link ) {
 			echo '<a href="' . esc_url( $background_image_url_link ) . '" class="background-image-clickable" target="_blank"></a>';
 		}
-
 	}
 
 endif;
@@ -165,7 +165,6 @@ if ( ! function_exists( 'colormag_header_markup' ) ) :
 		 * Hook: colormag_after_header.
 		 */
 		do_action( 'colormag_after_header' );
-
 	}
 
 endif;
@@ -195,7 +194,6 @@ if ( ! function_exists( 'colormag_header_main' ) ) :
 	function colormag_header_main() {
 
 		get_template_part( 'template-parts/header/header-main' );
-
 	}
 
 endif;
@@ -286,7 +284,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 
 				<div class="<?php echo esc_attr( $home_icon_class ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-					   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+						title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 					>
 						<?php colormag_get_icon( 'home' ); ?>
 					</a>
@@ -324,7 +322,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 					</p>
 					<?php
 						get_template_part( 'template-parts/header/primary-menu/main-navigation' );
-				?>
+					?>
 
 			</div>
 		</div>
@@ -401,7 +399,6 @@ if ( ! function_exists( 'colormag_front_page_full_width_sidebar' ) ) :
 			</div>
 			<?php
 		endif;
-
 	}
 
 endif;
@@ -483,8 +480,8 @@ if ( ! function_exists( 'colormag_add_submenu_icon' ) ) :
 			) {
 
 				$submenu_toggle_markup = '<span role="button" tabindex="0" class="cm-submenu-toggle" onkeypress="">' .
-										 '<svg class="cm-icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 17.5c-.3 0-.5-.1-.7-.3l-9-9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l8.3 8.3 8.3-8.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-9 9c-.2.2-.4.3-.7.3z"/></svg>' .
-										 '</span>';
+										'<svg class="cm-icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24"><path d="M12 17.5c-.3 0-.5-.1-.7-.3l-9-9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l8.3 8.3 8.3-8.3c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-9 9c-.2.2-.4.3-.7.3z"/></svg>' .
+										'</span>';
 
 				$item_output = str_replace(
 					$args->link_after . '</a>',
@@ -511,7 +508,7 @@ if ( ! function_exists( 'colormag_breadcrumb' ) ) :
 
 		// Bail out if breadcrumb is not selected.
 		if ( 1 === get_theme_mod( 'colormag_breadcrumb_enable', 0 ) ) {
-		?>
+			?>
 		<!-- Breadcrumb display -->
 		<div id="breadcrumb-wrap" class="breadcrumb-wrap" typeof="BreadcrumbList">
 			<div class="inner-wrap">
@@ -536,14 +533,14 @@ if ( ! function_exists( 'colormag_breadcrumb' ) ) :
 			?>
 			</div>
 		</div>
-		<?php
+			<?php
 		}
 	}
 endif;
 
 	add_action( 'colormag_action_before_content', 'colormag_breadcrumb', 15 );
 
-	if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
+if ( ! function_exists( 'colormag_theme_breadcrumb' ) ) :
 	/**
 	 * Container starts.
 	 */
@@ -557,3 +554,36 @@ endif;
 endif;
 
 add_action( 'colormag_action_breadcrumb', 'colormag_theme_breadcrumb', 10 );
+
+
+if ( ! function_exists( 'colormag_menu_fallback' ) ) :
+
+	/**
+	 * Menu fallback for primary menu.
+	 *
+	 * Contains wp_list_pages to display pages created,
+	 * search icons and WooCommerce cart icon.
+	 */
+	function colormag_menu_fallback() {
+
+		require get_template_directory() . '/inc/class-colormag-walker-page.php';
+		$output = '<ul id="cm-primary-menu" class="cm-primary-menu">';
+
+		$output .= wp_list_pages(
+			array(
+				'echo'               => false,
+				'title_li'           => false,
+				'walker'             => new Colormag_Walker_Page(),
+				'has_children_class' => 'menu-item-has-children',
+				'current_class'      => 'current-menu-item',
+			)
+		);
+
+		$output .= '</ul>';
+
+		// @codingStandardsIgnoreStart
+		echo $output;
+		// @codingStandardsIgnoreEnd
+	}
+
+endif;
