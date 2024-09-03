@@ -834,6 +834,52 @@
 						value,
 					);
 					break;
+
+				case "colormag_header_primary_menu_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav ul li a",
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav .cm-submenu-toggle .cm-icon",
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_header_primary_menu_selected_hovered_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav ul li a:hover",
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon",
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_header_primary_menu_hover_background":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav ul li:hover",
+						"background-color",
+						value,
+					);
+					break;
+
+				case "colormag_header_primary_sub_menu_background":
+					css = colormagGenerateBackgroundCSS(".cm-header-builder .cm-primary-nav .sub-menu, .cm-header-builder .cm-primary-nav .children", value);
+					break;
+
+				case "colormag_header_primary_menu_typography":
+					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-primary-nav ul li a", value);
+					break;
+
+				case "colormag_header_primary_sub_menu_typography":
+					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-primary-nav ul li ul li a", value);
+					break;
 //
 // 				case "colormag_footer_column_widget_link_color":
 // 					css = colormagGenerateCommonCSS(

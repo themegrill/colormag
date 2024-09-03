@@ -89,7 +89,7 @@ $options = apply_filters(
 									'transport' => 'postMessage',
 									'section'   => 'colormag_primary_menu_section',
 								),
-							),
+							)
 						),
 					),
 					'colormag_primary_menu_typography'  => array(
