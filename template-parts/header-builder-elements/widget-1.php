@@ -1,3 +1,3 @@
 <?php
 
-dynamic_sidebar( 'top-bar-col-1-sidebar' );
+dynamic_sidebar( 'header-sidebar-1' );
