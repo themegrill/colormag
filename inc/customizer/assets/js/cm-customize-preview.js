@@ -1784,6 +1784,35 @@
 					);
 					break;
 
+					case "colormag_header_search_icon_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-top-search .search-top::before",
+						"color",
+						value,
+					);
+					break;
+
+					case "colormag_header_search_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-top-search .search-form-top input",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_search_background":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top",
+						"background-color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .search-form-top.show::before",
+						"border-bottom-color",
+						value,
+					);
+					break;
+
 // 				case "colormag_header_html_1_text_color":
 // 					css = colormagGenerateCommonCSS(
 // 						".cm-header-builder .cm-html-1 *",

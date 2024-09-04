@@ -2282,7 +2282,6 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_secondary_menu_selected_hover_bg, $header_secondary_menu_selected_hover_bg_css );
 
-
 		$header_secondary_sub_menu_background_default = array(
 			'background-color'      => '#232323',
 			'background-image'      => '',
@@ -2328,10 +2327,9 @@ class ColorMag_Dynamic_CSS {
 				),
 			),
 		);
-		$header_secondary_menu_typography     = get_theme_mod( 'colormag_header_secondary_menu_typography', $header_secondary_menu_typography_default );
-		$header_secondary_sub_menu_typography = get_theme_mod( 'colormag_header_secondary_sub_menu_typography', $header_secondary_sub_menu_typography_default );
 
 		// secondary menu typography.
+		$header_secondary_menu_typography     = get_theme_mod( 'colormag_header_secondary_menu_typography', $header_secondary_menu_typography_default );
 		$parse_builder_css .= colormag_parse_typography_css(
 			$header_secondary_menu_typography_default,
 			$header_secondary_menu_typography,
@@ -2343,6 +2341,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// secondary sub menu typography.
+		$header_secondary_sub_menu_typography = get_theme_mod( 'colormag_header_secondary_sub_menu_typography', $header_secondary_sub_menu_typography_default );
 		$parse_builder_css .= colormag_parse_typography_css(
 			$header_secondary_sub_menu_typography_default,
 			$header_secondary_sub_menu_typography,
@@ -2352,6 +2351,36 @@ class ColorMag_Dynamic_CSS {
 				'mobile' => 600,
 			)
 		);
+
+		// Header search icon color.
+		$header_search_icon_color     = get_theme_mod( 'colormag_header_search_icon_color', '' );
+		$header_search_icon_color_css = array(
+			'.cm-header-builder .cm-top-search .search-top::before' => array(
+				'color' => esc_html( $header_search_icon_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_icon_color, $header_search_icon_color_css );
+
+		// Header search text color.
+		$header_search_text_color     = get_theme_mod( 'colormag_header_search_text_color', '' );
+		$header_search_text_color_css = array(
+			'.cm-header-builder .cm-top-search .search-form-top input' => array(
+				'color' => esc_html( $header_search_text_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_text_color, $header_search_text_color_css );
+
+		// Header search background color.
+		$header_search_background         = get_theme_mod( 'colormag_header_search_background', '' );
+		$header_search_background_css = array(
+			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top' => array(
+				'background-color' => esc_html( $header_search_background ),
+			),
+			'.cm-header-builder .search-form-top.show::before' => array(
+				'border-bottom-color' => esc_html( $header_search_background ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_background, $header_search_background_css );
 
 		return $parse_builder_css;
 	}
