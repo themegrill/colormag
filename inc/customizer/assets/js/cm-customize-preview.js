@@ -1813,6 +1813,14 @@
 					);
 					break;
 
+				case "colormag_header_random_icon_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-random-post .cm-icon--random-fill",
+						"fill",
+						value,
+					);
+					break;
+
 // 				case "colormag_header_html_1_text_color":
 // 					css = colormagGenerateCommonCSS(
 // 						".cm-header-builder .cm-html-1 *",

@@ -13,20 +13,20 @@ $options = array(
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Color', 'colormag' ),
 					'transport' => 'postMessage',
-					'section'   => 'colormag_header_builder_primary_menu',
+					'section'   => 'colormag_header_builder_search',
 				),
 				'colormag_header_search_text_color' => array(
 					'default' => '',
 					'type'    => 'customind-color',
 					'title'   => esc_html__( 'Text Color', 'colormag' ),
-					'section' => 'colormag_header_builder_primary_menu',
+					'section' => 'colormag_header_builder_search',
 				),
 				'colormag_header_search_background' => array(
 					'default'   => '',
 					'type'      => 'customind-color',
 					'transport' => 'postMessage',
 					'title'     => esc_html__( 'Background', 'colormag' ),
-					'section'   => 'colormag_header_builder_primary_menu',
+					'section'   => 'colormag_header_builder_search',
 				),
 			)
 		),

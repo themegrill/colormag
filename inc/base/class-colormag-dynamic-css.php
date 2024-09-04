@@ -2628,6 +2628,16 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Header search icon color.
+		$header_random_icon_color     = get_theme_mod( 'colormag_header_random_icon_color', '' );
+		$header_random_icon_color_css = array(
+			'.cm-header-builder .cm-random-post .cm-icon--random-fill' => array(
+				'fill' => esc_html( $header_random_icon_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_random_icon_color, $header_random_icon_color_css );
+
+
 		return $parse_builder_css;
 	}
 }

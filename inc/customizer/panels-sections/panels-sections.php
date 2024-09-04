@@ -205,6 +205,11 @@ $section_option_id = array(
 		'panel'    => 'colormag_header_builder',
 		'priority' => 10,
 	),
+	'colormag_header_builder_random'         => array(
+		'title'    => esc_html__( 'Random', 'colormag' ),
+		'panel'    => 'colormag_header_builder',
+		'priority' => 10,
+	),
 	'colormag_header_builder_offset_area'    => array(
 		'title'    => esc_html__( 'Offset Area', 'colormag' ),
 		'panel'    => 'colormag_header_builder',
