@@ -23,7 +23,7 @@ $options = array(
 				),
 				'colormag_header_main_menu_color_group'   => array(
 					'type'         => 'customind-color-group',
-					'title'        => 'Color',
+					'title'        => esc_html__( 'Color', 'colormag' ),
 					'section'      => 'colormag_header_builder_primary_menu',
 					'sub_controls' => array(
 						'colormag_header_primary_menu_text_color' => array(
@@ -44,6 +44,21 @@ $options = array(
 							'default'   => '',
 							'type'      => 'customind-color',
 							'title'     => esc_html__( 'Background', 'colormag' ),
+							'transport' => 'postMessage',
+							'section'   => 'colormag_header_builder_primary_menu',
+						),
+					),
+				),
+
+				'colormag_header_main_menu_background_group' => array(
+					'type'         => 'customind-color-group',
+					'title'        => esc_html__( 'Background', 'colormag' ),
+					'section'      => 'colormag_header_builder_primary_menu',
+					'sub_controls' => array(
+						'colormag_header_primary_menu_hover_background' => array(
+							'default'   => '',
+							'type'      => 'customind-color',
+							'title'     => esc_html__( 'Hover', 'colormag' ),
 							'transport' => 'postMessage',
 							'section'   => 'colormag_header_builder_primary_menu',
 						),

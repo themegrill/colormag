@@ -8,7 +8,7 @@ foreach ( $menus as $menu ) {
 $options = array(
 	'colormag_header_secondary_menu_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Primary Menu', 'colormag' ),
+		'title'        => esc_html__( 'Secondary Menu', 'colormag' ),
 		'section'      => 'colormag_header_builder_secondary_menu',
 		'priority'     => 9,
 		'sub_controls' => apply_filters(
@@ -49,7 +49,20 @@ $options = array(
 						),
 					),
 				),
-
+				'colormag_header_main_menu_background_group' => array(
+					'type'         => 'customind-color-group',
+					'title'        => esc_html__( 'Background', 'colormag' ),
+					'section'      => 'colormag_header_builder_secondary_menu',
+					'sub_controls' => array(
+						'colormag_header_secondary_menu_hover_background' => array(
+							'default'   => '',
+							'type'      => 'customind-color',
+							'title'     => esc_html__( 'Hover', 'colormag' ),
+							'transport' => 'postMessage',
+							'section'   => 'colormag_header_builder_secondary_menu',
+						),
+					),
+				),
 				'colormag_header_secondary_menu_typography' => array(
 					'default'   => array(
 						'font-family' => 'default',
