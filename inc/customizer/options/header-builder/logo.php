@@ -49,7 +49,7 @@ $options = array(
 		),
 		'collapsible'  => apply_filters( 'colormag_header_site_logo_accordion_collapsible', false ),
 	),
-	'colormag_header_site_identity_heading'         => array(
+	'colormag_header_site_identity_heading2'        => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Site Title', 'colormag' ),
 		'section'      => 'colormag_header_builder_logo',
@@ -57,14 +57,14 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_header_site_identity_sub_controls',
 			array(
-				'colormag_enable_site_identity'         => array(
+				'colormag_enable_site_identity2'         => array(
 					'title'    => esc_html__( 'Enable', 'colormag' ),
 					'default'  => true,
 					'type'     => 'customind-toggle',
 					'section'  => 'colormag_header_builder_logo',
 					'priority' => 10,
 				),
-				'colormag_header_site_identity_color_group' => array(
+				'colormag_header_site_identity_color_group2' => array(
 					'type'         => 'customind-color-group',
 					'title'        => esc_html__( 'Color', 'colormag' ),
 					'section'      => 'colormag_header_builder_logo',
@@ -76,15 +76,12 @@ $options = array(
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Normal', 'colormag' ),
 								'transport' => 'postMessage',
-								'section'   => 'colormag_colors',
+								'section'   => 'colormag_header_builder_logo',
 							),
 						),
 					),
-					'condition'    => array(
-						'colormag_enable_site_identity' => true,
-					),
 				),
-				'colormag_header_site_title_typography' => array(
+				'colormag_header_site_title_typography2' => array(
 					'default'   => array(
 						'font-family'    => 'Default',
 						'font-weight'    => '400',
@@ -125,9 +122,6 @@ $options = array(
 					'section'   => 'colormag_header_builder_logo',
 					'transport' => 'postMessage',
 					'priority'  => 14,
-					'condition' => array(
-						'colormag_enable_site_identity' => true,
-					),
 				),
 			),
 		),
@@ -155,9 +149,6 @@ $options = array(
 					'section'   => 'colormag_header_builder_logo',
 					'transport' => 'postMessage',
 					'priority'  => 16,
-					'condition' => array(
-						'colormag_enable_site_tagline' => true,
-					),
 				),
 				'colormag_header_site_tagline_typography' => array(
 					'default'   => array(
@@ -200,9 +191,6 @@ $options = array(
 					'section'   => 'colormag_header_builder_logo',
 					'transport' => 'postMessage',
 					'priority'  => 18,
-					'condition' => array(
-						'colormag_enable_site_tagline' => true,
-					),
 				),
 			),
 		),

@@ -279,6 +279,32 @@ function colormag_widgets_init() {
 
 add_action( 'widgets_init', 'colormag_widgets_init' );
 
+function colormag_builder_widget_init() {
+	$sidebars = array(
+		'header-sidebar-1' => esc_html__( 'Widget One', 'colormag' ),
+		'header-sidebar-2' => esc_html__( 'Widget Two', 'colormag' ),
+	);
+	foreach ( $sidebars as $id => $name ) {
+
+		register_sidebar(
+			apply_filters(
+				'colormag_sidebars_widget_args',
+				array(
+					'id'            => $id,
+					'name'          => $name,
+					'description'   => esc_html__( 'Add widgets here.', 'colormag' ),
+					'before_widget' => '<section id="%1$s" class="widget widget-' . $id . ' %2$s">',
+					'after_widget'  => '</section>',
+					'before_title'  => '<h2 class="widget-title">',
+					'after_title'   => '</h2>',
+				)
+			)
+		);
+	}
+}
+
+add_action( 'widgets_init', 'colormag_builder_widget_init' );
+
 if ( ! function_exists( 'widget_title_markup' ) ) :
 
 	/**
