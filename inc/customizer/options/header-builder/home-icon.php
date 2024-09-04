@@ -3,7 +3,7 @@
 $options = array(
 	'colormag_home_icon_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Search', 'colormag' ),
+		'title'        => esc_html__( 'Home Icon', 'colormag' ),
 		'section'      => 'colormag_header_builder_home_icon',
 		'sub_controls' => apply_filters(
 			'colormag_home_icon_sub_controls',

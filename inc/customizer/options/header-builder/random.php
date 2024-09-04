@@ -3,7 +3,7 @@
 $options = array(
 	'colormag_random_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Search', 'colormag' ),
+		'title'        => esc_html__( 'Random', 'colormag' ),
 		'section'      => 'colormag_header_builder_random',
 		'sub_controls' => apply_filters(
 			'colormag_random_sub_controls',
