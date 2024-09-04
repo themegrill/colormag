@@ -2382,6 +2382,252 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_background, $header_search_background_css );
 
+		// Header builder widget title color.
+		$header_widget_title_color     = get_theme_mod( 'colormag_widget_1_title_color', '' );
+		$header_widget_title_color_css = array(
+			'.cm-header-builder .widget.widget-header-sidebar-1 .widget-title' => array(
+				'color' => esc_html( $header_widget_title_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $header_widget_title_color, $header_widget_title_color_css );
+
+		// Header builder widget content color.
+		$header_widget_content_color     = get_theme_mod( 'colormag_widget_1_content_color', '' );
+		$header_widget_content_color_css = array(
+			'.cm-header-builder .widget.widget-header-sidebar-1' => array(
+				'color' => esc_html( $header_widget_content_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $header_widget_content_color, $header_widget_content_color_css );
+
+		// Header builder widget link color.
+		$header_widget_link_color     = get_theme_mod( 'colormag_widget_1_link_color', '' );
+		$header_widget_link_color_css = array(
+			'.cm-header-builder .widget.widget-header-sidebar-1 a' => array(
+				'color' => esc_html( $header_widget_link_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $header_widget_link_color, $header_widget_link_color_css );
+
+		// Header builder widget title typography.
+		$header_widget_1_title_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => '400',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '2',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.3',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$header_widget_1_title_typography = get_theme_mod( 'colormag_widget_1_title_typography', $header_widget_1_title_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_widget_1_title_typography_default,
+			$header_widget_1_title_typography,
+			'.cm-header-builder .widget.widget-header-sidebar-1 .widget-title',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Header builder widget content typography.
+		$header_widget_1_content_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => '400',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '2',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.3',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$header_widget_1_content_typography = get_theme_mod( 'colormag_widget_1_content_typography', $header_widget_1_content_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_widget_1_content_typography_default,
+			$header_widget_1_content_typography,
+			'.cm-header-builder .widget.widget-header-sidebar-1',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Header builder widget 2 title color.
+		$header_widget_2_title_color     = get_theme_mod( 'colormag_widget_2_title_color', '' );
+		$header_widget_2_title_color_css = array(
+			'.cm-header-builder .widget.widget-header-sidebar-2 .widget-title' => array(
+				'color' => esc_html( $header_widget_2_title_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $header_widget_2_title_color, $header_widget_2_title_color_css );
+
+		// Header builder widget 2 content color.
+		$header_widget_2_content_color     = get_theme_mod( 'colormag_widget_2_content_color', '' );
+		$header_widget_2_content_color_css = array(
+			'.cm-header-builder .widget.widget-header-sidebar-2' => array(
+				'color' => esc_html( $header_widget_2_content_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $header_widget_2_content_color, $header_widget_2_content_color_css );
+
+		// Header builder widget 2 link color.
+		$header_widget_2_link_color     = get_theme_mod( 'colormag_widget_2_link_color', '' );
+		$header_widget_2_link_color_css = array(
+			'.cm-header-builder .widget.widget-header-sidebar-2 a' => array(
+				'color' => esc_html( $header_widget_2_link_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $header_widget_2_link_color, $header_widget_2_link_color_css );
+
+		// Header builder widget title typography.
+		$header_widget_2_title_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => '400',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '2',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.3',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$header_widget_2_title_typography = get_theme_mod( 'colormag_widget_2_title_typography', $header_widget_2_title_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_widget_2_title_typography_default,
+			$header_widget_2_title_typography,
+			'.cm-header-builder .widget.widget-header-sidebar-2 .widget-title',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Header builder widget content typography.
+		$header_widget_2_content_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => '400',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '2',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.3',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$header_widget_2_content_typography = get_theme_mod( 'colormag_widget_2_content_typography', $header_widget_2_content_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_widget_2_content_typography_default,
+			$header_widget_2_content_typography,
+			'.cm-header-builder .widget.widget-header-sidebar-2',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
 		return $parse_builder_css;
 	}
 }

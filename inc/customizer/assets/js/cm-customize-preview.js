@@ -2109,86 +2109,86 @@
 					);
 					break;
 
-// 				case "colormag_widget_1_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_1_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_1_content_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_1_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_1_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-header-builder .widget.widget-top-bar-col-1-sidebar",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_2_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_2_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_2_content_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_2_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_widget_2_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-header-builder .widget.widget-top-bar-col-2-sidebar",
-// 						value,
-// 					);
-// 					break;
-//
+				case "colormag_widget_1_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .widget.widget-header-sidebar-1 .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_widget_1_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-header-builder .widget.widget-header-sidebar-1 .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_widget_1_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .widget.widget-header-sidebar-1",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_widget_1_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .widget.widget-header-sidebar-1 a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_widget_1_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-header-builder .widget.widget-header-sidebar-1",
+						value,
+					);
+					break;
+
+				case "colormag_widget_2_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .widget.widget-header-sidebar-2 .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_widget_2_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-header-builder .widget.widget-header-sidebar-2 .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_widget_2_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .widget.widget-header-sidebar-2",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_widget_2_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .widget.widget-header-sidebar-2 a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_widget_2_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-header-builder .widget.widget-header-sidebar-2",
+						value,
+					);
+					break;
+
 // 				case "colormag_header_mobile_menu_item_color":
 // 					css = colormagGenerateCommonCSS(".cm-mobile-nav a", "color", value);
 // 					css += colormagGenerateCommonCSS(
