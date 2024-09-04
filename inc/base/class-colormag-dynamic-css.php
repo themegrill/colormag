@@ -2637,6 +2637,14 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_random_icon_color, $header_random_icon_color_css );
 
+		// Header home icon color.
+		$header_random_icon_color     = get_theme_mod( 'colormag_header_home_icon_color', '' );
+		$header_random_icon_color_css = array(
+			'.cm-header-builder .cm-home-icon .cm-icon--home' => array(
+				'fill' => esc_html( $header_random_icon_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_random_icon_color, $header_random_icon_color_css );
 
 		return $parse_builder_css;
 	}

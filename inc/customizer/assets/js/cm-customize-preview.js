@@ -1821,6 +1821,14 @@
 					);
 					break;
 
+				case "colormag_header_home_icon_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-home-icon .cm-icon--home",
+						"fill",
+						value,
+					);
+					break;
+
 // 				case "colormag_header_html_1_text_color":
 // 					css = colormagGenerateCommonCSS(
 // 						".cm-header-builder .cm-html-1 *",

@@ -35,6 +35,7 @@ require __DIR__ . '/header-builder/primary-menu.php';
 require __DIR__ . '/header-builder/secondary-menu.php';
 require __DIR__ . '/header-builder/cart.php';
 require __DIR__ . '/header-builder/random.php';
+require __DIR__ . '/header-builder/home-icon.php';
 require __DIR__ . '/header-builder/offset-area.php';
 require __DIR__ . '/header-builder/search.php';
 require __DIR__ . '/header-builder/socials.php';
