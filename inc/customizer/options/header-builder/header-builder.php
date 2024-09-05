@@ -138,6 +138,11 @@ function customind_get_header_components() {
 					'section' => 'colormag_header_builder_news_ticker',
 					'id'      => 'news-ticker',
 				),
+				array(
+					'name'    => __( 'Random', 'colormag' ),
+					'section' => 'colormag_header_builder_random',
+					'id'      => 'random',
+				),
 			)
 		),
 	);
