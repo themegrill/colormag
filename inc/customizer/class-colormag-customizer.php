@@ -62,7 +62,14 @@ class ColorMag_Customizer {
 		if (
 			str_contains( $section->id, 'header-sidebar-' ) ||
 			str_contains( $section->id, 'footer-sidebar-' ) ||
-			str_contains( $section->id, 'colormag_header_sidebar' )
+			str_contains( $section->id, 'colormag_header_sidebar' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_one_upper' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_two_upper' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_three_upper' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_one' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_two' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_three' ) ||
+			str_contains( $section->id, 'colormag_footer_sidebar_four' )
 		) {
 			$active = true;
 		}
@@ -77,7 +84,15 @@ class ColorMag_Customizer {
 	 * @param int|string $sidebar_id   Sidebar ID.
 	 */
 	public function modify_widgets_panel( array $section_args, string $section_id, $sidebar_id ): array {
-		$footer_widgets = [];
+		$footer_widgets = [
+			'colormag_footer_sidebar_one_upper',
+			'colormag_footer_sidebar_two_upper',
+			'colormag_footer_sidebar_three_upper',
+			'colormag_footer_sidebar_one',
+			'colormag_footer_sidebar_two',
+			'colormag_footer_sidebar_three',
+			'colormag_footer_sidebar_four',
+		];
 		$header_widgets = [
 			'header-sidebar-1',
 			'header-sidebar-2',
