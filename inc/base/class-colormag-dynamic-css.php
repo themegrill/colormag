@@ -2647,31 +2647,31 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_random_icon_color, $header_random_icon_color_css );
 
 		// Footer builder widget title color.
-		$footer_widget_title_color     = get_theme_mod( 'zakra_footer_widget_1_title_color', '' );
+		$footer_widget_title_color     = get_theme_mod( 'colormag_footer_widget_1_title_color', '' );
 		$footer_widget_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one_upper .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper .widget-title' => array(
 				'color' => esc_html( $footer_widget_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_title_color, $footer_widget_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_title_color, $footer_widget_title_color_css );
 
 		// Footer builder widget content color.
-		$footer_widget_content_color     = get_theme_mod( 'zakra_footer_widget_1_content_color', '' );
+		$footer_widget_content_color     = get_theme_mod( 'colormag_footer_widget_1_content_color', '' );
 		$footer_widget_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one_upper' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper' => array(
 				'color' => esc_html( $footer_widget_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_content_color, $footer_widget_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_content_color, $footer_widget_content_color_css );
 
 		// Footer builder widget link color.
-		$footer_widget_link_color     = get_theme_mod( 'zakra_footer_widget_1_link_color', '' );
+		$footer_widget_link_color     = get_theme_mod( 'colormag_footer_widget_1_link_color', '' );
 		$footer_widget_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one_upper a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper a' => array(
 				'color' => esc_html( $footer_widget_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_link_color, $footer_widget_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_link_color, $footer_widget_link_color_css );
 
 		// Footer builder widget title typography.
 		$footer_widget_1_title_typography_default = array(
@@ -2708,11 +2708,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_1_title_typography = get_theme_mod( 'zakra_footer_widget_1_title_typography', $footer_widget_1_title_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_1_title_typography = get_theme_mod( 'colormag_footer_widget_1_title_typography', $footer_widget_1_title_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_1_title_typography_default,
 			$footer_widget_1_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one_upper .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2754,11 +2754,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_1_content_typography = get_theme_mod( 'zakra_footer_widget_1_content_typography', $footer_widget_1_content_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_1_content_typography = get_theme_mod( 'colormag_footer_widget_1_content_typography', $footer_widget_1_content_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_1_content_typography_default,
 			$footer_widget_1_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one_upper',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2766,31 +2766,31 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Footer builder widget 2 title color.
-		$footer_widget_2_title_color     = get_theme_mod( 'zakra_footer_widget_2_title_color', '' );
+		$footer_widget_2_title_color     = get_theme_mod( 'colormag_footer_widget_2_title_color', '' );
 		$footer_widget_2_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two_upper .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper .widget-title' => array(
 				'color' => esc_html( $footer_widget_2_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_2_title_color, $footer_widget_2_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_2_title_color, $footer_widget_2_title_color_css );
 
 		// Footer builder widget 2 content color.
-		$footer_widget_2_content_color     = get_theme_mod( 'zakra_footer_widget_2_content_color', '' );
+		$footer_widget_2_content_color     = get_theme_mod( 'colormag_footer_widget_2_content_color', '' );
 		$footer_widget_2_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two_upper' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper' => array(
 				'color' => esc_html( $footer_widget_2_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_2_content_color, $footer_widget_2_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_2_content_color, $footer_widget_2_content_color_css );
 
 		// Footer builder widget 2 link color.
-		$footer_widget_2_link_color     = get_theme_mod( 'zakra_footer_widget_2_link_color', '' );
+		$footer_widget_2_link_color     = get_theme_mod( 'colormag_footer_widget_2_link_color', '' );
 		$footer_widget_2_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two_upper a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper a' => array(
 				'color' => esc_html( $footer_widget_2_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_2_link_color, $footer_widget_2_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_2_link_color, $footer_widget_2_link_color_css );
 
 		// Footer builder widget 2 title typography.
 		$footer_widget_2_title_typography_default = array(
@@ -2827,11 +2827,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_2_title_typography = get_theme_mod( 'zakra_footer_widget_2_title_typography', $footer_widget_2_title_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_2_title_typography = get_theme_mod( 'colormag_footer_widget_2_title_typography', $footer_widget_2_title_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_2_title_typography_default,
 			$footer_widget_2_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two_upper .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2873,11 +2873,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_2_content_typography = get_theme_mod( 'zakra_footer_widget_2_content_typography', $footer_widget_2_content_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_2_content_typography = get_theme_mod( 'colormag_footer_widget_2_content_typography', $footer_widget_2_content_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_2_content_typography_default,
 			$footer_widget_2_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two_upper',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2885,31 +2885,31 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Footer builder widget 3 title color.
-		$footer_widget_3_title_color     = get_theme_mod( 'zakra_footer_widget_3_title_color', '' );
+		$footer_widget_3_title_color     = get_theme_mod( 'colormag_footer_widget_3_title_color', '' );
 		$footer_widget_3_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three_upper .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper .widget-title' => array(
 				'color' => esc_html( $footer_widget_3_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_3_title_color, $footer_widget_3_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_3_title_color, $footer_widget_3_title_color_css );
 
 		// Footer builder widget 3 content color.
-		$footer_widget_3_content_color     = get_theme_mod( 'zakra_footer_widget_3_content_color', '' );
+		$footer_widget_3_content_color     = get_theme_mod( 'colormag_footer_widget_3_content_color', '' );
 		$footer_widget_3_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three_upper' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper' => array(
 				'color' => esc_html( $footer_widget_3_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_3_content_color, $footer_widget_3_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_3_content_color, $footer_widget_3_content_color_css );
 
 		// Footer builder widget 3 link color.
-		$footer_widget_3_link_color     = get_theme_mod( 'zakra_footer_widget_3_link_color', '' );
+		$footer_widget_3_link_color     = get_theme_mod( 'colormag_footer_widget_3_link_color', '' );
 		$footer_widget_3_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three_upper a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper a' => array(
 				'color' => esc_html( $footer_widget_3_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_3_link_color, $footer_widget_3_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_3_link_color, $footer_widget_3_link_color_css );
 
 		// Footer builder widget 3 title typography.
 		$footer_widget_3_title_typography_default = array(
@@ -2947,12 +2947,12 @@ class ColorMag_Dynamic_CSS {
 			'text-transform' => 'none',
 		);
 
-		$footer_widget_3_title_typography = get_theme_mod( 'zakra_footer_widget_3_title_typography', $footer_widget_3_title_typography_default );
+		$footer_widget_3_title_typography = get_theme_mod( 'colormag_footer_widget_3_title_typography', $footer_widget_3_title_typography_default );
 
-		$parse_builder_css .= zakra_parse_typography_css(
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_3_title_typography_default,
 			$footer_widget_3_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three_upper .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2995,12 +2995,12 @@ class ColorMag_Dynamic_CSS {
 			'text-transform' => 'none',
 		);
 
-		$footer_widget_3_content_typography = get_theme_mod( 'zakra_footer_widget_3_content_typography', $footer_widget_3_content_typography_default );
+		$footer_widget_3_content_typography = get_theme_mod( 'colormag_footer_widget_3_content_typography', $footer_widget_3_content_typography_default );
 
-		$parse_builder_css .= zakra_parse_typography_css(
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_3_content_typography_default,
 			$footer_widget_3_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three_upper',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3008,31 +3008,31 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Footer builder widget 4 title color.
-		$footer_widget_4_title_color     = get_theme_mod( 'zakra_footer_widget_4_title_color', '' );
+		$footer_widget_4_title_color     = get_theme_mod( 'colormag_footer_widget_4_title_color', '' );
 		$footer_widget_4_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one .widget-title' => array(
 				'color' => esc_html( $footer_widget_4_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_4_title_color, $footer_widget_4_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_4_title_color, $footer_widget_4_title_color_css );
 
 		// Footer builder widget 4 content color.
-		$footer_widget_4_content_color     = get_theme_mod( 'zakra_footer_widget_4_content_color', '' );
+		$footer_widget_4_content_color     = get_theme_mod( 'colormag_footer_widget_4_content_color', '' );
 		$footer_widget_4_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one' => array(
 				'color' => esc_html( $footer_widget_4_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_4_content_color, $footer_widget_4_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_4_content_color, $footer_widget_4_content_color_css );
 
 		// Footer builder widget 4 link color.
-		$footer_widget_4_link_color     = get_theme_mod( 'zakra_footer_widget_4_link_color', '' );
+		$footer_widget_4_link_color     = get_theme_mod( 'colormag_footer_widget_4_link_color', '' );
 		$footer_widget_4_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one a' => array(
 				'color' => esc_html( $footer_widget_4_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_4_link_color, $footer_widget_4_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_4_link_color, $footer_widget_4_link_color_css );
 
 		// Footer builder widget 4 title typography.
 		$footer_widget_4_title_typography_default = array(
@@ -3070,12 +3070,12 @@ class ColorMag_Dynamic_CSS {
 			'text-transform' => 'none',
 		);
 
-		$footer_widget_4_title_typography = get_theme_mod( 'zakra_footer_widget_4_title_typography', $footer_widget_4_title_typography_default );
+		$footer_widget_4_title_typography = get_theme_mod( 'colormag_footer_widget_4_title_typography', $footer_widget_4_title_typography_default );
 
-		$parse_builder_css .= zakra_parse_typography_css(
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_4_title_typography_default,
 			$footer_widget_4_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3118,12 +3118,12 @@ class ColorMag_Dynamic_CSS {
 			'text-transform' => 'none',
 		);
 
-		$footer_widget_4_content_typography = get_theme_mod( 'zakra_footer_widget_4_content_typography', $footer_widget_4_content_typography_default );
+		$footer_widget_4_content_typography = get_theme_mod( 'colormag_footer_widget_4_content_typography', $footer_widget_4_content_typography_default );
 
-		$parse_builder_css .= zakra_parse_typography_css(
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_4_content_typography_default,
 			$footer_widget_4_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_one',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3131,31 +3131,31 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Footer builder widget 5 title color.
-		$footer_widget_5_title_color     = get_theme_mod( 'zakra_footer_widget_5_title_color', '' );
+		$footer_widget_5_title_color     = get_theme_mod( 'colormag_footer_widget_5_title_color', '' );
 		$footer_widget_5_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two .widget-title' => array(
 				'color' => esc_html( $footer_widget_5_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_5_title_color, $footer_widget_5_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_5_title_color, $footer_widget_5_title_color_css );
 
 		// Footer builder widget 5 content color.
-		$footer_widget_5_content_color     = get_theme_mod( 'zakra_footer_widget_5_content_color', '' );
+		$footer_widget_5_content_color     = get_theme_mod( 'colormag_footer_widget_5_content_color', '' );
 		$footer_widget_5_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two' => array(
 				'color' => esc_html( $footer_widget_5_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_5_content_color, $footer_widget_5_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_5_content_color, $footer_widget_5_content_color_css );
 
 		// Footer builder widget 5 link color.
-		$footer_widget_5_link_color     = get_theme_mod( 'zakra_footer_widget_5_link_color', '' );
+		$footer_widget_5_link_color     = get_theme_mod( 'colormag_footer_widget_5_link_color', '' );
 		$footer_widget_5_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two a' => array(
 				'color' => esc_html( $footer_widget_5_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_5_link_color, $footer_widget_5_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_5_link_color, $footer_widget_5_link_color_css );
 
 		// Footer builder widget 5 title typography.
 		$footer_widget_5_title_typography_default = array(
@@ -3192,11 +3192,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_5_title_typography = get_theme_mod( 'zakra_footer_widget_5_title_typography', $footer_widget_5_title_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_5_title_typography = get_theme_mod( 'colormag_footer_widget_5_title_typography', $footer_widget_5_title_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_5_title_typography_default,
 			$footer_widget_5_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3238,11 +3238,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_5_content_typography = get_theme_mod( 'zakra_footer_widget_5_content_typography', $footer_widget_5_content_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_5_content_typography = get_theme_mod( 'colormag_footer_widget_5_content_typography', $footer_widget_5_content_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_5_content_typography_default,
 			$footer_widget_5_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_two',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3250,31 +3250,31 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Footer builder widget 6 title color.
-		$footer_widget_6_title_color     = get_theme_mod( 'zakra_footer_widget_6_title_color', '' );
+		$footer_widget_6_title_color     = get_theme_mod( 'colormag_footer_widget_6_title_color', '' );
 		$footer_widget_6_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three .widget-title' => array(
 				'color' => esc_html( $footer_widget_6_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_6_title_color, $footer_widget_6_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_6_title_color, $footer_widget_6_title_color_css );
 
 		// Footer builder widget 6 content color.
-		$footer_widget_6_content_color     = get_theme_mod( 'zakra_footer_widget_6_content_color', '' );
+		$footer_widget_6_content_color     = get_theme_mod( 'colormag_footer_widget_6_content_color', '' );
 		$footer_widget_6_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three' => array(
 				'color' => esc_html( $footer_widget_6_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_6_content_color, $footer_widget_6_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_6_content_color, $footer_widget_6_content_color_css );
 
 		// Footer builder widget 6 link color.
-		$footer_widget_6_link_color     = get_theme_mod( 'zakra_footer_widget_6_link_color', '' );
+		$footer_widget_6_link_color     = get_theme_mod( 'colormag_footer_widget_6_link_color', '' );
 		$footer_widget_6_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three a' => array(
 				'color' => esc_html( $footer_widget_6_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_6_link_color, $footer_widget_6_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_6_link_color, $footer_widget_6_link_color_css );
 
 		// Footer builder widget 6 title typography.
 		$footer_widget_6_title_typography_default = array(
@@ -3311,11 +3311,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_6_title_typography = get_theme_mod( 'zakra_footer_widget_6_title_typography', $footer_widget_6_title_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_6_title_typography = get_theme_mod( 'colormag_footer_widget_6_title_typography', $footer_widget_6_title_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_6_title_typography_default,
 			$footer_widget_6_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3357,11 +3357,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_6_content_typography = get_theme_mod( 'zakra_footer_widget_6_content_typography', $footer_widget_6_content_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_6_content_typography = get_theme_mod( 'colormag_footer_widget_6_content_typography', $footer_widget_6_content_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_6_content_typography_default,
 			$footer_widget_6_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_three',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3369,31 +3369,31 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Footer builder widget 7 title color.
-		$footer_widget_7_title_color     = get_theme_mod( 'zakra_footer_widget_7_title_color', '' );
+		$footer_widget_7_title_color     = get_theme_mod( 'colormag_footer_widget_7_title_color', '' );
 		$footer_widget_7_title_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_four .widget-title' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_four .widget-title' => array(
 				'color' => esc_html( $footer_widget_7_title_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_7_title_color, $footer_widget_7_title_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_7_title_color, $footer_widget_7_title_color_css );
 
 		// Footer builder widget 7 content color.
-		$footer_widget_7_content_color     = get_theme_mod( 'zakra_footer_widget_7_content_color', '' );
+		$footer_widget_7_content_color     = get_theme_mod( 'colormag_footer_widget_7_content_color', '' );
 		$footer_widget_7_content_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_four' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_four' => array(
 				'color' => esc_html( $footer_widget_7_content_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_7_content_color, $footer_widget_7_content_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_7_content_color, $footer_widget_7_content_color_css );
 
 		// Footer builder widget 7 link color.
-		$footer_widget_7_link_color     = get_theme_mod( 'zakra_footer_widget_7_link_color', '' );
+		$footer_widget_7_link_color     = get_theme_mod( 'colormag_footer_widget_7_link_color', '' );
 		$footer_widget_7_link_color_css = array(
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_four a' => array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_four a' => array(
 				'color' => esc_html( $footer_widget_7_link_color ),
 			),
 		);
-		$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_7_link_color, $footer_widget_7_link_color_css );
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_7_link_color, $footer_widget_7_link_color_css );
 
 		// Footer builder widget 7 title typography.
 		$footer_widget_7_title_typography_default = array(
@@ -3430,11 +3430,11 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_7_title_typography = get_theme_mod( 'zakra_footer_widget_7_title_typography', $footer_widget_7_title_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_7_title_typography = get_theme_mod( 'colormag_footer_widget_7_title_typography', $footer_widget_7_title_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_7_title_typography_default,
 			$footer_widget_7_title_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_four .widget-title',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_four .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -3476,17 +3476,458 @@ class ColorMag_Dynamic_CSS {
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$footer_widget_7_content_typography = get_theme_mod( 'zakra_footer_widget_7_content_typography', $footer_widget_7_content_typography_default );
-		$parse_builder_css .= zakra_parse_typography_css(
+		$footer_widget_7_content_typography = get_theme_mod( 'colormag_footer_widget_7_content_typography', $footer_widget_7_content_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_widget_7_content_typography_default,
 			$footer_widget_7_content_typography,
-			'.zak-footer-builder .widget.widget-colormag_footer_sidebar_four',
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_four',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
 			)
 		);
 
+		//
+		// Footer builder html 1 color.
+		$footer_html_1_text_color     = get_theme_mod( 'colormag_footer_html_1_text_color', '' );
+		$footer_html_1_text_color_css = array(
+			'.cm-footer-builder .cm-html-1 *' => array(
+				'color' => esc_html( $footer_html_1_text_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $footer_html_1_text_color, $footer_html_1_text_color_css );
+
+		// Footer builder html 1 link color.
+		$footer_html_1_link_color     = get_theme_mod( 'colormag_footer_html_1_link_color', '' );
+		$footer_html_1_link_color_css = array(
+			'.cm-footer-builder .cm-html-1 a' => array(
+				'color' => esc_html( $footer_html_1_link_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $footer_html_1_link_color, $footer_html_1_link_color_css );
+
+		// Footer builder html 1 link hover color.
+		$footer_html_1_link_hover_color     = get_theme_mod( 'colormag_footer_html_1_link_hover_color', '' );
+		$footer_html_1_link_hover_color_css = array(
+			'.cm-footer-builder .cm-html-1 a:hover' => array(
+				'color' => esc_html( $footer_html_1_link_hover_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $footer_html_1_link_hover_color, $footer_html_1_link_hover_color_css );
+
+		// Footer builder html 1 font size.
+		$footer_html_1_font_size_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+
+		$footer_html_1_font_size = get_theme_mod( 'colormag_footer_html_1_font_size', $footer_html_1_font_size_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_html_1_font_size_default,
+			$footer_html_1_font_size,
+			'.cm-footer-builder .cm-html-1 *',
+			'font-size'
+		);
+
+		// Footer builder html 1 margin.
+		$footer_html_1_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_html_1_margin = get_theme_mod( 'colormag_footer_html_1_margin', $footer_html_1_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_html_1_margin_default,
+			$footer_html_1_margin,
+			'.cm-footer-builder .cm-html-1',
+			'margin'
+		);
+
+		// Footer builder footer menu color.
+		$footer_menu_color     = get_theme_mod( 'colormag_footer_menu_color', '' );
+		$footer_menu_color_css = array(
+			'.cm-footer-builder .cm-footer-nav ul li a' => array(
+				'color' => esc_html( $footer_menu_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_menu_color, $footer_menu_color_css );
+
+		// Footer builder footer menu hover color.
+		$footer_menu_hover_color     = get_theme_mod( 'colormag_footer_menu_hover_color', '' );
+		$footer_menu_hover_color_css = array(
+			'.cm-footer-builder .cm-footer-nav ul li a:hover' => array(
+				'color' => esc_html( $footer_menu_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_menu_hover_color, $footer_menu_hover_color_css );
+
+		// Footer builder footer menu typography.
+		$footer_menu_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => '400',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '4',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.3',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$footer_menu_1_typography = get_theme_mod( 'colormag_footer_menu_1_typography', $footer_menu_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$footer_menu_typography_default,
+			$footer_menu_1_typography,
+			'.cm-footer-builder .cm-footer-nav-1 ul li a',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Footer builder top area container.
+		$footer_top_area_container_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$footer_top_area_container = get_theme_mod( 'colormag_footer_top_area_container', $footer_top_area_container_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_top_area_container_default,
+			$footer_top_area_container,
+			'.cm-footer-builder .cm-footer-top-row .cm-container',
+			'max-width'
+		);
+
+		// Footer builder top area height.
+		$footer_top_area_height_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$footer_top_area_height = get_theme_mod( 'colormag_footer_top_area_height', $footer_top_area_height_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_top_area_height_default,
+			$footer_top_area_height,
+			'.cm-footer-builder .cm-top-row',
+			'height'
+		);
+
+		// Footer top area background.
+		$footer_top_area_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$footer_top_area_background         = get_theme_mod( 'colormag_footer_top_area_background', $footer_top_area_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $footer_top_area_background_default, $footer_top_area_background, '.cm-footer-builder .cm-footer-top-row' );
+
+		// Footer top area padding.
+		$footer_top_area_padding_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_top_area_padding = get_theme_mod( 'colormag_footer_top_area_padding', $footer_top_area_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_top_area_padding_default,
+			$footer_top_area_padding,
+			'.cm-footer-builder .cm-footer-top-row',
+			'padding'
+		);
+
+		// Footer top area margin.
+		$footer_top_area_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_top_area_margin = get_theme_mod( 'colormag_footer_top_area_margin', $footer_top_area_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_top_area_margin_default,
+			$footer_top_area_margin,
+			'.cm-footer-builder .cm-footer-top-row',
+			'margin'
+		);
+
+		// Footer top area border width.
+		$footer_top_area_border_width_default = array(
+			'top'    => '0',
+			'right'  => '0',
+			'bottom' => '0',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$footer_top_area_border_width = get_theme_mod( 'colormag_footer_top_area_border_width', $footer_top_area_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_top_area_border_width_default,
+			$footer_top_area_border_width,
+			'.cm-footer-builder .cm-footer-top-row',
+			'border-width'
+		);
+
+		// Footer builder top area border color.
+		$footer_top_area_border_color     = get_theme_mod( 'colormag_footer_top_area_border_color', '' );
+		$footer_top_area_border_color_css = array(
+			'.cm-footer-builder .cm-footer-top-row' => array(
+				'border-color' => esc_html( $footer_top_area_border_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $footer_top_area_border_color, $footer_top_area_border_color_css );
+
+		// Footer builder main area height.
+		$footer_main_area_height_default = array(
+
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$footer_main_area_height = get_theme_mod( 'colormag_footer_main_area_height', $footer_main_area_height_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_main_area_height_default,
+			$footer_main_area_height,
+			'.cm-footer-builder .cm-main-row',
+			'height'
+		);
+
+		// Footer builder main area container.
+		$footer_main_area_container_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$footer_main_area_container = get_theme_mod( 'colormag_footer_main_area_container', $footer_main_area_container_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_main_area_container_default,
+			$footer_main_area_container,
+			'.cm-footer-builder .cm-footer-main-row .cm-container',
+			'max-width'
+		);
+
+		// Footer builder main area background.
+		$footer_main_area_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$footer_main_area_background         = get_theme_mod( 'colormag_footer_main_area_background', $footer_main_area_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $footer_main_area_background_default, $footer_main_area_background, '.cm-footer-builder .cm-footer-main-row' );
+
+		// Footer builder main area padding.
+		$footer_main_area_padding_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_main_area_padding = get_theme_mod( 'colormag_footer_main_area_padding', $footer_main_area_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_main_area_padding_default,
+			$footer_main_area_padding,
+			'.cm-footer-builder .cm-footer-main-row',
+			'padding'
+		);
+
+		// Footer builder main area margin.
+		$footer_main_area_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_main_area_margin = get_theme_mod( 'colormag_footer_main_area_margin', $footer_main_area_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_main_area_margin_default,
+			$footer_main_area_margin,
+			'.cm-footer-builder .cm-footer-main-row',
+			'margin'
+		);
+
+		// Footer builder main area border width.
+		$footer_main_area_border_width_default = array(
+			'top'    => '0',
+			'right'  => '0',
+			'bottom' => '0',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$footer_main_area_border_width = get_theme_mod( 'colormag_footer_main_area_border_width', $footer_main_area_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_main_area_border_width_default,
+			$footer_main_area_border_width,
+			'.cm-footer-builder .cm-footer-main-row',
+			'border-width'
+		);
+
+		// Footer builder main area border color.
+		$footer_main_area_border_color     = get_theme_mod( 'colormag_footer_main_area_border_color', '' );
+		$footer_main_area_border_color_css = array(
+			'.cm-footer-builder .cm-footer-main-row' => array(
+				'border-color' => esc_html( $footer_main_area_border_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $footer_main_area_border_color, $footer_main_area_border_color_css );
+
+		// Footer builder bottom area height.
+		$footer_bottom_area_height_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$footer_bottom_area_height = get_theme_mod( 'colormag_footer_bottom_area_height', $footer_bottom_area_height_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_bottom_area_height_default,
+			$footer_bottom_area_height,
+			'.cm-footer-builder .cm-bottom-row',
+			'height'
+		);
+
+		// Footer builder bottom area container.
+		$footer_bottom_area_container_default = array(
+			'size' => 0,
+			'unit' => 'px',
+		);
+
+		$footer_bottom_area_container = get_theme_mod( 'colormag_footer_bottom_area_container', $footer_bottom_area_container_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$footer_bottom_area_container_default,
+			$footer_bottom_area_container,
+			'.cm-footer-builder .cm-footer-bottom-row .cm-container',
+			'max-width'
+		);
+
+		// Footer builder bottom area background.
+		$footer_bottom_area_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$footer_bottom_area_background         = get_theme_mod( 'colormag_footer_bottom_area_background', $footer_bottom_area_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $footer_bottom_area_background_default, $footer_bottom_area_background, '.cm-footer-builder .cm-footer-bottom-row' );
+
+		// Footer builder bottom area padding.
+		$footer_bottom_area_padding_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_bottom_area_padding = get_theme_mod( 'colormag_footer_bottom_area_padding', $footer_bottom_area_padding_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_bottom_area_padding_default,
+			$footer_bottom_area_padding,
+			'.cm-footer-builder .cm-footer-bottom-row',
+			'padding'
+		);
+
+		// Footer builder bottom area margin.
+		$footer_bottom_area_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_bottom_area_margin = get_theme_mod( 'colormag_footer_bottom_area_margin', $footer_bottom_area_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_bottom_area_margin_default,
+			$footer_bottom_area_margin,
+			'.cm-footer-builder .cm-footer-bottom-row',
+			'margin'
+		);
+
+		// Footer builder bottom area border width.
+		$footer_bottom_area_border_width_default = array(
+			'top'    => '0',
+			'right'  => '0',
+			'bottom' => '0',
+			'left'   => '0',
+			'unit'   => 'px',
+		);
+
+		$footer_bottom_area_border_width = get_theme_mod( 'colormag_footer_bottom_area_border_width', $footer_bottom_area_border_width_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_bottom_area_border_width_default,
+			$footer_bottom_area_border_width,
+			'.cm-footer-builder .cm-footer-bottom-row',
+			'border-width'
+		);
+
+		$footer_bottom_area_border_color     = get_theme_mod( 'colormag_footer_bottom_area_border_color', '' );
+		$footer_bottom_area_border_color_css = array(
+			'.cm-footer-builder .cm-footer-bottom-row' => array(
+				'border-color' => esc_html( $footer_bottom_area_border_color ),
+			),
+		);
+		$parse_builder_css                   .= colormag_parse_css( '', $footer_bottom_area_border_color, $footer_bottom_area_border_color_css );
 
 		return $parse_builder_css;
 	}

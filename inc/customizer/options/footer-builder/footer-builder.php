@@ -12,11 +12,6 @@ function customind_get_footer_components() {
 					'id'      => 'html-1',
 				),
 				array(
-					'name'    => __( 'HTML 2', 'colormag' ),
-					'section' => 'colormag_footer_builder_html_2',
-					'id'      => 'html-2',
-				),
-				array(
 					'name'     => __( 'Widget 1', 'colormag' ),
 					'section'  => 'colormag_footer_builder_widget_1',
 					'section2' => 'sidebar-widgets-colormag_footer_sidebar_one_upper',
@@ -62,11 +57,6 @@ function customind_get_footer_components() {
 					'name'    => __( 'Menu 1', 'colormag' ),
 					'section' => 'colormag_footer_builder_footer_menu',
 					'id'      => 'footer-menu',
-				),
-				array(
-					'name'    => __( 'Menu 2', 'colormag' ),
-					'section' => 'colormag_footer_builder_footer_menu_2',
-					'id'      => 'footer-menu-2',
 				),
 				array(
 					'name'    => __( 'Socials', 'colormag' ),
