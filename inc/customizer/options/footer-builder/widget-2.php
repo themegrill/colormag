@@ -58,7 +58,7 @@ $options = array(
 				'colormag_footer_widget_1_link_divider'  => array(
 					'type'    => 'customind-divider',
 					'variant' => 'dashed',
-					'section' => 'colormag_blog',
+					'section' => 'colormag_footer_builder_widget_2s',
 				),
 				'colormag_footer_widget_1_link_color'    => array(
 					'default'   => '',
@@ -70,7 +70,7 @@ $options = array(
 				'colormag_footer_widget_1_content_color_divider' => array(
 					'type'    => 'customind-divider',
 					'variant' => 'dashed',
-					'section' => 'colormag_blog',
+					'section' => 'colormag_footer_builder_widget_2s',
 				),
 				'colormag_footer_widget_1_content_color' => array(
 					'default'   => '',

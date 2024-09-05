@@ -310,6 +310,11 @@ $section_option_id = array(
 		'panel'    => 'colormag_footer_builder',
 		'priority' => 10,
 	),
+	'colormag_footer_builder_widget_7'       => array(
+		'title'    => esc_html__( 'Widget 6', 'colormag' ),
+		'panel'    => 'colormag_footer_builder',
+		'priority' => 10,
+	),
 	'colormag_footer_builder_top_area'       => array(
 		'title'    => esc_html__( 'Top Area', 'colormag' ),
 		'panel'    => 'colormag_footer_builder',

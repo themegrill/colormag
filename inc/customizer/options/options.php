@@ -59,5 +59,6 @@ require __DIR__ . '/footer-builder/widget-3.php';
 require __DIR__ . '/footer-builder/widget-4.php';
 require __DIR__ . '/footer-builder/widget-5.php';
 require __DIR__ . '/footer-builder/widget-6.php';
+require __DIR__ . '/footer-builder/widget-7.php';
 require __DIR__ . '/footer-builder/socials.php';
 require __DIR__ . '/footer-builder/footer-builder.php';

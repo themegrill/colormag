@@ -56,7 +56,7 @@ function customind_get_footer_components() {
 					'name'     => __( 'Widget 7', 'colormag' ),
 					'section'  => 'colormag_footer_builder_widget_7',
 					'section2' => 'sidebar-widgets-colormag_footer_sidebar_four',
-					'id'       => 'widget-6',
+					'id'       => 'widget-7',
 				),
 				array(
 					'name'    => __( 'Menu 1', 'colormag' ),

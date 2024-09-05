@@ -2345,167 +2345,289 @@
 // 						value,
 // 					);
 // 					break;
-//
-// 				case "colormag_footer_widget_1_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_1_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-1 .widget-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_1_content_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-1",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_1_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-1 a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_1_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-1",
-// 						value,
-// 					);
-// 					break;
+
+				case "colormag_footer_widget_1_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_1_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_1_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_1_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_1_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper",
+						value,
+					);
+					break;
 // 				//
-// 				case "colormag_footer_widget_2_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_2_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-2 .widget-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_2_content_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-2",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_2_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-2 a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_2_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-2",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_3_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_3_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-3 .widget-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_3_content_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-3",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_3_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-3 a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_3_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-3",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_4_title_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_4_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-4 .widget-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_4_content_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-4",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_4_link_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-footer-builder .widget.widget-footer-sidebar-4 a",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_footer_widget_4_content_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-footer-builder .widget.widget-footer-sidebar-4",
-// 						value,
-// 					);
-// 					break;
-//
+				case "colormag_footer_widget_2_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_2_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_2_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_2_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_2_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_3_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_3_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_3_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_3_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_3_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_4_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_4_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_4_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_4_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_4_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_one",
+						value,
+					);
+					break;
+
+					//
+				case "colormag_footer_widget_5_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_5_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_5_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_5_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_5_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_two",
+						value,
+					);
+					break;
+
+					//6
+				case "colormag_footer_widget_6_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_6_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_6_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_6_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_6_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_three",
+						value,
+					);
+					break;
+
+		//7
+				case "colormag_footer_widget_7_title_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_four .widget-title",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_7_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_four .widget-title",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_7_content_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_four",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_7_link_color":
+					css = colormagGenerateCommonCSS(
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_four a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_footer_widget_7_content_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-footer-builder .widget.widget-colormag_footer_sidebar_four",
+						value,
+					);
+					break;
 // 				case "colormag_footer_menu_color":
 // 					css = colormagGenerateCommonCSS(
 // 						".cm-footer-builder .cm-footer-nav ul li a",

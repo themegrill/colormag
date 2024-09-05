@@ -1,24 +1,24 @@
 <?php
 
 $options = array(
-	'colormag_footer_builder_widget_5_heading' => array(
+	'colormag_footer_builder_widget_7_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Widget 5', 'colormag' ),
-		'section'      => 'colormag_footer_builder_widget_5',
+		'title'        => esc_html__( 'Widget 7', 'zakra' ),
+		'section'      => 'colormag_footer_builder_widget_7',
 		'sub_controls' => apply_filters(
-			'colormag_footer_builder_widget_5_sub_controls',
+			'colormag_footer_builder_widget_7_sub_controls',
 			array(
 				'colormag_footer_widget_1_title_color'   => array(
 					'default'   => '',
 					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Title Color', 'colormag' ),
+					'title'     => esc_html__( 'Title Color', 'zakra' ),
 					'transport' => 'postMessage',
-					'section'   => 'colormag_footer_builder_widget_5',
+					'section'   => 'colormag_footer_builder_widget_7',
 				),
 				'colormag_footer_widget_1_title_typography' => array(
 					'default'   => array(
 						'font-family'    => 'default',
-						'font-weight'    => '500',
+						'font-weight'    => '600',
 						'font-size'      => array(
 							'desktop' => array(
 								'size' => '2',
@@ -52,40 +52,40 @@ $options = array(
 					),
 					'type'      => 'customind-typography',
 					'transport' => 'postMessage',
-					'title'     => esc_html__( 'Title Typography', 'colormag' ),
-					'section'   => 'colormag_footer_builder_widget_5',
+					'title'     => esc_html__( 'Title Typography', 'zakra' ),
+					'section'   => 'colormag_footer_builder_widget_7',
 				),
 				'colormag_footer_widget_1_link_divider'  => array(
 					'type'    => 'customind-divider',
 					'variant' => 'dashed',
-					'section' => 'colormag_footer_builder_widget_5',
+					'section' => 'colormag_footer_builder_widget_7',
 				),
 				'colormag_footer_widget_1_link_color'    => array(
 					'default'   => '',
 					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Link', 'colormag' ),
+					'title'     => esc_html__( 'Link', 'zakra' ),
 					'transport' => 'postMessage',
-					'section'   => 'colormag_footer_builder_widget_5',
+					'section'   => 'colormag_footer_builder_widget_7',
 				),
 				'colormag_footer_widget_1_content_color_divider' => array(
 					'type'    => 'customind-divider',
 					'variant' => 'dashed',
-					'section' => 'colormag_footer_builder_widget_5',
+					'section' => 'colormag_footer_builder_widget_7',
 				),
 				'colormag_footer_widget_1_content_color' => array(
 					'default'   => '',
 					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Content Color', 'colormag' ),
+					'title'     => esc_html__( 'Content Color', 'zakra' ),
 					'transport' => 'postMessage',
-					'section'   => 'colormag_footer_builder_widget_5',
+					'section'   => 'colormag_footer_builder_widget_7',
 				),
 				'colormag_footer_widget_1_content_typography' => array(
 					'default'   => array(
 						'font-family'    => 'default',
-						'font-weight'    => '500',
+						'font-weight'    => '600',
 						'font-size'      => array(
 							'desktop' => array(
-								'size' => '1.5',
+								'size' => '1.6',
 								'unit' => 'rem',
 							),
 							'tablet'  => array(
@@ -116,12 +116,12 @@ $options = array(
 					),
 					'type'      => 'customind-typography',
 					'transport' => 'postMessage',
-					'title'     => esc_html__( 'Content Typography', 'colormag' ),
-					'section'   => 'colormag_footer_builder_widget_5',
+					'title'     => esc_html__( 'Content Typography', 'zakra' ),
+					'section'   => 'colormag_footer_builder_widget_7',
 				),
 			)
 		),
-		'collapsible'  => apply_filters( 'colormag_footer_builder_widget_5_accordion_collapsible', false ),
+		'collapsible'  => apply_filters( 'colormag_footer_builder_widget_7_accordion_collapsible', false ),
 	),
 );
 
