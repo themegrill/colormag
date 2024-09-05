@@ -46,14 +46,13 @@ function colormag_widgets_init() {
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
 		)
 	);
-
 	// Registering Header sidebar.
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Header Sidebar', 'colormag' ),
 			'id'            => 'colormag_header_sidebar',
 			'description'   => esc_html__( 'Shows widgets in header section just above the main navigation menu.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix widget-colormag_header_sidebar">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -281,7 +280,6 @@ add_action( 'widgets_init', 'colormag_widgets_init' );
 
 function colormag_builder_widget_init() {
 	$sidebars = array(
-		'header-sidebar-1' => esc_html__( 'Widget One', 'colormag' ),
 		'header-sidebar-2' => esc_html__( 'Widget Two', 'colormag' ),
 	);
 	foreach ( $sidebars as $id => $name ) {

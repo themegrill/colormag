@@ -2127,7 +2127,7 @@
 
 				case "colormag_widget_1_title_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .widget.widget-header-sidebar-1 .widget-title",
+						".cm-header-builder .widget.widget-colormag_header_sidebar .widget-title",
 						"color",
 						value,
 					);
@@ -2136,14 +2136,14 @@
 				case "colormag_widget_1_title_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
-						".cm-header-builder .widget.widget-header-sidebar-1 .widget-title",
+						".cm-header-builder .widget.widget-colormag_header_sidebar .widget-title",
 						value,
 					);
 					break;
 
 				case "colormag_widget_1_content_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .widget.widget-header-sidebar-1",
+						".cm-header-builder .widget.widget-colormag_header_sidebar",
 						"color",
 						value,
 					);
@@ -2151,7 +2151,7 @@
 
 				case "colormag_widget_1_link_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .widget.widget-header-sidebar-1 a",
+						".cm-header-builder .widget.widget-colormag_header_sidebar a",
 						"color",
 						value,
 					);
@@ -2160,7 +2160,7 @@
 				case "colormag_widget_1_content_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
-						".cm-header-builder .widget.widget-header-sidebar-1",
+						".cm-header-builder .widget.widget-colormag_header_sidebar",
 						value,
 					);
 					break;

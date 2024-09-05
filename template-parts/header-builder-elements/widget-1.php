@@ -1,3 +1,3 @@
 <?php
 
-dynamic_sidebar( 'header-sidebar-1' );
+dynamic_sidebar( 'colormag_header_sidebar' );

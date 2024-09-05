@@ -2385,7 +2385,7 @@ class ColorMag_Dynamic_CSS {
 		// Header builder widget title color.
 		$header_widget_title_color     = get_theme_mod( 'colormag_widget_1_title_color', '' );
 		$header_widget_title_color_css = array(
-			'.cm-header-builder .widget.widget-header-sidebar-1 .widget-title' => array(
+			'.cm-header-builder .widget.widget-colormag_header_sidebar .widget-title' => array(
 				'color' => esc_html( $header_widget_title_color ),
 			),
 		);
@@ -2394,7 +2394,7 @@ class ColorMag_Dynamic_CSS {
 		// Header builder widget content color.
 		$header_widget_content_color     = get_theme_mod( 'colormag_widget_1_content_color', '' );
 		$header_widget_content_color_css = array(
-			'.cm-header-builder .widget.widget-header-sidebar-1' => array(
+			'.cm-header-builder .widget.widget-colormag_header_sidebar' => array(
 				'color' => esc_html( $header_widget_content_color ),
 			),
 		);
@@ -2403,7 +2403,7 @@ class ColorMag_Dynamic_CSS {
 		// Header builder widget link color.
 		$header_widget_link_color     = get_theme_mod( 'colormag_widget_1_link_color', '' );
 		$header_widget_link_color_css = array(
-			'.cm-header-builder .widget.widget-header-sidebar-1 a' => array(
+			'.cm-header-builder .widget.widget-colormag_header_sidebar a' => array(
 				'color' => esc_html( $header_widget_link_color ),
 			),
 		);
@@ -2450,7 +2450,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_typography_css(
 			$header_widget_1_title_typography_default,
 			$header_widget_1_title_typography,
-			'.cm-header-builder .widget.widget-header-sidebar-1 .widget-title',
+			'.cm-header-builder .widget.widget-colormag_header_sidebar .widget-title',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -2498,7 +2498,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_typography_css(
 			$header_widget_1_content_typography_default,
 			$header_widget_1_content_typography,
-			'.cm-header-builder .widget.widget-header-sidebar-1',
+			'.cm-header-builder .widget.widget-colormag_header_sidebar',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,

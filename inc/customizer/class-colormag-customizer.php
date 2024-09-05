@@ -61,7 +61,8 @@ class ColorMag_Customizer {
 	public function modify_widgets_section_state( bool $active, $section ): bool {
 		if (
 			str_contains( $section->id, 'header-sidebar-' ) ||
-			str_contains( $section->id, 'footer-sidebar-' )
+			str_contains( $section->id, 'footer-sidebar-' ) ||
+			str_contains( $section->id, 'colormag_header_sidebar' )
 		) {
 			$active = true;
 		}
@@ -80,6 +81,7 @@ class ColorMag_Customizer {
 		$header_widgets = [
 			'header-sidebar-1',
 			'header-sidebar-2',
+			'colormag_header_sidebar',
 		];
 
 		if ( in_array( $sidebar_id, $footer_widgets, true ) ) {

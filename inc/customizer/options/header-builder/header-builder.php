@@ -39,7 +39,7 @@ function customind_get_header_components() {
 					'name'     => __( 'Widget 1', 'colormag' ),
 					'section'  => 'colormag_header_builder_widget_1',
 					'id'       => 'widget-1',
-					'section2' => 'sidebar-widgets-header-sidebar-1',
+					'section2' => 'sidebar-widgets-colormag_header_sidebar',
 				),
 				array(
 					'name'     => __( 'Widget 2', 'colormag' ),
