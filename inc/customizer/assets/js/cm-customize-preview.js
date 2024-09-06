@@ -2699,38 +2699,38 @@
 // 						value,
 // 					);
 // 					break;
-//
-// 				case "colormag_header_site_identity_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .site-title",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_site_title_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-header-builder .site-title",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_site_tagline_color":
-// 					css = colormagGenerateCommonCSS(
-// 						".cm-header-builder .site-description",
-// 						"color",
-// 						value,
-// 					);
-// 					break;
-//
-// 				case "colormag_header_site_tagline_typography":
-// 					css = colormagGenerateTypographyCSS(
-// 						id,
-// 						".cm-header-builder .site-description",
-// 						value,
-// 					);
-// 					break;
+
+				case "colormag_header_site_identity_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .site-title a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_site_title_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-header-builder .site-title a",
+						value,
+					);
+					break;
+
+				case "colormag_header_site_tagline_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .site-description",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_site_tagline_typography":
+					css = colormagGenerateTypographyCSS(
+						id,
+						".cm-header-builder .site-description",
+						value,
+					);
+					break;
 
 // 				case "colormag_footer_bottom_area_color":
 // 					css = colormagGenerateCommonCSS(

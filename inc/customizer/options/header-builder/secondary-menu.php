@@ -6,7 +6,7 @@ foreach ( $menus as $menu ) {
 	$menu_choices[ $menu->term_id ] = $menu->name;
 }
 $options = array(
-	'colormag_header_secondary_menu_heading' => array(
+	'colormag_header_secondary_menu_heading'     => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Secondary Menu', 'colormag' ),
 		'section'      => 'colormag_header_builder_secondary_menu',
@@ -92,7 +92,7 @@ $options = array(
 		),
 		'collapsible'  => apply_filters( 'colormag_secondary_menu_accordion_collapsible', false ),
 	),
-	'colormag_header_sub_menu_heading'       => array(
+	'colormag_header_secondary_sub_menu_heading' => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Sub Menu', 'colormag' ),
 		'section'      => 'colormag_header_builder_secondary_menu',

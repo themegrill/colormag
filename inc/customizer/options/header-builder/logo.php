@@ -49,7 +49,7 @@ $options = array(
 		),
 		'collapsible'  => apply_filters( 'colormag_header_site_logo_accordion_collapsible', false ),
 	),
-	'colormag_header_site_identity_heading2'        => array(
+	'colormag_header_site_identity_heading'         => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Site Title', 'colormag' ),
 		'section'      => 'colormag_header_builder_logo',
@@ -57,14 +57,14 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_header_site_identity_sub_controls',
 			array(
-				'colormag_enable_site_identity2'         => array(
+				'colormag_enable_site_identity'         => array(
 					'title'    => esc_html__( 'Enable', 'colormag' ),
 					'default'  => true,
 					'type'     => 'customind-toggle',
 					'section'  => 'colormag_header_builder_logo',
 					'priority' => 10,
 				),
-				'colormag_header_site_identity_color_group2' => array(
+				'colormag_header_site_identity_color_group' => array(
 					'type'         => 'customind-color-group',
 					'title'        => esc_html__( 'Color', 'colormag' ),
 					'section'      => 'colormag_header_builder_logo',
@@ -81,7 +81,7 @@ $options = array(
 						),
 					),
 				),
-				'colormag_header_site_title_typography2' => array(
+				'colormag_header_site_title_typography' => array(
 					'default'   => array(
 						'font-family'    => 'Default',
 						'font-weight'    => '400',
