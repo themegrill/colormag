@@ -43,19 +43,28 @@ $options = array(
 					'section'   => 'colormag_header_builder_bottom_area',
 					'transport' => 'postMessage',
 				),
+				'colormag_main_header_width_setting'       => array(
+					'default' => 'full-width',
+					'type'    => 'customind-select',
+					'title'   => esc_html__( 'Width', 'zakra' ),
+					'section' => 'colormag_header_builder_bottom_area',
+					'choices' => array(
+						'full-width' => esc_html__( 'Full Width', 'colormag' ),
+						'contained'  => esc_html__( 'Contained', 'colormag' ),
+					),
+				),
 				'colormag_header_bottom_area_background'   => array(
-					'default'   => array(
-						'background-color'      => '',
+					'default' => array(
+						'background-color'      => '#27272A',
 						'background-image'      => '',
 						'background-repeat'     => 'repeat',
 						'background-position'   => 'center center',
 						'background-size'       => 'contain',
 						'background-attachment' => 'scroll',
 					),
-					'type'      => 'customind-background',
-					'title'     => esc_html__( 'Background', 'colormag' ),
-					'transport' => 'postMessage',
-					'section'   => 'colormag_header_builder_bottom_area',
+					'type'    => 'customind-background',
+					'title'   => esc_html__( 'Background', 'colormag' ),
+					'section' => 'colormag_header_builder_bottom_area',
 				),
 
 				'colormag_header_bottom_area_padding'      => array(

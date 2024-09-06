@@ -1023,8 +1023,9 @@ function colormag_render_header_cols( $cols, $cols_area ) {
 }
 
 function colormag_header_builder_markup() {
-	$builder = get_theme_mod( 'colormag_header_builder', colormag_header_default_builder() );
-	echo '<header id="cm-masthead" class="cm-header-builder" >';
+	$header_bottom_area_width = get_theme_mod( 'colormag_main_header_width_setting', 'full-width' );
+	$builder                  = get_theme_mod( 'colormag_header_builder', colormag_header_default_builder() );
+	echo '<header id="cm-masthead" class="cm-header-builder ' . ( 'contained' === $header_bottom_area_width ? 'cm-contained' : 'cm-full-width' ) . '" >';
 	echo '<div class="cm-main-header">';
 	echo '<div class="cm-row cm-desktop-row">';
 	$filter_areas    = function ( $device ) use ( $builder ) {

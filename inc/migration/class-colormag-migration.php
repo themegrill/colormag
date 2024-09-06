@@ -576,6 +576,18 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_site_tagline_typography' );
 			}
 
+			$main_header_background = get_theme_mod( 'colormag_main_header_background', '' );
+			if ( $main_header_background ) {
+				set_theme_mod( 'colormag_header_main_area_background', $main_header_background );
+				remove_theme_mod( 'colormag_main_header_background' );
+			}
+
+			$main_header_width = get_theme_mod( 'colormag_main_header_width_setting', 'full-width' );
+			if ( $main_header_width ) {
+				set_theme_mod( 'colormag_header_bottom_area_width', $main_header_width );
+				remove_theme_mod( 'colormag_main_header_width_setting' );
+			}
+
 			update_option( 'colormag_builder_migration', true );
 		}
 

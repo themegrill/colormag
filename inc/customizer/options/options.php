@@ -10,7 +10,7 @@ require __DIR__ . '/front-page/front-page.php';
 //require __DIR__ . '/header-and-navigation/top-bar.php';
 require __DIR__ . '/header-and-navigation/header-action.php';
 require __DIR__ . '/header-and-navigation/header-media.php';
-require __DIR__ . '/header-and-navigation/main-header.php';
+//require __DIR__ . '/header-and-navigation/main-header.php';
 require __DIR__ . '/header-and-navigation/primary-menu.php';
 //require __DIR__ . '/header-and-navigation/site-identity.php';
 require __DIR__ . '/header-and-navigation/sticky-header.php';

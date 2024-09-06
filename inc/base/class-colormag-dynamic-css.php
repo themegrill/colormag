@@ -2068,8 +2068,16 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Header bottom area background.
+		$header_bottom_area_width = get_theme_mod('colormag_main_header_width_setting', 'full-width');
+		error_log( print_r( $header_bottom_area_width, true ) );
+		if ( 'contained' === $header_bottom_area_width ){
+			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row';
+		} else {
+			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-header-bottom-row';
+		}
+
 		$header_bottom_area_background_default = array(
-			'background-color'      => '',
+			'background-color'      => '#27272A',
 			'background-image'      => '',
 			'background-repeat'     => 'repeat',
 			'background-position'   => 'center center',
@@ -2077,7 +2085,7 @@ class ColorMag_Dynamic_CSS {
 			'background-attachment' => 'scroll',
 		);
 		$header_bottom_area_background         = get_theme_mod( 'colormag_header_bottom_area_background', $header_bottom_area_background_default );
-		$parse_builder_css                           .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, '.cm-header-builder .cm-header-bottom-row' );
+		$parse_builder_css                           .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, $bottom_header_background_selector );
 
 		// Header bottom area padding.
 		$header_bottom_area_padding_default = array(

@@ -23,11 +23,25 @@
     border: 0 solid;
   }
 
-	.cm-header-bottom-row {
-		box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-		background-color: #27272A;
-		border-top: 4px solid #207daf;
+	&.cm-full-width {
+		.cm-header-bottom-row {
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
+			background-color: #27272A;
+			border-top: 4px solid #207daf;
+		}
+	}
 
+	&.cm-contained {
+		.cm-header-bottom-row {
+			.cm-bottom-row {
+				box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
+				background-color: #27272A;
+				border-top: 4px solid #207daf;
+			}
+		}
+	}
+
+	.cm-header-bottom-row {
 		#cm-primary-nav {
 			box-shadow: none;
 			background-color: transparent;

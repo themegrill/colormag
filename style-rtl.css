@@ -949,7 +949,14 @@ table td {
 	border: 0 solid;
 }
 
-.cm-header-builder .cm-header-bottom-row {
+.cm-header-builder.cm-full-width .cm-header-bottom-row {
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
+	background-color: #27272A;
+	border-top: 4px solid #207daf;
+}
+
+.cm-header-builder.cm-contained .cm-header-bottom-row .cm-bottom-row {
 	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
 	background-color: #27272A;
