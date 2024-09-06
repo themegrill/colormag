@@ -3663,6 +3663,18 @@ class ColorMag_Dynamic_CSS {
 		$footer_top_area_background         = get_theme_mod( 'colormag_footer_top_area_background', $footer_top_area_background_default );
 		$parse_builder_css                           .= colormag_parse_background_css( $footer_top_area_background_default, $footer_top_area_background, '.cm-footer-builder .cm-footer-top-row' );
 
+		// Footer top area col background.
+		$footer_top_area_col_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'contain',
+			'background-attachment' => 'scroll',
+		);
+		$footer_top_area_col_background         = get_theme_mod( 'colormag_footer_top_area_col_background', $footer_top_area_col_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $footer_top_area_col_background_default, $footer_top_area_col_background, '.cm-footer-builder .cm-footer-top-row' );
+
 		// Footer top area padding.
 		$footer_top_area_padding_default = array(
 			'top'    => '',

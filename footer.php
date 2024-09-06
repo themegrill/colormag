@@ -44,7 +44,7 @@ do_action( 'colormag_before_footer' );
  * @hooked colormag_footer_start - 10
  * @hooked colormag_footer_sidebar - 15
  */
-do_action( 'colormag_action_before_footer' );
+//do_action( 'colormag_action_before_footer' );
 
 
 /**
@@ -52,7 +52,7 @@ do_action( 'colormag_action_before_footer' );
  *
  * @hooked colormag_footer_socket_inner_wrapper_start - 10
  */
-do_action( 'colormag_action_before_inner_footer' );
+//do_action( 'colormag_action_before_inner_footer' );
 
 
 /**
@@ -63,7 +63,9 @@ do_action( 'colormag_action_before_inner_footer' );
  * @hooked colormag_footer_socket_left_section - 20
  * @hooked colormag_footer_socket_area_end - 25
  */
-do_action( 'colormag_action_footer' );
+//do_action( 'colormag_action_footer' );
+
+colormag_footer_builder_markup();
 
 
 /**

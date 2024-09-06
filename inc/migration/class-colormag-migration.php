@@ -530,6 +530,89 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			set_theme_mod( 'colormag_header_builder', $header_builder_config );
 
+			// Footer builder migration.
+			$footer_builder_config = [
+				'desktop' => [
+					'top'    => [
+						'top-1' => [],
+						'top-2' => [],
+						'top-3' => [],
+						'top-4' => [],
+						'top-5' => [],
+					],
+					'main'   => [
+						'main-1' => [],
+						'main-2' => [],
+						'main-3' => [],
+						'main-4' => [],
+						'main-5' => [],
+					],
+					'bottom' => [
+						'bottom-1' => [],
+						'bottom-2' => [],
+						'bottom-3' => [],
+						'bottom-4' => [],
+						'bottom-5' => [],
+					],
+				],
+				'offset'  => [],
+			];
+
+			if ( is_active_sidebar( 'colormag_footer_sidebar_one_upper' ) ) {
+				$footer_builder_config['desktop']['top']['top-1'][] = 'widget-1';
+			}
+
+			if ( is_active_sidebar( 'colormag_footer_sidebar_two_upper' ) ) {
+				$footer_builder_config['desktop']['top']['top-2'][] = 'widget-2';
+			}
+
+			if ( is_active_sidebar( 'colormag_footer_sidebar_three_upper' ) ) {
+				$footer_builder_config['desktop']['top']['top-3'][] = 'widget-3';
+			}
+
+			$footer_column_layout = get_theme_mod( 'colormag_footer_column_layout', 'style-4' );
+			if ( 'style-1' === $footer_column_layout ) {
+				set_theme_mod( 'colormag_footer_main_area_cols', 1 );
+				if ( is_active_sidebar( 'colormag_footer_sidebar_one' ) ) {
+					$footer_builder_config['desktop']['main']['main-1'][] = 'widget-4';
+				}
+			} elseif ( 'style-2' === $footer_column_layout ) {
+				set_theme_mod( 'colormag_footer_main_area_cols', 2 );
+				if ( is_active_sidebar( 'colormag_footer_sidebar_one' ) ) {
+					$footer_builder_config['desktop']['main']['main-1'][] = 'widget-4';
+				}
+				if ( is_active_sidebar( 'colormag_footer_sidebar_two' ) ) {
+					$footer_builder_config['desktop']['main']['main-2'][] = 'widget-5';
+				}
+			} elseif ( 'style-3' === $footer_column_layout ) {
+				set_theme_mod( 'colormag_footer_main_area_cols', 3 );
+				if ( is_active_sidebar( 'colormag_footer_sidebar_one' ) ) {
+					$footer_builder_config['desktop']['main']['main-1'][] = 'widget-4';
+				}
+				if ( is_active_sidebar( 'colormag_footer_sidebar_two' ) ) {
+					$footer_builder_config['desktop']['main']['main-2'][] = 'widget-5';
+				}
+				if ( is_active_sidebar( 'colormag_footer_sidebar_three' ) ) {
+					$footer_builder_config['desktop']['main']['main-3'][] = 'widget-6';
+				}
+			} else {
+				set_theme_mod( 'colormag_footer_main_area_cols', 4 );
+				if ( is_active_sidebar( 'colormag_footer_sidebar_one' ) ) {
+					$footer_builder_config['desktop']['main']['main-1'][] = 'widget-4';
+				}
+				if ( is_active_sidebar( 'colormag_footer_sidebar_two' ) ) {
+					$footer_builder_config['desktop']['main']['main-2'][] = 'widget-5';
+				}
+				if ( is_active_sidebar( 'colormag_footer_sidebar_three' ) ) {
+					$footer_builder_config['desktop']['main']['main-3'][] = 'widget-6';
+				}
+				if ( is_active_sidebar( 'colormag_footer_sidebar_four' ) ) {
+					$footer_builder_config['desktop']['main']['main-4'][] = 'widget-7';
+				}
+			}
+
+			set_theme_mod( 'colormag_footer_builder', $footer_builder_config );
+
 			// Option migration.
 			$top_bar_background = get_theme_mod( 'colormag_top_bar_background_color', '' );
 			if ( $top_bar_background ) {
@@ -586,6 +669,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			if ( $main_header_width ) {
 				set_theme_mod( 'colormag_header_bottom_area_width', $main_header_width );
 				remove_theme_mod( 'colormag_main_header_width_setting' );
+			}
+
+			$footer_background = get_theme_mod( 'colormag_footer_background', '' );
+
+			if ( $footer_background ) {
+				set_theme_mod( 'colormag_footer_top_area_background', $footer_background );
+				set_theme_mod( 'colormag_footer_main_area_background', $footer_background );
+				remove_theme_mod( 'colormag_footer_background' );
 			}
 
 			update_option( 'colormag_builder_migration', true );
