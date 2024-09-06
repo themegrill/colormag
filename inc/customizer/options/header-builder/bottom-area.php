@@ -46,7 +46,7 @@ $options = array(
 				'colormag_main_header_width_setting'       => array(
 					'default' => 'full-width',
 					'type'    => 'customind-select',
-					'title'   => esc_html__( 'Width', 'zakra' ),
+					'title'   => esc_html__( 'Width', 'colormag' ),
 					'section' => 'colormag_header_builder_bottom_area',
 					'choices' => array(
 						'full-width' => esc_html__( 'Full Width', 'colormag' ),
@@ -78,7 +78,6 @@ $options = array(
 					'type'        => 'customind-dimensions',
 					'title'       => esc_html__( 'Padding', 'colormag' ),
 					'section'     => 'colormag_header_builder_bottom_area',
-					'transport'   => 'postMessage',
 					'units'       => array( 'px', 'em' ),
 					'defaultUnit' => 'px',
 				),
@@ -94,7 +93,6 @@ $options = array(
 					'type'        => 'customind-dimensions',
 					'title'       => esc_html__( 'Margin', 'colormag' ),
 					'section'     => 'colormag_header_builder_bottom_area',
-					'transport'   => 'postMessage',
 					'units'       => array( 'px', 'em' ),
 					'defaultUnit' => 'px',
 				),
@@ -110,17 +108,15 @@ $options = array(
 					'type'        => 'customind-dimensions',
 					'title'       => esc_html__( 'Border Width', 'colormag' ),
 					'section'     => 'colormag_header_builder_bottom_area',
-					'transport'   => 'postMessage',
 					'units'       => array( 'px', 'em' ),
 					'defaultUnit' => 'px',
 				),
 
 				'colormag_header_bottom_area_border_color' => array(
-					'title'     => esc_html__( 'Border Color', 'colormag' ),
-					'default'   => '',
-					'type'      => 'customind-color',
-					'section'   => 'colormag_header_builder_bottom_area',
-					'transport' => 'postMessage',
+					'title'   => esc_html__( 'Border Color', 'colormag' ),
+					'default' => '',
+					'type'    => 'customind-color',
+					'section' => 'colormag_header_builder_bottom_area',
 				),
 			)
 		),

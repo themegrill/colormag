@@ -2069,7 +2069,6 @@ class ColorMag_Dynamic_CSS {
 
 		// Header bottom area background.
 		$header_bottom_area_width = get_theme_mod('colormag_main_header_width_setting', 'full-width');
-		error_log( print_r( $header_bottom_area_width, true ) );
 		if ( 'contained' === $header_bottom_area_width ){
 			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row';
 		} else {
@@ -2101,7 +2100,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_dimension_css(
 			$header_bottom_area_padding_default,
 			$header_bottom_area_padding,
-			'.cm-header-builder .cm-header-bottom-row',
+			$bottom_header_background_selector,
 			'padding'
 		);
 
@@ -2119,7 +2118,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_dimension_css(
 			$header_bottom_area_margin_default,
 			$header_bottom_area_margin,
-			'.cm-header-builder .cm-header-bottom-row',
+			$bottom_header_background_selector,
 			'margin'
 		);
 
@@ -2137,13 +2136,13 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_dimension_css(
 			$header_bottom_area_border_width_default,
 			$header_bottom_area_border_width,
-			'.cm-header-builder .cm-header-bottom-row',
+			$bottom_header_background_selector,
 			'border-width'
 		);
 
 		$header_bottom_area_border_color     = get_theme_mod( 'colormag_header_bottom_area_border_color', '' );
 		$header_bottom_area_border_color_css = array(
-			'.cm-header-builder .cm-header-bottom-row' => array(
+			$bottom_header_background_selector => array(
 				'border-color' => esc_html( $header_bottom_area_border_color ),
 			),
 		);
@@ -2152,7 +2151,7 @@ class ColorMag_Dynamic_CSS {
 		// Header bottom area color.
 		$header_bottom_area_color     = get_theme_mod( 'colormag_header_bottom_area_color', '' );
 		$header_bottom_area_color_css = array(
-			'.cm-header-builder .cm-header-bottom-row' => array(
+			$bottom_header_background_selector => array(
 				'color' => esc_html( $header_bottom_area_color ),
 			),
 		);

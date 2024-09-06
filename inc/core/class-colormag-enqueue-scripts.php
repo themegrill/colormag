@@ -701,20 +701,56 @@ if ( ! function_exists( 'colormag_parse_dimension_css' ) ) {
 
 		$unit = isset( $output_value['unit'] ) ? $output_value['unit'] : ( isset( $default_value['unit'] ) ? $default_value['unit'] : 'px' );
 
-		if ( isset( $output_value['top'] ) && ! empty( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
-			$parse_css .= $property . '-top:' . $output_value['top'] . $unit . ';';
-		}
+		if ( 'border-width' === $property ) {
 
-		if ( isset( $output_value['top'] ) && ! empty( $output_value['top'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
-			$parse_css .= $property . '-right:' . $output_value['right'] . $unit . ';';
-		}
+			if ( isset( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+				$parse_css .= 'border-top-width:' . $output_value['top'] . $unit . ';';
+			}
 
-		if ( isset( $output_value['bottom'] ) && ! empty( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
-			$parse_css .= $property . '-bottom:' . $output_value['bottom'] . $unit . ';';
-		}
+			if ( isset( $output_value['right'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+				$parse_css .= 'border-right-width:' . $output_value['right'] . $unit . ';';
+			}
 
-		if ( isset( $output_value['left'] ) && ! empty( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
-			$parse_css .= $property . '-left:' . $output_value['left'] . $unit . ';';
+			if ( isset( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+				$parse_css .= 'border-bottom-width:' . $output_value['bottom'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+				$parse_css .= 'border-left-width:' . $output_value['left'] . $unit . ';';
+			}
+		} elseif ( 'border-radius' === $property ) {
+
+			if ( isset( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+				$parse_css .= 'border-top-left-radius:' . $output_value['top'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['right'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+				$parse_css .= 'border-top-right-radius:' . $output_value['right'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+				$parse_css .= 'border-bottom-right-radius:' . $output_value['bottom'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+				$parse_css .= 'border-bottom-left-radius:' . $output_value['left'] . $unit . ';';
+			}
+		} else {
+			if ( isset( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+				$parse_css .= $property . '-top:' . $output_value['top'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['right'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+				$parse_css .= $property . '-right:' . $output_value['right'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+				$parse_css .= $property . '-bottom:' . $output_value['bottom'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+				$parse_css .= $property . '-left:' . $output_value['left'] . $unit . ';';
+			}
 		}
 
 		$parse_css .= '}';
