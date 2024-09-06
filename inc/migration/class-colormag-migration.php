@@ -530,6 +530,52 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			set_theme_mod( 'colormag_header_builder', $header_builder_config );
 
+			// Option migration.
+			$top_bar_background = get_theme_mod( 'colormag_top_bar_background_color', '' );
+			if ( $top_bar_background ) {
+				$top_bar_background_value = array(
+					'background-color'      => $top_bar_background,
+					'background-image'      => '',
+					'background-repeat'     => 'repeat',
+					'background-position'   => 'center center',
+					'background-size'       => 'contain',
+					'background-attachment' => 'scroll',
+				);
+
+				set_theme_mod( 'colormag_header_top_area_background', $top_bar_background_value );
+				remove_theme_mod( 'colormag_top_bar_background_color' );
+			}
+
+			$site_title_color = get_theme_mod( 'colormag_site_title_color', '' );
+			if ( $site_title_color ) {
+				set_theme_mod( 'colormag_header_site_identity_color', $site_title_color );
+				remove_theme_mod( 'colormag_site_title_color' );
+			}
+
+			$site_title_hover_color = get_theme_mod( 'colormag_site_title_hover_color', '' );
+			if ( $site_title_hover_color ) {
+				set_theme_mod( 'colormag_header_site_identity_hover_color', $site_title_hover_color );
+				remove_theme_mod( 'colormag_site_title_hover_color' );
+			}
+
+			$site_title_typography = get_theme_mod( 'colormag_site_title_typography', '' );
+			if ( $site_title_typography ) {
+				set_theme_mod( 'colormag_header_site_title_typography', $site_title_typography );
+				remove_theme_mod( 'colormag_site_title_typography' );
+			}
+
+			$site_tagline_color = get_theme_mod( 'colormag_site_tagline_color', '' );
+			if ( $site_tagline_color ) {
+				set_theme_mod( 'colormag_header_site_tagline_color', $site_tagline_color );
+				remove_theme_mod( 'colormag_site_tagline_color' );
+			}
+
+			$site_tagline_typography = get_theme_mod( 'colormag_site_tagline_typography', '' );
+			if ( $site_tagline_typography ) {
+				set_theme_mod( 'colormag_header_site_tagline_typography', $site_tagline_typography );
+				remove_theme_mod( 'colormag_site_tagline_typography' );
+			}
+
 			update_option( 'colormag_builder_migration', true );
 		}
 

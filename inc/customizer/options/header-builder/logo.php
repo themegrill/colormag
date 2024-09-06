@@ -78,6 +78,13 @@ $options = array(
 								'transport' => 'postMessage',
 								'section'   => 'colormag_header_builder_logo',
 							),
+							'colormag_header_site_identity_hover_color' => array(
+								'default'   => '',
+								'type'      => 'customind-color',
+								'title'     => esc_html__( 'Hover', 'colormag' ),
+								'transport' => 'postMessage',
+								'section'   => 'colormag_header_builder_logo',
+							),
 						),
 					),
 				),

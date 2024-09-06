@@ -3945,13 +3945,22 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Header builder site title color.
-		$header_site_title_color     = get_theme_mod( 'colormag_header_site_identity_color', '#16181a' );
+		$header_site_title_color     = get_theme_mod( 'colormag_header_site_identity_color', '' );
 		$header_site_title_color_css = array(
 			'.cm-header-builder .site-title a' => array(
 				'color' => esc_html( $header_site_title_color ),
 			),
 		);
-		$parse_builder_css            .= colormag_parse_css( '#16181a', $header_site_title_color, $header_site_title_color_css );
+		$parse_builder_css            .= colormag_parse_css( '', $header_site_title_color, $header_site_title_color_css );
+
+		// Header builder site title hover color.
+		$header_site_title_hover_color     = get_theme_mod( 'colormag_header_site_identity_hover_color', '' );
+		$header_site_title_hover_color_css = array(
+			'.cm-header-builder .site-title a:hover' => array(
+				'color' => esc_html( $header_site_title_hover_color ),
+			),
+		);
+		$parse_builder_css            .= colormag_parse_css( '#16181a', $header_site_title_hover_color, $header_site_title_hover_color_css );
 
 		// Header builder site title typography.
 		$header_site_title_typography_default = array(

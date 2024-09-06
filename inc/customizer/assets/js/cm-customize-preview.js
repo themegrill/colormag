@@ -2708,6 +2708,14 @@
 					);
 					break;
 
+				case "colormag_header_site_identity_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .site-title a:hover",
+						"color",
+						value,
+					);
+					break;
+
 				case "colormag_header_site_title_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
