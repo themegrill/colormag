@@ -510,6 +510,24 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
+			$top_bar_enable     = get_theme_mod( 'colormag_enable_top_bar', 0 );
+			$date_enable        = get_theme_mod( 'colormag_date_display', false );
+			$news_ticker_enable = get_theme_mod( 'colormag_enable_news_ticker', 0 );
+			$social_enable      = get_theme_mod( 'colormag_enable_social_icons', 0 );
+			if ( $top_bar_enable ) {
+				if ( $date_enable ) {
+					$header_builder_config['desktop']['top']['left'][] = 'date';
+				}
+
+				if ( $news_ticker_enable ) {
+					$header_builder_config['desktop']['top']['left'][] = 'news-ticker';
+				}
+
+				if ( $social_enable ) {
+					$header_builder_config['desktop']['top']['right'][] = 'socials';
+				}
+			}
+
 			set_theme_mod( 'colormag_header_builder', $header_builder_config );
 
 			update_option( 'colormag_builder_migration', true );
