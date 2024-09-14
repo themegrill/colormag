@@ -104,8 +104,8 @@ $options = array(
 					'main-5' => array(),
 				),
 				'bottom' => array(
-					'bottom-1' => array(),
-					'bottom-2' => array( 'copyright' ),
+					'bottom-1' => array( 'copyright' ),
+					'bottom-2' => array(),
 					'bottom-3' => array(),
 					'bottom-4' => array(),
 					'bottom-5' => array(),

@@ -1,4 +1,5 @@
 <?php
+$default_footer_value = esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag' ) . '[tg-link]' . esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].';
 
 $options = array(
 	'colormag_footer_copyright_heading' => array(
@@ -11,7 +12,7 @@ $options = array(
 				'colormag_footer_copyright'            => array(
 					'default'     => sprintf(
 					/* translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link. */
-						esc_html__( 'Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s.', 'colormag' ),
+						esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: %3$s', 'colormag' ) . esc_html__( ' by ThemeGrill. Powered by %4$s', 'colormag' ),
 						'{the-year}',
 						'{site-link}',
 						'{theme-link}',
