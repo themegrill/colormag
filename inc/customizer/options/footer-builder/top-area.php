@@ -83,7 +83,20 @@ $options = array(
 					'transport' => 'postMessage',
 					'section'   => 'colormag_footer_builder_top_area',
 				),
-
+				'colormag_footer_top_area_widget_background' => array(
+					'default'   => array(
+						'background-color'      => '',
+						'background-image'      => '',
+						'background-repeat'     => 'repeat',
+						'background-position'   => 'center center',
+						'background-size'       => 'contain',
+						'background-attachment' => 'scroll',
+					),
+					'type'      => 'customind-background',
+					'title'     => esc_html__( 'Widget Background', 'colormag' ),
+					'transport' => 'postMessage',
+					'section'   => 'colormag_footer_builder_top_area',
+				),
 				'colormag_footer_top_area_padding'        => array(
 					'default'     => array(
 						'top'    => '',

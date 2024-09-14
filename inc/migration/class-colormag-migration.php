@@ -667,7 +667,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			$main_header_width = get_theme_mod( 'colormag_main_header_width_setting', 'full-width' );
 			if ( $main_header_width ) {
-				set_theme_mod( 'colormag_header_bottom_area_width', $main_header_width );
+				set_theme_mod( 'colormag_main_header_width_setting', $main_header_width );
 				remove_theme_mod( 'colormag_main_header_width_setting' );
 			}
 
@@ -677,6 +677,60 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				set_theme_mod( 'colormag_footer_top_area_background', $footer_background );
 				set_theme_mod( 'colormag_footer_main_area_background', $footer_background );
 				remove_theme_mod( 'colormag_footer_background' );
+			}
+
+			$upper_footer_background = get_theme_mod( 'colormag_upper_footer_background', '' );
+			if ( $upper_footer_background ) {
+				set_theme_mod( 'colormag_footer_top_area_widget_background', $upper_footer_background );
+				remove_theme_mod( 'colormag_upper_footer_background' );
+			}
+
+			$widget_title_color = get_theme_mod( 'colormag_footer_widget_title_color', '' );
+			if ( $widget_title_color ) {
+				set_theme_mod( 'colormag_footer_widget_1_title_color', $widget_title_color );
+				set_theme_mod( 'colormag_footer_widget_2_title_color', $widget_title_color );
+				set_theme_mod( 'colormag_footer_widget_3_title_color', $widget_title_color );
+				set_theme_mod( 'colormag_footer_widget_4_title_color', $widget_title_color );
+				set_theme_mod( 'colormag_footer_widget_5_title_color', $widget_title_color );
+				set_theme_mod( 'colormag_footer_widget_6_title_color', $widget_title_color );
+				set_theme_mod( 'colormag_footer_widget_7_title_color', $widget_title_color );
+				remove_theme_mod( 'colormag_footer_widget_title_color' );
+			}
+
+			$widget_content_color = get_theme_mod( 'colormag_footer_widget_content_color', '' );
+			if ( $widget_content_color ) {
+				set_theme_mod( 'colormag_footer_widget_1_content_color', $widget_content_color );
+				set_theme_mod( 'colormag_footer_widget_2_content_color', $widget_content_color );
+				set_theme_mod( 'colormag_footer_widget_3_content_color', $widget_content_color );
+				set_theme_mod( 'colormag_footer_widget_4_content_color', $widget_content_color );
+				set_theme_mod( 'colormag_footer_widget_5_content_color', $widget_content_color );
+				set_theme_mod( 'colormag_footer_widget_6_content_color', $widget_content_color );
+				set_theme_mod( 'colormag_footer_widget_7_content_color', $widget_content_color );
+				remove_theme_mod( 'colormag_footer_widget_content_color' );
+			}
+
+			$widget_link_color = get_theme_mod( 'colormag_footer_widget_content_link_text_color', '' );
+			if ( $widget_link_color ) {
+				set_theme_mod( 'colormag_footer_widget_1_link_color', $widget_link_color );
+				set_theme_mod( 'colormag_footer_widget_2_link_color', $widget_link_color );
+				set_theme_mod( 'colormag_footer_widget_3_link_color', $widget_link_color );
+				set_theme_mod( 'colormag_footer_widget_4_link_color', $widget_link_color );
+				set_theme_mod( 'colormag_footer_widget_5_link_color', $widget_link_color );
+				set_theme_mod( 'colormag_footer_widget_6_link_color', $widget_link_color );
+				set_theme_mod( 'colormag_footer_widget_7_link_color', $widget_link_color );
+				remove_theme_mod( 'colormag_footer_widget_content_link_text_color' );
+			}
+
+			$widget_link_hover_color = get_theme_mod( 'colormag_footer_widget_content_link_text_hover_color', '' );
+			if ( $widget_link_hover_color ) {
+				set_theme_mod( 'colormag_footer_widget_1_link_hover_color', $widget_link_hover_color );
+				set_theme_mod( 'colormag_footer_widget_2_link_hover_color', $widget_link_hover_color );
+				set_theme_mod( 'colormag_footer_widget_3_link_hover_color', $widget_link_hover_color );
+				set_theme_mod( 'colormag_footer_widget_4_link_hover_color', $widget_link_hover_color );
+				set_theme_mod( 'colormag_footer_widget_5_link_hover_color', $widget_link_hover_color );
+				set_theme_mod( 'colormag_footer_widget_6_link_hover_color', $widget_link_hover_color );
+				set_theme_mod( 'colormag_footer_widget_7_link_hover_color', $widget_link_hover_color );
+				remove_theme_mod( 'colormag_footer_widget_content_link_text_hover_color' );
 			}
 
 			update_option( 'colormag_builder_migration', true );

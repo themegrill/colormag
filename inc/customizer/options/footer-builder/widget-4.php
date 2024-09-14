@@ -8,14 +8,14 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_footer_builder_widget_4_sub_controls',
 			array(
-				'colormag_footer_widget_1_title_color'   => array(
+				'colormag_footer_widget_4_title_color'   => array(
 					'default'   => '',
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Title Color', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_footer_builder_widget_4',
 				),
-				'colormag_footer_widget_1_title_typography' => array(
+				'colormag_footer_widget_4_title_typography' => array(
 					'default'   => array(
 						'font-family'    => 'default',
 						'font-weight'    => '400',
@@ -55,31 +55,45 @@ $options = array(
 					'title'     => esc_html__( 'Title Typography', 'colormag' ),
 					'section'   => 'colormag_footer_builder_widget_4',
 				),
-				'colormag_footer_widget_1_link_divider'  => array(
+				'colormag_footer_widget_4_link_divider'  => array(
 					'type'    => 'customind-divider',
 					'variant' => 'dashed',
 					'section' => 'colormag_footer_builder_widget_4',
 				),
-				'colormag_footer_widget_1_link_color'    => array(
-					'default'   => '',
-					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Link', 'colormag' ),
-					'transport' => 'postMessage',
-					'section'   => 'colormag_footer_builder_widget_4',
+				'colormag_footer_widget_4_link_color_group' => array(
+					'type'         => 'customind-color-group',
+					'title'        => esc_html__( 'Link.', 'colormag' ),
+					'section'      => 'colormag_footer_column_section',
+					'sub_controls' => array(
+						'colormag_footer_widget_4_link_color'    => array(
+							'default'   => '',
+							'type'      => 'customind-color',
+							'title'     => esc_html__( 'Normal', 'colormag' ),
+							'transport' => 'postMessage',
+							'section'   => 'colormag_footer_builder_widget_4',
+						),
+						'colormag_footer_widget_4_link_hover_color'    => array(
+							'default'   => '',
+							'type'      => 'customind-color',
+							'title'     => esc_html__( 'Hover', 'colormag' ),
+							'transport' => 'postMessage',
+							'section'   => 'colormag_footer_builder_widget_4',
+						),
+					),
 				),
-				'colormag_footer_widget_1_content_color_divider' => array(
+				'colormag_footer_widget_4_content_color_divider' => array(
 					'type'    => 'customind-divider',
 					'variant' => 'dashed',
 					'section' => 'colormag_footer_builder_widget_4',
 				),
-				'colormag_footer_widget_1_content_color' => array(
+				'colormag_footer_widget_4_content_color' => array(
 					'default'   => '',
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Content Color', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_footer_builder_widget_4',
 				),
-				'colormag_footer_widget_1_content_typography' => array(
+				'colormag_footer_widget_4_content_typography' => array(
 					'default'   => array(
 						'font-family'    => 'default',
 						'font-weight'    => '400',

@@ -2680,6 +2680,16 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_link_color, $footer_widget_link_color_css );
 
+		// Footer builder widget link hover color.
+		$footer_widget_link_hover_color     = get_theme_mod( 'colormag_footer_widget_1_link_hover_color', '' );
+		$footer_widget_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one_upper a:hover' => array(
+				'color' => esc_html( $footer_widget_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_link_hover_color, $footer_widget_link_hover_color_css );
+
+
 		// Footer builder widget title typography.
 		$footer_widget_1_title_typography_default = array(
 			'font-family'    => 'default',
@@ -2799,6 +2809,15 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_2_link_color, $footer_widget_2_link_color_css );
 
+		// Footer builder widget 2 link hover color.
+		$footer_widget_2_link_hover_color     = get_theme_mod( 'colormag_footer_widget_2_link_hover_color', '' );
+		$footer_widget_2_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two_upper a:hover' => array(
+				'color' => esc_html( $footer_widget_2_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_2_link_hover_color, $footer_widget_2_link_hover_color_css );
+
 		// Footer builder widget 2 title typography.
 		$footer_widget_2_title_typography_default = array(
 			'font-family'    => 'default',
@@ -2917,6 +2936,16 @@ class ColorMag_Dynamic_CSS {
 			),
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_3_link_color, $footer_widget_3_link_color_css );
+
+		// Footer builder widget 3 link hover color.
+		$footer_widget_3_link_hover_color     = get_theme_mod( 'colormag_footer_widget_3_link_hover_color', '' );
+		$footer_widget_3_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three_upper a:hover' => array(
+				'color' => esc_html( $footer_widget_3_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_3_link_hover_color, $footer_widget_3_link_hover_color_css );
+
 
 		// Footer builder widget 3 title typography.
 		$footer_widget_3_title_typography_default = array(
@@ -3041,6 +3070,15 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_4_link_color, $footer_widget_4_link_color_css );
 
+		// Footer builder widget 4 link hover color.
+		$footer_widget_4_link_hover_color     = get_theme_mod( 'colormag_footer_widget_4_link_hover_color', '' );
+		$footer_widget_4_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_one a:hover' => array(
+				'color' => esc_html( $footer_widget_4_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_4_link_hover_color, $footer_widget_4_link_hover_color_css );
+
 		// Footer builder widget 4 title typography.
 		$footer_widget_4_title_typography_default = array(
 			'font-family'    => 'default',
@@ -3164,6 +3202,15 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_5_link_color, $footer_widget_5_link_color_css );
 
+		// Footer builder widget 5 link hover color.
+		$footer_widget_5_link_hover_color     = get_theme_mod( 'colormag_footer_widget_5_link_hover_color', '' );
+		$footer_widget_5_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_two a:hover' => array(
+				'color' => esc_html( $footer_widget_5_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_5_link_hover_color, $footer_widget_5_link_hover_color_css );
+
 		// Footer builder widget 5 title typography.
 		$footer_widget_5_title_typography_default = array(
 			'font-family'    => 'default',
@@ -3283,6 +3330,15 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_6_link_color, $footer_widget_6_link_color_css );
 
+		// Footer builder widget 6 link hover color.
+		$footer_widget_6_link_hover_color     = get_theme_mod( 'colormag_footer_widget_6_link_hover_color', '' );
+		$footer_widget_6_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_three a:hover' => array(
+				'color' => esc_html( $footer_widget_6_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_6_link_hover_color, $footer_widget_6_link_hover_color_css );
+
 		// Footer builder widget 6 title typography.
 		$footer_widget_6_title_typography_default = array(
 			'font-family'    => 'default',
@@ -3401,6 +3457,15 @@ class ColorMag_Dynamic_CSS {
 			),
 		);
 		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_7_link_color, $footer_widget_7_link_color_css );
+
+		// Footer builder widget 7 link hover color.
+		$footer_widget_7_link_hover_color     = get_theme_mod( 'colormag_footer_widget_7_link_hover_color', '' );
+		$footer_widget_7_link_hover_color_css = array(
+			'.cm-footer-builder .widget.widget-colormag_footer_sidebar_four a:hover' => array(
+				'color' => esc_html( $footer_widget_7_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_widget_7_link_hover_color, $footer_widget_7_link_hover_color_css );
 
 		// Footer builder widget 7 title typography.
 		$footer_widget_7_title_typography_default = array(
