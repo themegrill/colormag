@@ -112,6 +112,7 @@ require_once COLORMAG_WIDGETS_DIR . '/class-colormag-widgets.php';
  */
 // Template functions files.
 require COLORMAG_INCLUDES_DIR . '/template-tags.php';
+require COLORMAG_INCLUDES_DIR . '/builder-template-tags.php';
 require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 
 // Svg icon class.
