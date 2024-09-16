@@ -3173,10 +3173,6 @@ Styles for separating single posts loaded from ajax call.
 
 /* Widget Search.
 	--------------------------------------------- */
-.wp-block-search .wp-block-search__label {
-	display: none;
-}
-
 .wp-block-search .wp-block-search__button {
 	border: 0;
 	margin-left: 0;
