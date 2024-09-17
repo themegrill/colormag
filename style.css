@@ -1414,6 +1414,12 @@ table td {
 .cm-footer-builder .cm-footer-bottom-row {
 	padding-bottom: 24px;
 	padding-top: 24px;
+	background-color: #27272a;
+	color: #f4f4f5;
+}
+
+.cm-footer-builder .cm-footer-bottom-row .cm-copyright {
+	font-size: 14px;
 }
 
 .cm-footer-builder .cm-main-row {

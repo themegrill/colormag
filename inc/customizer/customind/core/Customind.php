@@ -7,6 +7,7 @@ namespace Customind\Core;
 
 use Customind\Core\Factories\TypeFactory;
 use Customind\Core\Traits\Hook;
+use Customind\Core\Types\UpsellSection;
 
 class Customind {
 
@@ -186,6 +187,7 @@ class Customind {
 		$this->register_items( $wp_customize, 'panel' );
 		$this->register_items( $wp_customize, 'section' );
 		$this->register_items( $wp_customize, 'control' );
+		$wp_customize->register_section_type( UpsellSection::class );
 		$this->process_typography_controls();
 	}
 
@@ -203,7 +205,14 @@ class Customind {
 		}
 		$is_control = 'control' === $type;
 		foreach ( $items as $id => $args ) {
-			$_type = $is_control ? $args['type'] ?? '' : 'customind-' . $type;
+			if ( $is_control ) {
+				$_type = $args['type'] ?? '';
+			} elseif ( 'upsell-section' === ( $args['type'] ?? '' ) ) {
+				$_type        = 'customind-upsell-section';
+				$args['type'] = 'customind-upsell-section';
+			} else {
+				$_type = $args['type'] ?? "customind-$type";
+			}
 			$this->do_action( "register:{$type}", $id, $wp_customize, $args );
 			$item = TypeFactory::create( $_type, $wp_customize, $id, $args );
 			$wp_customize->{"add_$type"}( $item );
@@ -297,6 +306,10 @@ class Customind {
 	 */
 	private function add_items( array $args, $type ) {
 		foreach ( $args as $key => $arg ) {
+			if ( isset( $arg['type'] ) && 'upsell-section' === $arg['type'] ) {
+				$this->sections[ $key ] = $arg;
+				continue;
+			}
 			$this->$type[ $key ] = $arg;
 		}
 	}
@@ -342,6 +355,8 @@ class Customind {
 
 		wp_enqueue_style( 'fontawesome', $fontawesome_path, [], $this->fontawesome_version );
 		wp_enqueue_style( 'customind', $this->get_asset_url( 'customind.css' ), [], $asset['version'] );
+		// Support RTL.
+		wp_style_add_data( 'customind', 'rtl', 'replace' );
 		wp_enqueue_script( 'customind', $this->get_asset_url( 'customind.js' ), array_merge( $asset['dependencies'], [ 'customize-preview' ] ), $asset['version'], true );
 
 		if ( ! empty( $this->i18n_data['domain'] ) && ! empty( $this->i18n_data['path'] ) ) {

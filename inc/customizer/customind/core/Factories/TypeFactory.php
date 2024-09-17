@@ -35,12 +35,14 @@ use Customind\Core\Types\Controls\FooterBuilder;
 use Customind\Core\Types\Controls\ToggleButton;
 use Customind\Core\Types\Controls\HeaderBuilder;
 use Customind\Core\Types\Controls\Tabs;
+use Customind\Core\Types\UpsellSection;
 
 class TypeFactory {
 
 	const CLASSES = [
 		'customind-panel'              => Panel::class,
 		'customind-section'            => Section::class,
+		'customind-upsell-section'     => UpsellSection::class,
 		'customind-textarea'           => Textarea::class,
 		'customind-title'              => Title::class,
 		'customind-toggle'             => Toggle::class,
