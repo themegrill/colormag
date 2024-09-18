@@ -611,6 +611,34 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
+			$footer_bar_alignment       = get_theme_mod( 'colormag_footer_bar_alignment', 'left' );
+			$social_icons_enable        = get_theme_mod( 'colormag_enable_social_icons', false );
+			$social_icons_footer_enable = get_theme_mod( 'colormag_enable_social_icons_footer', true );
+			if ( 'left' === $footer_bar_alignment ) {
+				$footer_builder_config['desktop']['bottom']['bottom-1'] = [ 'copyright' ];
+				if ( $social_icons_enable ) {
+					if ( $social_icons_footer_enable ) {
+						$footer_builder_config['desktop']['bottom']['bottom-2'] = [ 'socials' ];
+					}
+				}
+			} elseif ( 'right' === $footer_column_layout ) {
+				if ( $social_icons_enable ) {
+					if ( $social_icons_footer_enable ) {
+						$footer_builder_config['desktop']['bottom']['bottom-1'] = [ 'socials' ];
+					}
+				}
+				$footer_builder_config['desktop']['bottom']['bottom-2'] = [ 'copyright' ];
+
+			} elseif ( 'center' === $footer_column_layout ) {
+				set_theme_mod( 'colormag_footer_bottom_area_cols', 1 );
+				$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'copyright';
+				if ( $social_icons_enable ) {
+					if ( $social_icons_footer_enable ) {
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'socials';
+					}
+				}
+			}
+
 			set_theme_mod( 'colormag_footer_builder', $footer_builder_config );
 
 			// Option migration.
@@ -731,6 +759,24 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				set_theme_mod( 'colormag_footer_widget_6_link_hover_color', $widget_link_hover_color );
 				set_theme_mod( 'colormag_footer_widget_7_link_hover_color', $widget_link_hover_color );
 				remove_theme_mod( 'colormag_footer_widget_content_link_text_hover_color' );
+			}
+
+			$footer_bar_bg_color = get_theme_mod( 'colormag_footer_copyright_background', '' );
+			if ( $footer_bar_bg_color ) {
+				set_theme_mod( 'colormag_footer_bottom_area_background', $footer_bar_bg_color );
+				remove_theme_mod( 'colormag_footer_copyright_background' );
+			}
+
+			$footer_bar_text_color = get_theme_mod( 'colormag_footer_copyright_text_color', '' );
+			if ( $footer_bar_text_color ) {
+				set_theme_mod( 'colormag_footer_copyright_text_color', $footer_bar_text_color );
+				remove_theme_mod( 'colormag_footer_copyright_text_color' );
+			}
+
+			$footer_bar_link_color = get_theme_mod( 'colormag_footer_copyright_link_text_color', '' );
+			if ( $footer_bar_link_color ) {
+				set_theme_mod( 'colormag_footer_copyright_link_color', $footer_bar_link_color );
+				remove_theme_mod( 'colormag_footer_copyright_link_text_color' );
 			}
 
 			update_option( 'colormag_builder_migration', true );
