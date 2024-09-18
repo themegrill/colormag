@@ -472,7 +472,7 @@ if ( ! function_exists( 'colormag_add_submenu_icon' ) ) :
 	 */
 	function colormag_add_submenu_icon( $item_output, $item, $depth, $args ) {
 
-		if ( 'primary' === $args->theme_location ) {
+		if ( 'primary' === $args->theme_location || 'menu-secondary' === $args->theme_location ) {
 
 			if (
 				in_array( 'menu-item-has-children', $item->classes, true ) ||

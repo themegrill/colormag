@@ -222,29 +222,80 @@
       }
     }
   }
-
 }
 
-.cm-secondary-nav,
-.cm-tertiary-nav,
-.cm-quaternary-nav {
-  border: 0 solid;
+#cm-secondary-nav {
+	position: relative;
 
-  ul {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: flex-start;
-    margin-bottom: 0;
-    margin-left: 0;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
 
-    li {
-      list-style: none;
-    }
-  }
+		li {
+			position: relative;
+			padding: 10px 16px;
+			display: flex;
+			justify-content: space-between;
+
+			.cm-submenu-toggle {
+				display: flex;
+				align-items: center;
+				padding-left: 8px;
+				cursor: pointer;
+
+				.cm-icon {
+					fill: #207daf;
+				}
+			}
+
+			&:hover {
+				> .sub-menu {
+					left: 0;
+				}
+			}
+
+			.sub-menu {
+				display: flex;
+				flex-wrap: wrap;
+				list-style: none;
+				position: absolute;
+				flex-direction: column;
+				width: 200px;
+				top: 100%;
+				left: -99999px;
+				background-color: #ffffff;
+				z-index: 9999;
+			}
+		}
+
+		ul {
+			li {
+				ul.sub-menu {
+					top: 0;
+
+					ul.sub-menu {
+						top: 0;
+					}
+				}
+
+				&:hover {
+					> ul.sub-menu {
+						left: 100%;
+
+						li{
+							&:hover {
+								> ul.sub-menu {
+									left: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
-
 
 @media (max-width: 768px) {
   .cm-header-builder {
@@ -254,152 +305,6 @@
 
     .cm-mobile-row {
       display: block;
-    }
-  }
-}
-
-.cm-desktop-row {
-  &.cm-header-search--opened {
-
-    .cm-main-nav,
-    .cm-primary-nav,
-    .site-branding,
-    .cm-header-col--1 {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .cm-bottom-row:has(.cm-header-search) {
-      nav, .cm-mini-cart, .cm-header-buttons, .cm-header-button--2, .cm-html-1, .cm-html-2, .site-branding {
-        visibility: hidden;
-        opacity: 0;
-      }
-    }
-    .cm-top-row:has(.cm-header-search) {
-      nav, .cm-mini-cart, .cm-header-buttons, .cm-header-button--2, .cm-html-1, .cm-html-2, .site-branding {
-        visibility: hidden;
-        opacity: 0;
-      }
-    }
-
-    .cm-main-row:has(.cm-header-search) {
-      nav, .cm-mini-cart, .cm-header-buttons, .cm-html-1, .cm-html-2, .site-branding {
-        visibility: hidden;
-        opacity: 0;
-      }
-    }
-
-    .cm-search-container {
-      display: flex;
-      width: 100%;
-      z-index: 9999;
-      visibility: visible;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .cm-header-buttons {
-      display: block;
-    }
-
-    .yith-wcwl-items-count {
-      display: none;
-    }
-
-    .cm-header-search__toggle {
-      display: none;
-    }
-
-    .cm-header-action {
-      li {
-        display: none;
-      }
-    }
-
-    .cm-search-field-label {
-
-      input {
-        color: $color__white;
-        padding: 0.7rem 0;
-        background-color: inherit;
-
-        &:focus {
-          color: $color__white;
-        }
-      }
-
-      input:-webkit-autofill,
-      input:-webkit-autofill:focus {
-        transition: background-color 600000s 0s, color 600000s 0s;
-      }
-
-      input[data-autocompleted] {
-        background-color: transparent !important;
-      }
-
-      .cm-icon--search {
-        display: block;
-
-        svg {
-          fill: $color__white;
-        }
-      }
-    }
-
-    .cm-icon--close {
-      position: relative;
-      display: block;
-      background: unset;
-      border: none;
-      padding: length('l-5', px);
-      z-index: 9999;
-
-      &:focus {
-        outline: 1px solid $color__white;
-      }
-
-      &:active {
-        outline: none;
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: length('l-5', px);
-        right: 0;
-        width: length('l-10', px);
-        height: length('l-1', px);
-        border-radius: length('l-1', px);
-        background: $color__white;
-        transform: rotate(45deg);
-        transition: all 0.3s ease-in-out;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: length('l-5', px);
-        right: 0;
-        width: length('l-10', px);
-        height: length('l-1', px);
-        border-radius: length('l-1', px);
-        background: $color__white;
-        transform: rotate(135deg);
-        transition: all 0.3s ease-in-out;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        &:before {
-          transform: rotate(0deg);
-          transition: all 0.3s ease-in-out;
-        }
-
-        &:after {
-          transform: rotate(180deg);
-          transition: all 0.3s ease-in-out;
-        }
-      }
     }
   }
 }
