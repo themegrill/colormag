@@ -4024,14 +4024,14 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_slider_css(
 			$header_site_logo_width_default,
 			$header_site_logo_width,
-			'.cm-header-builder .site-branding .custom-logo-link img',
+			'.cm-header-builder .cm-site-branding img',
 			'width'
 		);
 
 		// Header builder site title color.
 		$header_site_title_color     = get_theme_mod( 'colormag_header_site_identity_color', '' );
 		$header_site_title_color_css = array(
-			'.cm-header-builder .site-title a' => array(
+			'.cm-header-builder .cm-site-title a' => array(
 				'color' => esc_html( $header_site_title_color ),
 			),
 		);
@@ -4040,7 +4040,7 @@ class ColorMag_Dynamic_CSS {
 		// Header builder site title hover color.
 		$header_site_title_hover_color     = get_theme_mod( 'colormag_header_site_identity_hover_color', '' );
 		$header_site_title_hover_color_css = array(
-			'.cm-header-builder .site-title a:hover' => array(
+			'.cm-header-builder .cm-site-title a:hover' => array(
 				'color' => esc_html( $header_site_title_hover_color ),
 			),
 		);
@@ -4087,7 +4087,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_typography_css(
 			$header_site_title_typography_default,
 			$header_site_title_typography,
-			'.cm-header-builder .site-title a',
+			'.cm-header-builder .cm-site-title a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -4097,11 +4097,60 @@ class ColorMag_Dynamic_CSS {
 		// Header builder site tagline color.
 		$header_site_tagline_color     = get_theme_mod( 'colormag_header_site_tagline_color', '' );
 		$header_site_tagline_color_css = array(
-			'.cm-header-builder .site-description' => array(
+			'.cm-header-builder .cm-site-description' => array(
 				'color' => esc_html( $header_site_tagline_color ),
 			),
 		);
 		$parse_builder_css            .= colormag_parse_css( '', $header_site_tagline_color, $header_site_tagline_color_css );
+
+		// Header builder site tagline typography.
+		$header_site_tagline_typography_default     = array(
+			'font-family'    => 'Default',
+			'font-weight'    => '400',
+			'subsets'        => array( 'latin' ),
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.8',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+		$header_site_tagline_typography     = get_theme_mod( 'colormag_header_site_tagline_typography', $header_site_tagline_typography_default );
+
+		// Site tagline typography.
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_site_tagline_typography_default,
+			$header_site_tagline_typography,
+			'.cm-header-builder .cm-site-description',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
 
 		return $parse_builder_css;
 	}

@@ -2747,18 +2747,18 @@
 // 						value,
 // 					);
 // 					break;
-//
-// 				case "colormag_header_site_logo_height":
-// 					css = colormagGenerateSliderCSS(
-// 						".cm-header-builder .site-branding .custom-logo-link img",
-// 						"width",
-// 						value,
-// 					);
-// 					break;
+
+				case "colormag_header_site_logo_height":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-site-branding img",
+						"width",
+						value,
+					);
+					break;
 
 				case "colormag_header_site_identity_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .site-title a",
+						".cm-header-builder .cm-site-title a",
 						"color",
 						value,
 					);
@@ -2766,7 +2766,7 @@
 
 				case "colormag_header_site_identity_hover_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .site-title a:hover",
+						".cm-header-builder .cm-site-title a:hover",
 						"color",
 						value,
 					);
@@ -2775,14 +2775,14 @@
 				case "colormag_header_site_title_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
-						".cm-header-builder .site-title a",
+						".cm-header-builder .cm-site-title a",
 						value,
 					);
 					break;
 
 				case "colormag_header_site_tagline_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .site-description",
+						".cm-header-builder .cm-site-description ",
 						"color",
 						value,
 					);
@@ -2791,7 +2791,7 @@
 				case "colormag_header_site_tagline_typography":
 					css = colormagGenerateTypographyCSS(
 						id,
-						".cm-header-builder .site-description",
+						".cm-header-builder .cm-site-description ",
 						value,
 					);
 					break;

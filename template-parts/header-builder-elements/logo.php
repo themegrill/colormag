@@ -16,9 +16,6 @@ $header_display_type  = get_theme_mod( 'colormag_header_logo_placement', 'header
 $site_identity_enable = get_theme_mod( 'colormag_enable_site_identity', true );
 $site_tagline_enable  = get_theme_mod( 'colormag_enable_site_tagline', true );
 
-error_log( print_r( $site_identity_enable, true ) );
-error_log( print_r( $site_tagline_enable, true ) );
-
 ?>
 	<div id="cm-site-branding" class="cm-site-branding">
 		<?php

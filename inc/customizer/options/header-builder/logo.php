@@ -164,7 +164,7 @@ $options = array(
 						'subsets'        => array( 'latin' ),
 						'font-size'      => array(
 							'desktop' => array(
-								'size' => '1.6',
+								'size' => '',
 								'unit' => 'rem',
 							),
 							'tablet'  => array(
