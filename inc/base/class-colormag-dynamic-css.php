@@ -2265,7 +2265,7 @@ class ColorMag_Dynamic_CSS {
 			'.cm-header-builder .cm-secondary-nav ul li a' => array(
 				'color' => esc_html( $header_secondary_menu_text_color ),
 			),
-			'.cm-header-builder .cm-secondary-nav .cm-submenu-toggle .cm-icon'      => array(
+			'.cm-header-builder #cm-secondary-nav ul li .cm-submenu-toggle .cm-icon'      => array(
 				'fill' => esc_html( $header_secondary_menu_text_color ),
 			),
 		);
@@ -2273,10 +2273,10 @@ class ColorMag_Dynamic_CSS {
 
 		$header_secondary_menu_selected_hovered_text_color     = get_theme_mod( 'colormag_header_secondary_menu_selected_hovered_text_color', '' );
 		$header_secondary_menu_selected_hovered_text_color_css = array(
-			'.cm-header-builder .cm-secondary-nav ul li a:hover' => array(
+			'.cm-header-builder .cm-secondary-nav ul li:hover > a' => array(
 				'color' => esc_html( $header_secondary_menu_selected_hovered_text_color ),
 			),
-			'.cm-header-builder .cm-secondary-nav li:hover > .cm-submenu-toggle .cm-icon' => array(
+			'.cm-header-builder #cm-secondary-nav ul li:hover > .cm-submenu-toggle .cm-icon' => array(
 				'fill' => esc_html( $header_secondary_menu_selected_hovered_text_color ),
 			),
 		);
@@ -2299,7 +2299,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$header_secondary_sub_menu_background         = get_theme_mod( 'colormag_header_secondary_sub_menu_background', $header_secondary_sub_menu_background_default );
-		$parse_builder_css                          .= colormag_parse_background_css( $header_secondary_sub_menu_background_default, $header_secondary_sub_menu_background, '.cm-header-builder .cm-secondary-nav .sub-menu, .cm-header-builder .cm-secondary-nav .children' );
+		$parse_builder_css                          .= colormag_parse_background_css( $header_secondary_sub_menu_background_default, $header_secondary_sub_menu_background, '.cm-header-builder nav.cm-secondary-nav ul.sub-menu, .cm-header-builder .cm-secondary-nav .children' );
 
 		$header_secondary_menu_typography_default     = array(
 			'font-family' => 'default',

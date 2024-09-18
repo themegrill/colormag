@@ -881,7 +881,6 @@
 					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-primary-nav ul li ul li a", value);
 					break;
 
-					//
 				case "colormag_header_secondary_menu_text_color":
 					css = colormagGenerateCommonCSS(
 						".cm-header-builder .cm-secondary-nav ul li a",
@@ -889,7 +888,7 @@
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						".cm-header-builder .cm-secondary-nav .cm-submenu-toggle .cm-icon",
+						".cm-header-builder #cm-secondary-nav ul li .cm-submenu-toggle .cm-icon",
 						"fill",
 						value,
 					);
@@ -897,12 +896,12 @@
 
 				case "colormag_header_secondary_menu_selected_hovered_text_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .cm-secondary-nav ul li a:hover",
+						".cm-header-builder .cm-secondary-nav ul li:hover > a",
 						"color",
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						".cm-header-builder .cm-secondary-nav li:hover > .cm-submenu-toggle .cm-icon",
+						".cm-header-builder #cm-secondary-nav ul li > .cm-submenu-toggle .cm-icon",
 						"fill",
 						value,
 					);

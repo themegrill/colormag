@@ -1190,11 +1190,11 @@ table td {
 	background: transparent;
 }
 
-#cm-secondary-nav {
+.cm-secondary-nav {
 	position: relative;
 }
 
-#cm-secondary-nav ul {
+.cm-secondary-nav ul {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1203,7 +1203,7 @@ table td {
 	list-style: none;
 }
 
-#cm-secondary-nav ul li {
+.cm-secondary-nav ul li {
 	position: relative;
 	padding: 10px 16px;
 	display: -webkit-box;
@@ -1214,7 +1214,7 @@ table td {
 	justify-content: space-between;
 }
 
-#cm-secondary-nav ul li .cm-submenu-toggle {
+.cm-secondary-nav ul li .cm-submenu-toggle {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1225,15 +1225,15 @@ table td {
 	cursor: pointer;
 }
 
-#cm-secondary-nav ul li .cm-submenu-toggle .cm-icon {
+.cm-secondary-nav ul li .cm-submenu-toggle .cm-icon {
 	fill: #207daf;
 }
 
-#cm-secondary-nav ul li:hover > .sub-menu {
+.cm-secondary-nav ul li:hover > .sub-menu {
 	left: 0;
 }
 
-#cm-secondary-nav ul li .sub-menu {
+.cm-secondary-nav ul li .sub-menu {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1252,19 +1252,19 @@ table td {
 	z-index: 9999;
 }
 
-#cm-secondary-nav ul ul li ul.sub-menu {
+.cm-secondary-nav ul ul li ul.sub-menu {
 	top: 0;
 }
 
-#cm-secondary-nav ul ul li ul.sub-menu ul.sub-menu {
+.cm-secondary-nav ul ul li ul.sub-menu ul.sub-menu {
 	top: 0;
 }
 
-#cm-secondary-nav ul ul li:hover > ul.sub-menu {
+.cm-secondary-nav ul ul li:hover > ul.sub-menu {
 	left: 100%;
 }
 
-#cm-secondary-nav ul ul li:hover > ul.sub-menu li:hover > ul.sub-menu {
+.cm-secondary-nav ul ul li:hover > ul.sub-menu li:hover > ul.sub-menu {
 	left: 100%;
 }
 
