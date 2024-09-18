@@ -2265,7 +2265,7 @@ class ColorMag_Dynamic_CSS {
 			'.cm-header-builder .cm-secondary-nav ul li a' => array(
 				'color' => esc_html( $header_secondary_menu_text_color ),
 			),
-			'.cm-header-builder #cm-secondary-nav ul li .cm-submenu-toggle .cm-icon'      => array(
+			'.cm-header-builder .cm-secondary-nav ul li .cm-submenu-toggle .cm-icon'      => array(
 				'fill' => esc_html( $header_secondary_menu_text_color ),
 			),
 		);
@@ -2276,7 +2276,7 @@ class ColorMag_Dynamic_CSS {
 			'.cm-header-builder .cm-secondary-nav ul li:hover > a' => array(
 				'color' => esc_html( $header_secondary_menu_selected_hovered_text_color ),
 			),
-			'.cm-header-builder #cm-secondary-nav ul li:hover > .cm-submenu-toggle .cm-icon' => array(
+			'.cm-header-builder .cm-secondary-nav ul li:hover > .cm-submenu-toggle .cm-icon' => array(
 				'fill' => esc_html( $header_secondary_menu_selected_hovered_text_color ),
 			),
 		);

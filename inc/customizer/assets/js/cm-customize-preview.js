@@ -888,7 +888,7 @@
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						".cm-header-builder #cm-secondary-nav ul li .cm-submenu-toggle .cm-icon",
+						".cm-header-builder .cm-secondary-nav ul li .cm-submenu-toggle .cm-icon",
 						"fill",
 						value,
 					);
@@ -901,7 +901,7 @@
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						".cm-header-builder #cm-secondary-nav ul li > .cm-submenu-toggle .cm-icon",
+						".cm-header-builder .cm-secondary-nav ul li > .cm-submenu-toggle .cm-icon",
 						"fill",
 						value,
 					);
