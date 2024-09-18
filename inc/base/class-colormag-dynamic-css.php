@@ -2170,7 +2170,7 @@ class ColorMag_Dynamic_CSS {
 
 		$header_primary_menu_selected_hovered_text_color     = get_theme_mod( 'colormag_header_primary_menu_selected_hovered_text_color', '' );
 		$header_primary_menu_selected_hovered_text_color_css = array(
-			'.cm-header-builder .cm-primary-nav ul li a:hover' => array(
+			'.cm-header-builder .cm-primary-nav ul li:hover > a' => array(
 				'color' => esc_html( $header_primary_menu_selected_hovered_text_color ),
 			),
 			'.cm-header-builder .cm-primary-nav li:hover > .cm-submenu-toggle .cm-icon' => array(
@@ -2180,9 +2180,10 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hovered_text_color, $header_primary_menu_selected_hovered_text_color_css );
 
 		$header_primary_menu_selected_hover_bg     = get_theme_mod( 'colormag_header_primary_menu_hover_background', '' );
+		error_log( print_r( $header_primary_menu_selected_hover_bg, true ) );
 		$header_primary_menu_selected_hover_bg_css = array(
 			'.cm-header-builder .cm-primary-nav ul li:hover' => array(
-				'color' => esc_html( $header_primary_menu_selected_hover_bg ),
+				'background' => esc_html( $header_primary_menu_selected_hover_bg ),
 			),
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hover_bg, $header_primary_menu_selected_hover_bg_css );
@@ -2240,7 +2241,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css .= colormag_parse_typography_css(
 			$header_primary_menu_typography_default,
 			$header_primary_menu_typography,
-			'.cm-header-builder .cm-primary-nav ul li a',
+			'.cm-header-builder .cm-primary-nav > ul > li > a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,

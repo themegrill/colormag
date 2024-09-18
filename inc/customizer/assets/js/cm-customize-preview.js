@@ -197,146 +197,146 @@
 	}
 
 	function colormagGenerateTypographyCSS(controlId, selector, typography) {
-		let css = "";
-		var link = "",
-			fontFamily = "",
-			fontWeight = "",
-			fontStyle = "",
-			fontTransform = "",
-			desktopFontSize = "",
-			tabletFontSize = "",
-			mobileFontSize = "",
-			desktopLineHeight = "",
-			tabletLineHeight = "",
-			mobileLineHeight = "",
-			desktopLetterSpacing = "",
-			tabletLetterSpacing = "",
-			mobileLetterSpacing = "";
+		let css = '';
+		var link = '',
+			fontFamily = '',
+			fontWeight = '',
+			fontStyle = '',
+			fontTransform = '',
+			desktopFontSize = '',
+			tabletFontSize = '',
+			mobileFontSize = '',
+			desktopLineHeight = '',
+			tabletLineHeight = '',
+			mobileLineHeight = '',
+			desktopLetterSpacing = '',
+			tabletLetterSpacing = '',
+			mobileLetterSpacing = '';
 
-		if ("object" == typeof typography) {
-			if (undefined !== typography["font-size"]) {
+		if ('object' == typeof typography) {
+			if (undefined !== typography['font-size']) {
 				if (
-					undefined !== typography["font-size"]["desktop"]["size"] &&
-					"" !== typography["font-size"]["desktop"]["size"]
+					undefined !== typography['font-size']['desktop']['size'] &&
+					'' !== typography['font-size']['desktop']['size']
 				) {
 					desktopFontSize =
-						typography["font-size"]["desktop"]["size"] +
-						typography["font-size"]["desktop"]["unit"];
+						typography['font-size']['desktop']['size'] +
+						typography['font-size']['desktop']['unit'];
 				}
 
 				if (
-					undefined !== typography["font-size"]["tablet"]["size"] &&
-					"" !== typography["font-size"]["tablet"]["size"]
+					undefined !== typography['font-size']['tablet']['size'] &&
+					'' !== typography['font-size']['tablet']['size']
 				) {
 					tabletFontSize =
-						typography["font-size"]["tablet"]["size"] +
-						typography["font-size"]["tablet"]["unit"];
+						typography['font-size']['tablet']['size'] +
+						typography['font-size']['tablet']['unit'];
 				}
 
 				if (
-					undefined !== typography["font-size"]["mobile"]["size"] &&
-					"" !== typography["font-size"]["mobile"]["size"]
+					undefined !== typography['font-size']['mobile']['size'] &&
+					'' !== typography['font-size']['mobile']['size']
 				) {
 					mobileFontSize =
-						typography["font-size"]["mobile"]["size"] +
-						typography["font-size"]["mobile"]["unit"];
+						typography['font-size']['mobile']['size'] +
+						typography['font-size']['mobile']['unit'];
 				}
 			}
 
-			if (undefined !== typography["line-height"]) {
+			if (undefined !== typography['line-height']) {
 				if (
-					undefined !== typography["line-height"]["desktop"]["size"] &&
-					"" !== typography["line-height"]["desktop"]["size"]
+					undefined !== typography['line-height']['desktop']['size'] &&
+					'' !== typography['line-height']['desktop']['size']
 				) {
 					const desktopLineHeightUnit =
-						"-" !== typography["line-height"]["desktop"]["unit"]
-							? typography["line-height"]["desktop"]["unit"]
-							: "";
+						'-' !== typography['line-height']['desktop']['unit']
+							? typography['line-height']['desktop']['unit']
+							: '';
 					desktopLineHeight =
-						typography["line-height"]["desktop"]["size"] +
+						typography['line-height']['desktop']['size'] +
 						desktopLineHeightUnit;
 				}
 
 				if (
-					undefined !== typography["line-height"]["tablet"]["size"] &&
-					"" !== typography["line-height"]["tablet"]["size"]
+					undefined !== typography['line-height']['tablet']['size'] &&
+					'' !== typography['line-height']['tablet']['size']
 				) {
 					const tabletLineHeightUnit =
-						"-" !== typography["line-height"]["tablet"]["unit"]
-							? typography["line-height"]["tablet"]["unit"]
-							: "";
+						'-' !== typography['line-height']['tablet']['unit']
+							? typography['line-height']['tablet']['unit']
+							: '';
 					tabletLineHeight =
-						typography["line-height"]["tablet"]["size"] + tabletLineHeightUnit;
+						typography['line-height']['tablet']['size'] + tabletLineHeightUnit;
 				}
 
 				if (
-					undefined !== typography["line-height"]["mobile"]["size"] &&
-					"" !== typography["line-height"]["mobile"]["size"]
+					undefined !== typography['line-height']['mobile']['size'] &&
+					'' !== typography['line-height']['mobile']['size']
 				) {
 					const mobileLineHeightUnit =
-						"-" !== typography["line-height"]["mobile"]["unit"]
-							? typography["line-height"]["mobile"]["unit"]
-							: "";
+						'-' !== typography['line-height']['mobile']['unit']
+							? typography['line-height']['mobile']['unit']
+							: '';
 					mobileLineHeight =
-						typography["line-height"]["mobile"]["size"] + mobileLineHeightUnit;
+						typography['line-height']['mobile']['size'] + mobileLineHeightUnit;
 				}
 			}
 
-			if (undefined !== typography["letter-spacing"]) {
+			if (undefined !== typography['letter-spacing']) {
 				if (
-					undefined !== typography["letter-spacing"]["desktop"]["size"] &&
-					"" !== typography["letter-spacing"]["desktop"]["size"]
+					undefined !== typography['letter-spacing']['desktop']['size'] &&
+					'' !== typography['letter-spacing']['desktop']['size']
 				) {
 					const desktopLetterSpacingUnit =
-						"-" !== typography["letter-spacing"]["desktop"]["unit"]
-							? typography["letter-spacing"]["desktop"]["unit"]
-							: "";
+						'-' !== typography['letter-spacing']['desktop']['unit']
+							? typography['letter-spacing']['desktop']['unit']
+							: '';
 					desktopLetterSpacing =
-						typography["letter-spacing"]["desktop"]["size"] +
+						typography['letter-spacing']['desktop']['size'] +
 						desktopLetterSpacingUnit;
 				}
 
 				if (
-					undefined !== typography["letter-spacing"]["tablet"]["size"] &&
-					"" !== typography["letter-spacing"]["tablet"]["size"]
+					undefined !== typography['letter-spacing']['tablet']['size'] &&
+					'' !== typography['letter-spacing']['tablet']['size']
 				) {
 					const tabletLetterSpacingUnit =
-						"-" !== typography["letter-spacing"]["tablet"]["unit"]
-							? typography["letter-spacing"]["tablet"]["unit"]
-							: "";
+						'-' !== typography['letter-spacing']['tablet']['unit']
+							? typography['letter-spacing']['tablet']['unit']
+							: '';
 					tabletLetterSpacing =
-						typography["letter-spacing"]["tablet"]["size"] +
+						typography['letter-spacing']['tablet']['size'] +
 						tabletLetterSpacingUnit;
 				}
 
 				if (
-					undefined !== typography["letter-spacing"]["mobile"]["size"] &&
-					"" !== typography["letter-spacing"]["mobile"]["size"]
+					undefined !== typography['letter-spacing']['mobile']['size'] &&
+					'' !== typography['letter-spacing']['mobile']['size']
 				) {
 					const mobileLetterSpacingUnit =
-						"-" !== typography["letter-spacing"]["mobile"]["unit"]
-							? typography["letter-spacing"]["mobile"]["unit"]
-							: "";
+						'-' !== typography['letter-spacing']['mobile']['unit']
+							? typography['letter-spacing']['mobile']['unit']
+							: '';
 					mobileLetterSpacing =
-						typography["letter-spacing"]["mobile"]["size"] +
+						typography['letter-spacing']['mobile']['size'] +
 						mobileLetterSpacingUnit;
 				}
 			}
 
 			if (
-				undefined !== typography["font-family"] &&
-				"" !== typography["font-family"]
+				undefined !== typography['font-family'] &&
+				'' !== typography['font-family']
 			) {
-				fontFamily = typography["font-family"].split(",")[0];
-				fontFamily = fontFamily.replace(/'/g, "");
+				fontFamily = typography['font-family'].split(',')[0];
+				fontFamily = fontFamily.replace(/'/g, '');
 
 				if (
-					fontFamily.includes("default") ||
-					fontFamily.includes("-apple-system")
+					fontFamily.includes('default') ||
+					fontFamily.includes('-apple-system')
 				) {
 					fontFamily =
 						'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif';
-				} else if (fontFamily.includes("Monaco")) {
+				} else if (fontFamily.includes('Monaco')) {
 					fontFamily =
 						'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace';
 				} else {
@@ -345,34 +345,34 @@
 			}
 
 			if (
-				undefined !== typography["font-weight"] &&
-				"" !== typography["font-weight"]
+				undefined !== typography['font-weight'] &&
+				'' !== typography['font-weight']
 			) {
-				if (colormagIsNumeric(typography["font-weight"])) {
-					fontWeight = parseInt(typography["font-weight"]);
+				if (colormagIsNumeric(typography['font-weight'])) {
+					fontWeight = parseInt(typography['font-weight']);
 				} else {
 					fontWeight =
-						"regular" != typography["font-weight"]
-							? typography["font-weight"]
-							: "normal";
+						'regular' != typography['font-weight']
+							? typography['font-weight']
+							: 'normal';
 				}
 			}
 
 			if (
-				undefined !== typography["font-style"] &&
-				"" !== typography["font-style"]
+				undefined !== typography['font-style'] &&
+				'' !== typography['font-style']
 			) {
-				fontStyle = typography["font-style"];
+				fontStyle = typography['font-style'];
 			}
 
 			if (
-				undefined !== typography["text-transform"] &&
-				"" !== typography["text-transform"]
+				undefined !== typography['text-transform'] &&
+				'' !== typography['text-transform']
 			) {
-				fontTransform = typography["text-transform"];
+				fontTransform = typography['text-transform'];
 			}
 
-			jQuery("link#" + controlId).remove();
+			jQuery('link#' + controlId).remove();
 
 			css = `${selector} {
 						font-family: ${fontFamily};
@@ -400,7 +400,7 @@
 						}
 					}`;
 
-			jQuery("head").append(link);
+			jQuery('head').append(link);
 
 			return css;
 		}
@@ -850,7 +850,7 @@
 
 				case "colormag_header_primary_menu_selected_hovered_text_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .cm-primary-nav ul li a:hover",
+						".cm-header-builder .cm-primary-nav ul li:hover > a",
 						"color",
 						value,
 					);
@@ -864,7 +864,7 @@
 				case "colormag_header_primary_menu_hover_background":
 					css = colormagGenerateCommonCSS(
 						".cm-header-builder .cm-primary-nav ul li:hover",
-						"background-color",
+						"background",
 						value,
 					);
 					break;
@@ -874,7 +874,7 @@
 					break;
 
 				case "colormag_header_primary_menu_typography":
-					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-primary-nav ul li a", value);
+					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-primary-nav > ul > li > a", value);
 					break;
 
 				case "colormag_header_primary_sub_menu_typography":
