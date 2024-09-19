@@ -10,26 +10,17 @@ $options = array(
 			'colormag_footer_copyright_sub_controls',
 			array(
 				'colormag_footer_copyright'            => array(
-					'default'     => sprintf(
-					/* translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link. */
-						esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: %3$s', 'colormag' ) . esc_html__( ' by ThemeGrill. Powered by %4$s', 'colormag' ),
-						'{the-year}',
-						'{site-link}',
-						'{theme-link}',
-						'{wp-link}'
+					'default' => $default_footer_value,
+					'type'    => 'customind-editor',
+					'title'   => esc_html__( 'Copyright', 'colormag' ),
+					'partial' => array(
+						'selector'        => '.copyright',
+						'render_callback' => array(
+							'ColorMag_Customizer_Partials',
+							'render_footer_copyright_text',
+						),
 					),
-					'type'        => 'customind-editor',
-					'title'       => esc_html__( 'Text/HTML for Column 1', 'colormag' ),
-					'description' => wp_kses(
-						'<a href="' . esc_url( 'https://docs.colormagtheme.com/en/article/dynamic-strings-for-footer-copyright-content-13empt5/' ) . '" target="_blank">' . esc_html__( 'Docs Link', 'colormag' ) . '</a>',
-						array(
-							'a' => array(
-								'href'   => true,
-								'target' => true,
-							),
-						)
-					),
-					'section'     => 'colormag_footer_builder_copyright',
+					'section' => 'colormag_footer_builder_copyright',
 				),
 				'colormag_footer_copyright_text_color' => array(
 					'title'     => esc_html__( 'Color', 'colormag' ),
