@@ -4152,6 +4152,27 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Footer builder area cols.
+		$footer_builder_top_col = get_theme_mod('colormag_footer_top_area_cols', 4);
+
+		$footer_builder_main_col = get_theme_mod('colormag_footer_main_area_cols', 4);
+
+		$footer_builder_bottom_col = get_theme_mod('colormag_footer_bottom_area_cols', 2);
+
+		$parse_builder_css .= ":root{--top-grid-columns: {$footer_builder_top_col};
+			--main-grid-columns: {$footer_builder_main_col};
+			--bottom-grid-columns: {$footer_builder_bottom_col};
+			}";
+
+		if ( 1 == $footer_builder_top_col ){
+			$parse_builder_css .= " .cm-footer-builder .cm-top-row{justify-items: center;} ";
+			$parse_builder_css .= " .cm-footer-builder .cm-top-row .cm-footer-top-1-col{ display: block;} ";
+		} elseif ( 1 === $footer_builder_main_col ) {
+			$parse_builder_css .= " .cm-footer-builder .cm-main-row{justify-items: center;} ";
+		} elseif ( 1 === $footer_builder_bottom_col ) {
+			$parse_builder_css .= " .cm-footer-builder .cm-bottom-row{justify-items: center;} ";
+		}
+
 		return $parse_builder_css;
 	}
 }
