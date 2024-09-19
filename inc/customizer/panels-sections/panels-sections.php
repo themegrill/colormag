@@ -40,6 +40,11 @@ $panel_options_id = array(
 );
 
 $section_option_id = array(
+	'colormag_builder'                       => array(
+		'title'    => esc_html__( 'Builder', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 1,
+	),
 	'colormag_global_colors_section'         => array(
 		'title'    => esc_html__( 'Colors', 'colormag' ),
 		'panel'    => 'colormag_global_panel',

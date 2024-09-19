@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . '/global/builder.php';
 require __DIR__ . '/global/colors.php';
 require __DIR__ . '/global/category-colors.php';
 require __DIR__ . '/global/container.php';
