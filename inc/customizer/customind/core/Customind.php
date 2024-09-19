@@ -556,7 +556,7 @@ class Customind {
 	/**
 	 * Get i18n data.
 	 *
-	 * @return string
+	 * @return array
 	 */
 	public function get_i18n_data() {
 		return $this->apply_filters( 'text-domain', $this->i18n_data );

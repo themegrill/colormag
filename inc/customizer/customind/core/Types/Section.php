@@ -75,15 +75,17 @@ class Section extends \WP_Customize_Section {
 		$json['content']        = $this->get_content();
 		$json['active']         = $this->active();
 		$json['instanceNumber'] = $this->instance_number;
+		global $customind;
+		$text_domain = $customind->get_i18n_data()['domain'];
 
 		if ( $this->panel ) {
 			$json['customizeAction'] = sprintf(
 				/* Translators: 1: Panel Title. */
-				esc_html__( 'Customizing &#9656; %s' ),
+				esc_html__( 'Customizing &#9656; %s', $text_domain ),
 				esc_html( $this->manager->get_panel( $this->panel )->title )
 			);
 		} else {
-			$json['customizeAction'] = esc_html__( 'Customizing' );
+			$json['customizeAction'] = esc_html__( 'Customizing', $text_domain );
 		}
 
 		return $json;
