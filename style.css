@@ -1190,6 +1190,14 @@ table td {
 	background: transparent;
 }
 
+.cm-header-builder .cm-random-post .cm-icon--random-fill {
+	font-size: 32px;
+}
+
+.cm-header-builder .cm-home-icon {
+	padding: 8px;
+}
+
 .cm-secondary-nav {
 	position: relative;
 }
