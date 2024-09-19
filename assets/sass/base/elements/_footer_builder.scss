@@ -25,6 +25,18 @@
 		}
 	}
 
+	.cm-footer-top-row {
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		.widget {
+			width: 100%;
+			height: fit-content;
+			border-radius: 4px;
+			padding: 12px;
+		}
+	}
+
 	.cm-footer-main-row {
 		padding-bottom: 60px;
 		padding-top: 60px;

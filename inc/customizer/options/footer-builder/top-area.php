@@ -7,7 +7,7 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_footer_top_area_sub_controls',
 			array(
-				'colormag_footer_top_area_cols'           => array(
+				'colormag_footer_top_area_cols'         => array(
 					'type'        => 'customind-slider',
 					'title'       => 'Top row cols',
 					'default'     => 3,
@@ -18,7 +18,7 @@ $options = array(
 						'step' => 1,
 					),
 				),
-				'colormag_footer_top_area_container'      => array(
+				'colormag_footer_top_area_container'    => array(
 					'default'     => array(
 						'size' => '',
 						'unit' => 'px',
@@ -35,7 +35,7 @@ $options = array(
 						'step' => 1,
 					),
 				),
-				'colormag_footer_top_area_height'         => array(
+				'colormag_footer_top_area_height'       => array(
 					'default'     => array(
 						'size' => '',
 						'unit' => 'px',
@@ -47,29 +47,14 @@ $options = array(
 					'units'       => array( 'px' ),
 					'defaultUnit' => 'px',
 				),
-				'colormag_footer_top_area_color'          => array(
+				'colormag_footer_top_area_color'        => array(
 					'title'     => esc_html__( 'Color', 'colormag' ),
 					'default'   => '',
 					'type'      => 'customind-color',
 					'section'   => 'colormag_footer_builder_top_area',
 					'transport' => 'postMessage',
 				),
-				'colormag_footer_top_area_background'     => array(
-					'default'   => array(
-						'background-color'      => '',
-						'background-image'      => '',
-						'background-repeat'     => 'repeat',
-						'background-position'   => 'center center',
-						'background-size'       => 'contain',
-						'background-attachment' => 'scroll',
-					),
-					'type'      => 'customind-background',
-					'title'     => esc_html__( 'Background', 'colormag' ),
-					'transport' => 'postMessage',
-					'section'   => 'colormag_footer_builder_top_area',
-				),
-
-				'colormag_footer_top_area_col_background' => array(
+				'colormag_footer_top_area_background'   => array(
 					'default'   => array(
 						'background-color'      => '',
 						'background-image'      => '',
@@ -93,11 +78,11 @@ $options = array(
 						'background-attachment' => 'scroll',
 					),
 					'type'      => 'customind-background',
-					'title'     => esc_html__( 'Widget Background', 'colormag' ),
+					'title'     => esc_html__( 'Column Background', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_footer_builder_top_area',
 				),
-				'colormag_footer_top_area_padding'        => array(
+				'colormag_footer_top_area_padding'      => array(
 					'default'     => array(
 						'top'    => '',
 						'right'  => '',
@@ -113,7 +98,7 @@ $options = array(
 					'defaultUnit' => 'px',
 				),
 
-				'colormag_footer_top_area_margin'         => array(
+				'colormag_footer_top_area_margin'       => array(
 					'default'     => array(
 						'top'    => '',
 						'right'  => '',
@@ -129,7 +114,7 @@ $options = array(
 					'defaultUnit' => 'px',
 				),
 
-				'colormag_footer_top_area_border_width'   => array(
+				'colormag_footer_top_area_border_width' => array(
 					'default'     => array(
 						'top'    => '0',
 						'right'  => '0',
@@ -145,7 +130,7 @@ $options = array(
 					'defaultUnit' => 'px',
 				),
 
-				'colormag_footer_top_area_border_color'   => array(
+				'colormag_footer_top_area_border_color' => array(
 					'title'     => esc_html__( 'Border Color', 'colormag' ),
 					'default'   => '',
 					'type'      => 'customind-color',

@@ -1318,6 +1318,20 @@ table td {
 	border: 0 solid #3F3F46;
 }
 
+.cm-footer-builder .cm-footer-top-row {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.cm-footer-builder .cm-footer-top-row .widget {
+	width: 100%;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	border-radius: 4px;
+	padding: 12px;
+}
+
 .cm-footer-builder .cm-footer-main-row {
 	padding-bottom: 60px;
 	padding-top: 60px;

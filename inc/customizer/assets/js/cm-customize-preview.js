@@ -2204,6 +2204,10 @@
 					);
 					break;
 
+				case "colormag_footer_top_area_widget_background":
+					css = colormagGenerateBackgroundCSS(".cm-footer-builder .cm-footer-top-row .widget", value);
+					break;
+
 // 				case "colormag_header_mobile_menu_item_color":
 // 					css = colormagGenerateCommonCSS(".cm-mobile-nav a", "color", value);
 // 					css += colormagGenerateCommonCSS(

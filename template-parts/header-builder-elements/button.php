@@ -15,11 +15,10 @@ $button_enable = get_theme_mod( 'colormag_enable_header_button' );
 $button_text   = get_theme_mod( 'colormag_header_button_text' );
 $button_link   = get_theme_mod( 'colormag_header_button_link' );
 $button_target = get_theme_mod( 'colormag_header_button_target' ) ? ' target="_blank"' : '';
-$desktop_class = $args['is_desktop'] ? 'cm-header-buttons--desktop' : '';
 
 if ( $button_text ) :
 	?>
-	<div class="cm-header-buttons <?php echo esc_attr( $desktop_class ); ?>">
+	<div class="cm-header-buttons">
 		<?php
 		do_action( 'colormag_header_button_start' );
 

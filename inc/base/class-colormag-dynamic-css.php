@@ -2180,7 +2180,6 @@ class ColorMag_Dynamic_CSS {
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hovered_text_color, $header_primary_menu_selected_hovered_text_color_css );
 
 		$header_primary_menu_selected_hover_bg     = get_theme_mod( 'colormag_header_primary_menu_hover_background', '' );
-		error_log( print_r( $header_primary_menu_selected_hover_bg, true ) );
 		$header_primary_menu_selected_hover_bg_css = array(
 			'.cm-header-builder .cm-primary-nav ul li:hover' => array(
 				'background' => esc_html( $header_primary_menu_selected_hover_bg ),
@@ -3729,8 +3728,8 @@ class ColorMag_Dynamic_CSS {
 		$footer_top_area_background         = get_theme_mod( 'colormag_footer_top_area_background', $footer_top_area_background_default );
 		$parse_builder_css                           .= colormag_parse_background_css( $footer_top_area_background_default, $footer_top_area_background, '.cm-footer-builder .cm-footer-top-row' );
 
-		// Footer top area col background.
-		$footer_top_area_col_background_default = array(
+		// Footer top area widget background.
+		$footer_top_area_widget_background_default = array(
 			'background-color'      => '',
 			'background-image'      => '',
 			'background-repeat'     => 'repeat',
@@ -3738,8 +3737,8 @@ class ColorMag_Dynamic_CSS {
 			'background-size'       => 'contain',
 			'background-attachment' => 'scroll',
 		);
-		$footer_top_area_col_background         = get_theme_mod( 'colormag_footer_top_area_col_background', $footer_top_area_col_background_default );
-		$parse_builder_css                           .= colormag_parse_background_css( $footer_top_area_col_background_default, $footer_top_area_col_background, '.cm-footer-builder .cm-footer-top-row' );
+		$footer_top_area_widget_background         = get_theme_mod( 'colormag_footer_top_area_widget_background', $footer_top_area_widget_background_default );
+		$parse_builder_css                           .= colormag_parse_background_css( $footer_top_area_widget_background_default, $footer_top_area_widget_background, '.cm-footer-builder .cm-footer-top-row .widget' );
 
 		// Footer top area padding.
 		$footer_top_area_padding_default = array(
