@@ -70,9 +70,8 @@ do_action( 'colormag_before' );
 do_action( 'colormag_action_before' );
 ?>
 
-<?php //colormag_header(); ?>
-<?php colormag_header_builder_markup(); ?>
-<!---->
+<?php colormag_header(); ?>
+
 <?php
 /**
  * Hook: colormag_before_main.
