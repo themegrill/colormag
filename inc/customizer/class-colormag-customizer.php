@@ -37,8 +37,10 @@ class ColorMag_Customizer {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_dynamic_css' ) );
 
-		add_filter( 'customizer_widgets_section_args', [ $this, 'modify_widgets_panel' ], 10, 3 );
-		add_filter( 'customize_section_active', [ $this, 'modify_widgets_section_state' ], 100, 2 );
+		if ( get_theme_mod( 'colormag_enable_builder', false ) ) {
+			add_filter( 'customizer_widgets_section_args', [ $this, 'modify_widgets_panel' ], 10, 3 );
+			add_filter( 'customize_section_active', [ $this, 'modify_widgets_section_state' ], 100, 2 );
+		}
 	}
 
 	public function on_customizer_register( $wp_customize ) {
