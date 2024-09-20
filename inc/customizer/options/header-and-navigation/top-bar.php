@@ -140,7 +140,7 @@ $options = apply_filters(
 						'title'    => esc_html__( 'Social Icons', 'zakra' ),
 						'type'     => 'customind-navigation',
 						'section'  => 'colormag_top_bar_section',
-						'to'       => 'colormag_news_ticker_section',
+						'to'       => 'colormag_social_icons_section',
 						'nav_type' => 'section',
 					),
 				)

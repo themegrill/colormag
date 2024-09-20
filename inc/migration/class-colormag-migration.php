@@ -428,84 +428,106 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			if ( 'layout-1' === $main_header_layout ) {
 				$main_header_layout_1_style_alignment = get_theme_mod( 'colormag_header_display_type', 'type_one' );
 				if ( 'type_one' === $main_header_layout_1_style_alignment ) {
-					$bottom_left                                        = [];
+					$bottom_left = [];
+					self::remove_component( 'logo', $header_builder_config );
 					$header_builder_config['desktop']['main']['left'][] = 'logo';
 
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
+						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['right'][] = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
+						self::remove_component( 'home-icon', $header_builder_config );
 						$bottom_left[] = 'home-icon';
 					}
+					self::remove_component( 'primary-menu', $header_builder_config );
 					$bottom_left[]                                      = 'primary-menu';
 					$header_builder_config['desktop']['bottom']['left'] = $bottom_left;
 
 					if ( $search_enable ) {
+						self::remove_component( 'search', $header_builder_config );
 						$header_builder_config['desktop']['bottom']['right'][] = 'search';
 					}
 
 					if ( $random_enable ) {
+						self::remove_component( 'random', $header_builder_config );
 						$header_builder_config['desktop']['bottom']['right'][] = 'random';
 					}
 				} elseif ( 'type_three' === $main_header_layout_1_style_alignment ) {
 					$bottom_left = [];
+					self::remove_component( 'logo', $header_builder_config );
 					$header_builder_config['desktop']['main']['center'][] = 'logo';
 
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
+						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['center'][] = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
+						self::remove_component( 'primary-menu', $header_builder_config );
 						$bottom_left[] = 'home-icon';
 					}
 					$bottom_left[]                                      = 'primary-menu';
 					$header_builder_config['desktop']['bottom']['left'] = $bottom_left;
 
 					if ( $search_enable ) {
+						self::remove_component( 'search', $header_builder_config );
 						$header_builder_config['desktop']['bottom']['right'][] = 'search';
 					}
 
 					if ( $random_enable ) {
+						self::remove_component( 'random', $header_builder_config );
 						$header_builder_config['desktop']['bottom']['right'][] = 'random';
 					}
 				} elseif ( 'type_two' === $main_header_layout_1_style_alignment ) {
 					$bottom_left = [];
+					self::remove_component( 'logo', $header_builder_config );
 					$header_builder_config['desktop']['main']['right'][] = 'logo';
 
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
+						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['left'][] = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
+						self::remove_component( 'home-icon', $header_builder_config );
 						$bottom_left[] = 'home-icon';
 					}
+					self::remove_component( 'primary-menu', $header_builder_config );
 					$bottom_left[]                                      = 'primary-menu';
 					$header_builder_config['desktop']['bottom']['left'] = $bottom_left;
 
 					if ( $search_enable ) {
+						self::remove_component( 'search', $header_builder_config );
 						$header_builder_config['desktop']['bottom']['right'][] = 'search';
 					}
 
 					if ( $random_enable ) {
+						self::remove_component( 'random', $header_builder_config );
 						$header_builder_config['desktop']['bottom']['right'][] = 'random';
 					}
 				}
 			} elseif ( 'layout-2' === $main_header_layout ) {
 				$bottom_left = [];
+				self::remove_component( 'logo', $header_builder_config );
 				$header_builder_config['desktop']['main']['center'][] = 'logo';
 
 				if ( 'home-icon' === $home_icon ) {
+					self::remove_component( 'home-icon', $header_builder_config );
 					$bottom_left[] = 'home-icon';
 				}
+				self::remove_component( 'primary-menu', $header_builder_config );
 				$bottom_left[]                                      = 'primary-menu';
 				$header_builder_config['desktop']['bottom']['left'] = $bottom_left;
 
 				if ( $search_enable ) {
+					self::remove_component( 'search', $header_builder_config );
 					$header_builder_config['desktop']['bottom']['right'][] = 'search';
 				}
 
 				if ( $random_enable ) {
+					self::remove_component( 'random', $header_builder_config );
 					$header_builder_config['desktop']['bottom']['right'][] = 'random';
 				}
 			}
@@ -595,7 +617,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				if ( is_active_sidebar( 'colormag_footer_sidebar_three' ) ) {
 					$footer_builder_config['desktop']['main']['main-3'][] = 'widget-6';
 				}
-			} else {
+			} elseif ( 'style-4' === $footer_column_layout ) {
 				set_theme_mod( 'colormag_footer_main_area_cols', 4 );
 				if ( is_active_sidebar( 'colormag_footer_sidebar_one' ) ) {
 					$footer_builder_config['desktop']['main']['main-1'][] = 'widget-4';
@@ -800,6 +822,20 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			return false;
 		}
 
+		public static function remove_component( $component_to_remove, &$_array ) {
+			foreach ( $_array as $key => &$value ) {
+				if ( is_array( $value ) ) {
+					self::remove_component( $component_to_remove, $value );
+				} else { // phpcs:ignore
+					if ( $value === $component_to_remove ) {
+						unset( $_array[ $key ] );
+					}
+				}
+			}
+			if ( array_values( $_array ) === $_array ) {
+				$_array = array_values( $_array );
+			}
+		}
 
 		/**
 		 * @return bool
