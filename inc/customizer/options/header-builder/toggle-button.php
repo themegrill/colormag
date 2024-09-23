@@ -8,10 +8,10 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_header_builder_toggle_button_sub_controls',
 			array(
-				'colormag_header_builder_toggle_button' => array(
-					'default' => 0,
-					'title'   => esc_html__( 'Enable', 'colormag' ),
-					'type'    => 'customind-toggle',
+				'colormag_header_builder_toggle_button_color' => array(
+					'title'   => esc_html__( 'Color', 'colormag' ),
+					'default' => '',
+					'type'    => 'customind-color',
 					'section' => 'colormag_header_builder_toggle_button',
 				),
 			)

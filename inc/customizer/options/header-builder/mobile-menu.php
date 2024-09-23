@@ -45,40 +45,6 @@ $options = array(
 						)
 					),
 				),
-				'colormag_header_mobile_menu_item_border_bottom' => array(
-					'default'     => array(
-						'size' => 1,
-						'unit' => 'px',
-					),
-					'type'        => 'customind-slider',
-					'title'       => esc_html__( 'Border Width', 'colormag' ),
-					'section'     => 'colormag_header_builder_mobile_menu',
-					'transport'   => 'postMessage',
-					'priority'    => 20,
-					'units'       => array( 'px' ),
-					'defaultUnit' => 'px',
-				),
-				'colormag_header_mobile_menu_item_border_bottom_style' => array(
-					'default'   => 'solid',
-					'type'      => 'customind-select',
-					'title'     => esc_html__( 'Border Style', 'colormag' ),
-					'section'   => 'colormag_header_builder_mobile_menu',
-					'transport' => 'postMessage',
-					'priority'  => 20,
-					'choices'   => array(
-						'solid'  => esc_html__( 'Solid', 'colormag' ),
-						'dotted' => esc_html__( 'Dotted', 'colormag' ),
-						'dashed' => esc_html__( 'Dashed', 'colormag' ),
-					),
-				),
-				'colormag_header_mobile_menu_item_border_bottom_color' => array(
-					'default'   => '',
-					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Border Color', 'colormag' ),
-					'transport' => 'postMessage',
-					'priority'  => 20,
-					'section'   => 'colormag_header_builder_mobile_menu',
-				),
 				'colormag_header_mobile_menu_typography' => array(
 					'default'   => array(
 						'font-family'    => 'Default',
@@ -119,6 +85,42 @@ $options = array(
 					'title'     => esc_html__( 'Typography', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_header_builder_mobile_menu',
+				),
+				'colormag_mobile_sub_menu_background'    => array(
+					'default'   => array(
+						'background-color'      => '#232323',
+						'background-image'      => '',
+						'background-position'   => 'center center',
+						'background-size'       => 'auto',
+						'background-attachment' => 'scroll',
+						'background-repeat'     => 'repeat',
+					),
+					'type'      => 'customind-background',
+					'title'     => esc_html__( 'Background', 'zakra' ),
+					'transport' => 'postMessage',
+					'section'   => 'colormag_primary_menu_section',
+				),
+				'colormag_mobile_sub_menu_typography'    => array(
+					'default'   => array(
+						'font-size' => array(
+							'desktop' => array(
+								'size' => '14',
+								'unit' => 'px',
+							),
+							'tablet'  => array(
+								'size' => '',
+								'unit' => '',
+							),
+							'mobile'  => array(
+								'size' => '',
+								'unit' => '',
+							),
+						),
+					),
+					'type'      => 'customind-typography',
+					'title'     => esc_html__( 'Typography', 'zakra' ),
+					'transport' => 'postMessage',
+					'section'   => 'colormag_primary_menu_section',
 				),
 			)
 		),

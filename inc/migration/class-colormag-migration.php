@@ -803,6 +803,30 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_primary_sub_menu_typography' );
 			}
 
+			$header_toggle_color = get_theme_mod( 'colormag_mobile_menu_toggle_icon_color', '#fff' );
+			if ( $header_toggle_color ) {
+				set_theme_mod( 'colormag_header_builder_toggle_button_color', $header_toggle_color );
+				remove_theme_mod( 'colormag_mobile_menu_toggle_icon_color' );
+			}
+
+			$mobile_menu_text_color = get_theme_mod( 'colormag_mobile_menu_text_color' );
+			if ( $mobile_menu_text_color ) {
+				set_theme_mod( 'colormag_header_mobile_menu_item_color', $mobile_menu_text_color );
+				remove_theme_mod( 'colormag_mobile_menu_text_color' );
+			}
+
+			$mobile_menu_text_hover_color = get_theme_mod( 'colormag_mobile_menu_selected_hovered_text_color' );
+			if ( $mobile_menu_text_hover_color ) {
+				set_theme_mod( 'colormag_header_mobile_menu_item_hover_color', $mobile_menu_text_hover_color );
+				remove_theme_mod( 'colormag_mobile_menu_selected_hovered_text_color' );
+			}
+
+			$mobile_typography = get_theme_mod( 'colormag_mobile_menu_typography' );
+			if ( $mobile_typography ) {
+				set_theme_mod( 'colormag_header_mobile_menu_typography', $mobile_typography );
+				remove_theme_mod( 'colormag_mobile_menu_typography' );
+			}
+
 			$header_action_color = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
 			if ( $header_action_color ) {
 				set_theme_mod( 'colormag_header_search_icon_color', $header_action_color );

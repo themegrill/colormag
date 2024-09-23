@@ -4122,6 +4122,16 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css            .= colormag_parse_css( '', $header_site_tagline_color, $header_site_tagline_color_css );
 
+		// Header toggle color.
+		$header_toggle_color     = get_theme_mod( 'colormag_header_builder_toggle_button_color', '' );
+		$header_toggle_color_css = array(
+			'.cm-header-builder .cm-toggle-button' => array(
+				'color' => esc_html( $header_toggle_color ),
+			),
+		);
+		$parse_builder_css            .= colormag_parse_css( '', $header_toggle_color, $header_toggle_color_css );
+
+
 		// Header builder site tagline typography.
 		$header_site_tagline_typography_default     = array(
 			'font-family'    => 'Default',
