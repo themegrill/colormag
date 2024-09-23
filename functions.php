@@ -65,6 +65,12 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
  */
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
+// Load customind.
+require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
+//require __DIR__ . '/../customind/init.php';
+global $customind;
+$customind->set_css_var_prefix( 'colormag' );
+
 /**
  * Deprecated.
  */
@@ -106,6 +112,7 @@ require_once COLORMAG_WIDGETS_DIR . '/class-colormag-widgets.php';
  */
 // Template functions files.
 require COLORMAG_INCLUDES_DIR . '/template-tags.php';
+require COLORMAG_INCLUDES_DIR . '/builder-template-tags.php';
 require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 
 // Svg icon class.
@@ -113,6 +120,7 @@ require COLORMAG_INCLUDES_DIR . '/class-colormag-svg-icons.php';
 
 //Template hooks.
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/hook-functions.php';
+require COLORMAG_PARENT_DIR . '/template-parts/hooks/builder.php';
 
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/header/header.php';
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/header/header-main.php';
@@ -323,15 +331,11 @@ function colormag_content_width() {
 			if ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
 				$content_width = 1140; /* pixels */
 			}
-		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
+		} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
-			}
 		}
-	} else {
-		if ( 'no_sidebar_full_width' === $layout_meta ) {
+	} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
 			$content_width = 1140; /* pixels */
-		}
 	}
 }
 

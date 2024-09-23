@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit();
 
-if ( ! class_exists( ' Colormag_Walker_Page' ) ) {
+if ( ! class_exists( 'Colormag_Walker_Page' ) ) {
 
 	/**
 	* Class Colormag_Walker_Page.

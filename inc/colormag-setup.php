@@ -33,11 +33,11 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 		add_theme_support( 'post-thumbnails' );
 
-		// Registering navigation menu.
-		register_nav_menu(
-			'primary',
-			esc_html__( 'Primary Menu', 'colormag' )
-		);
+		//      // Registering navigation menu.
+		//      register_nav_menu(
+		//          'primary',
+		//          esc_html__( 'Primary Menu', 'colormag' )
+		//      );
 
 		// Cropping the images to different sizes to be used in the theme.
 		add_image_size( 'colormag-highlighted-post', 392, 272, true );
@@ -428,7 +428,6 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		$starter_content = apply_filters( 'colormag_starter_content', $starter_content );
 
 		add_theme_support( 'starter-content', $starter_content );
-
 	}
 
 endif;

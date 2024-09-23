@@ -56,6 +56,10 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'colormag_scripts_styles_method' ) );
 
 			add_action( 'enqueue_block_editor_assets', array( $this, 'colormag_block_editor_styles' ), 1 );
+
+			add_action( 'customize_controls_enqueue_scripts', array( $this, 'colormag_inline_customizer_css' ) );
+
+			add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_js' ), 11 );
 		}
 
 		/**
@@ -81,6 +85,11 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			if ( 'dark' === $skin_color ) {
 				wp_enqueue_style( 'colormag_dark_style', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			}
+
+			$host_fonts_locally = get_theme_mod( 'colormag_load_google_fonts_locally', false );
+
+			// Local Google fonts locally.
+			wp_enqueue_style( 'colormag_googlefonts', \Customind\Core\get_google_fonts_url( $host_fonts_locally ), array(), COLORMAG_THEME_VERSION, 'all' );
 
 			/**
 			 * Inline CSS from customizer.
@@ -195,6 +204,19 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 		}
 
+		public function customize_js() {
+
+			error_log( print_r( get_template_directory_uri(), true ) );
+
+			wp_enqueue_script(
+				'colormag-builder-customizer',
+				COLORMAG_CUSTOMIZER_URL . '/assets/js/cm-customize.js',
+				array( 'jquery', 'customize-controls' ),
+				COLORMAG_THEME_VERSION,
+				true
+			);
+		}
+
 		/**
 		 * Enqueue block editor styles.
 		 *
@@ -206,6 +228,79 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
 			wp_enqueue_style( 'colormag-block-editor-dark-styles', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag-block-editor-styles', 'rtl', 'replace' );
+		}
+
+		public function colormag_inline_customizer_css() {
+			wp_add_inline_style(
+				'customize-controls',
+				'
+		        #customize-control-colormag_site_identity_general_heading .customind-control .font-normal{
+		        font-weight: 600;
+		        }
+
+		        #customize-control-colormag_header_media_heading .customind-control .font-normal{
+		        font-weight: 600;
+		        }
+
+		        #customize-control-colormag_header_media_heading .customind-control {
+		        border-bottom: 1px solid #e5e5e5;
+		        }
+
+		        #customize-control-colormag_site_identity_general_heading .customind-control {
+		        border-bottom: 1px solid #e5e5e5;
+		        }
+
+		        #customize-control-blogname #_customize-input-blogname {
+		        height: 40px;
+		        }
+
+		        #customize-control-blogdescription #_customize-input-blogdescription {
+		        height: 40px;
+		        }
+
+		        [data-colormag-header-panel="active"]{
+			    #sub-accordion-section-colormag_builder{
+			    top: 65px !important;
+			    left:2px !important;
+			    visibility: visible !important;
+			    height: auto !important;
+			    transform: none !important;
+			    z-index: 99999999;
+
+			    .section-meta{
+			        display:none !important;
+			    }
+			}
+
+			#accordion-section-colormag_builder {
+			    height:155px !important;
+			    visibility: hidden;
+			}
+			    [data-control-id="colormag_builder_heading"]{
+			        max-width: 310px !important;
+			    }
+			}
+
+			.section-open[data-colormag-header-panel="active"]{
+			    #sub-accordion-section-colormag_builder{
+			        visibility: hidden !important;
+			        height: auto !important;
+			        transform: none !important;
+			    }
+			    }
+
+			    #customize-control-colormag_header_builder_style_heading {
+			    margin-top: 20px;
+			    }
+
+			    .zak-hidden{
+			       height: 0;
+				    visibility: hidden;
+				    padding: 0 !important;
+				    margin: 0;
+				}
+		    '
+			);
 		}
 	}
 
@@ -696,20 +791,56 @@ if ( ! function_exists( 'colormag_parse_dimension_css' ) ) {
 
 		$unit = isset( $output_value['unit'] ) ? $output_value['unit'] : ( isset( $default_value['unit'] ) ? $default_value['unit'] : 'px' );
 
-		if ( isset( $output_value['top'] ) && ! empty( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
-			$parse_css .= $property . '-top:' . $output_value['top'] . $unit . ';';
-		}
+		if ( 'border-width' === $property ) {
 
-		if ( isset( $output_value['top'] ) && ! empty( $output_value['top'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
-			$parse_css .= $property . '-right:' . $output_value['right'] . $unit . ';';
-		}
+			if ( isset( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+				$parse_css .= 'border-top-width:' . $output_value['top'] . $unit . ';';
+			}
 
-		if ( isset( $output_value['bottom'] ) && ! empty( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
-			$parse_css .= $property . '-bottom:' . $output_value['bottom'] . $unit . ';';
-		}
+			if ( isset( $output_value['right'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+				$parse_css .= 'border-right-width:' . $output_value['right'] . $unit . ';';
+			}
 
-		if ( isset( $output_value['left'] ) && ! empty( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
-			$parse_css .= $property . '-left:' . $output_value['left'] . $unit . ';';
+			if ( isset( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+				$parse_css .= 'border-bottom-width:' . $output_value['bottom'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+				$parse_css .= 'border-left-width:' . $output_value['left'] . $unit . ';';
+			}
+		} elseif ( 'border-radius' === $property ) {
+
+			if ( isset( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+				$parse_css .= 'border-top-left-radius:' . $output_value['top'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['right'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+				$parse_css .= 'border-top-right-radius:' . $output_value['right'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+				$parse_css .= 'border-bottom-right-radius:' . $output_value['bottom'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+				$parse_css .= 'border-bottom-left-radius:' . $output_value['left'] . $unit . ';';
+			}
+		} else {
+			if ( isset( $output_value['top'] ) && ( $output_value['top'] !== $default_value['top'] ) ) {
+				$parse_css .= $property . '-top:' . $output_value['top'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['right'] ) && ( $output_value['right'] !== $default_value['right'] ) ) {
+				$parse_css .= $property . '-right:' . $output_value['right'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['bottom'] ) && ( $output_value['bottom'] !== $default_value['bottom'] ) ) {
+				$parse_css .= $property . '-bottom:' . $output_value['bottom'] . $unit . ';';
+			}
+
+			if ( isset( $output_value['left'] ) && ( $output_value['left'] !== $default_value['left'] ) ) {
+				$parse_css .= $property . '-left:' . $output_value['left'] . $unit . ';';
+			}
 		}
 
 		$parse_css .= '}';

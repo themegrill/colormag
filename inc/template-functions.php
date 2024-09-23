@@ -77,6 +77,63 @@ function colormag_remove_more_jump_link( $link ) {
 
 add_filter( 'the_content_more_link', 'colormag_remove_more_jump_link' );
 
+/**
+ * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode()
+ * function to register new shortcodes with WordPress.
+ *
+ * @uses add_shortcode() to create new shortcodes.
+ */
+function colormag_add_shortcodes() {
+
+	/* Add theme-specific shortcodes. */
+	add_shortcode( 'the-year', 'colormag_the_year_shortcode' );
+	add_shortcode( 'site-link', 'colormag_site_link_shortcode' );
+	add_shortcode( 'wp-link', 'colormag_wp_link_shortcode' );
+	add_shortcode( 'tg-link', 'colormag_themegrill_link_shortcode' );
+}
+
+add_action( 'init', 'colormag_add_shortcodes' );
+
+
+/**
+ * Shortcode to display the current year.
+ *
+ * @return string
+ * @uses date() Gets the current year.
+ */
+function colormag_the_year_shortcode() {
+	return date( 'Y' );
+}
+
+/**
+ * Shortcode to display a link back to the site.
+ *
+ * @return string
+ * @uses get_bloginfo() Gets the site link.
+ */
+function colormag_site_link_shortcode() {
+	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+}
+
+/**
+ * Shortcode to display a link to WordPress.org.
+ *
+ * @return string
+ */
+function colormag_wp_link_shortcode() {
+	return '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'colormag' ) . '" rel="nofollow"><span>' . esc_html__( 'WordPress', 'colormag' ) . '</span></a>';
+}
+
+/**
+ * Shortcode to display a link to ColorMag Theme.
+ *
+ * @return string
+ */
+function colormag_themegrill_link_shortcode() {
+	return '<a href="' . esc_url( 'https://themegrill.com/wordpress-themes/' ) . '" target="_blank" title="' . esc_attr__( 'ColorMag', 'colormag' ) . '" rel="nofollow"><span>' . esc_html__( 'ColorMag', 'colormag' ) . '</span></a>';
+}
+
+
 
 /**
  * Creating responsive video for posts/pages.
@@ -95,7 +152,6 @@ function colormag_responsive_video( $html, $url, $attr, $post_ID ) {
 	}
 
 	return $html;
-
 }
 
 add_filter( 'embed_oembed_html', 'colormag_responsive_video', 10, 4 );
@@ -121,7 +177,6 @@ function colormag_colored_category_title( $title ) {
 	}
 
 	return $output;
-
 }
 
 /**
@@ -167,7 +222,6 @@ function colormag_header_image_markup( $html, $header, $attr ) {
 	}
 
 	return $output;
-
 }
 
 add_filter( 'get_header_image_tag', 'colormag_header_image_markup', 10, 3 );
@@ -199,10 +253,10 @@ function colormag_body_class( $classes ) {
 		$layout_meta = 'default_layout';
 	}
 
-	$woocommerce_widgets_enabled  = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
-	$colormag_default_sidebar_layout      = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
-	$colormag_page_sidebar_layout = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
+	$woocommerce_widgets_enabled     = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
+	$colormag_default_sidebar_layout = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_page_sidebar_layout    = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout    = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 
 	/**
 	 * Header styles.
@@ -293,7 +347,6 @@ function colormag_body_class( $classes ) {
 	}
 
 	return $classes;
-
 }
 
 add_filter( 'body_class', 'colormag_body_class' );
@@ -327,7 +380,6 @@ function colormag_posts_column_views( $columns ) {
 	$columns['post_views'] = esc_html__( 'Total Views', 'colormag' );
 
 	return $columns;
-
 }
 
 add_filter( 'manage_posts_columns', 'colormag_posts_column_views' );
@@ -360,8 +412,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_twitter"><?php esc_html_e( 'Twitter', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_twitter" id="colormag_twitter"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_twitter', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_twitter', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -370,8 +422,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_facebook"><?php esc_html_e( 'Facebook', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_facebook" id="colormag_facebook"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_facebook', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_facebook', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -380,8 +432,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_google_plus"><?php esc_html_e( 'Google Plus', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_google_plus" id="colormag_google_plus"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_google_plus', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_google_plus', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -390,8 +442,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_flickr"><?php esc_html_e( 'Flickr', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_flickr" id="colormag_flickr"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_flickr', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_flickr', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -400,8 +452,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_linkedin"><?php esc_html_e( 'LinkedIn', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_linkedin" id="colormag_linkedin"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_linkedin', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_linkedin', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -410,8 +462,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_instagram"><?php esc_html_e( 'Instagram', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_instagram" id="colormag_instagram"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_instagram', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_instagram', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -420,8 +472,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_tumblr"><?php esc_html_e( 'Tumblr', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_tumblr" id="colormag_tumblr"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_tumblr', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_tumblr', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -430,8 +482,8 @@ function colormag_extra_user_field( $user ) {
 			<th><label for="colormag_youtube"><?php esc_html_e( 'Youtube', 'colormag' ); ?></label></th>
 			<td>
 				<input type="text" name="colormag_youtube" id="colormag_youtube"
-					   value="<?php echo esc_attr( get_the_author_meta( 'colormag_youtube', $user->ID ) ); ?>"
-					   class="regular-text"
+						value="<?php echo esc_attr( get_the_author_meta( 'colormag_youtube', $user->ID ) ); ?>"
+						class="regular-text"
 				/>
 			</td>
 		</tr>
@@ -510,7 +562,6 @@ function colormag_extra_user_field_save_option( $user_id ) {
 	} else {
 		delete_user_meta( $user_id, 'colormag_youtube' );
 	}
-
 }
 
 add_action( 'personal_options_update', 'colormag_extra_user_field_save_option' );

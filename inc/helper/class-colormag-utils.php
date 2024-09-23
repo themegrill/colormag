@@ -204,7 +204,6 @@ class ColorMag_Utils {
 		}
 
 		return $output;
-
 	}
 
 	/**
@@ -234,6 +233,5 @@ class ColorMag_Utils {
 		} else {
 			get_sidebar( $sidebar );
 		}
-
 	}
 }
