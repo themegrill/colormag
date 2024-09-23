@@ -403,7 +403,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					),
 					'main'   => array(
 						'left'   => array(),
-						'centre' => array(
+						'center' => array(
 							'logo',
 						),
 						'right'  => array(),
