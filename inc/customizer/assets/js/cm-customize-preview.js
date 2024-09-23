@@ -686,7 +686,7 @@
 					);
 					break;
 
-				case "colormag_header_action_icon_color":
+				case "colormag_header_action_icon_hover_color":
 					css = colormagGenerateCommonCSS(
 						".fa.search-top:hover",
 						"color",
@@ -699,7 +699,7 @@
 					);
 					break;
 
-				case "colormag_header_action_icon_hover_color":
+				case "colormag_header_action_icon_color":
 					css = colormagGenerateCommonCSS(
 						".fa.search-top",
 						"color",
