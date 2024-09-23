@@ -190,16 +190,16 @@ $options = array(
 					'right'  => array(),
 				),
 				'main'   => array(
-					'left'   => array(
+					'left'   => array(),
+					'centre' => array(
 						'logo',
 					),
-					'centre' => array(),
-					'right'  => array(
-						'toggle-button',
-					),
+					'right'  => array(),
 				),
 				'bottom' => array(
-					'left'   => array(),
+					'left'   => array(
+						'toggle-button',
+					),
 					'center' => array(),
 					'right'  => array(),
 				),

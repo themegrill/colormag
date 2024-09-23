@@ -1283,6 +1283,29 @@ table td {
 	.cm-header-builder .cm-mobile-row {
 		display: block;
 	}
+	.cm-header-builder .cm-mobile-row .cm-header-bottom-row {
+		-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
+		background-color: #27272A;
+		border-top: 4px solid #207daf;
+	}
+	.cm-header-builder .cm-mobile-row .cm-menu-toggle svg {
+		width: 30px;
+		height: 30px;
+	}
+	.cm-header-builder .cm-mobile-row .menu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		left: 0;
+		right: 0;
+		-webkit-filter: drop-shadow(0px 4px 18px rgba(153, 153, 153, 0.1));
+		filter: drop-shadow(0px 4px 18px rgba(153, 153, 153, 0.1));
+	}
+	.cm-header-builder .cm-mobile-row .cm-header-left-col {
+		position: relative;
+	}
 }
 
 .cm-footer-builder .cm-row {
