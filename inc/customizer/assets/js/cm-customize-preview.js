@@ -1791,6 +1791,14 @@
 					);
 					break;
 
+				case "colormag_header_search_icon_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-top-search:hover > .search-top::before",
+						"color",
+						value,
+					);
+					break;
+
 					case "colormag_header_search_text_color":
 					css = colormagGenerateCommonCSS(
 						".cm-header-builder .cm-top-search .search-form-top input",
@@ -1815,6 +1823,14 @@
 				case "colormag_header_random_icon_color":
 					css = colormagGenerateCommonCSS(
 						".cm-header-builder .cm-random-post .cm-icon--random-fill",
+						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_header_random_icon_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-random-post:hover > .cm-icon--random-fill",
 						"fill",
 						value,
 					);

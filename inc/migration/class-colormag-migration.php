@@ -737,6 +737,20 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_primary_menu_background' );
 			}
 
+			$header_action_color = get_theme_mod( 'colormag_header_action_icon_color', '#fff' );
+			if ( $header_action_color ) {
+				set_theme_mod( 'colormag_header_search_icon_color', $header_action_color );
+				set_theme_mod( 'colormag_header_random_icon_color', $header_action_color );
+				remove_theme_mod( 'colormag_header_action_icon_color' );
+			}
+
+			$header_action_hover_color = get_theme_mod( 'colormag_header_action_icon_hover_color', '' );
+			if ( $header_action_hover_color ) {
+				set_theme_mod( 'colormag_header_search_icon_hover_color', $header_action_hover_color );
+				set_theme_mod( 'colormag_header_random_icon_hover_color', $header_action_hover_color );
+				remove_theme_mod( 'colormag_header_action_icon_hover_color' );
+			}
+
 			$footer_background = get_theme_mod( 'colormag_footer_background', '' );
 
 			if ( $footer_background ) {
