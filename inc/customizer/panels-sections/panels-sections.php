@@ -165,6 +165,16 @@ $section_option_id = array(
 		'panel'    => 'colormag_header_builder',
 		'priority' => 10,
 	),
+	'colormag_header_builder_toggle_button'  => array(
+		'title'    => esc_html__( 'Toggle Button', 'colormag' ),
+		'panel'    => 'colormag_header_builder',
+		'priority' => 10,
+	),
+	'colormag_header_builder_mobile_menu'    => array(
+		'title'    => esc_html__( 'Mobile Menu', 'colormag' ),
+		'panel'    => 'colormag_header_builder',
+		'priority' => 10,
+	),
 	'colormag_header_builder_primary_menu'   => array(
 		'title'    => esc_html__( 'Primary Menu', 'colormag' ),
 		'panel'    => 'colormag_header_builder',

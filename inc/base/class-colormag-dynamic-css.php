@@ -4131,7 +4131,6 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css            .= colormag_parse_css( '', $header_toggle_color, $header_toggle_color_css );
 
-
 		// Header builder site tagline typography.
 		$header_site_tagline_typography_default     = array(
 			'font-family'    => 'Default',
@@ -4175,6 +4174,82 @@ class ColorMag_Dynamic_CSS {
 			$header_site_tagline_typography_default,
 			$header_site_tagline_typography,
 			'.cm-header-builder .cm-site-description',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Header mobile menu color.
+		$header_mobile_menu_color     = get_theme_mod( 'colormag_header_mobile_menu_item_color', '' );
+		$header_mobile_menu_color_css = array(
+			'.cm-header-builder .cm-mobile-nav ul li a' => array(
+				'color' => esc_html( $header_mobile_menu_color ),
+			),
+		);
+		$parse_builder_css            .= colormag_parse_css( '', $header_mobile_menu_color, $header_mobile_menu_color_css );
+
+		// Header mobile menu hover color.
+		$header_mobile_menu_hover_color     = get_theme_mod( 'colormag_header_mobile_menu_item_hover_color', '' );
+		$header_mobile_menu_hover_color_css = array(
+			'.cm-header-builder .cm-mobile-nav ul li:hover a' => array(
+				'color' => esc_html( $header_mobile_menu_hover_color ),
+			),
+		);
+		$parse_builder_css            .= colormag_parse_css( '', $header_mobile_menu_hover_color, $header_mobile_menu_hover_color_css );
+
+		// Header mobile background.
+		$mobile_background_default = array(
+			'background-color'      => '',
+			'background-image'      => '',
+			'background-position'   => 'center center',
+			'background-size'       => 'auto',
+			'background-attachment' => 'scroll',
+			'background-repeat'     => 'repeat',
+		);
+		$mobile_background         = get_theme_mod( 'colormag_mobile_menu_background', $mobile_background_default );
+		$parse_builder_css                      .= colormag_parse_background_css( $mobile_background_default, $mobile_background, '.cm-mobile-nav ul li' );
+
+		// Header mobile typography.
+		$header_mobile_typography_default     = array(
+			'font-family'    => 'Default',
+			'font-weight'    => '400',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '1.6',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '1.6',
+					'unit' => 'rem',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.8',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '1.8',
+					'unit' => '-',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+		$header_mobile_typography     = get_theme_mod( 'colormag_header_mobile_menu_typography', $header_mobile_typography_default );
+		$parse_builder_css .= colormag_parse_typography_css(
+			$header_mobile_typography_default,
+			$header_mobile_typography,
+			'.cm-header-builder .cm-mobile-nav ul li a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,

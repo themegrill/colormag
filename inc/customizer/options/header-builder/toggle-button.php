@@ -3,7 +3,7 @@
 $options = array(
 	'colormag_header_builder_toggle_button_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Load Google fonts locally', 'colormag' ),
+		'title'        => esc_html__( 'Toggle Button', 'colormag' ),
 		'section'      => 'colormag_header_builder_toggle_button',
 		'sub_controls' => apply_filters(
 			'colormag_header_builder_toggle_button_sub_controls',

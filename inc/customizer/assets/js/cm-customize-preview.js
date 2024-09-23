@@ -926,6 +926,30 @@
 				case "colormag_header_secondary_sub_menu_typography":
 					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-secondary-nav ul li ul li a", value);
 					break;
+
+				case "colormag_header_mobile_menu_typography":
+					css = colormagGenerateTypographyCSS(id, ".cm-header-builder .cm-mobile-nav ul li a", value);
+					break;
+
+				case "colormag_mobile_menu_background":
+					css = colormagGenerateBackgroundCSS(".cm-mobile-nav ul li", value);
+					break;
+
+				case "colormag_header_mobile_menu_item_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-mobile-nav ul li a",
+						"color",
+						value,
+					);
+					break;
+
+				case "colormag_header_mobile_menu_item_hover_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-mobile-nav ul li:hover a",
+						"color",
+						value,
+					);
+					break;
 //
 // 				case "colormag_footer_column_widget_link_color":
 // 					css = colormagGenerateCommonCSS(
