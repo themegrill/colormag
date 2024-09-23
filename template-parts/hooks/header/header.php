@@ -321,7 +321,14 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 						<?php colormag_get_icon( 'x-mark' ); ?>
 					</p>
 					<?php
-						get_template_part( 'template-parts/header/primary-menu/main-navigation' );
+						get_template_part(
+							'template-parts/header/primary-menu/main-navigation',
+							null,
+							array(
+								'id'    => 'cm-primary-nav',
+								'class' => 'cm-primary-nav',
+							)
+						);
 					?>
 
 			</div>
@@ -564,10 +571,12 @@ if ( ! function_exists( 'colormag_menu_fallback' ) ) :
 	 * Contains wp_list_pages to display pages created,
 	 * search icons and WooCommerce cart icon.
 	 */
-	function colormag_menu_fallback() {
+	function colormag_menu_fallback( $args ) {
 
+		$id    = $args['menu_id'] ?? 'cm-primary-menu';
+		$class = $args['menu_class'] ?? 'cm-primary-menu';
 		require get_template_directory() . '/inc/class-colormag-walker-page.php';
-		$output = '<ul id="cm-primary-menu" class="cm-primary-menu">';
+		$output = '<ul id="' . $id . '" class="' . $class . '">';
 
 		$output .= wp_list_pages(
 			array(

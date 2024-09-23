@@ -402,16 +402,16 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 						'right'  => array(),
 					),
 					'main'   => array(
-						'left'   => array(
+						'left'   => array(),
+						'centre' => array(
 							'logo',
 						),
-						'centre' => array(),
-						'right'  => array(
-							'toggle-button',
-						),
+						'right'  => array(),
 					),
 					'bottom' => array(
-						'left'   => array(),
+						'left'   => array(
+							'toggle-button',
+						),
 						'center' => array(),
 						'right'  => array(),
 					),
@@ -549,6 +549,8 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					$header_builder_config['desktop']['top']['right'][] = 'socials';
 				}
 			}
+
+			$header_builder_config['mobile']['main']['left'] = [ 'logo' ];
 
 			set_theme_mod( 'colormag_header_builder', $header_builder_config );
 

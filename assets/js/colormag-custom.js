@@ -95,7 +95,7 @@ jQuery( document ).ready(
 		jQuery( '.cm-menu-primary-container .menu-item-has-children' ) ;
 
 		// Adds down icon for menu with sub menu.
-		jQuery( '.cm-menu-primary-container .cm-submenu-toggle' ).click(
+		jQuery( '.cm-submenu-toggle' ).click(
 			function () {
 				jQuery( this ).parent( '.menu-item-has-children' ).children( 'ul.sub-menu' ).first().slideToggle( '1000' );
 			}

@@ -10,6 +10,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+error_log( print_r( $args, true ) );
+
 if ( has_nav_menu( 'primary' ) ) {
 	wp_nav_menu(
 		array(
@@ -21,7 +23,6 @@ if ( has_nav_menu( 'primary' ) ) {
 } else {
 	require get_template_directory() . '/inc/class-colormag-walker-page.php';
 	wp_page_menu(
-
 		array(
 			'walker'             => new Colormag_Walker_Page(),
 			'has_children_class' => 'menu-item-has-children',

@@ -327,17 +327,33 @@
 			height: 30px;
 		}
 
-		.menu {
-			display: none;
+		.cm-mobile-nav {
 			position: absolute;
 			top: 100%;
 			width: 100%;
 			left: 0;
 			right: 0;
 			filter: drop-shadow(0px 4px 18px rgba(153, 153, 153, 0.1));
+			z-index: 9;
+
+			.cm-mobile-menu {
+				display: none;
+
+				.sub-menu {
+					display: none;
+				}
+
+				&.cm-mobile-menu--open {
+					display: block;
+				}
+			}
+
+
 		}
 
-		.cm-header-left-col {
+		.cm-top-row,
+		.cm-main-row,
+		.cm-bottom-row {
 			position: relative;
 		}
     }

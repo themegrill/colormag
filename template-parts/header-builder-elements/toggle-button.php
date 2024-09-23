@@ -11,10 +11,24 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<p class="cm-menu-toggle" aria-expanded="false">
+<div class="cm-mobile-nav-container">
+<button type="button" class="cm-menu-toggle" aria-expanded="false">
 						<?php colormag_get_icon( 'bars' ); ?>
 						<?php colormag_get_icon( 'x-mark' ); ?>
-	</p>
-<?php
-get_template_part( 'template-parts/header/primary-menu/main-navigation' );
-?>
+	</button>
+
+<nav id="cm-mobile-nav" class="cm-mobile-nav">
+	<?php
+	wp_nav_menu(
+		array(
+			'theme_location' => 'primary',
+			'menu_id'        => 'cm-mobile-menu',
+			'menu_class'     => 'cm-mobile-menu',
+			'container'      => 'cm-menu-mobile-container',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'fallback_cb'    => 'colormag_menu_fallback',
+		)
+	);
+	?>
+</nav><!-- #cm-mobile-nav -->
+</div>

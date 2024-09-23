@@ -1293,8 +1293,7 @@ table td {
 		width: 30px;
 		height: 30px;
 	}
-	.cm-header-builder .cm-mobile-row .menu {
-		display: none;
+	.cm-header-builder .cm-mobile-row .cm-mobile-nav {
 		position: absolute;
 		top: 100%;
 		width: 100%;
@@ -1302,8 +1301,20 @@ table td {
 		left: 0;
 		-webkit-filter: drop-shadow(0px 4px 18px rgba(153, 153, 153, 0.1));
 		filter: drop-shadow(0px 4px 18px rgba(153, 153, 153, 0.1));
+		z-index: 9;
 	}
-	.cm-header-builder .cm-mobile-row .cm-header-left-col {
+	.cm-header-builder .cm-mobile-row .cm-mobile-nav .cm-mobile-menu {
+		display: none;
+	}
+	.cm-header-builder .cm-mobile-row .cm-mobile-nav .cm-mobile-menu .sub-menu {
+		display: none;
+	}
+	.cm-header-builder .cm-mobile-row .cm-mobile-nav .cm-mobile-menu.cm-mobile-menu--open {
+		display: block;
+	}
+	.cm-header-builder .cm-mobile-row .cm-top-row,
+	.cm-header-builder .cm-mobile-row .cm-main-row,
+	.cm-header-builder .cm-mobile-row .cm-bottom-row {
 		position: relative;
 	}
 }
