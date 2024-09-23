@@ -721,6 +721,22 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_main_header_width_setting' );
 			}
 
+			$primary_menu_bg = get_theme_mod(
+				'colormag_primary_menu_background',
+				array(
+					'background-color'      => '#27272A',
+					'background-image'      => '',
+					'background-position'   => 'center center',
+					'background-size'       => 'auto',
+					'background-attachment' => 'scroll',
+					'background-repeat'     => 'repeat',
+				)
+			);
+			if ( $primary_menu_bg ) {
+				set_theme_mod( 'colormag_header_bottom_area_background', $primary_menu_bg );
+				remove_theme_mod( 'colormag_primary_menu_background' );
+			}
+
 			$footer_background = get_theme_mod( 'colormag_footer_background', '' );
 
 			if ( $footer_background ) {

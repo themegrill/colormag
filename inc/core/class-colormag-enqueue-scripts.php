@@ -206,8 +206,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 		public function customize_js() {
 
-			error_log( print_r( get_template_directory_uri(), true ) );
-
 			wp_enqueue_script(
 				'colormag-builder-customizer',
 				COLORMAG_CUSTOMIZER_URL . '/assets/js/cm-customize.js',
