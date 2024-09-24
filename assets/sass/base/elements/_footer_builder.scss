@@ -168,6 +168,22 @@
 		.cm-mobile-row {
 			display: block;
 		}
+
+		.cm-footer {
+			&.cm-footer-builder {
+				.cm-footer-top-row {
+					.cm-top-row {
+						grid-template-columns: 1fr;
+					}
+				}
+
+				.cm-footer-main-row {
+					.cm-main-row {
+						grid-template-columns: 1fr;
+					}
+				}
+			}
+		}
 	}
 
 

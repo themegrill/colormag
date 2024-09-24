@@ -1526,6 +1526,12 @@ table td {
 	.cm-footer-builder .cm-mobile-row {
 		display: block;
 	}
+	.cm-footer-builder .cm-footer.cm-footer-builder .cm-footer-top-row .cm-top-row {
+		grid-template-columns: 1fr;
+	}
+	.cm-footer-builder .cm-footer.cm-footer-builder .cm-footer-main-row .cm-main-row {
+		grid-template-columns: 1fr;
+	}
 }
 
 .cm-footer-builder .cm-mini-cart li {
