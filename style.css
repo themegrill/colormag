@@ -1289,6 +1289,11 @@ table td {
 		background-color: #27272A;
 		border-top: 4px solid #207daf;
 	}
+	.cm-header-builder .cm-mobile-row .cm-menu-toggle {
+		background: none;
+		border: none;
+		padding: 0;
+	}
 	.cm-header-builder .cm-mobile-row .cm-menu-toggle svg {
 		width: 30px;
 		height: 30px;

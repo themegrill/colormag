@@ -322,9 +322,14 @@
 			border-top: 4px solid #207daf;
 		}
 
-		.cm-menu-toggle svg {
-			width: 30px;
-			height: 30px;
+		.cm-menu-toggle {
+			background: none;
+			border: none;
+			padding: 0;
+			svg {
+				width: 30px;
+				height: 30px;
+			}
 		}
 
 		.cm-mobile-nav {
