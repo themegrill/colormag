@@ -10,8 +10,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-error_log( print_r( $args, true ) );
-
 if ( has_nav_menu( 'primary' ) ) {
 	wp_nav_menu(
 		array(

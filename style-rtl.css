@@ -1166,6 +1166,14 @@ table td {
 	content: none;
 }
 
+.cm-header-builder .cm-home-icon.front_page_on {
+	background: none;
+}
+
+.cm-header-builder .fa.search-top {
+	padding: 0;
+}
+
 .cm-header-builder .cm-mini-cart li {
 	list-style: none;
 }

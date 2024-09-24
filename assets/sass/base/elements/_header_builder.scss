@@ -196,6 +196,16 @@
     }
   }
 
+	.cm-home-icon {
+		&.front_page_on{
+			background: none;
+		}
+	}
+
+	.fa.search-top {
+		padding: 0;
+	}
+
   .cm-mini-cart {
 
     li {

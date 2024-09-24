@@ -60,7 +60,7 @@ $options = array(
 	),
 	'colormag_enable_random_post_heading'  => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Search', 'zakra' ),
+		'title'        => esc_html__( 'Random', 'zakra' ),
 		'section'      => 'colormag_header_action_section',
 		'sub_controls' => apply_filters(
 			'colormag_enable_random_post_sub_controls',
