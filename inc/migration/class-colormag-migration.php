@@ -701,8 +701,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					// Extract the social media name from the ID
 					$social_name = str_replace( 'colormag_social_', '', $colormag_social_link['id'] );
 
-					error_log( print_r( $social_name, true ) );
-
 					$icon = $social_name;
 
 					if ( 'twitter' === $social_name ) {
