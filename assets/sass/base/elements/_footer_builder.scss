@@ -8,6 +8,15 @@
 		flex-direction: row;
 	}
 
+	.footer-social-icons {
+		display: flex;
+		gap: 14px;
+
+		i {
+			font-size: 16px;
+		}
+	}
+
 	.cm-footer-top-row,
 	.cm-footer-main-row,
 	.cm-footer-bottom-row {

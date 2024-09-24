@@ -108,7 +108,7 @@ $options = apply_filters(
 				'colormag_footer_bar_social_icons_sub_controls',
 				array(
 					'colormag_footer_bar_social_icons_navigate' => array(
-						'title'    => esc_html__( 'Social Icons', 'zakra' ),
+						'title'    => esc_html__( 'Social Icons', 'colormag' ),
 						'type'     => 'customind-navigation',
 						'section'  => 'colormag_footer_bar_section',
 						'to'       => 'colormag_social_icons_section',

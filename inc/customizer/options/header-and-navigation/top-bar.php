@@ -46,7 +46,7 @@ $options = apply_filters(
 						),
 					),
 					'colormag_top_bar_background_color' => array(
-						'title'     => esc_html__( 'Background', 'zakra' ),
+						'title'     => esc_html__( 'Background', 'colormag' ),
 						'default'   => '',
 						'type'      => 'customind-color',
 						'transport' => 'postMessage',
@@ -84,7 +84,7 @@ $options = apply_filters(
 					'colormag_date_display_type' => array(
 						'default'   => 'theme_default',
 						'type'      => 'customind-select',
-						'title'     => esc_html__( 'Date Format', 'zakra' ),
+						'title'     => esc_html__( 'Date Format', 'colormag' ),
 						'section'   => 'colormag_top_bar_section',
 						'choices'   => array(
 							'theme_default'          => esc_html__( 'Theme Default Setting', 'colormag' ),
@@ -116,7 +116,7 @@ $options = apply_filters(
 				'colormag_top_bar_news_ticker_sub_controls',
 				array(
 					'colormag_news_ticker_navigate' => array(
-						'title'    => esc_html__( 'News Ticker', 'zakra' ),
+						'title'    => esc_html__( 'News Ticker', 'colormag' ),
 						'type'     => 'customind-navigation',
 						'section'  => 'colormag_top_bar_section',
 						'to'       => 'colormag_news_ticker_section',
@@ -137,7 +137,7 @@ $options = apply_filters(
 				'colormag_top_bar_social_icons_sub_controls',
 				array(
 					'colormag_top_bar_social_icons_navigate' => array(
-						'title'    => esc_html__( 'Social Icons', 'zakra' ),
+						'title'    => esc_html__( 'Social Icons', 'colormag' ),
 						'type'     => 'customind-navigation',
 						'section'  => 'colormag_top_bar_section',
 						'to'       => 'colormag_social_icons_section',

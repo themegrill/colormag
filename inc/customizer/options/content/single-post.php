@@ -40,13 +40,13 @@ $options = apply_filters(
 				'colormag_single_featured_image_sub_controls',
 				array(
 					'colormag_enable_featured_image' => array(
-						'title'   => esc_html__( 'Enable', 'zakra' ),
+						'title'   => esc_html__( 'Enable', 'colormag' ),
 						'default' => true,
 						'type'    => 'customind-toggle',
 						'section' => 'colormag_single_post_section',
 					),
 					'colormag_enable_lightbox'       => array(
-						'title'     => esc_html__( 'LightBox', 'zakra' ),
+						'title'     => esc_html__( 'LightBox', 'colormag' ),
 						'default'   => 0,
 						'type'      => 'customind-toggle',
 						'section'   => 'colormag_single_post_section',
@@ -66,7 +66,7 @@ $options = apply_filters(
 				'colormag_related_posts_sub_controls',
 				array(
 					'colormag_enable_related_posts' => array(
-						'title'   => esc_html__( 'Enable', 'zakra' ),
+						'title'   => esc_html__( 'Enable', 'colormag' ),
 						'default' => false,
 						'type'    => 'customind-toggle',
 						'section' => 'colormag_single_post_section',
@@ -74,7 +74,7 @@ $options = apply_filters(
 					'colormag_related_posts_query'  => array(
 						'default'   => 'categories',
 						'type'      => 'customind-select',
-						'title'     => esc_html__( 'Query', 'zakra' ),
+						'title'     => esc_html__( 'Query', 'colormag' ),
 						'section'   => 'colormag_single_post_section',
 						'choices'   => array(
 							'categories' => esc_html__( 'Categories', 'colormag' ),

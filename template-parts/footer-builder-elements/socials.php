@@ -1,7 +1,7 @@
 <?php
 
 $footer_social = get_theme_mod(
-	'zakra_footer_socials',
+	'colormag_footer_socials',
 	array(
 		array(
 			'id'    => uniqid(),

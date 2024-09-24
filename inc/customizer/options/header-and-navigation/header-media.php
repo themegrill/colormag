@@ -6,7 +6,7 @@ $header_video_value = get_theme_mod( 'header_video' ) === 0 ? 0 : '';
 $options = array(
 	'colormag_header_media_position_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Position', 'zakra' ),
+		'title'        => esc_html__( 'Position', 'colormag' ),
 		'section'      => 'header_image',
 		'sub_controls' => apply_filters(
 			'colormag_header_media_position_sub_controls',
@@ -14,7 +14,7 @@ $options = array(
 				'colormag_header_media_position'         => array(
 					'default' => 'position-two',
 					'type'    => 'customind-select',
-					'title'   => esc_html__( 'Position', 'zakra' ),
+					'title'   => esc_html__( 'Position', 'colormag' ),
 					'section' => 'header_image',
 					'choices' => array(
 						'position-one'   => esc_html__( 'Above Header', 'colormag' ),

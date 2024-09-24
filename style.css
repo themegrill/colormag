@@ -1178,6 +1178,17 @@ table td {
 	list-style: none;
 }
 
+.cm-header-builder .header-social-icons {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 14px;
+}
+
+.cm-header-builder .header-social-icons i {
+	font-size: 16px;
+}
+
 .cm-header-builder.cm-layout-1-transparent {
 	position: relative;
 	border-bottom: none;
@@ -1344,6 +1355,17 @@ table td {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: row;
 	flex-direction: row;
+}
+
+.cm-footer-builder .footer-social-icons {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 14px;
+}
+
+.cm-footer-builder .footer-social-icons i {
+	font-size: 16px;
 }
 
 .cm-footer-builder .cm-footer-top-row,

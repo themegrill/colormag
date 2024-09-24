@@ -88,15 +88,15 @@ $options = apply_filters(
 		),
 		'colormag_blog_post_date_heading'  => array(
 			'type'         => 'customind-accordion',
-			'title'        => esc_html__( 'Post Date', 'zakra' ),
+			'title'        => esc_html__( 'Post Date', 'colormag' ),
 			'section'      => 'colormag_blog_section',
 			'sub_controls' => apply_filters(
-				'zakra_blog_post_date_type_sub_controls',
+				'colormag_blog_post_date_type_sub_controls',
 				array(
 					'colormag_blog_post_date_type' => array(
 						'default' => 'post-date',
 						'type'    => 'customind-select',
-						'title'   => esc_html__( 'Type', 'zakra' ),
+						'title'   => esc_html__( 'Type', 'colormag' ),
 						'section' => 'colormag_blog_section',
 						'choices' => array(
 							'post-date'     => esc_html__( 'Post Date', 'colormag' ),

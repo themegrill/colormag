@@ -104,7 +104,7 @@ $options = array(
 						'background-repeat'     => 'repeat',
 					),
 					'type'      => 'customind-background',
-					'title'     => esc_html__( 'Background', 'zakra' ),
+					'title'     => esc_html__( 'Background', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_header_builder_primary_menu',
 				),

@@ -213,6 +213,15 @@
     }
   }
 
+	.header-social-icons {
+		display: flex;
+		gap: 14px;
+
+		i {
+			font-size: 16px;
+		}
+	}
+
   &.cm-layout-1-transparent {
     position: relative;
     border-bottom: none;

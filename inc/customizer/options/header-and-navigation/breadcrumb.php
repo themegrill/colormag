@@ -5,18 +5,18 @@ $options = apply_filters(
 	array(
 		'colormag_breadcrumb_general_heading' => array(
 			'type'         => 'customind-accordion',
-			'title'        => esc_html__( 'Breadcrumb', 'zakra' ),
+			'title'        => esc_html__( 'Breadcrumb', 'colormag' ),
 			'section'      => 'colormag_breadcrumb_section',
 			'sub_controls' => apply_filters(
 				'colormag_breadcrumb_controls',
 				array(
 					'colormag_breadcrumb_general_heading' => array(
 						'type'    => 'customind-title',
-						'title'   => esc_html__( 'General', 'zakra' ),
+						'title'   => esc_html__( 'General', 'colormag' ),
 						'section' => 'colormag_breadcrumb_section',
 					),
 					'colormag_breadcrumb_enable'          => array(
-						'title'   => esc_html__( 'Enable', 'zakra' ),
+						'title'   => esc_html__( 'Enable', 'colormag' ),
 						'default' => 0,
 						'type'    => 'customind-toggle',
 						'section' => 'colormag_breadcrumb_section',

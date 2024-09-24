@@ -11,7 +11,7 @@ $options = apply_filters(
 				'colormag_page_featured_image_sub_controls',
 				array(
 					'colormag_enable_page_featured_image' => array(
-						'title'   => esc_html__( 'Enable', 'zakra' ),
+						'title'   => esc_html__( 'Enable', 'colormag' ),
 						'default' => false,
 						'type'    => 'customind-toggle',
 						'section' => 'colormag_page_section',

@@ -2,7 +2,7 @@
 /**
  * Site navigation template file.
  *
- * @package zakra
+ * @package colormag
  *
  * @since 3.0.0
  */

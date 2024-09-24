@@ -12,13 +12,13 @@ $options = apply_filters(
 				array(
 					'colormag_footer_general_subtitle' => array(
 						'type'    => 'customind-title',
-						'title'   => esc_html__( 'General', 'zakra' ),
+						'title'   => esc_html__( 'General', 'colormag' ),
 						'section' => 'colormag_footer_column_section',
 					),
 					'colormag_main_footer_layout'      => array(
 						'default'   => 'layout-1',
 						'type'      => 'customind-select',
-						'title'     => esc_html__( 'Layout', 'zakra' ),
+						'title'     => esc_html__( 'Layout', 'colormag' ),
 						'section'   => 'colormag_footer_column_section',
 						'transport' => 'postMessage',
 						'choices'   => array(

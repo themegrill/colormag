@@ -3,7 +3,7 @@
 $options = array(
 	'colormag_footer_builder_widget_6_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Widget 6', 'zakra' ),
+		'title'        => esc_html__( 'Widget 6', 'colormag' ),
 		'section'      => 'colormag_footer_builder_widget_6',
 		'sub_controls' => apply_filters(
 			'colormag_footer_builder_widget_6_sub_controls',
@@ -11,7 +11,7 @@ $options = array(
 				'colormag_footer_widget_6_title_color'   => array(
 					'default'   => '',
 					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Title Color', 'zakra' ),
+					'title'     => esc_html__( 'Title Color', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_footer_builder_widget_6',
 				),
@@ -52,7 +52,7 @@ $options = array(
 					),
 					'type'      => 'customind-typography',
 					'transport' => 'postMessage',
-					'title'     => esc_html__( 'Title Typography', 'zakra' ),
+					'title'     => esc_html__( 'Title Typography', 'colormag' ),
 					'section'   => 'colormag_footer_builder_widget_6',
 				),
 				'colormag_footer_widget_6_link_divider'  => array(
@@ -89,7 +89,7 @@ $options = array(
 				'colormag_footer_widget_6_content_color' => array(
 					'default'   => '',
 					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Content Color', 'zakra' ),
+					'title'     => esc_html__( 'Content Color', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_footer_builder_widget_6',
 				),
@@ -130,7 +130,7 @@ $options = array(
 					),
 					'type'      => 'customind-typography',
 					'transport' => 'postMessage',
-					'title'     => esc_html__( 'Content Typography', 'zakra' ),
+					'title'     => esc_html__( 'Content Typography', 'colormag' ),
 					'section'   => 'colormag_footer_builder_widget_6',
 				),
 			)

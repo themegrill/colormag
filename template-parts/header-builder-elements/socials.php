@@ -26,7 +26,7 @@ $social = get_theme_mod(
 ?>
 
 <?php if ( ! empty( $social ) ) : ?>
-	<div class="social-icons">
+	<div class="social-icons header-social-icons">
 		<?php foreach ( $social as $key => $value ) : ?>
 			<?php if ( ! empty( $value ) ) : ?>
 				<a href="<?php echo esc_url( $value['url'] ); ?>" target="_blank" rel="noopener noreferrer">

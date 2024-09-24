@@ -1,5 +1,5 @@
 <?php
-
+error_log( print_r( get_theme_mod( 'colormag_footer_socials' ), true ) );
 $options = array(
 	'colormag_footer_builder_social_heading' => array(
 		'type'         => 'customind-accordion',

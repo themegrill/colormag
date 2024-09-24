@@ -13,7 +13,7 @@ $options = apply_filters(
 				array(
 					'colormag_main_header_layout_general_heading' => array(
 						'type'    => 'customind-title',
-						'title'   => esc_html__( 'General', 'zakra' ),
+						'title'   => esc_html__( 'General', 'colormag' ),
 						'section' => 'colormag_primary_header_section',
 					),
 					'colormag_main_header_layout'         => array(
@@ -101,7 +101,7 @@ $options = apply_filters(
 					'colormag_main_header_width_setting'  => array(
 						'default'   => 'full-width',
 						'type'      => 'customind-select',
-						'title'     => esc_html__( 'Width', 'zakra' ),
+						'title'     => esc_html__( 'Width', 'colormag' ),
 						'section'   => 'colormag_primary_header_section',
 						'choices'   => array(
 							'full-width' => esc_html__( 'Full Width', 'colormag' ),

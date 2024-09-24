@@ -6,18 +6,18 @@ $customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'pos
 $options = array(
 	'colormag_social_icons_heading'          => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Social Icons', 'zakra' ),
+		'title'        => esc_html__( 'Social Icons', 'colormag' ),
 		'section'      => 'colormag_social_icons_section',
 		'sub_controls' => apply_filters(
 			'colormag_social_icons_controls',
 			array(
 				'colormag_social_icons_general_heading' => array(
 					'type'    => 'customind-title',
-					'title'   => esc_html__( 'General', 'zakra' ),
+					'title'   => esc_html__( 'General', 'colormag' ),
 					'section' => 'colormag_social_icons_section',
 				),
 				'colormag_enable_social_icons'          => array(
-					'title'     => esc_html__( 'Enable', 'zakra' ),
+					'title'     => esc_html__( 'Enable', 'colormag' ),
 					'default'   => false,
 					'type'      => 'customind-toggle',
 					'section'   => 'colormag_social_icons_section',
@@ -32,13 +32,13 @@ $options = array(
 	),
 	'colormag_social_icons_position_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Position', 'zakra' ),
+		'title'        => esc_html__( 'Position', 'colormag' ),
 		'section'      => 'colormag_social_icons_section',
 		'sub_controls' => apply_filters(
 			'colormag_social_icons_position_controls',
 			array(
 				'colormag_enable_social_icons_header' => array(
-					'title'     => esc_html__( 'Header', 'zakra' ),
+					'title'     => esc_html__( 'Header', 'colormag' ),
 					'default'   => true,
 					'type'      => 'customind-toggle',
 					'section'   => 'colormag_social_icons_section',
@@ -48,7 +48,7 @@ $options = array(
 					),
 				),
 				'colormag_enable_social_icons_footer' => array(
-					'title'     => esc_html__( 'Footer', 'zakra' ),
+					'title'     => esc_html__( 'Footer', 'colormag' ),
 					'default'   => true,
 					'type'      => 'customind-toggle',
 					'section'   => 'colormag_social_icons_section',

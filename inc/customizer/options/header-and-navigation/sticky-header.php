@@ -5,18 +5,18 @@ $options = apply_filters(
 	array(
 		'colormag_sticky_header_heading' => array(
 			'type'         => 'customind-accordion',
-			'title'        => esc_html__( 'Sticky Header', 'zakra' ),
+			'title'        => esc_html__( 'Sticky Header', 'colormag' ),
 			'section'      => 'colormag_sticky_header_section',
 			'sub_controls' => apply_filters(
 				'colormag_sticky_controls',
 				array(
 					'colormag_sticky_header_general_subtitle' => array(
 						'type'    => 'customind-title',
-						'title'   => esc_html__( 'General', 'zakra' ),
+						'title'   => esc_html__( 'General', 'colormag' ),
 						'section' => 'colormag_sticky_header_section',
 					),
 					'colormag_enable_sticky_menu' => array(
-						'title'   => esc_html__( 'Enable', 'zakra' ),
+						'title'   => esc_html__( 'Enable', 'colormag' ),
 						'default' => 0,
 						'type'    => 'customind-toggle',
 						'section' => 'colormag_sticky_header_section',
