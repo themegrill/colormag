@@ -820,10 +820,13 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_primary_menu_top_border_width' );
 			}
 
-			$primary_menu_border_color = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
+			$primary_menu_border_color = get_theme_mod( 'colormag_primary_menu_top_border_color' );
+			$primary_color             = get_theme_mod( 'colormag_primary_color' );
 			if ( $primary_menu_border_color ) {
 				set_theme_mod( 'colormag_header_bottom_area_border_color', $primary_menu_border_color );
 				remove_theme_mod( 'colormag_primary_menu_top_border_color' );
+			} else {
+				set_theme_mod( 'colormag_header_bottom_area_border_color', $primary_color );
 			}
 
 			$primary_menu_color = get_theme_mod( 'colormag_primary_menu_text_color' );

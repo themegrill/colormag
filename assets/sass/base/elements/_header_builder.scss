@@ -122,7 +122,6 @@
   .cm-bottom-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     border: 0 solid;
     position: relative;
 
@@ -203,7 +202,7 @@
 	}
 
 	.fa.search-top {
-		padding: 0;
+		padding: 1px;
 	}
 
   .cm-mini-cart {

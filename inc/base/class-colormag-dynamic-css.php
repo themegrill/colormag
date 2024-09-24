@@ -179,7 +179,7 @@ class ColorMag_Dynamic_CSS {
 			),
 
 			'#cm-primary-nav,
-			.cm-contained .cm-header-2 .cm-row'
+			.cm-contained .cm-header-2 .cm-row, .cm-header-builder.cm-full-width .cm-main-header .cm-header-bottom-row'
 			=> array(
 				'border-top-color' => esc_html( $primary_color ),
 			),
@@ -2072,7 +2072,7 @@ class ColorMag_Dynamic_CSS {
 		if ( 'contained' === $header_bottom_area_width ){
 			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row';
 		} else {
-			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-header-bottom-row';
+			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-desktop-row.cm-main-header .cm-header-bottom-row';
 		}
 
 		$header_bottom_area_background_default = array(
