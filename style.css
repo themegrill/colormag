@@ -1365,6 +1365,20 @@ table td {
 	font-size: 16px;
 }
 
+.cm-footer-builder .cm-widget-title {
+	border-bottom: 2px solid #207daf;
+	font-size: 1.4rem;
+	color: #e4e4e7;
+}
+
+.cm-footer-builder .cm-widget-title span {
+	display: inline-block;
+	padding: 6px 12px;
+	background-color: #207daf;
+	color: #fff;
+	font-size: 1.6rem;
+}
+
 .cm-footer-builder .cm-footer-top-row,
 .cm-footer-builder .cm-footer-main-row,
 .cm-footer-builder .cm-footer-bottom-row {
@@ -1401,6 +1415,7 @@ table td {
 .cm-footer-builder .cm-footer-main-row {
 	padding-bottom: 60px;
 	padding-top: 60px;
+	background-color: #3f3f46;
 }
 
 .cm-footer-builder .cm-footer-bottom-row {

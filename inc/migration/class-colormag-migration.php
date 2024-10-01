@@ -986,6 +986,67 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				remove_theme_mod( 'colormag_footer_copyright_link_text_color' );
 			}
 
+			// Social links lists.
+			$social_links_count    = 70;
+			$colormag_social_links = array(
+				'colormag_social_facebook'  => array(
+					'id'      => 'colormag_social_facebook',
+					'title'   => esc_html__( 'Facebook', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_twitter'   => array(
+					'id'      => 'colormag_social_twitter',
+					'title'   => esc_html__( 'Twitter', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_instagram' => array(
+					'id'      => 'colormag_social_instagram',
+					'title'   => esc_html__( 'Instagram', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_pinterest' => array(
+					'id'      => 'colormag_social_pinterest',
+					'title'   => esc_html__( 'Pinterest', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_youtube'   => array(
+					'id'      => 'colormag_social_youtube',
+					'title'   => esc_html__( 'YouTube', 'colormag' ),
+					'default' => '',
+				),
+			);
+
+			$all_social_links = [];
+			foreach ( $colormag_social_links as $colormag_social_link ) {
+				$have_url = get_theme_mod( $colormag_social_link['id'] );
+
+				if ( $have_url ) {
+					// Extract the social media name from the ID
+					$social_name = str_replace( 'colormag_social_', '', $colormag_social_link['id'] );
+
+					$icon = $social_name;
+
+					if ( 'twitter' === $social_name ) {
+						$icon = 'x-twitter';
+					} elseif ( 'instagram' === $social_name ) {
+						$icon = 'square-instagram';
+					}
+
+					$footer_social_value = array(
+						'id'    => uniqid(),
+						'label' => $social_name,
+						'url'   => $have_url,
+						'icon'  => 'fa-brands fa-' . $icon,
+					);
+
+					// You might want to add this value to a larger array of social links
+					$all_social_links[] = $footer_social_value;
+				}
+			}
+
+			set_theme_mod( 'colormag_header_socials', $all_social_links );
+			set_theme_mod( 'colormag_footer_socials', $all_social_links );
+
 			update_option( 'colormag_builder_migration', true );
 		}
 

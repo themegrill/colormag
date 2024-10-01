@@ -17,6 +17,20 @@
 		}
 	}
 
+	.cm-widget-title {
+		border-bottom: 2px solid #207daf;
+		font-size: 1.4rem;
+		color: #e4e4e7;
+
+		span {
+			display: inline-block;
+			padding: 6px 12px;
+			background-color: #207daf;
+			color: #fff;
+			font-size: 1.6rem;
+		}
+	}
+
 	.cm-footer-top-row,
 	.cm-footer-main-row,
 	.cm-footer-bottom-row {
@@ -49,6 +63,7 @@
 	.cm-footer-main-row {
 		padding-bottom: 60px;
 		padding-top: 60px;
+		background-color: #3f3f46;
 	}
 
 	.cm-footer-bottom-row {
