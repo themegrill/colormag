@@ -14,9 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Include the customizer framework files.
-require __DIR__ . '/core/class-colormag-customizer-framework.php';
-
 require_once __DIR__ . '/functions.php';
 /**
  * ColorMag customizer class.

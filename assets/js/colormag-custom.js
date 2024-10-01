@@ -122,9 +122,16 @@ jQuery( document ).ready(
 		/**
 		 * Scrollbar on fixed responsive menu.
 		 */
+		let stickyElementWrapper = document.getElementsByClassName('cm-header-builder');
+		let stickyElement;
+		if (stickyElementWrapper.length > 0){
+			stickyElement = ".cm-header-bottom-row";
+		} else {
+			stickyElement = ".cm-primary-nav";
+		}
 		jQuery( window ).on( 'load',
 			function() {
-				if ( window.matchMedia( '(max-width: 768px)' ).matches && jQuery( '#cm-masthead .sticky-wrapper, #cm-masthead .headroom' ).length >= 1 ) {
+				if ( window.matchMedia( '(max-width: 768px)' ).matches && jQuery( '#cm-masthead .sticky-wrapper, .cm-header-bottom-row .sticky-wrapper, #cm-masthead .headroom' ).length >= 1 ) {
 					var screenHeight        = jQuery( window ).height();
 					var availableMenuHeight = screenHeight - 88;
 					var menu                = jQuery( '#cm-primary-nav' ).find( 'ul' ).first();
@@ -200,14 +207,14 @@ jQuery( document ).ready(
 			var wpAdminBar = jQuery( '#wpadminbar' );
 
 			if ( wpAdminBar.length ) {
-				jQuery( '#cm-primary-nav' ).sticky(
+				jQuery( stickyElement ).sticky(
 					{
 						topSpacing : wpAdminBar.height(),
 						zIndex     : 999
 					}
 				);
 			} else {
-				jQuery( '#cm-primary-nav' ).sticky(
+				jQuery( stickyElement ).sticky(
 					{
 						topSpacing : 0,
 						zIndex     : 999
@@ -221,21 +228,21 @@ jQuery( document ).ready(
 
 		// Menu reveal on scroll.
 		if ( typeof jQuery.fn.headroom !== 'undefined' ) {
-			var offset_value = jQuery( '#cm-primary-nav' ).offset().top;
+			var offset_value = jQuery( stickyElement ).offset().top;
 			var wpAdminBar   = jQuery( '#wpadminbar' );
-			var menuwidth    = jQuery( '.cm-primary-nav' ).width();
+			var menuwidth    = jQuery( stickyElement ).width();
 
 			if ( wpAdminBar.length ) {
-				offset_value = wpAdminBar.height() + jQuery( '#cm-primary-nav' ).offset().top;
+				offset_value = wpAdminBar.height() + jQuery( stickyElement ).offset().top;
 			}
 
-			jQuery( '.cm-primary-nav' ).headroom(
+			jQuery( stickyElement ).headroom(
 				{
 					'offset'    : offset_value,
 					'tolerance' : 0,
 					onPin       : function () {
 						if ( wpAdminBar.length ) {
-							jQuery( '.cm-primary-nav' ).css(
+							jQuery( stickyElement ).css(
 								{
 									'top'      : wpAdminBar.height(),
 									'position' : 'fixed',
@@ -243,17 +250,18 @@ jQuery( document ).ready(
 								}
 							);
 						} else {
-							jQuery( '.cm-primary-nav' ).css(
+							jQuery( stickyElement ).css(
 								{
 									'top'      : 0,
 									'position' : 'fixed',
+									'z-index': 999,
 									'width'    : menuwidth
 								}
 							);
 						}
 					},
 					onTop       : function () {
-						jQuery( '.cm-primary-nav' ).css(
+						jQuery( stickyElement ).css(
 							{
 								'top'      : 0,
 								'position' : 'relative'

@@ -2,40 +2,31 @@
 
 $panel_options_id = array(
 	'colormag_global_panel'     => array(
-		'title'    => esc_html__( 'Global', 'colormag' ),
-		'priority' => 10,
+		'title' => esc_html__( 'Global', 'colormag' ),
 	),
 	'colormag_front_page_panel' => array(
-		'title'    => esc_html__( 'Front Page', 'colormag' ),
-		'priority' => 20,
+		'title' => esc_html__( 'Front Page', 'colormag' ),
 	),
 	'colormag_header_panel'     => array(
-		'title'    => esc_html__( 'Header & Navigation', 'colormag' ),
-		'priority' => 30,
-	),
-	'colormag_content_panel'    => array(
-		'title'    => esc_html__( 'Content', 'colormag' ),
-		'priority' => 40,
-	),
-	'colormag_footer_panel'     => array(
-		'title'    => esc_html__( 'Footer', 'colormag' ),
-		'priority' => 50,
-	),
-	'colormag_additional_panel' => array(
-		'title'    => esc_html__( 'Additional', 'colormag' ),
-		'priority' => 60,
-	),
-	'woocommerce'               => array(
-		'title'    => esc_html__( 'WooCommerce', 'colormag' ),
-		'priority' => 70,
+		'title' => esc_html__( 'Header & Navigation', 'colormag' ),
 	),
 	'colormag_header_builder'   => array(
-		'title'    => esc_html__( 'Header Builder', 'colormag' ),
-		'priority' => 10,
+		'title' => esc_html__( 'Header Builder', 'colormag' ),
+	),
+	'colormag_content_panel'    => array(
+		'title' => esc_html__( 'Content', 'colormag' ),
+	),
+	'colormag_footer_panel'     => array(
+		'title' => esc_html__( 'Footer', 'colormag' ),
 	),
 	'colormag_footer_builder'   => array(
-		'title'    => esc_html__( 'Footer Builder', 'colormag' ),
-		'priority' => 10,
+		'title' => esc_html__( 'Footer Builder', 'colormag' ),
+	),
+	'colormag_additional_panel' => array(
+		'title' => esc_html__( 'Additional', 'colormag' ),
+	),
+	'woocommerce'               => array(
+		'title' => esc_html__( 'WooCommerce', 'colormag' ),
 	),
 );
 
@@ -109,6 +100,11 @@ $section_option_id = array(
 		'title'    => esc_html__( 'Header Action', 'colormag' ),
 		'panel'    => 'colormag_header_panel',
 		'priority' => 60,
+	),
+	'header_image'                           => array(
+		'title'    => esc_html__( 'Header Media', 'colormag' ),
+		'panel'    => 'colormag_header_panel',
+		'priority' => 70,
 	),
 	'colormag_breadcrumb_section'            => array(
 		'title'    => esc_html__( 'Breadcrumb', 'colormag' ),
