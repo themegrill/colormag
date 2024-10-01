@@ -99,18 +99,19 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			$typography_ids = apply_filters(
 				'colormag_enqueue_scripts_typography_ids',
 				array(
-					'colormag_news_ticker_content_typography',
-					'colormag_news_ticker_label_typography',
-					'colormag_h3_typography',
-					'colormag_h2_typography',
-					'colormag_h1_typography',
-					'colormag_headings_typography',
-					'colormag_base_typography',
 					'colormag_blog_post_title_typography',
 					'colormag_mobile_menu_typography',
 					'colormag_primary_menu_typography',
 					'colormag_site_tagline_typography',
 					'colormag_site_title_typography',
+					'colormag_h6_typography',
+					'colormag_h5_typography',
+					'colormag_h4_typography',
+					'colormag_h3_typography',
+					'colormag_h2_typography',
+					'colormag_h1_typography',
+					'colormag_headings_typography',
+					'colormag_base_typography',
 				)
 			);
 
