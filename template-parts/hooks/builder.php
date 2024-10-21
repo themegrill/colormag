@@ -1,7 +1,7 @@
 <?php
 
 $enable_builder = get_theme_mod( 'colormag_enable_builder', false );
-if ( $enable_builder ) {
+if ( $enable_builder || colormag_maybe_enable_builder() ) {
 	add_action(
 		'after_setup_theme',
 		function () {

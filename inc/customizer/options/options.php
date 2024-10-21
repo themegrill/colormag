@@ -1,7 +1,6 @@
 <?php
 $enable_builder = get_theme_mod( 'colormag_enable_builder', false );
 
-require __DIR__ . '/global/builder.php';
 require __DIR__ . '/global/colors.php';
 require __DIR__ . '/global/category-colors.php';
 require __DIR__ . '/global/container.php';
@@ -18,7 +17,7 @@ require __DIR__ . '/content/post-meta.php';
 require __DIR__ . '/content/single-post.php';
 require __DIR__ . '/woocommerce/woocommerce.php';
 
-if ( $enable_builder ) {
+if ( $enable_builder || colormag_maybe_enable_builder() ) {
 	require __DIR__ . '/header-builder/header-builder.php';
 	require __DIR__ . '/header-builder/top-area.php';
 	require __DIR__ . '/header-builder/main-area.php';
@@ -56,6 +55,7 @@ if ( $enable_builder ) {
 	require __DIR__ . '/footer-builder/socials.php';
 	require __DIR__ . '/footer-builder/footer-builder.php';
 } else {
+	require __DIR__ . '/global/builder.php';
 	require __DIR__ . '/header-and-navigation/primary-menu.php';
 	require __DIR__ . '/header-and-navigation/header-action.php';
 	require __DIR__ . '/header-and-navigation/site-identity.php';

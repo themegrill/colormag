@@ -34,7 +34,7 @@ class ColorMag_Customizer {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_dynamic_css' ) );
 
-		if ( get_theme_mod( 'colormag_enable_builder', false ) ) {
+		if ( get_theme_mod( 'colormag_enable_builder', false ) || colormag_maybe_enable_builder() ) {
 			add_filter( 'customizer_widgets_section_args', [ $this, 'modify_widgets_panel' ], 10, 3 );
 			add_filter( 'customize_section_active', [ $this, 'modify_widgets_section_state' ], 100, 2 );
 		}

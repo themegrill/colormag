@@ -120,7 +120,7 @@ function colormag_header_builder_markup() {
 	do_action( 'colormag_page_header' );
 }
 $enable_builder = get_theme_mod( 'colormag_enable_builder', false );
-if ( $enable_builder ) {
+if ( $enable_builder || colormag_maybe_enable_builder() ) {
 	add_action( 'colormag_header', 'colormag_header_builder_markup' );
 }
 
@@ -285,6 +285,6 @@ function colormag_footer_builder_markup() {
 }
 
 $enable_builder = get_theme_mod( 'colormag_enable_builder', false );
-if ( $enable_builder ) {
+if ( $enable_builder || colormag_maybe_enable_builder() ) {
 	add_action( 'colormag_builder_footer', 'colormag_footer_builder_markup' );
 }

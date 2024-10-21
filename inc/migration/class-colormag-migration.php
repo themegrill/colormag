@@ -22,7 +22,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				add_action( 'after_setup_theme', array( $this, 'colormag_free_major_update_customizer_migration_v1' ) );
 			}
 
-			add_action( 'after_setup_theme', [ $this, 'colormag_builder_migration' ], 25 );
+			$enable_builder = get_theme_mod( 'colormag_enable_builder', '' );
+			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_builder_migration' ], 25 );
+			if ( $enable_builder ) {
+				add_action( 'after_setup_theme', [ $this, 'colormag_builder_migration' ], 25 );
+			}
 		}
 
 		/**
@@ -365,13 +369,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		 */
 		public function colormag_builder_migration() {
 
-			$enable_builder = get_theme_mod( 'colormag_enable_builder', '' );
-
-			if ( get_option( 'colormag_builder_migration' ) ) {
-				return;
-			}
-
-			if ( ! $enable_builder ) {
+			if ( get_option( 'colormag_builder_migration' ) && ! doing_action( 'themegrill_ajax_demo_imported' ) ) {
 				return;
 			}
 
@@ -1093,9 +1091,9 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			 * If migration is already run then return false.
 			 *
 			 */
-			$migrated = get_option( 'colormag_free_major_update_customizer_migration_v1' );
+			$migrated = get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_theme_mod( 'colormag_enable_builder' );
 
-			if ( $migrated ) {
+			if ( $migrated || wp_doing_ajax() ) {
 
 				return false;
 			}

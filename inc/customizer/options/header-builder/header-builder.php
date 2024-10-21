@@ -82,16 +82,6 @@ function customind_get_header_components() {
 					'id'      => 'logo',
 				),
 				array(
-					'name'    => __( 'Primary Menu', 'colormag' ),
-					'section' => 'colormag_header_builder_primary_menu',
-					'id'      => 'primary-menu',
-				),
-				array(
-					'name'    => __( 'Secondary Menu', 'colormag' ),
-					'section' => 'colormag_header_builder_secondary_menu',
-					'id'      => 'secondary-menu',
-				),
-				array(
 					'name'    => __( 'Mobile Menu', 'colormag' ),
 					'section' => 'colormag_header_builder_mobile_menu',
 					'id'      => 'mobile-menu',

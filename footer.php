@@ -39,7 +39,7 @@ do_action( 'colormag_before_footer' );
 
 
 $enable_builder = get_theme_mod( 'colormag_enable_builder', false );
-if ( $enable_builder ) {
+if ( $enable_builder || colormag_maybe_enable_builder() ) {
 	colormag_footer_builder_markup();
 } else {
 

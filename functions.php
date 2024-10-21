@@ -345,3 +345,16 @@ add_action( 'template_redirect', 'colormag_content_width' );
  * Detect plugin. For use on Front End only.
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+function colormag_maybe_enable_builder() {
+
+	if ( get_option( 'colormag_builder_migration' ) ) {
+		return true;
+	}
+
+	if ( get_option( 'colormag_major_update_v1_customize_migrate' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) | get_option( 'colormag_transfer' ) || get_option( 'colormag_autoload_posts_control_migrate' ) ) {
+		return false;
+	}
+
+	return true;
+}

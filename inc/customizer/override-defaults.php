@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-if ( get_theme_mod( 'colormag_enable_builder', false ) ) {
+if ( get_theme_mod( 'colormag_enable_builder', false ) || colormag_maybe_enable_builder() ) {
 	$wp_customize->get_control( 'blogname' )->section         = 'colormag_header_builder_logo';
 	$wp_customize->get_control( 'blogname' )->priority        = 4;
 	$wp_customize->get_control( 'blogdescription' )->section  = 'colormag_header_builder_logo';
