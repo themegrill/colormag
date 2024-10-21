@@ -1998,6 +1998,10 @@ table td {
 	font-size: 32px;
 }
 
+.search-form-top.show {
+	width: unset;
+}
+
 @media screen and (min-width: 48em) {
 	.cm-header-actions {
 		-ms-flex-preferred-size: unset;
