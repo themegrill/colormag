@@ -1,4 +1,8 @@
 .cm-footer-builder {
+
+	a {
+		color: #fff;
+	}
 	.cm-row {
 		display: block;
 	}
@@ -136,6 +140,10 @@
 	.widget {
 		a {
 			text-decoration: none;
+		}
+
+		li {
+			list-style: none;
 		}
 
 		.wp-block-heading,

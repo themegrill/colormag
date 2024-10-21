@@ -1340,6 +1340,10 @@ table td {
 	}
 }
 
+.cm-footer-builder a {
+	color: #fff;
+}
+
 .cm-footer-builder .cm-row {
 	display: block;
 }
@@ -1484,6 +1488,10 @@ table td {
 
 .cm-footer-builder .widget a {
 	text-decoration: none;
+}
+
+.cm-footer-builder .widget li {
+	list-style: none;
 }
 
 .cm-footer-builder .widget .wp-block-heading,
