@@ -16,9 +16,9 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		private $old_theme_mods;
 
 		public function __construct() {
-			add_action( 'after_setup_theme', array( $this, 'colormag_social_icons_control_migrate' ) );
 
 			if ( self::maybe_run_migration() || self::colormag_demo_import_migration() ) {
+				add_action( 'after_setup_theme', array( $this, 'colormag_social_icons_control_migrate' ) );
 				add_action( 'after_setup_theme', array( $this, 'colormag_free_major_update_customizer_migration_v1' ) );
 			}
 
