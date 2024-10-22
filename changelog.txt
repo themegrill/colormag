@@ -1,4 +1,8 @@
 == Changelog ==
+= 3.1.11 - 2024-08-24 =
+* Fix - Compatibility of ColorMag with Elementor Pro.
+* Fix - Outside container background issue.
+
 = 3.1.10 - 2024-07-23 =
 * Feature - Option to change mobile menu color and typography.
 * Feature - Option to change mobile sub menu background color and typography.
