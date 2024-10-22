@@ -12,10 +12,16 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+
 /**
  * Define constants.
  */
 require get_template_directory() . '/inc/base/class-colormag-constants.php';
+
+/**
+ * Helpers functions.
+ */
+require get_template_directory() . '/inc/helper/utils.php';
 
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.

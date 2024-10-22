@@ -81,11 +81,11 @@ class Section extends \WP_Customize_Section {
 		if ( $this->panel ) {
 			$json['customizeAction'] = sprintf(
 				/* Translators: 1: Panel Title. */
-				esc_html__( 'Customizing &#9656; %s', $text_domain ),
+				esc_html__( 'Customizing &#9656; %s', 'colormag' ),
 				esc_html( $this->manager->get_panel( $this->panel )->title )
 			);
 		} else {
-			$json['customizeAction'] = esc_html__( 'Customizing', $text_domain );
+			$json['customizeAction'] = esc_html__( 'Customizing', 'colormag' );
 		}
 
 		return $json;

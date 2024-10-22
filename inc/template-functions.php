@@ -78,64 +78,6 @@ function colormag_remove_more_jump_link( $link ) {
 add_filter( 'the_content_more_link', 'colormag_remove_more_jump_link' );
 
 /**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode()
- * function to register new shortcodes with WordPress.
- *
- * @uses add_shortcode() to create new shortcodes.
- */
-function colormag_add_shortcodes() {
-
-	/* Add theme-specific shortcodes. */
-	add_shortcode( 'the-year', 'colormag_the_year_shortcode' );
-	add_shortcode( 'site-link', 'colormag_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'colormag_wp_link_shortcode' );
-	add_shortcode( 'tg-link', 'colormag_themegrill_link_shortcode' );
-}
-
-add_action( 'init', 'colormag_add_shortcodes' );
-
-
-/**
- * Shortcode to display the current year.
- *
- * @return string
- * @uses date() Gets the current year.
- */
-function colormag_the_year_shortcode() {
-	return date( 'Y' );
-}
-
-/**
- * Shortcode to display a link back to the site.
- *
- * @return string
- * @uses get_bloginfo() Gets the site link.
- */
-function colormag_site_link_shortcode() {
-	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to WordPress.org.
- *
- * @return string
- */
-function colormag_wp_link_shortcode() {
-	return '<a href="' . esc_url( 'http://wordpress.org' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'colormag' ) . '" rel="nofollow"><span>' . esc_html__( 'WordPress', 'colormag' ) . '</span></a>';
-}
-
-/**
- * Shortcode to display a link to ColorMag Theme.
- *
- * @return string
- */
-function colormag_themegrill_link_shortcode() {
-	return '<a href="' . esc_url( 'https://themegrill.com/wordpress-themes/' ) . '" target="_blank" title="' . esc_attr__( 'ColorMag', 'colormag' ) . '" rel="nofollow"><span>' . esc_html__( 'ColorMag', 'colormag' ) . '</span></a>';
-}
-
-
-
-/**
  * Creating responsive video for posts/pages.
  *
  * @param string|false $html    The cached HTML result, stored in post meta.
