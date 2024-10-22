@@ -37,12 +37,11 @@ class ColorMag_Meta_Box_Page_Settings {
 
 		<p>
 			<input type="text" class="widefat" name="video_url" id="video_url"
-			       value="<?php echo esc_url( $colormag_video_url ); ?>"
+					value="<?php echo esc_url( $colormag_video_url ); ?>"
 			/>
 		</p>
 
 		<?php
-
 	}
 
 	/**
@@ -102,11 +101,11 @@ class ColorMag_Meta_Box_Page_Settings {
 							'id'      => 'colormag_page_layout',
 							'label'   => esc_html__( 'Select Layout', 'colormag' ),
 							'choices' => array(
-								'default_layout'              => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
-								'right_sidebar'               => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
-								'left_sidebar'                => COLORMAG_PARENT_URL . '/assets/img/left-sidebar.png',
-								'no_sidebar_full_width'       => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-full-width-layout.png',
-								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-content-centered-layout.png',
+								'default_layout'        => COLORMAG_PARENT_URL . '/assets/img/sidebar/customizer.svg',
+								'right_sidebar'         => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+								'left_sidebar'          => COLORMAG_PARENT_URL . '/assets/img/sidebar/left-sidebar.svg',
+								'no_sidebar_full_width' => COLORMAG_PARENT_URL . '/assets/img/sidebar/contained.svg',
+								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/sidebar/centered.svg',
 							),
 						)
 					);
@@ -172,7 +171,6 @@ class ColorMag_Meta_Box_Page_Settings {
 		 * Hook for page settings data save.
 		 */
 		do_action( 'colormag_page_settings_save', $post_id );
-
 	}
 
 	/**
@@ -192,8 +190,8 @@ class ColorMag_Meta_Box_Page_Settings {
 				<?php foreach ( $field['choices'] as $key => $value ) { ?>
 					<label class="colormag-label" for="<?php echo esc_attr( $key ); ?>">
 						<input type="radio" name="<?php echo esc_attr( $field['id'] ); ?>"
-						       id="<?php echo esc_attr( $key ); ?>"
-						       value="<?php echo esc_attr( $key ); ?>"
+								id="<?php echo esc_attr( $key ); ?>"
+								value="<?php echo esc_attr( $key ); ?>"
 							<?php checked( $field['value'], $key ); ?>
 						/>
 
@@ -205,5 +203,4 @@ class ColorMag_Meta_Box_Page_Settings {
 
 		<?php
 	}
-
 }
