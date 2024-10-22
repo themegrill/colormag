@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 3.1.11\n"
+"Project-Id-Version: ColorMag 4.0.0\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-08-26 04:23:25+00:00\n"
+"POT-Creation-Date: 2024-09-24 06:43:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -159,7 +159,7 @@ msgstr ""
 #: inc/admin/class-colormag-theme-review-notice.php:154
 #: inc/admin/class-colormag-theme-review-notice.php:172
 #: inc/admin/class-colormag-welcome-notice.php:104
-#: inc/migration/class-colormag-migration.php:365
+#: inc/migration/class-colormag-migration.php:1000
 #: inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
@@ -236,7 +236,9 @@ msgid "Go to Customizer"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:71
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:222
+#: inc/customizer/options/header-and-navigation/site-identity.php:8
+#: inc/customizer/options/header-builder/logo.php:6
+#: inc/customizer/panels-sections/panels-sections.php:94
 msgid "Site Identity"
 msgstr ""
 
@@ -257,7 +259,7 @@ msgid "Sidebar Options"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:96 inc/admin/views/dashbaord.php:145
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:305
+#: inc/customizer/panels-sections/panels-sections.php:124
 msgid "Blog"
 msgstr ""
 
@@ -274,21 +276,25 @@ msgid "Upgrade Now"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:133
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:198
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:46
+#: inc/customizer/options/header-and-navigation/top-bar.php:11
+#: inc/customizer/panels-sections/panels-sections.php:84
 msgid "Top Bar"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:137
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:230
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:38
+#: inc/customizer/options/header-and-navigation/main-header.php:8
+#: inc/customizer/panels-sections/panels-sections.php:99
 msgid "Main Header"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:141 inc/colormag-setup.php:39
+#: inc/admin/views/dashbaord.php:141
 #: inc/core/class-colormag-after-setup-theme.php:82
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:238
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:43
+#: inc/customizer/options/header-and-navigation/primary-menu.php:8
+#: inc/customizer/options/header-builder/header-builder.php:14
+#: inc/customizer/options/header-builder/header-builder.php:85
+#: inc/customizer/options/header-builder/primary-menu.php:11
+#: inc/customizer/panels-sections/panels-sections.php:104
+#: inc/customizer/panels-sections/panels-sections.php:179
 msgid "Primary Menu"
 msgstr ""
 
@@ -297,14 +303,14 @@ msgid "Meta"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:153
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:348
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:40
+#: inc/customizer/options/footer/footer-column.php:8
+#: inc/customizer/panels-sections/panels-sections.php:144
 msgid "Footer Column"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:157
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:356
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:40
+#: inc/customizer/options/footer/footer-bar.php:8
+#: inc/customizer/panels-sections/panels-sections.php:149
 msgid "Footer Bar"
 msgstr ""
 
@@ -589,11 +595,13 @@ msgid "Week %s"
 msgstr ""
 
 #: inc/colormag-wp-query.php:40
+#: template-parts/header-builder-elements/news-ticker.php:19
 msgid "Latest:"
 msgstr ""
 
 #: inc/colormag-wp-query.php:96
-#: inc/customizer/class-colormag-customizer-partials.php:100
+#: inc/customizer/class-colormag-customizer-partials.php:99
+#: template-parts/header-builder-elements/random.php:22
 msgid "View a random post"
 msgstr ""
 
@@ -627,7 +635,7 @@ msgid "Add your custom block title"
 msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:103
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:185
+#: inc/customizer/options/footer/footer-column.php:109
 msgid "Widget Title"
 msgstr ""
 
@@ -668,8 +676,8 @@ msgid "Latest Posts"
 msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:218
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:56
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:140
+#: inc/customizer/options/content/post-meta.php:19
+#: inc/customizer/options/content/single-post.php:80
 msgid "Categories"
 msgstr ""
 
@@ -717,138 +725,36 @@ msgstr ""
 msgid "Grid Style 5"
 msgstr ""
 
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:42
-msgid "Global"
+#: inc/core/class-colormag-after-setup-theme.php:83
+#: inc/customizer/options/header-builder/header-builder.php:19
+#: inc/customizer/options/header-builder/header-builder.php:90
+#: inc/customizer/options/header-builder/secondary-menu.php:11
+#: inc/customizer/panels-sections/panels-sections.php:184
+msgid "Secondary Menu"
 msgstr ""
 
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:49
-msgid "Front Page"
+#: inc/customizer/class-colormag-customizer-partials.php:117
+#: inc/customizer/options/footer-builder/copyright.php:2
+#: template-parts/footer-builder-elements/copyright.php:9
+msgid "Copyright &copy; "
 msgstr ""
 
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:56
-msgid "Header & Navigation"
+#: inc/customizer/class-colormag-customizer-partials.php:117
+#: inc/customizer/options/footer-builder/copyright.php:2
+#: template-parts/footer-builder-elements/copyright.php:9
+msgid "All rights reserved."
 msgstr ""
 
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:63
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:66
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:64
-msgid "Content"
+#: inc/customizer/class-colormag-customizer-partials.php:117
+#: inc/customizer/options/footer-builder/copyright.php:2
+#: template-parts/footer-builder-elements/copyright.php:9
+msgid "Theme: "
 msgstr ""
 
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:70
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:104
-msgid "Footer"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:77
-msgid "Additional"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:96
-msgid "Colors"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:105
-msgid "Category Colors"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:114
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:166
-#: inc/customizer/options/global/class-colormag-customize-container-options.php:41
-msgid "Container"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:123
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:337
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:378
-msgid "Sidebar"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:132
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:86
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:230
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:314
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:420
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:497
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:144
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:246
-msgid "Typography"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:140
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:43
-msgid "Button"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:148
-msgid "Site Layout"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:157
-#: inc/customizer/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php:58
-msgid "Sidebar Layout"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:175
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:73
-msgid "Base"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:187
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:49
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:49
-#: inc/customizer/options/global/class-colormag-customize-container-options.php:51
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:41
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-breadcrumb-options.php:43
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:55
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:47
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:56
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:161
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:56
-#: inc/meta-boxes/class-colormag-meta-box-page-settings.php:77
-msgid "General"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:206
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:189
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:206
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:47
-msgid "News Ticker"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:254
-msgid "Header Action"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:278
-msgid "Breadcrumb"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:294
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:47
-msgid "Sticky Header"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:313
-msgid "Single Post"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:321
-msgid "Post Meta"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:329
-msgid "Page"
-msgstr ""
-
-#: inc/customizer/class-colormag-customizer-register-sections-panels.php:367
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:46
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:179
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:188
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:192
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:221
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:238
-msgid "Social Icons"
+#: inc/customizer/class-colormag-customizer-partials.php:117
+#: inc/customizer/options/footer-builder/copyright.php:2
+#: template-parts/footer-builder-elements/copyright.php:9
+msgid " by ThemeGrill. Powered by "
 msgstr ""
 
 #: inc/customizer/core/class-colormag-fonts.php:186
@@ -1156,7 +1062,7 @@ msgid "Clear color"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:49
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:210
+#: inc/customizer/options/content/blog.php:150
 msgid "Default"
 msgstr ""
 
@@ -1186,6 +1092,7 @@ msgid "Right"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/dimensions/class-colormag-dimensions-control.php:47
+#: inc/customizer/options/header-builder/header-builder.php:257
 msgid "Bottom"
 msgstr ""
 
@@ -1257,25 +1164,48 @@ msgid "Letter Spacing"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1113
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:97
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:111
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:44
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:74
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:185
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:52
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:189
+#: inc/customizer/options/footer/footer-bar.php:50
+#: inc/customizer/options/footer/footer-column.php:61
+#: inc/customizer/options/header-and-navigation/header-action.php:13
+#: inc/customizer/options/header-and-navigation/main-header.php:123
+#: inc/customizer/options/header-and-navigation/primary-menu.php:15
+#: inc/customizer/options/header-and-navigation/primary-menu.php:195
+#: inc/customizer/options/header-and-navigation/top-bar.php:41
 msgid "Style"
 msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1118
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:278
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:68
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:101
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:162
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:66
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:211
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:401
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:113
+#: inc/customizer/options/footer/footer-bar.php:86
+#: inc/customizer/options/footer/footer-column.php:122
+#: inc/customizer/options/footer/footer-column.php:147
+#: inc/customizer/options/footer/footer-column.php:172
+#: inc/customizer/options/footer-builder/copyright.php:42
+#: inc/customizer/options/footer-builder/footer-menu.php:31
+#: inc/customizer/options/footer-builder/html-1.php:35
+#: inc/customizer/options/footer-builder/main-area.php:67
+#: inc/customizer/options/footer-builder/widget-1.php:71
+#: inc/customizer/options/footer-builder/widget-2.php:71
+#: inc/customizer/options/footer-builder/widget-3.php:71
+#: inc/customizer/options/footer-builder/widget-4.php:71
+#: inc/customizer/options/footer-builder/widget-5.php:71
+#: inc/customizer/options/footer-builder/widget-6.php:71
+#: inc/customizer/options/footer-builder/widget-7.php:71
+#: inc/customizer/options/global/button.php:26
+#: inc/customizer/options/global/button.php:48
+#: inc/customizer/options/global/colors.php:157
+#: inc/customizer/options/header-and-navigation/header-action.php:26
+#: inc/customizer/options/header-and-navigation/primary-menu.php:81
+#: inc/customizer/options/header-and-navigation/primary-menu.php:208
+#: inc/customizer/options/header-and-navigation/site-identity.php:67
+#: inc/customizer/options/header-builder/header-button.php:40
+#: inc/customizer/options/header-builder/header-button.php:61
+#: inc/customizer/options/header-builder/html-1.php:35
+#: inc/customizer/options/header-builder/logo.php:77
+#: inc/customizer/options/header-builder/mobile-menu.php:27
+#: inc/customizer/options/header-builder/primary-menu.php:32
+#: inc/customizer/options/header-builder/random.php:21
+#: inc/customizer/options/header-builder/search.php:21
+#: inc/customizer/options/header-builder/secondary-menu.php:32
 msgid "Normal"
 msgstr ""
 
@@ -1305,7 +1235,7 @@ msgstr ""
 
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1143
 #: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1171
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:369
+#: inc/customizer/options/header-and-navigation/primary-menu.php:312
 msgid "None"
 msgstr ""
 
@@ -1338,538 +1268,1213 @@ msgid "Line Through"
 msgstr ""
 
 #: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:69
+#: inc/customizer/customind/core/Types/Section.php:84
 #. Translators: 1: Panel Title.
 msgid "Customizing &#9656; %s"
 msgstr ""
 
 #: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:73
+#: inc/customizer/customind/core/Types/Section.php:88
 msgid "Customizing"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:57
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:197
-#: inc/customizer/options/content/class-colormag-customize-page-options.php:51
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:86
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:123
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-breadcrumb-options.php:53
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:96
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:116
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:65
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:136
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:67
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:83
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:203
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:66
+#: inc/customizer/options/additional/social-icons.php:9
+#: inc/customizer/options/footer/footer-bar.php:105
+#: inc/customizer/options/footer/footer-bar.php:111
+#: inc/customizer/options/header-and-navigation/top-bar.php:134
+#: inc/customizer/options/header-and-navigation/top-bar.php:140
+#: inc/customizer/panels-sections/panels-sections.php:154
+msgid "Social Icons"
+msgstr ""
+
+#: inc/customizer/options/additional/social-icons.php:16
+#: inc/customizer/options/footer/footer-bar.php:15
+#: inc/customizer/options/footer/footer-column.php:15
+#: inc/customizer/options/front-page/front-page.php:6
+#: inc/customizer/options/global/button.php:13
+#: inc/customizer/options/global/container.php:13
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:15
+#: inc/customizer/options/header-and-navigation/main-header.php:16
+#: inc/customizer/options/header-and-navigation/news-ticker.php:16
+#: inc/customizer/options/header-and-navigation/primary-menu.php:179
+#: inc/customizer/options/header-and-navigation/sticky-header.php:15
+#: inc/customizer/options/header-and-navigation/top-bar.php:19
+#: inc/customizer/panels-sections/panels-sections.php:79
+#: inc/meta-boxes/class-colormag-meta-box-page-settings.php:77
+msgid "General"
+msgstr ""
+
+#: inc/customizer/options/additional/social-icons.php:20
+#: inc/customizer/options/content/blog.php:139
+#: inc/customizer/options/content/page.php:14
+#: inc/customizer/options/content/single-post.php:43
+#: inc/customizer/options/content/single-post.php:69
+#: inc/customizer/options/global/builder.php:13
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:19
+#: inc/customizer/options/header-and-navigation/header-action.php:52
+#: inc/customizer/options/header-and-navigation/header-action.php:69
+#: inc/customizer/options/header-and-navigation/news-ticker.php:20
+#: inc/customizer/options/header-and-navigation/site-identity.php:51
+#: inc/customizer/options/header-and-navigation/sticky-header.php:19
+#: inc/customizer/options/header-and-navigation/top-bar.php:24
+#: inc/customizer/options/header-and-navigation/top-bar.php:71
+#: inc/customizer/options/header-builder/cart.php:13
+#: inc/customizer/options/header-builder/logo.php:61
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:70
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:43
+#: inc/customizer/options/additional/social-icons.php:35
+#: inc/customizer/options/header-and-navigation/header-media.php:9
+#: inc/customizer/options/header-and-navigation/header-media.php:17
 msgid "Position"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:85
+#: inc/customizer/options/additional/social-icons.php:41
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:136
-#: inc/customizer/options/content/class-colormag-customize-page-options.php:60
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:155
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:201
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:244
-#: inc/customizer/options/front-page/class-colormag-customize-front-page-general-options.php:54
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:182
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:182
-#: inc/customizer/options/global/class-colormag-customize-container-options.php:89
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:199
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:505
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:138
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:252
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:223
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:76
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:536
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:295
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:75
-msgid "Learn more"
+#: inc/customizer/options/additional/social-icons.php:51
+#: inc/customizer/panels-sections/panels-sections.php:21
+msgid "Footer"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:137
-#: inc/customizer/options/content/class-colormag-customize-page-options.php:61
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:156
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:202
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:245
-#: inc/customizer/options/front-page/class-colormag-customize-front-page-general-options.php:55
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:183
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:183
-#: inc/customizer/options/global/class-colormag-customize-container-options.php:90
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:200
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:506
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:139
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:253
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:224
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-news-ticker-options.php:77
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:537
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:296
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-sticky-header-options.php:76
-msgid "Unlock more features available in Pro version."
-msgstr ""
-
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:151
-#: inc/template-functions.php:370
+#: inc/customizer/options/additional/social-icons.php:74
+#: inc/migration/class-colormag-migration.php:671
+#: inc/template-functions.php:422
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:156
-#: inc/template-functions.php:360
+#: inc/customizer/options/additional/social-icons.php:79
+#: inc/migration/class-colormag-migration.php:676
+#: inc/template-functions.php:412
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:161
-#: inc/template-functions.php:410
+#: inc/customizer/options/additional/social-icons.php:84
+#: inc/migration/class-colormag-migration.php:681
+#: inc/template-functions.php:462
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:166
+#: inc/customizer/options/additional/social-icons.php:89
+#: inc/migration/class-colormag-migration.php:686
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:171
+#: inc/customizer/options/additional/social-icons.php:94
+#: inc/migration/class-colormag-migration.php:691
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer/options/additional/class-colormag-customize-social-icons-options.php:201
+#: inc/customizer/options/additional/social-icons.php:116
 msgid "Check to open in new tab"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:43
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:43
+#: inc/customizer/options/additional/social-icons.php:141
+#: inc/customizer/options/content/blog.php:163
+#: inc/customizer/options/content/page.php:25
+#: inc/customizer/options/content/post-meta.php:40
+#: inc/customizer/options/content/single-post.php:93
+#: inc/customizer/options/footer/footer-bar.php:123
+#: inc/customizer/options/footer/footer-column.php:191
+#: inc/customizer/options/front-page/front-page.php:24
+#: inc/customizer/options/global/button.php:108
+#: inc/customizer/options/global/category-colors.php:37
+#: inc/customizer/options/global/colors.php:178
+#: inc/customizer/options/global/container.php:82
+#: inc/customizer/options/global/sidebar.php:91
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:30
+#: inc/customizer/options/header-and-navigation/header-media.php:57
+#: inc/customizer/options/header-and-navigation/main-header.php:148
+#: inc/customizer/options/header-and-navigation/news-ticker.php:31
+#: inc/customizer/options/header-and-navigation/primary-menu.php:322
+#: inc/customizer/options/header-and-navigation/site-identity.php:174
+#: inc/customizer/options/header-and-navigation/sticky-header.php:30
+#: inc/customizer/options/header-and-navigation/top-bar.php:155
+msgid "Unlock more features available in Pro version."
+msgstr ""
+
+#: inc/customizer/options/additional/social-icons.php:142
+#: inc/customizer/options/content/blog.php:164
+#: inc/customizer/options/content/page.php:26
+#: inc/customizer/options/content/post-meta.php:41
+#: inc/customizer/options/content/single-post.php:94
+#: inc/customizer/options/footer/footer-bar.php:124
+#: inc/customizer/options/footer/footer-column.php:192
+#: inc/customizer/options/front-page/front-page.php:25
+#: inc/customizer/options/global/button.php:109
+#: inc/customizer/options/global/category-colors.php:38
+#: inc/customizer/options/global/colors.php:179
+#: inc/customizer/options/global/container.php:83
+#: inc/customizer/options/global/sidebar.php:92
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:31
+#: inc/customizer/options/header-and-navigation/header-media.php:58
+#: inc/customizer/options/header-and-navigation/main-header.php:149
+#: inc/customizer/options/header-and-navigation/news-ticker.php:32
+#: inc/customizer/options/header-and-navigation/primary-menu.php:323
+#: inc/customizer/options/header-and-navigation/site-identity.php:175
+#: inc/customizer/options/header-and-navigation/sticky-header.php:31
+#: inc/customizer/options/header-and-navigation/top-bar.php:156
+msgid "Learn more"
+msgstr ""
+
+#: inc/customizer/options/content/blog.php:8
+#: inc/customizer/options/content/blog.php:15
+#: inc/customizer/options/content/single-post.php:8
+#: inc/customizer/options/content/single-post.php:15
 msgid "Post Elements"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:44
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:44
+#: inc/customizer/options/content/blog.php:17
+#: inc/customizer/options/content/post-meta.php:17
+#: inc/customizer/options/content/single-post.php:17
 msgid "Drag & Drop items to re-arrange the order"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:62
+#: inc/customizer/options/content/blog.php:19
 msgid "Post Format (Image)"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:63
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:61
+#: inc/customizer/options/content/blog.php:20
+#: inc/customizer/options/content/single-post.php:19
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:64
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:63
+#: inc/customizer/options/content/blog.php:21
+#: inc/customizer/options/content/single-post.php:21
 msgid "Meta Tags"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:65
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:62
+#: inc/customizer/options/content/blog.php:22
+#: inc/customizer/options/content/single-post.php:20
 msgid "Title"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:76
-msgid "Post Title"
+#: inc/customizer/options/content/blog.php:23
+#: inc/customizer/options/content/single-post.php:22
+#: inc/customizer/panels-sections/panels-sections.php:17
+msgid "Content"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:139
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:152
+#: inc/customizer/options/content/blog.php:40
+msgid "Post title"
+msgstr ""
+
+#: inc/customizer/options/content/blog.php:81
+#: inc/customizer/options/footer-builder/copyright.php:92
+#: inc/customizer/options/footer-builder/footer-menu.php:80
+#: inc/customizer/options/header-and-navigation/primary-menu.php:115
+#: inc/customizer/options/header-and-navigation/primary-menu.php:162
+#: inc/customizer/options/header-and-navigation/primary-menu.php:242
+#: inc/customizer/options/header-and-navigation/primary-menu.php:291
+#: inc/customizer/options/header-and-navigation/site-identity.php:103
+#: inc/customizer/options/header-and-navigation/site-identity.php:160
+#: inc/customizer/options/header-builder/date.php:75
+#: inc/customizer/options/header-builder/logo.php:128
+#: inc/customizer/options/header-builder/logo.php:197
+#: inc/customizer/options/header-builder/mobile-menu.php:92
+#: inc/customizer/options/header-builder/news-ticker.php:65
+#: inc/customizer/options/header-builder/primary-menu.php:81
+#: inc/customizer/options/header-builder/primary-menu.php:147
+#: inc/customizer/options/header-builder/secondary-menu.php:79
+#: inc/customizer/options/header-builder/secondary-menu.php:145
+#: inc/customizer/panels-sections/panels-sections.php:69
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer/options/content/blog.php:91
+#: inc/customizer/options/content/blog.php:102
 msgid "Post Date"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:149
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:174
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:207
+#: inc/customizer/options/content/blog.php:99
+#: inc/customizer/options/content/blog.php:120
+#: inc/customizer/options/content/blog.php:147
 msgid "Type"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:153
+#: inc/customizer/options/content/blog.php:103
 msgid "Modified Date"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:162
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:177
+#: inc/customizer/options/content/blog.php:112
+#: inc/customizer/options/content/blog.php:123
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:163
-msgid "Choose to display the post content or excerpt:"
-msgstr ""
-
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:178
+#: inc/customizer/options/content/blog.php:124
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:187
+#: inc/customizer/options/content/blog.php:133
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-blog-options.php:211
+#: inc/customizer/options/content/blog.php:151
 msgid "Numbered"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-page-options.php:40
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:76
+#: inc/customizer/options/content/page.php:8
+#: inc/customizer/options/content/single-post.php:37
 msgid "Featured Image"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:40
+#: inc/customizer/options/content/post-meta.php:8
+#: inc/customizer/options/content/post-meta.php:15
 msgid "Meta Elements"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:57
+#: inc/customizer/options/content/post-meta.php:20
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:58
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:120
+#: inc/customizer/options/content/post-meta.php:21
+#: inc/customizer/options/header-and-navigation/top-bar.php:65
+#: inc/customizer/options/header-builder/date.php:8
+#: inc/customizer/options/header-builder/header-builder.php:56
+#: inc/customizer/options/header-builder/header-builder.php:132
+#: inc/customizer/panels-sections/panels-sections.php:264
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:59
+#: inc/customizer/options/content/post-meta.php:22
 msgid "Views"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:60
+#: inc/customizer/options/content/post-meta.php:23
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:61
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:141
+#: inc/customizer/options/content/post-meta.php:24
+#: inc/customizer/options/content/single-post.php:81
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:62
+#: inc/customizer/options/content/post-meta.php:25
 msgid "Reading Time"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-post-meta-options.php:63
+#: inc/customizer/options/content/post-meta.php:26
 msgid "Edit button"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:96
+#: inc/customizer/options/content/single-post.php:49
 msgid "LightBox"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:113
+#: inc/customizer/options/content/single-post.php:63
 msgid "Related Posts"
 msgstr ""
 
-#: inc/customizer/options/content/class-colormag-customize-single-post-options.php:137
+#: inc/customizer/options/content/single-post.php:77
 msgid "Query"
 msgstr ""
 
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:60
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:121
+#: inc/customizer/options/footer/footer-bar.php:21
+#: inc/customizer/options/header-and-navigation/main-header.php:76
 msgid "Alignment"
 msgstr ""
 
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:104
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:118
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:155
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:88
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:88
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:193
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:59
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:286
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:469
+#: inc/customizer/options/footer/footer-bar.php:63
+#: inc/customizer/options/footer/footer-column.php:74
+#: inc/customizer/options/footer/footer-column.php:99
+#: inc/customizer/options/footer-builder/bottom-area.php:67
+#: inc/customizer/options/footer-builder/main-area.php:91
+#: inc/customizer/options/footer-builder/top-area.php:67
+#: inc/customizer/options/global/button.php:41
+#: inc/customizer/options/global/container.php:41
+#: inc/customizer/options/header-and-navigation/main-header.php:138
+#: inc/customizer/options/header-and-navigation/primary-menu.php:28
+#: inc/customizer/options/header-and-navigation/primary-menu.php:140
+#: inc/customizer/options/header-and-navigation/primary-menu.php:269
+#: inc/customizer/options/header-and-navigation/top-bar.php:49
+#: inc/customizer/options/header-builder/bottom-area.php:66
+#: inc/customizer/options/header-builder/header-button.php:55
+#: inc/customizer/options/header-builder/main-area.php:56
+#: inc/customizer/options/header-builder/mobile-menu.php:51
+#: inc/customizer/options/header-builder/offset-area.php:14
+#: inc/customizer/options/header-builder/primary-menu.php:48
+#: inc/customizer/options/header-builder/primary-menu.php:107
+#: inc/customizer/options/header-builder/search.php:45
+#: inc/customizer/options/header-builder/secondary-menu.php:47
+#: inc/customizer/options/header-builder/secondary-menu.php:105
+#: inc/customizer/options/header-builder/top-area.php:58
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:136
+#: inc/customizer/options/footer/footer-bar.php:73
 msgid "Footer Copyright"
 msgstr ""
 
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:143
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:152
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:195
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:225
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:263
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:55
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:51
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:107
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:117
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:197
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:387
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:94
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:214
+#: inc/customizer/options/footer/footer-bar.php:80
+#: inc/customizer/options/footer-builder/bottom-area.php:51
+#: inc/customizer/options/footer-builder/copyright.php:26
+#: inc/customizer/options/footer-builder/html-1.php:19
+#: inc/customizer/options/footer-builder/main-area.php:51
+#: inc/customizer/options/footer-builder/top-area.php:51
+#: inc/customizer/options/global/button.php:19
+#: inc/customizer/options/header-and-navigation/header-action.php:18
+#: inc/customizer/options/header-and-navigation/primary-menu.php:55
+#: inc/customizer/options/header-and-navigation/primary-menu.php:73
+#: inc/customizer/options/header-and-navigation/primary-menu.php:200
+#: inc/customizer/options/header-and-navigation/site-identity.php:59
+#: inc/customizer/options/header-and-navigation/site-identity.php:131
+#: inc/customizer/options/header-builder/bottom-area.php:40
+#: inc/customizer/options/header-builder/date.php:31
+#: inc/customizer/options/header-builder/header-button.php:34
+#: inc/customizer/options/header-builder/home-icon.php:14
+#: inc/customizer/options/header-builder/html-1.php:19
+#: inc/customizer/options/header-builder/logo.php:69
+#: inc/customizer/options/header-builder/logo.php:153
+#: inc/customizer/options/header-builder/main-area.php:40
+#: inc/customizer/options/header-builder/mobile-menu.php:19
+#: inc/customizer/options/header-builder/news-ticker.php:14
+#: inc/customizer/options/header-builder/primary-menu.php:26
+#: inc/customizer/options/header-builder/toggle-button.php:12
+#: inc/customizer/options/header-builder/top-area.php:42
 msgid "Color"
 msgstr ""
 
-#: inc/customizer/options/footer/class-colormag-customize-footer-bar-options.php:163
-msgid "Link Color"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:60
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:73
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:57
-msgid "Layout"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:63
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:61
-msgid "Layout 1"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:64
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:62
-msgid "Layout 2"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:74
-msgid "Footer Column Layout"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:148
-msgid "Upper Footer"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:202
-msgid "Widget title color."
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:215
-msgid "Widget Content"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:255
-msgid "Widget Link"
-msgstr ""
-
-#: inc/customizer/options/footer/class-colormag-customize-footer-column-options.php:290
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:80
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:113
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:173
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:77
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:130
+#: inc/customizer/options/footer/footer-bar.php:93
+#: inc/customizer/options/footer/footer-column.php:179
+#: inc/customizer/options/footer-builder/copyright.php:49
+#: inc/customizer/options/footer-builder/footer-menu.php:38
+#: inc/customizer/options/footer-builder/html-1.php:42
+#: inc/customizer/options/footer-builder/main-area.php:74
+#: inc/customizer/options/footer-builder/widget-1.php:78
+#: inc/customizer/options/footer-builder/widget-2.php:78
+#: inc/customizer/options/footer-builder/widget-3.php:78
+#: inc/customizer/options/footer-builder/widget-4.php:78
+#: inc/customizer/options/footer-builder/widget-5.php:78
+#: inc/customizer/options/footer-builder/widget-6.php:78
+#: inc/customizer/options/footer-builder/widget-7.php:78
+#: inc/customizer/options/global/button.php:33
+#: inc/customizer/options/global/button.php:55
+#: inc/customizer/options/global/colors.php:164
+#: inc/customizer/options/header-and-navigation/header-action.php:33
+#: inc/customizer/options/header-and-navigation/site-identity.php:74
+#: inc/customizer/options/header-builder/header-button.php:47
+#: inc/customizer/options/header-builder/header-button.php:68
+#: inc/customizer/options/header-builder/html-1.php:42
+#: inc/customizer/options/header-builder/logo.php:84
+#: inc/customizer/options/header-builder/mobile-menu.php:34
+#: inc/customizer/options/header-builder/primary-menu.php:39
+#: inc/customizer/options/header-builder/primary-menu.php:54
+#: inc/customizer/options/header-builder/random.php:28
+#: inc/customizer/options/header-builder/search.php:28
+#: inc/customizer/options/header-builder/secondary-menu.php:39
+#: inc/customizer/options/header-builder/secondary-menu.php:53
 msgid "Hover"
 msgstr ""
 
-#: inc/customizer/options/front-page/class-colormag-customize-front-page-general-options.php:45
-msgid "Hide blog posts/static page"
+#: inc/customizer/options/footer/footer-column.php:21
+#: inc/customizer/options/global/container.php:19
+#: inc/customizer/options/global/sidebar.php:53
+#: inc/customizer/options/header-and-navigation/main-header.php:22
+msgid "Layout"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:129
+#: inc/customizer/options/footer/footer-column.php:25
+#: inc/customizer/options/header-and-navigation/main-header.php:26
+msgid "Layout 1"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:26
+#: inc/customizer/options/header-and-navigation/main-header.php:27
+msgid "Layout 2"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:32
+msgid "Footer Column Layout"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:84
+msgid "Upper Footer"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:116
+#: inc/customizer/options/footer/footer-column.php:141
+#: inc/customizer/options/footer/footer-column.php:166
+msgid "Color."
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:134
+msgid "Widget Content"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:159
+msgid "Widget Link"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:5
+#: inc/customizer/options/header-builder/bottom-area.php:5
+#: inc/customizer/panels-sections/panels-sections.php:254
+#: inc/customizer/panels-sections/panels-sections.php:344
+msgid "Bottom Area"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:27
+#: inc/customizer/options/footer-builder/main-area.php:27
+#: inc/customizer/options/footer-builder/top-area.php:27
+#: inc/customizer/options/global/container.php:6
+#: inc/customizer/options/header-builder/bottom-area.php:16
+#: inc/customizer/options/header-builder/main-area.php:16
+#: inc/customizer/options/header-builder/top-area.php:18
+#: inc/customizer/panels-sections/panels-sections.php:59
+msgid "Container"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:44
+#: inc/customizer/options/footer-builder/main-area.php:44
+#: inc/customizer/options/footer-builder/top-area.php:44
+#: inc/customizer/options/header-builder/bottom-area.php:33
+#: inc/customizer/options/header-builder/logo.php:42
+#: inc/customizer/options/header-builder/main-area.php:33
+#: inc/customizer/options/header-builder/top-area.php:35
+msgid "Height"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:81
+#: inc/customizer/options/footer-builder/main-area.php:105
+#: inc/customizer/options/footer-builder/top-area.php:94
+#: inc/customizer/options/global/button.php:71
+#: inc/customizer/options/header-builder/bottom-area.php:79
+#: inc/customizer/options/header-builder/header-button.php:83
+#: inc/customizer/options/header-builder/main-area.php:70
+#: inc/customizer/options/header-builder/top-area.php:71
 msgid "Padding"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:151
-msgid "Border"
+#: inc/customizer/options/footer-builder/bottom-area.php:97
+#: inc/customizer/options/footer-builder/main-area.php:121
+#: inc/customizer/options/footer-builder/top-area.php:110
+#: inc/customizer/options/header-builder/bottom-area.php:94
+#: inc/customizer/options/header-builder/main-area.php:86
+msgid "Margin"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-button-options.php:165
-msgid "Radius"
+#: inc/customizer/options/footer-builder/bottom-area.php:113
+#: inc/customizer/options/footer-builder/main-area.php:137
+#: inc/customizer/options/footer-builder/top-area.php:126
+#: inc/customizer/options/header-builder/bottom-area.php:109
+#: inc/customizer/options/header-builder/header-button.php:98
+#: inc/customizer/options/header-builder/main-area.php:102
+#: inc/customizer/options/header-builder/top-area.php:86
+msgid "Border Width"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:44
-msgid "Theme Colors"
-msgstr ""
-
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:52
-msgid "Primary Color"
-msgstr ""
-
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:97
-msgid "Skin Color"
-msgstr ""
-
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:100
-msgid "White Skin"
-msgstr ""
-
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:101
-msgid "Dark Skin"
-msgstr ""
-
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:111
-msgid "Box"
-msgstr ""
-
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:119
+#: inc/customizer/options/footer-builder/bottom-area.php:121
+#: inc/customizer/options/footer-builder/main-area.php:145
+#: inc/customizer/options/footer-builder/top-area.php:134
+#: inc/customizer/options/header-builder/bottom-area.php:116
+#: inc/customizer/options/header-builder/header-button.php:107
+#: inc/customizer/options/header-builder/main-area.php:110
+#: inc/customizer/options/header-builder/top-area.php:94
 msgid "Border Color"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:142
-#: inc/customizer/options/global/class-colormag-customize-colors-options.php:151
+#: inc/customizer/options/footer-builder/copyright.php:7
+#: inc/customizer/options/footer-builder/copyright.php:15
+#: inc/customizer/options/footer-builder/footer-builder.php:67
+#: inc/customizer/panels-sections/panels-sections.php:284
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/copyright.php:34
+#: inc/customizer/options/footer-builder/html-1.php:27
+#: inc/customizer/options/global/colors.php:142
+#: inc/customizer/options/global/colors.php:149
+#: inc/customizer/options/header-builder/html-1.php:27
 #: template-parts/hooks/content/content.php:92
 msgid "Links"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-container-options.php:101
-msgid "Inside"
+#: inc/customizer/options/footer-builder/footer-builder.php:10
+#: inc/customizer/options/footer-builder/html-1.php:6
+#: inc/customizer/options/header-builder/header-builder.php:34
+#: inc/customizer/options/header-builder/header-builder.php:110
+#: inc/customizer/options/header-builder/html-1.php:6
+#: inc/customizer/panels-sections/panels-sections.php:199
+#: inc/customizer/panels-sections/panels-sections.php:349
+msgid "HTML 1"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:55
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:153
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:135
+#: inc/customizer/options/footer-builder/footer-builder.php:15
+#: inc/customizer/options/footer-builder/widget-1.php:6
+#: inc/customizer/options/header-builder/header-builder.php:39
+#: inc/customizer/options/header-builder/header-builder.php:115
+#: inc/customizer/options/header-builder/widget-1.php:6
+#: inc/customizer/panels-sections/panels-sections.php:209
+#: inc/customizer/panels-sections/panels-sections.php:299
+msgid "Widget 1"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:21
+#: inc/customizer/options/footer-builder/widget-2.php:6
+#: inc/customizer/options/header-builder/header-builder.php:45
+#: inc/customizer/options/header-builder/header-builder.php:121
+#: inc/customizer/options/header-builder/widget-2.php:6
+#: inc/customizer/panels-sections/panels-sections.php:214
+#: inc/customizer/panels-sections/panels-sections.php:304
+msgid "Widget 2"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:27
+#: inc/customizer/options/footer-builder/widget-3.php:6
+#: inc/customizer/panels-sections/panels-sections.php:309
+msgid "Widget 3"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:33
+#: inc/customizer/options/footer-builder/widget-4.php:6
+#: inc/customizer/panels-sections/panels-sections.php:314
+msgid "Widget 4"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:39
+#: inc/customizer/options/footer-builder/widget-5.php:6
+#: inc/customizer/panels-sections/panels-sections.php:319
+msgid "Widget 5"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:45
+#: inc/customizer/options/footer-builder/widget-6.php:6
+#: inc/customizer/panels-sections/panels-sections.php:324
+#: inc/customizer/panels-sections/panels-sections.php:329
+msgid "Widget 6"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:51
+#: inc/customizer/options/footer-builder/widget-7.php:6
+msgid "Widget 7"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:57
+#: inc/customizer/panels-sections/panels-sections.php:289
+msgid "Menu 1"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:62
+#: inc/customizer/panels-sections/panels-sections.php:279
+msgid "Socials"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:79
+#: inc/customizer/options/global/builder.php:6
+#: inc/customizer/options/header-builder/header-builder.php:154
+#: inc/customizer/panels-sections/panels-sections.php:44
+msgid "Builder"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-menu.php:11
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-menu.php:19
+msgid "Select a Menu"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/html-1.php:14
+#: inc/customizer/options/header-builder/html-1.php:14
+msgid "Text/HTML for HTML 1"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/html-1.php:50
+#: inc/customizer/options/header-builder/html-1.php:50
+msgid "Font Size"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:5
+#: inc/customizer/options/header-builder/main-area.php:5
+#: inc/customizer/panels-sections/panels-sections.php:249
+#: inc/customizer/panels-sections/panels-sections.php:339
+msgid "Main Area"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:59
+#: inc/customizer/options/header-builder/news-ticker.php:21
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:157
+msgid "Widget"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:162
+#: inc/customizer/options/footer-builder/widget-1.php:14
+#: inc/customizer/options/footer-builder/widget-2.php:14
+#: inc/customizer/options/footer-builder/widget-3.php:14
+#: inc/customizer/options/footer-builder/widget-4.php:14
+#: inc/customizer/options/footer-builder/widget-5.php:14
+#: inc/customizer/options/footer-builder/widget-6.php:14
+#: inc/customizer/options/footer-builder/widget-7.php:14
+#: inc/customizer/options/header-builder/widget-1.php:14
+#: inc/customizer/options/header-builder/widget-2.php:14
+msgid "Title Color"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:174
+msgid "Widget Item List"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:184
+msgid "Border Bottom Width"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/main-area.php:191
+msgid "Border Bottom Color"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/socials.php:5
+#: inc/customizer/options/footer-builder/socials.php:12
+#: inc/customizer/options/header-builder/header-builder.php:51
+#: inc/customizer/options/header-builder/socials.php:6
+#: inc/customizer/options/header-builder/socials.php:13
+#: inc/customizer/panels-sections/panels-sections.php:219
+msgid "Social"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/top-area.php:5
+#: inc/customizer/options/header-builder/top-area.php:7
+#: inc/customizer/panels-sections/panels-sections.php:244
+#: inc/customizer/panels-sections/panels-sections.php:334
+msgid "Top Area"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/top-area.php:81
+msgid "Column Background"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/widget-1.php:55
+#: inc/customizer/options/footer-builder/widget-2.php:55
+#: inc/customizer/options/footer-builder/widget-3.php:55
+#: inc/customizer/options/footer-builder/widget-4.php:55
+#: inc/customizer/options/footer-builder/widget-5.php:55
+#: inc/customizer/options/footer-builder/widget-6.php:55
+#: inc/customizer/options/footer-builder/widget-7.php:55
+#: inc/customizer/options/header-builder/widget-1.php:55
+#: inc/customizer/options/header-builder/widget-2.php:55
+msgid "Title Typography"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/widget-1.php:65
+#: inc/customizer/options/footer-builder/widget-2.php:65
+#: inc/customizer/options/footer-builder/widget-3.php:65
+#: inc/customizer/options/footer-builder/widget-4.php:65
+#: inc/customizer/options/footer-builder/widget-5.php:65
+#: inc/customizer/options/footer-builder/widget-6.php:65
+#: inc/customizer/options/footer-builder/widget-7.php:65
+msgid "Link."
+msgstr ""
+
+#: inc/customizer/options/footer-builder/widget-1.php:92
+#: inc/customizer/options/footer-builder/widget-2.php:92
+#: inc/customizer/options/footer-builder/widget-3.php:92
+#: inc/customizer/options/footer-builder/widget-4.php:92
+#: inc/customizer/options/footer-builder/widget-5.php:92
+#: inc/customizer/options/footer-builder/widget-6.php:92
+#: inc/customizer/options/footer-builder/widget-7.php:92
+#: inc/customizer/options/header-builder/widget-1.php:78
+#: inc/customizer/options/header-builder/widget-2.php:78
+msgid "Content Color"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/widget-1.php:133
+#: inc/customizer/options/footer-builder/widget-2.php:133
+#: inc/customizer/options/footer-builder/widget-3.php:133
+#: inc/customizer/options/footer-builder/widget-4.php:133
+#: inc/customizer/options/footer-builder/widget-5.php:133
+#: inc/customizer/options/footer-builder/widget-6.php:133
+#: inc/customizer/options/footer-builder/widget-7.php:133
+#: inc/customizer/options/header-builder/widget-1.php:119
+#: inc/customizer/options/header-builder/widget-2.php:119
+msgid "Content Typography"
+msgstr ""
+
+#: inc/customizer/options/front-page/front-page.php:12
+msgid "Hide blog posts/static page"
+msgstr ""
+
+#: inc/customizer/options/global/button.php:6
+#: inc/customizer/options/header-builder/header-builder.php:100
+#: inc/customizer/panels-sections/panels-sections.php:74
+msgid "Button"
+msgstr ""
+
+#: inc/customizer/options/global/button.php:85
+msgid "Border"
+msgstr ""
+
+#: inc/customizer/options/global/button.php:90
+msgid "Radius"
+msgstr ""
+
+#: inc/customizer/options/global/category-colors.php:14
+msgid "Categories Colors"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:8
+#: inc/customizer/options/global/colors.php:13
+msgid "Customized Color palette"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:100
+msgid "Theme Colors"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:106
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:112
+msgid "Base"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:119
+msgid "Box Border Color"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:128
+msgid "Skin Color"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:131
+msgid "White Skin"
+msgstr ""
+
+#: inc/customizer/options/global/colors.php:132
+msgid "Dark Skin"
+msgstr ""
+
+#: inc/customizer/options/global/container.php:56
+msgid "Inside Background"
+msgstr ""
+
+#: inc/customizer/options/global/container.php:71
+msgid "Outside Background"
+msgstr ""
+
+#: inc/customizer/options/global/sidebar.php:30
+#: inc/customizer/panels-sections/panels-sections.php:64
+msgid "Sidebar"
+msgstr ""
+
+#: inc/customizer/options/global/sidebar.php:36
+#: inc/customizer/options/header-and-navigation/main-header.php:104
+#: inc/customizer/options/header-and-navigation/primary-menu.php:48
+#: inc/customizer/options/header-builder/bottom-area.php:49
 msgid "Width"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:83
+#: inc/customizer/options/global/sidebar.php:61
 msgid "Default Layout"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:122
+#: inc/customizer/options/global/sidebar.php:70
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-sidebar-options.php:161
+#: inc/customizer/options/global/sidebar.php:79
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:43
+#: inc/customizer/options/global/typography.php:8
+#: inc/customizer/options/global/typography.php:51
 msgid "Body"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:99
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:106
+#: inc/customizer/options/global/typography.php:60
 msgid "Headings"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:164
+#: inc/customizer/options/global/typography.php:102
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer/options/global/typography.php:151
 msgid "H1"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:222
+#: inc/customizer/options/global/typography.php:192
 msgid "H2"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:280
+#: inc/customizer/options/global/typography.php:232
 msgid "H3"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:338
+#: inc/customizer/options/global/typography.php:271
 msgid "H4"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:394
+#: inc/customizer/options/global/typography.php:310
 msgid "H5"
 msgstr ""
 
-#: inc/customizer/options/global/class-colormag-customize-typography-options.php:450
+#: inc/customizer/options/global/typography.php:349
 msgid "H6"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:86
-#: searchform.php:23
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:8
+#: inc/customizer/panels-sections/panels-sections.php:114
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/header-action.php:6
+#: inc/customizer/panels-sections/panels-sections.php:109
+msgid "Header Action"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/header-action.php:46
+#: inc/customizer/options/header-builder/header-builder.php:29
+#: inc/customizer/options/header-builder/header-builder.php:105
+#: inc/customizer/options/header-builder/search.php:6
+#: inc/customizer/panels-sections/panels-sections.php:194 searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-action-options.php:106
-msgid "Random Post"
+#: inc/customizer/options/header-and-navigation/header-action.php:63
+#: inc/customizer/options/header-builder/header-builder.php:66
+#: inc/customizer/options/header-builder/header-builder.php:142
+#: inc/customizer/options/header-builder/random.php:6
+#: inc/customizer/panels-sections/panels-sections.php:224
+msgid "Random"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:76
+#: inc/customizer/options/header-and-navigation/header-media.php:20
 msgid "Above Header"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:77
+#: inc/customizer/options/header-and-navigation/header-media.php:21
 msgid "Between Site Identity and Primary Menu"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:78
+#: inc/customizer/options/header-and-navigation/header-media.php:22
 msgid "Below Header"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-media-options.php:109
+#: inc/customizer/options/header-and-navigation/header-media.php:26
 msgid "Check to make header image link back to home page"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:160
-msgid "Date Format"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:164
-msgid "Theme Default Setting"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-header-top-bar-options.php:165
-msgid "From WordPress Date Setting"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:71
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:96
+#: inc/customizer/options/header-and-navigation/main-header.php:33
+#: inc/customizer/options/header-and-navigation/main-header.php:56
 msgid "Advanced Style"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:170
+#: inc/customizer/options/header-and-navigation/main-header.php:107
+#: inc/customizer/options/header-builder/bottom-area.php:52
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-main-header-options.php:171
+#: inc/customizer/options/header-and-navigation/main-header.php:108
+#: inc/customizer/options/header-builder/bottom-area.php:53
 msgid "Contained"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:100
+#: inc/customizer/options/header-and-navigation/news-ticker.php:8
+#: inc/customizer/options/header-and-navigation/top-bar.php:113
+#: inc/customizer/options/header-and-navigation/top-bar.php:119
+#: inc/customizer/options/header-builder/header-builder.php:61
+#: inc/customizer/options/header-builder/header-builder.php:137
+#: inc/customizer/options/header-builder/news-ticker.php:8
+#: inc/customizer/panels-sections/panels-sections.php:89
+#: inc/customizer/panels-sections/panels-sections.php:269
+msgid "News Ticker"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/primary-menu.php:39
 msgid "Border Top"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:152
-msgid "Mobile Menu"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:171
-msgid "Icon Color"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:222
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:412
-msgid "Hover/Selected"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:278
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:461
-msgid "Sub Menu"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:355
-msgid "Home Icon/Logo"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:370
-msgid "Home Icon"
-msgstr ""
-
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-primary-menu-options.php:379
+#: inc/customizer/options/header-and-navigation/primary-menu.php:66
 msgid "Main Menu"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:43
+#: inc/customizer/options/header-and-navigation/primary-menu.php:88
+#: inc/customizer/options/header-and-navigation/primary-menu.php:215
+msgid "Hover/Selected"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/primary-menu.php:125
+#: inc/customizer/options/header-and-navigation/primary-menu.php:256
+#: inc/customizer/options/header-builder/primary-menu.php:92
+#: inc/customizer/options/header-builder/secondary-menu.php:90
+msgid "Sub Menu"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/primary-menu.php:172
+#: inc/customizer/options/header-builder/header-builder.php:95
+#: inc/customizer/options/header-builder/mobile-menu.php:11
+#: inc/customizer/panels-sections/panels-sections.php:174
+msgid "Mobile Menu"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/primary-menu.php:183
+#: inc/customizer/options/header-builder/random.php:13
+#: inc/customizer/options/header-builder/search.php:13
+msgid "Icon Color"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/primary-menu.php:301
+#: inc/customizer/options/header-and-navigation/primary-menu.php:309
+msgid "Home Icon/Logo"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/primary-menu.php:313
+#: inc/customizer/options/header-builder/header-builder.php:71
+#: inc/customizer/options/header-builder/home-icon.php:6
+#: inc/customizer/panels-sections/panels-sections.php:229
+msgid "Home Icon"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/site-identity.php:14
+#: inc/customizer/options/header-builder/logo.php:12
 msgid "Site Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:52
+#: inc/customizer/options/header-and-navigation/site-identity.php:22
+#: inc/customizer/options/header-builder/header-builder.php:80
+#: inc/customizer/options/header-builder/logo.php:20
+#: inc/customizer/panels-sections/panels-sections.php:164
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/site-identity.php:33
+#: inc/customizer/options/header-builder/logo.php:31
 msgid "Retina Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:64
-msgid "Site Icon"
+#: inc/customizer/options/header-and-navigation/site-identity.php:35
+#: inc/customizer/options/header-builder/logo.php:33
+msgid ""
+"Upload 2X times the size of your current logo. Eg: If your current logo "
+"size is 120*60 then upload 240*120 sized logo."
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:76
+#: inc/customizer/options/header-and-navigation/site-identity.php:44
+#: inc/customizer/options/header-builder/logo.php:54
 msgid "Site Title"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/class-colormag-customize-site-identity-options.php:196
+#: inc/customizer/options/header-and-navigation/site-identity.php:117
 msgid "Site Tagline"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php:49
+#: inc/customizer/options/header-and-navigation/sticky-header.php:8
+#: inc/customizer/panels-sections/panels-sections.php:119
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/top-bar.php:87
+#: inc/customizer/options/header-builder/date.php:16
+msgid "Date Format"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/top-bar.php:90
+#: inc/customizer/options/header-builder/date.php:19
+msgid "Theme Default Setting"
+msgstr ""
+
+#: inc/customizer/options/header-and-navigation/top-bar.php:91
+#: inc/customizer/options/header-builder/date.php:20
+msgid "From WordPress Date Setting"
+msgstr ""
+
+#: inc/customizer/options/header-builder/cart.php:6
+msgid "Load Google fonts locally"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:9
+msgid "Site Title & Logo"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:24
+#: inc/customizer/options/header-builder/header-button.php:6
+msgid "Button 1"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:127
+#: inc/customizer/options/header-builder/toggle-button.php:6
+#: inc/customizer/panels-sections/panels-sections.php:169
+msgid "Toggle Button"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:213
+msgid "Builder area top"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:218
+msgid "Builder area top left"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:223
+msgid "Builder area top middle"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:228
+msgid "Builder area top right"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:235
+msgid "Builder Main area"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:240
+msgid "Builder area middle left"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:245
+msgid "Main center"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:250
+msgid "Main right"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:262
+msgid "Bottom left"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:267
+msgid "Bottom center"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:272
+msgid "Bottom right"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:280
+#: inc/customizer/options/header-builder/offset-area.php:6
+#: inc/customizer/panels-sections/panels-sections.php:234
+msgid "Offset Area"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-button.php:13
+msgid "Text"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-button.php:19
+#: inc/customizer/options/header-builder/widget-1.php:66
+#: inc/customizer/options/header-builder/widget-2.php:66
+msgid "Link"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-button.php:23
+msgid "https://example.com"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-button.php:28
+msgid "Open link in a new tab"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-button.php:117
+msgid "Border Radius"
+msgstr ""
+
+#: inc/customizer/options/header-builder/logo.php:139
+msgid "Tagline"
+msgstr ""
+
+#: inc/customizer/options/header-builder/primary-menu.php:18
+#: inc/customizer/options/header-builder/secondary-menu.php:18
+msgid "Select Menu Navigation"
+msgstr ""
+
+#: inc/customizer/options/header-builder/search.php:38
+msgid "Text Color"
+msgstr ""
+
+#: inc/customizer/options/woocommerce/woocommerce.php:5
+#: inc/customizer/panels-sections/panels-sections.php:159
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: inc/customizer/options/woocommerce/woocommerce.php:11
 msgid "Check to register different sidebar areas to be used for WooCommerce pages."
 msgstr ""
 
-#: inc/customizer/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php:74
+#: inc/customizer/options/woocommerce/woocommerce.php:22
+msgid "Sidebar Layout"
+msgstr ""
+
+#: inc/customizer/options/woocommerce/woocommerce.php:30
 msgid "WooCommerce Shop Page Layout"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php:109
+#: inc/customizer/options/woocommerce/woocommerce.php:55
 msgid "WooCommerce Archive Page Layout"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/class-colormag-customize-woocommerce-sidebar-options.php:144
+#: inc/customizer/options/woocommerce/woocommerce.php:80
 msgid "WooCommerce Single Product Page Layout"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:5
+msgid "Global"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:9
+msgid "Front Page"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:13
+msgid "Header & Navigation"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:25
+msgid "Additional"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:29
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:33
+#: inc/customizer/panels-sections/panels-sections.php:239
+msgid "Header Builder"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:37
+#: inc/customizer/panels-sections/panels-sections.php:274
+msgid "Footer Builder"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:49
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:54
+msgid "Category Colors"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:129
+msgid "Single Post"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:134
+msgid "Post Meta"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:139
+msgid "Page"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:189
+msgid "Header Button"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:204
+#: inc/customizer/panels-sections/panels-sections.php:354
+msgid "HTML 2"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:259
+msgid "Cart"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:294
+msgid "Menu 2"
 msgstr ""
 
 #: inc/meta-boxes/class-colormag-meta-box-page-settings.php:103
@@ -1895,31 +2500,35 @@ msgstr ""
 msgid "Fix Migration Issues"
 msgstr ""
 
-#: inc/template-functions.php:327
-msgid "Total Views"
-msgstr ""
-
-#: inc/template-functions.php:356
-msgid "User Social Links"
+#: inc/template-functions.php:124 template-parts/hooks/footer/footer.php:267
+msgid "WordPress"
 msgstr ""
 
 #: inc/template-functions.php:380
+msgid "Total Views"
+msgstr ""
+
+#: inc/template-functions.php:408
+msgid "User Social Links"
+msgstr ""
+
+#: inc/template-functions.php:432
 msgid "Google Plus"
 msgstr ""
 
-#: inc/template-functions.php:390
+#: inc/template-functions.php:442
 msgid "Flickr"
 msgstr ""
 
-#: inc/template-functions.php:400
+#: inc/template-functions.php:452
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/template-functions.php:420
+#: inc/template-functions.php:472
 msgid "Tumblr"
 msgstr ""
 
-#: inc/template-functions.php:430
+#: inc/template-functions.php:482
 msgid "Youtube"
 msgstr ""
 
@@ -2148,140 +2757,148 @@ msgstr ""
 msgid "Shows widgets at Left side."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:53
+#: inc/widgets/class-colormag-widgets.php:52
 msgid "Header Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:55
+#: inc/widgets/class-colormag-widgets.php:54
 msgid "Shows widgets in header section just above the main navigation menu."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:66
+#: inc/widgets/class-colormag-widgets.php:65
 msgid "Front Page: Slider Area"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:68
+#: inc/widgets/class-colormag-widgets.php:67
 msgid "Show widget just below menu. Suitable for TG: Featured Cat Slider."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:79
+#: inc/widgets/class-colormag-widgets.php:78
 msgid "Front Page: Area beside slider"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:81
+#: inc/widgets/class-colormag-widgets.php:80
 msgid "Show widget beside the slider. Suitable for TG: Highlighted Posts."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:92
+#: inc/widgets/class-colormag-widgets.php:91
 msgid "Front Page: Content Top Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:94
+#: inc/widgets/class-colormag-widgets.php:93
 msgid "Content Top Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:105
+#: inc/widgets/class-colormag-widgets.php:104
 msgid "Front Page: Content Middle Left Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:107
+#: inc/widgets/class-colormag-widgets.php:106
 msgid "Content Middle Left Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:118
+#: inc/widgets/class-colormag-widgets.php:117
 msgid "Front Page: Content Middle Right Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:120
+#: inc/widgets/class-colormag-widgets.php:119
 msgid "Content Middle Right Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:131
+#: inc/widgets/class-colormag-widgets.php:130
 msgid "Front Page: Content Bottom Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:133
+#: inc/widgets/class-colormag-widgets.php:132
 msgid "Content Middle Bottom Section"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:144
+#: inc/widgets/class-colormag-widgets.php:143
 msgid "Contact Page Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:146
+#: inc/widgets/class-colormag-widgets.php:145
 msgid "Shows widgets on Contact Page Template."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:157
+#: inc/widgets/class-colormag-widgets.php:156
 msgid "Error 404 Page Sidebar"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:159
+#: inc/widgets/class-colormag-widgets.php:158
 msgid "Shows widgets on Error 404 page."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:170
+#: inc/widgets/class-colormag-widgets.php:169
 msgid "Advertisement Above The Footer"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:172
+#: inc/widgets/class-colormag-widgets.php:171
 msgid "Shows widgets Just Above The Footer, suitable for TG: 728x90 widget."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:183
+#: inc/widgets/class-colormag-widgets.php:182
 msgid "Footer Sidebar One ( Upper )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:185
+#: inc/widgets/class-colormag-widgets.php:184
 msgid "Shows widgets at footer sidebar one in upper."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:196
+#: inc/widgets/class-colormag-widgets.php:195
 msgid "Footer Sidebar Two ( Upper )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:198
+#: inc/widgets/class-colormag-widgets.php:197
 msgid "Shows widgets at footer sidebar two in upper."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:209
+#: inc/widgets/class-colormag-widgets.php:208
 msgid "Footer Sidebar Three ( Upper )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:211
+#: inc/widgets/class-colormag-widgets.php:210
 msgid "Shows widgets at footer sidebar three in upper."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:222
+#: inc/widgets/class-colormag-widgets.php:221
 msgid "Footer Sidebar One"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:224
+#: inc/widgets/class-colormag-widgets.php:223
 msgid "Shows widgets at footer sidebar one."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:235
+#: inc/widgets/class-colormag-widgets.php:234
 msgid "Footer Sidebar Two"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:237
+#: inc/widgets/class-colormag-widgets.php:236
 msgid "Shows widgets at footer sidebar two."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:248
+#: inc/widgets/class-colormag-widgets.php:247
 msgid "Footer Sidebar Three"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:250
+#: inc/widgets/class-colormag-widgets.php:249
 msgid "Shows widgets at footer sidebar three."
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:261
+#: inc/widgets/class-colormag-widgets.php:260
 msgid "Footer Sidebar Four ( Lower )"
 msgstr ""
 
-#: inc/widgets/class-colormag-widgets.php:263
+#: inc/widgets/class-colormag-widgets.php:262
 msgid "Shows widgets at footer sidebar four."
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:283
+msgid "Widget Two"
+msgstr ""
+
+#: inc/widgets/class-colormag-widgets.php:293
+msgid "Add widgets here."
 msgstr ""
 
 #: inc/widgets/colormag-125x125-advertisement-widget.php:28
@@ -2546,21 +3163,17 @@ msgstr ""
 msgid "Quotes"
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:269
-msgid "WordPress"
-msgstr ""
-
-#: template-parts/hooks/footer/footer.php:273
+#: template-parts/hooks/footer/footer.php:271
 #. Translators: %1$s: Current year, %2$s: Site link
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:273
+#: template-parts/hooks/footer/footer.php:271
 #. Translators: %1$s: Theme name, %2$s: ThemeGrill site link
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: template-parts/hooks/footer/footer.php:273
+#: template-parts/hooks/footer/footer.php:271
 #. Translators: %s: WordPress link
 msgid "Powered by %s."
 msgstr ""
@@ -2569,11 +3182,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: template-parts/hooks/header/header.php:525
+#: template-parts/hooks/header/header.php:529
 msgid "Breadcrumbs"
 msgstr ""
 
-#: template-parts/hooks/header/header.php:525
+#: template-parts/hooks/header/header.php:529
 msgid "You are here: "
 msgstr ""
 

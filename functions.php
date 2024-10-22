@@ -65,6 +65,12 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
  */
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
+// Load customind.
+require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
+//require __DIR__ . '/../customind/init.php';
+global $customind;
+$customind->set_css_var_prefix( 'colormag' );
+
 /**
  * Deprecated.
  */
@@ -106,6 +112,7 @@ require_once COLORMAG_WIDGETS_DIR . '/class-colormag-widgets.php';
  */
 // Template functions files.
 require COLORMAG_INCLUDES_DIR . '/template-tags.php';
+require COLORMAG_INCLUDES_DIR . '/builder-template-tags.php';
 require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 
 // Svg icon class.
@@ -113,6 +120,7 @@ require COLORMAG_INCLUDES_DIR . '/class-colormag-svg-icons.php';
 
 //Template hooks.
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/hook-functions.php';
+require COLORMAG_PARENT_DIR . '/template-parts/hooks/builder.php';
 
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/header/header.php';
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/header/header-main.php';
@@ -323,15 +331,11 @@ function colormag_content_width() {
 			if ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
 				$content_width = 1140; /* pixels */
 			}
-		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
+		} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
-			}
 		}
-	} else {
-		if ( 'no_sidebar_full_width' === $layout_meta ) {
+	} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
 			$content_width = 1140; /* pixels */
-		}
 	}
 }
 
@@ -342,14 +346,17 @@ add_action( 'template_redirect', 'colormag_content_width' );
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-add_action(
-	'after_setup_theme',
-	function () {
-		$background = sanitize_hex_color_no_hash( get_theme_mod( 'background_color', '' ) );
-		if ( empty( $background ) ) {
-			return;
-		}
-		set_theme_mod( 'background_color', $background );
-	},
-	10
-);
+function colormag_maybe_enable_builder() {
+
+	if ( get_option( 'colormag_builder_migration' ) ) {
+		return true;
+	}
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_transfer' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	return true;
+}
+
+error_log( print_r( colormag_maybe_enable_builder(), true ) );

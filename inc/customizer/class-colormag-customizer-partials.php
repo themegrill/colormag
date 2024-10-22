@@ -64,7 +64,6 @@ class ColorMag_Customizer_Partials {
 		} elseif ( 'wordpress_date_setting' == get_theme_mod( 'colormag_date_display_type', 'theme_default' ) ) {
 			echo esc_html( date_i18n( get_option( 'date_format' ) ) );
 		}
-
 	}
 
 	/**
@@ -105,7 +104,21 @@ class ColorMag_Customizer_Partials {
 		<?php
 		// Reset Post Data.
 		wp_reset_postdata();
+	}
 
+	/**
+	 * Render the footer copyright information for selective refresh partial.
+	 *
+	 * @return void
+	 */
+	public static function render_footer_copyright_text() {
+		$default_footer_value      = get_theme_mod(
+			'colormag_footer_copyright',
+			esc_html__( 'Copyright &copy; ', 'colormag' ) . '[the-year] [site-link]. ' . esc_html__( 'All rights reserved.', 'colormag' ) . '<br>' . esc_html__( 'Theme: ', 'colormag' ) . '[tg-link]' . esc_html__( ' by ThemeGrill. Powered by ', 'colormag' ) . '[wp-link].'
+		);
+		$colormag_footer_copyright = $default_footer_value;
+
+		echo do_shortcode( $colormag_footer_copyright );
 	}
 
 	/**
@@ -125,5 +138,4 @@ class ColorMag_Customizer_Partials {
 	public static function render_customize_partial_blogdescription() {
 		bloginfo( 'description' );
 	}
-
 }
