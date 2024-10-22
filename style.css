@@ -1405,6 +1405,8 @@ table td {
 .cm-footer-builder .cm-footer-top-row {
 	padding-top: 40px;
 	padding-bottom: 40px;
+	background-color: #3f3f46;
+	color: #e4e4e7;
 }
 
 .cm-footer-builder .cm-footer-top-row .widget {
@@ -1414,6 +1416,15 @@ table td {
 	height: fit-content;
 	border-radius: 4px;
 	padding: 12px;
+	background-color: #27272a;
+}
+
+.cm-footer-builder .cm-footer-top-row .widget .cm-entry-title a {
+	color: #fff;
+}
+
+.cm-footer-builder .cm-footer-top-row .widget a {
+	color: #fff;
 }
 
 .cm-footer-builder .cm-footer-main-row {

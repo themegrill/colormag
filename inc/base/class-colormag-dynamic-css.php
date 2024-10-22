@@ -111,6 +111,7 @@ class ColorMag_Dynamic_CSS {
 			.cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus,
 			.search-wrap button,
 			.page-numbers .current,
+			.cm-footer-builder .cm-widget-title span,
 			.wp-block-search .wp-element-button:hover' => array(
 			'background-color' => esc_html( $primary_color ),
 			),
@@ -232,6 +233,7 @@ class ColorMag_Dynamic_CSS {
 			.cm-footer-bar .copyright a,
 			.cm-layout-2.cm-layout-2-style-2 #cm-primary-nav,
 			.cm-layout-2 .cm-primary-nav ul > li:hover > a,
+			.cm-footer-builder .cm-widget-title,
 			.cm-layout-2 .cm-primary-nav ul > li.current-menu-item > a'
 			=> array(
 				'border-bottom-color' => esc_html( $primary_color ),
