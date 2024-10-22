@@ -358,5 +358,3 @@ function colormag_maybe_enable_builder() {
 
 	return true;
 }
-
-error_log( print_r( colormag_maybe_enable_builder(), true ) );
