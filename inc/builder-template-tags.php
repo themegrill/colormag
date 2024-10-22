@@ -36,7 +36,7 @@ function colormag_header_default_builder() {
 			),
 			'main'   => array(
 				'left'   => array(),
-				'centre' => array(
+				'center' => array(
 					'logo',
 				),
 				'right'  => array(),

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 4.0.0\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-09-24 06:43:58+00:00\n"
+"POT-Creation-Date: 2024-10-22 08:51:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -159,7 +159,7 @@ msgstr ""
 #: inc/admin/class-colormag-theme-review-notice.php:154
 #: inc/admin/class-colormag-theme-review-notice.php:172
 #: inc/admin/class-colormag-welcome-notice.php:104
-#: inc/migration/class-colormag-migration.php:1000
+#: inc/migration/class-colormag-migration.php:1059
 #: inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
@@ -238,7 +238,7 @@ msgstr ""
 #: inc/admin/views/dashbaord.php:71
 #: inc/customizer/options/header-and-navigation/site-identity.php:8
 #: inc/customizer/options/header-builder/logo.php:6
-#: inc/customizer/panels-sections/panels-sections.php:94
+#: inc/customizer/panels-sections/panels-sections.php:85
 msgid "Site Identity"
 msgstr ""
 
@@ -259,7 +259,7 @@ msgid "Sidebar Options"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:96 inc/admin/views/dashbaord.php:145
-#: inc/customizer/panels-sections/panels-sections.php:124
+#: inc/customizer/panels-sections/panels-sections.php:120
 msgid "Blog"
 msgstr ""
 
@@ -277,13 +277,13 @@ msgstr ""
 
 #: inc/admin/views/dashbaord.php:133
 #: inc/customizer/options/header-and-navigation/top-bar.php:11
-#: inc/customizer/panels-sections/panels-sections.php:84
+#: inc/customizer/panels-sections/panels-sections.php:75
 msgid "Top Bar"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:137
 #: inc/customizer/options/header-and-navigation/main-header.php:8
-#: inc/customizer/panels-sections/panels-sections.php:99
+#: inc/customizer/panels-sections/panels-sections.php:90
 msgid "Main Header"
 msgstr ""
 
@@ -291,10 +291,9 @@ msgstr ""
 #: inc/core/class-colormag-after-setup-theme.php:82
 #: inc/customizer/options/header-and-navigation/primary-menu.php:8
 #: inc/customizer/options/header-builder/header-builder.php:14
-#: inc/customizer/options/header-builder/header-builder.php:85
 #: inc/customizer/options/header-builder/primary-menu.php:11
-#: inc/customizer/panels-sections/panels-sections.php:104
-#: inc/customizer/panels-sections/panels-sections.php:179
+#: inc/customizer/panels-sections/panels-sections.php:95
+#: inc/customizer/panels-sections/panels-sections.php:175
 msgid "Primary Menu"
 msgstr ""
 
@@ -304,13 +303,13 @@ msgstr ""
 
 #: inc/admin/views/dashbaord.php:153
 #: inc/customizer/options/footer/footer-column.php:8
-#: inc/customizer/panels-sections/panels-sections.php:144
+#: inc/customizer/panels-sections/panels-sections.php:140
 msgid "Footer Column"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:157
 #: inc/customizer/options/footer/footer-bar.php:8
-#: inc/customizer/panels-sections/panels-sections.php:149
+#: inc/customizer/panels-sections/panels-sections.php:145
 msgid "Footer Bar"
 msgstr ""
 
@@ -727,553 +726,32 @@ msgstr ""
 
 #: inc/core/class-colormag-after-setup-theme.php:83
 #: inc/customizer/options/header-builder/header-builder.php:19
-#: inc/customizer/options/header-builder/header-builder.php:90
 #: inc/customizer/options/header-builder/secondary-menu.php:11
-#: inc/customizer/panels-sections/panels-sections.php:184
+#: inc/customizer/panels-sections/panels-sections.php:180
 msgid "Secondary Menu"
 msgstr ""
 
 #: inc/customizer/class-colormag-customizer-partials.php:117
-#: inc/customizer/options/footer-builder/copyright.php:2
-#: template-parts/footer-builder-elements/copyright.php:9
 msgid "Copyright &copy; "
 msgstr ""
 
 #: inc/customizer/class-colormag-customizer-partials.php:117
-#: inc/customizer/options/footer-builder/copyright.php:2
-#: template-parts/footer-builder-elements/copyright.php:9
 msgid "All rights reserved."
 msgstr ""
 
 #: inc/customizer/class-colormag-customizer-partials.php:117
-#: inc/customizer/options/footer-builder/copyright.php:2
-#: template-parts/footer-builder-elements/copyright.php:9
 msgid "Theme: "
 msgstr ""
 
 #: inc/customizer/class-colormag-customizer-partials.php:117
-#: inc/customizer/options/footer-builder/copyright.php:2
-#: template-parts/footer-builder-elements/copyright.php:9
 msgid " by ThemeGrill. Powered by "
 msgstr ""
 
-#: inc/customizer/core/class-colormag-fonts.php:186
-msgid "Thin 100"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:187
-msgid "Thin 100 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:188
-msgid "Extra-Light 200"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:189
-msgid "Extra-Light 200 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:190
-msgid "Light 300"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:191
-msgid "Light 300 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:192
-msgid "Regular 400"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:193
-msgid "Regular 400 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:194
-msgid "Medium 500"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:195
-msgid "Medium 500 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:196
-msgid "Semi-Bold 600"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:197
-msgid "Semi-Bold 600 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:198
-msgid "Bold 700"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:199
-msgid "Bold 700 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:200
-msgid "Extra-Bold 800"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:201
-msgid "Extra-Bold 800 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:202
-msgid "Black 900"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:203
-msgid "Black 900 Italic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:227
-msgid "Arabic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:228
-msgid "Bengali"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:229
-msgid "Chinese (Hong Kong)"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:230
-msgid "Chinese (Simplified)"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:231
-msgid "Chinese (Traditional)"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:232
-msgid "Cyrillic"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:233
-msgid "Cyrillic Extended"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:234
-msgid "Devanagari"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:235
-msgid "Greek"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:236
-msgid "Greek Extended"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:237
-msgid "Gujarati"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:238
-msgid "Gurmukhi"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:239
-msgid "Hebrew"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:240
-msgid "Japanese"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:241
-msgid "Kannada"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:242
-msgid "Khmer"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:243
-msgid "Korean"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:244
-msgid "Latin"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:245
-msgid "Latin Extended"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:246
-msgid "Malayalam"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:247
-msgid "Myanmar"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:248
-msgid "Oriya"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:249
-msgid "Sinhala"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:250
-msgid "Tamil"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:251
-msgid "Telugu"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:252
-msgid "Thai"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:253
-msgid "Tibetan"
-msgstr ""
-
-#: inc/customizer/core/class-colormag-fonts.php:254
-msgid "Vietnamese"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:42
-msgid "No file selected"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:94
-msgid "Background Color"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:105
-msgid "Background Image"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:111
-msgid "No Image Selected"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:118
-msgid "Remove"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:125
-msgid "Select Image"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:132
-msgid "Background Repeat"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:136
-msgid "No Repeat"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:139
-msgid "Repeat All"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:142
-msgid "Repeat Horizontally"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:145
-msgid "Repeat Vertically"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:150
-msgid "Background Position"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:154
-msgid "Left Top"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:157
-msgid "Left Center"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:160
-msgid "Left Bottom"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:163
-msgid "Right Top"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:166
-msgid "Right Center"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:169
-msgid "Right Bottom"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:172
-msgid "Center Top"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:175
-msgid "Center Center"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:178
-msgid "Center Bottom"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:183
-msgid "Background Size"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:187
-msgid "Cover"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:190
-msgid "Contain"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:193
-msgid "Auto"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:198
-msgid "Background Attachment"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:202
-msgid "Scroll"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/background/class-colormag-background-control.php:205
-msgid "Fixed"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:47
-msgid "Clear"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:48
-msgid "Clear color"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:49
-#: inc/customizer/options/content/blog.php:150
-msgid "Default"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:50
-msgid "Select default color"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:51
-msgid "Select Color"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/color/class-colormag-color-control.php:52
-msgid "Color value"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/date/class-colormag-date-control.php:59
-msgid "Select Date"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/dimensions/class-colormag-dimensions-control.php:45
-msgid "Top"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/dimensions/class-colormag-dimensions-control.php:46
-#: sidebar.php:32
-msgid "Right"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/dimensions/class-colormag-dimensions-control.php:47
-#: inc/customizer/options/header-builder/header-builder.php:257
-msgid "Bottom"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/dimensions/class-colormag-dimensions-control.php:48
-#: sidebar-left.php:32
-msgid "Left"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/dimensions/class-colormag-dimensions-control.php:78
-#: inc/customizer/core/custom-controls/slider/class-colormag-slider-control.php:106
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:358
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:444
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:530
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:621
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:707
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:793
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:886
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:973
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1060
-msgid "Back to default"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/navigate/class-colormag-navigate-control.php:67
-#. Translators: %1$s: Anchor tag open, %2$s: Customizer section name %3$s:
-#. Anchor tag close
-msgid "%1$s Click here to edit %2$s features %3$s"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:52
-msgid "Standard Fonts"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:53
-msgid "Google Fonts"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:60
-msgid "Custom Fonts"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:288
-msgid "Family"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:296
-msgid "Weight"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:305
-msgid "Subset(s)"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:323
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:409
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:495
-msgid "Size"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:586
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:672
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:758
-msgid "Line Height"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:850
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:938
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1025
-msgid "Letter Spacing"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1113
-#: inc/customizer/options/footer/footer-bar.php:50
-#: inc/customizer/options/footer/footer-column.php:61
-#: inc/customizer/options/header-and-navigation/header-action.php:13
-#: inc/customizer/options/header-and-navigation/main-header.php:123
-#: inc/customizer/options/header-and-navigation/primary-menu.php:15
-#: inc/customizer/options/header-and-navigation/primary-menu.php:195
-#: inc/customizer/options/header-and-navigation/top-bar.php:41
-msgid "Style"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1118
-#: inc/customizer/options/footer/footer-bar.php:86
-#: inc/customizer/options/footer/footer-column.php:122
-#: inc/customizer/options/footer/footer-column.php:147
-#: inc/customizer/options/footer/footer-column.php:172
-#: inc/customizer/options/footer-builder/copyright.php:42
-#: inc/customizer/options/footer-builder/footer-menu.php:31
-#: inc/customizer/options/footer-builder/html-1.php:35
-#: inc/customizer/options/footer-builder/main-area.php:67
-#: inc/customizer/options/footer-builder/widget-1.php:71
-#: inc/customizer/options/footer-builder/widget-2.php:71
-#: inc/customizer/options/footer-builder/widget-3.php:71
-#: inc/customizer/options/footer-builder/widget-4.php:71
-#: inc/customizer/options/footer-builder/widget-5.php:71
-#: inc/customizer/options/footer-builder/widget-6.php:71
-#: inc/customizer/options/footer-builder/widget-7.php:71
-#: inc/customizer/options/global/button.php:26
-#: inc/customizer/options/global/button.php:48
-#: inc/customizer/options/global/colors.php:157
-#: inc/customizer/options/header-and-navigation/header-action.php:26
-#: inc/customizer/options/header-and-navigation/primary-menu.php:81
-#: inc/customizer/options/header-and-navigation/primary-menu.php:208
-#: inc/customizer/options/header-and-navigation/site-identity.php:67
-#: inc/customizer/options/header-builder/header-button.php:40
-#: inc/customizer/options/header-builder/header-button.php:61
-#: inc/customizer/options/header-builder/html-1.php:35
-#: inc/customizer/options/header-builder/logo.php:77
-#: inc/customizer/options/header-builder/mobile-menu.php:27
-#: inc/customizer/options/header-builder/primary-menu.php:32
-#: inc/customizer/options/header-builder/random.php:21
-#: inc/customizer/options/header-builder/search.php:21
-#: inc/customizer/options/header-builder/secondary-menu.php:32
-msgid "Normal"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1121
-msgid "Italic"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1124
-msgid "Oblique"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1127
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1155
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1183
-msgid "Initial"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1130
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1158
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1186
-msgid "Inherit"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1138
-msgid "Transform"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1143
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1171
-#: inc/customizer/options/header-and-navigation/primary-menu.php:312
-msgid "None"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1146
-msgid "Capitalize"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1149
-msgid "Uppercase"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1152
-msgid "Lowercase"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1166
-msgid "Decoration"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1174
-msgid "Underline"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1177
-msgid "Overline"
-msgstr ""
-
-#: inc/customizer/core/custom-controls/typography/class-colormag-typography-control.php:1180
-msgid "Line Through"
-msgstr ""
-
-#: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:69
 #: inc/customizer/customind/core/Types/Section.php:84
 #. Translators: 1: Panel Title.
 msgid "Customizing &#9656; %s"
 msgstr ""
 
-#: inc/customizer/core/extend-customizer/class-colormag-wp-customize-section.php:73
 #: inc/customizer/customind/core/Types/Section.php:88
 msgid "Customizing"
 msgstr ""
@@ -1283,7 +761,7 @@ msgstr ""
 #: inc/customizer/options/footer/footer-bar.php:111
 #: inc/customizer/options/header-and-navigation/top-bar.php:134
 #: inc/customizer/options/header-and-navigation/top-bar.php:140
-#: inc/customizer/panels-sections/panels-sections.php:154
+#: inc/customizer/panels-sections/panels-sections.php:150
 msgid "Social Icons"
 msgstr ""
 
@@ -1299,7 +777,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/primary-menu.php:179
 #: inc/customizer/options/header-and-navigation/sticky-header.php:15
 #: inc/customizer/options/header-and-navigation/top-bar.php:19
-#: inc/customizer/panels-sections/panels-sections.php:79
+#: inc/customizer/panels-sections/panels-sections.php:70
 #: inc/meta-boxes/class-colormag-meta-box-page-settings.php:77
 msgid "General"
 msgstr ""
@@ -1318,7 +796,6 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/sticky-header.php:19
 #: inc/customizer/options/header-and-navigation/top-bar.php:24
 #: inc/customizer/options/header-and-navigation/top-bar.php:71
-#: inc/customizer/options/header-builder/cart.php:13
 #: inc/customizer/options/header-builder/logo.php:61
 msgid "Enable"
 msgstr ""
@@ -1334,35 +811,40 @@ msgid "Header"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:51
-#: inc/customizer/panels-sections/panels-sections.php:21
+#: inc/customizer/panels-sections/panels-sections.php:20
 msgid "Footer"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:74
-#: inc/migration/class-colormag-migration.php:671
-#: inc/template-functions.php:422
+#: inc/migration/class-colormag-migration.php:669
+#: inc/migration/class-colormag-migration.php:992
+#: inc/template-functions.php:364
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:79
-#: inc/migration/class-colormag-migration.php:676
-#: inc/template-functions.php:412
+#: inc/migration/class-colormag-migration.php:674
+#: inc/migration/class-colormag-migration.php:997
+#: inc/template-functions.php:354
 msgid "Twitter"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:84
-#: inc/migration/class-colormag-migration.php:681
-#: inc/template-functions.php:462
+#: inc/migration/class-colormag-migration.php:679
+#: inc/migration/class-colormag-migration.php:1002
+#: inc/template-functions.php:404
 msgid "Instagram"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:89
-#: inc/migration/class-colormag-migration.php:686
+#: inc/migration/class-colormag-migration.php:684
+#: inc/migration/class-colormag-migration.php:1007
 msgid "Pinterest"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:94
-#: inc/migration/class-colormag-migration.php:691
+#: inc/migration/class-colormag-migration.php:689
+#: inc/migration/class-colormag-migration.php:1012
 msgid "YouTube"
 msgstr ""
 
@@ -1461,7 +943,7 @@ msgid "Post title"
 msgstr ""
 
 #: inc/customizer/options/content/blog.php:81
-#: inc/customizer/options/footer-builder/copyright.php:92
+#: inc/customizer/options/footer-builder/copyright.php:97
 #: inc/customizer/options/footer-builder/footer-menu.php:80
 #: inc/customizer/options/header-and-navigation/primary-menu.php:115
 #: inc/customizer/options/header-and-navigation/primary-menu.php:162
@@ -1478,7 +960,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/primary-menu.php:147
 #: inc/customizer/options/header-builder/secondary-menu.php:79
 #: inc/customizer/options/header-builder/secondary-menu.php:145
-#: inc/customizer/panels-sections/panels-sections.php:69
+#: inc/customizer/panels-sections/panels-sections.php:60
 msgid "Typography"
 msgstr ""
 
@@ -1510,6 +992,10 @@ msgstr ""
 msgid "Pagination"
 msgstr ""
 
+#: inc/customizer/options/content/blog.php:150
+msgid "Default"
+msgstr ""
+
 #: inc/customizer/options/content/blog.php:151
 msgid "Numbered"
 msgstr ""
@@ -1532,8 +1018,8 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/top-bar.php:65
 #: inc/customizer/options/header-builder/date.php:8
 #: inc/customizer/options/header-builder/header-builder.php:56
-#: inc/customizer/options/header-builder/header-builder.php:132
-#: inc/customizer/panels-sections/panels-sections.php:264
+#: inc/customizer/options/header-builder/header-builder.php:122
+#: inc/customizer/panels-sections/panels-sections.php:255
 msgid "Date"
 msgstr ""
 
@@ -1575,6 +1061,16 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
+#: inc/customizer/options/footer/footer-bar.php:50
+#: inc/customizer/options/footer/footer-column.php:61
+#: inc/customizer/options/header-and-navigation/header-action.php:13
+#: inc/customizer/options/header-and-navigation/main-header.php:123
+#: inc/customizer/options/header-and-navigation/primary-menu.php:15
+#: inc/customizer/options/header-and-navigation/primary-menu.php:195
+#: inc/customizer/options/header-and-navigation/top-bar.php:41
+msgid "Style"
+msgstr ""
+
 #: inc/customizer/options/footer/footer-bar.php:63
 #: inc/customizer/options/footer/footer-column.php:74
 #: inc/customizer/options/footer/footer-column.php:99
@@ -1608,7 +1104,7 @@ msgstr ""
 
 #: inc/customizer/options/footer/footer-bar.php:80
 #: inc/customizer/options/footer-builder/bottom-area.php:51
-#: inc/customizer/options/footer-builder/copyright.php:26
+#: inc/customizer/options/footer-builder/copyright.php:31
 #: inc/customizer/options/footer-builder/html-1.php:19
 #: inc/customizer/options/footer-builder/main-area.php:51
 #: inc/customizer/options/footer-builder/top-area.php:51
@@ -1635,9 +1131,43 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
+#: inc/customizer/options/footer/footer-bar.php:86
+#: inc/customizer/options/footer/footer-column.php:122
+#: inc/customizer/options/footer/footer-column.php:147
+#: inc/customizer/options/footer/footer-column.php:172
+#: inc/customizer/options/footer-builder/copyright.php:47
+#: inc/customizer/options/footer-builder/footer-menu.php:31
+#: inc/customizer/options/footer-builder/html-1.php:35
+#: inc/customizer/options/footer-builder/main-area.php:67
+#: inc/customizer/options/footer-builder/widget-1.php:71
+#: inc/customizer/options/footer-builder/widget-2.php:71
+#: inc/customizer/options/footer-builder/widget-3.php:71
+#: inc/customizer/options/footer-builder/widget-4.php:71
+#: inc/customizer/options/footer-builder/widget-5.php:71
+#: inc/customizer/options/footer-builder/widget-6.php:71
+#: inc/customizer/options/footer-builder/widget-7.php:71
+#: inc/customizer/options/global/button.php:26
+#: inc/customizer/options/global/button.php:48
+#: inc/customizer/options/global/colors.php:157
+#: inc/customizer/options/header-and-navigation/header-action.php:26
+#: inc/customizer/options/header-and-navigation/primary-menu.php:81
+#: inc/customizer/options/header-and-navigation/primary-menu.php:208
+#: inc/customizer/options/header-and-navigation/site-identity.php:67
+#: inc/customizer/options/header-builder/header-button.php:40
+#: inc/customizer/options/header-builder/header-button.php:61
+#: inc/customizer/options/header-builder/html-1.php:35
+#: inc/customizer/options/header-builder/logo.php:77
+#: inc/customizer/options/header-builder/mobile-menu.php:27
+#: inc/customizer/options/header-builder/primary-menu.php:32
+#: inc/customizer/options/header-builder/random.php:21
+#: inc/customizer/options/header-builder/search.php:21
+#: inc/customizer/options/header-builder/secondary-menu.php:32
+msgid "Normal"
+msgstr ""
+
 #: inc/customizer/options/footer/footer-bar.php:93
 #: inc/customizer/options/footer/footer-column.php:179
-#: inc/customizer/options/footer-builder/copyright.php:49
+#: inc/customizer/options/footer-builder/copyright.php:54
 #: inc/customizer/options/footer-builder/footer-menu.php:38
 #: inc/customizer/options/footer-builder/html-1.php:42
 #: inc/customizer/options/footer-builder/main-area.php:74
@@ -1708,8 +1238,8 @@ msgstr ""
 
 #: inc/customizer/options/footer-builder/bottom-area.php:5
 #: inc/customizer/options/header-builder/bottom-area.php:5
-#: inc/customizer/panels-sections/panels-sections.php:254
-#: inc/customizer/panels-sections/panels-sections.php:344
+#: inc/customizer/panels-sections/panels-sections.php:250
+#: inc/customizer/panels-sections/panels-sections.php:335
 msgid "Bottom Area"
 msgstr ""
 
@@ -1720,7 +1250,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/bottom-area.php:16
 #: inc/customizer/options/header-builder/main-area.php:16
 #: inc/customizer/options/header-builder/top-area.php:18
-#: inc/customizer/panels-sections/panels-sections.php:59
+#: inc/customizer/panels-sections/panels-sections.php:50
 msgid "Container"
 msgstr ""
 
@@ -1773,14 +1303,21 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:7
-#: inc/customizer/options/footer-builder/copyright.php:15
+#: inc/customizer/options/footer-builder/copyright.php:5
+#: inc/customizer/options/footer-builder/copyright.php:20
 #: inc/customizer/options/footer-builder/footer-builder.php:67
-#: inc/customizer/panels-sections/panels-sections.php:284
+#: inc/customizer/panels-sections/panels-sections.php:275
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:34
+#: inc/customizer/options/footer-builder/copyright.php:13
+#: inc/helper/utils.php:16
+#. translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress
+#. Link.
+msgid "Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s."
+msgstr ""
+
+#: inc/customizer/options/footer-builder/copyright.php:39
 #: inc/customizer/options/footer-builder/html-1.php:27
 #: inc/customizer/options/global/colors.php:142
 #: inc/customizer/options/global/colors.php:149
@@ -1792,55 +1329,55 @@ msgstr ""
 #: inc/customizer/options/footer-builder/footer-builder.php:10
 #: inc/customizer/options/footer-builder/html-1.php:6
 #: inc/customizer/options/header-builder/header-builder.php:34
-#: inc/customizer/options/header-builder/header-builder.php:110
+#: inc/customizer/options/header-builder/header-builder.php:100
 #: inc/customizer/options/header-builder/html-1.php:6
-#: inc/customizer/panels-sections/panels-sections.php:199
-#: inc/customizer/panels-sections/panels-sections.php:349
+#: inc/customizer/panels-sections/panels-sections.php:195
+#: inc/customizer/panels-sections/panels-sections.php:340
 msgid "HTML 1"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:15
 #: inc/customizer/options/footer-builder/widget-1.php:6
 #: inc/customizer/options/header-builder/header-builder.php:39
-#: inc/customizer/options/header-builder/header-builder.php:115
+#: inc/customizer/options/header-builder/header-builder.php:105
 #: inc/customizer/options/header-builder/widget-1.php:6
-#: inc/customizer/panels-sections/panels-sections.php:209
-#: inc/customizer/panels-sections/panels-sections.php:299
+#: inc/customizer/panels-sections/panels-sections.php:205
+#: inc/customizer/panels-sections/panels-sections.php:290
 msgid "Widget 1"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:21
 #: inc/customizer/options/footer-builder/widget-2.php:6
 #: inc/customizer/options/header-builder/header-builder.php:45
-#: inc/customizer/options/header-builder/header-builder.php:121
+#: inc/customizer/options/header-builder/header-builder.php:111
 #: inc/customizer/options/header-builder/widget-2.php:6
-#: inc/customizer/panels-sections/panels-sections.php:214
-#: inc/customizer/panels-sections/panels-sections.php:304
+#: inc/customizer/panels-sections/panels-sections.php:210
+#: inc/customizer/panels-sections/panels-sections.php:295
 msgid "Widget 2"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:27
 #: inc/customizer/options/footer-builder/widget-3.php:6
-#: inc/customizer/panels-sections/panels-sections.php:309
+#: inc/customizer/panels-sections/panels-sections.php:300
 msgid "Widget 3"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:33
 #: inc/customizer/options/footer-builder/widget-4.php:6
-#: inc/customizer/panels-sections/panels-sections.php:314
+#: inc/customizer/panels-sections/panels-sections.php:305
 msgid "Widget 4"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:39
 #: inc/customizer/options/footer-builder/widget-5.php:6
-#: inc/customizer/panels-sections/panels-sections.php:319
+#: inc/customizer/panels-sections/panels-sections.php:310
 msgid "Widget 5"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:45
 #: inc/customizer/options/footer-builder/widget-6.php:6
-#: inc/customizer/panels-sections/panels-sections.php:324
-#: inc/customizer/panels-sections/panels-sections.php:329
+#: inc/customizer/panels-sections/panels-sections.php:315
+#: inc/customizer/panels-sections/panels-sections.php:320
 msgid "Widget 6"
 msgstr ""
 
@@ -1850,19 +1387,19 @@ msgid "Widget 7"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:57
-#: inc/customizer/panels-sections/panels-sections.php:289
+#: inc/customizer/panels-sections/panels-sections.php:280
 msgid "Menu 1"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:62
-#: inc/customizer/panels-sections/panels-sections.php:279
+#: inc/customizer/panels-sections/panels-sections.php:270
 msgid "Socials"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:79
 #: inc/customizer/options/global/builder.php:6
-#: inc/customizer/options/header-builder/header-builder.php:154
-#: inc/customizer/panels-sections/panels-sections.php:44
+#: inc/customizer/options/header-builder/header-builder.php:144
+#: inc/customizer/panels-sections/panels-sections.php:35
 msgid "Builder"
 msgstr ""
 
@@ -1886,8 +1423,8 @@ msgstr ""
 
 #: inc/customizer/options/footer-builder/main-area.php:5
 #: inc/customizer/options/header-builder/main-area.php:5
-#: inc/customizer/panels-sections/panels-sections.php:249
-#: inc/customizer/panels-sections/panels-sections.php:339
+#: inc/customizer/panels-sections/panels-sections.php:245
+#: inc/customizer/panels-sections/panels-sections.php:330
 msgid "Main Area"
 msgstr ""
 
@@ -1930,14 +1467,14 @@ msgstr ""
 #: inc/customizer/options/header-builder/header-builder.php:51
 #: inc/customizer/options/header-builder/socials.php:6
 #: inc/customizer/options/header-builder/socials.php:13
-#: inc/customizer/panels-sections/panels-sections.php:219
+#: inc/customizer/panels-sections/panels-sections.php:215
 msgid "Social"
 msgstr ""
 
 #: inc/customizer/options/footer-builder/top-area.php:5
 #: inc/customizer/options/header-builder/top-area.php:7
-#: inc/customizer/panels-sections/panels-sections.php:244
-#: inc/customizer/panels-sections/panels-sections.php:334
+#: inc/customizer/panels-sections/panels-sections.php:240
+#: inc/customizer/panels-sections/panels-sections.php:325
 msgid "Top Area"
 msgstr ""
 
@@ -1996,8 +1533,8 @@ msgid "Hide blog posts/static page"
 msgstr ""
 
 #: inc/customizer/options/global/button.php:6
-#: inc/customizer/options/header-builder/header-builder.php:100
-#: inc/customizer/panels-sections/panels-sections.php:74
+#: inc/customizer/options/header-builder/header-builder.php:90
+#: inc/customizer/panels-sections/panels-sections.php:65
 msgid "Button"
 msgstr ""
 
@@ -2055,7 +1592,7 @@ msgid "Outside Background"
 msgstr ""
 
 #: inc/customizer/options/global/sidebar.php:30
-#: inc/customizer/panels-sections/panels-sections.php:64
+#: inc/customizer/panels-sections/panels-sections.php:55
 msgid "Sidebar"
 msgstr ""
 
@@ -2116,28 +1653,28 @@ msgid "H6"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/breadcrumb.php:8
-#: inc/customizer/panels-sections/panels-sections.php:114
+#: inc/customizer/panels-sections/panels-sections.php:110
 msgid "Breadcrumb"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/header-action.php:6
-#: inc/customizer/panels-sections/panels-sections.php:109
+#: inc/customizer/panels-sections/panels-sections.php:100
 msgid "Header Action"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/header-action.php:46
 #: inc/customizer/options/header-builder/header-builder.php:29
-#: inc/customizer/options/header-builder/header-builder.php:105
+#: inc/customizer/options/header-builder/header-builder.php:95
 #: inc/customizer/options/header-builder/search.php:6
-#: inc/customizer/panels-sections/panels-sections.php:194 searchform.php:23
+#: inc/customizer/panels-sections/panels-sections.php:190 searchform.php:23
 msgid "Search"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/header-action.php:63
 #: inc/customizer/options/header-builder/header-builder.php:66
-#: inc/customizer/options/header-builder/header-builder.php:142
+#: inc/customizer/options/header-builder/header-builder.php:132
 #: inc/customizer/options/header-builder/random.php:6
-#: inc/customizer/panels-sections/panels-sections.php:224
+#: inc/customizer/panels-sections/panels-sections.php:220
 msgid "Random"
 msgstr ""
 
@@ -2176,10 +1713,10 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/top-bar.php:113
 #: inc/customizer/options/header-and-navigation/top-bar.php:119
 #: inc/customizer/options/header-builder/header-builder.php:61
-#: inc/customizer/options/header-builder/header-builder.php:137
+#: inc/customizer/options/header-builder/header-builder.php:127
 #: inc/customizer/options/header-builder/news-ticker.php:8
-#: inc/customizer/panels-sections/panels-sections.php:89
-#: inc/customizer/panels-sections/panels-sections.php:269
+#: inc/customizer/panels-sections/panels-sections.php:80
+#: inc/customizer/panels-sections/panels-sections.php:260
 msgid "News Ticker"
 msgstr ""
 
@@ -2204,9 +1741,9 @@ msgid "Sub Menu"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/primary-menu.php:172
-#: inc/customizer/options/header-builder/header-builder.php:95
+#: inc/customizer/options/header-builder/header-builder.php:85
 #: inc/customizer/options/header-builder/mobile-menu.php:11
-#: inc/customizer/panels-sections/panels-sections.php:174
+#: inc/customizer/panels-sections/panels-sections.php:170
 msgid "Mobile Menu"
 msgstr ""
 
@@ -2221,10 +1758,14 @@ msgstr ""
 msgid "Home Icon/Logo"
 msgstr ""
 
+#: inc/customizer/options/header-and-navigation/primary-menu.php:312
+msgid "None"
+msgstr ""
+
 #: inc/customizer/options/header-and-navigation/primary-menu.php:313
 #: inc/customizer/options/header-builder/header-builder.php:71
 #: inc/customizer/options/header-builder/home-icon.php:6
-#: inc/customizer/panels-sections/panels-sections.php:229
+#: inc/customizer/panels-sections/panels-sections.php:225
 msgid "Home Icon"
 msgstr ""
 
@@ -2236,7 +1777,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:22
 #: inc/customizer/options/header-builder/header-builder.php:80
 #: inc/customizer/options/header-builder/logo.php:20
-#: inc/customizer/panels-sections/panels-sections.php:164
+#: inc/customizer/panels-sections/panels-sections.php:160
 msgid "Logo"
 msgstr ""
 
@@ -2262,7 +1803,7 @@ msgid "Site Tagline"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/sticky-header.php:8
-#: inc/customizer/panels-sections/panels-sections.php:119
+#: inc/customizer/panels-sections/panels-sections.php:115
 msgid "Sticky Header"
 msgstr ""
 
@@ -2281,10 +1822,6 @@ msgstr ""
 msgid "From WordPress Date Setting"
 msgstr ""
 
-#: inc/customizer/options/header-builder/cart.php:6
-msgid "Load Google fonts locally"
-msgstr ""
-
 #: inc/customizer/options/header-builder/header-builder.php:9
 msgid "Site Title & Logo"
 msgstr ""
@@ -2294,59 +1831,63 @@ msgstr ""
 msgid "Button 1"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:127
+#: inc/customizer/options/header-builder/header-builder.php:117
 #: inc/customizer/options/header-builder/toggle-button.php:6
-#: inc/customizer/panels-sections/panels-sections.php:169
+#: inc/customizer/panels-sections/panels-sections.php:165
 msgid "Toggle Button"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:213
+#: inc/customizer/options/header-builder/header-builder.php:203
 msgid "Builder area top"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:218
+#: inc/customizer/options/header-builder/header-builder.php:208
 msgid "Builder area top left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:223
+#: inc/customizer/options/header-builder/header-builder.php:213
 msgid "Builder area top middle"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:228
+#: inc/customizer/options/header-builder/header-builder.php:218
 msgid "Builder area top right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:235
+#: inc/customizer/options/header-builder/header-builder.php:225
 msgid "Builder Main area"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:240
+#: inc/customizer/options/header-builder/header-builder.php:230
 msgid "Builder area middle left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:245
+#: inc/customizer/options/header-builder/header-builder.php:235
 msgid "Main center"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:250
+#: inc/customizer/options/header-builder/header-builder.php:240
 msgid "Main right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:262
+#: inc/customizer/options/header-builder/header-builder.php:247
+msgid "Bottom"
+msgstr ""
+
+#: inc/customizer/options/header-builder/header-builder.php:252
 msgid "Bottom left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:267
+#: inc/customizer/options/header-builder/header-builder.php:257
 msgid "Bottom center"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:272
+#: inc/customizer/options/header-builder/header-builder.php:262
 msgid "Bottom right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:280
+#: inc/customizer/options/header-builder/header-builder.php:270
 #: inc/customizer/options/header-builder/offset-area.php:6
-#: inc/customizer/panels-sections/panels-sections.php:234
+#: inc/customizer/panels-sections/panels-sections.php:230
 msgid "Offset Area"
 msgstr ""
 
@@ -2386,7 +1927,7 @@ msgid "Text Color"
 msgstr ""
 
 #: inc/customizer/options/woocommerce/woocommerce.php:5
-#: inc/customizer/panels-sections/panels-sections.php:159
+#: inc/customizer/panels-sections/panels-sections.php:155
 msgid "WooCommerce Sidebar"
 msgstr ""
 
@@ -2414,15 +1955,25 @@ msgstr ""
 msgid "Global"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:9
+#: inc/customizer/panels-sections/panels-sections.php:8
 msgid "Front Page"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:13
+#: inc/customizer/panels-sections/panels-sections.php:11
 msgid "Header & Navigation"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:25
+#: inc/customizer/panels-sections/panels-sections.php:14
+#: inc/customizer/panels-sections/panels-sections.php:235
+msgid "Header Builder"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:23
+#: inc/customizer/panels-sections/panels-sections.php:265
+msgid "Footer Builder"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:26
 msgid "Additional"
 msgstr ""
 
@@ -2430,51 +1981,45 @@ msgstr ""
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:33
-#: inc/customizer/panels-sections/panels-sections.php:239
-msgid "Header Builder"
-msgstr ""
-
-#: inc/customizer/panels-sections/panels-sections.php:37
-#: inc/customizer/panels-sections/panels-sections.php:274
-msgid "Footer Builder"
-msgstr ""
-
-#: inc/customizer/panels-sections/panels-sections.php:49
+#: inc/customizer/panels-sections/panels-sections.php:40
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:54
+#: inc/customizer/panels-sections/panels-sections.php:45
 msgid "Category Colors"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:129
+#: inc/customizer/panels-sections/panels-sections.php:105
+msgid "Header Media"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:125
 msgid "Single Post"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:134
+#: inc/customizer/panels-sections/panels-sections.php:130
 msgid "Post Meta"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:139
+#: inc/customizer/panels-sections/panels-sections.php:135
 msgid "Page"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:189
+#: inc/customizer/panels-sections/panels-sections.php:185
 msgid "Header Button"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:204
-#: inc/customizer/panels-sections/panels-sections.php:354
+#: inc/customizer/panels-sections/panels-sections.php:200
+#: inc/customizer/panels-sections/panels-sections.php:345
 msgid "HTML 2"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:259
-msgid "Cart"
+#: inc/customizer/panels-sections/panels-sections.php:285
+msgid "Menu 2"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:294
-msgid "Menu 2"
+#: inc/helper/utils.php:33 template-parts/hooks/footer/footer.php:267
+msgid "WordPress"
 msgstr ""
 
 #: inc/meta-boxes/class-colormag-meta-box-page-settings.php:103
@@ -2500,35 +2045,31 @@ msgstr ""
 msgid "Fix Migration Issues"
 msgstr ""
 
-#: inc/template-functions.php:124 template-parts/hooks/footer/footer.php:267
-msgid "WordPress"
-msgstr ""
-
-#: inc/template-functions.php:380
+#: inc/template-functions.php:322
 msgid "Total Views"
 msgstr ""
 
-#: inc/template-functions.php:408
+#: inc/template-functions.php:350
 msgid "User Social Links"
 msgstr ""
 
-#: inc/template-functions.php:432
+#: inc/template-functions.php:374
 msgid "Google Plus"
 msgstr ""
 
-#: inc/template-functions.php:442
+#: inc/template-functions.php:384
 msgid "Flickr"
 msgstr ""
 
-#: inc/template-functions.php:452
+#: inc/template-functions.php:394
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/template-functions.php:472
+#: inc/template-functions.php:414
 msgid "Tumblr"
 msgstr ""
 
-#: inc/template-functions.php:482
+#: inc/template-functions.php:424
 msgid "Youtube"
 msgstr ""
 
@@ -3067,6 +2608,10 @@ msgstr ""
 msgid "Contact Page"
 msgstr ""
 
+#: sidebar-left.php:32
+msgid "Left"
+msgstr ""
+
 #: sidebar-left.php:38 sidebar-two.php:19 sidebar-woocommerce-left.php:25
 #: sidebar-woocommerce-right.php:25 sidebar.php:38
 msgid "Example Widget"
@@ -3111,6 +2656,10 @@ msgid ""
 "by default. You can add custom widgets from the %swidgets screen%s in the "
 "admin. If custom widgets is added than this will be replaced by those "
 "widgets."
+msgstr ""
+
+#: sidebar.php:32
+msgid "Right"
 msgstr ""
 
 #: template-parts/content/related-posts.php:23

@@ -164,6 +164,7 @@ module.exports = function ( grunt ) {
 			files   : {
 				src    : [
 					'**',
+					'!assets/sass/**',
 					'!.*',
 					'!*.md',
 					'!*.zip',

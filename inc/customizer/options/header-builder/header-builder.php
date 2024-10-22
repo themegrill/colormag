@@ -181,7 +181,7 @@ $options = array(
 				),
 				'main'   => array(
 					'left'   => array(),
-					'centre' => array(
+					'center' => array(
 						'logo',
 					),
 					'right'  => array(),

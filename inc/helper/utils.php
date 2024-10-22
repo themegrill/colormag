@@ -32,7 +32,6 @@ if ( ! function_exists( 'colormag_footer_builder_copyright' ) ) {
 		$theme_link   = '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '" target="_blank" title="' . esc_attr( $theme_author['theme_name'] ) . '" rel="nofollow">' . $theme_author['theme_name'] . '</a>';
 		$wp_link      = '<a href="' . esc_url( 'https://wordpress.org/' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'colormag' ) . '" rel="nofollow">' . __( 'WordPress', 'colormag' ) . '</a>';
 
-		error_log( print_r( $content, true ) );
 		if ( $content || is_customize_preview() ) {
 			$content = str_replace( '{the-year}', date_i18n( 'Y' ), $content );
 			$content = str_replace( '{site-link}', $site_link, $content );
