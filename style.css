@@ -1553,27 +1553,27 @@ table td {
 	list-style: none;
 }
 
-@media (max-width: 768px) {
-	.cm-footer-builder .cm-desktop-row {
-		display: none;
-	}
-	.cm-footer-builder .cm-mobile-row {
-		display: block;
-	}
-	.cm-footer-builder .cm-footer.cm-footer-builder .cm-footer-top-row .cm-top-row {
-		grid-template-columns: 1fr;
-	}
-	.cm-footer-builder .cm-footer.cm-footer-builder .cm-footer-main-row .cm-main-row {
-		grid-template-columns: 1fr;
-	}
-}
-
 .cm-footer-builder .cm-mini-cart li {
 	list-style: none;
 }
 
 .cm-footer-builder .cm-footer-nav ul li {
 	list-style: none;
+}
+
+@media (max-width: 768px) {
+	.cm-desktop-row {
+		display: none;
+	}
+	.cm-mobile-row {
+		display: block;
+	}
+	.cm-footer.cm-footer-builder .cm-footer-top-row .cm-top-row {
+		grid-template-columns: 1fr;
+	}
+	.cm-footer.cm-footer-builder .cm-footer-main-row .cm-main-row {
+		grid-template-columns: 1fr;
+	}
 }
 
 /*--------------------------------------------------------------
