@@ -10,7 +10,7 @@ $options = array(
 				'colormag_footer_copyright'            => array(
 					'default' => sprintf(
 					/* translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link. */
-						esc_html__( 'Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s.', 'zakra' ),
+						esc_html__( 'Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s.', 'colormag' ),
 						'{the-year}',
 						'{site-link}',
 						'{theme-link}',
