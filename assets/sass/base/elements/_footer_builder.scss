@@ -224,13 +224,28 @@
 	.cm-footer {
 		&.cm-footer-builder {
 			.cm-footer-top-row {
+				padding-bottom: 8px;
+
 				.cm-top-row {
+					gap: 4px;
 					grid-template-columns: 1fr;
 				}
 			}
 
 			.cm-footer-main-row {
+				padding: 8px 0;
+
 				.cm-main-row {
+					gap: 4px;
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.cm-footer-bottom-row {
+				padding-top: 8px;
+
+				.cm-bottom-row {
+					gap: 4px;
 					grid-template-columns: 1fr;
 				}
 			}

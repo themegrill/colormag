@@ -1,4 +1,7 @@
 == Changelog ==
+= 4.0.1 - 2024-10-23 =
+* Fix - Footer responsive issue.
+
 = 4.0.0 - 2024-10-22 =
 * Added       - New Header builder.
 * Enhancement - Introduced a new visual Header Builder with drag and drop functionality.
