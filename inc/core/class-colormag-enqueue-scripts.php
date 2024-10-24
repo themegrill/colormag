@@ -60,6 +60,18 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			add_action( 'customize_controls_enqueue_scripts', array( $this, 'colormag_inline_customizer_css' ) );
 
 			add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_js' ), 11 );
+
+			add_filter(
+				'customind:typography:value',
+				array( $this, 'colormag_default_typography' )
+			);
+		}
+
+		public function colormag_default_typography( $value ) {
+			if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) ) {
+				$value['font-family'] = 'Open Sans';
+			}
+			return $value;
 		}
 
 		/**
@@ -754,7 +766,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 		// For font family.
 		$default_value_font_family = isset( $default_value['font-family'] ) ? $default_value['font-family'] : '';
-		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) ) {
+		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) ) {
 			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
 		}
 

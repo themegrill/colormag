@@ -47,6 +47,7 @@ function get_google_fonts_url_by_ids( $typography_controls_ids, $local = false, 
 		if ( ! $value ) {
 			continue;
 		}
+		$value = apply_filters( 'customind:typography:value', $value ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 		if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) ) {
 			continue;
 		}

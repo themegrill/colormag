@@ -23,7 +23,7 @@ $options = array(
 
 foreach ( $categories as $category_list ) {
 	$options[ 'colormag_category_color_' . get_cat_id( $category_list->cat_name ) ] = array(
-		'title'    => esc_html__( $category_list->cat_name, 'colormag' ),
+		'title'    => $category_list->cat_name,
 		'default'  => '',
 		'type'     => 'customind-color',
 		'section'  => 'colormag_category_colors_section',
