@@ -354,7 +354,7 @@ class Customind {
 		$fontawesome_path = $this->get_asset_url( 'all.min.css', "assets/fontawesome/{$this->get_fontawesome_version()}/css", false );
 
 		wp_enqueue_style( 'fontawesome', $fontawesome_path, [], $this->fontawesome_version );
-		wp_enqueue_style( 'customind', $this->get_asset_url( 'customind.css' ), [], $asset['version'] );
+		wp_enqueue_style( 'customind', $this->get_asset_url( 'customind.css' ), [ 'wp-components' ], $asset['version'] );
 		// Support RTL.
 		wp_style_add_data( 'customind', 'rtl', 'replace' );
 		wp_enqueue_script( 'customind', $this->get_asset_url( 'customind.js' ), array_merge( $asset['dependencies'], [ 'customize-preview' ] ), $asset['version'], true );
