@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.1
+Version: 4.0.2
 Tested up to: 6.6
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,6 +69,10 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version - 4.0.2 - 2024-10-25 =
+* Fix - Open Sans font issue.
+* Fix - Customizer CSS issues while using Classic Widget.
+
 = Version - 4.0.1 - 2024-10-23 =
 * Fix - Footer responsive issue.
 

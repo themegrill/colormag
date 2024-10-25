@@ -1,4 +1,8 @@
 == Changelog ==
+= 4.0.2 - 2024-10-25 =
+* Fix - Open Sans font issue.
+* Fix - Customizer CSS issues while using Classic Widget.
+
 = 4.0.1 - 2024-10-23 =
 * Fix - Footer responsive issue.
 
