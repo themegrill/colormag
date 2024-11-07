@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version TBD =
+* Fix - Mobile logo issue.
+
 = Version - 4.0.2 - 2024-10-25 =
 * Fix - Open Sans font issue.
 * Fix - Customizer CSS issues while using Classic Widget.
