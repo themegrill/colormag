@@ -440,22 +440,29 @@ if ( ! function_exists( 'colormag_change_logo_attr' ) ) :
 	 * @return mixed
 	 */
 	function colormag_change_logo_attr( $attr, $attachment, $size ) {
-		$custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
 
-		if ( ! empty( $custom_logo ) ) {
-			$custom_logo = $custom_logo[0];
-		}
-
-		if ( isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
-			$retina_logo    = get_theme_mod( 'colormag_retina_logo', '' );
-			$attr['srcset'] = '';
-
-			if ( $retina_logo ) {
-				$attr['srcset'] = $custom_logo . ' 1x,' . $retina_logo . ' 2x';
+		$custom_logo = get_theme_mod( 'custom_logo' );
+		$retina_logo = get_theme_mod( 'colormag_retina_logo' );
+		if ( $custom_logo && $retina_logo && isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
+			$custom_logo_src = wp_get_attachment_image_src( $custom_logo, 'full' );
+			if ( ! $custom_logo_src ) {
+				return $attr;
+			}       $custom_logo_url = $custom_logo_src[0];
+			if ( is_numeric( $retina_logo ) ) {
+				$retina_logo_attachment = wp_get_attachment_image_src( $retina_logo, 'full' );
+				if ( isset( $retina_logo_attachment[0] ) ) {
+					$retina_logo_src = $retina_logo_attachment[0];
+				}
+			} else {
+				$retina_logo_id         = attachment_url_to_postid( $retina_logo );
+				$retina_logo_attachment = wp_get_attachment_image_src( $retina_logo_id, 'full' );
+				if ( isset( $retina_logo_attachment[0] ) ) {
+							$retina_logo_src = $retina_logo_attachment[0];
+				}
+			}         if ( isset( $retina_logo_src ) ) {
+				$attr['srcset'] = $custom_logo_url . ' 1x, ' . $retina_logo_src . ' 2x';
 			}
-		}
-
-		return $attr;
+		}    return $attr;
 	}
 
 endif;
