@@ -87,6 +87,9 @@ $options = array(
 							),
 						),
 					),
+					'condition'    => array(
+						'colormag_enable_site_identity' => true,
+					),
 				),
 				'colormag_header_site_title_typography' => array(
 					'default'   => array(
@@ -129,6 +132,9 @@ $options = array(
 					'section'   => 'colormag_header_builder_logo',
 					'transport' => 'postMessage',
 					'priority'  => 14,
+					'condition' => array(
+						'colormag_enable_site_identity' => true,
+					),
 				),
 			),
 		),
@@ -156,6 +162,9 @@ $options = array(
 					'section'   => 'colormag_header_builder_logo',
 					'transport' => 'postMessage',
 					'priority'  => 16,
+					'condition' => array(
+						'colormag_enable_site_tagline' => true,
+					),
 				),
 				'colormag_header_site_tagline_typography' => array(
 					'default'   => array(
@@ -198,6 +207,9 @@ $options = array(
 					'section'   => 'colormag_header_builder_logo',
 					'transport' => 'postMessage',
 					'priority'  => 18,
+					'condition' => array(
+						'colormag_enable_site_tagline' => true,
+					),
 				),
 			),
 		),
