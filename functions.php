@@ -161,26 +161,6 @@ if ( defined( 'ELEMENTOR_VERSION' ) ) {
 	require_once COLORMAG_ELEMENTOR_DIR . '/elementor-functions.php';
 }
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
- * @since ColorMag 3.0.0
- */
-function cm_customize_preview_js() {
-
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
-	wp_enqueue_script(
-		'colormag-customizer-pre',
-		get_assets_url() . '/inc/customizer/assets/js/cm-customize-preview.js',
-		array(
-			'customize-preview',
-		),
-		COLORMAG_THEME_VERSION,
-		true
-	);
-}
-
 function get_assets_url() {
 	// Get correct URL and path to wp-content.
 	$content_url = untrailingslashit( dirname( dirname( get_stylesheet_directory_uri() ) ) );
@@ -191,8 +171,6 @@ function get_assets_url() {
 
 	return $url;
 }
-
-add_action( 'customize_preview_init', 'cm_customize_preview_js' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -364,3 +342,29 @@ function colormag_maybe_enable_builder() {
 
 	return true;
 }
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @since ColorMag 3.0.0
+ */
+function cm_customize_preview_js() {
+
+	if ( colormag_maybe_enable_builder() ) {
+		set_theme_mod( 'colormag_enable_builder', true );
+		update_option( 'colormag_builder_migration', true );
+	}
+
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+	wp_enqueue_script(
+		'colormag-customizer-pre',
+		get_assets_url() . '/inc/customizer/assets/js/cm-customize-preview.js',
+		array(
+			'customize-preview',
+		),
+		COLORMAG_THEME_VERSION,
+		true
+	);
+}
+add_action( 'customize_preview_init', 'cm_customize_preview_js' );

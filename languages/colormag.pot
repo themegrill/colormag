@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 4.0.2\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-10-25 08:01:03+00:00\n"
+"POT-Creation-Date: 2024-11-07 08:23:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -952,8 +952,8 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:103
 #: inc/customizer/options/header-and-navigation/site-identity.php:160
 #: inc/customizer/options/header-builder/date.php:75
-#: inc/customizer/options/header-builder/logo.php:128
-#: inc/customizer/options/header-builder/logo.php:197
+#: inc/customizer/options/header-builder/logo.php:131
+#: inc/customizer/options/header-builder/logo.php:206
 #: inc/customizer/options/header-builder/mobile-menu.php:92
 #: inc/customizer/options/header-builder/news-ticker.php:65
 #: inc/customizer/options/header-builder/primary-menu.php:81
@@ -1121,7 +1121,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/home-icon.php:14
 #: inc/customizer/options/header-builder/html-1.php:19
 #: inc/customizer/options/header-builder/logo.php:69
-#: inc/customizer/options/header-builder/logo.php:153
+#: inc/customizer/options/header-builder/logo.php:159
 #: inc/customizer/options/header-builder/main-area.php:40
 #: inc/customizer/options/header-builder/mobile-menu.php:19
 #: inc/customizer/options/header-builder/news-ticker.php:14
@@ -1913,7 +1913,7 @@ msgstr ""
 msgid "Border Radius"
 msgstr ""
 
-#: inc/customizer/options/header-builder/logo.php:139
+#: inc/customizer/options/header-builder/logo.php:145
 msgid "Tagline"
 msgstr ""
 
@@ -2270,15 +2270,15 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/widgets/abstract-colormag-widget.php:361
+#: inc/widgets/abstract-colormag-widget.php:360
 msgid "Choose an image"
 msgstr ""
 
-#: inc/widgets/abstract-colormag-widget.php:362
+#: inc/widgets/abstract-colormag-widget.php:361
 msgid "Use image"
 msgstr ""
 
-#: inc/widgets/abstract-colormag-widget.php:365
+#: inc/widgets/abstract-colormag-widget.php:364
 msgid "Select an Image"
 msgstr ""
 
@@ -2731,11 +2731,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: template-parts/hooks/header/header.php:529
+#: template-parts/hooks/header/header.php:536
 msgid "Breadcrumbs"
 msgstr ""
 
-#: template-parts/hooks/header/header.php:529
+#: template-parts/hooks/header/header.php:536
 msgid "You are here: "
 msgstr ""
 
