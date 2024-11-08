@@ -69,7 +69,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		}
 
 		/**
-		 * Migrate all of the customize options for 3.0.0 theme update.
+		 * Migrate all the customize options for 3.0.0 theme update.
 		 *
 		 * @since ColorMag 3.0.0
 		 */
@@ -1049,6 +1049,39 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		}
 
 		/**
+		 * Recursively removes a specified component from an array.
+		 *
+		 * This static function traverses through a multidimensional array and removes
+		 * all occurrences of a specified component. It performs the following operations:
+		 *
+		 * 1. Iterates through each element of the input array.
+		 * 2. If an element is an array, it recursively calls itself on that sub-array.
+		 * 3. If an element matches the component to remove, it unsets that element.
+		 * 4. After processing, if the array keys are sequential integers, it reindexes the array.
+		 *
+		 * @param mixed $component_to_remove The component to be removed from the array.
+		 * @param array &$_array             The array to remove the component from (passed by reference).
+		 *
+		 * @return void The function modifies the input array directly.
+		 *
+		 * @since 4.0.0
+		 */
+		public static function remove_component( $component_to_remove, &$_array ) {
+			foreach ( $_array as $key => &$value ) {
+				if ( is_array( $value ) ) {
+					self::remove_component( $component_to_remove, $value );
+				} else { // phpcs:ignore
+					if ( $value === $component_to_remove ) {
+						unset( $_array[ $key ] );
+					}
+				}
+			}
+			if ( array_values( $_array ) === $_array ) {
+				$_array = array_values( $_array );
+			}
+		}
+
+		/**
 		 * Return the value for customize migration on demo import.
 		 *
 		 * @return bool
@@ -1066,23 +1099,22 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			return false;
 		}
 
-		public static function remove_component( $component_to_remove, &$_array ) {
-			foreach ( $_array as $key => &$value ) {
-				if ( is_array( $value ) ) {
-					self::remove_component( $component_to_remove, $value );
-				} else { // phpcs:ignore
-					if ( $value === $component_to_remove ) {
-						unset( $_array[ $key ] );
-					}
-				}
-			}
-			if ( array_values( $_array ) === $_array ) {
-				$_array = array_values( $_array );
-			}
-		}
-
 		/**
-		 * @return bool
+		 * Determines whether to run the customizer migration.
+		 *
+		 * This static function checks if the customizer migration needs to be executed.
+		 * It performs the following checks:
+		 *
+		 * 1. Verifies if the migration has already been run by checking a specific option.
+		 * 2. If the migration has been run before, it returns false.
+		 * 3. If not previously migrated, it checks for the presence of old theme mods.
+		 * 4. Specifically looks for theme mods with the 'colormag_' prefix.
+		 *
+		 * The function is designed to prevent unnecessary migrations and ensure
+		 * that the migration only runs when old theme data is present.
+		 *
+		 * @return bool Returns true if migration should be run, false otherwise.
+		 *
 		 */
 		public static function maybe_run_migration() {
 
