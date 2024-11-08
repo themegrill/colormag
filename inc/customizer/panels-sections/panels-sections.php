@@ -7,11 +7,11 @@ $panel_options_id = array(
 	'colormag_front_page_panel' => array(
 		'title' => esc_html__( 'Front Page', 'colormag' ),
 	),
+	'colormag_header_panel'     => array(
+		'title' => esc_html__( 'Header & Navigation', 'colormag' ),
+	),
 	'colormag_header_builder'   => array(
 		'title' => esc_html__( 'Header Builder', 'colormag' ),
-	),
-	'colormag_header_panel'     => array(
-		'title' => esc_html__( 'Page Element', 'colormag' ),
 	),
 	'colormag_content_panel'    => array(
 		'title' => esc_html__( 'Content', 'colormag' ),
