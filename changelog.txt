@@ -1,4 +1,8 @@
 == Changelog ==
+= 4.0.3 - 2024-11-11 =
+* Fix   - Mobile logo issue.
+* Tweak - New image webp image format added.
+
 = 4.0.2 - 2024-10-25 =
 * Fix - Open Sans font issue.
 * Fix - Customizer CSS issues while using Classic Widget.
