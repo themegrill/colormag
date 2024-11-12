@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.3
+Version: 4.0.4
 Tested up to: 6.6
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.3
+Stable tag: 4.0.4
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,6 +69,11 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.0.4 - 2024-11-12 =
+* Fix - Header media image issue.
+* Fix - Logo remove option issue.
+* Fix - Search icon color option issue.
+
 = Version - 4.0.3 - 2024-11-11 =
 * Fix   - Mobile logo issue.
 * Tweak - New image webp image format added.

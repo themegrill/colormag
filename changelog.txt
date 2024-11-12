@@ -1,4 +1,9 @@
 == Changelog ==
+= 4.0.4 - 2024-11-12 =
+* Fix - Header media image issue.
+* Fix - Logo remove option issue.
+* Fix - Search icon color option issue.
+
 = 4.0.3 - 2024-11-11 =
 * Fix   - Mobile logo issue.
 * Tweak - New image webp image format added.

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 4.0.3\n"
+"Project-Id-Version: ColorMag 4.0.4\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-11-11 08:52:05+00:00\n"
+"POT-Creation-Date: 2024-11-12 10:34:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -792,11 +792,11 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/header-action.php:52
 #: inc/customizer/options/header-and-navigation/header-action.php:69
 #: inc/customizer/options/header-and-navigation/news-ticker.php:20
-#: inc/customizer/options/header-and-navigation/site-identity.php:51
+#: inc/customizer/options/header-and-navigation/site-identity.php:49
 #: inc/customizer/options/header-and-navigation/sticky-header.php:19
 #: inc/customizer/options/header-and-navigation/top-bar.php:24
 #: inc/customizer/options/header-and-navigation/top-bar.php:71
-#: inc/customizer/options/header-builder/logo.php:61
+#: inc/customizer/options/header-builder/logo.php:59
 msgid "Enable"
 msgstr ""
 
@@ -870,7 +870,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/main-header.php:148
 #: inc/customizer/options/header-and-navigation/news-ticker.php:31
 #: inc/customizer/options/header-and-navigation/primary-menu.php:322
-#: inc/customizer/options/header-and-navigation/site-identity.php:174
+#: inc/customizer/options/header-and-navigation/site-identity.php:172
 #: inc/customizer/options/header-and-navigation/sticky-header.php:30
 #: inc/customizer/options/header-and-navigation/top-bar.php:155
 msgid "Unlock more features available in Pro version."
@@ -894,7 +894,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/main-header.php:149
 #: inc/customizer/options/header-and-navigation/news-ticker.php:32
 #: inc/customizer/options/header-and-navigation/primary-menu.php:323
-#: inc/customizer/options/header-and-navigation/site-identity.php:175
+#: inc/customizer/options/header-and-navigation/site-identity.php:173
 #: inc/customizer/options/header-and-navigation/sticky-header.php:31
 #: inc/customizer/options/header-and-navigation/top-bar.php:156
 msgid "Learn more"
@@ -949,11 +949,11 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/primary-menu.php:162
 #: inc/customizer/options/header-and-navigation/primary-menu.php:242
 #: inc/customizer/options/header-and-navigation/primary-menu.php:291
-#: inc/customizer/options/header-and-navigation/site-identity.php:103
-#: inc/customizer/options/header-and-navigation/site-identity.php:160
+#: inc/customizer/options/header-and-navigation/site-identity.php:101
+#: inc/customizer/options/header-and-navigation/site-identity.php:158
 #: inc/customizer/options/header-builder/date.php:75
-#: inc/customizer/options/header-builder/logo.php:131
-#: inc/customizer/options/header-builder/logo.php:206
+#: inc/customizer/options/header-builder/logo.php:129
+#: inc/customizer/options/header-builder/logo.php:204
 #: inc/customizer/options/header-builder/mobile-menu.php:92
 #: inc/customizer/options/header-builder/news-ticker.php:65
 #: inc/customizer/options/header-builder/primary-menu.php:81
@@ -1091,7 +1091,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/offset-area.php:14
 #: inc/customizer/options/header-builder/primary-menu.php:48
 #: inc/customizer/options/header-builder/primary-menu.php:107
-#: inc/customizer/options/header-builder/search.php:45
+#: inc/customizer/options/header-builder/search.php:28
 #: inc/customizer/options/header-builder/secondary-menu.php:47
 #: inc/customizer/options/header-builder/secondary-menu.php:105
 #: inc/customizer/options/header-builder/top-area.php:58
@@ -1113,19 +1113,20 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/primary-menu.php:55
 #: inc/customizer/options/header-and-navigation/primary-menu.php:73
 #: inc/customizer/options/header-and-navigation/primary-menu.php:200
-#: inc/customizer/options/header-and-navigation/site-identity.php:59
-#: inc/customizer/options/header-and-navigation/site-identity.php:131
+#: inc/customizer/options/header-and-navigation/site-identity.php:57
+#: inc/customizer/options/header-and-navigation/site-identity.php:129
 #: inc/customizer/options/header-builder/bottom-area.php:40
 #: inc/customizer/options/header-builder/date.php:31
 #: inc/customizer/options/header-builder/header-button.php:34
 #: inc/customizer/options/header-builder/home-icon.php:14
 #: inc/customizer/options/header-builder/html-1.php:19
-#: inc/customizer/options/header-builder/logo.php:69
-#: inc/customizer/options/header-builder/logo.php:159
+#: inc/customizer/options/header-builder/logo.php:67
+#: inc/customizer/options/header-builder/logo.php:157
 #: inc/customizer/options/header-builder/main-area.php:40
 #: inc/customizer/options/header-builder/mobile-menu.php:19
 #: inc/customizer/options/header-builder/news-ticker.php:14
 #: inc/customizer/options/header-builder/primary-menu.php:26
+#: inc/customizer/options/header-builder/search.php:14
 #: inc/customizer/options/header-builder/toggle-button.php:12
 #: inc/customizer/options/header-builder/top-area.php:42
 msgid "Color"
@@ -1152,15 +1153,14 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/header-action.php:26
 #: inc/customizer/options/header-and-navigation/primary-menu.php:81
 #: inc/customizer/options/header-and-navigation/primary-menu.php:208
-#: inc/customizer/options/header-and-navigation/site-identity.php:67
+#: inc/customizer/options/header-and-navigation/site-identity.php:65
 #: inc/customizer/options/header-builder/header-button.php:40
 #: inc/customizer/options/header-builder/header-button.php:61
 #: inc/customizer/options/header-builder/html-1.php:35
-#: inc/customizer/options/header-builder/logo.php:77
+#: inc/customizer/options/header-builder/logo.php:75
 #: inc/customizer/options/header-builder/mobile-menu.php:27
 #: inc/customizer/options/header-builder/primary-menu.php:32
 #: inc/customizer/options/header-builder/random.php:21
-#: inc/customizer/options/header-builder/search.php:21
 #: inc/customizer/options/header-builder/secondary-menu.php:32
 msgid "Normal"
 msgstr ""
@@ -1182,16 +1182,15 @@ msgstr ""
 #: inc/customizer/options/global/button.php:55
 #: inc/customizer/options/global/colors.php:164
 #: inc/customizer/options/header-and-navigation/header-action.php:33
-#: inc/customizer/options/header-and-navigation/site-identity.php:74
+#: inc/customizer/options/header-and-navigation/site-identity.php:72
 #: inc/customizer/options/header-builder/header-button.php:47
 #: inc/customizer/options/header-builder/header-button.php:68
 #: inc/customizer/options/header-builder/html-1.php:42
-#: inc/customizer/options/header-builder/logo.php:84
+#: inc/customizer/options/header-builder/logo.php:82
 #: inc/customizer/options/header-builder/mobile-menu.php:34
 #: inc/customizer/options/header-builder/primary-menu.php:39
 #: inc/customizer/options/header-builder/primary-menu.php:54
 #: inc/customizer/options/header-builder/random.php:28
-#: inc/customizer/options/header-builder/search.php:28
 #: inc/customizer/options/header-builder/secondary-menu.php:39
 #: inc/customizer/options/header-builder/secondary-menu.php:53
 msgid "Hover"
@@ -1258,7 +1257,7 @@ msgstr ""
 #: inc/customizer/options/footer-builder/main-area.php:44
 #: inc/customizer/options/footer-builder/top-area.php:44
 #: inc/customizer/options/header-builder/bottom-area.php:33
-#: inc/customizer/options/header-builder/logo.php:42
+#: inc/customizer/options/header-builder/logo.php:40
 #: inc/customizer/options/header-builder/main-area.php:33
 #: inc/customizer/options/header-builder/top-area.php:35
 msgid "Height"
@@ -1749,7 +1748,6 @@ msgstr ""
 
 #: inc/customizer/options/header-and-navigation/primary-menu.php:183
 #: inc/customizer/options/header-builder/random.php:13
-#: inc/customizer/options/header-builder/search.php:13
 msgid "Icon Color"
 msgstr ""
 
@@ -1781,24 +1779,24 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:33
-#: inc/customizer/options/header-builder/logo.php:31
+#: inc/customizer/options/header-and-navigation/site-identity.php:31
+#: inc/customizer/options/header-builder/logo.php:29
 msgid "Retina Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:35
-#: inc/customizer/options/header-builder/logo.php:33
+#: inc/customizer/options/header-and-navigation/site-identity.php:33
+#: inc/customizer/options/header-builder/logo.php:31
 msgid ""
 "Upload 2X times the size of your current logo. Eg: If your current logo "
 "size is 120*60 then upload 240*120 sized logo."
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:44
-#: inc/customizer/options/header-builder/logo.php:54
+#: inc/customizer/options/header-and-navigation/site-identity.php:42
+#: inc/customizer/options/header-builder/logo.php:52
 msgid "Site Title"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:117
+#: inc/customizer/options/header-and-navigation/site-identity.php:115
 msgid "Site Tagline"
 msgstr ""
 
@@ -1913,7 +1911,7 @@ msgstr ""
 msgid "Border Radius"
 msgstr ""
 
-#: inc/customizer/options/header-builder/logo.php:145
+#: inc/customizer/options/header-builder/logo.php:143
 msgid "Tagline"
 msgstr ""
 
@@ -1922,7 +1920,7 @@ msgstr ""
 msgid "Select Menu Navigation"
 msgstr ""
 
-#: inc/customizer/options/header-builder/search.php:38
+#: inc/customizer/options/header-builder/search.php:21
 msgid "Text Color"
 msgstr ""
 
