@@ -11,7 +11,7 @@ $options = array(
 				'colormag_header_search_icon_color' => array(
 					'default'   => '',
 					'type'      => 'customind-color',
-					'title'     => esc_html__( 'Color', 'zakra' ),
+					'title'     => esc_html__( 'Color', 'colormag' ),
 					'transport' => 'postMessage',
 					'section'   => 'colormag_header_builder_search',
 				),
