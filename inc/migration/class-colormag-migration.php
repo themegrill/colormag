@@ -433,6 +433,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['right'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['center'][] = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -460,6 +461,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['center'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['center'][]  = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -486,6 +488,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['left'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['left'][]  = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
