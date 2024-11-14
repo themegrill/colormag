@@ -1338,7 +1338,7 @@ table td {
 	.cm-header-builder .cm-mobile-row .cm-bottom-row {
 		position: relative;
 	}
-	.cm-header-builder .cm-mobile-row .cm-header-center-col {
+	.cm-header-builder .cm-mobile-row .cm-header-center-col, .cm-header-builder .cm-mobile-row .cm-header-left-col, .cm-header-builder .cm-mobile-row .cm-header-right-col {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		-ms-flex-direction: column;

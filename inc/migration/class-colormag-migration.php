@@ -423,6 +423,9 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$home_icon          = get_theme_mod( 'colormag_menu_icon_logo', 'icon' );
 			$search_enable      = get_theme_mod( 'colormag_enable_search', 0 );
 			$random_enable      = get_theme_mod( 'colormag_enable_random_post', 0 );
+
+			$header_builder_config['mobile']['main']['left'][] = 'logo';
+
 			if ( 'layout-1' === $main_header_layout ) {
 				$main_header_layout_1_style_alignment = get_theme_mod( 'colormag_header_display_type', 'type_one' );
 				if ( 'type_one' === $main_header_layout_1_style_alignment ) {
@@ -433,7 +436,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['right'][] = 'widget-1';
-						$header_builder_config['mobile']['main']['center'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['left'][]   = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -461,7 +464,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['center'][] = 'widget-1';
-						$header_builder_config['mobile']['main']['center'][]  = 'widget-1';
+						$header_builder_config['mobile']['main']['left'][]    = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -487,8 +490,8 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
-						$header_builder_config['desktop']['main']['left'][]  = 'widget-1';
-						$header_builder_config['mobile']['main']['center'][] = 'widget-1';
+						$header_builder_config['desktop']['main']['left'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['left'][]  = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -550,8 +553,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					$header_builder_config['desktop']['top']['right'][] = 'socials';
 				}
 			}
-
-			$header_builder_config['mobile']['main']['left'] = [ 'logo' ];
 
 			set_theme_mod( 'colormag_header_builder', $header_builder_config );
 
