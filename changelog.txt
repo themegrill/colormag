@@ -1,4 +1,7 @@
 == Changelog ==
+= 4.0.5 - 2024-11-15 =
+* Fix   - WordPress 6.7 customizer css issue.
+
 = 4.0.4 - 2024-11-12 =
 * Fix - Header media image issue.
 * Fix - Logo remove option issue.

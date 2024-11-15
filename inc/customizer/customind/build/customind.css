@@ -1687,6 +1687,26 @@ li[class^='customize-control-customind-'] {
 	height: auto;
 }
 
+.wp-full-overlay[data-customind-builder-panel="elearning_footer_builder"]:not(.customind-builder-hidden){
+	bottom: 328px;
+	height: auto;
+}
+
+.wp-full-overlay[data-customind-builder-panel="elearning_header_builder"]:not(.customind-builder-hidden){
+	bottom: 328px;
+	height: auto;
+}
+
+.wp-full-overlay.customind-builder-hidden[data-customind-builder-panel="elearning_header_builder"]{
+	bottom: 52px;
+	height: auto;
+}
+
+.wp-full-overlay.customind-builder-hidden[data-customind-builder-panel="elearning_footer_builder"]{
+	bottom: 52px;
+	height: auto;
+}
+
 [data-control-type="customind-select"] select{
 	max-width: 100%;
 }
@@ -1703,6 +1723,23 @@ li.customize-control-customind-accordion {
 #customize-controls .current-panel .control-section > h3.accordion-section-title {
 	padding-top: 12px;
 	padding-bottom: 12px;
+}
+
+.customind #customize-controls .current-panel .control-section > h3.accordion-section-title .accordion-trigger {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.customind #customize-controls .control-section .accordion-section-title button:hover, .customind #customize-controls .control-section .accordion-section-title button:focus {
+	background: unset;
+}
+
+.customind .accordion-section-title button.accordion-trigger {
+	height: unset;
+}
+
+.customind #customize-theme-controls .customize-pane-parent {
+	overflow: hidden;
 }
 
 /*#customize-theme-controls .control-section-customind-upsell-section .accordion-section-title:hover, #customize-theme-controls .control-section-customind-upsell-section .accordion-section-title:focus {*/
