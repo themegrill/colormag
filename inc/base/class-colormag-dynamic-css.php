@@ -4279,6 +4279,31 @@ class ColorMag_Dynamic_CSS {
 			$parse_builder_css .= " .cm-footer-builder .cm-bottom-row{justify-items: center;} ";
 		}
 
+		$color_palette_default = array(
+			'id'     => 'preset-1',
+			'name'   => 'Preset 1',
+			'colors' => array(
+				'colormag-color-1' => '#eaf3fb',
+				'colormag-color-2' => '#bfdcf3',
+				'colormag-color-3' => '#94c4eb',
+				'colormag-color-4' => '#6aace2',
+				'colormag-color-5' => '#257bc1',
+				'colormag-color-6' => '#1d6096',
+				'colormag-color-7' => '#15446b',
+				'colormag-color-8' => '#0c2941',
+				'colormag-color-9' => '#040e16',
+			),
+		);
+
+		// Color palette.
+		$color_palette = get_theme_mod('colormag_color_palette', $color_palette_default );
+		$parse_builder_css .= sprintf(' :root{%s}', array_reduce( array_keys($color_palette['colors'] ?? []), function($acc, $curr) use ($color_palette) {
+			$acc .= "--{$curr}: {$color_palette['colors'][$curr]};";
+
+			return $acc;
+		}, '' ));
+
+
 		return $parse_builder_css;
 	}
 }
