@@ -4258,6 +4258,16 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Header builder mobile menu background color.
+		$header_mobile_menu_background_color     = get_theme_mod( 'colormag_header_mobile_menu_background', '' );
+		$header_mobile_menu_background_color_css = array(
+			'.cm-mobile-nav' => array(
+				'background-color' => esc_html( $header_mobile_menu_background_color ),
+			),
+		);
+		$parse_builder_css                       .= zakra_parse_css( '', $header_mobile_menu_background_color, $header_mobile_menu_background_color_css );
+
+
 		// Footer builder area cols.
 		$footer_builder_top_col = get_theme_mod('colormag_footer_top_area_cols', 4);
 
