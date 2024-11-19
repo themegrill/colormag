@@ -7046,3 +7046,8 @@ blockquote.wp-block-quote.has-text-align-right {
 .mega-menu .mega-toggle-on .cm-breaking-news-slider-widget {
 	visibility: visible !important;
 }
+
+.siteorigin-panels .cm-featured-posts {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+}
