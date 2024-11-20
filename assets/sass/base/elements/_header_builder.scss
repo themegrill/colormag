@@ -379,6 +379,10 @@
 		.cm-bottom-row {
 			position: relative;
 		}
+
+		.cm-header-center-col,.cm-header-left-col, .cm-header-right-col {
+			flex-direction: column;
+		}
     }
   }
 }

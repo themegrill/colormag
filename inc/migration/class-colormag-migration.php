@@ -401,9 +401,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					),
 					'main'   => array(
 						'left'   => array(),
-						'center' => array(
-							'logo',
-						),
+						'center' => array(),
 						'right'  => array(),
 					),
 					'bottom' => array(
@@ -423,6 +421,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$home_icon          = get_theme_mod( 'colormag_menu_icon_logo', 'icon' );
 			$search_enable      = get_theme_mod( 'colormag_enable_search', 0 );
 			$random_enable      = get_theme_mod( 'colormag_enable_random_post', 0 );
+
 			if ( 'layout-1' === $main_header_layout ) {
 				$main_header_layout_1_style_alignment = get_theme_mod( 'colormag_header_display_type', 'type_one' );
 				if ( 'type_one' === $main_header_layout_1_style_alignment ) {
@@ -433,6 +432,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['right'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['center'][] = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -460,6 +460,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
 						$header_builder_config['desktop']['main']['center'][] = 'widget-1';
+						$header_builder_config['mobile']['main']['center'][]  = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -485,7 +486,8 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
 						self::remove_component( 'widget-1', $header_builder_config );
-						$header_builder_config['desktop']['main']['left'][] = 'widget-1';
+						$header_builder_config['desktop']['main']['left'][]  = 'widget-1';
+						$header_builder_config['mobile']['main']['center'][] = 'widget-1';
 					}
 
 					if ( 'home-icon' === $home_icon ) {
@@ -548,7 +550,12 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
-			$header_builder_config['mobile']['main']['left'] = [ 'logo' ];
+			$header_builder_config['mobile']['main']['center'][] = 'logo';
+			if ( count( $header_builder_config['mobile']['main']['center'] ) > 1 ) {
+				$mobile_builder_first                                 = $header_builder_config['mobile']['main']['center'][0];
+				$header_builder_config['mobile']['main']['center'][0] = $header_builder_config['mobile']['main']['center'][1];
+				$header_builder_config['mobile']['main']['center'][1] = $mobile_builder_first;
+			}
 
 			set_theme_mod( 'colormag_header_builder', $header_builder_config );
 
