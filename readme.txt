@@ -69,6 +69,8 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+* Enhancement   - Compatibility with Page Builder by SiteOrigin.
+
 = Version 4.0.5 - 2024-11-15 =
 * Fix   - WordPress 6.7 customizer css issue.
 
