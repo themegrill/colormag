@@ -3680,6 +3680,18 @@ Styles for separating single posts loaded from ajax call.
 		flex-basis: calc(50% - 10px);
 		margin-bottom: 0;
 	}
+	.cm-secondary .cm-featured-posts.cm-featured-posts--style-1 {
+		gap: 20px;
+	}
+	.cm-secondary .cm-featured-posts.cm-featured-posts--style-1 .cm-posts {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+	}
+	.cm-secondary .cm-featured-posts.cm-featured-posts--style-1 .cm-first-post {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+		margin-bottom: 0;
+	}
 }
 
 /* Style 2 widget.
