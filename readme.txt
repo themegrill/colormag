@@ -70,6 +70,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Enhancement   - Compatibility with Page Builder by SiteOrigin.
+* Fix   - Offset background color issue.
 * Fix   - TG: Featured Posts (Style 1) style issue.
 
 = Version 4.0.5 - 2024-11-15 =
