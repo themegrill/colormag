@@ -71,8 +71,8 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version 4.0.6 - 2024-11-20 =
 * Enhancement   - Compatibility with Page Builder by SiteOrigin.
-* Fix           - Offset background color issue.
 * Fix           - TG: Featured Posts (Style 1) style issue.
+* Fix           - Offset background color issue.
 
 = Version 4.0.5 - 2024-11-15 =
 * Fix   - WordPress 6.7 customizer css issue.
