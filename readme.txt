@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.6
+Version: 4.0.7
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.6
+Stable tag: 4.0.7
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,6 +69,10 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.0.7 - 2024-11-22 =
+* Fix           - TG: Widget style issue.
+* Fix           - Customizer section padding issue.
+
 = Version 4.0.6 - 2024-11-20 =
 * Enhancement   - Compatibility with Page Builder by SiteOrigin.
 * Fix           - TG: Featured Posts (Style 1) style issue.
