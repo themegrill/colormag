@@ -3700,6 +3700,14 @@ Styles for separating single posts loaded from ajax call.
 	}
 }
 
+.cm-secondary .cm-featured-posts--style-1 .cm-posts .cm-post a {
+	max-width: 130px;
+}
+
+.cm-secondary .cm-featured-posts--style-1 .cm-posts .cm-post-content a {
+	max-width: 100%;
+}
+
 /* Style 2 widget.
 --------------------------------------------- */
 .cm-featured-posts--style-2.cm-featured-posts .cm-first-post,
@@ -3716,6 +3724,14 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-featured-posts--style-2 .cm-posts .cm-below-entry-meta {
 	margin-bottom: 0;
+}
+
+.cm-secondary .cm-featured-posts--style-2 .cm-posts .cm-post a {
+	max-width: 130px;
+}
+
+.cm-secondary .cm-featured-posts--style-2 .cm-posts .cm-post-content a {
+	max-width: 100%;
 }
 
 /* Highlighted posts widget.
