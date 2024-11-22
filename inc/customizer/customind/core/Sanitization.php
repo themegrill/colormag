@@ -205,7 +205,7 @@ class Sanitization {
 			'customind-editor'        => 'wp_kses_post',
 			'customind-fontawesome'   => 'sanitize_text_field',
 			'customind-select'        => 'sanitize_text_field',
-			'customind-textarea'      => 'sanitize_textarea_field',
+			'customind-textarea'      => null,
 			'customind-background'    => null,
 			'customind-slider'        => null,
 			'customind-dimensions'    => null,

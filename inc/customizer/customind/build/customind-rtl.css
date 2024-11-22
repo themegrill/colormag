@@ -1720,16 +1720,6 @@ li.customize-control-customind-accordion {
 	margin-top: 12px;
 }
 
-#customize-controls .current-panel .control-section > h3.accordion-section-title {
-	padding-top: 12px;
-	padding-bottom: 12px;
-}
-
-.customind #customize-controls .current-panel .control-section > h3.accordion-section-title .accordion-trigger {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
 .customind #customize-controls .control-section .accordion-section-title button:hover, .customind #customize-controls .control-section .accordion-section-title button:focus {
 	background: unset;
 }
