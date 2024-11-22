@@ -1,4 +1,8 @@
 == Changelog ==
+= 4.0.7 - 2024-11-22 =
+* Fix           - TG: Widget style issue.
+* Fix           - Customizer section padding issue.
+
 = 4.0.6 - 2024-11-20 =
 * Enhancement   - Compatibility with Page Builder by SiteOrigin.
 * Fix           - Offset background color issue.
