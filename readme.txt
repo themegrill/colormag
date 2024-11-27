@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version TBD =
+* Fix           - TG: Widget style issue in footer.
+
 = Version 4.0.7 - 2024-11-22 =
 * Fix           - TG: Widget style issue.
 * Fix           - Customizer section padding issue.
