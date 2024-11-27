@@ -41,3 +41,21 @@
 		}
 	}
 }
+
+.cm-footer {
+	.cm-featured-posts--style-2 {
+		.cm-posts {
+			.cm-post {
+				a {
+					max-width: 130px;
+				}
+			}
+
+			.cm-post-content {
+				a {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
