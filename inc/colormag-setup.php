@@ -45,17 +45,6 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		add_image_size( 'colormag-featured-post-small', 130, 90, true );
 		add_image_size( 'colormag-featured-image', 800, 445, true );
 
-		// Setup the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'colormag_custom_background_args',
-				array(
-					'default-color' => 'eaeaea',
-				)
-			)
-		);
-
 		/**
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
