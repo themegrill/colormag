@@ -16,9 +16,7 @@ $options = array(
 				),
 			)
 		),
-		'input_attrs'  => array(
-			'collapsible' => apply_filters( 'colormag_header_builder_toggle_button_accordion_collapsible', false ),
-		),
+		'collapsible'  => apply_filters( 'colormag_header_builder_toggle_button_accordion_collapsible', false ),
 	),
 );
 
