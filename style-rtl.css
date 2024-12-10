@@ -1415,6 +1415,16 @@ table td {
 	color: #e4e4e7;
 }
 
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-1-col:has(aside),
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-2-col:has(aside),
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-3-col:has(aside),
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-4-col:has(aside) {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
 .cm-footer-builder .cm-footer-top-row .widget {
 	width: 100%;
 	height: -webkit-fit-content;
