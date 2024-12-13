@@ -40,6 +40,9 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	 */
 	protected function register_controls() {
 
+		// Controls related to general.
+		$this->widget_general_controls();
+
 		// Controls related to widget title section.
 		$this->widget_title_controls();
 
@@ -51,7 +54,95 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		// Controls related to posts filter section.
 		$this->posts_filter_controls();
+	}
 
+	/**
+	 * Controls related to widget title section.
+	 */
+	public function widget_general_controls() {
+
+		// Widget title section.
+		$this->start_controls_section(
+			'section_colormag_general_manage',
+			array(
+				'label' => esc_html__( 'General', 'colormag' ),
+			)
+		);
+
+		$this->add_control(
+			'first_column_title',
+			[
+				'label' => esc_html__( 'First Column', 'colormag' ),
+				'type'  => Controls_Manager::HEADING,
+			]
+		);
+
+		// Widget first column post element.
+		$this->add_control(
+			'first_column_post_element_select',
+			[
+				'label'       => esc_html__( 'Post Element', 'colormag' ),
+				'type'        => Controls_Manager::SELECT2,
+				'label_block' => true,
+				'multiple'    => true,
+				'options'     => [
+					'image'   => esc_html__( 'Image', 'colormag' ),
+					'title'   => esc_html__( 'Title', 'colormag' ),
+					'meta'    => esc_html__( 'Tag', 'colormag' ),
+					'excerpt' => esc_html__( 'Content', 'colormag' ),
+				],
+				'default'     => [ 'image', 'title', 'meta', 'excerpt' ],
+			]
+		);
+
+		// Add a title and a line between the controls.
+		$this->add_control(
+			'second_column_title',
+			[
+				'label' => esc_html__( 'Column Second', 'colormag' ),
+				'type'  => Controls_Manager::HEADING,
+			]
+		);
+
+		$this->add_control(
+			'second_column_divider',
+			[
+				'type' => Controls_Manager::DIVIDER,
+			]
+		);
+
+		// Widget second column post element.
+		$this->add_control(
+			'show_second_column_image',
+			[
+				'label'        => esc_html__( 'Image', 'companion-elementor' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Show', 'companion-elementor' ),
+				'label_off'    => esc_html__( 'Hide', 'companion-elementor' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			]
+		);
+
+		$this->add_control(
+			'second_column_post_element_select',
+			[
+				'label'       => esc_html__( 'Post Element', 'colormag' ),
+				'type'        => Controls_Manager::SELECT2,
+				'label_block' => true,
+				'multiple'    => true,
+				'options'     => [
+					'title' => esc_html__( 'Title', 'colormag' ),
+					'meta'  => esc_html__( 'Tag', 'colormag' ),
+				],
+				'default'     => [ 'title', 'meta' ],
+			]
+		);
+
+		// Extra option control related to widget title section.
+		$this->widget_title_controls_extra();
+
+		$this->end_controls_section();
 	}
 
 	/**
@@ -82,7 +173,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->widget_title_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -142,7 +232,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->widget_title_style_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -185,7 +274,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -236,7 +324,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_filter_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -278,7 +365,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$get_featured_posts = new \WP_Query( $query_args );
 
 		return $get_featured_posts;
-
 	}
 
 	/**
@@ -326,5 +412,4 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		</a>
 		<?php
 	}
-
 }
