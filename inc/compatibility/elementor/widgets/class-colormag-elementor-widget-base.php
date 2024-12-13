@@ -49,6 +49,8 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		// Controls related to widget title style section.
 		$this->widget_title_style_controls();
 
+		$this->widget_layout_controls();
+
 		// Controls related to posts section.
 		$this->posts_controls();
 
@@ -230,6 +232,63 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		// Extra option control related to widget title style section.
 		$this->widget_title_style_controls_extra();
+
+		$this->end_controls_section();
+	}
+
+	public function widget_layout_controls() {
+
+		$this->start_controls_section(
+			'section_colormag_widget_title_layout',
+			array(
+				'label' => esc_html__( 'Widget Layout', 'colormag' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'column_one_element_gap',
+			[
+				'label'     => __( 'Column One Element Gap', 'companion-elementor' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default'   => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-title'         => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-expert entry-content' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'column_two_element_gap',
+			[
+				'label'     => __( 'Column Two Element Gap', 'companion-elementor' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default'   => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tg-two-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 	}

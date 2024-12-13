@@ -109,7 +109,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 					if ( 1 == $count ) : // on first post.
 						?>
 					<div class="tg-col-control">
-						<div class="tg_module_block">
+						<div class="tg_module_block tg-first-block">
 							<?php foreach ( $first_column_post_element_select as $element ) : ?>
 								<?php if ( 'image' === $element ) : ?>
 									<?php if ( has_post_thumbnail() ) : ?>
@@ -143,7 +143,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 
 					if ( 2 == $count ) :
 						?>
-				<div class="tg-col-control">
+				<div class="tg-col-control tg-two-block">
 					<?php endif; ?>
 
 					<?php if ( 2 <= $count ) : // Add grid style after first post. ?>
