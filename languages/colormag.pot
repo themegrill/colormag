@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 4.0.7\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-11-22 08:11:41+00:00\n"
+"POT-Creation-Date: 2024-12-13 12:00:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1397,7 +1397,7 @@ msgstr ""
 
 #: inc/customizer/options/footer-builder/footer-builder.php:79
 #: inc/customizer/options/global/builder.php:6
-#: inc/customizer/options/header-builder/header-builder.php:144
+#: inc/customizer/options/header-builder/header-builder.php:149
 #: inc/customizer/panels-sections/panels-sections.php:35
 msgid "Builder"
 msgstr ""
@@ -1464,6 +1464,7 @@ msgstr ""
 #: inc/customizer/options/footer-builder/socials.php:5
 #: inc/customizer/options/footer-builder/socials.php:12
 #: inc/customizer/options/header-builder/header-builder.php:51
+#: inc/customizer/options/header-builder/header-builder.php:137
 #: inc/customizer/options/header-builder/socials.php:6
 #: inc/customizer/options/header-builder/socials.php:13
 #: inc/customizer/panels-sections/panels-sections.php:215
@@ -1835,55 +1836,55 @@ msgstr ""
 msgid "Toggle Button"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:203
+#: inc/customizer/options/header-builder/header-builder.php:208
 msgid "Builder area top"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:208
+#: inc/customizer/options/header-builder/header-builder.php:213
 msgid "Builder area top left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:213
+#: inc/customizer/options/header-builder/header-builder.php:218
 msgid "Builder area top middle"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:218
+#: inc/customizer/options/header-builder/header-builder.php:223
 msgid "Builder area top right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:225
+#: inc/customizer/options/header-builder/header-builder.php:230
 msgid "Builder Main area"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:230
+#: inc/customizer/options/header-builder/header-builder.php:235
 msgid "Builder area middle left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:235
+#: inc/customizer/options/header-builder/header-builder.php:240
 msgid "Main center"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:240
+#: inc/customizer/options/header-builder/header-builder.php:245
 msgid "Main right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:247
+#: inc/customizer/options/header-builder/header-builder.php:252
 msgid "Bottom"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:252
+#: inc/customizer/options/header-builder/header-builder.php:257
 msgid "Bottom left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:257
+#: inc/customizer/options/header-builder/header-builder.php:262
 msgid "Bottom center"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:262
+#: inc/customizer/options/header-builder/header-builder.php:267
 msgid "Bottom right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:270
+#: inc/customizer/options/header-builder/header-builder.php:275
 #: inc/customizer/options/header-builder/offset-area.php:6
 #: inc/customizer/panels-sections/panels-sections.php:230
 msgid "Offset Area"
