@@ -10,6 +10,10 @@
 // Declare required namespace.
 namespace elementor\widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Color;
@@ -40,16 +44,14 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	 */
 	protected function register_controls() {
 
-		// Controls related to general.
-		$this->widget_general_controls();
-
 		// Controls related to widget title section.
 		$this->widget_title_controls();
 
+		// Controls related to general.
+		$this->widget_general_controls();
+
 		// Controls related to widget title style section.
 		$this->widget_title_style_controls();
-
-		$this->widget_layout_controls();
 
 		// Controls related to posts section.
 		$this->posts_controls();
@@ -63,25 +65,27 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 	 */
 	public function widget_general_controls() {
 
-		// Widget title section.
 		$this->start_controls_section(
-			'section_colormag_general_manage',
+			'ec_button_style_section',
 			array(
-				'label' => esc_html__( 'General', 'colormag' ),
+				'label' => esc_html__( 'General', 'companion-elementor' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->start_controls_tabs(
+			'post_element_tabs'
+		);
+
+		$this->start_controls_tab(
+			'post_element_tab_style_1',
+			array(
+				'label' => esc_html__( 'Style 1', 'companion-elementor' ),
 			)
 		);
 
 		$this->add_control(
-			'first_column_title',
-			[
-				'label' => esc_html__( 'First Column', 'colormag' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		// Widget first column post element.
-		$this->add_control(
-			'first_column_post_element_select',
+			'post_element_select_style_1',
 			[
 				'label'       => esc_html__( 'Post Element', 'colormag' ),
 				'type'        => Controls_Manager::SELECT2,
@@ -97,52 +101,88 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			]
 		);
 
-		// Add a title and a line between the controls.
 		$this->add_control(
-			'second_column_title',
+			'style_1_element_gap',
 			[
-				'label' => esc_html__( 'Column Second', 'colormag' ),
-				'type'  => Controls_Manager::HEADING,
-			]
-		);
-
-		$this->add_control(
-			'second_column_divider',
-			[
-				'type' => Controls_Manager::DIVIDER,
-			]
-		);
-
-		// Widget second column post element.
-		$this->add_control(
-			'show_second_column_image',
-			[
-				'label'        => esc_html__( 'Image', 'companion-elementor' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'companion-elementor' ),
-				'label_off'    => esc_html__( 'Hide', 'companion-elementor' ),
-				'return_value' => 'yes',
-				'default'      => 'yes',
-			]
-		);
-
-		$this->add_control(
-			'second_column_post_element_select',
-			[
-				'label'       => esc_html__( 'Post Element', 'colormag' ),
-				'type'        => Controls_Manager::SELECT2,
-				'label_block' => true,
-				'multiple'    => true,
-				'options'     => [
-					'title' => esc_html__( 'Title', 'colormag' ),
-					'meta'  => esc_html__( 'Tag', 'colormag' ),
+				'label'     => __( 'Element Gap', 'companion-elementor' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
 				],
-				'default'     => [ 'title', 'meta' ],
+				'default'   => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-title'         => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-expert entry-content' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
 			]
 		);
 
-		// Extra option control related to widget title section.
-		$this->widget_title_controls_extra();
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'post_element_tab_style_2',
+			array(
+				'label' => esc_html__( 'Style 2', 'companion-elementor' ),
+			)
+		);
+
+				// Widget second column post element.
+				$this->add_control(
+					'show_style_2_image',
+					[
+						'label'        => esc_html__( 'Image', 'companion-elementor' ),
+						'type'         => Controls_Manager::SWITCHER,
+						'label_on'     => esc_html__( 'Show', 'companion-elementor' ),
+						'label_off'    => esc_html__( 'Hide', 'companion-elementor' ),
+						'return_value' => 'yes',
+						'default'      => 'yes',
+					]
+				);
+
+				$this->add_control(
+					'post_element_select_style_2',
+					[
+						'label'       => esc_html__( 'Post Element', 'colormag' ),
+						'type'        => Controls_Manager::SELECT2,
+						'label_block' => true,
+						'multiple'    => true,
+						'options'     => [
+							'title' => esc_html__( 'Title', 'colormag' ),
+							'meta'  => esc_html__( 'Tag', 'colormag' ),
+						],
+						'default'     => [ 'title', 'meta' ],
+					]
+				);
+
+		$this->add_control(
+			'style_2_element_gap',
+			[
+				'label'     => __( 'Element Gap', 'companion-elementor' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default'   => [
+					'unit' => 'px',
+					'size' => 0,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .tg-two-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
 
 		$this->end_controls_section();
 	}
@@ -232,63 +272,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		// Extra option control related to widget title style section.
 		$this->widget_title_style_controls_extra();
-
-		$this->end_controls_section();
-	}
-
-	public function widget_layout_controls() {
-
-		$this->start_controls_section(
-			'section_colormag_widget_title_layout',
-			array(
-				'label' => esc_html__( 'Widget Layout', 'colormag' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			)
-		);
-
-		$this->add_control(
-			'column_one_element_gap',
-			[
-				'label'     => __( 'Column One Element Gap', 'companion-elementor' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default'   => [
-					'unit' => 'px',
-					'size' => 0,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-title'         => 'margin-top: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .tg_module_block.tg-first-block .tg-expert entry-content' => 'margin-top: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'column_two_element_gap',
-			[
-				'label'     => __( 'Column Two Element Gap', 'companion-elementor' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default'   => [
-					'unit' => 'px',
-					'size' => 0,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .tg-two-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
 
 		$this->end_controls_section();
 	}

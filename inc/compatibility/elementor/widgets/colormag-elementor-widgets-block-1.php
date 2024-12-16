@@ -79,14 +79,14 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 	 */
 	protected function render() {
 
-		$widget_title                      = $this->get_settings( 'widget_title' );
-		$posts_number                      = $this->get_settings( 'posts_number' );
-		$first_column_post_element_select  = $this->get_settings( 'first_column_post_element_select' );
-		$second_column_post_element_select = $this->get_settings( 'second_column_post_element_select' );
-		$display_type                      = $this->get_settings( 'display_type' );
-		$offset_posts_number               = $this->get_settings( 'offset_posts_number' );
-		$categories_selected               = $this->get_settings( 'categories_selected' );
-		$show_second_column_image          = $this->get_settings( 'show_second_column_image' );
+		$widget_title                = $this->get_settings( 'widget_title' );
+		$posts_number                = $this->get_settings( 'posts_number' );
+		$post_element_select_style_1 = $this->get_settings( 'post_element_select_style_1' );
+		$post_element_select_style_2 = $this->get_settings( 'post_element_select_style_2' );
+		$display_type                = $this->get_settings( 'display_type' );
+		$offset_posts_number         = $this->get_settings( 'offset_posts_number' );
+		$categories_selected         = $this->get_settings( 'categories_selected' );
+		$show_style_2_image          = $this->get_settings( 'show_style_2_image' );
 
 		// Create the posts query.
 		$get_featured_posts = $this->query_posts( $posts_number, $display_type, $categories_selected, $offset_posts_number );
@@ -110,7 +110,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 						?>
 					<div class="tg-col-control">
 						<div class="tg_module_block tg-first-block">
-							<?php foreach ( $first_column_post_element_select as $element ) : ?>
+							<?php foreach ( $post_element_select_style_1 as $element ) : ?>
 								<?php if ( 'image' === $element ) : ?>
 									<?php if ( has_post_thumbnail() ) : ?>
 								<figure class="tg-module-thumb">
@@ -148,7 +148,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 
 					<?php if ( 2 <= $count ) : // Add grid style after first post. ?>
 						<div class="tg_module_block tg_module_block--list-small">
-							<?php if ( $show_second_column_image ) : ?>
+							<?php if ( $show_style_2_image ) : ?>
 								<?php if ( has_post_thumbnail() ) : ?>
 								<figure class="tg-module-thumb">
 									<?php $this->the_post_thumbnail( $featured_image_size ); ?>
@@ -158,7 +158,7 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 
 							<div class="tg-module-info">
 								<?php
-								foreach ( $second_column_post_element_select
+								foreach ( $post_element_select_style_2
 
 								as $element ) :
 									if ( 'title' === $element ) :
