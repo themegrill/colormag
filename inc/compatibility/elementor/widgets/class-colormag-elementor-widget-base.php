@@ -154,10 +154,11 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 						'label_block' => true,
 						'multiple'    => true,
 						'options'     => [
-							'title' => esc_html__( 'Title', 'colormag' ),
-							'meta'  => esc_html__( 'Tag', 'colormag' ),
+							'title'   => esc_html__( 'Title', 'colormag' ),
+							'meta'    => esc_html__( 'Tag', 'colormag' ),
+							'excerpt' => esc_html__( 'Content', 'colormag' ),
 						],
-						'default'     => [ 'title', 'meta' ],
+						'default'     => [ 'title', 'meta', 'excerpt' ],
 					]
 				);
 
