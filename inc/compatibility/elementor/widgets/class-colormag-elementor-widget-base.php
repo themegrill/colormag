@@ -111,10 +111,9 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 					'label'     => esc_html__( 'Color:', 'colormag' ),
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#289dcc',
-
 					'selectors' => array(
-						'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
-						'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
+						'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .tg-module-wrapper .tg-module-title'      => 'border-bottom-color: {{VALUE}}',
 					),
 				),
 				class_exists( Color::class ) ? [
@@ -138,7 +137,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 							'type'      => Controls_Manager::COLOR,
 							'default'   => '#ffffff',
 							'selectors' => array(
-								'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'color: {{VALUE}}',
 							),
 						),
 						class_exists( Color::class ) ? [
