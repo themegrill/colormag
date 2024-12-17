@@ -118,10 +118,10 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 					),
 				),
 				class_exists( Color::class ) ? [
-					'scheme' => [
+					'scheme' => array(
 						'type'  => Color::get_type(),
 						'value' => Color::COLOR_1,
-					],
+					),
 				] : [
 					'global' => [
 						'default' => Global_Colors::COLOR_PRIMARY,
@@ -132,16 +132,25 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 				$this->add_control(
 					'widget_title_text_color',
-					array(
-						'label'     => esc_html__( 'Text Color:', 'colormag' ),
-						'type'      => Controls_Manager::COLOR,
-						'default'   => '#ffffff',
-						'global'    => [
-							'default' => Global_Colors::COLOR_PRIMARY,
-						],
-						'selectors' => array(
-							'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
+					array_merge(
+						array(
+							'label'     => esc_html__( 'Text Color:', 'colormag' ),
+							'type'      => Controls_Manager::COLOR,
+							'default'   => '#ffffff',
+							'selectors' => array(
+								'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
+							),
 						),
+						class_exists( Color::class ) ? [
+							'scheme' => array(
+								'type'  => Color::get_type(),
+								'value' => Color::COLOR_1,
+							),
+						] : [
+							'global' => [
+								'default' => Global_Colors::COLOR_PRIMARY,
+							],
+						]
 					)
 				);
 
