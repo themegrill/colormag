@@ -4127,8 +4127,8 @@ class ColorMag_Dynamic_CSS {
 		// Header toggle color.
 		$header_toggle_color     = get_theme_mod( 'colormag_header_builder_toggle_button_color', '' );
 		$header_toggle_color_css = array(
-			'.cm-header-builder .cm-toggle-button' => array(
-				'color' => esc_html( $header_toggle_color ),
+			'.cm-header-builder .cm-toggle-button,.cm-header-builder .cm-mobile-row .cm-menu-toggle svg' => array(
+				'fill' => esc_html( $header_toggle_color ),
 			),
 		);
 		$parse_builder_css            .= colormag_parse_css( '', $header_toggle_color, $header_toggle_color_css );

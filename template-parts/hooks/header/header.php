@@ -521,7 +521,7 @@ if ( ! function_exists( 'colormag_breadcrumb' ) ) :
 	function colormag_breadcrumb() {
 
 		// Bail out if breadcrumb is not selected.
-		if ( 1 === get_theme_mod( 'colormag_breadcrumb_enable', 0 ) ) {
+		if ( 1 == get_theme_mod( 'colormag_breadcrumb_enable', 0 ) ) {
 			?>
 		<!-- Breadcrumb display -->
 		<div id="breadcrumb-wrap" class="breadcrumb-wrap" typeof="BreadcrumbList">

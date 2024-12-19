@@ -71,6 +71,8 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Fix           - TG: Widget style issue in footer.
+* Update        - Compatibility with Elementor v3.26.
+* Fix           - Breadcrumb enable issue.
 
 = Version 4.0.7 - 2024-11-22 =
 * Fix           - TG: Widget style issue.

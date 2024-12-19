@@ -133,6 +133,11 @@ function customind_get_header_components() {
 					'section' => 'colormag_header_builder_random',
 					'id'      => 'random',
 				),
+				array(
+					'name'    => __( 'Social', 'colormag' ),
+					'section' => 'colormag_header_builder_socials',
+					'id'      => 'socials',
+				),
 			)
 		),
 	);
