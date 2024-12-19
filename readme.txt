@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.7
+Version: 4.0.8
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.7
+Stable tag: 4.0.8
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,9 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version TBD =
-* Fix           - TG: Widget style issue in footer.
+= Version 4.0.8 - 2024-12-19 =
 * Update        - Compatibility with Elementor v3.26.
+* Fix           - TG: Widget style issue in footer.
 * Fix           - Breadcrumb enable issue.
 
 = Version 4.0.7 - 2024-11-22 =
