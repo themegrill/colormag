@@ -1415,6 +1415,16 @@ table td {
 	color: #e4e4e7;
 }
 
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-1-col:has(aside),
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-2-col:has(aside),
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-3-col:has(aside),
+.cm-footer-builder .cm-footer-top-row .cm-footer-top-4-col:has(aside) {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
 .cm-footer-builder .cm-footer-top-row .widget {
 	width: 100%;
 	height: -webkit-fit-content;
@@ -3708,6 +3718,14 @@ Styles for separating single posts loaded from ajax call.
 	max-width: 100%;
 }
 
+.cm-footer .cm-featured-posts--style-1 .cm-posts .cm-post a {
+	max-width: 130px;
+}
+
+.cm-footer .cm-featured-posts--style-1 .cm-posts .cm-post-content a {
+	max-width: 100%;
+}
+
 /* Style 2 widget.
 --------------------------------------------- */
 .cm-featured-posts--style-2.cm-featured-posts .cm-first-post,
@@ -3731,6 +3749,14 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-secondary .cm-featured-posts--style-2 .cm-posts .cm-post-content a {
+	max-width: 100%;
+}
+
+.cm-footer .cm-featured-posts--style-2 .cm-posts .cm-post a {
+	max-width: 130px;
+}
+
+.cm-footer .cm-featured-posts--style-2 .cm-posts .cm-post-content a {
 	max-width: 100%;
 }
 
