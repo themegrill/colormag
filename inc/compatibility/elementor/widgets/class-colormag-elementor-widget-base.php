@@ -17,6 +17,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Core\Schemes\Color;
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -240,36 +241,52 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		$this->add_control(
 			'widget_title_color',
-			array(
-				'label'     => esc_html__( 'Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#289dcc',
-				'scheme'    => array(
-					'type'  => Color::get_type(),
-					'value' => Color::COLOR_1,
+			array_merge(
+				array(
+					'label'     => esc_html__( 'Color:', 'colormag' ),
+					'type'      => Controls_Manager::COLOR,
+					'default'   => '#289dcc',
+					'selectors' => array(
+						'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .tg-module-wrapper .tg-module-title'      => 'border-bottom-color: {{VALUE}}',
+					),
 				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
-					'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
-				),
+				class_exists( Color::class ) ? [
+					'scheme' => array(
+						'type'  => Color::get_type(),
+						'value' => Color::COLOR_1,
+					),
+				] : [
+					'global' => [
+						'default' => Global_Colors::COLOR_PRIMARY,
+					],
+				]
 			)
 		);
 
-		$this->add_control(
-			'widget_title_text_color',
-			array(
-				'label'     => esc_html__( 'Text Color:', 'colormag' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '#ffffff',
-				'scheme'    => array(
-					'type'  => Color::get_type(),
-					'value' => Color::COLOR_1,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
-				),
-			)
-		);
+				$this->add_control(
+					'widget_title_text_color',
+					array_merge(
+						array(
+							'label'     => esc_html__( 'Text Color:', 'colormag' ),
+							'type'      => Controls_Manager::COLOR,
+							'default'   => '#ffffff',
+							'selectors' => array(
+								'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'color: {{VALUE}}',
+							),
+						),
+						class_exists( Color::class ) ? [
+							'scheme' => array(
+								'type'  => Color::get_type(),
+								'value' => Color::COLOR_1,
+							),
+						] : [
+							'global' => [
+								'default' => Global_Colors::COLOR_PRIMARY,
+							],
+						]
+					)
+				);
 
 		// Extra option control related to widget title style section.
 		$this->widget_title_style_controls_extra();
