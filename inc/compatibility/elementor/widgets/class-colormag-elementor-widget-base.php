@@ -308,7 +308,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			<h4 class="module-title">
 				<span><?php echo esc_html( $widget_title ); ?></span>
 			</h4>
-		</div><!-- tg-module-title-wrap -->
+		</div>
 
 		<?php
 	}
