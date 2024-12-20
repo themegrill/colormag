@@ -111,8 +111,8 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 					'label'     => esc_html__( 'Color:', 'colormag' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => array(
-						'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'background-color: {{VALUE}}',
-						'{{WRAPPER}} .tg-module-wrapper .tg-module-title'      => 'border-bottom-color: {{VALUE}}',
+						'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .tg-module-wrapper .module-title'      => 'border-bottom-color: {{VALUE}}',
 					),
 				),
 				class_exists( Color::class ) ? [
@@ -136,7 +136,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 							'type'      => Controls_Manager::COLOR,
 							'default'   => '#232323',
 							'selectors' => array(
-								'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'color: {{VALUE}}',
+								'{{WRAPPER}} .tg-module-wrapper .module-title span' => 'color: {{VALUE}}',
 							),
 						),
 						class_exists( Color::class ) ? [
@@ -308,7 +308,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			<h4 class="module-title">
 				<span><?php echo esc_html( $widget_title ); ?></span>
 			</h4>
-		</div><!-- tg-module-title-wrap -->
+		</div>
 
 		<?php
 	}
