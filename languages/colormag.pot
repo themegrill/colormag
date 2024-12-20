@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag 4.0.8\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2024-12-19 03:01:29+00:00\n"
+"POT-Creation-Date: 2024-12-20 05:19:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -642,15 +642,15 @@ msgstr ""
 msgid "Color:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:136
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:135
 msgid "Text Color:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:177
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:176
 msgid "Posts"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:184
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:183
 #: inc/widgets/colormag-featured-posts-slider-widget.php:35
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:50
 #: inc/widgets/colormag-featured-posts-widget.php:50
@@ -658,29 +658,29 @@ msgstr ""
 msgid "Number of posts to display:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:193
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192
 msgid "Offset Posts:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:219
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:218
 msgid "Filter"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:226
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:225
 msgid "Display the posts from:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:230
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:229
 msgid "Latest Posts"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:231
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:230
 #: inc/customizer/options/content/post-meta.php:19
 #: inc/customizer/options/content/single-post.php:80
 msgid "Categories"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:239
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:238
 msgid "Select categories:"
 msgstr ""
 
@@ -688,7 +688,7 @@ msgstr ""
 msgid "Title Widget"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-1.php:48
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-1.php:46
 msgid "Block Style 1"
 msgstr ""
 
