@@ -110,7 +110,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 				array(
 					'label'     => esc_html__( 'Color:', 'colormag' ),
 					'type'      => Controls_Manager::COLOR,
-					'default'   => '#289dcc',
 					'selectors' => array(
 						'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'background-color: {{VALUE}}',
 						'{{WRAPPER}} .tg-module-wrapper .tg-module-title'      => 'border-bottom-color: {{VALUE}}',
@@ -123,7 +122,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 					),
 				] : [
 					'global' => [
-						'default' => Global_Colors::COLOR_PRIMARY,
+						'default' => '',
 					],
 				]
 			)
@@ -135,7 +134,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 						array(
 							'label'     => esc_html__( 'Text Color:', 'colormag' ),
 							'type'      => Controls_Manager::COLOR,
-							'default'   => '#ffffff',
+							'default'   => '#232323',
 							'selectors' => array(
 								'{{WRAPPER}} .tg-module-wrapper .tg-module-title a' => 'color: {{VALUE}}',
 							),
@@ -147,7 +146,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 							),
 						] : [
 							'global' => [
-								'default' => Global_Colors::COLOR_PRIMARY,
+								'default' => '',
 							],
 						]
 					)
