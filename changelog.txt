@@ -1,4 +1,7 @@
 == Changelog ==
+= 4.0.9 - 2024-12-20 =
+* Fix - Elementor widget title color and background color issue.
+
 = 4.0.8 - 2024-12-19 =
 * Update        - Compatibility with Elementor v3.26.
 * Fix           - TG: Widget style issue in footer.
