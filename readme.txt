@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version 4.0.9 - 2024-12-20 =
 * Fix - Elementor widget title color and background color issue.
+* Fix - Outside container background color issue.
 
 = Version 4.0.8 - 2024-12-19 =
 * Update        - Compatibility with Elementor v3.26.
