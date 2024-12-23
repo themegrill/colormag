@@ -69,7 +69,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.0.9 - 2024-12-20 =
+= Version 4.0.9 - 2024-12-23 =
 * Fix - Elementor widget title color and background color issue.
 * Fix - Outside container background color issue.
 

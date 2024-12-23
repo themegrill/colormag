@@ -1075,7 +1075,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		 *
 		 * @return void
 		 *
-		 * @since 4.0.0
+		 * @since 4.0.9
 		 */
 		public function colormag_outside_background_migration() {
 
