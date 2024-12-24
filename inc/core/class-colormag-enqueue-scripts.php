@@ -112,6 +112,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				'colormag_enqueue_scripts_typography_ids',
 				array(
 					'colormag_blog_post_title_typography',
+					'colormag_single_post_title_typography',
 					'colormag_mobile_menu_typography',
 					'colormag_primary_menu_typography',
 					'colormag_site_tagline_typography',
