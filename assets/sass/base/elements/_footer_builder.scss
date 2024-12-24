@@ -58,6 +58,13 @@
 		background-color: #3f3f46;
 		color: #e4e4e7;
 
+		.cm-footer-top-1-col:has(aside),
+		.cm-footer-top-2-col:has(aside),
+		.cm-footer-top-3-col:has(aside),
+		.cm-footer-top-4-col:has(aside) {
+			flex-direction: column;
+		}
+
 		.widget {
 			width: 100%;
 			height: fit-content;

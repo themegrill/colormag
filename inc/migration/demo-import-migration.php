@@ -55,7 +55,7 @@ function colormag_demo_import_migration_notice() {
 			<?php
 		endif;
 }
-add_action( 'admin_notices', 'colormag_demo_import_migration_notice' );
+//add_action( 'admin_notices', 'colormag_demo_import_migration_notice' );
 
 /**
  * Option to dismiss the notice.

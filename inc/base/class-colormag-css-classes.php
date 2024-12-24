@@ -23,7 +23,6 @@ if ( ! class_exists( 'ColorMag_Css_Classes' ) ) :
 		public function __construct() {
 
 			add_filter( 'colormag_header_class', array( $this, 'colormag_add_header_classes' ) );
-
 		}
 
 		/**
@@ -50,15 +49,22 @@ if ( ! class_exists( 'ColorMag_Css_Classes' ) ) :
 				$classes[] = 'cm-' . $layout . '-' . $layout2_style;
 			}
 
-			if ( 'full-width' === $width && 'layout-1' === $layout ) {
-				$classes[] = 'cm-' . $width;
-			} elseif ( 'contained' === $width && 'layout-1' === $layout ) {
-				$classes[] = 'cm-' . $width;
+			if ( 'layout-1' === $layout ) {
+				if ( 'full-width' === $width ) {
+					$classes[] = 'cm-' . $width;
+				} elseif ( 'contained' === $width ) {
+					$classes[] = 'cm-' . $width;
+				}
+			} elseif ( colormag_maybe_enable_builder() ) {
+				if ( 'full-width' === $width ) {
+					$classes[] = 'cm-' . $width;
+				} elseif ( 'contained' === $width ) {
+					$classes[] = 'cm-' . $width;
+				}
 			}
 
 			return $classes;
 		}
-
 	}
 endif;
 

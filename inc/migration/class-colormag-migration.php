@@ -27,6 +27,8 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			if ( $enable_builder ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_builder_migration' ], 25 );
 			}
+
+			add_action( 'after_setup_theme', [ $this, 'colormag_outside_background_migration' ], 25 );
 		}
 
 		/**
@@ -1053,6 +1055,63 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			set_theme_mod( 'colormag_footer_socials', $all_social_links );
 
 			update_option( 'colormag_builder_migration', true );
+		}
+
+		/**
+		 * Migrates outside background settings to a new theme mod.
+		 *
+		 * This function handles the migration of various background-related theme mods
+		 * to a single, consolidated theme mod. It performs the following operations:
+		 *
+		 * 1. Checks if the migration has already been performed to avoid duplicate migrations.
+		 * 2. Retrieves individual background-related theme mods (color, image, preset, position, size, repeat, attachment).
+		 * 3. If any of these theme mods exist, it consolidates them into a single array.
+		 * 4. Sets the new consolidated theme mod 'elearning_outside_container_background'.
+		 * 5. Removes the old individual theme mods.
+		 * 6. Updates an option to mark the migration as complete.
+		 *
+		 * This migration is necessary to update the theme's handling of background settings,
+		 * moving from individual settings to a more flexible, consolidated approach.
+		 *
+		 * @return void
+		 *
+		 * @since 4.0.9
+		 */
+		public function colormag_outside_background_migration() {
+
+			if ( get_option( 'colormag_outside_background_migration' ) ) {
+				return;
+			}
+
+			$background_color      = get_theme_mod( 'background_color' );
+			$background_image      = get_theme_mod( 'background_image' );
+			$background_preset     = get_theme_mod( 'background_preset' );
+			$background_position   = get_theme_mod( 'background_position' );
+			$background_size       = get_theme_mod( 'background_size' );
+			$background_repeat     = get_theme_mod( 'background_repeat' );
+			$background_attachment = get_theme_mod( 'background_attachment' );
+
+			if ( $background_color || $background_image || $background_preset || $background_position || $background_size || $background_repeat || $background_attachment ) {
+				$background_value = array(
+					'background-color'      => $background_color,
+					'background-image'      => $background_image,
+					'background-repeat'     => $background_repeat,
+					'background-position'   => $background_position,
+					'background-size'       => $background_size,
+					'background-attachment' => $background_attachment,
+				);
+
+				set_theme_mod( 'colormag_outside_container_background', $background_value );
+				remove_theme_mod( 'background_color' );
+				remove_theme_mod( 'background_image' );
+				remove_theme_mod( 'background_preset' );
+				remove_theme_mod( 'background_position' );
+				remove_theme_mod( 'background_size' );
+				remove_theme_mod( 'background_attachment' );
+				remove_theme_mod( 'background_repeat' );
+			}
+
+			update_option( 'colormag_outside_background_migration', true );
 		}
 
 		/**
