@@ -100,7 +100,7 @@ class ColorMag_Elementor_Widgets_Block_4 extends Colormag_Elementor_Widget_Base 
 			$get_featured_posts->the_post();
 			?>
 
-			<div class="tg_module_block tg-row tg-first-block">
+			<div class="tg_module_block tg-row tg-two-block">
 			<?php if ( $show_style_2_image ) : ?>
 				<?php if ( has_post_thumbnail() ) : ?>
 			<figure class="tg-module-thumb tg-col-control">
@@ -109,7 +109,7 @@ class ColorMag_Elementor_Widgets_Block_4 extends Colormag_Elementor_Widget_Base 
 		<?php endif; ?>
 			<?php endif; ?>
 
-			<div class="tg-module-info tg-col-control tg-first-block">
+			<div class="tg-module-info tg-col-control">
 			<?php
 			foreach ( $post_element_select_style_2 as $element ) {
 

@@ -176,6 +176,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .tg-two-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .tg-two-block .tg-excerpt'          => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -287,7 +288,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->widget_title_style_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -330,7 +330,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -381,7 +380,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$this->posts_filter_controls_extra();
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -423,7 +421,6 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		$get_featured_posts = new \WP_Query( $query_args );
 
 		return $get_featured_posts;
-
 	}
 
 	/**
@@ -471,5 +468,4 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		</a>
 		<?php
 	}
-
 }
