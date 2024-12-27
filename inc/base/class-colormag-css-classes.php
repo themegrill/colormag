@@ -37,11 +37,13 @@ if ( ! class_exists( 'ColorMag_Css_Classes' ) ) :
 			$layout = get_theme_mod( 'colormag_main_header_layout', 'layout-1' );
 			$width  = get_theme_mod( 'colormag_main_header_width_setting', 'full-width' );
 
-			$classes[] = 'cm-' . $layout;
-
 			$layout1_style = get_theme_mod( 'colormag_main_header_layout_1_style', 'style-1' );
 
 			$layout2_style = get_theme_mod( 'colormag_main_header_layout_2_style', 'style-1' );
+
+			if ( ! colormag_maybe_enable_builder() ) {
+				$classes[] = 'cm-' . $layout;
+			}
 
 			if ( 'layout-1' === $layout ) {
 				$classes[] = 'cm-' . $layout . '-' . $layout1_style;
