@@ -69,6 +69,10 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version =
+* Added - Option to change single post title typography.
+* Fix   - Header media responsive display issue.
+
 = Version 4.0.9 - 2024-12-23 =
 * Fix - Elementor widget title color and background color issue.
 * Fix - Outside container background color issue.
