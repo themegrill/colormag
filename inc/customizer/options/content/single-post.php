@@ -58,6 +58,57 @@ $options = apply_filters(
 			),
 			'collapsible'  => apply_filters( 'colormag_single_featured_image_accordion_collapsible', false ),
 		),
+		'colormag_single_post_title_heading'     => array(
+			'type'         => 'customind-accordion',
+			'title'        => esc_html__( 'Post Title', 'colormag' ),
+			'section'      => 'colormag_single_post_section',
+			'sub_controls' => apply_filters(
+				'colormag_single_post_title_sub_controls',
+				array(
+					'colormag_single_post_title_typography' => array(
+						'default'   => array(
+							'font-family'    => 'default',
+							'font-weight'    => '500',
+							'font-size'      => array(
+								'desktop' => array(
+									'size' => '',
+									'unit' => 'px',
+								),
+								'tablet'  => array(
+									'size' => '',
+									'unit' => 'px',
+								),
+								'mobile'  => array(
+									'size' => '',
+									'unit' => 'px',
+								),
+							),
+							'line-height'    => array(
+								'desktop' => array(
+									'size' => '1.3',
+									'unit' => '',
+								),
+								'tablet'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+								'mobile'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+							),
+							'font-style'     => 'normal',
+							'text-transform' => 'none',
+						),
+						'type'      => 'customind-typography',
+						'title'     => esc_html__( 'Typography', 'colormag' ),
+						'transport' => 'postMessage',
+						'section'   => 'colormag_single_post_section',
+					),
+				)
+			),
+			'collapsible'  => apply_filters( 'colormag_single_post_title_accordion_collapsible', false ),
+		),
 		'colormag_related_posts_heading'         => array(
 			'type'         => 'customind-accordion',
 			'title'        => esc_html__( 'Related Posts', 'colormag' ),
