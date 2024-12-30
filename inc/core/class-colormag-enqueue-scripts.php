@@ -162,7 +162,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// News Ticker.
 			wp_register_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-			if ( 1 == get_theme_mod( 'colormag_enable_news_ticker', 0 ) ) {
+			if ( ( 1 == get_theme_mod( 'colormag_enable_news_ticker', 0 ) ) || colormag_maybe_enable_builder() ) {
 				wp_enqueue_script( 'colormag-news-ticker', COLORMAG_JS_URL . '/news-ticker/jquery.newsTicker' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 			}
 
