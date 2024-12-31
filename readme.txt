@@ -72,6 +72,7 @@ and we will include it within the theme from next version update.
 = Version =
 * Added - Option to change single post title typography.
 * Fix   - Header media responsive display issue.
+* Fix   - News ticker issue in builder.
 
 = Version 4.0.9 - 2024-12-23 =
 * Fix - Elementor widget title color and background color issue.
