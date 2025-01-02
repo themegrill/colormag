@@ -254,6 +254,10 @@
 				.cm-bottom-row {
 					gap: 4px;
 					grid-template-columns: 1fr;
+
+					.cm-footer-bottom-2-col {
+						justify-content: flex-start;
+					}
 				}
 			}
 		}
