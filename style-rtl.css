@@ -1605,6 +1605,11 @@ table td {
 		gap: 4px;
 		grid-template-columns: 1fr;
 	}
+	.cm-footer.cm-footer-builder .cm-footer-bottom-row .cm-bottom-row .cm-footer-bottom-2-col {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	}
 }
 
 /*--------------------------------------------------------------

@@ -236,14 +236,14 @@ if ( ! function_exists( 'colormag_render_header_rows' ) ) {
 		$header_image_position = get_theme_mod( 'colormag_header_media_position', 'position-two' );
 
 		foreach ( $builder as $area => $row ) {
-			if ( 'desktop' === $device && 'top' === $area ) {
+			if ( ( 'desktop' === $device || 'mobile' === $device ) && 'top' === $area ) {
 				if ( 'position-one' === $header_image_position ) {
 					the_custom_header_markup();
 				}
 				do_action( 'colormag_before_header_top' );
 			}
 
-			if ( 'desktop' === $device && 'bottom' === $area ) {
+			if ( ( 'desktop' === $device || 'mobile' === $device ) && 'bottom' === $area ) {
 				if ( 'position-two' === $header_image_position ) {
 					the_custom_header_markup();
 				}
@@ -265,11 +265,11 @@ if ( ! function_exists( 'colormag_render_header_rows' ) ) {
 			echo '</div>';
 			echo '</div>';
 
-			if ( 'desktop' === $device && 'top' === $area ) {
+			if ( ( 'desktop' === $device || 'mobile' === $device ) && 'top' === $area ) {
 				do_action( 'colormag_after_header_top' );
 			}
 
-			if ( 'desktop' === $device && 'bottom' === $area ) {
+			if ( ( 'desktop' === $device || 'mobile' === $device ) && 'bottom' === $area ) {
 				if ( 'position-three' === $header_image_position ) {
 					the_custom_header_markup();
 				}

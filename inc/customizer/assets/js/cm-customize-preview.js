@@ -578,6 +578,10 @@
 					css = colormagGenerateTypographyCSS(id, ".cm-entry-title", value);
 					break;
 
+				case "colormag_single_post_title_typography":
+					css = colormagGenerateTypographyCSS(id, ".single .cm-entry-header .cm-entry-title", value);
+					break;
+
 				case "colormag_footer_copyright_background":
 					css = colormagGenerateBackgroundCSS(
 						".cm-footer-bar",
