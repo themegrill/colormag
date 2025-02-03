@@ -44,6 +44,9 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 		// Controls related to widget title section.
 		$this->widget_title_controls();
 
+		// Controls related to general.
+		$this->widget_general_controls();
+
 		// Controls related to widget title style section.
 		$this->widget_title_style_controls();
 
@@ -52,6 +55,119 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 
 		// Controls related to posts filter section.
 		$this->posts_filter_controls();
+	}
+
+	/**
+	 * Controls related to widget title section.
+	 */
+	public function widget_general_controls() {
+
+		if ( 'ColorMag-Posts-Block-1' === $this->get_name() || 'ColorMag-Posts-Block-2' === $this->get_name() || 'ColorMag-Posts-Block-3' === $this->get_name() || 'ColorMag-Posts-Block-4' === $this->get_name() || 'ColorMag-Posts-Block-5' === $this->get_name() || 'ColorMag-Posts-Block-6' === $this->get_name() || 'ColorMag-Posts-Block-7' === $this->get_name() ) {
+			$this->start_controls_section(
+				'ec_button_style_section',
+				[
+					'label' => esc_html__( 'General', 'companion-elementor' ),
+					'tab'   => Controls_Manager::TAB_STYLE,
+				]
+			);
+		}
+
+		if ( 'ColorMag-Posts-Block-1' === $this->get_name() || 'ColorMag-Posts-Block-2' === $this->get_name() || 'ColorMag-Posts-Block-3' === $this->get_name() ) {
+			$this->add_control(
+				'post_element_select_style_1',
+				[
+					'label'       => esc_html__( 'Post Element', 'colormag' ),
+					'type'        => Controls_Manager::SELECT2,
+					'label_block' => true,
+					'multiple'    => true,
+					'options'     => [
+						'image'   => esc_html__( 'Image', 'colormag' ),
+						'title'   => esc_html__( 'Title', 'colormag' ),
+						'meta'    => esc_html__( 'Tag', 'colormag' ),
+						'excerpt' => esc_html__( 'Content', 'colormag' ),
+					],
+					'default'     => [ 'image', 'title', 'meta', 'excerpt' ],
+				]
+			);
+
+			$this->add_control(
+				'style_1_element_gap',
+				[
+					'label'     => __( 'Element Gap', 'companion-elementor' ),
+					'type'      => Controls_Manager::SLIDER,
+					'range'     => [
+						'px' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'default'   => [
+						'unit' => 'px',
+						'size' => 0,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-title'         => 'margin-top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .tg_module_block.tg-first-block .tg-module-meta'          => 'margin-top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .tg_module_block.tg-first-block .tg-expert entry-content' => 'margin-top: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+		}
+
+		if ( 'ColorMag-Posts-Block-4' === $this->get_name() || 'ColorMag-Posts-Block-6' === $this->get_name() || 'ColorMag-Posts-Block-7' === $this->get_name() ) {
+			// Widget second column post element.
+			$this->add_control(
+				'show_style_2_image',
+				[
+					'label'        => esc_html__( 'Image', 'companion-elementor' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'label_on'     => esc_html__( 'Show', 'companion-elementor' ),
+					'label_off'    => esc_html__( 'Hide', 'companion-elementor' ),
+					'return_value' => 'yes',
+					'default'      => 'yes',
+				]
+			);
+
+			$this->add_control(
+				'post_element_select_style_2',
+				[
+					'label'       => esc_html__( 'Post Element', 'colormag' ),
+					'type'        => Controls_Manager::SELECT2,
+					'label_block' => true,
+					'multiple'    => true,
+					'options'     => [
+						'title'   => esc_html__( 'Title', 'colormag' ),
+						'meta'    => esc_html__( 'Tag', 'colormag' ),
+						'excerpt' => esc_html__( 'Content', 'colormag' ),
+					],
+					'default'     => [ 'title', 'meta', 'excerpt' ],
+				]
+			);
+
+			$this->add_control(
+				'style_2_element_gap',
+				[
+					'label'     => __( 'Element Gap', 'companion-elementor' ),
+					'type'      => Controls_Manager::SLIDER,
+					'range'     => [
+						'px' => [
+							'min' => 0,
+							'max' => 100,
+						],
+					],
+					'default'   => [
+						'unit' => 'px',
+						'size' => 0,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .tg-two-block .tg-module-meta' => 'margin-top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .tg-two-block .tg-excerpt'     => 'margin-top: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+		}
+
+		$this->end_controls_section();
 	}
 
 	/**

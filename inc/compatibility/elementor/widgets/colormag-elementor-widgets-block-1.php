@@ -79,11 +79,14 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 	 */
 	protected function render() {
 
-		$widget_title        = $this->get_settings( 'widget_title' );
-		$posts_number        = $this->get_settings( 'posts_number' );
-		$display_type        = $this->get_settings( 'display_type' );
-		$offset_posts_number = $this->get_settings( 'offset_posts_number' );
-		$categories_selected = $this->get_settings( 'categories_selected' );
+		$widget_title                = $this->get_settings( 'widget_title' );
+		$posts_number                = $this->get_settings( 'posts_number' );
+		$post_element_select_style_1 = $this->get_settings( 'post_element_select_style_1' );
+		$post_element_select_style_2 = $this->get_settings( 'post_element_select_style_2' );
+		$display_type                = $this->get_settings( 'display_type' );
+		$offset_posts_number         = $this->get_settings( 'offset_posts_number' );
+		$categories_selected         = $this->get_settings( 'categories_selected' );
+		$show_style_2_image          = $this->get_settings( 'show_style_2_image' );
 
 		// Create the posts query.
 		$get_featured_posts = $this->query_posts( $posts_number, $display_type, $categories_selected, $offset_posts_number );
@@ -106,35 +109,33 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 					if ( 1 == $count ) : // on first post.
 						?>
 					<div class="tg-col-control">
-						<div class="tg_module_block">
-							<?php if ( has_post_thumbnail() ) : ?>
+						<div class="tg_module_block tg-first-block">
+							<?php foreach ( $post_element_select_style_1 as $element ) : ?>
+								<?php if ( 'image' === $element ) : ?>
+									<?php if ( has_post_thumbnail() ) : ?>
 								<figure class="tg-module-thumb">
-									<?php
-									$this->the_post_thumbnail( $featured_image_size );
+										<?php
+										$this->the_post_thumbnail( $featured_image_size );
 
-									colormag_elementor_colored_category();
-									?>
-								</figure>
-								<?php
-								elseif ( 1 == $count ) :
 										colormag_elementor_colored_category();
-								endif;
-								?>
+										?>
+								</figure>
+							<?php endif; ?>
+								<?php endif; ?>
+								<?php if ( 'title' === $element ) : ?>
+									<?php $this->the_title(); ?>
+								<?php endif; ?>
 
-								<?php
-								// Display the post title.
-								$this->the_title();
+								<?php if ( 'meta' === $element ) : ?>
+									<?php colormag_elementor_widgets_meta(); ?>
+								<?php endif; ?>
 
-								// Displays the entry meta.
-								colormag_elementor_widgets_meta();
-								?>
-
-							<div class="tg-expert entry-content">
-								<?php
-								// Displays the post excerpts.
-								the_excerpt();
-								?>
-							</div>
+								<?php if ( 'excerpt' === $element ) : ?>
+									<div class="tg-expert entry-content">
+										<?php the_excerpt(); ?>
+									</div>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</div>
 					</div>
 						<?php
@@ -142,24 +143,35 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 
 					if ( 2 == $count ) :
 						?>
-				<div class="tg-col-control">
+				<div class="tg-col-control tg-two-block">
 					<?php endif; ?>
 
 					<?php if ( 2 <= $count ) : // Add grid style after first post. ?>
 						<div class="tg_module_block tg_module_block--list-small">
-							<?php if ( has_post_thumbnail() ) : ?>
+							<?php if ( $show_style_2_image ) : ?>
+								<?php if ( has_post_thumbnail() ) : ?>
 								<figure class="tg-module-thumb">
 									<?php $this->the_post_thumbnail( $featured_image_size ); ?>
 								</figure>
+						<?php endif; ?>
 							<?php endif; ?>
 
 							<div class="tg-module-info">
 								<?php
-								// Display the post title.
-								$this->the_title();
+								foreach ( $post_element_select_style_2
 
-								// Displays the entry meta.
-								colormag_elementor_widgets_meta();
+								as $element ) :
+									if ( 'title' === $element ) :
+										// Display the post title.
+										$this->the_title();
+								endif;
+
+									if ( 'meta' === $element ) :
+										// Displays the entry meta.
+										colormag_elementor_widgets_meta();
+								endif;
+								endforeach;
+
 								?>
 							</div>
 						</div>
