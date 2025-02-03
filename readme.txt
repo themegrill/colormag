@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.9
+Version: 4.0.10
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.9
+Stable tag: 4.0.10
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,7 +69,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version =
+= Version 4.0.10 - 2025-01-06 =
 * Added - Option to change single post title typography.
 * Fix   - Header media responsive display issue.
 * Fix   - News ticker issue in builder.
