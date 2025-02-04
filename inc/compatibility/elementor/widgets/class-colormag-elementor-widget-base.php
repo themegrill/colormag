@@ -66,7 +66,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			$this->start_controls_section(
 				'ec_button_style_section',
 				[
-					'label' => esc_html__( 'General', 'companion-elementor' ),
+					'label' => esc_html__( 'General', 'colormag' ),
 					'tab'   => Controls_Manager::TAB_STYLE,
 				]
 			);
@@ -93,7 +93,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			$this->add_control(
 				'style_1_element_gap',
 				[
-					'label'     => __( 'Element Gap', 'companion-elementor' ),
+					'label'     => __( 'Element Gap', 'colormag' ),
 					'type'      => Controls_Manager::SLIDER,
 					'range'     => [
 						'px' => [
@@ -119,10 +119,10 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			$this->add_control(
 				'show_style_2_image',
 				[
-					'label'        => esc_html__( 'Image', 'companion-elementor' ),
+					'label'        => esc_html__( 'Image', 'colormag' ),
 					'type'         => Controls_Manager::SWITCHER,
-					'label_on'     => esc_html__( 'Show', 'companion-elementor' ),
-					'label_off'    => esc_html__( 'Hide', 'companion-elementor' ),
+					'label_on'     => esc_html__( 'Show', 'colormag' ),
+					'label_off'    => esc_html__( 'Hide', 'colormag' ),
 					'return_value' => 'yes',
 					'default'      => 'yes',
 				]
@@ -147,7 +147,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			$this->add_control(
 				'style_2_element_gap',
 				[
-					'label'     => __( 'Element Gap', 'companion-elementor' ),
+					'label'     => __( 'Element Gap', 'colormag' ),
 					'type'      => Controls_Manager::SLIDER,
 					'range'     => [
 						'px' => [
