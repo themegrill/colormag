@@ -138,6 +138,11 @@ function customind_get_header_components() {
 					'section' => 'colormag_header_builder_socials',
 					'id'      => 'socials',
 				),
+				array(
+					'name'    => __( 'Home Icon', 'colormag' ),
+					'section' => 'colormag_header_builder_home_icon',
+					'id'      => 'home-icon',
+				),
 			)
 		),
 	);
