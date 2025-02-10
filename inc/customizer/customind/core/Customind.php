@@ -79,6 +79,14 @@ class Customind {
 		'path'   => null,
 	];
 
+	/**
+	 * @var array<string,string>
+	 */
+	private $section_i18n = [
+		'customizing-action' => 'Customizing &#9656; %s',
+		'customizing'        => 'Customizing',
+	];
+
 	private $typography_controls_ids = [];
 
 	/**
@@ -563,12 +571,31 @@ class Customind {
 	}
 
 	/**
+	 * Get i18n data.
+	 *
+	 * @return array
+	 */
+	public function get_section_i18n() {
+		return $this->apply_filters( 'section-i18n', $this->section_i18n );
+	}
+
+	/**
 	 * Set i18n domain.
 	 *
 	 * @param array $domain
 	 * @return void
 	 */
 	public function set_i18n_data( $i18n_data ) {
+		$this->i18n_data = $i18n_data;
+	}
+
+	/**
+	 * Set i18n domain.
+	 *
+	 * @param array $domain
+	 * @return void
+	 */
+	public function set_section_i18n( $i18n_data ) {
 		$this->i18n_data = $i18n_data;
 	}
 

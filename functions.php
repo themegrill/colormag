@@ -73,9 +73,24 @@ require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
 // Load customind.
 require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
-//require __DIR__ . '/../customind/init.php';
+
+/**
+ * @var \Customind\Core\Customind
+ */
 global $customind;
 $customind->set_css_var_prefix( 'colormag' );
+$customind->set_i18n_data(
+	[
+		'domain' => 'colormag',
+	]
+);
+$customind->set_section_i18n(
+	[
+		/* Translators: 1: Panel Title. */
+		'customizing-action' => __( 'Customizing &#9656; %s', 'colormag' ),
+		'customizing'        => __( 'Customizing', 'colormag' ),
+	]
+);
 
 /**
  * Deprecated.
