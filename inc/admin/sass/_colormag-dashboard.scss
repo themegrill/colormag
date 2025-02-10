@@ -1,5 +1,5 @@
 /* Dashboard */
-.wrap {
+.colormag-wrap {
 	.colormag-header {
 		background-color: $background-color_2;
 		padding:0;
@@ -37,7 +37,7 @@
 }
 
 .appearance_page_colormag {
-	.wrap {
+	.colormag-wrap {
 		margin: 0 0 0 0;
 	}
 	#wpcontent {
@@ -1070,6 +1070,7 @@ h1.hndle{
 	.demo-importer {
 		max-width: 1280px;
 		margin: 0 auto;
+		padding: 0 20px;
 		.wp-filter {
 			padding: 0 20px;
 
@@ -1453,7 +1454,7 @@ body {
 
 /* Responsive */
 @media (min-width: 768px) {
-	.wrap {
+	.colormag-wrap {
 		.colormag-header {
 			padding: 12px 20px;
 		}

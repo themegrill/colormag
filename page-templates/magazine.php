@@ -44,7 +44,7 @@ get_header();
 		?>
 
 		<div id="cm-primary" class="cm-primary">
-			<div class="cm-posts" class="clearfix">
+			<div class="cm-posts clearfix">
 
 				<?php
 				if ( is_active_sidebar( 'colormag_front_page_content_top_section' ) ) {

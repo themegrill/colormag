@@ -31,7 +31,7 @@
 }
 
 @include breakpoint("mdm") {
-	
+
     .cm-featured-posts {
 
         &.cm-featured-posts--style-1 {
@@ -47,4 +47,58 @@
             }
         }
     }
+
+	.cm-secondary {
+		.cm-featured-posts {
+
+			&.cm-featured-posts--style-1 {
+				gap: 20px;
+
+				.cm-posts {
+					flex-basis: 100%;
+				}
+
+				.cm-first-post {
+					flex-basis: 100%;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.cm-secondary {
+	.cm-featured-posts--style-1 {
+		.cm-posts {
+			.cm-post {
+				a {
+					max-width: 130px;
+				}
+			}
+
+			.cm-post-content {
+				a {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.cm-footer {
+	.cm-featured-posts--style-1 {
+		.cm-posts {
+			.cm-post {
+				a {
+					max-width: 130px;
+				}
+			}
+
+			.cm-post-content {
+				a {
+					max-width: 100%;
+				}
+			}
+		}
+	}
 }

@@ -4,7 +4,7 @@
 Dark CSS
 --------------------------------------------------------------*/
 
-body {
+body.dark-skin {
 	background-color: $color__background-dark;
 	color: $color__gray-seven;
 }
@@ -294,14 +294,14 @@ body {
 			.cm-submenu-toggle,
 			.cm-home-icon,
 			.cm-menu-toggle {
-		
+
 				svg {
 					fill: $color__gray-100
 				}
 			}
-		
+
 			.cm-random-post {
-		
+
 				a {
 					svg {
 						fill: $color__gray-100

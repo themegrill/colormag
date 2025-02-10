@@ -7,78 +7,45 @@
 /**
  * For video post format.
  */
-jQuery( document ).ready(
-	function () {
-
-		// Hide the div by default.
-		jQuery( '#post-video-url' ).hide();
-
-		// If post format is selected, then, display the respective div.
-		if ( jQuery( '#post-format-video' ).is( ':checked' ) ) {
-			jQuery( '#post-video-url' ).show();
-		}
-
-		// Hiding the default post format type input box by default.
-		jQuery( 'input[name="post_format"]' ).change(
-			function () {
-				jQuery( '#post-video-url' ).hide();
-			}
-		);
-
-		// If post format is selected, then, display the respective input div.
-		jQuery( 'input#post-format-video' ).change(
-			function () {
-				jQuery( '#post-video-url' ).show();
-			}
-		);
-
+jQuery(document).ready(function () {
+	// Hide the div by default.
+	jQuery("#post-video-url").hide();
+	// If post format is selected, then, display the respective div.
+	if (jQuery("#post-format-video").is(":checked")) {
+		jQuery("#post-video-url").show();
 	}
-);
 
-jQuery( window ).on(
-	'load',
-	function() {
+	// Hiding the default post format type input box by default.
+	jQuery('input[name="post_format"]').change(function () {
+		jQuery("#post-video-url").hide();
+		if (jQuery(this).val() === "video") {
+			jQuery("#post-video-url").show();
+		} else {
+			jQuery("#post-video-url").hide();
+		}
+	});
 
-		var post_format_load = jQuery( 'select[id^="post-format-selector"] option:selected' ).attr( 'value' );
-
-		// Proceed only if Gutenberg editor is available.
-		if ( post_format_load ) {
-
-			// Display Video URL meta box on page load if Video post format is already chosen.
-			if ( 'video' === post_format_load ) {
-				jQuery( '#post-video-url' ).show();
+	var postFormatSelector;
+	setInterval(() => {
+		if (!postFormatSelector) {
+			postFormatSelector = jQuery('select[id^="post-format-selector"]');
+		} else {
+			if (
+				jQuery('select[id^="post-format-selector"]').val() === "video"
+			) {
+				jQuery("#post-video-url").show();
 			} else {
-				jQuery( '#post-video-url' ).hide();
+				jQuery("#post-video-url").hide();
 			}
-
-			// Display Video URL meta box on post format change and if  Video post format is chosen.
-			jQuery( document ).on(
-				'change',
-				'select[id*="post-format"]',
-				function () {
-					var post_format_change = this.value;
-
-					if ( 'video' === post_format_change ) {
-						jQuery( '#post-video-url' ).show();
-					} else {
-						jQuery( '#post-video-url' ).hide();
-					}
-				}
-			);
 		}
-
-	}
-);
+	}, 700);
+});
 
 /**
  * Tabs and other settings.
  */
-(
-	function ( $ ) {
-
-		// Generate tabs.
-		var metaBoxWrap = $( '#page-settings-tabs-wrapper' );
-		metaBoxWrap.tabs();
-
-	}
-)( jQuery );
+(function ($) {
+	// Generate tabs.
+	var metaBoxWrap = $("#page-settings-tabs-wrapper");
+	metaBoxWrap.tabs();
+})(jQuery);
