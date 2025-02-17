@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
+* Added       - Option to change the footer builder inner layout( Stack and Inline).
 * Fix         - Plugin conflict with Classic Widgets.
 
 = Version 4.0.10 - 2025-01-06 =
