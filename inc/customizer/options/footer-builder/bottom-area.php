@@ -124,6 +124,26 @@ $options = array(
 					'section'   => 'colormag_footer_builder_bottom_area',
 					'transport' => 'postMessage',
 				),
+				'colormag_footer_bottom_inner_element_layout_divider' => array(
+					'type'    => 'customind-divider',
+					'variant' => 'dashed',
+					'section' => 'colormag_footer_builder_bottom_area',
+				),
+				'colormag_footer_bottom_inner_element_layout_heading' => array(
+					'type'    => 'customind-title',
+					'title'   => esc_html__( 'Inner Elements', 'colormag' ),
+					'section' => 'colormag_footer_builder_bottom_area',
+				),
+				'colormag_footer_bottom_inner_element_layout' => array(
+					'type'      => 'customind-toggle-button',
+					'title'     => esc_html__( ' Layout', 'colormag' ),
+					'section'   => 'colormag_footer_builder_bottom_area',
+					'transport' => 'postMessage',
+					'choices'   => array(
+						'column' => esc_html__( 'Stack', 'colormag' ),
+						'row'    => esc_html__( 'Inline', 'colormag' ),
+					),
+				),
 			)
 		),
 		'collapsible'  => apply_filters( 'colormag_footer_bottom_area_background_accordion_collapsible', false ),
