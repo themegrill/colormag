@@ -1050,12 +1050,12 @@
 
 				case "colormag_header_bottom_area_border_width":
 					css = colormagGenerateDimensionCSS(
-						".cm-header-builder .cm-header-bottom-row",
+						".cm-header-builder .cm-header-bottom-row, .cm-header-builder .cm-mobile-row .cm-header-bottom-row",
 						"border-width",
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						".cm-header-builder .cm-header-bottom-row",
+						".cm-header-builder .cm-header-bottom-row, .cm-header-builder .cm-mobile-row .cm-header-bottom-row",
 						"border-style",
 						"solid",
 					);
@@ -1063,7 +1063,7 @@
 
 				case "colormag_header_bottom_area_border_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .cm-header-bottom-row",
+						".cm-header-builder .cm-header-bottom-row, .cm-header-builder .cm-mobile-row .cm-header-bottom-row",
 						"border-color",
 						value,
 					);
