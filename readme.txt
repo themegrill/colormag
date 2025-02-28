@@ -73,6 +73,7 @@ and we will include it within the theme from next version update.
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
 * Added       - Option to change the footer builder inner layout( Stack and Inline).
 * Fix         - Plugin conflict with Classic Widgets.
+* Fix         - Option to enable Header Footer builder.
 
 = Version 4.0.10 - 2025-01-06 =
 * Added - Option to change single post title typography.

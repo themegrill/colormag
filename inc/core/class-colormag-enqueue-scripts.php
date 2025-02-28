@@ -335,6 +335,10 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				    padding: 0 !important;
 				    margin: 0;
 				}
+
+				#customize-control-colormag_demo_migrated_heading {
+				display: none;
+				}
 		    '
 			);
 		}

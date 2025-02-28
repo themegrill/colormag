@@ -77,6 +77,23 @@ $options = array(
 		),
 		'collapsible'  => apply_filters( 'colormag_container_background_accordion_collapsible', false ),
 	),
+	'colormag_demo_migrated_heading'             => array(
+		'type'         => 'customind-accordion',
+		'title'        => esc_html__( 'Demo Migrated', 'colormag' ),
+		'section'      => 'colormag_global_container_section',
+		'sub_controls' => apply_filters(
+			'colormag_demo_migrated_sub_controls',
+			array(
+				'demo_migrated_to_builder' => array(
+					'default' => 0,
+					'title'   => esc_html__( 'Demo migrated', 'colormag' ),
+					'type'    => 'customind-toggle',
+					'section' => 'colormag_global_container_section',
+				),
+			),
+		),
+		'collapsible'  => apply_filters( 'colormag_demo_migrated_accordion_collapsible', false ),
+	),
 	'colormag_base_colors_upgrade'          => array(
 		'type'        => 'customind-upsell',
 		'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
