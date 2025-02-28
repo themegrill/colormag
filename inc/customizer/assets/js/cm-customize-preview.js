@@ -27,6 +27,10 @@
 		return css;
 	}
 
+	function colormagElementLayoutCSS(selector, property, value) {
+		return `${selector} {${property}: ${value};}`;
+	}
+
 	function colormagGenerateSliderCSS(selector, property, value) {
 		return `${selector} {${property}: ${value.size}${value.unit};}`;
 	}
@@ -1938,6 +1942,30 @@
 					css = colormagGenerateCommonCSS(
 						".cm-footer-builder .cm-footer-main-row .widget-title, .cm-footer-builder .cm-footer-main-row h1, .cm-footer-builder .cm-footer-main-row h2, .cm-footer-builder .cm-footer-main-row h3, .cm-footer-builder .cm-footer-main-row h4, .cm-footer-builder .cm-footer-main-row h5, .cm-footer-builder .cm-footer-main-row h6",
 						"color",
+						value,
+					);
+					break;
+
+				case 'colormag_footer_bottom_inner_element_layout':
+					css = colormagElementLayoutCSS(
+						'.cm-footer-builder .cm-footer-bottom-row .cm-footer-col',
+						'flex-direction',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_main_inner_element_layout':
+					css = colormagElementLayoutCSS(
+						'.cm-footer-builder .cm-footer-main-row .cm-footer-col',
+						'flex-direction',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_top_inner_element_layout':
+					css = colormagElementLayoutCSS(
+						'.cm-footer-builder .cm-footer-top-row .cm-footer-col',
+						'flex-direction',
 						value,
 					);
 					break;

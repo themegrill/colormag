@@ -4348,6 +4348,27 @@ class ColorMag_Dynamic_CSS {
 			$parse_builder_css .= " .cm-footer-builder .cm-bottom-row{justify-items: center;} ";
 		}
 
+		// Footer bottom layout alignment.
+		$footer_builder_bottom_layout = get_theme_mod('colormag_footer_bottom_inner_element_layout', 'column');
+
+		if ( ! empty( $footer_builder_bottom_layout ) ) {
+			$parse_builder_css .= ".cm-footer-builder .cm-footer-bottom-row .cm-footer-col{flex-direction: $footer_builder_bottom_layout;}";
+		}
+
+		// Footer main layout alignment.
+		$footer_builder_main_layout = get_theme_mod('colormag_footer_main_inner_element_layout', 'column');
+
+		if ( ! empty( $footer_builder_main_layout ) ) {
+			$parse_builder_css .= ".cm-footer-builder .cm-footer-main-row .cm-footer-col{flex-direction: $footer_builder_main_layout;}";
+		}
+
+		// Footer top layout alignment.
+		$footer_builder_top_layout = get_theme_mod('colormag_footer_top_inner_element_layout', 'column');
+
+		if ( ! empty( $footer_builder_top_layout ) ) {
+			$parse_builder_css .= ".cm-footer-builder .cm-footer-top-row .cm-footer-col{flex-direction: $footer_builder_top_layout;}";
+		}
+
 		$color_palette_default = array(
 			'id'     => 'preset-1',
 			'name'   => 'Preset 1',
