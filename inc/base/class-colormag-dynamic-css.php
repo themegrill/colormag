@@ -2131,9 +2131,9 @@ class ColorMag_Dynamic_CSS {
 		// Header bottom area background.
 		$header_bottom_area_width = get_theme_mod('colormag_main_header_width_setting', 'full-width');
 		if ( 'contained' === $header_bottom_area_width ){
-			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row';
+			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row, .cm-header-builder.cm-contained .cm-mobile-row .cm-header-bottom-row';
 		} else {
-			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-desktop-row.cm-main-header .cm-header-bottom-row';
+			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-desktop-row.cm-main-header .cm-header-bottom-row, .cm-header-builder.cm-full-width .cm-mobile-row .cm-header-bottom-row';
 		}
 
 		$header_bottom_area_background_default = array(

@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version =
+* Fix         - Mobile view border top color issue.
+
 = Version 4.0.11 - 2025-02-28 =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
 * Added       - Option to change the footer builder inner layout( Stack and Inline).
