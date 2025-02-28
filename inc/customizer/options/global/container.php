@@ -77,7 +77,7 @@ $options = array(
 		),
 		'collapsible'  => apply_filters( 'colormag_container_background_accordion_collapsible', false ),
 	),
-	'colormag_demo_migrated_heading'             => array(
+	'colormag_demo_migrated_heading'        => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Demo Migrated', 'colormag' ),
 		'section'      => 'colormag_global_container_section',
