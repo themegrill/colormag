@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version =
 * Fix         - Mobile view border top color issue.
+* Fix         - Embeded Block image size issue.
 
 = Version 4.0.11 - 2025-02-28 =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
