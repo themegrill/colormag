@@ -1,4 +1,4 @@
-<?php
+<?php global $post;
 /**
  * The template used for displaying single post content in single.php
  *
@@ -96,7 +96,7 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 
 				get_template_part( 'template-parts/entry/entry', 'summary' );
 			} elseif ( 'feature_image' === $single_order ) {
-				get_template_part( 'template-parts/entry/entry', 'featuredimage' );
+				get_template_part( 'template-parts/entry/entry', 'featured-image' );
 
 			}
 		}

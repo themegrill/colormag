@@ -20,12 +20,14 @@ $options = apply_filters(
 							'title'    => esc_attr__( 'Title', 'colormag' ),
 							'meta'     => esc_attr__( 'Meta Tags', 'colormag' ),
 							'content'  => esc_attr__( 'Content', 'colormag' ),
+							'feature_image'  => esc_attr__( 'Feature Image', 'colormag' ),
 						),
 						'default'     => array(
 							'category',
 							'title',
 							'meta',
 							'content',
+							'feature_image'
 						),
 					),
 				)
