@@ -52,7 +52,7 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 		 *
 		 * @return void
 		 */
-		public function setup_hooks(  ) {
+		public function setup_hooks() {
 
 			add_action( 'after_setup_theme', array( $this, 'colormag_setup' ) );
 		}
@@ -79,7 +79,8 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			// Registering navigation menu.
 			register_nav_menus(
 				array(
-					'primary' => esc_html__( 'Primary Menu', 'colormag' ),
+					'primary'        => esc_html__( 'Primary Menu', 'colormag' ),
+					'menu-secondary' => esc_html__( 'Secondary Menu', 'colormag' ),
 				)
 			);
 
@@ -92,17 +93,6 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			// Pro required image sizes.
 			add_image_size( 'colormag-default-news', 150, 150, true );
 			add_image_size( 'colormag-featured-image-large', 1400, 600, true );
-
-			// Setup the WordPress core custom background feature.
-			add_theme_support(
-				'custom-background',
-				apply_filters(
-					'colormag_custom_background_args',
-					array(
-						'default-color' => 'eaeaea',
-					)
-				)
-			);
 
 			/**
 			 * Let WordPress manage the document title.
@@ -177,11 +167,8 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 
 			// Responsive embeds support.
 			add_theme_support( 'responsive-embeds' );
-
 		}
-
 	}
 }
 
 ColorMag_After_Setup_Theme::get_instance();
-

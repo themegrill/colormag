@@ -20,7 +20,7 @@
 				content: '✖';
 			}
 		}
-		
+
 	}
 }
 
@@ -138,6 +138,12 @@
 	}
 }
 
+.search-form-top {
+	&.show {
+		width: unset;
+	}
+}
+
 @include breakpoint("mdm") {
 
 	.cm-header-actions {
@@ -158,4 +164,5 @@
 	.cm-top-search {
 		position: relative;
 	}
+
 }

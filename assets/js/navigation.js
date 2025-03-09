@@ -109,3 +109,24 @@
 		);
 	}
 )();
+
+(
+	function () {
+	const	container = document.querySelector('.cm-mobile-nav-container');
+		if ( ! container ) return;
+		const	button = container.querySelector('.cm-menu-toggle');
+		const	menu = container.querySelector('.cm-mobile-menu');
+		button.addEventListener( 'click', function (e){
+		e.preventDefault();
+		const expanded = e.currentTarget.getAttribute('aria-expanded');
+		if ( expanded === 'false' ){
+			e.currentTarget.setAttribute('aria-expanded', 'true');
+			menu.classList.add('cm-mobile-menu--open');
+		} else {
+			e.currentTarget.setAttribute('aria-expanded', 'false');
+			menu.classList.remove('cm-mobile-menu--open');
+		}
+	} )
+	}
+
+)()

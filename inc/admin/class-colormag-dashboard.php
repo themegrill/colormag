@@ -120,7 +120,6 @@ class ColorMag_Dashboard {
 						} else {
 							include __DIR__ . '/views/starter-templates.php';
 						}
-
 					},
 				),
 				'products'          => array(
@@ -144,8 +143,8 @@ class ColorMag_Dashboard {
 			)
 		)
 		?>
-		<div class="wrap">
-			<div class="metabox-holder">
+		<div class="colormag-wrap">
+			<div class="colormag-metabox-holder">
 				<div class="colormag-header">
 					<div class="cm-container" id="cm-dashboard-menu">
 <!--						<div class="cm-dashboard-head-right" id="cm-dashboard-menu">-->

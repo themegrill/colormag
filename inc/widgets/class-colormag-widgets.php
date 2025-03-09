@@ -46,14 +46,13 @@ function colormag_widgets_init() {
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
 		)
 	);
-
 	// Registering Header sidebar.
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Header Sidebar', 'colormag' ),
 			'id'            => 'colormag_header_sidebar',
 			'description'   => esc_html__( 'Shows widgets in header section just above the main navigation menu.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix widget-colormag_header_sidebar">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -183,7 +182,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar One ( Upper )', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_one_upper',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar one in upper.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s widget-colormag_footer_sidebar_one_upper">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -196,7 +195,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar Two ( Upper )', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_two_upper',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar two in upper.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s widget-colormag_footer_sidebar_two_upper">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -209,7 +208,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar Three ( Upper )', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_three_upper',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar three in upper.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s widget-colormag_footer_sidebar_three_upper">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -222,7 +221,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar One', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_one',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar one.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s widget-colormag_footer_sidebar_one">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -235,7 +234,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar Two', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_two',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar two.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s widget-colormag_footer_sidebar_two">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -248,7 +247,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar Three', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_three',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar three.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s  widget-colormag_footer_sidebar_three">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -261,7 +260,7 @@ function colormag_widgets_init() {
 			'name'          => esc_html__( 'Footer Sidebar Four ( Lower )', 'colormag' ),
 			'id'            => 'colormag_footer_sidebar_four',
 			'description'   => esc_html__( 'Shows widgets at footer sidebar four.', 'colormag' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s  widget-colormag_footer_sidebar_four">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title"><span>',
 			'after_title'   => '</span></' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>',
@@ -278,6 +277,31 @@ function colormag_widgets_init() {
 }
 
 add_action( 'widgets_init', 'colormag_widgets_init' );
+
+function colormag_builder_widget_init() {
+	$sidebars = array(
+		'header-sidebar-2' => esc_html__( 'Widget Two', 'colormag' ),
+	);
+	foreach ( $sidebars as $id => $name ) {
+
+		register_sidebar(
+			apply_filters(
+				'colormag_sidebars_widget_args',
+				array(
+					'id'            => $id,
+					'name'          => $name,
+					'description'   => esc_html__( 'Add widgets here.', 'colormag' ),
+					'before_widget' => '<section id="%1$s" class="widget widget-' . $id . ' %2$s">',
+					'after_widget'  => '</section>',
+					'before_title'  => '<h2 class="widget-title">',
+					'after_title'   => '</h2>',
+				)
+			)
+		);
+	}
+}
+
+add_action( 'widgets_init', 'colormag_builder_widget_init' );
 
 if ( ! function_exists( 'widget_title_markup' ) ) :
 

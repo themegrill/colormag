@@ -12,10 +12,16 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+
 /**
  * Define constants.
  */
 require get_template_directory() . '/inc/base/class-colormag-constants.php';
+
+/**
+ * Helpers functions.
+ */
+require get_template_directory() . '/inc/helper/utils.php';
 
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
@@ -65,6 +71,27 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
  */
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
+// Load customind.
+require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
+
+/**
+ * @var \Customind\Core\Customind
+ */
+global $customind;
+$customind->set_css_var_prefix( 'colormag' );
+$customind->set_i18n_data(
+	[
+		'domain' => 'colormag',
+	]
+);
+$customind->set_section_i18n(
+	[
+		/* Translators: 1: Panel Title. */
+		'customizing-action' => __( 'Customizing &#9656; %s', 'colormag' ),
+		'customizing'        => __( 'Customizing', 'colormag' ),
+	]
+);
+
 /**
  * Deprecated.
  */
@@ -106,6 +133,7 @@ require_once COLORMAG_WIDGETS_DIR . '/class-colormag-widgets.php';
  */
 // Template functions files.
 require COLORMAG_INCLUDES_DIR . '/template-tags.php';
+require COLORMAG_INCLUDES_DIR . '/builder-template-tags.php';
 require COLORMAG_INCLUDES_DIR . '/template-functions.php';
 
 // Svg icon class.
@@ -113,6 +141,7 @@ require COLORMAG_INCLUDES_DIR . '/class-colormag-svg-icons.php';
 
 //Template hooks.
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/hook-functions.php';
+require COLORMAG_PARENT_DIR . '/template-parts/hooks/builder.php';
 
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/header/header.php';
 require COLORMAG_PARENT_DIR . '/template-parts/hooks/header/header-main.php';
@@ -147,26 +176,6 @@ if ( defined( 'ELEMENTOR_VERSION' ) ) {
 	require_once COLORMAG_ELEMENTOR_DIR . '/elementor-functions.php';
 }
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
- * @since ColorMag 3.0.0
- */
-function cm_customize_preview_js() {
-
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
-	wp_enqueue_script(
-		'colormag-customizer-pre',
-		get_assets_url() . '/inc/customizer/assets/js/cm-customize-preview.js',
-		array(
-			'customize-preview',
-		),
-		COLORMAG_THEME_VERSION,
-		true
-	);
-}
-
 function get_assets_url() {
 	// Get correct URL and path to wp-content.
 	$content_url = untrailingslashit( dirname( dirname( get_stylesheet_directory_uri() ) ) );
@@ -177,8 +186,6 @@ function get_assets_url() {
 
 	return $url;
 }
-
-add_action( 'customize_preview_init', 'cm_customize_preview_js' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -323,15 +330,11 @@ function colormag_content_width() {
 			if ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
 				$content_width = 1140; /* pixels */
 			}
-		} else {
-			if ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
+		} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
 				$content_width = 1140; /* pixels */
-			}
 		}
-	} else {
-		if ( 'no_sidebar_full_width' === $layout_meta ) {
+	} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
 			$content_width = 1140; /* pixels */
-		}
 	}
 }
 
@@ -342,14 +345,41 @@ add_action( 'template_redirect', 'colormag_content_width' );
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-add_action(
-	'after_setup_theme',
-	function () {
-		$background = sanitize_hex_color_no_hash( get_theme_mod( 'background_color', '' ) );
-		if ( empty( $background ) ) {
-			return;
-		}
-		set_theme_mod( 'background_color', $background );
-	},
-	10
-);
+function colormag_maybe_enable_builder() {
+
+	if ( get_option( 'colormag_builder_migration' ) ) {
+		return true;
+	}
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_transfer' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	return true;
+}
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @since ColorMag 3.0.0
+ */
+function cm_customize_preview_js() {
+
+	if ( colormag_maybe_enable_builder() ) {
+		set_theme_mod( 'colormag_enable_builder', true );
+		update_option( 'colormag_builder_migration', true );
+	}
+
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+	wp_enqueue_script(
+		'colormag-customizer-pre',
+		get_assets_url() . '/inc/customizer/assets/js/cm-customize-preview.js',
+		array(
+			'customize-preview',
+		),
+		COLORMAG_THEME_VERSION,
+		true
+	);
+}
+add_action( 'customize_preview_init', 'cm_customize_preview_js' );
