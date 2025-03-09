@@ -23,11 +23,11 @@ $options = apply_filters(
 							'feature_image' => esc_attr__( 'Feature Image', 'colormag' ),
 						),
 						'default'     => array(
+							'feature_image',
 							'category',
 							'title',
 							'meta',
 							'content',
-							'feature_image',
 						),
 					),
 				)

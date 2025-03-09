@@ -33,11 +33,11 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 	$single_orders = get_theme_mod(
 		'colormag_single_post_elements',
 		array(
+			'feature_image',
 			'category',
 			'title',
 			'meta',
 			'content',
-			'feature_image',
 		)
 	);
 
