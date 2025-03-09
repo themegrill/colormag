@@ -16,18 +16,18 @@ $options = apply_filters(
 						'section'     => 'colormag_single_post_section',
 						'description' => esc_html__( 'Drag & Drop items to re-arrange the order', 'colormag' ),
 						'choices'     => array(
-							'category' => esc_attr__( 'Category', 'colormag' ),
-							'title'    => esc_attr__( 'Title', 'colormag' ),
-							'meta'     => esc_attr__( 'Meta Tags', 'colormag' ),
-							'content'  => esc_attr__( 'Content', 'colormag' ),
-							'feature_image'  => esc_attr__( 'Feature Image', 'colormag' ),
+							'category'      => esc_attr__( 'Category', 'colormag' ),
+							'title'         => esc_attr__( 'Title', 'colormag' ),
+							'meta'          => esc_attr__( 'Meta Tags', 'colormag' ),
+							'content'       => esc_attr__( 'Content', 'colormag' ),
+							'feature_image' => esc_attr__( 'Feature Image', 'colormag' ),
 						),
 						'default'     => array(
 							'category',
 							'title',
 							'meta',
 							'content',
-							'feature_image'
+							'feature_image',
 						),
 					),
 				)

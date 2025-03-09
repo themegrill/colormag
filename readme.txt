@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.11
-Tested up to: 6.7
+Version: 3.1.11
+Tested up to: 6.6
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.11
+Stable tag: 3.1.11
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,102 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version =
-* Fix         - Mobile view border top color issue.
-* Fix         - Embeded Block image size issue.
+= Version - TBD=
+* Fix - Single Post Post Elements Swap on Feature Image.
 
-= Version 4.0.11 - 2025-02-28 =
-* Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
-* Added       - Option to change the footer builder inner layout( Stack and Inline).
-* Fix         - Plugin conflict with Classic Widgets.
-* Fix         - Option to enable Header Footer builder.
-
-= Version 4.0.10 - 2025-01-06 =
-* Added - Option to change single post title typography.
-* Fix   - Header media responsive display issue.
-* Fix   - News ticker issue in builder.
-
-= Version 4.0.9 - 2024-12-23 =
-* Fix - Elementor widget title color and background color issue.
-* Fix - Outside container background color issue.
-
-= Version 4.0.8 - 2024-12-19 =
-* Update        - Compatibility with Elementor v3.26.
-* Fix           - TG: Widget style issue in footer.
-* Fix           - Breadcrumb enable issue.
-
-= Version 4.0.7 - 2024-11-22 =
-* Fix           - TG: Widget style issue.
-* Fix           - Customizer section padding issue.
-
-= Version 4.0.6 - 2024-11-20 =
-* Enhancement   - Compatibility with Page Builder by SiteOrigin.
-* Fix           - TG: Featured Posts (Style 1) style issue.
-* Fix           - Offset background color issue.
-
-= Version 4.0.5 - 2024-11-15 =
-* Fix   - WordPress 6.7 customizer css issue.
-
-= Version 4.0.4 - 2024-11-12 =
-* Fix - Header media image issue.
-* Fix - Logo remove option issue.
-* Fix - Search icon color option issue.
-
-= Version - 4.0.3 - 2024-11-11 =
-* Fix   - Mobile logo issue.
-* Tweak - New image webp image format added.
-
-= Version - 4.0.2 - 2024-10-25 =
-* Fix - Open Sans font issue.
-* Fix - Customizer CSS issues while using Classic Widget.
-
-= Version - 4.0.1 - 2024-10-23 =
-* Fix - Footer responsive issue.
-
-= Version - 4.0.0 - 2024-10-22 =
-* Added       - New Header builder.
-* Enhancement - Introduced a new visual Header Builder with drag and drop functionality.
-* Added       - Header Builder component - Site Title and Logo.
-* Enhancement - Option to change color and typography for Site Title and Logo.
-* Enhancement - Option to change enable/disable for Site Title and Logo.
-* Added       - Header Builder component - Primary Menu.
-* Enhancement - Option to change color, background, padding, margin and typography for primary menu component.
-* Enhancement - Option to change sub menu color, background, padding, border etc.
-* Added       - Header Builder component - Secondary, Tertiary and Quaternary Menu.
-* Enhancement - Option to change color and typography for secondary, tertiary and quaternary menu component.
-* Enhancement - Option to change sub menu typography.
-* Added       - Header Builder component - Button.
-* Enhancement - Option to change color, background, padding, border for button.
-* Added       - Header Builder component - Search.
-* Added       - Option to change search input color text and background color.
-* Added       - Option to change search icon color.
-* Added       - Header Builder component - HTML 1.
-* Added       - Option to change HTML 1  color, link color, font size, margin.
-* Added       - Header Builder component - Widget 1 and Widget 2.
-* Added       - Option to change Widget 1 and Widget 2 title and content color, link color and typography.
-* Added       - Header Builder component - Social.
-* Added       - Option to add new social icons.
-* Added       - Option to change all header row container width, height, color, background, padding, margin, border etc.
-* Enhancement - UI/UX improvement in toggle, select, slider, radio-image, sortable, editor, typography, dimension, navigation and color control.
-* Added       - New customizer color Palette.
-* Enhancement - Introduced reset to default option in all control.
-* Enhancement - Customizer color picker.
-* Enhancement - Customizer background control.
-* Enhancement - Customizer Typography control.
-* Added       - New Footer builder.
-* Enhancement - Introduced a new visual Footer Builder with drag and drop functionality.
-* Added       - Footer Builder component - HTML 1.
-* Added       - Option to change HTML 1 color, link color, font size, margin.
-* Added       - Footer Builder component - Widget 1, Widget 2, Widget 3, Widget 4, Widget 5, Widget 6 and Widget 7.
-* Added       - Option to change Widgets title and content color, link color and typography.
-* Added       - Footer Builder component - Menu 1.
-* Added       - Option to change Menu 1 color and typography.
-* Added       - Footer Builder component - Social.
-* Added       - Option to add new social icons.
-* Added       - Footer Builder component - Copyright.
-* Added       - Option to change copyright color, link color, typography, margin.
-* Added       - Option to change footer column for particular row.
-* Added       - Option to change all footer row container width, height, color, background, padding, margin, border etc.
 
 = Version - 3.1.11 - 2024-08-26 =
 * Fix - Compatibility of ColorMag with Elementor Pro.
