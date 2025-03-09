@@ -5050,14 +5050,18 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-posts .post {
 	overflow: hidden;
-	-webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
-	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+	-webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.24);
 	border-radius: 4px;
 }
 
+.cm-posts .cm-featured-image {
+	margin-bottom: 20px;
+}
+
 .cm-post {
-	-webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
-	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+	-webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.24);
 	border-radius: 4px;
 }
 
