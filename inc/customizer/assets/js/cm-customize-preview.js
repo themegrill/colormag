@@ -150,7 +150,7 @@
 
 			if (undefined !== typography['letter-spacing']) {
 				if (
-					undefined !== typography['letter-spacing']['desktop']['size'] &&
+					undefined !== typography?.['letter-spacing']?.['desktop']?.['size'] &&
 					'' !== typography['letter-spacing']['desktop']['size']
 				) {
 					const desktopLetterSpacingUnit =
@@ -163,7 +163,7 @@
 				}
 
 				if (
-					undefined !== typography['letter-spacing']['tablet']['size'] &&
+					undefined !== typography?.['letter-spacing']?.['tablet']?.['size'] &&
 					'' !== typography['letter-spacing']['tablet']['size']
 				) {
 					const tabletLetterSpacingUnit =
@@ -176,7 +176,7 @@
 				}
 
 				if (
-					undefined !== typography['letter-spacing']['mobile']['size'] &&
+					undefined !== typography?.['letter-spacing']?.['mobile']?.['size'] &&
 					'' !== typography['letter-spacing']['mobile']['size']
 				) {
 					const mobileLetterSpacingUnit =
