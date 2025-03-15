@@ -39,7 +39,7 @@ class ColorMag_Starter_Content {
 						'primary-menu',
 					),
 					'center' => array(),
-					'right'  => array(),
+					'right'  => array('search'),
 				),
 			),
 			'mobile'  => array(

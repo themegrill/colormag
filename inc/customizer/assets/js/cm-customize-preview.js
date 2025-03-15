@@ -731,9 +731,30 @@
 					);
 					break;
 
+				case "colormag_header_primary_menu_active_text_color":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav ul li.current-menu-item > a",
+						"color",
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav li.current-menu-item > .cm-submenu-toggle .cm-icon",
+						"fill",
+						value,
+					);
+					break;
+
 				case "colormag_header_primary_menu_hover_background":
 					css = colormagGenerateCommonCSS(
 						".cm-header-builder .cm-primary-nav ul li:hover",
+						"background",
+						value,
+					);
+					break;
+
+				case "colormag_header_primary_menu_active_background":
+					css = colormagGenerateCommonCSS(
+						".cm-header-builder .cm-primary-nav ul li.current-menu-item",
 						"background",
 						value,
 					);
