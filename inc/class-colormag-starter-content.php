@@ -17,6 +17,11 @@ class ColorMag_Starter_Content {
 				return 'Subscribe';
 			}
 		);
+
+		add_filter('body_class', function ($classes) {
+			$classes[] = 'cm-started-content';
+			return $classes;
+		});
 	}
 
 	public function header_builder_options() {
