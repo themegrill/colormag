@@ -2,7 +2,7 @@
 /**
  * About starter content.
  *
- * @package Neve\Compatibility\Starter_Content
+ * @package ColorMag\Compatibility\Starter_Content
  */
 
 return [

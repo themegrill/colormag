@@ -5635,13 +5635,6 @@ ul.wp-block-gallery img {
 	width: unset;
 }
 
-.no-sidebar-full-width .cm-primary .cm-entry-summary > .alignwide,
-.no-sidebar .cm-primary .cm-entry-summary > .alignwide {
-	margin-right: -100px;
-	margin-left: -100px;
-	max-width: unset;
-}
-
 .no-sidebar-full-width.box-layout .cm-content,
 .no-sidebar.box-layout .cm-content {
 	overflow: hidden;
