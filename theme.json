@@ -12,6 +12,103 @@
       "contentSize": "760px",
       "wideSize": "1160px",
       "fullSize": "none"
+    },
+    "typography": {
+      "writingMode": true,
+      "defaultFontSizes": false,
+      "fluid": true,
+      "fontSizes": [
+        {
+          "fluid": false,
+          "name": "Small",
+          "size": "0.875rem",
+          "slug": "small"
+        },
+        {
+          "fluid": {
+            "max": "1.125rem",
+            "min": "1rem"
+          },
+          "name": "Medium",
+          "size": "1rem",
+          "slug": "medium"
+        },
+        {
+          "fluid": {
+            "max": "1.375rem",
+            "min": "1.125rem"
+          },
+          "name": "Large",
+          "size": "1.38rem",
+          "slug": "large"
+        },
+        {
+          "fluid": {
+            "max": "2rem",
+            "min": "1.75rem"
+          },
+          "name": "Extra Large",
+          "size": "1.75rem",
+          "slug": "x-large"
+        },
+        {
+          "fluid": {
+            "max": "3rem",
+            "min": "2.15rem"
+          },
+          "name": "Extra Extra Large",
+          "size": "2.15rem",
+          "slug": "xx-large"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "name": "IBMPlexSerif",
+          "slug": "ibm-plex-serif",
+          "fontFamily": "IBM Plex Serif, sans-serif",
+          "fontFace": [
+            {
+              "src": [
+                "file:./assets/fonts/IBMPlexSerif-Regular.ttf"
+              ],
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontFamily": "IBMPlexSerif"
+            },
+            {
+              "src": [
+                "file:./assets/fonts/IBMPlexSerif-Bold.ttf"
+              ],
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontFamily": "IBMPlexSerif"
+            },
+            {
+              "src": [
+                "file:./assets/fonts/IBMPlexSerif-SemiBold.ttf"
+              ],
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontFamily": "IBMPlexSerif"
+            }
+          ]
+        },
+        {
+          "name": "Inter",
+          "slug": "inter",
+          "fontFamily": "Inter, sans-serif",
+          "fontFace": [
+            {
+              "src": [
+                "file:./assets/fonts/Inter-VariableFont_opsz,wght.ttf"
+              ],
+              "fontWeight": "200 800",
+              "fontStyle": "normal",
+              "fontFamily": "Inter"
+            }
+          ]
+        }
+      ]
     }
   }
 }
