@@ -1,4 +1,26 @@
 <?php
+$sidebar_layout_choices = apply_filters(
+	'colormag_site_layout_choices',
+	array(
+		'right_sidebar'               => array(
+			'label' => '',
+			'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+		),
+		'left_sidebar'                => array(
+			'label' => '',
+			'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/left-sidebar.svg',
+		),
+		'no_sidebar_full_width'       => array(
+			'label' => '',
+			'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/contained.svg',
+		),
+		'no_sidebar_content_centered' => array(
+			'label' => '',
+			'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/centered.svg',
+		),
+	)
+);
+
 $options = array(
 	'colormag_woocommerce_sidebar_register_setting_heading' => array(
 		'type'         => 'customind-accordion',
@@ -29,24 +51,7 @@ $options = array(
 					'type'    => 'customind-radio-image',
 					'title'   => esc_html__( 'WooCommerce Shop Page Layout', 'colormag' ),
 					'section' => 'colormag_woocommerce_sidebar_section',
-					'choices' => array(
-						'right_sidebar'               => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
-						),
-						'left_sidebar'                => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/left-sidebar.png',
-						),
-						'no_sidebar_full_width'       => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-full-width-layout.png',
-						),
-						'no_sidebar_content_centered' => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-content-centered-layout.png',
-						),
-					),
+					'choices' => $sidebar_layout_choices,
 					'columns' => 2,
 				),
 				'colormag_woocmmerce_archive_page_layout' => array(
@@ -54,24 +59,7 @@ $options = array(
 					'type'    => 'customind-radio-image',
 					'title'   => esc_html__( 'WooCommerce Archive Page Layout', 'colormag' ),
 					'section' => 'colormag_woocommerce_sidebar_section',
-					'choices' => array(
-						'right_sidebar'               => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
-						),
-						'left_sidebar'                => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/left-sidebar.png',
-						),
-						'no_sidebar_full_width'       => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-full-width-layout.png',
-						),
-						'no_sidebar_content_centered' => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-content-centered-layout.png',
-						),
-					),
+					'choices' => $sidebar_layout_choices,
 					'columns' => 2,
 				),
 				'colormag_woocmmerce_single_product_page_layout' => array(
@@ -79,24 +67,7 @@ $options = array(
 					'type'    => 'customind-radio-image',
 					'title'   => esc_html__( 'WooCommerce Single Product Page Layout', 'colormag' ),
 					'section' => 'colormag_woocommerce_sidebar_section',
-					'choices' => array(
-						'right_sidebar'               => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/right-sidebar.png',
-						),
-						'left_sidebar'                => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/left-sidebar.png',
-						),
-						'no_sidebar_full_width'       => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-full-width-layout.png',
-						),
-						'no_sidebar_content_centered' => array(
-							'label' => '',
-							'url'   => COLORMAG_PARENT_URL . '/assets/img/no-sidebar-content-centered-layout.png',
-						),
-					),
+					$sidebar_layout_choices,
 					'columns' => 2,
 				),
 			),
