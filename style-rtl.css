@@ -5617,6 +5617,12 @@ ul.wp-block-gallery img {
 	display: none;
 }
 
+.cm-started-content .cm-primary .cm-entry-summary .cm-block-alignfull {
+	margin-right: calc(50% - 50vw);
+	margin-left: calc(50% - 50vw);
+	max-width: unset;
+}
+
 body:not(.cm-started-content) .no-sidebar-full-width,
 body:not(.cm-started-content) .no-sidebar {
 	overflow: hidden;
