@@ -2,12 +2,12 @@
 
 
 class ColorMag_Starter_Content {
-	const HOME_SLUG       = 'home';
-	const BLOG_SLUG       = 'blog';
-	const ABOUT_SLUG      = 'about';
-	const CONTACT         = 'contact';
-	const PORTOFOLIO_SLUG = 'portofolio';
-	const PROJECT_DETAILS = 'project-details';
+	const HOME_SLUG  = 'home';
+	const BLOG_SLUG  = 'blog';
+	const POLITICS   = 'politics';
+	const WORLD      = 'world';
+	const SPORTS     = 'sports';
+	const TECHNOLOGY = 'technology';
 
 	public function __construct() {
 		add_filter( 'colormag_header_builder_options', array( $this, 'header_builder_options' ) );
@@ -18,10 +18,13 @@ class ColorMag_Starter_Content {
 			}
 		);
 
-		add_filter('body_class', function ($classes) {
-			$classes[] = 'cm-started-content';
-			return $classes;
-		});
+		add_filter(
+			'body_class',
+			function ( $classes ) {
+				$classes[] = 'cm-started-content';
+				return $classes;
+			}
+		);
 	}
 
 	public function header_builder_options() {
@@ -44,7 +47,7 @@ class ColorMag_Starter_Content {
 						'primary-menu',
 					),
 					'center' => array(),
-					'right'  => array('search'),
+					'right'  => array( 'search' ),
 				),
 			),
 			'mobile'  => array(
@@ -87,53 +90,53 @@ class ColorMag_Starter_Content {
 				'object'    => 'page',
 				'object_id' => '{{' . self::HOME_SLUG . '}}',
 			],
-			'page_about'           => [
+			'page_politics'        => [
 				'type'      => 'post_type',
 				'object'    => 'page',
-				'object_id' => '{{' . self::ABOUT_SLUG . '}}',
+				'object_id' => '{{' . self::POLITICS . '}}',
 			],
-			'page_portofolio'      => [
+			'page_sports'          => [
 				'type'      => 'post_type',
 				'object'    => 'page',
-				'object_id' => '{{' . self::PORTOFOLIO_SLUG . '}}',
+				'object_id' => '{{' . self::SPORTS . '}}',
 			],
 			'page_project_details' => [
 				'type'      => 'post_type',
 				'object'    => 'page',
-				'object_id' => '{{' . self::PROJECT_DETAILS . '}}',
+				'object_id' => '{{' . self::TECHNOLOGY . '}}',
 			],
 			'page_blog'            => [
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::BLOG_SLUG . '}}',
 			],
-			'page_contact'         => [
+			'page_world'           => [
 				'type'      => 'post_type',
 				'object'    => 'page',
-				'object_id' => '{{' . self::CONTACT . '}}',
+				'object_id' => '{{' . self::WORLD . '}}',
 			],
 		];
 
 		$footer_nav_items = [
-			'home'         => [
+			'home'          => [
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::HOME_SLUG . '}}',
 			],
-			'page_blog'    => [
+			'page_blog'     => [
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::BLOG_SLUG . '}}',
 			],
-			'page_about'   => [
+			'page_politics' => [
 				'type'      => 'post_type',
 				'object'    => 'page',
-				'object_id' => '{{' . self::ABOUT_SLUG . '}}',
+				'object_id' => '{{' . self::POLITICS . '}}',
 			],
-			'page_contact' => [
+			'page_world'    => [
 				'type'      => 'post_type',
 				'object'    => 'page',
-				'object_id' => '{{' . self::CONTACT . '}}',
+				'object_id' => '{{' . self::WORLD . '}}',
 			],
 		];
 
@@ -163,12 +166,12 @@ class ColorMag_Starter_Content {
 				),
 			),
 			'posts'       => [
-				self::HOME_SLUG       => require __DIR__ . '/compatibility/starter-content/home.php',
-				self::ABOUT_SLUG      => require __DIR__ . '/compatibility/starter-content/about.php',
-				self::CONTACT         => require __DIR__ . '/compatibility/starter-content/contact.php',
-				self::PORTOFOLIO_SLUG => require __DIR__ . '/compatibility/starter-content/portofolio.php',
-				self::PROJECT_DETAILS => require __DIR__ . '/compatibility/starter-content/project-details.php',
-				self::BLOG_SLUG       => [
+				self::HOME_SLUG  => require __DIR__ . '/compatibility/starter-content/home.php',
+				self::POLITICS   => require __DIR__ . '/compatibility/starter-content/politics.php',
+				self::WORLD      => require __DIR__ . '/compatibility/starter-content/world.php',
+				self::SPORTS     => require __DIR__ . '/compatibility/starter-content/sports.php',
+				self::TECHNOLOGY => require __DIR__ . '/compatibility/starter-content/technology.php',
+				self::BLOG_SLUG  => [
 					'post_name'  => self::BLOG_SLUG,
 					'post_type'  => 'page',
 					'post_title' => _x( 'Blog', 'Theme starter content', 'colormag' ),

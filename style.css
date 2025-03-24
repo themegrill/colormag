@@ -5621,6 +5621,24 @@ ul.wp-block-gallery img {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: unset;
+	padding: 0 16px;
+}
+
+@media screen and (max-width: 768px) {
+	.cm-started-content .cm-remove-padding {
+		padding: 0 !important;
+		border: 0 !important;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.cm-started-content .cm-sticky {
+		height: 100vh;
+		/* Ensure it fits within the viewport */
+		position: sticky;
+		top: 20px;
+		/* Distance from the top when scrolling */
+	}
 }
 
 body:not(.cm-started-content) .no-sidebar-full-width,

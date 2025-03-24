@@ -16,48 +16,32 @@
     "typography": {
       "writingMode": true,
       "defaultFontSizes": false,
-      "fluid": true,
+      "fluid": false,
       "fontSizes": [
         {
           "fluid": false,
           "name": "Small",
-          "size": "0.875rem",
+          "size": "14px",
           "slug": "small"
         },
         {
-          "fluid": {
-            "max": "1.125rem",
-            "min": "1rem"
-          },
           "name": "Medium",
-          "size": "1rem",
+          "size": "16px",
           "slug": "medium"
         },
         {
-          "fluid": {
-            "max": "1.375rem",
-            "min": "1.125rem"
-          },
           "name": "Large",
-          "size": "1.38rem",
+          "size": "18px",
           "slug": "large"
         },
         {
-          "fluid": {
-            "max": "2rem",
-            "min": "1.75rem"
-          },
           "name": "Extra Large",
-          "size": "1.75rem",
+          "size": "28px",
           "slug": "x-large"
         },
         {
-          "fluid": {
-            "max": "3rem",
-            "min": "2.15rem"
-          },
           "name": "Extra Extra Large",
-          "size": "2.15rem",
+          "size": "34px",
           "slug": "xx-large"
         }
       ],
