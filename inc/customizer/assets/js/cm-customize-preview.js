@@ -337,11 +337,11 @@
 					break;
 
 				case "colormag_h1_typography":
-					css = colormagGenerateTypographyCSS(id, "h1", value);
+					css = colormagGenerateTypographyCSS(id, "h1, h1 a, .cm-header-builder .cm-site-title a", value);
 					break;
 
 				case "colormag_h2_typography":
-					css = colormagGenerateTypographyCSS(id, "h2", value);
+					css = colormagGenerateTypographyCSS(id, "h2, h2.cm-entry-title a", value);
 					break;
 
 				case "colormag_h3_typography":

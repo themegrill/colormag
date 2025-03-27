@@ -800,7 +800,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$heading_h1_typography_default,
 			$heading_h1_typography,
-			'h1',
+			'h1, h1 a, .cm-header-builder .cm-site-title a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
@@ -811,7 +811,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_typography_css(
 			$heading_h2_typography_default,
 			$heading_h2_typography,
-			'h2',
+			'h2, h2.cm-entry-title a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
