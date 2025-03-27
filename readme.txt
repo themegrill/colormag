@@ -72,6 +72,7 @@ and we will include it within the theme from next version update.
 = Version =
 * Fix         - Mobile view border top color issue.
 * Fix         - Embeded Block image size issue.
+* Fix 		  - Font size issue in global typography heading.
 
 = Version 4.0.11 - 2025-02-28 =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
@@ -196,7 +197,7 @@ and we will include it within the theme from next version update.
 * Option - To change sidebar width.
 * Fix    - Primary menu background on contained main header.
 * Fix    - Post meta categories issue.
- 
+
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.
