@@ -16,8 +16,14 @@ project.properties
 # Dist folder
 /dist/
 
+#Bower
+/bower_components/
+
 # OS X metadata
 .DS_Store
 
 # Windows junk
 Thumbs.db
+
+# Zip
+colormag-pro.zip

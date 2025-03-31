@@ -33,6 +33,7 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function __construct() {
 
+		if ( $this->is_classic_editor_active() ) {
 		// Adding required meta boxes.
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 
@@ -43,9 +44,55 @@ class ColorMag_Meta_Boxes {
 		// Save the meta boxes contents.
 		add_action( 'save_post', array( $this, 'save_meta_boxes' ), 1, 2 );
 
+		}
+
 		// Save page settings meta boxes.
 		add_action( 'colormag_process_page_settings_meta', 'ColorMag_Meta_Box_Page_Settings::save', 10, 2 );
 
+		add_action(
+			'enqueue_block_editor_assets',
+			function () {
+				$meta_asset_file = get_template_directory() . '/assets/build/meta.asset.php';
+				if ( get_current_screen()->id === 'customize' ) {
+					return;
+				}
+				if ( file_exists( $meta_asset_file ) ) {
+					$meta_asset = require $meta_asset_file;
+					wp_enqueue_script( 'colormag-pro-meta', get_template_directory_uri() . '/assets/build/meta.js', $meta_asset['dependencies'], $meta_asset['version'], true );
+					wp_enqueue_style( 'colormag-pro-meta', get_template_directory_uri() . '/assets/build/meta.css', array(), time() );
+				}
+			}
+		);
+
+		$this->register_meta_fields();
+	}
+
+	private function register_meta_fields() {
+		register_post_meta(
+			'',
+			'colormag_page_layout',
+			[
+				'show_in_rest'  => true,
+				'single'        => true,
+				'default'       => 'default_layout',
+				'type'          => 'string',
+				'auth_callback' => '__return_true',
+			]
+		);
+	}
+
+	private function is_classic_editor_active() {
+
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		if ( is_plugin_active( 'classic-editor/classic-editor.php' ) ) {
+			return true;
+		}
+
+		if ( ! apply_filters( 'use_block_editor_for_post', true, get_post() ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
