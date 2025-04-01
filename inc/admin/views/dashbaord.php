@@ -138,7 +138,7 @@ function import_button_html() {
 				<div class="postbox cm-premium-features">
 					<div class="cm-premium-features-title">
 						<h2><?php esc_html_e( 'Premium Features', 'colormag' ); ?></h2>
-						<a href="<?php echo esc_url( 'https://themegrill.com/colormag-pricing/' ); ?>" target="_blank">
+						<a href="<?php echo esc_url( 'https://themegrill.com/pricing/?utm_medium=premiumm-features&utm_source=colormag-theme&utm_campaign=premiumm-features&utm_content=upgrade-now' ); ?>" target="_blank">
 						<?php esc_html_e( 'Upgrade Now', 'colormag' ); ?></a>
 					</div>
 					<div class="cm-premium-features-content" style="padding: 0;margin: 0;">
