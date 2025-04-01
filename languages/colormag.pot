@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-04-01 04:14+0000\n"
+"POT-Creation-Date: 2025-04-01 04:47+0000\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -637,59 +637,59 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:182
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:184
 msgid "Block Title"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:190, inc/widgets/colormag-125x125-advertisement-widget.php:34, inc/widgets/colormag-300x250-advertisement-widget.php:34, inc/widgets/colormag-728x90-advertisement-widget.php:34, inc/widgets/colormag-featured-posts-vertical-widget.php:40, inc/widgets/colormag-featured-posts-widget.php:40
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192, inc/widgets/colormag-125x125-advertisement-widget.php:34, inc/widgets/colormag-300x250-advertisement-widget.php:34, inc/widgets/colormag-728x90-advertisement-widget.php:34, inc/widgets/colormag-featured-posts-vertical-widget.php:40, inc/widgets/colormag-featured-posts-widget.php:40
 msgid "Title:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:194
 msgid "Add your custom block title"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:218, inc/customizer/options/footer/footer-column.php:109
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:220, inc/customizer/options/footer/footer-column.php:109
 msgid "Widget Title"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:227
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:229
 msgid "Color:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:251
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:253
 msgid "Text Color:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:292
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:294
 msgid "Posts"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:299, inc/widgets/colormag-featured-posts-slider-widget.php:35, inc/widgets/colormag-featured-posts-vertical-widget.php:50, inc/widgets/colormag-featured-posts-widget.php:50, inc/widgets/colormag-highlighted-posts-widget.php:34
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:301, inc/widgets/colormag-featured-posts-slider-widget.php:35, inc/widgets/colormag-featured-posts-vertical-widget.php:50, inc/widgets/colormag-featured-posts-widget.php:50, inc/widgets/colormag-highlighted-posts-widget.php:34
 msgid "Number of posts to display:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:308
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:310
 msgid "Offset Posts:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:334
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:336
 msgid "Filter"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:341
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:343
 msgid "Display the posts from:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:345
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:347
 msgid "Latest Posts"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:346, inc/customizer/options/content/post-meta.php:19, inc/customizer/options/content/single-post.php:131
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:348, inc/customizer/options/content/post-meta.php:19, inc/customizer/options/content/single-post.php:131
 msgid "Categories"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:354
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:356
 msgid "Select categories:"
 msgstr ""
 
