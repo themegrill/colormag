@@ -139,9 +139,15 @@ if ( ! function_exists( 'colormag_category_color' ) ) :
 		$category = get_categories( $args );
 
 		foreach ( $category as $category_list ) {
+
+			$my_default_lang = apply_filters( 'wpml_default_language', null );
+
+			$wp_category_id = apply_filters( 'wpml_object_id', $wp_category_id, 'category', true, $my_default_lang );
+
 			$color = get_theme_mod( 'colormag_category_color_' . $wp_category_id );
 
 			return $color;
+
 		}
 	}
 
