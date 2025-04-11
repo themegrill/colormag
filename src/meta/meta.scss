@@ -1,0 +1,148 @@
+.mainFlexbox {
+	width: 100%;
+	flex: 1;
+}
+
+.icon {
+	height: 110px;
+	width: 110px;
+}
+
+.padding-section {
+	margin-top: 10px;
+}
+
+
+.page-flex-row .css-1dnujmn {
+	display: flex !important;
+	flex-direction: row !important;
+}
+
+
+.padding-logo {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+[data-state='active'] {
+	border: 1px solid #13a1dc;
+	border-radius: 4px;
+	padding: 4px;
+}
+
+[data-state='inactive'] {
+	border: 1px solid #E5E7EB;
+	border-radius: 4px;
+	padding: 4px;
+}
+
+.underline {
+	border: none;
+	background: linear-gradient(to right, #D3D3D3 50%, rgba(255, 255, 255, 0) 50%) repeat-x;
+	background-size: 8px 1px;
+	height: 1px;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+
+.interface-complementary-area h2 {
+	margin-bottom: 0 !important;
+}
+
+
+.featuredImage {
+	border-radius: 2px;
+	line-height: 20px;
+	height: 90px;
+	padding: 8px 0;
+	border: 0;
+	text-align: center;
+}
+
+.positionAbsolute {
+	position: absolute;
+	top: 70%;
+	left: 22%;
+}
+
+.btnHeaderPanel {
+	padding: 6px 8px;
+	background: #ffffffbf;
+	border: 0;
+	border: 0;
+}
+
+.featureRelativeImg {
+	height: 150px;
+}
+
+.relative {
+	position: relative;
+}
+
+.centered-button-container {
+	background-color: #f0f0f0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px dashed #BDBDBD;
+	border-radius: 2px;
+}
+
+
+.btn-group {
+	display: flex;
+	justify-content: center;
+	border-radius: 2px;
+}
+
+.btn-group button {
+	background-color: white;
+	border: 1px solid #E0E0E0;
+	color: #7A7A7A;
+	padding: 10px 20px;
+	cursor: pointer;
+	float: left;
+}
+
+.btn-group .active {
+	background-color: blue;
+	color: white;
+	border-radius: 3px;
+}
+
+.active {
+	color: #2563EB;
+}
+
+.btn-group button:not(:last-child) {
+	border-right: none;
+
+}
+
+.btn-group button:last-child {
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+
+.btn-group:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.checkboxWidth {
+	height: 18px !important;
+	width: 18px !important;
+}
+
+svg.components-checkbox-control__checked {
+	position: absolute;
+	left: 48%;
+	top: 44%;
+	height: 20px;
+}

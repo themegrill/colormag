@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.11
+Version: 4.0.12
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.11
+Stable tag: 4.0.12
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,9 +69,10 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version =
+= Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.
-* Fix         - Embeded Block image size issue.
+* Fix         - Embed Block image size issue.
+* Update      - Page settings layout.
 
 = Version 4.0.11 - 2025-02-28 =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
