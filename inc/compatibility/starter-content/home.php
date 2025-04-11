@@ -44,8 +44,8 @@ return [
 
 <!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"style":{"dimensions":{"minHeight":""},"spacing":{"blockGap":"16px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Frame-1000005428.png","id":38,"dimRatio":0,"isUserOverlayColor":true,"minHeight":250,"contentPosition":"bottom left","align":"wide","style":{"border":{"radius":"8px"},"spacing":{"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide has-custom-content-position is-position-bottom-left" style="border-radius:8px;min-height:250px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-38" alt="" src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Frame-1000005428.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"},"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":{"top":"0px"}}}} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Banner-img-2.jpg","id":38,"dimRatio":0,"isUserOverlayColor":true,"minHeight":250,"contentPosition":"bottom left","align":"wide","style":{"border":{"radius":"8px"},"spacing":{"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignwide has-custom-content-position is-position-bottom-left" style="border-radius:8px;min-height:250px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-38" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Banner-img-2.jpg" alt="" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"},"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":{"top":"0px"}}}} -->
 <div class="wp-block-buttons" style="border-style:none;border-width:0px;padding-top:0;padding-bottom:0"><!-- wp:button {"className":"is-style-fill","style":{"color":{"background":"#8269df"},"spacing":{"padding":{"left":"8px","right":"8px","top":"6px","bottom":"6px"}},"border":{"radius":"3px","width":"0px","style":"none"},"typography":{"fontSize":"10px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"inter"} -->
 <div class="wp-block-button has-custom-font-size is-style-fill has-inter-font-family" style="font-size:10px;font-style:normal;font-weight:400"><a class="wp-block-button__link has-background wp-element-button" style="border-style:none;border-width:0px;border-radius:3px;background-color:#8269df;padding-top:6px;padding-right:8px;padding-bottom:6px;padding-left:8px">TECHNOLOGY</a></div>
 <!-- /wp:button --></div>
@@ -58,8 +58,8 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"dimensions":{"minHeight":""},"spacing":{"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-8.png","id":52,"dimRatio":0,"isUserOverlayColor":true,"focalPoint":{"x":0.84,"y":0.76},"minHeight":250,"contentPosition":"bottom left","align":"wide","style":{"border":{"radius":"8px"},"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide has-custom-content-position is-position-bottom-left" style="border-radius:8px;min-height:250px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-52" alt="" src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-8.png" style="object-position:84% 76%" data-object-fit="cover" data-object-position="84% 76%"/><div class="wp-block-cover__inner-container"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"},"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":{"top":"0"}}}} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Banner-img-2.jpg","id":52,"dimRatio":0,"isUserOverlayColor":true,"focalPoint":{"x":0.84,"y":0.76},"minHeight":250,"contentPosition":"bottom left","align":"wide","style":{"border":{"radius":"8px"},"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignwide has-custom-content-position is-position-bottom-left" style="border-radius:8px;min-height:250px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-52" alt=""  src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Banner-img-2.jpg" alt="" style="object-position:84% 76%" data-object-fit="cover" data-object-position="84% 76%"/><div class="wp-block-cover__inner-container"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"},"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":{"top":"0"}}}} -->
 <div class="wp-block-buttons" style="border-style:none;border-width:0px;margin-top:0;margin-bottom:0"><!-- wp:button {"className":"is-style-fill","style":{"color":{"background":"#d78d25"},"spacing":{"padding":{"left":"8px","right":"8px","top":"6px","bottom":"6px"}},"border":{"radius":"3px","width":"0px","style":"none"},"typography":{"fontSize":"10px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"inter"} -->
 <div class="wp-block-button has-custom-font-size is-style-fill has-inter-font-family" style="font-size:10px;font-style:normal;font-weight:400"><a class="wp-block-button__link has-background wp-element-button" style="border-style:none;border-width:0px;border-radius:3px;background-color:#d78d25;padding-top:6px;padding-right:8px;padding-bottom:6px;padding-left:8px">SPORTS</a></div>
 <!-- /wp:button --></div>
@@ -97,7 +97,7 @@ return [
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":56,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-6-scaled.jpg" alt="" class="wp-image-56" style="border-radius:4px"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-1.jpg" alt="" class="wp-image-56" style="border-radius:4px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -107,7 +107,7 @@ return [
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":16,"width":"24px","height":"24px","scale":"cover","sizeSlug":"thumbnail","linkDestination":"none","style":{"border":{"radius":"100px"}}} -->
-<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Ellipse-20-150x150.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
+<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-2.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -125,7 +125,7 @@ return [
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":68,"aspectRatio":"3/2","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-3-1.jpg" alt="" class="wp-image-68" style="border-radius:4px;aspect-ratio:3/2;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-2.jpg" alt="" class="wp-image-68" style="border-radius:4px;aspect-ratio:3/2;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -135,7 +135,7 @@ return [
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":16,"width":"24px","height":"24px","scale":"cover","sizeSlug":"thumbnail","linkDestination":"none","style":{"border":{"radius":"100px"}}} -->
-<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Ellipse-20-150x150.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
+<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-2.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -157,7 +157,7 @@ return [
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":70,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-4-1.jpg" alt="" class="wp-image-70" style="border-radius:4px"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-3.jpg" alt="" class="wp-image-70" style="border-radius:4px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -167,7 +167,7 @@ return [
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":16,"width":"24px","height":"24px","scale":"cover","sizeSlug":"thumbnail","linkDestination":"none","style":{"border":{"radius":"100px"}}} -->
-<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Ellipse-20-150x150.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
+<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-3.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -185,7 +185,7 @@ return [
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":71,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image size-full has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-5-1.jpg" alt="" class="wp-image-71" style="border-radius:4px"/></figure>
+<figure class="wp-block-image size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-4.jpg" alt="" class="wp-image-71" style="border-radius:4px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -195,7 +195,7 @@ return [
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px"}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":16,"width":"24px","height":"24px","scale":"cover","sizeSlug":"thumbnail","linkDestination":"none","style":{"border":{"radius":"100px"}}} -->
-<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Ellipse-20-150x150.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
+<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/editor-pick-4.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -249,7 +249,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":97,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-9.png" alt="" class="wp-image-97"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-1.jpg" alt="" class="wp-image-97"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600","fontSize":"17px"}},"fontFamily":"ibm-plex-serif"} -->
@@ -275,7 +275,7 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":102,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-11-1.png" alt="" class="wp-image-102"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-2.jpg" alt="" class="wp-image-102"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -303,7 +303,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":104,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1-8.png" alt="" class="wp-image-104"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-2.jpg" alt="" class="wp-image-104"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -329,7 +329,7 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":105,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-2.png" alt="" class="wp-image-105"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-4.jpg" alt="" class="wp-image-105"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -355,7 +355,7 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":106,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1-9.png" alt="" class="wp-image-106"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-1.jpg" alt="" class="wp-image-106"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -426,7 +426,7 @@ return [
 <!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":127,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Rectangle-17-5.jpg" alt="" class="wp-image-127"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/politics-img-4.jpg" alt="" class="wp-image-127"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -460,7 +460,7 @@ return [
 <!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":133,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Rectangle-17-6.jpg" alt="" class="wp-image-133"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/politics-img-4.jpg" alt="" class="wp-image-133"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -494,7 +494,7 @@ return [
 <!-- wp:columns {"verticalAlignment":"center"} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":135,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Rectangle-17-7.jpg" alt="" class="wp-image-135"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/politics-img-4.jpg" alt="" class="wp-image-135"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -540,7 +540,7 @@ return [
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":78,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousel-7-scaled.jpg" alt="" class="wp-image-78"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/technology-mage-1.jpg" alt="" class="wp-image-78"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"right":"0","left":"0","top":"0","bottom":"0"}}},"fontFamily":"ibm-plex-serif"} -->
@@ -571,7 +571,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":80,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/https___www.pexels.com_photo_red-xiaomi-mi-smartphone-beside-white-cat-figurine-929487_.jpg" alt="" class="wp-image-80"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/technology-img-4.jpg" alt="" class="wp-image-80"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -589,7 +589,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":80,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/https___www.pexels.com_photo_red-xiaomi-mi-smartphone-beside-white-cat-figurine-929487_.jpg" alt="" class="wp-image-80"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/technology-img-4.jpg" class="wp-image-80"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -695,7 +695,7 @@ return [
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":175,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1-10.png" alt="" class="wp-image-175"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Video-Img-3-min.jpg" alt="" class="wp-image-175"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -723,7 +723,7 @@ return [
 <!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":176,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1-11.png" alt="" class="wp-image-176"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Video-Img-3-min.jpg" alt="" class="wp-image-176"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -751,7 +751,7 @@ return [
 <!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":177,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1-12.png" alt="" class="wp-image-177"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Video-Img-3-min.jpg" alt="" class="wp-image-177"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -779,7 +779,7 @@ return [
 <!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":178,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1-13.png" alt="" class="wp-image-178"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Video-Img-3-min.jpg" alt="" class="wp-image-178"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
