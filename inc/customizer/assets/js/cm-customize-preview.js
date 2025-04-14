@@ -300,14 +300,6 @@
 					);
 					break;
 
-				case "colormag_box_shadow_color":
-					css = colormagGenerateCommonCSS(
-						".cm-posts .post",
-						"box-shadow",
-						value,
-					);
-					break;
-
 				case "colormag_link_color":
 					css = colormagGenerateCommonCSS(".cm-entry-summary a", "color", value);
 					break;
