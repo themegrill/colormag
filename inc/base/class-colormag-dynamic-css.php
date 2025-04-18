@@ -3766,6 +3766,99 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Footer builder copyright color.
+		$footer_copyright_color     = get_theme_mod( 'colormag_footer_copyright_text_color', '' );
+		$footer_copyright_color_css = array(
+			'.cm-footer-builder .cm-copyright' => array(
+				'color' => esc_html( $footer_copyright_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_copyright_color, $footer_copyright_color_css );
+
+		// Footer builder copyright color.
+		$footer_copyright_link_color     = get_theme_mod( 'colormag_footer_copyright_link_color', '' );
+		$footer_copyright_link_color_css = array(
+			'.cm-footer-builder .cm-copyright a' => array(
+				'color' => esc_html( $footer_copyright_link_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_copyright_link_color, $footer_copyright_link_color_css );
+
+		// Footer builder copyright hover color.
+		$footer_copyright_link_hover_color     = get_theme_mod( 'colormag_footer_copyright_link_hover_color', '' );
+		$footer_copyright_link_hover_color_css = array(
+			'.cm-footer-builder .cm-copyright a:hover' => array(
+				'color' => esc_html( $footer_copyright_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_copyright_link_hover_color, $footer_copyright_link_hover_color_css );
+
+		// Footer builder copyright typography.
+		$footer_copyright_typography_default = array(
+			'font-family'    => 'Default',
+			'font-weight'    => 'regular',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '1.6',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.8',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$footer_copyright_typography = get_theme_mod( 'colormag_footer_copyright_typography', $footer_copyright_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$footer_copyright_typography_default,
+			$footer_copyright_typography,
+			'.cm-footer-builder .cm-copyright',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Footer builder copyright margin.
+		$footer_copyright_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_copyright_margin = get_theme_mod( 'colormag_footer_copyright_margin', $footer_copyright_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_copyright_margin_default,
+			$footer_copyright_margin,
+			'.cm-footer-builder .cm-copyright',
+			'margin'
+		);
+
 		// Footer builder top area container.
 		$footer_top_area_container_default = array(
 			'size' => 0,
