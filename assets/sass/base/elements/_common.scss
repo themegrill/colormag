@@ -7,3 +7,148 @@
 ::-webkit-scrollbar-thumb {
 	background: $color__gray-400;
 }
+
+.editor-picks {
+ 	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #E14D36;
+		z-index: 1;
+	}
+}
+
+.technology {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #F09819;
+		z-index: 1;
+	}
+}
+
+.politics {
+	position: relative;
+	margin-bottom: 0;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #E14D36;
+		z-index: 1;
+	}
+}
+
+.watch {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #E14D36;
+		z-index: 1;
+	}
+}
+
+.fitness {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #8269DF;
+		z-index: 1;
+	}
+}
+
+.diet  {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #E14D36;
+		z-index: 1;
+	}
+}
+
+.top-stories  {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #F09819;
+		z-index: 1;
+	}
+}
+
+.lifestyle  {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #E14D36;
+		z-index: 1;
+	}
+}
+
+.sports  {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -8px;
+		width: 8px;
+		height: 8px;
+		border-radius: 100px;
+		background-color: #8269DF;
+		z-index: 1;
+	}
+}

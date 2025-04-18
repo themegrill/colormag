@@ -585,6 +585,151 @@ input[type="submit"]:hover,
 	background: #a1a1aa;
 }
 
+.editor-picks {
+	position: relative;
+}
+
+.editor-picks:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #E14D36;
+	z-index: 1;
+}
+
+.technology {
+	position: relative;
+}
+
+.technology:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #F09819;
+	z-index: 1;
+}
+
+.politics {
+	position: relative;
+	margin-bottom: 0;
+}
+
+.politics:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #E14D36;
+	z-index: 1;
+}
+
+.watch {
+	position: relative;
+}
+
+.watch:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #E14D36;
+	z-index: 1;
+}
+
+.fitness {
+	position: relative;
+}
+
+.fitness:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #8269DF;
+	z-index: 1;
+}
+
+.diet {
+	position: relative;
+}
+
+.diet:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #E14D36;
+	z-index: 1;
+}
+
+.top-stories {
+	position: relative;
+}
+
+.top-stories:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #F09819;
+	z-index: 1;
+}
+
+.lifestyle {
+	position: relative;
+}
+
+.lifestyle:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #E14D36;
+	z-index: 1;
+}
+
+.sports {
+	position: relative;
+}
+
+.sports:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: -8px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #8269DF;
+	z-index: 1;
+}
+
 /**
  * Fields.
  */
