@@ -2240,6 +2240,18 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hovered_text_color, $header_primary_menu_selected_hovered_text_color_css );
 
+		$header_primary_menu_active_text_color     = get_theme_mod( 'colormag_header_primary_menu_active_text_color', '' );
+		$header_primary_menu_active_text_color_css = array(
+			'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a' => array(
+				'color' => esc_html( $header_primary_menu_active_text_color ),
+			),
+			'.cm-header-builder .cm-primary-nav li.current-menu-item > .cm-submenu-toggle .cm-icon' => array(
+				'fill' => esc_html( $header_primary_menu_active_text_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_active_text_color, $header_primary_menu_active_text_color_css );
+
+
 		$header_primary_menu_selected_hover_bg     = get_theme_mod( 'colormag_header_primary_menu_hover_background', '' );
 		$header_primary_menu_selected_hover_bg_css = array(
 			'.cm-header-builder .cm-primary-nav ul li:hover' => array(
@@ -2248,6 +2260,13 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hover_bg, $header_primary_menu_selected_hover_bg_css );
 
+		$header_primary_menu_selected_active_bg     = get_theme_mod( 'colormag_header_primary_menu_active_background', '' );
+		$header_primary_menu_selected_active_bg_css = array(
+			'.cm-header-builder .cm-primary-nav ul li.current-menu-item' => array(
+				'background' => esc_html( $header_primary_menu_selected_active_bg ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_active_bg, $header_primary_menu_selected_active_bg_css );
 
 		$header_primary_sub_menu_background_default = array(
 			'background-color'      => '#232323',

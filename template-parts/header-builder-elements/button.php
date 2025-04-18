@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 $button_enable = get_theme_mod( 'colormag_enable_header_button' );
 
-$button_text   = get_theme_mod( 'colormag_header_button_text' );
+$button_text   = apply_filters( 'colormag_header_button_text', get_theme_mod( 'colormag_header_button_text' ) );
 $button_link   = get_theme_mod( 'colormag_header_button_link' );
 $button_target = get_theme_mod( 'colormag_header_button_target' ) ? ' target="_blank"' : '';
 

@@ -102,9 +102,9 @@ class Customind {
 	 * @return void
 	 */
 	public function init_hooks() {
-		add_action( 'customize_controls_enqueue_scripts', [ $this, 'enqueue_scripts' ], PHP_INT_MAX );
-		add_action( 'customize_register', [ $this, 'register' ], PHP_INT_MAX );
-		add_action( 'customize_preview_init', [ $this, 'enqueue_preview_scripts' ], PHP_INT_MAX );
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'enqueue_scripts' ], 999 );
+		add_action( 'customize_register', [ $this, 'register' ], 999 );
+		add_action( 'customize_preview_init', [ $this, 'enqueue_preview_scripts' ], 999 );
 		add_action( 'customize_save_after', [ $this, 'on_save' ] );
 
 		$this->add_action( 'register:control', [ $this, 'process_settings' ], 10, 3 );
