@@ -1086,11 +1086,11 @@ return [
 <div class="wp-block-group alignfull cm-block-alignfull has-background" style="background:linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%);padding-top:80px;padding-bottom:80px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"top-stories","style":{"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontFamily":"inter"} -->
-<h6 class="wp-block-heading top-stories has-white-color has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:18px;font-style:normal;font-weight:600">Top Stories</h6>
+<h6 class="wp-block-heading top-stories has-white-color has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:18px;font-style:normal;font-weight:600">' . esc_html__( 'Top Stories', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#7a7a7a"}}},"typography":{"fontSize":"13px"}},"textColor":"white","fontFamily":"inter"} -->
-<p class="has-white-color has-text-color has-link-color has-inter-font-family" style="font-size:13px">View All</p>
+<p class="has-white-color has-text-color has-link-color has-inter-font-family" style="font-size:13px">' . esc_html__( 'View All', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -1104,9 +1104,9 @@ return [
 <div class="wp-block-group alignwide" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1.jpg","id":219,"dimRatio":0,"customOverlayColor":"#7e7975","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-219" alt="" src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplash-1.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#7e7975"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">How to Create Budget That Works for Your Lifestyle</h5>
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Slider-img-with-overlay.jpg","id":219,"dimRatio":0,"customOverlayColor":"#7e7975","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-219" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Slider-img-with-overlay.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#7e7975"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'How to Create Budget That Works for Your Lifestyle', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1130,9 +1130,9 @@ return [
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplasah-1.jpg","id":222,"dimRatio":0,"customOverlayColor":"#757a82","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-222" alt="" src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unsplasah-1.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#757a82"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Find the best PC games optimized For console</h5>
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Slider-Img-with-overlay-2.jpg","id":222,"dimRatio":0,"customOverlayColor":"#757a82","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-222" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Slider-Img-with-overlay-2.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#757a82"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Find the best PC games optimized For console', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1156,8 +1156,8 @@ return [
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unasplash-1.jpg","id":223,"dimRatio":0,"customOverlayColor":"#7a726c","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-223" alt="" src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spiske-WUehAgqO5hE-unasplash-1.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#7a726c"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Slider-Img-with-overlay-3.jpg","id":223,"dimRatio":0,"customOverlayColor":"#7a726c","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-223" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Slider-Img-with-overlay-3.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#7a726c"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
 <h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Organizing Your Home: Tips for Creating San city</h5>
 <!-- /wp:heading -->
 
@@ -1182,9 +1182,9 @@ return [
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spisake-WUehAgqO5hE-unsplash-1.jpg","id":224,"dimRatio":0,"customOverlayColor":"#9d9d97","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","isDark":false,"style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-224" alt="" src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/markus-spisake-WUehAgqO5hE-unsplash-1.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#9d9d97"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Dive into the world of gaming platforms</h5>
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Slider-Img-with-overlay-4.jpg","id":224,"dimRatio":0,"customOverlayColor":"#9d9d97","isUserOverlayColor":false,"minHeight":335,"contentPosition":"bottom left","isDark":false,"style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:335px"><img class="wp-block-cover__image-background wp-image-224" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Slider-Img-with-overlay-4.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#9d9d97"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Dive into the world of gaming platforms', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1218,11 +1218,11 @@ return [
 <div class="wp-block-group alignwide"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"lifestyle","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
-<h6 class="wp-block-heading lifestyle has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:20px;font-style:normal;font-weight:600">Lifestyle</h6>
+<h6 class="wp-block-heading lifestyle has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:20px;font-style:normal;font-weight:600">' . esc_html__( 'Lifestyle', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#7a7a7a"}}},"typography":{"fontSize":"13px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"inter"} -->
-<p class="has-link-color has-inter-font-family" style="font-size:13px;font-style:normal;font-weight:400"><a href="#">View All</a></p>
+<p class="has-link-color has-inter-font-family" style="font-size:13px;font-style:normal;font-weight:400"><a href="#">' . esc_html__( 'View All', 'colormag' ) . '</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -1234,11 +1234,11 @@ return [
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":228,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Frame-1000005209-1.jpg" alt="" class="wp-image-228"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-1.jpg" alt="" class="wp-image-228"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">iHow Fitness Can Boost Your Mood and Increase Happiness</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'How Fitness Can Boost Your Mood and Increase Happiness', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1260,11 +1260,11 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":229,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Frame-100a0005209.png" alt="" class="wp-image-229"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-2.jpg" alt="" class="wp-image-229"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Exploring the Link Between Physical Fitness and Mental Well-Being</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Exploring the Link Between Physical Fitness and Mental Well-Being', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1286,11 +1286,11 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":230,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Frame-1aa000005209.png" alt="" class="wp-image-230"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-3.jpg" alt="" class="wp-image-230"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Finding Peace and Joy Through Mindful Fitness Practices</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Finding Peace and Joy Through Mindful Fitness Practices', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1316,13 +1316,13 @@ return [
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":233,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/red-xiaomi-mi-smartphone-beside-white-cat-figurine-91129487.jpg" alt="" class="wp-image-233"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-4.jpg" alt="" class="wp-image-233"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Boost Your Productivity with These Simple Tips</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Boost Your Productivity with These Simple Tips', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1336,13 +1336,13 @@ return [
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":235,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/red-xiaomi-mi-smartphone-beside-white-cat-figurine-qw929487.jpg" alt="" class="wp-image-235"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-5.jpg" alt="" class="wp-image-235"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Creating a Space for Self-Care in Your Everyday Routine</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Creating a Space for Self-Care in Your Everyday Routine', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1356,13 +1356,13 @@ return [
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":237,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/red-xiaomi-mi-smartphone-beside-white-cat-figurineww-929487.jpg" alt="" class="wp-image-237"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-6.jpg" alt="" class="wp-image-237"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Build a Routine That Supports Your Best Self</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Build a Routine That Supports Your Best Self', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1378,13 +1378,13 @@ return [
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":234,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/red-xiaomi-mi-smartphone-beside-wqhite-cat-figurine-929487.jpg" alt="" class="wp-image-234"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-7.jpg" alt="" class="wp-image-234"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Discover the Secret to a Balanced and Happy Life</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Discover the Secret to a Balanced and Happy Life', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1398,13 +1398,13 @@ return [
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":236,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/red-xiaomi-mi-smartphone-beside-white-cat-qfigurine-929487.jpg" alt="" class="wp-image-236"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-8.jpg" alt="" class="wp-image-236"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Simple Ways to Cultivate Gratitude and Joy Daily</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Simple Ways to Cultivate Gratitude and Joy Daily', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1418,13 +1418,13 @@ return [
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":238,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/red-xiaomi-mi-smartphone-beside-white-cat-figurine-929487.jpg" alt="" class="wp-image-238"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/lifestyle-img-9.jpg" alt="" class="wp-image-238"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Master the Art of Meal Prepping for a How to..</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Master the Art of Meal Prepping for a How to..', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1441,7 +1441,7 @@ return [
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":119,"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Ads"},"align":"wide"} -->
-<figure class="wp-block-image alignwide size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Screenshot_3.png" alt="" class="wp-image-119"/></figure>
+<figure class="wp-block-image alignwide size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Horizontal-ad.jpg" alt="" class="wp-image-119"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
@@ -1453,11 +1453,11 @@ return [
 <div class="wp-block-group alignwide"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"sports","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
-<h6 class="wp-block-heading sports has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:20px;font-style:normal;font-weight:600">Sports</h6>
+<h6 class="wp-block-heading sports has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:20px;font-style:normal;font-weight:600">' . esc_html__( 'Wellness', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#7a7a7a"}}},"typography":{"fontSize":"13px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"inter"} -->
-<p class="has-link-color has-inter-font-family" style="font-size:13px;font-style:normal;font-weight:400"><a href="#">View All</a></p>
+<p class="has-link-color has-inter-font-family" style="font-size:13px;font-style:normal;font-weight:400"><a href="#">' . esc_html__( 'View All', 'colormag' ) . '</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -1471,11 +1471,11 @@ return [
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"40%","style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column" style="flex-basis:40%"><!-- wp:image {"id":243,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-caroAusel.png" alt="" class="wp-image-243"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-1.jpg" alt="" class="wp-image-243"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"22px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:22px;font-style:normal;font-weight:600">Emerging technologies are changing how we live and work</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:22px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live and work', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -1495,7 +1495,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum aliquet odio mattis. Class aptent taciti sociosquad. et velit interdum, ac aliquet odio mattis.</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">' . esc_html__( 'Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum aliquet odio mattis. Class aptent taciti sociosquad. et velit interdum, ac aliquet odio mattis.', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -1503,11 +1503,11 @@ return [
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"8px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":244,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/AAhero-carousel.jpg" alt="" class="wp-image-244" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-2.jpg" alt="" class="wp-image-244" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Emerging technologies are changing how we live</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
@@ -1517,11 +1517,11 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"8px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":245,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-caroAusel.jpg" alt="" class="wp-image-245" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-3.jpg" alt="" class="wp-image-245" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Emerging technologies are changing how we live</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
@@ -1533,11 +1533,11 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"8px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":246,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-carousAel.jpg" alt="" class="wp-image-246" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-4.jpg" alt="" class="wp-image-246" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600","fontSize":"17px"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Emerging technologies are changing how we live</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
@@ -1547,11 +1547,11 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"8px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":247,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/hero-caroAufdsel.jpg" alt="" class="wp-image-247" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-5 .jpg" alt="" class="wp-image-247" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Emerging technologies are changing how we live</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
