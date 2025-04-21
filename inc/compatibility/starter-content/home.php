@@ -1053,26 +1053,47 @@ return [
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"33.33%","className":"cm-remove-padding cm-sticky","style":{"spacing":{"padding":{"left":"20px"},"blockGap":"24px"},"border":{"left":{"color":"#e0e0e0","style":"solid","width":"1px"}}}} -->
-<div class="wp-block-column cm-remove-padding cm-sticky" style="border-left-color:#e0e0e0;border-left-style:solid;border-left-width:1px;padding-left:20px;flex-basis:33.33%"><!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:image {"id":200,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Weather.png" alt="" class="wp-image-200"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:group {"style":{"spacing":{"blockGap":"12px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
-<h5 class="wp-block-heading has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600">Get In Touch</h5>
-<!-- /wp:heading -->
-
-<!-- wp:image {"id":202,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Social-Icons-5.png" alt="" class="wp-image-202"/></figure>
+<!-- wp:column {"width":"33.33%","className":"cm-remove-padding","style":{"spacing":{"padding":{"left":"20px"},"blockGap":"24px"},"border":{"left":{"color":"#e0e0e0","style":"solid","width":"1px"}}}} -->
+<div class="wp-block-column cm-remove-padding" style="border-left-color:#e0e0e0;border-left-style:solid;border-left-width:1px;padding-left:20px;flex-basis:33.33%"><!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":220,"sizeSlug":"full","linkDestination":"none","style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
+<figure class="wp-block-image size-full" style="margin-bottom:10px"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/instagram.png" alt="" class="wp-image-220"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
-<!-- wp:image {"id":204,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://rhetoricalvan.s4-tastewp.com/wp-content/uploads/2025/03/Frame-1000005404.jpg" alt="" class="wp-image-204"/></figure>
+<!-- wp:group {"style":{"border":{"radius":"4px","color":"#e0e0e0","style":"solid","width":"8px"},"spacing":{"padding":{"top":"24px","bottom":"24px","left":"24px","right":"24px"},"blockGap":"16px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-border-color" style="border-color:#e0e0e0;border-style:solid;border-width:8px;border-radius:4px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px"><!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:20px;font-style:normal;font-weight:700">' . esc_html__( 'Never Miss Any Updates!', 'colormag' ) . '</h5>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"},"spacing":{"margin":{"top":"8px","bottom":"8px"}}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:8px;font-size:14px">' . esc_html__( 'Subscribe our newsletter for the latest news.', 'colormag' ) . '</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<input type="text" id="name" name="name" placeholder="Name" style="border: 1px solid #E0E0E0; padding: 8px 16px; border-radius: 4px; width: fit-content; margin-bottom: 12px; font-size:12px; width: 100%;">
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<input type="text" id="email" name="email" placeholder="Email" style="border: 1px solid #E0E0E0; padding: 8px 16px; border-radius: 4px; width: fit-content; margin-bottom: 12px; font-size:12px; width: 100%;">
+<!-- /wp:html -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"width":75,"className":"is-style-fill","style":{"typography":{"fontSize":"12px"},"border":{"radius":"4px","width":"0px","style":"none"},"color":{"background":"#8269df"},"spacing":{"padding":{"top":"12px","bottom":"12px"}}},"fontFamily":"inter"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-75 is-style-fill"><a class="wp-block-button__link has-background has-inter-font-family has-custom-font-size wp-element-button" style="border-style:none;border-width:0px;border-radius:4px;background-color:#8269df;padding-top:12px;padding-bottom:12px;font-size:12px">' . esc_html__( 'SUBSCRIBE', 'colormag' ) . '</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="font-size:12px">' . esc_html__( 'I have read and agree to the all conditions.', 'colormag' ) . '</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":221,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Vertical-ad.jpg" alt="" class="wp-image-221"/></figure>
 <!-- /wp:image --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
