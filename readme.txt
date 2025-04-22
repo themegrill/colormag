@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= TBD =
+* Added - Active background color option in primary menu component of header builder.
+
 = Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.
 * Fix         - Embed Block image size issue.
@@ -197,7 +200,7 @@ and we will include it within the theme from next version update.
 * Option - To change sidebar width.
 * Fix    - Primary menu background on contained main header.
 * Fix    - Post meta categories issue.
- 
+
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.
