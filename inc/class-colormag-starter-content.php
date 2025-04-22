@@ -40,7 +40,7 @@ class ColorMag_Starter_Content {
 						'logo',
 					),
 					'center' => array(),
-					'right'  => array( 'button', 'search' ),
+					'right'  => array( 'search' ),
 				),
 				'bottom' => array(
 					'left'   => array( 'primary-menu' ),

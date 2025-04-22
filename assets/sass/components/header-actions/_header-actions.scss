@@ -24,6 +24,32 @@
 	}
 }
 
+.cm-search-icon-in-input-right {
+	position: relative;
+	.search-icon-input-right {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: $color__gray-200;
+		font-size: 16px;
+		pointer-events: none;
+	}
+
+	.search-wrap {
+		&:focus-within {
+			.search-icon-input-right {
+				display: none;
+			}
+		}
+
+		input {
+			border: none;
+				box-shadow: 0 0 0 0 rgba($color__primary, 0.2);
+		}
+	}
+}
+
 .fa.search-top {
 	display: flex;
 	align-items: center;

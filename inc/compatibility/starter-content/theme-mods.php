@@ -17,7 +17,7 @@ return array(
 					'logo',
 				),
 				'center' => array(),
-				'right'  => array( 'socials', 'button', 'search' ),
+				'right'  => array( 'search' ),
 			),
 			'bottom' => array(
 				'left'   => array( 'primary-menu' ),
@@ -78,4 +78,7 @@ return array(
 	'colormag_page_sidebar_layout'                   => 'no_sidebar_full_width',
 	'colormag_header_search_icon_color'              => '#000000',
 	'colormag_date_color'                            => '#F4F4F4',
+	'colormag_header_search_type'                    => 'search-icon-input',
+	'colormag_header_search_background'              => '#FFFFFF24',
+	'colormag_header_search_text_color'              => '#FFFFFF',
 );

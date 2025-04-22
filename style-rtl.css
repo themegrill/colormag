@@ -1913,6 +1913,29 @@ table td {
 	content: '✖';
 }
 
+.cm-search-icon-in-input-right {
+	position: relative;
+}
+
+.cm-search-icon-in-input-right .search-icon-input-right {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #e4e4e7;
+	font-size: 16px;
+	pointer-events: none;
+}
+
+.cm-search-icon-in-input-right .search-wrap:focus-within .search-icon-input-right {
+	display: none;
+}
+
+.cm-search-icon-in-input-right .search-wrap input {
+	border: none;
+	box-shadow: 0 0 0 0 rgba(32, 125, 175, 0.2);
+}
+
 .fa.search-top {
 	display: flex;
 	align-items: center;

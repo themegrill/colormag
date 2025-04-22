@@ -2448,6 +2448,37 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_icon_color, $header_search_icon_color_css );
 
+		// Header search button background color.
+		$header_search_button_background     = get_theme_mod( 'colormag_header_search_button_background', '' );
+		$header_search_button_background_css = array(
+			'.cm-header-builder .fa.search-top, .cm-header-builder .search-wrap button' => array(
+				'background-color' => esc_html( $header_search_button_background ),
+			),
+		);
+		$parse_builder_css                  .= colormag_parse_css( '', $header_search_button_background, $header_search_button_background_css );
+		$header_search_button_background_css = array(
+			'.cm-header-builder .fa.search-top, .cm-header-builder .search-wrap button' => array(
+				'border-color' => esc_html( $header_search_button_background ),
+			),
+		);
+		$parse_builder_css                  .= colormag_parse_css( '', $header_search_button_background, $header_search_button_background_css );
+
+		// Header search button background hover color.
+		$header_search_button_hover_background     = get_theme_mod( 'colormag_header_search_button_hover_background', '' );
+		$header_search_button_hover_background_css = array(
+			'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover' => array(
+				'background-color' => esc_html( $header_search_button_hover_background ),
+			),
+		);
+		$parse_builder_css                        .= colormag_parse_css( '', $header_search_button_hover_background, $header_search_button_hover_background_css );
+		$header_search_button_hover_background_css = array(
+			'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover' => array(
+				'border-color' => esc_html( $header_search_button_hover_background ),
+			),
+		);
+		$parse_builder_css                        .= colormag_parse_css( '', $header_search_button_hover_background, $header_search_button_hover_background_css );
+
+
 		// Header search icon hover color.
 		$header_search_icon_hover_color     = get_theme_mod( 'colormag_header_search_icon_hover_color', '' );
 		$header_search_icon_hover_color_css = array(
@@ -2460,7 +2491,7 @@ class ColorMag_Dynamic_CSS {
 		// Header search text color.
 		$header_search_text_color     = get_theme_mod( 'colormag_header_search_text_color', '' );
 		$header_search_text_color_css = array(
-			'.cm-header-builder .cm-top-search .search-form-top input' => array(
+			'.cm-header-builder .cm-top-search .search-form-top input, .search-wrap input' => array(
 				'color' => esc_html( $header_search_text_color ),
 			),
 		);
@@ -2469,7 +2500,7 @@ class ColorMag_Dynamic_CSS {
 		// Header search background color.
 		$header_search_background         = get_theme_mod( 'colormag_header_search_background', '' );
 		$header_search_background_css = array(
-			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top' => array(
+			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top, .search-wrap input' => array(
 				'background-color' => esc_html( $header_search_background ),
 			),
 			'.cm-header-builder .search-form-top.show::before' => array(
