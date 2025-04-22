@@ -31,23 +31,21 @@ class ColorMag_Starter_Content {
 		return array(
 			'desktop' => array(
 				'top'    => array(
-					'left'   => array(),
+					'left'   => array( 'news-ticker' ),
 					'center' => array(),
-					'right'  => array(),
+					'right'  => array( 'date', 'socials' ),
 				),
 				'main'   => array(
 					'left'   => array(
 						'logo',
 					),
 					'center' => array(),
-					'right'  => array( 'socials', 'button' ),
+					'right'  => array( 'button', 'search' ),
 				),
 				'bottom' => array(
-					'left'   => array(
-						'primary-menu',
-					),
+					'left'   => array( 'primary-menu' ),
 					'center' => array(),
-					'right'  => array( 'search' ),
+					'right'  => array(),
 				),
 			),
 			'mobile'  => array(
