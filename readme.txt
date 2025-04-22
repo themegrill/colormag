@@ -70,8 +70,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Fix - Footer builder random component icon hover color issue.
-* Added - Icon size option in random component of footer builder.
+* Fix - Header builder random component icon hover color issue.
+* Added - Icon size option in random component of header builder.
 
 = Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.
