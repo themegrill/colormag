@@ -2717,7 +2717,7 @@ class ColorMag_Dynamic_CSS {
 		// Header random icon hover color.
 		$header_random_icon_hover_color     = get_theme_mod( 'colormag_header_random_icon_hover_color', '' );
 		$header_random_icon_hover_color_css = array(
-			'.cm-header-builder .cm-random-post:hover > .cm-icon--random-fill' => array(
+			'.cm-header-builder .cm-random-post:hover .cm-icon--random-fill' => array(
 				'fill' => esc_html( $header_random_icon_hover_color ),
 			),
 		);
