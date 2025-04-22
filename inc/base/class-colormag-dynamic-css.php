@@ -2723,6 +2723,20 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_random_icon_hover_color, $header_random_icon_hover_color_css );
 
+		// Header builder site logo width.
+		$header_random_icon_size_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+		// Header random icon size color.
+		$header_random_icon_size     = get_theme_mod( 'colormag_header_random_icon_size', $header_random_icon_size_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_random_icon_size_default,
+			$header_random_icon_size,
+			'.cm-header-builder .cm-random-post .cm-icon--random-fill',
+			'font-size'
+		);
 
 		// Header home icon color.
 		$header_random_icon_color     = get_theme_mod( 'colormag_header_home_icon_color', '' );

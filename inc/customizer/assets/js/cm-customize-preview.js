@@ -1134,6 +1134,14 @@
 					);
 					break;
 
+				case "colormag_header_random_icon_size":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-random-post .cm-icon--random-fill",
+						"font-size",
+						value,
+					);
+					break;
+
 				case "colormag_header_home_icon_color":
 					css = colormagGenerateCommonCSS(
 						".cm-header-builder .cm-home-icon .cm-icon--home",
