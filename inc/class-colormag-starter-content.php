@@ -11,6 +11,8 @@ class ColorMag_Starter_Content {
 
 	public function __construct() {
 		add_filter( 'colormag_header_builder_options', array( $this, 'header_builder_options' ) );
+		add_filter( 'colormag_footer_builder_options', array( $this, 'footer_builder_options' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_starter_css' ) );
 		add_filter(
 			'colormag_header_button_text',
 			function () {
@@ -27,6 +29,12 @@ class ColorMag_Starter_Content {
 		);
 	}
 
+	public function customizer_starter_css() {
+		if ( is_front_page() && is_customize_preview() ) {
+			wp_enqueue_style( 'colormag-starter-content', get_template_directory_uri() . '/assets/css/starter-content.css', array(), '' );
+		}
+	}
+
 	public function header_builder_options() {
 		return array(
 			'desktop' => array(
@@ -40,12 +48,12 @@ class ColorMag_Starter_Content {
 						'logo',
 					),
 					'center' => array(),
-					'right'  => array( 'search' ),
+					'right'  => array( 'secondary-menu', 'search' ),
 				),
 				'bottom' => array(
 					'left'   => array( 'primary-menu' ),
 					'center' => array(),
-					'right'  => array(),
+					'right'  => array( 'random' ),
 				),
 			),
 			'mobile'  => array(
@@ -75,6 +83,34 @@ class ColorMag_Starter_Content {
 		);
 	}
 
+	public function footer_builder_options() {
+		return array(
+			'desktop' => array(
+				'top'    => array(
+					'top-1' => array(),
+					'top-2' => array(),
+					'top-3' => array(),
+					'top-4' => array(),
+					'top-5' => array(),
+				),
+				'main'   => array(
+					'main-1' => array(),
+					'main-2' => array(),
+					'main-3' => array(),
+					'main-4' => array(),
+					'main-5' => array(),
+				),
+				'bottom' => array(
+					'bottom-1' => array( 'copyright' ),
+					'bottom-2' => array( 'footer-menu' ),
+					'bottom-3' => array(),
+					'bottom-4' => array(),
+					'bottom-5' => array(),
+				),
+			),
+		);
+	}
+
 	/**
 	 * Return starter content definition.
 	 *
@@ -84,92 +120,78 @@ class ColorMag_Starter_Content {
 
 		$nav_items = [
 			'home'                 => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::HOME_SLUG . '}}',
+				'title' => 'Home',
+				'url'   => '#',
 			],
 			'page_politics'        => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::POLITICS . '}}',
+				'title' => 'Politics',
+				'url'   => '#',
 			],
 			'page_sports'          => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::SPORTS . '}}',
+				'title' => 'Sports',
+				'url'   => '#',
 			],
 			'page_project_details' => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::TECHNOLOGY . '}}',
+				'title' => 'Technology',
+				'url'   => '#',
 			],
 			'page_blog'            => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::BLOG_SLUG . '}}',
+				'title' => 'Blog',
+				'url'   => '#',
 			],
-			'page_world'           => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::WORLD . '}}',
+			'page_worlds'          => [
+				'title' => 'World',
+				'url'   => '#',
 			],
 		];
 
-		$footer_nav_items = [
-			'home'          => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::HOME_SLUG . '}}',
+		$secondary_nav_items = [
+			'privacy' => [
+				'title' => 'Privacy',
+				'url'   => '#',
 			],
-			'page_blog'     => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::BLOG_SLUG . '}}',
+			'video'   => [
+				'title' => 'Videos',
+				'url'   => '#',
 			],
-			'page_politics' => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::POLITICS . '}}',
+			'starter' => [
+				'title' => 'Start Demos',
+				'url'   => '#',
 			],
-			'page_world'    => [
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::WORLD . '}}',
+			'contact' => [
+				'title' => 'Contact',
+				'url'   => '#',
 			],
 		];
 
 		$content = [
 			'nav_menus'   =>
 				[
-					'primary' => [
+					'primary'        => [
 						'items' => $nav_items,
 					],
-					'footer'  => [
-						'items' => $footer_nav_items,
+					'menu-secondary' => [
+						'items' => $secondary_nav_items,
 					],
 				],
 			'options'     => [
 				'page_on_front'  => '{{' . self::HOME_SLUG . '}}',
 				'page_for_posts' => '{{' . self::BLOG_SLUG . '}}',
 				'show_on_front'  => 'page',
-				'blogname'       => 'ColorMag',
+				'blogname'       => '',
 			],
 			'theme_mods'  => require __DIR__ . '/compatibility/starter-content/theme-mods.php',
 			'attachments' => array(
-				'featured-image-logo' => array(
-					'post_title'   => 'Featured Logo',
+				'logo' => array(
+					'post_title'   => 'Logo',
 					'post_content' => 'Attachment Description',
 					'post_excerpt' => 'Attachment Caption',
-					'file'         => 'assets/img/starter-content/logo-agency.png',
+					'file'         => 'assets/img/starter/cm-logo.png',
 				),
 			),
 			'posts'       => [
-				self::HOME_SLUG  => require __DIR__ . '/compatibility/starter-content/home.php',
-				self::POLITICS   => require __DIR__ . '/compatibility/starter-content/politics.php',
-				self::WORLD      => require __DIR__ . '/compatibility/starter-content/world.php',
-				self::SPORTS     => require __DIR__ . '/compatibility/starter-content/sports.php',
-				self::TECHNOLOGY => require __DIR__ . '/compatibility/starter-content/technology.php',
-				self::BLOG_SLUG  => [
+				self::HOME_SLUG => require __DIR__ . '/compatibility/starter-content/home.php',
+				self::BLOG_SLUG => [
 					'post_name'  => self::BLOG_SLUG,
 					'post_type'  => 'page',
 					'post_title' => _x( 'Blog', 'Theme starter content', 'colormag' ),

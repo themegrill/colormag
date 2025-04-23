@@ -1431,7 +1431,7 @@ class ColorMag_Dynamic_CSS {
 
 		$footer_copyright_color     = get_theme_mod( 'colormag_footer_copyright_text_color', '#F4F4F5' );
 		$footer_copyright_color_css = array(
-			'.cm-footer-bar-area .cm-footer-bar__2' => array(
+			'.cm-footer-bar-area .cm-footer-bar__2, .cm-footer-col .cm-copyright' => array(
 				'color' => esc_html( $footer_copyright_color ),
 			),
 		);
