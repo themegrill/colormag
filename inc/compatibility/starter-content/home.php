@@ -91,6 +91,10 @@ return [
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
+<!-- wp:separator {"className":"is-style-wide","style":{"color":{"background":"#e0e0e0"},"spacing":{"margin":{"top":"14px","bottom":"8px"}}}} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:14px;margin-bottom:8px;background-color:#e0e0e0;color:#e0e0e0"/>
+<!-- /wp:separator -->
+
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns -->
@@ -240,14 +244,14 @@ return [
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
-<div class="wp-block-column"><!-- wp:image {"id":163,"sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-column"><!-- wp:image {"id":163,"sizeSlug":"full","linkDestination":"none",{"border":{"radius":"4px"}} -->
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-1.jpg" alt="" class="wp-image-163"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
-<div class="wp-block-column"><!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Tech innovations are revolutionizing industries Fields Artificial', 'colormag' ) . '</h5>
+<!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","lineHeight":"27px"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:27px">' . esc_html__( 'Tech innovations are revolutionizing industries Fields Artificial', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
@@ -256,8 +260,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -278,18 +282,18 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-2.jpg" alt="" class="wp-image-104"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Smartphones are getting smarter, integrating AI', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600","lineHeight":"26px"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600;line-height:26px">' . esc_html__( 'Smartphones are getting smarter, integrating AI', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -304,18 +308,18 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-3.jpg" alt="" class="wp-image-105"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Gadgets are evolving, changing the way interact', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600","lineHeight":"26px"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600;line-height:26px">' . esc_html__( 'Gadgets are evolving, changing the way interact', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -330,18 +334,18 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-4.jpg" alt="" class="wp-image-106"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Wearable tech is reshaping personal fitness tracking ...', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600","lineHeight":"26px"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600;line-height:26px">' . esc_html__( 'Wearable tech is reshaping personal fitness tracking ...', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -364,24 +368,24 @@ return [
 <p class="has-text-color has-link-color has-inter-font-family" style="color:#e14d36;margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:500">' . esc_html__( 'Elections', 'colormag' ) . '</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"color":{"text":"#bfbfbf"},"elements":{"link":{"color":{"text":"#bfbfbf"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p class="has-text-color has-link-color" style="color:#bfbfbf;margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"500"},"color":{"text":"#4e4e4e"},"elements":{"link":{"color":{"text":"#4e4e4e"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
 <p class="has-text-color has-link-color has-inter-font-family" style="color:#4e4e4e;margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:500">' . esc_html__( 'Relations', 'colormag' ) . '</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"color":{"text":"#bfbfbf"},"elements":{"link":{"color":{"text":"#bfbfbf"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p class="has-text-color has-link-color" style="color:#bfbfbf;margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"500"},"color":{"text":"#4e4e4e"},"elements":{"link":{"color":{"text":"#4e4e4e"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
 <p class="has-text-color has-link-color has-inter-font-family" style="color:#4e4e4e;margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:500">' . esc_html__( 'President', 'colormag' ) . '</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"color":{"text":"#bfbfbf"},"elements":{"link":{"color":{"text":"#bfbfbf"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p class="has-text-color has-link-color" style="color:#bfbfbf;margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"500"},"color":{"text":"#4e4e4e"},"elements":{"link":{"color":{"text":"#4e4e4e"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -407,14 +411,14 @@ return [
 <h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Climate change demands urgent action global leaders today', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"8px","bottom":"6px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="margin-top:8px;margin-bottom:6px;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -424,7 +428,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi....', 'colormag' ) . '</p>
+<p style="margin-top:0;margin-bottom:0">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -441,14 +445,14 @@ return [
 <h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Voter turnout highlights the need for engaging and inclusive policies', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"8px","bottom":"6px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="margin-top:8px;margin-bottom:6px;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -458,7 +462,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi....', 'colormag' ) . '</p>
+<p style="margin-top:0;margin-bottom:0">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -475,14 +479,14 @@ return [
 <h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Economic reforms remain a top priority for governments worldwide', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"8px","bottom":"6px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="margin-top:8px;margin-bottom:6px;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -492,17 +496,17 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi....', 'colormag' ) . '</p>
+<p style="margin-top:0;margin-bottom:0">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"33.33%","className":"cm-remove-padding","style":{"spacing":{"padding":{"left":"20px"},"blockGap":"24px"},"border":{"left":{"color":"#e0e0e0","style":"solid","width":"1px"}}}} -->
-<div class="wp-block-column cm-remove-padding" style="border-left-color:#e0e0e0;border-left-style:solid;border-left-width:1px;padding-left:20px;flex-basis:33.33%"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/slider-bg-img.jpg","id":164,"dimRatio":0,"customOverlayColor":"#b0adab","isUserOverlayColor":false,"contentPosition":"bottom center","isDark":false,"sizeSlug":"full","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center"><img class="wp-block-cover__image-background wp-image-164 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-bg-img.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#b0adab"></span><div class="wp-block-cover__inner-container"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"},"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":{"top":"0"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:column {"width":"33.33%","className":"cm-remove-padding","style":{"spacing":{"padding":{"left":"20px","right":"20px","top":"20px","bottom":"20px"},"blockGap":"24px"},"border":{"left":{"color":"#e0e0e0","style":"solid","width":"1px"},"right":{"color":"#e0e0e0","style":"solid","width":"1px"},"top":{"color":"#e0e0e0","style":"solid","width":"1px"},"bottom":{"color":"#e0e0e0","style":"solid","width":"1px"},"radius":"4px"}}} -->
+<div class="wp-block-column cm-remove-padding" style="border-color:#e0e0e0;border-style:solid;border-width:1px;border-radius:4px;padding:20px;flex-basis:33.33%"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/slider-bg-img.jpg","id":164,"dimRatio":0,"customOverlayColor":"#b0adab","isUserOverlayColor":false,"contentPosition":"bottom center","isDark":false,"sizeSlug":"full","className":"cm-cover-height","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center cm-cover-height"><img class="wp-block-cover__image-background wp-image-164 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-bg-img.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#b0adab"></span><div class="wp-block-cover__inner-container"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"},"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":{"top":"0"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons" style="border-style:none;border-width:0px;margin-top:0;margin-bottom:0"><!-- wp:button {"className":"is-style-fill","style":{"color":{"background":"#d78d25"},"spacing":{"padding":{"left":"8px","right":"8px","top":"6px","bottom":"6px"}},"border":{"radius":"3px","width":"0px","style":"none"},"typography":{"fontSize":"10px","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"inter"} -->
 <div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-background has-inter-font-family has-custom-font-size wp-element-button" style="border-style:none;border-width:0px;border-radius:3px;background-color:#d78d25;padding-top:6px;padding-right:8px;padding-bottom:6px;padding-left:8px;font-size:10px;font-style:normal;font-weight:400">' . esc_html__( 'SPORTS', 'colormag' ) . '</a></div>
 <!-- /wp:button --></div>
@@ -519,8 +523,8 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"sports","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"10px","bottom":"10px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
-<h6 class="wp-block-heading sports has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:10px;margin-bottom:10px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Follow Us', 'colormag' ) . '</h6>
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"10px","bottom":"10px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
+<h6 class="wp-block-heading has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:10px;margin-bottom:10px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Follow Us', 'colormag' ) . '</h6>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -529,8 +533,8 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"politics","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"10px","bottom":"10px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
-<h6 class="wp-block-heading politics has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:10px;margin-bottom:10px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Trending', 'colormag' ) . '</h6>
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"10px","bottom":"10px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
+<h6 class="wp-block-heading has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:10px;margin-bottom:10px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Trending', 'colormag' ) . '</h6>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -543,18 +547,18 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/trending-img-1.jpg" alt="" class="wp-image-78"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"right":"0","left":"0","top":"0","bottom":"0"}}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:16px;font-style:normal;font-weight:600">' . esc_html__( 'Diplomacy is key to resolving cross-border conflicts effectively', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600","lineHeight":"27px"},"spacing":{"margin":{"right":"0","left":"0","top":"0","bottom":"0"}}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:16px;font-style:normal;font-weight:600;line-height:27px">' . esc_html__( 'Diplomacy is key to resolving cross-border conflicts effectively', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"2px","bottom":"6px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:2px;padding-bottom:6px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -595,7 +599,7 @@ return [
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Fund boost to support youth social action across the..', 'colormag' ) . '</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Fund boost to support youth social the..', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -650,8 +654,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">November 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -681,8 +685,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -709,8 +713,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -737,8 +741,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -765,8 +769,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -820,8 +824,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -850,8 +854,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -882,8 +886,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -912,8 +916,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -961,8 +965,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1053,8 +1057,8 @@ return [
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"33.33%","className":"cm-remove-padding","style":{"spacing":{"padding":{"left":"20px"},"blockGap":"24px"},"border":{"left":{"color":"#e0e0e0","style":"solid","width":"1px"}}}} -->
-<div class="wp-block-column cm-remove-padding" style="border-left-color:#e0e0e0;border-left-style:solid;border-left-width:1px;padding-left:20px;flex-basis:33.33%"><!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained"}} -->
+<!-- wp:column {"width":"33.33%","className":"cm-remove-padding","style":{"spacing":{"padding":{"left":"20px", "right":"20px", "top":"20px", "bottom":"20px"},"blockGap":"24px"},"border":{"left":{"color":"#e0e0e0","style":"solid","width":"1px"}}}} -->
+<div class="wp-block-column cm-remove-padding" style="border-left-color:#e0e0e0;border-left-style:solid;border-left-width:1px;padding-left:20px;padding-top:20px;padding-right:20px;padding-bottom:20px;flex-basis:33.33%"><!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained"}} -->
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":220,"sizeSlug":"full","linkDestination":"none","style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
 <figure class="wp-block-image size-full" style="margin-bottom:10px"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/instagram.jpg" alt="" class="wp-image-220"/></figure>
@@ -1136,8 +1140,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1162,8 +1166,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1188,8 +1192,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1214,8 +1218,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1268,8 +1272,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1294,8 +1298,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -1320,8 +1324,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1505,8 +1509,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Jenisha Dutch</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<p style="margin-top:0;margin-bottom:0">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
+<p style="margin-top:0;margin-bottom:0;font-size:10px;line-height:19px;color:#909090">|</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->

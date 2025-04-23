@@ -99,3 +99,18 @@
 .cm-primary-nav li {
 	padding: 12px 16px;
 }
+
+.wp-block-image img,
+.wp-post-image,
+.entry-content img,
+figure img {
+	border-radius: 4px !important;
+}
+
+.cm-cover-height img, .cm-cover-height {
+	height: 344px;
+	min-height: 344px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
