@@ -32,7 +32,7 @@ $header_builder_search_type = get_theme_mod( 'colormag_header_search_type', 'nor
 					   class="s field"
 					   name="s"
 					   value="<?php echo get_search_query(); ?>"
-					   placeholder="<?php esc_attr_e( 'Search', 'colormag' ); ?>"
+					   placeholder="<?php esc_attr_e( 'Search...', 'colormag' ); ?>"
 				/>
 				<span class="search-icon-input-right"><i class="fa fa-search"></i></span>
 			</div>

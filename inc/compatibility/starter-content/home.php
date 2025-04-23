@@ -75,7 +75,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Editor Pick section"},"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"0px","bottom":"0px"},"blockGap":"32px"}},"layout":{"type":"default"}} -->
@@ -215,7 +215,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Technology Section"},"align":"wide","layout":{"type":"default"}} -->
@@ -301,7 +301,7 @@ return [
 
 <!-- wp:column {"style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":105,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-image-3.jpg" alt="" class="wp-image-105"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/tech-img-3.jpg" alt="" class="wp-image-105"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
@@ -609,7 +609,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Watch Videos Section"},"align":"full","className":"cm-block-alignfull","style":{"color":{"gradient":"linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%)"},"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"layout":{"type":"constrained"}} -->
@@ -781,7 +781,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Fitness"},"align":"wide","layout":{"type":"default"}} -->
@@ -1100,7 +1100,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Top Stories"},"align":"full","className":"cm-block-alignfull","style":{"color":{"gradient":"linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%)"},"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"layout":{"type":"constrained"}} -->
@@ -1232,7 +1232,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"lifestyle"},"align":"wide","layout":{"type":"constrained"}} -->
@@ -1458,7 +1458,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":119,"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Ads"},"align":"wide"} -->
@@ -1466,7 +1466,7 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"sports"},"align":"wide","layout":{"type":"constrained"}} -->
@@ -1490,8 +1490,8 @@ return [
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"40%","style":{"spacing":{"blockGap":"12px"}}} -->
-<div class="wp-block-column" style="flex-basis:40%"><!-- wp:image {"id":243,"sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%","style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:image {"id":243,"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-1.jpg" alt="" class="wp-image-243"/></figure>
 <!-- /wp:image -->
 
@@ -1520,19 +1520,19 @@ return [
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"60%"} -->
-<div class="wp-block-column" style="flex-basis:60%"><!-- wp:columns -->
+<!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"style":{"spacing":{"blockGap":"8px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":244,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-2.jpg" alt="" class="wp-image-244" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600">' . esc_html__( 'Incorporate simple daily habits to boost your well-being ', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"8px","bottom":"0px"}}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -1541,12 +1541,12 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-3.jpg" alt="" class="wp-image-245" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600">' . esc_html__( 'Learn how to prioritize your mental and physical Health', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"8px","bottom":"0px"}}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1557,12 +1557,12 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-4.jpg" alt="" class="wp-image-246" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600","fontSize":"17px"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600","fontSize":"16px"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600">' . esc_html__( 'Easy ways to reduce stress and improve mental clarity', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"8px","bottom":"0px"}}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -1571,12 +1571,12 @@ return [
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-5 .jpg" alt="" class="wp-image-247" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live', 'colormag' ) . '</h5>
+<!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"16px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:16px;font-style:normal;font-weight:600">' . esc_html__( 'Unlock the secrets Of wellness for body and Soul', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"8px","bottom":"0px"}}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1586,14 +1586,14 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Subscribe"},"align":"full","className":"cm-block-alignfull","style":{"color":{"background":"#0D0F11"},"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull cm-block-alignfull has-background" style="background-color:#0D0F11;padding-top:48px;padding-bottom:48px"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"40px"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"16px"}}} -->
 <div class="wp-block-column"><!-- wp:heading {"level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"26px"}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h4 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="font-size:26px">Subscribe For Latest Updates !</h4>
+<h4 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="font-size:26px">' . esc_html__( 'Subscribe For Latest Updates !', 'colormag' ) . '</h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontFamily":"inter"} -->
@@ -1627,7 +1627,7 @@ return [
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":344,"sizeSlug":"full","linkDestination":"none","align":"left"} -->
-<figure class="wp-block-image alignleft size-full"><img src="http://one.test/wp-content/uploads/2025/04/CM-Logo-4.png" alt="" class="wp-image-344"/></figure>
+<figure class="wp-block-image alignleft size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/cm-logo.png" alt="" class="wp-image-344"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -1689,7 +1689,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":346,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://one.test/wp-content/uploads/2025/04/tech-img-1.jpg" alt="" class="wp-image-346"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/footer-img-1.jpg" alt="" class="wp-image-346"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -1707,7 +1707,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":346,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://one.test/wp-content/uploads/2025/04/tech-img-1.jpg" alt="" class="wp-image-346"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/footer-img-3.jpg" alt="" class="wp-image-346"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -1725,7 +1725,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":346,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://one.test/wp-content/uploads/2025/04/tech-img-1.jpg" alt="" class="wp-image-346"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/footer-img-5.jpg" alt="" class="wp-image-346"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -1749,7 +1749,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":346,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://one.test/wp-content/uploads/2025/04/tech-img-1.jpg" alt="" class="wp-image-346"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/footer-img-5.jpg" alt="" class="wp-image-346"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -1767,7 +1767,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":346,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://one.test/wp-content/uploads/2025/04/tech-img-1.jpg" alt="" class="wp-image-346"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/footer-img-1.jpg" alt="" class="wp-image-346"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -1785,7 +1785,7 @@ return [
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":346,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://one.test/wp-content/uploads/2025/04/tech-img-1.jpg" alt="" class="wp-image-346"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/footer-img-3.jpg" alt="" class="wp-image-346"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 

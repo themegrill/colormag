@@ -124,21 +124,90 @@ return array(
 	'colormag_footer_bottom_area_color'              => '#BDBDBD',
 	'colormag_footer_menu_color'                     => '#BDBDBD',
 	'colormag_footer_menu'                           => '#BDBDBD',
+	'colormag_news_ticker_link_color'                => '#D3D3D3',
 	'colormag_header_top_area_border_width'          => array(
 		'top'    => '0',
 		'right'  => '0',
 		'bottom' => '1',
 		'left'   => '0',
 		'units'  => 'px',
+	),'colormag_header_top_area_padding'          => array(
+		'top'    => '15',
+		'right'  => '0',
+		'bottom' => '15',
+		'left'   => '0',
+		'units'  => 'px',
+	),'colormag_header_main_area_padding'          => array(
+		'top'    => '24',
+		'right'  => '0',
+		'bottom' => '24',
+		'left'   => '0',
+		'units'  => 'px',
 	),
 	'custom_logo'                                    => '{{logo}}',
 	'colormag_header_secondary_menu_typography'      => array(
 		'font-family' => 'Inter',
+		'font-size'   => array(
+			'desktop' => array(
+				'size' => '13',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+
 	),
-	'colormag_header_primary_menu_typography'      => array(
+	'colormag_header_primary_menu_typography'        => array(
+		'font-family' => 'Inter',
+		'font-weight' => '500',
+		'font-size'   => array(
+			'desktop' => array(
+				'size' => '15',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+	),
+	'colormag_footer_menu_typography'                => array(
 		'font-family' => 'Inter',
 	),
-	'colormag_footer_menu_typography'      => array(
-		'font-family' => 'Inter',
+	'colormag_header_socials'                        => array(
+		array(
+			'id'    => uniqid(),
+			'label' => 'facebook',
+			'url'   => '#',
+			'icon'  => 'fa-brands fa-facebook-f',
+		),
+		array(
+			'id'    => uniqid(),
+			'label' => 'twitter',
+			'url'   => '#',
+			'icon'  => 'fa-brands fa-x-twitter',
+		),
+		array(
+			'id'    => uniqid(),
+			'label' => 'instagram',
+			'url'   => '#',
+			'icon'  => 'fa-brands fa-instagram',
+		),
+		array(
+			'id'    => uniqid(),
+			'label' => 'youtube',
+			'url'   => '#',
+			'icon'  => 'fa-brands fa-youtube',
+		),
 	),
 );

@@ -1932,7 +1932,6 @@ table td {
 }
 
 .cm-search-icon-in-input-right .search-wrap input {
-	border: none;
 	box-shadow: 0 0 0 0 rgba(32, 125, 175, 0.2);
 }
 
@@ -5267,7 +5266,7 @@ ul.wp-block-gallery img {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: unset;
-	padding: 0 16px;
+	padding: 0 24px;
 }
 
 @media screen and (max-width: 768px) {
