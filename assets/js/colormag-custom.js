@@ -552,5 +552,25 @@ jQuery( document ).ready(
 			}()
 		);
 
+		//Display Post View Count
+		jQuery('.cm-post-views').each(function() {
+			var this2 = jQuery(this);
+			var postId = this2.data('post-id');
+
+			if (!postId) return;
+
+			jQuery.get(postViewsDataObj.ajax_url, {
+				action: 'colormag_get_post_views',
+				nonce: postViewsDataObj.nonce,
+				post_id: postId
+			}, function(response) {
+				if (response.success && response.data.views !== undefined) {
+					this2.find('.total-views').text(response.data.views + ' Views');
+				} else {
+					this2.find('.total-views').text('0 Views');
+				}
+			});
+		});
 	}
 );
+

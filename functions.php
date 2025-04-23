@@ -383,3 +383,29 @@ function cm_customize_preview_js() {
 	);
 }
 add_action( 'customize_preview_init', 'cm_customize_preview_js' );
+
+add_action( 'wp_ajax_nopriv_colormag_get_post_views', 'colormag_post_view_count_display' );
+add_action( 'wp_ajax_colormag_get_post_views', 'colormag_post_view_count_display' );
+
+function colormag_post_view_count_display() {
+	if (!isset($_GET['nonce']) || !wp_verify_nonce($_GET['nonce'], 'colormag_get_post_views_nonce')) {
+		wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
+    }
+
+    if ( ! isset( $_GET['post_id'] ) || !is_numeric( $_GET['post_id'] ) ) {
+		wp_send_json_error( array( 'message' => 'Invalid post id.' ) );
+    }
+
+    $post_id = intval( $_GET['post_id'] );
+	$count_key = 'total_number_of_views';
+	$count     = get_post_meta( $post_id, $count_key, true );
+
+	if ( empty($count) ) {
+		update_post_meta( $post_id, $count_key, '0' );
+		$count = 0;
+	}
+
+ 	wp_send_json_success(array(
+		'views' => $count,
+	));
+}

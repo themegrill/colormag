@@ -240,6 +240,21 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+
+			$is_views_enabled = get_theme_mod('colormag_post_meta_structure', false);
+
+			if(in_array('views', $is_views_enabled)) {
+				$is_views_enabled = true;
+			} else {
+				$is_views_enabled = false;
+			}
+
+			if($is_views_enabled){
+				wp_localize_script( 'colormag-custom', 'postViewsDataObj', array(
+					'ajax_url' => admin_url('admin-ajax.php'),
+					'nonce'    => wp_create_nonce('colormag_get_post_views_nonce'),
+				) );
+			}
 		}
 
 		public function customize_js() {

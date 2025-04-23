@@ -49,10 +49,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 				if ( 'views' === $meta_order && $full_post_meta ) {
 					echo wp_kses(
-						colormag_post_view_display( get_the_ID() ),
-						array(
+							'<span class="cm-post-views" data-post-id="' . esc_attr( get_the_ID() ) . '">
+								' . colormag_get_icon( 'eye', false ) . '
+								<span class="total-views"></span>
+							</span>',
+							array(
 							'span' => array(
 								'class' => true,
+								'data-post-id' => true,
 							),
 						) + ColorMag_SVG_Icons::$allowed_html
 					);
