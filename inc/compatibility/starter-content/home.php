@@ -572,8 +572,8 @@ return [
 <p class="has-inter-font-family" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:14px;font-style:normal;font-weight:400">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dolore magna aliqua.', 'colormag' ) . '</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
+<!-- wp:columns {"style":{"spacing":{"blockGap":"12px"}}} -->
+<div class="wp-block-columns" style="gap:12px"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":80,"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/trending-img-3.jpg" alt="" class="wp-image-80"/></figure>
 <!-- /wp:image --></div>
@@ -581,17 +581,18 @@ return [
 
 <!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">Policy shifts signal a new chapter in developing ..</h6>
+<h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Policy shifts signal a new chapter in developing ..
+', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
+<!-- wp:columns {"style":{"spacing":{"blockGap":"12px"}}} -->
+<div class="wp-block-columns" style="gap:12px"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":80,"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/trending-img-2.jpg" alt="" class="wp-image-80"/></figure>
 <!-- /wp:image --></div>
@@ -602,8 +603,8 @@ return [
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Fund boost to support youth social the..', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"6px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:6px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -994,7 +995,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1012,7 +1013,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1030,7 +1031,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1048,7 +1049,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1351,7 +1352,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1371,7 +1372,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1391,7 +1392,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1413,7 +1414,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1433,7 +1434,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1453,7 +1454,7 @@ return [
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2022</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
