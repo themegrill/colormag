@@ -75,26 +75,28 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"metadata":{"name":"Editor Pick section"},"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"0px","bottom":"0px"},"blockGap":"32px"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"16px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-top:16px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"editor-picks","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"10px","left":"10px","top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
-<h6 class="wp-block-heading editor-picks has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:0;margin-bottom:0;padding-top:0;padding-right:10px;padding-bottom:0;padding-left:10px;font-size:20px;font-style:normal;font-weight:600">' . esc_html__( 'Editor’s Pick', 'colormag' ) . '</h6>
+<!-- wp:group {"metadata":{"name":"Editor Picks"},"align":"full","className":"cm-block-alignfull","style":{"color":{"background":"#F8F9FA","spacing":{"padding":{"top":"48","bottom":"48"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull cm-block-alignfull has-background" style="background:#F8F9FA;padding-top:48px;padding-bottom:48px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"editor-picks","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
+<h6 class="wp-block-heading editor-picks has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:20px;font-style:normal;font-weight:600">' . esc_html__( 'Editor’s Pick', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#7a7a7a"}}}}} -->
-<p class="has-link-color"><a href="#">' . esc_html__( 'View All', 'colormag' ) . '</a> </p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#7a7a7a"}}},"typography":{"fontSize":"13px"}},"textColor":"white","fontFamily":"inter"} -->
+<p class="has-white-color has-text-color has-link-color has-inter-font-family" style="font-size:13px">' . esc_html__( 'View All', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-wide","style":{"color":{"background":"#e0e0e0"},"spacing":{"margin":{"top":"14px","bottom":"8px"}}}} -->
-<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:14px;margin-bottom:8px;background-color:#e0e0e0;color:#e0e0e0"/>
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide" style="margin-top:0;margin-bottom:0"><!-- wp:group {"metadata":{"name":"Editor Pick section"},"align":"wide","style":{"spacing":{"padding":{"right":"0px","left":"0px","top":"0px","bottom":"0px"},"blockGap":"32px"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide" style="padding: 0;">
+<!-- wp:separator {"align":"wide","className":"is-style-wide","style":{"color":{"background":"#e0e0e0"},"spacing":{"margin":{"top":"8px","bottom":"8px"}}}} -->
+<hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-wide" style="background-color:#e0e0e0;color:#7a7a7a80;margin-top:8px;margin-bottom:8px"/>
 <!-- /wp:separator -->
-
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:columns -->
@@ -216,10 +218,12 @@ return [
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:48px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Technology Section"},"align":"wide","layout":{"type":"default"}} -->
@@ -614,7 +618,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Watch Videos Section"},"align":"full","className":"cm-block-alignfull","style":{"color":{"gradient":"linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%)"},"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"layout":{"type":"constrained"}} -->
@@ -630,14 +634,14 @@ return [
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"align":"wide","className":"is-style-wide","style":{"color":{"background":"#7a7a7a80"}}} -->
-<hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-wide" style="background-color:#7a7a7a80;color:#7a7a7a80"/>
+<!-- wp:separator {"align":"wide","className":"is-style-wide","style":{"color":{"background":"#7a7a7a80"},"spacing":{"margin":{"top":"8px","bottom":"8px"}}}} -->
+<hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-wide" style="background-color:#7a7a7a80;color:#7a7a7a80;margin-top:8px;margin-bottom:8px"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Video-main.jpg","id":169,"dimRatio":10,"overlayColor":"black","isUserOverlayColor":true,"contentPosition":"bottom left","style":{"color":{"duotone":"unset"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"62.5%"} -->
+<div class="wp-block-column" style="flex-basis:62.5%"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/img/starter/Video-main.jpg","id":169,"dimRatio":10,"overlayColor":"black","isUserOverlayColor":true,"contentPosition":"bottom left","style":{"color":{"duotone":"unset"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-bottom-left"><img class="wp-block-cover__image-background wp-image-169" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Video-main.jpg" alt="" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-10 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:columns {"style":{"spacing":{"margin":{"bottom":"21px"}}}} -->
 <div class="wp-block-columns" style="margin-bottom:21px"><!-- wp:column {"width":"75%","style":{"spacing":{"blockGap":"12px","padding":{"right":"22px","left":"22px"}}}} -->
 <div class="wp-block-column" style="padding-right:22px;padding-left:22px;flex-basis:75%"><!-- wp:buttons {"style":{"border":{"width":"0px","style":"none"}}} -->
@@ -668,8 +672,8 @@ return [
 <!-- /wp:cover --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"33.33%"} -->
-<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:columns {"isStackedOnMobile":false} -->
+<!-- wp:column {"width":"37.5%"} -->
+<div class="wp-block-column" style="flex-basis:37.5%"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":175,"sizeSlug":"full","linkDestination":"none"} -->
 <figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Video-Img-1.jpg" alt="" class="wp-image-175"/></figure>
@@ -786,7 +790,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Fitness"},"align":"wide","layout":{"type":"default"}} -->
@@ -816,11 +820,11 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Unlock the Hidden Secrets to Athletic Success and Contribution', 'colormag' ) . '</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Discover the Path to Achieving Unstoppable Fitness Success', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"8px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:8px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -846,11 +850,11 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Unlock the Hidden Secrets to Athletic Success and Contribution', 'colormag' ) . '</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Master the Strategies for Reaching Your Fitness Goals', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"8px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:8px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -878,11 +882,11 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Unlock the Hidden Secrets to Athletic Success and Contribution', 'colormag' ) . '</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Transform Your Athletic Journey and Unlock New Heights', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"8px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:9px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -911,8 +915,8 @@ return [
 <h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Unlock the Hidden Secrets to Athletic Success and Contribution', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"8px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:8px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -936,8 +940,8 @@ return [
 <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"46px","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:46px;margin-bottom:0"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"16px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:16px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"diet","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"10px","left":"10px","top":"0","bottom":"0"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
-<h6 class="wp-block-heading diet has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;padding-top:0;padding-right:10px;padding-bottom:0;padding-left:10px;font-size:20px;font-style:normal;font-weight:600">' . esc_html__( 'Diet Health', 'colormag' ) . '</h6>
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"diet","style":{"color":{"text":"#222222"},"elements":{"link":{"color":{"text":"#222222"}}},"spacing":{"padding":{"right":"10px","left":"10px","top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"inter"} -->
+<h6 class="wp-block-heading diet has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;color:#222222;margin-top:0;margin-bottom:0;padding-top:0;padding-right:10px;padding-bottom:0;padding-left:10px;font-size:20px;font-style:normal;font-weight:600">' . esc_html__( 'Diet Health', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"13px","fontStyle":"normal","fontWeight":"500"},"color":{"text":"#7a7a7a"},"elements":{"link":{"color":{"text":"#7a7a7a"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
@@ -946,8 +950,8 @@ return [
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-wide","style":{"color":{"background":"#e0e0e0"},"spacing":{"margin":{"top":"12px","bottom":"12px"}}}} -->
-<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:12px;margin-bottom:12px;background-color:#e0e0e0;color:#e0e0e0"/>
+<!-- wp:separator {"className":"is-style-wide","style":{"color":{"background":"#e0e0e0"},"spacing":{"margin":{"top":"8px","bottom":"8px"}}}} -->
+<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:8px;margin-bottom:8px;background-color:#e0e0e0;color:#e0e0e0"/>
 <!-- /wp:separator -->
 
 <!-- wp:columns -->
@@ -957,11 +961,11 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":5,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Unlock the Hidden Secrets to Athletic Success and Contribution', 'colormag' ) . '</h5>
+<h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Diplomacy is key to resolving cross-border conflicts effectively', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"8px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:8px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -977,7 +981,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">' . esc_html__( 'Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.', 'colormag' ) . '</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.', 'colormag' ) . '</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -994,8 +998,8 @@ return [
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Simple Steps to Turn Your Hobby into a Full-Time', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"6px","bottom":"8px"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:6px;margin-bottom:8px;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1012,8 +1016,8 @@ return [
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Follow Your Passion and Create the Life You Love ', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"6px","bottom":"8px"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:6px;margin-bottom:8px;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1021,7 +1025,7 @@ return [
 <!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false} -->
 <div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":215,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/diet-and-health-img-1.jpg" alt="" class="wp-image-215" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/diet-and-health-img-4.jpg" alt="" class="wp-image-215" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -1030,8 +1034,8 @@ return [
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'How to Create a Budget That Works for Your Lifestyle', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"6px","bottom":"8px"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:6px;margin-bottom:8px;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1039,17 +1043,17 @@ return [
 <!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":216,"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/diet-and-health-img-2.jpg" class="wp-image-216" style="aspect-ratio:4/3;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/diet-and-health-img-5.jpg" class="wp-image-216" style="aspect-ratio:4/3;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Master the Art of Meal Prepping for a Healthier', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"6px","bottom":"8px"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:6px;margin-bottom:8px;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1066,8 +1070,8 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"border":{"radius":"4px","color":"#e0e0e0","style":"solid","width":"8px"},"spacing":{"padding":{"top":"24px","bottom":"24px","left":"24px","right":"24px"},"blockGap":"16px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-border-color" style="border-color:#e0e0e0;border-style:solid;border-width:8px;border-radius:4px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px"><!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:group {"style":{"border":{"radius":"4px","color":"#F2F2F2","style":"solid","width":"10px"},"spacing":{"padding":{"top":"24px","bottom":"24px","left":"24px","right":"24px"},"blockGap":"16px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-border-color" style="border-color:#F2F2F2;border-style:solid;border-width:10px;border-radius:4px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px; text-align: center;"><!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"20px","fontStyle":"normal","fontWeight":"700"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"ibm-plex-serif"} -->
 <h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:20px;font-style:normal;font-weight:700">' . esc_html__( 'Never Miss Any Updates!', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
@@ -1084,9 +1088,13 @@ return [
 <!-- /wp:html -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":75,"className":"is-style-fill","style":{"typography":{"fontSize":"12px"},"border":{"radius":"4px","width":"0px","style":"none"},"color":{"background":"#8269df"},"spacing":{"padding":{"top":"12px","bottom":"12px"}}},"fontFamily":"inter"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-75 is-style-fill"><a class="wp-block-button__link has-background has-inter-font-family has-custom-font-size wp-element-button" style="border-style:none;border-width:0px;border-radius:4px;background-color:#8269df;padding-top:12px;padding-bottom:12px;font-size:12px">' . esc_html__( 'SUBSCRIBE', 'colormag' ) . '</a></div>
-<!-- /wp:button --></div>
+<div class="wp-block-buttons">
+    <!-- wp:button {"width":100,"className":"is-style-fill","style":{"typography":{"fontSize":"12px"},"border":{"radius":"4px","width":"0px","style":"none"},"color":{"background":"#8269df"},"spacing":{"padding":{"top":"12px","bottom":"12px"}}},"fontFamily":"inter"} -->
+    <div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill">
+        <a class="wp-block-button__link has-background has-inter-font-family has-custom-font-size wp-element-button" style="border-style:none;border-width:0px;border-radius:4px;background-color:#8269df;padding-top:12px;padding-bottom:12px;font-size:12px;width:100%">' . esc_html__( 'SUBSCRIBE', 'colormag' ) . '</a>
+    </div>
+    <!-- /wp:button -->
+</div>
 <!-- /wp:buttons -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
@@ -1105,11 +1113,11 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"metadata":{"name":"Top Stories"},"align":"full","className":"cm-block-alignfull","style":{"color":{"gradient":"linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%)"},"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull cm-block-alignfull has-background" style="background:linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%);padding-top:80px;padding-bottom:80px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Top Stories"},"align":"full","className":"cm-block-alignfull","style":{"color":{"gradient":"linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%)"},"spacing":{"padding":{"top":"48","bottom":"48"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull cm-block-alignfull has-background" style="background:linear-gradient(135deg,rgb(23,23,23) 0%,rgb(23,23,23) 100%);padding-top:48px;padding-bottom:48px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"top-stories","style":{"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":{},"right":{},"bottom":{}},"typography":{"fontSize":"18px","fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontFamily":"inter"} -->
 <h6 class="wp-block-heading top-stories has-white-color has-text-color has-link-color has-inter-font-family" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px;font-size:18px;font-style:normal;font-weight:600">' . esc_html__( 'Top Stories', 'colormag' ) . '</h6>
@@ -1121,8 +1129,8 @@ return [
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"align":"wide","className":"is-style-wide","style":{"color":{"background":"#7a7a7a80"}}} -->
-<hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-wide" style="background-color:#7a7a7a80;color:#7a7a7a80"/>
+<!-- wp:separator {"align":"wide","className":"is-style-wide","style":{"color":{"background":"#7a7a7a80"},"spacing":{"margin":{"top":"8px","bottom":"8px"}}}} -->
+<hr class="wp-block-separator alignwide has-text-color has-alpha-channel-opacity has-background is-style-wide" style="background-color:#7a7a7a80;color:#7a7a7a80;margin-top:8px;margin-bottom:8px"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
@@ -1135,8 +1143,8 @@ return [
 <h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'How to Create Budget That Works for Your Lifestyle', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"8px","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -1161,8 +1169,8 @@ return [
 <h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Find the best PC games optimized For console', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"8px","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -1187,8 +1195,8 @@ return [
 <h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">Organizing Your Home: Tips for Creating San city</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"8px","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -1213,8 +1221,8 @@ return [
 <h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600">' . esc_html__( 'Dive into the world of gaming platforms', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group has-white-color has-text-color has-link-color" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">Nov 08, 2025</p>
 <!-- /wp:paragraph -->
@@ -1237,7 +1245,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"lifestyle"},"align":"wide","layout":{"type":"constrained"}} -->
@@ -1346,13 +1354,13 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%;align-items:center;"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Boost Your Productivity with These Simple Tips', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1366,13 +1374,13 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%;align-items:center;"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Creating a Space for Self-Care in Your Everyday Routine', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1386,13 +1394,13 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%;align-items:center;"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Build a Routine That Supports Your Best Self', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1408,13 +1416,13 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%;align-items:center;"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Discover the Secret to a Balanced and Happy Life', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1428,13 +1436,13 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%;align-items:center;"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Simple Ways to Cultivate Gratitude and Joy Daily', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1448,13 +1456,13 @@ return [
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
+<!-- wp:column {"width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"className":"is-vertically-aligned-center"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%;align-items:center;"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"15px","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"ibm-plex-serif"} -->
 <h6 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:15px;font-style:normal;font-weight:600">' . esc_html__( 'Master the Art of Meal Prepping for a How to..', 'colormag' ) . '</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
+<p class="has-inter-font-family" style="margin-top:8px;margin-bottom:0;font-size:12px">Nov 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -1463,7 +1471,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":119,"sizeSlug":"full","linkDestination":"none","metadata":{"name":"Ads"},"align":"wide"} -->
@@ -1471,7 +1479,7 @@ return [
 <!-- /wp:image -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"sports"},"align":"wide","layout":{"type":"constrained"}} -->
@@ -1504,8 +1512,8 @@ return [
 <h5 class="wp-block-heading has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:22px;font-style:normal;font-weight:600">' . esc_html__( 'Emerging technologies are changing how we live and work', 'colormag' ) . '</h5>
 <!-- /wp:heading -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"8px"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
+<div class="wp-block-group" style="padding-top:0;padding-bottom:8px"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Jenisha Dutch</p>
 <!-- /wp:paragraph -->
@@ -1591,7 +1599,7 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:spacer {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<div style="margin-top:0;margin-bottom:0;height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="margin-top:0;margin-bottom:0;height:24px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"metadata":{"name":"Subscribe"},"align":"full","className":"cm-block-alignfull","style":{"color":{"background":"#0D0F11"},"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"type":"constrained"}} -->
@@ -1687,8 +1695,8 @@ return [
 <!-- wp:column {"width":"60%"} -->
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"20px"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"}},"spacing":{"padding":{"bottom":"12px"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-bottom:12px;font-size:20px">Editor’s Pick</h5>
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"style":{"typography":{"fontSize":"20px"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"bottom":{"color":"#222222","style":"solid","width":"1px"}},"spacing":{"padding":{"bottom":"12px"}},"color":{"text":"#222222"}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
+<h5 class="wp-block-heading has-link-color has-ibm-plex-serif-font-family" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-bottom:12px;font-size:20px;color:#222222">Editor’s Pick</h5>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
