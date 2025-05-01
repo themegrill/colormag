@@ -69,6 +69,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+* Added       - Option to change full width search width, border width, border color and border radius.
+* Added       - Option to change full width search placeholder color.
+
 = Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.
 * Fix         - Embed Block image size issue.

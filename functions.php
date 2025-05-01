@@ -84,13 +84,15 @@ $customind->set_i18n_data(
 		'domain' => 'colormag',
 	]
 );
-$customind->set_section_i18n(
-	[
-		/* Translators: 1: Panel Title. */
-		'customizing-action' => __( 'Customizing &#9656; %s', 'colormag' ),
-		'customizing'        => __( 'Customizing', 'colormag' ),
-	]
-);
+add_action( 'after_setup_theme', function() use ( $customind ) {
+	$customind->set_section_i18n(
+		[
+			/* Translators: 1: Panel Title. */
+			'customizing-action' => __( 'Customizing ▶ %s', 'colormag' ),
+			'customizing'        => __( 'Customizing', 'colormag' ),
+		]
+	);
+} );
 
 /**
  * Deprecated.
@@ -156,7 +158,7 @@ require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
 
 /** Breadcrumb class. */
 require_once COLORMAG_INCLUDES_DIR . '/class-breadcrumb-trail.php';
-require_once COLORMAG_INCLUDES_DIR . '/class-colormag-starter-content.php';
+//require_once COLORMAG_INCLUDES_DIR . '/class-colormag-starter-content.php';
 
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/ajax.php';

@@ -446,6 +446,14 @@
 					);
 					break;
 
+				case 'colormag_header_search_width':
+					css = colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-wrap, .cm-search-box .search-wrap',
+						'width',
+						value,
+					);
+					break;
+
 				case 'colormag_primary_menu_top_border_color':
 					css = colormagGenerateCommonCSS(
 						'#cm-primary-nav',
@@ -932,6 +940,14 @@
 					);
 					break;
 
+				case 'colormag_header_search_border_radius':
+					css = colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
+						'border-radius',
+						value,
+					);
+					break;
+
 				case 'colormag_header_button_border_width':
 					css = colormagGenerateDimensionCSS(
 						'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
@@ -940,9 +956,25 @@
 					);
 					break;
 
+				case 'colormag_header_search_border_width':
+					css = colormagGenerateDimensionCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
+						'border-width',
+						value,
+					);
+					break;
+
 				case 'colormag_header_button_border_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+						'border-color',
+						value,
+					);
+					break;
+
+				case 'colormag_header_search_border_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
 						'border-color',
 						value,
 					);
@@ -1163,6 +1195,14 @@
 				case 'colormag_header_search_text_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-top-search .search-form-top input, .search-wrap input',
+						'color',
+						value,
+					);
+					break;
+
+				case 'colormag_header_search_placeholder_color':
+					css = colormagGenerateCommonCSS(
+						'.search-wrap input::placeholder',
 						'color',
 						value,
 					);

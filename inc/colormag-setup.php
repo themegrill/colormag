@@ -415,9 +415,9 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 
 		);
 
-		$starter_content = apply_filters( 'colormag_starter_content', ColorMag_Starter_Content::get() );
+//		$starter_content = apply_filters( 'colormag_starter_content', ColorMag_Starter_Content::get() );
 
-		add_theme_support( 'starter-content', $starter_content );
+//		add_theme_support( 'starter-content', $starter_content );
 	}
 
 endif;

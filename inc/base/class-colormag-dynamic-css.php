@@ -1026,6 +1026,20 @@ class ColorMag_Dynamic_CSS {
 			'border-top-width'
 		);
 
+		$full_search_width_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+
+		$full_width_search = get_theme_mod( 'colormag_header_search_width', $full_search_width_default );
+
+		$parse_css .= colormag_parse_slider_css(
+			$full_search_width_default,
+			$full_width_search,
+			'.cm-search-icon-in-input-right .search-wrap,.cm-search-box .search-wrap',
+			'width'
+		);
+
 		// Button text color.
 		$button_text_color = get_theme_mod( 'colormag_button_color', '' );
 
@@ -1138,6 +1152,23 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		$parse_css .= colormag_parse_css( '', $footer_widget_link_hover_color, $footer_widget_link_hover_color_css );
+
+		$search_border_width_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$full_search_border_width = get_theme_mod( 'colormag_header_search_border_width', $search_border_width_default );
+
+		$parse_css .= colormag_parse_dimension_css(
+			$search_border_width_default,
+			$full_search_border_width,
+			'.cm-search-icon-in-input-right .search-wrap input',
+			'border-width'
+		);
 
 		/**
 		 * Button.
@@ -1864,6 +1895,16 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                          .= colormag_parse_css( '', $header_button_border_color, $header_button_border_color_css );
 
+		// Search border color.
+		$full_search_border_color     = get_theme_mod( 'colormag_header_search_border_color', '' );
+		$full_search_border_color_css = array(
+			'.cm-search-icon-in-input-right .search-wrap input' => array(
+				'border-color' => esc_html( $full_search_border_color ),
+			),
+		);
+		$parse_builder_css                          .= colormag_parse_css( '', $full_search_border_color, $full_search_border_color_css );
+
+
 		// Header button radius.
 		$header_button_border_radius_default = array(
 			'size' => 0,
@@ -1876,6 +1917,21 @@ class ColorMag_Dynamic_CSS {
 			$header_button_border_radius_default,
 			$header_button_border_radius,
 			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+			'border-radius'
+		);
+
+		// Full Search border radius.
+		$full_search_border_radius_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+
+		$header_button_border_radius = get_theme_mod( 'colormag_header_search_border_radius', $full_search_border_radius_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$full_search_border_radius_default,
+			$header_button_border_radius,
+			'.cm-search-icon-in-input-right .search-wrap input',
 			'border-radius'
 		);
 
@@ -2496,6 +2552,15 @@ class ColorMag_Dynamic_CSS {
 			),
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_text_color, $header_search_text_color_css );
+
+		// Header search placeholder color.
+		$header_search_placeholder_color     = get_theme_mod( 'colormag_header_search_placeholder_color', '' );
+		$header_search_placeholder_color_css = array(
+			'.search-wrap input::placeholder' => array(
+				'color' => esc_html( $header_search_placeholder_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
 
 		// Header search background color.
 		$header_search_background         = get_theme_mod( 'colormag_header_search_background', '' );
