@@ -72,6 +72,7 @@ and we will include it within the theme from next version update.
 = TBD =
 * Fix - Header builder random component icon hover color issue.
 * Added - Icon size option in random component of header builder.
+* Added - Option to change header builder primary menu active background color.
 
 = Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.

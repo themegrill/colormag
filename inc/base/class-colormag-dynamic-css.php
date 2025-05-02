@@ -2248,6 +2248,13 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hover_bg, $header_primary_menu_selected_hover_bg_css );
 
+		$header_primary_menu_selected_active_bg     = get_theme_mod( 'colormag_header_primary_menu_active_background', '' );
+		$header_primary_menu_selected_active_bg_css = array(
+			'.cm-header-builder .cm-primary-nav ul li.current-menu-item' => array(
+				'background' => esc_html( $header_primary_menu_selected_active_bg ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_active_bg, $header_primary_menu_selected_active_bg_css );
 
 		$header_primary_sub_menu_background_default = array(
 			'background-color'      => '#232323',
