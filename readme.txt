@@ -70,6 +70,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
+* Fix - Footer builder copyright component options not working
 * Fix - Footer builder menu 1 component typography option not working in frontend
 * Fix - Footer builder menu 1 component not displayed properly in footer bottom area in frontend
 * Fix - Header builder random component icon hover color issue.
