@@ -1136,8 +1136,16 @@
 
 				case "colormag_header_random_icon_hover_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .cm-random-post:hover > .cm-icon--random-fill",
+						".cm-header-builder .cm-random-post:hover .cm-icon--random-fill",
 						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_header_random_icon_size":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-random-post .cm-icon--random-fill",
+						"font-size",
 						value,
 					);
 					break;
