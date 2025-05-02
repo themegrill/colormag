@@ -739,6 +739,14 @@
 					);
 					break;
 
+				case 'colormag_header_primary_menu_active_background':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .cm-primary-nav ul li.current-menu-item',
+						'background',
+						value,
+					);
+					break;
+
 				case "colormag_header_primary_sub_menu_background":
 					css = colormagGenerateBackgroundCSS(".cm-header-builder .cm-primary-nav .sub-menu, .cm-header-builder .cm-primary-nav .children", value);
 					break;
@@ -1128,8 +1136,16 @@
 
 				case "colormag_header_random_icon_hover_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .cm-random-post:hover > .cm-icon--random-fill",
+						".cm-header-builder .cm-random-post:hover .cm-icon--random-fill",
 						"fill",
+						value,
+					);
+					break;
+
+				case "colormag_header_random_icon_size":
+					css = colormagGenerateSliderCSS(
+						".cm-header-builder .cm-random-post .cm-icon--random-fill",
+						"font-size",
 						value,
 					);
 					break;
@@ -1844,8 +1860,40 @@
 
 				case "colormag_footer_copyright_text_color":
 					css = colormagGenerateCommonCSS(
-						".cm-footer-bar-area .cm-footer-bar__2",
+						".cm-footer-bar-area .cm-footer-bar__2, .cm-footer-builder .cm-copyright",
 						"color",
+						value,
+					);
+					break;
+
+				case 'colormag_footer_copyright_link_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-footer-builder .cm-copyright a',
+						'color',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_copyright_link_hover_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-footer-builder .cm-copyright a:hover',
+						'color',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_copyright_typography':
+					css = colormagGenerateTypographyCSS(
+						id,
+						'.cm-footer-bar-area .cm-footer-bar__2, .cm-footer-builder .cm-copyright',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_copyright_margin':
+					css = colormagGenerateDimensionCSS(
+						'.cm-footer-builder .cm-copyright',
+						'margin',
 						value,
 					);
 					break;

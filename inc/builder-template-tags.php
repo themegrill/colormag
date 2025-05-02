@@ -412,7 +412,7 @@ if ( ! function_exists( 'colormag_footer_builder_markup' ) ) {
 			);
 			echo '<div class="' . esc_attr( implode( ' ', $classes ) ) . '">';
 			$i       = 1;
-			$top_row = get_theme_mod( 'colormag_footer_' . $area . '_area_cols', ( 'top' === $area || 'main' === $area ) ? 4 : 1 );
+			$top_row = get_theme_mod( 'colormag_footer_' . $area . '_area_cols', ( 'top' === $area || 'main' === $area ) ? 4 : 2 );
 			$top_row = apply_filters( 'colormag_footer_' . $area . '_area_cols', $top_row );
 
 			foreach ( $row as $cols_area => $cols ) {
