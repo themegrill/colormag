@@ -1501,7 +1501,7 @@
 
 				case 'colormag_header_mobile_menu_background':
 					css = colormagGenerateCommonCSS(
-						'.cm-mobile-nav ..cm-mobile-menu--open',
+						'.cm-mobile-nav.cm-mobile-open-container > .cm-mobile-menu--open',
 						'background-color',
 						value,
 					);
