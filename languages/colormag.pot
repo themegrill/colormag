@@ -1,63 +1,79 @@
-# <!=Copyright (C) 2025 ThemeGrill
-# This file is distributed under the GNU General Public License, version 3 (GPLv3).=!>
+# Copyright (C) 2025 ColorMag
+# This file is distributed under the same license as the ColorMag package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 4.0.10\n"
-"Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2025-01-06 06:50:28+00:00\n"
+"Project-Id-Version: ColorMag\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
-
-#: 404.php:34
-msgid "404"
-msgstr ""
+"POT-Creation-Date: 2025-04-09 03:46+0000\n"
+"Report-Msgid-Bugs-To: themegrill@gmail.com\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:32
 msgid "oops ! Page Not Found"
 msgstr ""
 
+#: 404.php:34
+msgid "404"
+msgstr ""
+
 #: 404.php:38
-msgid ""
-"We are sorry for the inconvenience. The page you’re trying to access does "
-"not exist or has been removed."
+msgid "We are sorry for the inconvenience. The page you’re trying to access does not exist or has been removed."
 msgstr ""
 
 #: 404.php:43
 msgid "Back to Home"
 msgstr ""
 
-#: comments.php:39 inc/ajax.php:53
-#. Translators: %1$s: Post title
+#. translators: %1$s: Comment count, %2$s: Post title
+#: comments.php:45, inc/ajax.php:60
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39, inc/ajax.php:53
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: comments.php:55 comments.php:75
+#: comments.php:55, comments.php:75
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:57 comments.php:77
+#: comments.php:57, comments.php:77
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:58 comments.php:78
+#: comments.php:58, comments.php:78
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:88 inc/ajax.php:90
+#: comments.php:88, inc/ajax.php:90
 msgid "Comments are closed."
+msgstr ""
+
+#. translators: 1: Panel Title.
+#: functions.php:90
+msgid "Customizing &#9656; %s"
+msgstr ""
+
+#: functions.php:91
+msgid "Customizing"
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:38
 msgid "Processing..."
 msgstr ""
 
-#: inc/admin/class-colormag-changelog-parser.php:27
-#: inc/admin/class-colormag-changelog-parser.php:85
+#: inc/admin/class-colormag-changelog-parser.php:27, inc/admin/class-colormag-changelog-parser.php:85
 msgid "Changelog not found."
 msgstr ""
 
@@ -73,8 +89,8 @@ msgstr ""
 msgid "Failed to read changelog."
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:36
 #. translators: %s: Theme Name.
+#: inc/admin/class-colormag-dashboard.php:36
 msgid "%s"
 msgstr ""
 
@@ -82,7 +98,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: inc/admin/class-colormag-dashboard.php:113 inc/admin/views/dashbaord.php:199
+#: inc/admin/class-colormag-dashboard.php:113, inc/admin/views/dashbaord.php:215
 msgid "Starter Templates"
 msgstr ""
 
@@ -98,7 +114,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#. Theme Name of the plugin/theme
+#: inc/admin/class-colormag-dashboard.php:152, inc/admin/class-colormag-dashboard.php:182, inc/admin/views/dashbaord.php:198, inc/admin/views/dashbaord.php:219, inc/helper/utils.php:27, template-parts/hooks/footer/footer.php:269, template-parts/hooks/footer/footer.php:269
 msgid "ColorMag"
 msgstr ""
 
@@ -110,34 +126,27 @@ msgstr ""
 msgid "Latest Updates"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:79
-#: inc/migration/demo-import-migration.php:28
+#: inc/admin/class-colormag-theme-review-notice.php:79, inc/migration/demo-import-migration.php:28
 msgid "Colormag"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:87
 #. translators: %s: Smile icon
+#: inc/admin/class-colormag-theme-review-notice.php:87
 msgid "The above word is just to draw your attention. %s"
 msgstr ""
 
+#. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag
 #: inc/admin/class-colormag-theme-review-notice.php:96
-#. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing
-#. of strong tag
-msgid ""
-"Hope you are having a nice experience with %1$s %2$s %3$s theme. Please "
-"provide this theme a nice review."
+msgid "Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review."
 msgstr ""
 
 #: inc/admin/class-colormag-theme-review-notice.php:104
 msgid "What benefit would you have?"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:110
 #. translators: %s: Smiley icon
-msgid ""
-"Basically, it would encourage us to release updates regularly with new "
-"features & bug fixes so that you can keep on using the theme without any "
-"issues and also to provide free support like we have been doing. %s"
+#: inc/admin/class-colormag-theme-review-notice.php:110
+msgid "Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s"
 msgstr ""
 
 #: inc/admin/class-colormag-theme-review-notice.php:119
@@ -156,20 +165,16 @@ msgstr ""
 msgid "I have a query"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:154
-#: inc/admin/class-colormag-theme-review-notice.php:172
-#: inc/admin/class-colormag-welcome-notice.php:104
-#: inc/migration/class-colormag-migration.php:1158
-#: inc/migration/demo-import-migration.php:66
+#: inc/admin/class-colormag-theme-review-notice.php:154, inc/admin/class-colormag-theme-review-notice.php:172, inc/admin/class-colormag-welcome-notice.php:104, inc/migration/class-colormag-migration.php:1158, inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/admin/class-colormag-welcome-notice.php:26
+#: inc/admin/class-colormag-welcome-notice.php:26, inc/admin/class-colormag-welcome-notice.php:26
 msgid "Get started"
 msgstr ""
 
-#: inc/admin/class-colormag-welcome-notice.php:64
 #. translators: 1: Username
+#: inc/admin/class-colormag-welcome-notice.php:64
 msgid "Welcome %1$s!"
 msgstr ""
 
@@ -177,237 +182,195 @@ msgstr ""
 msgid "Start Building with ColorMag!"
 msgstr ""
 
+#. translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag.
 #: inc/admin/class-colormag-welcome-notice.php:80
-#. translators: 1: welcome page link starting html tag, 2: welcome page link
-#. ending html tag.
-msgid ""
-"Welcome! Thank you for choosing ColorMag! To get started with "
-"professionally designed pre-built templates from ColorMag, click on the "
-"button below!"
+msgid "Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!"
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:87
-msgid ""
-"Clicking this button will install and activate the ThemeGrill Demo Importer "
-"plugin allowing you to import the theme’s demos."
+msgid "Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos."
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:108
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:22
+#: inc/admin/views/dashbaord.php:38
 msgid "Create a new page"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:34 inc/admin/views/starter-templates.php:9
-msgid "Activate ThemeGrill Demo Importer Plugin"
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:36 inc/admin/views/starter-templates.php:11
-msgid "Install ThemeGrill Demo Importer Plugin"
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:38 inc/admin/views/starter-templates.php:13
+#: inc/admin/views/dashbaord.php:54, inc/admin/views/starter-templates.php:13
 msgid "View Starter Templates"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:53
+#: inc/admin/views/dashbaord.php:52, inc/admin/views/starter-templates.php:11
+msgid "Install ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:50, inc/admin/views/starter-templates.php:9
+msgid "Activate ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:69
 msgid "Welcome to ColorMag"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:54 inc/admin/views/free-vs-pro.php:224
+#: inc/admin/views/dashbaord.php:70, inc/admin/views/free-vs-pro.php:224
 msgid "Free"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:57
-msgid ""
-"Experience a seamless magazine-themed website building experience with "
-"ColorMag! Explore all the settings and features right here and get started "
-"with your first page."
+#: inc/admin/views/dashbaord.php:73
+msgid "Experience a seamless magazine-themed website building experience with ColorMag! Explore all the settings and features right here and get started with your first page."
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:63
+#: inc/admin/views/dashbaord.php:79
 msgid "Quick Settings"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:64
+#: inc/admin/views/dashbaord.php:80
 msgid "Go to Customizer"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:71
-#: inc/customizer/options/header-and-navigation/site-identity.php:8
-#: inc/customizer/options/header-builder/logo.php:6
-#: inc/customizer/panels-sections/panels-sections.php:85
+#: inc/admin/views/dashbaord.php:87, inc/customizer/options/header-and-navigation/site-identity.php:8, inc/customizer/options/header-builder/logo.php:6, inc/customizer/panels-sections/panels-sections.php:82
 msgid "Site Identity"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:76
+#: inc/admin/views/dashbaord.php:92
 msgid "Header Options"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:81
+#: inc/admin/views/dashbaord.php:97
 msgid "Footer Options"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:86
+#: inc/admin/views/dashbaord.php:102
 msgid "Global Colors"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:91
+#: inc/admin/views/dashbaord.php:107
 msgid "Sidebar Options"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:96 inc/admin/views/dashbaord.php:145
-#: inc/customizer/panels-sections/panels-sections.php:120
+#: inc/admin/views/dashbaord.php:112, inc/admin/views/dashbaord.php:161, inc/customizer/panels-sections/panels-sections.php:117
 msgid "Blog"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:114
+#: inc/admin/views/dashbaord.php:130
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:124
+#: inc/admin/views/dashbaord.php:140
 msgid "Premium Features"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:126 inc/admin/views/free-vs-pro.php:294
+#: inc/admin/views/dashbaord.php:142, inc/admin/views/free-vs-pro.php:294
 msgid "Upgrade Now"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:133
-#: inc/customizer/options/header-and-navigation/top-bar.php:11
-#: inc/customizer/panels-sections/panels-sections.php:75
+#: inc/admin/views/dashbaord.php:149, inc/customizer/options/header-and-navigation/top-bar.php:11, inc/customizer/panels-sections/panels-sections.php:72
 msgid "Top Bar"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:137
-#: inc/customizer/options/header-and-navigation/main-header.php:8
-#: inc/customizer/panels-sections/panels-sections.php:90
+#: inc/admin/views/dashbaord.php:153, inc/customizer/options/header-and-navigation/main-header.php:8, inc/customizer/panels-sections/panels-sections.php:87
 msgid "Main Header"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:141
-#: inc/core/class-colormag-after-setup-theme.php:82
-#: inc/customizer/options/header-and-navigation/primary-menu.php:8
-#: inc/customizer/options/header-builder/header-builder.php:14
-#: inc/customizer/options/header-builder/primary-menu.php:11
-#: inc/customizer/panels-sections/panels-sections.php:95
-#: inc/customizer/panels-sections/panels-sections.php:175
+#: inc/admin/views/dashbaord.php:157, inc/core/class-colormag-after-setup-theme.php:82, inc/customizer/options/header-and-navigation/primary-menu.php:8, inc/customizer/options/header-builder/header-builder.php:14, inc/customizer/options/header-builder/primary-menu.php:11, inc/customizer/panels-sections/panels-sections.php:92, inc/customizer/panels-sections/panels-sections.php:172
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:149
+#: inc/admin/views/dashbaord.php:165
 msgid "Meta"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:153
-#: inc/customizer/options/footer/footer-column.php:8
-#: inc/customizer/panels-sections/panels-sections.php:140
+#: inc/admin/views/dashbaord.php:169, inc/customizer/options/footer/footer-column.php:8, inc/customizer/panels-sections/panels-sections.php:137
 msgid "Footer Column"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:157
-#: inc/customizer/options/footer/footer-bar.php:8
-#: inc/customizer/panels-sections/panels-sections.php:145
+#: inc/admin/views/dashbaord.php:173, inc/customizer/options/footer/footer-bar.php:8, inc/customizer/panels-sections/panels-sections.php:142
 msgid "Footer Bar"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:177 inc/admin/views/dashbaord.php:220
-#: inc/admin/views/dashbaord.php:229
+#: inc/admin/views/dashbaord.php:193, inc/admin/views/dashbaord.php:236, inc/admin/views/dashbaord.php:245
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:205
-msgid ""
-"Explore diverse demos from ColorMag theme to get your site running in no "
-"time! <br> <br> Simply choose the demo that fits your requirements, import "
-"it, and give it some of your personal touch! "
+#: inc/admin/views/dashbaord.php:221
+msgid "Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! "
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:225
-msgid ""
-"Stuck due to an issue? Our detailed documentation will surely clear up any "
-"confusions you have!"
+#: inc/admin/views/dashbaord.php:241
+msgid "Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:241 inc/admin/views/help.php:79
+#: inc/admin/views/dashbaord.php:257, inc/admin/views/help.php:79
 msgid "Leave us a Review"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:254 inc/admin/views/help.php:92
+#: inc/admin/views/dashbaord.php:270, inc/admin/views/help.php:92
 msgid "Based on 1430+ Reviews"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:261
 #. translators: %s: Theme Name.
-msgid ""
-"What do you think of our theme? Was it a good experience and did it match "
-"your expectations? Let us know so we can improve!"
+#: inc/admin/views/dashbaord.php:277
+msgid "What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:267 inc/admin/views/help.php:104
+#: inc/admin/views/dashbaord.php:283, inc/admin/views/help.php:104
 msgid "Submit a Review"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:283 inc/admin/views/help.php:120
+#: inc/admin/views/dashbaord.php:299, inc/admin/views/help.php:120
 msgid "Feature Request"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:290 inc/admin/views/help.php:127
 #. translators: %s: Theme Name.
+#: inc/admin/views/dashbaord.php:306, inc/admin/views/help.php:127
 msgid "Please take a moment to suggest any features that could enhance our product."
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:295 inc/admin/views/help.php:132
+#: inc/admin/views/dashbaord.php:311, inc/admin/views/help.php:132
 msgid "Request a Feature"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:307 inc/admin/views/help.php:33
+#: inc/admin/views/dashbaord.php:323, inc/admin/views/help.php:33
 msgid "Support"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:314
 #. translators: %s: Theme Name.
-msgid ""
-"Get in touch with our support team. You can always submit a support ticket "
-"for help."
+#: inc/admin/views/dashbaord.php:330
+msgid "Get in touch with our support team. You can always submit a support ticket for help."
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:319
+#: inc/admin/views/dashbaord.php:335
 msgid "Create a Ticket"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:324 inc/admin/views/help.php:137
+#: inc/admin/views/dashbaord.php:340, inc/admin/views/help.php:137
 msgid "Useful Plugins"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:380 inc/admin/views/help.php:193
-#: inc/admin/views/products.php:124
-msgid "Activated"
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:382 inc/admin/views/help.php:195
-#: inc/admin/views/products.php:128
-msgid "Activate"
-msgstr ""
-
-#: inc/admin/views/dashbaord.php:385 inc/admin/views/help.php:198
-#: inc/admin/views/products.php:133
+#: inc/admin/views/dashbaord.php:401, inc/admin/views/help.php:198, inc/admin/views/products.php:133
 msgid "Install"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:408 inc/admin/views/help.php:222
+#: inc/admin/views/dashbaord.php:398, inc/admin/views/help.php:195, inc/admin/views/products.php:128
+msgid "Activate"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:396, inc/admin/views/help.php:193, inc/admin/views/products.php:124
+msgid "Activated"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:424, inc/admin/views/help.php:222
 msgid "ThemeGrill Community"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:413
-msgid ""
-"Join our Facebook group filled with ThemeGrill themes users, including "
-"ColorMag users to discuss anything about the theme!"
+#: inc/admin/views/dashbaord.php:429
+msgid "Join our Facebook group filled with ThemeGrill themes users, including ColorMag users to discuss anything about the theme!"
 msgstr ""
 
-#: inc/admin/views/dashbaord.php:416 inc/admin/views/help.php:234
+#: inc/admin/views/dashbaord.php:432, inc/admin/views/help.php:234
 msgid "Join our Facebook Group"
 msgstr ""
 
@@ -416,9 +379,7 @@ msgid "Pro"
 msgstr ""
 
 #: inc/admin/views/free-vs-pro.php:295
-msgid ""
-"Access all premium extensions, features, and upcoming updates right away by "
-"<br> upgrading to the Pro version."
+msgid "Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version."
 msgstr ""
 
 #: inc/admin/views/free-vs-pro.php:296
@@ -430,9 +391,7 @@ msgid "Need Some Help?"
 msgstr ""
 
 #: inc/admin/views/help.php:26
-msgid ""
-"Please check out basic documentation for detailed information on how to use "
-"ColorMag."
+msgid "Please check out basic documentation for detailed information on how to use ColorMag."
 msgstr ""
 
 #: inc/admin/views/help.php:27
@@ -440,12 +399,10 @@ msgid "View Now"
 msgstr ""
 
 #: inc/admin/views/help.php:34
-msgid ""
-"We would be happy to guide you through any issues and queries you have "
-"regarding ColorMag!"
+msgid "We would be happy to guide you through any issues and queries you have regarding ColorMag!"
 msgstr ""
 
-#: inc/admin/views/help.php:35 inc/migration/demo-import-migration.php:46
+#: inc/admin/views/help.php:35, inc/migration/demo-import-migration.php:46
 msgid "Contact Support"
 msgstr ""
 
@@ -462,12 +419,10 @@ msgid "Facebook Community"
 msgstr ""
 
 #: inc/admin/views/help.php:45
-msgid ""
-"Join our Facebook haven, where the latest news and updates eagerly await "
-"your arrival."
+msgid "Join our Facebook haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
-#: inc/admin/views/help.php:46 inc/admin/views/help.php:56
+#: inc/admin/views/help.php:46, inc/admin/views/help.php:56
 msgid "Join Group"
 msgstr ""
 
@@ -480,9 +435,7 @@ msgid "X Community"
 msgstr ""
 
 #: inc/admin/views/help.php:55
-msgid ""
-"Join our Twitter haven, where the latest news and updates eagerly await "
-"your arrival."
+msgid "Join our Twitter haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
 #: inc/admin/views/help.php:61
@@ -494,22 +447,20 @@ msgid "Youtube Community"
 msgstr ""
 
 #: inc/admin/views/help.php:65
-msgid ""
-"Join our YouTube haven, where the latest news and updates eagerly await "
-"your arrival."
+msgid "Join our YouTube haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
 #: inc/admin/views/help.php:66
 msgid "Subscribe"
 msgstr ""
 
-#: inc/admin/views/help.php:98
 #. translators: %s: Theme Name.
+#: inc/admin/views/help.php:98
 msgid "Sharing your review is a valuable way to help us enhance your experience."
 msgstr ""
 
-#: inc/admin/views/help.php:229
 #. translators: %s: Theme Name.
+#: inc/admin/views/help.php:229
 msgid "Join our facebook group of ColorMag users for creating beautiful websites!"
 msgstr ""
 
@@ -517,7 +468,7 @@ msgstr ""
 msgid "Themes"
 msgstr ""
 
-#: inc/admin/views/products.php:41 inc/admin/views/products.php:118
+#: inc/admin/views/products.php:41, inc/admin/views/products.php:118
 msgid "Learn More"
 msgstr ""
 
@@ -534,16 +485,14 @@ msgid "Live Demo"
 msgstr ""
 
 #: inc/admin/views/starter-templates.php:46
-msgid ""
-"In order to be able to import any starter sites for <br> ColorMag you need "
-"to install ThemeGrill demo <br> importer plugin active."
+msgid "In order to be able to import any starter sites for <br> ColorMag you need to install ThemeGrill demo <br> importer plugin active."
 msgstr ""
 
-#: inc/ajax.php:22 navigation.php:32 navigation.php:50
+#: inc/ajax.php:22, navigation.php:32, navigation.php:50
 msgid "&larr; Previous"
 msgstr ""
 
-#: inc/ajax.php:23 navigation.php:33 navigation.php:51
+#: inc/ajax.php:23, navigation.php:33, navigation.php:51
 msgid "Next &rarr;"
 msgstr ""
 
@@ -555,6 +504,11 @@ msgstr ""
 msgid "Browse:"
 msgstr ""
 
+#: inc/class-breadcrumb-trail.php:269
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
 #: inc/class-breadcrumb-trail.php:270
 msgid "Home"
 msgstr ""
@@ -563,44 +517,75 @@ msgstr ""
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/class-breadcrumb-trail.php:272
-#: template-parts/hooks/content/content.php:98
+#: inc/class-breadcrumb-trail.php:272, template-parts/hooks/content/content.php:98
 msgid "Archives"
 msgstr ""
 
+#. translators: %s is the search query.
 #: inc/class-breadcrumb-trail.php:274
-#. Translators: %s is the search query.
 msgid "Search results for: %s"
 msgstr ""
 
+#. translators: %s is the page number.
 #: inc/class-breadcrumb-trail.php:276
-#. Translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
 
+#. translators: %s is the page number.
 #: inc/class-breadcrumb-trail.php:278
-#. Translators: %s is the page number.
 msgid "Comment Page %s"
 msgstr ""
 
+#. translators: Minute archive title. %s is the minute time format.
 #: inc/class-breadcrumb-trail.php:280
-#. Translators: Minute archive title. %s is the minute time format.
 msgid "Minute %s"
 msgstr ""
 
+#. translators: Weekly archive title. %s is the week date format.
 #: inc/class-breadcrumb-trail.php:282
-#. Translators: Weekly archive title. %s is the week date format.
 msgid "Week %s"
 msgstr ""
 
-#: inc/colormag-wp-query.php:40
-#: template-parts/header-builder-elements/news-ticker.php:19
+#: inc/class-breadcrumb-trail.php:712
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: inc/class-breadcrumb-trail.php:729
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: inc/class-breadcrumb-trail.php:746
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: inc/class-breadcrumb-trail.php:762, inc/class-breadcrumb-trail.php:790, inc/class-breadcrumb-trail.php:828, inc/class-breadcrumb-trail.php:854, inc/class-breadcrumb-trail.php:1200
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/class-breadcrumb-trail.php:763, inc/class-breadcrumb-trail.php:829, inc/class-breadcrumb-trail.php:1202
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: inc/class-breadcrumb-trail.php:764, inc/class-breadcrumb-trail.php:1204
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: inc/class-breadcrumb-trail.php:791
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: inc/colormag-wp-query.php:40, template-parts/header-builder-elements/news-ticker.php:19
 msgid "Latest:"
 msgstr ""
 
-#: inc/colormag-wp-query.php:96
-#: inc/customizer/class-colormag-customizer-partials.php:99
-#: template-parts/header-builder-elements/random.php:22
+#: inc/colormag-wp-query.php:96, inc/customizer/class-colormag-customizer-partials.php:99, template-parts/header-builder-elements/random.php:22
 msgid "View a random post"
 msgstr ""
 
@@ -616,71 +601,95 @@ msgstr ""
 msgid "ColorMag Global Widgets"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:66
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:69, inc/customizer/options/additional/social-icons.php:16, inc/customizer/options/footer/footer-bar.php:15, inc/customizer/options/footer/footer-column.php:15, inc/customizer/options/front-page/front-page.php:6, inc/customizer/options/global/button.php:13, inc/customizer/options/global/container.php:13, inc/customizer/options/header-and-navigation/breadcrumb.php:15, inc/customizer/options/header-and-navigation/main-header.php:16, inc/customizer/options/header-and-navigation/news-ticker.php:16, inc/customizer/options/header-and-navigation/primary-menu.php:179, inc/customizer/options/header-and-navigation/sticky-header.php:15, inc/customizer/options/header-and-navigation/top-bar.php:19, inc/customizer/panels-sections/panels-sections.php:67, inc/meta-boxes/class-colormag-meta-box-page-settings.php:76
+msgid "General"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:79, inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:134
+msgid "Post Element"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:84, inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:122
+msgid "Image"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:85, inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:139, inc/customizer/options/content/blog.php:22, inc/customizer/options/content/single-post.php:20
+msgid "Title"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:86, inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:140
+msgid "Tag"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:87, inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:141, inc/customizer/options/content/blog.php:23, inc/customizer/options/content/single-post.php:22, inc/customizer/panels-sections/panels-sections.php:17
+msgid "Content"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:96, inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:150
+msgid "Element Gap"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:124
+msgid "Show"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:125
+msgid "Hide"
+msgstr ""
+
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:184
 msgid "Block Title"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:74
-#: inc/widgets/colormag-125x125-advertisement-widget.php:34
-#: inc/widgets/colormag-300x250-advertisement-widget.php:34
-#: inc/widgets/colormag-728x90-advertisement-widget.php:34
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:40
-#: inc/widgets/colormag-featured-posts-widget.php:40
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192, inc/widgets/colormag-125x125-advertisement-widget.php:34, inc/widgets/colormag-300x250-advertisement-widget.php:34, inc/widgets/colormag-728x90-advertisement-widget.php:34, inc/widgets/colormag-featured-posts-vertical-widget.php:40, inc/widgets/colormag-featured-posts-widget.php:40
 msgid "Title:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:76
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:194
 msgid "Add your custom block title"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:102
-#: inc/customizer/options/footer/footer-column.php:109
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:220, inc/customizer/options/footer/footer-column.php:109
 msgid "Widget Title"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:111
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:229
 msgid "Color:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:135
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:253
 msgid "Text Color:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:176
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:294
 msgid "Posts"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:183
-#: inc/widgets/colormag-featured-posts-slider-widget.php:35
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:50
-#: inc/widgets/colormag-featured-posts-widget.php:50
-#: inc/widgets/colormag-highlighted-posts-widget.php:34
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:301, inc/widgets/colormag-featured-posts-slider-widget.php:35, inc/widgets/colormag-featured-posts-vertical-widget.php:50, inc/widgets/colormag-featured-posts-widget.php:50, inc/widgets/colormag-highlighted-posts-widget.php:34
 msgid "Number of posts to display:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:310
 msgid "Offset Posts:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:218
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:336
 msgid "Filter"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:225
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:343
 msgid "Display the posts from:"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:229
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:347
 msgid "Latest Posts"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:230
-#: inc/customizer/options/content/post-meta.php:19
-#: inc/customizer/options/content/single-post.php:131
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:348, inc/customizer/options/content/post-meta.php:19, inc/customizer/options/content/single-post.php:131
 msgid "Categories"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:238
+#: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:356
 msgid "Select categories:"
 msgstr ""
 
@@ -692,19 +701,19 @@ msgstr ""
 msgid "Block Style 1"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-2.php:55
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-2.php:53
 msgid "Block Style 2"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-4.php:48
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-4.php:46
 msgid "Block Style 4"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-6.php:55
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-6.php:53
 msgid "Block Style 6"
 msgstr ""
 
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-9.php:53
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-9.php:51
 msgid "Block Style 9"
 msgstr ""
 
@@ -724,10 +733,7 @@ msgstr ""
 msgid "Grid Style 5"
 msgstr ""
 
-#: inc/core/class-colormag-after-setup-theme.php:83
-#: inc/customizer/options/header-builder/header-builder.php:19
-#: inc/customizer/options/header-builder/secondary-menu.php:11
-#: inc/customizer/panels-sections/panels-sections.php:180
+#: inc/core/class-colormag-after-setup-theme.php:83, inc/customizer/options/header-builder/header-builder.php:19, inc/customizer/options/header-builder/secondary-menu.php:11, inc/customizer/panels-sections/panels-sections.php:177
 msgid "Secondary Menu"
 msgstr ""
 
@@ -747,62 +753,15 @@ msgstr ""
 msgid " by ThemeGrill. Powered by "
 msgstr ""
 
-#: inc/customizer/customind/core/Types/Section.php:84
-#. Translators: 1: Panel Title.
-msgid "Customizing &#9656; %s"
-msgstr ""
-
-#: inc/customizer/customind/core/Types/Section.php:88
-msgid "Customizing"
-msgstr ""
-
-#: inc/customizer/options/additional/social-icons.php:9
-#: inc/customizer/options/footer/footer-bar.php:105
-#: inc/customizer/options/footer/footer-bar.php:111
-#: inc/customizer/options/header-and-navigation/top-bar.php:134
-#: inc/customizer/options/header-and-navigation/top-bar.php:140
-#: inc/customizer/panels-sections/panels-sections.php:150
+#: inc/customizer/options/additional/social-icons.php:9, inc/customizer/options/footer/footer-bar.php:105, inc/customizer/options/footer/footer-bar.php:111, inc/customizer/options/header-and-navigation/top-bar.php:134, inc/customizer/options/header-and-navigation/top-bar.php:140, inc/customizer/panels-sections/panels-sections.php:147
 msgid "Social Icons"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:16
-#: inc/customizer/options/footer/footer-bar.php:15
-#: inc/customizer/options/footer/footer-column.php:15
-#: inc/customizer/options/front-page/front-page.php:6
-#: inc/customizer/options/global/button.php:13
-#: inc/customizer/options/global/container.php:13
-#: inc/customizer/options/header-and-navigation/breadcrumb.php:15
-#: inc/customizer/options/header-and-navigation/main-header.php:16
-#: inc/customizer/options/header-and-navigation/news-ticker.php:16
-#: inc/customizer/options/header-and-navigation/primary-menu.php:179
-#: inc/customizer/options/header-and-navigation/sticky-header.php:15
-#: inc/customizer/options/header-and-navigation/top-bar.php:19
-#: inc/customizer/panels-sections/panels-sections.php:70
-#: inc/meta-boxes/class-colormag-meta-box-page-settings.php:76
-msgid "General"
-msgstr ""
-
-#: inc/customizer/options/additional/social-icons.php:20
-#: inc/customizer/options/content/blog.php:139
-#: inc/customizer/options/content/page.php:14
-#: inc/customizer/options/content/single-post.php:43
-#: inc/customizer/options/content/single-post.php:120
-#: inc/customizer/options/global/builder.php:13
-#: inc/customizer/options/header-and-navigation/breadcrumb.php:19
-#: inc/customizer/options/header-and-navigation/header-action.php:52
-#: inc/customizer/options/header-and-navigation/header-action.php:69
-#: inc/customizer/options/header-and-navigation/news-ticker.php:20
-#: inc/customizer/options/header-and-navigation/site-identity.php:49
-#: inc/customizer/options/header-and-navigation/sticky-header.php:19
-#: inc/customizer/options/header-and-navigation/top-bar.php:24
-#: inc/customizer/options/header-and-navigation/top-bar.php:71
-#: inc/customizer/options/header-builder/logo.php:59
+#: inc/customizer/options/additional/social-icons.php:20, inc/customizer/options/content/blog.php:139, inc/customizer/options/content/page.php:14, inc/customizer/options/content/single-post.php:43, inc/customizer/options/content/single-post.php:120, inc/customizer/options/global/builder.php:13, inc/customizer/options/header-and-navigation/breadcrumb.php:19, inc/customizer/options/header-and-navigation/header-action.php:52, inc/customizer/options/header-and-navigation/header-action.php:69, inc/customizer/options/header-and-navigation/news-ticker.php:20, inc/customizer/options/header-and-navigation/site-identity.php:49, inc/customizer/options/header-and-navigation/sticky-header.php:19, inc/customizer/options/header-and-navigation/top-bar.php:24, inc/customizer/options/header-and-navigation/top-bar.php:71, inc/customizer/options/header-builder/logo.php:59
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:35
-#: inc/customizer/options/header-and-navigation/header-media.php:9
-#: inc/customizer/options/header-and-navigation/header-media.php:17
+#: inc/customizer/options/additional/social-icons.php:35, inc/customizer/options/header-and-navigation/header-media.php:9, inc/customizer/options/header-and-navigation/header-media.php:17
 msgid "Position"
 msgstr ""
 
@@ -810,41 +769,27 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:51
-#: inc/customizer/panels-sections/panels-sections.php:20
+#: inc/customizer/options/additional/social-icons.php:51, inc/customizer/panels-sections/panels-sections.php:20
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:74
-#: inc/migration/class-colormag-migration.php:678
-#: inc/migration/class-colormag-migration.php:1001
-#: inc/template-functions.php:364
+#: inc/customizer/options/additional/social-icons.php:74, inc/migration/class-colormag-migration.php:678, inc/migration/class-colormag-migration.php:1001, inc/template-functions.php:364
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:79
-#: inc/migration/class-colormag-migration.php:683
-#: inc/migration/class-colormag-migration.php:1006
-#: inc/template-functions.php:354
+#: inc/customizer/options/additional/social-icons.php:79, inc/migration/class-colormag-migration.php:683, inc/migration/class-colormag-migration.php:1006, inc/template-functions.php:354
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:84
-#: inc/migration/class-colormag-migration.php:688
-#: inc/migration/class-colormag-migration.php:1011
-#: inc/template-functions.php:404
+#: inc/customizer/options/additional/social-icons.php:84, inc/migration/class-colormag-migration.php:688, inc/migration/class-colormag-migration.php:1011, inc/template-functions.php:404
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:89
-#: inc/migration/class-colormag-migration.php:693
-#: inc/migration/class-colormag-migration.php:1016
+#: inc/customizer/options/additional/social-icons.php:89, inc/migration/class-colormag-migration.php:693, inc/migration/class-colormag-migration.php:1016
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:94
-#: inc/migration/class-colormag-migration.php:698
-#: inc/migration/class-colormag-migration.php:1021
+#: inc/customizer/options/additional/social-icons.php:94, inc/migration/class-colormag-migration.php:698, inc/migration/class-colormag-migration.php:1021
 msgid "YouTube"
 msgstr ""
 
@@ -852,64 +797,19 @@ msgstr ""
 msgid "Check to open in new tab"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:141
-#: inc/customizer/options/content/blog.php:163
-#: inc/customizer/options/content/page.php:25
-#: inc/customizer/options/content/post-meta.php:40
-#: inc/customizer/options/content/single-post.php:144
-#: inc/customizer/options/footer/footer-bar.php:123
-#: inc/customizer/options/footer/footer-column.php:191
-#: inc/customizer/options/front-page/front-page.php:24
-#: inc/customizer/options/global/button.php:108
-#: inc/customizer/options/global/category-colors.php:37
-#: inc/customizer/options/global/colors.php:178
-#: inc/customizer/options/global/container.php:82
-#: inc/customizer/options/global/sidebar.php:91
-#: inc/customizer/options/header-and-navigation/breadcrumb.php:30
-#: inc/customizer/options/header-and-navigation/header-media.php:57
-#: inc/customizer/options/header-and-navigation/main-header.php:148
-#: inc/customizer/options/header-and-navigation/news-ticker.php:31
-#: inc/customizer/options/header-and-navigation/primary-menu.php:322
-#: inc/customizer/options/header-and-navigation/site-identity.php:172
-#: inc/customizer/options/header-and-navigation/sticky-header.php:30
-#: inc/customizer/options/header-and-navigation/top-bar.php:155
+#: inc/customizer/options/additional/social-icons.php:141, inc/customizer/options/content/blog.php:163, inc/customizer/options/content/page.php:25, inc/customizer/options/content/post-meta.php:40, inc/customizer/options/content/single-post.php:144, inc/customizer/options/footer/footer-bar.php:123, inc/customizer/options/footer/footer-column.php:191, inc/customizer/options/front-page/front-page.php:24, inc/customizer/options/global/button.php:108, inc/customizer/options/global/category-colors.php:37, inc/customizer/options/global/colors.php:178, inc/customizer/options/global/container.php:99, inc/customizer/options/global/sidebar.php:91, inc/customizer/options/header-and-navigation/breadcrumb.php:30, inc/customizer/options/header-and-navigation/header-media.php:57, inc/customizer/options/header-and-navigation/main-header.php:148, inc/customizer/options/header-and-navigation/news-ticker.php:31, inc/customizer/options/header-and-navigation/primary-menu.php:322, inc/customizer/options/header-and-navigation/site-identity.php:172, inc/customizer/options/header-and-navigation/sticky-header.php:30, inc/customizer/options/header-and-navigation/top-bar.php:155
 msgid "Unlock more features available in Pro version."
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:142
-#: inc/customizer/options/content/blog.php:164
-#: inc/customizer/options/content/page.php:26
-#: inc/customizer/options/content/post-meta.php:41
-#: inc/customizer/options/content/single-post.php:145
-#: inc/customizer/options/footer/footer-bar.php:124
-#: inc/customizer/options/footer/footer-column.php:192
-#: inc/customizer/options/front-page/front-page.php:25
-#: inc/customizer/options/global/button.php:109
-#: inc/customizer/options/global/category-colors.php:38
-#: inc/customizer/options/global/colors.php:179
-#: inc/customizer/options/global/container.php:83
-#: inc/customizer/options/global/sidebar.php:92
-#: inc/customizer/options/header-and-navigation/breadcrumb.php:31
-#: inc/customizer/options/header-and-navigation/header-media.php:58
-#: inc/customizer/options/header-and-navigation/main-header.php:149
-#: inc/customizer/options/header-and-navigation/news-ticker.php:32
-#: inc/customizer/options/header-and-navigation/primary-menu.php:323
-#: inc/customizer/options/header-and-navigation/site-identity.php:173
-#: inc/customizer/options/header-and-navigation/sticky-header.php:31
-#: inc/customizer/options/header-and-navigation/top-bar.php:156
+#: inc/customizer/options/additional/social-icons.php:142, inc/customizer/options/content/blog.php:164, inc/customizer/options/content/page.php:26, inc/customizer/options/content/post-meta.php:41, inc/customizer/options/content/single-post.php:145, inc/customizer/options/footer/footer-bar.php:124, inc/customizer/options/footer/footer-column.php:192, inc/customizer/options/front-page/front-page.php:25, inc/customizer/options/global/button.php:109, inc/customizer/options/global/category-colors.php:38, inc/customizer/options/global/colors.php:179, inc/customizer/options/global/container.php:100, inc/customizer/options/global/sidebar.php:92, inc/customizer/options/header-and-navigation/breadcrumb.php:31, inc/customizer/options/header-and-navigation/header-media.php:58, inc/customizer/options/header-and-navigation/main-header.php:149, inc/customizer/options/header-and-navigation/news-ticker.php:32, inc/customizer/options/header-and-navigation/primary-menu.php:323, inc/customizer/options/header-and-navigation/site-identity.php:173, inc/customizer/options/header-and-navigation/sticky-header.php:31, inc/customizer/options/header-and-navigation/top-bar.php:156
 msgid "Learn more"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:8
-#: inc/customizer/options/content/blog.php:15
-#: inc/customizer/options/content/single-post.php:8
-#: inc/customizer/options/content/single-post.php:15
+#: inc/customizer/options/content/blog.php:8, inc/customizer/options/content/blog.php:15, inc/customizer/options/content/single-post.php:8, inc/customizer/options/content/single-post.php:15
 msgid "Post Elements"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:17
-#: inc/customizer/options/content/post-meta.php:17
-#: inc/customizer/options/content/single-post.php:17
+#: inc/customizer/options/content/blog.php:17, inc/customizer/options/content/post-meta.php:17, inc/customizer/options/content/single-post.php:17
 msgid "Drag & Drop items to re-arrange the order"
 msgstr ""
 
@@ -917,62 +817,27 @@ msgstr ""
 msgid "Post Format (Image)"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:20
-#: inc/customizer/options/content/single-post.php:19
+#: inc/customizer/options/content/blog.php:20, inc/customizer/options/content/single-post.php:19
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:21
-#: inc/customizer/options/content/single-post.php:21
+#: inc/customizer/options/content/blog.php:21, inc/customizer/options/content/single-post.php:21
 msgid "Meta Tags"
-msgstr ""
-
-#: inc/customizer/options/content/blog.php:22
-#: inc/customizer/options/content/single-post.php:20
-msgid "Title"
-msgstr ""
-
-#: inc/customizer/options/content/blog.php:23
-#: inc/customizer/options/content/single-post.php:22
-#: inc/customizer/panels-sections/panels-sections.php:17
-msgid "Content"
 msgstr ""
 
 #: inc/customizer/options/content/blog.php:40
 msgid "Post title"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:81
-#: inc/customizer/options/content/single-post.php:104
-#: inc/customizer/options/footer-builder/copyright.php:97
-#: inc/customizer/options/footer-builder/footer-menu.php:80
-#: inc/customizer/options/header-and-navigation/primary-menu.php:115
-#: inc/customizer/options/header-and-navigation/primary-menu.php:162
-#: inc/customizer/options/header-and-navigation/primary-menu.php:242
-#: inc/customizer/options/header-and-navigation/primary-menu.php:291
-#: inc/customizer/options/header-and-navigation/site-identity.php:101
-#: inc/customizer/options/header-and-navigation/site-identity.php:158
-#: inc/customizer/options/header-builder/date.php:75
-#: inc/customizer/options/header-builder/logo.php:129
-#: inc/customizer/options/header-builder/logo.php:204
-#: inc/customizer/options/header-builder/mobile-menu.php:92
-#: inc/customizer/options/header-builder/news-ticker.php:65
-#: inc/customizer/options/header-builder/primary-menu.php:81
-#: inc/customizer/options/header-builder/primary-menu.php:147
-#: inc/customizer/options/header-builder/secondary-menu.php:79
-#: inc/customizer/options/header-builder/secondary-menu.php:145
-#: inc/customizer/panels-sections/panels-sections.php:60
+#: inc/customizer/options/content/blog.php:81, inc/customizer/options/content/single-post.php:104, inc/customizer/options/footer-builder/copyright.php:97, inc/customizer/options/footer-builder/footer-menu.php:80, inc/customizer/options/header-and-navigation/primary-menu.php:115, inc/customizer/options/header-and-navigation/primary-menu.php:162, inc/customizer/options/header-and-navigation/primary-menu.php:242, inc/customizer/options/header-and-navigation/primary-menu.php:291, inc/customizer/options/header-and-navigation/site-identity.php:101, inc/customizer/options/header-and-navigation/site-identity.php:158, inc/customizer/options/header-builder/date.php:75, inc/customizer/options/header-builder/logo.php:129, inc/customizer/options/header-builder/logo.php:204, inc/customizer/options/header-builder/mobile-menu.php:92, inc/customizer/options/header-builder/news-ticker.php:65, inc/customizer/options/header-builder/primary-menu.php:81, inc/customizer/options/header-builder/primary-menu.php:147, inc/customizer/options/header-builder/secondary-menu.php:79, inc/customizer/options/header-builder/secondary-menu.php:145, inc/customizer/panels-sections/panels-sections.php:57
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:91
-#: inc/customizer/options/content/blog.php:102
+#: inc/customizer/options/content/blog.php:91, inc/customizer/options/content/blog.php:102
 msgid "Post Date"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:99
-#: inc/customizer/options/content/blog.php:120
-#: inc/customizer/options/content/blog.php:147
+#: inc/customizer/options/content/blog.php:99, inc/customizer/options/content/blog.php:120, inc/customizer/options/content/blog.php:147
 msgid "Type"
 msgstr ""
 
@@ -980,8 +845,7 @@ msgstr ""
 msgid "Modified Date"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:112
-#: inc/customizer/options/content/blog.php:123
+#: inc/customizer/options/content/blog.php:112, inc/customizer/options/content/blog.php:123
 msgid "Excerpt"
 msgstr ""
 
@@ -1001,13 +865,11 @@ msgstr ""
 msgid "Numbered"
 msgstr ""
 
-#: inc/customizer/options/content/page.php:8
-#: inc/customizer/options/content/single-post.php:37
+#: inc/customizer/options/content/page.php:8, inc/customizer/options/content/single-post.php:37
 msgid "Featured Image"
 msgstr ""
 
-#: inc/customizer/options/content/post-meta.php:8
-#: inc/customizer/options/content/post-meta.php:15
+#: inc/customizer/options/content/post-meta.php:8, inc/customizer/options/content/post-meta.php:15
 msgid "Meta Elements"
 msgstr ""
 
@@ -1015,12 +877,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/options/content/post-meta.php:21
-#: inc/customizer/options/header-and-navigation/top-bar.php:65
-#: inc/customizer/options/header-builder/date.php:8
-#: inc/customizer/options/header-builder/header-builder.php:56
-#: inc/customizer/options/header-builder/header-builder.php:122
-#: inc/customizer/panels-sections/panels-sections.php:255
+#: inc/customizer/options/content/post-meta.php:21, inc/customizer/options/header-and-navigation/top-bar.php:65, inc/customizer/options/header-builder/date.php:8, inc/customizer/options/header-builder/header-builder.php:56, inc/customizer/options/header-builder/header-builder.php:122, inc/customizer/panels-sections/panels-sections.php:252
 msgid "Date"
 msgstr ""
 
@@ -1032,8 +889,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer/options/content/post-meta.php:24
-#: inc/customizer/options/content/single-post.php:132
+#: inc/customizer/options/content/post-meta.php:24, inc/customizer/options/content/single-post.php:132
 msgid "Tags"
 msgstr ""
 
@@ -1061,349 +917,120 @@ msgstr ""
 msgid "Query"
 msgstr ""
 
-#: inc/customizer/options/footer/footer-bar.php:21
-#: inc/customizer/options/header-and-navigation/main-header.php:76
-msgid "Alignment"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-bar.php:50
-#: inc/customizer/options/footer/footer-column.php:61
-#: inc/customizer/options/header-and-navigation/header-action.php:13
-#: inc/customizer/options/header-and-navigation/main-header.php:123
-#: inc/customizer/options/header-and-navigation/primary-menu.php:15
-#: inc/customizer/options/header-and-navigation/primary-menu.php:195
-#: inc/customizer/options/header-and-navigation/top-bar.php:41
-msgid "Style"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-bar.php:63
-#: inc/customizer/options/footer/footer-column.php:74
-#: inc/customizer/options/footer/footer-column.php:99
-#: inc/customizer/options/footer-builder/bottom-area.php:67
-#: inc/customizer/options/footer-builder/main-area.php:91
-#: inc/customizer/options/footer-builder/top-area.php:67
-#: inc/customizer/options/global/button.php:41
-#: inc/customizer/options/global/container.php:41
-#: inc/customizer/options/header-and-navigation/main-header.php:138
-#: inc/customizer/options/header-and-navigation/primary-menu.php:28
-#: inc/customizer/options/header-and-navigation/primary-menu.php:140
-#: inc/customizer/options/header-and-navigation/primary-menu.php:269
-#: inc/customizer/options/header-and-navigation/top-bar.php:49
-#: inc/customizer/options/header-builder/bottom-area.php:66
-#: inc/customizer/options/header-builder/header-button.php:55
-#: inc/customizer/options/header-builder/main-area.php:56
-#: inc/customizer/options/header-builder/mobile-menu.php:51
-#: inc/customizer/options/header-builder/offset-area.php:14
-#: inc/customizer/options/header-builder/primary-menu.php:48
-#: inc/customizer/options/header-builder/primary-menu.php:107
-#: inc/customizer/options/header-builder/search.php:28
-#: inc/customizer/options/header-builder/secondary-menu.php:47
-#: inc/customizer/options/header-builder/secondary-menu.php:105
-#: inc/customizer/options/header-builder/top-area.php:58
-msgid "Background"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-bar.php:73
-msgid "Footer Copyright"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-bar.php:80
-#: inc/customizer/options/footer-builder/bottom-area.php:51
-#: inc/customizer/options/footer-builder/copyright.php:31
-#: inc/customizer/options/footer-builder/html-1.php:19
-#: inc/customizer/options/footer-builder/main-area.php:51
-#: inc/customizer/options/footer-builder/top-area.php:51
-#: inc/customizer/options/global/button.php:19
-#: inc/customizer/options/header-and-navigation/header-action.php:18
-#: inc/customizer/options/header-and-navigation/primary-menu.php:55
-#: inc/customizer/options/header-and-navigation/primary-menu.php:73
-#: inc/customizer/options/header-and-navigation/primary-menu.php:200
-#: inc/customizer/options/header-and-navigation/site-identity.php:57
-#: inc/customizer/options/header-and-navigation/site-identity.php:129
-#: inc/customizer/options/header-builder/bottom-area.php:40
-#: inc/customizer/options/header-builder/date.php:31
-#: inc/customizer/options/header-builder/header-button.php:34
-#: inc/customizer/options/header-builder/home-icon.php:14
-#: inc/customizer/options/header-builder/html-1.php:19
-#: inc/customizer/options/header-builder/logo.php:67
-#: inc/customizer/options/header-builder/logo.php:157
-#: inc/customizer/options/header-builder/main-area.php:40
-#: inc/customizer/options/header-builder/mobile-menu.php:19
-#: inc/customizer/options/header-builder/news-ticker.php:14
-#: inc/customizer/options/header-builder/primary-menu.php:26
-#: inc/customizer/options/header-builder/search.php:14
-#: inc/customizer/options/header-builder/toggle-button.php:12
-#: inc/customizer/options/header-builder/top-area.php:42
-msgid "Color"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-bar.php:86
-#: inc/customizer/options/footer/footer-column.php:122
-#: inc/customizer/options/footer/footer-column.php:147
-#: inc/customizer/options/footer/footer-column.php:172
-#: inc/customizer/options/footer-builder/copyright.php:47
-#: inc/customizer/options/footer-builder/footer-menu.php:31
-#: inc/customizer/options/footer-builder/html-1.php:35
-#: inc/customizer/options/footer-builder/main-area.php:67
-#: inc/customizer/options/footer-builder/widget-1.php:71
-#: inc/customizer/options/footer-builder/widget-2.php:71
-#: inc/customizer/options/footer-builder/widget-3.php:71
-#: inc/customizer/options/footer-builder/widget-4.php:71
-#: inc/customizer/options/footer-builder/widget-5.php:71
-#: inc/customizer/options/footer-builder/widget-6.php:71
-#: inc/customizer/options/footer-builder/widget-7.php:71
-#: inc/customizer/options/global/button.php:26
-#: inc/customizer/options/global/button.php:48
-#: inc/customizer/options/global/colors.php:157
-#: inc/customizer/options/header-and-navigation/header-action.php:26
-#: inc/customizer/options/header-and-navigation/primary-menu.php:81
-#: inc/customizer/options/header-and-navigation/primary-menu.php:208
-#: inc/customizer/options/header-and-navigation/site-identity.php:65
-#: inc/customizer/options/header-builder/header-button.php:40
-#: inc/customizer/options/header-builder/header-button.php:61
-#: inc/customizer/options/header-builder/html-1.php:35
-#: inc/customizer/options/header-builder/logo.php:75
-#: inc/customizer/options/header-builder/mobile-menu.php:27
-#: inc/customizer/options/header-builder/primary-menu.php:32
-#: inc/customizer/options/header-builder/random.php:21
-#: inc/customizer/options/header-builder/secondary-menu.php:32
-msgid "Normal"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-bar.php:93
-#: inc/customizer/options/footer/footer-column.php:179
-#: inc/customizer/options/footer-builder/copyright.php:54
-#: inc/customizer/options/footer-builder/footer-menu.php:38
-#: inc/customizer/options/footer-builder/html-1.php:42
-#: inc/customizer/options/footer-builder/main-area.php:74
-#: inc/customizer/options/footer-builder/widget-1.php:78
-#: inc/customizer/options/footer-builder/widget-2.php:78
-#: inc/customizer/options/footer-builder/widget-3.php:78
-#: inc/customizer/options/footer-builder/widget-4.php:78
-#: inc/customizer/options/footer-builder/widget-5.php:78
-#: inc/customizer/options/footer-builder/widget-6.php:78
-#: inc/customizer/options/footer-builder/widget-7.php:78
-#: inc/customizer/options/global/button.php:33
-#: inc/customizer/options/global/button.php:55
-#: inc/customizer/options/global/colors.php:164
-#: inc/customizer/options/header-and-navigation/header-action.php:33
-#: inc/customizer/options/header-and-navigation/site-identity.php:72
-#: inc/customizer/options/header-builder/header-button.php:47
-#: inc/customizer/options/header-builder/header-button.php:68
-#: inc/customizer/options/header-builder/html-1.php:42
-#: inc/customizer/options/header-builder/logo.php:82
-#: inc/customizer/options/header-builder/mobile-menu.php:34
-#: inc/customizer/options/header-builder/primary-menu.php:39
-#: inc/customizer/options/header-builder/primary-menu.php:54
-#: inc/customizer/options/header-builder/random.php:28
-#: inc/customizer/options/header-builder/secondary-menu.php:39
-#: inc/customizer/options/header-builder/secondary-menu.php:53
-msgid "Hover"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:21
-#: inc/customizer/options/global/container.php:19
-#: inc/customizer/options/global/sidebar.php:53
-#: inc/customizer/options/header-and-navigation/main-header.php:22
-msgid "Layout"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:25
-#: inc/customizer/options/header-and-navigation/main-header.php:26
-msgid "Layout 1"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:26
-#: inc/customizer/options/header-and-navigation/main-header.php:27
-msgid "Layout 2"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:32
-msgid "Footer Column Layout"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:84
-msgid "Upper Footer"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:116
-#: inc/customizer/options/footer/footer-column.php:141
-#: inc/customizer/options/footer/footer-column.php:166
-msgid "Color."
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:134
-msgid "Widget Content"
-msgstr ""
-
-#: inc/customizer/options/footer/footer-column.php:159
-msgid "Widget Link"
-msgstr ""
-
-#: inc/customizer/options/footer-builder/bottom-area.php:5
-#: inc/customizer/options/header-builder/bottom-area.php:5
-#: inc/customizer/panels-sections/panels-sections.php:250
-#: inc/customizer/panels-sections/panels-sections.php:335
+#: inc/customizer/options/footer-builder/bottom-area.php:5, inc/customizer/options/header-builder/bottom-area.php:5, inc/customizer/panels-sections/panels-sections.php:247, inc/customizer/panels-sections/panels-sections.php:332
 msgid "Bottom Area"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:27
-#: inc/customizer/options/footer-builder/main-area.php:27
-#: inc/customizer/options/footer-builder/top-area.php:27
-#: inc/customizer/options/global/container.php:6
-#: inc/customizer/options/header-builder/bottom-area.php:16
-#: inc/customizer/options/header-builder/main-area.php:16
-#: inc/customizer/options/header-builder/top-area.php:18
-#: inc/customizer/panels-sections/panels-sections.php:50
+#: inc/customizer/options/footer-builder/bottom-area.php:27, inc/customizer/options/footer-builder/main-area.php:27, inc/customizer/options/footer-builder/top-area.php:27, inc/customizer/options/global/container.php:6, inc/customizer/options/header-builder/bottom-area.php:16, inc/customizer/options/header-builder/main-area.php:16, inc/customizer/options/header-builder/top-area.php:18, inc/customizer/panels-sections/panels-sections.php:47
 msgid "Container"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:44
-#: inc/customizer/options/footer-builder/main-area.php:44
-#: inc/customizer/options/footer-builder/top-area.php:44
-#: inc/customizer/options/header-builder/bottom-area.php:33
-#: inc/customizer/options/header-builder/logo.php:40
-#: inc/customizer/options/header-builder/main-area.php:33
-#: inc/customizer/options/header-builder/top-area.php:35
+#: inc/customizer/options/footer-builder/bottom-area.php:44, inc/customizer/options/footer-builder/main-area.php:44, inc/customizer/options/footer-builder/top-area.php:44, inc/customizer/options/header-builder/bottom-area.php:33, inc/customizer/options/header-builder/logo.php:40, inc/customizer/options/header-builder/main-area.php:33, inc/customizer/options/header-builder/top-area.php:35
 msgid "Height"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:81
-#: inc/customizer/options/footer-builder/main-area.php:105
-#: inc/customizer/options/footer-builder/top-area.php:94
-#: inc/customizer/options/global/button.php:71
-#: inc/customizer/options/header-builder/bottom-area.php:79
-#: inc/customizer/options/header-builder/header-button.php:83
-#: inc/customizer/options/header-builder/main-area.php:70
-#: inc/customizer/options/header-builder/top-area.php:71
+#: inc/customizer/options/footer-builder/bottom-area.php:51, inc/customizer/options/footer-builder/copyright.php:31, inc/customizer/options/footer-builder/html-1.php:19, inc/customizer/options/footer-builder/main-area.php:51, inc/customizer/options/footer-builder/top-area.php:51, inc/customizer/options/footer/footer-bar.php:80, inc/customizer/options/global/button.php:19, inc/customizer/options/header-and-navigation/header-action.php:18, inc/customizer/options/header-and-navigation/primary-menu.php:55, inc/customizer/options/header-and-navigation/primary-menu.php:73, inc/customizer/options/header-and-navigation/primary-menu.php:200, inc/customizer/options/header-and-navigation/site-identity.php:57, inc/customizer/options/header-and-navigation/site-identity.php:129, inc/customizer/options/header-builder/bottom-area.php:40, inc/customizer/options/header-builder/date.php:31, inc/customizer/options/header-builder/header-button.php:34, inc/customizer/options/header-builder/home-icon.php:14, inc/customizer/options/header-builder/html-1.php:19, inc/customizer/options/header-builder/logo.php:67, inc/customizer/options/header-builder/logo.php:157, inc/customizer/options/header-builder/main-area.php:40, inc/customizer/options/header-builder/mobile-menu.php:19, inc/customizer/options/header-builder/news-ticker.php:14, inc/customizer/options/header-builder/primary-menu.php:26, inc/customizer/options/header-builder/search.php:14, inc/customizer/options/header-builder/toggle-button.php:12, inc/customizer/options/header-builder/top-area.php:42
+msgid "Color"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:67, inc/customizer/options/footer-builder/main-area.php:91, inc/customizer/options/footer-builder/top-area.php:67, inc/customizer/options/footer/footer-bar.php:63, inc/customizer/options/footer/footer-column.php:74, inc/customizer/options/footer/footer-column.php:99, inc/customizer/options/global/button.php:41, inc/customizer/options/global/container.php:41, inc/customizer/options/header-and-navigation/main-header.php:138, inc/customizer/options/header-and-navigation/primary-menu.php:28, inc/customizer/options/header-and-navigation/primary-menu.php:140, inc/customizer/options/header-and-navigation/primary-menu.php:269, inc/customizer/options/header-and-navigation/top-bar.php:49, inc/customizer/options/header-builder/bottom-area.php:66, inc/customizer/options/header-builder/header-button.php:55, inc/customizer/options/header-builder/main-area.php:56, inc/customizer/options/header-builder/mobile-menu.php:51, inc/customizer/options/header-builder/offset-area.php:14, inc/customizer/options/header-builder/primary-menu.php:48, inc/customizer/options/header-builder/primary-menu.php:107, inc/customizer/options/header-builder/search.php:28, inc/customizer/options/header-builder/secondary-menu.php:47, inc/customizer/options/header-builder/secondary-menu.php:105, inc/customizer/options/header-builder/top-area.php:58
+msgid "Background"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:81, inc/customizer/options/footer-builder/main-area.php:105, inc/customizer/options/footer-builder/top-area.php:94, inc/customizer/options/global/button.php:71, inc/customizer/options/header-builder/bottom-area.php:79, inc/customizer/options/header-builder/header-button.php:83, inc/customizer/options/header-builder/main-area.php:70, inc/customizer/options/header-builder/top-area.php:71
 msgid "Padding"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:97
-#: inc/customizer/options/footer-builder/main-area.php:121
-#: inc/customizer/options/footer-builder/top-area.php:110
-#: inc/customizer/options/header-builder/bottom-area.php:94
-#: inc/customizer/options/header-builder/main-area.php:86
+#: inc/customizer/options/footer-builder/bottom-area.php:97, inc/customizer/options/footer-builder/main-area.php:121, inc/customizer/options/footer-builder/top-area.php:110, inc/customizer/options/header-builder/bottom-area.php:94, inc/customizer/options/header-builder/main-area.php:86
 msgid "Margin"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:113
-#: inc/customizer/options/footer-builder/main-area.php:137
-#: inc/customizer/options/footer-builder/top-area.php:126
-#: inc/customizer/options/header-builder/bottom-area.php:109
-#: inc/customizer/options/header-builder/header-button.php:98
-#: inc/customizer/options/header-builder/main-area.php:102
-#: inc/customizer/options/header-builder/top-area.php:86
+#: inc/customizer/options/footer-builder/bottom-area.php:113, inc/customizer/options/footer-builder/main-area.php:137, inc/customizer/options/footer-builder/top-area.php:126, inc/customizer/options/header-builder/bottom-area.php:109, inc/customizer/options/header-builder/header-button.php:98, inc/customizer/options/header-builder/main-area.php:102, inc/customizer/options/header-builder/top-area.php:86
 msgid "Border Width"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:121
-#: inc/customizer/options/footer-builder/main-area.php:145
-#: inc/customizer/options/footer-builder/top-area.php:134
-#: inc/customizer/options/header-builder/bottom-area.php:116
-#: inc/customizer/options/header-builder/header-button.php:107
-#: inc/customizer/options/header-builder/main-area.php:110
-#: inc/customizer/options/header-builder/top-area.php:94
+#: inc/customizer/options/footer-builder/bottom-area.php:121, inc/customizer/options/footer-builder/main-area.php:145, inc/customizer/options/footer-builder/top-area.php:134, inc/customizer/options/header-builder/bottom-area.php:116, inc/customizer/options/header-builder/header-button.php:107, inc/customizer/options/header-builder/main-area.php:110, inc/customizer/options/header-builder/top-area.php:94
 msgid "Border Color"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:5
-#: inc/customizer/options/footer-builder/copyright.php:20
-#: inc/customizer/options/footer-builder/footer-builder.php:67
-#: inc/customizer/panels-sections/panels-sections.php:275
+#: inc/customizer/options/footer-builder/bottom-area.php:134, inc/customizer/options/footer-builder/main-area.php:205, inc/customizer/options/footer-builder/top-area.php:148
+msgid "Inner Elements"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:139, inc/customizer/options/footer-builder/main-area.php:210, inc/customizer/options/footer-builder/top-area.php:153
+msgid " Layout"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:143, inc/customizer/options/footer-builder/main-area.php:214, inc/customizer/options/footer-builder/top-area.php:157
+msgid "Stack"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/bottom-area.php:144, inc/customizer/options/footer-builder/main-area.php:215, inc/customizer/options/footer-builder/top-area.php:158
+msgid "Inline"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/copyright.php:5, inc/customizer/options/footer-builder/copyright.php:20, inc/customizer/options/footer-builder/footer-builder.php:67, inc/customizer/panels-sections/panels-sections.php:272
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:13
-#: inc/helper/utils.php:16
-#. translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress
-#. Link.
+#. translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link.
+#: inc/customizer/options/footer-builder/copyright.php:13, inc/helper/utils.php:16
 msgid "Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s."
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:39
-#: inc/customizer/options/footer-builder/html-1.php:27
-#: inc/customizer/options/global/colors.php:142
-#: inc/customizer/options/global/colors.php:149
-#: inc/customizer/options/header-builder/html-1.php:27
-#: template-parts/hooks/content/content.php:92
+#: inc/customizer/options/footer-builder/copyright.php:39, inc/customizer/options/footer-builder/html-1.php:27, inc/customizer/options/global/colors.php:142, inc/customizer/options/global/colors.php:149, inc/customizer/options/header-builder/html-1.php:27, template-parts/hooks/content/content.php:92
 msgid "Links"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:10
-#: inc/customizer/options/footer-builder/html-1.php:6
-#: inc/customizer/options/header-builder/header-builder.php:34
-#: inc/customizer/options/header-builder/header-builder.php:100
-#: inc/customizer/options/header-builder/html-1.php:6
-#: inc/customizer/panels-sections/panels-sections.php:195
-#: inc/customizer/panels-sections/panels-sections.php:340
+#: inc/customizer/options/footer-builder/copyright.php:47, inc/customizer/options/footer-builder/footer-menu.php:31, inc/customizer/options/footer-builder/html-1.php:35, inc/customizer/options/footer-builder/main-area.php:67, inc/customizer/options/footer-builder/widget-1.php:71, inc/customizer/options/footer-builder/widget-2.php:71, inc/customizer/options/footer-builder/widget-3.php:71, inc/customizer/options/footer-builder/widget-4.php:71, inc/customizer/options/footer-builder/widget-5.php:71, inc/customizer/options/footer-builder/widget-6.php:71, inc/customizer/options/footer-builder/widget-7.php:71, inc/customizer/options/footer/footer-bar.php:86, inc/customizer/options/footer/footer-column.php:122, inc/customizer/options/footer/footer-column.php:147, inc/customizer/options/footer/footer-column.php:172, inc/customizer/options/global/button.php:26, inc/customizer/options/global/button.php:48, inc/customizer/options/global/colors.php:157, inc/customizer/options/header-and-navigation/header-action.php:26, inc/customizer/options/header-and-navigation/primary-menu.php:81, inc/customizer/options/header-and-navigation/primary-menu.php:208, inc/customizer/options/header-and-navigation/site-identity.php:65, inc/customizer/options/header-builder/header-button.php:40, inc/customizer/options/header-builder/header-button.php:61, inc/customizer/options/header-builder/html-1.php:35, inc/customizer/options/header-builder/logo.php:75, inc/customizer/options/header-builder/mobile-menu.php:27, inc/customizer/options/header-builder/primary-menu.php:32, inc/customizer/options/header-builder/random.php:21, inc/customizer/options/header-builder/secondary-menu.php:32
+msgid "Normal"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/copyright.php:54, inc/customizer/options/footer-builder/footer-menu.php:38, inc/customizer/options/footer-builder/html-1.php:42, inc/customizer/options/footer-builder/main-area.php:74, inc/customizer/options/footer-builder/widget-1.php:78, inc/customizer/options/footer-builder/widget-2.php:78, inc/customizer/options/footer-builder/widget-3.php:78, inc/customizer/options/footer-builder/widget-4.php:78, inc/customizer/options/footer-builder/widget-5.php:78, inc/customizer/options/footer-builder/widget-6.php:78, inc/customizer/options/footer-builder/widget-7.php:78, inc/customizer/options/footer/footer-bar.php:93, inc/customizer/options/footer/footer-column.php:179, inc/customizer/options/global/button.php:33, inc/customizer/options/global/button.php:55, inc/customizer/options/global/colors.php:164, inc/customizer/options/header-and-navigation/header-action.php:33, inc/customizer/options/header-and-navigation/site-identity.php:72, inc/customizer/options/header-builder/header-button.php:47, inc/customizer/options/header-builder/header-button.php:68, inc/customizer/options/header-builder/html-1.php:42, inc/customizer/options/header-builder/logo.php:82, inc/customizer/options/header-builder/mobile-menu.php:34, inc/customizer/options/header-builder/primary-menu.php:39, inc/customizer/options/header-builder/primary-menu.php:54, inc/customizer/options/header-builder/random.php:28, inc/customizer/options/header-builder/secondary-menu.php:39, inc/customizer/options/header-builder/secondary-menu.php:53
+msgid "Hover"
+msgstr ""
+
+#: inc/customizer/options/footer-builder/footer-builder.php:10, inc/customizer/options/footer-builder/html-1.php:6, inc/customizer/options/header-builder/header-builder.php:34, inc/customizer/options/header-builder/header-builder.php:100, inc/customizer/options/header-builder/html-1.php:6, inc/customizer/panels-sections/panels-sections.php:192, inc/customizer/panels-sections/panels-sections.php:337
 msgid "HTML 1"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:15
-#: inc/customizer/options/footer-builder/widget-1.php:6
-#: inc/customizer/options/header-builder/header-builder.php:39
-#: inc/customizer/options/header-builder/header-builder.php:105
-#: inc/customizer/options/header-builder/widget-1.php:6
-#: inc/customizer/panels-sections/panels-sections.php:205
-#: inc/customizer/panels-sections/panels-sections.php:290
+#: inc/customizer/options/footer-builder/footer-builder.php:15, inc/customizer/options/footer-builder/widget-1.php:6, inc/customizer/options/header-builder/header-builder.php:39, inc/customizer/options/header-builder/header-builder.php:105, inc/customizer/options/header-builder/widget-1.php:6, inc/customizer/panels-sections/panels-sections.php:202, inc/customizer/panels-sections/panels-sections.php:287
 msgid "Widget 1"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:21
-#: inc/customizer/options/footer-builder/widget-2.php:6
-#: inc/customizer/options/header-builder/header-builder.php:45
-#: inc/customizer/options/header-builder/header-builder.php:111
-#: inc/customizer/options/header-builder/widget-2.php:6
-#: inc/customizer/panels-sections/panels-sections.php:210
-#: inc/customizer/panels-sections/panels-sections.php:295
+#: inc/customizer/options/footer-builder/footer-builder.php:21, inc/customizer/options/footer-builder/widget-2.php:6, inc/customizer/options/header-builder/header-builder.php:45, inc/customizer/options/header-builder/header-builder.php:111, inc/customizer/options/header-builder/widget-2.php:6, inc/customizer/panels-sections/panels-sections.php:207, inc/customizer/panels-sections/panels-sections.php:292
 msgid "Widget 2"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:27
-#: inc/customizer/options/footer-builder/widget-3.php:6
-#: inc/customizer/panels-sections/panels-sections.php:300
+#: inc/customizer/options/footer-builder/footer-builder.php:27, inc/customizer/options/footer-builder/widget-3.php:6, inc/customizer/panels-sections/panels-sections.php:297
 msgid "Widget 3"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:33
-#: inc/customizer/options/footer-builder/widget-4.php:6
-#: inc/customizer/panels-sections/panels-sections.php:305
+#: inc/customizer/options/footer-builder/footer-builder.php:33, inc/customizer/options/footer-builder/widget-4.php:6, inc/customizer/panels-sections/panels-sections.php:302
 msgid "Widget 4"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:39
-#: inc/customizer/options/footer-builder/widget-5.php:6
-#: inc/customizer/panels-sections/panels-sections.php:310
+#: inc/customizer/options/footer-builder/footer-builder.php:39, inc/customizer/options/footer-builder/widget-5.php:6, inc/customizer/panels-sections/panels-sections.php:307
 msgid "Widget 5"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:45
-#: inc/customizer/options/footer-builder/widget-6.php:6
-#: inc/customizer/panels-sections/panels-sections.php:315
-#: inc/customizer/panels-sections/panels-sections.php:320
+#: inc/customizer/options/footer-builder/footer-builder.php:45, inc/customizer/options/footer-builder/widget-6.php:6, inc/customizer/panels-sections/panels-sections.php:312, inc/customizer/panels-sections/panels-sections.php:317
 msgid "Widget 6"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:51
-#: inc/customizer/options/footer-builder/widget-7.php:6
+#: inc/customizer/options/footer-builder/footer-builder.php:51, inc/customizer/options/footer-builder/widget-7.php:6
 msgid "Widget 7"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:57
-#: inc/customizer/panels-sections/panels-sections.php:280
+#: inc/customizer/options/footer-builder/footer-builder.php:57, inc/customizer/panels-sections/panels-sections.php:277
 msgid "Menu 1"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:62
-#: inc/customizer/panels-sections/panels-sections.php:270
+#: inc/customizer/options/footer-builder/footer-builder.php:62, inc/customizer/panels-sections/panels-sections.php:267
 msgid "Socials"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/footer-builder.php:79
-#: inc/customizer/options/global/builder.php:6
-#: inc/customizer/options/header-builder/header-builder.php:149
-#: inc/customizer/panels-sections/panels-sections.php:35
+#: inc/customizer/options/footer-builder/footer-builder.php:79, inc/customizer/options/global/builder.php:6, inc/customizer/options/header-builder/header-builder.php:154, inc/customizer/panels-sections/panels-sections.php:32
 msgid "Builder"
 msgstr ""
 
@@ -1415,25 +1042,19 @@ msgstr ""
 msgid "Select a Menu"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/html-1.php:14
-#: inc/customizer/options/header-builder/html-1.php:14
+#: inc/customizer/options/footer-builder/html-1.php:14, inc/customizer/options/header-builder/html-1.php:14
 msgid "Text/HTML for HTML 1"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/html-1.php:50
-#: inc/customizer/options/header-builder/html-1.php:50
+#: inc/customizer/options/footer-builder/html-1.php:50, inc/customizer/options/header-builder/html-1.php:50
 msgid "Font Size"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/main-area.php:5
-#: inc/customizer/options/header-builder/main-area.php:5
-#: inc/customizer/panels-sections/panels-sections.php:245
-#: inc/customizer/panels-sections/panels-sections.php:330
+#: inc/customizer/options/footer-builder/main-area.php:5, inc/customizer/options/header-builder/main-area.php:5, inc/customizer/panels-sections/panels-sections.php:242, inc/customizer/panels-sections/panels-sections.php:327
 msgid "Main Area"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/main-area.php:59
-#: inc/customizer/options/header-builder/news-ticker.php:21
+#: inc/customizer/options/footer-builder/main-area.php:59, inc/customizer/options/header-builder/news-ticker.php:21
 msgid "Link Color"
 msgstr ""
 
@@ -1441,16 +1062,7 @@ msgstr ""
 msgid "Widget"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/main-area.php:162
-#: inc/customizer/options/footer-builder/widget-1.php:14
-#: inc/customizer/options/footer-builder/widget-2.php:14
-#: inc/customizer/options/footer-builder/widget-3.php:14
-#: inc/customizer/options/footer-builder/widget-4.php:14
-#: inc/customizer/options/footer-builder/widget-5.php:14
-#: inc/customizer/options/footer-builder/widget-6.php:14
-#: inc/customizer/options/footer-builder/widget-7.php:14
-#: inc/customizer/options/header-builder/widget-1.php:14
-#: inc/customizer/options/header-builder/widget-2.php:14
+#: inc/customizer/options/footer-builder/main-area.php:162, inc/customizer/options/footer-builder/widget-1.php:14, inc/customizer/options/footer-builder/widget-2.php:14, inc/customizer/options/footer-builder/widget-3.php:14, inc/customizer/options/footer-builder/widget-4.php:14, inc/customizer/options/footer-builder/widget-5.php:14, inc/customizer/options/footer-builder/widget-6.php:14, inc/customizer/options/footer-builder/widget-7.php:14, inc/customizer/options/header-builder/widget-1.php:14, inc/customizer/options/header-builder/widget-2.php:14
 msgid "Title Color"
 msgstr ""
 
@@ -1466,20 +1078,11 @@ msgstr ""
 msgid "Border Bottom Color"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/socials.php:5
-#: inc/customizer/options/footer-builder/socials.php:12
-#: inc/customizer/options/header-builder/header-builder.php:51
-#: inc/customizer/options/header-builder/header-builder.php:137
-#: inc/customizer/options/header-builder/socials.php:6
-#: inc/customizer/options/header-builder/socials.php:13
-#: inc/customizer/panels-sections/panels-sections.php:215
+#: inc/customizer/options/footer-builder/socials.php:5, inc/customizer/options/footer-builder/socials.php:12, inc/customizer/options/header-builder/header-builder.php:51, inc/customizer/options/header-builder/header-builder.php:137, inc/customizer/options/header-builder/socials.php:6, inc/customizer/options/header-builder/socials.php:13, inc/customizer/panels-sections/panels-sections.php:212
 msgid "Social"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/top-area.php:5
-#: inc/customizer/options/header-builder/top-area.php:7
-#: inc/customizer/panels-sections/panels-sections.php:240
-#: inc/customizer/panels-sections/panels-sections.php:325
+#: inc/customizer/options/footer-builder/top-area.php:5, inc/customizer/options/header-builder/top-area.php:7, inc/customizer/panels-sections/panels-sections.php:237, inc/customizer/panels-sections/panels-sections.php:322
 msgid "Top Area"
 msgstr ""
 
@@ -1487,59 +1090,71 @@ msgstr ""
 msgid "Column Background"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/widget-1.php:55
-#: inc/customizer/options/footer-builder/widget-2.php:55
-#: inc/customizer/options/footer-builder/widget-3.php:55
-#: inc/customizer/options/footer-builder/widget-4.php:55
-#: inc/customizer/options/footer-builder/widget-5.php:55
-#: inc/customizer/options/footer-builder/widget-6.php:55
-#: inc/customizer/options/footer-builder/widget-7.php:55
-#: inc/customizer/options/header-builder/widget-1.php:55
-#: inc/customizer/options/header-builder/widget-2.php:55
+#: inc/customizer/options/footer-builder/widget-1.php:55, inc/customizer/options/footer-builder/widget-2.php:55, inc/customizer/options/footer-builder/widget-3.php:55, inc/customizer/options/footer-builder/widget-4.php:55, inc/customizer/options/footer-builder/widget-5.php:55, inc/customizer/options/footer-builder/widget-6.php:55, inc/customizer/options/footer-builder/widget-7.php:55, inc/customizer/options/header-builder/widget-1.php:55, inc/customizer/options/header-builder/widget-2.php:55
 msgid "Title Typography"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/widget-1.php:65
-#: inc/customizer/options/footer-builder/widget-2.php:65
-#: inc/customizer/options/footer-builder/widget-3.php:65
-#: inc/customizer/options/footer-builder/widget-4.php:65
-#: inc/customizer/options/footer-builder/widget-5.php:65
-#: inc/customizer/options/footer-builder/widget-6.php:65
-#: inc/customizer/options/footer-builder/widget-7.php:65
+#: inc/customizer/options/footer-builder/widget-1.php:65, inc/customizer/options/footer-builder/widget-2.php:65, inc/customizer/options/footer-builder/widget-3.php:65, inc/customizer/options/footer-builder/widget-4.php:65, inc/customizer/options/footer-builder/widget-5.php:65, inc/customizer/options/footer-builder/widget-6.php:65, inc/customizer/options/footer-builder/widget-7.php:65
 msgid "Link."
 msgstr ""
 
-#: inc/customizer/options/footer-builder/widget-1.php:92
-#: inc/customizer/options/footer-builder/widget-2.php:92
-#: inc/customizer/options/footer-builder/widget-3.php:92
-#: inc/customizer/options/footer-builder/widget-4.php:92
-#: inc/customizer/options/footer-builder/widget-5.php:92
-#: inc/customizer/options/footer-builder/widget-6.php:92
-#: inc/customizer/options/footer-builder/widget-7.php:92
-#: inc/customizer/options/header-builder/widget-1.php:78
-#: inc/customizer/options/header-builder/widget-2.php:78
+#: inc/customizer/options/footer-builder/widget-1.php:92, inc/customizer/options/footer-builder/widget-2.php:92, inc/customizer/options/footer-builder/widget-3.php:92, inc/customizer/options/footer-builder/widget-4.php:92, inc/customizer/options/footer-builder/widget-5.php:92, inc/customizer/options/footer-builder/widget-6.php:92, inc/customizer/options/footer-builder/widget-7.php:92, inc/customizer/options/header-builder/widget-1.php:78, inc/customizer/options/header-builder/widget-2.php:78
 msgid "Content Color"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/widget-1.php:133
-#: inc/customizer/options/footer-builder/widget-2.php:133
-#: inc/customizer/options/footer-builder/widget-3.php:133
-#: inc/customizer/options/footer-builder/widget-4.php:133
-#: inc/customizer/options/footer-builder/widget-5.php:133
-#: inc/customizer/options/footer-builder/widget-6.php:133
-#: inc/customizer/options/footer-builder/widget-7.php:133
-#: inc/customizer/options/header-builder/widget-1.php:119
-#: inc/customizer/options/header-builder/widget-2.php:119
+#: inc/customizer/options/footer-builder/widget-1.php:133, inc/customizer/options/footer-builder/widget-2.php:133, inc/customizer/options/footer-builder/widget-3.php:133, inc/customizer/options/footer-builder/widget-4.php:133, inc/customizer/options/footer-builder/widget-5.php:133, inc/customizer/options/footer-builder/widget-6.php:133, inc/customizer/options/footer-builder/widget-7.php:133, inc/customizer/options/header-builder/widget-1.php:119, inc/customizer/options/header-builder/widget-2.php:119
 msgid "Content Typography"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-bar.php:21, inc/customizer/options/header-and-navigation/main-header.php:76
+msgid "Alignment"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-bar.php:50, inc/customizer/options/footer/footer-column.php:61, inc/customizer/options/header-and-navigation/header-action.php:13, inc/customizer/options/header-and-navigation/main-header.php:123, inc/customizer/options/header-and-navigation/primary-menu.php:15, inc/customizer/options/header-and-navigation/primary-menu.php:195, inc/customizer/options/header-and-navigation/top-bar.php:41
+msgid "Style"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-bar.php:73
+msgid "Footer Copyright"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:21, inc/customizer/options/global/container.php:19, inc/customizer/options/global/sidebar.php:53, inc/customizer/options/header-and-navigation/main-header.php:22
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:25, inc/customizer/options/header-and-navigation/main-header.php:26
+msgid "Layout 1"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:26, inc/customizer/options/header-and-navigation/main-header.php:27
+msgid "Layout 2"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:32
+msgid "Footer Column Layout"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:84
+msgid "Upper Footer"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:116, inc/customizer/options/footer/footer-column.php:141, inc/customizer/options/footer/footer-column.php:166
+msgid "Color."
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:134
+msgid "Widget Content"
+msgstr ""
+
+#: inc/customizer/options/footer/footer-column.php:159
+msgid "Widget Link"
 msgstr ""
 
 #: inc/customizer/options/front-page/front-page.php:12
 msgid "Hide blog posts/static page"
 msgstr ""
 
-#: inc/customizer/options/global/button.php:6
-#: inc/customizer/options/header-builder/header-builder.php:90
-#: inc/customizer/panels-sections/panels-sections.php:65
+#: inc/customizer/options/global/button.php:6, inc/customizer/options/header-builder/header-builder.php:90, inc/customizer/panels-sections/panels-sections.php:62
 msgid "Button"
 msgstr ""
 
@@ -1555,8 +1170,7 @@ msgstr ""
 msgid "Categories Colors"
 msgstr ""
 
-#: inc/customizer/options/global/colors.php:8
-#: inc/customizer/options/global/colors.php:13
+#: inc/customizer/options/global/colors.php:8, inc/customizer/options/global/colors.php:13
 msgid "Customized Color palette"
 msgstr ""
 
@@ -1596,15 +1210,19 @@ msgstr ""
 msgid "Outside Background"
 msgstr ""
 
-#: inc/customizer/options/global/sidebar.php:30
-#: inc/customizer/panels-sections/panels-sections.php:55
+#: inc/customizer/options/global/container.php:82
+msgid "Demo Migrated"
+msgstr ""
+
+#: inc/customizer/options/global/container.php:89
+msgid "Demo migrated"
+msgstr ""
+
+#: inc/customizer/options/global/sidebar.php:30, inc/customizer/panels-sections/panels-sections.php:52
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer/options/global/sidebar.php:36
-#: inc/customizer/options/header-and-navigation/main-header.php:104
-#: inc/customizer/options/header-and-navigation/primary-menu.php:48
-#: inc/customizer/options/header-builder/bottom-area.php:49
+#: inc/customizer/options/global/sidebar.php:36, inc/customizer/options/header-and-navigation/main-header.php:104, inc/customizer/options/header-and-navigation/primary-menu.php:48, inc/customizer/options/header-builder/bottom-area.php:49
 msgid "Width"
 msgstr ""
 
@@ -1620,8 +1238,7 @@ msgstr ""
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:8
-#: inc/customizer/options/global/typography.php:51
+#: inc/customizer/options/global/typography.php:8, inc/customizer/options/global/typography.php:51
 msgid "Body"
 msgstr ""
 
@@ -1633,53 +1250,43 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:151
+#: inc/customizer/options/global/typography.php:165
 msgid "H1"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:192
+#: inc/customizer/options/global/typography.php:206
 msgid "H2"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:232
+#: inc/customizer/options/global/typography.php:246
 msgid "H3"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:271
+#: inc/customizer/options/global/typography.php:285
 msgid "H4"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:310
+#: inc/customizer/options/global/typography.php:324
 msgid "H5"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:349
+#: inc/customizer/options/global/typography.php:363
 msgid "H6"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/breadcrumb.php:8
-#: inc/customizer/panels-sections/panels-sections.php:110
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:8, inc/customizer/panels-sections/panels-sections.php:107
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/header-action.php:6
-#: inc/customizer/panels-sections/panels-sections.php:100
+#: inc/customizer/options/header-and-navigation/header-action.php:6, inc/customizer/panels-sections/panels-sections.php:97
 msgid "Header Action"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/header-action.php:46
-#: inc/customizer/options/header-builder/header-builder.php:29
-#: inc/customizer/options/header-builder/header-builder.php:95
-#: inc/customizer/options/header-builder/search.php:6
-#: inc/customizer/panels-sections/panels-sections.php:190 searchform.php:23
+#: inc/customizer/options/header-and-navigation/header-action.php:46, inc/customizer/options/header-builder/header-builder.php:29, inc/customizer/options/header-builder/header-builder.php:95, inc/customizer/options/header-builder/search.php:6, inc/customizer/panels-sections/panels-sections.php:187, searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/header-action.php:63
-#: inc/customizer/options/header-builder/header-builder.php:66
-#: inc/customizer/options/header-builder/header-builder.php:132
-#: inc/customizer/options/header-builder/random.php:6
-#: inc/customizer/panels-sections/panels-sections.php:220
+#: inc/customizer/options/header-and-navigation/header-action.php:63, inc/customizer/options/header-builder/header-builder.php:66, inc/customizer/options/header-builder/header-builder.php:132, inc/customizer/options/header-builder/random.php:6, inc/customizer/panels-sections/panels-sections.php:217
 msgid "Random"
 msgstr ""
 
@@ -1699,29 +1306,19 @@ msgstr ""
 msgid "Check to make header image link back to home page"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/main-header.php:33
-#: inc/customizer/options/header-and-navigation/main-header.php:56
+#: inc/customizer/options/header-and-navigation/main-header.php:33, inc/customizer/options/header-and-navigation/main-header.php:56
 msgid "Advanced Style"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/main-header.php:107
-#: inc/customizer/options/header-builder/bottom-area.php:52
+#: inc/customizer/options/header-and-navigation/main-header.php:107, inc/customizer/options/header-builder/bottom-area.php:52
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/main-header.php:108
-#: inc/customizer/options/header-builder/bottom-area.php:53
+#: inc/customizer/options/header-and-navigation/main-header.php:108, inc/customizer/options/header-builder/bottom-area.php:53
 msgid "Contained"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/news-ticker.php:8
-#: inc/customizer/options/header-and-navigation/top-bar.php:113
-#: inc/customizer/options/header-and-navigation/top-bar.php:119
-#: inc/customizer/options/header-builder/header-builder.php:61
-#: inc/customizer/options/header-builder/header-builder.php:127
-#: inc/customizer/options/header-builder/news-ticker.php:8
-#: inc/customizer/panels-sections/panels-sections.php:80
-#: inc/customizer/panels-sections/panels-sections.php:260
+#: inc/customizer/options/header-and-navigation/news-ticker.php:8, inc/customizer/options/header-and-navigation/top-bar.php:113, inc/customizer/options/header-and-navigation/top-bar.php:119, inc/customizer/options/header-builder/header-builder.php:61, inc/customizer/options/header-builder/header-builder.php:127, inc/customizer/options/header-builder/news-ticker.php:8, inc/customizer/panels-sections/panels-sections.php:77, inc/customizer/panels-sections/panels-sections.php:257
 msgid "News Ticker"
 msgstr ""
 
@@ -1733,32 +1330,23 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/primary-menu.php:88
-#: inc/customizer/options/header-and-navigation/primary-menu.php:215
+#: inc/customizer/options/header-and-navigation/primary-menu.php:88, inc/customizer/options/header-and-navigation/primary-menu.php:215
 msgid "Hover/Selected"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/primary-menu.php:125
-#: inc/customizer/options/header-and-navigation/primary-menu.php:256
-#: inc/customizer/options/header-builder/primary-menu.php:92
-#: inc/customizer/options/header-builder/secondary-menu.php:90
+#: inc/customizer/options/header-and-navigation/primary-menu.php:125, inc/customizer/options/header-and-navigation/primary-menu.php:256, inc/customizer/options/header-builder/primary-menu.php:92, inc/customizer/options/header-builder/secondary-menu.php:90
 msgid "Sub Menu"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/primary-menu.php:172
-#: inc/customizer/options/header-builder/header-builder.php:85
-#: inc/customizer/options/header-builder/mobile-menu.php:11
-#: inc/customizer/panels-sections/panels-sections.php:170
+#: inc/customizer/options/header-and-navigation/primary-menu.php:172, inc/customizer/options/header-builder/header-builder.php:85, inc/customizer/options/header-builder/mobile-menu.php:11, inc/customizer/panels-sections/panels-sections.php:167
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/primary-menu.php:183
-#: inc/customizer/options/header-builder/random.php:13
+#: inc/customizer/options/header-and-navigation/primary-menu.php:183, inc/customizer/options/header-builder/random.php:13
 msgid "Icon Color"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/primary-menu.php:301
-#: inc/customizer/options/header-and-navigation/primary-menu.php:309
+#: inc/customizer/options/header-and-navigation/primary-menu.php:301, inc/customizer/options/header-and-navigation/primary-menu.php:309
 msgid "Home Icon/Logo"
 msgstr ""
 
@@ -1766,39 +1354,27 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/primary-menu.php:313
-#: inc/customizer/options/header-builder/header-builder.php:71
-#: inc/customizer/options/header-builder/home-icon.php:6
-#: inc/customizer/panels-sections/panels-sections.php:225
+#: inc/customizer/options/header-and-navigation/primary-menu.php:313, inc/customizer/options/header-builder/header-builder.php:71, inc/customizer/options/header-builder/header-builder.php:142, inc/customizer/options/header-builder/home-icon.php:6, inc/customizer/panels-sections/panels-sections.php:222
 msgid "Home Icon"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:14
-#: inc/customizer/options/header-builder/logo.php:12
+#: inc/customizer/options/header-and-navigation/site-identity.php:14, inc/customizer/options/header-builder/logo.php:12
 msgid "Site Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:22
-#: inc/customizer/options/header-builder/header-builder.php:80
-#: inc/customizer/options/header-builder/logo.php:20
-#: inc/customizer/panels-sections/panels-sections.php:160
+#: inc/customizer/options/header-and-navigation/site-identity.php:22, inc/customizer/options/header-builder/header-builder.php:80, inc/customizer/options/header-builder/logo.php:20, inc/customizer/panels-sections/panels-sections.php:157
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:31
-#: inc/customizer/options/header-builder/logo.php:29
+#: inc/customizer/options/header-and-navigation/site-identity.php:31, inc/customizer/options/header-builder/logo.php:29
 msgid "Retina Logo"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:33
-#: inc/customizer/options/header-builder/logo.php:31
-msgid ""
-"Upload 2X times the size of your current logo. Eg: If your current logo "
-"size is 120*60 then upload 240*120 sized logo."
+#: inc/customizer/options/header-and-navigation/site-identity.php:33, inc/customizer/options/header-builder/logo.php:31
+msgid "Upload 2X times the size of your current logo. Eg: If your current logo size is 120*60 then upload 240*120 sized logo."
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/site-identity.php:42
-#: inc/customizer/options/header-builder/logo.php:52
+#: inc/customizer/options/header-and-navigation/site-identity.php:42, inc/customizer/options/header-builder/logo.php:52
 msgid "Site Title"
 msgstr ""
 
@@ -1806,23 +1382,19 @@ msgstr ""
 msgid "Site Tagline"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/sticky-header.php:8
-#: inc/customizer/panels-sections/panels-sections.php:115
+#: inc/customizer/options/header-and-navigation/sticky-header.php:8, inc/customizer/panels-sections/panels-sections.php:112
 msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/top-bar.php:87
-#: inc/customizer/options/header-builder/date.php:16
+#: inc/customizer/options/header-and-navigation/top-bar.php:87, inc/customizer/options/header-builder/date.php:16
 msgid "Date Format"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/top-bar.php:90
-#: inc/customizer/options/header-builder/date.php:19
+#: inc/customizer/options/header-and-navigation/top-bar.php:90, inc/customizer/options/header-builder/date.php:19
 msgid "Theme Default Setting"
 msgstr ""
 
-#: inc/customizer/options/header-and-navigation/top-bar.php:91
-#: inc/customizer/options/header-builder/date.php:20
+#: inc/customizer/options/header-and-navigation/top-bar.php:91, inc/customizer/options/header-builder/date.php:20
 msgid "From WordPress Date Setting"
 msgstr ""
 
@@ -1830,68 +1402,63 @@ msgstr ""
 msgid "Site Title & Logo"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:24
-#: inc/customizer/options/header-builder/header-button.php:6
+#: inc/customizer/options/header-builder/header-builder.php:24, inc/customizer/options/header-builder/header-button.php:6
 msgid "Button 1"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:117
-#: inc/customizer/options/header-builder/toggle-button.php:6
-#: inc/customizer/panels-sections/panels-sections.php:165
+#: inc/customizer/options/header-builder/header-builder.php:117, inc/customizer/options/header-builder/toggle-button.php:6, inc/customizer/panels-sections/panels-sections.php:162
 msgid "Toggle Button"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:208
+#: inc/customizer/options/header-builder/header-builder.php:213
 msgid "Builder area top"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:213
+#: inc/customizer/options/header-builder/header-builder.php:218
 msgid "Builder area top left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:218
+#: inc/customizer/options/header-builder/header-builder.php:223
 msgid "Builder area top middle"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:223
+#: inc/customizer/options/header-builder/header-builder.php:228
 msgid "Builder area top right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:230
+#: inc/customizer/options/header-builder/header-builder.php:235
 msgid "Builder Main area"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:235
+#: inc/customizer/options/header-builder/header-builder.php:240
 msgid "Builder area middle left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:240
+#: inc/customizer/options/header-builder/header-builder.php:245
 msgid "Main center"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:245
+#: inc/customizer/options/header-builder/header-builder.php:250
 msgid "Main right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:252
+#: inc/customizer/options/header-builder/header-builder.php:257
 msgid "Bottom"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:257
+#: inc/customizer/options/header-builder/header-builder.php:262
 msgid "Bottom left"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:262
+#: inc/customizer/options/header-builder/header-builder.php:267
 msgid "Bottom center"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:267
+#: inc/customizer/options/header-builder/header-builder.php:272
 msgid "Bottom right"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-builder.php:275
-#: inc/customizer/options/header-builder/offset-area.php:6
-#: inc/customizer/panels-sections/panels-sections.php:230
+#: inc/customizer/options/header-builder/header-builder.php:280, inc/customizer/options/header-builder/offset-area.php:6, inc/customizer/panels-sections/panels-sections.php:227
 msgid "Offset Area"
 msgstr ""
 
@@ -1899,9 +1466,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-button.php:19
-#: inc/customizer/options/header-builder/widget-1.php:66
-#: inc/customizer/options/header-builder/widget-2.php:66
+#: inc/customizer/options/header-builder/header-button.php:19, inc/customizer/options/header-builder/widget-1.php:66, inc/customizer/options/header-builder/widget-2.php:66
 msgid "Link"
 msgstr ""
 
@@ -1921,8 +1486,7 @@ msgstr ""
 msgid "Tagline"
 msgstr ""
 
-#: inc/customizer/options/header-builder/primary-menu.php:18
-#: inc/customizer/options/header-builder/secondary-menu.php:18
+#: inc/customizer/options/header-builder/primary-menu.php:18, inc/customizer/options/header-builder/secondary-menu.php:18
 msgid "Select Menu Navigation"
 msgstr ""
 
@@ -1930,28 +1494,27 @@ msgstr ""
 msgid "Text Color"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/woocommerce.php:5
-#: inc/customizer/panels-sections/panels-sections.php:155
+#: inc/customizer/options/woocommerce/woocommerce.php:27, inc/customizer/panels-sections/panels-sections.php:152
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/woocommerce.php:11
+#: inc/customizer/options/woocommerce/woocommerce.php:33
 msgid "Check to register different sidebar areas to be used for WooCommerce pages."
 msgstr ""
 
-#: inc/customizer/options/woocommerce/woocommerce.php:22
+#: inc/customizer/options/woocommerce/woocommerce.php:44
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/woocommerce.php:30
+#: inc/customizer/options/woocommerce/woocommerce.php:52
 msgid "WooCommerce Shop Page Layout"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/woocommerce.php:55
+#: inc/customizer/options/woocommerce/woocommerce.php:60
 msgid "WooCommerce Archive Page Layout"
 msgstr ""
 
-#: inc/customizer/options/woocommerce/woocommerce.php:80
+#: inc/customizer/options/woocommerce/woocommerce.php:68
 msgid "WooCommerce Single Product Page Layout"
 msgstr ""
 
@@ -1967,13 +1530,11 @@ msgstr ""
 msgid "Header & Navigation"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:14
-#: inc/customizer/panels-sections/panels-sections.php:235
+#: inc/customizer/panels-sections/panels-sections.php:14, inc/customizer/panels-sections/panels-sections.php:232
 msgid "Header Builder"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:23
-#: inc/customizer/panels-sections/panels-sections.php:265
+#: inc/customizer/panels-sections/panels-sections.php:23, inc/customizer/panels-sections/panels-sections.php:262
 msgid "Footer Builder"
 msgstr ""
 
@@ -1981,48 +1542,47 @@ msgstr ""
 msgid "Additional"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:29
-msgid "WooCommerce"
-msgstr ""
-
-#: inc/customizer/panels-sections/panels-sections.php:40
+#: inc/customizer/panels-sections/panels-sections.php:37
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:45
+#: inc/customizer/panels-sections/panels-sections.php:42
 msgid "Category Colors"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:105
+#: inc/customizer/panels-sections/panels-sections.php:102
 msgid "Header Media"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:125
+#: inc/customizer/panels-sections/panels-sections.php:122
 msgid "Single Post"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:130
+#: inc/customizer/panels-sections/panels-sections.php:127
 msgid "Post Meta"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:135
+#: inc/customizer/panels-sections/panels-sections.php:132
 msgid "Page"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:185
+#: inc/customizer/panels-sections/panels-sections.php:182
 msgid "Header Button"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:200
-#: inc/customizer/panels-sections/panels-sections.php:345
+#: inc/customizer/panels-sections/panels-sections.php:197, inc/customizer/panels-sections/panels-sections.php:342
 msgid "HTML 2"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:285
+#: inc/customizer/panels-sections/panels-sections.php:282
 msgid "Menu 2"
 msgstr ""
 
-#: inc/helper/utils.php:33 template-parts/hooks/footer/footer.php:267
+#: inc/customizer/panels-sections/panels-sections.php:350
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/helper/utils.php:33, inc/helper/utils.php:33, template-parts/hooks/footer/footer.php:267, template-parts/hooks/footer/footer.php:267
 msgid "WordPress"
 msgstr ""
 
@@ -2030,19 +1590,16 @@ msgstr ""
 msgid "Select Layout"
 msgstr ""
 
-#: inc/meta-boxes/class-colormag-meta-boxes.php:59
+#: inc/meta-boxes/class-colormag-meta-boxes.php:106
 msgid "Page Settings"
 msgstr ""
 
-#: inc/meta-boxes/class-colormag-meta-boxes.php:68
+#: inc/meta-boxes/class-colormag-meta-boxes.php:115
 msgid "Video URL"
 msgstr ""
 
 #: inc/migration/demo-import-migration.php:33
-msgid ""
-"It seems you&#39;ve either imported ColorMag demos recently or updated "
-"ColorMag to 3.0 version. After these actions, if you&#39;ve seen any design "
-"issues in your site, please try clicking the button below:"
+msgid "It seems you&#39;ve either imported ColorMag demos recently or updated ColorMag to 3.0 version. After these actions, if you&#39;ve seen any design issues in your site, please try clicking the button below:"
 msgstr ""
 
 #: inc/migration/demo-import-migration.php:42
@@ -2077,7 +1634,7 @@ msgstr ""
 msgid "Youtube"
 msgstr ""
 
-#: inc/template-tags.php:74 template-parts/content-page.php:67
+#: inc/template-tags.php:74, template-parts/content-page.php:67
 msgid "Edit"
 msgstr ""
 
@@ -2085,192 +1642,190 @@ msgstr ""
 msgid "min read"
 msgstr ""
 
-#: inc/template-tags.php:431
+#: inc/template-tags.php:437
 msgid "Euro Member Countries"
 msgstr ""
 
-#: inc/template-tags.php:432
+#: inc/template-tags.php:438
 msgid "Australian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:433
+#: inc/template-tags.php:439
 msgid "Bulgarian Lev"
 msgstr ""
 
-#: inc/template-tags.php:434
+#: inc/template-tags.php:440
 msgid "Brazilian Real"
 msgstr ""
 
-#: inc/template-tags.php:435
+#: inc/template-tags.php:441
 msgid "Canadian Dollar"
 msgstr ""
 
-#: inc/template-tags.php:436
+#: inc/template-tags.php:442
 msgid "Swiss Franc"
 msgstr ""
 
-#: inc/template-tags.php:437
+#: inc/template-tags.php:443
 msgid "Chinese Yuan Renminbi"
 msgstr ""
 
-#: inc/template-tags.php:438
+#: inc/template-tags.php:444
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: inc/template-tags.php:439
+#: inc/template-tags.php:445
 msgid "Danish Krone"
 msgstr ""
 
-#: inc/template-tags.php:440
+#: inc/template-tags.php:446
 msgid "British Pound"
 msgstr ""
 
-#: inc/template-tags.php:441
+#: inc/template-tags.php:447
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: inc/template-tags.php:442
+#: inc/template-tags.php:448
 msgid "Croatian Kuna"
 msgstr ""
 
-#: inc/template-tags.php:443
+#: inc/template-tags.php:449
 msgid "Hungarian Forint"
 msgstr ""
 
-#: inc/template-tags.php:444
+#: inc/template-tags.php:450
 msgid "Indonesian Rupiah"
 msgstr ""
 
-#: inc/template-tags.php:445
+#: inc/template-tags.php:451
 msgid "Israeli Shekel"
 msgstr ""
 
-#: inc/template-tags.php:446
+#: inc/template-tags.php:452
 msgid "Indian Rupee"
 msgstr ""
 
-#: inc/template-tags.php:447
+#: inc/template-tags.php:453
 msgid "Japanese Yen"
 msgstr ""
 
-#: inc/template-tags.php:448
+#: inc/template-tags.php:454
 msgid "Korean (South) Won"
 msgstr ""
 
-#: inc/template-tags.php:449
+#: inc/template-tags.php:455
 msgid "Mexican Peso"
 msgstr ""
 
-#: inc/template-tags.php:450
+#: inc/template-tags.php:456
 msgid "Malaysian Ringgit"
 msgstr ""
 
-#: inc/template-tags.php:451
+#: inc/template-tags.php:457
 msgid "Norwegian Krone"
 msgstr ""
 
-#: inc/template-tags.php:452
+#: inc/template-tags.php:458
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: inc/template-tags.php:453
+#: inc/template-tags.php:459
 msgid "Philippine Peso"
 msgstr ""
 
-#: inc/template-tags.php:454
+#: inc/template-tags.php:460
 msgid "Polish Zloty"
 msgstr ""
 
-#: inc/template-tags.php:455
+#: inc/template-tags.php:461
 msgid "Romanian (New) Leu"
 msgstr ""
 
-#: inc/template-tags.php:456
+#: inc/template-tags.php:462
 msgid "Russian Ruble"
 msgstr ""
 
-#: inc/template-tags.php:457
+#: inc/template-tags.php:463
 msgid "Swedish Krona"
 msgstr ""
 
-#: inc/template-tags.php:458
+#: inc/template-tags.php:464
 msgid "Singapore Dollar"
 msgstr ""
 
-#: inc/template-tags.php:459
+#: inc/template-tags.php:465
 msgid "Thai Baht"
 msgstr ""
 
-#: inc/template-tags.php:460
+#: inc/template-tags.php:466
 msgid "Turkish Lira"
 msgstr ""
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:467
 msgid "United States Dollar"
 msgstr ""
 
-#: inc/template-tags.php:462
+#: inc/template-tags.php:468
 msgid "South African Rand"
 msgstr ""
 
-#: inc/template-tags.php:492
+#: inc/template-tags.php:498
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:494
+#: inc/template-tags.php:500
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:516
+#: inc/template-tags.php:522
 msgid "Post author"
 msgstr ""
 
-#: inc/template-tags.php:527
-#. Translators: 1. Comment date, 2. Comment time
+#. translators: 1. Comment date, 2. Comment time
+#: inc/template-tags.php:533
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:534
+#: inc/template-tags.php:540
 msgid "Permalink"
 msgstr ""
 
-#: inc/template-tags.php:546
+#: inc/template-tags.php:552
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:557
+#: inc/template-tags.php:563
 msgid "Reply"
 msgstr ""
 
-#: inc/template-tags.php:595
-msgid "0 View"
-msgstr ""
-
-#: inc/template-tags.php:598
-#. Translators: %s Post view count
+#. translators: %s Post view count
+#: inc/template-tags.php:604
 msgid "%s Views"
 msgstr ""
 
-#: inc/template-tags.php:820
-#. Translators: 1. Post link, 2. Post time, 3. Post date
-msgid ""
-"<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" "
-"rel=\"bookmark\">%3$s %4$s</a></span>"
+#: inc/template-tags.php:601
+msgid "0 View"
 msgstr ""
 
-#: inc/template-tags.php:872
+#. translators: 1. Post link, 2. Post time, 3. Post date
+#: inc/template-tags.php:826
+msgid "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s %4$s</a></span>"
+msgstr ""
+
+#: inc/template-tags.php:878
 msgid " 0 Comments"
 msgstr ""
 
-#: inc/template-tags.php:873
+#: inc/template-tags.php:879
 msgid " 1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:874
+#: inc/template-tags.php:880
 msgid " % Comments"
 msgstr ""
 
-#: inc/template-tags.php:898
+#: inc/template-tags.php:904
 msgid ", "
 msgstr ""
 
@@ -2458,25 +2013,11 @@ msgstr ""
 msgid "Add your Advertisement 125x125 Images Here"
 msgstr ""
 
-#: inc/widgets/colormag-125x125-advertisement-widget.php:44
-#: inc/widgets/colormag-125x125-advertisement-widget.php:54
-#: inc/widgets/colormag-125x125-advertisement-widget.php:64
-#: inc/widgets/colormag-125x125-advertisement-widget.php:74
-#: inc/widgets/colormag-125x125-advertisement-widget.php:84
-#: inc/widgets/colormag-125x125-advertisement-widget.php:94
-#: inc/widgets/colormag-300x250-advertisement-widget.php:44
-#: inc/widgets/colormag-728x90-advertisement-widget.php:44
+#: inc/widgets/colormag-125x125-advertisement-widget.php:44, inc/widgets/colormag-125x125-advertisement-widget.php:54, inc/widgets/colormag-125x125-advertisement-widget.php:64, inc/widgets/colormag-125x125-advertisement-widget.php:74, inc/widgets/colormag-125x125-advertisement-widget.php:84, inc/widgets/colormag-125x125-advertisement-widget.php:94, inc/widgets/colormag-300x250-advertisement-widget.php:44, inc/widgets/colormag-728x90-advertisement-widget.php:44
 msgid "Advertisement Image Link "
 msgstr ""
 
-#: inc/widgets/colormag-125x125-advertisement-widget.php:49
-#: inc/widgets/colormag-125x125-advertisement-widget.php:59
-#: inc/widgets/colormag-125x125-advertisement-widget.php:69
-#: inc/widgets/colormag-125x125-advertisement-widget.php:79
-#: inc/widgets/colormag-125x125-advertisement-widget.php:89
-#: inc/widgets/colormag-125x125-advertisement-widget.php:99
-#: inc/widgets/colormag-300x250-advertisement-widget.php:49
-#: inc/widgets/colormag-728x90-advertisement-widget.php:49
+#: inc/widgets/colormag-125x125-advertisement-widget.php:49, inc/widgets/colormag-125x125-advertisement-widget.php:59, inc/widgets/colormag-125x125-advertisement-widget.php:69, inc/widgets/colormag-125x125-advertisement-widget.php:79, inc/widgets/colormag-125x125-advertisement-widget.php:89, inc/widgets/colormag-125x125-advertisement-widget.php:99, inc/widgets/colormag-300x250-advertisement-widget.php:49, inc/widgets/colormag-728x90-advertisement-widget.php:49
 msgid "Advertisement Image "
 msgstr ""
 
@@ -2505,52 +2046,34 @@ msgid "Add your Advertisement 728x90 Images Here"
 msgstr ""
 
 #: inc/widgets/colormag-featured-posts-slider-widget.php:28
-msgid ""
-"Display latest posts or posts of specific category, which will be used as "
-"the slider."
+msgid "Display latest posts or posts of specific category, which will be used as the slider."
 msgstr ""
 
 #: inc/widgets/colormag-featured-posts-slider-widget.php:29
 msgid "TG: Featured Category Slider"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-slider-widget.php:42
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:57
-#: inc/widgets/colormag-featured-posts-widget.php:57
-#: inc/widgets/colormag-highlighted-posts-widget.php:41
+#: inc/widgets/colormag-featured-posts-slider-widget.php:42, inc/widgets/colormag-featured-posts-vertical-widget.php:57, inc/widgets/colormag-featured-posts-widget.php:57, inc/widgets/colormag-highlighted-posts-widget.php:41
 msgid "Show latest Posts"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-slider-widget.php:43
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:58
-#: inc/widgets/colormag-featured-posts-widget.php:58
-#: inc/widgets/colormag-highlighted-posts-widget.php:42
+#: inc/widgets/colormag-featured-posts-slider-widget.php:43, inc/widgets/colormag-featured-posts-vertical-widget.php:58, inc/widgets/colormag-featured-posts-widget.php:58, inc/widgets/colormag-highlighted-posts-widget.php:42
 msgid "Show posts from a category"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-slider-widget.php:44
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:59
-#: inc/widgets/colormag-featured-posts-widget.php:59
-#: inc/widgets/colormag-highlighted-posts-widget.php:43
+#: inc/widgets/colormag-featured-posts-slider-widget.php:44, inc/widgets/colormag-featured-posts-vertical-widget.php:59, inc/widgets/colormag-featured-posts-widget.php:59, inc/widgets/colormag-highlighted-posts-widget.php:43
 msgid "Show posts from a tag"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-slider-widget.php:45
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:60
-#: inc/widgets/colormag-featured-posts-widget.php:60
-#: inc/widgets/colormag-highlighted-posts-widget.php:44
+#: inc/widgets/colormag-featured-posts-slider-widget.php:45, inc/widgets/colormag-featured-posts-vertical-widget.php:60, inc/widgets/colormag-featured-posts-widget.php:60, inc/widgets/colormag-highlighted-posts-widget.php:44
 msgid "Show posts from an author"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-slider-widget.php:51
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:66
-#: inc/widgets/colormag-featured-posts-widget.php:66
-#: inc/widgets/colormag-highlighted-posts-widget.php:50
+#: inc/widgets/colormag-featured-posts-slider-widget.php:51, inc/widgets/colormag-featured-posts-vertical-widget.php:66, inc/widgets/colormag-featured-posts-widget.php:66, inc/widgets/colormag-highlighted-posts-widget.php:50
 msgid "Select category"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:28
-#: inc/widgets/colormag-featured-posts-widget.php:28
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:28, inc/widgets/colormag-featured-posts-widget.php:28
 msgid "Display latest posts or posts of specific category."
 msgstr ""
 
@@ -2558,13 +2081,11 @@ msgstr ""
 msgid "TG: Featured Posts (Style 2)"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:34
-#: inc/widgets/colormag-featured-posts-widget.php:34
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:34, inc/widgets/colormag-featured-posts-widget.php:34
 msgid "Layout will be as below:"
 msgstr ""
 
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:45
-#: inc/widgets/colormag-featured-posts-widget.php:45
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:45, inc/widgets/colormag-featured-posts-widget.php:45
 msgid "Description"
 msgstr ""
 
@@ -2573,9 +2094,7 @@ msgid "TG: Featured Posts (Style 1)"
 msgstr ""
 
 #: inc/widgets/colormag-highlighted-posts-widget.php:28
-msgid ""
-"Display latest posts or posts of specific category. Suitable for the Area "
-"Beside Slider Sidebar."
+msgid "Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar."
 msgstr ""
 
 #: inc/widgets/colormag-highlighted-posts-widget.php:29
@@ -2586,148 +2105,125 @@ msgstr ""
 msgid "No matching post found"
 msgstr ""
 
-#: no-results.php:36
-#. Translators: %1$s: Link to WP admin new post page.
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: no-results.php:57
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: no-results.php:50
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: no-results.php:57
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+#: no-results.php:36
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
+#: page-templates/contact.php:3
+msgid "Contact Page Template"
+msgstr ""
+
+#: page-templates/magazine.php:3
+msgid "Magazine Template"
+msgstr ""
+
+#: page-templates/page-builder.php:3
+msgid "Gutenberg Block / Page Builder (ColorMag)"
+msgstr ""
+
+#. translators: %s: Search query.
 #: search.php:38
-#. Translators: %s: Search query.
 msgid "Search Results for: %s"
-msgstr ""
-
-#: sidebar-left.php:30 sidebar.php:30
-msgid "Contact Page"
 msgstr ""
 
 #: sidebar-left.php:32
 msgid "Left"
 msgstr ""
 
-#: sidebar-left.php:38 sidebar-two.php:19 sidebar-woocommerce-left.php:25
-#: sidebar-woocommerce-right.php:25 sidebar.php:38
+#: sidebar-left.php:30, sidebar.php:30
+msgid "Contact Page"
+msgstr ""
+
+#: sidebar-left.php:38, sidebar-two.php:19, sidebar-woocommerce-left.php:25, sidebar-woocommerce-right.php:25, sidebar.php:38
 msgid "Example Widget"
 msgstr ""
 
-#: sidebar-left.php:41 sidebar.php:41
-#. Translators: 1. Label for Contact Page or Left sidebar area, 2. Opening of
-#. the link for widgets.php WordPress section, 3. Closing of the link for
-#. widgets.php WordPress section
-#. Translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of
-#. the link for widgets.php WordPress section, 3. Closing of the link for
-#. widgets.php WordPress section
-msgid ""
-"This is an example widget to show how the %s Sidebar looks by default. You "
-"can add custom widgets from the %swidgets screen%s in the admin. If custom "
-"widgets is added than this will be replaced by those widgets."
+#. translators: 1. Label for Contact Page or Left sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
+#. translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
+#: sidebar-left.php:41, sidebar.php:41
+msgid "This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #: sidebar-two.php:20
-msgid ""
-"This is an example widget to show how the Secondary sidebar looks by "
-"default. You can add custom widgets from the %swidgets screen%s in the "
-"admin. If custom widgets are added then this will be replaced by those "
-"widgets"
+msgid "This is an example widget to show how the Secondary sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets are added then this will be replaced by those widgets"
 msgstr ""
 
+#. translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
 #: sidebar-woocommerce-left.php:28
-#. Translators: 1. Opening of the link for widgets.php WordPress section, 2.
-#. Closing of the link for widgets.php WordPress section
-msgid ""
-"This is an example widget to show how the WooCommerce Left Sidebar looks by "
-"default. You can add custom widgets from the %swidgets screen%s in the "
-"admin. If custom widgets is added than this will be replaced by those "
-"widgets."
+msgid "This is an example widget to show how the WooCommerce Left Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
+#. translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
 #: sidebar-woocommerce-right.php:28
-#. Translators: 1. Opening of the link for widgets.php WordPress section, 2.
-#. Closing of the link for widgets.php WordPress section
-msgid ""
-"This is an example widget to show how the WooCommerce Right Sidebar looks "
-"by default. You can add custom widgets from the %swidgets screen%s in the "
-"admin. If custom widgets is added than this will be replaced by those "
-"widgets."
+msgid "This is an example widget to show how the WooCommerce Right Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #: sidebar.php:32
 msgid "Right"
 msgstr ""
 
+#: template-parts/content-page.php:56, template-parts/entry/entry-summary.php:32
+msgid "Pages:"
+msgstr ""
+
 #: template-parts/content/related-posts.php:23
 msgid "You May Also Like"
 msgstr ""
 
-#: template-parts/content-page.php:56 template-parts/entry/entry-summary.php:32
-msgid "Pages:"
-msgstr ""
-
-#: template-parts/entry/entry-summary.php:25
-#: template-parts/entry/entry-summary.php:46
-#: template-parts/entry/entry-summary.php:50
+#: template-parts/entry/entry-summary.php:50, template-parts/entry/entry-summary.php:46, template-parts/entry/entry-summary.php:25
 msgid "Read More"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:47
-#. Translators: %s: Author name
-msgid "Author: %s"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:61
-#. Translators: %s: Day archive
-msgid "Day: %s"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:68
-#. Translators: %s: Month archive
-msgid "Month: %s"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:75
-#. Translators: %s: Year archive
-msgid "Year: %s"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:80
-msgid "Asides"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:83
-msgid "Images"
-msgstr ""
-
-#: template-parts/hooks/content/content.php:86
-msgid "Videos"
 msgstr ""
 
 #: template-parts/hooks/content/content.php:89
 msgid "Quotes"
 msgstr ""
 
+#: template-parts/hooks/content/content.php:86
+msgid "Videos"
+msgstr ""
+
+#: template-parts/hooks/content/content.php:83
+msgid "Images"
+msgstr ""
+
+#: template-parts/hooks/content/content.php:80
+msgid "Asides"
+msgstr ""
+
+#: template-parts/hooks/content/content.php:75
+msgid "Year: %s"
+msgstr ""
+
+#: template-parts/hooks/content/content.php:68
+msgid "Month: %s"
+msgstr ""
+
+#: template-parts/hooks/content/content.php:61
+msgid "Day: %s"
+msgstr ""
+
+#: template-parts/hooks/content/content.php:47
+msgid "Author: %s"
+msgstr ""
+
+#. translators: %s: WordPress link
 #: template-parts/hooks/footer/footer.php:271
-#. Translators: %1$s: Current year, %2$s: Site link
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
 #: template-parts/hooks/footer/footer.php:271
-#. Translators: %1$s: Theme name, %2$s: ThemeGrill site link
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: template-parts/hooks/footer/footer.php:271
-#. Translators: %s: WordPress link
 msgid "Powered by %s."
 msgstr ""
 
@@ -2741,98 +2237,4 @@ msgstr ""
 
 #: template-parts/hooks/header/header.php:536
 msgid "You are here: "
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "https://themegrill.com/themes/colormag/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"ColorMag is always the best choice when it comes to magazine, news, and "
-"blog WordPress themes. You can create elegant and modern websites for news "
-"portals, online magazines, and publishing sites. With ColorMag’s 8 and "
-"counting free starter demos for health, food, entertainment, sports, and "
-"fashion industries, building a magazine style website is super easy. Best "
-"of all, the ColorMag WordPress theme offers multiple ad spaces in its "
-"layout. So, you can monetize your website by displaying ads in these slots "
-"without any fuss. And if you plan to sell products and services online, you "
-"can rely on the theme’s compatibility with WooCommerce. Some of its key "
-"features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser "
-"Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, "
-"download the free ColorMag theme and create professional magazine websites "
-"quickly. You can get free support for ColorMag at "
-"https://themegrill.com/contact/ and check our demos at "
-"https://themegrilldemos.com/colormag/"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "ThemeGrill"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://themegrill.com"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Contact Page Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Magazine Template"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Gutenberg Block / Page Builder (ColorMag)"
-msgstr ""
-
-#: comments.php:45 inc/ajax.php:60
-#. Translators: %1$s: Comment count, %2$s: Post title
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-breadcrumb-trail.php:269
-msgctxt "breadcrumbs aria label"
-msgid "Breadcrumbs"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:712
-msgctxt "minute and hour archives time format"
-msgid "g:i a"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:729
-msgctxt "minute archives time format"
-msgid "i"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:746
-msgctxt "hour archives time format"
-msgid "g a"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:762 inc/class-breadcrumb-trail.php:790
-#: inc/class-breadcrumb-trail.php:828 inc/class-breadcrumb-trail.php:854
-#: inc/class-breadcrumb-trail.php:1200
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:763 inc/class-breadcrumb-trail.php:829
-#: inc/class-breadcrumb-trail.php:1202
-msgctxt "monthly archives date format"
-msgid "F"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:764 inc/class-breadcrumb-trail.php:1204
-msgctxt "daily archives date format"
-msgid "j"
-msgstr ""
-
-#: inc/class-breadcrumb-trail.php:791
-msgctxt "weekly archives date format"
-msgid "W"
 msgstr ""

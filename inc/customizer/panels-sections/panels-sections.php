@@ -25,9 +25,6 @@ $panel_options_id = array(
 	'colormag_additional_panel' => array(
 		'title' => esc_html__( 'Additional', 'colormag' ),
 	),
-	'woocommerce'               => array(
-		'title' => esc_html__( 'WooCommerce', 'colormag' ),
-	),
 );
 
 $section_option_id = array(
@@ -347,6 +344,12 @@ $section_option_id = array(
 		'priority' => 10,
 	),
 );
+
+if ( class_exists( 'WooCommerce' ) ) {
+	$panel_options_id['woocommerce'] = array(
+		'title' => esc_html__( 'WooCommerce', 'colormag' ),
+	);
+}
 
 colormag_customind()->add_panels( $panel_options_id );
 colormag_customind()->add_sections( $section_option_id );

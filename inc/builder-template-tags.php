@@ -343,7 +343,7 @@ if ( ! function_exists( 'colormag_render_footer_cols' ) ) {
 	 * @since 4.0.0
 	 */
 	function colormag_render_footer_cols( $cols, $cols_area ) {
-		echo '<div class="cm-footer-' . esc_attr( colormag_footer_get_area_class( $cols_area ) ) . '-col">';
+		echo '<div class="cm-footer-col cm-footer-' . esc_attr( colormag_footer_get_area_class( $cols_area ) ) . '-col">';
 		foreach ( $cols as $element ) {
 			get_template_part( "template-parts/footer-builder-elements/$element", '' );
 		}

@@ -1,22 +1,36 @@
-'use strict';
+import gulp from 'gulp';
+import autoprefixer from 'gulp-autoprefixer';
+import lec from 'gulp-line-ending-corrector';
+import notify from 'gulp-notify';
+import rename from 'gulp-rename';
+import rtlcss from 'gulp-rtlcss';
+import _uglify from 'gulp-uglify-es';
+import uglifycss from 'gulp-uglifycss';
+import nodeSass from 'node-sass';
+import gulpSass from 'gulp-sass';
+import wpPot from 'gulp-wp-pot';
+const sass = gulpSass(nodeSass);
+import zip from 'gulp-zip';
+const uglify = _uglify.default;
 
-var gulp         = require( 'gulp' ),
-    browserSync  = require( 'browser-sync' ).create(),
-    sass         = require( 'gulp-sass' ),
-    postcss      = require( 'gulp-postcss' ),
-    autoprefixer = require( 'autoprefixer' ),
-    notify       = require( 'gulp-notify' ),
-    uglifycss    = require( 'gulp-uglifycss' ),
-    rename       = require( 'gulp-rename' ),
-    flatten      = require( 'gulp-flatten' ),
-    concatCss    = require( 'gulp-concat-css' ),
-    concatJS     = require( 'gulp-concat' ),
-    uglify       = require( 'gulp-uglify-es' ).default,
-    rtlcss       = require( 'gulp-rtlcss' ),
-    lec          = require( 'gulp-line-ending-corrector' );
+// Project information.
+const info = {
+	name: 'colormag',
+	slug: 'colormag',
+	url: 'https://themegrill.com/plugins/zakra-pro/',
+	author: 'ThemeGrill',
+	authorUrl: 'https://themegrill.com/',
+	authorEmail: 'themegrill@gmail.com',
+	teamEmail: 'team@themegrill.com',
+};
+
+const dirs = {
+	js: 'js',
+	css: 'css'
+};
 
 // Define paths.
-var paths = {
+const paths = {
 
 	styles : {
 		src  : './assets/sass/**/*.scss',
@@ -46,19 +60,12 @@ var paths = {
 		dest : './inc/customizer/assets/js/',
 	},
 
-	elementorStyles : {
-		scss : {
-			src  : './inc/elementor/assets/SCSS/**/*.scss',
-			dest : './inc/elementor/assets/css/'
-		},
-		cssmin : {
-			src  : [
-				'./inc/elementor/assets/css/*.css',
-				'!./inc/elementor/assets/css/*.min.css',
-				'!./inc/elementor/assets/css/*-rtl.css'
-			],
-			dest : './inc/elementor/assets/css/'
-		}
+	elementorStyles   : {
+		src  : [
+			'./inc/compatibility/elementor/assets/css/elementor.css',
+			'./inc/compatibility/elementor/assets/css/elementor.min.css'
+		],
+		dest : './inc/compatibility/elementor/assets/css'
 	},
 
 	elementorJS : {
@@ -120,40 +127,41 @@ var paths = {
 			],
 			dest : './inc/meta-boxes/assets/css'
 		}
-	}
+	},
+
+	zip: {
+		src: [
+			'**',
+			'!assets/sass/**',
+			'!.*',
+			'!*.md',
+			'!*.zip',
+			'!.*/**',
+			'!dist/**',
+			'!bower.json',
+			'!gulpfile.js',
+			'!Gruntfile.js',
+			'!package.json',
+			'!node_modules/**',
+			'!package-lock.json'
+		],
+		dest: './dist',
+	},
 
 };
-
-// Start browserSync.
-function browserSyncStart( cb ) {
-	browserSync.init( {
-		proxy : 'colormag.local/colormag'
-	}, cb );
-}
-
-// Reloads the browser.
-function browserSyncReload( cb ) {
-	browserSync.reload();
-	cb();
-}
 
 // Compiles SASS into CSS.
 function sassCompile() {
 	return gulp.src( paths.styles.src )
-	           .pipe( sass( {
-		           indentType  : 'tab',
-		           indentWidth : 1,
-		           outputStyle : 'expanded',
-		           linefeed    : 'crlf'
-	           } ).on( 'error', sass.logError ) )
-	           .pipe( postcss( [
-		           autoprefixer( {
-			           browsers : [ 'last 2 versions' ],
-			           cascade  : false
-		           } )
-	           ] ) )
-	           .pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
-	           .pipe( gulp.dest( paths.styles.dest ) );
+		.pipe( sass( {
+			indentType  : 'tab',
+			indentWidth : 1,
+			outputStyle : 'expanded',
+			linefeed    : 'crlf'
+		} ))
+		.pipe( autoprefixer() )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( gulp.dest( paths.styles.dest ) );
 }
 
 // Compiles Admin SASS into CSS.
@@ -165,36 +173,25 @@ function adminSassCompile() {
 			outputStyle : 'expanded',
 			linefeed    : 'crlf'
 		} ).on( 'error', sass.logError ) )
-		.pipe( postcss( [
-			autoprefixer( {
-				browsers : [ 'last 2 versions' ],
-				cascade  : false
-			} )
-		] ) )
 		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.adminStyles.dest ) );
 }
 
 function elementorStylesCompile() {
-	return gulp.src( paths.elementorStyles.scss.src )
-	           .pipe( sass( {
-		           indentType  : 'tab',
-		           indentWidth : 1,
-		           outputStyle : 'expanded',
-		           linefeed    : 'crlf'
-	           } ).on( 'error', sass.logError ) )
-	           .pipe( postcss( [
-		           autoprefixer( {
-			           browsers : [ 'last 2 versions' ],
-			           cascade  : false
-		           } )
-	           ] ) )
-	           .pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
-	           .pipe( gulp.dest( paths.elementorStyles.scss.dest ) );
+	return gulp.src( paths.elementorStyles.src )
+		.pipe( sass( {
+			indentType  : 'tab',
+			indentWidth : 1,
+			outputStyle : 'expanded',
+			linefeed    : 'crlf'
+		} ).on( 'error', sass.logError ) )
+		.pipe(autoprefixer())
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( gulp.dest( paths.elementorStyles.dest ) );
 }
 
 // Minifies the elementor js files.
-function minifyelementorJs() {
+async function minifyelementorJs() {
 	return gulp
 		.src( paths.elementorJS.jsmin.src )
 		.pipe( uglify() )
@@ -207,22 +204,11 @@ function minifyelementorJs() {
 // Minify elementor styles css file.
 function minifyelementorStyles() {
 	return gulp
-		.src( paths.elementorStyles.cssmin.src )
+		.src( paths.elementorStyles.src )
 		.pipe( uglifycss() )
 		.pipe( rename( { suffix : '.min' } ) )
 		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
-		.pipe( gulp.dest( paths.elementorStyles.cssmin.dest ) );
-}
-
-// Minifies the js files.
-function minifyJs() {
-	return gulp
-		.src( paths.js.src )
-		.pipe( uglify() )
-		.pipe( rename( { suffix : '.min' } ) )
-		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
-		.pipe( gulp.dest( paths.js.dest ) )
-		.on( 'error', notify.onError() );
+		.pipe( gulp.dest( paths.elementorStyles.dest ) );
 }
 
 // Minifies the customizer js files.
@@ -246,12 +232,7 @@ function compileMetaBoxSass() {
 			outputStyle : 'expanded',
 			linefeed    : 'crlf'
 		} ).on( 'error', sass.logError ) )
-		.pipe( postcss( [
-			autoprefixer( {
-				browsers : [ 'last 2 versions' ],
-				cascade  : false
-			} )
-		] ) )
+		.pipe(autoprefixer())
 		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
 		.pipe( gulp.dest( paths.metaBoxes.scss.dest ) )
 		.on( 'error', notify.onError() );
@@ -322,12 +303,55 @@ function generateMetaBoxesRTLCSS() {
 		.on( 'error', notify.onError() );
 }
 
-// Watch for file changes.
-function watch() {
+// From grunt
+
+// Compress plugin into a zip file.
+function compressZip() {
+	return gulp
+		.src(paths.zip.src, {
+			encoding: false
+		})
+		.pipe(
+			rename(function (path) {
+				path.dirname = info.name + '/' + path.dirname;
+			}),
+		)
+		.pipe(zip(info.name + '.zip'))
+		.pipe(gulp.dest(paths.zip.dest));
+}
+
+// Generate POT files.
+function makePot() {
+	return gulp
+		.src('**/*.php')
+		.pipe(
+			wpPot({
+				domain: 'colormag',
+				package: 'ColorMag',
+				bugReport: 'themegrill@gmail.com',
+				team: 'LANGUAGE <EMAIL@ADDRESS>'
+			}),
+		)
+		.pipe(gulp.dest('languages/colormag.pot'));
+}
+
+// Minify all .js files.
+async function minifyJs() {
+	return gulp
+		.src( paths.js.src )
+		.pipe( uglify() )
+		.pipe( rename( { suffix : '.min' } ) )
+		.pipe( lec( { verbose : true, eolc : 'LF', encoding : 'utf8' } ) )
+		.pipe( gulp.dest( paths.js.dest ) )
+		.on( 'error', notify.onError() );
+}
+
+
+function watch(){
 	gulp.watch( paths.styles.src, sassCompile );
-	gulp.watch( paths.adminStyles.src, adminSassCompile );
-	gulp.watch( paths.elementorStyles.scss.src, elementorStylesCompile );
-	gulp.watch( paths.elementorStyles.cssmin.src, minifyelementorStyles );
+	gulp.watch( paths.styles.src, adminSassCompile );
+	gulp.watch( paths.elementorStyles.src, elementorStylesCompile );
+	gulp.watch( paths.elementorStyles.src, minifyelementorStyles );
 	gulp.watch( paths.elementorJS.jsmin.src, minifyelementorJs );
 	gulp.watch( paths.js.src, minifyJs );
 	gulp.watch( paths.js.src, minifyCustomizerJs );
@@ -340,34 +364,55 @@ function watch() {
 	gulp.watch( paths.rtlcss.metaBoxes.src, generateMetaBoxesRTLCSS );
 }
 
-// Define series of tasks.
-var server            = gulp.series( browserSyncStart, watch ),
-	styles            = gulp.series( sassCompile, adminSassCompile, generateRTLCSS, generateBlockStyleRTLCSS ),
-    scripts           = gulp.series( minifyJs ),
-    elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, minifyelementorJs, generateElementorRTLCSS ),
-    metaBoxes         = gulp.series( compileMetaBoxSass, minifyMetaBoxCSS, minifyMetaBoxJs, generateMetaBoxesRTLCSS ),
-    compile           = gulp.series( styles, scripts, elementorStyles, metaBoxes );
+// Build
+const build = gulp.series(
+	generateRTLCSS,
+	generateBlockStyleRTLCSS,
+	generateElementorRTLCSS,
+	generateMetaBoxesRTLCSS,
+	minifyJs,
+	minifyCustomizerJs,
+	minifyMetaBoxJs,
+	minifyMetaBoxCSS,
+	minifyelementorJs,
+	minifyelementorStyles,
+	sassCompile,
+	adminSassCompile,
+	elementorStylesCompile,
+	compileMetaBoxSass,
+	makePot,
+	compressZip,
+);
 
-exports.browserSyncStart                = browserSyncStart;
-exports.browserSyncReload               = browserSyncReload;
-exports.sassCompile                     = sassCompile;
-exports.adminSassCompile                = adminSassCompile;
-exports.elementorStylesCompile          = elementorStylesCompile;
-exports.minifyelementorStyles           = minifyelementorStyles;
-exports.minifyelementorJs               = minifyelementorJs;
-exports.watch                           = watch;
-exports.server                          = server;
-exports.styles                          = styles;
-exports.scripts                         = scripts;
-exports.elementorStyles                 = elementorStyles;
-exports.metaBoxes                       = metaBoxes;
-exports.compile                         = compile;
-exports.minifyJs                        = minifyJs;
-exports.minifyCustomizerJs              = minifyCustomizerJs;
-exports.compileMetaBoxSass              = compileMetaBoxSass;
-exports.minifyMetaBoxCSS                = minifyMetaBoxCSS;
-exports.minifyMetaBoxJs                 = minifyMetaBoxJs;
-exports.generateRTLCSS                  = generateRTLCSS;
-exports.generateBlockStyleRTLCSS        = generateBlockStyleRTLCSS;
-exports.generateElementorRTLCSS         = generateElementorRTLCSS;
-exports.generateMetaBoxesRTLCSS         = generateMetaBoxesRTLCSS;
+// Define series of tasks.
+const styles            = gulp.series( sassCompile, generateRTLCSS, generateBlockStyleRTLCSS ),
+	scripts           = gulp.series( minifyJs ),
+	elementorStyles   = gulp.series( elementorStylesCompile, minifyelementorStyles, minifyelementorJs, generateElementorRTLCSS ),
+	metaBoxes         = gulp.series( compileMetaBoxSass, minifyMetaBoxCSS, minifyMetaBoxJs, generateMetaBoxesRTLCSS ),
+	compile           = gulp.series( styles, scripts, elementorStyles, metaBoxes );
+
+export {
+	build,
+	sassCompile,
+	adminSassCompile,
+	elementorStylesCompile,
+	minifyelementorStyles,
+	minifyelementorJs,
+	styles,
+	scripts,
+	elementorStyles,
+	metaBoxes,
+	compile,
+	minifyJs,
+	minifyCustomizerJs,
+	compileMetaBoxSass,
+	minifyMetaBoxCSS,
+	minifyMetaBoxJs,
+	generateRTLCSS,
+	generateBlockStyleRTLCSS,
+	generateElementorRTLCSS,
+	generateMetaBoxesRTLCSS,
+	makePot,
+	compressZip,
+	watch
+}

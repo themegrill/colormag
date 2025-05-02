@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.10
+Version: 4.0.12
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.10
+Stable tag: 4.0.12
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,8 +69,16 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version TBD =
+= Version 4.0.12 - 2025-04-01 =
+* Fix         - Mobile view border top color issue.
+* Fix         - Embed Block image size issue.
+* Update      - Page settings layout.
+
+= Version 4.0.11 - 2025-02-28 =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
+* Added       - Option to change the footer builder inner layout( Stack and Inline).
+* Fix         - Plugin conflict with Classic Widgets.
+* Fix         - Option to enable Header Footer builder.
 
 = Version 4.0.10 - 2025-01-06 =
 * Added - Option to change single post title typography.

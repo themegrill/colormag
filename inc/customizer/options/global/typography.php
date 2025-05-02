@@ -143,6 +143,20 @@ $options = apply_filters(
 									'unit' => '',
 								),
 							),
+							'letter-spacing'    => array(
+								'desktop' => array(
+									'size' => '',
+									'unit' => '',
+								),
+								'tablet'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+								'mobile'  => array(
+									'size' => '',
+									'unit' => '',
+								),
+							),
 							'font-style'     => 'normal',
 							'text-transform' => 'none',
 						),

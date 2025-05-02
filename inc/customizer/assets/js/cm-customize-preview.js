@@ -27,6 +27,10 @@
 		return css;
 	}
 
+	function colormagElementLayoutCSS(selector, property, value) {
+		return `${selector} {${property}: ${value};}`;
+	}
+
 	function colormagGenerateSliderCSS(selector, property, value) {
 		return `${selector} {${property}: ${value.size}${value.unit};}`;
 	}
@@ -146,7 +150,7 @@
 
 			if (undefined !== typography['letter-spacing']) {
 				if (
-					undefined !== typography['letter-spacing']['desktop']['size'] &&
+					undefined !== typography?.['letter-spacing']?.['desktop']?.['size'] &&
 					'' !== typography['letter-spacing']['desktop']['size']
 				) {
 					const desktopLetterSpacingUnit =
@@ -159,7 +163,7 @@
 				}
 
 				if (
-					undefined !== typography['letter-spacing']['tablet']['size'] &&
+					undefined !== typography?.['letter-spacing']?.['tablet']?.['size'] &&
 					'' !== typography['letter-spacing']['tablet']['size']
 				) {
 					const tabletLetterSpacingUnit =
@@ -172,7 +176,7 @@
 				}
 
 				if (
-					undefined !== typography['letter-spacing']['mobile']['size'] &&
+					undefined !== typography?.['letter-spacing']?.['mobile']?.['size'] &&
 					'' !== typography['letter-spacing']['mobile']['size']
 				) {
 					const mobileLetterSpacingUnit =
@@ -1050,12 +1054,12 @@
 
 				case "colormag_header_bottom_area_border_width":
 					css = colormagGenerateDimensionCSS(
-						".cm-header-builder .cm-header-bottom-row",
+						".cm-header-builder .cm-header-bottom-row, .cm-header-builder .cm-mobile-row .cm-header-bottom-row",
 						"border-width",
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						".cm-header-builder .cm-header-bottom-row",
+						".cm-header-builder .cm-header-bottom-row, .cm-header-builder .cm-mobile-row .cm-header-bottom-row",
 						"border-style",
 						"solid",
 					);
@@ -1063,7 +1067,7 @@
 
 				case "colormag_header_bottom_area_border_color":
 					css = colormagGenerateCommonCSS(
-						".cm-header-builder .cm-header-bottom-row",
+						".cm-header-builder .cm-header-bottom-row, .cm-header-builder .cm-mobile-row .cm-header-bottom-row",
 						"border-color",
 						value,
 					);
@@ -1938,6 +1942,30 @@
 					css = colormagGenerateCommonCSS(
 						".cm-footer-builder .cm-footer-main-row .widget-title, .cm-footer-builder .cm-footer-main-row h1, .cm-footer-builder .cm-footer-main-row h2, .cm-footer-builder .cm-footer-main-row h3, .cm-footer-builder .cm-footer-main-row h4, .cm-footer-builder .cm-footer-main-row h5, .cm-footer-builder .cm-footer-main-row h6",
 						"color",
+						value,
+					);
+					break;
+
+				case 'colormag_footer_bottom_inner_element_layout':
+					css = colormagElementLayoutCSS(
+						'.cm-footer-builder .cm-footer-bottom-row .cm-footer-col',
+						'flex-direction',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_main_inner_element_layout':
+					css = colormagElementLayoutCSS(
+						'.cm-footer-builder .cm-footer-main-row .cm-footer-col',
+						'flex-direction',
+						value,
+					);
+					break;
+
+				case 'colormag_footer_top_inner_element_layout':
+					css = colormagElementLayoutCSS(
+						'.cm-footer-builder .cm-footer-top-row .cm-footer-col',
+						'flex-direction',
 						value,
 					);
 					break;

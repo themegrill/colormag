@@ -2131,9 +2131,9 @@ class ColorMag_Dynamic_CSS {
 		// Header bottom area background.
 		$header_bottom_area_width = get_theme_mod('colormag_main_header_width_setting', 'full-width');
 		if ( 'contained' === $header_bottom_area_width ){
-			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row';
+			$bottom_header_background_selector = '.cm-header-builder.cm-contained .cm-header-bottom-row .cm-container .cm-bottom-row, .cm-header-builder.cm-contained .cm-mobile-row .cm-header-bottom-row';
 		} else {
-			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-desktop-row.cm-main-header .cm-header-bottom-row';
+			$bottom_header_background_selector = '.cm-header-builder.cm-full-width .cm-desktop-row.cm-main-header .cm-header-bottom-row, .cm-header-builder.cm-full-width .cm-mobile-row .cm-header-bottom-row';
 		}
 
 		$header_bottom_area_background_default = array(
@@ -4346,6 +4346,27 @@ class ColorMag_Dynamic_CSS {
 			$parse_builder_css .= " .cm-footer-builder .cm-main-row{justify-items: center;} ";
 		} elseif ( 1 === $footer_builder_bottom_col ) {
 			$parse_builder_css .= " .cm-footer-builder .cm-bottom-row{justify-items: center;} ";
+		}
+
+		// Footer bottom layout alignment.
+		$footer_builder_bottom_layout = get_theme_mod('colormag_footer_bottom_inner_element_layout', 'column');
+
+		if ( ! empty( $footer_builder_bottom_layout ) ) {
+			$parse_builder_css .= ".cm-footer-builder .cm-footer-bottom-row .cm-footer-col{flex-direction: $footer_builder_bottom_layout;}";
+		}
+
+		// Footer main layout alignment.
+		$footer_builder_main_layout = get_theme_mod('colormag_footer_main_inner_element_layout', 'column');
+
+		if ( ! empty( $footer_builder_main_layout ) ) {
+			$parse_builder_css .= ".cm-footer-builder .cm-footer-main-row .cm-footer-col{flex-direction: $footer_builder_main_layout;}";
+		}
+
+		// Footer top layout alignment.
+		$footer_builder_top_layout = get_theme_mod('colormag_footer_top_inner_element_layout', 'column');
+
+		if ( ! empty( $footer_builder_top_layout ) ) {
+			$parse_builder_css .= ".cm-footer-builder .cm-footer-top-row .cm-footer-col{flex-direction: $footer_builder_top_layout;}";
 		}
 
 		$color_palette_default = array(

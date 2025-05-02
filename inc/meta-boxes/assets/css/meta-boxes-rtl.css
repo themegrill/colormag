@@ -4,8 +4,6 @@
 }
 
 #colormag-page-setting #page-settings-tabs-wrapper {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -44,15 +42,11 @@
 #colormag-page-setting .colormag-ui-content .options-group {
 	padding: 15px 0;
 	border-bottom: 1px solid #eeeeee;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 }
 
 #colormag-page-setting .colormag-ui-content .colormag-ui-desc,
 #colormag-page-setting .colormag-ui-content .colormag-ui-field {
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
 	flex: 1;
 }
 
@@ -65,7 +59,6 @@
 }
 
 #colormag-page-setting .colormag-ui-content .colormag-label input:checked + img {
-	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
 	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
 	border: 1px solid #13a1dc;
 }
