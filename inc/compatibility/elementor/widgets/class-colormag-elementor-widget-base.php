@@ -114,7 +114,7 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			);
 		}
 
-		if ( 'ColorMag-Posts-Block-4' === $this->get_name() || 'ColorMag-Posts-Block-6' === $this->get_name() || 'ColorMag-Posts-Block-7' === $this->get_name() ) {
+		if ( 'ColorMag-Posts-Block-1' === $this->get_name() || 'ColorMag-Posts-Block-4' === $this->get_name() || 'ColorMag-Posts-Block-6' === $this->get_name() || 'ColorMag-Posts-Block-7' === $this->get_name() ) {
 			// Widget second column post element.
 			$this->add_control(
 				'show_style_2_image',

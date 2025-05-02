@@ -55,6 +55,13 @@ $options = array(
 							'transport' => 'postMessage',
 							'section'   => 'colormag_header_builder_primary_menu',
 						),
+						'colormag_header_primary_menu_active_background' => array(
+							'default'   => '',
+							'type'      => 'customind-color',
+							'title'     => esc_html__( 'Active', 'colormag' ),
+							'transport' => 'postMessage',
+							'section'   => 'colormag_header_builder_primary_menu',
+						),
 					),
 				),
 
