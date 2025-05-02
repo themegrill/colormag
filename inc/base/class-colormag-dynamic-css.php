@@ -4434,7 +4434,7 @@ class ColorMag_Dynamic_CSS {
 		// Header builder mobile menu background color.
 		$header_mobile_menu_background_color     = get_theme_mod( 'colormag_header_mobile_menu_background', '' );
 		$header_mobile_menu_background_color_css = array(
-			'.cm-mobile-nav li' => array(
+			'.cm-mobile-nav .cm-mobile-menu--open' => array(
 				'background-color' => esc_html( $header_mobile_menu_background_color ),
 			),
 		);
