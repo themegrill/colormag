@@ -70,6 +70,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
+* Fix - Footer builder menu 1 component typography option not working in frontend
+* Fix - Footer builder menu 1 component not displayed properly in footer bottom area in frontend
 * Fix - Header builder random component icon hover color issue.
 * Added - Icon size option in random component of header builder.
 * Added - Option to change header builder primary menu active background color.
@@ -202,7 +204,7 @@ and we will include it within the theme from next version update.
 * Option - To change sidebar width.
 * Fix    - Primary menu background on contained main header.
 * Fix    - Post meta categories issue.
-
+ 
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.

@@ -3775,12 +3775,12 @@ class ColorMag_Dynamic_CSS {
 			'text-transform' => 'none',
 		);
 
-		$footer_menu_1_typography = get_theme_mod( 'colormag_footer_menu_1_typography', $footer_menu_typography_default );
+		$footer_menu_1_typography = get_theme_mod( 'colormag_footer_menu_typography', $footer_menu_typography_default );
 
 		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_menu_typography_default,
 			$footer_menu_1_typography,
-			'.cm-footer-builder .cm-footer-nav-1 ul li a',
+			'.cm-footer-builder .cm-footer-nav ul li a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
