@@ -81,8 +81,8 @@ class ColorMag_Elementor_Widgets_Block_1 extends Colormag_Elementor_Widget_Base 
 
 		$widget_title                = $this->get_settings( 'widget_title' );
 		$posts_number                = $this->get_settings( 'posts_number' );
-		$post_element_select_style_1 = $this->get_settings( 'post_element_select_style_1' );
-		$post_element_select_style_2 = $this->get_settings( 'post_element_select_style_2' );
+		$post_element_select_style_1 = $this->get_settings( 'post_element_select_style_1' ) ?? array();
+		$post_element_select_style_2 = $this->get_settings( 'post_element_select_style_2' ) ?? array();
 		$display_type                = $this->get_settings( 'display_type' );
 		$offset_posts_number         = $this->get_settings( 'offset_posts_number' );
 		$categories_selected         = $this->get_settings( 'categories_selected' );

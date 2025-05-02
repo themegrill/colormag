@@ -293,7 +293,7 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 			</div>
 			<h3><?php esc_html_e( 'Upgrade Now', 'colormag' ); ?></h3>
 			<p><?php echo __( 'Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version.', 'colormag' ); ?></p>
-			<a  href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank"><span><?php esc_html_e( 'Get ColorMag Pro Now', 'colormag' ); ?></span></a>
+			<a  href="<?php echo esc_url( 'https://themegrill.com/pricing/?utm_medium=free-vs-pro&utm_source=colormag-theme&utm_campaign=free-vs-pro&utm_content=get-colormag-pro-now' ); ?>" target="_blank"><span><?php esc_html_e( 'Get ColorMag Pro Now', 'colormag' ); ?></span></a>
 		</div>
 	</div>
 </div>

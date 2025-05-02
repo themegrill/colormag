@@ -173,7 +173,7 @@ class ColorMag_Dashboard {
 									echo esc_html( $theme->Version );
 									?>
 							</span>
-							<a href="<?php echo esc_url( 'https://themegrill.com/pricing/' ); ?>" target="_blank">
+							<a href="<?php echo esc_url( 'https://themegrill.com/pricing/?utm_medium=dash-header&utm_source=colormag-theme&utm_campaign=dash-header&utm_content=upgrade-to-pro' ); ?>" target="_blank">
 								<span class="cm-upgrade-to-pro">
 								<?php esc_html_e( 'Upgrade to Pro', 'colormag' ); ?>
 							</span>

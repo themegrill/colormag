@@ -1,4 +1,9 @@
 == Changelog ==
+= 4.0.12 - 2025-03-01 =
+* Fix         - Mobile view border top color issue.
+* Fix         - Embed Block image size issue.
+* Update      - Page settings layout.
+
 = 4.0.11 - 2025-02-28 =
 * Added       - Option to change enable and disable feature image, title, tag and excerpt in Elementor widget.
 * Added       - Option to change the footer builder inner layout( Stack and Inline).

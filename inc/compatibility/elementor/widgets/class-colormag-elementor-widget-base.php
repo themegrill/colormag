@@ -167,7 +167,9 @@ abstract class Colormag_Elementor_Widget_Base extends Widget_Base {
 			);
 		}
 
-		$this->end_controls_section();
+		if ( 'ColorMag-Posts-Block-1' === $this->get_name() || 'ColorMag-Posts-Block-2' === $this->get_name() || 'ColorMag-Posts-Block-3' === $this->get_name() || 'ColorMag-Posts-Block-4' === $this->get_name() || 'ColorMag-Posts-Block-5' === $this->get_name() || 'ColorMag-Posts-Block-6' === $this->get_name() || 'ColorMag-Posts-Block-7' === $this->get_name() ) {
+			$this->end_controls_section();
+		}
 	}
 
 	/**
