@@ -40,8 +40,6 @@ class colormag_highlighted_posts_widget extends ColorMag_Widget {
 				'choices' => array(
 					'latest'   => esc_html__( 'Show latest Posts', 'colormag' ),
 					'category' => esc_html__( 'Show posts from a category', 'colormag' ),
-					'tag'      => esc_html__( 'Show posts from a tag', 'colormag' ),
-					'author'   => esc_html__( 'Show posts from an author', 'colormag' ),
 				),
 			),
 			'category' => array(
