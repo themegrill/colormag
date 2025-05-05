@@ -10,7 +10,8 @@ class ColorMag_Starter_Content {
 	const TECHNOLOGY = 'technology';
 
 	public function __construct() {
-		add_filter( 'colormag_header_builder_options', array( $this, 'header_builder_options' ) );
+		$is_fresh_site = get_option( 'fresh_site' );
+		add_filter( 'colormag_header_builder_default_options', array( $this, 'header_builder_options' ) );
 		add_filter( 'colormag_footer_builder_options', array( $this, 'footer_builder_options' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_starter_css' ) );
 		add_filter(
@@ -30,12 +31,18 @@ class ColorMag_Starter_Content {
 	}
 
 	public function customizer_starter_css() {
-		if ( is_front_page() && is_customize_preview() ) {
+		//      if ( is_front_page() && is_customize_preview() ) {
 			wp_enqueue_style( 'colormag-starter-content', get_template_directory_uri() . '/assets/css/starter-content.css', array(), '' );
-		}
+		//      }
 	}
 
-	public function header_builder_options() {
+	public function header_builder_options( $options ) {
+
+		if ( ! get_option( 'fresh_site' ) ||
+			! is_customize_preview() ) {
+			return $options;
+		}
+
 		return array(
 			'desktop' => array(
 				'top'    => array(
