@@ -12,26 +12,12 @@ defined( 'ABSPATH' ) || exit;
 
 wp_nav_menu(
 	array(
-		'theme_location' => 'menu-mobile',
+		'theme_location' => 'primary',
 		'menu_id'        => 'cm-mobile-menu',
 		'menu_class'     => 'cm-mobile-menu',
-		'container'      => '',
-
-		'fallback_cb'    => function () {
-			$output = '<ul id="cm-mobile-menu" class="cm-mobile-menu">';
-
-			$output .= wp_list_pages(
-				array(
-					'echo'               => false,
-					'title_li'           => false,
-					'has_children_class' => 'menu-item-has-children',
-					'current_class'      => 'current-menu-item',
-				)
-			);
-
-			$output .= '</ul>';
-			echo $output;
-		},
-
+		'container'      => 'cm-menu-mobile-container',
+		'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		'fallback_cb'    => 'colormag_menu_fallback',
 	)
 );
+
