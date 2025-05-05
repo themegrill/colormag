@@ -70,12 +70,12 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Fix - Footer builder copyright component options not working
-* Fix - Footer builder menu 1 component typography option not working in frontend
-* Fix - Footer builder menu 1 component not displayed properly in footer bottom area in frontend
-* Fix - Header builder random component icon hover color issue.
 * Added - Icon size option in random component of header builder.
 * Added - Option to change header builder primary menu active background color.
+* Fix   - Header builder random component icon hover color issue.
+* Fix   - Footer builder copyright component options not working
+* Fix   - Footer builder menu 1 component typography option not working in frontend
+* Fix   - Footer builder menu 1 component not displayed properly in footer bottom area in frontend
 
 = Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.
