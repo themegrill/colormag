@@ -76,6 +76,7 @@ and we will include it within the theme from next version update.
 * Fix   - Footer builder copyright component options not working
 * Fix   - Footer builder menu 1 component typography option not working in frontend
 * Fix   - Footer builder menu 1 component not displayed properly in footer bottom area in frontend
+* Fix   - Builder offset area issue.
 
 = Version 4.0.12 - 2025-04-01 =
 * Fix         - Mobile view border top color issue.
