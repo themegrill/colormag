@@ -69,6 +69,14 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= TBD =
+* Fix - Footer builder copyright component options not working
+* Fix - Footer builder menu 1 component typography option not working in frontend
+* Fix - Footer builder menu 1 component not displayed properly in footer bottom area in frontend
+* Fix - Header builder random component icon hover color issue.
+* Added - Icon size option in random component of header builder.
+* Added - Option to change header builder primary menu active background color.
+* Fix         - Builder offset area issue.
 * Added       - Option to change full width search width, border width, border color and border radius.
 * Added       - Option to change full width search placeholder color.
 
