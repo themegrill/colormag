@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.12
-Tested up to: 6.7
+Version: 4.0.13
+Tested up to: 6.8
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.12
+Stable tag: 4.0.13
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -69,7 +69,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= TBD =
+= Version 4.0.13 - 2025-05-05 =
 * Added - Icon size option in random component of header builder.
 * Added - Option to change header builder primary menu active background color.
 * Fix   - Header builder random component icon hover color issue.
