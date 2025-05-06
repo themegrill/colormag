@@ -69,6 +69,8 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+* Fix   - Toggle menu issue on customizer.
+
 = Version 4.0.13 - 2025-05-05 =
 * Added - Icon size option in random component of header builder.
 * Added - Option to change header builder primary menu active background color.

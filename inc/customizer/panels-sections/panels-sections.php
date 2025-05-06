@@ -345,7 +345,7 @@ $section_option_id = array(
 	),
 	'colormag_customize_upsell_section'      => array(
 		'type'             => 'upsell-section',
-		'title'            => esc_html__( 'More Features in Pro', 'zakra' ),
+		'title'            => esc_html__( 'More Features in Pro', 'colormag' ),
 		'url'              => 'https://themegrill.com/pricing/?utm_medium=customizer-upsell&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro',
 		'section_callback' => \Customind\Core\Types\UpsellSection::class,
 		'priority'         => 1,

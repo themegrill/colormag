@@ -118,13 +118,20 @@
 	})(container);
 })();
 
-(function () {
+function initMobileNavigation() {
 	const container = document.querySelector('.cm-mobile-nav-container');
 	if (!container) return;
+
 	const button = container.querySelector('.cm-menu-toggle');
 	const menu = container.querySelector('.cm-mobile-menu');
 	const mobileArea = container.querySelector('.cm-mobile-header-row');
-	button.addEventListener('click', function (e) {
+
+	// Remove any existing event listener to prevent duplicates
+	button.removeEventListener('click', toggleMobileMenu);
+	// Add the event listener
+	button.addEventListener('click', toggleMobileMenu);
+
+	function toggleMobileMenu(e) {
 		e.preventDefault();
 		const expanded = e.currentTarget.getAttribute('aria-expanded');
 		if (expanded === 'false') {
@@ -136,5 +143,18 @@
 			menu.classList.remove('cm-mobile-menu--open');
 			mobileArea.classList.remove('cm-mobile-menu--open');
 		}
+	}
+}
+
+// Initialize on page load
+initMobileNavigation();
+
+// Re-initialize when WordPress Customizer refreshes the preview
+if (wp && wp.customize) {
+	wp.customize.bind('preview-ready', function () {
+		// Listen for partial content refresh
+		wp.customize.selectiveRefresh.bind('partial-content-rendered', function () {
+			initMobileNavigation();
+		});
 	});
-})();
+}
