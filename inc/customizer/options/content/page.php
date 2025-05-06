@@ -3,6 +3,23 @@
 $options = apply_filters(
 	'colormag_page_options',
 	array(
+		'colormag_archive_page_heading'        => array(
+			'type'         => 'customind-accordion',
+			'title'        => esc_html__( 'Page Header', 'colormag' ),
+			'section'      => 'colormag_page_section',
+			'sub_controls' => apply_filters(
+				'colormag_page_featured_image_sub_controls',
+				array(
+					'colormag_enable_page_header' => array(
+						'title'   => esc_html__( 'Enable', 'colormag' ),
+						'default' => true,
+						'type'    => 'customind-toggle',
+						'section' => 'colormag_page_section',
+					),
+				)
+			),
+			'collapsible'  => apply_filters( 'colormag_page_header_accordion_collapsible', false ),
+		),
 		'colormag_page_featured_image_heading' => array(
 			'type'         => 'customind-accordion',
 			'title'        => esc_html__( 'Featured Image', 'colormag' ),

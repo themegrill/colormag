@@ -72,6 +72,9 @@ $options = array(
 					'section'   => 'colormag_global_container_section',
 					'transport' => 'postMessage',
 					'priority'  => 20,
+					'condition' => array(
+						'colormag_container_layout' => 'boxed',
+					),
 				),
 			)
 		),
