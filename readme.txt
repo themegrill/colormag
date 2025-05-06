@@ -70,6 +70,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 * Fix   - Toggle menu issue on customizer.
+* Added       - Option to enable/disable page header.
 
 = Version 4.0.13 - 2025-05-05 =
 * Added - Icon size option in random component of header builder.
