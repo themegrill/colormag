@@ -84,15 +84,18 @@ $customind->set_i18n_data(
 		'domain' => 'colormag',
 	]
 );
-add_action( 'after_setup_theme', function() use ( $customind ) {
-	$customind->set_section_i18n(
-		[
-			/* Translators: 1: Panel Title. */
-			'customizing-action' => __( 'Customizing ▶ %s', 'colormag' ),
-			'customizing'        => __( 'Customizing', 'colormag' ),
-		]
-	);
-} );
+add_action(
+	'after_setup_theme',
+	function () use ( $customind ) {
+		$customind->set_section_i18n(
+			[
+				/* Translators: 1: Panel Title. */
+				'customizing-action' => __( 'Customizing ▶ %s', 'colormag' ),
+				'customizing'        => __( 'Customizing', 'colormag' ),
+			]
+		);
+	}
+);
 
 /**
  * Deprecated.
