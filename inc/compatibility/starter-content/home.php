@@ -29,7 +29,7 @@ return [
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":16,"width":"24px","height":"24px","scale":"cover","sizeSlug":"thumbnail","linkDestination":"none","style":{"border":{"radius":"100px"}}} -->
-<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Moana-Doe.jpg" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
+<figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Moana-Doe.png" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","textDecoration":"underline"}},"fontFamily":"inter"} -->
@@ -326,7 +326,7 @@ return [
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"padding":{"right":"20px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center" style="padding-right:20px"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":59,"width":"260px","height":"184px","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"4px"},"spacing":{"margin":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Politics-Img-1.jpg" alt="" class="wp-image-59" style="border-radius:4px;object-fit:cover;width:260px;height:184px"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Politics-Img-11.jpg" alt="" class="wp-image-59" style="border-radius:4px;object-fit:cover;width:260px;height:184px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 

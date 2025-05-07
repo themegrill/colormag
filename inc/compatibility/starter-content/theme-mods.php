@@ -101,7 +101,6 @@ return array(
 		'background-size'       => 'contain',
 		'background-attachment' => 'scroll',
 	),
-	'colormag_header_bottom_area_border_color'       => '#f3f3f3',
 	'colormag_header_primary_menu_active_text_color' => '#c57eef',
 	'colormag_header_primary_menu_text_color'        => '#FFFFFF',
 	'colormag_header_primary_menu_selected_hovered_text_color' => '#c57eef',
@@ -125,19 +124,27 @@ return array(
 	'colormag_footer_menu_color'                     => '#BDBDBD',
 	'colormag_footer_menu'                           => '#BDBDBD',
 	'colormag_news_ticker_link_color'                => '#D3D3D3',
+	'colormag_header_search_border_color'            => '#EBEBEC1A',
+	'colormag_header_search_placeholder_color'       => '#FFFFFF',
+	'colormag_header_search_width'                   => array(
+		'size'  => 300,
+		'units' => 'px',
+	),
 	'colormag_header_top_area_border_width'          => array(
 		'top'    => '0',
 		'right'  => '0',
 		'bottom' => '1',
 		'left'   => '0',
 		'units'  => 'px',
-	),'colormag_header_top_area_padding'          => array(
+	),
+	'colormag_header_top_area_padding'               => array(
 		'top'    => '15',
 		'right'  => '0',
 		'bottom' => '15',
 		'left'   => '0',
 		'units'  => 'px',
-	),'colormag_header_main_area_padding'          => array(
+	),
+	'colormag_header_main_area_padding'              => array(
 		'top'    => '24',
 		'right'  => '0',
 		'bottom' => '24',

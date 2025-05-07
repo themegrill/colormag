@@ -32,7 +32,7 @@ class ColorMag_Starter_Content {
 
 	public function customizer_starter_css() {
 		//      if ( is_front_page() && is_customize_preview() ) {
-			wp_enqueue_style( 'colormag-starter-content', get_template_directory_uri() . '/assets/css/starter-content.css', array(), '' );
+//			wp_enqueue_style( 'colormag-starter-content', get_template_directory_uri() . '/assets/css/starter-content.css', array(), '' );
 		//      }
 	}
 
