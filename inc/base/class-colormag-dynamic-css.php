@@ -2556,7 +2556,7 @@ class ColorMag_Dynamic_CSS {
 		// Header search placeholder color.
 		$header_search_placeholder_color     = get_theme_mod( 'colormag_header_search_placeholder_color', '' );
 		$header_search_placeholder_color_css = array(
-			'.search-wrap input::placeholder' => array(
+			'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-wrap i' => array(
 				'color' => esc_html( $header_search_placeholder_color ),
 			),
 		);

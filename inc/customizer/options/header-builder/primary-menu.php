@@ -90,6 +90,22 @@ $options = array(
 								'unit' => '',
 							),
 						),
+						'line-height'    => array(
+							'desktop' => array(
+								'size' => '',
+								'unit' => '-',
+							),
+							'tablet'  => array(
+								'size' => '',
+								'unit' => '-',
+							),
+							'mobile'  => array(
+								'size' => '',
+								'unit' => '-',
+							),
+						),
+						'font-style'     => 'normal',
+						'text-transform' => 'none',
 					),
 					'type'      => 'customind-typography',
 					'title'     => esc_html__( 'Typography', 'colormag' ),

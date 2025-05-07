@@ -130,6 +130,10 @@ return array(
 		'size'  => 300,
 		'units' => 'px',
 	),
+	'colormag_header_random_icon_size'               => array(
+		'size'  => 18,
+		'units' => 'px',
+	),
 	'colormag_header_top_area_border_width'          => array(
 		'top'    => '0',
 		'right'  => '0',
@@ -187,6 +191,40 @@ return array(
 				'unit' => '',
 			),
 		),
+	),
+	'colormag_header_primary_menu_typography'        => array(
+		'font-family'    => 'Inter',
+		'font-weight'    => '500',
+		'font-size'      => array(
+			'desktop' => array(
+				'size' => '15',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+		'line-height'    => array(
+			'desktop' => array(
+				'size' => '1.6',
+				'unit' => '-',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '-',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '-',
+			),
+		),
+		'font-style'     => 'normal',
+		'text-transform' => 'capitalize',
 	),
 	'colormag_footer_menu_typography'                => array(
 		'font-family' => 'Inter',

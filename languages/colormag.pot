@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-05-01 07:12+0000\n"
+"POT-Creation-Date: 2025-05-07 07:18+0000\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -581,7 +581,7 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: inc/class-colormag-starter-content.php:197
+#: inc/class-colormag-starter-content.php:204
 msgctxt "Theme starter content"
 msgid "Blog"
 msgstr ""
@@ -736,316 +736,6 @@ msgstr ""
 
 #: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-5.php:55
 msgid "Grid Style 5"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:17
-msgid "LATEST NEWS"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:22
-msgid "New Artist Takes the Music Scene by Storm with Unforgettable"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:55
-msgid "New Smartphone Feature Could Change Way We Use Devices"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:69, inc/compatibility/starter-content/home.php:520
-msgid "Underdog Team Triumphs in a Thrilling Final Match"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:85
-msgid "Editor’s Pick"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:89, inc/compatibility/starter-content/home.php:240, inc/compatibility/starter-content/home.php:807, inc/compatibility/starter-content/home.php:948, inc/compatibility/starter-content/home.php:1127, inc/compatibility/starter-content/home.php:1259, inc/compatibility/starter-content/home.php:1494
-msgid "View All"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:110
-msgid "Drake Reveals Secret Behind His Latest Chart Hit"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:138
-msgid "Tom Hanks Talks Family in Exclusive Interview"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:170
-msgid "Joe Biden’s Plan to Tackle Climate Change Gains Support"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:198
-msgid "Lionel Messi Scores Hat-Trick to Secure Big Win"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:236
-msgid "Technology"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:258
-msgid "Tech innovations are revolutionizing industries Fields Artificial"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:278
-msgid "Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:290
-msgid "Smartphones are getting smarter, integrating AI"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:316
-msgid "Gadgets are evolving, changing the way interact"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:342
-msgid "Wearable tech is reshaping personal fitness tracking ..."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:367
-msgid "Politics"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:372
-msgid "Elections"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:380
-msgid "Relations"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:388
-msgid "President"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:396
-msgid "World"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:415
-msgid "Climate change demands urgent action global leaders today"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:435, inc/compatibility/starter-content/home.php:469, inc/compatibility/starter-content/home.php:503
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:449
-msgid "Voter turnout highlights the need for engaging and inclusive policies"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:483
-msgid "Economic reforms remain a top priority for governments worldwide"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:515
-msgid "SPORTS"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:531
-msgid "Follow Us"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:541
-msgid "Trending"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:555, inc/compatibility/starter-content/home.php:964
-msgid "Diplomacy is key to resolving cross-border conflicts effectively"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:576
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dolore magna aliqua."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:588
-msgid ""
-"Policy shifts signal a new chapter in developing ..\n"
-""
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:607
-msgid "Fund boost to support youth social the.."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:628
-msgid "Watch Videos"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:632
-msgid "More Posts"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:649
-msgid "LIVE"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:654
-msgid "Breaking Down This Year’s Bold Fashion Trends From Techno Worlds"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:713
-msgid "Dive into the world of cloud gaming platforms"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:741
-msgid "Explore the latest tech innovations in games"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:769
-msgid "Unbox next-generation consoles and Lineups"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:803
-msgid "Fitness"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:823
-msgid "Discover the Path to Achieving Unstoppable Fitness Success"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:843, inc/compatibility/starter-content/home.php:935
-msgid "Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:853
-msgid "Master the Strategies for Reaching Your Fitness Goals"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:885
-msgid "Transform Your Athletic Journey and Unlock New Heights"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:915
-msgid "Unlock the Hidden Secrets to Athletic Success and Contribution"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:944
-msgid "Diet Health"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:984
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:998
-msgid "Simple Steps to Turn Your Hobby into a Full-Time"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1016
-msgid "Follow Your Passion and Create the Life You Love "
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1034
-msgid "How to Create a Budget That Works for Your Lifestyle"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1052
-msgid "Master the Art of Meal Prepping for a Healthier"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1075
-msgid "Never Miss Any Updates!"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1079
-msgid "Subscribe our newsletter for the latest news."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1094
-msgid "SUBSCRIBE"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1101
-msgid "I have read and agree to the all conditions."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1123
-msgid "Top Stories"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1143
-msgid "How to Create Budget That Works for Your Lifestyle"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1169
-msgid "Find the best PC games optimized For console"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1221
-msgid "Dive into the world of gaming platforms"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1255
-msgid "Lifestyle"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1275
-msgid "How Fitness Can Boost Your Mood and Increase Happiness"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1301
-msgid "Exploring the Link Between Physical Fitness and Mental Well-Being"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1327
-msgid "Finding Peace and Joy Through Mindful Fitness Practices"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1359
-msgid "Boost Your Productivity with These Simple Tips"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1379
-msgid "Creating a Space for Self-Care in Your Everyday Routine"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1399
-msgid "Build a Routine That Supports Your Best Self"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1421
-msgid "Discover the Secret to a Balanced and Happy Life"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1441
-msgid "Simple Ways to Cultivate Gratitude and Joy Daily"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1461
-msgid "Master the Art of Meal Prepping for a How to.."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1490
-msgid "Wellness"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1512
-msgid "Emerging technologies are changing how we live and work"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1532
-msgid "Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum aliquet odio mattis. Class aptent taciti sociosquad. et velit interdum, ac aliquet odio mattis."
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1544
-msgid "Incorporate simple daily habits to boost your well-being "
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1558
-msgid "Learn how to prioritize your mental and physical Health"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1574
-msgid "Easy ways to reduce stress and improve mental clarity"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1588
-msgid "Unlock the secrets Of wellness for body and Soul"
-msgstr ""
-
-#: inc/compatibility/starter-content/home.php:1609
-msgid "Subscribe For Latest Updates !"
 msgstr ""
 
 #: inc/compatibility/starter-content/politics.php:10
@@ -1264,11 +954,11 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:51, inc/customizer/options/footer-builder/copyright.php:31, inc/customizer/options/footer-builder/html-1.php:19, inc/customizer/options/footer-builder/main-area.php:51, inc/customizer/options/footer-builder/top-area.php:51, inc/customizer/options/footer/footer-bar.php:80, inc/customizer/options/global/button.php:19, inc/customizer/options/header-and-navigation/header-action.php:18, inc/customizer/options/header-and-navigation/primary-menu.php:55, inc/customizer/options/header-and-navigation/primary-menu.php:73, inc/customizer/options/header-and-navigation/primary-menu.php:200, inc/customizer/options/header-and-navigation/site-identity.php:57, inc/customizer/options/header-and-navigation/site-identity.php:129, inc/customizer/options/header-builder/bottom-area.php:40, inc/customizer/options/header-builder/date.php:31, inc/customizer/options/header-builder/header-button.php:34, inc/customizer/options/header-builder/home-icon.php:14, inc/customizer/options/header-builder/html-1.php:19, inc/customizer/options/header-builder/logo.php:67, inc/customizer/options/header-builder/logo.php:157, inc/customizer/options/header-builder/main-area.php:40, inc/customizer/options/header-builder/mobile-menu.php:19, inc/customizer/options/header-builder/news-ticker.php:14, inc/customizer/options/header-builder/primary-menu.php:26, inc/customizer/options/header-builder/search.php:61, inc/customizer/options/header-builder/toggle-button.php:12, inc/customizer/options/header-builder/top-area.php:42
+#: inc/customizer/options/footer-builder/bottom-area.php:51, inc/customizer/options/footer-builder/copyright.php:31, inc/customizer/options/footer-builder/html-1.php:19, inc/customizer/options/footer-builder/main-area.php:51, inc/customizer/options/footer-builder/top-area.php:51, inc/customizer/options/footer/footer-bar.php:80, inc/customizer/options/global/button.php:19, inc/customizer/options/header-and-navigation/header-action.php:18, inc/customizer/options/header-and-navigation/primary-menu.php:55, inc/customizer/options/header-and-navigation/primary-menu.php:73, inc/customizer/options/header-and-navigation/primary-menu.php:200, inc/customizer/options/header-and-navigation/site-identity.php:57, inc/customizer/options/header-and-navigation/site-identity.php:129, inc/customizer/options/header-builder/bottom-area.php:40, inc/customizer/options/header-builder/date.php:31, inc/customizer/options/header-builder/header-button.php:34, inc/customizer/options/header-builder/home-icon.php:14, inc/customizer/options/header-builder/html-1.php:19, inc/customizer/options/header-builder/logo.php:67, inc/customizer/options/header-builder/logo.php:157, inc/customizer/options/header-builder/main-area.php:40, inc/customizer/options/header-builder/mobile-menu.php:19, inc/customizer/options/header-builder/news-ticker.php:14, inc/customizer/options/header-builder/primary-menu.php:26, inc/customizer/options/header-builder/search.php:114, inc/customizer/options/header-builder/toggle-button.php:12, inc/customizer/options/header-builder/top-area.php:42
 msgid "Color"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:67, inc/customizer/options/footer-builder/main-area.php:91, inc/customizer/options/footer-builder/top-area.php:67, inc/customizer/options/footer/footer-bar.php:63, inc/customizer/options/footer/footer-column.php:74, inc/customizer/options/footer/footer-column.php:99, inc/customizer/options/global/button.php:41, inc/customizer/options/global/container.php:41, inc/customizer/options/header-and-navigation/main-header.php:138, inc/customizer/options/header-and-navigation/primary-menu.php:28, inc/customizer/options/header-and-navigation/primary-menu.php:140, inc/customizer/options/header-and-navigation/primary-menu.php:269, inc/customizer/options/header-and-navigation/top-bar.php:49, inc/customizer/options/header-builder/bottom-area.php:66, inc/customizer/options/header-builder/header-button.php:55, inc/customizer/options/header-builder/main-area.php:56, inc/customizer/options/header-builder/mobile-menu.php:51, inc/customizer/options/header-builder/offset-area.php:14, inc/customizer/options/header-builder/primary-menu.php:55, inc/customizer/options/header-builder/primary-menu.php:121, inc/customizer/options/header-builder/search.php:32, inc/customizer/options/header-builder/search.php:67, inc/customizer/options/header-builder/secondary-menu.php:47, inc/customizer/options/header-builder/secondary-menu.php:105, inc/customizer/options/header-builder/top-area.php:58
+#: inc/customizer/options/footer-builder/bottom-area.php:67, inc/customizer/options/footer-builder/main-area.php:91, inc/customizer/options/footer-builder/top-area.php:67, inc/customizer/options/footer/footer-bar.php:63, inc/customizer/options/footer/footer-column.php:74, inc/customizer/options/footer/footer-column.php:99, inc/customizer/options/global/button.php:41, inc/customizer/options/global/container.php:41, inc/customizer/options/header-and-navigation/main-header.php:138, inc/customizer/options/header-and-navigation/primary-menu.php:28, inc/customizer/options/header-and-navigation/primary-menu.php:140, inc/customizer/options/header-and-navigation/primary-menu.php:269, inc/customizer/options/header-and-navigation/top-bar.php:49, inc/customizer/options/header-builder/bottom-area.php:66, inc/customizer/options/header-builder/header-button.php:55, inc/customizer/options/header-builder/main-area.php:56, inc/customizer/options/header-builder/mobile-menu.php:51, inc/customizer/options/header-builder/offset-area.php:14, inc/customizer/options/header-builder/primary-menu.php:55, inc/customizer/options/header-builder/primary-menu.php:121, inc/customizer/options/header-builder/search.php:39, inc/customizer/options/header-builder/search.php:120, inc/customizer/options/header-builder/secondary-menu.php:47, inc/customizer/options/header-builder/secondary-menu.php:105, inc/customizer/options/header-builder/top-area.php:58
 msgid "Background"
 msgstr ""
 
@@ -1280,11 +970,11 @@ msgstr ""
 msgid "Margin"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:113, inc/customizer/options/footer-builder/main-area.php:137, inc/customizer/options/footer-builder/top-area.php:126, inc/customizer/options/header-builder/bottom-area.php:109, inc/customizer/options/header-builder/header-button.php:98, inc/customizer/options/header-builder/main-area.php:102, inc/customizer/options/header-builder/top-area.php:86
+#: inc/customizer/options/footer-builder/bottom-area.php:113, inc/customizer/options/footer-builder/main-area.php:137, inc/customizer/options/footer-builder/top-area.php:126, inc/customizer/options/header-builder/bottom-area.php:109, inc/customizer/options/header-builder/header-button.php:98, inc/customizer/options/header-builder/main-area.php:102, inc/customizer/options/header-builder/search.php:66, inc/customizer/options/header-builder/top-area.php:86
 msgid "Border Width"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:121, inc/customizer/options/footer-builder/main-area.php:145, inc/customizer/options/footer-builder/top-area.php:134, inc/customizer/options/header-builder/bottom-area.php:116, inc/customizer/options/header-builder/header-button.php:107, inc/customizer/options/header-builder/main-area.php:110, inc/customizer/options/header-builder/top-area.php:94
+#: inc/customizer/options/footer-builder/bottom-area.php:121, inc/customizer/options/footer-builder/main-area.php:145, inc/customizer/options/footer-builder/top-area.php:134, inc/customizer/options/header-builder/bottom-area.php:116, inc/customizer/options/header-builder/header-button.php:107, inc/customizer/options/header-builder/main-area.php:110, inc/customizer/options/header-builder/search.php:78, inc/customizer/options/header-builder/top-area.php:94
 msgid "Border Color"
 msgstr ""
 
@@ -1317,11 +1007,11 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:47, inc/customizer/options/footer-builder/footer-menu.php:31, inc/customizer/options/footer-builder/html-1.php:35, inc/customizer/options/footer-builder/main-area.php:67, inc/customizer/options/footer-builder/widget-1.php:71, inc/customizer/options/footer-builder/widget-2.php:71, inc/customizer/options/footer-builder/widget-3.php:71, inc/customizer/options/footer-builder/widget-4.php:71, inc/customizer/options/footer-builder/widget-5.php:71, inc/customizer/options/footer-builder/widget-6.php:71, inc/customizer/options/footer-builder/widget-7.php:71, inc/customizer/options/footer/footer-bar.php:86, inc/customizer/options/footer/footer-column.php:122, inc/customizer/options/footer/footer-column.php:147, inc/customizer/options/footer/footer-column.php:172, inc/customizer/options/global/button.php:26, inc/customizer/options/global/button.php:48, inc/customizer/options/global/colors.php:157, inc/customizer/options/header-and-navigation/header-action.php:26, inc/customizer/options/header-and-navigation/primary-menu.php:81, inc/customizer/options/header-and-navigation/primary-menu.php:208, inc/customizer/options/header-and-navigation/site-identity.php:65, inc/customizer/options/header-builder/header-button.php:40, inc/customizer/options/header-builder/header-button.php:61, inc/customizer/options/header-builder/html-1.php:35, inc/customizer/options/header-builder/logo.php:75, inc/customizer/options/header-builder/mobile-menu.php:27, inc/customizer/options/header-builder/primary-menu.php:32, inc/customizer/options/header-builder/random.php:21, inc/customizer/options/header-builder/search.php:75, inc/customizer/options/header-builder/secondary-menu.php:32
+#: inc/customizer/options/footer-builder/copyright.php:47, inc/customizer/options/footer-builder/footer-menu.php:31, inc/customizer/options/footer-builder/html-1.php:35, inc/customizer/options/footer-builder/main-area.php:67, inc/customizer/options/footer-builder/widget-1.php:71, inc/customizer/options/footer-builder/widget-2.php:71, inc/customizer/options/footer-builder/widget-3.php:71, inc/customizer/options/footer-builder/widget-4.php:71, inc/customizer/options/footer-builder/widget-5.php:71, inc/customizer/options/footer-builder/widget-6.php:71, inc/customizer/options/footer-builder/widget-7.php:71, inc/customizer/options/footer/footer-bar.php:86, inc/customizer/options/footer/footer-column.php:122, inc/customizer/options/footer/footer-column.php:147, inc/customizer/options/footer/footer-column.php:172, inc/customizer/options/global/button.php:26, inc/customizer/options/global/button.php:48, inc/customizer/options/global/colors.php:157, inc/customizer/options/header-and-navigation/header-action.php:26, inc/customizer/options/header-and-navigation/primary-menu.php:81, inc/customizer/options/header-and-navigation/primary-menu.php:208, inc/customizer/options/header-and-navigation/site-identity.php:65, inc/customizer/options/header-builder/header-button.php:40, inc/customizer/options/header-builder/header-button.php:61, inc/customizer/options/header-builder/html-1.php:35, inc/customizer/options/header-builder/logo.php:75, inc/customizer/options/header-builder/mobile-menu.php:27, inc/customizer/options/header-builder/primary-menu.php:32, inc/customizer/options/header-builder/random.php:21, inc/customizer/options/header-builder/search.php:128, inc/customizer/options/header-builder/secondary-menu.php:32
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/copyright.php:54, inc/customizer/options/footer-builder/footer-menu.php:38, inc/customizer/options/footer-builder/html-1.php:42, inc/customizer/options/footer-builder/main-area.php:74, inc/customizer/options/footer-builder/widget-1.php:78, inc/customizer/options/footer-builder/widget-2.php:78, inc/customizer/options/footer-builder/widget-3.php:78, inc/customizer/options/footer-builder/widget-4.php:78, inc/customizer/options/footer-builder/widget-5.php:78, inc/customizer/options/footer-builder/widget-6.php:78, inc/customizer/options/footer-builder/widget-7.php:78, inc/customizer/options/footer/footer-bar.php:93, inc/customizer/options/footer/footer-column.php:179, inc/customizer/options/global/button.php:33, inc/customizer/options/global/button.php:55, inc/customizer/options/global/colors.php:164, inc/customizer/options/header-and-navigation/header-action.php:33, inc/customizer/options/header-and-navigation/site-identity.php:72, inc/customizer/options/header-builder/header-button.php:47, inc/customizer/options/header-builder/header-button.php:68, inc/customizer/options/header-builder/html-1.php:42, inc/customizer/options/header-builder/logo.php:82, inc/customizer/options/header-builder/mobile-menu.php:34, inc/customizer/options/header-builder/primary-menu.php:39, inc/customizer/options/header-builder/primary-menu.php:61, inc/customizer/options/header-builder/random.php:28, inc/customizer/options/header-builder/search.php:82, inc/customizer/options/header-builder/secondary-menu.php:39, inc/customizer/options/header-builder/secondary-menu.php:53
+#: inc/customizer/options/footer-builder/copyright.php:54, inc/customizer/options/footer-builder/footer-menu.php:38, inc/customizer/options/footer-builder/html-1.php:42, inc/customizer/options/footer-builder/main-area.php:74, inc/customizer/options/footer-builder/widget-1.php:78, inc/customizer/options/footer-builder/widget-2.php:78, inc/customizer/options/footer-builder/widget-3.php:78, inc/customizer/options/footer-builder/widget-4.php:78, inc/customizer/options/footer-builder/widget-5.php:78, inc/customizer/options/footer-builder/widget-6.php:78, inc/customizer/options/footer-builder/widget-7.php:78, inc/customizer/options/footer/footer-bar.php:93, inc/customizer/options/footer/footer-column.php:179, inc/customizer/options/global/button.php:33, inc/customizer/options/global/button.php:55, inc/customizer/options/global/colors.php:164, inc/customizer/options/header-and-navigation/header-action.php:33, inc/customizer/options/header-and-navigation/site-identity.php:72, inc/customizer/options/header-builder/header-button.php:47, inc/customizer/options/header-builder/header-button.php:68, inc/customizer/options/header-builder/html-1.php:42, inc/customizer/options/header-builder/logo.php:82, inc/customizer/options/header-builder/mobile-menu.php:34, inc/customizer/options/header-builder/primary-menu.php:39, inc/customizer/options/header-builder/primary-menu.php:61, inc/customizer/options/header-builder/random.php:28, inc/customizer/options/header-builder/search.php:135, inc/customizer/options/header-builder/secondary-menu.php:39, inc/customizer/options/header-builder/secondary-menu.php:53
 msgid "Hover"
 msgstr ""
 
@@ -1557,7 +1247,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer/options/global/sidebar.php:36, inc/customizer/options/header-and-navigation/main-header.php:104, inc/customizer/options/header-and-navigation/primary-menu.php:48, inc/customizer/options/header-builder/bottom-area.php:49, inc/customizer/options/header-builder/search.php:41
+#: inc/customizer/options/global/sidebar.php:36, inc/customizer/options/header-and-navigation/main-header.php:104, inc/customizer/options/header-and-navigation/primary-menu.php:48, inc/customizer/options/header-builder/bottom-area.php:49, inc/customizer/options/header-builder/search.php:48
 msgid "Width"
 msgstr ""
 
@@ -1813,7 +1503,7 @@ msgstr ""
 msgid "Open link in a new tab"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-button.php:117
+#: inc/customizer/options/header-builder/header-button.php:117, inc/customizer/options/header-builder/search.php:91
 msgid "Border Radius"
 msgstr ""
 
@@ -1827,6 +1517,10 @@ msgstr ""
 
 #: inc/customizer/options/header-builder/primary-menu.php:46, inc/customizer/options/header-builder/primary-menu.php:68
 msgid "Active"
+msgstr ""
+
+#: inc/customizer/options/header-builder/random.php:41
+msgid "Icon Size"
 msgstr ""
 
 #: inc/customizer/options/header-builder/search.php:14
@@ -1849,7 +1543,11 @@ msgstr ""
 msgid "Text Color"
 msgstr ""
 
-#: inc/customizer/options/header-builder/search.php:53
+#: inc/customizer/options/header-builder/search.php:31
+msgid "Placeholder Color"
+msgstr ""
+
+#: inc/customizer/options/header-builder/search.php:106
 msgid "Search Button"
 msgstr ""
 
@@ -1937,7 +1635,7 @@ msgstr ""
 msgid "Menu 2"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:350
+#: inc/customizer/panels-sections/panels-sections.php:357
 msgid "WooCommerce"
 msgstr ""
 
