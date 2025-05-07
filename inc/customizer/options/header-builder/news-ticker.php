@@ -10,28 +10,29 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_news_ticker_sub_controls',
 			array(
-				'colormag_news_ticker_label'      => array(
+				'colormag_news_ticker_label'              => array(
 					'title'     => esc_html__( 'Label', 'colormag' ),
 					'default'   => 'Latest:',
 					'type'      => 'customind-text',
 					'section'   => 'colormag_header_builder_news_ticker',
 					'transport' => 'postMessage',
 				),
-				'colormag_news_ticker_color'      => array(
+				'colormag_news_ticker_color'              => array(
 					'title'     => esc_html__( 'Color', 'colormag' ),
 					'default'   => '',
 					'type'      => 'customind-color',
 					'section'   => 'colormag_header_builder_news_ticker',
 					'transport' => 'postMessage',
 				),
-				'colormag_news_ticker_link_color' => array(
+				'colormag_news_ticker_link_color'         => array(
 					'title'     => esc_html__( 'Link Color', 'colormag' ),
 					'default'   => '',
 					'type'      => 'customind-color',
 					'section'   => 'colormag_header_builder_news_ticker',
 					'transport' => 'postMessage',
+
 				),
-				'colormag_news_ticker_link_typography' => array(
+				'colormag_news_ticker_content_typography' => array(
 					'default'   => array(
 						'font-family'    => 'default',
 						'font-weight'    => 'regular',
@@ -72,7 +73,7 @@ $options = array(
 					'title'     => esc_html__( 'Link Typography', 'colormag' ),
 					'section'   => 'colormag_header_builder_news_ticker',
 				),
-				'colormag_news_ticker_typography' => array(
+				'colormag_news_ticker_typography'         => array(
 					'default'   => array(
 						'font-family'    => 'default',
 						'font-weight'    => 'regular',

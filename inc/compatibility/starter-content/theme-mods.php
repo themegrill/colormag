@@ -334,7 +334,7 @@ return array(
 			),
 		),
 	),
-	'colormag_news_ticker_link_typography'           => array(
+	'colormag_news_ticker_content_typography'           => array(
 		'font-family' => 'Inter',
 		'font-weight' => '600',
 		'font-size'   => array(

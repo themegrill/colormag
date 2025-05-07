@@ -2634,7 +2634,6 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $social_icon_color, $social_icon_color_css );
 
-
 		// Header search background color.
 		$header_search_background         = get_theme_mod( 'colormag_header_search_background', '' );
 		$header_search_background_css = array(

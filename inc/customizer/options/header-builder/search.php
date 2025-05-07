@@ -8,7 +8,7 @@ $options = array(
 		'sub_controls' => apply_filters(
 			'colormag_search_sub_controls',
 			array(
-				'colormag_header_search_type'          => array(
+				'colormag_header_search_type'              => array(
 					'default' => 'normal-search',
 					'type'    => 'customind-select',
 					'title'   => esc_html__( 'Search Type', 'colormag' ),
@@ -19,27 +19,27 @@ $options = array(
 						'search-icon-input' => esc_html__( 'Icon Inside Search', 'colormag' ),
 					),
 				),
-				'colormag_header_search_text_color'    => array(
+				'colormag_header_search_text_color'        => array(
 					'default' => '',
 					'type'    => 'customind-color',
 					'title'   => esc_html__( 'Text Color', 'colormag' ),
 					'section' => 'colormag_header_builder_search',
 				),
-				'colormag_header_search_placeholder_color'    => array(
-					'default' => '',
-					'type'    => 'customind-color',
-					'title'   => esc_html__( 'Placeholder Color', 'colormag' ),
+				'colormag_header_search_placeholder_color' => array(
+					'default'   => '',
+					'type'      => 'customind-color',
+					'title'     => esc_html__( 'Placeholder Color', 'colormag' ),
 					'transport' => 'postMessage',
-					'section' => 'colormag_header_builder_search',
+					'section'   => 'colormag_header_builder_search',
 				),
-				'colormag_header_search_background'    => array(
+				'colormag_header_search_background'        => array(
 					'default'   => '',
 					'type'      => 'customind-color',
 					'transport' => 'postMessage',
 					'title'     => esc_html__( 'Background', 'colormag' ),
 					'section'   => 'colormag_header_builder_search',
 				),
-				'colormag_header_search_width'         => array(
+				'colormag_header_search_width'             => array(
 					'default'     => array(
 						'size'  => '',
 						'units' => 'px',
@@ -54,7 +54,7 @@ $options = array(
 						'colormag_header_search_type' => 'search-icon-input',
 					),
 				),
-				'colormag_header_search_border_width'  => array(
+				'colormag_header_search_border_width'      => array(
 					'default'     => array(
 						'top'    => '',
 						'right'  => '',
@@ -72,7 +72,7 @@ $options = array(
 						'colormag_header_search_type' => 'search-icon-input',
 					),
 				),
-				'colormag_header_search_border_color'  => array(
+				'colormag_header_search_border_color'      => array(
 					'default'   => '',
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Border Color', 'colormag' ),
@@ -82,7 +82,7 @@ $options = array(
 						'colormag_header_search_type' => 'search-icon-input',
 					),
 				),
-				'colormag_header_search_border_radius' => array(
+				'colormag_header_search_border_radius'     => array(
 					'default'     => array(
 						'size'  => '',
 						'units' => 'px',
