@@ -4,13 +4,8 @@
 class ColorMag_Starter_Content {
 	const HOME_SLUG  = 'home';
 	const BLOG_SLUG  = 'blog';
-	const POLITICS   = 'politics';
-	const WORLD      = 'world';
-	const SPORTS     = 'sports';
-	const TECHNOLOGY = 'technology';
 
 	public function __construct() {
-		$is_fresh_site = get_option( 'fresh_site' );
 		add_filter( 'colormag_header_builder_default_options', array( $this, 'header_builder_options' ) );
 		add_filter( 'colormag_footer_builder_options', array( $this, 'footer_builder_options' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_starter_css' ) );
