@@ -1177,6 +1177,14 @@
 					);
 					break;
 
+				case 'colormag_header_socials_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .header-social-icons a',
+						'color',
+						value,
+					);
+					break;
+
 				case 'colormag_header_search_icon_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-top-search .search-top::before',

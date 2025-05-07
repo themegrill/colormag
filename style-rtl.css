@@ -1248,6 +1248,19 @@ table td {
 	font-size: 16px;
 }
 
+.cm-header-builder .social-style-1 {
+	gap: 0px;
+}
+
+.cm-header-builder .social-style-1 a {
+	border-left: 1px solid #4E4E4E;
+	padding: 0 10px;
+}
+
+.cm-header-builder .social-style-1 a:last-child {
+	border-left: none;
+}
+
 .cm-header-builder.cm-layout-1-transparent {
 	position: relative;
 	border-bottom: none;

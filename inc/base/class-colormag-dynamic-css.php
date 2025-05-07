@@ -1196,6 +1196,23 @@ class ColorMag_Dynamic_CSS {
 			'padding'
 		);
 
+		$content_area_padding_default = array(
+			'top'    => '60',
+			'right'  => '',
+			'bottom' => '60',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$content_area_padding = get_theme_mod( 'colormag_content_area_padding', $content_area_padding_default );
+
+		$parse_css .= colormag_parse_dimension_css(
+			$content_area_padding_default,
+			$content_area_padding,
+			'.cm-content',
+			'padding'
+		);
+
 		// Border radius.
 		$button_border_radius_default = array(
 			'size' => 3,
@@ -2561,6 +2578,16 @@ class ColorMag_Dynamic_CSS {
 			),
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
+
+		// Social icon color.
+		$social_icon_color     = get_theme_mod( 'colormag_header_socials_color', '' );
+		$social_icon_color_css = array(
+			'.cm-header-builder .header-social-icons a' => array(
+				'color' => esc_html( $social_icon_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $social_icon_color, $social_icon_color_css );
+
 
 		// Header search background color.
 		$header_search_background         = get_theme_mod( 'colormag_header_search_background', '' );

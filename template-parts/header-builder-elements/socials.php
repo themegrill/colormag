@@ -1,6 +1,6 @@
 <?php
 
-$social = get_theme_mod(
+$social      = get_theme_mod(
 	'colormag_header_socials',
 	array(
 		array(
@@ -23,10 +23,11 @@ $social = get_theme_mod(
 		),
 	)
 );
+$social_icon = get_theme_mod( 'colormag_header_socials_style', 'default' );
 ?>
 
 <?php if ( ! empty( $social ) ) : ?>
-	<div class="social-icons header-social-icons">
+	<div class="social-icons header-social-icons social-<?php echo esc_attr( $social_icon ); ?>">
 		<?php foreach ( $social as $key => $value ) : ?>
 			<?php if ( ! empty( $value ) ) : ?>
 				<a href="<?php echo esc_url( $value['url'] ); ?>" target="_blank" rel="noopener noreferrer">

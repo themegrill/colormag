@@ -226,6 +226,18 @@
 		}
 	}
 
+	.social-style-1 {
+		gap: 0px;
+		a{
+			border-right: 1px solid #4E4E4E;
+			padding: 0 10px;
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}
+
   &.cm-layout-1-transparent {
     position: relative;
     border-bottom: none;
