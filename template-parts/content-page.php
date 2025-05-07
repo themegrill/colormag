@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php
 	if ( ( ! is_page_template( 'page-templates/page-builder.php' ) ) ) {
-
+		if ( get_theme_mod('colormag_enable_page_header',true)){
 		$markup = is_front_page() ? 'h2' : 'h1';
 		?>
 		<header class="cm-entry-header">
@@ -44,6 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</header>
 
 		<?php
+		}
 	}
 	?>
 
