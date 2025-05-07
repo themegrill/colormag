@@ -25,6 +25,30 @@ return array(
 				'right'  => array( 'random' ),
 			),
 		),
+		'mobile'  => array(
+			'top'    => array(
+				'left'   => array(),
+				'center' => array(),
+				'right'  => array(),
+			),
+			'main'   => array(
+				'left'   => array(),
+				'center' => array(
+					'logo',
+				),
+				'right'  => array(),
+			),
+			'bottom' => array(
+				'left'   => array(
+					'toggle-button',
+				),
+				'center' => array(),
+				'right'  => array(),
+			),
+		),
+		'offset'  => array(
+			'mobile-menu',
+		),
 	),
 	'colormag_footer_builder'                        => array(
 		'desktop' => array(
