@@ -689,6 +689,14 @@
 					);
 					break;
 
+				case 'colormag_news_ticker_link_typography':
+					css = colormagGenerateTypographyCSS(
+						id,
+						'.cm-header-builder .breaking-news ul li a',
+						value,
+					);
+					break;
+
 				case 'colormag_header_html_1_text_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-html-1 *',

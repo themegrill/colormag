@@ -71,6 +71,9 @@ and we will include it within the theme from next version update.
 == Changelog ==
 * Added       - Option to change full width search width, border width, border color and border radius.
 * Added       - Option to change full width search placeholder color.
+* Added       - Option to change NewsTicker label in header builder.
+* Added       - Option to change NewsTicker link typography in header builder.
+* Added       - Option to change Social icon color and style in header builder.
 
 = Version 4.0.13 - 2025-05-05 =
 * Added - Icon size option in random component of header builder.

@@ -105,7 +105,7 @@ return array(
 	'colormag_header_primary_menu_text_color'        => '#FFFFFF',
 	'colormag_header_primary_menu_selected_hovered_text_color' => '#c57eef',
 	'colormag_header_primary_menu_hover_background'  => 'transparent',
-	'colormag_header_primary_menu_active_background' => 'transparent',
+	'colormag_header_primary_menu_active_background' => '#252728',
 	'colormag_default_sidebar_layout'                => 'no_sidebar_full_width',
 	'colormag_page_sidebar_layout'                   => 'no_sidebar_full_width',
 	'colormag_header_search_icon_color'              => '#000000',
@@ -124,24 +124,32 @@ return array(
 	'colormag_footer_menu_color'                     => '#BDBDBD',
 	'colormag_footer_menu'                           => '#BDBDBD',
 	'colormag_news_ticker_color'                     => '#FFFFFF',
-	'colormag_news_ticker_link_color'                => '#FFFFFF',
+	'colormag_news_ticker_link_color'                => '#d3d3d3',
 	'colormag_header_search_border_color'            => '#EBEBEC1A',
 	'colormag_header_search_placeholder_color'       => '#FFFFFF',
 	'colormag_header_socials_color'                  => '#FFFFFF',
 	'colormag_header_socials_style'                  => 'style-1',
-	'colormag_enable_page_header'                  => false,
+	'colormag_enable_page_header'                    => false,
+	'colormag_news_ticker_label'                     => 'Trending :',
 	'colormag_header_search_width'                   => array(
 		'size'  => 300,
 		'units' => 'px',
 	),
 	'colormag_header_random_icon_size'               => array(
-		'size'  => 18,
+		'size'  => 20,
 		'units' => 'px',
 	),
 	'colormag_header_top_area_border_width'          => array(
 		'top'    => '0',
 		'right'  => '0',
 		'bottom' => '1',
+		'left'   => '0',
+		'units'  => 'px',
+	),
+	'colormag_header_bottom_area_padding'            => array(
+		'top'    => '6',
+		'right'  => '0',
+		'bottom' => '6',
 		'left'   => '0',
 		'units'  => 'px',
 	),
@@ -264,6 +272,60 @@ return array(
 			'label' => 'youtube',
 			'url'   => '#',
 			'icon'  => 'fa-brands fa-youtube',
+		),
+	),
+	'colormag_date_typography'                       => array(
+		'font-family' => 'Inter',
+		'font-weight' => '400',
+		'font-size'   => array(
+			'desktop' => array(
+				'size' => '13',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+	),
+	'colormag_news_ticker_typography'                => array(
+		'font-family' => 'Inter',
+		'font-weight' => '600',
+		'font-size'   => array(
+			'desktop' => array(
+				'size' => '13',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+	),
+	'colormag_news_ticker_link_typography'           => array(
+		'font-family' => 'Inter',
+		'font-weight' => '600',
+		'font-size'   => array(
+			'desktop' => array(
+				'size' => '13',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
 		),
 	),
 );

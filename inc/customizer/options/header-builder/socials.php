@@ -20,17 +20,16 @@ $options = array(
 							'transport' => 'postMessage',
 							'section'   => 'colormag_header_builder_socials',
 						),
-						'colormag_header_socials_style' => array(
-							'default'   => 'default',
-							'type'      => 'customind-select',
-							'title'     => esc_html__( 'Style', 'colormag' ),
-							'section'   => 'colormag_header_builder_socials',
-							'transport' => 'postMessage',
-							'choices'   => array(
-								'default' => esc_html__( 'Default', 'colormag' ),
-								'style-1' => esc_html__( 'Style 1', 'colormag' ),
-							),
-						),
+					),
+				),
+				'colormag_header_socials_style'       => array(
+					'default' => 'default',
+					'type'    => 'customind-select',
+					'title'   => esc_html__( 'Style', 'colormag' ),
+					'section' => 'colormag_header_builder_socials',
+					'choices' => array(
+						'default' => esc_html__( 'Default', 'colormag' ),
+						'style-1' => esc_html__( 'Style 1', 'colormag' ),
 					),
 				),
 				'colormag_header_socials'             => array(
