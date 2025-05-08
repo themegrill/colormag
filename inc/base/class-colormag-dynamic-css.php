@@ -2248,6 +2248,13 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_hover_bg, $header_primary_menu_selected_hover_bg_css );
 
+		$header_primary_menu_selected_active_bg     = get_theme_mod( 'colormag_header_primary_menu_active_background', '' );
+		$header_primary_menu_selected_active_bg_css = array(
+			'.cm-header-builder .cm-primary-nav ul li.current-menu-item' => array(
+				'background' => esc_html( $header_primary_menu_selected_active_bg ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_primary_menu_selected_active_bg, $header_primary_menu_selected_active_bg_css );
 
 		$header_primary_sub_menu_background_default = array(
 			'background-color'      => '#232323',
@@ -2717,12 +2724,26 @@ class ColorMag_Dynamic_CSS {
 		// Header random icon hover color.
 		$header_random_icon_hover_color     = get_theme_mod( 'colormag_header_random_icon_hover_color', '' );
 		$header_random_icon_hover_color_css = array(
-			'.cm-header-builder .cm-random-post:hover > .cm-icon--random-fill' => array(
+			'.cm-header-builder .cm-random-post:hover .cm-icon--random-fill' => array(
 				'fill' => esc_html( $header_random_icon_hover_color ),
 			),
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_random_icon_hover_color, $header_random_icon_hover_color_css );
 
+		// Header random icon size default.
+		$header_random_icon_size_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+		// Header random icon size.
+		$header_random_icon_size     = get_theme_mod( 'colormag_header_random_icon_size', $header_random_icon_size_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_random_icon_size_default,
+			$header_random_icon_size,
+			'.cm-header-builder .cm-random-post .cm-icon--random-fill',
+			'font-size'
+		);
 
 		// Header home icon color.
 		$header_random_icon_color     = get_theme_mod( 'colormag_header_home_icon_color', '' );
@@ -3754,16 +3775,109 @@ class ColorMag_Dynamic_CSS {
 			'text-transform' => 'none',
 		);
 
-		$footer_menu_1_typography = get_theme_mod( 'colormag_footer_menu_1_typography', $footer_menu_typography_default );
+		$footer_menu_1_typography = get_theme_mod( 'colormag_footer_menu_typography', $footer_menu_typography_default );
 
 		$parse_builder_css .= colormag_parse_typography_css(
 			$footer_menu_typography_default,
 			$footer_menu_1_typography,
-			'.cm-footer-builder .cm-footer-nav-1 ul li a',
+			'.cm-footer-builder .cm-footer-nav ul li a',
 			array(
 				'tablet' => 768,
 				'mobile' => 600,
 			)
+		);
+
+		// Footer builder copyright color.
+		$footer_copyright_color     = get_theme_mod( 'colormag_footer_copyright_text_color', '' );
+		$footer_copyright_color_css = array(
+			'.cm-footer-builder .cm-copyright' => array(
+				'color' => esc_html( $footer_copyright_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_copyright_color, $footer_copyright_color_css );
+
+		// Footer builder copyright color.
+		$footer_copyright_link_color     = get_theme_mod( 'colormag_footer_copyright_link_color', '' );
+		$footer_copyright_link_color_css = array(
+			'.cm-footer-builder .cm-copyright a' => array(
+				'color' => esc_html( $footer_copyright_link_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_copyright_link_color, $footer_copyright_link_color_css );
+
+		// Footer builder copyright hover color.
+		$footer_copyright_link_hover_color     = get_theme_mod( 'colormag_footer_copyright_link_hover_color', '' );
+		$footer_copyright_link_hover_color_css = array(
+			'.cm-footer-builder .cm-copyright a:hover' => array(
+				'color' => esc_html( $footer_copyright_link_hover_color ),
+			),
+		);
+		$parse_builder_css                               .= colormag_parse_css( '', $footer_copyright_link_hover_color, $footer_copyright_link_hover_color_css );
+
+		// Footer builder copyright typography.
+		$footer_copyright_typography_default = array(
+			'font-family'    => 'Default',
+			'font-weight'    => 'regular',
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '1.6',
+					'unit' => 'rem',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.8',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+
+		$footer_copyright_typography = get_theme_mod( 'colormag_footer_copyright_typography', $footer_copyright_typography_default );
+
+		$parse_builder_css .= colormag_parse_typography_css(
+			$footer_copyright_typography_default,
+			$footer_copyright_typography,
+			'.cm-footer-builder .cm-copyright',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
+		// Footer builder copyright margin.
+		$footer_copyright_margin_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+
+		$footer_copyright_margin = get_theme_mod( 'colormag_footer_copyright_margin', $footer_copyright_margin_default );
+
+		$parse_builder_css .= colormag_parse_dimension_css(
+			$footer_copyright_margin_default,
+			$footer_copyright_margin,
+			'.cm-footer-builder .cm-copyright',
+			'margin'
 		);
 
 		// Footer builder top area container.
@@ -4320,7 +4434,7 @@ class ColorMag_Dynamic_CSS {
 		// Header builder mobile menu background color.
 		$header_mobile_menu_background_color     = get_theme_mod( 'colormag_header_mobile_menu_background', '' );
 		$header_mobile_menu_background_color_css = array(
-			'.cm-mobile-nav li' => array(
+			'.cm-mobile-nav.cm-mobile-open-container > .cm-mobile-menu--open' => array(
 				'background-color' => esc_html( $header_mobile_menu_background_color ),
 			),
 		);

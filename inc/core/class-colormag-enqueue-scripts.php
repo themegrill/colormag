@@ -125,6 +125,37 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 					'colormag_h1_typography',
 					'colormag_headings_typography',
 					'colormag_base_typography',
+					'colormag_footer_copyright_typography',
+					'colormag_footer_menu_typography',
+					'colormag_footer_widget_1_title_typography',
+					'colormag_footer_widget_1_content_typography',
+					'colormag_footer_widget_2_title_typography',
+					'colormag_footer_widget_2_content_typography',
+					'colormag_footer_widget_3_title_typography',
+					'colormag_footer_widget_3_content_typography',
+					'colormag_footer_widget_4_title_typography',
+					'colormag_footer_widget_4_content_typography',
+					'colormag_footer_widget_5_title_typography',
+					'colormag_footer_widget_5_content_typography',
+					'colormag_footer_widget_6_title_typography',
+					'colormag_footer_widget_6_content_typography',
+					'colormag_footer_widget_7_title_typography',
+					'colormag_footer_widget_7_content_typography',
+					'colormag_primary_sub_menu_typography',
+					'colormag_mobile_sub_menu_typography',
+					'colormag_date_typography',
+					'colormag_header_site_title_typography',
+					'colormag_header_site_tagline_typography',
+					'colormag_header_mobile_menu_typography',
+					'colormag_news_ticker_typography',
+					'colormag_header_primary_menu_typography',
+					'colormag_header_primary_sub_menu_typography',
+					'colormag_header_secondary_menu_typography',
+					'colormag_header_secondary_sub_menu_typography',
+					'colormag_widget_1_title_typography',
+					'colormag_widget_1_content_typography',
+					'colormag_widget_2_title_typography',
+					'colormag_widget_2_content_typography',
 				)
 			);
 
@@ -339,6 +370,58 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				#customize-control-colormag_demo_migrated_heading {
 				display: none;
 				}
+
+				#accordion-section-colormag_customize_upsell_section .accordion-section-title a {
+				padding: 10px 30px 11px 14px;
+				display: block;
+				}
+
+				#accordion-panel-nav_menus {
+				margin-top:10px;
+				}
+
+				#accordion-section-colormag_customize_fb_section {
+				display: flex;
+				    justify-content: center;
+				}
+
+			#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title {
+             background: transparent !important;
+		    width: 208px;
+		    border: 1px solid #1877F2;
+		    border-radius: 4px;
+		    margin: 21px;
+		    position: relative;
+		    text-align: right;
+		}
+
+		#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title:hover {
+		    background: #F7F7F7 !important;
+			}
+
+		#accordion-section-colormag_customize_fb_section .accordion-section-title::before {
+		        content: "\f09a";
+			    font-family: "Font Awesome 6 Brands";
+			    position: absolute;
+			    right: 185px;
+			    top: 48%;
+			    transform: translateY(-50%);
+			    color: #1877F2;
+			    font-size: 15px;
+			    display: block;
+					}
+
+		#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title a {
+		       color: #1877F2 !important;
+		    padding: 10px 10px 10px 11px;
+		    display:block;
+
+		}
+
+		#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title a:focus {
+		       box-shadow: 0 0 0 0 #2271b1;
+            outline: 0 solid transparent;
+		}
 		    '
 			);
 		}

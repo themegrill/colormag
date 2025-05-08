@@ -5,8 +5,8 @@ Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
-Version: 4.0.12
-Tested up to: 6.7
+Version: 4.0.13
+Tested up to: 6.8
 Requires PHP: 7.4
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -1010,6 +1010,7 @@ table td {
 .cm-header-builder .cm-bottom-row {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	border: 0 solid;
 	position: relative;
 }
@@ -1037,6 +1038,10 @@ table td {
 
 .cm-header-builder .cm-mobile-row {
 	display: none;
+}
+
+.cm-header-builder .cm-mobile-row .cm-mobile-open-container {
+	background: #27272A;
 }
 
 .cm-header-builder .site-title {
@@ -1190,6 +1195,12 @@ table td {
 @media (max-width: 768px) {
 	.cm-header-builder .cm-desktop-row {
 		display: none;
+	}
+	.cm-header-builder .cm-mobile-header-row {
+		display: none;
+	}
+	.cm-header-builder .cm-mobile-header-row.cm-mobile-menu--open {
+		display: block;
 	}
 	.cm-header-builder .cm-mobile-row {
 		display: block;
@@ -2492,6 +2503,30 @@ li.default-menu {
 	padding: 0;
 }
 
+.cm-mobile-nav.cm-mobile-open-container ul {
+	padding: 0;
+}
+
+.cm-mobile-nav.cm-mobile-open-container > .cm-mobile-menu--open {
+	padding: 10px;
+	background: #27272A;
+}
+
+.cm-mobile-nav.cm-mobile-open-container .cm-header-buttons {
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.cm-mobile-nav.cm-mobile-open-container .date-in-header {
+	text-align: right;
+}
+
+.cm-mobile-nav.cm-mobile-open-container .cm-mobile-header-row.cm-mobile-menu--open {
+	display: flex;
+	gap: 8px;
+	flex-direction: column;
+}
+
 .cm-mobile-nav .menu {
 	position: absolute;
 	top: 100%;
@@ -2518,14 +2553,25 @@ li.default-menu {
 	list-style: none;
 }
 
-.cm-mobile-nav a {
+.cm-mobile-nav li a {
 	display: block;
 	flex-grow: 1;
-	font-size: 14px;
-	color: #fff;
 	padding: 10px 20px;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+.cm-mobile-nav .social-icons {
+	padding: 0 10px;
+}
+
+.cm-mobile-nav .social-icons a {
+	padding: 8px;
+}
+
+.cm-mobile-nav a {
+	color: #fff;
+	font-size: 14px;
 }
 
 .cm-mobile-nav .cm-random-post a {

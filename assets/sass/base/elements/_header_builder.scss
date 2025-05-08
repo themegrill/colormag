@@ -122,6 +122,7 @@
   .cm-bottom-row {
     display: flex;
     justify-content: space-between;
+	align-items: center;
     border: 0 solid;
     position: relative;
 
@@ -149,6 +150,10 @@
 
   .cm-mobile-row {
     display: none;
+
+	  .cm-mobile-open-container {
+		  background: #27272A;
+	  }
   }
 	.site-title {
 		margin-bottom: 0;
@@ -330,6 +335,14 @@
     .cm-desktop-row {
       display: none;
     }
+
+	  .cm-mobile-header-row {
+		  display: none;
+
+		  &.cm-mobile-menu--open {
+			  display: block;
+		  }
+	  }
 
     .cm-mobile-row {
       display: block;
