@@ -1879,7 +1879,7 @@ class ColorMag_Dynamic_CSS {
 			'border-radius'
 		);
 
-		// Header button radius.
+		// Newsticker width.
 		$news_ticker_width_default = array(
 			'size' => 240,
 			'unit' => 'px',
