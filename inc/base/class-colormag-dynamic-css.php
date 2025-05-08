@@ -1879,6 +1879,21 @@ class ColorMag_Dynamic_CSS {
 			'border-radius'
 		);
 
+		// Header button radius.
+		$news_ticker_width_default = array(
+			'size' => 240,
+			'unit' => 'px',
+		);
+
+		$news_ticker_width = get_theme_mod( 'colormag_news_ticker_width', $news_ticker_width_default );
+
+		$parse_builder_css .= colormag_parse_slider_css(
+			$news_ticker_width_default,
+			$news_ticker_width,
+			'.cm-header-builder .newsticker',
+			'width'
+		);
+
 		/**
 		 * Header top area height.
 		 */
