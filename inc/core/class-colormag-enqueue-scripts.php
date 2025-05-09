@@ -221,26 +221,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 					'file'    => '/library/font-awesome/css/v4-shims',
 					'version' => '4.7.0',
 				),
-				array(
-					'handle'  => 'font-awesome-all',
-					'file'    => '/library/font-awesome/css/all',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/library/font-awesome/css/solid',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/library/font-awesome/css/regular',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/library/font-awesome/css/brands',
-					'version' => '6.2.4',
-				),
 			);
 
 			foreach ( $font_awesome_styles as $style ) {
