@@ -62,7 +62,7 @@ class ColorMag_Starter_Content {
 				'top'    => array(
 					'left'   => array(),
 					'center' => array(),
-					'right'  => array(),
+					'right'  => array('socials'),
 				),
 				'main'   => array(
 					'left'   => array(),
@@ -76,7 +76,7 @@ class ColorMag_Starter_Content {
 						'toggle-button',
 					),
 					'center' => array(),
-					'right'  => array(),
+					'right'  => array('random' ),
 				),
 			),
 			'offset'  => array(

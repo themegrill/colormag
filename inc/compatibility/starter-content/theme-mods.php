@@ -28,7 +28,7 @@ return array(
 		'mobile'  => array(
 			'top'    => array(
 				'left'   => array(),
-				'center' => array(),
+				'center' => array('socials'),
 				'right'  => array(),
 			),
 			'main'   => array(
@@ -43,7 +43,7 @@ return array(
 					'toggle-button',
 				),
 				'center' => array(),
-				'right'  => array(),
+				'right'  => array('random' ),
 			),
 		),
 		'offset'  => array(
