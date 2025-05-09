@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-05-07 08:36+0000\n"
+"POT-Creation-Date: 2025-05-09 02:45+0000\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -450,7 +450,7 @@ msgstr ""
 msgid "Join our YouTube haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
-#: inc/admin/views/help.php:66, inc/compatibility/starter-content/theme-mods.php:54
+#: inc/admin/views/help.php:66, inc/compatibility/starter-content/theme-mods.php:78
 msgid "Subscribe"
 msgstr ""
 
@@ -581,7 +581,7 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: inc/class-colormag-starter-content.php:204
+#: inc/class-colormag-starter-content.php:199
 msgctxt "Theme starter content"
 msgid "Blog"
 msgstr ""
@@ -1523,11 +1523,11 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: inc/customizer/options/header-builder/news-ticker.php:72
+#: inc/customizer/options/header-builder/news-ticker.php:73
 msgid "Link Typography"
 msgstr ""
 
-#: inc/customizer/options/header-builder/news-ticker.php:113
+#: inc/customizer/options/header-builder/news-ticker.php:114
 msgid "Label Typography"
 msgstr ""
 
