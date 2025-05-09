@@ -37,7 +37,7 @@ require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.p
 
 
 ///** ColorMag setup file, hooked for `after_setup_theme`. */
-//require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
+require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 
 /**
  * Base.
