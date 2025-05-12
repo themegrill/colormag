@@ -17,6 +17,17 @@ $options = array(
 					'section'   => 'colormag_header_builder_news_ticker',
 					'transport' => 'postMessage',
 				),
+				'colormag_news_ticker_width'      => array(
+					'default'     => array(
+						'size'  => 240,
+						'units' => 'px',
+					),
+					'type'        => 'customind-slider',
+					'title'       => esc_html__( 'Width', 'colormag' ),
+					'section'     => 'colormag_header_builder_button_1',
+					'units'       => array( 'px' ),
+					'defaultUnit' => 'px',
+				),
 				'colormag_news_ticker_color'              => array(
 					'title'     => esc_html__( 'Color', 'colormag' ),
 					'default'   => '',

@@ -74,6 +74,9 @@ and we will include it within the theme from next version update.
 * Added       - Option to change NewsTicker label in header builder.
 * Added       - Option to change NewsTicker link typography in header builder.
 * Added       - Option to change Social icon color and style in header builder.
+* Added       - Option to enable/disable page header.
+* Added       - Option change NewsTicker width in header builder.
+* Fix         - Toggle menu issue on customizer.
 
 = Version 4.0.13 - 2025-05-05 =
 * Added - Icon size option in random component of header builder.

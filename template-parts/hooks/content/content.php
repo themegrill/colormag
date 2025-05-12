@@ -117,12 +117,12 @@ if ( ! function_exists( 'colormag_archive_header' ) ) :
 		</header><!-- .cm-page-header -->
 
 		<?php
-
 	}
 
 endif;
-
-add_action( 'colormag_action_archive_header', 'colormag_archive_header', 10 );
+if ( get_theme_mod( 'colormag_enable_page_header', true ) ) {
+	add_action( 'colormag_action_archive_header', 'colormag_archive_header', 10 );
+}
 
 if ( ! function_exists( 'colormag_render_comments' ) ) :
 
@@ -135,7 +135,6 @@ if ( ! function_exists( 'colormag_render_comments' ) ) :
 		if ( comments_open() || '0' != get_comments_number() ) {
 			comments_template();
 		}
-
 	}
 
 endif;
@@ -160,10 +159,9 @@ if ( ! function_exists( 'colormag_author_bio' ) ) :
 				<p class="author-description"><?php the_author_meta( 'description' ); ?></p>
 			</div>
 
-		<?php
+			<?php
 
 		endif;
-
 	}
 
 endif;
@@ -180,7 +178,6 @@ if ( ! function_exists( 'colormag_related_posts' ) ) :
 		if ( 1 == get_theme_mod( 'colormag_enable_related_posts', 0 ) ) {
 			get_template_part( 'template-parts/content/related-posts' );
 		}
-
 	}
 
 endif;

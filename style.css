@@ -1692,7 +1692,7 @@ table td {
 }
 
 .newsticker {
-	max-width: 240px;
+	max-width: 400px;
 	overflow: hidden;
 	margin-left: 4px;
 	height: 20px;

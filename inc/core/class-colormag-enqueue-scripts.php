@@ -355,6 +355,53 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				padding: 10px 30px 11px 14px;
 				display: block;
 				}
+
+				#accordion-panel-nav_menus {
+				margin-top:10px;
+				}
+
+				#accordion-section-colormag_customize_fb_section {
+				display: flex;
+				    justify-content: center;
+				}
+
+			#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title {
+             background: transparent !important;
+		    width: 208px;
+		    border: 1px solid #1877F2;
+		    border-radius: 4px;
+		    margin: 21px;
+		    position: relative;
+		    text-align: right;
+		}
+
+		#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title:hover {
+		    background: #F7F7F7 !important;
+			}
+
+		#accordion-section-colormag_customize_fb_section .accordion-section-title::before {
+		        content: "\f09a";
+			    font-family: "Font Awesome 6 Brands";
+			    position: absolute;
+			    right: 185px;
+			    top: 48%;
+			    transform: translateY(-50%);
+			    color: #1877F2;
+			    font-size: 15px;
+			    display: block;
+					}
+
+		#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title a {
+		       color: #1877F2 !important;
+		    padding: 10px 10px 10px 11px;
+		    display:block;
+
+		}
+
+		#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title a:focus {
+		       box-shadow: 0 0 0 0 #2271b1;
+            outline: 0 solid transparent;
+		}
 		    '
 			);
 		}

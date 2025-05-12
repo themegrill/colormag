@@ -365,7 +365,7 @@ class Customind {
 		wp_enqueue_style( 'customind', $this->get_asset_url( 'customind.css' ), [ 'wp-components' ], $asset['version'] );
 		// Support RTL.
 		wp_style_add_data( 'customind', 'rtl', 'replace' );
-		wp_enqueue_script( 'customind', $this->get_asset_url( 'customind.js' ), array_merge( $asset['dependencies'], [ 'customize-preview' ] ), $asset['version'], true );
+		wp_enqueue_script( 'customind', $this->get_asset_url( 'customind.js' ), array_merge( $asset['dependencies'] ), $asset['version'], true );
 
 		if ( ! empty( $this->i18n_data['domain'] ) && ! empty( $this->i18n_data['path'] ) ) {
 			wp_set_script_translations( 'customind', $this->i18n_data['domain'], $this->i18n_data['path'] );
