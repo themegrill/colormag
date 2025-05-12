@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-05-12 05:08+0000\n"
+"POT-Creation-Date: 2025-05-12 08:27+0000\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -165,7 +165,7 @@ msgstr ""
 msgid "I have a query"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:154, inc/admin/class-colormag-theme-review-notice.php:172, inc/admin/class-colormag-welcome-notice.php:104, inc/migration/class-colormag-migration.php:1158, inc/migration/demo-import-migration.php:66
+#: inc/admin/class-colormag-theme-review-notice.php:154, inc/admin/class-colormag-theme-review-notice.php:172, inc/admin/class-colormag-welcome-notice.php:104, inc/migration/class-colormag-migration.php:1165, inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
@@ -798,23 +798,23 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:74, inc/migration/class-colormag-migration.php:678, inc/migration/class-colormag-migration.php:1001, inc/template-functions.php:364
+#: inc/customizer/options/additional/social-icons.php:74, inc/migration/class-colormag-migration.php:685, inc/migration/class-colormag-migration.php:1008, inc/template-functions.php:364
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:79, inc/migration/class-colormag-migration.php:683, inc/migration/class-colormag-migration.php:1006, inc/template-functions.php:354
+#: inc/customizer/options/additional/social-icons.php:79, inc/migration/class-colormag-migration.php:690, inc/migration/class-colormag-migration.php:1013, inc/template-functions.php:354
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:84, inc/migration/class-colormag-migration.php:688, inc/migration/class-colormag-migration.php:1011, inc/template-functions.php:404
+#: inc/customizer/options/additional/social-icons.php:84, inc/migration/class-colormag-migration.php:695, inc/migration/class-colormag-migration.php:1018, inc/template-functions.php:404
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:89, inc/migration/class-colormag-migration.php:693, inc/migration/class-colormag-migration.php:1016
+#: inc/customizer/options/additional/social-icons.php:89, inc/migration/class-colormag-migration.php:700, inc/migration/class-colormag-migration.php:1023
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:94, inc/migration/class-colormag-migration.php:698, inc/migration/class-colormag-migration.php:1021
+#: inc/customizer/options/additional/social-icons.php:94, inc/migration/class-colormag-migration.php:705, inc/migration/class-colormag-migration.php:1028
 msgid "YouTube"
 msgstr ""
 
