@@ -2621,7 +2621,7 @@ class ColorMag_Dynamic_CSS {
 		// Header search background color.
 		$header_search_background         = get_theme_mod( 'colormag_header_search_background', '' );
 		$header_search_background_css = array(
-			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top' => array(
+			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top, .cm-search-icon-in-input-right .search-wrap input' => array(
 				'background-color' => esc_html( $header_search_background ),
 			),
 			'.cm-header-builder .search-form-top.show::before' => array(

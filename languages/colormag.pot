@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2025-05-09 11:07+0000\n"
+"POT-Creation-Date: 2025-05-12 05:08+0000\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -822,11 +822,11 @@ msgstr ""
 msgid "Check to open in new tab"
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:141, inc/customizer/options/content/blog.php:163, inc/customizer/options/content/page.php:42, inc/customizer/options/content/post-meta.php:40, inc/customizer/options/content/single-post.php:144, inc/customizer/options/footer/footer-bar.php:123, inc/customizer/options/footer/footer-column.php:191, inc/customizer/options/front-page/front-page.php:24, inc/customizer/options/global/button.php:108, inc/customizer/options/global/category-colors.php:37, inc/customizer/options/global/colors.php:178, inc/customizer/options/global/container.php:113, inc/customizer/options/global/sidebar.php:91, inc/customizer/options/header-and-navigation/breadcrumb.php:30, inc/customizer/options/header-and-navigation/header-media.php:57, inc/customizer/options/header-and-navigation/main-header.php:148, inc/customizer/options/header-and-navigation/news-ticker.php:31, inc/customizer/options/header-and-navigation/primary-menu.php:322, inc/customizer/options/header-and-navigation/site-identity.php:172, inc/customizer/options/header-and-navigation/sticky-header.php:30, inc/customizer/options/header-and-navigation/top-bar.php:155
+#: inc/customizer/options/additional/social-icons.php:141, inc/customizer/options/content/blog.php:163, inc/customizer/options/content/page.php:42, inc/customizer/options/content/post-meta.php:40, inc/customizer/options/content/single-post.php:144, inc/customizer/options/footer/footer-bar.php:123, inc/customizer/options/footer/footer-column.php:191, inc/customizer/options/front-page/front-page.php:24, inc/customizer/options/global/button.php:108, inc/customizer/options/global/category-colors.php:37, inc/customizer/options/global/colors.php:178, inc/customizer/options/global/container.php:116, inc/customizer/options/global/sidebar.php:91, inc/customizer/options/header-and-navigation/breadcrumb.php:30, inc/customizer/options/header-and-navigation/header-media.php:57, inc/customizer/options/header-and-navigation/main-header.php:148, inc/customizer/options/header-and-navigation/news-ticker.php:31, inc/customizer/options/header-and-navigation/primary-menu.php:322, inc/customizer/options/header-and-navigation/site-identity.php:172, inc/customizer/options/header-and-navigation/sticky-header.php:30, inc/customizer/options/header-and-navigation/top-bar.php:155
 msgid "Unlock more features available in Pro version."
 msgstr ""
 
-#: inc/customizer/options/additional/social-icons.php:142, inc/customizer/options/content/blog.php:164, inc/customizer/options/content/page.php:43, inc/customizer/options/content/post-meta.php:41, inc/customizer/options/content/single-post.php:145, inc/customizer/options/footer/footer-bar.php:124, inc/customizer/options/footer/footer-column.php:192, inc/customizer/options/front-page/front-page.php:25, inc/customizer/options/global/button.php:109, inc/customizer/options/global/category-colors.php:38, inc/customizer/options/global/colors.php:179, inc/customizer/options/global/container.php:114, inc/customizer/options/global/sidebar.php:92, inc/customizer/options/header-and-navigation/breadcrumb.php:31, inc/customizer/options/header-and-navigation/header-media.php:58, inc/customizer/options/header-and-navigation/main-header.php:149, inc/customizer/options/header-and-navigation/news-ticker.php:32, inc/customizer/options/header-and-navigation/primary-menu.php:323, inc/customizer/options/header-and-navigation/site-identity.php:173, inc/customizer/options/header-and-navigation/sticky-header.php:31, inc/customizer/options/header-and-navigation/top-bar.php:156
+#: inc/customizer/options/additional/social-icons.php:142, inc/customizer/options/content/blog.php:164, inc/customizer/options/content/page.php:43, inc/customizer/options/content/post-meta.php:41, inc/customizer/options/content/single-post.php:145, inc/customizer/options/footer/footer-bar.php:124, inc/customizer/options/footer/footer-column.php:192, inc/customizer/options/front-page/front-page.php:25, inc/customizer/options/global/button.php:109, inc/customizer/options/global/category-colors.php:38, inc/customizer/options/global/colors.php:179, inc/customizer/options/global/container.php:117, inc/customizer/options/global/sidebar.php:92, inc/customizer/options/header-and-navigation/breadcrumb.php:31, inc/customizer/options/header-and-navigation/header-media.php:58, inc/customizer/options/header-and-navigation/main-header.php:149, inc/customizer/options/header-and-navigation/news-ticker.php:32, inc/customizer/options/header-and-navigation/primary-menu.php:323, inc/customizer/options/header-and-navigation/site-identity.php:173, inc/customizer/options/header-and-navigation/sticky-header.php:31, inc/customizer/options/header-and-navigation/top-bar.php:156
 msgid "Learn more"
 msgstr ""
 
@@ -958,7 +958,7 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/bottom-area.php:51, inc/customizer/options/footer-builder/copyright.php:31, inc/customizer/options/footer-builder/html-1.php:19, inc/customizer/options/footer-builder/main-area.php:51, inc/customizer/options/footer-builder/top-area.php:51, inc/customizer/options/footer/footer-bar.php:80, inc/customizer/options/global/button.php:19, inc/customizer/options/header-and-navigation/header-action.php:18, inc/customizer/options/header-and-navigation/primary-menu.php:55, inc/customizer/options/header-and-navigation/primary-menu.php:73, inc/customizer/options/header-and-navigation/primary-menu.php:200, inc/customizer/options/header-and-navigation/site-identity.php:57, inc/customizer/options/header-and-navigation/site-identity.php:129, inc/customizer/options/header-builder/bottom-area.php:40, inc/customizer/options/header-builder/date.php:31, inc/customizer/options/header-builder/header-button.php:34, inc/customizer/options/header-builder/home-icon.php:14, inc/customizer/options/header-builder/html-1.php:19, inc/customizer/options/header-builder/logo.php:67, inc/customizer/options/header-builder/logo.php:157, inc/customizer/options/header-builder/main-area.php:40, inc/customizer/options/header-builder/mobile-menu.php:19, inc/customizer/options/header-builder/news-ticker.php:21, inc/customizer/options/header-builder/primary-menu.php:26, inc/customizer/options/header-builder/search.php:114, inc/customizer/options/header-builder/socials.php:13, inc/customizer/options/header-builder/toggle-button.php:12, inc/customizer/options/header-builder/top-area.php:42
+#: inc/customizer/options/footer-builder/bottom-area.php:51, inc/customizer/options/footer-builder/copyright.php:31, inc/customizer/options/footer-builder/html-1.php:19, inc/customizer/options/footer-builder/main-area.php:51, inc/customizer/options/footer-builder/top-area.php:51, inc/customizer/options/footer/footer-bar.php:80, inc/customizer/options/global/button.php:19, inc/customizer/options/header-and-navigation/header-action.php:18, inc/customizer/options/header-and-navigation/primary-menu.php:55, inc/customizer/options/header-and-navigation/primary-menu.php:73, inc/customizer/options/header-and-navigation/primary-menu.php:200, inc/customizer/options/header-and-navigation/site-identity.php:57, inc/customizer/options/header-and-navigation/site-identity.php:129, inc/customizer/options/header-builder/bottom-area.php:40, inc/customizer/options/header-builder/date.php:31, inc/customizer/options/header-builder/header-button.php:34, inc/customizer/options/header-builder/home-icon.php:14, inc/customizer/options/header-builder/html-1.php:19, inc/customizer/options/header-builder/logo.php:67, inc/customizer/options/header-builder/logo.php:157, inc/customizer/options/header-builder/main-area.php:40, inc/customizer/options/header-builder/mobile-menu.php:19, inc/customizer/options/header-builder/news-ticker.php:32, inc/customizer/options/header-builder/primary-menu.php:26, inc/customizer/options/header-builder/search.php:114, inc/customizer/options/header-builder/socials.php:13, inc/customizer/options/header-builder/toggle-button.php:12, inc/customizer/options/header-builder/top-area.php:42
 msgid "Color"
 msgstr ""
 
@@ -1083,7 +1083,7 @@ msgstr ""
 msgid "Main Area"
 msgstr ""
 
-#: inc/customizer/options/footer-builder/main-area.php:59, inc/customizer/options/header-builder/news-ticker.php:28
+#: inc/customizer/options/footer-builder/main-area.php:59, inc/customizer/options/header-builder/news-ticker.php:39
 msgid "Link Color"
 msgstr ""
 
@@ -1243,11 +1243,11 @@ msgstr ""
 msgid "Outside Background"
 msgstr ""
 
-#: inc/customizer/options/global/container.php:96
+#: inc/customizer/options/global/container.php:99
 msgid "Demo Migrated"
 msgstr ""
 
-#: inc/customizer/options/global/container.php:103
+#: inc/customizer/options/global/container.php:106
 msgid "Demo migrated"
 msgstr ""
 
@@ -1255,7 +1255,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer/options/global/sidebar.php:36, inc/customizer/options/header-and-navigation/main-header.php:104, inc/customizer/options/header-and-navigation/primary-menu.php:48, inc/customizer/options/header-builder/bottom-area.php:49, inc/customizer/options/header-builder/search.php:48
+#: inc/customizer/options/global/sidebar.php:36, inc/customizer/options/header-and-navigation/main-header.php:104, inc/customizer/options/header-and-navigation/primary-menu.php:48, inc/customizer/options/header-builder/bottom-area.php:49, inc/customizer/options/header-builder/news-ticker.php:26, inc/customizer/options/header-builder/search.php:48
 msgid "Width"
 msgstr ""
 
@@ -1523,11 +1523,11 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: inc/customizer/options/header-builder/news-ticker.php:73
+#: inc/customizer/options/header-builder/news-ticker.php:84
 msgid "Link Typography"
 msgstr ""
 
-#: inc/customizer/options/header-builder/news-ticker.php:114
+#: inc/customizer/options/header-builder/news-ticker.php:125
 msgid "Label Typography"
 msgstr ""
 
@@ -1659,7 +1659,15 @@ msgstr ""
 msgid "Menu 2"
 msgstr ""
 
-#: inc/customizer/panels-sections/panels-sections.php:357
+#: inc/customizer/panels-sections/panels-sections.php:348
+msgid "More Features in Pro"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:355
+msgid "Join Facebook Community"
+msgstr ""
+
+#: inc/customizer/panels-sections/panels-sections.php:364
 msgid "WooCommerce"
 msgstr ""
 
