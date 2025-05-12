@@ -2,12 +2,12 @@
 
 
 class ColorMag_Starter_Content {
-	const HOME_SLUG  = 'home';
-	const BLOG_SLUG  = 'blog';
+	const HOME_SLUG = 'home';
+	const BLOG_SLUG = 'blog';
 
 	public function __construct() {
 		add_filter( 'colormag_header_builder_default_options', array( $this, 'header_builder_options' ) );
-		add_filter( 'colormag_footer_builder_options', array( $this, 'footer_builder_options' ) );
+		add_filter( 'colormag_footer_builder_default_options', array( $this, 'footer_builder_options' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_starter_css' ) );
 		add_filter(
 			'colormag_header_button_text',
@@ -62,7 +62,7 @@ class ColorMag_Starter_Content {
 				'top'    => array(
 					'left'   => array(),
 					'center' => array(),
-					'right'  => array('socials'),
+					'right'  => array( 'socials' ),
 				),
 				'main'   => array(
 					'left'   => array(),
@@ -76,7 +76,7 @@ class ColorMag_Starter_Content {
 						'toggle-button',
 					),
 					'center' => array(),
-					'right'  => array('random' ),
+					'right'  => array( 'random' ),
 				),
 			),
 			'offset'  => array(
