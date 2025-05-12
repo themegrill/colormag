@@ -69,9 +69,14 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-* Fix   - Toggle menu issue on customizer.
+* Added       - Option to change full width search width, border width, border color and border radius.
+* Added       - Option to change full width search placeholder color.
+* Added       - Option to change NewsTicker label in header builder.
+* Added       - Option to change NewsTicker link typography in header builder.
+* Added       - Option to change Social icon color and style in header builder.
 * Added       - Option to enable/disable page header.
 * Added       - Option change NewsTicker width in header builder.
+* Fix         - Toggle menu issue on customizer.
 
 = Version 4.0.13 - 2025-05-05 =
 * Added - Icon size option in random component of header builder.

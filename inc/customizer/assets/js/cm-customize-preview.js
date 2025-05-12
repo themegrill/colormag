@@ -446,6 +446,14 @@
 					);
 					break;
 
+				case 'colormag_header_search_width':
+					css = colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-wrap, .cm-search-box .search-wrap',
+						'width',
+						value,
+					);
+					break;
+
 				case 'colormag_primary_menu_top_border_color':
 					css = colormagGenerateCommonCSS(
 						'#cm-primary-nav',
@@ -681,6 +689,14 @@
 					);
 					break;
 
+				case 'colormag_news_ticker_link_typography':
+					css = colormagGenerateTypographyCSS(
+						id,
+						'.cm-header-builder .breaking-news ul li a',
+						value,
+					);
+					break;
+
 				case 'colormag_header_html_1_text_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-html-1 *',
@@ -747,6 +763,27 @@
 					);
 					break;
 
+				case 'colormag_header_primary_menu_active_text_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a',
+						'color',
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						'.cm-header-builder .cm-primary-nav li.current-menu-item > .cm-submenu-toggle .cm-icon',
+						'fill',
+						value,
+					);
+					break;
+
+				case 'colormag_header_primary_menu_hover_background':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .cm-primary-nav ul li:hover',
+						'background',
+						value,
+					);
+					break;
+
 				case 'colormag_header_primary_menu_hover_background':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-primary-nav ul li:hover',
@@ -759,13 +796,6 @@
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-primary-nav ul li.current-menu-item',
 						'background',
-						value,
-					);
-					break;
-
-				case 'colormag_header_primary_sub_menu_background':
-					css = colormagGenerateBackgroundCSS(
-						'.cm-header-builder .cm-primary-nav .sub-menu, .cm-header-builder .cm-primary-nav .children',
 						value,
 					);
 					break;
@@ -919,6 +949,14 @@
 					);
 					break;
 
+				case 'colormag_header_search_border_radius':
+					css = colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
+						'border-radius',
+						value,
+					);
+					break;
+
 				case 'colormag_header_button_border_width':
 					css = colormagGenerateDimensionCSS(
 						'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
@@ -927,9 +965,25 @@
 					);
 					break;
 
+				case 'colormag_header_search_border_width':
+					css = colormagGenerateDimensionCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
+						'border-width',
+						value,
+					);
+					break;
+
 				case 'colormag_header_button_border_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+						'border-color',
+						value,
+					);
+					break;
+
+				case 'colormag_header_search_border_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
 						'border-color',
 						value,
 					);
@@ -1131,6 +1185,14 @@
 					);
 					break;
 
+				case 'colormag_header_socials_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .header-social-icons a',
+						'color',
+						value,
+					);
+					break;
+
 				case 'colormag_header_search_icon_color':
 					css = colormagGenerateCommonCSS(
 						'.cm-header-builder .cm-top-search .search-top::before',
@@ -1149,7 +1211,15 @@
 
 				case 'colormag_header_search_text_color':
 					css = colormagGenerateCommonCSS(
-						'.cm-header-builder .cm-top-search .search-form-top input',
+						'.cm-header-builder .cm-top-search .search-form-top input, .search-wrap input',
+						'color',
+						value,
+					);
+					break;
+
+				case 'colormag_header_search_placeholder_color':
+					css = colormagGenerateCommonCSS(
+						'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-wrap i',
 						'color',
 						value,
 					);
@@ -1157,7 +1227,7 @@
 
 				case 'colormag_header_search_background':
 					css = colormagGenerateCommonCSS(
-						'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top',
+						'.cm-header-builder .cm-top-search .search-form-top input,.search-wrap input, .cm-header-builder .cm-top-search .search-form-top',
 						'background-color',
 						value,
 					);
@@ -1176,9 +1246,35 @@
 					);
 					break;
 
+				case 'colormag_header_search_button_background':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .fa.search-top, .cm-header-builder .search-wrap button',
+						'background-color',
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						'.cm-header-builder .fa.search-top, .cm-header-builder .search-wrap button',
+						'border-color',
+						value,
+					);
+					break;
+
+				case 'colormag_header_search_button_hover_background':
+					css = colormagGenerateCommonCSS(
+						'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover',
+						'background-color',
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						"'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover'",
+						'border-color',
+						value,
+					);
+					break;
+
 				case 'colormag_header_random_icon_hover_color':
 					css = colormagGenerateCommonCSS(
-						'.cm-header-builder .cm-random-post:hover .cm-icon--random-fill',
+						'.cm-header-builder .cm-random-post:hover > .cm-icon--random-fill',
 						'fill',
 						value,
 					);
@@ -1404,6 +1500,14 @@
 					);
 					break;
 
+				case 'colormag_site_tagline_color':
+					css = colormagGenerateCommonCSS(
+						'.cm-site-description',
+						'color',
+						value,
+					);
+					break;
+
 				case 'colormag_site_tagline_typography':
 					css = colormagGenerateTypographyCSS(
 						id,
@@ -1501,7 +1605,7 @@
 
 				case 'colormag_header_mobile_menu_background':
 					css = colormagGenerateCommonCSS(
-						'.cm-mobile-nav.cm-mobile-open-container > .cm-mobile-menu--open',
+						'.cm-mobile-nav li',
 						'background-color',
 						value,
 					);

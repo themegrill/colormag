@@ -37,7 +37,7 @@ require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.p
 
 
 ///** ColorMag setup file, hooked for `after_setup_theme`. */
-//require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
+require COLORMAG_INCLUDES_DIR . '/colormag-setup.php';
 
 /**
  * Base.
@@ -161,6 +161,7 @@ require COLORMAG_INCLUDES_DIR . '/colormag-wp-query.php';
 
 /** Breadcrumb class. */
 require_once COLORMAG_INCLUDES_DIR . '/class-breadcrumb-trail.php';
+require_once COLORMAG_INCLUDES_DIR . '/class-colormag-starter-content.php';
 
 /** Load functions */
 require_once COLORMAG_INCLUDES_DIR . '/ajax.php';

@@ -15,46 +15,50 @@
 	display: none;
 }
 
-.no-sidebar-full-width,
-.no-sidebar {
-	overflow: hidden;
-
+.cm-started-content {
 	.cm-primary {
-
 		.cm-entry-summary {
-
-			> .alignfull {
-				margin-left: calc(50% - 50vw);
-				margin-right: calc(50% - 50vw);
-				max-width: unset;
-
-				&.wp-block-cover,
-				&.wp-block-cover-image {
-					width: unset;
-				}
+			.cm-block-alignfull {
+					margin-left: calc(50% - 50vw);
+					margin-right: calc(50% - 50vw);
+					max-width: unset;
+				padding: 0 24px;
 			}
-
-			> .alignwide {
-				margin-left: -100px;
-				margin-right: -100px;
-				max-width: unset;
 			}
+	}
+
+	@media screen and (max-width: 768px) {
+		.cm-remove-padding {
+			padding: 0 !important;
+			border: 0 !important;
+		}
+
+	}
+
+	@media screen and (min-width: 768px) {
+
+		.cm-sticky {
+			height: 100vh; /* Ensure it fits within the viewport */
+			position: sticky;
+			top: 20px; /* Distance from the top when scrolling */
 		}
 	}
 
-	&.box-layout {
+}
 
-		.cm-content {
-			overflow: hidden;
-		}
+body:not(.cm-started-content) {
+	.no-sidebar-full-width,
+	.no-sidebar {
+		overflow: hidden;
 
 		.cm-primary {
 
 			.cm-entry-summary {
 
 				> .alignfull {
-					margin-left: -30px;
-					margin-right: -30px;
+					margin-left: calc(50% - 50vw);
+					margin-right: calc(50% - 50vw);
+					max-width: unset;
 
 					&.wp-block-cover,
 					&.wp-block-cover-image {
@@ -63,14 +67,44 @@
 				}
 
 				> .alignwide {
-					margin-left: -30px;
-					margin-right: -30px;
+					margin-left: -100px;
+					margin-right: -100px;
 					max-width: unset;
+				}
+			}
+		}
+
+		&.box-layout {
+
+			.cm-content {
+				overflow: hidden;
+			}
+
+			.cm-primary {
+
+				.cm-entry-summary {
+
+					> .alignfull {
+						margin-left: -30px;
+						margin-right: -30px;
+
+						&.wp-block-cover,
+						&.wp-block-cover-image {
+							width: unset;
+						}
+					}
+
+					> .alignwide {
+						margin-left: -30px;
+						margin-right: -30px;
+						max-width: unset;
+					}
 				}
 			}
 		}
 	}
 }
+
 
 @media screen and (max-width: 1200px) {
 

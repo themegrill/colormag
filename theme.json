@@ -5,7 +5,94 @@
     "spacing": {
       "blockGap": true,
       "margin": true,
-      "padding": true
+      "padding": true,
+      "units": ["%", "px", "em", "rem"]
+    },
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1160px",
+      "fullSize": "none"
+    },
+    "typography": {
+      "writingMode": true,
+      "defaultFontSizes": false,
+      "fluid": false,
+      "fontSizes": [
+        {
+          "fluid": false,
+          "name": "Small",
+          "size": "14px",
+          "slug": "small"
+        },
+        {
+          "name": "Medium",
+          "size": "16px",
+          "slug": "medium"
+        },
+        {
+          "name": "Large",
+          "size": "18px",
+          "slug": "large"
+        },
+        {
+          "name": "Extra Large",
+          "size": "28px",
+          "slug": "x-large"
+        },
+        {
+          "name": "Extra Extra Large",
+          "size": "34px",
+          "slug": "xx-large"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "name": "IBMPlexSerif",
+          "slug": "ibm-plex-serif",
+          "fontFamily": "IBM Plex Serif, sans-serif",
+          "fontFace": [
+            {
+              "src": [
+                "file:./assets/fonts/IBMPlexSerif-Regular.woff2"
+              ],
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontFamily": "IBMPlexSerif"
+            },
+            {
+              "src": [
+                "file:./assets/fonts/IBMPlexSerif-Bold.woff2"
+              ],
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontFamily": "IBMPlexSerif"
+            },
+            {
+              "src": [
+                "file:./assets/fonts/IBMPlexSerif-SemiBold.woff2"
+              ],
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontFamily": "IBMPlexSerif"
+            }
+          ]
+        },
+        {
+          "name": "Inter",
+          "slug": "inter",
+          "fontFamily": "Inter, sans-serif",
+          "fontFace": [
+            {
+              "src": [
+                "file:./assets/fonts/Inter-Regular.woff2"
+              ],
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontFamily": "Inter"
+            }
+          ]
+        }
+      ]
     }
   }
 }

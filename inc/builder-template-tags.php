@@ -14,53 +14,57 @@ if ( ! function_exists( 'colormag_header_default_builder' ) ) {
 	 * @since 4.0.0
 	 */
 	function colormag_header_default_builder() {
-		return array(
-			'desktop' => array(
-				'top'    => array(
-					'left'   => array(),
-					'center' => array(),
-					'right'  => array(),
-				),
-				'main'   => array(
-					'left'   => array(
-						'logo',
+		$header_builder_default = apply_filters(
+			'colormag_header_builder_default_options',
+			array(
+				'desktop' => array(
+					'top'    => array(
+						'left'   => array(),
+						'center' => array(),
+						'right'  => array(),
 					),
-					'center' => array(),
-					'right'  => array(),
-				),
-				'bottom' => array(
-					'left'   => array(
-						'primary-menu',
+					'main'   => array(
+						'left'   => array(
+							'logo',
+						),
+						'center' => array(),
+						'right'  => array(),
 					),
-					'center' => array(),
-					'right'  => array(),
-				),
-			),
-			'mobile'  => array(
-				'top'    => array(
-					'left'   => array(),
-					'center' => array(),
-					'right'  => array(),
-				),
-				'main'   => array(
-					'left'   => array(),
-					'center' => array(
-						'logo',
+					'bottom' => array(
+						'left'   => array(
+							'primary-menu',
+						),
+						'center' => array(),
+						'right'  => array(),
 					),
-					'right'  => array(),
 				),
-				'bottom' => array(
-					'left'   => array(
-						'toggle-button',
+				'mobile'  => array(
+					'top'    => array(
+						'left'   => array(),
+						'center' => array(),
+						'right'  => array(),
 					),
-					'center' => array(),
-					'right'  => array(),
+					'main'   => array(
+						'left'   => array(),
+						'center' => array(
+							'logo',
+						),
+						'right'  => array(),
+					),
+					'bottom' => array(
+						'left'   => array(
+							'toggle-button',
+						),
+						'center' => array(),
+						'right'  => array(),
+					),
 				),
-			),
-			'offset'  => array(
-				'mobile-menu',
-			),
+				'offset'  => array(
+					'mobile-menu',
+				),
+			)
 		);
+		return $header_builder_default;
 	}
 }
 

@@ -90,7 +90,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			$inline_style_handle = ( 'white' === $skin_color ) ? 'colormag_style' : 'colormag_dark_style';
 
 			// Loads our main css.
-			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), COLORMAG_THEME_VERSION );
+			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), time() );
 			wp_style_add_data( 'colormag_style', 'rtl', 'replace' );
 
 			// Load dark css.
@@ -220,26 +220,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 					'handle'  => 'font-awesome-4',
 					'file'    => '/library/font-awesome/css/v4-shims',
 					'version' => '4.7.0',
-				),
-				array(
-					'handle'  => 'font-awesome-all',
-					'file'    => '/library/font-awesome/css/all',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/library/font-awesome/css/solid',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/library/font-awesome/css/regular',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/library/font-awesome/css/brands',
-					'version' => '6.2.4',
 				),
 			);
 
