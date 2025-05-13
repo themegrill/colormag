@@ -5339,7 +5339,7 @@ ul.wp-block-gallery img {
 
 .cm-started-content .cm-primary .cm-entry-summary .cm-block-alignfull {
 	margin-right: calc(50% - 50vw);
-	margin-left: calc(50% - 50vw);
+	margin-left: calc(51% - 50.2vw);
 	max-width: unset;
 	padding: 0 24px;
 }
