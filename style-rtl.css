@@ -6791,3 +6791,33 @@ blockquote.wp-block-quote.has-text-align-right {
 .siteorigin-panels .cm-featured-posts {
 	flex-wrap: nowrap;
 }
+
+@media screen and (max-width: 768px) and (min-width: 600px) {
+	.cm-starter-main .cm-col-2 {
+		display: flex;
+		gap: 18px;
+	}
+	.cm-starter-main .cm-col-2 > .wp-block-group {
+		margin: 0;
+	}
+	.cm-starter-main .cm-col-2 > .wp-block-column {
+		flex-basis: 48% !important;
+	}
+	.cm-starter-main .cm-diet-health {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 18px;
+	}
+	.cm-starter-main .cm-diet-health > .wp-block-columns {
+		margin: 0;
+	}
+	.cm-starter-main .cm-diet-health .is-not-stacked-on-mobile {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.cm-starter-main .cm-diet-health > .wp-block-columns {
+		flex-direction: column;
+	}
+}

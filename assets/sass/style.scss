@@ -85,3 +85,47 @@ and Blueprint http://www.blueprintcss.org/
 @import "responsive/responsive";
 
 @import "compatibility/site-origin/featured-post-style-1";
+
+
+@media screen and (max-width: 768px) and (min-width: 600px) {
+	.cm-starter-main {
+		.cm-col-2 {
+			display: flex;
+			gap: 18px;
+			> .wp-block-group{
+				margin: 0;
+			}
+
+			> .wp-block-column {
+				flex-basis: 48% !important;
+			}
+		}
+
+		.cm-diet-health {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 18px;
+
+			> .wp-block-columns {
+				margin: 0;
+			}
+
+			.is-not-stacked-on-mobile {
+				flex-direction: column;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 360px) {
+	.cm-starter-main {
+
+		.cm-diet-health {
+
+			> .wp-block-columns {
+				flex-direction: column;
+			}
+		}
+	}
+}
