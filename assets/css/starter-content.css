@@ -15,3 +15,10 @@
 	font-size: 17px;
 	color: #FF0000;
 }
+
+@media screen and (max-width: 768px) {
+	.no-sidebar-full-width .cm-primary .cm-entry-summary > .alignwide, .no-sidebar .cm-primary .cm-entry-summary > .alignwide {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}

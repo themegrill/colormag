@@ -147,6 +147,7 @@ return array(
 	'colormag_footer_bottom_area_color'              => '#BDBDBD',
 	'colormag_footer_menu_color'                     => '#BDBDBD',
 	'colormag_footer_menu'                           => '#BDBDBD',
+	'colormag_header_builder_toggle_button_color'                     => '#FFFFFF',
 	'colormag_news_ticker_color'                     => '#FFFFFF',
 	'colormag_news_ticker_link_color'                => '#d3d3d3',
 	'colormag_header_search_border_color'            => '#EBEBEC1A',
@@ -154,6 +155,8 @@ return array(
 	'colormag_header_socials_color'                  => '#FFFFFF',
 	'colormag_header_socials_style'                  => 'style-1',
 	'colormag_enable_page_header'                    => false,
+	'colormag_enable_site_identity'                    => false,
+	'colormag_enable_site_tagline'                    => false,
 	'colormag_news_ticker_label'                     => 'Trending :',
 	'colormag_header_search_width'                   => array(
 		'size'  => 300,
