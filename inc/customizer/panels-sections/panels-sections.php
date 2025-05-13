@@ -355,7 +355,7 @@ $section_option_id = array(
 		'title'            => esc_html__( 'Join Facebook Community', 'colormag' ),
 		'url'              => 'https://www.facebook.com/groups/628387942515455/',
 		'section_callback' => \Customind\Core\Types\UpsellSection::class,
-		'priority'         => 1000,
+		'priority'         => 10000000,
 	),
 );
 

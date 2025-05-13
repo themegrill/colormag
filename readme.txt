@@ -47,6 +47,63 @@ Resources packed within the theme.
   https://pxhere.com/en/photo/1575625
   https://pxhere.com/en/photo/1548565
   https://pxhere.com/en/photo/510089
+  
+  https://www.pexels.com/photo/young-model-taking-a-picture-with-vintage-camera-15704128
+  https://www.pexels.com/photo/photo-of-a-man-in-a-black-shirt-smiling-while-playing-on-a-computer-9072296
+  https://www.pexels.com/photo/woman-wearing-eyeglasses-in-orange-light-17080023
+  https://www.pexels.com/photo/smiling-woman-holding-a-pink-carnation-flower-5755031
+  https://www.pexels.com/photo/woman-in-purple-hat-3979116
+  https://www.pexels.com/photo/person-wearing-a-guy-fawkes-mask-with-a-flower-on-his-ear-5721170
+  https://www.pexels.com/photo/woman-in-purple-jacket-holding-flowers-8422482
+  https://www.pexels.com/photo/a-man-in-a-red-hoodie-wearing-a-vr-headset-7887135
+  https://www.pexels.com/photo/bitcoins-on-blur-background-7267610
+  https://www.pexels.com/photo/close-up-of-a-clicbot-8982668
+  https://www.pexels.com/photo/close-up-shot-of-black-headset-11398246
+  https://www.pexels.com/photo/climate-road-landscape-people-2990657
+  https://www.pexels.com/photo/boys-with-painted-faces-and-palestinian-flags-15973935
+  https://www.pexels.com/photo/close-up-of-a-man-holding-the-flag-of-the-united-states-and-a-pin-with-a-word-vote-5926351
+  https://www.pexels.com/photo/a-dark-green-leaf-with-dark-green-leaves-15444913
+  https://www.pexels.com/photo/young-woman-smiling-in-melbourne-at-night-31475485
+  https://www.pexels.com/photo/a-young-girl-and-boy-looking-at-the-robot-8294690
+  https://www.pexels.com/photo/woman-in-black-dress-singing-7803605
+  https://www.pexels.com/video/boy-wearing-headset-playing-video-game-8128311
+  https://www.pexels.com/photo/bitcoins-on-blur-background-7267610
+  https://www.pexels.com/photo/cheerful-woman-recording-voice-message-on-smartphone-in-street-3783519
+  https://www.pexels.com/photo/illuminated-gray-speaker-in-close-up-shot-14309815/
+  https://www.pexels.com/photo/photo-of-a-man-in-a-black-shirt-smiling-while-playing-on-a-computer-9072296/
+  https://www.pexels.com/photo/young-woman-drinking-water-from-drinking-flask-4853255/
+  https://www.pexels.com/photo/unrecognizable-female-athlete-standing-near-sport-accessories-4498610/
+  https://www.pexels.com/photo/crop-sportswoman-putting-sports-equipment-in-gym-bag-5384401/
+  https://www.pexels.com/photo/photo-of-woman-sitting-on-yoga-mat-3758145/
+  https://www.pexels.com/photo/father-and-son-cheering-while-watching-a-football-match-4934188/
+  https://www.pexels.com/photo/two-women-preparing-a-healthy-dish-6707697/
+  https://www.pexels.com/photo/photo-of-woman-in-purple-top-while-slicing-pizza-3811606/
+  https://www.pexels.com/photo/woman-eating-healthy-food-6740512/
+  https://www.pexels.com/photo/woman-holding-silverware-while-looking-at-phone-1471522/
+  https://www.pexels.com/photo/protester-holding-a-megaphone-8898679/
+  https://www.pexels.com/photo/photo-of-vehicle-on-gasoline-station-3027794/
+  https://www.pexels.com/photo/people-with-palestinian-flags-protesting-on-the-street-19028569/
+  https://www.pexels.com/photo/city-road-people-street-2027062/
+  https://www.pexels.com/photo/bride-dancing-with-wedding-guests-at-the-reception-13434450/
+  https://www.pexels.com/photo/boy-wearing-a-black-and-white-virtual-reality-goggles-3391378/
+  https://www.pexels.com/photo/white-shih-tzu-puppy-on-fabric-sofa-chair-981062/
+  https://www.pexels.com/photo/woman-taking-photo-with-a-polaroid-camera-5081609/
+  https://www.pexels.com/photo/close-up-photo-of-a-man-in-a-floral-polo-laughing-while-lifting-his-hands-8638707/
+  https://www.pexels.com/photo/woman-filming-herself-while-preparing-food-8357265/
+  https://www.pexels.com/photo/photo-of-couple-smiling-while-sitting-by-the-wooden-table-4651196/
+  https://www.pexels.com/photo/scrabble-tiles-on-a-plate-5842230/
+  https://www.pexels.com/photo/woman-eating-breakfast-near-glass-window-3764483/
+  https://www.pexels.com/photo/photo-of-woman-playing-with-her-children-3806953/
+  https://www.pexels.com/photo/a-woman-holding-black-smartphone-6964062/
+  https://www.pexels.com/photo/girl-wearing-headphones-while-using-his-laptop-5877661/
+  https://www.pexels.com/photo/photo-of-plants-on-the-table-1005058/
+  https://www.pexels.com/photo/woman-painting-in-a-sunlit-home-studio-31280581/
+  https://www.pexels.com/photo/two-girls-sitting-on-a-couch-looking-at-a-smartphone-7481972/
+  https://www.pexels.com/photo/bitcoins-on-blur-background-7267610/
+  https://www.pexels.com/photo/portrait-of-young-woman-247287/
+  https://www.pexels.com/photo/woman-taking-photo-with-a-polaroid-camera-5081609/
+  https://www.pexels.com/photo/white-shih-tzu-puppy-on-fabric-sofa-chair-981062/
+  https://www.pexels.com/photo/illuminated-gray-speaker-in-close-up-shot-14309815/
 
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed

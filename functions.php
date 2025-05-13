@@ -73,7 +73,6 @@ require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
 // Load customind.
 require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
-
 /**
  * @var \Customind\Core\Customind
  */
