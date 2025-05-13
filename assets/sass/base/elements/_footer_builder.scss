@@ -7,6 +7,10 @@
 		display: block;
 	}
 
+	.cm-footer-nav,.cm-footer-menu {
+		display: flex;
+	}
+
 	.wp-block-social-links {
 		display: flex;
 		flex-direction: row;

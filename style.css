@@ -1419,6 +1419,10 @@ table td {
 	display: block;
 }
 
+.cm-footer-builder .cm-footer-nav, .cm-footer-builder .cm-footer-menu {
+	display: flex;
+}
+
 .cm-footer-builder .wp-block-social-links {
 	display: flex;
 	flex-direction: row;
