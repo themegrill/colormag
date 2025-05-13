@@ -183,8 +183,9 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	}
 
 endif;
-
+if ( ! colormag_maybe_enable_builder() ){
 add_action( 'colormag_action_before_header', 'colormag_header_start', 10 );
+}
 
 if ( ! function_exists( 'colormag_header_main' ) ) :
 
@@ -372,8 +373,9 @@ if ( ! function_exists( 'colormag_header_end' ) ) :
 	}
 
 endif;
-
+if ( ! colormag_maybe_enable_builder() ){
 	add_action( 'colormag_action_after_header', 'colormag_header_end', 10 );
+	}
 
 if ( ! function_exists( 'colormag_main_section_start' ) ) :
 

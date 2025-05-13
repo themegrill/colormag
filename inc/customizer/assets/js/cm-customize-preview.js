@@ -1223,6 +1223,11 @@
 						'color',
 						value,
 					);
+					css += colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-wrap i',
+						'fill',
+						value,
+					);
 					break;
 
 				case 'colormag_header_search_background':

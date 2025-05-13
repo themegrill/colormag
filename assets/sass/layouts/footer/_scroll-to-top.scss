@@ -10,9 +10,20 @@ a#scroll-up {
 	filter: alpha(opacity=50);
 	/* For IE8 and earlier */
 
+
 	i {
-		font-size: 40px;
-		color: $color__primary;
+		height: 48px;
+		width: 48px;
+		border-radius: 4px;
+		background-color: #8269DF;
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:before {
+			color: #FFFFFF;
+		}
 	}
 
 	&:hover {

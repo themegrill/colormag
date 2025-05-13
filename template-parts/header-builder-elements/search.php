@@ -34,7 +34,7 @@ $header_builder_search_type = get_theme_mod( 'colormag_header_search_type', 'nor
 					   value="<?php echo get_search_query(); ?>"
 					   placeholder="<?php esc_attr_e( 'Search...', 'colormag' ); ?>"
 				/>
-				<span class="search-icon-input-right"><i class="fa fa-search"></i></span>
+				<span class="search-icon-input-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 11a7 7 0 1 0-14 0 7 7 0 0 0 14 0Zm2 0a8.96 8.96 0 0 1-1.97 5.616l3.677 3.677.068.076a1 1 0 0 1-1.406 1.406l-.076-.068-3.677-3.677A9 9 0 1 1 20 11Z"/></svg></span>
 			</div>
 
 		</form><!-- .searchform -->

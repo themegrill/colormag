@@ -1050,6 +1050,12 @@ table td {
 	font-weight: 400;
 }
 
+.cm-header-builder .cm-primary-nav .cm-submenu-toggle .cm-icon {
+	width: 12px;
+	height: 13px;
+	stroke-width: 1.167px;
+}
+
 .cm-header-builder .cm-row {
 	display: block;
 }
@@ -1944,11 +1950,17 @@ table td {
 .cm-search-icon-in-input-right .search-icon-input-right {
 	position: absolute;
 	left: 10px;
-	top: 50%;
+	top: 58%;
 	transform: translateY(-50%);
 	color: #e4e4e7;
 	font-size: 16px;
 	pointer-events: none;
+}
+
+.cm-search-icon-in-input-right .search-icon-input-right svg {
+	width: 18px;
+	height: 18px;
+	fill: #FFFFFF;
 }
 
 .cm-search-icon-in-input-right .search-wrap:focus-within .search-icon-input-right {
@@ -6042,8 +6054,18 @@ a#scroll-up {
 }
 
 a#scroll-up i {
-	font-size: 40px;
-	color: #207daf;
+	height: 48px;
+	width: 48px;
+	border-radius: 4px;
+	background-color: #8269DF;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a#scroll-up i:before {
+	color: #FFFFFF;
 }
 
 a#scroll-up:hover {

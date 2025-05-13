@@ -2609,6 +2609,13 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
 
+		$header_search_placeholder_color_css = array(
+			'.cm-search-icon-in-input-right .search-wrap i' => array(
+				'fill' => esc_html( $header_search_placeholder_color ),
+			),
+		);
+		$parse_builder_css                                   .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
+
 		// Social icon color.
 		$social_icon_color     = get_theme_mod( 'colormag_header_socials_color', '' );
 		$social_icon_color_css = array(
