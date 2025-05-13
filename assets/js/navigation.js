@@ -126,38 +126,61 @@ function initMobileNavigation() {
 	const menu = container.querySelector('.cm-mobile-menu');
 	const mobileArea = container.querySelector('.cm-mobile-header-row');
 
-	// Remove any existing event listener to prevent duplicates
-	button.removeEventListener('click', toggleMobileMenu);
-	// Add the event listener
-	button.addEventListener('click', toggleMobileMenu);
+	// Check if required elements exist
+	if (!button || !menu || !mobileArea) return;
 
+	// Define handler function outside addEventListener to maintain reference
 	function toggleMobileMenu(e) {
 		e.preventDefault();
-		const expanded = e.currentTarget.getAttribute('aria-expanded');
-		if (expanded === 'false') {
-			e.currentTarget.setAttribute('aria-expanded', 'true');
+		// Use e.currentTarget to reference the clicked button (newButton)
+		const currentButton = e.currentTarget;
+		const expanded = currentButton.getAttribute('aria-expanded') === 'true';
+
+		// Toggle expanded state based on current value
+		currentButton.setAttribute('aria-expanded', !expanded);
+
+		if (!expanded) {
+			container.classList.add('cm-toggle-open');
 			menu.classList.add('cm-mobile-menu--open');
 			mobileArea.classList.add('cm-mobile-menu--open');
 		} else {
-			e.currentTarget.setAttribute('aria-expanded', 'false');
+			container.classList.remove('cm-toggle-open');
 			menu.classList.remove('cm-mobile-menu--open');
 			mobileArea.classList.remove('cm-mobile-menu--open');
 		}
 	}
+
+	// Remove any existing handler by cloning the element
+	const newButton = button.cloneNode(true);
+	button.parentNode.replaceChild(newButton, button);
+
+	// Set initial aria state
+	newButton.setAttribute('aria-expanded', 'false');
+
+	// Add event listener to the new button
+	newButton.addEventListener('click', toggleMobileMenu);
 }
 
 // Initialize on page load
-initMobileNavigation();
+document.addEventListener('DOMContentLoaded', function () {
+	initMobileNavigation();
+});
 
-// Re-initialize when WordPress Customizer refreshes the preview
-if (
-	typeof window.wp !== 'undefined' &&
-	typeof window.wp.customize !== 'undefined'
-) {
+// Handle WordPress Customizer events
+if (typeof wp !== 'undefined' && wp.customize) {
 	wp.customize.bind('preview-ready', function () {
+		// Initial run
+		initMobileNavigation();
+
 		// Listen for partial content refresh
 		wp.customize.selectiveRefresh.bind('partial-content-rendered', function () {
-			initMobileNavigation();
+			// Use a slightly longer delay
+			setTimeout(initMobileNavigation, 150);
+		});
+
+		// Listen for any preview change
+		wp.customize.preview.bind('refresh', function () {
+			setTimeout(initMobileNavigation, 150);
 		});
 	});
 }
