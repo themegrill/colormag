@@ -150,7 +150,10 @@ function initMobileNavigation() {
 initMobileNavigation();
 
 // Re-initialize when WordPress Customizer refreshes the preview
-if (wp && wp.customize) {
+if (
+	typeof window.wp !== 'undefined' &&
+	typeof window.wp.customize !== 'undefined'
+) {
 	wp.customize.bind('preview-ready', function () {
 		// Listen for partial content refresh
 		wp.customize.selectiveRefresh.bind('partial-content-rendered', function () {
