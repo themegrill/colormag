@@ -4412,7 +4412,7 @@ Styles for separating single posts loaded from ajax call.
 	border-top: 4px solid #289dcc;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 769px) {
 	.cm-menu-toggle {
 		display: none;
 	}
@@ -6792,6 +6792,22 @@ blockquote.wp-block-quote.has-text-align-right {
 	flex-wrap: nowrap;
 }
 
+.cm-footer-border-line {
+	position: relative;
+}
+
+.cm-footer-border-line:before {
+	position: absolute;
+	bottom: -1px;
+	right: 0;
+	content: "";
+	display: block;
+	width: 52px;
+	height: 1px;
+	background-color: #8269df;
+	margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) and (min-width: 600px) {
 	.cm-starter-main .cm-col-2 {
 		display: flex;
@@ -6803,6 +6819,26 @@ blockquote.wp-block-quote.has-text-align-right {
 	.cm-starter-main .cm-col-2 > .wp-block-column {
 		flex-basis: 48% !important;
 	}
+	.cm-starter-main .cm-editor-picks {
+		display: flex;
+		gap: 18px;
+	}
+	.cm-starter-main .cm-editor-picks > .wp-block-group {
+		margin: 0;
+	}
+	.cm-starter-main .cm-editor-picks > .wp-block-column {
+		flex-basis: 48% !important;
+	}
+	.cm-starter-main .cm-fitness {
+		display: flex;
+		gap: 18px;
+	}
+	.cm-starter-main .cm-fitness > .wp-block-group {
+		margin: 0;
+	}
+	.cm-starter-main .cm-fitness > .wp-block-column {
+		flex-basis: 48% !important;
+	}
 	.cm-starter-main .cm-diet-health {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -6812,13 +6848,14 @@ blockquote.wp-block-quote.has-text-align-right {
 		margin: 0;
 	}
 	.cm-starter-main .cm-diet-health .is-not-stacked-on-mobile {
+		gap: 12px;
 		flex-direction: column;
 	}
 	.cm-starter-main .cm-technology-section > .wp-block-column {
 		flex-basis: 48% !important;
 	}
 	.cm-starter-main .cm-technology-section-2 > .wp-block-column {
-		flex-basis: 31% !important;
+		flex-basis: 30% !important;
 	}
 	.cm-starter-main .cm-politics-col {
 		display: flex;
@@ -6837,8 +6874,8 @@ blockquote.wp-block-quote.has-text-align-right {
 		gap: 18px;
 	}
 	.cm-starter-main .cm-politics-2 > .wp-block-columns {
-		flex-direction: column !important;
 		margin: 0;
+		gap: 12px;
 	}
 	.cm-starter-main .cm-politics-img img {
 		width: 100% !important;
@@ -6874,10 +6911,30 @@ blockquote.wp-block-quote.has-text-align-right {
 	.cm-starter-main .cm-footer-col > .wp-block-column:last-child {
 		flex-basis: 64.66% !important;
 	}
+	.cm-starter-main .cm-video-col-2 {
+		display: flex;
+	}
+	.cm-starter-main .cm-video-col-2 > .wp-block-column:first-child {
+		flex-basis: 31.33% !important;
+	}
+	.cm-starter-main .cm-video-col-2 > .wp-block-column:last-child {
+		flex-basis: 64.66% !important;
+	}
+	.cm-starter-main .cm-technology-cover {
+		width: 60%;
+		margin: auto;
+	}
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 600px) {
 	.cm-starter-main .cm-diet-health > .wp-block-columns {
+		gap: 12px;
 		flex-direction: column;
+	}
+	.cm-starter-main .cm-technology-section, .cm-starter-main .cm-technology-section-2, .cm-starter-main .cm-politics-col, .cm-starter-main .cm-video-col-2 {
+		gap: 12px;
+	}
+	.cm-starter-main .cm-life-style-3 > .wp-block-columns {
+		gap: 12px;
 	}
 }
