@@ -81,17 +81,17 @@ Resources packed within the theme.
   https://www.pexels.com/photo/bitcoins-on-blur-background-7267610/
   https://www.pexels.com/photo/woman-taking-photo-with-a-polaroid-camera-5081609/
   
-    https://pxhere.com/en/photo/613031
-    https://pxhere.com/en/photo/1558211
-    https://pxhere.com/en/photo/1333828
-    https://pxhere.com/en/photo/1439011
-    https://pxhere.com/en/photo/657926
-    https://pxhere.com/en/photo/1608817
-    https://pxhere.com/en/photo/805572
-    https://pxhere.com/en/photo/1085512
-    https://pxhere.com/en/photo/1575625
-    https://pxhere.com/en/photo/1548565
-    https://pxhere.com/en/photo/510089
+  https://pxhere.com/en/photo/613031
+  https://pxhere.com/en/photo/1558211
+  https://pxhere.com/en/photo/1333828
+  https://pxhere.com/en/photo/1439011
+  https://pxhere.com/en/photo/657926
+  https://pxhere.com/en/photo/1608817
+  https://pxhere.com/en/photo/805572
+  https://pxhere.com/en/photo/1085512
+  https://pxhere.com/en/photo/1575625
+  https://pxhere.com/en/photo/1548565
+  https://pxhere.com/en/photo/510089
 
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * JQuery Advanced News Ticker 1.0.11 by Valentin Ledrapier(risq) | GPL Licensed
