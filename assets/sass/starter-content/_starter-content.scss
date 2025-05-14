@@ -1,0 +1,190 @@
+
+.cm-footer-border-line {
+	position: relative;
+	&:before {
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		content: "";
+		display: block;
+		width: 52px;
+		height: 1px;
+		background-color: #8269df;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 768px) and (min-width: 600px) {
+	.cm-starter-main {
+		.cm-col-2 {
+			display: flex;
+			gap: 18px;
+			> .wp-block-group{
+				margin: 0;
+			}
+
+			> .wp-block-column {
+				flex-basis: 48% !important;
+			}
+		}
+
+		.cm-editor-picks {
+			display: flex;
+			gap: 18px;
+			> .wp-block-group{
+				margin: 0;
+			}
+
+			> .wp-block-column {
+				flex-basis: 48% !important;
+			}
+		}
+
+		.cm-fitness {
+			display: flex;
+			gap: 18px;
+			> .wp-block-group{
+				margin: 0;
+			}
+
+			> .wp-block-column {
+				flex-basis: 48% !important;
+			}
+		}
+
+		.cm-diet-health {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 18px;
+
+			> .wp-block-columns {
+				margin: 0;
+			}
+
+			.is-not-stacked-on-mobile {
+				gap: 12px;
+				flex-direction: column;
+			}
+		}
+
+		.cm-technology-section {
+			> .wp-block-column {
+				flex-basis: 48% !important;
+			}
+		}
+
+		.cm-technology-section-2 {
+			> .wp-block-column {
+				flex-basis: 30% !important;
+			}
+		}
+
+		.cm-politics-col {
+			display: flex;
+			> .wp-block-column:first-child {
+				flex-basis:31.33% !important;
+			}
+			> .wp-block-column:last-child {
+				flex-basis:64.66% !important;
+			}
+		}
+
+		.cm-social-media {
+			img	{
+				width: 60%;
+			}
+		}
+
+		.cm-politics-2 {
+			display: flex;
+			gap: 18px;
+			> .wp-block-columns {
+				margin: 0;
+				gap: 12px;
+			}
+		}
+
+		.cm-politics-img {
+			img	 {
+				width: 100% !important;
+				height: 100% !important;
+			}
+		}
+
+		.cm-social-media-button {
+			width: 60%;
+		}
+
+		.cm-top-stories {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 18px;
+		}
+
+		.cm-life-style {
+			> .wp-block-column {
+				flex-basis: 31% !important;
+			}
+		}
+
+		.cm-life-style-2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			.wp-block-column {
+				> .wp-block-columns {
+					margin: 0;
+					flex-direction: column !important;
+					gap: 8px;
+				}
+			}
+		}
+
+		.cm-footer-col {
+			display: flex;
+			gap: 16px;
+			> .wp-block-column:first-child {
+				flex-basis:10% !important;
+			}
+			> .wp-block-column:last-child {
+				flex-basis:64.66% !important;
+			}
+		}
+
+		.cm-video-col-2 {
+			display: flex;
+			> .wp-block-column:first-child {
+				flex-basis:31.33% !important;
+			}
+			> .wp-block-column:last-child {
+				flex-basis:64.66% !important;
+			}
+		}
+
+		.cm-technology-cover {
+			width: 60%;
+			margin: auto;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.cm-starter-main {
+
+		.cm-diet-health {
+
+			> .wp-block-columns {
+				gap: 12px;
+				flex-direction: column;
+			}
+		}
+
+		.cm-technology-section,.cm-technology-section-2,.cm-politics-col, .cm-video-col-2 {
+			gap: 12px;
+		}
+
+		.cm-life-style-3 {
+			> .wp-block-columns {
+				gap: 12px;
+			}
+		}
+	}
+}
