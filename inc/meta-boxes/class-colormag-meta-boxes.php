@@ -33,7 +33,6 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function __construct() {
 
-		if ( $this->is_classic_editor_active() ) {
 		// Adding required meta boxes.
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 
@@ -43,8 +42,6 @@ class ColorMag_Meta_Boxes {
 
 		// Save the meta boxes contents.
 		add_action( 'save_post', array( $this, 'save_meta_boxes' ), 1, 2 );
-
-		}
 
 		// Save page settings meta boxes.
 		add_action( 'colormag_process_page_settings_meta', 'ColorMag_Meta_Box_Page_Settings::save', 10, 2 );
@@ -100,6 +97,9 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function add_meta_boxes() {
 
+		if ( ! $this->is_classic_editor_active() ) {
+			return;
+		}
 		// Global options for page and posts.
 		add_meta_box(
 			'colormag-page-setting',
@@ -121,6 +121,10 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function enqueue() {
 
+		if ( ! $this->is_classic_editor_active() ) {
+			return;
+		}
+
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 		// Enqueue meta boxes CSS file.
@@ -138,9 +142,13 @@ class ColorMag_Meta_Boxes {
 	 * @param int     $post_id Post ID.
 	 * @param WP_Post $post    Post object.
 	 *
-	 * @return null|mixed
+	 * @return void|mixed
 	 */
 	public function save_meta_boxes( $post_id, $post ) {
+
+		if ( ! $this->is_classic_editor_active() ) {
+			return;
+		}
 
 		$post_id = absint( $post_id );
 
