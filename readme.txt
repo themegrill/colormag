@@ -36,7 +36,7 @@ Resources packed within the theme.
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * Images used in the screenshot are licensed under Creative Commons Zero (CC0):
   
-  ht tps://pxhere.com/en/photo/1368697
+  https://pxhere.com/en/photo/1368697
   https://pxhere.com/en/photo/99223
   https://pxhere.com/en/photo/1364216
   https://pxhere.com/en/photo/1587555
