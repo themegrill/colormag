@@ -1448,10 +1448,6 @@ return [
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
 <p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum aliquet odio mattis. Class aptent taciti sociosquad. et velit interdum, ac aliquet odio mattis.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"500","textDecoration":"underline"},"spacing":{"margin":{"top":"8px","bottom":"0"}},"color":{"text":"#646464"},"elements":{"link":{"color":{"text":"#646464"}}}},"fontFamily":"inter"} -->
-<p class="has-text-color has-link-color has-inter-font-family" style="color:#646464;margin-top:8px;margin-bottom:0;font-size:14px;font-style:normal;font-weight:500;text-decoration:underline">Read More</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
