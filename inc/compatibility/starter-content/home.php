@@ -485,8 +485,8 @@ return [
 <p class="has-text-color has-link-color has-inter-font-family" style="color:#4e4e4e;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:13px;font-style:normal;font-weight:400;line-height:1.7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dolore magna aliqua.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"className":"cm-politics-2","layout":{"type":"constrained"}} -->
-<div class="wp-block-group cm-politics-2"><!-- wp:columns {"className":"cm-trending-1","style":{"spacing":{"blockGap":"12px"}}} -->
+<!-- wp:group {"className":"cm-politics-2","style":{"spacing":{"blockGap":"12px","margin":{"top":"12px","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group cm-politics-2" style="margin-top:12px;margin-bottom:0"><!-- wp:columns {"className":"cm-trending-1","style":{"spacing":{"blockGap":"12px"}}} -->
 <div class="wp-block-columns cm-trending-1"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":76,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"4px"}}} -->
 <figure class="wp-block-image size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-4.jpg" alt="" class="wp-image-76" style="border-radius:4px"/></figure>
@@ -582,7 +582,7 @@ return [
 <div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:32%"><!-- wp:columns {"className":"cm-video-col-2","style":{"spacing":{"blockGap":{"top":"0px","left":"16px"}}}} -->
 <div class="wp-block-columns cm-video-col-2"><!-- wp:column {"width":"33.33%","layout":{"type":"default"}} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":78,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"},"spacing":{"margin":{"right":"0px","left":"0px"}}}} -->
-<figure class="wp-block-image alignfull size-full has-custom-border" style="margin-right:0px;margin-left:0px"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/video-img-2.jpg" alt="" class="wp-image-78" style="border-radius:4px"/></figure>
+<figure class="wp-block-image alignfull size-full has-custom-border" style="margin-right:0px;margin-left:0px"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/videos-img-2.jpg" alt="" class="wp-image-78" style="border-radius:4px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -610,7 +610,7 @@ return [
 <!-- wp:columns {"className":"cm-video-col-2","style":{"spacing":{"blockGap":{"left":"16px"}}}} -->
 <div class="wp-block-columns cm-video-col-2"><!-- wp:column {"verticalAlignment":"center","width":"33.33%","layout":{"type":"constrained"}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":79,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/video-img-3.jpg" alt="" class="wp-image-79" style="border-radius:4px"/></figure>
+<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/videos-img-3.jpg" alt="" class="wp-image-79" style="border-radius:4px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -638,7 +638,7 @@ return [
 <!-- wp:columns {"verticalAlignment":"center","className":"cm-video-col-2","style":{"spacing":{"blockGap":{"left":"16px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center cm-video-col-2"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":80,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/video-img-4.jpg" alt="" class="wp-image-80" style="border-radius:4px"/></figure>
+<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/videos-img-4.jpg" alt="" class="wp-image-80" style="border-radius:4px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -666,7 +666,7 @@ return [
 <!-- wp:columns {"className":"cm-video-col-2","style":{"spacing":{"blockGap":{"left":"16px"}}}} -->
 <div class="wp-block-columns cm-video-col-2"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":81,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/video-img-5.jpg" alt="" class="wp-image-81" style="border-radius:4px"/></figure>
+<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/videos-img-5.jpg" alt="" class="wp-image-81" style="border-radius:4px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -694,7 +694,7 @@ return [
 <!-- wp:columns {"className":"cm-video-col-2","style":{"spacing":{"blockGap":{"left":"16px"}}}} -->
 <div class="wp-block-columns cm-video-col-2"><!-- wp:column {"verticalAlignment":"center","width":"33.33%","layout":{"type":"constrained"}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":79,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/video-img-2.jpg" alt="" class="wp-image-79" style="border-radius:4px"/></figure>
+<figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/videos-img-2.jpg" alt="" class="wp-image-79" style="border-radius:4px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -911,11 +911,15 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"400","lineHeight":"1.8"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400;line-height:1.8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400;line-height:1.8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"textDecoration":"underline"}}} -->
+<p style="text-decoration:underline">Read More</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"className":"cm-diet-health"} -->
+<!-- wp:column {"width":"","className":"cm-diet-health"} -->
 <div class="wp-block-column cm-diet-health"><!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"left":"16px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"center","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%"><!-- wp:image {"id":27,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
@@ -1421,8 +1425,8 @@ return [
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%","style":{"spacing":{"blockGap":"8px"}}} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:image {"id":83,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"width":"47%","style":{"spacing":{"blockGap":"8px"}}} -->
+<div class="wp-block-column" style="flex-basis:47%"><!-- wp:image {"id":83,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
 <figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-1.jpg" alt="" class="wp-image-83" style="border-radius:4px"/></figure>
 <!-- /wp:image -->
 
@@ -1447,12 +1451,12 @@ return [
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum aliquet odio mattis. Class aptent taciti sociosquad. et velit interdum, ac aliquet odio mattis.</p>
+<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:14px;font-style:normal;font-weight:400">Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum aliquet odio mattis. </p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:columns {"className":"cm-col-2"} -->
+<!-- wp:column {"width":"53%"} -->
+<div class="wp-block-column" style="flex-basis:53%"><!-- wp:columns {"className":"cm-col-2"} -->
 <div class="wp-block-columns cm-col-2"><!-- wp:column {"style":{"spacing":{"blockGap":"8px"}}} -->
 <div class="wp-block-column"><!-- wp:image {"id":84,"sizeSlug":"full","linkDestination":"none","align":"full","style":{"border":{"radius":"4px"}}} -->
 <figure class="wp-block-image alignfull size-full has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/wellness-img-2.jpg" alt="" class="wp-image-84" style="border-radius:4px"/></figure>
@@ -1616,9 +1620,9 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"60%"} -->
-<div class="wp-block-column" style="flex-basis:60%"><!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"typography":{"fontSize":"20px"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"bottom":"12px"}},"color":{"text":"#222222"}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
+<div class="wp-block-column" style="flex-basis:60%"><!-- wp:columns {"verticalAlignment":null} -->
+<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"typography":{"fontSize":"20px"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"bottom":"12px"}},"color":{"text":"#222222"}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
 <h5 class="wp-block-heading cm-footer-border-line has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;color:#222222;padding-bottom:12px;font-size:20px">Editor’s Pick</h5>
 <!-- /wp:heading -->
 
