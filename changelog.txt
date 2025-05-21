@@ -1,4 +1,15 @@
 == Changelog ==
+= 4.0.14 - 2025-05-21 =
+* Added       - New ColorMag Main demo (https://themegrilldemos.com/colormag/).
+* Added       - Option to change full width search width, border width, border color and border radius.
+* Added       - Option to change full width search placeholder color.
+* Added       - Option to change NewsTicker label in header builder.
+* Added       - Option to change NewsTicker link typography in header builder.
+* Added       - Option to change Social icon color and style in header builder.
+* Added       - Option to enable/disable page header.
+* Added       - Option change NewsTicker width in header builder.
+* Fix         - Toggle menu issue on customizer.
+
 = 4.0.13 - 2025-05-21 =
 * Added - Icon size option in random component of header builder.
 * Added - Option to change header builder primary menu active background color.
