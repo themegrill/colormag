@@ -12,13 +12,13 @@ $args = array(
 	'post_status'         => $post_status,
 );
 
-$news_ticker_label = get_theme_mod('colormag_news_ticker_label','Latest:');
+$news_ticker_label = get_theme_mod( 'colormag_news_ticker_label', 'Latest:' );
 
 $get_featured_posts = new WP_Query( $args );
 ?>
 
 	<div class="breaking-news">
-		<strong class="breaking-news-latest"><?php esc_html_e($news_ticker_label); ?></strong>
+		<strong class="breaking-news-latest"><?php echo esc_html( $news_ticker_label ); ?></strong>
 
 		<ul class="newsticker">
 			<?php
