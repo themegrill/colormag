@@ -1,5 +1,5 @@
 == Changelog ==
-= 4.0.13 - 2025-05-05 =
+= 4.0.13 - 2025-05-21 =
 * Added - Icon size option in random component of header builder.
 * Added - Option to change header builder primary menu active background color.
 * Fix   - Header builder random component icon hover color issue.
