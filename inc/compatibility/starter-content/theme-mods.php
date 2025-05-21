@@ -28,7 +28,7 @@ return array(
 		'mobile'  => array(
 			'top'    => array(
 				'left'   => array(),
-				'center' => array( 'socials' ),
+				'center' => array( 'date' ),
 				'right'  => array(),
 			),
 			'main'   => array(
