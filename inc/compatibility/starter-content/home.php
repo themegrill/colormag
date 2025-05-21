@@ -1040,7 +1040,7 @@ return [
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0px;padding-bottom:0px"><!-- wp:image {"id":77,"sizeSlug":"full","linkDestination":"none","className":"cm-social-media","style":{"border":{"radius":"4px"}}} -->
-<figure class="wp-block-image size-full has-custom-border cm-social-media"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/vertical-ad.jpg" alt="" class="wp-image-77" style="border-radius:4px"/></figure>
+<figure class="wp-block-image size-full has-custom-border cm-social-media"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/Vertical-ad.jpg" alt="" class="wp-image-77" style="border-radius:4px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

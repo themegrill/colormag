@@ -201,7 +201,7 @@ return array(
 		'left'   => '0',
 		'units'  => 'px',
 	),
-	'custom_logo'                                    => '{{logo}}',
+	'custom_logo'                                    => '{{cm-starter-logo}}',
 	'colormag_header_secondary_menu_typography'      => array(
 		'font-family' => 'Inter',
 		'font-size'   => array(
