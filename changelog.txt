@@ -1,4 +1,7 @@
 == Changelog ==
+= 4.0.15 - 2025-05-21 =
+* Fix         - Starter Template issue.
+
 = 4.0.14 - 2025-05-21 =
 * Added       - New ColorMag Main demo (https://themegrilldemos.com/colormag/).
 * Added       - Option to change full width search width, border width, border color and border radius.

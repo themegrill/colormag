@@ -558,6 +558,10 @@ class Customind {
 		$filepath      = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . $directory . DIRECTORY_SEPARATOR . $filename;
 		$filepath      = str_replace( '\\', '/', $filepath );
 		$relative_path = substr( $filepath, strpos( $filepath, 'wp-content' ) );
+		if ( is_multisite() ) {
+			// Use network_site_url to get the main site URL without subdomain
+			return network_site_url( $relative_path );
+		}
 		return site_url( $relative_path );
 	}
 

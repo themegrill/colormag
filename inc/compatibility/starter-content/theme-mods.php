@@ -28,7 +28,7 @@ return array(
 		'mobile'  => array(
 			'top'    => array(
 				'left'   => array(),
-				'center' => array('socials'),
+				'center' => array( 'socials' ),
 				'right'  => array(),
 			),
 			'main'   => array(
@@ -43,7 +43,7 @@ return array(
 					'toggle-button',
 				),
 				'center' => array(),
-				'right'  => array('random' ),
+				'right'  => array( 'random' ),
 			),
 		),
 		'offset'  => array(
@@ -147,16 +147,18 @@ return array(
 	'colormag_footer_bottom_area_color'              => '#BDBDBD',
 	'colormag_footer_menu_color'                     => '#BDBDBD',
 	'colormag_footer_menu'                           => '#BDBDBD',
-	'colormag_header_builder_toggle_button_color'                     => '#FFFFFF',
+	'colormag_header_builder_toggle_button_color'    => '#FFFFFF',
 	'colormag_news_ticker_color'                     => '#FFFFFF',
 	'colormag_news_ticker_link_color'                => '#d3d3d3',
 	'colormag_header_search_border_color'            => '#EBEBEC1A',
 	'colormag_header_search_placeholder_color'       => '#FFFFFF',
 	'colormag_header_socials_color'                  => '#FFFFFF',
+	'colormag_header_site_identity_color'            => '#F5F5F5',
 	'colormag_header_socials_style'                  => 'style-1',
 	'colormag_enable_page_header'                    => false,
-	'colormag_enable_site_identity'                    => false,
-	'colormag_enable_site_tagline'                    => false,
+	'colormag_enable_site_identity'                  => true,
+	'colormag_enable_site_tagline'                   => false,
+	'blogname'                                       => 'ColorMag',
 	'colormag_news_ticker_label'                     => 'Trending :',
 	'colormag_header_search_width'                   => array(
 		'size'  => 300,
@@ -201,7 +203,6 @@ return array(
 		'left'   => '0',
 		'units'  => 'px',
 	),
-	'custom_logo'                                    => '{{cm-starter-logo}}',
 	'colormag_header_secondary_menu_typography'      => array(
 		'font-family' => 'Inter',
 		'font-size'   => array(
@@ -337,12 +338,30 @@ return array(
 			),
 		),
 	),
-	'colormag_news_ticker_content_typography'           => array(
+	'colormag_news_ticker_content_typography'        => array(
 		'font-family' => 'Inter',
 		'font-weight' => '600',
 		'font-size'   => array(
 			'desktop' => array(
 				'size' => '13',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+	),
+	'colormag_header_site_title_typography'          => array(
+		'font-family' => 'Ibm Plex Serif',
+		'font-weight' => '700',
+		'font-size'   => array(
+			'desktop' => array(
+				'size' => '28',
 				'unit' => 'px',
 			),
 			'tablet'  => array(

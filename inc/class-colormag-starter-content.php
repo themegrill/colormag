@@ -56,7 +56,7 @@ class ColorMag_Starter_Content {
 				'top'    => array(
 					'left'   => array(),
 					'center' => array(),
-					'right'  => array( 'socials' ),
+					'right'  => array( 'date' ),
 				),
 				'main'   => array(
 					'left'   => array(),
