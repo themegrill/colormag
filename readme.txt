@@ -120,6 +120,8 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+* Added       - Option to select widgets post by tags and author.
+
 = Version 4.0.15 - 2025-05-21 =
 * Fix         - Starter Template issue.
 
