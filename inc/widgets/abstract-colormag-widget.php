@@ -179,7 +179,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
-				case 'dropdown_users':
+				case 'dropdown_ssusers':
 					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
 					$available_users      = array();
 					$all_author_users     = get_users(
@@ -269,6 +269,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 		if ( empty( $this->settings ) ) {
 			return;
 		}
+
 
 		foreach ( $this->settings as $key => $setting ) {
 
@@ -543,7 +544,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 								'selected'         => $value,
 								'orderby'          => 'name',
 								'order'            => 'ASC',
-								'capability'       => 'authors',
+								'capability'       => 'edit_posts',
 								'class'            => 'widefat postform',
 							)
 						);
@@ -763,7 +764,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 *
 	 * @return \WP_Query
 	 */
-	public function query_posts( $number, $type, $category ) {
+	public function query_posts( $number, $type, $category, $tag ='', $author='' ) {
 
 		$post_status = 'publish';
 		if ( 1 == get_option( 'fresh_site' ) ) {
@@ -777,6 +778,16 @@ abstract class ColorMag_Widget extends WP_Widget {
 			'no_found_rows'       => true,
 			'post_status'         => $post_status,
 		);
+
+		// Displays from tag chosen.
+		if ( 'tag' == $type ) {
+			$args['tag__in'] = $tag;
+		}
+
+		// Displays from author chosen.
+		if ( 'author' == $type ) {
+			$args['author__in'] = $author;
+		}
 
 		// Display posts from category.
 		if ( 'category' == $type ) {
