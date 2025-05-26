@@ -33,15 +33,26 @@ $options = array(
 				),
 				'colormag_header_site_logo_height' => array(
 					'default'     => array(
-						'size'  => '',
-						'units' => 'px',
+						'desktop' => array(
+							'size' => '',
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'size' => '',
+							'unit' => 'px',
+						),
+						'mobile'  => array(
+							'size' => '',
+							'unit' => 'px',
+						),
 					),
 					'type'        => 'customind-slider',
-					'title'       => esc_html__( 'Height', 'colormag' ),
+					'title'       => esc_html__( 'Width', 'colormag' ),
 					'transport'   => 'postMessage',
 					'section'     => 'colormag_header_builder_logo',
 					'units'       => array( 'px' ),
 					'defaultUnit' => 'px',
+					'responsive'  => true,
 				),
 			),
 		),

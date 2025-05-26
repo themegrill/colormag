@@ -32,7 +32,34 @@
 	}
 
 	function colormagGenerateSliderCSS(selector, property, value) {
-		return `${selector} {${property}: ${value.size}${value.unit};}`;
+		let css = '';
+
+		// Check if we have responsive values (desktop, tablet, mobile)
+		if (value.desktop || value.tablet || value.mobile) {
+			// Desktop styling
+			if (value.desktop?.size) {
+				const unit = value.desktop.unit || 'px';
+				css += `${selector} {${property}: ${value.desktop.size}${unit};}`;
+			}
+
+			// Tablet styling
+			if (value.tablet?.size) {
+				const tabletUnit = value.tablet.unit || 'px';
+				css += `@media(max-width: 768px) {${selector} {${property}: ${value.tablet.size}${tabletUnit};}}`;
+			}
+
+			// Mobile styling
+			if (value.mobile?.size) {
+				const mobileUnit = value.mobile.unit || 'px';
+				css += `@media(max-width: 600px) {${selector} {${property}: ${value.mobile.size}${mobileUnit};}}`;
+			}
+		} else {
+			// Legacy format (non-responsive)
+			const unit = value.unit || 'px';
+			css = `${selector} {${property}: ${value.size}${unit};}`;
+		}
+
+		return css;
 	}
 
 	function colormagGenerateBackgroundCSS(selector, value) {

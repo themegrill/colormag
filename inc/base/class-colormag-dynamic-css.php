@@ -4380,8 +4380,18 @@ class ColorMag_Dynamic_CSS {
 
 		// Header builder site logo width.
 		$header_site_logo_width_default = array(
-			'size' => '',
-			'unit' => 'px',
+			'desktop' => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
 		);
 
 		$header_site_logo_width = get_theme_mod( 'colormag_header_site_logo_height', $header_site_logo_width_default );

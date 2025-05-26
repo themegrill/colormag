@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.14
+Version: 4.0.15
 Tested up to: 6.8
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.14
+Stable tag: 4.0.15
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -120,6 +120,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.0.15 - 2025-05-21 =
+* Fix         - Starter Template issue.
+
 = Version 4.0.14 - 2025-05-21 =
 * Added       - New ColorMag Main demo (https://themegrilldemos.com/colormag/).
 * Added       - Option to change full width search width, border width, border color and border radius.

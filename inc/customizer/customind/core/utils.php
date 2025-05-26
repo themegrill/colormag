@@ -39,11 +39,70 @@ function get_social_networks() {
 	return $socials;
 }
 
+/**
+ * Get font format from src.
+ *
+ * @param string $src
+ * @return array
+ */
+function get_custom_font_format( $src ) {
+	$format = pathinfo( $src, PATHINFO_EXTENSION );
+	$option = [
+		'url'    => $src,
+		'format' => 'eot' === $format ? 'embedded-opentype' : (
+		'otf' === $format ? 'opentype' : (
+		'ttf' === $format ? 'truetype' : $format
+		)
+		),
+	];
+	return $option;
+}
+
+/**
+ * Generate custom fonts CSS.
+ *
+ * This function retrieves custom fonts using the `magazine_blocks_pro_get_fonts` function if it exists,
+ * processes each font to generate the necessary CSS for `@font-face` rules, and returns the complete CSS string.
+ *
+ * @return string The generated CSS for custom fonts.
+ */
+function get_custom_fonts_css() {
+	$fonts = [];
+	if ( function_exists( 'magazine_blocks_pro_get_fonts' ) ) {
+		$fonts = magazine_blocks_pro_get_fonts( true );
+	}
+
+	$styles = [];
+	foreach ( $fonts as $font ) {
+		foreach ( $font['faces'] as $face ) {
+			$src      = $face['src'];
+			$format   = get_custom_font_format( $src );
+			$styles[] = [
+				'font-family'  => $font['family'],
+				'font-style'   => $face['fontStyle'],
+				'font-weight'  => $face['fontWeight'],
+				'font-display' => 'fallback',
+				'src'          => "url({$format['url']}) format('{$format['format']}')",
+			];
+		}
+	}
+
+	$css = '';
+	foreach ( $styles as $style ) {
+		$css .= '@font-face{';
+		foreach ( $style as $key => $value ) {
+			$css .= $key . ':' . $value . ';';
+		}
+		$css .= '}';
+	}
+	return $css;
+}
 
 function get_google_fonts_url_by_ids( $typography_controls_ids, $local = false, $format = 'woff2' ) {
 	$fonts = [];
 	foreach ( $typography_controls_ids as $id ) {
 		$value = get_theme_mod( $id );
+
 		if ( ! $value ) {
 			continue;
 		}
@@ -60,6 +119,7 @@ function get_google_fonts_url_by_ids( $typography_controls_ids, $local = false, 
 				: array_merge( $fonts[ $family ], [ $weight ] ) )
 			: [ $weight ];
 	}
+
 	if ( empty( $fonts ) ) {
 		return false;
 	}

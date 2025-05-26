@@ -9,12 +9,6 @@ class ColorMag_Starter_Content {
 		add_filter( 'colormag_header_builder_default_options', array( $this, 'header_builder_options' ) );
 		add_filter( 'colormag_footer_builder_default_options', array( $this, 'footer_builder_options' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_starter_css' ) );
-		add_filter(
-			'colormag_header_button_text',
-			function () {
-				return 'Subscribe';
-			}
-		);
 
 		add_filter(
 			'body_class',
@@ -61,8 +55,8 @@ class ColorMag_Starter_Content {
 			'mobile'  => array(
 				'top'    => array(
 					'left'   => array(),
-					'center' => array(),
-					'right'  => array( 'socials' ),
+					'center' => array( 'date' ),
+					'right'  => array(),
 				),
 				'main'   => array(
 					'left'   => array(),
@@ -85,7 +79,12 @@ class ColorMag_Starter_Content {
 		);
 	}
 
-	public function footer_builder_options() {
+	public function footer_builder_options( $options ) {
+		if ( ! get_option( 'fresh_site' ) ||
+			! is_customize_preview() ) {
+			return $options;
+		}
+
 		return array(
 			'desktop' => array(
 				'top'    => array(
@@ -184,7 +183,7 @@ class ColorMag_Starter_Content {
 			],
 			'theme_mods'  => require __DIR__ . '/compatibility/starter-content/theme-mods.php',
 			'attachments' => array(
-				'logo' => array(
+				'cm-starter-logo' => array(
 					'post_title'   => 'Logo',
 					'post_content' => 'Attachment Description',
 					'post_excerpt' => 'Attachment Caption',

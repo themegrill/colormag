@@ -516,11 +516,11 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 
 								<b class="fn">
 								<?php
-									printf(
-										get_comment_author_link(),
-										// If current post author is also comment author, make it known visually.
-										( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author', 'colormag' ) . '</span>' : ''
-									);
+								    echo get_comment_author_link();
+								    // If current post author is also comment author, make it known visually.
+								    if ($comment->user_id === $post->post_author) {
+								        echo '<span>' . esc_html__('Post author', 'colormag') . '</span>';
+								    }
 								?>
 								</b>
 
