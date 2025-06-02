@@ -65,10 +65,19 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 				'default' => '',
 				'label'   => esc_html__( 'Select category', 'colormag' ),
 			),
+			'tag'           => array(
+				'type'    => 'dropdown_tags',
+				'default' => '',
+				'label'   => esc_html__( 'Select tag', 'colormag' ),
+			),
+			'author'        => array(
+				'type'    => 'dropdown_users',
+				'default' => '',
+				'label'   => esc_html__( 'Select author', 'colormag' ),
+			),
 		);
 
 		parent::__construct();
-
 	}
 
 	/**
@@ -87,9 +96,11 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
 		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';
 		$category = isset( $instance['category'] ) ? $instance['category'] : '';
+		$tag      = isset( $instance['tag'] ) ? $instance['tag'] : '';
+		$author   = isset( $instance['author'] ) ? $instance['author'] : '';
 
 		// Create the posts query.
-		$get_featured_posts = $this->query_posts( $number, $type, $category );
+		$get_featured_posts = $this->query_posts( $number, $type, $category, $tag, $author );
 
 		$this->widget_start( $args );
 		?>
@@ -149,7 +160,7 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 			if ( 1 == $i ) {
 				echo '</div>';
 			}
-			$i ++;
+			++$i;
 		endwhile;
 		if ( $i > 2 ) {
 			echo '</div>';
@@ -159,7 +170,5 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 		wp_reset_postdata();
 
 		$this->widget_end( $args );
-
 	}
-
 }
