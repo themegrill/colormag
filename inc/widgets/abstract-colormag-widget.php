@@ -179,7 +179,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $setting['default'];
 					break;
 
-				case 'dropdown_ssusers':
+				case 'dropdown_users':
 					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
 					$available_users      = array();
 					$all_author_users     = get_users(
