@@ -29,6 +29,36 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 
 			add_action( 'after_setup_theme', [ $this, 'colormag_outside_background_migration' ], 25 );
+			add_action( 'after_setup_theme', [ $this, 'colormag_logo_height_migration' ], 25 );
+		}
+
+
+		public function colormag_logo_height_migration() {
+			$logo_height = get_theme_mod( 'colormag_header_site_logo_height' );
+
+			if ( get_option( 'colormag_logo_height_migration' ) || isset( $logo_height['desktop'] ) || isset( $logo_height['tablet'] ) || isset( $logo_height['mobile'] ) ) {
+				return;
+			}
+
+			if ( ! empty( $logo_height ) && is_array( $logo_height ) && isset( $logo_height['size'] ) && ! empty( $logo_height['size'] ) ) {
+				$logo_height = $logo_height['size'];
+				$value       = array(
+					'desktop' => array(
+						'size' => $logo_height,
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				);
+				set_theme_mod( 'colormag_header_site_logo_height', $value );
+				update_option( 'colormag_logo_height_migration', true );
+			}
 		}
 
 		/**

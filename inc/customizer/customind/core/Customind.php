@@ -106,12 +106,29 @@ class Customind {
 		add_action( 'customize_register', [ $this, 'register' ], 999 );
 		add_action( 'customize_preview_init', [ $this, 'enqueue_preview_scripts' ], 999 );
 		add_action( 'customize_save_after', [ $this, 'on_save' ] );
+		add_action( 'wp_head', [ $this, 'enqueue_custom_fonts' ] );
 
 		$this->add_action( 'register:control', [ $this, 'process_settings' ], 10, 3 );
 		$this->add_action( 'register:control', [ $this, 'process_builder_panels' ], 10, 3 );
 		$this->add_action( 'customize:save', [ $this, 'update_google_fonts_url' ] );
 	}
 
+	/**
+	 * Enqueue custom fonts.
+	 *
+	 * This function retrieves custom fonts CSS, registers a new style for local fonts,
+	 * enqueues the style, and adds the CSS inline if it is not empty.
+	 *
+	 * @return void
+	 */
+	public function enqueue_custom_fonts() {
+		$css = get_custom_fonts_css();
+		if ( ! empty( $css ) ) {
+			wp_register_style( 'customind-local-fonts', false );
+			wp_enqueue_style( 'customind-local-fonts' );
+			wp_add_inline_style( 'customind-local-fonts', $css );
+		}
+	}
 
 	/**
 	 * On save.
@@ -358,6 +375,8 @@ class Customind {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
+
+		$custom_fonts     = [];
 		$asset            = $this->get_asset( 'customind' );
 		$fontawesome_path = $this->get_asset_url( 'all.min.css', "assets/fontawesome/{$this->get_fontawesome_version()}/css", false );
 
@@ -371,11 +390,17 @@ class Customind {
 			wp_set_script_translations( 'customind', $this->i18n_data['domain'], $this->i18n_data['path'] );
 		}
 
+		// Custom fonts from Magazine Blocks Pro.
+		if ( function_exists( 'magazine_blocks_pro_get_fonts' ) ) {
+			$custom_fonts = magazine_blocks_pro_get_fonts();
+		}
+
 		wp_localize_script(
 			'customind',
 			'__CUSTOMIND__',
 			[
 				'googleFonts'           => $this->get_google_fonts(),
+				'customFonts'           => $custom_fonts,
 				'fontawesome'           => $this->get_fontawesome(),
 				'condition'             => $this->get_condition(),
 				'conditions'            => $this->get_conditions(),
@@ -558,10 +583,6 @@ class Customind {
 		$filepath      = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . $directory . DIRECTORY_SEPARATOR . $filename;
 		$filepath      = str_replace( '\\', '/', $filepath );
 		$relative_path = substr( $filepath, strpos( $filepath, 'wp-content' ) );
-		if ( is_multisite() ) {
-			// Use network_site_url to get the main site URL without subdomain
-			return network_site_url( $relative_path );
-		}
 		return site_url( $relative_path );
 	}
 

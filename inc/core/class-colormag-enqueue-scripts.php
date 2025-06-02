@@ -1006,13 +1006,48 @@ if ( ! function_exists( 'colormag_parse_slider_css' ) ) :
 
 		$parse_css = '';
 
-		if ( isset( $output_value['size'] ) ) {
+		if ( isset( $output_value['desktop']['size'] ) || isset( $output_value['tablet']['size'] ) || isset( $output_value['mobile']['size'] ) ) {
+			$parse_css = '';
 
-			$parse_css = $selector . '{';
+			// Desktop styling
+			if ( isset( $output_value['desktop']['size'] ) ) {
+				$unit = isset( $output_value['desktop']['unit'] ) ? $output_value['desktop']['unit'] :
+					( isset( $default_value['desktop']['unit'] ) ? $default_value['desktop']['unit'] : 'px' );
 
-			$unit       = isset( $output_value['unit'] ) ? $output_value['unit'] : ( isset( $default_value['unit'] ) ? $default_value['unit'] : 'px' );
+				$parse_css .= $selector . '{';
+				$parse_css .= $property . ':' . $output_value['desktop']['size'] . $unit . ';';
+				$parse_css .= '}';
+			}
+
+			// Tablet styling
+			if ( isset( $output_value['tablet']['size'] ) && ! empty( $output_value['tablet']['size'] ) ) {
+				$tablet_unit = isset( $output_value['tablet']['unit'] ) ? $output_value['tablet']['unit'] :
+					( isset( $default_value['tablet']['unit'] ) ? $default_value['tablet']['unit'] : 'px' );
+
+				$parse_css .= '@media(max-width: 768px){';
+				$parse_css .= $selector . '{';
+				$parse_css .= $property . ':' . $output_value['tablet']['size'] . $tablet_unit . ';';
+				$parse_css .= '}';
+				$parse_css .= '}';
+			}
+
+			// Mobile styling
+			if ( isset( $output_value['mobile']['size'] ) && ! empty( $output_value['mobile']['size'] ) ) {
+				$mobile_unit = isset( $output_value['mobile']['unit'] ) ? $output_value['mobile']['unit'] :
+					( isset( $default_value['mobile']['unit'] ) ? $default_value['mobile']['unit'] : 'px' );
+
+				$parse_css .= '@media(max-width: 600px){';
+				$parse_css .= $selector . '{';
+				$parse_css .= $property . ':' . $output_value['mobile']['size'] . $mobile_unit . ';';
+				$parse_css .= '}';
+				$parse_css .= '}';
+			}
+		} elseif ( isset( $output_value['size'] ) ) {
+			// Handle legacy format (non-responsive)
+			$parse_css  = $selector . '{';
+			$unit       = isset( $output_value['unit'] ) ? $output_value['unit'] :
+				( isset( $default_value['unit'] ) ? $default_value['unit'] : 'px' );
 			$parse_css .= $property . ':' . $output_value['size'] . $unit . ';';
-
 			$parse_css .= '}';
 		}
 

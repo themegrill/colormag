@@ -248,6 +248,9 @@
 .bottom-\[45px\] {
 		bottom: 45px;
 }
+.bottom-\[8px\] {
+		bottom: 8px;
+}
 .left-0 {
 		right: 0;
 }
@@ -268,6 +271,9 @@
 }
 .right-\[5px\] {
 		left: 5px;
+}
+.right-\[6px\] {
+		left: 6px;
 }
 .right-\[8px\] {
 		left: 8px;
@@ -301,6 +307,9 @@
 }
 .z-\[2\] {
 		z-index: 2;
+}
+.z-\[99999999\] {
+		z-index: 99999999;
 }
 .z-\[9999999\] {
 		z-index: 9999999;
@@ -361,6 +370,9 @@
 }
 .mb-2 {
 		margin-bottom: 8px;
+}
+.mb-3 {
+		margin-bottom: 12px;
 }
 .mb-4 {
 		margin-bottom: 16px;
@@ -644,6 +656,10 @@
 		--tw-translate-y: var(--y);
 		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.rotate-90 {
+		--tw-rotate: 90deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .transform {
 		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -663,6 +679,9 @@
 }
 .cursor-move {
 		cursor: move;
+}
+.cursor-not-allowed {
+		cursor: not-allowed;
 }
 .cursor-pointer {
 		cursor: pointer;
@@ -879,6 +898,9 @@
 .border-b-0 {
 		border-bottom-width: 0px;
 }
+.border-b-\[1px\] {
+		border-bottom-width: 1px;
+}
 .border-l {
 		border-right-width: 1px;
 }
@@ -936,6 +958,14 @@
 .border-\[\#D1D5DB\] {
 		--tw-border-opacity: 1;
 		border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.border-\[\#E1E1E1\] {
+		--tw-border-opacity: 1;
+		border-color: rgb(225 225 225 / var(--tw-border-opacity));
+}
+.border-\[\#E4E4E4\] {
+		--tw-border-opacity: 1;
+		border-color: rgb(228 228 228 / var(--tw-border-opacity));
 }
 .border-\[\#F4F4F4\] {
 		--tw-border-opacity: 1;
@@ -998,6 +1028,10 @@
 .bg-\[\#2563EB\] {
 		--tw-bg-opacity: 1;
 		background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+.bg-\[\#E1E1E1\] {
+		--tw-bg-opacity: 1;
+		background-color: rgb(225 225 225 / var(--tw-bg-opacity));
 }
 .bg-\[\#FFFFFF\] {
 		--tw-bg-opacity: 1;
@@ -1212,6 +1246,9 @@
 }
 .pb-4 {
 		padding-bottom: 16px;
+}
+.pb-\[12px\] {
+		padding-bottom: 12px;
 }
 .pl-2 {
 		padding-right: 8px;
@@ -1575,6 +1612,22 @@
 	}
 }
 
+.customind-dimension-top-side .customind-number-input-input {
+	border-top-color: #207daf;
+}
+
+.customind-dimension-left-side .customind-number-input-input {
+	border-right-color: #207daf;
+}
+
+.customind-dimension-right-side .customind-number-input-input {
+	border-left-color: #207daf;
+}
+
+.customind-dimension-bottom-side .customind-number-input-input {
+	border-bottom-color: #207daf;
+}
+
 li[class^='customize-control-customind-'] {
 	margin-bottom: 0;
 }
@@ -1798,6 +1851,10 @@ li.customize-control-customind-accordion {
 		--tw-bg-opacity: 1;
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.hover\:text-\[\#135e96\]:hover {
+		--tw-text-opacity: 1;
+		color: rgb(19 94 150 / var(--tw-text-opacity));
+}
 .hover\:text-primary-500:hover {
 		--tw-text-opacity: 1;
 		color: rgb(37 123 193 / var(--tw-text-opacity));
@@ -1942,10 +1999,6 @@ li.customize-control-customind-accordion {
 		--tw-border-opacity: 1;
 		border-color: rgb(37 123 193 / var(--tw-border-opacity));
 }
-.data-\[state\=closed\]\:border-gray-300[data-state=closed] {
-		--tw-border-opacity: 1;
-		border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
 .data-\[state\=inactive\]\:border-gray-200[data-state=inactive] {
 		--tw-border-opacity: 1;
 		border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -1953,10 +2006,6 @@ li.customize-control-customind-accordion {
 .data-\[state\=inactive\]\:border-gray-300[data-state=inactive] {
 		--tw-border-opacity: 1;
 		border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
-.data-\[state\=open\]\:border-primary-500[data-state=open] {
-		--tw-border-opacity: 1;
-		border-color: rgb(37 123 193 / var(--tw-border-opacity));
 }
 .data-\[state\=active\]\:bg-primary-500[data-state=active] {
 		--tw-bg-opacity: 1;
@@ -2055,8 +2104,8 @@ li.customize-control-customind-accordion {
 		.sm\:max-w-\[500px\] {
 				max-width: 500px;
 		}
-		.sm\:max-w-\[852px\] {
-				max-width: 852px;
+		.sm\:max-w-\[680px\] {
+				max-width: 680px;
 		}
 		.sm\:flex-row {
 				flex-direction: row;
