@@ -28,4 +28,4 @@ Thumbs.db
 # Zip
 colormag-pro.zip
 
-/vendor/
+#/vendor/
