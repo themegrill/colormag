@@ -1,0 +1,29 @@
+{
+    "name": "wpeverest/wpeverest-sniffs",
+    "description": "WPEverest sniffs",
+    "type": "phpcodesniffer-standard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lekhnath Pandey",
+            "email": "lekhnath005@gmail.com"
+        }
+    ],
+    "keywords": [
+        "phpcs",
+        "standards",
+        "WordPress",
+        "WPEverest"
+    ],
+    "require": {
+            "php": ">=7.4",
+            "wp-coding-standards/wpcs": ">=2.3",
+            "dealerdirect/phpcodesniffer-composer-installer": ">=0.7.4",
+            "phpcompatibility/phpcompatibility-wp": ">=2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

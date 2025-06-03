@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<ruleset name="WPEverest Core" namespace="WPEverest">
+    <description>WPEverest coding standards.</description>
+</ruleset>

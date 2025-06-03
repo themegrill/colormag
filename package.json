@@ -10,7 +10,7 @@
     "prettier": "prettier --ignore-path .gitignore --check \"**/*.+(ts|tsx)\"",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx)\"",
     "prettier:fix": "prettier --write \"**/*.+(ts|tsx)\"",
-    "release": "pnpm build && gulp build"
+    "release": "pnpm build && composer makepot && gulp build "
   },
   "keywords": [],
   "author": "",

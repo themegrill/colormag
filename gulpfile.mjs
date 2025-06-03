@@ -135,6 +135,7 @@ const paths = {
 			'!assets/sass/**',
 			'!.*',
 			'!*.md',
+			'!vendor/**',
 			'!*.zip',
 			'!.*/**',
 			'!dist/**',
@@ -380,7 +381,7 @@ const build = gulp.series(
 	adminSassCompile,
 	elementorStylesCompile,
 	compileMetaBoxSass,
-	makePot,
+	// makePot,
 	compressZip,
 );
 
@@ -412,7 +413,7 @@ export {
 	generateBlockStyleRTLCSS,
 	generateElementorRTLCSS,
 	generateMetaBoxesRTLCSS,
-	makePot,
+	// makePot,
 	compressZip,
 	watch
 }

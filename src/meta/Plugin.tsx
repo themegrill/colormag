@@ -1,5 +1,6 @@
 import { Panel, PanelBody } from '@wordpress/components';
 import { PluginSidebar } from '@wordpress/edit-post';
+import { __ } from '@wordpress/i18n';
 import React, { useState } from 'react';
 import GeneralPanel from './components/GeneralPanel';
 import { PanelTypes } from './components/meta.schema';
@@ -16,7 +17,7 @@ export const Plugin = () => {
 	return (
 		<PluginSidebar
 			name="colormag-meta-setting-sidebar"
-			title="ColorMag Page Settings"
+			title={__('ColorMag Meta Settings', 'colormag')}
 			icon={
 				<>
 					<svg
