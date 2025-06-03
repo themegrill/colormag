@@ -220,7 +220,7 @@ class ColorMag_Dashboard {
 					foreach ( $changelog_data as $entry ) {
 						echo '<div class="cm-changelog__list-item">';
 						echo '<div class="cm-changelog__list-head">';
-						echo '<h4 class="cm-changelog__version">Version: ' . esc_html( $entry['version'] ) . '</h4>';
+						echo '<h4 class="cm-changelog__version">' . esc_html__( 'Version:', 'colormag' ) . ' ' . esc_html( $entry['version'] ) . '</h4>';
 						echo '<p class="cm-changelog__date">' . esc_html( $entry['date'] ) . '</p>';
 						echo '</div>'; // cm-changelog__list-head
 
@@ -241,7 +241,7 @@ class ColorMag_Dashboard {
 					}
 					echo '</div>'; // cm-changelog
 				} else {
-					echo '<p>No changelog data available.</p>';
+					echo '<p>' . esc_html__( 'No changelog data available.', 'colormag' ) . '</p>';
 				}
 
 				?>

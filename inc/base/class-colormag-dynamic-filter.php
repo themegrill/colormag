@@ -44,7 +44,6 @@ if ( ! class_exists( 'ColorMag_Dynamic_Filter' ) ) :
 			);
 
 			return apply_filters( 'colormag_css_class_list', self::$css_class_arr );
-
 		}
 
 		/**
@@ -68,9 +67,7 @@ if ( ! class_exists( 'ColorMag_Dynamic_Filter' ) ) :
 			}
 
 			return $filtered;
-
 		}
-
 	}
 
 endif;
