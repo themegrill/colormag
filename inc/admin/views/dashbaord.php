@@ -123,7 +123,7 @@ function import_button_html() {
 								<a href="
 								<?php
 								if ( isset( $item['type'] ) ) {
-									echo admin_url( 'customize.php?autofocus[' . $item['type'] . ']=' . $item['id'] );
+									echo esc_url( admin_url( 'customize.php?autofocus[' . $item['type'] . ']=' . $item['id'] ) );
 								}
 								?>
 								" target="_blank">
@@ -218,7 +218,7 @@ function import_button_html() {
 						<div class="cm-starter-templates">
 							<img src="<?php echo esc_url( COLORMAG_PARENT_URL . '/inc/admin/images/cm-starter-templates.png' ); ?>" alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
 						</div>
-						<p><?php echo __( 'Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'colormag' ); ?></p>
+						<p><?php echo esc_html__( 'Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'colormag' ); ?></p>
 						<?php echo import_button_html(); ?>
 					</div>
 				</div>
@@ -301,10 +301,7 @@ function import_button_html() {
 					<div class="inside">
 						<p>
 							<?php
-							printf(
-							/* translators: %s: Theme Name. */
-								esc_html__( 'Please take a moment to suggest any features that could enhance our product.', 'colormag' ),
-							);
+							echo esc_html__( 'Please take a moment to suggest any features that could enhance our product.', 'colormag' );
 							?>
 						</p>
 						<a href="<?php echo esc_url( 'https://themegrill.com/contact/#tg-query' ); ?>"
@@ -325,10 +322,7 @@ function import_button_html() {
 					<div class="inside">
 						<p>
 							<?php
-							printf(
-							/* translators: %s: Theme Name. */
-								esc_html__( 'Get in touch with our support team. You can always submit a support ticket for help.', 'colormag' ),
-							);
+							echo esc_html__( 'Get in touch with our support team. You can always submit a support ticket for help.', 'colormag' );
 							?>
 						</p>
 						<a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>"
@@ -342,10 +336,10 @@ function import_button_html() {
 					<?php
 					$plugins = array(
 						array(
-							'name'        => 'Everest Forms',
+							'name'        => __( 'Everest Forms', 'colormag' ),
 							'file'        => 'everest-forms/everest-forms.php',
 							'slug'        => 'everest-forms',
-							'description' => 'Form Builder Plugin',
+							'description' => __( 'Form Builder Plugin', 'colormag' ),
 							'color'       => '#5317AA',
 							'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
@@ -360,10 +354,10 @@ function import_button_html() {
 							</svg>',
 						),
 						array(
-							'name'        => 'BlockArt',
+							'name'        => __( 'BlockArt', 'colormag' ),
 							'file'        => 'blockart-blocks/blockart.php',
 							'slug'        => 'blockart',
-							'description' => 'Page Builder Plugin',
+							'description' => __( 'Page Builder Plugin', 'colormag' ),
 							'color'       => '#2563EB',
 							'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
@@ -395,10 +389,10 @@ function import_button_html() {
 								<?php if ( $is_plugin_activated ) : ?>
 									<?php esc_html_e( 'Activated', 'colormag' ); ?>
 								<?php else : ?>
-									<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></span></a>
+									<span><a href="#" class="activate-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Activate', 'colormag' ); ?></a></span>
 								<?php endif; ?>
 							<?php else : ?>
-								<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></span></a>
+								<span><a href="#" class="install-plugin" data-plugin="<?php echo esc_attr( $plugin_file ); ?>" data-slug="<?php echo esc_attr( $plugin_slug ); ?> "><?php esc_html_e( 'Install', 'colormag' ); ?></a></span>
 							<?php endif; ?>
 					</div>
 						<?php

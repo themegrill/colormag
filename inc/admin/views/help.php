@@ -82,18 +82,16 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 					<div class="ratings">
 								<span>
 										<?php
-										echo $star_icon;
-										echo $star_icon;
-										echo $star_icon;
-										echo $star_icon;
-										echo $star_icon;
+										for ( $i = 0; $i < 5; $i++ ) {
+											echo $star_icon;
+										}
 										?>
 								</span>
 						<span><?php esc_html_e( 'Based on 1430+ Reviews', 'colormag' ); ?></span>
 					</div>
 					<p>
 						<?php
-						echo sprintf(
+						printf(
 						/* translators: %s: Theme Name. */
 							esc_html__( 'Sharing your review is a valuable way to help us enhance your experience.', 'colormag' ),
 							$theme->Name
@@ -101,35 +99,35 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 						?>
 					</p>
 					<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/colormag/reviews/?rate=5#new-post' ); ?>"
-					   target="_blank"><?php esc_html_e( 'Submit a Review', 'colormag' ); ?></a>
+						target="_blank"><?php esc_html_e( 'Submit a Review', 'colormag' ); ?></a>
 				</div>
 			</div>
 			<div class="postbox">
 				<h3 class="hndle">
 					<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-						 fill="none">
+						fill="none">
 						<path
 							d="M12.9998 11.667C13.1664 10.8337 13.5831 10.2503 14.2498 9.58366C15.0831 8.83366 15.4998 7.75033 15.4998 6.66699C15.4998 5.34091 14.973 4.06914 14.0353 3.13146C13.0976 2.19378 11.8258 1.66699 10.4998 1.66699C9.17367 1.66699 7.9019 2.19378 6.96422 3.13146C6.02654 4.06914 5.49976 5.34091 5.49976 6.66699C5.49976 7.50033 5.66642 8.50033 6.74976 9.58366C7.33309 10.167 7.83309 10.8337 7.99976 11.667"
 							stroke="#2563EB" stroke-width="1.66667" stroke-linecap="round"
 							stroke-linejoin="round"/>
 						<path d="M7.99988 15H12.9999" stroke="#2563EB" stroke-width="1.66667"
-							  stroke-linecap="round" stroke-linejoin="round"/>
+								stroke-linecap="round" stroke-linejoin="round"/>
 						<path d="M8.83325 18.333H12.1666" stroke="#2563EB" stroke-width="1.66667"
-							  stroke-linecap="round" stroke-linejoin="round"/>
+								stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 					<span><?php esc_html_e( 'Feature Request', 'colormag' ); ?></span>
 				</h3>
 				<div class="inside">
 					<p>
 						<?php
-						echo sprintf(
+						printf(
 						/* translators: %s: Theme Name. */
 							esc_html__( 'Please take a moment to suggest any features that could enhance our product.', 'colormag' ),
 						);
 						?>
 					</p>
 					<a href="<?php echo esc_url( 'https://themegrill.com/contact/#tg-query' ); ?>"
-					   target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
+						target="_blank"><?php esc_html_e( 'Request a Feature', 'colormag' ); ?></a>
 				</div>
 			</div>
 			<div class="postbox cm-useful-plugins">
@@ -139,10 +137,10 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 				<?php
 				$plugins = array(
 					array(
-						'name'        => 'Everest Forms',
+						'name'        => __( 'Everest Forms', 'colormag' ),
 						'file'        => 'everest-forms/everest-forms.php',
 						'slug'        => 'everest-forms',
-						'description' => 'Form Builder Plugin',
+						'description' => __( 'Form Builder Plugin', 'colormag' ),
 						'color'       => '#5317AA',
 						'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
@@ -157,10 +155,10 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 							</svg>',
 					),
 					array(
-						'name'        => 'BlockArt',
+						'name'        => __( 'BlockArt', 'colormag' ),
 						'file'        => 'blockart-blocks/blockart.php',
 						'slug'        => 'blockart',
-						'description' => 'Page Builder Plugin',
+						'description' => __( 'Page Builder Plugin', 'colormag' ),
 						'color'       => '#2563EB',
 						'svg'         => '<svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40"-->
 								 fill="none">
@@ -170,7 +168,6 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 									  fill="white"/>
 							</svg>',
 					),
-					// Add more plugins as needed
 				);
 
 				// Loop through the plugins
@@ -205,7 +202,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 			<div class="postbox">
 				<h3 class="hndle">
 					<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
-						 fill="none">
+						fill="none">
 						<path
 							d="M13.8327 17.5V15.8333C13.8327 14.9493 13.4815 14.1014 12.8564 13.4763C12.2313 12.8512 11.3834 12.5 10.4993 12.5H5.49935C4.61529 12.5 3.76745 12.8512 3.14233 13.4763C2.51721 14.1014 2.16602 14.9493 2.16602 15.8333V17.5"
 							stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -224,14 +221,14 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" vie
 				<div class="inside">
 					<p>
 						<?php
-						echo sprintf(
+						printf(
 						/* translators: %s: Theme Name. */
 							esc_html__( 'Join our facebook group of ColorMag users for creating beautiful websites!', 'colormag' ),
 						);
 						?>
 					</p>
 					<a href="<?php echo esc_url( 'https://www.facebook.com/groups/themegrill' ); ?>"
-					   target="_blank"><?php esc_html_e( 'Join our Facebook Group', 'colormag' ); ?></a>
+						target="_blank"><?php esc_html_e( 'Join our Facebook Group', 'colormag' ); ?></a>
 				</div>
 			</div>
 		</div><!--/.col-30-->
