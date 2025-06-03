@@ -32,15 +32,15 @@ $options = array(
 						),
 					),
 				),
-				'colormag_header_random_icon_size' => array(
+				'colormag_header_random_icon_size'        => array(
 					'default'     => array(
 						'size'  => '',
 						'units' => 'px',
 					),
 					'type'        => 'customind-slider',
-					'title'        => esc_html__( 'Icon Size', 'colormag' ),
+					'title'       => esc_html__( 'Icon Size', 'colormag' ),
 					'transport'   => 'postMessage',
-					'section'      => 'colormag_header_builder_random',
+					'section'     => 'colormag_header_builder_random',
 					'units'       => array( 'px', 'em', 'rem' ),
 					'defaultUnit' => 'px',
 				),

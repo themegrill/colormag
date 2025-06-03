@@ -74,9 +74,9 @@ $options = array(
 
 				'colormag_header_primary_menu_typography' => array(
 					'default'   => array(
-						'font-family' => 'default',
-						'font-weight' => '600',
-						'font-size'   => array(
+						'font-family'    => 'default',
+						'font-weight'    => '600',
+						'font-size'      => array(
 							'desktop' => array(
 								'size' => '14',
 								'unit' => 'px',

@@ -62,7 +62,7 @@ $options = array(
 				),
 				'colormag_footer_widget_1_link_color_group' => array(
 					'type'         => 'customind-color-group',
-					'title'        => esc_html__( 'Link.', 'colormag' ),
+					'title'        => esc_html__( 'Link', 'colormag' ),
 					'section'      => 'colormag_footer_builder_widget_1',
 					'sub_controls' => array(
 						'colormag_footer_widget_1_link_color'    => array(

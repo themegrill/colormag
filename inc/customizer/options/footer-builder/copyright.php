@@ -107,7 +107,7 @@ $options = array(
 						'unit'   => 'px',
 					),
 					'type'        => 'customind-dimensions',
-					'title'       => 'Margin',
+					'title'       => esc_html__( 'Margin', 'colormag' ),
 					'section'     => 'colormag_footer_builder_copyright',
 					'transport'   => 'postMessage',
 					'units'       => array( 'px', 'em', '%', 'rem' ),

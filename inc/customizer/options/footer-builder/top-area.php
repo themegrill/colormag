@@ -9,7 +9,7 @@ $options = array(
 			array(
 				'colormag_footer_top_area_cols'            => array(
 					'type'        => 'customind-slider',
-					'title'       => 'Top row cols',
+					'title'       => esc_html__( 'Top row cols', 'colormag' ),
 					'default'     => 3,
 					'section'     => 'colormag_footer_builder_top_area',
 					'input_attrs' => array(

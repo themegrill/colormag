@@ -17,7 +17,7 @@ $options = array(
 					'section'   => 'colormag_header_builder_news_ticker',
 					'transport' => 'postMessage',
 				),
-				'colormag_news_ticker_width'      => array(
+				'colormag_news_ticker_width'              => array(
 					'default'     => array(
 						'size'  => 240,
 						'units' => 'px',

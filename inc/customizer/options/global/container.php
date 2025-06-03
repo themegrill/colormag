@@ -103,7 +103,7 @@ $options = array(
 			array(
 				'demo_migrated_to_builder' => array(
 					'default' => 0,
-					'title'   => esc_html__( 'Demo migrated', 'colormag' ),
+					'title'   => esc_html__( 'Demo Migrated To Builder', 'colormag' ),
 					'type'    => 'customind-toggle',
 					'section' => 'colormag_global_container_section',
 				),

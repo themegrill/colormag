@@ -143,7 +143,7 @@ $options = apply_filters(
 									'unit' => '',
 								),
 							),
-							'letter-spacing'    => array(
+							'letter-spacing' => array(
 								'desktop' => array(
 									'size' => '',
 									'unit' => '',
