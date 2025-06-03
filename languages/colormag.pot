@@ -9,23 +9,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-03T06:49:26+00:00\n"
+"POT-Creation-Date: 2025-06-03T11:01:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: colormag\n"
 
 #. Theme Name of the theme
 #: style.css
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:152
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:182
-#: dist/colormag/inc/admin/views/dashbaord.php:198
-#: dist/colormag/inc/admin/views/dashbaord.php:219
-#: dist/colormag/inc/helper/utils.php:27
-#: dist/colormag/template-parts/hooks/footer/footer.php:269
 #: inc/admin/class-colormag-dashboard.php:152
 #: inc/admin/class-colormag-dashboard.php:182
 #: inc/admin/views/dashbaord.php:198
 #: inc/admin/views/dashbaord.php:219
+#: inc/admin/views/products.php:12
 #: inc/helper/utils.php:27
 #: template-parts/hooks/footer/footer.php:269
 msgid "ColorMag"
@@ -52,29 +47,23 @@ msgid "https://themegrill.com"
 msgstr ""
 
 #: 404.php:32
-#: dist/colormag/404.php:32
 msgid "oops ! Page Not Found"
 msgstr ""
 
 #: 404.php:34
-#: dist/colormag/404.php:34
 msgid "404"
 msgstr ""
 
 #: 404.php:38
-#: dist/colormag/404.php:38
 msgid "We are sorry for the inconvenience. The page you’re trying to access does not exist or has been removed."
 msgstr ""
 
 #: 404.php:43
-#: dist/colormag/404.php:43
 msgid "Back to Home"
 msgstr ""
 
 #. Translators: %1$s: Post title
 #: comments.php:39
-#: dist/colormag/comments.php:39
-#: dist/colormag/inc/ajax.php:53
 #: inc/ajax.php:53
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
@@ -82,8 +71,6 @@ msgstr ""
 
 #. Translators: %1$s: Comment count, %2$s: Post title
 #: comments.php:45
-#: dist/colormag/comments.php:45
-#: dist/colormag/inc/ajax.php:60
 #: inc/ajax.php:60
 #, php-format
 msgctxt "comments title"
@@ -94,173 +81,141 @@ msgstr[1] ""
 
 #: comments.php:55
 #: comments.php:75
-#: dist/colormag/comments.php:55
-#: dist/colormag/comments.php:75
 msgid "Comment navigation"
 msgstr ""
 
 #: comments.php:57
 #: comments.php:77
-#: dist/colormag/comments.php:57
-#: dist/colormag/comments.php:77
 msgid "&larr; Older Comments"
 msgstr ""
 
 #: comments.php:58
 #: comments.php:78
-#: dist/colormag/comments.php:58
-#: dist/colormag/comments.php:78
 msgid "Newer Comments &rarr;"
 msgstr ""
 
 #: comments.php:88
-#: dist/colormag/comments.php:88
-#: dist/colormag/inc/ajax.php:90
 #: inc/ajax.php:90
 msgid "Comments are closed."
 msgstr ""
 
 #. Translators: 1: Panel Title.
-#: dist/colormag/functions.php:92
 #: functions.php:92
 #, php-format
 msgid "Customizing ▶ %s"
 msgstr ""
 
-#: dist/colormag/functions.php:93
 #: functions.php:93
 msgid "Customizing"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-admin.php:38
 #: inc/admin/class-colormag-admin.php:38
 msgid "Processing..."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-changelog-parser.php:27
-#: dist/colormag/inc/admin/class-colormag-changelog-parser.php:85
 #: inc/admin/class-colormag-changelog-parser.php:27
 #: inc/admin/class-colormag-changelog-parser.php:85
 msgid "Changelog not found."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-changelog-parser.php:42
 #: inc/admin/class-colormag-changelog-parser.php:42
 msgid "You are not allowed to access this resource."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-changelog-parser.php:80
 #: inc/admin/class-colormag-changelog-parser.php:80
 msgid "Could not access filesystem."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-changelog-parser.php:91
 #: inc/admin/class-colormag-changelog-parser.php:91
 msgid "Failed to read changelog."
 msgstr ""
 
 #. translators: %s: Theme Name.
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:36
 #: inc/admin/class-colormag-dashboard.php:36
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:107
 #: inc/admin/class-colormag-dashboard.php:107
 msgid "Dashboard"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:113
-#: dist/colormag/inc/admin/views/dashbaord.php:215
 #: inc/admin/class-colormag-dashboard.php:113
 #: inc/admin/views/dashbaord.php:215
 msgid "Starter Templates"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:126
 #: inc/admin/class-colormag-dashboard.php:126
 msgid "Products"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:132
 #: inc/admin/class-colormag-dashboard.php:132
 msgid "Free Vs Pro"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:138
 #: inc/admin/class-colormag-dashboard.php:138
 msgid "Help"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:178
 #: inc/admin/class-colormag-dashboard.php:178
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-dashboard.php:197
 #: inc/admin/class-colormag-dashboard.php:197
 msgid "Latest Updates"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:79
-#: dist/colormag/inc/migration/demo-import-migration.php:28
+#: inc/admin/class-colormag-dashboard.php:223
+msgid "Version:"
+msgstr ""
+
+#: inc/admin/class-colormag-dashboard.php:244
+msgid "No changelog data available."
+msgstr ""
+
 #: inc/admin/class-colormag-theme-review-notice.php:79
 #: inc/migration/demo-import-migration.php:28
 msgid "Colormag"
 msgstr ""
 
 #. translators: %s: Smile icon
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:87
 #: inc/admin/class-colormag-theme-review-notice.php:87
 #, php-format
 msgid "The above word is just to draw your attention. %s"
 msgstr ""
 
 #. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:96
 #: inc/admin/class-colormag-theme-review-notice.php:96
 #, php-format
 msgid "Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:104
 #: inc/admin/class-colormag-theme-review-notice.php:104
 msgid "What benefit would you have?"
 msgstr ""
 
 #. translators: %s: Smiley icon
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:110
 #: inc/admin/class-colormag-theme-review-notice.php:110
 #, php-format
 msgid "Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:119
 #: inc/admin/class-colormag-theme-review-notice.php:119
 msgid "Sure, I'd love to!"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:124
 #: inc/admin/class-colormag-theme-review-notice.php:124
 msgid "I already did!"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:129
 #: inc/admin/class-colormag-theme-review-notice.php:129
 msgid "Maybe later"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:134
 #: inc/admin/class-colormag-theme-review-notice.php:134
 msgid "I have a query"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:154
-#: dist/colormag/inc/admin/class-colormag-theme-review-notice.php:172
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:104
-#: dist/colormag/inc/migration/class-colormag-migration.php:1193
-#: dist/colormag/inc/migration/demo-import-migration.php:66
 #: inc/admin/class-colormag-theme-review-notice.php:154
 #: inc/admin/class-colormag-theme-review-notice.php:172
 #: inc/admin/class-colormag-welcome-notice.php:104
@@ -269,96 +224,73 @@ msgstr ""
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:26
 #: inc/admin/class-colormag-welcome-notice.php:26
 msgid "Get started"
 msgstr ""
 
 #. translators: 1: Username
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:64
 #: inc/admin/class-colormag-welcome-notice.php:64
 #, php-format
 msgid "Welcome %1$s!"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:72
 #: inc/admin/class-colormag-welcome-notice.php:72
 msgid "Start Building with ColorMag!"
 msgstr ""
 
 #. translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag.
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:80
 #: inc/admin/class-colormag-welcome-notice.php:80
 msgid "Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!"
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:87
 #: inc/admin/class-colormag-welcome-notice.php:87
 msgid "Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos."
 msgstr ""
 
-#: dist/colormag/inc/admin/class-colormag-welcome-notice.php:108
 #: inc/admin/class-colormag-welcome-notice.php:108
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:38
 #: inc/admin/views/dashbaord.php:38
 msgid "Create a new page"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:50
-#: dist/colormag/inc/admin/views/starter-templates.php:9
 #: inc/admin/views/dashbaord.php:50
 #: inc/admin/views/starter-templates.php:9
 msgid "Activate ThemeGrill Demo Importer Plugin"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:52
-#: dist/colormag/inc/admin/views/starter-templates.php:11
 #: inc/admin/views/dashbaord.php:52
 #: inc/admin/views/starter-templates.php:11
 msgid "Install ThemeGrill Demo Importer Plugin"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:54
-#: dist/colormag/inc/admin/views/starter-templates.php:13
 #: inc/admin/views/dashbaord.php:54
 #: inc/admin/views/starter-templates.php:13
 msgid "View Starter Templates"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:69
 #: inc/admin/views/dashbaord.php:69
 msgid "Welcome to ColorMag"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:70
-#: dist/colormag/inc/admin/views/free-vs-pro.php:224
 #: inc/admin/views/dashbaord.php:70
 #: inc/admin/views/free-vs-pro.php:224
 msgid "Free"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:73
 #: inc/admin/views/dashbaord.php:73
 msgid "Experience a seamless magazine-themed website building experience with ColorMag! Explore all the settings and features right here and get started with your first page."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:79
 #: inc/admin/views/dashbaord.php:79
 msgid "Quick Settings"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:80
 #: inc/admin/views/dashbaord.php:80
 msgid "Go to Customizer"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:87
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:8
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:82
 #: inc/admin/views/dashbaord.php:87
 #: inc/customizer/options/header-and-navigation/site-identity.php:8
 #: inc/customizer/options/header-builder/logo.php:6
@@ -366,77 +298,53 @@ msgstr ""
 msgid "Site Identity"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:92
 #: inc/admin/views/dashbaord.php:92
 msgid "Header Options"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:97
 #: inc/admin/views/dashbaord.php:97
 msgid "Footer Options"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:102
 #: inc/admin/views/dashbaord.php:102
 msgid "Global Colors"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:107
 #: inc/admin/views/dashbaord.php:107
 msgid "Sidebar Options"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:112
-#: dist/colormag/inc/admin/views/dashbaord.php:161
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:117
 #: inc/admin/views/dashbaord.php:112
 #: inc/admin/views/dashbaord.php:161
 #: inc/customizer/panels-sections/panels-sections.php:117
 msgid "Blog"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:130
 #: inc/admin/views/dashbaord.php:130
 msgid "Customize"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:140
 #: inc/admin/views/dashbaord.php:140
 msgid "Premium Features"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:142
-#: dist/colormag/inc/admin/views/free-vs-pro.php:294
 #: inc/admin/views/dashbaord.php:142
 #: inc/admin/views/free-vs-pro.php:294
 msgid "Upgrade Now"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:149
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:11
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:72
 #: inc/admin/views/dashbaord.php:149
 #: inc/customizer/options/header-and-navigation/top-bar.php:11
 #: inc/customizer/panels-sections/panels-sections.php:72
 msgid "Top Bar"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:153
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:8
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:87
 #: inc/admin/views/dashbaord.php:153
 #: inc/customizer/options/header-and-navigation/main-header.php:8
 #: inc/customizer/panels-sections/panels-sections.php:87
 msgid "Main Header"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:157
-#: dist/colormag/inc/core/class-colormag-after-setup-theme.php:82
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:8
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:14
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:11
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:92
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:172
 #: inc/admin/views/dashbaord.php:157
 #: inc/core/class-colormag-after-setup-theme.php:82
 #: inc/customizer/options/header-and-navigation/primary-menu.php:8
@@ -447,427 +355,881 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:165
 #: inc/admin/views/dashbaord.php:165
 msgid "Meta"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:169
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:8
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:137
 #: inc/admin/views/dashbaord.php:169
 #: inc/customizer/options/footer/footer-column.php:8
 #: inc/customizer/panels-sections/panels-sections.php:137
 msgid "Footer Column"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:173
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:8
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:142
 #: inc/admin/views/dashbaord.php:173
 #: inc/customizer/options/footer/footer-bar.php:8
 #: inc/customizer/panels-sections/panels-sections.php:142
 msgid "Footer Bar"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:193
-#: dist/colormag/inc/admin/views/dashbaord.php:236
-#: dist/colormag/inc/admin/views/dashbaord.php:245
 #: inc/admin/views/dashbaord.php:193
 #: inc/admin/views/dashbaord.php:236
 #: inc/admin/views/dashbaord.php:245
 msgid "Documentation"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:221
 #: inc/admin/views/dashbaord.php:221
 msgid "Explore diverse demos from ColorMag theme to get your site running in no time! <br> <br> Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! "
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:241
 #: inc/admin/views/dashbaord.php:241
 msgid "Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:257
-#: dist/colormag/inc/admin/views/help.php:79
 #: inc/admin/views/dashbaord.php:257
 #: inc/admin/views/help.php:79
 msgid "Leave us a Review"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:270
-#: dist/colormag/inc/admin/views/help.php:92
 #: inc/admin/views/dashbaord.php:270
-#: inc/admin/views/help.php:92
+#: inc/admin/views/help.php:90
 msgid "Based on 1430+ Reviews"
 msgstr ""
 
 #. translators: %s: Theme Name.
-#: dist/colormag/inc/admin/views/dashbaord.php:277
 #: inc/admin/views/dashbaord.php:277
 msgid "What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:283
-#: dist/colormag/inc/admin/views/help.php:104
 #: inc/admin/views/dashbaord.php:283
-#: inc/admin/views/help.php:104
+#: inc/admin/views/help.php:102
 msgid "Submit a Review"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:299
-#: dist/colormag/inc/admin/views/help.php:120
 #: inc/admin/views/dashbaord.php:299
-#: inc/admin/views/help.php:120
+#: inc/admin/views/help.php:118
 msgid "Feature Request"
 msgstr ""
 
 #. translators: %s: Theme Name.
-#: dist/colormag/inc/admin/views/dashbaord.php:306
-#: dist/colormag/inc/admin/views/help.php:127
-#: inc/admin/views/dashbaord.php:306
-#: inc/admin/views/help.php:127
+#: inc/admin/views/dashbaord.php:304
+#: inc/admin/views/help.php:125
 msgid "Please take a moment to suggest any features that could enhance our product."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:311
-#: dist/colormag/inc/admin/views/help.php:132
-#: inc/admin/views/dashbaord.php:311
-#: inc/admin/views/help.php:132
+#: inc/admin/views/dashbaord.php:308
+#: inc/admin/views/help.php:130
 msgid "Request a Feature"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:323
-#: dist/colormag/inc/admin/views/help.php:33
-#: inc/admin/views/dashbaord.php:323
+#: inc/admin/views/dashbaord.php:320
+#: inc/admin/views/free-vs-pro.php:213
 #: inc/admin/views/help.php:33
 msgid "Support"
 msgstr ""
 
-#. translators: %s: Theme Name.
-#: dist/colormag/inc/admin/views/dashbaord.php:330
-#: inc/admin/views/dashbaord.php:330
+#: inc/admin/views/dashbaord.php:325
 msgid "Get in touch with our support team. You can always submit a support ticket for help."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:335
-#: inc/admin/views/dashbaord.php:335
+#: inc/admin/views/dashbaord.php:329
 msgid "Create a Ticket"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:340
-#: dist/colormag/inc/admin/views/help.php:137
-#: inc/admin/views/dashbaord.php:340
-#: inc/admin/views/help.php:137
+#: inc/admin/views/dashbaord.php:334
+#: inc/admin/views/help.php:135
 msgid "Useful Plugins"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:396
-#: dist/colormag/inc/admin/views/help.php:193
-#: dist/colormag/inc/admin/views/products.php:124
-#: inc/admin/views/dashbaord.php:396
-#: inc/admin/views/help.php:193
-#: inc/admin/views/products.php:124
+#: inc/admin/views/dashbaord.php:339
+#: inc/admin/views/help.php:140
+#: inc/admin/views/products.php:63
+msgid "Everest Forms"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:342
+#: inc/admin/views/help.php:143
+msgid "Form Builder Plugin"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:357
+#: inc/admin/views/help.php:158
+#: inc/admin/views/products.php:90
+msgid "BlockArt"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:360
+#: inc/admin/views/help.php:161
+msgid "Page Builder Plugin"
+msgstr ""
+
+#: inc/admin/views/dashbaord.php:390
+#: inc/admin/views/help.php:190
+#: inc/admin/views/products.php:123
 msgid "Activated"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:398
-#: dist/colormag/inc/admin/views/help.php:195
-#: dist/colormag/inc/admin/views/products.php:128
-#: inc/admin/views/dashbaord.php:398
-#: inc/admin/views/help.php:195
-#: inc/admin/views/products.php:128
+#: inc/admin/views/dashbaord.php:392
+#: inc/admin/views/help.php:192
+#: inc/admin/views/products.php:127
 msgid "Activate"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:401
-#: dist/colormag/inc/admin/views/help.php:198
-#: dist/colormag/inc/admin/views/products.php:133
-#: inc/admin/views/dashbaord.php:401
-#: inc/admin/views/help.php:198
-#: inc/admin/views/products.php:133
+#: inc/admin/views/dashbaord.php:395
+#: inc/admin/views/help.php:195
+#: inc/admin/views/products.php:132
 msgid "Install"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:424
-#: dist/colormag/inc/admin/views/help.php:222
-#: inc/admin/views/dashbaord.php:424
-#: inc/admin/views/help.php:222
+#: inc/admin/views/dashbaord.php:418
+#: inc/admin/views/help.php:219
 msgid "ThemeGrill Community"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:429
-#: inc/admin/views/dashbaord.php:429
+#: inc/admin/views/dashbaord.php:423
 msgid "Join our Facebook group filled with ThemeGrill themes users, including ColorMag users to discuss anything about the theme!"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/dashbaord.php:432
-#: dist/colormag/inc/admin/views/help.php:234
-#: inc/admin/views/dashbaord.php:432
-#: inc/admin/views/help.php:234
+#: inc/admin/views/dashbaord.php:426
+#: inc/admin/views/help.php:231
 msgid "Join our Facebook Group"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/free-vs-pro.php:225
+#: inc/admin/views/free-vs-pro.php:27
+msgid "Hook For Developers"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:28
+msgid "WooCommerce Compatible"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:29
+msgid "Gutenberg Compatible"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:30
+msgid "Button Customization"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:31
+msgid "Typography(Font Size, Font Family, Font Weight,...)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:32
+msgid "Styling Options"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:32
+#: inc/admin/views/free-vs-pro.php:33
+#: inc/admin/views/free-vs-pro.php:50
+#: inc/admin/views/free-vs-pro.php:52
+#: inc/admin/views/free-vs-pro.php:55
+msgid "Limited"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:33
+msgid "Background Options"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:34
+msgid "Pre Built Demos"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:40
+msgid "Primary Colors"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:41
+msgid "Heading Colors"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:42
+#: inc/customizer/options/global/colors.php:128
+msgid "Skin Color"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:43
+#: inc/customizer/options/footer-builder/main-area.php:59
+#: inc/customizer/options/header-builder/news-ticker.php:39
+msgid "Link Color"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:44
+#: inc/customizer/panels-sections/panels-sections.php:42
+msgid "Category Colors"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:50
+msgid "Site Identity Customization"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:51
+msgid "Header Layouts"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:52
+#: inc/customizer/options/header-and-navigation/sticky-header.php:8
+#: inc/customizer/panels-sections/panels-sections.php:112
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:53
+msgid "Header Content Align"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:54
+msgid "Customize Date"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:55
+#: inc/customizer/options/header-and-navigation/news-ticker.php:8
+#: inc/customizer/options/header-and-navigation/top-bar.php:113
+#: inc/customizer/options/header-and-navigation/top-bar.php:119
+#: inc/customizer/options/header-builder/header-builder.php:61
+#: inc/customizer/options/header-builder/header-builder.php:127
+#: inc/customizer/options/header-builder/news-ticker.php:8
+#: inc/customizer/panels-sections/panels-sections.php:77
+#: inc/customizer/panels-sections/panels-sections.php:257
+msgid "News Ticker"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:56
+msgid "Primary Menu Styling Options"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:57
+msgid "Responsive Menu Style"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:58
+msgid "Menu in Top Bar"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:64
+msgid "Dedicated Sidebar"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:70
+msgid "Boxed"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:71
+msgid "Wide"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:72
+#: inc/customizer/options/woocommerce/woocommerce.php:44
+msgid "Sidebar Layout"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:73
+msgid "Front Page: Top Full Width"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:79
+msgid "Default Blog Layout"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:80
+msgid "One Column Layout"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:81
+msgid "Full Width Layout"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:82
+msgid "Grid Layout"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:83
+#: inc/customizer/options/header-and-navigation/breadcrumb.php:8
+#: inc/customizer/panels-sections/panels-sections.php:107
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:84
+msgid "Breadcrumb Label"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:85
+#: inc/customizer/options/content/page.php:25
+#: inc/customizer/options/content/single-post.php:37
+msgid "Featured Image"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:86
+#: inc/customizer/options/content/blog.php:112
+#: inc/customizer/options/content/blog.php:123
+msgid "Excerpt"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:87
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:88
+msgid "Read More Text"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:89
+msgid "Infinite Scroll"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:90
+#: inc/admin/views/free-vs-pro.php:186
+#: inc/customizer/options/content/blog.php:133
+msgid "Pagination"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:96
+msgid "Author Bio"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:97
+msgid "Lightbox For Images"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:98
+msgid "Post Navigation Style"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:99
+#: inc/customizer/options/content/single-post.php:114
+msgid "Related Posts"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:100
+msgid "Reading Post Indicator"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:101
+msgid "Show or hide Post Meta Like Author, Comment, Date, Categories etc"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:102
+msgid "Post Date Format"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:103
+msgid "Sticky Sidebar"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:104
+msgid "Sidebar Styling Options"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:105
+msgid "Featured Image in Single Post"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:106
+msgid "Social Share Button"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:107
+msgid "Reading Progress Indicator"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:108
+msgid "Flyout Related Posts"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:114
+msgid "Footer Area Style"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:115
+msgid "Scroll To Top Button"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:116
+msgid "Footer Widgets Area"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:117
+msgid "Footer Widgets Styling Options"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:118
+msgid "Footer Copyright Editor"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:124
+msgid "Schema Markup"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:125
+#: inc/customizer/options/additional/social-icons.php:9
+#: inc/customizer/options/footer/footer-bar.php:105
+#: inc/customizer/options/footer/footer-bar.php:111
+#: inc/customizer/options/header-and-navigation/top-bar.php:134
+#: inc/customizer/options/header-and-navigation/top-bar.php:140
+#: inc/customizer/panels-sections/panels-sections.php:147
+msgid "Social Icons"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:125
+msgid "Custom"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:126
+msgid "Social Icons Position"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:132
+msgid "OpenWeatherMap API Integration"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:133
+msgid "GoogleMaps API Integration"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:134
+msgid "Exchange Rate API Integration"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:140
+msgid "Widget Areas"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:146
+#: inc/widgets/colormag-125x125-advertisement-widget.php:29
+msgid "TG: 125x125 Advertisement"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:147
+#: inc/widgets/colormag-300x250-advertisement-widget.php:29
+msgid "TG: 300x250 Advertisement"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:148
+#: inc/widgets/colormag-728x90-advertisement-widget.php:29
+msgid "TG: 728x90 Advertisement"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:149
+msgid "TG: Breaking News Widget"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:150
+msgid "TG: Call To Action"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:151
+msgid "TG: Currency Exchange"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:152
+#: inc/widgets/colormag-featured-posts-slider-widget.php:29
+msgid "TG: Featured Category Slider"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:153
+#: inc/widgets/colormag-featured-posts-widget.php:29
+msgid "TG: Featured Posts (Style 1)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:154
+#: inc/widgets/colormag-featured-posts-vertical-widget.php:29
+msgid "TG: Featured Posts (Style 2)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:155
+msgid "TG: Featured Posts (Style 3)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:156
+msgid "TG: Featured Posts (Style 4)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:157
+msgid "TG: Featured Posts (Style 5)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:158
+msgid "TG: Featured Posts (Style 6)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:159
+msgid "TG: Featured Posts (Style 7)"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:160
+msgid "TG: Featured Video Playlist"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:161
+msgid "TG: Google Maps"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:162
+#: inc/widgets/colormag-highlighted-posts-widget.php:29
+msgid "TG: Highlighted Posts"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:163
+msgid "TG: Random Posts Widget"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:164
+msgid "TG: Tabbed Widget"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:165
+msgid "TG: Videos"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:166
+msgid "TG: Weather"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:176
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-1.php:46
+msgid "Block Style 1"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:177
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-2.php:53
+msgid "Block Style 2"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:178
+msgid "Block Style 3"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:179
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-4.php:46
+msgid "Block Style 4"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:180
+msgid "Block Style 5"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:181
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-6.php:53
+msgid "Block Style 6"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:182
+msgid "Block Style 7"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:183
+msgid "Block Style 8"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:184
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-9.php:51
+msgid "Block Style 9"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:185
+msgid "Block Style 10"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:192
+msgid "Grid Style 1"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:193
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-2.php:55
+msgid "Grid Style 2"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:194
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-3.php:55
+msgid "Grid Style 3"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:195
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-4.php:55
+msgid "Grid Style 4"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:196
+#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-5.php:55
+msgid "Grid Style 5"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:197
+msgid "Grid Style 6"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:198
+msgid "Grid Style 7"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:199
+msgid "Grid Style 8"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:200
+msgid "Grid Style 9"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:206
+#: inc/compatibility/elementor/widgets/colormag-elementor-global-widgets-title.php:48
+msgid "Title Widget"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:207
+msgid "Trending News"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:213
+msgid "WordPress.org Forum"
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:213
+msgid "Dedicated Support"
+msgstr ""
+
 #: inc/admin/views/free-vs-pro.php:225
 msgid "Pro"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/free-vs-pro.php:295
 #: inc/admin/views/free-vs-pro.php:295
 msgid "Access all premium extensions, features, and upcoming updates right away by <br> upgrading to the Pro version."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/free-vs-pro.php:296
 #: inc/admin/views/free-vs-pro.php:296
 msgid "Get ColorMag Pro Now"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:25
 #: inc/admin/views/help.php:25
 msgid "Need Some Help?"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:26
 #: inc/admin/views/help.php:26
 msgid "Please check out basic documentation for detailed information on how to use ColorMag."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:27
 #: inc/admin/views/help.php:27
 msgid "View Now"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:34
 #: inc/admin/views/help.php:34
 msgid "We would be happy to guide you through any issues and queries you have regarding ColorMag!"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:35
-#: dist/colormag/inc/migration/demo-import-migration.php:46
 #: inc/admin/views/help.php:35
 #: inc/migration/demo-import-migration.php:46
 msgid "Contact Support"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:38
 #: inc/admin/views/help.php:38
 msgid "Join Our Community"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:41
 #: inc/admin/views/help.php:41
 msgid "facebook"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:44
 #: inc/admin/views/help.php:44
 msgid "Facebook Community"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:45
 #: inc/admin/views/help.php:45
 msgid "Join our Facebook haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:46
-#: dist/colormag/inc/admin/views/help.php:56
 #: inc/admin/views/help.php:46
 #: inc/admin/views/help.php:56
 msgid "Join Group"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:51
 #: inc/admin/views/help.php:51
 msgid "x"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:54
 #: inc/admin/views/help.php:54
 msgid "X Community"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:55
 #: inc/admin/views/help.php:55
 msgid "Join our Twitter haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:61
 #: inc/admin/views/help.php:61
 msgid "youtube"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:64
 #: inc/admin/views/help.php:64
 msgid "Youtube Community"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:65
 #: inc/admin/views/help.php:65
 msgid "Join our YouTube haven, where the latest news and updates eagerly await your arrival."
 msgstr ""
 
-#: dist/colormag/inc/admin/views/help.php:66
-#: dist/colormag/inc/compatibility/starter-content/theme-mods.php:78
 #: inc/admin/views/help.php:66
 #: inc/compatibility/starter-content/theme-mods.php:78
 msgid "Subscribe"
 msgstr ""
 
 #. translators: %s: Theme Name.
-#: dist/colormag/inc/admin/views/help.php:98
-#: inc/admin/views/help.php:98
+#: inc/admin/views/help.php:96
 msgid "Sharing your review is a valuable way to help us enhance your experience."
 msgstr ""
 
 #. translators: %s: Theme Name.
-#: dist/colormag/inc/admin/views/help.php:229
-#: inc/admin/views/help.php:229
+#: inc/admin/views/help.php:226
 msgid "Join our facebook group of ColorMag users for creating beautiful websites!"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/products.php:6
 #: inc/admin/views/products.php:6
 msgid "Themes"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/products.php:41
-#: dist/colormag/inc/admin/views/products.php:118
-#: inc/admin/views/products.php:41
-#: inc/admin/views/products.php:118
+#: inc/admin/views/products.php:15
+msgid "Modern and professional WordPress magazine-styled theme perfect for creating websites for magazines, news portals, and so on."
+msgstr ""
+
+#: inc/admin/views/products.php:20
+msgid "Zakra"
+msgstr ""
+
+#: inc/admin/views/products.php:23
+msgid "Multipurpose WordPress theme loaded with intuitive features and powerful customization options to create professional websites of any kind."
+msgstr ""
+
+#: inc/admin/views/products.php:40
+#: inc/admin/views/products.php:117
 msgid "Learn More"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/products.php:42
-#: inc/admin/views/products.php:42
+#: inc/admin/views/products.php:41
 msgid "Live demo"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/products.php:49
-#: inc/admin/views/products.php:49
+#: inc/admin/views/products.php:48
 msgid "Plugins"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/products.php:119
-#: inc/admin/views/products.php:119
+#: inc/admin/views/products.php:54
+msgid "User Registration"
+msgstr ""
+
+#: inc/admin/views/products.php:58
+msgid "Ultimate WordPress user registration plugin to streamline the user signup process. Create registration & login forms, manage users, and more."
+msgstr ""
+
+#: inc/admin/views/products.php:67
+msgid "Feature-rich and highly customizable WordPress form builder plugin to create different types of professional forms for your website."
+msgstr ""
+
+#: inc/admin/views/products.php:72
+msgid "Masteriyo"
+msgstr ""
+
+#: inc/admin/views/products.php:76
+msgid "Streamline the learning process with an easy-to-use and highly advanced LMS plugin loaded with powerful features to create and sell courses online through your website effortlessly."
+msgstr ""
+
+#: inc/admin/views/products.php:81
+msgid "Magazine Blocks"
+msgstr ""
+
+#: inc/admin/views/products.php:85
+msgid "Powerful WordPress Gutenberg block plugin with the perfect blocks and editing options to create magazine-themed websites."
+msgstr ""
+
+#: inc/admin/views/products.php:94
+msgid "Highly customizable WordPress Gutenberg block plugin with pre-made templates and powerful blocks to create websites of any niche in no time. "
+msgstr ""
+
+#: inc/admin/views/products.php:118
 msgid "Live Demo"
 msgstr ""
 
-#: dist/colormag/inc/admin/views/starter-templates.php:46
 #: inc/admin/views/starter-templates.php:46
 msgid "In order to be able to import any starter sites for <br> ColorMag you need to install ThemeGrill demo <br> importer plugin active."
 msgstr ""
 
-#: dist/colormag/inc/ajax.php:22
-#: dist/colormag/navigation.php:32
-#: dist/colormag/navigation.php:50
 #: inc/ajax.php:22
 #: navigation.php:32
 #: navigation.php:50
 msgid "&larr; Previous"
 msgstr ""
 
-#: dist/colormag/inc/ajax.php:23
-#: dist/colormag/navigation.php:33
-#: dist/colormag/navigation.php:51
 #: inc/ajax.php:23
 #: navigation.php:33
 #: navigation.php:51
 msgid "Next &rarr;"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:241
 #: inc/class-breadcrumb-trail.php:241
 msgid "You are here:"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:268
 #: inc/class-breadcrumb-trail.php:268
 msgid "Browse:"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:269
 #: inc/class-breadcrumb-trail.php:269
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:270
 #: inc/class-breadcrumb-trail.php:270
 msgid "Home"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:271
 #: inc/class-breadcrumb-trail.php:271
 msgid "404 Not Found"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:272
-#: dist/colormag/template-parts/hooks/content/content.php:98
 #: inc/class-breadcrumb-trail.php:272
 #: template-parts/hooks/content/content.php:98
 msgid "Archives"
 msgstr ""
 
 #. Translators: %s is the search query.
-#: dist/colormag/inc/class-breadcrumb-trail.php:274
 #: inc/class-breadcrumb-trail.php:274
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
 
 #. Translators: %s is the page number.
-#: dist/colormag/inc/class-breadcrumb-trail.php:276
 #: inc/class-breadcrumb-trail.php:276
 #, php-format
 msgid "Page %s"
 msgstr ""
 
 #. Translators: %s is the page number.
-#: dist/colormag/inc/class-breadcrumb-trail.php:278
 #: inc/class-breadcrumb-trail.php:278
 #, php-format
 msgid "Comment Page %s"
 msgstr ""
 
 #. Translators: Minute archive title. %s is the minute time format.
-#: dist/colormag/inc/class-breadcrumb-trail.php:280
 #: inc/class-breadcrumb-trail.php:280
 #, php-format
 msgid "Minute %s"
 msgstr ""
 
 #. Translators: Weekly archive title. %s is the week date format.
-#: dist/colormag/inc/class-breadcrumb-trail.php:282
 #: inc/class-breadcrumb-trail.php:282
 #, php-format
 msgid "Week %s"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:712
 #: inc/class-breadcrumb-trail.php:712
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:729
 #: inc/class-breadcrumb-trail.php:729
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:746
 #: inc/class-breadcrumb-trail.php:746
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:762
-#: dist/colormag/inc/class-breadcrumb-trail.php:790
-#: dist/colormag/inc/class-breadcrumb-trail.php:828
-#: dist/colormag/inc/class-breadcrumb-trail.php:854
-#: dist/colormag/inc/class-breadcrumb-trail.php:1200
 #: inc/class-breadcrumb-trail.php:762
 #: inc/class-breadcrumb-trail.php:790
 #: inc/class-breadcrumb-trail.php:828
@@ -877,9 +1239,6 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:763
-#: dist/colormag/inc/class-breadcrumb-trail.php:829
-#: dist/colormag/inc/class-breadcrumb-trail.php:1202
 #: inc/class-breadcrumb-trail.php:763
 #: inc/class-breadcrumb-trail.php:829
 #: inc/class-breadcrumb-trail.php:1202
@@ -887,70 +1246,44 @@ msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:764
-#: dist/colormag/inc/class-breadcrumb-trail.php:1204
 #: inc/class-breadcrumb-trail.php:764
 #: inc/class-breadcrumb-trail.php:1204
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: dist/colormag/inc/class-breadcrumb-trail.php:791
 #: inc/class-breadcrumb-trail.php:791
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: dist/colormag/inc/class-colormag-starter-content.php:198
 #: inc/class-colormag-starter-content.php:198
 msgctxt "Theme starter content"
 msgid "Blog"
 msgstr ""
 
-#: dist/colormag/inc/colormag-wp-query.php:40
 #: inc/colormag-wp-query.php:40
 msgid "Latest:"
 msgstr ""
 
-#: dist/colormag/inc/colormag-wp-query.php:96
-#: dist/colormag/inc/customizer/class-colormag-customizer-partials.php:99
-#: dist/colormag/template-parts/header-builder-elements/random.php:22
 #: inc/colormag-wp-query.php:96
 #: inc/customizer/class-colormag-customizer-partials.php:99
 #: template-parts/header-builder-elements/random.php:22
 msgid "View a random post"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/elementor.php:169
 #: inc/compatibility/elementor/elementor.php:169
 msgid "ColorMag Widget Blocks"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/elementor.php:178
 #: inc/compatibility/elementor/elementor.php:178
 msgid "ColorMag Widget Grid"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/elementor.php:187
 #: inc/compatibility/elementor/elementor.php:187
 msgid "ColorMag Global Widgets"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:69
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:16
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:15
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:15
-#: dist/colormag/inc/customizer/options/front-page/front-page.php:6
-#: dist/colormag/inc/customizer/options/global/button.php:13
-#: dist/colormag/inc/customizer/options/global/container.php:13
-#: dist/colormag/inc/customizer/options/header-and-navigation/breadcrumb.php:15
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:16
-#: dist/colormag/inc/customizer/options/header-and-navigation/news-ticker.php:16
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:179
-#: dist/colormag/inc/customizer/options/header-and-navigation/sticky-header.php:15
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:19
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:67
-#: dist/colormag/inc/meta-boxes/class-colormag-meta-box-page-settings.php:76
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:69
 #: inc/customizer/options/additional/social-icons.php:16
 #: inc/customizer/options/footer/footer-bar.php:15
@@ -969,24 +1302,16 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:79
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:134
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:79
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:134
 msgid "Post Element"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:84
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:122
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:84
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:122
 msgid "Image"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:85
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:139
-#: dist/colormag/inc/customizer/options/content/blog.php:22
-#: dist/colormag/inc/customizer/options/content/single-post.php:20
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:85
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:139
 #: inc/customizer/options/content/blog.php:22
@@ -994,18 +1319,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:86
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:140
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:86
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:140
 msgid "Tag"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:87
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:141
-#: dist/colormag/inc/customizer/options/content/blog.php:23
-#: dist/colormag/inc/customizer/options/content/single-post.php:22
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:17
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:87
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:141
 #: inc/customizer/options/content/blog.php:23
@@ -1014,34 +1332,23 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:96
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:150
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:96
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:150
 msgid "Element Gap"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:124
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:124
 msgid "Show"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:125
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:125
 msgid "Hide"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:184
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:184
 msgid "Block Title"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:34
-#: dist/colormag/inc/widgets/colormag-300x250-advertisement-widget.php:34
-#: dist/colormag/inc/widgets/colormag-728x90-advertisement-widget.php:34
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:40
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:40
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:192
 #: inc/widgets/colormag-125x125-advertisement-widget.php:34
 #: inc/widgets/colormag-300x250-advertisement-widget.php:34
@@ -1051,38 +1358,27 @@ msgstr ""
 msgid "Title:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:194
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:194
 msgid "Add your custom block title"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:220
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:109
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:220
 #: inc/customizer/options/footer/footer-column.php:109
 msgid "Widget Title"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:229
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:229
 msgid "Color:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:253
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:253
 msgid "Text Color:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:294
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:294
 msgid "Posts"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:301
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:35
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:50
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:50
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:34
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:301
 #: inc/widgets/colormag-featured-posts-slider-widget.php:35
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:50
@@ -1091,118 +1387,52 @@ msgstr ""
 msgid "Number of posts to display:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:310
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:310
 msgid "Offset Posts:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:336
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:336
 msgid "Filter"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:343
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:343
 msgid "Display the posts from:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:347
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:347
 msgid "Latest Posts"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:348
-#: dist/colormag/inc/customizer/options/content/post-meta.php:19
-#: dist/colormag/inc/customizer/options/content/single-post.php:131
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:348
 #: inc/customizer/options/content/post-meta.php:19
 #: inc/customizer/options/content/single-post.php:131
 msgid "Categories"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:356
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:356
 msgid "Select categories:"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-global-widgets-title.php:48
-#: inc/compatibility/elementor/widgets/colormag-elementor-global-widgets-title.php:48
-msgid "Title Widget"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-1.php:46
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-1.php:46
-msgid "Block Style 1"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-2.php:53
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-2.php:53
-msgid "Block Style 2"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-4.php:46
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-4.php:46
-msgid "Block Style 4"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-6.php:53
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-6.php:53
-msgid "Block Style 6"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-9.php:51
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-block-9.php:51
-msgid "Block Style 9"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-2.php:55
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-2.php:55
-msgid "Grid Style 2"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-3.php:55
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-3.php:55
-msgid "Grid Style 3"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-4.php:55
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-4.php:55
-msgid "Grid Style 4"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-5.php:55
-#: inc/compatibility/elementor/widgets/colormag-elementor-widgets-grid-5.php:55
-msgid "Grid Style 5"
-msgstr ""
-
-#: dist/colormag/inc/compatibility/starter-content/politics.php:10
 #: inc/compatibility/starter-content/politics.php:10
 msgctxt "Theme starter content"
 msgid "Politics"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/starter-content/sports.php:10
 #: inc/compatibility/starter-content/sports.php:10
 msgctxt "Theme starter content"
 msgid "Sports"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/starter-content/technology.php:10
 #: inc/compatibility/starter-content/technology.php:10
 msgctxt "Theme starter content"
 msgid "Technology"
 msgstr ""
 
-#: dist/colormag/inc/compatibility/starter-content/world.php:11
 #: inc/compatibility/starter-content/world.php:11
 msgctxt "Theme starter content"
 msgid "World"
 msgstr ""
 
-#: dist/colormag/inc/core/class-colormag-after-setup-theme.php:83
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:19
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:11
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:177
 #: inc/core/class-colormag-after-setup-theme.php:83
 #: inc/customizer/options/header-builder/header-builder.php:19
 #: inc/customizer/options/header-builder/secondary-menu.php:11
@@ -1210,57 +1440,22 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/class-colormag-customizer-partials.php:117
 #: inc/customizer/class-colormag-customizer-partials.php:117
 msgid "Copyright &copy; "
 msgstr ""
 
-#: dist/colormag/inc/customizer/class-colormag-customizer-partials.php:117
 #: inc/customizer/class-colormag-customizer-partials.php:117
 msgid "All rights reserved."
 msgstr ""
 
-#: dist/colormag/inc/customizer/class-colormag-customizer-partials.php:117
 #: inc/customizer/class-colormag-customizer-partials.php:117
 msgid "Theme: "
 msgstr ""
 
-#: dist/colormag/inc/customizer/class-colormag-customizer-partials.php:117
 #: inc/customizer/class-colormag-customizer-partials.php:117
 msgid " by ThemeGrill. Powered by "
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:9
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:105
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:111
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:134
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:140
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:147
-#: inc/customizer/options/additional/social-icons.php:9
-#: inc/customizer/options/footer/footer-bar.php:105
-#: inc/customizer/options/footer/footer-bar.php:111
-#: inc/customizer/options/header-and-navigation/top-bar.php:134
-#: inc/customizer/options/header-and-navigation/top-bar.php:140
-#: inc/customizer/panels-sections/panels-sections.php:147
-msgid "Social Icons"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:20
-#: dist/colormag/inc/customizer/options/content/blog.php:139
-#: dist/colormag/inc/customizer/options/content/page.php:14
-#: dist/colormag/inc/customizer/options/content/page.php:31
-#: dist/colormag/inc/customizer/options/content/single-post.php:43
-#: dist/colormag/inc/customizer/options/content/single-post.php:120
-#: dist/colormag/inc/customizer/options/global/builder.php:13
-#: dist/colormag/inc/customizer/options/header-and-navigation/breadcrumb.php:19
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:52
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:69
-#: dist/colormag/inc/customizer/options/header-and-navigation/news-ticker.php:20
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:49
-#: dist/colormag/inc/customizer/options/header-and-navigation/sticky-header.php:19
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:24
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:71
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:70
 #: inc/customizer/options/additional/social-icons.php:20
 #: inc/customizer/options/content/blog.php:139
 #: inc/customizer/options/content/page.php:14
@@ -1280,31 +1475,21 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:35
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:9
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:17
 #: inc/customizer/options/additional/social-icons.php:35
 #: inc/customizer/options/header-and-navigation/header-media.php:9
 #: inc/customizer/options/header-and-navigation/header-media.php:17
 msgid "Position"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:41
 #: inc/customizer/options/additional/social-icons.php:41
 msgid "Header"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:51
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:20
 #: inc/customizer/options/additional/social-icons.php:51
 #: inc/customizer/panels-sections/panels-sections.php:20
 msgid "Footer"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:74
-#: dist/colormag/inc/migration/class-colormag-migration.php:713
-#: dist/colormag/inc/migration/class-colormag-migration.php:1036
-#: dist/colormag/inc/template-functions.php:364
 #: inc/customizer/options/additional/social-icons.php:74
 #: inc/migration/class-colormag-migration.php:713
 #: inc/migration/class-colormag-migration.php:1036
@@ -1312,10 +1497,6 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:79
-#: dist/colormag/inc/migration/class-colormag-migration.php:718
-#: dist/colormag/inc/migration/class-colormag-migration.php:1041
-#: dist/colormag/inc/template-functions.php:354
 #: inc/customizer/options/additional/social-icons.php:79
 #: inc/migration/class-colormag-migration.php:718
 #: inc/migration/class-colormag-migration.php:1041
@@ -1323,10 +1504,6 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:84
-#: dist/colormag/inc/migration/class-colormag-migration.php:723
-#: dist/colormag/inc/migration/class-colormag-migration.php:1046
-#: dist/colormag/inc/template-functions.php:404
 #: inc/customizer/options/additional/social-icons.php:84
 #: inc/migration/class-colormag-migration.php:723
 #: inc/migration/class-colormag-migration.php:1046
@@ -1334,50 +1511,22 @@ msgstr ""
 msgid "Instagram"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:89
-#: dist/colormag/inc/migration/class-colormag-migration.php:728
-#: dist/colormag/inc/migration/class-colormag-migration.php:1051
 #: inc/customizer/options/additional/social-icons.php:89
 #: inc/migration/class-colormag-migration.php:728
 #: inc/migration/class-colormag-migration.php:1051
 msgid "Pinterest"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:94
-#: dist/colormag/inc/migration/class-colormag-migration.php:733
-#: dist/colormag/inc/migration/class-colormag-migration.php:1056
 #: inc/customizer/options/additional/social-icons.php:94
 #: inc/migration/class-colormag-migration.php:733
 #: inc/migration/class-colormag-migration.php:1056
 msgid "YouTube"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:116
 #: inc/customizer/options/additional/social-icons.php:116
 msgid "Check to open in new tab"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:141
-#: dist/colormag/inc/customizer/options/content/blog.php:163
-#: dist/colormag/inc/customizer/options/content/page.php:42
-#: dist/colormag/inc/customizer/options/content/post-meta.php:40
-#: dist/colormag/inc/customizer/options/content/single-post.php:144
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:123
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:191
-#: dist/colormag/inc/customizer/options/front-page/front-page.php:24
-#: dist/colormag/inc/customizer/options/global/button.php:108
-#: dist/colormag/inc/customizer/options/global/category-colors.php:37
-#: dist/colormag/inc/customizer/options/global/colors.php:178
-#: dist/colormag/inc/customizer/options/global/container.php:116
-#: dist/colormag/inc/customizer/options/global/sidebar.php:91
-#: dist/colormag/inc/customizer/options/header-and-navigation/breadcrumb.php:30
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:57
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:148
-#: dist/colormag/inc/customizer/options/header-and-navigation/news-ticker.php:31
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:322
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:172
-#: dist/colormag/inc/customizer/options/header-and-navigation/sticky-header.php:30
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:155
 #: inc/customizer/options/additional/social-icons.php:141
 #: inc/customizer/options/content/blog.php:163
 #: inc/customizer/options/content/page.php:42
@@ -1402,27 +1551,6 @@ msgstr ""
 msgid "Unlock more features available in Pro version."
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/additional/social-icons.php:142
-#: dist/colormag/inc/customizer/options/content/blog.php:164
-#: dist/colormag/inc/customizer/options/content/page.php:43
-#: dist/colormag/inc/customizer/options/content/post-meta.php:41
-#: dist/colormag/inc/customizer/options/content/single-post.php:145
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:124
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:192
-#: dist/colormag/inc/customizer/options/front-page/front-page.php:25
-#: dist/colormag/inc/customizer/options/global/button.php:109
-#: dist/colormag/inc/customizer/options/global/category-colors.php:38
-#: dist/colormag/inc/customizer/options/global/colors.php:179
-#: dist/colormag/inc/customizer/options/global/container.php:117
-#: dist/colormag/inc/customizer/options/global/sidebar.php:92
-#: dist/colormag/inc/customizer/options/header-and-navigation/breadcrumb.php:31
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:58
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:149
-#: dist/colormag/inc/customizer/options/header-and-navigation/news-ticker.php:32
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:323
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:173
-#: dist/colormag/inc/customizer/options/header-and-navigation/sticky-header.php:31
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:156
 #: inc/customizer/options/additional/social-icons.php:142
 #: inc/customizer/options/content/blog.php:164
 #: inc/customizer/options/content/page.php:43
@@ -1447,10 +1575,6 @@ msgstr ""
 msgid "Learn more"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:8
-#: dist/colormag/inc/customizer/options/content/blog.php:15
-#: dist/colormag/inc/customizer/options/content/single-post.php:8
-#: dist/colormag/inc/customizer/options/content/single-post.php:15
 #: inc/customizer/options/content/blog.php:8
 #: inc/customizer/options/content/blog.php:15
 #: inc/customizer/options/content/single-post.php:8
@@ -1458,58 +1582,30 @@ msgstr ""
 msgid "Post Elements"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:17
-#: dist/colormag/inc/customizer/options/content/post-meta.php:17
-#: dist/colormag/inc/customizer/options/content/single-post.php:17
 #: inc/customizer/options/content/blog.php:17
 #: inc/customizer/options/content/post-meta.php:17
 #: inc/customizer/options/content/single-post.php:17
 msgid "Drag & Drop items to re-arrange the order"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:19
 #: inc/customizer/options/content/blog.php:19
 msgid "Post Format (Image)"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:20
-#: dist/colormag/inc/customizer/options/content/single-post.php:19
 #: inc/customizer/options/content/blog.php:20
 #: inc/customizer/options/content/single-post.php:19
 msgid "Category"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:21
-#: dist/colormag/inc/customizer/options/content/single-post.php:21
 #: inc/customizer/options/content/blog.php:21
 #: inc/customizer/options/content/single-post.php:21
 msgid "Meta Tags"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:40
 #: inc/customizer/options/content/blog.php:40
 msgid "Post title"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:81
-#: dist/colormag/inc/customizer/options/content/single-post.php:104
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:97
-#: dist/colormag/inc/customizer/options/footer-builder/footer-menu.php:80
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:115
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:162
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:242
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:291
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:101
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:158
-#: dist/colormag/inc/customizer/options/header-builder/date.php:75
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:140
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:215
-#: dist/colormag/inc/customizer/options/header-builder/mobile-menu.php:92
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:111
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:177
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:79
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:145
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:57
 #: inc/customizer/options/content/blog.php:81
 #: inc/customizer/options/content/single-post.php:104
 #: inc/customizer/options/footer-builder/copyright.php:97
@@ -1532,86 +1628,47 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:91
-#: dist/colormag/inc/customizer/options/content/blog.php:102
 #: inc/customizer/options/content/blog.php:91
 #: inc/customizer/options/content/blog.php:102
 msgid "Post Date"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:99
-#: dist/colormag/inc/customizer/options/content/blog.php:120
-#: dist/colormag/inc/customizer/options/content/blog.php:147
 #: inc/customizer/options/content/blog.php:99
 #: inc/customizer/options/content/blog.php:120
 #: inc/customizer/options/content/blog.php:147
 msgid "Type"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:103
 #: inc/customizer/options/content/blog.php:103
 msgid "Modified Date"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:112
-#: dist/colormag/inc/customizer/options/content/blog.php:123
-#: inc/customizer/options/content/blog.php:112
-#: inc/customizer/options/content/blog.php:123
-msgid "Excerpt"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/content/blog.php:124
 #: inc/customizer/options/content/blog.php:124
 msgid "Full Content"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:133
-#: inc/customizer/options/content/blog.php:133
-msgid "Pagination"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/content/blog.php:150
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:31
 #: inc/customizer/options/content/blog.php:150
 #: inc/customizer/options/header-builder/socials.php:31
 msgid "Default"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/blog.php:151
 #: inc/customizer/options/content/blog.php:151
 msgid "Numbered"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/page.php:8
 #: inc/customizer/options/content/page.php:8
 msgid "Page Header"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/page.php:25
-#: dist/colormag/inc/customizer/options/content/single-post.php:37
-#: inc/customizer/options/content/page.php:25
-#: inc/customizer/options/content/single-post.php:37
-msgid "Featured Image"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/content/post-meta.php:8
-#: dist/colormag/inc/customizer/options/content/post-meta.php:15
 #: inc/customizer/options/content/post-meta.php:8
 #: inc/customizer/options/content/post-meta.php:15
 msgid "Meta Elements"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:20
 #: inc/customizer/options/content/post-meta.php:20
 msgid "Author"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:21
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:65
-#: dist/colormag/inc/customizer/options/header-builder/date.php:8
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:56
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:122
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:252
 #: inc/customizer/options/content/post-meta.php:21
 #: inc/customizer/options/header-and-navigation/top-bar.php:65
 #: inc/customizer/options/header-builder/date.php:8
@@ -1621,57 +1678,39 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:22
 #: inc/customizer/options/content/post-meta.php:22
 msgid "Views"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:23
 #: inc/customizer/options/content/post-meta.php:23
 msgid "Comments"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:24
-#: dist/colormag/inc/customizer/options/content/single-post.php:132
 #: inc/customizer/options/content/post-meta.php:24
 #: inc/customizer/options/content/single-post.php:132
 msgid "Tags"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:25
 #: inc/customizer/options/content/post-meta.php:25
 msgid "Reading Time"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/post-meta.php:26
 #: inc/customizer/options/content/post-meta.php:26
 msgid "Edit button"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/single-post.php:49
 #: inc/customizer/options/content/single-post.php:49
 msgid "LightBox"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/single-post.php:63
 #: inc/customizer/options/content/single-post.php:63
 msgid "Post Title"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/content/single-post.php:114
-#: inc/customizer/options/content/single-post.php:114
-msgid "Related Posts"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/content/single-post.php:128
 #: inc/customizer/options/content/single-post.php:128
 msgid "Query"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:5
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:5
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:247
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:332
 #: inc/customizer/options/footer-builder/bottom-area.php:5
 #: inc/customizer/options/header-builder/bottom-area.php:5
 #: inc/customizer/panels-sections/panels-sections.php:247
@@ -1679,14 +1718,10 @@ msgstr ""
 msgid "Bottom Area"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:27
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:27
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:27
-#: dist/colormag/inc/customizer/options/global/container.php:6
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:16
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:16
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:18
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:47
+#: inc/customizer/options/footer-builder/bottom-area.php:12
+msgid "Bottom row cols"
+msgstr ""
+
 #: inc/customizer/options/footer-builder/bottom-area.php:27
 #: inc/customizer/options/footer-builder/main-area.php:27
 #: inc/customizer/options/footer-builder/top-area.php:27
@@ -1698,12 +1733,6 @@ msgstr ""
 msgid "Container"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:44
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:44
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:44
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:33
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:33
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:35
 #: inc/customizer/options/footer-builder/bottom-area.php:44
 #: inc/customizer/options/footer-builder/main-area.php:44
 #: inc/customizer/options/footer-builder/top-area.php:44
@@ -1713,34 +1742,6 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:51
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:31
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:19
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:51
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:51
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:80
-#: dist/colormag/inc/customizer/options/global/button.php:19
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:18
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:55
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:73
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:200
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:57
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:129
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:40
-#: dist/colormag/inc/customizer/options/header-builder/date.php:31
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:34
-#: dist/colormag/inc/customizer/options/header-builder/home-icon.php:14
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:19
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:78
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:168
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:40
-#: dist/colormag/inc/customizer/options/header-builder/mobile-menu.php:19
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:32
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:26
-#: dist/colormag/inc/customizer/options/header-builder/search.php:114
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:13
-#: dist/colormag/inc/customizer/options/header-builder/toggle-button.php:12
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:42
 #: inc/customizer/options/footer-builder/bottom-area.php:51
 #: inc/customizer/options/footer-builder/copyright.php:31
 #: inc/customizer/options/footer-builder/html-1.php:19
@@ -1772,31 +1773,6 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:67
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:91
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:67
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:63
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:74
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:99
-#: dist/colormag/inc/customizer/options/global/button.php:41
-#: dist/colormag/inc/customizer/options/global/container.php:55
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:138
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:28
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:140
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:269
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:49
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:66
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:55
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:56
-#: dist/colormag/inc/customizer/options/header-builder/mobile-menu.php:51
-#: dist/colormag/inc/customizer/options/header-builder/offset-area.php:14
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:55
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:137
-#: dist/colormag/inc/customizer/options/header-builder/search.php:39
-#: dist/colormag/inc/customizer/options/header-builder/search.php:120
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:47
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:105
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:58
 #: inc/customizer/options/footer-builder/bottom-area.php:67
 #: inc/customizer/options/footer-builder/main-area.php:91
 #: inc/customizer/options/footer-builder/top-area.php:67
@@ -1825,14 +1801,6 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:81
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:105
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:94
-#: dist/colormag/inc/customizer/options/global/button.php:71
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:79
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:83
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:70
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:71
 #: inc/customizer/options/footer-builder/bottom-area.php:81
 #: inc/customizer/options/footer-builder/main-area.php:105
 #: inc/customizer/options/footer-builder/top-area.php:94
@@ -1844,12 +1812,9 @@ msgstr ""
 msgid "Padding"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:97
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:121
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:110
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:94
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:86
 #: inc/customizer/options/footer-builder/bottom-area.php:97
+#: inc/customizer/options/footer-builder/copyright.php:110
+#: inc/customizer/options/footer-builder/html-1.php:70
 #: inc/customizer/options/footer-builder/main-area.php:121
 #: inc/customizer/options/footer-builder/top-area.php:110
 #: inc/customizer/options/header-builder/bottom-area.php:94
@@ -1857,14 +1822,6 @@ msgstr ""
 msgid "Margin"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:113
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:137
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:126
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:109
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:98
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:102
-#: dist/colormag/inc/customizer/options/header-builder/search.php:66
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:86
 #: inc/customizer/options/footer-builder/bottom-area.php:113
 #: inc/customizer/options/footer-builder/main-area.php:137
 #: inc/customizer/options/footer-builder/top-area.php:126
@@ -1876,14 +1833,6 @@ msgstr ""
 msgid "Border Width"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:121
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:145
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:134
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:116
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:107
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:110
-#: dist/colormag/inc/customizer/options/header-builder/search.php:78
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:94
 #: inc/customizer/options/footer-builder/bottom-area.php:121
 #: inc/customizer/options/footer-builder/main-area.php:145
 #: inc/customizer/options/footer-builder/top-area.php:134
@@ -1895,46 +1844,30 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:134
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:205
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:148
 #: inc/customizer/options/footer-builder/bottom-area.php:134
 #: inc/customizer/options/footer-builder/main-area.php:205
 #: inc/customizer/options/footer-builder/top-area.php:148
 msgid "Inner Elements"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:139
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:210
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:153
 #: inc/customizer/options/footer-builder/bottom-area.php:139
 #: inc/customizer/options/footer-builder/main-area.php:210
 #: inc/customizer/options/footer-builder/top-area.php:153
 msgid " Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:143
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:214
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:157
 #: inc/customizer/options/footer-builder/bottom-area.php:143
 #: inc/customizer/options/footer-builder/main-area.php:214
 #: inc/customizer/options/footer-builder/top-area.php:157
 msgid "Stack"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/bottom-area.php:144
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:215
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:158
 #: inc/customizer/options/footer-builder/bottom-area.php:144
 #: inc/customizer/options/footer-builder/main-area.php:215
 #: inc/customizer/options/footer-builder/top-area.php:158
 msgid "Inline"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:5
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:20
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:67
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:272
 #: inc/customizer/options/footer-builder/copyright.php:5
 #: inc/customizer/options/footer-builder/copyright.php:20
 #: inc/customizer/options/footer-builder/footer-builder.php:67
@@ -1943,20 +1876,12 @@ msgid "Copyright"
 msgstr ""
 
 #. translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link.
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:13
-#: dist/colormag/inc/helper/utils.php:16
 #: inc/customizer/options/footer-builder/copyright.php:13
 #: inc/helper/utils.php:16
 #, php-format
 msgid "Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s."
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:39
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:27
-#: dist/colormag/inc/customizer/options/global/colors.php:142
-#: dist/colormag/inc/customizer/options/global/colors.php:149
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:27
-#: dist/colormag/template-parts/hooks/content/content.php:92
 #: inc/customizer/options/footer-builder/copyright.php:39
 #: inc/customizer/options/footer-builder/html-1.php:27
 #: inc/customizer/options/global/colors.php:142
@@ -1966,38 +1891,6 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:47
-#: dist/colormag/inc/customizer/options/footer-builder/footer-menu.php:31
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:35
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:67
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:71
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:71
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:71
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:71
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:71
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:71
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:71
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:86
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:122
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:147
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:172
-#: dist/colormag/inc/customizer/options/global/button.php:26
-#: dist/colormag/inc/customizer/options/global/button.php:48
-#: dist/colormag/inc/customizer/options/global/colors.php:157
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:26
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:81
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:208
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:65
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:40
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:61
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:35
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:86
-#: dist/colormag/inc/customizer/options/header-builder/mobile-menu.php:27
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:32
-#: dist/colormag/inc/customizer/options/header-builder/random.php:21
-#: dist/colormag/inc/customizer/options/header-builder/search.php:128
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:32
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:19
 #: inc/customizer/options/footer-builder/copyright.php:47
 #: inc/customizer/options/footer-builder/footer-menu.php:31
 #: inc/customizer/options/footer-builder/html-1.php:35
@@ -2033,35 +1926,6 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/copyright.php:54
-#: dist/colormag/inc/customizer/options/footer-builder/footer-menu.php:38
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:42
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:74
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:78
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:78
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:78
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:78
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:78
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:78
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:78
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:93
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:179
-#: dist/colormag/inc/customizer/options/global/button.php:33
-#: dist/colormag/inc/customizer/options/global/button.php:55
-#: dist/colormag/inc/customizer/options/global/colors.php:164
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:33
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:72
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:47
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:68
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:42
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:93
-#: dist/colormag/inc/customizer/options/header-builder/mobile-menu.php:34
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:39
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:61
-#: dist/colormag/inc/customizer/options/header-builder/random.php:28
-#: dist/colormag/inc/customizer/options/header-builder/search.php:135
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:39
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:53
 #: inc/customizer/options/footer-builder/copyright.php:54
 #: inc/customizer/options/footer-builder/footer-menu.php:38
 #: inc/customizer/options/footer-builder/html-1.php:42
@@ -2094,13 +1958,6 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:10
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:6
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:34
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:100
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:192
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:337
 #: inc/customizer/options/footer-builder/footer-builder.php:10
 #: inc/customizer/options/footer-builder/html-1.php:6
 #: inc/customizer/options/header-builder/header-builder.php:34
@@ -2111,13 +1968,6 @@ msgstr ""
 msgid "HTML 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:15
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:6
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:39
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:105
-#: dist/colormag/inc/customizer/options/header-builder/widget-1.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:202
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:287
 #: inc/customizer/options/footer-builder/footer-builder.php:15
 #: inc/customizer/options/footer-builder/widget-1.php:6
 #: inc/customizer/options/header-builder/header-builder.php:39
@@ -2128,13 +1978,6 @@ msgstr ""
 msgid "Widget 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:21
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:6
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:45
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:111
-#: dist/colormag/inc/customizer/options/header-builder/widget-2.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:207
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:292
 #: inc/customizer/options/footer-builder/footer-builder.php:21
 #: inc/customizer/options/footer-builder/widget-2.php:6
 #: inc/customizer/options/header-builder/header-builder.php:45
@@ -2145,37 +1988,24 @@ msgstr ""
 msgid "Widget 2"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:27
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:297
 #: inc/customizer/options/footer-builder/footer-builder.php:27
 #: inc/customizer/options/footer-builder/widget-3.php:6
 #: inc/customizer/panels-sections/panels-sections.php:297
 msgid "Widget 3"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:33
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:302
 #: inc/customizer/options/footer-builder/footer-builder.php:33
 #: inc/customizer/options/footer-builder/widget-4.php:6
 #: inc/customizer/panels-sections/panels-sections.php:302
 msgid "Widget 4"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:39
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:307
 #: inc/customizer/options/footer-builder/footer-builder.php:39
 #: inc/customizer/options/footer-builder/widget-5.php:6
 #: inc/customizer/panels-sections/panels-sections.php:307
 msgid "Widget 5"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:45
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:312
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:317
 #: inc/customizer/options/footer-builder/footer-builder.php:45
 #: inc/customizer/options/footer-builder/widget-6.php:6
 #: inc/customizer/panels-sections/panels-sections.php:312
@@ -2183,66 +2013,45 @@ msgstr ""
 msgid "Widget 6"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:51
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:6
 #: inc/customizer/options/footer-builder/footer-builder.php:51
 #: inc/customizer/options/footer-builder/widget-7.php:6
 msgid "Widget 7"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:57
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:277
 #: inc/customizer/options/footer-builder/footer-builder.php:57
 #: inc/customizer/panels-sections/panels-sections.php:277
 msgid "Menu 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:62
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:267
 #: inc/customizer/options/footer-builder/footer-builder.php:62
 #: inc/customizer/panels-sections/panels-sections.php:267
 msgid "Socials"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-builder.php:79
-#: dist/colormag/inc/customizer/options/global/builder.php:6
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:154
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:32
 #: inc/customizer/options/footer-builder/footer-builder.php:79
-#: inc/customizer/options/global/builder.php:6
-#: inc/customizer/options/header-builder/header-builder.php:154
-#: inc/customizer/panels-sections/panels-sections.php:32
-msgid "Builder"
+#: inc/customizer/panels-sections/panels-sections.php:23
+#: inc/customizer/panels-sections/panels-sections.php:262
+msgid "Footer Builder"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-menu.php:11
 #: inc/customizer/options/footer-builder/footer-menu.php:11
 msgid "Footer Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/footer-menu.php:19
 #: inc/customizer/options/footer-builder/footer-menu.php:19
 msgid "Select a Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:14
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:14
 #: inc/customizer/options/footer-builder/html-1.php:14
 #: inc/customizer/options/header-builder/html-1.php:14
 msgid "Text/HTML for HTML 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/html-1.php:50
-#: dist/colormag/inc/customizer/options/header-builder/html-1.php:50
 #: inc/customizer/options/footer-builder/html-1.php:50
 #: inc/customizer/options/header-builder/html-1.php:50
 msgid "Font Size"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:5
-#: dist/colormag/inc/customizer/options/header-builder/main-area.php:5
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:242
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:327
 #: inc/customizer/options/footer-builder/main-area.php:5
 #: inc/customizer/options/header-builder/main-area.php:5
 #: inc/customizer/panels-sections/panels-sections.php:242
@@ -2250,28 +2059,14 @@ msgstr ""
 msgid "Main Area"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:59
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:39
-#: inc/customizer/options/footer-builder/main-area.php:59
-#: inc/customizer/options/header-builder/news-ticker.php:39
-msgid "Link Color"
+#: inc/customizer/options/footer-builder/main-area.php:12
+msgid "Main Area cols"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:157
 #: inc/customizer/options/footer-builder/main-area.php:157
 msgid "Widget"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:162
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:14
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:14
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:14
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:14
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:14
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:14
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:14
-#: dist/colormag/inc/customizer/options/header-builder/widget-1.php:14
-#: dist/colormag/inc/customizer/options/header-builder/widget-2.php:14
 #: inc/customizer/options/footer-builder/main-area.php:162
 #: inc/customizer/options/footer-builder/widget-1.php:14
 #: inc/customizer/options/footer-builder/widget-2.php:14
@@ -2285,28 +2080,18 @@ msgstr ""
 msgid "Title Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:174
 #: inc/customizer/options/footer-builder/main-area.php:174
 msgid "Widget Item List"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:184
 #: inc/customizer/options/footer-builder/main-area.php:184
 msgid "Border Bottom Width"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/main-area.php:191
 #: inc/customizer/options/footer-builder/main-area.php:191
 msgid "Border Bottom Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/socials.php:5
-#: dist/colormag/inc/customizer/options/footer-builder/socials.php:12
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:51
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:137
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:6
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:37
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:212
 #: inc/customizer/options/footer-builder/socials.php:5
 #: inc/customizer/options/footer-builder/socials.php:12
 #: inc/customizer/options/header-builder/header-builder.php:51
@@ -2317,10 +2102,6 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:5
-#: dist/colormag/inc/customizer/options/header-builder/top-area.php:7
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:237
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:322
 #: inc/customizer/options/footer-builder/top-area.php:5
 #: inc/customizer/options/header-builder/top-area.php:7
 #: inc/customizer/panels-sections/panels-sections.php:237
@@ -2328,20 +2109,14 @@ msgstr ""
 msgid "Top Area"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/top-area.php:81
+#: inc/customizer/options/footer-builder/top-area.php:12
+msgid "Top row cols"
+msgstr ""
+
 #: inc/customizer/options/footer-builder/top-area.php:81
 msgid "Column Background"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:55
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:55
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:55
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:55
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:55
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:55
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:55
-#: dist/colormag/inc/customizer/options/header-builder/widget-1.php:55
-#: dist/colormag/inc/customizer/options/header-builder/widget-2.php:55
 #: inc/customizer/options/footer-builder/widget-1.php:55
 #: inc/customizer/options/footer-builder/widget-2.php:55
 #: inc/customizer/options/footer-builder/widget-3.php:55
@@ -2354,13 +2129,6 @@ msgstr ""
 msgid "Title Typography"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:65
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:65
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:65
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:65
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:65
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:65
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:65
 #: inc/customizer/options/footer-builder/widget-1.php:65
 #: inc/customizer/options/footer-builder/widget-2.php:65
 #: inc/customizer/options/footer-builder/widget-3.php:65
@@ -2368,18 +2136,12 @@ msgstr ""
 #: inc/customizer/options/footer-builder/widget-5.php:65
 #: inc/customizer/options/footer-builder/widget-6.php:65
 #: inc/customizer/options/footer-builder/widget-7.php:65
-msgid "Link."
+#: inc/customizer/options/header-builder/header-button.php:19
+#: inc/customizer/options/header-builder/widget-1.php:66
+#: inc/customizer/options/header-builder/widget-2.php:66
+msgid "Link"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:92
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:92
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:92
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:92
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:92
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:92
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:92
-#: dist/colormag/inc/customizer/options/header-builder/widget-1.php:78
-#: dist/colormag/inc/customizer/options/header-builder/widget-2.php:78
 #: inc/customizer/options/footer-builder/widget-1.php:92
 #: inc/customizer/options/footer-builder/widget-2.php:92
 #: inc/customizer/options/footer-builder/widget-3.php:92
@@ -2392,15 +2154,6 @@ msgstr ""
 msgid "Content Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer-builder/widget-1.php:133
-#: dist/colormag/inc/customizer/options/footer-builder/widget-2.php:133
-#: dist/colormag/inc/customizer/options/footer-builder/widget-3.php:133
-#: dist/colormag/inc/customizer/options/footer-builder/widget-4.php:133
-#: dist/colormag/inc/customizer/options/footer-builder/widget-5.php:133
-#: dist/colormag/inc/customizer/options/footer-builder/widget-6.php:133
-#: dist/colormag/inc/customizer/options/footer-builder/widget-7.php:133
-#: dist/colormag/inc/customizer/options/header-builder/widget-1.php:119
-#: dist/colormag/inc/customizer/options/header-builder/widget-2.php:119
 #: inc/customizer/options/footer-builder/widget-1.php:133
 #: inc/customizer/options/footer-builder/widget-2.php:133
 #: inc/customizer/options/footer-builder/widget-3.php:133
@@ -2413,21 +2166,11 @@ msgstr ""
 msgid "Content Typography"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:21
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:76
 #: inc/customizer/options/footer/footer-bar.php:21
 #: inc/customizer/options/header-and-navigation/main-header.php:76
 msgid "Alignment"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:50
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:61
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:13
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:123
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:15
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:195
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:41
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:28
 #: inc/customizer/options/footer/footer-bar.php:50
 #: inc/customizer/options/footer/footer-column.php:61
 #: inc/customizer/options/header-and-navigation/header-action.php:13
@@ -2439,177 +2182,131 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-bar.php:73
 #: inc/customizer/options/footer/footer-bar.php:73
 msgid "Footer Copyright"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:21
-#: dist/colormag/inc/customizer/options/global/container.php:19
-#: dist/colormag/inc/customizer/options/global/sidebar.php:53
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:22
 #: inc/customizer/options/footer/footer-column.php:21
 #: inc/customizer/options/global/container.php:19
 #: inc/customizer/options/global/sidebar.php:53
 #: inc/customizer/options/header-and-navigation/main-header.php:22
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:25
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:26
 #: inc/customizer/options/footer/footer-column.php:25
 #: inc/customizer/options/header-and-navigation/main-header.php:26
 msgid "Layout 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:26
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:27
 #: inc/customizer/options/footer/footer-column.php:26
 #: inc/customizer/options/header-and-navigation/main-header.php:27
 msgid "Layout 2"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:32
 #: inc/customizer/options/footer/footer-column.php:32
 msgid "Footer Column Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:84
 #: inc/customizer/options/footer/footer-column.php:84
 msgid "Upper Footer"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:116
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:141
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:166
 #: inc/customizer/options/footer/footer-column.php:116
 #: inc/customizer/options/footer/footer-column.php:141
 #: inc/customizer/options/footer/footer-column.php:166
 msgid "Color."
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:134
 #: inc/customizer/options/footer/footer-column.php:134
 msgid "Widget Content"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/footer/footer-column.php:159
 #: inc/customizer/options/footer/footer-column.php:159
 msgid "Widget Link"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/front-page/front-page.php:12
 #: inc/customizer/options/front-page/front-page.php:12
 msgid "Hide blog posts/static page"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/button.php:6
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:90
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:62
+#: inc/customizer/options/global/builder.php:6
+#: inc/customizer/panels-sections/panels-sections.php:32
+msgid "Builder"
+msgstr ""
+
 #: inc/customizer/options/global/button.php:6
 #: inc/customizer/options/header-builder/header-builder.php:90
 #: inc/customizer/panels-sections/panels-sections.php:62
 msgid "Button"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/button.php:85
 #: inc/customizer/options/global/button.php:85
 msgid "Border"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/button.php:90
 #: inc/customizer/options/global/button.php:90
 msgid "Radius"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/category-colors.php:14
 #: inc/customizer/options/global/category-colors.php:14
 msgid "Categories Colors"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:8
-#: dist/colormag/inc/customizer/options/global/colors.php:13
 #: inc/customizer/options/global/colors.php:8
 #: inc/customizer/options/global/colors.php:13
 msgid "Customized Color palette"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:100
 #: inc/customizer/options/global/colors.php:100
 msgid "Theme Colors"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:106
 #: inc/customizer/options/global/colors.php:106
 msgid "Primary Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:112
 #: inc/customizer/options/global/colors.php:112
 msgid "Base"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:119
 #: inc/customizer/options/global/colors.php:119
 msgid "Box Border Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:128
-#: inc/customizer/options/global/colors.php:128
-msgid "Skin Color"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/global/colors.php:131
 #: inc/customizer/options/global/colors.php:131
 msgid "White Skin"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/colors.php:132
 #: inc/customizer/options/global/colors.php:132
 msgid "Dark Skin"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/container.php:44
 #: inc/customizer/options/global/container.php:44
 msgid "Content Area Padding"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/container.php:70
 #: inc/customizer/options/global/container.php:70
 msgid "Inside Background"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/container.php:85
 #: inc/customizer/options/global/container.php:85
 msgid "Outside Background"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/container.php:99
 #: inc/customizer/options/global/container.php:99
 msgid "Demo Migrated"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/container.php:106
 #: inc/customizer/options/global/container.php:106
-msgid "Demo migrated"
+msgid "Demo Migrated To Builder"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/sidebar.php:30
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:52
 #: inc/customizer/options/global/sidebar.php:30
 #: inc/customizer/panels-sections/panels-sections.php:52
 msgid "Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/sidebar.php:36
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:104
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:48
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:49
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:50
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:26
-#: dist/colormag/inc/customizer/options/header-builder/search.php:48
 #: inc/customizer/options/global/sidebar.php:36
 #: inc/customizer/options/header-and-navigation/main-header.php:104
 #: inc/customizer/options/header-and-navigation/primary-menu.php:48
@@ -2620,89 +2317,60 @@ msgstr ""
 msgid "Width"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/sidebar.php:61
 #: inc/customizer/options/global/sidebar.php:61
 msgid "Default Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/sidebar.php:70
 #: inc/customizer/options/global/sidebar.php:70
 msgid "Default layout for pages only"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/sidebar.php:79
 #: inc/customizer/options/global/sidebar.php:79
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:8
-#: dist/colormag/inc/customizer/options/global/typography.php:51
 #: inc/customizer/options/global/typography.php:8
 #: inc/customizer/options/global/typography.php:51
 msgid "Body"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:60
 #: inc/customizer/options/global/typography.php:60
 msgid "Headings"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:102
 #: inc/customizer/options/global/typography.php:102
 msgid "Heading"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:165
 #: inc/customizer/options/global/typography.php:165
 msgid "H1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:206
 #: inc/customizer/options/global/typography.php:206
 msgid "H2"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:246
 #: inc/customizer/options/global/typography.php:246
 msgid "H3"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:285
 #: inc/customizer/options/global/typography.php:285
 msgid "H4"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:324
 #: inc/customizer/options/global/typography.php:324
 msgid "H5"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/global/typography.php:363
 #: inc/customizer/options/global/typography.php:363
 msgid "H6"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/breadcrumb.php:8
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:107
-#: inc/customizer/options/header-and-navigation/breadcrumb.php:8
-#: inc/customizer/panels-sections/panels-sections.php:107
-msgid "Breadcrumb"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:97
 #: inc/customizer/options/header-and-navigation/header-action.php:6
 #: inc/customizer/panels-sections/panels-sections.php:97
 msgid "Header Action"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:46
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:29
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:95
-#: dist/colormag/inc/customizer/options/header-builder/search.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:187
-#: dist/colormag/searchform.php:23
-#: dist/colormag/template-parts/header-builder-elements/search.php:18
 #: inc/customizer/options/header-and-navigation/header-action.php:46
 #: inc/customizer/options/header-builder/header-builder.php:29
 #: inc/customizer/options/header-builder/header-builder.php:95
@@ -2713,11 +2381,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-action.php:63
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:66
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:132
-#: dist/colormag/inc/customizer/options/header-builder/random.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:217
 #: inc/customizer/options/header-and-navigation/header-action.php:63
 #: inc/customizer/options/header-builder/header-builder.php:66
 #: inc/customizer/options/header-builder/header-builder.php:132
@@ -2726,87 +2389,50 @@ msgstr ""
 msgid "Random"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:20
 #: inc/customizer/options/header-and-navigation/header-media.php:20
 msgid "Above Header"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:21
 #: inc/customizer/options/header-and-navigation/header-media.php:21
 msgid "Between Site Identity and Primary Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:22
 #: inc/customizer/options/header-and-navigation/header-media.php:22
 msgid "Below Header"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/header-media.php:26
 #: inc/customizer/options/header-and-navigation/header-media.php:26
 msgid "Check to make header image link back to home page"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:33
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:56
 #: inc/customizer/options/header-and-navigation/main-header.php:33
 #: inc/customizer/options/header-and-navigation/main-header.php:56
 msgid "Advanced Style"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:107
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:52
 #: inc/customizer/options/header-and-navigation/main-header.php:107
 #: inc/customizer/options/header-builder/bottom-area.php:52
 msgid "Full Width"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/main-header.php:108
-#: dist/colormag/inc/customizer/options/header-builder/bottom-area.php:53
 #: inc/customizer/options/header-and-navigation/main-header.php:108
 #: inc/customizer/options/header-builder/bottom-area.php:53
 msgid "Contained"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/news-ticker.php:8
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:113
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:119
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:61
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:127
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:8
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:77
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:257
-#: inc/customizer/options/header-and-navigation/news-ticker.php:8
-#: inc/customizer/options/header-and-navigation/top-bar.php:113
-#: inc/customizer/options/header-and-navigation/top-bar.php:119
-#: inc/customizer/options/header-builder/header-builder.php:61
-#: inc/customizer/options/header-builder/header-builder.php:127
-#: inc/customizer/options/header-builder/news-ticker.php:8
-#: inc/customizer/panels-sections/panels-sections.php:77
-#: inc/customizer/panels-sections/panels-sections.php:257
-msgid "News Ticker"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:39
 #: inc/customizer/options/header-and-navigation/primary-menu.php:39
 msgid "Border Top"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:66
 #: inc/customizer/options/header-and-navigation/primary-menu.php:66
 msgid "Main Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:88
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:215
 #: inc/customizer/options/header-and-navigation/primary-menu.php:88
 #: inc/customizer/options/header-and-navigation/primary-menu.php:215
 msgid "Hover/Selected"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:125
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:256
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:122
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:90
 #: inc/customizer/options/header-and-navigation/primary-menu.php:125
 #: inc/customizer/options/header-and-navigation/primary-menu.php:256
 #: inc/customizer/options/header-builder/primary-menu.php:122
@@ -2814,10 +2440,6 @@ msgstr ""
 msgid "Sub Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:172
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:85
-#: dist/colormag/inc/customizer/options/header-builder/mobile-menu.php:11
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:167
 #: inc/customizer/options/header-and-navigation/primary-menu.php:172
 #: inc/customizer/options/header-builder/header-builder.php:85
 #: inc/customizer/options/header-builder/mobile-menu.php:11
@@ -2825,30 +2447,20 @@ msgstr ""
 msgid "Mobile Menu"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:183
-#: dist/colormag/inc/customizer/options/header-builder/random.php:13
 #: inc/customizer/options/header-and-navigation/primary-menu.php:183
 #: inc/customizer/options/header-builder/random.php:13
 msgid "Icon Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:301
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:309
 #: inc/customizer/options/header-and-navigation/primary-menu.php:301
 #: inc/customizer/options/header-and-navigation/primary-menu.php:309
 msgid "Home Icon/Logo"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:312
 #: inc/customizer/options/header-and-navigation/primary-menu.php:312
 msgid "None"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/primary-menu.php:313
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:71
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:142
-#: dist/colormag/inc/customizer/options/header-builder/home-icon.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:222
 #: inc/customizer/options/header-and-navigation/primary-menu.php:313
 #: inc/customizer/options/header-builder/header-builder.php:71
 #: inc/customizer/options/header-builder/header-builder.php:142
@@ -2857,17 +2469,11 @@ msgstr ""
 msgid "Home Icon"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:14
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:12
 #: inc/customizer/options/header-and-navigation/site-identity.php:14
 #: inc/customizer/options/header-builder/logo.php:12
 msgid "Site Logo"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:22
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:80
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:20
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:157
 #: inc/customizer/options/header-and-navigation/site-identity.php:22
 #: inc/customizer/options/header-builder/header-builder.php:80
 #: inc/customizer/options/header-builder/logo.php:20
@@ -2875,945 +2481,710 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:31
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:29
 #: inc/customizer/options/header-and-navigation/site-identity.php:31
 #: inc/customizer/options/header-builder/logo.php:29
 msgid "Retina Logo"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:33
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:31
 #: inc/customizer/options/header-and-navigation/site-identity.php:33
 #: inc/customizer/options/header-builder/logo.php:31
 msgid "Upload 2X times the size of your current logo. Eg: If your current logo size is 120*60 then upload 240*120 sized logo."
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:42
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:63
 #: inc/customizer/options/header-and-navigation/site-identity.php:42
 #: inc/customizer/options/header-builder/logo.php:63
 msgid "Site Title"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/site-identity.php:115
 #: inc/customizer/options/header-and-navigation/site-identity.php:115
 msgid "Site Tagline"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/sticky-header.php:8
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:112
-#: inc/customizer/options/header-and-navigation/sticky-header.php:8
-#: inc/customizer/panels-sections/panels-sections.php:112
-msgid "Sticky Header"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:87
-#: dist/colormag/inc/customizer/options/header-builder/date.php:16
 #: inc/customizer/options/header-and-navigation/top-bar.php:87
 #: inc/customizer/options/header-builder/date.php:16
 msgid "Date Format"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:90
-#: dist/colormag/inc/customizer/options/header-builder/date.php:19
 #: inc/customizer/options/header-and-navigation/top-bar.php:90
 #: inc/customizer/options/header-builder/date.php:19
 msgid "Theme Default Setting"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-and-navigation/top-bar.php:91
-#: dist/colormag/inc/customizer/options/header-builder/date.php:20
 #: inc/customizer/options/header-and-navigation/top-bar.php:91
 #: inc/customizer/options/header-builder/date.php:20
 msgid "From WordPress Date Setting"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:9
 #: inc/customizer/options/header-builder/header-builder.php:9
 msgid "Site Title & Logo"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:24
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:6
 #: inc/customizer/options/header-builder/header-builder.php:24
 #: inc/customizer/options/header-builder/header-button.php:6
 msgid "Button 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:117
-#: dist/colormag/inc/customizer/options/header-builder/toggle-button.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:162
 #: inc/customizer/options/header-builder/header-builder.php:117
 #: inc/customizer/options/header-builder/toggle-button.php:6
 #: inc/customizer/panels-sections/panels-sections.php:162
 msgid "Toggle Button"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:213
+#: inc/customizer/options/header-builder/header-builder.php:154
+#: inc/customizer/panels-sections/panels-sections.php:14
+#: inc/customizer/panels-sections/panels-sections.php:232
+msgid "Header Builder"
+msgstr ""
+
 #: inc/customizer/options/header-builder/header-builder.php:213
 msgid "Builder area top"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:218
 #: inc/customizer/options/header-builder/header-builder.php:218
 msgid "Builder area top left"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:223
 #: inc/customizer/options/header-builder/header-builder.php:223
 msgid "Builder area top middle"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:228
 #: inc/customizer/options/header-builder/header-builder.php:228
 msgid "Builder area top right"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:235
 #: inc/customizer/options/header-builder/header-builder.php:235
 msgid "Builder Main area"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:240
 #: inc/customizer/options/header-builder/header-builder.php:240
 msgid "Builder area middle left"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:245
 #: inc/customizer/options/header-builder/header-builder.php:245
 msgid "Main center"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:250
 #: inc/customizer/options/header-builder/header-builder.php:250
 msgid "Main right"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:257
 #: inc/customizer/options/header-builder/header-builder.php:257
 msgid "Bottom"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:262
 #: inc/customizer/options/header-builder/header-builder.php:262
 msgid "Bottom left"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:267
 #: inc/customizer/options/header-builder/header-builder.php:267
 msgid "Bottom center"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:272
 #: inc/customizer/options/header-builder/header-builder.php:272
 msgid "Bottom right"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-builder.php:280
-#: dist/colormag/inc/customizer/options/header-builder/offset-area.php:6
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:227
 #: inc/customizer/options/header-builder/header-builder.php:280
 #: inc/customizer/options/header-builder/offset-area.php:6
 #: inc/customizer/panels-sections/panels-sections.php:227
 msgid "Offset Area"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:13
 #: inc/customizer/options/header-builder/header-button.php:13
 msgid "Text"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:19
-#: dist/colormag/inc/customizer/options/header-builder/widget-1.php:66
-#: dist/colormag/inc/customizer/options/header-builder/widget-2.php:66
-#: inc/customizer/options/header-builder/header-button.php:19
-#: inc/customizer/options/header-builder/widget-1.php:66
-#: inc/customizer/options/header-builder/widget-2.php:66
-msgid "Link"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:23
 #: inc/customizer/options/header-builder/header-button.php:23
 msgid "https://example.com"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:28
 #: inc/customizer/options/header-builder/header-button.php:28
 msgid "Open link in a new tab"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/header-button.php:117
-#: dist/colormag/inc/customizer/options/header-builder/search.php:91
 #: inc/customizer/options/header-builder/header-button.php:117
 #: inc/customizer/options/header-builder/search.php:91
 msgid "Border Radius"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/logo.php:154
 #: inc/customizer/options/header-builder/logo.php:154
 msgid "Tagline"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:14
 #: inc/customizer/options/header-builder/news-ticker.php:14
 msgid "Label"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:84
 #: inc/customizer/options/header-builder/news-ticker.php:84
 msgid "Link Typography"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/news-ticker.php:125
 #: inc/customizer/options/header-builder/news-ticker.php:125
 msgid "Label Typography"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:18
-#: dist/colormag/inc/customizer/options/header-builder/secondary-menu.php:18
 #: inc/customizer/options/header-builder/primary-menu.php:18
 #: inc/customizer/options/header-builder/secondary-menu.php:18
 msgid "Select Menu Navigation"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:46
-#: dist/colormag/inc/customizer/options/header-builder/primary-menu.php:68
 #: inc/customizer/options/header-builder/primary-menu.php:46
 #: inc/customizer/options/header-builder/primary-menu.php:68
 msgid "Active"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/random.php:41
 #: inc/customizer/options/header-builder/random.php:41
 msgid "Icon Size"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:14
 #: inc/customizer/options/header-builder/search.php:14
 msgid "Search Type"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:17
 #: inc/customizer/options/header-builder/search.php:17
 msgid "Normal Search"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:18
 #: inc/customizer/options/header-builder/search.php:18
 msgid "Search Box"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:19
 #: inc/customizer/options/header-builder/search.php:19
 msgid "Icon Inside Search"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:25
 #: inc/customizer/options/header-builder/search.php:25
 msgid "Text Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:31
 #: inc/customizer/options/header-builder/search.php:31
 msgid "Placeholder Color"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/search.php:106
 #: inc/customizer/options/header-builder/search.php:106
 msgid "Search Button"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/header-builder/socials.php:32
 #: inc/customizer/options/header-builder/socials.php:32
 msgid "Style 1"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/woocommerce/woocommerce.php:27
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:152
 #: inc/customizer/options/woocommerce/woocommerce.php:27
 #: inc/customizer/panels-sections/panels-sections.php:152
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/woocommerce/woocommerce.php:33
 #: inc/customizer/options/woocommerce/woocommerce.php:33
 msgid "Check to register different sidebar areas to be used for WooCommerce pages."
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/woocommerce/woocommerce.php:44
-#: inc/customizer/options/woocommerce/woocommerce.php:44
-msgid "Sidebar Layout"
-msgstr ""
-
-#: dist/colormag/inc/customizer/options/woocommerce/woocommerce.php:52
 #: inc/customizer/options/woocommerce/woocommerce.php:52
 msgid "WooCommerce Shop Page Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/woocommerce/woocommerce.php:60
 #: inc/customizer/options/woocommerce/woocommerce.php:60
 msgid "WooCommerce Archive Page Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/options/woocommerce/woocommerce.php:68
 #: inc/customizer/options/woocommerce/woocommerce.php:68
 msgid "WooCommerce Single Product Page Layout"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:5
 #: inc/customizer/panels-sections/panels-sections.php:5
 msgid "Global"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:8
 #: inc/customizer/panels-sections/panels-sections.php:8
 msgid "Front Page"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:11
 #: inc/customizer/panels-sections/panels-sections.php:11
 msgid "Header & Navigation"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:14
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:232
-#: inc/customizer/panels-sections/panels-sections.php:14
-#: inc/customizer/panels-sections/panels-sections.php:232
-msgid "Header Builder"
-msgstr ""
-
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:23
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:262
-#: inc/customizer/panels-sections/panels-sections.php:23
-#: inc/customizer/panels-sections/panels-sections.php:262
-msgid "Footer Builder"
-msgstr ""
-
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:26
 #: inc/customizer/panels-sections/panels-sections.php:26
 msgid "Additional"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:37
 #: inc/customizer/panels-sections/panels-sections.php:37
 msgid "Colors"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:42
-#: inc/customizer/panels-sections/panels-sections.php:42
-msgid "Category Colors"
-msgstr ""
-
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:102
 #: inc/customizer/panels-sections/panels-sections.php:102
 msgid "Header Media"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:122
 #: inc/customizer/panels-sections/panels-sections.php:122
 msgid "Single Post"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:127
 #: inc/customizer/panels-sections/panels-sections.php:127
 msgid "Post Meta"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:132
 #: inc/customizer/panels-sections/panels-sections.php:132
 msgid "Page"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:182
 #: inc/customizer/panels-sections/panels-sections.php:182
 msgid "Header Button"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:197
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:342
 #: inc/customizer/panels-sections/panels-sections.php:197
 #: inc/customizer/panels-sections/panels-sections.php:342
 msgid "HTML 2"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:282
 #: inc/customizer/panels-sections/panels-sections.php:282
 msgid "Menu 2"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:348
 #: inc/customizer/panels-sections/panels-sections.php:348
 msgid "More Features in Pro"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:355
 #: inc/customizer/panels-sections/panels-sections.php:355
 msgid "Join Facebook Community"
 msgstr ""
 
-#: dist/colormag/inc/customizer/panels-sections/panels-sections.php:364
 #: inc/customizer/panels-sections/panels-sections.php:364
 msgid "WooCommerce"
 msgstr ""
 
-#: dist/colormag/inc/helper/utils.php:33
-#: dist/colormag/template-parts/hooks/footer/footer.php:267
 #: inc/helper/utils.php:33
 #: template-parts/hooks/footer/footer.php:267
 msgid "WordPress"
 msgstr ""
 
-#: dist/colormag/inc/meta-boxes/class-colormag-meta-box-page-settings.php:102
 #: inc/meta-boxes/class-colormag-meta-box-page-settings.php:102
 msgid "Select Layout"
 msgstr ""
 
-#: dist/colormag/inc/meta-boxes/class-colormag-meta-boxes.php:106
 #: inc/meta-boxes/class-colormag-meta-boxes.php:106
 msgid "Page Settings"
 msgstr ""
 
-#: dist/colormag/inc/meta-boxes/class-colormag-meta-boxes.php:115
 #: inc/meta-boxes/class-colormag-meta-boxes.php:115
 msgid "Video URL"
 msgstr ""
 
-#: dist/colormag/inc/migration/demo-import-migration.php:33
 #: inc/migration/demo-import-migration.php:33
 msgid "It seems you&#39;ve either imported ColorMag demos recently or updated ColorMag to 3.0 version. After these actions, if you&#39;ve seen any design issues in your site, please try clicking the button below:"
 msgstr ""
 
-#: dist/colormag/inc/migration/demo-import-migration.php:42
 #: inc/migration/demo-import-migration.php:42
 msgid "Fix Migration Issues"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:322
 #: inc/template-functions.php:322
 msgid "Total Views"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:350
 #: inc/template-functions.php:350
 msgid "User Social Links"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:374
 #: inc/template-functions.php:374
 msgid "Google Plus"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:384
 #: inc/template-functions.php:384
 msgid "Flickr"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:394
 #: inc/template-functions.php:394
 msgid "LinkedIn"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:414
 #: inc/template-functions.php:414
 msgid "Tumblr"
 msgstr ""
 
-#: dist/colormag/inc/template-functions.php:424
 #: inc/template-functions.php:424
 msgid "Youtube"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:74
-#: dist/colormag/template-parts/content-page.php:68
 #: inc/template-tags.php:74
 #: template-parts/content-page.php:68
 msgid "Edit"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:116
 #: inc/template-tags.php:116
 msgid "min read"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:437
 #: inc/template-tags.php:437
 msgid "Euro Member Countries"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:438
 #: inc/template-tags.php:438
 msgid "Australian Dollar"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:439
 #: inc/template-tags.php:439
 msgid "Bulgarian Lev"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:440
 #: inc/template-tags.php:440
 msgid "Brazilian Real"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:441
 #: inc/template-tags.php:441
 msgid "Canadian Dollar"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:442
 #: inc/template-tags.php:442
 msgid "Swiss Franc"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:443
 #: inc/template-tags.php:443
 msgid "Chinese Yuan Renminbi"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:444
 #: inc/template-tags.php:444
 msgid "Czech Republic Koruna"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:445
 #: inc/template-tags.php:445
 msgid "Danish Krone"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:446
 #: inc/template-tags.php:446
 msgid "British Pound"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:447
 #: inc/template-tags.php:447
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:448
 #: inc/template-tags.php:448
 msgid "Croatian Kuna"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:449
 #: inc/template-tags.php:449
 msgid "Hungarian Forint"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:450
 #: inc/template-tags.php:450
 msgid "Indonesian Rupiah"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:451
 #: inc/template-tags.php:451
 msgid "Israeli Shekel"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:452
 #: inc/template-tags.php:452
 msgid "Indian Rupee"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:453
 #: inc/template-tags.php:453
 msgid "Japanese Yen"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:454
 #: inc/template-tags.php:454
 msgid "Korean (South) Won"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:455
 #: inc/template-tags.php:455
 msgid "Mexican Peso"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:456
 #: inc/template-tags.php:456
 msgid "Malaysian Ringgit"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:457
 #: inc/template-tags.php:457
 msgid "Norwegian Krone"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:458
 #: inc/template-tags.php:458
 msgid "New Zealand Dollar"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:459
 #: inc/template-tags.php:459
 msgid "Philippine Peso"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:460
 #: inc/template-tags.php:460
 msgid "Polish Zloty"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:461
 #: inc/template-tags.php:461
 msgid "Romanian (New) Leu"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:462
 #: inc/template-tags.php:462
 msgid "Russian Ruble"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:463
 #: inc/template-tags.php:463
 msgid "Swedish Krona"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:464
 #: inc/template-tags.php:464
 msgid "Singapore Dollar"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:465
 #: inc/template-tags.php:465
 msgid "Thai Baht"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:466
 #: inc/template-tags.php:466
 msgid "Turkish Lira"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:467
 #: inc/template-tags.php:467
 msgid "United States Dollar"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:468
 #: inc/template-tags.php:468
 msgid "South African Rand"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:498
 #: inc/template-tags.php:498
 msgid "Pingback:"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:500
 #: inc/template-tags.php:500
 msgid "(Edit)"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:522
 #: inc/template-tags.php:522
 msgid "Post author"
 msgstr ""
 
 #. Translators: 1. Comment date, 2. Comment time
-#: dist/colormag/inc/template-tags.php:533
 #: inc/template-tags.php:533
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:540
 #: inc/template-tags.php:540
 msgid "Permalink"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:552
 #: inc/template-tags.php:552
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:563
 #: inc/template-tags.php:563
 msgid "Reply"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:601
 #: inc/template-tags.php:601
 msgid "0 View"
 msgstr ""
 
 #. Translators: %s Post view count
-#: dist/colormag/inc/template-tags.php:604
 #: inc/template-tags.php:604
 #, php-format
 msgid "%s Views"
 msgstr ""
 
 #. Translators: 1. Post link, 2. Post time, 3. Post date
-#: dist/colormag/inc/template-tags.php:826
 #: inc/template-tags.php:826
 #, php-format
 msgid "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s %4$s</a></span>"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:878
 #: inc/template-tags.php:878
 msgid " 0 Comments"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:879
 #: inc/template-tags.php:879
 msgid " 1 Comment"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:880
 #: inc/template-tags.php:880
 msgid " % Comments"
 msgstr ""
 
-#: dist/colormag/inc/template-tags.php:904
 #: inc/template-tags.php:904
 msgid ", "
 msgstr ""
 
-#: dist/colormag/inc/widgets/abstract-colormag-widget.php:361
 #: inc/widgets/abstract-colormag-widget.php:361
 msgid "Choose an image"
 msgstr ""
 
-#: dist/colormag/inc/widgets/abstract-colormag-widget.php:362
 #: inc/widgets/abstract-colormag-widget.php:362
 msgid "Use image"
 msgstr ""
 
-#: dist/colormag/inc/widgets/abstract-colormag-widget.php:365
 #: inc/widgets/abstract-colormag-widget.php:365
 msgid "Select an Image"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:26
 #: inc/widgets/class-colormag-widgets.php:26
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "Right Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:28
 #: inc/widgets/class-colormag-widgets.php:28
 msgid "Shows widgets at Right side."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:40
 #: inc/widgets/class-colormag-widgets.php:40
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "Left Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:42
 #: inc/widgets/class-colormag-widgets.php:42
 msgid "Shows widgets at Left side."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:52
 #: inc/widgets/class-colormag-widgets.php:52
 msgid "Header Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:54
 #: inc/widgets/class-colormag-widgets.php:54
 msgid "Shows widgets in header section just above the main navigation menu."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:65
 #: inc/widgets/class-colormag-widgets.php:65
 msgid "Front Page: Slider Area"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:67
 #: inc/widgets/class-colormag-widgets.php:67
 msgid "Show widget just below menu. Suitable for TG: Featured Cat Slider."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:78
 #: inc/widgets/class-colormag-widgets.php:78
 msgid "Front Page: Area beside slider"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:80
 #: inc/widgets/class-colormag-widgets.php:80
 msgid "Show widget beside the slider. Suitable for TG: Highlighted Posts."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:91
 #: inc/widgets/class-colormag-widgets.php:91
 msgid "Front Page: Content Top Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:93
 #: inc/widgets/class-colormag-widgets.php:93
 msgid "Content Top Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:104
 #: inc/widgets/class-colormag-widgets.php:104
 msgid "Front Page: Content Middle Left Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:106
 #: inc/widgets/class-colormag-widgets.php:106
 msgid "Content Middle Left Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:117
 #: inc/widgets/class-colormag-widgets.php:117
 msgid "Front Page: Content Middle Right Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:119
 #: inc/widgets/class-colormag-widgets.php:119
 msgid "Content Middle Right Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:130
 #: inc/widgets/class-colormag-widgets.php:130
 msgid "Front Page: Content Bottom Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:132
 #: inc/widgets/class-colormag-widgets.php:132
 msgid "Content Middle Bottom Section"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:143
 #: inc/widgets/class-colormag-widgets.php:143
 msgid "Contact Page Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:145
 #: inc/widgets/class-colormag-widgets.php:145
 msgid "Shows widgets on Contact Page Template."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:156
 #: inc/widgets/class-colormag-widgets.php:156
 msgid "Error 404 Page Sidebar"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:158
 #: inc/widgets/class-colormag-widgets.php:158
 msgid "Shows widgets on Error 404 page."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:169
 #: inc/widgets/class-colormag-widgets.php:169
 msgid "Advertisement Above The Footer"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:171
 #: inc/widgets/class-colormag-widgets.php:171
 msgid "Shows widgets Just Above The Footer, suitable for TG: 728x90 widget."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:182
 #: inc/widgets/class-colormag-widgets.php:182
 msgid "Footer Sidebar One ( Upper )"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:184
 #: inc/widgets/class-colormag-widgets.php:184
 msgid "Shows widgets at footer sidebar one in upper."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:195
 #: inc/widgets/class-colormag-widgets.php:195
 msgid "Footer Sidebar Two ( Upper )"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:197
 #: inc/widgets/class-colormag-widgets.php:197
 msgid "Shows widgets at footer sidebar two in upper."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:208
 #: inc/widgets/class-colormag-widgets.php:208
 msgid "Footer Sidebar Three ( Upper )"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:210
 #: inc/widgets/class-colormag-widgets.php:210
 msgid "Shows widgets at footer sidebar three in upper."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:221
 #: inc/widgets/class-colormag-widgets.php:221
 msgid "Footer Sidebar One"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:223
 #: inc/widgets/class-colormag-widgets.php:223
 msgid "Shows widgets at footer sidebar one."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:234
 #: inc/widgets/class-colormag-widgets.php:234
 msgid "Footer Sidebar Two"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:236
 #: inc/widgets/class-colormag-widgets.php:236
 msgid "Shows widgets at footer sidebar two."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:247
 #: inc/widgets/class-colormag-widgets.php:247
 msgid "Footer Sidebar Three"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:249
 #: inc/widgets/class-colormag-widgets.php:249
 msgid "Shows widgets at footer sidebar three."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:260
 #: inc/widgets/class-colormag-widgets.php:260
 msgid "Footer Sidebar Four ( Lower )"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:262
 #: inc/widgets/class-colormag-widgets.php:262
 msgid "Shows widgets at footer sidebar four."
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:283
 #: inc/widgets/class-colormag-widgets.php:283
 msgid "Widget Two"
 msgstr ""
 
-#: dist/colormag/inc/widgets/class-colormag-widgets.php:293
 #: inc/widgets/class-colormag-widgets.php:293
 msgid "Add widgets here."
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:28
 #: inc/widgets/colormag-125x125-advertisement-widget.php:28
 msgid "Add your 125x125 Advertisement here"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:29
-#: inc/widgets/colormag-125x125-advertisement-widget.php:29
-msgid "TG: 125x125 Advertisement"
-msgstr ""
-
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:39
 #: inc/widgets/colormag-125x125-advertisement-widget.php:39
 msgid "Add your Advertisement 125x125 Images Here"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:44
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:54
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:64
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:74
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:84
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:94
-#: dist/colormag/inc/widgets/colormag-300x250-advertisement-widget.php:44
-#: dist/colormag/inc/widgets/colormag-728x90-advertisement-widget.php:44
 #: inc/widgets/colormag-125x125-advertisement-widget.php:44
 #: inc/widgets/colormag-125x125-advertisement-widget.php:54
 #: inc/widgets/colormag-125x125-advertisement-widget.php:64
@@ -3825,14 +3196,6 @@ msgstr ""
 msgid "Advertisement Image Link "
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:49
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:59
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:69
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:79
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:89
-#: dist/colormag/inc/widgets/colormag-125x125-advertisement-widget.php:99
-#: dist/colormag/inc/widgets/colormag-300x250-advertisement-widget.php:49
-#: dist/colormag/inc/widgets/colormag-728x90-advertisement-widget.php:49
 #: inc/widgets/colormag-125x125-advertisement-widget.php:49
 #: inc/widgets/colormag-125x125-advertisement-widget.php:59
 #: inc/widgets/colormag-125x125-advertisement-widget.php:69
@@ -3844,50 +3207,26 @@ msgstr ""
 msgid "Advertisement Image "
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-300x250-advertisement-widget.php:28
 #: inc/widgets/colormag-300x250-advertisement-widget.php:28
 msgid "Add your 300x250 Advertisement here"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-300x250-advertisement-widget.php:29
-#: inc/widgets/colormag-300x250-advertisement-widget.php:29
-msgid "TG: 300x250 Advertisement"
-msgstr ""
-
-#: dist/colormag/inc/widgets/colormag-300x250-advertisement-widget.php:39
 #: inc/widgets/colormag-300x250-advertisement-widget.php:39
 msgid "Add your Advertisement 300x250 Images Here"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-728x90-advertisement-widget.php:28
 #: inc/widgets/colormag-728x90-advertisement-widget.php:28
 msgid "Add your 728x90 Advertisement here"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-728x90-advertisement-widget.php:29
-#: inc/widgets/colormag-728x90-advertisement-widget.php:29
-msgid "TG: 728x90 Advertisement"
-msgstr ""
-
-#: dist/colormag/inc/widgets/colormag-728x90-advertisement-widget.php:39
 #: inc/widgets/colormag-728x90-advertisement-widget.php:39
 msgid "Add your Advertisement 728x90 Images Here"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:28
 #: inc/widgets/colormag-featured-posts-slider-widget.php:28
 msgid "Display latest posts or posts of specific category, which will be used as the slider."
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:29
-#: inc/widgets/colormag-featured-posts-slider-widget.php:29
-msgid "TG: Featured Category Slider"
-msgstr ""
-
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:42
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:57
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:57
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:41
 #: inc/widgets/colormag-featured-posts-slider-widget.php:42
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:57
 #: inc/widgets/colormag-featured-posts-widget.php:57
@@ -3895,10 +3234,6 @@ msgstr ""
 msgid "Show latest Posts"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:43
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:58
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:58
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:42
 #: inc/widgets/colormag-featured-posts-slider-widget.php:43
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:58
 #: inc/widgets/colormag-featured-posts-widget.php:58
@@ -3906,10 +3241,6 @@ msgstr ""
 msgid "Show posts from a category"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:44
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:59
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:59
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:43
 #: inc/widgets/colormag-featured-posts-slider-widget.php:44
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:59
 #: inc/widgets/colormag-featured-posts-widget.php:59
@@ -3917,10 +3248,6 @@ msgstr ""
 msgid "Show posts from a tag"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:45
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:60
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:60
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:44
 #: inc/widgets/colormag-featured-posts-slider-widget.php:45
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:60
 #: inc/widgets/colormag-featured-posts-widget.php:60
@@ -3928,10 +3255,6 @@ msgstr ""
 msgid "Show posts from an author"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:51
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:66
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:66
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:50
 #: inc/widgets/colormag-featured-posts-slider-widget.php:51
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:66
 #: inc/widgets/colormag-featured-posts-widget.php:66
@@ -3939,10 +3262,6 @@ msgstr ""
 msgid "Select category"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:56
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:71
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:71
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:55
 #: inc/widgets/colormag-featured-posts-slider-widget.php:56
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:71
 #: inc/widgets/colormag-featured-posts-widget.php:71
@@ -3950,10 +3269,6 @@ msgstr ""
 msgid "Select tag"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-slider-widget.php:61
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:76
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:76
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:60
 #: inc/widgets/colormag-featured-posts-slider-widget.php:61
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:76
 #: inc/widgets/colormag-featured-posts-widget.php:76
@@ -3961,65 +3276,39 @@ msgstr ""
 msgid "Select author"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:28
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:28
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:28
 #: inc/widgets/colormag-featured-posts-widget.php:28
 msgid "Display latest posts or posts of specific category."
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:29
-#: inc/widgets/colormag-featured-posts-vertical-widget.php:29
-msgid "TG: Featured Posts (Style 2)"
-msgstr ""
-
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:34
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:34
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:34
 #: inc/widgets/colormag-featured-posts-widget.php:34
 msgid "Layout will be as below:"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-vertical-widget.php:45
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:45
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:45
 #: inc/widgets/colormag-featured-posts-widget.php:45
 msgid "Description"
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-featured-posts-widget.php:29
-#: inc/widgets/colormag-featured-posts-widget.php:29
-msgid "TG: Featured Posts (Style 1)"
-msgstr ""
-
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:28
 #: inc/widgets/colormag-highlighted-posts-widget.php:28
 msgid "Display latest posts or posts of specific category. Suitable for the Area Beside Slider Sidebar."
 msgstr ""
 
-#: dist/colormag/inc/widgets/colormag-highlighted-posts-widget.php:29
-#: inc/widgets/colormag-highlighted-posts-widget.php:29
-msgid "TG: Highlighted Posts"
-msgstr ""
-
-#: dist/colormag/no-results.php:25
 #: no-results.php:25
 msgid "No matching post found"
 msgstr ""
 
 #. Translators: %1$s: Link to WP admin new post page.
-#: dist/colormag/no-results.php:36
 #: no-results.php:36
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: dist/colormag/no-results.php:50
 #: no-results.php:50
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: dist/colormag/no-results.php:57
 #: no-results.php:57
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
@@ -4037,29 +3326,20 @@ msgid "Gutenberg Block / Page Builder (ColorMag)"
 msgstr ""
 
 #. Translators: %s: Search query.
-#: dist/colormag/search.php:38
 #: search.php:38
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: dist/colormag/sidebar-left.php:30
-#: dist/colormag/sidebar.php:30
 #: sidebar-left.php:30
 #: sidebar.php:30
 msgid "Contact Page"
 msgstr ""
 
-#: dist/colormag/sidebar-left.php:32
 #: sidebar-left.php:32
 msgid "Left"
 msgstr ""
 
-#: dist/colormag/sidebar-left.php:38
-#: dist/colormag/sidebar-two.php:19
-#: dist/colormag/sidebar-woocommerce-left.php:25
-#: dist/colormag/sidebar-woocommerce-right.php:25
-#: dist/colormag/sidebar.php:38
 #: sidebar-left.php:38
 #: sidebar-two.php:19
 #: sidebar-woocommerce-left.php:25
@@ -4070,165 +3350,134 @@ msgstr ""
 
 #. Translators: 1. Label for Contact Page or Left sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
 #. Translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
-#: dist/colormag/sidebar-left.php:41
-#: dist/colormag/sidebar.php:41
 #: sidebar-left.php:41
 #: sidebar.php:41
 #, php-format
 msgid "This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
-#: dist/colormag/sidebar-two.php:20
 #: sidebar-two.php:20
 #, php-format
 msgid "This is an example widget to show how the Secondary sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets are added then this will be replaced by those widgets"
 msgstr ""
 
 #. Translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
-#: dist/colormag/sidebar-woocommerce-left.php:28
 #: sidebar-woocommerce-left.php:28
 #, php-format
 msgid "This is an example widget to show how the WooCommerce Left Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #. Translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
-#: dist/colormag/sidebar-woocommerce-right.php:28
 #: sidebar-woocommerce-right.php:28
 #, php-format
 msgid "This is an example widget to show how the WooCommerce Right Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
-#: dist/colormag/sidebar.php:32
 #: sidebar.php:32
 msgid "Right"
 msgstr ""
 
-#: dist/colormag/template-parts/content-page.php:57
-#: dist/colormag/template-parts/entry/entry-summary.php:32
 #: template-parts/content-page.php:57
 #: template-parts/entry/entry-summary.php:32
 msgid "Pages:"
 msgstr ""
 
-#: dist/colormag/template-parts/content/related-posts.php:23
 #: template-parts/content/related-posts.php:23
 msgid "You May Also Like"
 msgstr ""
 
-#: dist/colormag/template-parts/entry/entry-summary.php:25
-#: dist/colormag/template-parts/entry/entry-summary.php:46
-#: dist/colormag/template-parts/entry/entry-summary.php:50
 #: template-parts/entry/entry-summary.php:25
 #: template-parts/entry/entry-summary.php:46
 #: template-parts/entry/entry-summary.php:50
 msgid "Read More"
 msgstr ""
 
-#: dist/colormag/template-parts/header-builder-elements/search.php:35
 #: template-parts/header-builder-elements/search.php:35
 msgid "Search..."
 msgstr ""
 
 #. Translators: %s: Author name
-#: dist/colormag/template-parts/hooks/content/content.php:47
 #: template-parts/hooks/content/content.php:47
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
 #. Translators: %s: Day archive
-#: dist/colormag/template-parts/hooks/content/content.php:61
 #: template-parts/hooks/content/content.php:61
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
 #. Translators: %s: Month archive
-#: dist/colormag/template-parts/hooks/content/content.php:68
 #: template-parts/hooks/content/content.php:68
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
 #. Translators: %s: Year archive
-#: dist/colormag/template-parts/hooks/content/content.php:75
 #: template-parts/hooks/content/content.php:75
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/content/content.php:80
 #: template-parts/hooks/content/content.php:80
 msgid "Asides"
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/content/content.php:83
 #: template-parts/hooks/content/content.php:83
 msgid "Images"
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/content/content.php:86
 #: template-parts/hooks/content/content.php:86
 msgid "Videos"
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/content/content.php:89
 #: template-parts/hooks/content/content.php:89
 msgid "Quotes"
 msgstr ""
 
 #. Translators: %1$s: Current year, %2$s: Site link
-#: dist/colormag/template-parts/hooks/footer/footer.php:271
 #: template-parts/hooks/footer/footer.php:271
 #, php-format
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
 #. Translators: %1$s: Theme name, %2$s: ThemeGrill site link
-#: dist/colormag/template-parts/hooks/footer/footer.php:271
 #: template-parts/hooks/footer/footer.php:271
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #. Translators: %s: WordPress link
-#: dist/colormag/template-parts/hooks/footer/footer.php:271
 #: template-parts/hooks/footer/footer.php:271
 #, php-format
 msgid "Powered by %s."
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/header/header.php:85
 #: template-parts/hooks/header/header.php:85
 msgid "Skip to content"
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/header/header.php:538
 #: template-parts/hooks/header/header.php:538
 msgid "Breadcrumbs"
 msgstr ""
 
-#: dist/colormag/template-parts/hooks/header/header.php:538
 #: template-parts/hooks/header/header.php:538
 msgid "You are here: "
 msgstr ""
 
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "Customizer"
 msgstr ""
 
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "Centered Sidebar"
 msgstr ""
 
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "Contained Sidebar"
 msgstr ""
 
 #: assets/build/meta.js:1
-#: dist/colormag/assets/build/meta.js:1
 msgid "ColorMag Meta Settings"
 msgstr ""
