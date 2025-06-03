@@ -1,4 +1,9 @@
 == Changelog ==
+= 4.0.16 - 2025-06-03 =
+* Added       - Option to select widgets post by tags and author.
+* Added       - Option to logo size on responsive device.
+* Update      - Translation ready for all theme strings.
+
 = 4.0.15 - 2025-05-21 =
 * Fix         - Starter Template issue.
 
