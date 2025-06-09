@@ -185,15 +185,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			wp_localize_script(
-				'colormag-custom',
-				'customind_upgrade',
-				array(
-					'enable' => true,
-					'link'   => 'https://themegrill.com/themes/colormag-pro/?utm_source=colormag&utm_medium=customizer&utm_campaign=upgrade',
-				)
-			);
-
 			// BxSlider JS.
 			wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
