@@ -1,4 +1,8 @@
 == Changelog ==
+= 4.0.17 - 2025-06-09 =
+* Fix         - Typography slide issue.
+* Fix         - Fontawesome 6 issue.
+
 = 4.0.16 - 2025-06-03 =
 * Added       - Option to select widgets post by tags and author.
 * Added       - Option to logo size on responsive device.

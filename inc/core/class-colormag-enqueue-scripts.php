@@ -233,6 +233,8 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( $style['handle'] );
 			}
 
+			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.2.4' );
+
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
 
@@ -367,7 +369,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title {
              background: transparent !important;
-		    width: 208px;
+		    width: 220px;
 		    border: 1px solid #1877F2;
 		    border-radius: 4px;
 		    margin: 21px;
@@ -383,7 +385,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		        content: "\f09a";
 			    font-family: "Font Awesome 6 Brands";
 			    position: absolute;
-			    right: 185px;
+			    right: 195px;
 			    top: 48%;
 			    transform: translateY(-50%);
 			    color: #1877F2;
