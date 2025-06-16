@@ -1647,6 +1647,12 @@
 	margin-bottom: 0 !important;
 }
 
+.customind-upgrade-accordion-section {
+	padding: 10px 16px;
+	margin-top: 14px;
+	border-bottom: none;
+}
+
 .expanded .customind-builder-area {
 	margin-right: 300px;
 }
