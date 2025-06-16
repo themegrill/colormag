@@ -16,7 +16,7 @@
 		position: relative;
 		padding: length( 'l-6' );
 		@include font-size("font-size-xs");
-		border: 1px solid $color__gray-300;
+		border: 1px solid var(--colormag-color-4, '#d4d4d8');
 		border-radius: 4px 0 0 4px;
 		line-height: 1.6;
 

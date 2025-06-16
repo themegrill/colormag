@@ -11,6 +11,7 @@ body.dark-skin {
 
 /* Top Bar.
 --------------------------------------------- */
+.dark-skin {
 .breaking-news {
 	background-color: $color__gray-one;
 
@@ -22,8 +23,6 @@ body.dark-skin {
 .date-in-header {
 	color: $color__gray-seven;
 }
-
-.dark-skin {
 
 	h1,
 	h2,
@@ -394,7 +393,7 @@ body.dark-skin {
 		}
 
 		.cm-mobile-nav li {
-			border-color: #3F3F46;
+			border-color: var(--colormag-color-3, #3F3F46);
 			a {
 				color: $color__gray-100;
 			}
@@ -549,7 +548,6 @@ body.dark-skin {
 		}
 	}
 
-}
 
 .cm-breaking-news i.fa-arrow-up::before,
 .cm-breaking-news i.fa-arrow-down::before {
@@ -559,7 +557,6 @@ body.dark-skin {
 
 /* Support Dark Skin.
 --------------------------------------------- */
-.dark-skin {
 
 	body {
 		color: #cccccc;

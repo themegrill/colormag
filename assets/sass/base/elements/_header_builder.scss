@@ -46,8 +46,8 @@
 	&.cm-full-width {
 		.cm-header-bottom-row {
 			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-			background-color: #27272A;
-			border-top: 4px solid #207daf;
+			background-color: var(--colormag-color-6, #27272A);
+			border-top: 4px solid var(--colormag-color-9, #207daf);
 		}
 	}
 
@@ -55,8 +55,8 @@
 		.cm-header-bottom-row {
 			.cm-bottom-row {
 				box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-				background-color: #27272A;
-				border-top: 4px solid #207daf;
+				background-color: var(--colormag-color-6, #27272A);
+				border-top: 4px solid var(--colormag-color-9, #207daf);
 			}
 		}
 	}
@@ -172,7 +172,7 @@
     display: none;
 
 	  .cm-mobile-open-container {
-		  background: #27272A;
+		  background: var(--colormag-color-6, #27272A);
 	  }
   }
 	.site-title {
@@ -310,7 +310,7 @@
 				cursor: pointer;
 
 				.cm-icon {
-					fill: #207daf;
+					fill: var(--colormag-color-9, #207daf);
 				}
 			}
 
@@ -426,8 +426,8 @@
 
 		.cm-header-bottom-row {
 			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-			background-color: #27272A;
-			border-top: 4px solid #207daf;
+			background-color: var(--colormag-color-6, #27272A);
+			border-top: 4px solid var(--colormag-color-9, #207daf);
 		}
 
 		.cm-menu-toggle {

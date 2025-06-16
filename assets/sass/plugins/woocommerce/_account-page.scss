@@ -81,7 +81,7 @@
 				padding: 0 20px;
 				font-weight: 500;
 				color: $color__gray-800;
-				border-bottom: 1px solid $color__gray-300;
+				border-bottom: 1px solid var(--colormag-color-4, '#d4d4d8');
 
 				&:hover,
 				&:focus {
