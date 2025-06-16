@@ -398,16 +398,19 @@ class Customind {
 		wp_localize_script(
 			'customind',
 			'__CUSTOMIND__',
-			[
-				'googleFonts'           => $this->get_google_fonts(),
-				'customFonts'           => $custom_fonts,
-				'fontawesome'           => $this->get_fontawesome(),
-				'condition'             => $this->get_condition(),
-				'conditions'            => $this->get_conditions(),
-				'builderPanels'         => $this->get_builder_panels(),
-				'cssVarPrefix'          => $this->get_css_var_prefix(),
-				'colorPaletteControlId' => $this->get_color_palette_control_id(),
-			]
+			apply_filters(
+				'customind_setting_data',
+				[
+					'googleFonts'           => $this->get_google_fonts(),
+					'customFonts'           => $custom_fonts,
+					'fontawesome'           => $this->get_fontawesome(),
+					'condition'             => $this->get_condition(),
+					'conditions'            => $this->get_conditions(),
+					'builderPanels'         => $this->get_builder_panels(),
+					'cssVarPrefix'          => $this->get_css_var_prefix(),
+					'colorPaletteControlId' => $this->get_color_palette_control_id(),
+				]
+			)
 		);
 	}
 

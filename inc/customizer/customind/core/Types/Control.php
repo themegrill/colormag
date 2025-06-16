@@ -51,6 +51,7 @@ class Control extends \WP_Customize_Control {
 		'customind-navigation',
 		'customind-image',
 		'customind-upsell',
+		'customind-upgrade',
 		'customind-socials',
 		'customind-preset',
 		'customind-builder-migration',

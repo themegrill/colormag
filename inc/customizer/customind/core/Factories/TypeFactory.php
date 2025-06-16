@@ -5,6 +5,7 @@ namespace Customind\Core\Factories;
 use Customind\Core\Types\Controls\BuilderMigration;
 use Customind\Core\Types\Controls\Preset;
 use Customind\Core\Types\Controls\Socials;
+use Customind\Core\Types\Controls\Upgrade;
 use Customind\Core\Types\Panel;
 use Customind\Core\Types\Section;
 use Customind\Core\Types\Controls\Date;
@@ -50,6 +51,7 @@ class TypeFactory {
 		'customind-toggle-button'      => ToggleButton::class,
 		'customind-typography'         => Typography::class,
 		'customind-upsell'             => Upsell::class,
+		'customind-upgrade'             => Upgrade::class,
 		'customind-accordion'          => Accordion::class,
 		'customind-background'         => Background::class,
 		'customind-checkbox'           => Checkbox::class,
