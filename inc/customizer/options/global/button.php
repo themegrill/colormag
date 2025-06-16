@@ -109,10 +109,8 @@ $options = array(
 		'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
 		'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
 		'points'      => array(
-			esc_html__( 'Option to change global button typography', 'colormag' ),
-			esc_html__( 'Option to change global button border style', 'colormag' ),
-			esc_html__( 'Option to change global button border width', 'colormag' ),
-			esc_html__( 'Option to change global button border normal and hover color', 'colormag' ),
+			esc_html__( 'Global button typography', 'colormag' ),
+			esc_html__( 'Button border style, width and colors', 'colormag' ),
 		),
 		'section'     => 'colormag_button_section',
 		'priority'    => 100,

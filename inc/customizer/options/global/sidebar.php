@@ -92,9 +92,9 @@ $options = apply_filters(
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
 			'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
 			'points'      => array(
-				esc_html__( 'Option to sticky sidebar', 'colormag' ),
-				esc_html__( 'Option to change sidebar widget title color and typography', 'colormag' ),
-				esc_html__( 'Option to change two sidebar layout', 'colormag' ),
+				esc_html__( 'Sticky sidebar', 'colormag' ),
+				esc_html__( 'Sidebar widget title color and typography', 'colormag' ),
+				esc_html__( 'Two sidebar layout', 'colormag' ),
 			),
 			'section'     => 'colormag_global_sidebar_section',
 			'priority'    => 100,
