@@ -150,7 +150,7 @@ and Blueprint http://www.blueprintcss.org/
 body {
 	--color--gray: #888888;
 	--color--light--primary: #9bc8da;
-	--color--primary: #207daf;
+	--color--primary: var(--colormag-color-9, #207daf);
 }
 
 /*--------------------------------------------------------------
@@ -247,7 +247,7 @@ ol, ul {
 }
 
 th, td, .wp-block-table th, .wp-block-table td {
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	padding: 6px 10px;
 }
 
@@ -416,7 +416,7 @@ tt {
 abbr,
 acronym,
 dfn {
-	border-bottom: 1px dotted #d4d4d8;
+	border-bottom: 1px dotted var(--colormag-color-4, "#d4d4d8");
 	cursor: help;
 }
 
@@ -527,11 +527,11 @@ input[type="submit"],
 .cm-button {
 	display: inline-block;
 	padding: 6px 10px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
-	border: 1px solid #207daf;
+	border: 1px solid var(--colormag-color-9, #207daf);
 	transition: background-color 0.3s linear 0s;
 	border-radius: 2px;
 	cursor: pointer;
@@ -544,7 +544,7 @@ input[type="submit"]:hover,
 .wp-block-button .wp-block-button__link:hover,
 .wp-element-button:hover,
 .cm-button:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	background-color: transparent;
 }
 
@@ -746,13 +746,13 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="search"]:focus, input[type="password"]:focus, input[type="url"]:focus {
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 }
 
 input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="tel"] {
 	box-sizing: border-box;
 	padding: 10px;
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	line-height: 20px;
 	width: 100%;
 	margin: 0 0 32px;
@@ -765,14 +765,14 @@ input.s {
 	width: 100%;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid #d4d4d8;
+	border: 1px solid var(--colormag-color-4, "#d4d4d8");
 	border-radius: 0 4px 4px 0;
 	line-height: 1.6;
 }
 
 input.s:focus {
 	padding-right: 10px;
-	border-color: #e4e4e7;
+	border-color: var(--colormag-color-5, "#E4E4E7");
 	text-indent: 0;
 }
 
@@ -781,7 +781,7 @@ textarea {
 	   -moz-appearance: none !important;
 	        appearance: none !important;
 	padding: 1%;
-	border: 1px solid #E4E4E7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	line-height: 20px;
 	width: 100%;
 	margin: 0 0 32px;
@@ -790,14 +790,14 @@ textarea {
 }
 
 textarea:focus {
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 }
 
 .colormag-button {
 	display: inline-block;
 	margin-bottom: 30px;
 	padding: 5px 10px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	border: 0;
 	transition: background-color 0.3s linear 0s;
 	border-radius: 3px;
@@ -822,7 +822,7 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	padding: 8px 16px;
 }
 
@@ -830,7 +830,7 @@ select {
  * Links.
  */
 a {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	text-decoration: none;
 	transition: all 0.3s ease;
 }
@@ -1080,14 +1080,14 @@ table td {
 
 .cm-header-builder.cm-full-width .cm-header-bottom-row {
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-	background-color: #27272A;
-	border-top: 4px solid #207daf;
+	background-color: var(--colormag-color-6, #27272A);
+	border-top: 4px solid var(--colormag-color-9, #207daf);
 }
 
 .cm-header-builder.cm-contained .cm-header-bottom-row .cm-bottom-row {
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-	background-color: #27272A;
-	border-top: 4px solid #207daf;
+	background-color: var(--colormag-color-6, #27272A);
+	border-top: 4px solid var(--colormag-color-9, #207daf);
 }
 
 .cm-header-builder .cm-header-bottom-row #cm-primary-nav {
@@ -1200,7 +1200,7 @@ table td {
 }
 
 .cm-header-builder .cm-mobile-row .cm-mobile-open-container {
-	background: #27272A;
+	background: var(--colormag-color-6, #27272A);
 }
 
 .cm-header-builder .site-title {
@@ -1328,7 +1328,7 @@ table td {
 }
 
 .cm-secondary-nav ul li .cm-submenu-toggle .cm-icon {
-	fill: #207daf;
+	fill: var(--colormag-color-9, #207daf);
 }
 
 .cm-secondary-nav ul li:hover > .sub-menu {
@@ -1406,8 +1406,8 @@ table td {
 	}
 	.cm-header-builder .cm-mobile-row .cm-header-bottom-row {
 		box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-		background-color: #27272A;
-		border-top: 4px solid #207daf;
+		background-color: var(--colormag-color-6, #27272A);
+		border-top: 4px solid var(--colormag-color-9, #207daf);
 	}
 	.cm-header-builder .cm-mobile-row .cm-menu-toggle {
 		background: none;
@@ -1473,7 +1473,7 @@ table td {
 }
 
 .cm-footer-builder .cm-widget-title {
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	font-size: 1.4rem;
 	color: #e4e4e7;
 }
@@ -1481,7 +1481,7 @@ table td {
 .cm-footer-builder .cm-widget-title span {
 	display: inline-block;
 	padding: 6px 12px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-size: 1.6rem;
 }
@@ -1545,7 +1545,7 @@ table td {
 .cm-footer-builder .cm-footer-bottom-row {
 	padding-bottom: 24px;
 	padding-top: 24px;
-	background-color: #27272a;
+	background-color: var(--colormag-color-6, #27272A);
 	color: #f4f4f5;
 }
 
@@ -1832,7 +1832,7 @@ table td {
 }
 
 .social-links .fa:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .social-links .fa-twitter {
@@ -2007,7 +2007,7 @@ table td {
 }
 
 .cm-search-icon-in-input-right .search-wrap input {
-	box-shadow: 0 0 0 0 rgba(32, 125, 175, 0.2);
+	box-shadow: 0 0 0 0 rgba(var(--colormag-color-9, #207daf), 0.2);
 }
 
 .fa.search-top {
@@ -2023,7 +2023,7 @@ table td {
 }
 
 .fa.search-top:hover {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .search-wrap {
@@ -2036,7 +2036,7 @@ table td {
 .search-wrap button {
 	padding: 14px;
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	font-size: 1.4rem;
 	border-radius: 4px 0 0 4px;
 	line-height: 0.8;
@@ -2079,7 +2079,7 @@ table td {
 	width: 100%;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	border-radius: 0 4px 4px 0;
 }
 
@@ -2108,7 +2108,7 @@ table td {
 }
 
 .cm-primary-nav .cm-random-post a:hover {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-primary-nav .cm-random-post a svg {
@@ -2193,7 +2193,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	margin-bottom: 16px;
 	padding-bottom: 0;
 	font-size: 1.8rem;
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 }
 
 .cm-page-header span {
@@ -2201,7 +2201,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	align-items: center;
 	gap: 6px;
 	padding: 6px 12px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -2307,7 +2307,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 .wp-block-query-pagination-numbers .page-numbers.current {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -2324,7 +2324,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 .previous a:hover,
 .next a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	text-decoration: underline;
 }
 
@@ -2340,7 +2340,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 .nav-previous a,
 .nav-next a {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	cursor: pointer;
 	font-size: 16px;
 }
@@ -2382,7 +2382,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 }
 
 .link-pagination .post-page-numbers.current {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -2391,7 +2391,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 .slide-prev,
 .slide-next {
 	filter: alpha(opacity=70);
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -2492,7 +2492,7 @@ nav li > ol {
 }
 
 .cm-primary-nav .cm-home-icon a:hover {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-primary-nav a:hover {
@@ -2504,7 +2504,7 @@ nav li > ol {
 }
 
 .cm-primary-nav ul li.current-menu-item, .cm-primary-nav ul li.current_page_ancestor, .cm-primary-nav ul li.current-menu-ancestor, .cm-primary-nav ul li.current_page_item, .cm-primary-nav ul li:hover, .cm-primary-nav ul li.focus {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-primary-nav .sub-menu,
@@ -2584,12 +2584,12 @@ nav li > ol {
 
 .cm-primary-nav ul li ul li:hover {
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-primary-nav ul li.current-menu-item ul li a:hover {
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-primary-nav ul li ul li ul {
@@ -2606,7 +2606,7 @@ nav li > ol {
 	z-index: 999;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
 	background-color: #27272A;
-	border-top: 4px solid #207daf;
+	border-top: 4px solid var(--colormag-color-9, #207daf);
 }
 
 #cm-primary-nav .cm-row {
@@ -2617,7 +2617,7 @@ nav li > ol {
 }
 
 .cm-home-icon.front_page_on {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-home-icon svg {
@@ -2722,7 +2722,7 @@ li.default-menu {
 
 .cm-header .cm-mobile-nav li:hover, .cm-header .cm-mobile-nav li.current-page-ancestor, .cm-header .cm-mobile-nav li.current-menu-ancestor, .cm-header .cm-mobile-nav li.current-page-item, .cm-header .cm-mobile-nav li.current-menu-item {
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-header .cm-mobile-nav li:hover > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-item > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-item > .cm-sub-toggle i {
@@ -2822,11 +2822,11 @@ li.default-menu {
 	display: flex;
 	flex-wrap: wrap;
 	background-color: #27272A;
-	border-top: 1px solid #3F3F46;
+	border-top: 1px solid var(--colormag-color-3, #3F3F46);
 }
 
 .cm-mobile-nav li a:hover {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -2856,7 +2856,7 @@ li.default-menu {
 }
 
 .cm-mobile-nav .current_page_item > a, .cm-mobile-nav .current-menu-item {
-	background: #207daf;
+	background: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -2973,7 +2973,7 @@ li.default-menu {
 }
 
 .page-numbers .current {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -3085,7 +3085,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .comments-area .comment-permalink:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .comments-area .comment-reply-link {
@@ -3215,7 +3215,7 @@ Styles for separating single posts loaded from ajax call.
 	font-weight: 600;
 	cursor: pointer;
 	line-height: 1.8;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	border-radius: 2px;
 }
 
@@ -3239,7 +3239,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-entry-title a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	text-decoration: underline;
 }
 
@@ -3373,7 +3373,7 @@ Styles for separating single posts loaded from ajax call.
 
 .call-to-action {
 	padding: 30px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -3444,7 +3444,7 @@ Styles for separating single posts loaded from ajax call.
 	display: inline-block;
 	padding: 20px 25px;
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	font-size: 1.4rem;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -3486,7 +3486,7 @@ Styles for separating single posts loaded from ajax call.
 	align-items: center;
 	justify-content: center;
 	transform: translateY(-92%);
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	border-radius: 2px;
 	padding: 4px;
 	display: flex;
@@ -3558,7 +3558,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-featured-category-slider .cm-slide-content .cm-entry-header-meta .cm-post-categories a {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-featured-category-slider .cm-entry-title {
@@ -3849,7 +3849,7 @@ Styles for separating single posts loaded from ajax call.
 	position: relative;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid #d4d4d8;
+	border: 1px solid var(--colormag-color-4, "#d4d4d8");
 	border-radius: 0 4px 4px 0;
 	line-height: 1.6;
 }
@@ -3878,7 +3878,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .wp-block-search .wp-element-button:hover {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: transparent;
 }
 
@@ -3890,7 +3890,7 @@ Styles for separating single posts loaded from ajax call.
 
 .widget .wp-block-heading {
 	display: inline-block;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
@@ -3904,7 +3904,7 @@ Styles for separating single posts loaded from ajax call.
 .widget .block-title {
 	display: block;
 	margin-bottom: 20px;
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 }
 
 .widget select {
@@ -3926,7 +3926,7 @@ Styles for separating single posts loaded from ajax call.
 	display: flex;
 	flex-basis: 100%;
 	justify-content: space-between;
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	font-size: 18px;
 }
 
@@ -3934,7 +3934,7 @@ Styles for separating single posts loaded from ajax call.
 	display: inline-block;
 	padding: 6px 12px;
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-featured-posts .cm-posts .cm-post {
@@ -3962,7 +3962,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-featured-posts .cm-entry-title a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-featured-posts .cm-entry-header-meta {
@@ -4022,7 +4022,7 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-slider-area .cm-widget-title,
 .cm-beside-slider-widget .cm-widget-title {
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	font-size: 18px;
 	margin-bottom: 15px;
 	padding-bottom: 0;
@@ -4032,7 +4032,7 @@ Styles for separating single posts loaded from ajax call.
 .cm-beside-slider-widget .cm-widget-title span {
 	display: inline-block;
 	padding: 6px 12px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 }
 
@@ -4060,7 +4060,7 @@ Styles for separating single posts loaded from ajax call.
 .cm-comments-link a:hover,
 .cm-tag-links a:hover,
 .cm-edit-link a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 /* Front Page Top Section.
@@ -4108,14 +4108,14 @@ Styles for separating single posts loaded from ajax call.
 #cm-tertiary .cm-widget-title {
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	margin-bottom: 15px;
 }
 
 .cm-secondary .cm-widget-title span,
 #cm-tertiary .cm-widget-title span {
 	display: inline-block;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
@@ -4311,7 +4311,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-site-title a {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-site-description {
@@ -4325,7 +4325,7 @@ Styles for separating single posts loaded from ajax call.
 
 .header-image {
 	margin-bottom: 0;
-	border-bottom: 1px solid #e4e4e7;
+	border-bottom: 1px solid var(--colormag-color-5, "#E4E4E7");
 	width: 100%;
 }
 
@@ -4465,7 +4465,7 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-layout-2 #cm-primary-nav .fa:hover {
 	background: transparent;
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-layout-2 #cm-primary-nav .cm-home-icon.front_page_on {
@@ -4494,7 +4494,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-layout-2 .cm-primary-nav ul li.current-menu-item, .cm-layout-2 .cm-primary-nav ul li.current_page_item, .cm-layout-2 .cm-primary-nav ul li:hover, .cm-layout-2 .cm-primary-nav ul li.focus {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	background-color: transparent;
 }
 
@@ -4518,7 +4518,7 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-layout-2 .cm-primary-nav ul > li:hover > a, .cm-layout-2 .cm-primary-nav ul > li.current-menu-item > a, .cm-layout-2 .cm-primary-nav ul > li.current-menu-ancestor > a {
 	background-color: transparent;
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 }
 
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu {
@@ -4543,8 +4543,8 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus {
-	border-color: #207daf;
-	background-color: #207daf;
+	border-color: var(--colormag-color-9, #207daf);
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu li:hover > a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-ancestor > a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.current-menu-item > a, .cm-layout-2 .cm-primary-nav ul ul.sub-menu li.focus > a {
@@ -4570,7 +4570,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-layout-2 .cm-primary-nav ul li.focus > a {
-	border-color: #207daf;
+	border-color: var(--colormag-color-9, #207daf);
 }
 
 .cm-layout-2 .cm-primary-nav ul li.focus > ul.sub-menu {
@@ -4583,7 +4583,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-layout-2 .cm-primary-nav .cm-random-post a:hover .fa-random {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-layout-2 .cm-primary-nav .cm-random-post a .fa-random {
@@ -4613,7 +4613,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-layout-2 .cm-mobile-nav .cm-random-post a:hover .fa-random {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-layout-2 .cm-mobile-nav .cm-random-post a .fa-random {
@@ -4622,7 +4622,7 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-layout-2 .cm-mobile-nav li {
 	background-color: #fff;
-	border-color: #E4E4E7;
+	border-color: var(--colormag-color-5, "#E4E4E7");
 }
 
 .cm-layout-2 .cm-mobile-nav li a {
@@ -4654,7 +4654,7 @@ Styles for separating single posts loaded from ajax call.
 
 @media screen and (min-width: 48em) {
 	.cm-layout-2 .cm-layout-2-style-1 #cm-primary-nav {
-		border-top: 4px solid #207daf;
+		border-top: 4px solid var(--colormag-color-9, #207daf);
 	}
 }
 
@@ -4718,14 +4718,14 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .top-full-width-sidebar .cm-widget-title {
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	font-size: 1.4rem;
 	margin-bottom: 24px;
 	padding-bottom: 0;
 }
 
 .top-full-width-sidebar .cm-widget-title span {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	padding: 6px 12px;
 	display: inline-block;
@@ -4839,7 +4839,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-post:hover .play-button-wrapper {
-	background-color: #207DAF;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .post:hover .play-button-wrapper {
@@ -4870,7 +4870,7 @@ Styles for separating single posts loaded from ajax call.
 .cm-post-categories a {
 	display: inline-block;
 	padding: 4px 8px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-size: 10px;
 	text-transform: uppercase;
@@ -4896,7 +4896,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .human-diff-time .human-diff-time-display:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	cursor: pointer;
 }
 
@@ -4941,14 +4941,14 @@ ul.wp-block-gallery img {
 }
 
 .single .cm-posts .tags a {
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	padding: 3px 5px;
 	border-radius: 3px;
 	color: #777777;
 }
 
 .single .cm-posts .tags a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	text-decoration: none;
 }
 
@@ -5042,7 +5042,7 @@ ul.wp-block-gallery img {
 }
 
 .related-posts-main-title .fa {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .related-posts-main-title span {
@@ -5140,7 +5140,7 @@ ul.wp-block-gallery img {
 }
 
 .related-posts-wrapper.style-3 .cm-post-content .cm-entry-title a:hover::before {
-	background: #207daf;
+	background: var(--colormag-color-9, #207daf);
 }
 
 .related-posts-wrapper.style-4 .related-posts {
@@ -5219,7 +5219,7 @@ ul.wp-block-gallery img {
 }
 
 .related-posts-wrapper-flyout .cm-entry-title a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .related-posts-wrapper-flyout .cm-author {
@@ -5234,14 +5234,14 @@ ul.wp-block-gallery img {
 }
 
 .box {
-	border: 1px solid #e4e4e7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	border-radius: 3px;
 	display: inline-block;
 }
 
 .count {
 	background: none repeat scroll 100% 0 #f2f2f2;
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	float: left;
 	font-size: 22px;
 	padding: 0 16px;
@@ -5328,7 +5328,7 @@ ul.wp-block-gallery img {
 .format-link .cm-entry-summary a {
 	display: inline-block;
 	padding: 15px 40px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	border-radius: 3px;
 	text-decoration: underline;
@@ -5495,7 +5495,7 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 }
 
 .cm-error-404 .cm-page-title {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 	font-size: 300px;
 	font-weight: 700;
 	line-height: 300px;
@@ -5538,10 +5538,10 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 .cm-error-404 .cm-btn {
 	display: inline-block;
 	padding: 12px 24px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-weight: 600;
-	border: 1px solid #207daf;
+	border: 1px solid var(--colormag-color-9, #207daf);
 	border-radius: 2px;
 }
 
@@ -5612,7 +5612,7 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 .cm-no-results input.s {
 	width: 100%;
 	font-size: 1.4rem;
-	border: 1px solid #E4E4E7;
+	border: 1px solid var(--colormag-color-5, "#E4E4E7");
 	border-radius: 0 4px 4px 0;
 }
 
@@ -5681,7 +5681,7 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 }
 
 .cm-footer-bar a {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-footer-bar a:hover {
@@ -5805,7 +5805,7 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 }
 
 .cm-footer .cm-footer-menu ul li a:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 /* Footer column. */
@@ -5823,14 +5823,14 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 }
 
 .cm-footer-cols .cm-widget-title {
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	font-size: 1.4rem;
 }
 
 .cm-footer-cols .cm-widget-title span {
 	display: inline-block;
 	padding: 6px 12px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	font-size: 1.6rem;
 }
@@ -5842,7 +5842,7 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 
 .cm-footer-cols a:hover,
 .cm-footer-cols .human-diff-time:hover {
-	color: #207daf;
+	color: var(--colormag-color-9, #207daf);
 }
 
 .cm-footer-cols ul {
@@ -5918,7 +5918,7 @@ Classic Layout
 	right: 0;
 	width: 25px;
 	height: 2px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .colormag-footer--classic .cm-footer-cols .cm-row .cm-view-all-link {
@@ -5948,7 +5948,7 @@ Classic Bordered Layout
 	right: 0;
 	width: 25px;
 	height: 2px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 }
 
 .colormag-footer--classic-bordered .cm-widget-title span {
@@ -6043,14 +6043,14 @@ Classic Bordered Layout
 }
 
 .advertisement_above_footer .cm-widget-title {
-	border-bottom: 2px solid #207daf;
+	border-bottom: 2px solid var(--colormag-color-9, #207daf);
 	font-size: 18px;
 	margin-bottom: 16px;
 	padding-bottom: 0;
 }
 
 .advertisement_above_footer .cm-widget-title span {
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	padding: 6px 12px;
 	display: inline-block;
@@ -6123,7 +6123,7 @@ blockquote,
 	padding: 20px 82px 20px 30px;
 	margin-bottom: 30px;
 	margin-top: 16px;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	color: #fff;
 	border-radius: 4px;
 	border-right: 0;
@@ -6359,7 +6359,7 @@ blockquote.wp-block-quote.has-text-align-right {
 .cm-posts .wp-pagenavi .current {
 	padding: 4px 10px;
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	border: 1px solid #f2f2f2;
 }
 
@@ -6371,7 +6371,7 @@ blockquote.wp-block-quote.has-text-align-right {
 .cm-posts .wp-pagenavi a:hover {
 	padding: 4px 10px;
 	color: #fff;
-	background-color: #207daf;
+	background-color: var(--colormag-color-9, #207daf);
 	border: 1px solid #f2f2f2;
 }
 

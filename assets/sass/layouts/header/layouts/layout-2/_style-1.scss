@@ -265,7 +265,7 @@
 
 		li {
 			background-color: $color__white;
-			border-color: #E4E4E7;
+			border-color: var( --colormag-color-5, '#E4E4E7' );
 
 			a {
 				color: #3F3F46;
@@ -323,7 +323,7 @@
 		.cm-layout-2-style-1 {
 
 			#cm-primary-nav {
-				border-top: 4px solid #207daf;
+				border-top: 4px solid var(--colormag-color-9, #207daf);
 			}
 		}
 	}

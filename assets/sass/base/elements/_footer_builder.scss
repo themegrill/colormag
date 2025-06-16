@@ -26,14 +26,14 @@
 	}
 
 	.cm-widget-title {
-		border-bottom: 2px solid #207daf;
+		border-bottom: 2px solid var(--colormag-color-9, #207daf);
 		font-size: 1.4rem;
 		color: #e4e4e7;
 
 		span {
 			display: inline-block;
 			padding: 6px 12px;
-			background-color: #207daf;
+			background-color: var(--colormag-color-9, #207daf);
 			color: #fff;
 			font-size: 1.6rem;
 		}
@@ -97,7 +97,7 @@
 	.cm-footer-bottom-row {
 		padding-bottom: 24px;
 		padding-top: 24px;
-		background-color: #27272a;
+		background-color: var(--colormag-color-6, #27272A);
 		color: #f4f4f5;
 
 		.cm-copyright {

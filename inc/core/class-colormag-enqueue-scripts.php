@@ -582,7 +582,7 @@ if ( ! function_exists( 'colormag_parse_css' ) ) :
 	function colormag_parse_css( $default_value, $output_value, $css_output = array(), $min_media = '', $max_media = '' ) {
 
 		// Return if default value matches.
-		if ( $default_value === $output_value ) {
+		if ( strpos( $output_value, 'var' ) === false && $default_value === $output_value ) {
 			return;
 		}
 
@@ -663,7 +663,7 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 	 */
 	function colormag_parse_background_css( $default_value, $output_value, $selector ) {
 
-		if ( $default_value == $output_value ) {
+		if ( strpos( $output_value['background-color'], 'var' ) === false && $default_value === $output_value ) {
 			return;
 		}
 
@@ -671,7 +671,7 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 		$parse_css .= $selector . '{';
 
 		// For background color.
-		if ( isset( $output_value['background-color'] ) && ( $output_value['background-color'] != $default_value['background-color'] ) ) {
+		if ( isset( $output_value['background-color'] ) ) {
 			$parse_css .= 'background-color:' . $output_value['background-color'] . ';';
 		}
 

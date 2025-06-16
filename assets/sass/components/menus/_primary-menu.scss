@@ -449,7 +449,7 @@ li.default-menu {
 		display: flex;
 		flex-wrap: wrap;
 		background-color: #27272A;
-		border-top: 1px solid #3F3F46;
+		border-top: 1px solid var(--colormag-color-3, #3F3F46);
 
 		a:hover {
 			background-color: $color__primary;

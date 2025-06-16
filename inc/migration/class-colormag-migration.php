@@ -30,8 +30,36 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			add_action( 'after_setup_theme', [ $this, 'colormag_outside_background_migration' ], 25 );
 			add_action( 'after_setup_theme', [ $this, 'colormag_logo_height_migration' ], 25 );
+			add_action( 'themegrill_ajax_demo_imported', array( $this, 'colormag_color_preset' ), 25 );
 		}
 
+		public function colormag_color_preset() {
+
+			$color_preset = get_theme_mod(
+				'colormag_color_palette',
+				array(
+					'id'     => 'preset-5',
+					'name'   => 'Preset 5',
+					'colors' => array(
+						'colormag-color-1' => '#FFFFFF',
+						'colormag-color-2' => '#FAFAFA',
+						'colormag-color-4' => '#d4d4d8',
+						'colormag-color-5' => '#E4E4E7',
+						'colormag-color-3' => '#3F3F46',
+						'colormag-color-6' => '#27272a',
+						'colormag-color-7' => '#333333',
+						'colormag-color-8' => '#444444',
+						'colormag-color-9' => '#207daf',
+					),
+				)
+			);
+			if ( ! empty( $color_preset ) ) {
+				$color_preset = json_decode( wp_json_encode( $color_preset ), true );
+				if ( isset( $color_preset['id'] ) && 'preset-5' === $color_preset['id'] ) {
+					set_theme_mod( 'colormag_color_palette', array() );
+				}
+			}
+		}
 
 		public function colormag_logo_height_migration() {
 			$logo_height = get_theme_mod( 'colormag_header_site_logo_height' );
