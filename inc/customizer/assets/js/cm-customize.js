@@ -2,7 +2,7 @@
 	api.bind('ready', function () {
 		api.panel('colormag_header_panel', (panel) => {
 			panel.expanded.bind((isExpanded) => {
-				console.log( isExpanded );
+				console.log(isExpanded);
 				if (isExpanded) {
 					$('.wp-full-overlay').attr(`data-colormag-header-panel`, 'active');
 				} else {
