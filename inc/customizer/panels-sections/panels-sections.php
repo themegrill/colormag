@@ -405,6 +405,7 @@ $section_option_id = array(
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
 		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
 		'points'           => array(
+			esc_html__( 'Search Page Layout', 'colormag' ),
 			esc_html__( 'Layout and Pagination Options', 'colormag' ),
 			esc_html__( 'Post Display Settings', 'colormag' ),
 			esc_html__( 'Author and Meta Information', 'colormag' ),
