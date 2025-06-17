@@ -73,7 +73,7 @@ require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
 // Load customind.
 require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
-//require __DIR__ . '/../customind/init.php';
+
 /**
  * @var \Customind\Core\Customind
  */
@@ -389,3 +389,20 @@ function cm_customize_preview_js() {
 	);
 }
 add_action( 'customize_preview_init', 'cm_customize_preview_js' );
+
+add_action(
+	'customize_controls_enqueue_scripts',
+	function () {
+		add_filter(
+			'customind_setting_data',
+			function ( $data ) {
+				$data['upgrade_notice']      = true;
+				$data['upgrade_notice_text'] = __( 'Upgrade to ColorMag Pro for more features and customization options.', 'colormag' );
+				$data['upgrade_notice_link'] = 'https://themegrill.com/pricing/?utm_medium=customizer-upsell&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro';
+
+				return $data;
+			}
+		);
+	},
+	11
+);
