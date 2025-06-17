@@ -182,6 +182,9 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
 
+			// Theme custom JS.
+			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+
 			// BxSlider JS.
 			wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
@@ -233,6 +236,8 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( $style['handle'] );
 			}
 
+			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.2.4' );
+
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
 
@@ -249,8 +254,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
 
-			// Theme custom JS.
-			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 		}
 
 		public function customize_js() {
@@ -367,7 +370,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			#customize-theme-controls #accordion-section-colormag_customize_fb_section .accordion-section-title {
              background: transparent !important;
-		    width: 208px;
+		    width: 220px;
 		    border: 1px solid #1877F2;
 		    border-radius: 4px;
 		    margin: 21px;
@@ -383,7 +386,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		        content: "\f09a";
 			    font-family: "Font Awesome 6 Brands";
 			    position: absolute;
-			    right: 185px;
+			    right: 195px;
 			    top: 48%;
 			    transform: translateY(-50%);
 			    color: #1877F2;
