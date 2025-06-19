@@ -185,6 +185,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
+
 			// BxSlider JS.
 			wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
@@ -253,7 +254,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
-
 		}
 
 		public function customize_js() {
@@ -520,9 +520,44 @@ function colormag_image_uploader() {
 
 	wp_enqueue_media();
 	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
+
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
+
+// Returns an array of category colors.
+function colormag_get_category_colors() {
+	$category_colors = array();
+	foreach ( get_categories() as $cat ) {
+		$color = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
+		$category_colors[ $cat->term_id ] = $color;
+	}
+	return $category_colors;
+}
+
+// Enqueue and localize editor script with category colors.
+function colormag_enqueue_editor_assets() {
+	wp_enqueue_script(
+		'colormag-editor-script',
+		get_template_directory_uri() . '/assets/js/editor.js',
+		array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+		COLORMAG_THEME_VERSION,
+		true
+	);
+
+	wp_localize_script(
+		'colormag-editor-script',
+		'colormag_category_colors',
+		colormag_get_category_colors()
+	);
+
+	wp_localize_script(
+		'colormag-editor-script',
+		'colormag_category_color_override',
+		get_theme_mod( 'colormag_enable_override_category_color', false )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'colormag_enqueue_editor_assets' );
 
 
 if ( ! function_exists( 'colormag_darkcolor' ) ) :
