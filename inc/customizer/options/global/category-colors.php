@@ -26,7 +26,8 @@ $options = array(
 
 if ( function_exists( 'magazine_blocks' ) ) {
 	$options['colormag_enable_override_category_color'] = array(
-		'title'    => esc_html__( 'Enable for Magazine Block', 'colormag' ),
+		'title'    => esc_html__( 'Override for Magazine Blocks', 'colormag' ),
+		'description' => esc_html__( 'Enabling will override the magazine block global category colors', 'colormag' ),
 		'default'  => false,
 		'type'     => 'customind-toggle',
 		'section'  => 'colormag_category_colors_section',
