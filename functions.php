@@ -406,3 +406,100 @@ add_action(
 	},
 	11
 );
+
+
+// Add Google Fonts to block editor typography options
+add_filter(
+	'wp_theme_json_data_theme',
+	function ( WP_Theme_JSON_Data $json ) {
+		$google_fonts = [
+			[
+				'name'       => 'DM Sans',
+				'slug'       => 'dm-sans',
+				'fontFamily' => 'DM Sans, sans-serif',
+				'fontFace'   => [
+					[
+						'src'        => [
+							'https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2', // 400
+							'https://fonts.gstatic.com/s/dmsans/v15/rP2Cp2ywxg089UriAWCrOBw.woff2', // 700
+							'https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2', // variable
+						],
+						'fontWeight' => '100 900',
+						'fontStyle'  => 'normal',
+						'fontFamily' => 'DM Sans',
+					],
+				],
+			],
+			[
+				'name'       => 'Public Sans',
+				'slug'       => 'public-sans',
+				'fontFamily' => 'Public Sans, sans-serif',
+				'fontFace'   => [
+					[
+						'src'        => [
+							'https://fonts.gstatic.com/s/publicsans/v15/ijwOs5juQtsyLLR5jN4cxBEoRDf44uE.woff2', // 400
+							'https://fonts.gstatic.com/s/publicsans/v15/ijwPs5juQtsyLLR5jN4cxBEoRDf44uE.woff2', // 700
+							'https://fonts.gstatic.com/s/publicsans/v15/ijwOs5juQtsyLLR5jN4cxBEoRDf44uE.woff2', // variable
+						],
+						'fontWeight' => '100 900',
+						'fontStyle'  => 'normal',
+						'fontFamily' => 'Public Sans',
+					],
+				],
+			],
+			[
+				'name'       => 'Roboto',
+				'slug'       => 'roboto',
+				'fontFamily' => 'Roboto, sans-serif',
+				'fontFace'   => [
+					[
+						'src'        => [
+							'https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxM.woff2', // 400
+							'https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc9.woff2', // 700
+							'https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc6CsE.woff2', // variable
+						],
+						'fontWeight' => '100 900',
+						'fontStyle'  => 'normal',
+						'fontFamily' => 'Roboto',
+					],
+				],
+			],
+			[
+				'name'       => 'Segoe UI',
+				'slug'       => 'segoe-ui',
+				'fontFamily' => 'Segoe UI, Arial, sans-serif',
+				'fontFace'   => [],
+			],
+		];
+
+		$existing = $json->get_data()['settings']['typography']['fontFamilies']['theme'] ?? [];
+		$json->update_with(
+			[
+				'version'  => 3,
+				'settings' => [
+					'typography' => [
+						'fontFamilies' => [
+							...$google_fonts,
+							...$existing,
+						],
+					],
+				],
+			]
+		);
+		return $json;
+	},
+	10
+);
+
+// Enqueue Google Fonts in the block editor (all weights and variable fonts)
+add_action(
+	'enqueue_block_editor_assets',
+	function () {
+		wp_enqueue_style(
+			'colormag-google-fonts',
+			'https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&family=Public+Sans:wght@100..900&family=Roboto:wght@100..900&display=swap',
+			[],
+			null
+		);
+	}
+);
