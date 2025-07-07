@@ -4,6 +4,23 @@
   border-color: #E4E4E7;
   border-width: 0 0 1px 0;
 
+	.cm-site-title,.cm-site-description {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.cm-title-show-desktop,.cm-tagline-show-desktop {
+			display: block;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1024px) {
+		.cm-title-show-tablet, .cm-tagline-show-tablet { display: block; }
+	}
+	@media (max-width: 768px) {
+		.cm-title-show-mobile,.cm-tagline-show-mobile { display: block; }
+	}
+
 	.cm-menu-toggle[aria-expanded="true"] {
 
 		.cm-icon--bars {
