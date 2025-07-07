@@ -213,6 +213,7 @@ class Sanitization {
 			'customind-date'          => null,
 			'customind-sortable'      => null,
 			'customind-toggle-button' => null,
+			'customind-visibility-button' => null,
 			'customind-color-group'   => null,
 			'customind-accordion'     => null,
 			'customind-title'         => null,
