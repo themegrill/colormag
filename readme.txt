@@ -120,6 +120,8 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+* Added       - Option to set site title and tagline visibility.
+
 = Version 4.0.17 - 2025-06-09 =
 * Fix         - Typography slide issue.
 * Fix         - Fontawesome 6 issue.
