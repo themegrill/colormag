@@ -411,7 +411,11 @@ add_action(
 // Add Google Fonts to block editor typography options
 add_filter(
 	'wp_theme_json_data_theme',
-	function ( WP_Theme_JSON_Data $json ) {
+	function ( $json ) {
+
+		if ( ! class_exists( 'WP_Theme_JSON_Data' ) || ! ( $json instanceof WP_Theme_JSON_Data ) ) {
+			return $json;
+		}
 		$google_fonts = [
 			[
 				'name'       => 'DM Sans',

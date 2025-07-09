@@ -1,5 +1,8 @@
 == Changelog ==
-= 4.0.17 - 2025-07-07 =
+= 4.0.19 - 2025-07-09 =
+* Fix       - PHP error.
+
+= 4.0.18 - 2025-07-07 =
 * Added       - Option to set site title and tagline visibility.
 * Added       - New font families in editor typography.
 

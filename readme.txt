@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.18
+Version: 4.0.19
 Tested up to: 6.8
 Requires PHP: 7.4
 Requires at least: 4.7
-Stable tag: 4.0.18
+Stable tag: 4.0.19
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -120,6 +120,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.0.19 - 2025-07-09 =
+* Fix       - PHP error.
+
 = Version 4.0.18 - 2025-07-07 =
 * Added       - Option to set site title and tagline visibility.
 * Added       - New font families in editor typography.
