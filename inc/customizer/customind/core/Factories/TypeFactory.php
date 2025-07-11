@@ -6,6 +6,7 @@ use Customind\Core\Types\Controls\BuilderMigration;
 use Customind\Core\Types\Controls\Preset;
 use Customind\Core\Types\Controls\Socials;
 use Customind\Core\Types\Controls\Upgrade;
+use Customind\Core\Types\Controls\VisibilityButton;
 use Customind\Core\Types\Panel;
 use Customind\Core\Types\Section;
 use Customind\Core\Types\Controls\Date;
@@ -51,6 +52,7 @@ class TypeFactory {
 		'customind-title'              => Title::class,
 		'customind-toggle'             => Toggle::class,
 		'customind-toggle-button'      => ToggleButton::class,
+		'customind-visibility-button'      => VisibilityButton::class,
 		'customind-typography'         => Typography::class,
 		'customind-upsell'             => Upsell::class,
 		'customind-upgrade'            => Upgrade::class,

@@ -39,6 +39,7 @@ class Control extends \WP_Customize_Control {
 		'customind-editor',
 		'customind-select',
 		'customind-toggle-button',
+		'customind-visibility-button',
 		'customind-color-group',
 		'customind-accordion',
 		'customind-title',

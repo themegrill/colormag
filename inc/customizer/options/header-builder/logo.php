@@ -145,6 +145,26 @@ $options = array(
 						'colormag_enable_site_identity' => true,
 					),
 				),
+				'colormag_header_site_title_visibility' => [
+					'default'   => array(
+						'desktop',
+						'tablet',
+						'mobile',
+					),
+					'type'      => 'customind-visibility-button',
+					'title'     => esc_html__( 'Site Title Visibility', 'colormag' ),
+					'section'   => 'colormag_header_builder_logo',
+					'multiple'  => true,
+					'priority'  => 20,
+					'choices'   => [
+						'desktop' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.5 2.5h-12a2.333 2.333 0 0 0-2.333 2.308v7.5A2.342 2.342 0 0 0 4.5 14.642h5.167v1.325H7.5a.834.834 0 0 0 0 1.666h6a.833.833 0 1 0 0-1.666h-2.167V14.65H16.5a2.342 2.342 0 0 0 2.333-2.333v-7.5A2.333 2.333 0 0 0 16.5 2.5Zm.667 9.833A.667.667 0 0 1 16.5 13h-12a.666.666 0 0 1-.667-.667v-7.5a.658.658 0 0 1 .667-.666h12a.659.659 0 0 1 .667.658v7.508Z"/></svg>',
+						'tablet'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M15.042 18.4H5.958a2.276 2.276 0 0 1-2.275-2.275V4a2.267 2.267 0 0 1 2.275-2.267h9.084A2.267 2.267 0 0 1 17.317 4v12.125a2.275 2.275 0 0 1-2.275 2.275ZM5.958 3.24A.758.758 0 0 0 5.2 4v12.125a.758.758 0 0 0 .758.758h9.084a.758.758 0 0 0 .758-.758V4a.758.758 0 0 0-.758-.759H5.958Zm5.3 11.367a.758.758 0 0 0-.758-.758.758.758 0 1 0 .767.758h-.009Z"/></svg>',
+						'mobile'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14.292 18.333H6.709a2.275 2.275 0 0 1-2.267-2.275V3.941a2.267 2.267 0 0 1 2.267-2.274h7.583a2.267 2.267 0 0 1 2.267 2.266v12.134a2.275 2.275 0 0 1-2.267 2.266ZM6.709 3.192a.75.75 0 0 0-.75.75v12.125a.75.75 0 0 0 .75.758h7.583a.75.75 0 0 0 .75-.758V3.94a.75.75 0 0 0-.75-.75H6.709Zm4.558 11.358a.758.758 0 0 0-.758-.759.758.758 0 1 0 .766.759h-.008Z"/></svg>',
+					],
+					'condition' => array(
+						'colormag_enable_site_identity' => true,
+					),
+				],
 			),
 		),
 		'collapsible'  => apply_filters( 'colormag_header_site_identity_accordion_collapsible', false ),
@@ -220,6 +240,26 @@ $options = array(
 						'colormag_enable_site_tagline' => true,
 					),
 				),
+				'colormag_header_site_tagline_visibility' => [
+					'default'   => array(
+						'desktop',
+						'tablet',
+						'mobile',
+					),
+					'type'      => 'customind-visibility-button',
+					'title'     => esc_html__( 'Site Tagline Visibility', 'colormag' ),
+					'section'   => 'colormag_header_builder_logo',
+					'priority'  => 20,
+					'multiple'  => true,
+					'choices'   => [
+						'desktop' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.5 2.5h-12a2.333 2.333 0 0 0-2.333 2.308v7.5A2.342 2.342 0 0 0 4.5 14.642h5.167v1.325H7.5a.834.834 0 0 0 0 1.666h6a.833.833 0 1 0 0-1.666h-2.167V14.65H16.5a2.342 2.342 0 0 0 2.333-2.333v-7.5A2.333 2.333 0 0 0 16.5 2.5Zm.667 9.833A.667.667 0 0 1 16.5 13h-12a.666.666 0 0 1-.667-.667v-7.5a.658.658 0 0 1 .667-.666h12a.659.659 0 0 1 .667.658v7.508Z"/></svg>',
+						'tablet'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M15.042 18.4H5.958a2.276 2.276 0 0 1-2.275-2.275V4a2.267 2.267 0 0 1 2.275-2.267h9.084A2.267 2.267 0 0 1 17.317 4v12.125a2.275 2.275 0 0 1-2.275 2.275ZM5.958 3.24A.758.758 0 0 0 5.2 4v12.125a.758.758 0 0 0 .758.758h9.084a.758.758 0 0 0 .758-.758V4a.758.758 0 0 0-.758-.759H5.958Zm5.3 11.367a.758.758 0 0 0-.758-.758.758.758 0 1 0 .767.758h-.009Z"/></svg>',
+						'mobile'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14.292 18.333H6.709a2.275 2.275 0 0 1-2.267-2.275V3.941a2.267 2.267 0 0 1 2.267-2.274h7.583a2.267 2.267 0 0 1 2.267 2.266v12.134a2.275 2.275 0 0 1-2.267 2.266ZM6.709 3.192a.75.75 0 0 0-.75.75v12.125a.75.75 0 0 0 .75.758h7.583a.75.75 0 0 0 .75-.758V3.94a.75.75 0 0 0-.75-.75H6.709Zm4.558 11.358a.758.758 0 0 0-.758-.759.758.758 0 1 0 .766.759h-.008Z"/></svg>',
+					],
+					'condition' => array(
+						'colormag_enable_site_tagline' => true,
+					),
+				],
 			),
 		),
 		'collapsible'  => apply_filters( 'colormag_tagline_accordion_collapsible', false ),

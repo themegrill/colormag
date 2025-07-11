@@ -2,20 +2,20 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 4.0.17\n"
+"Project-Id-Version: ColorMag 4.0.19\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/colormag\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-09T11:51:58+00:00\n"
+"POT-Creation-Date: 2025-07-09T04:18:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: colormag\n"
 
 #. Theme Name of the theme
-#: style.css
+#: C:/laragon/www/one/wp-content/themes/colormag/style.css
 #: inc/admin/class-colormag-dashboard.php:152
 #: inc/admin/class-colormag-dashboard.php:182
 #: inc/admin/views/dashbaord.php:198
@@ -27,22 +27,22 @@ msgid "ColorMag"
 msgstr ""
 
 #. Theme URI of the theme
-#: style.css
+#: C:/laragon/www/one/wp-content/themes/colormag/style.css
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the theme
-#: style.css
+#: C:/laragon/www/one/wp-content/themes/colormag/style.css
 msgid "ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the theme
-#: style.css
+#: C:/laragon/www/one/wp-content/themes/colormag/style.css
 msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the theme
-#: style.css
+#: C:/laragon/www/one/wp-content/themes/colormag/style.css
 msgid "https://themegrill.com"
 msgstr ""
 
@@ -65,14 +65,12 @@ msgstr ""
 #. Translators: %1$s: Post title
 #: comments.php:39
 #: inc/ajax.php:53
-#, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. Translators: %1$s: Comment count, %2$s: Post title
 #: comments.php:45
 #: inc/ajax.php:60
-#, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
@@ -100,13 +98,16 @@ msgid "Comments are closed."
 msgstr ""
 
 #. Translators: 1: Panel Title.
-#: functions.php:92
-#, php-format
+#: functions.php:93
 msgid "Customizing ▶ %s"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:94
 msgid "Customizing"
+msgstr ""
+
+#: functions.php:400
+msgid "Upgrade to ColorMag Pro for more features and customization options."
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:38
@@ -132,7 +133,6 @@ msgstr ""
 
 #. translators: %s: Theme Name.
 #: inc/admin/class-colormag-dashboard.php:36
-#, php-format
 msgid "%s"
 msgstr ""
 
@@ -180,13 +180,11 @@ msgstr ""
 
 #. translators: %s: Smile icon
 #: inc/admin/class-colormag-theme-review-notice.php:87
-#, php-format
 msgid "The above word is just to draw your attention. %s"
 msgstr ""
 
 #. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag
 #: inc/admin/class-colormag-theme-review-notice.php:96
-#, php-format
 msgid "Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review."
 msgstr ""
 
@@ -196,7 +194,6 @@ msgstr ""
 
 #. translators: %s: Smiley icon
 #: inc/admin/class-colormag-theme-review-notice.php:110
-#, php-format
 msgid "Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s"
 msgstr ""
 
@@ -230,7 +227,6 @@ msgstr ""
 
 #. translators: 1: Username
 #: inc/admin/class-colormag-welcome-notice.php:64
-#, php-format
 msgid "Welcome %1$s!"
 msgstr ""
 
@@ -1187,31 +1183,26 @@ msgstr ""
 
 #. Translators: %s is the search query.
 #: inc/class-breadcrumb-trail.php:274
-#, php-format
 msgid "Search results for: %s"
 msgstr ""
 
 #. Translators: %s is the page number.
 #: inc/class-breadcrumb-trail.php:276
-#, php-format
 msgid "Page %s"
 msgstr ""
 
 #. Translators: %s is the page number.
 #: inc/class-breadcrumb-trail.php:278
-#, php-format
 msgid "Comment Page %s"
 msgstr ""
 
 #. Translators: Minute archive title. %s is the minute time format.
 #: inc/class-breadcrumb-trail.php:280
-#, php-format
 msgid "Minute %s"
 msgstr ""
 
 #. Translators: Weekly archive title. %s is the week date format.
 #: inc/class-breadcrumb-trail.php:282
-#, php-format
 msgid "Week %s"
 msgstr ""
 
@@ -1618,7 +1609,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:158
 #: inc/customizer/options/header-builder/date.php:75
 #: inc/customizer/options/header-builder/logo.php:140
-#: inc/customizer/options/header-builder/logo.php:215
+#: inc/customizer/options/header-builder/logo.php:235
 #: inc/customizer/options/header-builder/mobile-menu.php:92
 #: inc/customizer/options/header-builder/primary-menu.php:111
 #: inc/customizer/options/header-builder/primary-menu.php:177
@@ -1761,7 +1752,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/home-icon.php:14
 #: inc/customizer/options/header-builder/html-1.php:19
 #: inc/customizer/options/header-builder/logo.php:78
-#: inc/customizer/options/header-builder/logo.php:168
+#: inc/customizer/options/header-builder/logo.php:188
 #: inc/customizer/options/header-builder/main-area.php:40
 #: inc/customizer/options/header-builder/mobile-menu.php:19
 #: inc/customizer/options/header-builder/news-ticker.php:32
@@ -1878,7 +1869,6 @@ msgstr ""
 #. translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link.
 #: inc/customizer/options/footer-builder/copyright.php:13
 #: inc/helper/utils.php:16
-#, php-format
 msgid "Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s."
 msgstr ""
 
@@ -2474,7 +2464,6 @@ msgid "Site Logo"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/site-identity.php:22
-#: inc/customizer/options/header-builder/header-builder.php:80
 #: inc/customizer/options/header-builder/logo.php:20
 #: inc/customizer/panels-sections/panels-sections.php:157
 msgid "Logo"
@@ -2515,6 +2504,7 @@ msgid "From WordPress Date Setting"
 msgstr ""
 
 #: inc/customizer/options/header-builder/header-builder.php:9
+#: inc/customizer/options/header-builder/header-builder.php:80
 msgid "Site Title & Logo"
 msgstr ""
 
@@ -2606,8 +2596,16 @@ msgstr ""
 msgid "Border Radius"
 msgstr ""
 
-#: inc/customizer/options/header-builder/logo.php:154
+#: inc/customizer/options/header-builder/logo.php:155
+msgid "Site Title Visibility"
+msgstr ""
+
+#: inc/customizer/options/header-builder/logo.php:174
 msgid "Tagline"
+msgstr ""
+
+#: inc/customizer/options/header-builder/logo.php:250
+msgid "Site Tagline Visibility"
 msgstr ""
 
 #: inc/customizer/options/header-builder/news-ticker.php:14
@@ -2954,7 +2952,6 @@ msgstr ""
 
 #. Translators: 1. Comment date, 2. Comment time
 #: inc/template-tags.php:533
-#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -2976,13 +2973,11 @@ msgstr ""
 
 #. Translators: %s Post view count
 #: inc/template-tags.php:604
-#, php-format
 msgid "%s Views"
 msgstr ""
 
 #. Translators: 1. Post link, 2. Post time, 3. Post date
 #: inc/template-tags.php:826
-#, php-format
 msgid "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s %4$s</a></span>"
 msgstr ""
 
@@ -3300,7 +3295,6 @@ msgstr ""
 
 #. Translators: %1$s: Link to WP admin new post page.
 #: no-results.php:36
-#, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
@@ -3326,7 +3320,6 @@ msgstr ""
 
 #. Translators: %s: Search query.
 #: search.php:38
-#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -3351,24 +3344,20 @@ msgstr ""
 #. Translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
 #: sidebar-left.php:41
 #: sidebar.php:41
-#, php-format
 msgid "This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #: sidebar-two.php:20
-#, php-format
 msgid "This is an example widget to show how the Secondary sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets are added then this will be replaced by those widgets"
 msgstr ""
 
 #. Translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
 #: sidebar-woocommerce-left.php:28
-#, php-format
 msgid "This is an example widget to show how the WooCommerce Left Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #. Translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
 #: sidebar-woocommerce-right.php:28
-#, php-format
 msgid "This is an example widget to show how the WooCommerce Right Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
@@ -3397,25 +3386,21 @@ msgstr ""
 
 #. Translators: %s: Author name
 #: template-parts/hooks/content/content.php:47
-#, php-format
 msgid "Author: %s"
 msgstr ""
 
 #. Translators: %s: Day archive
 #: template-parts/hooks/content/content.php:61
-#, php-format
 msgid "Day: %s"
 msgstr ""
 
 #. Translators: %s: Month archive
 #: template-parts/hooks/content/content.php:68
-#, php-format
 msgid "Month: %s"
 msgstr ""
 
 #. Translators: %s: Year archive
 #: template-parts/hooks/content/content.php:75
-#, php-format
 msgid "Year: %s"
 msgstr ""
 
@@ -3437,19 +3422,16 @@ msgstr ""
 
 #. Translators: %1$s: Current year, %2$s: Site link
 #: template-parts/hooks/footer/footer.php:271
-#, php-format
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
 #. Translators: %1$s: Theme name, %2$s: ThemeGrill site link
 #: template-parts/hooks/footer/footer.php:271
-#, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #. Translators: %s: WordPress link
 #: template-parts/hooks/footer/footer.php:271
-#, php-format
 msgid "Powered by %s."
 msgstr ""
 

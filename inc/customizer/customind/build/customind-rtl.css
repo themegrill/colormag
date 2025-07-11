@@ -1849,6 +1849,14 @@ li.customize-control-customind-accordion {
 /*#customize-theme-controls .control-section-customind-upsell-section .accordion-section-title:hover, #customize-theme-controls .control-section-customind-upsell-section .accordion-section-title:focus {*/
 /*	border-left: 2px solid #024F74 !important;*/
 /*}*/
+
+.customind-visibility-btn-img {
+	transition: filter 0.2s;
+}
+button[data-state='active'] .customind-visibility-btn-img {
+	/* Example: apply a blue tint using filter (approximation) */
+	filter: brightness(0) saturate(100%) invert(32%) sepia(99%) saturate(747%) hue-rotate(176deg) brightness(97%) contrast(101%);
+}
 .placeholder\:font-normal::-moz-placeholder {
 		font-weight: 400;
 }
@@ -1915,6 +1923,9 @@ li.customize-control-customind-accordion {
 .hover\:bg-white:hover {
 		--tw-bg-opacity: 1;
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover\:fill-white:hover {
+		fill: #fff;
 }
 .hover\:text-\[\#135e96\]:hover {
 		--tw-text-opacity: 1;
@@ -2074,6 +2085,9 @@ li.customize-control-customind-accordion {
 .data-\[state\=active\]\:border-0[data-state=active] {
 		border-width: 0px;
 }
+.data-\[state\=active\]\:border-\[1px\][data-state=active] {
+		border-width: 1px;
+}
 .data-\[state\=inactive\]\:border-\[1px\][data-state=inactive] {
 		border-width: 1px;
 }
@@ -2091,6 +2105,10 @@ li.customize-control-customind-accordion {
 }
 .data-\[state\=inactive\]\:border-dashed[data-state=inactive] {
 		border-style: dashed;
+}
+.data-\[state\=active\]\:border-gray-300[data-state=active] {
+		--tw-border-opacity: 1;
+		border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .data-\[state\=active\]\:border-primary-500[data-state=active] {
 		--tw-border-opacity: 1;
@@ -2111,6 +2129,9 @@ li.customize-control-customind-accordion {
 .data-\[state\=active\]\:bg-primary-500[data-state=active] {
 		--tw-bg-opacity: 1;
 		background-color: rgb(37 123 193 / var(--tw-bg-opacity));
+}
+.data-\[state\=active\]\:bg-transparent[data-state=active] {
+		background-color: transparent;
 }
 .data-\[state\=active\]\:bg-white[data-state=active] {
 		--tw-bg-opacity: 1;

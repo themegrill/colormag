@@ -77,7 +77,7 @@ function customind_get_header_components() {
 		'mobile'  => array_filter(
 			array(
 				array(
-					'name'    => __( 'Logo', 'colormag' ),
+					'name'    => __( 'Site Title & Logo', 'colormag' ),
 					'section' => 'colormag_header_builder_logo',
 					'id'      => 'logo',
 				),
