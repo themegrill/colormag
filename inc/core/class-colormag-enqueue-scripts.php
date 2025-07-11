@@ -559,7 +559,6 @@ function colormag_enqueue_editor_assets() {
 }
 add_action( 'enqueue_block_editor_assets', 'colormag_enqueue_editor_assets' );
 
-
 if ( ! function_exists( 'colormag_darkcolor' ) ) :
 
 	/**
