@@ -1580,10 +1580,21 @@ body.demo-import-message-popup {
 }
 
 /* Notices. */
+.notice.colormag-notice {
+	margin-top: 16px;
+}
+
 .colormag-notice {
 	position: relative;
-	padding: 20px 20px 0 20px;
+	padding: 0;
 	border-left-color: #2563EB;
+	border-right-color: #C3C4C7;
+	border-bottom-color: #C3C4C7;
+	border-top-color: #C3C4C7;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-top-width: 0;
+	border-radius: 0 8px 8px 0;
 }
 
 .colormag-notice .links {
@@ -1620,6 +1631,10 @@ body.demo-import-message-popup {
 	gap: 24px;
 }
 
+.colormag-message__content .colormag-message__image img{
+	border-radius: 0 8px 8px 0;
+}
+
 .colormag-message__content .colormag-message__image {
 	display: flex;
 	flex: 0 0 160px;
@@ -1640,9 +1655,9 @@ body.demo-import-message-popup {
 
 .colormag-message__content .colormag-message__subheading {
 	color: #383838;
-	font-size: 12px;
+	font-size: 14px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: normal;
 	margin: unset;
 }
@@ -1653,15 +1668,16 @@ body.demo-import-message-popup {
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
-	margin-top: 4px;
+	margin-top: 6px;
 	margin-bottom: 16px;
 }
 
 .colormag-message__content .colormag-message__description {
 	color: #383838;
-	font-size: 13px;
+	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
+	line-height: normal;
 }
 
 .colormag-message__content .colormag-message__cta {
@@ -1700,9 +1716,9 @@ h2.colormag-message__heading {
 
 a.colormag-message-close {
 	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 10px 15px 10px 21px;
+	top: 2px;
+	right: 30px;
+	padding: 0;
 	font-size: 13px;
 	line-height: 1.23076923;
 	text-decoration: none;
@@ -1719,7 +1735,8 @@ a.colormag-message-close:before {
 .colormag-message__text {
 	max-width: 660px;
 	align-self: center;
-	margin-bottom: 24px;
+	padding: 28px 0 28px 32px;
+
 }
 
 .colormag-message__text img {
