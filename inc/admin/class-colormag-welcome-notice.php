@@ -38,18 +38,18 @@ class Colormag_Welcome_Notice {
 			'_colormag_notice_nonce'
 		);
 
-//		// Get the current user object
-//		$current_user = wp_get_current_user();
-//
-//		// Check if the user is logged in
-//		if ( 0 !== $current_user->ID ) {
-//			// Get the username
-//			$username = $current_user->user_login;
-//		}
-//
-//		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
-//			return;
-//		}
+		// Get the current user object
+		$current_user = wp_get_current_user();
+
+		// Check if the user is logged in
+		if ( 0 !== $current_user->ID ) {
+			// Get the username
+			$username = $current_user->user_login;
+		}
+
+		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+			return;
+		}
 		?>
 		<div id="message" class="notice notice-success colormag-notice">
 			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
