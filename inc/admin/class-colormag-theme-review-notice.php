@@ -69,73 +69,49 @@ class ColorMag_Theme_Review_Notice {
 		 * 2. If the user has ignored the message partially for 14 days.
 		 * 3. Dismiss always if clicked on 'I Already Did' button.
 		 */
-		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-14 day' ) ) || ( $ignored_notice_partially > strtotime( '-14 day' ) ) || ( $ignored_notice ) ) {
-			return;
-		}
+//		if ( ( get_option( 'colormag_theme_installed_time' ) > strtotime( '-14 day' ) ) || ( $ignored_notice_partially > strtotime( '-14 day' ) ) || ( $ignored_notice ) ) {
+//			return;
+//		}
 		?>
 		<div class="notice notice-success colormag-notice theme-review-notice" style="position:relative;">
-		<div class="colormag-message__content">
+			<div class="cm-review-notice-content">
+		<div class="colormag-review-message__content">
 			<div class="colormag-message__image">
 				<img class="colormag-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/colormag-logo-square.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
 			</div>
 			<div class="colormag-message-review__text">
-			<h3><?php echo esc_html( 'HAKUNA MATATA!' ); ?></h3>
-					<p>(
+			<h3><?php echo esc_html( 'Loving ColorMag? Help Others Discover It!' ); ?></h3>
+					<p class="cm-review-content">
 						<?php
 						printf(
-							/* translators: %s: Smile icon */
-							esc_html__( 'The above word is just to draw your attention. %s', 'colormag' ),
-							'<span class="dashicons dashicons-smiley smile-icon"></span>'
+						/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
+							esc_html__( "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %sYour input helps other users find quality themes & motivates us to keep improving.%s", 'colormag' ),
+							'<br>',
+							''
 						);
 						?>
-					)</p>
-					<p>
-						<?php
-							printf(
-								/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
-								esc_html__( 'Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review.', 'colormag' ),
-								'<strong>',
-								esc_html( wp_get_theme( get_template() ) ),
-								'</strong>'
-							);
-						?>
 					</p>
-					<strong>
-						<?php esc_html_e( 'What benefit would you have?', 'colormag' ); ?>
-					</strong>
-					<p>
-						<?php
-							printf(
-								/* translators: %s: Smiley icon */
-								esc_html__( 'Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s', 'colormag' ),
-								'<span class="dashicons dashicons-smiley smile-icon"></span>'
-							);
-						?>
-					</p>
+				<div class="colormag-five-start-review">
+					<img class="" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/cm-five-start.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
+					<p><?php esc_html_e( 'Rated 4.9/5 by 1,400+ users', 'colormag' ); ?></p>
+				</div>
 
 			<div class="links">
 				<a href="https://wordpress.org/support/theme/colormag/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">
-					<span class="dashicons dashicons-external"></span>
-					<span><?php esc_html_e( 'Sure, I\'d love to!', 'colormag' ); ?></span>
+					<span><?php esc_html_e( 'Leave a 5-Star Review', 'colormag' ); ?></span>
 				</a>
 
-				<a href="<?php echo esc_url( $dismiss_url ); ?>" class="btn button-secondary">
-					<span class="dashicons dashicons-smiley"></span>
-					<span><?php esc_html_e( 'I already did!', 'colormag' ); ?></span>
-				</a>
-
-				<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="btn button-secondary">
-					<span class="dashicons dashicons-calendar"></span>
+				<a href="<?php echo esc_url( $temporary_dismiss_url ); ?>" class="cm-maybe-button btn button-secondary">
 					<span><?php esc_html_e( 'Maybe later', 'colormag' ); ?></span>
 				</a>
 
-				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/colormag/' ); ?>" class="btn button-secondary" target="_blank">
-					<span class="dashicons dashicons-testimonial"></span>
-					<span><?php esc_html_e( 'I have a query', 'colormag' ); ?></span>
-				</a>
 			</div> <!-- /.links -->
 			</div>
 		</div>
+				<div class="colormag-global_review_image">
+					<img class="colormag-review-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/global-review.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
+				</div>
+			</div>
 
 			<a class="notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 		</div> <!-- /.theme-review-notice -->
