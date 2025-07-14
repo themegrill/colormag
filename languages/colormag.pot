@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-09T04:18:44+00:00\n"
+"POT-Creation-Date: 2025-07-14T11:57:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: colormag\n"
@@ -173,49 +173,33 @@ msgstr ""
 msgid "No changelog data available."
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:79
+#: inc/admin/class-colormag-theme-review-notice.php:80
+#: inc/admin/class-colormag-theme-review-notice.php:95
+#: inc/admin/class-colormag-theme-review-notice.php:112
 #: inc/migration/demo-import-migration.php:28
 msgid "Colormag"
 msgstr ""
 
-#. translators: %s: Smile icon
-#: inc/admin/class-colormag-theme-review-notice.php:87
-msgid "The above word is just to draw your attention. %s"
-msgstr ""
-
 #. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag
+#: inc/admin/class-colormag-theme-review-notice.php:88
+msgid "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %sYour input helps other users find quality themes & motivates us to keep improving.%s"
+msgstr ""
+
 #: inc/admin/class-colormag-theme-review-notice.php:96
-msgid "Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review."
+msgid "Rated 4.9/5 by 1,400+ users"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:104
-msgid "What benefit would you have?"
+#: inc/admin/class-colormag-theme-review-notice.php:101
+msgid "Leave a 5-Star Review"
 msgstr ""
 
-#. translators: %s: Smiley icon
-#: inc/admin/class-colormag-theme-review-notice.php:110
-msgid "Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s"
-msgstr ""
-
-#: inc/admin/class-colormag-theme-review-notice.php:119
-msgid "Sure, I'd love to!"
-msgstr ""
-
-#: inc/admin/class-colormag-theme-review-notice.php:124
-msgid "I already did!"
-msgstr ""
-
-#: inc/admin/class-colormag-theme-review-notice.php:129
+#: inc/admin/class-colormag-theme-review-notice.php:105
 msgid "Maybe later"
 msgstr ""
 
-#: inc/admin/class-colormag-theme-review-notice.php:134
-msgid "I have a query"
-msgstr ""
-
-#: inc/admin/class-colormag-theme-review-notice.php:154
-#: inc/admin/class-colormag-theme-review-notice.php:172
-#: inc/admin/class-colormag-welcome-notice.php:104
+#: inc/admin/class-colormag-theme-review-notice.php:130
+#: inc/admin/class-colormag-theme-review-notice.php:148
+#: inc/admin/class-colormag-welcome-notice.php:103
 #: inc/migration/class-colormag-migration.php:1193
 #: inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
@@ -236,14 +220,10 @@ msgstr ""
 
 #. translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag.
 #: inc/admin/class-colormag-welcome-notice.php:80
-msgid "Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!"
+msgid "Get started with professionally designed demo templates by clicking the button below. This will install and activate the ThemeGrill Demo Importer plugin, allowing you to import the theme’s demos easily."
 msgstr ""
 
-#: inc/admin/class-colormag-welcome-notice.php:87
-msgid "Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos."
-msgstr ""
-
-#: inc/admin/class-colormag-welcome-notice.php:108
+#: inc/admin/class-colormag-welcome-notice.php:107
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
