@@ -23,7 +23,7 @@ class Colormag_Welcome_Notice {
 	 *
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get Started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
 
 		return $html;
 	}
