@@ -1599,8 +1599,14 @@ body.demo-import-message-popup {
 	gap: 10px;
 	border-radius: 3px;
 	background: #2563EB;
-	box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
-	line-height: unset;
+	line-height: normal;
+	font-weight: 500;
+	font-size: 14px;
+	min-height: 37px;
+}
+
+.colormag-message__cta .button.button-hero:hover {
+	background: #124CC9;
 }
 
 .colormag-message__cta .button.button-secondary.button-hero {
@@ -3079,8 +3085,8 @@ body.demo-import-message-popup {
 
 .colormag-message__content .colormag-message__image {
 	display: flex;
-	flex: 0 0 160px;
-	object-fit: cover;
+	flex-wrap: wrap;
+	align-content: center;
 }
 
 .colormag-message__content .colormag-message__image img {
@@ -3254,6 +3260,10 @@ a.colormag-message-close:before {
 	color: #fff;
 }
 
+.colormag-notice.theme-review-notice .button-primary:hover {
+	background: #452CB9;
+}
+
 .colormag-notice.theme-review-notice .button-secondary {
 	color: #6547DB;
 	border-color: #6547DB;
@@ -3267,6 +3277,10 @@ a.colormag-message-close:before {
 	-webkit-border-radius: inherit;
 	-moz-border-radius: inherit;
 	border-radius: inherit;
+}
+
+.colormag-notice.theme-review-notice .button-secondary span:hover {
+	background: #F2F2F2;
 }
 
 .colormag-notice.theme-review-notice strong {

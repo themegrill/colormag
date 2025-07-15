@@ -93,8 +93,14 @@ $border-left-color_5: #6547DB;
 		gap: 10px;
 		border-radius: 3px;
 		background: #2563EB;
-		box-shadow: 0 1px 0 0 rgba(204, 204, 204, 0.5);
-		line-height: unset;
+		line-height: normal;
+		font-weight: 500;
+		font-size: 14px;
+		min-height: 37px;
+
+		&:hover {
+			background: #124CC9;
+		}
 	}
 	.button.button-secondary.button-hero {
 		background: rgba(15, 103, 173, 0.04);
@@ -1420,6 +1426,8 @@ body.demo-import-message-popup {
 				font-weight: 500;
 				line-height: normal;
 				padding: 10px 20px;
+
+
 			}
 		}
 	}
@@ -1446,8 +1454,8 @@ body.demo-import-message-popup {
 			border-radius: 0 8px 8px 0;
 		}
 		display: flex;
-		flex: 0 0 160px;
-		object-fit: cover;
+		flex-wrap: wrap;
+		align-content: center;
 		.colormag-screenshot {
 			width: 100%;
 			margin: 0;
@@ -1593,6 +1601,10 @@ a.colormag-message-close {
 		border-color: $border-color_5;
 		box-shadow: none;
 		color: $color_3;
+
+		&:hover {
+			background: #452CB9;
+		}
 	}
 	.button-secondary {
 		color: $color_20;
@@ -1605,6 +1617,10 @@ a.colormag-message-close {
 			-webkit-border-radius: inherit;
 			-moz-border-radius: inherit;
 			border-radius: inherit;
+
+			&:hover {
+				background: #F2F2F2;
+			}
 		}
 	}
 	strong {
@@ -1650,6 +1666,7 @@ a.colormag-message-close {
 		}
 	}
 }
+
 @media (min-width: 768px) {
 	.themegrill-demo-importer-BlankState {
 		padding-bottom: 695px;
