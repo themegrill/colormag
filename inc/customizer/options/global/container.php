@@ -112,10 +112,13 @@ $options = array(
 		'collapsible'  => apply_filters( 'colormag_demo_migrated_accordion_collapsible', false ),
 	),
 	'colormag_base_colors_upgrade'          => array(
-		'type'        => 'customind-upsell',
-		'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
-		'title'       => esc_html__( 'Learn more', 'colormag' ),
+		'type'        => 'customind-upgrade',
+		'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
+		'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
 		'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'points'      => array(
+			esc_html__( 'Container width adjustment', 'colormag' ),
+		),
 		'section'     => 'colormag_global_container_section',
 		'priority'    => 100,
 	),
