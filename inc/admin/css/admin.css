@@ -1591,7 +1591,7 @@ body.demo-import-message-popup {
 	filter: blur(1px);
 }
 
-.colormag-message__cta .button.button-hero {
+.colormag-message__cta .button.button-hero, .colormag-message__cta .updating-message {
 	display: flex;
 	padding: 10px 20px;
 	justify-content: center;
@@ -1603,9 +1603,10 @@ body.demo-import-message-popup {
 	font-weight: 500;
 	font-size: 14px;
 	min-height: 37px;
+	max-height: 37px;
 }
 
-.colormag-message__cta .button.button-hero:hover {
+.colormag-message__cta .button.button-hero:hover, .colormag-message__cta .updating-message:hover {
 	background: #124CC9;
 }
 

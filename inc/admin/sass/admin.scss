@@ -85,7 +85,7 @@ $border-left-color_5: #6547DB;
 	filter: blur(1px);
 }
 .colormag-message__cta {
-	.button.button-hero {
+	.button.button-hero,.updating-message {
 		display: flex;
 		padding: 10px 20px;
 		justify-content: center;
@@ -97,6 +97,7 @@ $border-left-color_5: #6547DB;
 		font-weight: 500;
 		font-size: 14px;
 		min-height: 37px;
+		max-height: 37px;
 
 		&:hover {
 			background: #124CC9;
