@@ -23,7 +23,7 @@ class Colormag_Welcome_Notice {
 	 *
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get Started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
 
 		return $html;
 	}
@@ -77,14 +77,13 @@ class Colormag_Welcome_Notice {
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Welcome! Thank you for choosing ColorMag! To get started with professionally designed pre-built templates from ColorMag, click on the button below!', 'colormag' )
+								esc_html__( 'Get started with professionally designed demo templates by clicking the button below. This will install and activate the ThemeGrill Demo Importer plugin, allowing you to import the theme’s demos easily.', 'colormag' )
 							);
 							?>
 						</p>
 					</div>
 					<div class="colormag-message__cta">
 						<?php echo $this->import_button_html(); ?>
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos.', 'colormag' ); ?></span>
 					</div>
 				</div>
 				<div class="colormag-message__image">
