@@ -1580,6 +1580,10 @@ body.demo-import-message-popup {
 /* Welcome notice. */
 /* Colormag review notice */
 /* Responsive. */
+.wp-theme-colormag.update-php .colormag-notice {
+	display: none;
+}
+
 .colormag-wrap .colormag-header {
 	background-color: #fff;
 	padding: 0;

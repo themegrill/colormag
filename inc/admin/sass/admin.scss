@@ -73,6 +73,15 @@ $border-left-color_5: #6547DB;
 /* Welcome notice. */
 /* Colormag review notice */
 /* Responsive. */
+
+.wp-theme-colormag {
+	&.update-php {
+		.colormag-notice {
+			display: none;
+		}
+	}
+}
+
 .colormag-wrap {
 	.colormag-header {
 		background-color: $background-color_1;
