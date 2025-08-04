@@ -1118,6 +1118,12 @@ table td {
 	border-top: none;
 }
 
+.cm-header-builder .cm-header-main-row #cm-primary-nav {
+	box-shadow: none;
+	background-color: transparent;
+	border-top: none;
+}
+
 .cm-header-builder .cm-header-top-row {
 	background-color: #f4f4f5;
 	padding-bottom: 8px;
