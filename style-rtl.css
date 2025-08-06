@@ -500,6 +500,16 @@ body {
 	background-size: cover;
 }
 
+body #page {
+	display: flex;
+	flex-direction: column;
+	min-height: 96vh;
+}
+
+body .cm-content {
+	flex-grow: 1;
+}
+
 body.clickable-background-image {
 	position: relative;
 }
