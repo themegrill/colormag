@@ -63,7 +63,7 @@ function customind_get_header_components() {
 					'id'      => 'news-ticker',
 				),
 				array(
-					'name'    => __( 'Random', 'colormag' ),
+					'name'    => __( 'Random Post Viewer', 'colormag' ),
 					'section' => 'colormag_header_builder_random',
 					'id'      => 'random',
 				),
