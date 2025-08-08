@@ -271,14 +271,110 @@
 		}
 	}
 
-	.social-style-1 {
-		gap: 0px;
-		a{
-			border-right: 1px solid #4E4E4E;
-			padding: 0 10px;
+	.social-icons {
+		display: flex;
+		align-items: center;
 
-			&:last-child {
-				border-right: none;
+		// Default styling for the social icon links
+		a {
+			font-size: 20px; // Adjust size of icons
+		}
+
+		// Separator styles
+		&.social-separator-dot {
+			a {
+				margin-right: 5px;
+				&:after {
+					content: "•";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-line {
+			a {
+				&:after {
+					content: "|";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-space {
+			a {
+				&:after {
+					content: " ";
+				}
+			}
+		}
+
+		&.social-separator-slash {
+			a {
+				&:after {
+					content: "/";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-pipe {
+			a {
+				&:after {
+					content: "|";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-bullet {
+			a {
+				&:after {
+					content: "•";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-hyphen {
+			a {
+				&:after {
+					content: "-";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-comma {
+			a {
+				&:after {
+					content: ",";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-chevron {
+			a {
+				&:after {
+					content: "›";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&.social-separator-arrow {
+			a {
+				&:after {
+					content: "→";
+					margin-left: 10px;
+				}
+			}
+		}
+
+		// Remove the separator after the last social icon
+		a:last-child {
+			&:after {
+				content: none;
 			}
 		}
 	}

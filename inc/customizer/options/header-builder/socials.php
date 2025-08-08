@@ -32,6 +32,24 @@ $options = array(
 						'style-1' => esc_html__( 'Style 1', 'colormag' ),
 					),
 				),
+				'colormag_header_socials_separator'   => array(
+					'default'   => 'pipe',
+					'type'      => 'customind-select',
+					'title'     => esc_html__( 'Separator', 'colormag' ),
+					'section'   => 'colormag_header_builder_socials',
+					'choices'   => array(
+						'pipe'    => esc_html__( 'Pipe (|)', 'colormag' ),
+						'dot'     => esc_html__( 'Dot (•)', 'colormag' ),
+						'slash'   => esc_html__( 'Slash (/)', 'colormag' ),
+						'bullet'  => esc_html__( 'Bullet (•)', 'colormag' ),
+						'hyphen'  => esc_html__( 'Hyphen (-)', 'colormag' ),
+						'chevron' => esc_html__( 'Chevron (›)', 'colormag' ),
+						'arrow'   => esc_html__( 'Arrow (→)', 'colormag' ),
+					),
+					'condition' => array(
+						'colormag_header_socials_style' => 'style-1',
+					),
+				),
 				'colormag_header_socials'             => array(
 					'type'    => 'customind-socials',
 					'title'   => esc_html__( 'Social', 'colormag' ),
