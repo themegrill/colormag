@@ -41,7 +41,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			);
 
 			// Only add nonce and ajaxurl if user has appropriate capabilities
-			if ( current_user_can( 'install_plugins' ) || current_user_can( 'activate_plugins' ) ) {
+			if ( current_user_can( 'manage_options' ) ) {
 				$welcome_data['nonce']   = wp_create_nonce( 'colormag_demo_import_nonce' );
 				$welcome_data['ajaxurl'] = admin_url( 'admin-ajax.php' );
 			}

@@ -127,7 +127,18 @@ class Colormag_Welcome_Notice {
 	 * Handle the AJAX process while import or get started button clicked.
 	 */
 	public function welcome_notice_import_handler() {
+
 		check_ajax_referer( 'colormag_demo_import_nonce', 'security' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error(
+				array(
+					'errorCode'    => 'permission_denied',
+					'errorMessage' => __( 'You do not have permission to perform this action.', 'colormag' ),
+				)
+			);
+			exit;
+		}
 
 		$state = '';
 
