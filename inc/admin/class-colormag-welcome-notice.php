@@ -32,6 +32,11 @@ class Colormag_Welcome_Notice {
 	 * Show welcome notice.
 	 */
 	public function welcome_notice_markup() {
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		$dismiss_url = wp_nonce_url(
 			remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ),
 			'colormag_hide_notices_nonce',
