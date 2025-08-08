@@ -23,7 +23,7 @@ class Colormag_Welcome_Notice {
 	 *
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get Started', 'colormag' ) . '">' . esc_html__( 'Get started', 'colormag' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Let’s Get Started', 'colormag' ) . '">' . esc_html__( 'Let’s Get Started', 'colormag' ) . '</a>';
 
 		return $html;
 	}
@@ -57,24 +57,14 @@ class Colormag_Welcome_Notice {
 		}
 		?>
 		<div id="message" class="notice notice-success colormag-notice">
-			<a class="colormag-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 
 			<div class="colormag-message__content">
 				<div class="colormag-message__text">
 					<div class="colormag-message__head">
-						<p class="colormag-message__subheading">
-							<?php
-							printf(
-							/* translators: 1: Username */
-								esc_html__( 'Welcome %1$s!', 'colormag' ),
-								$username
-							);
-							?>
-						</p>
 						<h2 class="colormag-message__heading">
 							<?php
 							printf(
-								esc_html__( 'Start Building with ColorMag!', 'colormag' )
+								esc_html__( 'Thank You for Choosing ColorMag!', 'colormag' )
 							);
 							?>
 						</h2>
@@ -82,7 +72,7 @@ class Colormag_Welcome_Notice {
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Get started with professionally designed demo templates by clicking the button below. This will install and activate the ThemeGrill Demo Importer plugin, allowing you to import the theme’s demos easily.', 'colormag' )
+								esc_html__( 'Jumpstart your website with our professionally designed starter templates — crafted for almost every niche. Create a beautiful, fully functional site in just a few clicks.', 'colormag' )
 							);
 							?>
 						</p>
@@ -90,6 +80,9 @@ class Colormag_Welcome_Notice {
 					<div class="colormag-message__cta">
 						<?php echo $this->import_button_html(); ?>
 					</div>
+					<a href="<?php echo esc_url( $dismiss_url ); ?>" class="cm-welcome-notice-remove">
+						<?php esc_html_e( 'I prefer to build from scratch', 'colormag' ); ?>
+					</a>
 				</div>
 				<div class="colormag-message__image">
 					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/colormag-welcome-banner.png" alt="ColorMag Templates">
