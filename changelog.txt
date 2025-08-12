@@ -1,4 +1,9 @@
 == Changelog ==
+= 4.0.20 - 2025-08-12 =
+* Update    - Dashboard notice.
+* Update    - General security measure.
+* Fix       - Footer now stays at the bottom on pages with minimal content.
+
 = 4.0.19 - 2025-07-09 =
 * Fix       - PHP error.
 
