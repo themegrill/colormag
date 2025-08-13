@@ -599,7 +599,41 @@ if ( ! function_exists( 'colormag_menu_fallback' ) ) :
 
 		$output .= '</ul>';
 
-		echo esc_html( $output );
+		echo wp_kses(
+			$output,
+			array(
+				'ul'   => array(
+					'id'    => true,
+					'class' => true,
+				),
+				'li'   => array(
+					'class' => true,
+				),
+				'a'    => array(
+					'href'  => true,
+					'title' => true,
+					'class' => true,
+				),
+				'span' => array(
+					'class' => true,
+				),
+				'svg'  => array(
+					'class'     => true,
+					'xmlns'     => true,
+					'viewBox'   => true,
+					'xml:space' => true,
+					'role'      => true,
+					'path'      => array(
+						'd'      => true,
+						'fill'   => true,
+						'stroke' => true,
+					),
+				),
+				'div'  => array(
+					'class' => true,
+				),
+			)
+		);
 	}
 
 endif;
