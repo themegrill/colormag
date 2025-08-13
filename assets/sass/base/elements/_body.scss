@@ -7,6 +7,16 @@ body {
 	padding-bottom: length( 'l-5' );
 	background-size: cover;
 
+	#page {
+		display: flex;
+		flex-direction: column;
+		min-height: 96vh;
+	}
+
+	.cm-content {
+		flex-grow: 1;
+	}
+
 	&.clickable-background-image {
 		position: relative;
 

@@ -1455,6 +1455,15 @@ body.demo-import-message-popup {
 		color: $color_17;
 	}
 }
+
+.cm-welcome-notice-remove {
+	color: #7A7A7A;
+
+	&:hover {
+		color: #2563EB;
+	}
+}
+
 .colormag-message__content {
 	display: flex;
 	gap: 24px;
@@ -1505,6 +1514,8 @@ body.demo-import-message-popup {
 		display: flex;
 		align-items: center;
 		gap: 24px;
+		margin-bottom: 16px;
+
 		.plugin-install-notice {
 			color: $color_18;
 			font-size: 13px;

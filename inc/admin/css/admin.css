@@ -3082,6 +3082,14 @@ body.demo-import-message-popup {
 	color: #111;
 }
 
+.cm-welcome-notice-remove {
+	color: #7A7A7A;
+}
+
+.cm-welcome-notice-remove:hover {
+	color: #2563EB;
+}
+
 .colormag-message__content {
 	display: flex;
 	gap: 24px;
@@ -3141,6 +3149,7 @@ body.demo-import-message-popup {
 	display: flex;
 	align-items: center;
 	gap: 24px;
+	margin-bottom: 16px;
 }
 
 .colormag-message__content .colormag-message__cta .plugin-install-notice {
