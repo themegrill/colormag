@@ -2220,15 +2220,28 @@ table td {
 
 @media (max-width: 600px) {
 	.search-form-top.show {
-		width: 50vw;
-		max-width: 50vw;
+		width: 70vw;
+		max-width: 70vw;
 	}
 }
 
-@media (min-width: 601px) {
+@media (min-width: 600px) and (max-width: 767px) {
 	.search-form-top.show {
-		width: 20vw;
-		max-width: 20vw;
+		width: 60vw;
+		max-width: 60vw;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.search-form-top.show {
+		width: 40vw;
+		max-width: 40vw;
+	}
+}
+
+@media (min-width: 1025px) {
+	.search-form-top.show {
+		width: 400px;
 	}
 }
 
