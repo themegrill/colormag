@@ -47,6 +47,7 @@ jQuery(document).ready(function () {
 		}
 
 		adjustSearchFormPosition();
+
 		// For esc key press.
 		jQuery(document).on('keyup', function (e) {
 			// On esc key press.
