@@ -48,6 +48,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			}
 
 			set_theme_mod( 'colormag_default_sidebar_layout', 'no_sidebar_full_width' );
+			set_theme_mod( 'colormag_page_sidebar_layout', 'no_sidebar_full_width' );
 			update_option( 'colormag_sidebar_layout_migration', true );
 		}
 
