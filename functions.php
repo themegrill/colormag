@@ -353,13 +353,15 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 function colormag_maybe_enable_builder() {
 
-	if ( get_option( 'colormag_builder_migration' ) ) {
+	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
 		return true;
 	}
 
 	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
 		return false;
 	}
+
+	update_option( 'colormag_maybe_enable_builder', true );
 
 	return true;
 }

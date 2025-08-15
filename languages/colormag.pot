@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-12T08:41:15+00:00\n"
+"POT-Creation-Date: 2025-08-15T04:05:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: colormag\n"
@@ -2177,7 +2177,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/header-builder.php:51
 #: inc/customizer/options/header-builder/header-builder.php:137
 #: inc/customizer/options/header-builder/socials.php:6
-#: inc/customizer/options/header-builder/socials.php:37
+#: inc/customizer/options/header-builder/socials.php:55
 #: inc/customizer/panels-sections/panels-sections.php:212
 msgid "Social"
 msgstr ""
@@ -2797,6 +2797,38 @@ msgstr ""
 
 #: inc/customizer/options/header-builder/socials.php:32
 msgid "Style 1"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:38
+msgid "Separator"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:41
+msgid "Pipe (|)"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:42
+msgid "Dot (•)"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:43
+msgid "Slash (/)"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:44
+msgid "Bullet (•)"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:45
+msgid "Hyphen (-)"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:46
+msgid "Chevron (›)"
+msgstr ""
+
+#: inc/customizer/options/header-builder/socials.php:47
+msgid "Arrow (→)"
 msgstr ""
 
 #: inc/customizer/options/woocommerce/woocommerce.php:27

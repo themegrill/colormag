@@ -36,6 +36,7 @@ class ColorMag_Theme_Review_Notice {
 	public function review_notice() {
 		// Set the installed time in `colormag_theme_installed_time` option table.
 		if ( ! get_option( 'colormag_theme_installed_time' ) ) {
+			do_action( 'colormag_theme_review_notice_set_time' );
 			update_option( 'colormag_theme_installed_time', time() );
 		}
 	}
