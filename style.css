@@ -503,7 +503,7 @@ body {
 body #page {
 	display: flex;
 	flex-direction: column;
-	min-height: 96vh;
+	min-height: calc( 100vh - var(--wp-admin--admin-bar--height, 0px));
 }
 
 body .cm-content {
@@ -1300,17 +1300,70 @@ table td {
 	font-size: 16px;
 }
 
-.cm-header-builder .social-style-1 {
-	gap: 0px;
+.cm-header-builder .social-icons {
+	display: flex;
+	align-items: center;
 }
 
-.cm-header-builder .social-style-1 a {
-	border-right: 1px solid #4E4E4E;
-	padding: 0 10px;
+.cm-header-builder .social-icons a {
+	font-size: 20px;
 }
 
-.cm-header-builder .social-style-1 a:last-child {
-	border-right: none;
+.cm-header-builder .social-icons.social-separator-dot a {
+	margin-right: 5px;
+}
+
+.cm-header-builder .social-icons.social-separator-dot a:after {
+	content: "•";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-line a:after {
+	content: "|";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-space a:after {
+	content: " ";
+}
+
+.cm-header-builder .social-icons.social-separator-slash a:after {
+	content: "/";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-pipe a:after {
+	content: "|";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-bullet a:after {
+	content: "•";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-hyphen a:after {
+	content: "-";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-comma a:after {
+	content: ",";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-chevron a:after {
+	content: "›";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-arrow a:after {
+	content: "→";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons a:last-child:after {
+	content: none;
 }
 
 .cm-header-builder.cm-layout-1-transparent {
@@ -2013,7 +2066,7 @@ table td {
 }
 
 .cm-top-search {
-	position: initial;
+	position: relative;
 }
 
 .cm-top-search:has(.show) .fa.search-top::before {
@@ -2106,7 +2159,8 @@ table td {
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
 	top: -10px;
-	right: 54px;
+	right: 10px;
+	left: var(--arrow-left, auto);
 }
 
 .search-form-top :focus-visible {
@@ -2155,19 +2209,23 @@ table td {
 	font-size: 32px;
 }
 
-.search-form-top.show {
-	width: unset;
+@media (max-width: 600px) {
+	.search-form-top.show {
+		width: 50vw;
+		max-width: 50vw;
+	}
+}
+
+@media (min-width: 601px) and (max-width: 2000px) {
+	.search-form-top.show {
+		width: 20vw;
+		max-width: 20vw;
+	}
 }
 
 @media screen and (min-width: 48em) {
 	.cm-header-actions {
 		flex-basis: unset;
-	}
-	.search-form-top.show {
-		width: 570px;
-	}
-	.search-form-top.show::before {
-		right: 10px;
 	}
 	.cm-top-search {
 		position: relative;
