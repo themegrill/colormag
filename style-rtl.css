@@ -2209,6 +2209,15 @@ table td {
 	font-size: 32px;
 }
 
+@media screen and (min-width: 48em) {
+	.cm-header-actions {
+		flex-basis: unset;
+	}
+	.cm-top-search {
+		position: relative;
+	}
+}
+
 @media (max-width: 600px) {
 	.search-form-top.show {
 		width: 50vw;
@@ -2216,19 +2225,10 @@ table td {
 	}
 }
 
-@media (min-width: 601px) and (max-width: 2000px) {
+@media (min-width: 601px) {
 	.search-form-top.show {
 		width: 20vw;
 		max-width: 20vw;
-	}
-}
-
-@media screen and (min-width: 48em) {
-	.cm-header-actions {
-		flex-basis: unset;
-	}
-	.cm-top-search {
-		position: relative;
 	}
 }
 
