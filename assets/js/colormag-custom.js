@@ -3,7 +3,9 @@
  *
  * @package ColorMag
  */
-jQuery(document).ready(function () {
+
+// Main initialization function
+function colormagInit() {
 	/**
 	 * Search.
 	 */
@@ -13,63 +15,70 @@ jQuery(document).ready(function () {
 	};
 
 	// For Search Icon Toggle effect added at the top.
-	jQuery('.search-top').click(function () {
-		jQuery(this).next('#cm-masthead .search-form-top').toggleClass('show');
+	// Use event delegation to handle dynamically moved elements
+	jQuery(document)
+		.off('click.colormag', '.search-top')
+		.on('click.colormag', '.search-top', function () {
+			jQuery(this).next('#cm-masthead .search-form-top').toggleClass('show');
 
-		jQuery('#cm-content').toggleClass('backdrop');
-		// Focus after some time to fix conflict with toggleClass.
-		setTimeout(function () {
-			jQuery('#cm-masthead .search-form-top input').focus();
-		}, 200);
+			jQuery('#cm-content').toggleClass('backdrop');
+			// Focus after some time to fix conflict with toggleClass.
+			setTimeout(function () {
+				jQuery('#cm-masthead .search-form-top input').focus();
+			}, 200);
 
-		// Function to adjust search form position to prevent horizontal overflow
-		function adjustSearchFormPosition() {
-			var $form = jQuery(
-				'.cm-desktop-row .search-form-top.show, .cm-mobile-row .search-form-top.show',
-			);
-			if (!$form.length) return;
+			// Function to adjust search form position to prevent horizontal overflow
+			function adjustSearchFormPosition() {
+				var $form = jQuery(
+					'.cm-desktop-row .search-form-top.show, .cm-mobile-row .search-form-top.show',
+				);
+				if (!$form.length) return;
 
-			// Reset to default before checking
-			$form.css({ right: '', left: '' });
+				// Reset to default before checking
+				$form.css({ right: '', left: '' });
 
-			var rect = $form[0].getBoundingClientRect();
-			var viewportWidth = window.innerWidth;
+				var rect = $form[0].getBoundingClientRect();
+				var viewportWidth = window.innerWidth;
 
-			if (rect.right > viewportWidth) {
-				// Overflowing right, align to right edge
-				$form.css({ right: 0, left: 'auto' });
-				$form.css({ '--arrow-right': 10 + 'px' });
-			} else if (rect.left < 0) {
-				// Overflowing left, align to left edge
-				$form.css({ left: 0, right: 'auto' });
-				$form.css({ '--arrow-left': 10 + 'px' });
-			}
-		}
-
-		adjustSearchFormPosition();
-
-		// For esc key press.
-		jQuery(document).on('keyup', function (e) {
-			// On esc key press.
-			if (27 === e.keyCode) {
-				// If search box is opened.
-				if (jQuery('#cm-masthead .search-form-top').hasClass('show')) {
-					hideSearchForm();
+				if (rect.right > viewportWidth) {
+					// Overflowing right, align to right edge
+					$form.css({ right: 0, left: 'auto' });
+					$form.css({ '--arrow-right': 10 + 'px' });
+				} else if (rect.left < 0) {
+					// Overflowing left, align to left edge
+					$form.css({ left: 0, right: 'auto' });
+					$form.css({ '--arrow-left': 10 + 'px' });
 				}
 			}
+
+			adjustSearchFormPosition();
+
+			// For esc key press.
+			jQuery(document)
+				.off('keyup.colormag')
+				.on('keyup.colormag', function (e) {
+					// On esc key press.
+					if (27 === e.keyCode) {
+						// If search box is opened.
+						if (jQuery('#cm-masthead .search-form-top').hasClass('show')) {
+							hideSearchForm();
+						}
+					}
+				});
+
+			jQuery(document)
+				.off('click.outEvent.colormag')
+				.on('click.outEvent.colormag', function (e) {
+					if (e.target.closest('.cm-top-search')) {
+						return;
+					}
+
+					hideSearchForm();
+
+					// Unbind current click event.
+					jQuery(document).off('click.outEvent.colormag');
+				});
 		});
-
-		jQuery(document).on('click.outEvent', function (e) {
-			if (e.target.closest('.cm-top-search')) {
-				return;
-			}
-
-			hideSearchForm();
-
-			// Unbind current click event.
-			jQuery(document).off('click.outEvent');
-		});
-	});
 
 	/**
 	 * Scroll to top JS setting.
@@ -78,23 +87,27 @@ jQuery(document).ready(function () {
 	jQuery('#scroll-up').hide();
 
 	// Scroll up settings.
-	jQuery(window).scroll(function () {
-		if (jQuery(this).scrollTop() > 1000) {
-			jQuery('#scroll-up').fadeIn();
-		} else {
-			jQuery('#scroll-up').fadeOut();
-		}
-	});
+	jQuery(window)
+		.off('scroll.colormag')
+		.on('scroll.colormag', function () {
+			if (jQuery(this).scrollTop() > 1000) {
+				jQuery('#scroll-up').fadeIn();
+			} else {
+				jQuery('#scroll-up').fadeOut();
+			}
+		});
 
-	jQuery('a#scroll-up').click(function () {
-		jQuery('body,html').animate(
-			{
-				scrollTop: 0,
-			},
-			800,
-		);
-		return false;
-	});
+	jQuery('a#scroll-up')
+		.off('click.colormag')
+		.on('click.colormag', function () {
+			jQuery('body,html').animate(
+				{
+					scrollTop: 0,
+				},
+				800,
+			);
+			return false;
+		});
 
 	/**
 	 * Better responsive menu settings.
@@ -104,29 +117,33 @@ jQuery(document).ready(function () {
 	jQuery('.cm-menu-primary-container .menu-item-has-children');
 
 	// Adds down icon for menu with sub menu.
-	jQuery('.cm-submenu-toggle').click(function () {
-		jQuery(this)
-			.parent('.menu-item-has-children')
-			.children('ul.sub-menu')
-			.first()
-			.slideToggle('1000');
-	});
+	jQuery('.cm-submenu-toggle')
+		.off('click.colormag')
+		.on('click.colormag', function () {
+			jQuery(this)
+				.parent('.menu-item-has-children')
+				.children('ul.sub-menu')
+				.first()
+				.slideToggle('1000');
+		});
 
-	jQuery(document).on(
-		'click',
-		'#cm-primary-nav ul li.menu-item-has-children > a',
-		function (event) {
-			var menuClass = jQuery(this).parent('.menu-item-has-children');
+	jQuery(document)
+		.off('click.colormag', '#cm-primary-nav ul li.menu-item-has-children > a')
+		.on(
+			'click.colormag',
+			'#cm-primary-nav ul li.menu-item-has-children > a',
+			function (event) {
+				var menuClass = jQuery(this).parent('.menu-item-has-children');
 
-			if (!menuClass.hasClass('focus') && jQuery(window).width() <= 768) {
-				menuClass.addClass('focus');
-				event.preventDefault();
-				menuClass.children('.sub-menu').css({
-					display: 'block',
-				});
-			}
-		},
-	);
+				if (!menuClass.hasClass('focus') && jQuery(window).width() <= 768) {
+					menuClass.addClass('focus');
+					event.preventDefault();
+					menuClass.children('.sub-menu').css({
+						display: 'block',
+					});
+				}
+			},
+		);
 
 	/**
 	 * Scrollbar on fixed responsive menu.
@@ -139,7 +156,15 @@ jQuery(document).ready(function () {
 	} else {
 		stickyElement = '.cm-primary-nav';
 	}
-	jQuery(window).on('load', function () {
+
+	// Check if window is already loaded
+	if (document.readyState === 'complete') {
+		initStickyMenu();
+	} else {
+		jQuery(window).off('load.colormag').on('load.colormag', initStickyMenu);
+	}
+
+	function initStickyMenu() {
 		if (
 			window.matchMedia('(max-width: 768px)').matches &&
 			jQuery(
@@ -153,7 +178,7 @@ jQuery(document).ready(function () {
 			menu.css('max-height', availableMenuHeight);
 			menu.addClass('menu-scrollbar');
 		}
-	});
+	}
 
 	// add widget block title class.
 	jQuery('.wp-block-group__inner-container h2').wrap(
@@ -349,44 +374,46 @@ jQuery(document).ready(function () {
 			playerframe.css('visibility', 'visible').fadeIn();
 		});
 
-		playercontainer.on('click', '.video-playlist-item', function () {
-			var item = jQuery(this);
-			var iframe_id = item.data('id');
-			var current_video_id = jQuery('#' + iframe_id);
-			var src = item.data('src');
+		playercontainer
+			.off('click.colormag', '.video-playlist-item')
+			.on('click.colormag', '.video-playlist-item', function () {
+				var item = jQuery(this);
+				var iframe_id = item.data('id');
+				var current_video_id = jQuery('#' + iframe_id);
+				var src = item.data('src');
 
-			// Pause all videos if a item is clicked.
-			playercontainer.find('.player-frame').each(function () {
-				jQuery(this).pauseVideo().hide();
-			});
+				// Pause all videos if a item is clicked.
+				playercontainer.find('.player-frame').each(function () {
+					jQuery(this).pauseVideo().hide();
+				});
 
-			if (!current_video_id.length) {
-				playercontainer
-					.find('.video-frame')
-					.append(
-						'<iframe id="' +
-							iframe_id +
-							'" class="player-frame" src="' +
-							src +
-							'" frameborder="0" width="100%" height="434" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+				if (!current_video_id.length) {
+					playercontainer
+						.find('.video-frame')
+						.append(
+							'<iframe id="' +
+								iframe_id +
+								'" class="player-frame" src="' +
+								src +
+								'" frameborder="0" width="100%" height="434" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+						);
+					current_video_id = jQuery('#' + iframe_id);
+					current_video_id.video();
+
+					current_video_id.addVideoEvent(
+						'ready',
+						function (e, $current_video_id, video_type) {
+							current_video_id.playVideo();
+						},
 					);
-				current_video_id = jQuery('#' + iframe_id);
-				current_video_id.video();
+				} else {
+					current_video_id.playVideo();
+				}
 
-				current_video_id.addVideoEvent(
-					'ready',
-					function (e, $current_video_id, video_type) {
-						current_video_id.playVideo();
-					},
-				);
-			} else {
-				current_video_id.playVideo();
-			}
+				current_video_id.css('visibility', 'visible').fadeIn();
 
-			current_video_id.css('visibility', 'visible').fadeIn();
-
-			update_video_status(playercontainer);
-		});
+				update_video_status(playercontainer);
+			});
 	});
 
 	// Update Video status.
@@ -461,71 +488,155 @@ jQuery(document).ready(function () {
 			pinterestWindow;
 
 		if (facebookShare) {
-			jQuery(facebookShare).click(function (e) {
-				e.preventDefault();
-				facebookWindow = window.open(
-					'https://www.facebook.com/sharer/sharer.php?u=' +
-						document.URL +
-						'&p[title]=' +
-						document.title,
-					'facebook-popup',
-					'height=350,width=600',
-				);
+			jQuery(facebookShare)
+				.off('click.colormag')
+				.on('click.colormag', function (e) {
+					e.preventDefault();
+					facebookWindow = window.open(
+						'https://www.facebook.com/sharer/sharer.php?u=' +
+							document.URL +
+							'&p[title]=' +
+							document.title,
+						'facebook-popup',
+						'height=350,width=600',
+					);
 
-				if (facebookWindow.focus) {
-					facebookWindow.focus();
-				}
+					if (facebookWindow.focus) {
+						facebookWindow.focus();
+					}
 
-				return false;
-			});
+					return false;
+				});
 		}
 
 		if (twitterShare) {
-			jQuery(twitterShare).click(function (e) {
-				e.preventDefault();
-				twitterWindow = window.open(
-					'https://twitter.com/share?text=' +
-						document.title +
-						'&url=' +
-						document.URL,
-					'twitter-popup',
-					'height=350,width=600',
-				);
+			jQuery(twitterShare)
+				.off('click.colormag')
+				.on('click.colormag', function (e) {
+					e.preventDefault();
+					twitterWindow = window.open(
+						'https://twitter.com/share?text=' +
+							document.title +
+							'&url=' +
+							document.URL,
+						'twitter-popup',
+						'height=350,width=600',
+					);
 
-				if (twitterWindow.focus) {
-					twitterWindow.focus();
-				}
+					if (twitterWindow.focus) {
+						twitterWindow.focus();
+					}
 
-				return false;
-			});
+					return false;
+				});
 		}
 
 		if (pinterestshare) {
-			jQuery(pinterestshare).click(function (e) {
-				e.preventDefault();
-				var featuredImage = jQuery('.cm-posts .cm-featured-image img').attr(
-					'src',
-				)
-					? jQuery('.cm-posts .cm-featured-image img').attr('src')
-					: '';
+			jQuery(pinterestshare)
+				.off('click.colormag')
+				.on('click.colormag', function (e) {
+					e.preventDefault();
+					var featuredImage = jQuery('.cm-posts .cm-featured-image img').attr(
+						'src',
+					)
+						? jQuery('.cm-posts .cm-featured-image img').attr('src')
+						: '';
 
-				pinterestWindow = window.open(
-					'https://pinterest.com/pin/create/button/?url=' +
-						document.URL +
-						'&media=' +
-						featuredImage +
-						'&description=' +
-						document.title,
-					'pinterest-popup',
-					'height=350,width=600',
-				);
+					pinterestWindow = window.open(
+						'https://pinterest.com/pin/create/button/?url=' +
+							document.URL +
+							'&media=' +
+							featuredImage +
+							'&description=' +
+							document.title,
+						'pinterest-popup',
+						'height=350,width=600',
+					);
 
-				if (pinterestWindow.focus) {
-					pinterestWindow.focus();
-				}
+					if (pinterestWindow.focus) {
+						pinterestWindow.focus();
+					}
 
-				return false;
-			});
+					return false;
+				});
 		}
 	})();
+}
+
+// Initialize on document ready
+jQuery(document).ready(function () {
+	colormagInit();
 });
+
+// Initialize on customizer events to handle header builder changes
+if (typeof wp !== 'undefined' && wp.customize) {
+	// Wait for customizer to be ready
+	wp.customize.bind('preview-ready', function () {
+		colormagInit();
+	});
+
+	// Listen for customizer changes when preview is ready
+	if (wp.customize.preview) {
+		wp.customize.preview.bind('url', function () {
+			colormagInit();
+		});
+
+		wp.customize.preview.bind('section', function () {
+			colormagInit();
+		});
+	}
+
+	// Listen for any customizer changes (including header builder)
+	wp.customize.bind('change', function () {
+		// Small delay to ensure DOM is updated
+		setTimeout(function () {
+			colormagInit();
+		}, 100);
+	});
+
+	// Listen for header builder specific changes
+	wp.customize.bind('preview-url', function () {
+		colormagInit();
+	});
+}
+
+// Additional listener for header builder DOM changes
+if (typeof MutationObserver !== 'undefined') {
+	var observer = new MutationObserver(function (mutations) {
+		var shouldReinit = false;
+
+		mutations.forEach(function (mutation) {
+			// Check if header elements were added/removed/moved
+			if (mutation.type === 'childList') {
+				var target = mutation.target;
+				if (
+					target &&
+					(target.classList.contains('cm-header-builder') ||
+						target.classList.contains('cm-desktop-row') ||
+						target.classList.contains('cm-mobile-row') ||
+						target.closest('.cm-header-builder'))
+				) {
+					shouldReinit = true;
+				}
+			}
+		});
+
+		if (shouldReinit) {
+			// Small delay to ensure all changes are complete
+			setTimeout(function () {
+				colormagInit();
+			}, 50);
+		}
+	});
+
+	// Start observing when DOM is ready
+	jQuery(document).ready(function () {
+		var headerBuilder = document.querySelector('.cm-header-builder');
+		if (headerBuilder) {
+			observer.observe(headerBuilder, {
+				childList: true,
+				subtree: true,
+			});
+		}
+	});
+}
