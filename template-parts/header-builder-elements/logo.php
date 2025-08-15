@@ -65,17 +65,11 @@ if ( $site_identity_enable || $site_tagline_enable ) {
 	<div id="cm-site-info" class="">
 		<?php
 		if ( $site_identity_enable ) {
-			if ( is_front_page() || is_home() ) :
-				?>
-				<h1 class="cm-site-title <?php echo esc_attr( implode( ' ', $device_classes ) ); ?> <?php echo esc_attr( false === $site_identity_enable ? $screen_reader : '' ); ?>">
+			?>
+				<span class="cm-site-title <?php echo esc_attr( implode( ' ', $device_classes ) ); ?> <?php echo esc_attr( false === $site_identity_enable ? $screen_reader : '' ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</h1>
-			<?php else : ?>
-				<h3 class="cm-site-title <?php echo esc_attr( implode( ' ', $device_classes ) ); ?> <?php echo esc_attr( false === $site_identity_enable ? $screen_reader : '' ); ?>">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</h3>
-				<?php
-			endif;
+				</span>
+			<?php
 		}
 		?>
 

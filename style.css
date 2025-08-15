@@ -503,7 +503,7 @@ body {
 body #page {
 	display: flex;
 	flex-direction: column;
-	min-height: 96vh;
+	min-height: calc( 100vh - var(--wp-admin--admin-bar--height, 0px));
 }
 
 body .cm-content {
@@ -1300,17 +1300,70 @@ table td {
 	font-size: 16px;
 }
 
-.cm-header-builder .social-style-1 {
-	gap: 0px;
+.cm-header-builder .social-icons {
+	display: flex;
+	align-items: center;
 }
 
-.cm-header-builder .social-style-1 a {
-	border-right: 1px solid #4E4E4E;
-	padding: 0 10px;
+.cm-header-builder .social-icons a {
+	font-size: 20px;
 }
 
-.cm-header-builder .social-style-1 a:last-child {
-	border-right: none;
+.cm-header-builder .social-icons.social-separator-dot a {
+	margin-right: 5px;
+}
+
+.cm-header-builder .social-icons.social-separator-dot a:after {
+	content: "•";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-line a:after {
+	content: "|";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-space a:after {
+	content: " ";
+}
+
+.cm-header-builder .social-icons.social-separator-slash a:after {
+	content: "/";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-pipe a:after {
+	content: "|";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-bullet a:after {
+	content: "•";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-hyphen a:after {
+	content: "-";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-comma a:after {
+	content: ",";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-chevron a:after {
+	content: "›";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-arrow a:after {
+	content: "→";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons a:last-child:after {
+	content: none;
 }
 
 .cm-header-builder.cm-layout-1-transparent {
@@ -4346,6 +4399,12 @@ Styles for separating single posts loaded from ajax call.
 	margin-bottom: 0;
 	font-size: 40px;
 	line-height: 1.5;
+	color: #27272a;
+	font-weight: 500;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
 }
 
 .cm-site-title a {
