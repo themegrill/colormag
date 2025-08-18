@@ -90,7 +90,7 @@ $options = apply_filters(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
-			'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+			'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer&utm_source=colormag-theme&utm_campaign=customizer-global-slidebar&utm_content=upgrade-to-pro' ),
 			'points'      => array(
 				esc_html__( 'Sticky sidebar', 'colormag' ),
 				esc_html__( 'Sidebar widget title color and typography', 'colormag' ),

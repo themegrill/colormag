@@ -346,7 +346,7 @@ $section_option_id = array(
 	'colormag_customize_upsell_section'            => array(
 		'type'             => 'upsell-section',
 		'title'            => esc_html__( 'More Features in Pro', 'colormag' ),
-		'url'              => 'https://themegrill.com/pricing/?utm_medium=customizer-upsell&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro',
+		'url'              => 'https://themegrill.com/pricing/?utm_medium=customizer&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro',
 		'section_callback' => \Customind\Core\Types\UpsellSection::class,
 		'priority'         => 1,
 	),
@@ -361,7 +361,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer&utm_source=colormag-theme&utm_campaign=customizer-global&utm_content=upgrade-to-pro' ),
 		'points'           => array(
 			esc_html__( 'Form element options', 'colormag' ),
 			esc_html__( 'Accessibility options', 'colormag' ),
@@ -376,7 +376,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer&utm_source=colormag-theme&utm_campaign=customizer-front-page&utm_content=upgrade-to-pro' ),
 		'points'           => array(
 			esc_html__( 'Unique post system', 'colormag' ),
 			esc_html__( 'Front Page: Top Full Width Container', 'colormag' ),
@@ -391,7 +391,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer&utm_source=colormag-theme&utm_campaign=customizer-header-navigation&utm_content=upgrade-to-pro' ),
 		'points'           => array(
 			esc_html__( 'Transparent Header', 'colormag' ),
 		),
