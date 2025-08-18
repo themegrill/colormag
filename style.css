@@ -31,7 +31,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 700;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Bold.woff) format("woff");
+	src: url(../../fonts/OpenSans-Bold.woff) format("woff");
 }
 
 @font-face {
@@ -40,7 +40,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 700;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-BoldItalic.woff) format("woff");
+	src: url(../../fonts/OpenSans-BoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -49,7 +49,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 800;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-ExtraBold.woff) format("woff");
+	src: url(../../fonts/OpenSans-ExtraBold.woff) format("woff");
 }
 
 @font-face {
@@ -58,7 +58,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 800;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
+	src: url(../../fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -67,7 +67,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Italic.woff) format("woff");
+	src: url(../../fonts/OpenSans-Italic.woff) format("woff");
 }
 
 @font-face {
@@ -76,7 +76,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 300;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Light.woff) format("woff");
+	src: url(../../fonts/OpenSans-Light.woff) format("woff");
 }
 
 @font-face {
@@ -85,7 +85,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 300;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-LightItalic.woff) format("woff");
+	src: url(../../fonts/OpenSans-LightItalic.woff) format("woff");
 }
 
 @font-face {
@@ -94,7 +94,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 500;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Medium.woff) format("woff");
+	src: url(../../fonts/OpenSans-Medium.woff) format("woff");
 }
 
 @font-face {
@@ -103,7 +103,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 500;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-MediumItalic.woff) format("woff");
+	src: url(../../fonts/OpenSans-MediumItalic.woff) format("woff");
 }
 
 @font-face {
@@ -112,7 +112,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Regular.woff) format("woff");
+	src: url(../../fonts/OpenSans-Regular.woff) format("woff");
 }
 
 @font-face {
@@ -121,7 +121,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 600;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-SemiBold.woff) format("woff");
+	src: url(../../fonts/OpenSans-SemiBold.woff) format("woff");
 }
 
 @font-face {
@@ -130,7 +130,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 600;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-SemiBoldItalic.woff) format("woff");
+	src: url(../../fonts/OpenSans-SemiBoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -139,7 +139,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-VariableFont.woff) format("woff");
+	src: url(../../fonts/OpenSans-VariableFont.woff) format("woff");
 }
 
 /*--------------------------------------------------------------
@@ -503,7 +503,7 @@ body {
 body #page {
 	display: flex;
 	flex-direction: column;
-	min-height: 96vh;
+	min-height: calc( 100vh - var(--wp-admin--admin-bar--height, 0px));
 }
 
 body .cm-content {
@@ -1300,17 +1300,70 @@ table td {
 	font-size: 16px;
 }
 
-.cm-header-builder .social-style-1 {
-	gap: 0px;
+.cm-header-builder .social-icons {
+	display: flex;
+	align-items: center;
 }
 
-.cm-header-builder .social-style-1 a {
-	border-right: 1px solid #4E4E4E;
-	padding: 0 10px;
+.cm-header-builder .social-icons a {
+	font-size: 20px;
 }
 
-.cm-header-builder .social-style-1 a:last-child {
-	border-right: none;
+.cm-header-builder .social-icons.social-separator-dot a {
+	margin-right: 5px;
+}
+
+.cm-header-builder .social-icons.social-separator-dot a:after {
+	content: "•";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-line a:after {
+	content: "|";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-space a:after {
+	content: " ";
+}
+
+.cm-header-builder .social-icons.social-separator-slash a:after {
+	content: "/";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-pipe a:after {
+	content: "|";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-bullet a:after {
+	content: "•";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-hyphen a:after {
+	content: "-";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-comma a:after {
+	content: ",";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-chevron a:after {
+	content: "›";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-arrow a:after {
+	content: "→";
+	margin-left: 10px;
+}
+
+.cm-header-builder .social-icons a:last-child:after {
+	content: none;
 }
 
 .cm-header-builder.cm-layout-1-transparent {
