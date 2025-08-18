@@ -74,16 +74,17 @@ function colormag_get_area_class( $id ) {
 
 if ( ! function_exists( 'colormag_render_header_cols' ) ) {
 	/**
-	 * @param $cols - array of elements
-	 * @param $cols_area - left, center, right
+	 * @param array  $cols      Array of elements
+	 * @param string $cols_area Left, center, right
+	 * @param string $device    Device type (desktop or mobile)
 	 *
 	 * @return void
 	 */
-	function colormag_render_header_cols( $cols, $cols_area ) {
+	function colormag_render_header_cols( $cols, $cols_area, $device = 'desktop' ) {
 		echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $cols_area ) ) . '-col">';
 		foreach ( $cols as $element ) {
 			do_action( 'colormag_header_template_parts', $element );
-			get_template_part( "template-parts/header-builder-elements/$element", '' );
+			get_template_part( "template-parts/header-builder-elements/$element", '', array( 'device' => $device ) );
 		}
 		echo '</div>';
 	}
@@ -262,7 +263,7 @@ if ( ! function_exists( 'colormag_render_header_rows' ) ) {
 			echo '<div class="cm-' . esc_attr( colormag_get_area_class( $area ) ) . '-row">';
 
 			foreach ( $row as $cols_area => $cols ) {
-				colormag_render_header_cols( $cols, $cols_area );
+				colormag_render_header_cols( $cols, $cols_area, $device );
 			}
 
 			echo '</div>';
