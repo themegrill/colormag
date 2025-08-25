@@ -1,5 +1,350 @@
 <?php
+$sidebar_layout_choices = apply_filters(
+	'colormag_site_layout_choices',
+	array(
+		'preset-1' => array(
+			'label'              => '',
+			'url'                => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+			'body_typography'    => array(
+				'font-family'    => 'Roboto',
+				'font-weight'    => '600',
+				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '36',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+			'heading_typography' => array(
+				'font-family'    => 'Ojuju',
+				'font-weight'    => '700',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+		),
+		'preset-2' => array(
+			'label'              => '',
+			'url'                => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+			'body_typography'    => array(
+				'font-family'    => 'Ojuju',
+				'font-weight'    => '700',
+				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '12',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+			'heading_typography' => array(
+				'font-family'    => 'Lato',
+				'font-weight'    => '700',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
 
+		),
+		'preset-3' => array(
+			'label'              => '',
+			'url'                => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+			'body_typography'    => array(
+				'font-family'    => 'Ojuju',
+				'font-weight'    => '800',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+			'heading_typography' => array(
+				'font-family'    => 'Karla',
+				'font-weight'    => '800',
+				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '36',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+
+		),
+		'preset-4' => array(
+			'label'              => '',
+			'url'                => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+			'body_typography'    => array(
+				'font-family'    => 'default',
+				'font-weight'    => 'regular',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+			'heading_typography' => array(
+				'font-family'    => 'default',
+				'font-weight'    => 'regular',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+
+		),
+	)
+);
 $options = apply_filters(
 	'colormag_typography_options',
 	array(
@@ -10,7 +355,17 @@ $options = apply_filters(
 			'sub_controls' => apply_filters(
 				'colormag_body_typography_sub_controls',
 				array(
-					'colormag_base_typography' => array(
+					'colormag_default_sidebar_layoutaa' => array(
+						'type'       => 'customind-typography-preset',
+						'title'      => esc_html__( 'Default Layout', 'colormag' ),
+						'body_id'    => 'colormag_base_typography',
+						'heading_id' => 'colormag_headings_typography',
+						'section'    => 'colormag_global_typography_section',
+						'choices'    => $sidebar_layout_choices,
+						'priority'   => 5,
+						'columns'    => 2,
+					),
+					'colormag_base_typography'        => array(
 						'default'   => array(
 							'font-family'    => 'default',
 							'font-weight'    => 'regular',
