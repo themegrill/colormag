@@ -1,6 +1,18 @@
 <?php
 
 $options = array(
+	'colormag_container_tab_group'          => array(
+		'type'    => 'customind-tab-group',
+		'title'   => esc_html__( 'Tab Group', 'colormag' ),
+		'section' => 'colormag_global_container_section',
+		'choices' => apply_filters(
+			'colormag_container_sub_controls',
+			array(
+				'colormag_container_heading'            => esc_html__( 'Heading', 'colormag' ),
+				'colormag_container_background_heading' => esc_html__( 'Background', 'colormag' ),
+			)
+		),
+	),
 	'colormag_container_heading'            => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Container', 'colormag' ),
