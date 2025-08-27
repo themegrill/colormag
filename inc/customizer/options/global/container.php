@@ -2,16 +2,17 @@
 
 $options = array(
 	'colormag_container_tab_group'          => array(
-		'type'    => 'customind-tab-group',
-		'title'   => esc_html__( 'Tab Group', 'colormag' ),
-		'section' => 'colormag_global_container_section',
-		'choices' => apply_filters(
+		'type'        => 'customind-tab-group',
+		'title'       => esc_html__( 'Tab Group', 'colormag' ),
+		'section'     => 'colormag_global_container_section',
+		'choices'     => apply_filters(
 			'colormag_container_sub_controls',
 			array(
-				'colormag_container_heading'            => esc_html__( 'Heading', 'colormag' ),
-				'colormag_container_background_heading' => esc_html__( 'Background', 'colormag' ),
+				'general' => esc_html__( 'General', 'colormag' ),
+				'style'   => esc_html__( 'Style', 'colormag' ),
 			)
 		),
+		'input_attrs' => array( 'default_tab' => 'style' ),
 	),
 	'colormag_container_heading'            => array(
 		'type'         => 'customind-accordion',
@@ -60,6 +61,7 @@ $options = array(
 				),
 			)
 		),
+		'input_attrs'  => array( 'tab' => 'general' ),
 		'collapsible'  => apply_filters( 'colormag_container_accordion_collapsible', false ),
 	),
 	'colormag_container_background_heading' => array(
@@ -105,6 +107,7 @@ $options = array(
 			)
 		),
 		'collapsible'  => apply_filters( 'colormag_container_background_accordion_collapsible', false ),
+		'input_attrs'  => array( 'tab' => 'style' ),
 	),
 	'colormag_demo_migrated_heading'        => array(
 		'type'         => 'customind-accordion',
