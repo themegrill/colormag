@@ -12,7 +12,7 @@ $options = array(
 				'style'   => esc_html__( 'Style', 'colormag' ),
 			)
 		),
-		'input_attrs' => array( 'default_tab' => 'style' ),
+		'default_tab' => 'style',
 	),
 	'colormag_container_heading'            => array(
 		'type'         => 'customind-accordion',
@@ -61,8 +61,8 @@ $options = array(
 				),
 			)
 		),
-		'input_attrs'  => array( 'tab' => 'general' ),
 		'collapsible'  => apply_filters( 'colormag_container_accordion_collapsible', false ),
+		'tab'          => 'general',
 	),
 	'colormag_container_background_heading' => array(
 		'type'         => 'customind-accordion',
@@ -107,7 +107,7 @@ $options = array(
 			)
 		),
 		'collapsible'  => apply_filters( 'colormag_container_background_accordion_collapsible', false ),
-		'input_attrs'  => array( 'tab' => 'style' ),
+		'tab'          => 'style',
 	),
 	'colormag_demo_migrated_heading'        => array(
 		'type'         => 'customind-accordion',
