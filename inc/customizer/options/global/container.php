@@ -5,7 +5,7 @@ $options = array(
 		'type'        => 'customind-heading',
 		'title'       => esc_html__( 'Container', 'colormag' ),
 		'section'     => 'colormag_global_container_section',
-		'description' => 'Hello maiya',
+		'description' => 'Hello user',
 	),
 	'colormag_container_heading'            => array(
 		'type'         => 'customind-accordion',
