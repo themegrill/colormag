@@ -7,6 +7,7 @@ namespace Customind\Core;
 
 use Customind\Core\Factories\TypeFactory;
 use Customind\Core\Traits\Hook;
+use Customind\Core\Types\UpgradeSection;
 use Customind\Core\Types\UpsellSection;
 
 class Customind {
@@ -213,6 +214,7 @@ class Customind {
 		$this->register_items( $wp_customize, 'section' );
 		$this->register_items( $wp_customize, 'control' );
 		$wp_customize->register_section_type( UpsellSection::class );
+		$wp_customize->register_section_type( UpgradeSection::class );
 		$this->process_typography_controls();
 	}
 
@@ -235,6 +237,9 @@ class Customind {
 			} elseif ( 'upsell-section' === ( $args['type'] ?? '' ) ) {
 				$_type        = 'customind-upsell-section';
 				$args['type'] = 'customind-upsell-section';
+			} elseif ( 'upgrade-section' === ( $args['type'] ?? '' ) ) {
+				$_type        = 'customind-upgrade-section';
+				$args['type'] = 'customind-upgrade-section';
 			} else {
 				$_type = $args['type'] ?? "customind-$type";
 			}
@@ -331,7 +336,7 @@ class Customind {
 	 */
 	private function add_items( array $args, $type ) {
 		foreach ( $args as $key => $arg ) {
-			if ( isset( $arg['type'] ) && 'upsell-section' === $arg['type'] ) {
+			if ( isset( $arg['type'] ) && ( 'upgrade-section' === $arg['type'] || 'upsell-section' === $arg['type'] ) ) {
 				$this->sections[ $key ] = $arg;
 				continue;
 			}
@@ -398,16 +403,19 @@ class Customind {
 		wp_localize_script(
 			'customind',
 			'__CUSTOMIND__',
-			[
-				'googleFonts'           => $this->get_google_fonts(),
-				'customFonts'           => $custom_fonts,
-				'fontawesome'           => $this->get_fontawesome(),
-				'condition'             => $this->get_condition(),
-				'conditions'            => $this->get_conditions(),
-				'builderPanels'         => $this->get_builder_panels(),
-				'cssVarPrefix'          => $this->get_css_var_prefix(),
-				'colorPaletteControlId' => $this->get_color_palette_control_id(),
-			]
+			apply_filters(
+				'customind_setting_data',
+				[
+					'googleFonts'           => $this->get_google_fonts(),
+					'customFonts'           => $custom_fonts,
+					'fontawesome'           => $this->get_fontawesome(),
+					'condition'             => $this->get_condition(),
+					'conditions'            => $this->get_conditions(),
+					'builderPanels'         => $this->get_builder_panels(),
+					'cssVarPrefix'          => $this->get_css_var_prefix(),
+					'colorPaletteControlId' => $this->get_color_palette_control_id(),
+				]
+			)
 		);
 	}
 

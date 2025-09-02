@@ -19,9 +19,8 @@
       "fluid": false,
       "fontSizes": [
         {
-          "fluid": false,
           "name": "Small",
-          "size": "14px",
+          "size": "13px",
           "slug": "small"
         },
         {
@@ -31,18 +30,23 @@
         },
         {
           "name": "Large",
-          "size": "18px",
+          "size": "20px",
           "slug": "large"
         },
         {
-          "name": "Extra Large",
-          "size": "28px",
+          "name": "X-Large",
+          "size": "24px",
           "slug": "x-large"
         },
         {
-          "name": "Extra Extra Large",
-          "size": "34px",
+          "name": "XX-Large",
+          "size": "30px",
           "slug": "xx-large"
+        },
+        {
+          "name": "Huge",
+          "size": "36px",
+          "slug": "huge"
         }
       ],
       "fontFamilies": [

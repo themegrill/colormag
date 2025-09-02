@@ -1,7 +1,7 @@
 <?php
 
 $options = array(
-	'colormag_button_heading' => array(
+	'colormag_button_heading'   => array(
 		'type'         => 'customind-accordion',
 		'title'        => esc_html__( 'Button', 'colormag' ),
 		'section'      => 'colormag_button_section',
@@ -104,10 +104,14 @@ $options = array(
 		'collapsible'  => apply_filters( 'colormag_button_accordion_collapsible', false ),
 	),
 	'colormag_button_upgrade' => array(
-		'type'        => 'customind-upsell',
-		'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
-		'title'       => esc_html__( 'Learn more', 'colormag' ),
+		'type'        => 'customind-upgrade',
+		'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
+		'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
 		'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'points'      => array(
+			esc_html__( 'Global button typography', 'colormag' ),
+			esc_html__( 'Button border style, width and colors', 'colormag' ),
+		),
 		'section'     => 'colormag_button_section',
 		'priority'    => 100,
 	),
