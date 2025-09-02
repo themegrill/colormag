@@ -3,7 +3,7 @@
 	.cm-posts {
 
 		.tags a {
-			border: 1px solid $color__gray-200;
+			border: 1px solid var(--colormag-color-5, '#E4E4E7');
 			padding: 3px 5px;
 			border-radius: 3px;
 			color: #777777;
@@ -327,7 +327,7 @@
 }
 
 .box {
-	border: 1px solid $color__gray-200;
+	border: 1px solid var(--colormag-color-5, '#E4E4E7');
 	border-radius: 3px;
 	display: inline-block;
 }

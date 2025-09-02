@@ -89,7 +89,7 @@
 	padding: length( 'l-15' ) length( 'l-12' );
 	background-color: $color__gray-100;
 	border-radius: 4px;
-	border: 1px solid $color__gray-200;
+	border: 1px solid var(--colormag-color-5, '#E4E4E7');
 
 	label {
 		display: block;
@@ -102,7 +102,7 @@
 @include breakpoint("mdm") {
 
 	.woocommerce-lost-password  {
-	
+
 		.woocommerce-ResetPassword {
 			width: 570px
 		}
