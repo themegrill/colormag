@@ -67,7 +67,7 @@ class ColorMag_Meta_Boxes {
 	private function register_meta_fields() {
 		register_post_meta(
 			'',
-			'colormag_page_layout',
+			'colormag_page_container_layout',
 			[
 				'show_in_rest'  => true,
 				'single'        => true,
@@ -76,20 +76,17 @@ class ColorMag_Meta_Boxes {
 				'auth_callback' => '__return_true',
 			]
 		);
-	}
-
-	private function is_classic_editor_active() {
-
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-		if ( is_plugin_active( 'classic-editor/classic-editor.php' ) ) {
-			return true;
-		}
-
-		if ( ! apply_filters( 'use_block_editor_for_post', true, get_post() ) ) {
-			return true;
-		}
-
-		return false;
+		register_post_meta(
+			'',
+			'colormag_page_sidebar_layout',
+			[
+				'show_in_rest'  => true,
+				'single'        => true,
+				'default'       => 'default_layout',
+				'type'          => 'string',
+				'auth_callback' => '__return_true',
+			]
+		);
 	}
 
 	/**
@@ -113,7 +110,20 @@ class ColorMag_Meta_Boxes {
 
 		// Video URL option for video post format only.
 		add_meta_box( 'post-video-url', esc_html__( 'Video URL', 'colormag' ), 'ColorMag_Meta_Box_Page_Settings::render_video_url', 'post', 'side', 'high' );
+	}
 
+	private function is_classic_editor_active() {
+
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		if ( is_plugin_active( 'classic-editor/classic-editor.php' ) ) {
+			return true;
+		}
+
+		if ( ! apply_filters( 'use_block_editor_for_post', true, get_post() ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -133,7 +143,6 @@ class ColorMag_Meta_Boxes {
 
 		// Enqueue meta boxes JS file.
 		wp_enqueue_script( 'colormag-meta-boxes', COLORMAG_INCLUDES_URL . '/meta-boxes/assets/js/meta-boxes' . $suffix . '.js', array( 'jquery-ui-tabs' ), COLORMAG_THEME_VERSION, true );
-
 	}
 
 	/**
@@ -178,10 +187,8 @@ class ColorMag_Meta_Boxes {
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return $post_id;
 			}
-		} else {
-			if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		} elseif ( ! current_user_can( 'edit_post', $post_id ) ) {
 				return $post_id;
-			}
 		}
 
 		// We need this save event to run once to avoid potential endless loops.
@@ -192,9 +199,7 @@ class ColorMag_Meta_Boxes {
 		foreach ( $process_actions as $process_action ) {
 			do_action( 'colormag_process_' . $process_action . '_meta', $post_id, $post );
 		}
-
 	}
-
 }
 
 return new ColorMag_Meta_Boxes();

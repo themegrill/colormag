@@ -210,6 +210,7 @@ class Sanitization {
 			'customind-slider'        => null,
 			'customind-dimensions'    => null,
 			'customind-typography'    => null,
+			'customind-typography-preset'    => null,
 			'customind-date'          => null,
 			'customind-sortable'      => null,
 			'customind-toggle-button' => null,

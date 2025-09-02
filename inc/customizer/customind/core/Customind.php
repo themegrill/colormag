@@ -90,6 +90,8 @@ class Customind {
 
 	private $typography_controls_ids = [];
 
+	private $tabs = [];
+
 	/**
 	 * Constructor.
 	 */
@@ -112,6 +114,39 @@ class Customind {
 		$this->add_action( 'register:control', [ $this, 'process_settings' ], 10, 3 );
 		$this->add_action( 'register:control', [ $this, 'process_builder_panels' ], 10, 3 );
 		$this->add_action( 'customize:save', [ $this, 'update_google_fonts_url' ] );
+
+		$this->add_filter( 'controls', [ $this, 'process_tabs' ] );
+	}
+
+	public function process_tabs( $controls ) {
+		$section_tabs_map = [];
+		$control_tabs_map = [];
+
+		foreach ( $controls as $id => $args ) {
+			if ( isset( $args['type'] ) && 'customind-tabs' === $args['type'] && isset( $args['section'] ) ) {
+				$section = $args['section'];
+				if ( isset( $section_tabs_map[ $section ] ) ) {
+						throw new \Exception(
+							sprintf(
+								'Only one tabs control is allowed per section. Section "%s" has multiple tabs controls.',
+								esc_html( $section )
+							)
+						);
+				}
+				$section_tabs_map[ $section ] = $id;
+			} elseif ( isset( $args['tab_group'], $args['tab'] ) ) {
+				$tab_group                        = $args['tab_group'];
+				$tab                              = $args['tab'];
+				$control_tabs_map[ $tab_group ][] = [
+					'id'  => $id,
+					'tab' => $tab,
+				];
+			}
+		}
+
+		$this->tabs = $control_tabs_map;
+
+		return $controls;
 	}
 
 	/**
@@ -414,6 +449,7 @@ class Customind {
 					'builderPanels'         => $this->get_builder_panels(),
 					'cssVarPrefix'          => $this->get_css_var_prefix(),
 					'colorPaletteControlId' => $this->get_color_palette_control_id(),
+					'tabs'                  => $this->tabs,
 				]
 			)
 		);

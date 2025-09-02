@@ -23,13 +23,22 @@ abstract class AbstractControl extends \WP_Customize_Control {
 	 */
 	public $is_sub_control = false;
 
+	/**
+	 * @var string|null
+	 */
 	public $tab;
+
+	/**
+	 * @var string|null
+	 */
+	public $tab_group;
 
 	/**
 	 * {@inheritdoc}
 	 */
 	public function __construct( $manager, $id, $args = [] ) {
 		$this->is_sub_control = $args['is_sub_control'] ?? false;
+		$this->tab_group      = $args['tab_group'] ?? null;
 		$this->tab            = $args['tab'] ?? null;
 		$args                 = $this->prepare_control_args( $id, $args );
 		$this->add_selective_refresh( $manager, $id, $args );
@@ -73,7 +82,7 @@ abstract class AbstractControl extends \WP_Customize_Control {
 			'settings'    => $id,
 			'type'        => $args['type'],
 			'choices'     => $args['choices'] ?? [],
-			'priority'    => $args['priority'] ?? 10,
+			'priority'    => 'customind-tabs' === $args['type'] ? PHP_INT_MIN : $args['priority'] ?? 10,
 			'input_attrs' => $args['input_attrs'] ?? [],
 			'capability'  => 'edit_theme_options',
 			'partial'     => $args['partial'] ?? null,
@@ -101,6 +110,7 @@ abstract class AbstractControl extends \WP_Customize_Control {
 				'id',
 				'choices',
 				'is_sub_control',
+				'tab_group',
 				'tab',
 			]
 		);

@@ -8,12 +8,12 @@ namespace Customind\Core\Types\Controls;
 /**
  * Typography control class.
  */
-class Typography extends AbstractControl {
+class TypographyPreset extends AbstractControl {
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public $type = 'customind-typography';
+	public $type = 'customind-typography-preset';
 
 	/**
 	 * Allowed properties.
@@ -21,6 +21,8 @@ class Typography extends AbstractControl {
 	 * @var string
 	 */
 	public $allowed_properties;
+	public $heading_id;
+	public $body_id;
 
 	/**
 	 * {@inheritDoc}
@@ -32,7 +34,8 @@ class Typography extends AbstractControl {
 	) {
 		parent::__construct( $id, $manager, $args );
 		$this->allowed_properties = $args['allowed_properties'] ?? null;
-		$this->display_mode       = $args['display_mode'] ?? '';
+		$this->heading_id         = $args['heading_id'] ?? '';
+		$this->body_id            = $args['body_id'] ?? '';
 	}
 
 	/**
@@ -43,7 +46,8 @@ class Typography extends AbstractControl {
 			parent::json_allowed_props(),
 			[
 				'allowed_properties',
-				'display_mode',
+				'body_id',
+				'heading_id',
 			]
 		);
 	}

@@ -14,7 +14,7 @@ $panel_options_id = array(
 		'title' => esc_html__( 'Header Builder', 'colormag' ),
 	),
 	'colormag_content_panel'    => array(
-		'title' => esc_html__( 'Content', 'colormag' ),
+		'title' => esc_html__( 'Post Content', 'colormag' ),
 	),
 	'colormag_footer_panel'     => array(
 		'title' => esc_html__( 'Footer', 'colormag' ),
@@ -25,6 +25,10 @@ $panel_options_id = array(
 	'colormag_additional_panel' => array(
 		'title' => esc_html__( 'Additional', 'colormag' ),
 	),
+	'header_image'              => array(
+		'title'    => esc_html__( 'Header Media', 'colormag' ),
+		'priority' => 40,
+	),
 );
 
 $section_option_id = array(
@@ -32,6 +36,11 @@ $section_option_id = array(
 		'title'    => esc_html__( 'Builder', 'colormag' ),
 		'panel'    => 'colormag_header_panel',
 		'priority' => 1,
+	),
+	'colormag_global_typography_section'           => array(
+		'title'    => esc_html__( 'Typography', 'colormag' ),
+		'panel'    => 'colormag_global_panel',
+		'priority' => 10,
 	),
 	'colormag_global_colors_section'               => array(
 		'title'    => esc_html__( 'Colors', 'colormag' ),
@@ -43,8 +52,8 @@ $section_option_id = array(
 		'panel'    => 'colormag_global_panel',
 		'priority' => 20,
 	),
-	'colormag_global_container_section'            => array(
-		'title'    => esc_html__( 'Container', 'colormag' ),
+	'colormag_global_layout_section'               => array(
+		'title'    => esc_html__( 'Layouts', 'colormag' ),
 		'panel'    => 'colormag_global_panel',
 		'priority' => 30,
 	),
@@ -52,11 +61,6 @@ $section_option_id = array(
 		'title'    => esc_html__( 'Sidebar', 'colormag' ),
 		'panel'    => 'colormag_global_panel',
 		'priority' => 40,
-	),
-	'colormag_global_typography_section'           => array(
-		'title'    => esc_html__( 'Typography', 'colormag' ),
-		'panel'    => 'colormag_global_panel',
-		'priority' => 50,
 	),
 	'colormag_button_section'                      => array(
 		'title'    => esc_html__( 'Button', 'colormag' ),
@@ -98,22 +102,12 @@ $section_option_id = array(
 		'panel'    => 'colormag_header_panel',
 		'priority' => 60,
 	),
-	'header_image'                                 => array(
-		'title'    => esc_html__( 'Header Media', 'colormag' ),
-		'panel'    => 'colormag_header_panel',
-		'priority' => 70,
-	),
-	'colormag_breadcrumb_section'                  => array(
-		'title'    => esc_html__( 'Breadcrumb', 'colormag' ),
-		'panel'    => 'colormag_header_panel',
-		'priority' => 70,
-	),
 	'colormag_sticky_header_section'               => array(
 		'title'    => esc_html__( 'Sticky Header', 'colormag' ),
-		'panel'    => 'colormag_header_panel',
+		'panel'    => 'colormag_header_builder',
 		'priority' => 80,
 	),
-	'colormag_blog_section'                        => array(
+	'colormag_blog_archive_section'                => array(
 		'title'    => esc_html__( 'Blog', 'colormag' ),
 		'panel'    => 'colormag_content_panel',
 		'priority' => 10,
@@ -129,7 +123,7 @@ $section_option_id = array(
 		'priority' => 30,
 	),
 	'colormag_page_section'                        => array(
-		'title'    => esc_html__( 'Page', 'colormag' ),
+		'title'    => esc_html__( 'Single Page', 'colormag' ),
 		'panel'    => 'colormag_content_panel',
 		'priority' => 40,
 	),
@@ -147,6 +141,11 @@ $section_option_id = array(
 		'title'    => esc_html__( 'Social Icons', 'colormag' ),
 		'panel'    => 'colormag_additional_panel',
 		'priority' => 10,
+	),
+	'colormag_breadcrumb_section'                  => array(
+		'title'    => esc_html__( 'Breadcrumb', 'colormag' ),
+		'panel'    => 'colormag_additional_panel',
+		'priority' => 70,
 	),
 	'colormag_woocommerce_sidebar_section'         => array(
 		'title'    => esc_html__( 'WooCommerce Sidebar', 'colormag' ),
@@ -396,10 +395,10 @@ $section_option_id = array(
 			esc_html__( 'Transparent Header', 'colormag' ),
 		),
 		'section_callback' => \Customind\Core\Types\UpgradeSection::class,
-		'panel'            => 'colormag_header_panel',
+		'panel'            => 'colormag_header_builder',
 		'priority'         => 100,
 	),
-	'colormag_customize_content_section'              => array(
+	'colormag_customize_content_section'           => array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),

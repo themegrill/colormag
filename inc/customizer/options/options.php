@@ -3,17 +3,16 @@ $enable_builder = get_theme_mod( 'colormag_enable_builder', false );
 
 require __DIR__ . '/global/colors.php';
 require __DIR__ . '/global/category-colors.php';
-require __DIR__ . '/global/container.php';
-require __DIR__ . '/global/sidebar.php';
+require __DIR__ . '/global/layout.php';
+//require __DIR__ . '/global/sidebar.php';
 require __DIR__ . '/global/button.php';
 require __DIR__ . '/global/typography.php';
 require __DIR__ . '/front-page/front-page.php';
 require __DIR__ . '/header-and-navigation/header-media.php';
 require __DIR__ . '/header-and-navigation/sticky-header.php';
-require __DIR__ . '/header-and-navigation/breadcrumb.php';
+require __DIR__ . '/additional/breadcrumb.php';
 require __DIR__ . '/content/blog.php';
-require __DIR__ . '/content/page.php';
-require __DIR__ . '/content/post-meta.php';
+require __DIR__ . '/content/single-page.php';
 require __DIR__ . '/content/single-post.php';
 require __DIR__ . '/woocommerce/woocommerce.php';
 

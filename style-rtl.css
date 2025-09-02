@@ -1300,17 +1300,70 @@ table td {
 	font-size: 16px;
 }
 
-.cm-header-builder .social-style-1 {
-	gap: 0px;
+.cm-header-builder .social-icons {
+	display: flex;
+	align-items: center;
 }
 
-.cm-header-builder .social-style-1 a {
-	border-left: 1px solid #4E4E4E;
-	padding: 0 10px;
+.cm-header-builder .social-icons a {
+	font-size: 20px;
 }
 
-.cm-header-builder .social-style-1 a:last-child {
-	border-left: none;
+.cm-header-builder .social-icons.social-separator-dot a {
+	margin-left: 5px;
+}
+
+.cm-header-builder .social-icons.social-separator-dot a:after {
+	content: "•";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-line a:after {
+	content: "|";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-space a:after {
+	content: " ";
+}
+
+.cm-header-builder .social-icons.social-separator-slash a:after {
+	content: "/";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-pipe a:after {
+	content: "|";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-bullet a:after {
+	content: "•";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-hyphen a:after {
+	content: "-";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-comma a:after {
+	content: ",";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-chevron a:after {
+	content: "›";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons.social-separator-arrow a:after {
+	content: "→";
+	margin-right: 10px;
+}
+
+.cm-header-builder .social-icons a:last-child:after {
+	content: none;
 }
 
 .cm-header-builder.cm-layout-1-transparent {
@@ -5396,18 +5449,42 @@ ul.wp-block-gallery img {
 	}
 }
 
-.no-sidebar .cm-primary {
+.cm-narrow-container .cm-primary {
 	margin: 0 auto;
 }
 
-.no-sidebar-full-width .cm-primary {
+.cm-narrow-container .cm-content .cm-container {
+	max-width: 768px;
+}
+
+.cm-right-sidebar .cm-content .cm-primary {
+	padding-left: 1.875em;
+}
+
+.cm-full-width-container .cm-content .cm-container {
+	max-width: 100%;
+	padding: 0;
+}
+
+.cm-full-width-container .cm-content .cm-container .cm-primary {
+	width: 100%;
+	padding-left: 0;
+}
+
+.cm-normal-container .cm-primary {
 	width: 100%;
 	padding: 0;
 }
 
-.no-sidebar .cm-secondary,
-.no-sidebar-full-width .cm-secondary {
+.cm-no-sidebar .cm-secondary {
 	display: none;
+}
+
+.cm-primary .cm-entry-summary .cm-block-alignfull {
+	margin-right: calc(50% - 50vw);
+	margin-left: calc(51% - 50.2vw);
+	max-width: unset;
+	padding: 0 24px;
 }
 
 .cm-started-content .cm-primary .cm-entry-summary .cm-block-alignfull {
@@ -5434,50 +5511,40 @@ ul.wp-block-gallery img {
 	}
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width,
-body:not(.cm-started-content) .no-sidebar {
+.cm-normal-container {
 	overflow: hidden;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width .cm-primary .cm-entry-summary > .alignfull,
-body:not(.cm-started-content) .no-sidebar .cm-primary .cm-entry-summary > .alignfull {
+.cm-normal-container .cm-primary .cm-entry-summary > .alignfull {
 	margin-right: calc(50% - 50vw);
 	margin-left: calc(50% - 50vw);
 	max-width: unset;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, body:not(.cm-started-content) .no-sidebar-full-width .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image,
-body:not(.cm-started-content) .no-sidebar .cm-primary .cm-entry-summary > .alignfull.wp-block-cover,
-body:not(.cm-started-content) .no-sidebar .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
+.cm-normal-container .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, .cm-normal-container .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
 	width: unset;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width .cm-primary .cm-entry-summary > .alignwide,
-body:not(.cm-started-content) .no-sidebar .cm-primary .cm-entry-summary > .alignwide {
+.cm-normal-container .cm-primary .cm-entry-summary > .alignwide {
 	margin-right: -100px;
 	margin-left: -100px;
 	max-width: unset;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width.box-layout .cm-content,
-body:not(.cm-started-content) .no-sidebar.box-layout .cm-content {
+.cm-normal-container.box-layout .cm-content {
 	overflow: hidden;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width.box-layout .cm-primary .cm-entry-summary > .alignfull,
-body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summary > .alignfull {
+.cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull {
 	margin-right: -30px;
 	margin-left: -30px;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, body:not(.cm-started-content) .no-sidebar-full-width.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image,
-body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover,
-body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
+.cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, .cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
 	width: unset;
 }
 
-body:not(.cm-started-content) .no-sidebar-full-width.box-layout .cm-primary .cm-entry-summary > .alignwide,
-body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summary > .alignwide {
+.cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignwide {
 	margin-right: -30px;
 	margin-left: -30px;
 	max-width: unset;
@@ -5488,11 +5555,11 @@ body:not(.cm-started-content) .no-sidebar.box-layout .cm-primary .cm-entry-summa
 		margin-right: -20px;
 		margin-left: -20px;
 	}
-	.no-sidebar .cm-primary .cm-entry-summary > .alignwide {
+	.cm-narrow-container .cm-primary .cm-entry-summary > .alignwide {
 		margin-right: -50px;
 		margin-left: -50px;
 	}
-	.no-sidebar .cm-primary .cm-entry-summary > .alignfull {
+	.cm-narrow-container .cm-primary .cm-entry-summary > .alignfull {
 		margin-right: -100px;
 		margin-left: -100px;
 	}

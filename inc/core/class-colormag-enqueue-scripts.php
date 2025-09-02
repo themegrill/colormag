@@ -185,7 +185,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-
 			// BxSlider JS.
 			wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
@@ -284,6 +283,22 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_add_inline_style(
 				'customize-controls',
 				'
+				#sub-accordion-panel-colormag_header_builder {
+			    height: 120vh !important;
+                 position: relative;
+				}
+
+				#accordion-section-colormag_customize_header_navigation_section {
+					    position: absolute;
+					    bottom: 0px;
+				}
+
+				#accordion-section-colormag_sticky_header_section {
+					    position: absolute;
+					    bottom: 180px;
+					    width: 100%;
+				}
+
 		        #customize-control-colormag_site_identity_general_heading .customind-control .font-normal{
 		        font-weight: 600;
 		        }
@@ -405,6 +420,22 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		       box-shadow: 0 0 0 0 #2271b1;
             outline: 0 solid transparent;
 		}
+
+		#sub-accordion-section-colormag_header_builder_section {
+				margin-top: 100px;
+				}
+
+				#accordion-section-colormag_sticky_header_section {
+			    display: block !important;
+			}
+
+			#accordion-section-colormag_transparent_header_section {
+			    display: block !important;
+			}
+
+			#accordion-section-title_tagline {
+			    margin-top: 20px;
+			}
 		    '
 			);
 		}
@@ -520,7 +551,6 @@ function colormag_image_uploader() {
 
 	wp_enqueue_media();
 	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
-
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
@@ -529,7 +559,7 @@ add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
 function colormag_get_category_colors() {
 	$category_colors = array();
 	foreach ( get_categories() as $cat ) {
-		$color = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
+		$color                            = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
 		$category_colors[ $cat->term_id ] = $color;
 	}
 	return $category_colors;

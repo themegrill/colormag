@@ -182,23 +182,34 @@ function colormag_body_class( $classes ) {
 
 	global $post;
 
+	$container_meta = get_post_meta( $post->ID, 'colormag_page_container_layout', true );
 	if ( $post ) {
-		$layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true );
+		$layout_meta = get_post_meta( $post->ID, 'colormag_page_sidebar_layout', true );
 	}
 
 	if ( is_home() ) {
 		$queried_id  = get_option( 'page_for_posts' );
-		$layout_meta = get_post_meta( $queried_id, 'colormag_page_layout', true );
+		$layout_meta = get_post_meta( $queried_id, 'colormag_page_sidebar_layout', true );
 	}
 
 	if ( empty( $layout_meta ) || is_archive() || is_search() ) {
 		$layout_meta = 'default_layout';
 	}
 
-	$woocommerce_widgets_enabled     = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
-	$colormag_default_sidebar_layout = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
-	$colormag_page_sidebar_layout    = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
-	$colormag_default_post_layout    = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
+	$woocommerce_widgets_enabled           = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
+	$colormag_default_sidebar_layout       = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+	$colormag_global_container_layout      = get_theme_mod( 'colormag_global_container_layout', 'no_sidebar_full_width' );
+	$colormag_blog_container_layout        = get_theme_mod( 'colormag_blog_container_layout', 'no_sidebar_full_width' );
+	$colormag_global_sidebar_layout        = get_theme_mod( 'colormag_global_sidebar_layout', 'no_sidebar' );
+	$colormag_search_sidebar_layout        = get_theme_mod( 'colormag_search_sidebar_layout', 'no_sidebar' );
+	$colormag_blog_sidebar_layout          = get_theme_mod( 'colormag_blog_sidebar_layout', 'no_sidebar' );
+	$colormag_single_post_sidebar_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'no_sidebar' );
+	$colormag_single_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'no_sidebar' );
+	$colormag_page_sidebar_layout          = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+	$colormag_default_post_layout          = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
+	$colormag_single_post_container_layout = get_theme_mod( 'colormag_single_post_container_layout', 'no_sidebar_full_width' );
+	$colormag_single_page_container_layout = get_theme_mod( 'colormag_single_page_container_layout', 'no_sidebar_full_width' );
+	$colormag_search_page_container_layout = get_theme_mod( 'colormag_search_container_layout', 'no_sidebar_full_width' );
 
 	/**
 	 * Header styles.
@@ -220,42 +231,167 @@ function colormag_body_class( $classes ) {
 	if ( 0 == $woocommerce_widgets_enabled || ( 1 == $woocommerce_widgets_enabled && ( function_exists( 'is_woocommerce' ) && ( ! is_woocommerce() ) ) ) ) :
 		if ( 'default_layout' === $layout_meta ) {
 			if ( is_page() ) {
-				if ( 'right_sidebar' === $colormag_page_sidebar_layout ) {
-					$classes[] = '';
-				} elseif ( 'left_sidebar' === $colormag_page_sidebar_layout ) {
-					$classes[] = 'left-sidebar';
-				} elseif ( 'no_sidebar_full_width' === $colormag_page_sidebar_layout ) {
-					$classes[] = 'no-sidebar-full-width';
-				} elseif ( 'no_sidebar_content_centered' === $colormag_page_sidebar_layout ) {
-					$classes[] = 'no-sidebar';
+				if ( 'no_sidebar_full_width' === $colormag_single_page_container_layout ) {
+					$classes[] = 'cm-normal-container';
+				} elseif ( 'no_sidebar_content_stretched' === $colormag_single_page_container_layout ) {
+					$classes[] = 'cm-full-width-container';
+				} elseif ( 'no_sidebar_content_centered' === $colormag_single_page_container_layout ) {
+					$classes[] = 'cm-narrow-container';
+				} elseif ( 'default' === $colormag_single_page_container_layout ) {
+					if ( 'no_sidebar_full_width' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-normal-container';
+					} elseif ( 'no_sidebar_content_stretched' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-full-width-container';
+					} elseif ( 'no_sidebar_content_centered' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-narrow-container';
+					}
+				}
+
+				if ( 'no_sidebar' === $colormag_single_page_sidebar_layout ) {
+					$classes[] = 'cm-no-sidebar';
+				} elseif ( 'right_sidebar' === $colormag_single_page_sidebar_layout ) {
+					$classes[] = 'cm-right-sidebar right-sidebar';
+				} elseif ( 'left_sidebar' === $colormag_single_page_sidebar_layout ) {
+					$classes[] = 'cm-left-sidebar left-sidebar';
+				} elseif ( 'two_sidebars' === $colormag_single_page_sidebar_layout ) {
+					$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+				} elseif ( 'default' === $colormag_single_page_sidebar_layout ) {
+					if ( 'no_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-no-sidebar';
+					} elseif ( 'right_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-right-sidebar right-sidebar';
+					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-left-sidebar left-sidebar';
+					} elseif ( 'two_sidebars' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+					}
 				}
 			} elseif ( is_single() ) {
-				if ( 'right_sidebar' === $colormag_default_post_layout ) {
-					$classes[] = '';
-				} elseif ( 'left_sidebar' === $colormag_default_post_layout ) {
-					$classes[] = 'left-sidebar';
-				} elseif ( 'no_sidebar_full_width' === $colormag_default_post_layout ) {
-					$classes[] = 'no-sidebar-full-width';
-				} elseif ( 'no_sidebar_content_centered' === $colormag_default_post_layout ) {
-					$classes[] = 'no-sidebar';
+				if ( 'no_sidebar_full_width' === $colormag_single_post_container_layout ) {
+					$classes[] = 'cm-normal-container';
+				} elseif ( 'no_sidebar_content_stretched' === $colormag_single_post_container_layout ) {
+					$classes[] = 'cm-full-width-container';
+				} elseif ( 'no_sidebar_content_centered' === $colormag_single_post_container_layout ) {
+					$classes[] = 'cm-narrow-container';
+				} elseif ( 'default' === $colormag_single_post_container_layout ) {
+					if ( 'no_sidebar_full_width' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-normal-container';
+					} elseif ( 'no_sidebar_content_stretched' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-full-width-container';
+					} elseif ( 'no_sidebar_content_centered' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-narrow-container';
+					}
 				}
-			} elseif ( 'right_sidebar' === $colormag_default_sidebar_layout ) {
-				$classes[] = '';
-			} elseif ( 'left_sidebar' === $colormag_default_sidebar_layout ) {
-				$classes[] = 'left-sidebar';
-			} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout ) {
-				$classes[] = 'no-sidebar-full-width';
-			} elseif ( 'no_sidebar_content_centered' === $colormag_default_sidebar_layout ) {
-				$classes[] = 'no-sidebar';
+
+				if ( 'no_sidebar' === $colormag_single_post_sidebar_layout ) {
+					$classes[] = 'cm-no-sidebar';
+				} elseif ( 'right_sidebar' === $colormag_single_post_sidebar_layout ) {
+					$classes[] = 'cm-right-sidebar right-sidebar';
+				} elseif ( 'left_sidebar' === $colormag_single_post_sidebar_layout ) {
+					$classes[] = 'cm-left-sidebar left-sidebar';
+				} elseif ( 'two_sidebars' === $colormag_single_post_sidebar_layout ) {
+					$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+				} elseif ( 'default' === $colormag_single_post_sidebar_layout ) {
+					if ( 'no_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-no-sidebar';
+					} elseif ( 'right_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-right-sidebar right-sidebar';
+					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-left-sidebar left-sidebar';
+					} elseif ( 'two_sidebars' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+					}
+				}
+			} elseif ( is_search() ) {
+				if ( 'no_sidebar_full_width' === $colormag_search_page_container_layout ) {
+					$classes[] = 'cm-normal-container';
+				} elseif ( 'no_sidebar_content_stretched' === $colormag_search_page_container_layout ) {
+					$classes[] = 'cm-full-width-container';
+				} elseif ( 'no_sidebar_content_centered' === $colormag_search_page_container_layout ) {
+					$classes[] = 'cm-narrow-container';
+				} elseif ( 'default' === $colormag_search_page_container_layout ) {
+					if ( 'no_sidebar_full_width' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-normal-container';
+					} elseif ( 'no_sidebar_content_stretched' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-full-width-container';
+					} elseif ( 'no_sidebar_content_centered' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-narrow-container';
+					}
+				}
+
+				if ( 'no_sidebar' === $colormag_search_sidebar_layout ) {
+					$classes[] = 'cm-no-sidebar';
+				} elseif ( 'right_sidebar' === $colormag_search_sidebar_layout ) {
+					$classes[] = 'cm-right-sidebar right-sidebar';
+				} elseif ( 'left_sidebar' === $colormag_search_sidebar_layout ) {
+					$classes[] = 'cm-left-sidebar left-sidebar';
+				} elseif ( 'two_sidebars' === $colormag_search_sidebar_layout ) {
+					$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+				} elseif ( 'default' === $colormag_search_sidebar_layout ) {
+					if ( 'no_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-no-sidebar';
+					} elseif ( 'right_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-right-sidebar right-sidebar';
+					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-left-sidebar left-sidebar';
+					} elseif ( 'two_sidebars' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+					}
+				}
+			} else {
+				if ( 'no_sidebar_full_width' === $colormag_blog_container_layout ) {
+					$classes[] = 'cm-normal-container';
+				} elseif ( 'no_sidebar_content_stretched' === $colormag_blog_container_layout ) {
+					$classes[] = 'cm-full-width-container';
+				} elseif ( 'no_sidebar_content_centered' === $colormag_blog_container_layout ) {
+					$classes[] = 'cm-narrow-container';
+				} elseif ( 'default' === $colormag_blog_container_layout ) {
+					if ( 'no_sidebar_full_width' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-normal-container';
+					} elseif ( 'no_sidebar_content_stretched' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-full-width-container';
+					} elseif ( 'no_sidebar_content_centered' === $colormag_global_container_layout ) {
+						$classes[] = 'cm-narrow-container';
+					}
+				}
+				if ( 'no_sidebar' === $colormag_blog_sidebar_layout ) {
+					$classes[] = 'cm-no-sidebar';
+				} elseif ( 'right_sidebar' === $colormag_blog_sidebar_layout ) {
+					$classes[] = 'cm-right-sidebar right-sidebar';
+				} elseif ( 'left_sidebar' === $colormag_blog_sidebar_layout ) {
+					$classes[] = 'cm-left-sidebar left-sidebar';
+				} elseif ( 'two_sidebars' === $colormag_blog_sidebar_layout ) {
+					$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+				} elseif ( 'default' === $colormag_blog_sidebar_layout ) {
+					if ( 'no_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-no-sidebar';
+					} elseif ( 'right_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-right-sidebar right-sidebar';
+					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-left-sidebar left-sidebar';
+					} elseif ( 'two_sidebars' === $colormag_global_sidebar_layout ) {
+						$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+					}
+				}
 			}
-		} elseif ( 'right_sidebar' === $layout_meta ) {
-			$classes[] = '';
-		} elseif ( 'left_sidebar' === $layout_meta ) {
-			$classes[] = 'left-sidebar';
-		} elseif ( 'no_sidebar_full_width' === $layout_meta ) {
-			$classes[] = 'no-sidebar-full-width';
-		} elseif ( 'no_sidebar_content_centered' === $layout_meta ) {
-			$classes[] = 'no-sidebar';
+		} else {
+			if ( 'right_sidebar' === $layout_meta ) {
+				$classes[] = 'cm-right-sidebar right-sidebar';
+			} elseif ( 'left_sidebar' === $layout_meta ) {
+				$classes[] = 'cm-left-sidebar left-sidebar';
+			} elseif ( 'two_sidebars' === $layout_meta ) {
+				$classes[] = 'cm-two-sidebars tg-site-layout--2-sidebars';
+			} elseif ( 'no_sidebar' === $layout_meta ) {
+				$classes[] = 'cm-no-sidebar';
+			}
+
+			if ( 'no_sidebar_full_width' === $container_meta ) {
+				$classes[] = 'cm-normal-container';
+			} elseif ( 'no_sidebar_content_stretched' === $container_meta ) {
+				$classes[] = 'cm-full-width-container';
+			} elseif ( 'no_sidebar_content_centered' === $container_meta ) {
+				$classes[] = 'cm-narrow-container';
+			}
 		}
 
 	endif;

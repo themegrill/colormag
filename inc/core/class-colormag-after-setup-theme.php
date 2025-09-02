@@ -55,6 +55,160 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 		public function setup_hooks() {
 
 			add_action( 'after_setup_theme', array( $this, 'colormag_setup' ) );
+			add_action( 'after_setup_theme', array( $this, 'support_editor_color_palette' ) );
+			add_action( 'rest_request_after_callbacks', array( $this, 'elementor_add_theme_colors' ), 999, 3 );
+			add_action( 'rest_request_after_callbacks', array( $this, 'display_global_colors_front_end' ), 999, 3 );
+			add_filter( 'colormag_theme_dynamic_css', array( $this, 'generate_global_elementor_style' ) );
+		}
+
+		public function support_editor_color_palette() {
+			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$editor_palette = $this->format_global_palette( $global_palette );
+			add_theme_support( 'editor-color-palette', $editor_palette );
+		}
+
+		public function format_global_palette( $global_palette ) {
+			$editor_palette = array();
+
+			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
+				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+
+					$label = ucwords( str_replace( '-', ' ', $color_key ) );
+
+					$editor_palette[] = array(
+						'name'  => $label,
+						'slug'  => $color_key,
+						'color' => $color_value,
+					);
+				}
+			}
+			return $editor_palette;
+		}
+
+		/**
+		 * Add theme colors to Elementor global colors via REST API.
+		 *
+		 * @param \WP_REST_Response $response The response object.
+		 * @param array             $handler  The handler that was used.
+		 * @param \WP_REST_Request  $request  The request object.
+		 * @return \WP_REST_Response
+		 */
+		public function elementor_add_theme_colors( $response, $handler, $request ) {
+
+			$route = $request->get_route();
+
+			if ( '/elementor/v1/globals' !== $route ) {
+				return $response;
+			}
+
+			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$data           = $response->get_data();
+
+			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
+				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+					// Remove hyphens from slug for Elementor compatibility
+					$no_hyphens = str_replace( '-', '', $color_key );
+					$label      = ucwords( str_replace( '-', ' ', $color_key ) );
+
+					$data['colors'][ $no_hyphens ] = array(
+						'id'    => esc_attr( $no_hyphens ),
+						'title' => 'Theme ' . $label,
+						'value' => $color_value,
+					);
+				}
+			}
+
+			$response->set_data( $data );
+			return $response;
+		}
+
+		/**
+		 * Display individual global colors for Elementor front-end requests.
+		 *
+		 * @param \WP_REST_Response $response The response object.
+		 * @param array             $handler  The handler that was used.
+		 * @param \WP_REST_Request  $request  The request object.
+		 * @return \WP_REST_Response
+		 */
+		public function display_global_colors_front_end( $response, $handler, $request ) {
+			$route = $request->get_route();
+
+			if ( 0 !== strpos( $route, '/elementor/v1/globals' ) ) {
+				return $response;
+			}
+
+			$slug_map       = array();
+			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+
+			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
+				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+					// Remove hyphens as hyphens do not work with Elementor global styles.
+					$no_hyphens              = str_replace( '-', '', $color_key );
+					$slug_map[ $no_hyphens ] = $color_key;
+				}
+			}
+
+			$rest_id = substr( $route, strrpos( $route, '/' ) + 1 );
+
+			if ( ! in_array( $rest_id, array_keys( $slug_map ), true ) ) {
+				return $response;
+			}
+
+			$original_color_key = $slug_map[ $rest_id ];
+			$label              = ucwords( str_replace( '-', ' ', $original_color_key ) );
+
+			return rest_ensure_response(
+				array(
+					'id'    => esc_attr( $rest_id ),
+					'title' => 'Theme ' . $label,
+					'value' => $global_palette['colors'][ $original_color_key ],
+				)
+			);
+		}
+
+		/**
+		 * Generate global Elementor style CSS variables.
+		 *
+		 * @param string $dynamic_css The existing dynamic CSS.
+		 * @return string
+		 */
+		public function generate_global_elementor_style( $dynamic_css ) {
+			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$palette_style  = array();
+			$style          = array();
+
+			if ( isset( $global_palette['colors'] ) ) {
+				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+					// Remove hyphens from color key for CSS variable
+					$variable_key           = '--e-global-color-' . str_replace( '-', '', $color_key );
+					$style[ $variable_key ] = $color_value;
+				}
+
+				$palette_style[':root'] = $style;
+				$dynamic_css           .= $this->parse_css( $palette_style );
+			}
+
+			return $dynamic_css;
+		}
+
+		/**
+		 * Parse CSS array into CSS string.
+		 *
+		 * @param array $css_array The CSS array to parse.
+		 * @return string
+		 */
+		private function parse_css( $css_array ) {
+			$css = '';
+
+			foreach ( $css_array as $selector => $properties ) {
+				$css .= $selector . ' {';
+				foreach ( $properties as $property => $value ) {
+					$css .= $property . ': ' . $value . ';';
+				}
+				$css .= '}';
+			}
+
+			return $css;
 		}
 
 		/**
