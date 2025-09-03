@@ -12,11 +12,11 @@
 		border-radius: 0 4px 4px 0;
 	}
 
-	.wp-block-search__input{
+	.wp-block-search__input {
 		position: relative;
-		padding: length( 'l-6' );
+		padding: length('l-6');
 		@include font-size("font-size-xs");
-		border: 1px solid var(--colormag-color-4, '#d4d4d8');
+		border: 1px solid var(--cm-color-9, '#d4d4d8');
 		border-radius: 4px 0 0 4px;
 		line-height: 1.6;
 

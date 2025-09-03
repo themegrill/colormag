@@ -12,17 +12,17 @@ body.dark-skin {
 /* Top Bar.
 --------------------------------------------- */
 .dark-skin {
-.breaking-news {
-	background-color: $color__gray-one;
+	.breaking-news {
+		background-color: $color__gray-one;
 
-	&-latest {
-		color: $color__white;
+		&-latest {
+			color: $color__white;
+		}
 	}
-}
 
-.date-in-header {
-	color: $color__gray-seven;
-}
+	.date-in-header {
+		color: $color__gray-seven;
+	}
 
 	h1,
 	h2,
@@ -49,6 +49,7 @@ body.dark-skin {
 		li {
 			background-color: $color__gray-one;
 		}
+
 		a {
 			color: $color__white;
 		}
@@ -318,7 +319,7 @@ body.dark-skin {
 	.cm-footer-cols,
 	.cm-footer-bar {
 		border-top: 0 none;
-		background-color:$color__background-dark-footer-socket;
+		background-color: $color__background-dark-footer-socket;
 	}
 
 	#cm-footer .cm-upper-footer-cols .widget {
@@ -339,8 +340,9 @@ body.dark-skin {
 		color: $color__gray-seven;
 		border-color: $color__gray-five;
 	}
+
 	.cm-view-all-link {
-		background :$color__background-dark-page;
+		background: $color__background-dark-page;
 	}
 
 	/*--------------------------------------------------------------
@@ -379,7 +381,7 @@ body.dark-skin {
 
 			.cm-submenu-toggle {
 
-				svg{
+				svg {
 					fill: $color__gray-100;
 				}
 			}
@@ -393,7 +395,8 @@ body.dark-skin {
 		}
 
 		.cm-mobile-nav li {
-			border-color: var(--colormag-color-3, #3F3F46);
+			border-color: var(--cm-color-2, #3F3F46);
+
 			a {
 				color: $color__gray-100;
 			}
@@ -412,7 +415,7 @@ body.dark-skin {
 		.cm-mobile-nav {
 
 			li {
-				background-color:$color__background-news;
+				background-color: $color__background-news;
 			}
 		}
 	}
@@ -446,7 +449,7 @@ body.dark-skin {
 				border-color: $color__gray-seven;
 
 				&::before {
-					color:$color__gray-seven;
+					color: $color__gray-seven;
 				}
 			}
 
@@ -478,6 +481,7 @@ body.dark-skin {
 			}
 		}
 	}
+
 	&.colormag-header-clean--full-width {
 
 		.cm-top-bar {
@@ -490,6 +494,7 @@ body.dark-skin {
 		.cm-footer-cols {
 			background-color: $color__background-medium-footer-socket;
 		}
+
 		.cm-footer-bar {
 			background-color: $color__background-dark-footer-socket;
 		}
@@ -549,14 +554,14 @@ body.dark-skin {
 	}
 
 
-.cm-breaking-news i.fa-arrow-up::before,
-.cm-breaking-news i.fa-arrow-down::before {
-	background-color: #161616;
-	border: 1px solid #161616;
-}
+	.cm-breaking-news i.fa-arrow-up::before,
+	.cm-breaking-news i.fa-arrow-down::before {
+		background-color: #161616;
+		border: 1px solid #161616;
+	}
 
-/* Support Dark Skin.
---------------------------------------------- */
+	/* Support Dark Skin.
+	--------------------------------------------- */
 
 	body {
 		color: #cccccc;

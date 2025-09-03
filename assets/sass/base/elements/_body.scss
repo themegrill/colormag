@@ -2,9 +2,9 @@
  * Body.
  */
 body {
-	background-color: $color__gray-200;
-	padding-top: length( 'l-5' );
-	padding-bottom: length( 'l-5' );
+	background-color: var(--cm-color-3, #E4E4E7);
+	padding-top: length('l-5');
+	padding-bottom: length('l-5');
 	background-size: cover;
 
 	#page {

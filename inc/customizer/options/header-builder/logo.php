@@ -81,7 +81,7 @@ $options = array(
 						'colormag_header_site_identity_color_sub_controls',
 						array(
 							'colormag_header_site_identity_color' => array(
-								'default'   => 'var(--colormag-color-9)',
+								'default'   => 'var(--cm-color-1)',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Normal', 'colormag' ),
 								'transport' => 'postMessage',

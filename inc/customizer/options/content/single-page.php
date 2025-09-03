@@ -3,7 +3,7 @@ $container_layout_choices = apply_filters(
 	'colormag_container_layout_choices',
 	array(
 		'default'                     => array(
-			'label' => 'Default',
+			'label' => 'Inherit',
 			'url'   => COLORMAG_PARENT_URL . '/assets/img/sidebar/inherit.svg',
 		),
 		'no_sidebar_full_width'       => array(

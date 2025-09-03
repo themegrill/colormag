@@ -4,9 +4,9 @@
 }
 
 .cm-content {
-	padding-top:  length( 'l-30' );
-	padding-bottom:  length( 'l-30' );
-	background-color: $color__white;
+	padding-top: length('l-30');
+	padding-bottom: length('l-30');
+	background-color: var(--cm-color-3, #E4E4E7);
 }
 
 .wide {
@@ -29,7 +29,7 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 60px;
-	
+
 		.cm-one-half {
 			width: 100%;
 			padding-bottom: 0;
@@ -39,12 +39,12 @@
 }
 
 .top-full-width-sidebar {
-	margin-bottom: length( 'l-15');
+	margin-bottom: length('l-15');
 
 	.cm-widget-title {
 		border-bottom: 2px solid $color__primary;
 		@include font-size("font-size-xs");
-		margin-bottom:  length( 'l-12' );
+		margin-bottom: length('l-12');
 		padding-bottom: 0;
 
 		span {
@@ -68,7 +68,7 @@
 
 	.cm-primary {
 		width: calc(100% - 30%);
-		padding-right: length( 'l-15', em );
+		padding-right: length('l-15', em);
 	}
 
 	.cm-secondary {

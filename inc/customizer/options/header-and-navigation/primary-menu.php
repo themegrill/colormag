@@ -53,7 +53,7 @@ $options = apply_filters(
 					),
 					'colormag_primary_menu_top_border_color' => array(
 						'title'   => esc_html__( 'Color', 'colormag' ),
-						'default' => 'var(--colormag-color-9)',
+						'default' => 'var(--cm-color-1)',
 						'type'    => 'customind-color',
 						'section' => 'colormag_primary_menu_section',
 					),

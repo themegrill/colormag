@@ -113,8 +113,8 @@
 				display: flex;
 				flex-wrap: wrap;
 				gap: 16px;
-				margin-bottom: length( 'l-12' );
-				margin-top: length( 'l-12' );
+				margin-bottom: length('l-12');
+				margin-top: length('l-12');
 			}
 
 			.variations {
@@ -148,12 +148,12 @@
 
 			.qty {
 				width: 100px;
-				padding: length( 'l-4' ) length( 'l-12' );
+				padding: length('l-4') length('l-12');
 			}
 
 			.single_add_to_cart_button {
 				width: 100px;
-				padding: length( 'l-4' ) length( 'l-12' );
+				padding: length('l-4') length('l-12');
 				border-radius: 4px;
 			}
 		}
@@ -173,10 +173,10 @@
 		.product_meta {
 			display: flex;
 			flex-direction: column;
-			margin-top: length( 'l-12' );
+			margin-top: length('l-12');
 			padding: 16px 0;
-			border-top: 1px solid var(--colormag-color-4, '#d4d4d8');
-			border-bottom: 1px solid var(--colormag-color-4, '#d4d4d8');
+			border-top: 1px solid var(--cm-color-9, '#d4d4d8');
+			border-bottom: 1px solid var(--cm-color-9, '#d4d4d8');
 
 			> span {
 				margin: 8px 0;
@@ -201,7 +201,7 @@
 		}
 
 		.product_title {
-			margin-top: length( 'l-15' );
+			margin-top: length('l-15');
 		}
 	}
 
@@ -309,7 +309,7 @@
 .quantity {
 
 	input {
-		border: 1px solid var(--colormag-color-4, '#d4d4d8');
+		border: 1px solid var(--cm-color-9, '#d4d4d8');
 		border-radius: 4px;
 	}
 }

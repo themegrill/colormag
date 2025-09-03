@@ -21,7 +21,7 @@ nav li {
 		position: relative;
 		font-family: "Open Sans", serif;
 		font-weight: 300;
-		padding: length( 'l-5') length( 'l-8' );
+		padding: length('l-5') length('l-8');
 	}
 
 	a {
@@ -41,7 +41,7 @@ nav li {
 	.cm-home-icon {
 
 		a {
-			padding: length( 'l-4' );
+			padding: length('l-4');
 
 			&:hover {
 				background-color: $color__primary;
@@ -304,7 +304,7 @@ li.default-menu {
 			width: 48px;
 			height: 48px;
 			fill: $color__white;
-			padding: length( 'l-4');
+			padding: length('l-4');
 
 			&:hover {
 				color: $color__white;
@@ -433,7 +433,7 @@ li.default-menu {
 
 	.cm-random-post a {
 		display: flex;
-		padding: length( 'l-4' );
+		padding: length('l-4');
 		height: 48px;
 		line-height: 1.8;
 
@@ -449,7 +449,7 @@ li.default-menu {
 		display: flex;
 		flex-wrap: wrap;
 		background-color: #27272A;
-		border-top: 1px solid var(--colormag-color-3, #3F3F46);
+		border-top: 1px solid var(--cm-color-2, #3F3F46);
 
 		a:hover {
 			background-color: $color__primary;
@@ -464,7 +464,7 @@ li.default-menu {
 	.cm-submenu-toggle {
 		display: flex;
 		align-items: center;
-		padding: length( 'l-7' );
+		padding: length('l-7');
 		border-left: 1px solid rgba(255, 255, 255, 0.2);
 		cursor: pointer;
 

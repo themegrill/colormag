@@ -55,7 +55,7 @@ $options = array(
 				),
 				'colormag_header_bottom_area_background'   => array(
 					'default' => array(
-						'background-color'      => 'var(--colormag-color-6)',
+						'background-color'      => 'var(--cm-color-5)',
 						'background-image'      => '',
 						'background-repeat'     => 'repeat',
 						'background-position'   => 'center center',
@@ -114,7 +114,7 @@ $options = array(
 
 				'colormag_header_bottom_area_border_color' => array(
 					'title'   => esc_html__( 'Border Color', 'colormag' ),
-					'default' => 'var(--colormag-color-9)',
+					'default' => 'var(--cm-color-1)',
 					'type'    => 'customind-color',
 					'section' => 'colormag_header_builder_bottom_area',
 				),

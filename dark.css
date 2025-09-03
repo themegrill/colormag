@@ -1,7 +1,7 @@
 body {
 	--color--gray: #888888;
 	--color--light--primary: #9bc8da;
-	--color--primary: var(--colormag-color-9, #207daf);
+	--color--primary: var(--cm-color-1, #207daf);
 }
 
 /*--------------------------------------------------------------
@@ -19,7 +19,7 @@ body.dark-skin {
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
 	/* Support Dark Skin.
---------------------------------------------- */
+	--------------------------------------------- */
 }
 
 .dark-skin .breaking-news {
@@ -288,7 +288,7 @@ body.dark-skin {
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav li {
-	border-color: var(--colormag-color-3, #3F3F46);
+	border-color: var(--cm-color-2, #3F3F46);
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav li a {

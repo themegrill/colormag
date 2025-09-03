@@ -11,15 +11,15 @@
 	}
 
 	.checkout {
-		margin-top: length( 'l-15' );
+		margin-top: length('l-15');
 	}
 
 	.form-row {
-		margin-bottom: length( 'l-8');
+		margin-bottom: length('l-8');
 
 		input:not([type="checkbox"]) {
 			width: 100%;
-			padding: length( 'l-5') length( 'l-9');
+			padding: length('l-5') length('l-9');
 			margin-bottom: 0;
 			background-color: $color__white;
 			line-height: 1.5;
@@ -57,6 +57,7 @@
 
 		.form-row {
 			display: inline-block;
+
 			input:not([type="checkbox"]) {
 				width: 100%;
 				padding: 8px;
@@ -90,9 +91,9 @@
 }
 
 .woocommerce-checkout-review-order {
-	padding: length( 'l-15') length( 'l-12');
+	padding: length('l-15') length('l-12');
 	background-color: $color__gray-50;
-	border: 1px solid var(--colormag-color-5, '#E4E4E7');
+	border: 1px solid var(--cm-color-8, '#E4E4E7');
 	border-radius: 4px;
 
 	.form-row {
@@ -165,7 +166,7 @@
 		margin: 0;
 
 		li {
-			padding: length( 'l-9') length( 'l-10');
+			padding: length('l-9') length('l-10');
 			border: 2px dashed $color__gray_300;
 			border-radius: 4px;
 		}

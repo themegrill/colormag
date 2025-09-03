@@ -10,11 +10,11 @@
 	}
 
 	.cm-entry-header {
-		margin-bottom: length( 'l-15' );
+		margin-bottom: length('l-15');
 	}
 
 	h2 {
-		margin-bottom: length( 'l-15' );
+		margin-bottom: length('l-15');
 		@include font-size('font-size-xl');
 	}
 
@@ -39,7 +39,7 @@
 
 	label {
 		display: block;
-		margin-bottom: length( 'l-2' );
+		margin-bottom: length('l-2');
 		font-weight: 600;
 		line-height: 1.8;
 	}
@@ -58,7 +58,7 @@
 	input[type="password"],
 	input[type="url"],
 	input[type="tel"] {
-		margin-bottom: length( 'l-8') ;
+		margin-bottom: length('l-8');
 	}
 }
 
@@ -81,7 +81,7 @@
 				padding: 0 20px;
 				font-weight: 500;
 				color: $color__gray-800;
-				border-bottom: 1px solid var(--colormag-color-4, '#d4d4d8');
+				border-bottom: 1px solid var(--cm-color-9, '#d4d4d8');
 
 				&:hover,
 				&:focus {
@@ -115,12 +115,12 @@
 }
 
 .woocommerce-MyAccount-content {
-	padding: length( 'l-10' );
+	padding: length('l-10');
 	background-color: $color__gray-100;
 	border-radius: 4px;
 
 	p {
-		margin-bottom: length( 'l-6' );
+		margin-bottom: length('l-6');
 
 		&:last-child {
 			margin-bottom: 0;

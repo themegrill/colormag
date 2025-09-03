@@ -68,8 +68,8 @@
 	&.cm-full-width {
 		.cm-header-bottom-row {
 			box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-			background-color: var(--colormag-color-6, #27272A);
-			border-top: 4px solid var(--colormag-color-9, #207daf);
+			background-color: var(--cm-color-5, #27272A);
+			border-top: 4px solid var(--cm-color-1, #207daf);
 		}
 	}
 
@@ -77,8 +77,8 @@
 		.cm-header-bottom-row {
 			.cm-bottom-row {
 				box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-				background-color: var(--colormag-color-6, #27272A);
-				border-top: 4px solid var(--colormag-color-9, #207daf);
+				background-color: var(--cm-color-5, #27272A);
+				border-top: 4px solid var(--cm-color-1, #207daf);
 			}
 		}
 	}
@@ -202,7 +202,7 @@
 		display: none;
 
 		.cm-mobile-open-container {
-			background: var(--colormag-color-6, #27272A);
+			background: var(--cm-color-5, #27272A);
 		}
 	}
 
@@ -439,7 +439,7 @@
 				cursor: pointer;
 
 				.cm-icon {
-					fill: var(--colormag-color-9, #207daf);
+					fill: var(--cm-color-1, #207daf);
 				}
 			}
 
@@ -555,8 +555,8 @@
 
 			.cm-header-bottom-row {
 				box-shadow: 0 0 2px rgba(0, 0, 0, 0.1) inset;
-				background-color: var(--colormag-color-6, #27272A);
-				border-top: 4px solid var(--colormag-color-9, #207daf);
+				background-color: var(--cm-color-5, #27272A);
+				border-top: 4px solid var(--cm-color-1, #207daf);
 			}
 
 			.cm-menu-toggle {

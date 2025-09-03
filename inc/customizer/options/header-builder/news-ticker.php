@@ -37,7 +37,7 @@ $options = array(
 				),
 				'colormag_news_ticker_link_color'         => array(
 					'title'     => esc_html__( 'Link Color', 'colormag' ),
-					'default'   => 'var(--colormag-color-9)',
+					'default'   => 'var(--cm-color-1)',
 					'type'      => 'customind-color',
 					'section'   => 'colormag_header_builder_news_ticker',
 					'transport' => 'postMessage',

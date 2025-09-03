@@ -119,7 +119,7 @@ $options = array(
 
 				'colormag_footer_bottom_area_border_color' => array(
 					'title'     => esc_html__( 'Border Color', 'colormag' ),
-					'default'   => 'var(--colormag-color-3)',
+					'default'   => 'var(--cm-color-2)',
 					'type'      => 'customind-color',
 					'section'   => 'colormag_footer_builder_bottom_area',
 					'transport' => 'postMessage',

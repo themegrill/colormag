@@ -24,7 +24,7 @@
 	&:hover {
 
 		.play-button-wrapper {
-			background-color: var(--colormag-color-9, #207daf);
+			background-color: var(--cm-color-1, #207daf);
 		}
 	}
 }
@@ -56,14 +56,14 @@
 }
 
 .cm-post-categories {
-    display: inline-flex;
+	display: inline-flex;
 	gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
+	flex-wrap: wrap;
+	align-items: center;
 
 	a {
 		display: inline-block;
-		padding: length( 'l-2', px ) length( 'l-4', px);
+		padding: length('l-2', px) length('l-4', px);
 		background-color: $color__primary;
 		color: $color__white;
 		font-size: 10px;

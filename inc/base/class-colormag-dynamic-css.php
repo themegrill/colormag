@@ -1560,87 +1560,6 @@ class ColorMag_Dynamic_CSS {
 	}
 
 	/**
-	 * Returns the background CSS property for editor.
-	 *
-	 * @param string|array $default_value Default value.
-	 * @param string|array $output_value Updated value.
-	 * @param string $selector CSS selector.
-	 *
-	 * @return string|void Generated CSS for background CSS property.
-	 */
-	public static function colormag_editor_block_css() {
-		$parse_css = '';
-
-		// Primary color.
-		$primary_color     = get_theme_mod( 'colormag_primary_color', '#207daf' );
-		$primary_color_css = array(
-			'.mzb-featured-posts, .mzb-social-icon, .mzb-featured-categories, .mzb-social-icons-insert'
-			=> array(
-				'--color--light--primary' => ColorMag_Utils::adjust_color_opacity( $primary_color, 10 ),
-			),
-
-			'body'
-			=> array(
-				'--color--light--primary' => esc_html( $primary_color ),
-				'--color--primary'        => esc_html( $primary_color ),
-			),
-		);
-
-		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
-
-		return $parse_css;
-	}
-
-	/**
-	 * Return dynamic CSS output.
-	 *
-	 * @param string $dynamic_css Dynamic CSS.
-	 * @param string $dynamic_css_filtered Dynamic CSS Filters.
-	 *
-	 * @return string Generated CSS.
-	 */
-	public static function render_wc_output( $dynamic_css, $dynamic_css_filtered = '' ) {
-
-		// Generate dynamic CSS.
-		$parse_wc_css     = $dynamic_css;
-		$wc_primary_color = get_theme_mod( 'colormag_primary_color', '#207daf' );
-
-		$wc_primary_color_css = array(
-			'.woocommerce-cart .actions .button,
-			li.product .added_to_cart:hover'
-			=> array(
-				'border-color' => esc_html( $wc_primary_color ),
-			),
-
-			'li.product .added_to_cart,
-			.woocommerce-MyAccount-navigation ul .is-active a'
-			=> array(
-				'background-color' => esc_html( $wc_primary_color ),
-			),
-
-			'.woocommerce-cart .actions .button[aria-disabled="true"]'
-			=> array(
-				'background-color' => esc_html( $wc_primary_color ),
-				'border-color'     => esc_html( $wc_primary_color ),
-			),
-
-			'.product-subtotal,
-			.woocommerce-cart .actions .button,
-			li.product .added_to_cart:hover,
-			.stock.in-stock,
-			.woocommerce-MyAccount-navigation ul li a:hover,
-			.woocommerce-MyAccount-navigation ul li a:focus'
-			=> array(
-				'color' => esc_html( $wc_primary_color ),
-			),
-		);
-
-		$parse_wc_css .= colormag_parse_css( '#207daf', $wc_primary_color, $wc_primary_color_css );
-
-		return $parse_wc_css;
-	}
-
-	/**
 	 * Return dynamic CSS output.
 	 *
 	 * @param string $dynamic_css Dynamic CSS.
@@ -4668,15 +4587,15 @@ class ColorMag_Dynamic_CSS {
 			'id'     => 'preset-1',
 			'name'   => 'Preset 1',
 			'colors' => array(
-				'colormag-color-1' => '#eaf3fb',
-				'colormag-color-2' => '#bfdcf3',
-				'colormag-color-3' => '#94c4eb',
-				'colormag-color-4' => '#6aace2',
-				'colormag-color-5' => '#257bc1',
-				'colormag-color-6' => '#1d6096',
-				'colormag-color-7' => '#15446b',
-				'colormag-color-8' => '#0c2941',
-				'colormag-color-9' => '#040e16',
+				'cm-color-3' => '#eaf3fb',
+				'cm-color-4' => '#bfdcf3',
+				'cm-color-2' => '#94c4eb',
+				'cm-color-9' => '#6aace2',
+				'cm-color-8' => '#257bc1',
+				'cm-color-5' => '#1d6096',
+				'cm-color-7' => '#15446b',
+				'cm-color-6' => '#0c2941',
+				'cm-color-1' => '#040e16',
 			),
 		);
 
@@ -4690,5 +4609,86 @@ class ColorMag_Dynamic_CSS {
 
 
 		return $parse_builder_css;
+	}
+
+	/**
+	 * Returns the background CSS property for editor.
+	 *
+	 * @param string|array $default_value Default value.
+	 * @param string|array $output_value Updated value.
+	 * @param string $selector CSS selector.
+	 *
+	 * @return string|void Generated CSS for background CSS property.
+	 */
+	public static function colormag_editor_block_css() {
+		$parse_css = '';
+
+		// Primary color.
+		$primary_color     = get_theme_mod( 'colormag_primary_color', '#207daf' );
+		$primary_color_css = array(
+			'.mzb-featured-posts, .mzb-social-icon, .mzb-featured-categories, .mzb-social-icons-insert'
+			=> array(
+				'--color--light--primary' => ColorMag_Utils::adjust_color_opacity( $primary_color, 10 ),
+			),
+
+			'body'
+			=> array(
+				'--color--light--primary' => esc_html( $primary_color ),
+				'--color--primary'        => esc_html( $primary_color ),
+			),
+		);
+
+		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
+
+		return $parse_css;
+	}
+
+	/**
+	 * Return dynamic CSS output.
+	 *
+	 * @param string $dynamic_css Dynamic CSS.
+	 * @param string $dynamic_css_filtered Dynamic CSS Filters.
+	 *
+	 * @return string Generated CSS.
+	 */
+	public static function render_wc_output( $dynamic_css, $dynamic_css_filtered = '' ) {
+
+		// Generate dynamic CSS.
+		$parse_wc_css     = $dynamic_css;
+		$wc_primary_color = get_theme_mod( 'colormag_primary_color', '#207daf' );
+
+		$wc_primary_color_css = array(
+			'.woocommerce-cart .actions .button,
+			li.product .added_to_cart:hover'
+			=> array(
+				'border-color' => esc_html( $wc_primary_color ),
+			),
+
+			'li.product .added_to_cart,
+			.woocommerce-MyAccount-navigation ul .is-active a'
+			=> array(
+				'background-color' => esc_html( $wc_primary_color ),
+			),
+
+			'.woocommerce-cart .actions .button[aria-disabled="true"]'
+			=> array(
+				'background-color' => esc_html( $wc_primary_color ),
+				'border-color'     => esc_html( $wc_primary_color ),
+			),
+
+			'.product-subtotal,
+			.woocommerce-cart .actions .button,
+			li.product .added_to_cart:hover,
+			.stock.in-stock,
+			.woocommerce-MyAccount-navigation ul li a:hover,
+			.woocommerce-MyAccount-navigation ul li a:focus'
+			=> array(
+				'color' => esc_html( $wc_primary_color ),
+			),
+		);
+
+		$parse_wc_css .= colormag_parse_css( '#207daf', $wc_primary_color, $wc_primary_color_css );
+
+		return $parse_wc_css;
 	}
 }

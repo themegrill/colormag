@@ -35,8 +35,11 @@
 }
 
 .cm-normal-container .cm-primary {
-	width: 100%;
 	padding: 0;
+}
+
+.cm-normal-container.cm-no-sidebar .cm-primary {
+	width: 100%;
 }
 
 .cm-no-sidebar .cm-secondary {

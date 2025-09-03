@@ -32,14 +32,14 @@ i {
 
 pre {
 	overflow: auto;
-    max-width: 100%;
-    width: 798px;
+	max-width: 100%;
+	width: 798px;
 	margin-bottom: 20px;
-    padding: 30px 30px 84px 30px ;
+	padding: 30px 30px 84px 30px;
 	background-color: $color__gray-50;
 	@include font-size("font-size-xs");
 	font-style: italic;
-    line-height: 1.7;
+	line-height: 1.7;
 }
 
 code,
@@ -56,14 +56,14 @@ tt {
 abbr,
 acronym,
 dfn {
-	border-bottom: 1px dotted var(--colormag-color-4, '#d4d4d8');
+	border-bottom: 1px dotted var(--cm-color-9, '#d4d4d8');
 	cursor: help;
 }
 
 address {
 	display: block;
 	font-style: italic;
-	margin: 0 0 length( 'l-8' );
+	margin: 0 0 length('l-8');
 }
 
 ins {
@@ -75,7 +75,7 @@ hr,
 	background-color: $color__gray-200;
 	border: 0;
 	height: 1px;
-	margin: length( 'l-15' ) 0;
+	margin: length('l-15') 0;
 }
 
 dl {
@@ -84,9 +84,9 @@ dl {
 
 dt {
 	font-weight: bold;
-	margin-bottom: length( 'l-2' );
+	margin-bottom: length('l-2');
 }
 
 dd {
-	margin-bottom: length( 'l-12');
+	margin-bottom: length('l-12');
 }

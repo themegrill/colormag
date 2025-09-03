@@ -26,6 +26,7 @@
 
 .cm-search-icon-in-input-right {
 	position: relative;
+
 	.search-icon-input-right {
 		position: absolute;
 		right: 10px;
@@ -50,7 +51,7 @@
 		}
 
 		input {
-				box-shadow: 0 0 0 0 rgba($color__primary, 0.2);
+			box-shadow: 0 0 0 0 rgba($color__primary, 0.2);
 		}
 	}
 }
@@ -59,7 +60,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: length( 'l-4' );
+	padding: length('l-4');
 	width: 48px;
 	height: 48px;
 	color: $color__white;
@@ -78,7 +79,7 @@
 	border-radius: 4px;
 
 	button {
-		padding: length( 'l-7' );
+		padding: length('l-7');
 		color: $color__white;
 		background-color: $color__primary;
 		@include font-size("font-size-xs");
@@ -93,7 +94,7 @@
 	z-index: 9999;
 	border: 1px solid $color__gray-100;
 	display: none;
-	padding: length( 'l-12' );
+	padding: length('l-12');
 	border-radius: 0 0 4px 4px;
 	background-color: $color__white;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -121,9 +122,9 @@
 
 	input.s {
 		width: 100%;
-		padding: length( 'l-6' );
+		padding: length('l-6');
 		@include font-size("font-size-xs");
-		border: 1px solid var(--colormag-color-5, '#E4E4E7');
+		border: 1px solid var(--cm-color-8, '#E4E4E7');
 		border-radius: 4px 0 0 4px;
 	}
 
@@ -135,7 +136,7 @@
 /* Random Posts Icon.
 --------------------------------------------- */
 .cm-random-post {
-	order :1;
+	order: 1;
 
 	.fa-random {
 		color: $color__white;
@@ -152,7 +153,7 @@
 			display: flex;
 			align-items: center;
 			height: 48px;
-			padding: length( 'l-4' );
+			padding: length('l-4');
 			border-bottom: medium none;
 
 			&:hover {
@@ -181,7 +182,7 @@
 		flex-basis: unset;
 	}
 
-	.search-form-top{
+	.search-form-top {
 
 		&.show {
 			width: 570px;

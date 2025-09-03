@@ -56,7 +56,7 @@ $options = array(
 					'section'      => 'colormag_header_builder_button_1',
 					'sub_controls' => array(
 						'colormag_header_button_background_color'       => array(
-							'default'   => 'var(--colormag-color-9)',
+							'default'   => 'var(--cm-color-1)',
 							'type'      => 'customind-color',
 							'title'     => esc_html__( 'Normal', 'colormag' ),
 							'transport' => 'postMessage',
@@ -102,7 +102,7 @@ $options = array(
 					'defaultUnit' => 'px',
 				),
 				'colormag_header_button_border_color'  => array(
-					'default'   => 'var(--colormag-color-9)',
+					'default'   => 'var(--cm-color-1)',
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Border Color', 'colormag' ),
 					'transport' => 'postMessage',

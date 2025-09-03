@@ -3,7 +3,7 @@
 	.cm-posts {
 
 		.tags a {
-			border: 1px solid var(--colormag-color-5, '#E4E4E7');
+			border: 1px solid var(--cm-color-8, '#E4E4E7');
 			padding: 3px 5px;
 			border-radius: 3px;
 			color: #777777;
@@ -113,8 +113,9 @@
 		font-size: 2rem;
 	}
 }
+
 .related-posts-main-title {
-	margin-bottom: length( 'l-15' );
+	margin-bottom: length('l-15');
 
 	.fa {
 		color: $color__primary;
@@ -133,7 +134,7 @@
 	overflow: hidden;
 
 	.cm-post-content {
-		padding: length( 'l-10' )
+		padding: length('l-10')
 	}
 
 	.cm-author {
@@ -144,7 +145,7 @@
 
 		.cm-entry-title {
 			font-size: 20px;
-			margin-bottom: length( 'l-8' );
+			margin-bottom: length('l-8');
 		}
 	}
 
@@ -179,17 +180,17 @@
 
 		.single-related-posts {
 			display: grid;
-    		grid-template-columns: 1fr;
+			grid-template-columns: 1fr;
 		}
 
-		.related-posts  {
+		.related-posts {
 			grid-template-columns: 1fr;
 		}
 	}
 
 	&.style-3 {
 
-		.related-posts  {
+		.related-posts {
 			grid-template-columns: 1fr;
 			gap: 12px;
 		}
@@ -323,11 +324,11 @@
 --------------------------------------------- */
 .share-buttons {
 	display: inline-block;
-	margin-top: length( 'l-12' );
+	margin-top: length('l-12');
 }
 
 .box {
-	border: 1px solid var(--colormag-color-5, '#E4E4E7');
+	border: 1px solid var(--cm-color-8, '#E4E4E7');
 	border-radius: 3px;
 	display: inline-block;
 }

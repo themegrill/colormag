@@ -290,10 +290,10 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 			$layout_meta = 'default_layout';
 		}
 
-		$colormag_global_sidebar_layout = get_theme_mod( 'colormag_global_sidebar_layout', 'default' );
-		$colormag_blog_sidebar_layout   = get_theme_mod( 'colormag_blog_sidebar_layout', 'default' );
-		$colormag_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_container_layout', 'default' );
-		$colormag_single_post_layout    = get_theme_mod( 'colormag_single_post_container_layout', 'default' );
+		$colormag_global_sidebar_layout  = get_theme_mod( 'colormag_global_sidebar_layout', 'no_sidebar' );
+		$colormag_default_sidebar_layout = get_theme_mod( 'colormag_blog_sidebar_layout', 'no_sidebar' );
+		$colormag_page_sidebar_layout    = get_theme_mod( 'colormag_single_page_sidebar_layout', 'no_sidebar' );
+		$colormag_default_post_layout    = get_theme_mod( 'colormag_single_post_sidebar_layout', 'no_sidebar' );
 
 		if ( 'default_layout' === $layout_meta ) {
 
@@ -304,34 +304,39 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 				} elseif ( 'left_sidebar' === $colormag_page_sidebar_layout ) {
 					ColorMag_Utils::colormag_get_sidebar( 'left' );
 				} elseif ( 'default' === $colormag_page_sidebar_layout ) {
+
 					if ( 'right_sidebar' === $colormag_global_sidebar_layout || 'two_sidebars' === $colormag_global_sidebar_layout ) {
-						ColorMag_Utils::colormag_get_sidebar( $colormag_global_sidebar_layout );
+						ColorMag_Utils::colormag_get_sidebar( 'two_sidebars' === $colormag_global_sidebar_layout ? 'one_sidebars' : $colormag_global_sidebar_layout );
 					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
 						ColorMag_Utils::colormag_get_sidebar( 'left' );
 					}
 				}
 			} elseif ( is_single() ) {
 
-				if ( 'right_sidebar' === $colormag_single_post_layout || 'two_sidebars' === $colormag_single_post_layout ) {
-					ColorMag_Utils::colormag_get_sidebar( $colormag_single_post_layout );
-				} elseif ( 'left_sidebar' === $colormag_single_post_layout ) {
+				if ( 'right_sidebar' === $colormag_default_post_layout || 'two_sidebars' === $colormag_default_post_layout ) {
+					ColorMag_Utils::colormag_get_sidebar( $colormag_default_post_layout );
+				} elseif ( 'left_sidebar' === $colormag_default_post_layout ) {
 					ColorMag_Utils::colormag_get_sidebar( 'left' );
-				} elseif ( 'default' === $colormag_page_sidebar_layout ) {
+				} elseif ( 'default' === $colormag_default_post_layout ) {
+
 					if ( 'right_sidebar' === $colormag_global_sidebar_layout || 'two_sidebars' === $colormag_global_sidebar_layout ) {
-						ColorMag_Utils::colormag_get_sidebar( $colormag_global_sidebar_layout );
+						ColorMag_Utils::colormag_get_sidebar( 'two_sidebars' === $colormag_global_sidebar_layout ? 'one_sidebars' : $colormag_global_sidebar_layout );
 					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
 						ColorMag_Utils::colormag_get_sidebar( 'left' );
 					}
 				}
-			} elseif ( 'right_sidebar' === $colormag_blog_sidebar_layout || 'two_sidebars' === $colormag_blog_sidebar_layout ) {
-				ColorMag_Utils::colormag_get_sidebar( $colormag_blog_sidebar_layout );
-			} elseif ( 'left_sidebar' === $colormag_blog_sidebar_layout ) {
-				ColorMag_Utils::colormag_get_sidebar( 'left' );
-			} elseif ( 'default' === $colormag_blog_sidebar_layout ) {
-				if ( 'right_sidebar' === $colormag_global_sidebar_layout || 'two_sidebars' === $colormag_global_sidebar_layout ) {
-					ColorMag_Utils::colormag_get_sidebar( $colormag_global_sidebar_layout );
-				} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+			} elseif ( is_archive() || is_home() ) {
+
+				if ( 'right_sidebar' === $colormag_default_sidebar_layout || 'two_sidebars' === $colormag_default_sidebar_layout ) {
+					ColorMag_Utils::colormag_get_sidebar( $colormag_default_sidebar_layout );
+				} elseif ( 'left_sidebar' === $colormag_default_sidebar_layout ) {
 					ColorMag_Utils::colormag_get_sidebar( 'left' );
+				} elseif ( 'default' === $colormag_default_sidebar_layout ) {
+					if ( 'right_sidebar' === $colormag_global_sidebar_layout || 'two_sidebars' === $colormag_global_sidebar_layout ) {
+						ColorMag_Utils::colormag_get_sidebar( 'two_sidebars' === $colormag_global_sidebar_layout ? 'one_sidebars' : $colormag_global_sidebar_layout );
+					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+						ColorMag_Utils::colormag_get_sidebar( 'left' );
+					}
 				}
 			}
 		} elseif ( 'right_sidebar' === $layout_meta || 'two_sidebars' === $layout_meta ) {
