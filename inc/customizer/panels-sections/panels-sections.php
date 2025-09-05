@@ -25,10 +25,14 @@ $panel_options_id = array(
 	'colormag_additional_panel' => array(
 		'title' => esc_html__( 'Additional', 'colormag' ),
 	),
+	'title_tagline'             => array(
+		'title' => esc_html__( 'Site Identity', 'colormag' ),
+	),
 	'header_image'              => array(
 		'title'    => esc_html__( 'Header Media', 'colormag' ),
 		'priority' => 40,
 	),
+
 );
 
 $section_option_id = array(
@@ -81,11 +85,6 @@ $section_option_id = array(
 		'title'    => esc_html__( 'News Ticker', 'colormag' ),
 		'panel'    => 'colormag_header_panel',
 		'priority' => 20,
-	),
-	'title_tagline'                                => array(
-		'title'    => esc_html__( 'Site Identity', 'colormag' ),
-		'panel'    => 'colormag_header_panel',
-		'priority' => 30,
 	),
 	'colormag_primary_header_section'              => array(
 		'title'    => esc_html__( 'Main Header', 'colormag' ),

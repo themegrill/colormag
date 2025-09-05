@@ -47,6 +47,7 @@ require COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-filter.php';
 
 // Generate dynamic CSS from styling options.
 require_once COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-css.php';
+require_once COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-builder-css.php';
 
 // Adds classes to appropriate places.
 require_once COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-classes.php';
@@ -72,8 +73,9 @@ require_once COLORMAG_INCLUDES_DIR . '/core/custom-header.php';
 require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 
 // Load customind.
-require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
+//require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
 
+require __DIR__ . '/../customind/init.php';
 
 /**
  * @var \Customind\Core\Customind

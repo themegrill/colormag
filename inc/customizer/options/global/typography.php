@@ -490,7 +490,7 @@ $typography_preset_choices = apply_filters(
 $options = apply_filters(
 	'colormag_typography_options',
 	array(
-		'colormag_typography_presets'      => array(
+		'colormag_typography_presets'           => array(
 			'type'       => 'customind-typography-preset',
 			'title'      => esc_html__( 'Presets', 'colormag' ),
 			'body_id'    => 'colormag_base_typography',
@@ -500,12 +500,12 @@ $options = apply_filters(
 			'priority'   => 5,
 			'columns'    => 3,
 		),
-		'colormag_body_typography_heading' => array(
+		'colormag_body_typography_heading'      => array(
 			'type'    => 'customind-heading',
 			'title'   => esc_html__( 'Fonts', 'colormag' ),
 			'section' => 'colormag_global_typography_section',
 		),
-		'colormag_base_typography'         => array(
+		'colormag_base_typography'              => array(
 			'default'   => array(
 				'font-family'    => 'default',
 				'font-weight'    => 'regular',
@@ -546,7 +546,12 @@ $options = apply_filters(
 			'title'     => esc_html__( 'Body', 'colormag' ),
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_headings_typography'     => array(
+		'colormag_headings_typography_subtitle' => array(
+			'type'    => 'customind-divider',
+			'variant' => 'solid',
+			'section' => 'colormag_global_typography_section',
+		),
+		'colormag_headings_typography'          => array(
 			'default'            => array(
 				'font-family'    => 'default',
 				'font-weight'    => 'regular',
@@ -594,7 +599,7 @@ $options = apply_filters(
 				'text-transform',
 			),
 		),
-		'colormag_h1_typography'           => array(
+		'colormag_h1_typography'                => array(
 			'default'   => array(
 				'font-family'    => 'default',
 				'font-weight'    => 'regular',
@@ -649,7 +654,7 @@ $options = apply_filters(
 			'title'     => esc_html__( 'H1', 'colormag' ),
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_h2_typography'           => array(
+		'colormag_h2_typography'                => array(
 			'default'   => array(
 				'font-family'    => 'default',
 				'font-weight'    => 'regular',
@@ -690,7 +695,7 @@ $options = apply_filters(
 			'title'     => esc_html__( 'H2', 'colormag' ),
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_h3_typography'           => array(
+		'colormag_h3_typography'                => array(
 			'default'   => array(
 				'font-family'    => 'default',
 				'font-weight'    => 'regular',
@@ -731,7 +736,7 @@ $options = apply_filters(
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_h4_typography'           => array(
+		'colormag_h4_typography'                => array(
 			'default'   => array(
 				'font-family' => 'default',
 				'font-weight' => 'regular',
@@ -770,7 +775,7 @@ $options = apply_filters(
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_h5_typography'           => array(
+		'colormag_h5_typography'                => array(
 			'default'   => array(
 				'font-family' => 'default',
 				'font-weight' => 'regular',
@@ -809,7 +814,7 @@ $options = apply_filters(
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_h6_typography'           => array(
+		'colormag_h6_typography'                => array(
 			'default'   => array(
 				'font-family' => 'default',
 				'font-weight' => 'regular',

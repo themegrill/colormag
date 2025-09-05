@@ -93,6 +93,9 @@ $options = array(
 		'priority'    => 10,
 		'units'       => array( '%', 'em', 'rem' ),
 		'defaultUnit' => '%',
+		'condition'   => array(
+			'colormag_global_sidebar_layout!' => 'no_sidebar',
+		),
 	),
 	'colormag_demo_migrated_heading'   => array(
 		'type'         => 'customind-accordion',

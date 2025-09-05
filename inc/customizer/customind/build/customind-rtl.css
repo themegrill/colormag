@@ -1400,6 +1400,9 @@
 .pb-\[16px\] {
 		padding-bottom: 16px;
 }
+.pb-\[24px\] {
+		padding-bottom: 24px;
+}
 .pl-0 {
 		padding-right: 0;
 }
@@ -2167,14 +2170,11 @@ li.customize-control-customind-tabs {
 .customind-typography-style-2 {
 		overflow: hidden;
 		border-radius: 0.25rem;
-		border-width: 1px;
-		border-style: solid;
-		--tw-border-opacity: 1;
-		border-color: rgb(224 224 224 / var(--tw-border-opacity));
 		padding-right: 10px;
 		padding-left: 10px;
 		padding-top: 8px;
 		padding-bottom: 8px;
+	border: 1px solid #E0E0E0;
 }
 
 .customind-typography-style-2 .block {
@@ -2182,7 +2182,6 @@ li.customize-control-customind-tabs {
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 150%;
 }
 
 .customind-typography-style-2-popover {
@@ -2191,6 +2190,14 @@ li.customize-control-customind-tabs {
 
 .components-popover__arrow.is-right {
 	display: none;
+}
+
+#customize-controls .wp-full-overlay-sidebar-content {
+	background: #FFFFFF !important;
+}
+
+#customize-theme-controls .accordion-section-title:after, #customize-outer-theme-controls .accordion-section-title:after {
+	font-size: 16px !important;
 }
 
 .placeholder\:font-normal::-moz-placeholder {
@@ -2845,4 +2852,5 @@ li.customize-control-customind-tabs {
 .\[\&_svg\]\:shrink-0 svg {
 		flex-shrink: 0;
 }
+
 

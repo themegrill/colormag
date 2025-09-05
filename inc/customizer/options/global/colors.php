@@ -1,6 +1,6 @@
 <?php
 use function Customind\Core\get_social_networks;
-$options                                = apply_filters(
+$options                       = apply_filters(
 	'colormag_global_color_options',
 	array(
 		'colormag_color_palettes_heading'       => array(
@@ -11,7 +11,7 @@ $options                                = apply_filters(
 		),
 		'colormag_color_palette'                => array(
 			'type'     => 'customind-color-palette',
-			'title'    => esc_html__( 'Customized Color palette', 'colormag' ),
+			'title'    => esc_html__( 'Color palette', 'colormag' ),
 			'section'  => 'colormag_global_colors_section',
 			'priority' => 5,
 			'default'  => array(
@@ -209,7 +209,7 @@ $options                                = apply_filters(
 			'title'       => esc_html__( 'Dark Skin', 'colormag' ),
 			'section'     => 'colormag_global_colors_section',
 			'priority'    => 89,
-			'description' => esc_html__( 'These colors will be applied when "Dark Skin" is selected', 'colormag' ),
+			'description' => esc_html__( 'When dark palette is selected it will override this style in all content', 'colormag' ),
 		),
 		'colormag_colors_upgrade'               => array(
 			'type'        => 'customind-upgrade',
@@ -225,13 +225,12 @@ $options                                = apply_filters(
 		),
 	)
 );
-$options['colormag_color_skin_setting'] = array(
-	'default'   => 'white',
+$options['colormag_dark_skin'] = array(
+	'default'   => 'preset-5',
 	'type'      => 'customind-select',
 	'title'     => esc_html__( 'Skin Color', 'colormag' ),
 	'section'   => 'colormag_global_colors_section',
 	'transport' => 'postMessage',
-	'priority'  => 90,
 	'choices'   => call_user_func(
 		function () use ( $options ) {
 			// Get predefined presets

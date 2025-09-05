@@ -283,10 +283,54 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_add_inline_style(
 				'customize-controls',
 				'
-				#sub-accordion-panel-colormag_header_builder {
-			    height: 120vh !important;
-                 position: relative;
+				#customize-control-colormag_base_typography .customind-typography-label, #customize-control-colormag_headings_typography .customind-typography-label {
+					font-weight: 600;
 				}
+
+				#customize-control-site_icon {
+			    padding: 0px 12px;
+			    width: 90%;
+				}
+
+				#customize-control-blogname {
+			    padding: 0px 12px;
+				    width: 92%;
+				    padding-top: 10px;
+				    margin-top: 0;
+				    background: #FFF;
+				}
+
+				#customize-control-blogdescription {
+			    padding: 0px 12px;
+			    width: 90%;
+				}
+
+				#sub-accordion-panel-colormag_header_builder.current-panel {
+			    height: 1050px !important;
+                 position: relative;
+                     background: #F0F0F1;
+				}
+
+				#sub-accordion-section-colormag_footer_builder_section {
+				background: #F0F0F1 !important;
+				}
+
+				#customize-control-colormag_header_builder_components {
+				    background: #F0F0F1 !important;
+				}
+
+				#accordion-section-colormag_sticky_header_section .accordion-section-title{
+			    margin: 0 10px;
+                border-radius: 4px;
+			}
+
+			#accordion-section-colormag_sticky_header_section .accordion-section-title button{
+			 font-weight: 400;
+			}
+
+			.accordion-section-title button.accordion-trigger:focus{
+				    box-shadow: 0 0 0 0px #2271b1;
+			}
 
 				#accordion-section-colormag_customize_header_navigation_section {
 					    position: absolute;
@@ -423,6 +467,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 		#sub-accordion-section-colormag_header_builder_section {
 				margin-top: 100px;
+				    background: #F0F0F1;
 				}
 
 				#accordion-section-colormag_sticky_header_section {
@@ -433,8 +478,15 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			    display: block !important;
 			}
 
+			#accordion-section-colormag_sticky_header_section .accordion-section-title{
+			border-top: 1px solid #dcdcde !important;
+			border-left: 1px solid #dcdcde !important;
+			border-right: 1px solid #dcdcde !important;
+			}
+
 			#accordion-section-title_tagline {
-			    margin-top: 20px;
+			    margin-top: 40px;
+			    border-top: 1px solid #dcdcde !important;
 			}
 		    '
 			);
