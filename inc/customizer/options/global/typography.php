@@ -546,11 +546,6 @@ $options = apply_filters(
 			'title'     => esc_html__( 'Body', 'colormag' ),
 			'section'   => 'colormag_global_typography_section',
 		),
-		'colormag_headings_typography_subtitle' => array(
-			'type'    => 'customind-divider',
-			'variant' => 'solid',
-			'section' => 'colormag_global_typography_section',
-		),
 		'colormag_headings_typography'          => array(
 			'default'            => array(
 				'font-family'    => 'default',
@@ -598,6 +593,11 @@ $options = apply_filters(
 				'font-style',
 				'text-transform',
 			),
+		),
+		'colormag_headings_typography_subtitle' => array(
+			'type'    => 'customind-divider',
+			'variant' => 'solid',
+			'section' => 'colormag_global_typography_section',
 		),
 		'colormag_h1_typography'                => array(
 			'default'   => array(

@@ -231,6 +231,7 @@ $options['colormag_dark_skin'] = array(
 	'title'     => esc_html__( 'Skin Color', 'colormag' ),
 	'section'   => 'colormag_global_colors_section',
 	'transport' => 'postMessage',
+	'priority'  => 90,
 	'choices'   => call_user_func(
 		function () use ( $options ) {
 			// Get predefined presets
