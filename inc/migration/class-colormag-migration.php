@@ -28,10 +28,29 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_builder_migration' ], 25 );
 			}
 
+			add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_sidebar_full_width' ] );
 			add_action( 'after_setup_theme', [ $this, 'colormag_outside_background_migration' ], 25 );
 			add_action( 'after_setup_theme', [ $this, 'colormag_logo_height_migration' ], 25 );
 		}
 
+
+		/**
+		 * Migrates Zakra sidebar layout options to "contained" if not already migrated.
+		 *
+		 * Sets the page and archive sidebar layouts to "contained" and marks the migration as complete.
+		 *
+		 * @since ColorMag 3.0.0
+		 */
+		public function colormag_sidebar_full_width() {
+
+			if ( get_option( 'colormag_sidebar_layout_migration' ) ) {
+				return;
+			}
+
+			set_theme_mod( 'colormag_default_sidebar_layout', 'no_sidebar_full_width' );
+			set_theme_mod( 'colormag_page_sidebar_layout', 'no_sidebar_full_width' );
+			update_option( 'colormag_sidebar_layout_migration', true );
+		}
 
 		public function colormag_logo_height_migration() {
 			$logo_height = get_theme_mod( 'colormag_header_site_logo_height' );
