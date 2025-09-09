@@ -317,6 +317,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 				#sub-accordion-section-colormag_footer_builder_section {
 				background: #F0F0F1 !important;
+				margin-top: 20px !important;
 				}
 
 				#customize-control-colormag_header_builder_components {
@@ -492,6 +493,14 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			#customize-controls .customize-info.section-meta,.customize-section-description,#customize-control-header_video,#customize-control-external_header_video,#customize-control-header_image,#customize-control-show_on_front {
 			padding: 0 10px !important;
 			width: 95%;
+			}
+
+			#customize-control-colormag_header_builder_components {
+			    margin-top: 24px;
+			}
+
+			#customize-control-colormag_header_footer_components {
+			    margin-top: 24px;
 			}
 		    '
 			);
