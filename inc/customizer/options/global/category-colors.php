@@ -9,13 +9,6 @@ $categories     = get_categories( $args );
 $priority_count = 110;
 
 $options = array(
-	'colormag_category_color_heading' => array(
-		'type'     => 'customind-title',
-		'title'    => esc_html__( 'Categories Colors', 'colormag' ),
-		'section'  => 'colormag_category_colors_section',
-		'priority' => 1,
-	),
-
 	'colormag_category_color_divider' => array(
 		'type'     => 'customind-divider',
 		'variant'  => 'solid',

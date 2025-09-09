@@ -277,7 +277,6 @@
 		}
 	}
 
-	// Base styles for the social icons container
 	.social-icons {
 		display: flex;
 		align-items: center;
@@ -291,7 +290,6 @@
 		&.social-separator-dot {
 			a {
 				margin-right: 5px;
-
 				&:after {
 					content: "•";
 					margin-left: 10px;
@@ -477,7 +475,7 @@
 					> ul.sub-menu {
 						left: 100%;
 
-						li {
+						li{
 							&:hover {
 								> ul.sub-menu {
 									left: 100%;
