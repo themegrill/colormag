@@ -872,6 +872,9 @@
 .gap-6 {
 		gap: 24px;
 }
+.gap-\[10px\] {
+		gap: 10px;
+}
 .gap-\[12px\] {
 		gap: 12px;
 }
@@ -1065,10 +1068,6 @@
 		--tw-border-opacity: 1;
 		border-color: rgb(37 99 235 / var(--tw-border-opacity));
 }
-.border-\[\#949494\] {
-		--tw-border-opacity: 1;
-		border-color: rgb(148 148 148 / var(--tw-border-opacity));
-}
 .border-\[\#C7E5F5\] {
 		--tw-border-opacity: 1;
 		border-color: rgb(199 229 245 / var(--tw-border-opacity));
@@ -1167,10 +1166,6 @@
 		--tw-bg-opacity: 1;
 		background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
-.bg-\[\#E0E0E0\] {
-		--tw-bg-opacity: 1;
-		background-color: rgb(224 224 224 / var(--tw-bg-opacity));
-}
 .bg-\[\#F4F4F4\] {
 		--tw-bg-opacity: 1;
 		background-color: rgb(244 244 244 / var(--tw-bg-opacity));
@@ -1188,6 +1183,10 @@
 		background-color: rgb(252 252 252 / var(--tw-bg-opacity));
 }
 .bg-\[\#FFFFFF\] {
+		--tw-bg-opacity: 1;
+		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#FFF\] {
 		--tw-bg-opacity: 1;
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
@@ -1875,6 +1874,16 @@
 	border: 1px solid #E0E0E0;
 }
 
+#customize-theme-controls .control-section.open {
+	border: none;
+}
+
+.customind-palette-extender[aria-expanded="true"] {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #2563eb !important;
+}
+
 .customind-popover-content .customind-color-picker {
 	width: 100%;
 }
@@ -1893,6 +1902,13 @@
 
 .customind-top-palette-preview {
 	display: flex;
+	border: 1px solid #E8E8E8;
+	border-radius: 4px;
+}
+
+.customind-top-palette-preview .customind-zstack-trigger {
+	height: 28px;
+	width: 25px;
 }
 
 .customind-top-palette-preview .customind-zstack-container:first-child .customind-zstack-trigger {
@@ -1948,7 +1964,7 @@ li[class^='customize-control-customind-'] {
 }
 
 .customind-control:not([data-control-type='customind-builder']) {
-	max-width: 300px;
+	max-width: 320px;
 	padding: 10px 16px;
 	background-color: white;
 }
@@ -2188,6 +2204,15 @@ li.customize-control-customind-tabs {
 	left: 20px !important;
 }
 
+.customind-typography-style-2-popover #react-select-2-input {
+	box-shadow: 0 0 0 0;
+}
+
+.customind-font-family-select > div {
+	border: 1px solid #E0E0E0;
+	border-radius: 4px;
+}
+
 .components-popover__arrow.is-right {
 	display: none;
 }
@@ -2415,6 +2440,15 @@ li.customize-control-customind-tabs {
 
 .focus-visible\:ring-offset-2:focus-visible {
 		--tw-ring-offset-width: 2px;
+}
+
+.active\:border-solid:active {
+		border-style: solid;
+}
+
+.active\:border-\[\#2563eb\]:active {
+		--tw-border-opacity: 1;
+		border-color: rgb(37 99 235 / var(--tw-border-opacity));
 }
 
 .active\:text-\[\#207DAF\]:active {
@@ -2830,6 +2864,11 @@ li.customize-control-customind-tabs {
 
 .\[\&_input\]\:border-none input {
 		border-style: none;
+}
+
+.\[\&_input\]\:border-\[\#E0E0E0\] input {
+		--tw-border-opacity: 1;
+		border-color: rgb(224 224 224 / var(--tw-border-opacity));
 }
 
 .\[\&_input\]\:text-\[13px\] input {
