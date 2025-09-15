@@ -42,7 +42,7 @@ $sidebar_layout_choices = apply_filters(
 $options = apply_filters(
 	'colormag_blog_options',
 	array(
-		'colormag_blog_container_tab_group'    => array(
+		'colormag_blog_container_tab_group'         => array(
 			'type'    => 'customind-tabs',
 			'title'   => esc_html__( 'Blog', 'colormag' ),
 			'section' => 'colormag_blog_archive_section',
@@ -52,7 +52,7 @@ $options = apply_filters(
 			),
 			'default' => 'general',
 		),
-		'colormag_blog_container_layout'       => array(
+		'colormag_blog_container_layout'            => array(
 			'default'   => 'default',
 			'type'      => 'customind-radio-image',
 			'title'     => esc_html__( 'Container Layout', 'colormag' ),
@@ -63,14 +63,14 @@ $options = apply_filters(
 			'columns'   => 2,
 			'priority'  => 10,
 		),
-		'colormag_blog_sidebar_layout_divider' => array(
+		'colormag_blog_sidebar_layout_divider'      => array(
 			'type'      => 'customind-divider',
 			'variant'   => 'dashed',
 			'tab_group' => 'colormag_blog_container_tab_group',
 			'tab'       => 'general',
 			'section'   => 'colormag_blog_archive_section',
 		),
-		'colormag_blog_sidebar_layout'         => array(
+		'colormag_blog_sidebar_layout'              => array(
 			'default'   => 'default',
 			'type'      => 'customind-radio-image',
 			'title'     => esc_html__( 'Sidebar Layout', 'colormag' ),
@@ -81,14 +81,14 @@ $options = apply_filters(
 			'columns'   => 2,
 			'priority'  => 10,
 		),
-		'colormag_blog_layout_divider'         => array(
+		'colormag_blog_layout_divider'              => array(
 			'type'      => 'customind-divider',
 			'variant'   => 'dashed',
 			'tab'       => 'general',
 			'tab_group' => 'colormag_blog_container_tab_group',
 			'section'   => 'colormag_blog_archive_section',
 		),
-		'colormag_blog_post_elements_heading'  => array(
+		'colormag_blog_post_elements_heading'       => array(
 			'type'        => 'customind-heading',
 			'tab_group'   => 'colormag_blog_container_tab_group',
 			'title'       => esc_html__( 'Post Elements', 'colormag' ),
@@ -96,7 +96,7 @@ $options = apply_filters(
 			'description' => esc_html__( 'Manage the post elements such as Post Format, Category, Title, Meta, Content, etc.', 'colormag' ),
 			'tab'         => 'general',
 		),
-		'colormag_blog_post_elements'          => array(
+		'colormag_blog_post_elements'               => array(
 			'type'      => 'customind-sortable',
 			'tab'       => 'general',
 			'tab_group' => 'colormag_blog_container_tab_group',
@@ -117,7 +117,7 @@ $options = apply_filters(
 			),
 			'condition' => apply_filters( 'colormag_blog_post_elements_order', false ),
 		),
-		'colormag_blog_post_meta_heading'      => array(
+		'colormag_blog_post_meta_heading'           => array(
 			'type'        => 'customind-heading',
 			'title'       => esc_html__( 'Post Meta', 'colormag' ),
 			'section'     => 'colormag_blog_archive_section',
@@ -125,7 +125,7 @@ $options = apply_filters(
 			'tab'         => 'general',
 			'tab_group'   => 'colormag_blog_container_tab_group',
 		),
-		'colormag_blog_post_meta_structure'    => array(
+		'colormag_blog_post_meta_structure'         => array(
 			'type'      => 'customind-sortable',
 			'section'   => 'colormag_blog_archive_section',
 			'tab'       => 'general',
@@ -146,7 +146,7 @@ $options = apply_filters(
 			),
 			'condition' => apply_filters( 'colormag_post_meta_elements_title_order', false ),
 		),
-		'colormag_blog_post_title_typography'  => array(
+		'colormag_blog_post_title_typography'       => array(
 			'default'   => array(
 				'font-family'    => 'default',
 				'font-weight'    => '500',
@@ -189,14 +189,14 @@ $options = apply_filters(
 			'section'   => 'colormag_blog_archive_section',
 			'tab_group' => 'colormag_blog_container_tab_group',
 		),
-		'colormag_blog_post_date_heading'      => array(
+		'colormag_blog_post_date_heading'           => array(
 			'type'      => 'customind-heading',
 			'title'     => esc_html__( 'Post Date', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
 			'tab'       => 'general',
 			'tab_group' => 'colormag_blog_container_tab_group',
 		),
-		'colormag_blog_post_date_type'         => array(
+		'colormag_blog_post_date_type'              => array(
 			'default'   => 'post-date',
 			'type'      => 'customind-select',
 			'title'     => esc_html__( 'Type', 'colormag' ),
@@ -209,14 +209,14 @@ $options = apply_filters(
 				'both-date'     => esc_html__( 'Both Date', 'colormag' ),
 			),
 		),
-		'colormag_blog_content_heading'        => array(
+		'colormag_blog_content_heading'             => array(
 			'type'      => 'customind-heading',
 			'tab_group' => 'colormag_blog_container_tab_group',
 			'title'     => esc_html__( 'Excerpt', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
 			'tab'       => 'general',
 		),
-		'colormag_blog_content_excerpt_type'   => array(
+		'colormag_blog_content_excerpt_type'        => array(
 			'default'   => 'excerpt',
 			'type'      => 'customind-select',
 			'tab'       => 'general',
@@ -228,14 +228,14 @@ $options = apply_filters(
 				'content' => esc_html__( 'Full Content', 'colormag' ),
 			),
 		),
-		'colormag_pagination_heading'          => array(
+		'colormag_pagination_heading'               => array(
 			'type'      => 'customind-heading',
 			'title'     => esc_html__( 'Pagination', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
 			'tab_group' => 'colormag_blog_container_tab_group',
 			'tab'       => 'general',
 		),
-		'colormag_enable_pagination'           => array(
+		'colormag_enable_pagination'                => array(
 			'title'     => esc_html__( 'Enable', 'colormag' ),
 			'default'   => true,
 			'type'      => 'customind-toggle',
@@ -244,7 +244,7 @@ $options = apply_filters(
 			'transport' => 'refresh',
 			'tab'       => 'general',
 		),
-		'colormag_pagination_type'             => array(
+		'colormag_pagination_type'                  => array(
 			'default'   => 'excerpt',
 			'type'      => 'customind-select',
 			'title'     => esc_html__( 'Type', 'colormag' ),
@@ -259,7 +259,7 @@ $options = apply_filters(
 				'colormag_enable_pagination' => true,
 			),
 		),
-		'colormag_blog_upgrade'                => array(
+		'colormag_blog_upgrade'                     => array(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
@@ -278,6 +278,22 @@ $options = apply_filters(
 			),
 			'section'     => 'colormag_blog_archive_section',
 			'priority'    => 100,
+		),
+
+		'colormag_site_identity_navigation'         => array(
+			'title'    => esc_html__( 'Site Identity', 'colormag' ),
+			'type'     => 'customind-navigation',
+			'section'  => 'title_tagline',
+			'to'       => 'colormag_header_builder_logo',
+			'nav_type' => 'section',
+			'priority' => 1,
+		),
+		'colormag_site_identity_navigation_heading' => array(
+			'type'        => 'customind-heading',
+			'title'       => esc_html__( 'Site Icon', 'colormag' ),
+			'section'     => 'title_tagline',
+			'priority'    => 2,
+			'description' => esc_html__( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least 512 by 512 pixels.', 'colormag' ),
 		),
 	)
 );

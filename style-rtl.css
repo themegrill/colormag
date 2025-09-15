@@ -31,7 +31,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 700;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Bold.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-Bold.woff) format("woff");
 }
 
 @font-face {
@@ -40,7 +40,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 700;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-BoldItalic.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-BoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -49,7 +49,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 800;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-ExtraBold.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-ExtraBold.woff) format("woff");
 }
 
 @font-face {
@@ -58,7 +58,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 800;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -67,7 +67,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Italic.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-Italic.woff) format("woff");
 }
 
 @font-face {
@@ -76,7 +76,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 300;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Light.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-Light.woff) format("woff");
 }
 
 @font-face {
@@ -85,7 +85,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 300;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-LightItalic.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-LightItalic.woff) format("woff");
 }
 
 @font-face {
@@ -94,7 +94,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 500;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Medium.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-Medium.woff) format("woff");
 }
 
 @font-face {
@@ -103,7 +103,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 500;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-MediumItalic.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-MediumItalic.woff) format("woff");
 }
 
 @font-face {
@@ -112,7 +112,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-Regular.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-Regular.woff) format("woff");
 }
 
 @font-face {
@@ -121,7 +121,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 600;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-SemiBold.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-SemiBold.woff) format("woff");
 }
 
 @font-face {
@@ -130,7 +130,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 600;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-SemiBoldItalic.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-SemiBoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -139,7 +139,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(assets/fonts/OpenSans-VariableFont.woff) format("woff");
+	src: url(../../../assets/fonts/OpenSans-VariableFont.woff) format("woff");
 }
 
 /*--------------------------------------------------------------

@@ -1,16 +1,15 @@
 <?php
 $typography_preset_choices = apply_filters(
-	'colormag_site_layout_choices',
+	'cm_site_layout_choices',
 	array(
 		'preset-1' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'Roboto',
-				'font-weight'    => '600',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'Segoe UI',
+				'font-weight'    => '400',
 				'font-size'      => array(
 					'desktop' => array(
-						'size' => '36',
+						'size' => '15',
 						'unit' => 'px',
 					),
 					'tablet'  => array(
@@ -24,7 +23,7 @@ $typography_preset_choices = apply_filters(
 				),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.8',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -54,12 +53,11 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'Ojuju',
+				'font-family'    => 'Open Sans',
 				'font-weight'    => '700',
-				'subsets'        => array( 'latin' ),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.3',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -92,12 +90,10 @@ $typography_preset_choices = apply_filters(
 		'preset-2' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'Ojuju',
-				'font-weight'    => '700',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'Inter',
 				'font-size'      => array(
 					'desktop' => array(
-						'size' => '12',
+						'size' => '16',
 						'unit' => 'px',
 					),
 					'tablet'  => array(
@@ -109,9 +105,10 @@ $typography_preset_choices = apply_filters(
 						'unit' => 'px',
 					),
 				),
+				'subsets'        => array( 'latin' ),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.8',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -141,12 +138,11 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'Lato',
-				'font-weight'    => '700',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'Manrope',
+				'font-weight'    => '400',
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.3',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -175,17 +171,30 @@ $typography_preset_choices = apply_filters(
 				'font-style'     => 'inherit',
 				'text-transform' => 'none',
 			),
-
 		),
 		'preset-3' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'Ojuju',
-				'font-weight'    => '800',
+				'font-family'    => 'Lato',
+				'font-weight'    => '400',
 				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '16',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.8',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -215,26 +224,11 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'Karla',
-				'font-weight'    => '800',
-				'subsets'        => array( 'latin' ),
-				'font-size'      => array(
-					'desktop' => array(
-						'size' => '36',
-						'unit' => 'px',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-				),
+				'font-family'    => 'Montserrat',
+				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.3',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -263,17 +257,30 @@ $typography_preset_choices = apply_filters(
 				'font-style'     => 'inherit',
 				'text-transform' => 'none',
 			),
-
 		),
 		'preset-4' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
+				'font-family'    => 'Roboto',
+				'font-weight'    => '400',
 				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '16',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.8',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -303,12 +310,11 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'Poppins',
+				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.3',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -337,17 +343,29 @@ $typography_preset_choices = apply_filters(
 				'font-style'     => 'inherit',
 				'text-transform' => 'none',
 			),
-
 		),
 		'preset-5' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'Nunito',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '16',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.8',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -377,12 +395,11 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'Merriweather',
+				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.3',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -415,12 +432,25 @@ $typography_preset_choices = apply_filters(
 		'preset-6' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'DM Sans',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '16',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.8',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -450,12 +480,11 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
-				'subsets'        => array( 'latin' ),
+				'font-family'    => 'DM Serif Display',
+				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
-						'size' => '1.2',
+						'size' => '1.3',
 						'unit' => '-',
 					),
 					'tablet'  => array(
@@ -487,12 +516,13 @@ $typography_preset_choices = apply_filters(
 		),
 	)
 );
-$options = apply_filters(
+$options                   = apply_filters(
 	'colormag_typography_options',
 	array(
 		'colormag_typography_presets'           => array(
 			'type'       => 'customind-typography-preset',
 			'title'      => esc_html__( 'Presets', 'colormag' ),
+			'default'    => 'preset-1',
 			'body_id'    => 'colormag_base_typography',
 			'heading_id' => 'colormag_headings_typography',
 			'section'    => 'colormag_global_typography_section',

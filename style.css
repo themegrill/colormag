@@ -2213,6 +2213,12 @@ table td {
 	.cm-header-actions {
 		flex-basis: unset;
 	}
+	.search-form-top.show {
+		width: 570px;
+	}
+	.search-form-top.show::before {
+		right: 10px;
+	}
 	.cm-top-search {
 		position: relative;
 	}

@@ -109,7 +109,7 @@
 		if ('object' == typeof typography) {
 			if (undefined !== typography['font-size']) {
 				if (
-					undefined !== typography['font-size']['desktop']['size'] &&
+					'undefined' !== typeof typography?.['font-size']?.desktop?.size &&
 					'' !== typography['font-size']['desktop']['size']
 				) {
 					desktopFontSize =
@@ -118,7 +118,7 @@
 				}
 
 				if (
-					undefined !== typography['font-size']['tablet']['size'] &&
+					'undefined' !== typeof typography?.['font-size']?.tablet?.size &&
 					'' !== typography['font-size']['tablet']['size']
 				) {
 					tabletFontSize =
@@ -127,7 +127,7 @@
 				}
 
 				if (
-					undefined !== typography['font-size']['mobile']['size'] &&
+					'undefined' !== typeof typography?.['font-size']?.mobile?.size &&
 					'' !== typography['font-size']['mobile']['size']
 				) {
 					mobileFontSize =
@@ -138,7 +138,7 @@
 
 			if (undefined !== typography['line-height']) {
 				if (
-					undefined !== typography['line-height']['desktop']['size'] &&
+					'undefined' !== typeof typography?.['line-height']?.desktop?.size &&
 					'' !== typography['line-height']['desktop']['size']
 				) {
 					const desktopLineHeightUnit =
@@ -151,7 +151,7 @@
 				}
 
 				if (
-					undefined !== typography['line-height']['tablet']['size'] &&
+					'undefined' !== typeof typography?.['line-height']?.tablet?.size &&
 					'' !== typography['line-height']['tablet']['size']
 				) {
 					const tabletLineHeightUnit =
@@ -163,7 +163,7 @@
 				}
 
 				if (
-					undefined !== typography['line-height']['mobile']['size'] &&
+					'undefined' !== typeof typography?.['line-height']?.mobile?.size &&
 					'' !== typography['line-height']['mobile']['size']
 				) {
 					const mobileLineHeightUnit =
@@ -177,7 +177,8 @@
 
 			if (undefined !== typography['letter-spacing']) {
 				if (
-					undefined !== typography?.['letter-spacing']?.['desktop']?.['size'] &&
+					'undefined' !==
+						typeof typography?.['letter-spacing']?.desktop?.size &&
 					'' !== typography['letter-spacing']['desktop']['size']
 				) {
 					const desktopLetterSpacingUnit =
@@ -190,7 +191,7 @@
 				}
 
 				if (
-					undefined !== typography?.['letter-spacing']?.['tablet']?.['size'] &&
+					'undefined' !== typeof typography?.['letter-spacing']?.tablet?.size &&
 					'' !== typography['letter-spacing']['tablet']['size']
 				) {
 					const tabletLetterSpacingUnit =
@@ -203,7 +204,7 @@
 				}
 
 				if (
-					undefined !== typography?.['letter-spacing']?.['mobile']?.['size'] &&
+					'undefined' !== typeof typography?.['letter-spacing']?.mobile?.size &&
 					'' !== typography['letter-spacing']['mobile']['size']
 				) {
 					const mobileLetterSpacingUnit =
@@ -225,6 +226,7 @@
 
 				if (
 					fontFamily.includes('default') ||
+					fontFamily.includes('Default') ||
 					fontFamily.includes('-apple-system')
 				) {
 					fontFamily =

@@ -62,7 +62,24 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 		}
 
 		public function support_editor_color_palette() {
-			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$global_palette = get_theme_mod(
+				'colormag_color_palette',
+				array(
+					'id'     => 'preset-1',
+					'name'   => 'Preset 1',
+					'colors' => array(
+						'cm-color-1' => '#269bd1',
+						'cm-color-2' => '#1e7ba6',
+						'cm-color-3' => '#FFFFFF',
+						'cm-color-4' => '#F9FEFD',
+						'cm-color-5' => '#27272A',
+						'cm-color-6' => '#16181A',
+						'cm-color-7' => '#51585f',
+						'cm-color-8' => '#FFFFFF',
+						'cm-color-9' => '#e4e4e7',
+					),
+				)
+			);
 			$editor_palette = $this->format_global_palette( $global_palette );
 			add_theme_support( 'editor-color-palette', $editor_palette );
 		}
@@ -71,9 +88,22 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			$editor_palette = array();
 
 			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
-				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+				$color_names = array(
+					'1' => 'Main Accent',
+					'2' => 'Secondary Accent',
+					'3' => 'Main Background',
+					'4' => 'Surface Background',
+					'5' => 'Contrast Background',
+					'6' => 'Title Text',
+					'7' => 'Regular Text',
+					'8' => 'Text on Contrast',
+					'9' => 'Borders',
+				);
 
-					$label = ucwords( str_replace( '-', ' ', $color_key ) );
+				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+					preg_match( '/(\d+)$/', $color_key, $matches );
+					$num   = $matches[1] ?? '';
+					$label = 'ColorMag - ' . ( $color_names[ $num ] ?? $color_key );
 
 					$editor_palette[] = array(
 						'name'  => $label,
@@ -101,7 +131,24 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 				return $response;
 			}
 
-			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$global_palette = get_theme_mod(
+				'colormag_color_palette',
+				array(
+					'id'     => 'preset-1',
+					'name'   => 'Preset 1',
+					'colors' => array(
+						'cm-color-1' => '#269bd1',
+						'cm-color-2' => '#1e7ba6',
+						'cm-color-3' => '#FFFFFF',
+						'cm-color-4' => '#F9FEFD',
+						'cm-color-5' => '#27272A',
+						'cm-color-6' => '#16181A',
+						'cm-color-7' => '#51585f',
+						'cm-color-8' => '#FFFFFF',
+						'cm-color-9' => '#e4e4e7',
+					),
+				)
+			);
 			$data           = $response->get_data();
 
 			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
@@ -138,7 +185,24 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			}
 
 			$slug_map       = array();
-			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$global_palette = get_theme_mod(
+				'colormag_color_palette',
+				array(
+					'id'     => 'preset-1',
+					'name'   => 'Preset 1',
+					'colors' => array(
+						'cm-color-1' => '#269bd1',
+						'cm-color-2' => '#1e7ba6',
+						'cm-color-3' => '#FFFFFF',
+						'cm-color-4' => '#F9FEFD',
+						'cm-color-5' => '#27272A',
+						'cm-color-6' => '#16181A',
+						'cm-color-7' => '#51585f',
+						'cm-color-8' => '#FFFFFF',
+						'cm-color-9' => '#e4e4e7',
+					),
+				)
+			);
 
 			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
 				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
@@ -173,7 +237,24 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 		 * @return string
 		 */
 		public function generate_global_elementor_style( $dynamic_css ) {
-			$global_palette = get_theme_mod( 'colormag_color_palette', array() );
+			$global_palette = get_theme_mod(
+				'colormag_color_palette',
+				array(
+					'id'     => 'preset-1',
+					'name'   => 'Preset 1',
+					'colors' => array(
+						'cm-color-1' => '#269bd1',
+						'cm-color-2' => '#1e7ba6',
+						'cm-color-3' => '#FFFFFF',
+						'cm-color-4' => '#F9FEFD',
+						'cm-color-5' => '#27272A',
+						'cm-color-6' => '#16181A',
+						'cm-color-7' => '#51585f',
+						'cm-color-8' => '#FFFFFF',
+						'cm-color-9' => '#e4e4e7',
+					),
+				)
+			);
 			$palette_style  = array();
 			$style          = array();
 

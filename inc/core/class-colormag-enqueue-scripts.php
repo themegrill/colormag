@@ -289,12 +289,47 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 				#customize-control-site_icon {
 			    padding: 0px 12px;
-			    width: 87%;
+			    width: 92%;
+				}
+
+				#customize-control-site_icon .customize-control-title, #customize-control-site_icon .customize-control-description{
+					display:none;
+				}
+
+				#sub-accordion-section-colormag_category_colors_section {
+				margin-bottom: 10px;
+				}
+
+				.control-section-customind-section.open .section-meta {
+				margin-bottom: 10px !important;
+				}
+
+				#customize-control-site_icon .button-add-media{
+				border-radius: 4px;
 				}
 
 				#customize-control-colormag_header_builder_components {
 				margin-top:24px;
+				padding-right:16px;
 				}
+
+				#customize-control-colormag_footer_builder_components {
+			    padding-right:16px;
+				}
+
+				#accordion-section-colormag_sticky_header_section .accordion-section-title button::after {
+				    top: calc(50% - 7px);
+			}
+
+			#accordion-section-colormag_transparent_header_section .accordion-section-title button::after {
+				    top: calc(50% - 7px);
+			}
+
+			#accordion-section-colormag_transparent_header_section .accordion-section-title button{
+			 font-weight: 400;
+			    font-size:12px;
+
+			}
 
 				#customize-control-blogname {
 			    padding: 0px 12px;
@@ -331,6 +366,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			#accordion-section-colormag_sticky_header_section .accordion-section-title button{
 			 font-weight: 400;
+			  font-size:12px;
 			}
 
 			.accordion-section-title button.accordion-trigger:focus{
@@ -477,6 +513,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			#accordion-section-colormag_transparent_header_section {
 			    display: block !important;
+			    font-size:12px;
 			}
 
 			#accordion-section-colormag_sticky_header_section .accordion-section-title{

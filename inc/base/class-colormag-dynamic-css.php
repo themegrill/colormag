@@ -1542,6 +1542,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= $dynamic_css;
 
 		$parse_css .= self::colormag_editor_block_css();
+		$parse_css .= self::generate_color_palette_css_variables();
 
 		return apply_filters( 'colormag_theme_dynamic_css', $parse_css );
 	}
@@ -1589,6 +1590,45 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
 		return $parse_css;
+	}
+
+	/**
+	 * Generate CSS variables for ColorMag color palette.
+	 *
+	 * @return string Generated CSS variables.
+	 */
+	public static function generate_color_palette_css_variables() {
+		$global_palette = get_theme_mod(
+			'colormag_color_palette',
+			array(
+				'id'     => 'preset-1',
+				'name'   => 'Preset 1',
+				'colors' => array(
+					'cm-color-1' => '#269bd1',
+					'cm-color-2' => '#1e7ba6',
+					'cm-color-3' => '#FFFFFF',
+					'cm-color-4' => '#F9FEFD',
+					'cm-color-5' => '#27272A',
+					'cm-color-6' => '#16181A',
+					'cm-color-7' => '#51585f',
+					'cm-color-8' => '#FFFFFF',
+					'cm-color-9' => '#e4e4e7',
+				),
+			)
+		);
+
+		$css = ':root {';
+
+		if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
+			foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+				// Generate WordPress preset color variables
+				$css .= '--wp--preset--color--' . $color_key . ':' . $color_value . ';';
+			}
+		}
+
+		$css .= '}';
+
+		return $css;
 	}
 
 	/**
