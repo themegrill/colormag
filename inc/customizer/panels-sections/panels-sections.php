@@ -11,7 +11,7 @@ $panel_options_id = array(
 		'title' => esc_html__( 'Header & Navigation', 'colormag' ),
 	),
 	'colormag_header_builder'   => array(
-		'title' => esc_html__( 'Header Builder', 'colormag' ),
+		'title' => esc_html__( 'Header', 'colormag' ),
 	),
 	'colormag_content_panel'    => array(
 		'title' => esc_html__( 'Post Content', 'colormag' ),
@@ -20,7 +20,7 @@ $panel_options_id = array(
 		'title' => esc_html__( 'Footer', 'colormag' ),
 	),
 	'colormag_footer_builder'   => array(
-		'title' => esc_html__( 'Footer Builder', 'colormag' ),
+		'title' => esc_html__( 'Footer', 'colormag' ),
 	),
 	'colormag_additional_panel' => array(
 		'title' => esc_html__( 'Additional', 'colormag' ),
