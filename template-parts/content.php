@@ -72,6 +72,7 @@ $archive_search_layout = 'layout-1';
 	?>
 
 
+
 	<div class="cm-post-content">
 		<?php
 		foreach ( $content_orders as $key => $content_order ) {

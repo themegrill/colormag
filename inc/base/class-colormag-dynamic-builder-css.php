@@ -659,7 +659,14 @@ class ColorMag_Dynamic_Builder_CSS {
 			'background-attachment' => 'scroll',
 		);
 		$header_bottom_area_background         = get_theme_mod( 'colormag_header_bottom_area_background', $header_bottom_area_background_default );
-		$parse_builder_css                    .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, $bottom_header_background_selector );
+		if (
+			is_array( $header_bottom_area_background ) &&
+			isset( $header_bottom_area_background['background-color'] ) &&
+			strpos( $header_bottom_area_background['background-color'], 'var(--cm-color' ) === 0
+		) {
+			$header_bottom_area_background['background-color'] = 'var(--cm-color, #27272A)';
+		}
+		$parse_builder_css .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, $bottom_header_background_selector );
 
 		// Header bottom area padding.
 		$header_bottom_area_padding_default = array(
