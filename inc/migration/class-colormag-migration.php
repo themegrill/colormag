@@ -45,8 +45,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 		public function colormag_container_sidebar_migration() {
 
-			$should_run = false;
-			if ( doing_action( 'themegrill_ajax_demo_imported' ) ) {
+			$color_palette = get_theme_mod( 'colormag_color_palette', '' );
+			if ( ! empty( $color_palette ) && isset( $color_palette['updated_at'] ) ) {
+				$should_run = false;
+			} elseif ( doing_action( 'themegrill_ajax_demo_imported' ) ) {
 				$should_run = true;
 			} elseif ( ! get_option( 'colormag_container_sidebar_migration' ) ) {
 				$should_run = true;
@@ -141,195 +143,182 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			endwhile;
 
+			$default_palette = array(
+				'id'     => 'preset-5',
+				'name'   => 'Preset 1',
+				'colors' => array(
+					'colormag-color-1' => '#FFFFFF',
+					'colormag-color-2' => '#FAFAFA',
+					'colormag-color-4' => '#d4d4d8',
+					'colormag-color-5' => '#E4E4E7',
+					'colormag-color-3' => '#3F3F46',
+					'colormag-color-6' => '#27272a',
+					'colormag-color-7' => '#333333',
+					'colormag-color-8' => '#444444',
+					'colormag-color-9' => '#207daf',
+				),
+			);
+
+			$color_palette = get_theme_mod(
+				'colormag_color_palette',
+				$default_palette
+			);
+
 			// Check if color_palette has colors and is properly structured
 			if ( ! empty( $color_palette ) && is_array( $color_palette ) && isset( $color_palette['colors'] ) && is_array( $color_palette['colors'] ) && ! empty( $color_palette['colors'] ) ) {
-				$colors_keys = array_map(
-					function ( $color ) {
-						return 'var(--' . $color . ')';
-					},
-					array_keys( $color_palette['colors'] )
-				);
-				$colors      = array_combine(
-					$colors_keys,
-					array_values( $color_palette['colors'] )
-				);
+				$colors = $color_palette['colors'];
 			} else {
-				// If no valid color palette, set default preset
-				$default_preset = array(
-					'id'     => 'preset-1',
-					'name'   => 'Preset 1',
-					'colors' => array(
-						'colormag-color-1' => '#FFFFFF',
-						'colormag-color-2' => '#FAFAFA',
-						'colormag-color-3' => '#3F3F46',
-						'colormag-color-4' => '#d4d4d8',
-						'colormag-color-5' => '#E4E4E7',
-						'colormag-color-6' => '#27272a',
-						'colormag-color-7' => '#333333',
-						'colormag-color-8' => '#444444',
-						'colormag-color-9' => '#207daf',
-					),
-				);
-
-				$colors_keys = array_map(
-					function ( $color ) {
-						return $color;
-					},
-					array_keys( $default_preset['colors'] )
-				);
-				$colors      = array_combine(
-					$colors_keys,
-					array_values( $default_preset['colors'] )
-				);
-
+				$colors = $default_palette['colors'];
 			}
 
-			$color_id      = array(
-				array( 'colormag_primary_color', '#207daf' ),
-				array( 'colormag_base_color', '#444444' ),
-				array( 'colormag_headings_color', '#333333' ),
-				array( 'colormag_h1_color', '' ),
-				array( 'colormag_h2_color', '#333333' ),
-				array( 'colormag_h3_color', '#333333' ),
-				array( 'colormag_link_color', '#207daf' ),
-				array( 'colormag_link_hover_color', '#207daf' ),
-				array( 'colormag_sidebar_widget_title_color', '#ffffff' ),
-				array( 'colormag_button_color', '#ffffff' ),
-				array( 'colormag_button_hover_color', '' ),
-				array( 'colormag_button_background_color', '#207daf' ),
-				array( 'colormag_button_background_hover_color', '' ),
-				array( 'colormag_button_border_color', '' ),
-				array( 'colormag_button_border_hover_color', '' ),
-				array( 'colormag_widget_view_all_button_color', '' ),
-				array( 'colormag_widget_view_all_button_background', '' ),
+			$color_id = array(
+				array( 'colormag_primary_color', 'var(--colormag-color-9)', '#207daf' ),
+				array( 'colormag_base_color', 'var(--colormag-color-8)', '#444444' ),
+				array( 'colormag_headings_color', 'var(--colormag-color-7)', '#333333' ),
+				array( 'colormag_h1_color', '', '' ),
+				array( 'colormag_h2_color', 'var(--colormag-color-7)', '#333333' ),
+				array( 'colormag_h3_color', 'var(--colormag-color-7)', '#333333' ),
+				array( 'colormag_link_color', 'var(--colormag-color-9)', '#207daf' ),
+				array( 'colormag_link_hover_color', 'var(--colormag-color-9)', '#207daf' ),
+				array( 'colormag_sidebar_widget_title_color', '', '#ffffff' ),
+				array( 'colormag_button_color', '', '#ffffff' ),
+				array( 'colormag_button_hover_color', '', '' ),
+				array( 'colormag_button_background_color', 'var(--colormag-color-9)', '#207daf' ),
+				array( 'colormag_button_background_hover_color', '', '' ),
+				array( 'colormag_button_border_color', '', '' ),
+				array( 'colormag_button_border_hover_color', '', '' ),
+				array( 'colormag_widget_view_all_button_color', '', '' ),
+				array( 'colormag_widget_view_all_button_background', '', '' ),
 				array( 'colormag_form_element_text_color', '' ),
-				array( 'colormag_form_element_text_focus_color', '' ),
-				array( 'colormag_form_element_background_color', '' ),
-				array( 'colormag_form_element_background_focus_color', '' ),
-				array( 'colormag_form_element_border_color', '' ),
-				array( 'colormag_global_accessibility_color', '' ),
-				array( 'colormag_input_accessibility_color', '' ),
-				array( 'colormag_header_site_identity_color', '' ),
-				array( 'colormag_header_site_identity_hover_color', '' ),
-				array( 'colormag_header_site_tagline_color', '' ),
-				array( 'colormag_header_primary_menu_text_color', '' ),
-				array( 'colormag_header_primary_menu_selected_hovered_text_color', '' ),
-				array( 'colormag_header_primary_menu_active_text_color', '' ),
-				array( 'colormag_header_primary_menu_hover_background', '' ),
-				array( 'colormag_header_primary_menu_active_background', '' ),
-				array( 'colormag_header_secondary_menu_text_color', '' ),
-				array( 'colormag_header_secondary_menu_selected_hovered_text_color', '' ),
-				array( 'colormag_header_secondary_menu_hover_background', '' ),
-				array( 'colormag_header_button_color', '#ffffff' ),
-				array( 'colormag_header_button_hover_color', '#ffffff' ),
-				array( 'colormag_header_button_background_color', '#027abb' ),
-				array( 'colormag_header_button_background_hover_color', '#ffffff' ),
-				array( 'colormag_header_search_text_color', '' ),
-				array( 'colormag_header_search_placeholder_color', '' ),
-				array( 'colormag_header_search_background', '' ),
-				array( 'colormag_header_search_border_color', '' ),
-				array( 'colormag_header_search_icon_color', '' ),
-				array( 'colormag_header_search_button_background', '' ),
-				array( 'colormag_header_search_button_hover_background', '' ),
-				array( 'colormag_header_html_1_text_color', '' ),
-				array( 'colormag_header_html_1_link_color', '' ),
-				array( 'colormag_header_html_1_link_hover_color', '' ),
-				array( 'colormag_widget_1_title_color', '' ),
-				array( 'colormag_widget_1_link_color', '' ),
-				array( 'colormag_widget_1_content_color', '' ),
-				array( 'colormag_widget_2_title_color', '' ),
-				array( 'colormag_widget_2_link_color', '' ),
-				array( 'colormag_widget_2_content_color', '' ),
-				array( 'colormag_header_socials_color', '' ),
-				array( 'colormag_date_color', '' ),
-				array( 'colormag_news_ticker_color', '' ),
-				array( 'colormag_news_ticker_link_color', '' ),
-				array( 'colormag_header_random_icon_color', '' ),
-				array( 'colormag_header_random_icon_hover_color', '' ),
-				array( 'colormag_header_home_icon_color', '' ),
-				array( 'colormag_header_home_icon_background_color', '' ),
-				array( 'colormag_header_home_icon_hover_background_color', '' ),
-				array( 'colormag_off_canvas_text_color', '' ),
-				array( 'colormag_off_canvas_border_color', '' ),
-				array( 'colormag_post_title_color', '#333333' ),
-				array( 'colormag_page_title_color', '#333333' ),
-				array( 'colormag_footer_html_1_text_color', '' ),
-				array( 'colormag_footer_html_1_link_color', '' ),
-				array( 'colormag_footer_html_1_link_hover_color', '' ),
-				array( 'colormag_footer_widget_1_title_color', '' ),
-				array( 'colormag_footer_widget_1_link_color', '' ),
-				array( 'colormag_footer_widget_1_link_hover_color', '' ),
-				array( 'colormag_footer_widget_1_content_color', '' ),
-				array( 'colormag_footer_widget_2_title_color', '' ),
-				array( 'colormag_footer_widget_2_link_color', '' ),
-				array( 'colormag_footer_widget_2_link_hover_color', '' ),
-				array( 'colormag_footer_widget_2_content_color', '' ),
-				array( 'colormag_footer_widget_3_title_color', '' ),
-				array( 'colormag_footer_widget_3_link_color', '' ),
-				array( 'colormag_footer_widget_3_link_hover_color', '' ),
-				array( 'colormag_footer_widget_3_content_color', '' ),
-				array( 'colormag_footer_widget_4_title_color', '' ),
-				array( 'colormag_footer_widget_4_link_color', '' ),
-				array( 'colormag_footer_widget_4_link_hover_color', '' ),
-				array( 'colormag_footer_widget_4_content_color', '' ),
-				array( 'colormag_footer_widget_5_title_color', '' ),
-				array( 'colormag_footer_widget_5_link_color', '' ),
-				array( 'colormag_footer_widget_5_link_hover_color', '' ),
-				array( 'colormag_footer_widget_5_content_color', '' ),
-				array( 'colormag_footer_widget_6_title_color', '' ),
-				array( 'colormag_footer_widget_6_link_color', '' ),
-				array( 'colormag_footer_widget_6_link_hover_color', '' ),
-				array( 'colormag_footer_widget_6_content_color', '' ),
-				array( 'colormag_footer_widget_7_title_color', '' ),
-				array( 'colormag_footer_widget_7_link_color', '' ),
-				array( 'colormag_footer_widget_7_link_hover_color', '' ),
-				array( 'colormag_footer_widget_7_content_color', '' ),
-				array( 'colormag_footer_menu_color', '' ),
-				array( 'colormag_footer_menu_hover_color', '' ),
-				array( 'colormag_footer_button_color', '#ffffff' ),
-				array( 'colormag_footer_button_hover_color', '#ffffff' ),
-				array( 'colormag_footer_button_background_color', '#027abb' ),
-				array( 'colormag_footer_button_background_hover_color', '#ffffff' ),
-				array( 'colormag_footer_button_border_color', '#ffffff' ),
-				array( 'colormag_footer_copyright_text_color', '' ),
-				array( 'colormag_footer_copyright_link_color', '' ),
-				array( 'colormag_footer_copyright_link_hover_color', '' ),
-				array( 'colormag_footer_bottom_area_color', '#fafafa' ),
-				array( 'colormag_footer_bottom_area_border_color', '#3F3F46' ),
-				array( 'colormag_footer_main_area_color', '' ),
-				array( 'colormag_footer_main_area_link_color', '' ),
-				array( 'colormag_footer_main_area_link_hover_color', '' ),
-				array( 'colormag_footer_main_area_border_color', '' ),
-				array( 'colormag_footer_widgets_title_color', '' ),
-				array( 'colormag_footer_widgets_item_border_bottom_color', '' ),
-				array( 'colormag_footer_top_area_color', '' ),
-				array( 'colormag_footer_top_area_border_color', '' ),
-				array( 'colormag_header_bottom_area_color', '' ),
-				array( 'colormag_header_bottom_area_border_color', '' ),
-				array( 'colormag_header_main_area_color', '' ),
-				array( 'colormag_header_main_area_border_color', '' ),
-				array( 'colormag_header_top_area_color', '' ),
-				array( 'colormag_header_top_area_border_color', '' ),
+				array( 'colormag_form_element_text_focus_color', '', '' ),
+				array( 'colormag_form_element_background_color', '', '' ),
+				array( 'colormag_form_element_background_focus_color', '', '' ),
+				array( 'colormag_form_element_border_color', '', '' ),
+				array( 'colormag_global_accessibility_color', '', '' ),
+				array( 'colormag_input_accessibility_color', '', '' ),
+				array( 'colormag_header_site_identity_color', '', '' ),
+				array( 'colormag_header_site_identity_hover_color', '', '' ),
+				array( 'colormag_header_site_tagline_color', '', '' ),
+				array( 'colormag_header_primary_menu_text_color', '', '' ),
+				array( 'colormag_header_primary_menu_selected_hovered_text_color', '', '' ),
+				array( 'colormag_header_primary_menu_active_text_color', '', '' ),
+				array( 'colormag_header_primary_menu_hover_background', '', '' ),
+				array( 'colormag_header_primary_menu_active_background', '', '' ),
+				array( 'colormag_header_secondary_menu_text_color', '', '' ),
+				array( 'colormag_header_secondary_menu_selected_hovered_text_color', '', '' ),
+				array( 'colormag_header_secondary_menu_hover_background', '', '' ),
+				array( 'colormag_header_button_color', '', '#ffffff' ),
+				array( 'colormag_header_button_hover_color', '', '#ffffff' ),
+				array( 'colormag_header_button_background_color', 'var(--colormag-color-9)', '#207daf' ),
+				array( 'colormag_header_button_background_hover_color', '', '#ffffff' ),
+				array( 'colormag_header_search_text_color', '', '' ),
+				array( 'colormag_header_search_placeholder_color', '', '' ),
+				array( 'colormag_header_search_background', '', '' ),
+				array( 'colormag_header_search_border_color', '', '' ),
+				array( 'colormag_header_search_icon_color', '', '' ),
+				array( 'colormag_header_search_button_background', '', '' ),
+				array( 'colormag_header_search_button_hover_background', '', '' ),
+				array( 'colormag_header_html_1_text_color', '', '' ),
+				array( 'colormag_header_html_1_link_color', '', '' ),
+				array( 'colormag_header_html_1_link_hover_color', '', '' ),
+				array( 'colormag_widget_1_title_color', '', '' ),
+				array( 'colormag_widget_1_link_color', '', '' ),
+				array( 'colormag_widget_1_content_color', '', '' ),
+				array( 'colormag_widget_2_title_color', '', '' ),
+				array( 'colormag_widget_2_link_color', '', '' ),
+				array( 'colormag_widget_2_content_color', '', '' ),
+				array( 'colormag_header_socials_color', '', '' ),
+				array( 'colormag_date_color', '', '' ),
+				array( 'colormag_news_ticker_color', '', '' ),
+				array( 'colormag_news_ticker_link_color', '', '' ),
+				array( 'colormag_header_random_icon_color', '', '' ),
+				array( 'colormag_header_random_icon_hover_color', '', '' ),
+				array( 'colormag_header_home_icon_color', '', '' ),
+				array( 'colormag_header_home_icon_background_color', '', '' ),
+				array( 'colormag_header_home_icon_hover_background_color', '', '' ),
+				array( 'colormag_off_canvas_text_color', '', '' ),
+				array( 'colormag_off_canvas_border_color', '', '' ),
+				array( 'colormag_post_title_color', 'var(--colormag-color-7)', '#333333' ),
+				array( 'colormag_page_title_color', 'var(--colormag-color-7)', '#333333' ),
+				array( 'colormag_footer_html_1_text_color', '', '' ),
+				array( 'colormag_footer_html_1_link_color', '', '' ),
+				array( 'colormag_footer_html_1_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_1_title_color', '', '' ),
+				array( 'colormag_footer_widget_1_link_color', '', '' ),
+				array( 'colormag_footer_widget_1_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_1_content_color', '', '' ),
+				array( 'colormag_footer_widget_2_title_color', '', '' ),
+				array( 'colormag_footer_widget_2_link_color', '', '' ),
+				array( 'colormag_footer_widget_2_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_2_content_color', '', '' ),
+				array( 'colormag_footer_widget_3_title_color', '', '' ),
+				array( 'colormag_footer_widget_3_link_color', '', '' ),
+				array( 'colormag_footer_widget_3_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_3_content_color', '', '' ),
+				array( 'colormag_footer_widget_4_title_color', '', '' ),
+				array( 'colormag_footer_widget_4_link_color', '', '' ),
+				array( 'colormag_footer_widget_4_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_4_content_color', '', '' ),
+				array( 'colormag_footer_widget_5_title_color', '', '' ),
+				array( 'colormag_footer_widget_5_link_color', '', '' ),
+				array( 'colormag_footer_widget_5_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_5_content_color', '', '' ),
+				array( 'colormag_footer_widget_6_title_color', '', '' ),
+				array( 'colormag_footer_widget_6_link_color', '', '' ),
+				array( 'colormag_footer_widget_6_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_6_content_color', '', '' ),
+				array( 'colormag_footer_widget_7_title_color', '', '' ),
+				array( 'colormag_footer_widget_7_link_color', '', '' ),
+				array( 'colormag_footer_widget_7_link_hover_color', '', '' ),
+				array( 'colormag_footer_widget_7_content_color', '', '' ),
+				array( 'colormag_footer_menu_color', '', '' ),
+				array( 'colormag_footer_menu_hover_color', '', '' ),
+				array( 'colormag_footer_button_color', '', '#ffffff' ),
+				array( 'colormag_footer_button_hover_color', '', '#ffffff' ),
+				array( 'colormag_footer_button_background_color', '', '#027abb' ),
+				array( 'colormag_footer_button_background_hover_color', '', '#ffffff' ),
+				array( 'colormag_footer_button_border_color', '', '#ffffff' ),
+				array( 'colormag_footer_copyright_text_color', '', '' ),
+				array( 'colormag_footer_copyright_link_color', '', '' ),
+				array( 'colormag_footer_copyright_link_hover_color', '', '' ),
+				array( 'colormag_footer_bottom_area_color', '', '#fafafa' ),
+				array( 'colormag_footer_bottom_area_border_color', 'var(--colormag-color-3)', '#3F3F46' ),
+				array( 'colormag_footer_main_area_color', '', '' ),
+				array( 'colormag_footer_main_area_link_color', '', '' ),
+				array( 'colormag_footer_main_area_link_hover_color', '', '' ),
+				array( 'colormag_footer_main_area_border_color', '', '' ),
+				array( 'colormag_footer_widgets_title_color', '', '' ),
+				array( 'colormag_footer_widgets_item_border_bottom_color', '', '' ),
+				array( 'colormag_footer_top_area_color', '', '' ),
+				array( 'colormag_footer_top_area_border_color', '', '' ),
+				array( 'colormag_header_bottom_area_color', '', '' ),
+				array( 'colormag_header_bottom_area_border_color', '', '' ),
+				array( 'colormag_header_main_area_color', '', '' ),
+				array( 'colormag_header_main_area_border_color', '', '' ),
+				array( 'colormag_header_top_area_color', '', '' ),
+				array( 'colormag_header_top_area_border_color', '', '' ),
 			);
-			$color_palette = get_theme_mod( 'colormag_color_palette', array() );
 
 			// Set colors from the palette.
 			if ( ! empty( $colors ) ) {
 				foreach ( $color_id as $color_setting ) {
-					$color_value = get_theme_mod( $color_setting[0], '' );
+					$color_value = get_theme_mod( $color_setting[0], $color_setting[1] );
 
-					if ( strpos( $color_value, 'var(--colormag-color' ) === 0 ) {
-						$key = str_replace( 'var(--', '', $color_value );
-						$key = str_replace( ')', '', $key );
-						if ( isset( $colors[ $key ] ) ) {
-							set_theme_mod( $color_setting[0], $colors[ $key ] );
-						}
-					} else {
-						// If the value is not a CSS variable, ensure it's saved as is.
-						if ( ! empty( $color_value ) ) {
-							set_theme_mod( $color_setting[0], $color_value );
-						} elseif ( ! empty( $color_setting[1] ) ) {
-							set_theme_mod( $color_setting[0], $color_setting[1] );
+					if ( ! empty( $color_value ) ) {
+
+						if ( strpos( $color_value, 'var(--colormag-color' ) === 0 ) {
+							$key = str_replace( 'var(--', '', $color_value );
+							$key = str_replace( ')', '', $key );
+							if ( isset( $colors[ $key ] ) ) {
+								set_theme_mod( $color_setting[0], $colors[ $key ] );
+							}
+						} else {
+							// If the value is not a CSS variable, ensure it's saved as is.
+							if ( ! empty( $color_value ) ) {
+								set_theme_mod( $color_setting[0], $color_value );
+							} elseif ( ! empty( $color_setting[2] ) ) {
+								set_theme_mod( $color_setting[0], $color_setting[2] );
+							}
 						}
 					}
 				}
@@ -337,9 +326,32 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			// Set background colors from the palette.
 			if ( ! empty( $colors ) ) {
-				$bg_id = array( 'colormag_header_primary_sub_menu_background', 'colormag_header_top_area_background', 'colormag_header_main_area_background', 'colormag_header_bottom_area_background', 'colormag_footer_top_area_widget_background', 'colormag_footer_top_area_background', 'colormag_footer_main_area_background', 'colormag_footer_bottom_area_background', 'colormag_off_canvas_button_background', 'colormag_off_canvas_background', 'colormag_header_secondary_sub_menu_background', 'colormag_inside_container_background', 'colormag_outside_container_background' );
+				$bg_id = array(
+					array( 'colormag_header_primary_sub_menu_background', '#232323' ),
+					array( 'colormag_header_top_area_background', '#f4f4f5' ),
+					array( 'colormag_header_main_area_background', '#FAFAFA' ),
+					array( 'colormag_header_bottom_area_background', 'var(--colormag-color-6)' ),
+					array( 'colormag_footer_top_area_background', '' ),
+					array( 'colormag_footer_main_area_background', '' ),
+					array( 'colormag_footer_bottom_area_background', '' ),
+					array( 'colormag_off_canvas_button_background', '' ),
+					array( 'colormag_off_canvas_background', '' ),
+					array( 'colormag_header_secondary_sub_menu_background', '#232323' ),
+					array( 'colormag_inside_container_background', '#ffffff' ),
+					array( 'colormag_outside_container_background', '' ),
+				);
 				foreach ( $bg_id as $color_setting ) {
-					$value = get_theme_mod( $color_setting, '' );
+					$value = get_theme_mod(
+						$color_setting[0],
+						array(
+							'background-color'      => $color_setting[1],
+							'background-image'      => '',
+							'background-repeat'     => 'repeat',
+							'background-position'   => 'center center',
+							'background-size'       => 'contain',
+							'background-attachment' => 'scroll',
+						)
+					);
 					if ( is_array( $value ) && isset( $value['background-color'] ) ) {
 						$color_value = $value['background-color'];
 						if ( strpos( $color_value, 'var(--colormag-color' ) === 0 ) {
@@ -347,17 +359,34 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 							$key = str_replace( ')', '', $key );
 							if ( isset( $colors[ $key ] ) ) {
 								$value['background-color'] = $colors[ $key ];
-								set_theme_mod( $color_setting, $value );
+								set_theme_mod( $color_setting[0], $value );
 							}
+						} elseif ( ! empty( $color_value ) ) {
+							// If the value is not a CSS variable, ensure it's saved as is.
+							$value['background-color'] = $color_value;
+							set_theme_mod( $color_setting[0], $value );
+						} elseif ( ! empty( $color_setting[1] ) ) {
+							$value['background-color'] = $color_setting[1];
+							set_theme_mod( $color_setting[0], $value );
 						}
 					}
 				}
 			}
 
-			set_theme_mod(
-				'colormag_color_palette',
-				array()
+			// Reset color palette if it contains old colors.
+			$_colors_palette = get_theme_mod(
+				'colormag_color_palette'
 			);
+
+			if ( isset( $_colors_palette['colors'] ) && array_key_exists( 'colormag-color-3', $_colors_palette['colors'] ) ) {
+				set_theme_mod( 'colormag_color_palette', array() );
+			}
+
+			// Set dark skin to preset-6 if skin is dark.
+			$skin_setting = get_theme_mod( 'colormag_color_skin_setting', 'white' );
+			if ( 'dark' === $skin_setting ) {
+				set_theme_mod( 'colormag_dark_skin', 'preset-6' );
+			}
 
 			update_option( 'colormag_container_sidebar_migration', true );
 		}
