@@ -1055,6 +1055,7 @@ table td {
 	border-style: solid;
 	border-color: #E4E4E7;
 	border-width: 0 0 1px 0;
+	background: #FFFFFF;
 }
 
 .cm-header-builder .cm-site-title, .cm-header-builder .cm-site-description {
@@ -4800,7 +4801,7 @@ Styles for separating single posts loaded from ajax call.
 .cm-content {
 	padding-top: 60px;
 	padding-bottom: 60px;
-	background-color: var(--cm-color-3, #E4E4E7);
+	background-color: var(--cm-color-3, #FFFFFF);
 }
 
 .wide {

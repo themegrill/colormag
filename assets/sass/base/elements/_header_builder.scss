@@ -3,6 +3,7 @@
 	border-style: solid;
 	border-color: #E4E4E7;
 	border-width: 0 0 1px 0;
+	background: #FFFFFF;
 
 	.cm-site-title, .cm-site-description {
 		display: none;
@@ -290,6 +291,7 @@
 		&.social-separator-dot {
 			a {
 				margin-right: 5px;
+
 				&:after {
 					content: "•";
 					margin-left: 10px;
@@ -475,7 +477,7 @@
 					> ul.sub-menu {
 						left: 100%;
 
-						li{
+						li {
 							&:hover {
 								> ul.sub-menu {
 									left: 100%;
