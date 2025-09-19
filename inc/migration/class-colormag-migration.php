@@ -45,6 +45,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 		public function colormag_container_sidebar_migration() {
 
+			$should_run    = false;
 			$color_palette = get_theme_mod( 'colormag_color_palette', '' );
 			if ( ! empty( $color_palette ) && isset( $color_palette['updated_at'] ) ) {
 				$should_run = false;
