@@ -1533,6 +1533,52 @@ class ColorMag_Dynamic_CSS {
 
 			$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_elementor_css );
 
+			$color_palette_default = array(
+				'id'     => 'preset-5',
+				'name'   => 'Preset 5',
+				'colors' => array(
+					'cm-color-1' => '#257BC1',
+					'cm-color-2' => '#2270B0',
+					'cm-color-3' => '#FFFFFF',
+					'cm-color-4' => '#F9FEFD',
+					'cm-color-5' => '#27272A',
+					'cm-color-6' => '#16181A',
+					'cm-color-7' => '#8F8F8F',
+					'cm-color-8' => '#FFFFFF',
+					'cm-color-9' => '#C7C7C7',
+				),
+			);
+
+			// Color palette.
+			$color_palette = get_theme_mod( 'colormag_color_palette', $color_palette_default );
+
+			if ( empty( $color_palette ) ) {
+				$parse_css .= ' :root{
+				--cm-color-1: inherit;
+				--cm-color-2: inherit;
+				--cm-color-3: inherit;
+				--cm-color-4: inherit;
+				--cm-color-5: inherit;
+				--cm-color-6: inherit;
+				--cm-color-7: inherit;
+				--cm-color-8: inherit;
+				--cm-color-9: inherit;
+			}';
+			} else {
+				$parse_css .= sprintf(
+					' :root{%s}',
+					array_reduce(
+						array_keys( $color_palette['colors'] ?? [] ),
+						function ( $acc, $curr ) use ( $color_palette ) {
+							$acc .= "--{$curr}: {$color_palette['colors'][$curr]};";
+
+							return $acc;
+						},
+						''
+					)
+				);
+			}
+
 		}
 
 		// Add the custom CSS rendered dynamically, which is static.
@@ -1601,32 +1647,48 @@ class ColorMag_Dynamic_CSS {
 		$global_palette = get_theme_mod(
 			'colormag_color_palette',
 			array(
-				'id'     => 'preset-1',
-				'name'   => 'Preset 1',
+				'id'     => 'preset-5',
+				'name'   => 'Default',
 				'colors' => array(
-					'cm-color-1' => '#269bd1',
-					'cm-color-2' => '#1e7ba6',
+					'cm-color-1' => '#257BC1',
+					'cm-color-2' => '#2270B0',
 					'cm-color-3' => '#FFFFFF',
 					'cm-color-4' => '#F9FEFD',
 					'cm-color-5' => '#27272A',
 					'cm-color-6' => '#16181A',
-					'cm-color-7' => '#51585f',
+					'cm-color-7' => '#8F8F8F',
 					'cm-color-8' => '#FFFFFF',
-					'cm-color-9' => '#e4e4e7',
+					'cm-color-9' => '#C7C7C7',
 				),
 			)
 		);
 
-		$css = ':root {';
+		if ( empty( $global_palette ) ) {
+			$css = ':root{
+				--wp--preset--color--cm-color-1: inherit;
+				--wp--preset--color--cm-color-2: inherit;
+				--wp--preset--color--cm-color-3: inherit;
+				--wp--preset--color--cm-color-4: inherit;
+				--wp--preset--color--cm-color-5: inherit;
+				--wp--preset--color--cm-color-6: inherit;
+				--wp--preset--color--cm-color-7: inherit;
+				--wp--preset--color--cm-color-8: inherit;
+				--wp--preset--color--cm-color-9: inherit;
+			}';
+		} else {
+			$css = ':root {';
 
-		if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
-			foreach ( $global_palette['colors'] as $color_key => $color_value ) {
-				// Generate WordPress preset color variables
-				$css .= '--wp--preset--color--' . $color_key . ':' . $color_value . ';';
+			if ( isset( $global_palette['colors'] ) && is_array( $global_palette['colors'] ) ) {
+				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
+					// Generate WordPress preset color variables
+					$css .= '--wp--preset--color--' . $color_key . ':' . $color_value . ';';
+				}
 			}
+
+			$css .= '}';
 		}
 
-		$css .= '}';
+
 
 		return $css;
 	}

@@ -65,18 +65,18 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			$global_palette = get_theme_mod(
 				'colormag_color_palette',
 				array(
-					'id'     => 'preset-1',
-					'name'   => 'Preset 1',
+					'id'     => 'preset-5',
+					'name'   => 'Preset 5',
 					'colors' => array(
-						'cm-color-1' => '#269bd1',
-						'cm-color-2' => '#1e7ba6',
+						'cm-color-1' => '#257BC1',
+						'cm-color-2' => '#2270B0',
 						'cm-color-3' => '#FFFFFF',
 						'cm-color-4' => '#F9FEFD',
 						'cm-color-5' => '#27272A',
 						'cm-color-6' => '#16181A',
-						'cm-color-7' => '#51585f',
+						'cm-color-7' => '#8F8F8F',
 						'cm-color-8' => '#FFFFFF',
-						'cm-color-9' => '#e4e4e7',
+						'cm-color-9' => '#C7C7C7',
 					),
 				)
 			);
@@ -97,7 +97,7 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 					'6' => 'Title Text',
 					'7' => 'Regular Text',
 					'8' => 'Text on Contrast',
-					'9' => 'Borders',
+					'9' => 'Muted Color / Border',
 				);
 
 				foreach ( $global_palette['colors'] as $color_key => $color_value ) {
@@ -134,18 +134,18 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			$global_palette = get_theme_mod(
 				'colormag_color_palette',
 				array(
-					'id'     => 'preset-1',
-					'name'   => 'Preset 1',
+					'id'     => 'preset-5',
+					'name'   => 'Preset 5',
 					'colors' => array(
-						'cm-color-1' => '#269bd1',
-						'cm-color-2' => '#1e7ba6',
+						'cm-color-1' => '#257BC1',
+						'cm-color-2' => '#2270B0',
 						'cm-color-3' => '#FFFFFF',
 						'cm-color-4' => '#F9FEFD',
 						'cm-color-5' => '#27272A',
 						'cm-color-6' => '#16181A',
-						'cm-color-7' => '#51585f',
+						'cm-color-7' => '#8F8F8F',
 						'cm-color-8' => '#FFFFFF',
-						'cm-color-9' => '#e4e4e7',
+						'cm-color-9' => '#C7C7C7',
 					),
 				)
 			);
@@ -188,18 +188,18 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			$global_palette = get_theme_mod(
 				'colormag_color_palette',
 				array(
-					'id'     => 'preset-1',
-					'name'   => 'Preset 1',
+					'id'     => 'preset-5',
+					'name'   => 'Preset 5',
 					'colors' => array(
-						'cm-color-1' => '#269bd1',
-						'cm-color-2' => '#1e7ba6',
+						'cm-color-1' => '#257BC1',
+						'cm-color-2' => '#2270B0',
 						'cm-color-3' => '#FFFFFF',
 						'cm-color-4' => '#F9FEFD',
 						'cm-color-5' => '#27272A',
 						'cm-color-6' => '#16181A',
-						'cm-color-7' => '#51585f',
+						'cm-color-7' => '#8F8F8F',
 						'cm-color-8' => '#FFFFFF',
-						'cm-color-9' => '#e4e4e7',
+						'cm-color-9' => '#C7C7C7',
 					),
 				)
 			);
@@ -240,18 +240,18 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			$global_palette = get_theme_mod(
 				'colormag_color_palette',
 				array(
-					'id'     => 'preset-1',
-					'name'   => 'Preset 1',
+					'id'     => 'preset-5',
+					'name'   => 'Preset 5',
 					'colors' => array(
-						'cm-color-1' => '#269bd1',
-						'cm-color-2' => '#1e7ba6',
+						'cm-color-1' => '#257BC1',
+						'cm-color-2' => '#2270B0',
 						'cm-color-3' => '#FFFFFF',
 						'cm-color-4' => '#F9FEFD',
 						'cm-color-5' => '#27272A',
 						'cm-color-6' => '#16181A',
-						'cm-color-7' => '#51585f',
+						'cm-color-7' => '#8F8F8F',
 						'cm-color-8' => '#FFFFFF',
-						'cm-color-9' => '#e4e4e7',
+						'cm-color-9' => '#C7C7C7',
 					),
 				)
 			);

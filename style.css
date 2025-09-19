@@ -7,6 +7,7 @@ Author URI: https://themegrill.com
 Description: ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
 Version: 4.1.0
 Tested up to: 6.8
+Requires at least: 5.0
 Requires PHP: 7.4
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -31,7 +32,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 700;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-Bold.woff) format("woff");
+	src: url(assets/fonts/OpenSans-Bold.woff) format("woff");
 }
 
 @font-face {
@@ -40,7 +41,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 700;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-BoldItalic.woff) format("woff");
+	src: url(assets/fonts/OpenSans-BoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -49,7 +50,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 800;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-ExtraBold.woff) format("woff");
+	src: url(assets/fonts/OpenSans-ExtraBold.woff) format("woff");
 }
 
 @font-face {
@@ -58,7 +59,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 800;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
+	src: url(assets/fonts/OpenSans-ExtraBoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -67,7 +68,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-Italic.woff) format("woff");
+	src: url(assets/fonts/OpenSans-Italic.woff) format("woff");
 }
 
 @font-face {
@@ -76,7 +77,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 300;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-Light.woff) format("woff");
+	src: url(assets/fonts/OpenSans-Light.woff) format("woff");
 }
 
 @font-face {
@@ -85,7 +86,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 300;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-LightItalic.woff) format("woff");
+	src: url(assets/fonts/OpenSans-LightItalic.woff) format("woff");
 }
 
 @font-face {
@@ -94,7 +95,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 500;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-Medium.woff) format("woff");
+	src: url(assets/fonts/OpenSans-Medium.woff) format("woff");
 }
 
 @font-face {
@@ -103,7 +104,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 500;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-MediumItalic.woff) format("woff");
+	src: url(assets/fonts/OpenSans-MediumItalic.woff) format("woff");
 }
 
 @font-face {
@@ -112,7 +113,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-Regular.woff) format("woff");
+	src: url(assets/fonts/OpenSans-Regular.woff) format("woff");
 }
 
 @font-face {
@@ -121,7 +122,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 600;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-SemiBold.woff) format("woff");
+	src: url(assets/fonts/OpenSans-SemiBold.woff) format("woff");
 }
 
 @font-face {
@@ -130,7 +131,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 600;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-SemiBoldItalic.woff) format("woff");
+	src: url(assets/fonts/OpenSans-SemiBoldItalic.woff) format("woff");
 }
 
 @font-face {
@@ -139,7 +140,7 @@ and Blueprint http://www.blueprintcss.org/
 	font-weight: 400;
 	font-stretch: normal;
 	font-display: fallback;
-	src: url(../../../assets/fonts/OpenSans-VariableFont.woff) format("woff");
+	src: url(assets/fonts/OpenSans-VariableFont.woff) format("woff");
 }
 
 /*--------------------------------------------------------------

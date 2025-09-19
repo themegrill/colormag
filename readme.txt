@@ -5,7 +5,7 @@ Author: ThemeGrill
 Version: 4.1.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Requires at least: 4.7
+Requires at least: 5.0
 Stable tag: 4.1.0
 
 License: GNU General Public License, version 3 (GPLv3)

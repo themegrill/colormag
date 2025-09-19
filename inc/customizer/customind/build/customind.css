@@ -2300,8 +2300,8 @@ li.customize-control-customind-tabs {
 	margin-bottom: 0 !important;
 }
 
-.customize-control-customind-tabs .tab-active::after,
-.customize-control-customind-tabs [data-state='active']::after {
+.customind-popover-drawer .tab-active::after,
+.customind-popover-drawer [data-state='active']::after {
 	content: '';
 	position: absolute;
 	left: 0;
