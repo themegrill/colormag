@@ -124,7 +124,7 @@ p.stars {
 		gap: 30px;
 		margin-top: length('l-30');
 		padding: 0;
-		border-bottom: 1px solid var(--cm-color-9, '#d4d4d8');
+		border-bottom: 1px solid var(--cm-color-9, #d4d4d8);
 		list-style: none;
 		text-align: left;
 
@@ -176,7 +176,7 @@ p.stars {
 
 	.select2-selection--single {
 		color: $color__gray-800;
-		border-color: var(--cm-color-9, '#d4d4d8');
+		border-color: var(--cm-color-9, #d4d4d8);
 		border-radius: 4px;
 		height: 44px;
 		display: flex;
@@ -202,11 +202,11 @@ p.stars {
 	}
 
 	.select2-search--dropdown .select2-search__field {
-		border-color: var(--cm-color-9, '#d4d4d8');
+		border-color: var(--cm-color-9, #d4d4d8);
 	}
 
 	.select2-dropdown {
-		border-color: var(--cm-color-9, '#d4d4d8');
+		border-color: var(--cm-color-9, #d4d4d8);
 	}
 }
 

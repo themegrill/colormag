@@ -175,8 +175,8 @@
 			flex-direction: column;
 			margin-top: length('l-12');
 			padding: 16px 0;
-			border-top: 1px solid var(--cm-color-9, '#d4d4d8');
-			border-bottom: 1px solid var(--cm-color-9, '#d4d4d8');
+			border-top: 1px solid var(--cm-color-9, #d4d4d8);
+			border-bottom: 1px solid var(--cm-color-9, #d4d4d8);
 
 			> span {
 				margin: 8px 0;
@@ -309,7 +309,7 @@
 .quantity {
 
 	input {
-		border: 1px solid var(--cm-color-9, '#d4d4d8');
+		border: 1px solid var(--cm-color-9, #d4d4d8);
 		border-radius: 4px;
 	}
 }

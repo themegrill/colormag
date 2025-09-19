@@ -248,7 +248,7 @@ ol, ul {
 }
 
 th, td, .wp-block-table th, .wp-block-table td {
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	padding: 6px 10px;
 }
 
@@ -417,7 +417,7 @@ tt {
 abbr,
 acronym,
 dfn {
-	border-bottom: 1px dotted var(--cm-color-9, "#d4d4d8");
+	border-bottom: 1px dotted var(--cm-color-9, #d4d4d8);
 	cursor: help;
 }
 
@@ -757,13 +757,13 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="search"]:focus, input[type="password"]:focus, input[type="url"]:focus {
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 }
 
 input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="tel"] {
 	box-sizing: border-box;
 	padding: 10px;
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	line-height: 20px;
 	width: 100%;
 	margin: 0 0 32px;
@@ -776,14 +776,14 @@ input.s {
 	width: 100%;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-9, "#d4d4d8");
+	border: 1px solid var(--cm-color-9, #d4d4d8);
 	border-radius: 4px 0 0 4px;
 	line-height: 1.6;
 }
 
 input.s:focus {
 	padding-left: 10px;
-	border-color: var(--cm-color-8, "#E4E4E7");
+	border-color: var(--cm-color-8, #E4E4E7);
 	text-indent: 0;
 }
 
@@ -792,7 +792,7 @@ textarea {
 	   -moz-appearance: none !important;
 	        appearance: none !important;
 	padding: 1%;
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	line-height: 20px;
 	width: 100%;
 	margin: 0 0 32px;
@@ -801,7 +801,7 @@ textarea {
 }
 
 textarea:focus {
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 }
 
 .colormag-button {
@@ -833,7 +833,7 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	padding: 8px 16px;
 }
 
@@ -2173,7 +2173,7 @@ table td {
 	width: 100%;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	border-radius: 4px 0 0 4px;
 }
 
@@ -3966,7 +3966,7 @@ Styles for separating single posts loaded from ajax call.
 	position: relative;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-9, "#d4d4d8");
+	border: 1px solid var(--cm-color-9, #d4d4d8);
 	border-radius: 4px 0 0 4px;
 	line-height: 1.6;
 }
@@ -4442,7 +4442,7 @@ Styles for separating single posts loaded from ajax call.
 
 .header-image {
 	margin-bottom: 0;
-	border-bottom: 1px solid var(--cm-color-8, "#E4E4E7");
+	border-bottom: 1px solid var(--cm-color-8, #E4E4E7);
 	width: 100%;
 }
 
@@ -4739,7 +4739,7 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-layout-2 .cm-mobile-nav li {
 	background-color: #fff;
-	border-color: var(--cm-color-8, "#E4E4E7");
+	border-color: var(--cm-color-8, #E4E4E7);
 }
 
 .cm-layout-2 .cm-mobile-nav li a {
@@ -5058,7 +5058,7 @@ ul.wp-block-gallery img {
 }
 
 .single .cm-posts .tags a {
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	padding: 3px 5px;
 	border-radius: 3px;
 	color: #777777;
@@ -5351,7 +5351,7 @@ ul.wp-block-gallery img {
 }
 
 .box {
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	border-radius: 3px;
 	display: inline-block;
 }
@@ -5746,7 +5746,7 @@ ul.wp-block-gallery img {
 .cm-no-results input.s {
 	width: 100%;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-8, "#E4E4E7");
+	border: 1px solid var(--cm-color-8, #E4E4E7);
 	border-radius: 4px 0 0 4px;
 }
 

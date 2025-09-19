@@ -104,8 +104,8 @@ $options = apply_filters(
 			'choices'   => array(
 				'post_format' => esc_attr__( 'Post Format (Image)', 'colormag' ),
 				'category'    => esc_attr__( 'Category', 'colormag' ),
-				'title'       => esc_attr__( 'Title', 'colormag' ),
 				'meta'        => esc_attr__( 'Meta Tags', 'colormag' ),
+				'title'       => esc_attr__( 'Title', 'colormag' ),
 				'content'     => esc_attr__( 'Content', 'colormag' ),
 			),
 			'default'   => array(

@@ -330,7 +330,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					array( 'colormag_header_primary_sub_menu_background', '#232323' ),
 					array( 'colormag_header_top_area_background', '#f4f4f5' ),
 					array( 'colormag_header_main_area_background', '#FAFAFA' ),
-					array( 'colormag_header_bottom_area_background', 'var(--colormag-color-6)' ),
+					array( 'colormag_header_bottom_area_background', '' ),
 					array( 'colormag_footer_top_area_background', '' ),
 					array( 'colormag_footer_main_area_background', '' ),
 					array( 'colormag_footer_bottom_area_background', '' ),
