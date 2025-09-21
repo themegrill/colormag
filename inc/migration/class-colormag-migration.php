@@ -264,17 +264,17 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				$post_id              = get_the_ID();
 				$colormag_post_layout = get_post_meta( $post_id, 'colormag_page_layout', true );
 				if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
-					set_theme_mod( 'colormag_page_sidebar_layout', $colormag_post_layout );
-					set_theme_mod( 'colormag_page_container_layout', 'no_sidebar_full_width' );
+					update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
+					update_post_meta( $post_id, 'colormag_page_container_layout', 'no_sidebar_full_width' );
 				}
 				if ( 'no_sidebar_full_width' === $colormag_post_layout || 'no_sidebar_content_centered' === $colormag_post_layout || 'no_sidebar_content_stretched' === $colormag_post_layout ) {
-					set_theme_mod( 'colormag_page_container_layout', $colormag_post_layout );
-					set_theme_mod( 'colormag_page_sidebar_layout', 'no_sidebar' );
+					update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
+					update_post_meta( $post_id, 'colormag_page_sidebar_layout', 'no_sidebar' );
 				}
 
 				if ( 'default' === $colormag_post_layout ) {
-					set_theme_mod( 'colormag_page_container_layout', $colormag_post_layout );
-					set_theme_mod( 'colormag_page_sidebar_layout', $colormag_post_layout );
+					update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
+					update_post_meta( $post_id, 'colormag_page_sidebar_layout', '$colormag_post_layout' );
 				}
 			endwhile;
 
