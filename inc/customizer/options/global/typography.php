@@ -5,7 +5,7 @@ $typography_preset_choices = apply_filters(
 		'preset-1' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'Segoe UI',
+				'font-family'    => 'Open Sans',
 				'font-weight'    => '400',
 				'font-size'      => array(
 					'desktop' => array(
@@ -54,7 +54,7 @@ $typography_preset_choices = apply_filters(
 			),
 			'heading_typography' => array(
 				'font-family'    => 'Open Sans',
-				'font-weight'    => '700',
+				'font-weight'    => '500',
 				'line-height'    => array(
 					'desktop' => array(
 						'size' => '1.3',
@@ -90,7 +90,7 @@ $typography_preset_choices = apply_filters(
 		'preset-2' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'Inter',
+				'font-family'    => 'Lato',
 				'font-size'      => array(
 					'desktop' => array(
 						'size' => '16',
@@ -138,7 +138,7 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'Manrope',
+				'font-family'    => 'Rubik',
 				'font-weight'    => '400',
 				'line-height'    => array(
 					'desktop' => array(
@@ -173,92 +173,6 @@ $typography_preset_choices = apply_filters(
 			),
 		),
 		'preset-3' => array(
-			'label'              => '',
-			'body_typography'    => array(
-				'font-family'    => 'Lato',
-				'font-weight'    => '400',
-				'subsets'        => array( 'latin' ),
-				'font-size'      => array(
-					'desktop' => array(
-						'size' => '16',
-						'unit' => 'px',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-				),
-				'line-height'    => array(
-					'desktop' => array(
-						'size' => '1.8',
-						'unit' => '-',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => '',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => '',
-					),
-				),
-				'letter-spacing' => array(
-					'desktop' => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-				),
-				'font-style'     => 'inherit',
-				'text-transform' => 'none',
-			),
-			'heading_typography' => array(
-				'font-family'    => 'Montserrat',
-				'font-weight'    => '700',
-				'line-height'    => array(
-					'desktop' => array(
-						'size' => '1.3',
-						'unit' => '-',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => '',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => '',
-					),
-				),
-				'letter-spacing' => array(
-					'desktop' => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => 'px',
-					),
-				),
-				'font-style'     => 'inherit',
-				'text-transform' => 'none',
-			),
-		),
-		'preset-4' => array(
 			'label'              => '',
 			'body_typography'    => array(
 				'font-family'    => 'Roboto',
@@ -310,7 +224,93 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'Poppins',
+				'font-family'    => 'PT Serif',
+				'font-weight'    => '700',
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+		),
+		'preset-4' => array(
+			'label'              => '',
+			'body_typography'    => array(
+				'font-family'    => 'Inter',
+				'font-weight'    => '400',
+				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '16',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'inherit',
+				'text-transform' => 'none',
+			),
+			'heading_typography' => array(
+				'font-family'    => 'IBM Plex Serif',
 				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
@@ -347,7 +347,7 @@ $typography_preset_choices = apply_filters(
 		'preset-5' => array(
 			'label'              => '',
 			'body_typography'    => array(
-				'font-family'    => 'Nunito',
+				'font-family'    => 'Public Sans',
 				'font-weight'    => '400',
 				'font-size'      => array(
 					'desktop' => array(
@@ -395,7 +395,7 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'Merriweather',
+				'font-family'    => 'Bitter',
 				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
@@ -480,7 +480,7 @@ $typography_preset_choices = apply_filters(
 				'text-transform' => 'none',
 			),
 			'heading_typography' => array(
-				'font-family'    => 'DM Serif Display',
+				'font-family'    => 'Outfit',
 				'font-weight'    => '700',
 				'line-height'    => array(
 					'desktop' => array(
