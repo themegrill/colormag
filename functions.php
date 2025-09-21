@@ -521,3 +521,116 @@ add_action(
 		);
 	}
 );
+
+function colormag_typography_should_migrate() {
+	// Default values for comparison
+	$default_typography_presets   = '';
+	$default_base_typography_body = array(
+		'font-family'    => 'inherit',
+		'font-weight'    => 'regular',
+		'subsets'        => array( 'latin' ),
+		'font-size'      => array(
+			'desktop' => array(
+				'size' => '15',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+		),
+		'line-height'    => array(
+			'desktop' => array(
+				'size' => '1.6',
+				'unit' => '-',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '-',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '-',
+			),
+		),
+		'letter-spacing' => array(
+			'desktop' => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+		),
+	);
+
+	$default_base_heading_typography = array(
+		'font-family'    => 'inherit',
+		'font-weight'    => 'regular',
+		'subsets'        => array( 'latin' ),
+		'line-height'    => array(
+			'desktop' => array(
+				'size' => '1.2',
+				'unit' => '-',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+		'letter-spacing' => array(
+			'desktop' => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+		),
+		'font-style'     => 'normal',
+		'text-transform' => 'none',
+	);
+
+	// Get current values
+	$current_typography_presets      = get_theme_mod( 'colormag_typography_presets', $default_typography_presets );
+	$current_base_typography_body    = get_theme_mod( 'colormag_base_typography', $default_base_typography_body );
+	$current_base_heading_typography = get_theme_mod( 'colormag_headings_typography', $default_base_heading_typography );
+
+	// Check if current values are different from default values
+	$should_migrate = false;
+
+	// Check typography presets
+	if ( $current_typography_presets !== $default_typography_presets ) {
+		$should_migrate = true;
+	}
+
+	// Check base typography body
+	if ( $current_base_typography_body !== $default_base_typography_body ) {
+		$should_migrate = true;
+	}
+
+	// Check base heading typography
+	if ( $current_base_heading_typography !== $default_base_heading_typography ) {
+		$should_migrate = true;
+	}
+
+	return $should_migrate;
+}

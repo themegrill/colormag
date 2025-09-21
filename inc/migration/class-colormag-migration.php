@@ -38,10 +38,143 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			if ( ! colormag_fresh_install() || ( $theme_installed_time < $today ) ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_container_sidebar_migration' ], 25 );
+				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ], 30 );
 			}
 			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_container_sidebar_migration' ], 25 );
 		}
 
+		public function colormag_typography_migration() {
+
+			if ( get_option( 'colormag_typography_migration' ) ) {
+				return;
+			}
+
+			// Default values for comparison
+			$default_typography_presets   = '';
+			$default_base_typography_body = array(
+				'font-family'    => 'inherit',
+				'font-weight'    => 'regular',
+				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '15',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '-',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '-',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+			);
+
+			$default_base_heading_typography = array(
+				'font-family'    => 'inherit',
+				'font-weight'    => 'regular',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			// Get current values
+			$current_base_typography_body    = get_theme_mod( 'colormag_base_typography', $default_base_typography_body );
+			$current_base_heading_typography = get_theme_mod( 'colormag_headings_typography', $default_base_heading_typography );
+
+			// Check if current values are different from default values
+			$should_migrate = false;
+
+			// Check base typography body
+			if ( $current_base_typography_body !== $default_base_typography_body ) {
+				$should_migrate = true;
+			}
+
+			// Check base heading typography
+			if ( $current_base_heading_typography !== $default_base_heading_typography ) {
+				$should_migrate = true;
+			}
+
+			// Only run migration if current values are different from default values
+			if ( ! $should_migrate ) {
+				return;
+			}
+
+			remove_theme_mod( 'colormag_typography_presets' );
+
+			$base_typography = get_theme_mod(
+				'colormag_base_typography_body',
+				$default_base_typography_body
+			);
+
+			set_theme_mod( 'colormag_base_typography_body', $base_typography );
+
+			$base_heading_typography = get_theme_mod(
+				'colormag_base_typography_heading',
+				$default_base_heading_typography
+			);
+
+			set_theme_mod( 'colormag_base_typography_heading', $base_heading_typography );
+
+			update_option( 'colormag_typography_migration', true );
+		}
 
 		public function colormag_container_sidebar_migration() {
 
@@ -51,6 +184,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				$should_run = false;
 			} elseif ( doing_action( 'themegrill_ajax_demo_imported' ) ) {
 				$should_run = true;
+				set_theme_mod( 'colormag_enable_site_identity', false );
 			} elseif ( ! get_option( 'colormag_container_sidebar_migration' ) ) {
 				$should_run = true;
 			}

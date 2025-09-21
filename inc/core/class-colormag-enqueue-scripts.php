@@ -1004,6 +1004,10 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 	 */
 	function colormag_parse_typography_css( $default_value, $output_value, $selector, $devices = array() ) {
 
+		if ( isset( $default_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
+			$output_value['font-family'] = 'inherit';
+		}
+
 		if ( $default_value === $output_value ) {
 			return;
 		}
