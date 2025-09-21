@@ -153,15 +153,15 @@ $options                       = apply_filters(
 					'id'     => 'preset-6',
 					'name'   => 'Dark',
 					'colors' => array(
-						'cm-color-1' => '#207daf', // Primary
-						'cm-color-2' => '#121212', //Secondary
-						'cm-color-3' => '#0d0d0d', // Background
-						'cm-color-4' => '#E0E0E0', // Surface
-						'cm-color-5' => '#27272a',
-						'cm-color-6' => '#E3E2E2',
-						'cm-color-7' => '#D1D1D1',
-						'cm-color-8' => '#EBEBEB',
-						'cm-color-9' => '#ffffff3d', // Border
+						'cm-color-1' => '#257BC1',
+						'cm-color-2' => '#2270B0',
+						'cm-color-3' => '#0D0D0D',
+						'cm-color-4' => '#1C1C1C',
+						'cm-color-5' => '#27272A',
+						'cm-color-6' => '#FFFFFF',
+						'cm-color-7' => '#E3E2E2',
+						'cm-color-8' => '#FFFFFF',
+						'cm-color-9' => '#AEAEAD', // Border
 					),
 				),
 			),
