@@ -55,7 +55,7 @@ input {
 textarea {
 	appearance: none !important;
 	padding: 1%;
-	border: 1px solid var(--cm-color-8, #E4E4E7);
+	border: 1px solid var(--cm-color-9, #E4E4E7);
 	line-height: 20px;
 	width: 100%;
 	margin: 0 0 32px;
@@ -63,7 +63,7 @@ textarea {
 	border-radius: 4px;
 
 	&:focus {
-		border: 1px solid var(--cm-color-8, #E4E4E7);
+		border: 1px solid var(--cm-color-9, #E4E4E7);
 	}
 }
 
