@@ -37,8 +37,8 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$today                = strtotime( '2025-09-23' );
 
 			if ( ! colormag_fresh_install() || ( $theme_installed_time < $today ) ) {
-				add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_container_sidebar_migration' ] );
-				add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_typography_migration' ] );
+				add_action( 'after_setup_theme', [ $this, 'colormag_container_sidebar_migration' ] );
+				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ] );
 			}
 			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_container_sidebar_migration' ], 25 );
 		}
