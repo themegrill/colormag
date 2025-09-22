@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-22T07:08:31+00:00\n"
+"POT-Creation-Date: 2025-09-22T07:34:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: colormag\n"
@@ -193,7 +193,7 @@ msgstr ""
 
 #. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag
 #: inc/admin/class-colormag-theme-review-notice.php:89
-msgid "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %sYour input helps other users find quality themes & motivates us to keep improving.%s"
+msgid "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %1$sYour input helps other users find quality themes & motivates us to keep improving.%2$s"
 msgstr ""
 
 #: inc/admin/class-colormag-theme-review-notice.php:97

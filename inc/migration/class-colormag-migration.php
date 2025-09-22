@@ -318,7 +318,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				array( 'colormag_link_hover_color', '' ),
 				array( 'colormag_button_color', '#ffffff' ),
 				array( 'colormag_button_hover_color', '' ),
-				array( 'colormag_button_background_color', '#207daf' ),
+				array( 'colormag_button_background_color', '' ),
 				array( 'colormag_button_background_hover_color', '' ),
 				array( 'colormag_header_site_identity_color', '' ),
 				array( 'colormag_header_site_identity_hover_color', '' ),
