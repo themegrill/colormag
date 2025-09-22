@@ -177,21 +177,30 @@
 		flex-basis: unset;
 	}
 
-	.search-form-top {
-
-		&.show {
-			width: 570px;
-
-			&::before {
-				right: 10px;
-			}
-		}
+@media (max-width: 600px) {
+	.search-form-top.show {
+		width: 70vw;
+		max-width: 70vw;
 	}
+}
 
-	.cm-top-search {
-		position: relative;
+@media (min-width: 600px) and (max-width: 767px) {
+	.search-form-top.show {
+		width: 60vw;
+		max-width: 60vw;
 	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.search-form-top.show {
+		width: 40vw;
+		max-width: 40vw;
+	}
+}
 
+@media (min-width: 1025px) {
+	.search-form-top.show {
+		width: 400px;
+	}
 }
 
 @media (max-width: 600px) {
