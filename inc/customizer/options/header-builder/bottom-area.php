@@ -114,7 +114,7 @@ $options = array(
 
 				'colormag_header_bottom_area_border_color' => array(
 					'title'   => esc_html__( 'Border Color', 'colormag' ),
-					'default' => 'var(--cm-color-1)',
+					'default' => '',
 					'type'    => 'customind-color',
 					'section' => 'colormag_header_builder_bottom_area',
 				),
