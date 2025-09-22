@@ -1,6 +1,6 @@
 <?php
 use function Customind\Core\get_social_networks;
-$options                       = apply_filters(
+$options = apply_filters(
 	'colormag_global_color_options',
 	array(
 		'colormag_color_palettes_heading'       => array(
@@ -269,45 +269,45 @@ $options                       = apply_filters(
 		),
 	)
 );
-$options['colormag_dark_skin'] = array(
-	'default'   => 'preset-5',
-	'type'      => 'customind-select',
-	'title'     => esc_html__( 'Skin Color', 'colormag' ),
-	'section'   => 'colormag_global_colors_section',
-	'transport' => 'postMessage',
-	'priority'  => 90,
-	'choices'   => call_user_func(
-		function () use ( $options ) {
-			// Get predefined presets
-			$presets = $options['colormag_color_palette']['presets'];
-
-			// Get custom presets from theme mod
-			$color_palette = get_theme_mod( 'colormag_color_palette', array() );
-			$custom_presets = isset( $color_palette['custom'] ) ? $color_palette['custom'] : array();
-
-			// Combine all presets
-			$all_presets = array_merge( $presets, $custom_presets );
-
-			// Create choices array with name as key and id as value
-			$choices = array();
-			foreach ( $all_presets as $preset ) {
-				$name = isset( $preset['name'] ) ? $preset['name'] : ( isset( $preset['id'] ) ? 'Custom ' . $preset['id'] : 'Unknown' );
-				$id = isset( $preset['id'] ) ? $preset['id'] : 'unknown';
-				$choices[ $id ] = $name;
-			}
-
-			return $choices;
-		}
-	),
-	'js_vars'   => array(
-		array(
-			'function' => 'colormag_update_skin_choices',
-			'args'     => array(
-				'colormag_color_palette',
-			),
-		),
-	),
-);
+//$options['colormag_dark_skin'] = array(
+//  'default'   => 'preset-5',
+//  'type'      => 'customind-select',
+//  'title'     => esc_html__( 'Skin Color', 'colormag' ),
+//  'section'   => 'colormag_global_colors_section',
+//  'transport' => 'postMessage',
+//  'priority'  => 90,
+//  'choices'   => call_user_func(
+//      function () use ( $options ) {
+//          // Get predefined presets
+//          $presets = $options['colormag_color_palette']['presets'];
+//
+//          // Get custom presets from theme mod
+//          $color_palette = get_theme_mod( 'colormag_color_palette', array() );
+//          $custom_presets = isset( $color_palette['custom'] ) ? $color_palette['custom'] : array();
+//
+//          // Combine all presets
+//          $all_presets = array_merge( $presets, $custom_presets );
+//
+//          // Create choices array with name as key and id as value
+//          $choices = array();
+//          foreach ( $all_presets as $preset ) {
+//              $name = isset( $preset['name'] ) ? $preset['name'] : ( isset( $preset['id'] ) ? 'Custom ' . $preset['id'] : 'Unknown' );
+//              $id = isset( $preset['id'] ) ? $preset['id'] : 'unknown';
+//              $choices[ $id ] = $name;
+//          }
+//
+//          return $choices;
+//      }
+//  ),
+//  'js_vars'   => array(
+//      array(
+//          'function' => 'colormag_update_skin_choices',
+//          'args'     => array(
+//              'colormag_color_palette',
+//          ),
+//      ),
+//  ),
+//);
 
 
 colormag_customind()->add_controls( $options );

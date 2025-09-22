@@ -2029,7 +2029,7 @@ li[class^='customize-control-customind-'] {
 }
 
 .customind-control:not([data-control-type='customind-builder']) {
-	max-width: 320px;
+	max-width: 340px;
 	padding: 10px 16px;
 	background-color: white;
 }

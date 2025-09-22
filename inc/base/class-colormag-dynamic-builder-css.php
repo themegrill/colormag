@@ -3221,8 +3221,8 @@ class ColorMag_Dynamic_Builder_CSS {
 
 		// 4. Get current active palette modifications
 		$current_active_colors = isset( $color_palette['colors'] ) ? $color_palette['colors'] : array();
-		$current_active_id     = isset( $color_palette['id'] ) ? $color_palette['id'] : null;
-		$current_active_name   = isset( $color_palette['name'] ) ? $color_palette['name'] : null;
+		$current_active_id     = isset( $color_palette['id'] ) ? $color_palette['id'] : 'preset-5';
+		$current_active_name   = isset( $color_palette['name'] ) ? $color_palette['name'] : 'Default';
 
 		// 5. Process predefined presets and apply modifications if they're currently active
 		$processed_presets = array();

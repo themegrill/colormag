@@ -122,7 +122,7 @@ $section_option_id = array(
 		'priority' => 30,
 	),
 	'colormag_page_section'                        => array(
-		'title'    => esc_html__( 'Single Page', 'colormag' ),
+		'title'    => esc_html__( 'Page', 'colormag' ),
 		'panel'    => 'colormag_content_panel',
 		'priority' => 40,
 	),

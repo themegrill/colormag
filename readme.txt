@@ -120,6 +120,32 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.1.0 - 2025-09-22 =
+* Added - 6 new Typography Presets for font selection.
+* Added - Option to add/delete custom color palettes.
+* Added - "Header Media" as a top item in the customizer navigation.
+* Added - "Site Identity" to the main customizer navigation list.
+* Renamed - "Header Builder" to "Header".
+* Renamed - "Content" to "Post Content".
+* Renamed - "Footer Builder" to "Footer".
+* Renamed - "Container" to "Layouts".
+* Moved - "Page Element" options to respective menus.
+* Moved - "Breadcrumb" to "Additional".
+* Moved - "Sticky Header" to "Header".
+* Improved - Updated color palette design.
+* Improved - Enhanced Color Palette presets.
+* Improved - Set default colors for different sections to global colors.
+* Improved - Global color handling in preset, color picker, and added tooltips for color name.
+* Improved - Separated sidebar layout options into container and sidebar layout.
+* Improved - Merged default layout from "Sidebar" and "Container" into "Layouts".
+* Improved - Page-specific sidebar and container layout options to respective page in "Post Content"
+* Improved - Page setting sidebar and container layout options to respective page
+* Improved - Redesigned Post Content blog section with tabbed design and layout options.
+* Improved - Enhanced design of presets and tabs in "Page Header".
+* Improved - Removed "Sidebar" in Global after moving its contents to respective places.
+* Improved - Removed "Page Element" after moving its items to respective places.
+* Improved - Removed "Header & Navigation" after moving its items to respective places.
+
 = Version 4.0.20 - 2025-08-12 =
 * Update    - Dashboard notice.
 * Update    - General security measure.
