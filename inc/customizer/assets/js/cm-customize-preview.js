@@ -354,7 +354,7 @@
 					break;
 
 				case 'colormag_outside_container_background':
-					css = colormagGenerateBackgroundCSS('body', value);
+					css = colormagGenerateBackgroundCSS('body,body.boxed', value);
 					break;
 
 				case 'colormag_base_typography':

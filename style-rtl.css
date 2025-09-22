@@ -501,10 +501,14 @@ body {
 	background-size: cover;
 }
 
+body.boxed {
+	background-color: #E4E4E7;
+}
+
 body #page {
 	display: flex;
 	flex-direction: column;
-	min-height: calc( 100vh - var(--wp-admin--admin-bar--height, 0px));
+	min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
 }
 
 body .cm-content {

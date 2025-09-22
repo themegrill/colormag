@@ -7,10 +7,14 @@ body {
 	padding-bottom: length('l-5');
 	background-size: cover;
 
+	&.boxed {
+		background-color: #E4E4E7;
+	}
+
 	#page {
 		display: flex;
 		flex-direction: column;
-		min-height: calc( 100vh - var(--wp-admin--admin-bar--height, 0px) );
+		min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
 	}
 
 	.cm-content {

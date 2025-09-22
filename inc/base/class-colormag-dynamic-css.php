@@ -1259,7 +1259,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$outside_background         = get_theme_mod( 'colormag_outside_container_background', $outside_background_default );
-		$parse_css                      .= colormag_parse_background_css( $outside_background_default, $outside_background, 'body' );
+		$parse_css                      .= colormag_parse_background_css( $outside_background_default, $outside_background, 'body,body.boxed' );
 
 		// Main header options.
 		$header_background_default = array(
