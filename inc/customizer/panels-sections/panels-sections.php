@@ -103,7 +103,7 @@ $section_option_id = array(
 	),
 	'colormag_sticky_header_section'               => array(
 		'title'    => esc_html__( 'Sticky Header', 'colormag' ),
-		'panel'    => 'colormag_header_builder',
+		'panel'    => colormag_maybe_enable_builder() ? 'colormag_header_builder' : 'colormag_header_panel',
 		'priority' => 80,
 	),
 	'colormag_blog_archive_section'                => array(
@@ -394,7 +394,7 @@ $section_option_id = array(
 			esc_html__( 'Transparent Header', 'colormag' ),
 		),
 		'section_callback' => \Customind\Core\Types\UpgradeSection::class,
-		'panel'            => 'colormag_header_builder',
+		'panel'            => colormag_maybe_enable_builder() ? 'colormag_header_builder' : 'colormag_header_panel',
 		'priority'         => 100,
 	),
 	'colormag_customize_content_section'           => array(
