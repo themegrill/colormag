@@ -34,11 +34,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			add_action( 'themegrill_ajax_demo_imported', array( $this, 'colormag_color_preset' ), 25 );
 
 			$theme_installed_time = get_option( 'colormag_theme_installed_time' ); // timestamp
-			$today                = strtotime( '2025-09-23' );
+			$today                = strtotime( '2025-09-20' );
 
 			if ( ! colormag_fresh_install() || ( $theme_installed_time < $today ) ) {
-				add_action( 'after_setup_theme', [ $this, 'colormag_container_sidebar_migration' ], 25 );
-				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ], 30 );
+				add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_container_sidebar_migration' ] );
+				add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_typography_migration' ] );
 			}
 			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_container_sidebar_migration' ], 25 );
 		}

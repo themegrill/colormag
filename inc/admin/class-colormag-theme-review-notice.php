@@ -86,7 +86,7 @@ class ColorMag_Theme_Review_Notice {
 						<?php
 						printf(
 						/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
-							esc_html__( "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %sYour input helps other users find quality themes & motivates us to keep improving.%s", 'colormag' ),
+							esc_html__( "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %1\$sYour input helps other users find quality themes & motivates us to keep improving.%2\$s", 'colormag' ),
 							'<br>',
 							''
 						);
@@ -163,9 +163,9 @@ class ColorMag_Theme_Review_Notice {
 		$theme_installed_time = get_option( 'colormag_theme_installed_time' );
 
 		// Delete options data.
-		if ( $theme_installed_time ) {
-			delete_option( 'colormag_theme_installed_time' );
-		}
+		//      if ( $theme_installed_time ) {
+		//          delete_option( 'colormag_theme_installed_time' );
+		//      }
 
 		// Delete user meta data for theme review notice.
 		foreach ( $get_all_users as $user ) {
