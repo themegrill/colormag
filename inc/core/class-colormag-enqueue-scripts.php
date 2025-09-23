@@ -536,7 +536,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			if ( colormag_maybe_enable_builder() ) {
 				wp_add_inline_style(
-					'customize-controls-builder',
+					'customize-controls',
 					'
 #accordion-section-colormag_sticky_header_section .accordion-section-title{
 			border-top: 1px solid #dcdcde !important;

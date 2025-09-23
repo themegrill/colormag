@@ -5479,8 +5479,13 @@ ul.wp-block-gallery img {
 	}
 }
 
+.cm-narrow-container .cm-secondary {
+	display: none;
+}
+
 .cm-narrow-container .cm-primary {
 	margin: 0 auto;
+	width: 100%;
 }
 
 .cm-narrow-container .cm-content .cm-container {

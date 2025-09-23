@@ -71,22 +71,75 @@ $options = apply_filters(
 			'section'   => 'colormag_blog_archive_section',
 		),
 		'colormag_blog_sidebar_layout'              => array(
-			'default'   => 'default',
-			'type'      => 'customind-radio-image',
-			'title'     => esc_html__( 'Sidebar Layout', 'colormag' ),
-			'section'   => 'colormag_blog_archive_section',
-			'tab_group' => 'colormag_blog_container_tab_group',
-			'tab'       => 'general',
-			'choices'   => $sidebar_layout_choices,
-			'columns'   => 2,
-			'priority'  => 10,
+			'default'    => 'default',
+			'type'       => 'customind-radio-image',
+			'title'      => esc_html__( 'Sidebar Layout', 'colormag' ),
+			'section'    => 'colormag_blog_archive_section',
+			'tab_group'  => 'colormag_blog_container_tab_group',
+			'tab'        => 'general',
+			'choices'    => $sidebar_layout_choices,
+			'columns'    => 2,
+			'conditions' => array(
+				'relation' => 'OR',
+				'terms'    => array(
+					// Simple condition
+					array(
+						'id'       => 'colormag_blog_container_layout',
+						'operator' => '===',
+						'value'    => 'no_sidebar_full_width',
+					),
+					// Nested condition
+					array(
+						'relation' => 'AND',
+						'terms'    => array(
+							array(
+								'id'       => 'colormag_blog_container_layout',
+								'operator' => '===',
+								'value'    => 'default',
+							),
+							array(
+								'id'       => 'colormag_global_container_layout',
+								'operator' => '===',
+								'value'    => 'no_sidebar_full_width',
+							),
+						),
+					),
+				),
+			),
 		),
 		'colormag_blog_layout_divider'              => array(
-			'type'      => 'customind-divider',
-			'variant'   => 'dashed',
-			'tab'       => 'general',
-			'tab_group' => 'colormag_blog_container_tab_group',
-			'section'   => 'colormag_blog_archive_section',
+			'type'       => 'customind-divider',
+			'variant'    => 'dashed',
+			'tab'        => 'general',
+			'tab_group'  => 'colormag_blog_container_tab_group',
+			'section'    => 'colormag_blog_archive_section',
+			'conditions' => array(
+				'relation' => 'OR',
+				'terms'    => array(
+					// Simple condition
+					array(
+						'id'       => 'colormag_blog_container_layout',
+						'operator' => '===',
+						'value'    => 'no_sidebar_full_width',
+					),
+					// Nested condition
+					array(
+						'relation' => 'AND',
+						'terms'    => array(
+							array(
+								'id'       => 'colormag_blog_container_layout',
+								'operator' => '===',
+								'value'    => 'default',
+							),
+							array(
+								'id'       => 'colormag_global_container_layout',
+								'operator' => '===',
+								'value'    => 'no_sidebar_full_width',
+							),
+						),
+					),
+				),
+			),
 		),
 		'colormag_blog_post_elements_heading'       => array(
 			'type'        => 'customind-heading',
