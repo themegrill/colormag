@@ -45,7 +45,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 		public function colormag_typography_migration() {
 
-			if ( get_option( 'colormag_typography_migration' ) ) {r
+			if ( get_option( 'colormag_typography_migration' ) ) {
 				return;
 			}
 
