@@ -5486,6 +5486,7 @@ ul.wp-block-gallery img {
 .cm-narrow-container .cm-primary {
 	margin: 0 auto;
 	width: 100%;
+	padding-left: 0;
 }
 
 .cm-narrow-container .cm-content .cm-container {

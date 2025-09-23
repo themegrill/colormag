@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-22T07:34:57+00:00\n"
+"POT-Creation-Date: 2025-09-23T04:12:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: colormag\n"
@@ -158,9 +158,9 @@ msgid "Help"
 msgstr ""
 
 #: inc/admin/class-colormag-dashboard.php:178
-#: inc/customizer/options/content/blog.php:265
+#: inc/customizer/options/content/blog.php:318
 #: inc/customizer/options/content/single-page.php:114
-#: inc/customizer/options/content/single-post.php:252
+#: inc/customizer/options/content/single-post.php:306
 #: inc/customizer/options/global/button.php:92
 #: inc/customizer/options/global/colors.php:261
 #: inc/customizer/options/global/layout.php:120
@@ -211,7 +211,7 @@ msgstr ""
 #: inc/admin/class-colormag-theme-review-notice.php:131
 #: inc/admin/class-colormag-theme-review-notice.php:149
 #: inc/admin/class-colormag-welcome-notice.php:101
-#: inc/migration/class-colormag-migration.php:1704
+#: inc/migration/class-colormag-migration.php:1707
 #: inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
@@ -282,7 +282,7 @@ msgid "Go to Customizer"
 msgstr ""
 
 #: inc/admin/views/dashbaord.php:87
-#: inc/customizer/options/content/blog.php:284
+#: inc/customizer/options/content/blog.php:337
 #: inc/customizer/options/header-and-navigation/site-identity.php:8
 #: inc/customizer/options/header-builder/logo.php:6
 #: inc/customizer/panels-sections/panels-sections.php:29
@@ -648,13 +648,13 @@ msgstr ""
 
 #: inc/admin/views/free-vs-pro.php:85
 #: inc/customizer/options/content/single-page.php:97
-#: inc/customizer/options/content/single-post.php:150
+#: inc/customizer/options/content/single-post.php:204
 msgid "Featured Image"
 msgstr ""
 
 #: inc/admin/views/free-vs-pro.php:86
-#: inc/customizer/options/content/blog.php:215
-#: inc/customizer/options/content/blog.php:227
+#: inc/customizer/options/content/blog.php:268
+#: inc/customizer/options/content/blog.php:280
 msgid "Excerpt"
 msgstr ""
 
@@ -672,7 +672,7 @@ msgstr ""
 
 #: inc/admin/views/free-vs-pro.php:90
 #: inc/admin/views/free-vs-pro.php:186
-#: inc/customizer/options/content/blog.php:233
+#: inc/customizer/options/content/blog.php:286
 msgid "Pagination"
 msgstr ""
 
@@ -689,7 +689,7 @@ msgid "Post Navigation Style"
 msgstr ""
 
 #: inc/admin/views/free-vs-pro.php:99
-#: inc/customizer/options/content/single-post.php:218
+#: inc/customizer/options/content/single-post.php:272
 msgid "Related Posts"
 msgstr ""
 
@@ -1302,8 +1302,8 @@ msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:85
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:139
-#: inc/customizer/options/content/blog.php:108
-#: inc/customizer/options/content/single-post.php:106
+#: inc/customizer/options/content/blog.php:161
+#: inc/customizer/options/content/single-post.php:160
 msgid "Title"
 msgstr ""
 
@@ -1314,8 +1314,8 @@ msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:87
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:141
-#: inc/customizer/options/content/blog.php:109
-#: inc/customizer/options/content/single-post.php:108
+#: inc/customizer/options/content/blog.php:162
+#: inc/customizer/options/content/single-post.php:162
 msgid "Content"
 msgstr ""
 
@@ -1391,7 +1391,7 @@ msgid "Latest Posts"
 msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:348
-#: inc/customizer/options/content/single-post.php:242
+#: inc/customizer/options/content/single-post.php:296
 msgid "Categories"
 msgstr ""
 
@@ -1444,11 +1444,11 @@ msgstr ""
 
 #: inc/customizer/options/additional/breadcrumb.php:7
 #: inc/customizer/options/additional/social-icons.php:20
-#: inc/customizer/options/content/blog.php:239
+#: inc/customizer/options/content/blog.php:292
 #: inc/customizer/options/content/single-page.php:88
 #: inc/customizer/options/content/single-page.php:103
-#: inc/customizer/options/content/single-post.php:156
-#: inc/customizer/options/content/single-post.php:224
+#: inc/customizer/options/content/single-post.php:210
+#: inc/customizer/options/content/single-post.php:278
 #: inc/customizer/options/global/builder.php:13
 #: inc/customizer/options/header-and-navigation/header-action.php:52
 #: inc/customizer/options/header-and-navigation/header-action.php:69
@@ -1511,35 +1511,35 @@ msgid "Footer"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:74
-#: inc/migration/class-colormag-migration.php:1224
-#: inc/migration/class-colormag-migration.php:1547
+#: inc/migration/class-colormag-migration.php:1227
+#: inc/migration/class-colormag-migration.php:1550
 #: inc/template-functions.php:500
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:79
-#: inc/migration/class-colormag-migration.php:1229
-#: inc/migration/class-colormag-migration.php:1552
+#: inc/migration/class-colormag-migration.php:1232
+#: inc/migration/class-colormag-migration.php:1555
 #: inc/template-functions.php:490
 msgid "Twitter"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:84
-#: inc/migration/class-colormag-migration.php:1234
-#: inc/migration/class-colormag-migration.php:1557
+#: inc/migration/class-colormag-migration.php:1237
+#: inc/migration/class-colormag-migration.php:1560
 #: inc/template-functions.php:540
 msgid "Instagram"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:89
-#: inc/migration/class-colormag-migration.php:1239
-#: inc/migration/class-colormag-migration.php:1562
+#: inc/migration/class-colormag-migration.php:1242
+#: inc/migration/class-colormag-migration.php:1565
 msgid "Pinterest"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:94
-#: inc/migration/class-colormag-migration.php:1244
-#: inc/migration/class-colormag-migration.php:1567
+#: inc/migration/class-colormag-migration.php:1247
+#: inc/migration/class-colormag-migration.php:1570
 msgid "YouTube"
 msgstr ""
 
@@ -1567,48 +1567,48 @@ msgstr ""
 msgid "Container Layout"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:94
-#: inc/customizer/options/content/single-post.php:93
+#: inc/customizer/options/content/blog.php:147
+#: inc/customizer/options/content/single-post.php:147
 msgid "Post Elements"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:96
+#: inc/customizer/options/content/blog.php:149
 msgid "Manage the post elements such as Post Format, Category, Title, Meta, Content, etc."
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:105
-#: inc/customizer/options/content/single-post.php:104
+#: inc/customizer/options/content/blog.php:158
+#: inc/customizer/options/content/single-post.php:158
 msgid "Post Format (Image)"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:106
-#: inc/customizer/options/content/single-post.php:105
+#: inc/customizer/options/content/blog.php:159
+#: inc/customizer/options/content/single-post.php:159
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:107
-#: inc/customizer/options/content/single-post.php:107
+#: inc/customizer/options/content/blog.php:160
+#: inc/customizer/options/content/single-post.php:161
 msgid "Meta Tags"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:122
-#: inc/customizer/options/content/single-post.php:121
+#: inc/customizer/options/content/blog.php:175
+#: inc/customizer/options/content/single-post.php:175
 #: inc/customizer/panels-sections/panels-sections.php:120
 msgid "Post Meta"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:124
-#: inc/customizer/options/content/single-post.php:124
+#: inc/customizer/options/content/blog.php:177
+#: inc/customizer/options/content/single-post.php:178
 msgid "Manage the post meta elements such as Categories, Author, Date, Comments, Tags, etc."
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:134
-#: inc/customizer/options/content/single-post.php:133
+#: inc/customizer/options/content/blog.php:187
+#: inc/customizer/options/content/single-post.php:187
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:135
-#: inc/customizer/options/content/single-post.php:134
+#: inc/customizer/options/content/blog.php:188
+#: inc/customizer/options/content/single-post.php:188
 #: inc/customizer/options/header-and-navigation/top-bar.php:65
 #: inc/customizer/options/header-builder/date.php:8
 #: inc/customizer/options/header-builder/header-builder.php:56
@@ -1617,71 +1617,71 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:136
-#: inc/customizer/options/content/single-post.php:135
+#: inc/customizer/options/content/blog.php:189
+#: inc/customizer/options/content/single-post.php:189
 msgid "Views"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:137
-#: inc/customizer/options/content/single-post.php:136
+#: inc/customizer/options/content/blog.php:190
+#: inc/customizer/options/content/single-post.php:190
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:138
-#: inc/customizer/options/content/single-post.php:137
-#: inc/customizer/options/content/single-post.php:243
+#: inc/customizer/options/content/blog.php:191
+#: inc/customizer/options/content/single-post.php:191
+#: inc/customizer/options/content/single-post.php:297
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:139
-#: inc/customizer/options/content/single-post.php:138
+#: inc/customizer/options/content/blog.php:192
+#: inc/customizer/options/content/single-post.php:192
 msgid "Reading Time"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:140
-#: inc/customizer/options/content/single-post.php:139
+#: inc/customizer/options/content/blog.php:193
+#: inc/customizer/options/content/single-post.php:193
 msgid "Edit button"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:188
+#: inc/customizer/options/content/blog.php:241
 msgid "Post Title"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:194
-#: inc/customizer/options/content/blog.php:207
+#: inc/customizer/options/content/blog.php:247
+#: inc/customizer/options/content/blog.php:260
 msgid "Post Date"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:202
-#: inc/customizer/options/content/blog.php:224
-#: inc/customizer/options/content/blog.php:250
+#: inc/customizer/options/content/blog.php:255
+#: inc/customizer/options/content/blog.php:277
+#: inc/customizer/options/content/blog.php:303
 msgid "Type"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:208
+#: inc/customizer/options/content/blog.php:261
 msgid "Modified Date"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:209
+#: inc/customizer/options/content/blog.php:262
 msgid "Both Date"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:228
+#: inc/customizer/options/content/blog.php:281
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:255
+#: inc/customizer/options/content/blog.php:308
 #: inc/customizer/options/header-builder/socials.php:31
 msgid "Default"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:256
+#: inc/customizer/options/content/blog.php:309
 msgid "Numbered"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:264
+#: inc/customizer/options/content/blog.php:317
 #: inc/customizer/options/content/single-page.php:113
-#: inc/customizer/options/content/single-post.php:251
+#: inc/customizer/options/content/single-post.php:305
 #: inc/customizer/options/global/button.php:91
 #: inc/customizer/options/global/colors.php:260
 #: inc/customizer/options/global/layout.php:119
@@ -1693,51 +1693,51 @@ msgstr ""
 msgid "Upgrade to Pro for more features!"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:268
+#: inc/customizer/options/content/blog.php:321
 msgid "Grid layout"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:269
+#: inc/customizer/options/content/blog.php:322
 msgid "Blog page layout"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:270
+#: inc/customizer/options/content/blog.php:323
 msgid "Post title length"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:271
+#: inc/customizer/options/content/blog.php:324
 msgid "Read More text options"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:272
+#: inc/customizer/options/content/blog.php:325
 msgid "Post meta separator types"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:273
+#: inc/customizer/options/content/blog.php:326
 msgid "Number pagination alignment"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:274
+#: inc/customizer/options/content/blog.php:327
 msgid "Excerpt length and more text"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:275
+#: inc/customizer/options/content/blog.php:328
 msgid "Category page number of posts"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:276
+#: inc/customizer/options/content/blog.php:329
 msgid "Infinite Scroll pagination options"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:277
+#: inc/customizer/options/content/blog.php:330
 msgid "Feature image caption, lightbox and size"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:293
+#: inc/customizer/options/content/blog.php:346
 msgid "Site Icon"
 msgstr ""
 
-#: inc/customizer/options/content/blog.php:296
+#: inc/customizer/options/content/blog.php:349
 msgid "The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least 512 by 512 pixels."
 msgstr ""
 
@@ -1754,55 +1754,55 @@ msgstr ""
 msgid "Single Post"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:165
+#: inc/customizer/options/content/single-post.php:219
 msgid "LightBox"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:210
+#: inc/customizer/options/content/single-post.php:264
 msgid "Font"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:238
+#: inc/customizer/options/content/single-post.php:292
 msgid "Query"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:255
+#: inc/customizer/options/content/single-post.php:309
 msgid "Author Bio options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:256
+#: inc/customizer/options/content/single-post.php:310
 msgid "Related posts options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:257
+#: inc/customizer/options/content/single-post.php:311
 msgid "Single post image size"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:258
+#: inc/customizer/options/content/single-post.php:312
 msgid "Autoload posts options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:259
+#: inc/customizer/options/content/single-post.php:313
 msgid "Post Navigation options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:260
+#: inc/customizer/options/content/single-post.php:314
 msgid "Social share button options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:261
+#: inc/customizer/options/content/single-post.php:315
 msgid "Flyout Related Posts options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:262
+#: inc/customizer/options/content/single-post.php:316
 msgid "Single post tile color option"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:263
+#: inc/customizer/options/content/single-post.php:317
 msgid "Comment title typography option"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:264
+#: inc/customizer/options/content/single-post.php:318
 msgid "Reading Progress Indicator options"
 msgstr ""
 
