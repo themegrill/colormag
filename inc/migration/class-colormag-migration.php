@@ -283,7 +283,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			$default_palette = array(
 				'id'     => 'preset-5',
-				'name'   => 'Preset 1',
+				'name'   => 'Preset 5',
 				'colors' => array(
 					'colormag-color-1' => '#FFFFFF',
 					'colormag-color-2' => '#FAFAFA',
