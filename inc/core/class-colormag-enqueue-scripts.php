@@ -1040,7 +1040,9 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		// For font family.
 		$default_value_font_family = isset( $default_value['font-family'] ) ? $default_value['font-family'] : '';
 		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) ) {
-			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
+			if ( 'inherit' !== $output_value['font-family'] ) {
+				$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
+			}
 		}
 
 		// For font style.

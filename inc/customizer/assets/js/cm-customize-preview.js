@@ -219,7 +219,9 @@
 
 			if (
 				undefined !== typography['font-family'] &&
-				'' !== typography['font-family']
+				'' !== typography['font-family'] &&
+				('Inherit' !== typography['font-family'] ||
+					'inherit' !== typography['font-family'])
 			) {
 				fontFamily = typography['font-family'].split(',')[0];
 				fontFamily = fontFamily.replace(/'/g, '');
