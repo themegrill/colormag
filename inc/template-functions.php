@@ -182,8 +182,9 @@ function colormag_body_class( $classes ) {
 
 	global $post;
 
-	$container_meta = get_post_meta( $post->ID, 'colormag_page_container_layout', true );
+	$container_meta = '';
 	if ( $post ) {
+		$container_meta = get_post_meta( $post->ID, 'colormag_page_container_layout', true );
 		$layout_meta = get_post_meta( $post->ID, 'colormag_page_sidebar_layout', true );
 	}
 
