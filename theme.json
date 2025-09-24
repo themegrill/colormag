@@ -6,7 +6,12 @@
       "blockGap": true,
       "margin": true,
       "padding": true,
-      "units": ["%", "px", "em", "rem"]
+      "units": [
+        "%",
+        "px",
+        "em",
+        "rem"
+      ]
     },
     "layout": {
       "contentSize": "760px",
@@ -97,6 +102,9 @@
           ]
         }
       ]
+    },
+    "color": {
+      "defaultPalette": false
     }
   }
 }
