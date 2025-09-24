@@ -68,7 +68,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		}
 
 		public function colormag_default_typography( $value ) {
-			if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) ) {
+			if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) || ( 'inherit' === strtolower( $value['font-family'] ) ) ) {
 				$value['font-family'] = 'Open Sans';
 			}
 			return $value;
@@ -1027,7 +1027,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 	 */
 	function colormag_parse_typography_css( $default_value, $output_value, $selector, $devices = array() ) {
 
-		if ( isset( $default_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
+		if ( isset( $default_value['font-family'] ) && isset( $output_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
 			$output_value['font-family'] = 'inherit';
 		}
 
