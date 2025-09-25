@@ -209,8 +209,6 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				)
 			);
 
-			error_log( print_r( $colormag_default_sidebar_layout, true ) );
-			error_log( print_r( $colormag_page_layout, true ) );
 			if ( 'right_sidebar' === $colormag_default_sidebar_layout || 'left_sidebar' === $colormag_default_sidebar_layout || 'two_sidebars' === $colormag_default_sidebar_layout ) {
 				set_theme_mod( 'colormag_blog_sidebar_layout', $colormag_default_sidebar_layout );
 				set_theme_mod( 'colormag_blog_container_layout', 'no_sidebar_full_width' );
