@@ -56,10 +56,10 @@ if ( has_post_format( 'video' ) && ! ( has_post_thumbnail() ) ) :
 			<?php
 			$embed_code = wp_oembed_get( $video_post_url );
 
-			echo wp_kses_post( $embed_code );
+			echo do_shortcode( $embed_code );
 			?>
 		</div>
-	<?php
+		<?php
 	endif;
 
 endif;

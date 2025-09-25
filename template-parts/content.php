@@ -94,7 +94,7 @@ $archive_search_layout = 'layout-1';
 								<?php
 								$embed_code = wp_oembed_get( $video_post_url );
 
-								echo wp_kses_post( $embed_code );
+								echo do_shortcode( $embed_code );
 								?>
 							</div>
 							<?php
