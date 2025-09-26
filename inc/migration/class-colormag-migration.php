@@ -36,7 +36,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$theme_installed_time = get_option( 'colormag_theme_installed_time' ); // timestamp
 			$today                = strtotime( '2025-09-22' );
 
-			if ( ! colormag_fresh_install() || ( $theme_installed_time < $today ) ) {
+			if ( ! colormag_fresh_install() || ( ! empty( $theme_installed_time ) && $theme_installed_time < $today ) ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_container_sidebar_migration' ] );
 				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ] );
 			}

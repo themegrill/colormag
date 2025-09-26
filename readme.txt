@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.1.0
+Version: 4.1.1
 Tested up to: 6.8
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.1.0
+Stable tag: 4.1.1
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -120,6 +120,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.1.1 - 2025-09-26 =
+* Fix         - Undefined array key "font-family".
+
 = Version 4.1.0 - 2025-09-22 =
 * Added - 6 new Typography Presets for font selection.
 * Added - Option to add/delete custom color palettes.

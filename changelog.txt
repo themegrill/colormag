@@ -1,4 +1,7 @@
 == Changelog ==
+= 4.1.1 - 2025-09-26 =
+* Fix - Undefined array key "font-family".
+
 = 4.0.20 - 2025-08-12 =
 * Update    - Dashboard notice.
 * Update    - General security measure.
