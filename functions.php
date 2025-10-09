@@ -100,6 +100,30 @@ add_action(
 	}
 );
 
+function colormag_maybe_enable_builder() {
+
+	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
+		return true;
+	}
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	update_option( 'colormag_maybe_enable_builder', true );
+
+	return true;
+}
+
+function colormag_fresh_install() {
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	return true;
+}
+
 /**
  * Deprecated.
  */
@@ -353,30 +377,6 @@ add_action( 'template_redirect', 'colormag_content_width' );
  * Detect plugin. For use on Front End only.
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-function colormag_maybe_enable_builder() {
-
-	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
-		return true;
-	}
-
-	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
-	}
-
-	update_option( 'colormag_maybe_enable_builder', true );
-
-	return true;
-}
-
-function colormag_fresh_install() {
-
-	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
-	}
-
-	return true;
-}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
