@@ -115,15 +115,6 @@ function colormag_maybe_enable_builder() {
 	return true;
 }
 
-function colormag_fresh_install() {
-
-	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
-	}
-
-	return true;
-}
-
 /**
  * Deprecated.
  */
