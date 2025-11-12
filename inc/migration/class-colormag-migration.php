@@ -273,9 +273,9 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					update_post_meta( $post_id, 'colormag_page_sidebar_layout', 'no_sidebar' );
 				}
 
-				if ( 'default' === $colormag_post_layout ) {
+				if ( 'default_layout' === $colormag_post_layout ) {
 					update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
-					update_post_meta( $post_id, 'colormag_page_sidebar_layout', '$colormag_post_layout' );
+					update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
 				}
 			endwhile;
 

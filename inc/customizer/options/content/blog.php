@@ -238,9 +238,9 @@ $options = apply_filters(
 			'transport' => 'postMessage',
 
 			'tab'       => 'style',
+			'tab_group' => 'colormag_blog_container_tab_group',
 			'title'     => esc_html__( 'Post Title', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
-			'tab_group' => 'colormag_blog_container_tab_group',
 		),
 		'colormag_blog_post_date_heading'           => array(
 			'type'      => 'customind-heading',
