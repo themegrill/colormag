@@ -252,32 +252,58 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			set_theme_mod( 'colormag_search_page_meta_color', $colormag_post_meta_color );
 			set_theme_mod( 'colormag_search_page_meta_typography', $colormag_blog_post_meta_typography );
 
-			// Post meta migration.
-			$arg       = [
-				'post_type'      => 'any',
-				'posts_per_page' => - 1,
-			];
-			$the_query = new WP_Query( $arg );
-			while ( $the_query->have_posts() ) :
-				$the_query->the_post();
+			// Post meta migration - Process in batches to avoid memory exhaustion.
+			$batch_size = 100;
+			$offset     = 0;
+			
+			while ( true ) {
+				$args = [
+					'post_type'      => 'any',
+					'posts_per_page' => $batch_size,
+					'offset'         => $offset,
+					'fields'         => 'ids', // Only get post IDs to reduce memory usage.
+					'no_found_rows'  => true,
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+				];
+				
+				$the_query = new WP_Query( $args );
+				
+				// Break if no more posts.
+				if ( ! $the_query->have_posts() ) {
+					wp_reset_postdata();
+					break;
+				}
+				
+				// Process each post ID.
+				foreach ( $the_query->posts as $post_id ) {
+					$colormag_post_layout = get_post_meta( $post_id, 'colormag_page_layout', true );
+					
+					if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
+						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
+						update_post_meta( $post_id, 'colormag_page_container_layout', 'no_sidebar_full_width' );
+					}
+					if ( 'no_sidebar_full_width' === $colormag_post_layout || 'no_sidebar_content_centered' === $colormag_post_layout || 'no_sidebar_content_stretched' === $colormag_post_layout ) {
+						update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
+						update_post_meta( $post_id, 'colormag_page_sidebar_layout', 'no_sidebar' );
+					}
 
-				// Layout.
-				$post_id              = get_the_ID();
-				$colormag_post_layout = get_post_meta( $post_id, 'colormag_page_layout', true );
-				if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
-					update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
-					update_post_meta( $post_id, 'colormag_page_container_layout', 'no_sidebar_full_width' );
+					if ( 'default_layout' === $colormag_post_layout ) {
+						update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
+						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
+					}
 				}
-				if ( 'no_sidebar_full_width' === $colormag_post_layout || 'no_sidebar_content_centered' === $colormag_post_layout || 'no_sidebar_content_stretched' === $colormag_post_layout ) {
-					update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
-					update_post_meta( $post_id, 'colormag_page_sidebar_layout', 'no_sidebar' );
+				
+				wp_reset_postdata();
+				
+				// Move to next batch.
+				$offset += $batch_size;
+				
+				// Safety check: if we got fewer posts than batch size, we're done.
+				if ( count( $the_query->posts ) < $batch_size ) {
+					break;
 				}
-
-				if ( 'default_layout' === $colormag_post_layout ) {
-					update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
-					update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
-				}
-			endwhile;
+			}
 
 			$default_palette = array(
 				'id'     => 'preset-5',
