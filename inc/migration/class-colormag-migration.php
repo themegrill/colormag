@@ -253,32 +253,75 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			set_theme_mod( 'colormag_search_page_meta_typography', $colormag_blog_post_meta_typography );
 
 			// Post meta migration - Process in batches to avoid memory exhaustion.
-			$batch_size = 100;
+			// Reduced batch size to prevent memory issues with meta operations
+			$batch_size = 25;
 			$offset     = 0;
-			
+
 			while ( true ) {
-				$args = [
-					'post_type'      => 'any',
-					'posts_per_page' => $batch_size,
-					'offset'         => $offset,
-					'fields'         => 'ids', // Only get post IDs to reduce memory usage.
-					'no_found_rows'  => true,
-					'update_post_meta_cache' => false,
-					'update_post_term_cache' => false,
-				];
+				// Check available memory before processing batch
+				$memory_usage = memory_get_usage( true );
+				$memory_limit = ini_get( 'memory_limit' );
 				
-				$the_query = new WP_Query( $args );
+				// Convert memory limit to bytes (fallback if wp_convert_hr_to_bytes doesn't exist)
+				if ( function_exists( 'wp_convert_hr_to_bytes' ) ) {
+					$memory_limit_bytes = wp_convert_hr_to_bytes( $memory_limit );
+				} else {
+					// Manual conversion
+					$memory_limit_bytes = $memory_limit;
+					if ( preg_match( '/^(\d+)(.)$/', $memory_limit, $matches ) ) {
+						$number = $matches[1];
+						$unit   = strtolower( $matches[2] );
+						switch ( $unit ) {
+							case 'g':
+								$memory_limit_bytes = $number * 1024 * 1024 * 1024;
+								break;
+							case 'm':
+								$memory_limit_bytes = $number * 1024 * 1024;
+								break;
+							case 'k':
+								$memory_limit_bytes = $number * 1024;
+								break;
+						}
+					}
+				}
 				
-				// Break if no more posts.
-				if ( ! $the_query->have_posts() ) {
-					wp_reset_postdata();
+				// If memory usage is above 80%, skip this batch and try again later
+				if ( $memory_limit_bytes > 0 && $memory_usage > ( $memory_limit_bytes * 0.8 ) ) {
+					// Set a flag to retry later
+					update_option( 'colormag_container_sidebar_migration_pending', true );
 					break;
 				}
 				
+				$args = [
+					'post_type'              => 'any',
+					'posts_per_page'         => $batch_size,
+					'offset'                 => $offset,
+					'fields'                 => 'ids', // Only get post IDs to reduce memory usage.
+					'no_found_rows'          => true,
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+					'cache_results'          => false, // Disable query caching
+				];
+
+				$the_query = new WP_Query( $args );
+
+				// Break if no more posts.
+				if ( ! $the_query->have_posts() ) {
+					wp_reset_postdata();
+					$the_query = null;
+					break;
+				}
+
 				// Process each post ID.
-				foreach ( $the_query->posts as $post_id ) {
-					$colormag_post_layout = get_post_meta( $post_id, 'colormag_page_layout', true );
-					
+				$post_ids = $the_query->posts;
+				foreach ( $post_ids as $post_id ) {
+					// Use direct database query to avoid meta cache
+					global $wpdb;
+					$colormag_post_layout = $wpdb->get_var( $wpdb->prepare(
+						"SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'colormag_page_layout' LIMIT 1",
+						$post_id
+					) );
+
 					if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
 						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
 						update_post_meta( $post_id, 'colormag_page_container_layout', 'no_sidebar_full_width' );
@@ -292,15 +335,37 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 						update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
 						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
 					}
+					
+					// Clear post meta cache for this post
+					wp_cache_delete( $post_id, 'post_meta' );
 				}
 				
+				// Clear variables
+				$post_ids = null;
+				unset( $post_ids );
+
+				// Safety check: if we got fewer posts than batch size, we're done.
+				// Store count before resetting query
+				$post_count = $the_query->post_count;
+
 				wp_reset_postdata();
 				
+				// Clear query cache to free memory
+				$the_query = null;
+				unset( $the_query );
+
 				// Move to next batch.
 				$offset += $batch_size;
 				
-				// Safety check: if we got fewer posts than batch size, we're done.
-				if ( count( $the_query->posts ) < $batch_size ) {
+				// Clear WordPress object cache
+				wp_cache_flush();
+				
+				// Force garbage collection to free memory
+				if ( function_exists( 'gc_collect_cycles' ) ) {
+					gc_collect_cycles();
+				}
+				
+				if ( $post_count < $batch_size ) {
 					break;
 				}
 			}
