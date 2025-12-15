@@ -150,16 +150,44 @@ $options = apply_filters(
 			'tab'         => 'general',
 		),
 		'colormag_blog_post_elements'               => array(
-			'type'      => 'customind-sortable',
-			'tab'       => 'general',
-			'tab_group' => 'colormag_blog_container_tab_group',
+			'type'      => 'customind-sortable-v2',
 			'section'   => 'colormag_blog_archive_section',
+			'tab_group' => 'colormag_blog_container_tab_group',
+			'tab'       => 'general',
 			'choices'   => array(
-				'post_format' => esc_attr__( 'Post Format (Image)', 'colormag' ),
-				'category'    => esc_attr__( 'Category', 'colormag' ),
-				'meta'        => esc_attr__( 'Meta Tags', 'colormag' ),
-				'title'       => esc_attr__( 'Title', 'colormag' ),
-				'content'     => esc_attr__( 'Content', 'colormag' ),
+				'post_format' => array(
+					'label'    => 'Post Format (Image)',
+					'controls' => array(),
+				),
+				'category'    => array(
+					'label'    => 'category',
+					'controls' => array(),
+				),
+				'title'       => array(
+					'label'    => 'title',
+					'controls' => array(),
+				),
+				'meta'        => array(
+					'label'    => 'meta',
+					'controls' => array(),
+				),
+				'content'     => array(
+					'label'    => 'content',
+					'controls' => array(
+						'colormag_blog_content_excerpt_type'        => array(
+							'default'   => 'excerpt',
+							'type'      => 'customind-select',
+							'tab'       => 'general',
+							'tab_group' => 'colormag_blog_container_tab_group',
+							'title'     => esc_html__( 'Type', 'colormag' ),
+							'section'   => 'colormag_blog_archive_section',
+							'choices'   => array(
+								'excerpt' => esc_html__( 'Excerpt', 'colormag' ),
+								'content' => esc_html__( 'Full Content', 'colormag' ),
+							),
+						),
+					),
+				),
 			),
 			'default'   => array(
 				'post_format',
@@ -168,7 +196,6 @@ $options = apply_filters(
 				'meta',
 				'content',
 			),
-			'condition' => apply_filters( 'colormag_blog_post_elements_order', false ),
 		),
 		'colormag_blog_post_meta_heading'           => array(
 			'type'        => 'customind-heading',
@@ -179,25 +206,58 @@ $options = apply_filters(
 			'tab_group'   => 'colormag_blog_container_tab_group',
 		),
 		'colormag_blog_post_meta_structure'         => array(
-			'type'      => 'customind-sortable',
+			'type'      => 'customind-sortable-v2',
 			'section'   => 'colormag_blog_archive_section',
-			'tab'       => 'general',
 			'tab_group' => 'colormag_blog_container_tab_group',
+			'tab'       => 'general',
 			'choices'   => array(
-				'author'      => esc_attr__( 'Author', 'colormag' ),
-				'date'        => esc_attr__( 'Date', 'colormag' ),
-				'views'       => esc_attr__( 'Views', 'colormag' ),
-				'comments'    => esc_attr__( 'Comments', 'colormag' ),
-				'tags'        => esc_attr__( 'Tags', 'colormag' ),
-				'read-time'   => esc_attr__( 'Reading Time', 'colormag' ),
-				'edit-button' => esc_attr__( 'Edit button', 'colormag' ),
+				'author'      => array(
+					'label'    => 'author',
+					'controls' => array(),
+				),
+				'date'        => array(
+					'label'    => 'date',
+					'controls' => array(
+						'colormag_blog_post_date_type' => array(
+							'default'   => 'post-date',
+							'type'      => 'customind-select',
+							'title'     => esc_html__( 'Type', 'colormag' ),
+							'tab'       => 'general',
+							'tab_group' => 'colormag_blog_container_tab_group',
+							'section'   => 'colormag_blog_archive_section',
+							'choices'   => array(
+								'post-date'     => esc_html__( 'Post Date', 'colormag' ),
+								'modified-date' => esc_html__( 'Modified Date', 'colormag' ),
+								'both-date'     => esc_html__( 'Both Date', 'colormag' ),
+							),
+						),
+					),
+				),
+				'views'       => array(
+					'label'    => 'views',
+					'controls' => array(),
+				),
+				'comments'    => array(
+					'label'    => 'comments',
+					'controls' => array(),
+				),
+				'tags'        => array(
+					'label'    => 'content',
+					'controls' => array(),
+				),
+				'read-time'   => array(
+					'label'    => 'read-time',
+					'controls' => array(),
+				),
+				'edit-button' => array(
+					'label'    => 'edit-button',
+					'controls' => array(),
+				),
 			),
 			'default'   => array(
-				'categories',
 				'date',
 				'author',
 			),
-			'condition' => apply_filters( 'colormag_post_meta_elements_title_order', false ),
 		),
 		'colormag_blog_post_title_typography'       => array(
 			'default'   => array(
@@ -241,45 +301,6 @@ $options = apply_filters(
 			'tab_group' => 'colormag_blog_container_tab_group',
 			'title'     => esc_html__( 'Post Title', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
-		),
-		'colormag_blog_post_date_heading'           => array(
-			'type'      => 'customind-heading',
-			'title'     => esc_html__( 'Post Date', 'colormag' ),
-			'section'   => 'colormag_blog_archive_section',
-			'tab'       => 'general',
-			'tab_group' => 'colormag_blog_container_tab_group',
-		),
-		'colormag_blog_post_date_type'              => array(
-			'default'   => 'post-date',
-			'type'      => 'customind-select',
-			'title'     => esc_html__( 'Type', 'colormag' ),
-			'tab'       => 'general',
-			'tab_group' => 'colormag_blog_container_tab_group',
-			'section'   => 'colormag_blog_archive_section',
-			'choices'   => array(
-				'post-date'     => esc_html__( 'Post Date', 'colormag' ),
-				'modified-date' => esc_html__( 'Modified Date', 'colormag' ),
-				'both-date'     => esc_html__( 'Both Date', 'colormag' ),
-			),
-		),
-		'colormag_blog_content_heading'             => array(
-			'type'      => 'customind-heading',
-			'tab_group' => 'colormag_blog_container_tab_group',
-			'title'     => esc_html__( 'Excerpt', 'colormag' ),
-			'section'   => 'colormag_blog_archive_section',
-			'tab'       => 'general',
-		),
-		'colormag_blog_content_excerpt_type'        => array(
-			'default'   => 'excerpt',
-			'type'      => 'customind-select',
-			'tab'       => 'general',
-			'tab_group' => 'colormag_blog_container_tab_group',
-			'title'     => esc_html__( 'Type', 'colormag' ),
-			'section'   => 'colormag_blog_archive_section',
-			'choices'   => array(
-				'excerpt' => esc_html__( 'Excerpt', 'colormag' ),
-				'content' => esc_html__( 'Full Content', 'colormag' ),
-			),
 		),
 		'colormag_pagination_heading'               => array(
 			'type'      => 'customind-heading',
