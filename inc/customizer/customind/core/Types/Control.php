@@ -34,8 +34,10 @@ class Control extends \WP_Customize_Control {
 		'customind-textarea',
 		'customind-typography',
 		'customind-typography-preset',
+		'customind-typocolor',
 		'customind-date',
 		'customind-sortable',
+		'customind-sortable-v2',
 		'customind-image',
 		'customind-editor',
 		'customind-select',
@@ -156,32 +158,6 @@ class Control extends \WP_Customize_Control {
 	}
 
 	/**
-	 * Register sub controls.
-	 *
-	 * @param array $args
-	 * @return void
-	 */
-	protected function register_sub_controls( $manager, $args ) {
-		if ( empty( $args['sub_controls'] ) || ! in_array( $args['type'], self::GROUP_TYPES, true ) ) {
-			return;
-		}
-		foreach ( $args['sub_controls'] as $sub_control_id => $sub_control_args ) {
-			$manager->add_setting(
-				$sub_control_id,
-				array(
-					'default'           => $sub_control_args['default'] ?? '',
-					'transport'         => $sub_control_args['transport'] ?? 'refresh',
-					'type'              => 'theme_mod',
-					'sanitize_callback' => ( new Sanitization() )->get_sanitization_callback( $sub_control_args['type'] ),
-				)
-			);
-			$sub_control = new self( $manager, $sub_control_id, $sub_control_args, true );
-			$manager->add_control( $sub_control );
-			$this->sub_controls[] = $sub_control->json();
-		}
-	}
-
-	/**
 	 * Prepare control args.
 	 *
 	 * @param string $id
@@ -224,24 +200,29 @@ class Control extends \WP_Customize_Control {
 	}
 
 	/**
-	 * Add selective refresh support for the control.
+	 * Register sub controls.
 	 *
-	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
-	 * @param string               $id      Control ID.
-	 * @param array                $args    Args.
+	 * @param array $args
+	 * @return void
 	 */
-	protected function add_selective_refresh( $manager, $id, $args ) {
-		if ( ! isset( $args['partial'] ) || ! isset( $manager->selective_refresh ) ) {
+	protected function register_sub_controls( $manager, $args ) {
+		if ( empty( $args['sub_controls'] ) || ! in_array( $args['type'], self::GROUP_TYPES, true ) ) {
 			return;
 		}
-		$manager->selective_refresh->add_partial(
-			$id,
-			array(
-				'selector'            => $args['partial']['selector'] ?? '',
-				'render_callback'     => $args['partial']['render_callback'] ?? null,
-				'container_inclusive' => $args['partial']['container_inclusive'] ?? false,
-			)
-		);
+		foreach ( $args['sub_controls'] as $sub_control_id => $sub_control_args ) {
+			$manager->add_setting(
+				$sub_control_id,
+				array(
+					'default'           => $sub_control_args['default'] ?? '',
+					'transport'         => $sub_control_args['transport'] ?? 'refresh',
+					'type'              => 'theme_mod',
+					'sanitize_callback' => ( new Sanitization() )->get_sanitization_callback( $sub_control_args['type'] ),
+				)
+			);
+			$sub_control = new self( $manager, $sub_control_id, $sub_control_args, true );
+			$manager->add_control( $sub_control );
+			$this->sub_controls[] = $sub_control->json();
+		}
 	}
 
 	/**
@@ -288,6 +269,27 @@ class Control extends \WP_Customize_Control {
 		$json['link']       = $this->get_link();
 
 		return $json;
+	}
+
+	/**
+	 * Add selective refresh support for the control.
+	 *
+	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
+	 * @param string               $id      Control ID.
+	 * @param array                $args    Args.
+	 */
+	protected function add_selective_refresh( $manager, $id, $args ) {
+		if ( ! isset( $args['partial'] ) || ! isset( $manager->selective_refresh ) ) {
+			return;
+		}
+		$manager->selective_refresh->add_partial(
+			$id,
+			array(
+				'selector'            => $args['partial']['selector'] ?? '',
+				'render_callback'     => $args['partial']['render_callback'] ?? null,
+				'container_inclusive' => $args['partial']['container_inclusive'] ?? false,
+			)
+		);
 	}
 
 	/**
