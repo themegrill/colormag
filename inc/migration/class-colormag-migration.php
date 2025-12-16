@@ -261,7 +261,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				// Check available memory before processing batch
 				$memory_usage = memory_get_usage( true );
 				$memory_limit = ini_get( 'memory_limit' );
-				
+
 				// Convert memory limit to bytes (fallback if wp_convert_hr_to_bytes doesn't exist)
 				if ( function_exists( 'wp_convert_hr_to_bytes' ) ) {
 					$memory_limit_bytes = wp_convert_hr_to_bytes( $memory_limit );
@@ -284,14 +284,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 						}
 					}
 				}
-				
+
 				// If memory usage is above 80%, skip this batch and try again later
 				if ( $memory_limit_bytes > 0 && $memory_usage > ( $memory_limit_bytes * 0.8 ) ) {
 					// Set a flag to retry later
 					update_option( 'colormag_container_sidebar_migration_pending', true );
 					break;
 				}
-				
+
 				$args = [
 					'post_type'              => 'any',
 					'posts_per_page'         => $batch_size,
@@ -317,10 +317,12 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				foreach ( $post_ids as $post_id ) {
 					// Use direct database query to avoid meta cache
 					global $wpdb;
-					$colormag_post_layout = $wpdb->get_var( $wpdb->prepare(
-						"SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'colormag_page_layout' LIMIT 1",
-						$post_id
-					) );
+					$colormag_post_layout = $wpdb->get_var(
+						$wpdb->prepare(
+							"SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'colormag_page_layout' LIMIT 1",
+							$post_id
+						)
+					);
 
 					if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
 						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
@@ -335,11 +337,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 						update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
 						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
 					}
-					
+
 					// Clear post meta cache for this post
 					wp_cache_delete( $post_id, 'post_meta' );
 				}
-				
+
 				// Clear variables
 				$post_ids = null;
 				unset( $post_ids );
@@ -349,22 +351,22 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				$post_count = $the_query->post_count;
 
 				wp_reset_postdata();
-				
+
 				// Clear query cache to free memory
 				$the_query = null;
 				unset( $the_query );
 
 				// Move to next batch.
 				$offset += $batch_size;
-				
+
 				// Clear WordPress object cache
 				wp_cache_flush();
-				
+
 				// Force garbage collection to free memory
 				if ( function_exists( 'gc_collect_cycles' ) ) {
 					gc_collect_cycles();
 				}
-				
+
 				if ( $post_count < $batch_size ) {
 					break;
 				}
