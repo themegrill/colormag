@@ -120,13 +120,13 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.1.2 - 2025-12-16 =
+= Version 4.1.2 - 2025-12-18 =
 * Added - New combined typography color option in the Typography section, allowing unified color control for text styles.
 * Moved  - Relocated Headings color settings (H1–H3) from their previous location into the Typography section for better organization and easier access.
 * Update - Introduced a new sortable control for Blog, Single Post, and Search layouts, enabling users to reorder elements more flexibly.
 * Moved  - Transferred Elements options inside the Sortable element, grouping related controls together and improving the overall settings structure.
-* Fix         - Starter template issue.
-* Fix         - Undefined function colormag_fresh_install issue.
+* Fix    - Starter template issue.
+* Fix    - Undefined function colormag_fresh_install issue.
 
 = Version 4.1.1 - 2025-09-26 =
 * Fix         - Undefined array key "font-family".

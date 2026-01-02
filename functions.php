@@ -12,16 +12,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-/**
- * Increase memory limit to prevent memory exhaustion errors.
- * This helps with memory-intensive operations like migrations.
- * Note: This may not work if PHP's memory_limit is set at the server level.
- * For permanent fix, increase memory_limit in php.ini or wp-config.php
- */
-if ( ! defined( 'WP_MEMORY_LIMIT' ) ) {
-	@ini_set( 'memory_limit', '1024M' );
-}
-
 
 /**
  * Define constants.

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-16T09:18:35+00:00\n"
+"POT-Creation-Date: 2025-12-22T08:13:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: colormag\n"
@@ -98,15 +98,15 @@ msgid "Comments are closed."
 msgstr ""
 
 #. Translators: 1: Panel Title.
-#: functions.php:106
+#: functions.php:96
 msgid "Customizing ▶ %s"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:97
 msgid "Customizing"
 msgstr ""
 
-#: functions.php:424
+#: functions.php:414
 msgid "Upgrade to ColorMag Pro for more features and customization options."
 msgstr ""
 
