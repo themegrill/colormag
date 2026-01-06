@@ -52,6 +52,8 @@
 
 		.colormag-ui-desc,
 		.colormag-ui-field {
+			display: flex;
+			gap: 4px;
 			flex: 1;
 		}
 
@@ -72,6 +74,7 @@
 				&:checked + img {
 					box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
 					border: 1px solid #13a1dc;
+					border-radius: 4px;
 				}
 			}
 		}

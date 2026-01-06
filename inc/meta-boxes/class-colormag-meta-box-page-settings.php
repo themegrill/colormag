@@ -101,11 +101,11 @@ class ColorMag_Meta_Box_Page_Settings {
 							'id'      => 'colormag_page_layout',
 							'label'   => esc_html__( 'Select Layout', 'colormag' ),
 							'choices' => array(
-								'default_layout'        => COLORMAG_PARENT_URL . '/assets/img/sidebar/customizer.svg',
+								'default_layout'        => COLORMAG_PARENT_URL . '/assets/img/sidebar/inherit.svg',
 								'right_sidebar'         => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
 								'left_sidebar'          => COLORMAG_PARENT_URL . '/assets/img/sidebar/left-sidebar.svg',
-								'no_sidebar_full_width' => COLORMAG_PARENT_URL . '/assets/img/sidebar/contained.svg',
-								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/sidebar/centered.svg',
+								'no_sidebar_full_width' => COLORMAG_PARENT_URL . '/assets/img/sidebar/normal.svg',
+								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/sidebar/narrow.svg',
 							),
 						)
 					);
@@ -127,6 +127,37 @@ class ColorMag_Meta_Box_Page_Settings {
 				?>
 			</div>
 
+		</div>
+
+		<?php
+	}
+
+	/**
+	 * Output a radio image input field.
+	 *
+	 * @param array $field The fields of the input types.
+	 */
+	public static function render_radio_image( $field ) {
+		?>
+
+		<div class="options-group">
+			<div class="colormag-ui-desc">
+				<label><?php echo esc_html( $field['label'] ); ?></label>
+			</div>
+
+			<div class="colormag-ui-field">
+				<?php foreach ( $field['choices'] as $key => $value ) { ?>
+					<label class="colormag-label" for="<?php echo esc_attr( $key ); ?>">
+						<input type="radio" name="<?php echo esc_attr( $field['id'] ); ?>"
+								id="<?php echo esc_attr( $key ); ?>"
+								value="<?php echo esc_attr( $key ); ?>"
+							<?php checked( $field['value'], $key ); ?>
+						/>
+
+						<img width="122px" height="84px" src="<?php echo esc_url( $value ); ?>" />
+					</label>
+				<?php } ?>
+			</div>
 		</div>
 
 		<?php
@@ -171,36 +202,5 @@ class ColorMag_Meta_Box_Page_Settings {
 		 * Hook for page settings data save.
 		 */
 		do_action( 'colormag_page_settings_save', $post_id );
-	}
-
-	/**
-	 * Output a radio image input field.
-	 *
-	 * @param array $field The fields of the input types.
-	 */
-	public static function render_radio_image( $field ) {
-		?>
-
-		<div class="options-group">
-			<div class="colormag-ui-desc">
-				<label><?php echo esc_html( $field['label'] ); ?></label>
-			</div>
-
-			<div class="colormag-ui-field">
-				<?php foreach ( $field['choices'] as $key => $value ) { ?>
-					<label class="colormag-label" for="<?php echo esc_attr( $key ); ?>">
-						<input type="radio" name="<?php echo esc_attr( $field['id'] ); ?>"
-								id="<?php echo esc_attr( $key ); ?>"
-								value="<?php echo esc_attr( $key ); ?>"
-							<?php checked( $field['value'], $key ); ?>
-						/>
-
-						<img src="<?php echo esc_url( $value ); ?>" />
-					</label>
-				<?php } ?>
-			</div>
-		</div>
-
-		<?php
 	}
 }
