@@ -205,6 +205,48 @@ function import_button_html() {
 				</div>
 			</div> <!--/.col-70-->
 			<div class="col-30">
+				<div class="postbox cm-contributing">
+					<h3 class="hndle"><span><?php esc_html_e( 'Contributing', 'colormag' ); ?></span></h3>
+					<div class="inside">
+						<p><?php esc_html_e( 'Become a contributor by opting in to our anonymous data tracking. We guarantee no sensitive data is collected.', 'colormag' ); ?></p>
+						<a href="<?php echo esc_url( 'https://themegrill.com/privacy-policy/' ); ?>" target="_blank" class="cm-track-info-link">
+							<?php esc_html_e( 'What do we track?', 'colormag' ); ?>
+							<?php echo wp_kses( $link_icon, $allowed_html ); ?>
+						</a>
+						<div class="cm-tracking-toggle">
+							<label class="cm-toggle-switch" for="cm-allow-tracking">
+								<input type="checkbox" id="cm-allow-tracking" <?php checked( get_option( 'colormag_logger_flag', 'no' ), 'yes' ); ?>>
+								<span class="cm-toggle-slider"></span>
+							</label>
+							<span class="cm-toggle-label"><?php esc_html_e( 'Allow Anonymous Tracking', 'colormag' ); ?></span>
+						</div>
+					</div>
+				</div>
+				<style>
+					.cm-contributing .cm-track-info-link { display:inline-flex; align-items:center; gap:4px; font-size:13px; margin-bottom:12px; text-decoration:none; }
+					.cm-contributing .cm-track-info-link:hover { text-decoration:underline; }
+					.cm-tracking-toggle { display:flex; align-items:center; gap:10px; margin-top:4px; }
+					.cm-toggle-switch { position:relative; display:inline-block; width:44px; height:24px; flex-shrink:0; }
+					.cm-toggle-switch input { opacity:0; width:0; height:0; }
+					.cm-toggle-slider { position:absolute; cursor:pointer; inset:0; background:#ccc; border-radius:24px; transition:.25s; }
+					.cm-toggle-slider::before { content:""; position:absolute; height:18px; width:18px; left:3px; bottom:3px; background:#fff; border-radius:50%; transition:.25s; }
+					.cm-toggle-switch input:checked + .cm-toggle-slider { background:#2563EB; }
+					.cm-toggle-switch input:checked + .cm-toggle-slider::before { transform:translateX(20px); }
+					.cm-toggle-label { font-size:13px; font-weight:500; }
+				</style>
+				<script>
+					(function(){
+						var cb = document.getElementById('cm-allow-tracking');
+						if(!cb) return;
+						cb.addEventListener('change', function(){
+							var fd = new FormData();
+							fd.append('action','colormag_save_tracking');
+							fd.append('nonce','<?php echo esc_js( wp_create_nonce( 'colormag_tracking_nonce' ) ); ?>');
+							fd.append('enabled', cb.checked ? '1' : '0');
+							fetch(ajaxurl,{method:'POST',body:fd});
+						});
+					})();
+				</script>
 				<div class="postbox">
 					<h3 class="hndle">
 						<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

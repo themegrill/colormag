@@ -12,6 +12,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+require_once get_template_directory() . '/vendor/autoload.php';
 
 /**
  * Define constants.
@@ -26,6 +27,9 @@ require get_template_directory() . '/inc/helper/utils.php';
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
  */
+require get_template_directory() . '/inc/admin/class-colormag-contribution.php';
+ColorMag_Contribution::instance();
+
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
 	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
