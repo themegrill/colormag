@@ -140,6 +140,7 @@ class ColorMag_Contribution {
 	public function logger_data( $data ) {
 		global $wpdb;
 
+		$data['plan']            = 'free';
 		$data['theme_version']   = defined( 'COLORMAG_THEME_VERSION' ) ? COLORMAG_THEME_VERSION : '';
 		$data['child_theme']     = is_child_theme() ? get_stylesheet() : '';
 		$data['php_version']     = PHP_VERSION;
