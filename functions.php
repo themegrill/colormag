@@ -12,7 +12,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-require_once get_template_directory() . '/vendor/autoload.php';
+if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
+	require_once get_template_directory() . '/vendor/autoload.php';
+}
 
 /**
  * Define constants.
