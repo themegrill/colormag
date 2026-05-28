@@ -634,3 +634,35 @@ function colormag_typography_should_migrate() {
 
 	return $should_migrate;
 }
+
+/**
+ * One-time migration to update saved social icon FA classes to FA 6.5 names.
+ */
+function colormag_migrate_social_icon_classes() {
+	if ( get_option( 'colormag_social_icons_migrated_v1' ) ) {
+		return;
+	}
+	$icon_map = array(
+		'fa-brands fa-twitter'   => 'fa-brands fa-x-twitter',
+		'fa-brands fa-instagram' => 'fa-brands fa-square-instagram',
+	);
+	foreach ( array( 'colormag_header_socials', 'colormag_footer_socials' ) as $setting ) {
+		$socials = get_theme_mod( $setting );
+		if ( ! is_array( $socials ) ) {
+			continue;
+		}
+		$updated = false;
+		foreach ( $socials as &$social ) {
+			if ( isset( $social['icon'] ) && isset( $icon_map[ $social['icon'] ] ) ) {
+				$social['icon'] = $icon_map[ $social['icon'] ];
+				$updated        = true;
+			}
+		}
+		unset( $social );
+		if ( $updated ) {
+			set_theme_mod( $setting, $socials );
+		}
+	}
+	update_option( 'colormag_social_icons_migrated_v1', true );
+}
+add_action( 'after_setup_theme', 'colormag_migrate_social_icon_classes' );
