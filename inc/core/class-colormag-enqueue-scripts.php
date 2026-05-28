@@ -247,10 +247,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// jQuery Video JS.
 			wp_register_script( 'jquery-video', COLORMAG_JS_URL . '/jquery.video' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-			// HTML5Shiv for Lower IE versions.
-			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
-			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
-
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
 		}

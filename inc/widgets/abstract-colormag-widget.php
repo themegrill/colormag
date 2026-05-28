@@ -26,14 +26,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 *
 	 * @var string
 	 */
-	public $widget_cssclass;
+	public $widget_cssclass = '';
 
 	/**
 	 * Widget description.
 	 *
 	 * @var string
 	 */
-	public $widget_description;
+	public $widget_description = '';
 
 	/**
 	 * Widget ID.
@@ -47,7 +47,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 *
 	 * @var string
 	 */
-	public $widget_name;
+	public $widget_name = '';
 
 	/**
 	 * Settings.
