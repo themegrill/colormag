@@ -120,6 +120,10 @@ class ColorMag_Contribution {
 			return $data;
 		}
 
+		if ( $this->get_install_days() < 7 ) {
+			return $data;
+		}
+
 		return array(
 			'environmentId' => self::FORMBRICKS_ENV_ID,
 			'attributes'    => array(
@@ -203,7 +207,7 @@ class ColorMag_Contribution {
 	 * @return int
 	 */
 	private function get_install_days() {
-		$install_time = get_option( 'colormag_install', time() );
+		$install_time = get_option( 'colormag_theme_installed_time', time() );
 		return (int) floor( ( time() - (int) $install_time ) / DAY_IN_SECONDS );
 	}
 }
