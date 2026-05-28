@@ -39,7 +39,10 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
 
-require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.php';
+require get_template_directory() . '/inc/admin/class-colormag-changelog-controller.php';
+add_action( 'rest_api_init', function() {
+	( new Colormag_Changelog_Controller() )->register_routes();
+} );
 
 
 ///** ColorMag setup file, hooked for `after_setup_theme`. */

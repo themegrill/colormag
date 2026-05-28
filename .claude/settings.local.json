@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep -l \"switching\\\\|quick.feedback\\\\|activate.*theme\\\\|snooze\")",
+      "Bash(xargs grep -l \"theme.switch\\\\|switch.*theme\\\\|theme_switch\\\\|deactivat\\\\|feedback\")",
+      "Bash(xargs grep -l \"theme.switch\\\\|switch.*theme\\\\|better_theme\\\\|theme_switching\")"
+    ]
+  }
+}
