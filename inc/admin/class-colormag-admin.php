@@ -131,6 +131,8 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 						),
 						'nonce'            => wp_create_nonce( 'colormag_dashboard_nonce' ),
 						'ajaxUrl'          => admin_url( 'admin-ajax.php' ),
+						'trackingEnabled'  => 'yes' === get_option( 'colormag_logger_flag', 'no' ),
+						'trackingNonce'    => wp_create_nonce( 'colormag_tracking_nonce' ),
 					)
 				);
 			}
