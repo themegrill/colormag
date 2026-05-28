@@ -226,12 +226,12 @@ function import_button_html() {
 					.cm-contributing .cm-track-info-link { display:inline-flex; align-items:center; gap:4px; font-size:13px; margin-bottom:12px; text-decoration:none; }
 					.cm-contributing .cm-track-info-link:hover { text-decoration:underline; }
 					.cm-tracking-toggle { display:flex; align-items:center; gap:10px; margin-top:4px; }
-					.cm-toggle-switch { position:relative; display:inline-block; width:44px; height:24px; flex-shrink:0; }
+					.cm-toggle-switch { position:relative; display:inline-block; width:30px; height:17px; flex-shrink:0; }
 					.cm-toggle-switch input { opacity:0; width:0; height:0; }
-					.cm-toggle-slider { position:absolute; cursor:pointer; inset:0; background:#ccc; border-radius:24px; transition:.25s; }
-					.cm-toggle-slider::before { content:""; position:absolute; height:18px; width:18px; left:3px; bottom:3px; background:#fff; border-radius:50%; transition:.25s; }
+					.cm-toggle-slider { position:absolute; cursor:pointer; inset:0; background:#ccc; border-radius:17px; transition:.25s; }
+					.cm-toggle-slider::before { content:""; position:absolute; height:11px; width:11px; left:3px; bottom:3px; background:#fff; border-radius:50%; transition:.25s; }
 					.cm-toggle-switch input:checked + .cm-toggle-slider { background:#2563EB; }
-					.cm-toggle-switch input:checked + .cm-toggle-slider::before { transform:translateX(20px); }
+					.cm-toggle-switch input:checked + .cm-toggle-slider::before { transform:translateX(13px); }
 					.cm-toggle-label { font-size:13px; font-weight:500; }
 				</style>
 				<script>
