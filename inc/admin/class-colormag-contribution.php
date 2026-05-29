@@ -38,6 +38,11 @@ class ColorMag_Contribution {
 
 		// AJAX handler for the dashboard toggle.
 		add_action( 'wp_ajax_colormag_save_tracking', array( $this, 'ajax_save_tracking' ) );
+
+		// Weekly cron bridges to SDK's log action so send_log() fires.
+		add_action( 'colormag_log_activity_weekly', function() {
+			do_action( 'colormag_log_activity' );
+		} );
 	}
 
 	/**
@@ -187,15 +192,15 @@ class ColorMag_Contribution {
 		update_option( 'colormag_logger_flag', $flag );
 
 		if ( $enabled ) {
-			// wp_loaded already ran on this request with the old flag, so the Logger
-			// didn't register its action. Schedule at time() and spawn cron so the
-			// next non-blocking WP-Cron request picks it up fresh.
-			if ( ! wp_next_scheduled( 'colormag_log_activity' ) ) {
-				wp_schedule_single_event( time(), 'colormag_log_activity' );
+			wp_clear_scheduled_hook( 'colormag_log_activity' );
+			wp_schedule_single_event( time() - 1, 'colormag_log_activity' );
+			if ( ! wp_next_scheduled( 'colormag_log_activity_weekly' ) ) {
+				wp_schedule_event( time() + WEEK_IN_SECONDS, 'weekly', 'colormag_log_activity_weekly' );
 			}
 			spawn_cron();
 		} else {
 			wp_clear_scheduled_hook( 'colormag_log_activity' );
+			wp_clear_scheduled_hook( 'colormag_log_activity_weekly' );
 		}
 
 		wp_send_json_success( array( 'enabled' => $enabled ) );

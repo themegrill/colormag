@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-28T16:07:19+00:00\n"
+"POT-Creation-Date: 2026-05-29T06:15:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: colormag\n"
@@ -129,39 +129,39 @@ msgstr ""
 msgid "Failed to read changelog."
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:63
+#: inc/admin/class-colormag-contribution.php:68
 msgid "Why are you switching away from ColorMag?"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:72
+#: inc/admin/class-colormag-contribution.php:77
 msgid "I found a better theme"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:73
+#: inc/admin/class-colormag-contribution.php:78
 msgid "What's the theme's name?"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:76
+#: inc/admin/class-colormag-contribution.php:81
 msgid "I couldn't get the theme to look like the demo"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:77
+#: inc/admin/class-colormag-contribution.php:82
 msgid "What problem did you experience?"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:80
+#: inc/admin/class-colormag-contribution.php:85
 msgid "I no longer need it"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:81
+#: inc/admin/class-colormag-contribution.php:86
 msgid "If you could improve one thing, what would it be?"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:84
+#: inc/admin/class-colormag-contribution.php:89
 msgid "It has a compatibility issue with a plugin"
 msgstr ""
 
-#: inc/admin/class-colormag-contribution.php:85
+#: inc/admin/class-colormag-contribution.php:90
 msgid "What plugin caused the issue?"
 msgstr ""
 
