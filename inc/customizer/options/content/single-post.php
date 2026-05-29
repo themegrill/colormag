@@ -237,7 +237,7 @@ $options                = apply_filters(
 					'controls' => array(),
 				),
 				'tags'        => array(
-					'label'    => 'content',
+					'label'    => 'tags',
 					'controls' => array(),
 				),
 				'read-time'   => array(
@@ -250,7 +250,6 @@ $options                = apply_filters(
 				),
 			),
 			'default'   => array(
-				'categories',
 				'date',
 				'author',
 			),
