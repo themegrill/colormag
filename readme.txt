@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.1.2
+Version: 4.1.5
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.1.2
+Stable tag: 4.1.5
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -35,7 +35,7 @@ Resources packed within the theme.
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * Images used in the screenshot are licensed under Creative Commons Zero (CC0):
-  
+
   https://pxhere.com/en/photo/1368697
   https://pxhere.com/en/photo/99223
   https://pxhere.com/en/photo/1364216
@@ -86,7 +86,7 @@ Resources packed within the theme.
   https://stocksnap.io/photo/lake-blue-0MRSBYLPNM
   https://stocksnap.io/photo/lake-blue-FJIZ474BGQ
   https://stocksnap.io/photo/lake-blue-TDAU1ERCD4
- 
+
   https://pxhere.com/en/photo/613031
   https://pxhere.com/en/photo/1558211
   https://pxhere.com/en/photo/1333828
@@ -329,7 +329,7 @@ and we will include it within the theme from next version update.
 * Option - To change sidebar width.
 * Fix    - Primary menu background on contained main header.
 * Fix    - Post meta categories issue.
- 
+
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.

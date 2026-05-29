@@ -43,6 +43,18 @@ class ColorMag_Contribution {
 		add_action( 'colormag_log_activity_weekly', function() {
 			do_action( 'colormag_log_activity' );
 		} );
+
+		// Fix: ensure environment.plugins is a JSON array not object.
+		add_filter( 'http_request_args', function( $args, $url ) {
+			if ( false !== strpos( $url, 'api.themegrill.com/tracking/log' ) && ! empty( $args['body'] ) ) {
+				$body = json_decode( $args['body'], true );
+				if ( isset( $body['environment']['plugins'] ) ) {
+					$body['environment']['plugins'] = array_values( (array) $body['environment']['plugins'] );
+					$args['body']                   = wp_json_encode( $body );
+				}
+			}
+			return $args;
+		}, 10, 2 );
 	}
 
 	/**
