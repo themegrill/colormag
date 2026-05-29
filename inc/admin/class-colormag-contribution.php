@@ -190,6 +190,7 @@ class ColorMag_Contribution {
 		$flag    = $enabled ? 'yes' : 'no';
 
 		update_option( 'colormag_logger_flag', $flag );
+		update_option( 'colormag_pro_logger_flag', $flag );
 
 		if ( $enabled ) {
 			wp_clear_scheduled_hook( 'colormag_log_activity' );
