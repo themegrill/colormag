@@ -5570,6 +5570,11 @@ ul.wp-block-gallery img {
 	max-width: unset;
 }
 
+.cm-normal-container .cm-primary .cm-entry-summary > .alignwide.wp-block-woocommerce-checkout {
+	margin-left: unset;
+	margin-right: unset;
+}
+
 .cm-normal-container.box-layout .cm-content {
 	overflow: hidden;
 }
