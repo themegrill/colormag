@@ -319,9 +319,6 @@
 .isolate {
 		isolation: isolate;
 }
-.isolation-auto {
-		isolation: auto;
-}
 .z-10 {
 		z-index: 10;
 }
@@ -710,9 +707,6 @@
 }
 .max-w-\[254px\] {
 		max-width: 254px;
-}
-.max-w-\[90px\] {
-		max-width: 90px;
 }
 .max-w-full {
 		max-width: 100%;
@@ -1167,9 +1161,6 @@
 .border-gray-500 {
 		--tw-border-opacity: 1;
 		border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-.border-inherit {
-		border-color: inherit;
 }
 .border-primary-500 {
 		--tw-border-opacity: 1;
@@ -1690,6 +1681,10 @@
 }
 .text-current {
 		color: currentColor;
+}
+.text-gray-400 {
+		--tw-text-opacity: 1;
+		color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 .text-gray-500 {
 		--tw-text-opacity: 1;
@@ -2462,6 +2457,11 @@ li.customize-control-customind-tabs {
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-100:hover {
+		--tw-bg-opacity: 1;
+		background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-50:hover {
 		--tw-bg-opacity: 1;
 		background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -2484,6 +2484,11 @@ li.customize-control-customind-tabs {
 .hover\:text-\[\#207DAF\]:hover {
 		--tw-text-opacity: 1;
 		color: rgb(32 125 175 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-700:hover {
+		--tw-text-opacity: 1;
+		color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-500:hover {
@@ -2920,14 +2925,6 @@ li.customize-control-customind-tabs {
 		margin-bottom: 16px;
 }
 
-.\[\&\>div\>input\]\:border-none>div>input {
-		border-style: none;
-}
-
-.\[\&\>div\>input\]\:text-sm>div>input {
-		font-size: 14px;
-}
-
 .\[\&\>div\]\:relative>div {
 		position: relative;
 }
@@ -2989,8 +2986,16 @@ li.customize-control-customind-tabs {
 		height: 32px;
 }
 
+.\[\&_\.customind-number-input-input\]\:h-\[36px\] .customind-number-input-input {
+		height: 36px;
+}
+
 .\[\&_\.customind-number-input-input\]\:w-7 .customind-number-input-input {
 		width: 28px;
+}
+
+.\[\&_\.customind-number-input-input\]\:w-\[52px\] .customind-number-input-input {
+		width: 52px;
 }
 
 .\[\&_\.customind-number-input-input\]\:rounded-none .customind-number-input-input {
