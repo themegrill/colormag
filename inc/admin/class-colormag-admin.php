@@ -94,7 +94,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				$current_theme          = get_stylesheet();
 
 				// Settings screen excluded from free — output true empty JS object.
-				wp_add_inline_script( 'colormag-dashboard', 'window.__COLORMAG_SETTINGS__ = {};', 'before' );
+				wp_add_inline_script( 'colormag-dashboard', 'window.__COLORMAG_SETTINGS__ = {"hide_feature_section":true};', 'before' );
 
 				wp_localize_script(
 					'colormag-dashboard',
