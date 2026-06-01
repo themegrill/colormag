@@ -112,7 +112,8 @@ function get_google_fonts_url_by_ids( $typography_controls_ids, $local = false, 
 		}
 		$family           = $value['font-family'];
 		$weight           = $value['font-weight'] ?? 400;
-		$weight           = (int) $weight;
+		$weight           = ( 'regular' === strtolower( (string) $weight ) || 'italic' === strtolower( (string) $weight ) ) ? 400 : (int) $weight;
+		$weight           = $weight > 0 ? $weight : 400;
 		$fonts[ $family ] = isset( $fonts[ $family ] )
 			? ( in_array( $weight, $fonts[ $family ], true )
 				? $fonts[ $family ]

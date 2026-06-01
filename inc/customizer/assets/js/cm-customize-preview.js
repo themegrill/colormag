@@ -92,6 +92,7 @@
 	function colormagGenerateTypographyCSS(controlId, selector, typography) {
 		let css = '';
 		var link = '',
+			isGoogleFont = false,
 			fontFamily = '',
 			fontWeight = '',
 			fontStyle = '',
@@ -235,7 +236,7 @@
 					fontFamily =
 						'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace';
 				} else {
-					link = `<link id="${controlId}" href="https://fonts.googleapis.com/css?family=${fontFamily}" rel="stylesheet">`;
+					isGoogleFont = true;
 				}
 			}
 
@@ -265,6 +266,12 @@
 				'' !== typography['text-transform']
 			) {
 				fontTransform = typography['text-transform'];
+			}
+
+			if (isGoogleFont) {
+				var urlWeight = ( 'normal' === fontWeight || '' === fontWeight ) ? 400 : ( parseInt( fontWeight ) || 400 );
+				var urlFamily = fontFamily.trim().replace( / /g, '+' );
+				link = '<link id="' + controlId + '" href="https://fonts.googleapis.com/css?family=' + urlFamily + ':' + urlWeight + '" rel="stylesheet">';
 			}
 
 			jQuery('link#' + controlId).remove();
