@@ -638,7 +638,7 @@ $options                   = apply_filters(
 				'subsets'        => array( 'latin' ),
 				'font-size'      => array(
 					'desktop' => array(
-						'size' => '36',
+						'size' => '40',
 						'unit' => 'px',
 					),
 					'tablet'  => array(
