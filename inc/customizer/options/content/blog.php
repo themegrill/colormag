@@ -299,7 +299,7 @@ $options = apply_filters(
 
 			'tab'       => 'style',
 			'tab_group' => 'colormag_blog_container_tab_group',
-			'title'     => esc_html__( 'Post Title', 'colormag' ),
+			'title'     => esc_html__( 'Post Title Typography', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
 		),
 		'colormag_pagination_heading'               => array(

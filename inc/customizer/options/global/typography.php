@@ -631,6 +631,11 @@ $options                   = apply_filters(
 			'variant' => 'solid',
 			'section' => 'colormag_global_typography_section',
 		),
+		'colormag_typography_post_types_info'   => array(
+			'type'      => 'customind-heading',
+			'info_text' => esc_html__( 'Looking for post type typography? Find it under Post Types → Blog, Single Post, Page.', 'colormag' ),
+			'section'   => 'colormag_global_typography_section',
+		),
 		'colormag_h1_typography'                => array(
 			'default'   => array(
 				'font-family'    => 'inherit',
