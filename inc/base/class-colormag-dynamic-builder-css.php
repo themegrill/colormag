@@ -3355,23 +3355,6 @@ class ColorMag_Dynamic_Builder_CSS {
 			}
 		}
 
-		if ( $matched_preset ) {
-			error_log( '=== MATCHED PRESET DETAILS ===' );
-			error_log( 'Preset ID: ' . $matched_preset['id'] );
-			error_log( 'Preset Name: ' . $matched_preset['name'] );
-			error_log( 'Is Modified: ' . ( $matched_preset['is_modified'] ? 'Yes' : 'No' ) );
-			error_log( 'Is Custom: ' . ( isset( $matched_preset['is_custom'] ) && $matched_preset['is_custom'] ? 'Yes' : 'No' ) );
-			error_log( 'Current Colors: ' . print_r( $matched_preset['colors'], true ) );
-
-			if ( $matched_preset['is_modified'] ) {
-				error_log( 'Original Colors: ' . print_r( $matched_preset['original_colors'], true ) );
-				error_log( 'Modified Colors: ' . print_r( $matched_preset['modified_colors'], true ) );
-			}
-			error_log( '=== END MATCHED PRESET ===' );
-		} else {
-			error_log( 'No preset found for ID: ' . $preset_id );
-		}
-
 		return $matched_preset;
 	}
 }

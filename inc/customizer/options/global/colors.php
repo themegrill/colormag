@@ -248,13 +248,6 @@ $options = apply_filters(
 				'colormag_container_layout' => 'boxed',
 			),
 		),
-		'colormag_dark_skin_heading'            => array(
-			'type'        => 'customind-heading',
-			'title'       => esc_html__( 'Dark Skin', 'colormag' ),
-			'section'     => 'colormag_global_colors_section',
-			'priority'    => 89,
-			'description' => esc_html__( 'When dark palette is selected it will override this style in all content', 'colormag' ),
-		),
 		'colormag_colors_upgrade'               => array(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),

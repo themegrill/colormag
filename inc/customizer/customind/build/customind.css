@@ -255,6 +255,10 @@
 .inset-0 {
 		inset: 0;
 }
+.inset-x-0 {
+		left: 0;
+		right: 0;
+}
 .-top-\[3px\] {
 		top: -3px;
 }
@@ -273,6 +277,9 @@
 .left-6 {
 		left: 24px;
 }
+.left-\[14px\] {
+		left: 14px;
+}
 .left-\[50\%\] {
 		left: 50%;
 }
@@ -290,6 +297,9 @@
 }
 .right-\[8px\] {
 		right: 8px;
+}
+.top-0 {
+		top: 0;
 }
 .top-1\/2 {
 		top: 50%;
@@ -323,6 +333,9 @@
 }
 .z-\[2\] {
 		z-index: 2;
+}
+.z-\[3\] {
+		z-index: 3;
 }
 .z-\[999999999\] {
 		z-index: 999999999;
@@ -366,6 +379,10 @@
 		margin-top: 8px;
 		margin-bottom: 8px;
 }
+.my-px {
+		margin-top: 1px;
+		margin-bottom: 1px;
+}
 .\!ml-5 {
 		margin-left: 20px !important;
 }
@@ -404,6 +421,9 @@
 }
 .ml-auto {
 		margin-left: auto;
+}
+.mr-2 {
+		margin-right: 8px;
 }
 .mr-3 {
 		margin-right: 12px;
@@ -888,6 +908,9 @@
 .gap-6 {
 		gap: 24px;
 }
+.gap-\[10px\] {
+		gap: 10px;
+}
 .gap-\[12px\] {
 		gap: 12px;
 }
@@ -1229,6 +1252,10 @@
 .bg-gray-900 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+.bg-primary-50 {
+		--tw-bg-opacity: 1;
+		background-color: rgb(234 243 251 / var(--tw-bg-opacity));
 }
 .bg-primary-500 {
 		--tw-bg-opacity: 1;
@@ -1912,6 +1939,10 @@
 	margin-left: 300px;
 }
 
+.customind-typo-section {
+	width: 100%;
+}
+
 .customind-palette-header .zstack {
 	border-radius: 4px !important;
 }
@@ -2011,11 +2042,11 @@
 	border-bottom-color: #207daf;
 }
 
-li[class^='customize-control-customind-'] {
-	margin-bottom: 0;
-	padding-right: 8px;
-	padding-left: 8px;
-}
+/*li[class^='customize-control-customind-'] {*/
+/*	margin-bottom: 0;*/
+/*	padding-right: 8px;*/
+/*	padding-left: 8px;*/
+/*}*/
 
 .customize-control-customind-builder-components label {
 	font-weight: 600;
@@ -2059,10 +2090,6 @@ li[class^='customize-control-customind-'] {
 
 .customind-color-palette .customind-color-picker .react-colorful {
 	width: auto;
-}
-
-#customize-theme-controls .customize-pane-child.accordion-section-content {
-	padding: 12px 0;
 }
 
 .customind-color-picker .react-colorful__saturation {
@@ -2204,6 +2231,8 @@ li.customize-control-customind-accordion {
 .customind #customize-controls .control-section .accordion-section-title button:hover,
 .customind #customize-controls .control-section .accordion-section-title button:focus {
 	background: unset;
+	box-shadow: 0 0 0 0 #2271b1 !important;
+	outline: 0 solid transparent !important;
 }
 
 .customind .accordion-section-title button.accordion-trigger {
@@ -2298,18 +2327,20 @@ li.customize-control-customind-tabs {
 
 #customize-theme-controls .control-panel-themes > .accordion-section-title {
 	margin-bottom: 0 !important;
+	border-bottom: 0 !important;
+	border-top: 0 !important;
 }
 
 .customind-popover-drawer .tab-active::after,
-.customind-popover-drawer [data-state='active']::after {
+.customind-popover-drawer [aria-selected="true"]::after {
 	content: '';
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100%;
 	height: 1px;
 	background: #257BC1; /* or your primary color */
 	border-radius: 2px;
+	width: 100%;
 }
 
 .placeholder\:font-normal::-moz-placeholder {
@@ -2398,6 +2429,11 @@ li.customize-control-customind-tabs {
 .hover\:bg-\[\#2563EB\]:hover {
 		--tw-bg-opacity: 1;
 		background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#F3F4F6\]:hover {
+		--tw-bg-opacity: 1;
+		background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#F5F5F5\]:hover {
@@ -2891,10 +2927,6 @@ li.customize-control-customind-tabs {
 
 .\[\&\>div\]\:row-start-1>div {
 		grid-row-start: 1;
-}
-
-.\[\&\>div\]\:min-w-\[244px\]>div {
-		min-width: 244px;
 }
 
 .\[\&\>div\]\:min-w-\[260px\]>div {

@@ -19,18 +19,6 @@ class Sanitization {
 	private static $instance = null;
 
 	/**
-	 * Create single instance of this class.
-	 *
-	 * @return Sanitization
-	 */
-	public static function instance() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
-	/**
 	 * Sanitize radio.
 	 *
 	 * @param mixed                 $value Value from customizer.
@@ -46,6 +34,29 @@ class Sanitization {
 		}
 
 		return in_array( $value, array_keys( $choices ), true ) ? $value : ( $setting->default ?? '' );
+	}
+
+	/**
+	 * Sanitize color.
+	 *
+	 * @param string $value Value from customizer.
+	 * @return string
+	 */
+	public static function sanitize_color( $value ) {
+		switch ( true ) {
+			case 0 === strpos( $value, '#' ):
+				return self::sanitize_hex( $value );
+			case 0 === strpos( $value, 'rgb(' ):
+				return self::sanitize_rgb( $value );
+			case 0 === strpos( $value, 'rgba(' ):
+				return self::sanitize_rgba( $value );
+			case 0 === strpos( $value, 'hsl(' ):
+				return self::sanitize_hsl( $value );
+			case 0 === strpos( $value, 'hsla(' ):
+				return self::sanitize_hsla( $value );
+			default:
+				return '';
+		}
 	}
 
 	/**
@@ -123,29 +134,6 @@ class Sanitization {
 	}
 
 	/**
-	 * Sanitize color.
-	 *
-	 * @param string $value Value from customizer.
-	 * @return string
-	 */
-	public static function sanitize_color( $value ) {
-		switch ( true ) {
-			case 0 === strpos( $value, '#' ):
-				return self::sanitize_hex( $value );
-			case 0 === strpos( $value, 'rgb(' ):
-				return self::sanitize_rgb( $value );
-			case 0 === strpos( $value, 'rgba(' ):
-				return self::sanitize_rgba( $value );
-			case 0 === strpos( $value, 'hsl(' ):
-				return self::sanitize_hsl( $value );
-			case 0 === strpos( $value, 'hsla(' ):
-				return self::sanitize_hsla( $value );
-			default:
-				return '';
-		}
-	}
-
-	/**
 	 * Sanitize input.
 	 *
 	 * @param string $input
@@ -179,16 +167,6 @@ class Sanitization {
 	}
 
 	/**
-	 * Sanitize checkbox.
-	 *
-	 * @param mixed $input
-	 * @return boolean
-	 */
-	public function sanitize_checkbox( $input ) {
-		return 1 === $input || '1' === $input || true === (bool) $input;
-	}
-
-	/**
 	 * Get sanitization callback.
 	 *
 	 * @param string $control
@@ -196,31 +174,33 @@ class Sanitization {
 	 */
 	public static function get_sanitization_callback( $control ) {
 		$sanitization_callbacks = [
-			'customind-text'          => [ __CLASS__, '::sanitize_input' ],
-			'customind-checkbox'      => [ __CLASS__, '::sanitize_checkbox' ],
-			'customind-toggle'        => [ __CLASS__, '::sanitize_checkbox' ],
-			'customind-color'         => [ __CLASS__, '::sanitize_color' ],
-			'customind-radio'         => [ __CLASS__, '::sanitize_radio' ],
-			'customind-radio-image'   => [ __CLASS__, '::sanitize_radio' ],
-			'customind-editor'        => 'wp_kses_post',
-			'customind-fontawesome'   => 'sanitize_text_field',
-			'customind-select'        => 'sanitize_text_field',
-			'customind-textarea'      => null,
-			'customind-background'    => null,
-			'customind-slider'        => null,
-			'customind-dimensions'    => null,
-			'customind-typography'    => null,
-			'customind-typography-preset'    => null,
-			'customind-date'          => null,
-			'customind-sortable'      => null,
-			'customind-toggle-button' => null,
+			'customind-text'              => [ __CLASS__, '::sanitize_input' ],
+			'customind-checkbox'          => [ __CLASS__, '::sanitize_checkbox' ],
+			'customind-toggle'            => [ __CLASS__, '::sanitize_checkbox' ],
+			'customind-color'             => [ __CLASS__, '::sanitize_color' ],
+			'customind-radio'             => [ __CLASS__, '::sanitize_radio' ],
+			'customind-radio-image'       => [ __CLASS__, '::sanitize_radio' ],
+			'customind-editor'            => 'wp_kses_post',
+			'customind-fontawesome'       => 'sanitize_text_field',
+			'customind-select'            => 'sanitize_text_field',
+			'customind-textarea'          => null,
+			'customind-background'        => null,
+			'customind-slider'            => null,
+			'customind-dimensions'        => null,
+			'customind-typography'        => null,
+			'customind-typography-preset' => null,
+			'customind-typocolor'         => null,
+			'customind-date'              => null,
+			'customind-sortable'          => null,
+			'customind-sortable-v2'       => null,
+			'customind-toggle-button'     => null,
 			'customind-visibility-button' => null,
-			'customind-color-group'   => null,
-			'customind-accordion'     => null,
-			'customind-title'         => null,
-			'customind-divider'       => null,
-			'customind-gradient'      => null,
-			'customind-color-palette' => null,
+			'customind-color-group'       => null,
+			'customind-accordion'         => null,
+			'customind-title'             => null,
+			'customind-divider'           => null,
+			'customind-gradient'          => null,
+			'customind-color-palette'     => null,
 		];
 		$sanitization_callbacks = self::instance()->apply_filters( 'sanitization:callbacks', $sanitization_callbacks );
 
@@ -229,5 +209,27 @@ class Sanitization {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Create single instance of this class.
+	 *
+	 * @return Sanitization
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+	/**
+	 * Sanitize checkbox.
+	 *
+	 * @param mixed $input
+	 * @return boolean
+	 */
+	public function sanitize_checkbox( $input ) {
+		return 1 === $input || '1' === $input || true === (bool) $input;
 	}
 }

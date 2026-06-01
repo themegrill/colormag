@@ -282,8 +282,8 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Typography options.
 		 */
-		$base_typography_default             = array(
-			'font-family'    => 'default',
+		$base_typography_default                  = array(
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(
@@ -314,11 +314,25 @@ class ColorMag_Dynamic_CSS {
 					'unit' => '',
 				),
 			),
+			'letter-spacing' => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
 		);
-		$headings_typography_default         = array(
-			'font-family'    => 'default',
+		$headings_typography_default              = array(
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'line-height'    => array(
@@ -349,11 +363,12 @@ class ColorMag_Dynamic_CSS {
 					'unit' => '',
 				),
 			),
-			'font-style'     => 'inherit',
+			'font-style'     => 'normal',
 			'text-transform' => 'none',
+			'color'          => 'var(--cm-color-6)',
 		);
-		$heading_h1_typography_default       = array(
-			'font-family'    => 'default',
+		$heading_h1_typography_default            = array(
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(
@@ -400,9 +415,10 @@ class ColorMag_Dynamic_CSS {
 			),
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
+			'color'          => 'var(--cm-color-6)',
 		);
-		$heading_h2_typography_default       = array(
-			'font-family'    => 'default',
+		$heading_h2_typography_default            = array(
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(
@@ -449,9 +465,10 @@ class ColorMag_Dynamic_CSS {
 			),
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
+			'color'          => 'var(--cm-color-6)',
 		);
-		$heading_h3_typography_default       = array(
-			'font-family'    => 'default',
+		$heading_h3_typography_default            = array(
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(
@@ -498,11 +515,9 @@ class ColorMag_Dynamic_CSS {
 			),
 			'font-style'     => 'normal',
 			'text-transform' => 'none',
+			'color'          => 'var(--cm-color-6)',
 		);
-		$heading_h4_typography_default       = array(
-			'font-family' => 'default',
-			'font-weight' => 'regular',
-			'subsets'     => array( 'latin' ),
+		$heading_h4_typography_default            = array(
 			'font-size'   => array(
 				'desktop' => array(
 					'size' => '24',
@@ -531,11 +546,9 @@ class ColorMag_Dynamic_CSS {
 					'unit' => '',
 				),
 			),
+			'color'          => 'var(--cm-color-6)',
 		);
-		$heading_h5_typography_default       = array(
-			'font-family' => 'default',
-			'font-weight' => 'regular',
-			'subsets'     => array( 'latin' ),
+		$heading_h5_typography_default            = array(
 			'font-size'   => array(
 				'desktop' => array(
 					'size' => '22',
@@ -564,11 +577,9 @@ class ColorMag_Dynamic_CSS {
 					'unit' => '',
 				),
 			),
+			'color'          => 'var(--cm-color-6)',
 		);
-		$heading_h6_typography_default       = array(
-			'font-family' => 'default',
-			'font-weight' => 'regular',
-			'subsets'     => array( 'latin' ),
+		$heading_h6_typography_default            = array(
 			'font-size'   => array(
 				'desktop' => array(
 					'size' => '18',
@@ -597,6 +608,7 @@ class ColorMag_Dynamic_CSS {
 					'unit' => '',
 				),
 			),
+			'color'          => 'var(--cm-color-6)',
 		);
 		$site_title_typography_default       = array(
 			'font-family' => 'default',
@@ -786,7 +798,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Headings typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$headings_typography_default,
 			$headings_typography,
 			'h1 ,h2, h3, h4, h5, h6',
@@ -797,7 +809,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Heading H1 typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$heading_h1_typography_default,
 			$heading_h1_typography,
 			'h1',
@@ -808,7 +820,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Heading H2 typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$heading_h2_typography_default,
 			$heading_h2_typography,
 			'h2',
@@ -819,7 +831,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Heading H3 typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$heading_h3_typography_default,
 			$heading_h3_typography,
 			'h3',
@@ -830,7 +842,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Heading H4 typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$heading_h4_typography_default,
 			$heading_h4_typography,
 			'h4',
@@ -841,7 +853,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Heading H5 typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$heading_h5_typography_default,
 			$heading_h5_typography,
 			'h5',
@@ -852,7 +864,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Heading H6 typography.
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$heading_h6_typography_default,
 			$heading_h6_typography,
 			'h6',

@@ -27,12 +27,14 @@ use Customind\Core\Types\Controls\Sortable;
 use Customind\Core\Types\Controls\Textarea;
 use Customind\Core\Types\Controls\Accordion;
 use Customind\Core\Types\Controls\Background;
+use Customind\Core\Types\Controls\SortableV2;
 use Customind\Core\Types\Controls\BuilderComponents;
 use Customind\Core\Types\Controls\ColorGroup;
 use Customind\Core\Types\Controls\Dimensions;
 use Customind\Core\Types\Controls\Navigation;
 use Customind\Core\Types\Controls\RadioImage;
 use Customind\Core\Types\Controls\Typography;
+use Customind\Core\Types\Controls\TypoColor;
 use Customind\Core\Types\Controls\Fontawesome;
 use Customind\Core\Types\Controls\ColorPalette;
 use Customind\Core\Types\Controls\FooterBuilder;
@@ -57,9 +59,11 @@ class TypeFactory {
 		'customind-visibility-button'  => VisibilityButton::class,
 		'customind-typography'         => Typography::class,
 		'customind-typography-preset'         => TypographyPreset::class,
+		'customind-typocolor'          => TypoColor::class,
 		'customind-upsell'             => Upsell::class,
 		'customind-upgrade'            => Upgrade::class,
 		'customind-accordion'          => Accordion::class,
+		'customind-sortable-v2'        => SortableV2::class,
 		'customind-background'         => Background::class,
 		'customind-checkbox'           => Checkbox::class,
 		'customind-color'              => Color::class,

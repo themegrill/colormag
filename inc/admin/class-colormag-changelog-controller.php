@@ -1,25 +1,73 @@
 <?php
 /**
- * ColorMag Changelog Parser Class.
+ * RegenCSS controller.
  *
- * @author  ThemeGrill
- * @package ColorMag
- * @since   1.3.9
+ * @package Colormag
  */
+
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * ColorMag Changelog Parser.
+ * RegenCSS controller.
  */
-class ColorMag_Changelog_Parser {
+class Colormag_Changelog_Controller extends \WP_REST_Controller {
+
+	/**
+	 * The namespace of this controller's route.
+	 *
+	 * @var string The namespace of this controller's route.
+	 */
+	protected $namespace = 'colormag/v1';
+
+	/**
+	 * The base of this controller's route.
+	 *
+	 * @var string The base of this controller's route.
+	 */
+	protected $rest_base = 'changelog';
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return void
+	 */
+	public function register_routes() {
+		register_rest_route(
+			$this->namespace,
+			'/' . $this->rest_base,
+			array(
+				'args' => array(),
+				array(
+					'methods'             => \WP_REST_Server::READABLE,
+					'callback'            => array( $this, 'get_items' ),
+					'permission_callback' => array( $this, 'get_items_permissions_check' ),
+				),
+			)
+		);
+		register_rest_route(
+			$this->namespace,
+			'/' . $this->rest_base . '/(?P<version>\d+\.\d+(\.\d+)?)',
+			array(
+				'args' => array(),
+				array(
+					'methods'             => \WP_REST_Server::READABLE,
+					'callback'            => array( $this, 'get_item' ),
+					'permission_callback' => array( $this, 'get_items_permissions_check' ),
+				),
+			)
+		);
+	}
 
 	/**
 	 * Get item.
 	 *
+	 * @param \WP_Rest_Request $request Full detail about the request.
+	 * @return \WP_Error|\WP_REST_Response
 	 */
 	public function get_item( $request ) {
-		$changelog = $this->read_changelog();
+		$path      = COLORMAG_PARENT_DIR . '/changelog.txt';
+		$changelog = $this->read_changelog( $path );
 		$changelog = $this->parse_changelog( $changelog );
 
 		$data = array_search( $request['version'], array_column( $changelog, 'version' ), true );
@@ -33,10 +81,12 @@ class ColorMag_Changelog_Parser {
 	/**
 	 * Check if a given request has access to get items.
 	 *
+	 * @param \WP_REST_Request $request Full data about the request.
+	 *
+	 * @return true|\WP_Error
 	 */
-	public function get_items_permissions_check() {
-
-		if ( ! current_user_can( 'manage_themes' ) ) {
+	public function get_items_permissions_check( $request ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			return new \WP_Error(
 				'rest_forbidden',
 				esc_html__( 'You are not allowed to access this resource.', 'colormag' ),
@@ -49,12 +99,20 @@ class ColorMag_Changelog_Parser {
 	/**
 	 * Regenerate CSS.
 	 *
+	 * @param \WP_REST_Request $request Full data about the request.
+	 *
+	 * @return \WP_REST_Responsedeb
 	 */
-	public function get_items() {
-		$changelog = $this->read_changelog();
-		$changelog = $this->parse_changelog( $changelog );
+	public function get_items( $request ): \WP_REST_Response {
+		$path       = COLORMAG_PARENT_DIR . '/changelog.txt';
+		$changelog  = $this->read_changelog( $path );
+		$changelog  = $this->parse_changelog( $changelog );
+		$changelogs = array();
 
-		return $changelog;
+		foreach ( $changelog as $change ) {
+			$changelogs[] = $this->prepare_response_for_collection( $this->prepare_item_for_response( $change, $request ) );
+		}
+		return new \WP_REST_Response( $changelogs, 200 );
 	}
 
 	/**
@@ -62,7 +120,7 @@ class ColorMag_Changelog_Parser {
 	 *
 	 * @return \WP_Error|string
 	 */
-	protected function read_changelog() {
+	protected function read_changelog( $changelog_file ) {
 		/**
 		 * WP_FIlesystem_Direct instance.
 		 *
@@ -79,7 +137,6 @@ class ColorMag_Changelog_Parser {
 		if ( ! $wp_filesystem ) {
 			return new \WP_Error( 'filesystem_error', esc_html__( 'Could not access filesystem.', 'colormag' ) );
 		}
-		$changelog_file = COLORMAG_PARENT_DIR . '/changelog.txt';
 
 		if ( ! $wp_filesystem->exists( $changelog_file ) ) {
 			return new \WP_Error( 'changelog_not_found', esc_html__( 'Changelog not found.', 'colormag' ) );
@@ -157,7 +214,7 @@ class ColorMag_Changelog_Parser {
 		$response = new \WP_REST_Response( $data );
 		$response->add_links( $this->prepare_links( $item ) );
 
-		return apply_filters( 'colormag_blocks_prepare_changelog', $response, $item, $request );
+		return apply_filters( 'colormag_prepare_changelog', $response, $item, $request );
 	}
 
 	/**
@@ -171,6 +228,9 @@ class ColorMag_Changelog_Parser {
 			'self' => array(
 				'href' => rest_url(
 					sprintf(
+						'%s/%s/%s',
+						$this->namespace,
+						$this->rest_base,
 						$item['version']
 					)
 				),
@@ -178,5 +238,3 @@ class ColorMag_Changelog_Parser {
 		);
 	}
 }
-
-

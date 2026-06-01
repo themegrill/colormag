@@ -578,7 +578,7 @@ $options                   = apply_filters(
 		),
 		'colormag_headings_typography'          => array(
 			'default'            => array(
-				'font-family'    => 'default',
+				'font-family'    => 'inherit',
 				'font-weight'    => 'regular',
 				'subsets'        => array( 'latin' ),
 				'line-height'    => array(
@@ -609,10 +609,11 @@ $options                   = apply_filters(
 						'unit' => 'px',
 					),
 				),
-				'font-style'     => 'inherit',
+				'font-style'     => 'normal',
 				'text-transform' => 'none',
+				'color'          => 'var(--cm-color-6)',
 			),
-			'type'               => 'customind-typography',
+			'type'               => 'customind-typocolor',
 			'title'              => esc_html__( 'Heading', 'colormag' ),
 			'transport'          => 'postMessage',
 			'section'            => 'colormag_global_typography_section',
@@ -622,6 +623,7 @@ $options                   = apply_filters(
 				'line-height',
 				'font-style',
 				'text-transform',
+				'color',
 			),
 		),
 		'colormag_headings_typography_subtitle' => array(
@@ -631,8 +633,8 @@ $options                   = apply_filters(
 		),
 		'colormag_h1_typography'                => array(
 			'default'   => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
+				'font-family'    => 'inherit',
+				'font-weight'    => 'Inherit',
 				'subsets'        => array( 'latin' ),
 				'font-size'      => array(
 					'desktop' => array(
@@ -662,32 +664,19 @@ $options                   = apply_filters(
 						'unit' => '',
 					),
 				),
-				'letter-spacing' => array(
-					'desktop' => array(
-						'size' => '',
-						'unit' => '',
-					),
-					'tablet'  => array(
-						'size' => '',
-						'unit' => '',
-					),
-					'mobile'  => array(
-						'size' => '',
-						'unit' => '',
-					),
-				),
 				'font-style'     => 'normal',
 				'text-transform' => 'none',
+				'color'          => 'var(--cm-color-6)',
 			),
-			'type'      => 'customind-typography',
+			'type'      => 'customind-typocolor',
 			'transport' => 'postMessage',
 			'title'     => esc_html__( 'H1', 'colormag' ),
 			'section'   => 'colormag_global_typography_section',
 		),
 		'colormag_h2_typography'                => array(
 			'default'   => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
+				'font-family'    => 'inherit',
+				'font-weight'    => 'Inherit',
 				'subsets'        => array( 'latin' ),
 				'font-size'      => array(
 					'desktop' => array(
@@ -719,16 +708,17 @@ $options                   = apply_filters(
 				),
 				'font-style'     => 'normal',
 				'text-transform' => 'none',
+				'color'          => 'var(--cm-color-6)',
 			),
-			'type'      => 'customind-typography',
+			'type'      => 'customind-typocolor',
 			'transport' => 'postMessage',
 			'title'     => esc_html__( 'H2', 'colormag' ),
 			'section'   => 'colormag_global_typography_section',
 		),
 		'colormag_h3_typography'                => array(
 			'default'   => array(
-				'font-family'    => 'default',
-				'font-weight'    => 'regular',
+				'font-family'    => 'inherit',
+				'font-weight'    => 'Inherit',
 				'subsets'        => array( 'latin' ),
 				'font-size'      => array(
 					'desktop' => array(
@@ -760,16 +750,17 @@ $options                   = apply_filters(
 				),
 				'font-style'     => 'normal',
 				'text-transform' => 'none',
+				'color'          => 'var(--cm-color-6)',
 			),
-			'type'      => 'customind-typography',
+			'type'      => 'customind-typocolor',
 			'title'     => esc_html__( 'H3', 'colormag' ),
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',
 		),
 		'colormag_h4_typography'                => array(
 			'default'   => array(
-				'font-family' => 'default',
-				'font-weight' => 'regular',
+				'font-family' => 'Inherit',
+				'font-weight' => 'Inherit',
 				'subsets'     => array( 'latin' ),
 				'font-size'   => array(
 					'desktop' => array(
@@ -799,16 +790,17 @@ $options                   = apply_filters(
 						'unit' => '',
 					),
 				),
+				'color'       => 'var(--cm-color-6)',
 			),
-			'type'      => 'customind-typography',
+			'type'      => 'customind-typocolor',
 			'title'     => esc_html__( 'H4', 'colormag' ),
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',
 		),
 		'colormag_h5_typography'                => array(
 			'default'   => array(
-				'font-family' => 'default',
-				'font-weight' => 'regular',
+				'font-family' => 'Inherit',
+				'font-weight' => 'Inherit',
 				'subsets'     => array( 'latin' ),
 				'font-size'   => array(
 					'desktop' => array(
@@ -838,16 +830,17 @@ $options                   = apply_filters(
 						'unit' => '',
 					),
 				),
+				'color'       => 'var(--cm-color-6)',
 			),
-			'type'      => 'customind-typography',
+			'type'      => 'customind-typocolor',
 			'title'     => esc_html__( 'H5', 'colormag' ),
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',
 		),
 		'colormag_h6_typography'                => array(
 			'default'   => array(
-				'font-family' => 'default',
-				'font-weight' => 'regular',
+				'font-family' => 'Inherit',
+				'font-weight' => 'Inherit',
 				'subsets'     => array( 'latin' ),
 				'font-size'   => array(
 					'desktop' => array(
@@ -877,8 +870,9 @@ $options                   = apply_filters(
 						'unit' => '',
 					),
 				),
+				'color'       => 'var(--cm-color-6)',
 			),
-			'type'      => 'customind-typography',
+			'type'      => 'customind-typocolor',
 			'title'     => esc_html__( 'H6', 'colormag' ),
 			'transport' => 'postMessage',
 			'section'   => 'colormag_global_typography_section',

@@ -150,16 +150,53 @@ $options                = apply_filters(
 			'tab'       => 'general',
 		),
 		'colormag_single_post_elements'               => array(
-			'type'      => 'customind-sortable',
+			'type'      => 'customind-sortable-v2',
 			'section'   => 'colormag_single_post_section',
 			'tab_group' => 'colormag_single_post_container_tab_group',
 			'tab'       => 'general',
 			'choices'   => array(
-				'post_format' => esc_attr__( 'Post Format (Image)', 'colormag' ),
-				'category'    => esc_attr__( 'Category', 'colormag' ),
-				'title'       => esc_attr__( 'Title', 'colormag' ),
-				'meta'        => esc_attr__( 'Meta Tags', 'colormag' ),
-				'content'     => esc_attr__( 'Content', 'colormag' ),
+				'post_format' => array(
+					'label'    => 'Image',
+					'controls' => array(
+						'colormag_enable_featured_image' => array(
+							'title'     => esc_html__( 'Enable', 'colormag' ),
+							'default'   => true,
+							'type'      => 'customind-toggle',
+							'tab'       => 'general',
+							'section'   => 'colormag_single_post_section',
+							'tab_group' => 'colormag_single_post_container_tab_group',
+							'transport' => 'refresh',
+						),
+						'colormag_enable_lightbox'       => array(
+							'title'     => esc_html__( 'LightBox', 'colormag' ),
+							'default'   => false,
+							'type'      => 'customind-toggle',
+							'tab'       => 'general',
+							'section'   => 'colormag_single_post_section',
+							'tab_group' => 'colormag_single_post_container_tab_group',
+							'transport' => 'refresh',
+							'condition' => array(
+								'colormag_enable_featured_image' => true,
+							),
+						),
+					),
+				),
+				'category'    => array(
+					'label'    => 'category',
+					'controls' => array(),
+				),
+				'title'       => array(
+					'label'    => 'title',
+					'controls' => array(),
+				),
+				'meta'        => array(
+					'label'    => 'meta',
+					'controls' => array(),
+				),
+				'content'     => array(
+					'label'    => 'content',
+					'controls' => array(),
+				),
 			),
 			'default'   => array(
 				'post_format',
@@ -168,7 +205,6 @@ $options                = apply_filters(
 				'meta',
 				'content',
 			),
-			'condition' => apply_filters( 'colormag_single_single_post_section', false ),
 		),
 		'colormag_single_post_meta_heading'           => array(
 			'type'        => 'customind-heading',
@@ -179,50 +215,44 @@ $options                = apply_filters(
 			'tab'         => 'general',
 		),
 		'colormag_single_post_meta_structure'         => array(
-			'type'      => 'customind-sortable',
+			'type'      => 'customind-sortable-v2',
 			'section'   => 'colormag_single_post_section',
 			'tab_group' => 'colormag_single_post_container_tab_group',
 			'tab'       => 'general',
 			'choices'   => array(
-				'author'      => esc_attr__( 'Author', 'colormag' ),
-				'date'        => esc_attr__( 'Date', 'colormag' ),
-				'views'       => esc_attr__( 'Views', 'colormag' ),
-				'comments'    => esc_attr__( 'Comments', 'colormag' ),
-				'tags'        => esc_attr__( 'Tags', 'colormag' ),
-				'read-time'   => esc_attr__( 'Reading Time', 'colormag' ),
-				'edit-button' => esc_attr__( 'Edit button', 'colormag' ),
+				'author'      => array(
+					'label'    => 'author',
+					'controls' => array(),
+				),
+				'date'        => array(
+					'label'    => 'date',
+					'controls' => array(),
+				),
+				'views'       => array(
+					'label'    => 'views',
+					'controls' => array(),
+				),
+				'comments'    => array(
+					'label'    => 'comments',
+					'controls' => array(),
+				),
+				'tags'        => array(
+					'label'    => 'content',
+					'controls' => array(),
+				),
+				'read-time'   => array(
+					'label'    => 'read-time',
+					'controls' => array(),
+				),
+				'edit-button' => array(
+					'label'    => 'edit-button',
+					'controls' => array(),
+				),
 			),
 			'default'   => array(
 				'categories',
 				'date',
 				'author',
-			),
-			'condition' => apply_filters( 'colormag_post_meta_elements_title_order', false ),
-		),
-		'colormag_single_featured_image_heading'      => array(
-			'type'      => 'customind-heading',
-			'title'     => esc_html__( 'Featured Image', 'colormag' ),
-			'section'   => 'colormag_single_post_section',
-			'tab_group' => 'colormag_single_post_container_tab_group',
-			'tab'       => 'general',
-		),
-		'colormag_enable_featured_image'              => array(
-			'title'     => esc_html__( 'Enable', 'colormag' ),
-			'default'   => true,
-			'type'      => 'customind-toggle',
-			'tab'       => 'general',
-			'section'   => 'colormag_single_post_section',
-			'tab_group' => 'colormag_single_post_container_tab_group',
-			'transport' => 'refresh',
-		),
-		'colormag_enable_lightbox'                    => array(
-			'title'     => esc_html__( 'LightBox', 'colormag' ),
-			'default'   => 0,
-			'type'      => 'customind-toggle',
-			'tab'       => 'general',
-			'section'   => 'colormag_single_post_section',
-			'condition' => array(
-				'colormag_enable_featured_image' => true,
 			),
 		),
 		'colormag_single_post_title_typography'       => array(

@@ -345,7 +345,7 @@ class Customind {
 			if ( empty( $args['type'] ) ) {
 				continue;
 			}
-			if ( 'customind-typography' === $args['type'] && ! in_array( $key, $this->typography_controls_ids, true ) ) {
+			if ( ( 'customind-typography' === $args['type'] || 'customind-typocolor' === $args['type'] ) && ! in_array( $key, $this->typography_controls_ids, true ) ) {
 				$allowed_props = $args['input_attrs']['allowedProperties'] ?? [];
 				if ( empty( $allowed_props ) || in_array( 'font-family', $allowed_props, true ) ) {
 					$this->typography_controls_ids[] = $key;

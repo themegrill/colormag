@@ -33,7 +33,10 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
 
-require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.php';
+require get_template_directory() . '/inc/admin/class-colormag-changelog-controller.php';
+add_action( 'rest_api_init', function() {
+	( new Colormag_Changelog_Controller() )->register_routes();
+} );
 
 
 ///** ColorMag setup file, hooked for `after_setup_theme`. */
@@ -99,6 +102,30 @@ add_action(
 		);
 	}
 );
+
+function colormag_maybe_enable_builder() {
+
+	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
+		return true;
+	}
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	update_option( 'colormag_maybe_enable_builder', true );
+
+	return true;
+}
+
+function colormag_fresh_install() {
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	return true;
+}
 
 /**
  * Deprecated.
@@ -353,30 +380,6 @@ add_action( 'template_redirect', 'colormag_content_width' );
  * Detect plugin. For use on Front End only.
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-function colormag_maybe_enable_builder() {
-
-	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
-		return true;
-	}
-
-	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
-	}
-
-	update_option( 'colormag_maybe_enable_builder', true );
-
-	return true;
-}
-
-function colormag_fresh_install() {
-
-	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
-	}
-
-	return true;
-}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -634,3 +637,35 @@ function colormag_typography_should_migrate() {
 
 	return $should_migrate;
 }
+
+/**
+ * One-time migration to update saved social icon FA classes to FA 6.5 names.
+ */
+function colormag_migrate_social_icon_classes() {
+	if ( get_option( 'colormag_social_icons_migrated_v1' ) ) {
+		return;
+	}
+	$icon_map = array(
+		'fa-brands fa-twitter'   => 'fa-brands fa-x-twitter',
+		'fa-brands fa-instagram' => 'fa-brands fa-square-instagram',
+	);
+	foreach ( array( 'colormag_header_socials', 'colormag_footer_socials' ) as $setting ) {
+		$socials = get_theme_mod( $setting );
+		if ( ! is_array( $socials ) ) {
+			continue;
+		}
+		$updated = false;
+		foreach ( $socials as &$social ) {
+			if ( isset( $social['icon'] ) && isset( $icon_map[ $social['icon'] ] ) ) {
+				$social['icon'] = $icon_map[ $social['icon'] ];
+				$updated        = true;
+			}
+		}
+		unset( $social );
+		if ( $updated ) {
+			set_theme_mod( $setting, $socials );
+		}
+	}
+	update_option( 'colormag_social_icons_migrated_v1', true );
+}
+add_action( 'after_setup_theme', 'colormag_migrate_social_icon_classes' );
