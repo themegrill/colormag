@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Demo import migration.
  *
