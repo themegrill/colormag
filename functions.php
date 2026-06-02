@@ -104,18 +104,29 @@ add_action(
 );
 
 function colormag_maybe_enable_builder() {
+	static $result = null;
+
+	if ( null !== $result ) {
+		return $result;
+	}
 
 	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
-		return true;
+		$result = true;
+		return $result;
 	}
 
 	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
+		$result = false;
+		return $result;
 	}
 
-	update_option( 'colormag_maybe_enable_builder', true );
+	// Only write to the database in the admin context to avoid writes on every public frontend request.
+	if ( is_admin() ) {
+		update_option( 'colormag_maybe_enable_builder', true );
+	}
 
-	return true;
+	$result = true;
+	return $result;
 }
 
 function colormag_fresh_install() {
