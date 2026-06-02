@@ -74,35 +74,28 @@ if ( ! function_exists( 'colormag_random_post' ) ) :
 			return;
 		}
 
-		// Arguments for post query.
-		$args = array(
-			'posts_per_page'         => 1,
-			'post_type'              => 'post',
-			'ignore_sticky_posts'    => true,
-			'orderby'                => 'rand',
-			'no_found_rows'          => true,
-			'update_post_meta_cache' => false,
-			'update_post_term_cache' => false,
+		$ids = colormag_get_offset_random_post_ids(
+			array(
+				'posts_per_page' => 1,
+				'post_type'      => 'post',
+				'post_status'    => 'publish',
+			),
+			'colormag_random_menu_post',
+			2 * MINUTE_IN_SECONDS
 		);
 
-		$get_random_post = new WP_Query( $args );
+		if ( empty( $ids ) ) {
+			return;
+		}
 		?>
 
 		<div class="cm-random-post">
-			<?php
-			while ( $get_random_post->have_posts() ) :
-				$get_random_post->the_post();
-				?>
-				<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e( 'View a random post', 'colormag' ); ?>">
-					<?php colormag_get_icon( 'random-fill' ); ?>
-				</a>
-			<?php endwhile; ?>
+			<a href="<?php echo esc_url( get_permalink( $ids[0] ) ); ?>" title="<?php esc_attr_e( 'View a random post', 'colormag' ); ?>">
+				<?php colormag_get_icon( 'random-fill' ); ?>
+			</a>
 		</div>
 
 		<?php
-		// Reset Post Data.
-		wp_reset_postdata();
-
 	}
 
 endif;
@@ -118,37 +111,48 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) :
 		wp_reset_postdata();
 		global $post;
 
-		// Define shared post arguments.
-		$args = array(
-			'no_found_rows'          => true,
-			'update_post_meta_cache' => false,
-			'update_post_term_cache' => false,
-			'ignore_sticky_posts'    => 1,
-			'orderby'                => 'rand',
-			'post__not_in'           => array( $post->ID ),
-			'posts_per_page'         => 3,
+		$per_page   = 3;
+		$query_type = get_theme_mod( 'colormag_related_posts_query', 'categories' );
+
+		$base_args = array(
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'ignore_sticky_posts' => 1,
+			'post__not_in'        => array( $post->ID ),
+			'posts_per_page'      => $per_page,
 		);
 
-		// Related by categories.
-		if ( 'categories' == get_theme_mod( 'colormag_related_posts_query', 'categories' ) ) {
-			$cats                 = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
-			$args['category__in'] = $cats;
-		}
-
-		// Related by tags.
-		if ( 'tags' == get_theme_mod( 'colormag_related_posts_query', 'categories' ) ) {
-			$tags            = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
-			$args['tag__in'] = $tags;
-
-			// If no tags added, return.
-			if ( ! $tags ) {
-				$break = true;
+		if ( 'categories' === $query_type ) {
+			$cats = wp_get_post_categories( $post->ID, array( 'fields' => 'ids' ) );
+			if ( $cats ) {
+				$base_args['category__in'] = $cats;
 			}
+		} elseif ( 'tags' === $query_type ) {
+			$tags = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
+			if ( ! $tags ) {
+				return new WP_Query();
+			}
+			$base_args['tag__in'] = $tags;
 		}
 
-		$query = ! isset( $break ) ? new WP_Query( $args ) : new WP_Query();
+		$cache_key = 'colormag_related_' . $post->ID . '_' . $query_type;
+		$ids       = colormag_get_offset_random_post_ids( $base_args, $cache_key, 5 * MINUTE_IN_SECONDS );
 
-		return $query;
+		if ( empty( $ids ) ) {
+			return new WP_Query();
+		}
+
+		return new WP_Query(
+			array(
+				'post__in'               => $ids,
+				'posts_per_page'         => $per_page,
+				'orderby'                => 'post__in',
+				'no_found_rows'          => true,
+				'update_post_meta_cache' => false,
+				'update_post_term_cache' => false,
+				'ignore_sticky_posts'    => 1,
+			)
+		);
 
 	}
 
