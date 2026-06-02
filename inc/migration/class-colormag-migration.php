@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Migration scripts for ColorMag theme.
  *
