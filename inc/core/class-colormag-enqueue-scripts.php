@@ -685,17 +685,22 @@ add_filter('colormag_font_subset', 'colormag_font_subset');
 
 /**
  * Enqueue image upload script for use within widgets.
+ * Only loaded on the widgets screen — not on every admin page.
  */
-function colormag_image_uploader()
-{
+function colormag_image_uploader() {
 
-    $suffix = ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : '.min';
+    $screen = get_current_screen();
+    if ( ! $screen || 'widgets' !== $screen->id ) {
+        return;
+    }
+
+    $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
     wp_enqueue_media();
-    wp_enqueue_script('colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true);
+    wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
 }
 
-add_action('admin_enqueue_scripts', 'colormag_image_uploader');
+add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
 
 // Returns an array of category colors.
 function colormag_get_category_colors()
