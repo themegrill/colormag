@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Demo import migration.
  *
@@ -65,7 +65,7 @@ function colormag_demo_import_migration_notice_dismiss() {
 		if ( ! wp_verify_nonce( $_GET['_demo_import_migration_notice_dismiss_nonce'], 'demo_import_migration_notice_dismiss' ) ) {
 			wp_die( __( 'Action failed. Please refresh the page and retry.', 'colormag' ) );
 		}
-		update_option( 'colormag_demo_import_migration_notice_dismiss', true );
+		update_option( 'colormag_demo_import_migration_notice_dismiss', true, 'no' );
 	}
 }
 add_action( 'admin_init', 'colormag_demo_import_migration_notice_dismiss' );
