@@ -2,7 +2,7 @@
 /**
  * Header builder markup for this theme
  *
- * @package colormag
+ * @package colormag test
  */
 if ( ! function_exists( 'colormag_header_default_builder' ) ) {
 	/**
