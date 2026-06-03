@@ -319,9 +319,6 @@
 .isolate {
 		isolation: isolate;
 }
-.isolation-auto {
-		isolation: auto;
-}
 .z-10 {
 		z-index: 10;
 }
@@ -386,10 +383,10 @@
 .\!ml-5 {
 		margin-left: 20px !important;
 }
-.-ml-\[1\] {
-		margin-left: -1;
-}
 .-ml-\[1px\] {
+		margin-left: -1px;
+}
+.-ml-px {
 		margin-left: -1px;
 }
 .-mt-4 {
@@ -547,6 +544,9 @@
 .h-\[28px\] {
 		height: 28px;
 }
+.h-\[30px\] {
+		height: 30px;
+}
 .h-\[32px\] {
 		height: 32px;
 }
@@ -662,9 +662,6 @@
 .w-\[50px\] {
 		width: 50px;
 }
-.w-\[75px\] {
-		width: 75px;
-}
 .w-\[93\%\] {
 		width: 93%;
 }
@@ -710,9 +707,6 @@
 }
 .max-w-\[254px\] {
 		max-width: 254px;
-}
-.max-w-\[90px\] {
-		max-width: 90px;
 }
 .max-w-full {
 		max-width: 100%;
@@ -989,6 +983,9 @@
 .rounded-sm {
 		border-radius: 0.125rem;
 }
+.rounded-bl-none {
+		border-bottom-left-radius: 0px;
+}
 .rounded-bl-sm {
 		border-bottom-left-radius: 0.125rem;
 }
@@ -1009,9 +1006,6 @@
 }
 .rounded-tr-none {
 		border-top-right-radius: 0px;
-}
-.\!border-0 {
-		border-width: 0px !important;
 }
 .border {
 		border-width: 1px;
@@ -1141,6 +1135,10 @@
 		--tw-border-opacity: 1;
 		border-color: rgb(224 224 224 / var(--tw-border-opacity));
 }
+.border-\[\#e3e3e3\] {
+		--tw-border-opacity: 1;
+		border-color: rgb(227 227 227 / var(--tw-border-opacity));
+}
 .border-current {
 		border-color: currentColor;
 }
@@ -1163,9 +1161,6 @@
 .border-gray-500 {
 		--tw-border-opacity: 1;
 		border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-.border-inherit {
-		border-color: inherit;
 }
 .border-primary-500 {
 		--tw-border-opacity: 1;
@@ -1248,6 +1243,10 @@
 .bg-gray-200 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-gray-50 {
+		--tw-bg-opacity: 1;
+		background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 .bg-gray-900 {
 		--tw-bg-opacity: 1;
@@ -1393,6 +1392,10 @@
 		padding-left: 4px;
 		padding-right: 4px;
 }
+.py-0 {
+		padding-top: 0;
+		padding-bottom: 0;
+}
 .py-1 {
 		padding-top: 4px;
 		padding-bottom: 4px;
@@ -1433,14 +1436,8 @@
 		padding-top: 6px;
 		padding-bottom: 6px;
 }
-.\!pl-0 {
-		padding-left: 0 !important;
-}
 .\!pl-2 {
 		padding-left: 8px !important;
-}
-.\!pr-0 {
-		padding-right: 0 !important;
 }
 .\!pr-4 {
 		padding-right: 16px !important;
@@ -1472,11 +1469,17 @@
 .pl-\[10px\] {
 		padding-left: 10px;
 }
+.pl-\[5px\] {
+		padding-left: 5px;
+}
 .pr-2 {
 		padding-right: 8px;
 }
 .pr-8 {
 		padding-right: 32px;
+}
+.pr-\[24px\] {
+		padding-right: 24px;
 }
 .pr-\[6px\] {
 		padding-right: 6px;
@@ -1504,6 +1507,9 @@
 }
 .text-\[10px\] {
 		font-size: 10px;
+}
+.text-\[11px\] {
+		font-size: 11px;
 }
 .text-\[12px\] {
 		font-size: 12px;
@@ -1617,10 +1623,6 @@
 		--tw-text-opacity: 1 !important;
 		color: rgb(190 18 60 / var(--tw-text-opacity)) !important;
 }
-.\!text-gray-800 {
-		--tw-text-opacity: 1 !important;
-		color: rgb(31 41 55 / var(--tw-text-opacity)) !important;
-}
 .text-\[\#207DAF\] {
 		--tw-text-opacity: 1;
 		color: rgb(32 125 175 / var(--tw-text-opacity));
@@ -1679,6 +1681,10 @@
 }
 .text-current {
 		color: currentColor;
+}
+.text-gray-400 {
+		--tw-text-opacity: 1;
+		color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 .text-gray-500 {
 		--tw-text-opacity: 1;
@@ -2451,6 +2457,11 @@ li.customize-control-customind-tabs {
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-100:hover {
+		--tw-bg-opacity: 1;
+		background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gray-50:hover {
 		--tw-bg-opacity: 1;
 		background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -2473,6 +2484,11 @@ li.customize-control-customind-tabs {
 .hover\:text-\[\#207DAF\]:hover {
 		--tw-text-opacity: 1;
 		color: rgb(32 125 175 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-700:hover {
+		--tw-text-opacity: 1;
+		color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-500:hover {
@@ -2909,14 +2925,6 @@ li.customize-control-customind-tabs {
 		margin-bottom: 16px;
 }
 
-.\[\&\>div\>input\]\:border-none>div>input {
-		border-style: none;
-}
-
-.\[\&\>div\>input\]\:text-sm>div>input {
-		font-size: 14px;
-}
-
 .\[\&\>div\]\:relative>div {
 		position: relative;
 }
@@ -2970,8 +2978,24 @@ li.customize-control-customind-tabs {
 		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.\[\&_\.customind-number-input-input\]\:h-\[30px\] .customind-number-input-input {
+		height: 30px;
+}
+
 .\[\&_\.customind-number-input-input\]\:h-\[32px\] .customind-number-input-input {
 		height: 32px;
+}
+
+.\[\&_\.customind-number-input-input\]\:h-\[36px\] .customind-number-input-input {
+		height: 36px;
+}
+
+.\[\&_\.customind-number-input-input\]\:w-7 .customind-number-input-input {
+		width: 28px;
+}
+
+.\[\&_\.customind-number-input-input\]\:w-\[52px\] .customind-number-input-input {
+		width: 52px;
 }
 
 .\[\&_\.customind-number-input-input\]\:rounded-none .customind-number-input-input {
@@ -2983,20 +3007,58 @@ li.customize-control-customind-tabs {
 		border-right-width: 0px;
 }
 
+.\[\&_\.customind-number-input-input\]\:border-l .customind-number-input-input {
+		border-left-width: 1px;
+}
+
 .\[\&_\.customind-number-input-input\]\:border-solid .customind-number-input-input {
 		border-style: solid;
+}
+
+.\[\&_\.customind-number-input-input\]\:border-none .customind-number-input-input {
+		border-style: none;
+}
+
+.\[\&_\.customind-number-input-input\]\:border-l-gray-300 .customind-number-input-input {
+		--tw-border-opacity: 1;
+		border-left-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .\[\&_\.customind-number-input-input\]\:p-\[6px\] .customind-number-input-input {
 		padding: 6px;
 }
 
+.\[\&_\.customind-number-input-input\]\:px-\[4px\] .customind-number-input-input {
+		padding-left: 4px;
+		padding-right: 4px;
+}
+
+.\[\&_\.customind-number-input-input\]\:py-0 .customind-number-input-input {
+		padding-top: 0;
+		padding-bottom: 0;
+}
+
 .\[\&_\.customind-number-input-input\]\:text-center .customind-number-input-input {
 		text-align: center;
 }
 
+.\[\&_\.customind-number-input-input\]\:text-\[12px\] .customind-number-input-input {
+		font-size: 12px;
+}
+
 .\[\&_\.customind-number-input-input\]\:text-\[13px\] .customind-number-input-input {
 		font-size: 13px;
+}
+
+.\[\&_\.customind-number-input-input\]\:shadow-none .customind-number-input-input {
+		--tw-shadow: 0 0 #0000;
+		--tw-shadow-colored: 0 0 #0000;
+		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.\[\&_\.customind-number-input-input\]\:outline-none .customind-number-input-input {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
 }
 
 .\[\&_input\]\:border-solid input {
