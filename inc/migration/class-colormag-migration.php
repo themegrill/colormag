@@ -28,10 +28,615 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_builder_migration' ], 25 );
 			}
 
+			add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_sidebar_full_width' ] );
 			add_action( 'after_setup_theme', [ $this, 'colormag_outside_background_migration' ], 25 );
 			add_action( 'after_setup_theme', [ $this, 'colormag_logo_height_migration' ], 25 );
+			add_action( 'themegrill_ajax_demo_imported', array( $this, 'colormag_color_preset' ), 25 );
+
+			$theme_installed_time = get_option( 'colormag_theme_installed_time' ); // timestamp
+			$today                = strtotime( '2025-09-22' );
+
+			if ( ! colormag_fresh_install() || ( ! empty( $theme_installed_time ) && $theme_installed_time < $today ) ) {
+				add_action( 'after_setup_theme', [ $this, 'colormag_container_sidebar_migration' ] );
+				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ] );
+			}
+			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_container_sidebar_migration' ], 25 );
 		}
 
+		public function colormag_typography_migration() {
+
+			if ( get_option( 'colormag_typography_migration' ) ) {
+				return;
+			}
+
+			// Default values for comparison
+			$default_typography_presets   = '';
+			$default_base_typography_body = array(
+				'font-family'    => 'inherit',
+				'font-weight'    => 'regular',
+				'subsets'        => array( 'latin' ),
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '15',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '-',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '-',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+			);
+
+			$default_base_heading_typography = array(
+				'font-family'    => 'inherit',
+				'font-weight'    => 'regular',
+				'subsets'        => array( 'latin' ),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.2',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'letter-spacing' => array(
+					'desktop' => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			// Get current values
+			$current_base_typography_body    = get_theme_mod( 'colormag_base_typography', $default_base_typography_body );
+			$current_base_heading_typography = get_theme_mod( 'colormag_headings_typography', $default_base_heading_typography );
+
+			// Check if current values are different from default values
+			$should_migrate = false;
+
+			// Check base typography body
+			if ( $current_base_typography_body !== $default_base_typography_body ) {
+				$should_migrate = true;
+			}
+
+			// Check base heading typography
+			if ( $current_base_heading_typography !== $default_base_heading_typography ) {
+				$should_migrate = true;
+			}
+
+			// Only run migration if current values are different from default values
+			if ( ! $should_migrate ) {
+				return;
+			}
+
+			remove_theme_mod( 'colormag_typography_presets' );
+
+			$base_typography = get_theme_mod(
+				'colormag_base_typography_body',
+				$default_base_typography_body
+			);
+
+			set_theme_mod( 'colormag_base_typography_body', $base_typography );
+
+			$base_heading_typography = get_theme_mod(
+				'colormag_base_typography_heading',
+				$default_base_heading_typography
+			);
+
+			set_theme_mod( 'colormag_base_typography_heading', $base_heading_typography );
+
+			update_option( 'colormag_typography_migration', true );
+		}
+
+		public function colormag_container_sidebar_migration() {
+
+			$should_run    = false;
+			$color_palette = get_theme_mod( 'colormag_color_palette', '' );
+			if ( ! empty( $color_palette ) && isset( $color_palette['updated_at'] ) ) {
+				$should_run = false;
+			} elseif ( doing_action( 'themegrill_ajax_demo_imported' ) ) {
+				$should_run = true;
+				set_theme_mod( 'colormag_enable_site_identity', false );
+			} elseif ( ! get_option( 'colormag_container_sidebar_migration' ) ) {
+				$should_run = true;
+			}
+
+			if ( ! $should_run ) {
+				return;
+			}
+
+			$colormag_default_sidebar_layout    = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
+			$colormag_page_layout               = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
+			$colormag_post_layout               = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
+			$colormag_post_meta_date_style      = get_theme_mod( 'colormag_post_meta_date_style', 'style-1' );
+			$colormag_post_meta_author_style    = get_theme_mod( 'colormag_post_meta_author_style', 'style-1' );
+			$colormag_post_meta_color           = get_theme_mod( 'colormag_post_meta_color', '' );
+			$colormag_blog_post_meta_typography = get_theme_mod( 'colormag_blog_post_meta_typography', '' );
+			$post_meta_structure                = get_theme_mod(
+				'colormag_post_meta_structure',
+				array(
+					'categories',
+					'date',
+					'author',
+				)
+			);
+
+			if ( 'right_sidebar' === $colormag_default_sidebar_layout || 'left_sidebar' === $colormag_default_sidebar_layout || 'two_sidebars' === $colormag_default_sidebar_layout ) {
+				set_theme_mod( 'colormag_blog_sidebar_layout', $colormag_default_sidebar_layout );
+				set_theme_mod( 'colormag_blog_container_layout', 'no_sidebar_full_width' );
+			} elseif ( 'no_sidebar_full_width' === $colormag_default_sidebar_layout || 'no_sidebar_content_centered' === $colormag_default_sidebar_layout || 'no_sidebar_content_stretched' === $colormag_default_sidebar_layout ) {
+				set_theme_mod( 'colormag_blog_container_layout', $colormag_default_sidebar_layout );
+				set_theme_mod( 'colormag_blog_sidebar_layout', 'no_sidebar' );
+			}
+
+			if ( 'right_sidebar' === $colormag_page_layout || 'left_sidebar' === $colormag_page_layout || 'two_sidebars' === $colormag_page_layout ) {
+				set_theme_mod( 'colormag_single_page_sidebar_layout', $colormag_page_layout );
+				set_theme_mod( 'colormag_single_page_container_layout', 'no_sidebar_full_width' );
+			} elseif ( 'no_sidebar_full_width' === $colormag_page_layout || 'no_sidebar_content_centered' === $colormag_page_layout || 'no_sidebar_content_stretched' === $colormag_page_layout ) {
+				set_theme_mod( 'colormag_single_page_container_layout', $colormag_page_layout );
+				set_theme_mod( 'colormag_single_page_sidebar_layout', 'no_sidebar' );
+			}
+
+			if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
+				set_theme_mod( 'colormag_single_post_sidebar_layout', $colormag_post_layout );
+				set_theme_mod( 'colormag_single_post_container_layout', 'no_sidebar_full_width' );
+			} elseif ( 'no_sidebar_full_width' === $colormag_post_layout || 'no_sidebar_content_centered' === $colormag_post_layout || 'no_sidebar_content_stretched' === $colormag_post_layout ) {
+				set_theme_mod( 'colormag_single_post_container_layout', $colormag_post_layout );
+				set_theme_mod( 'colormag_single_post_sidebar_layout', 'no_sidebar' );
+			}
+
+			set_theme_mod( 'colormag_search_page_meta_structure', $post_meta_structure );
+			set_theme_mod( 'colormag_single_post_meta_structure', $post_meta_structure );
+			set_theme_mod( 'colormag_blog_post_meta_structure', $post_meta_structure );
+
+			set_theme_mod( 'colormag_blog_post_meta_date_style', $colormag_post_meta_date_style );
+			set_theme_mod( 'colormag_single_post_meta_date_style', $colormag_post_meta_date_style );
+			set_theme_mod( 'colormag_search_page_meta_date_style', $colormag_post_meta_date_style );
+
+			set_theme_mod( 'colormag_blog_post_meta_author_style', $colormag_post_meta_author_style );
+			set_theme_mod( 'colormag_single_post_meta_author_style', $colormag_post_meta_author_style );
+			set_theme_mod( 'colormag_search_page_meta_author_style', $colormag_post_meta_author_style );
+
+			set_theme_mod( 'colormag_blog_post_meta_color', $colormag_post_meta_color );
+			set_theme_mod( 'colormag_blog_post_meta_typography', $colormag_blog_post_meta_typography );
+			set_theme_mod( 'colormag_single_post_meta_color', $colormag_post_meta_color );
+			set_theme_mod( 'colormag_single_post_meta_typography', $colormag_blog_post_meta_typography );
+			set_theme_mod( 'colormag_search_page_meta_color', $colormag_post_meta_color );
+			set_theme_mod( 'colormag_search_page_meta_typography', $colormag_blog_post_meta_typography );
+
+			// Post meta migration - Process in batches to avoid memory exhaustion.
+			// Reduced batch size to prevent memory issues with meta operations
+			$batch_size = 25;
+			$offset     = 0;
+
+			while ( true ) {
+				// Check available memory before processing batch
+				$memory_usage = memory_get_usage( true );
+				$memory_limit = ini_get( 'memory_limit' );
+
+				// Convert memory limit to bytes (fallback if wp_convert_hr_to_bytes doesn't exist)
+				if ( function_exists( 'wp_convert_hr_to_bytes' ) ) {
+					$memory_limit_bytes = wp_convert_hr_to_bytes( $memory_limit );
+				} else {
+					// Manual conversion
+					$memory_limit_bytes = $memory_limit;
+					if ( preg_match( '/^(\d+)(.)$/', $memory_limit, $matches ) ) {
+						$number = $matches[1];
+						$unit   = strtolower( $matches[2] );
+						switch ( $unit ) {
+							case 'g':
+								$memory_limit_bytes = $number * 1024 * 1024 * 1024;
+								break;
+							case 'm':
+								$memory_limit_bytes = $number * 1024 * 1024;
+								break;
+							case 'k':
+								$memory_limit_bytes = $number * 1024;
+								break;
+						}
+					}
+				}
+
+				// If memory usage is above 80%, skip this batch and try again later
+				if ( $memory_limit_bytes > 0 && $memory_usage > ( $memory_limit_bytes * 0.8 ) ) {
+					// Set a flag to retry later
+					update_option( 'colormag_container_sidebar_migration_pending', true );
+					break;
+				}
+
+				$args = [
+					'post_type'              => 'any',
+					'posts_per_page'         => $batch_size,
+					'offset'                 => $offset,
+					'fields'                 => 'ids', // Only get post IDs to reduce memory usage.
+					'no_found_rows'          => true,
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+					'cache_results'          => false, // Disable query caching
+				];
+
+				$the_query = new WP_Query( $args );
+
+				// Break if no more posts.
+				if ( ! $the_query->have_posts() ) {
+					wp_reset_postdata();
+					$the_query = null;
+					break;
+				}
+
+				// Process each post ID.
+				$post_ids = $the_query->posts;
+				foreach ( $post_ids as $post_id ) {
+					// Use direct database query to avoid meta cache
+					global $wpdb;
+					$colormag_post_layout = $wpdb->get_var(
+						$wpdb->prepare(
+							"SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'colormag_page_layout' LIMIT 1",
+							$post_id
+						)
+					);
+
+					if ( 'right_sidebar' === $colormag_post_layout || 'left_sidebar' === $colormag_post_layout || 'two_sidebars' === $colormag_post_layout ) {
+						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
+						update_post_meta( $post_id, 'colormag_page_container_layout', 'no_sidebar_full_width' );
+					}
+					if ( 'no_sidebar_full_width' === $colormag_post_layout || 'no_sidebar_content_centered' === $colormag_post_layout || 'no_sidebar_content_stretched' === $colormag_post_layout ) {
+						update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
+						update_post_meta( $post_id, 'colormag_page_sidebar_layout', 'no_sidebar' );
+					}
+
+					if ( 'default_layout' === $colormag_post_layout ) {
+						update_post_meta( $post_id, 'colormag_page_container_layout', $colormag_post_layout );
+						update_post_meta( $post_id, 'colormag_page_sidebar_layout', $colormag_post_layout );
+					}
+
+					// Clear post meta cache for this post
+					wp_cache_delete( $post_id, 'post_meta' );
+				}
+
+				// Clear variables
+				$post_ids = null;
+				unset( $post_ids );
+
+				// Safety check: if we got fewer posts than batch size, we're done.
+				// Store count before resetting query
+				$post_count = $the_query->post_count;
+
+				wp_reset_postdata();
+
+				// Clear query cache to free memory
+				$the_query = null;
+				unset( $the_query );
+
+				// Move to next batch.
+				$offset += $batch_size;
+
+				// Clear WordPress object cache
+				wp_cache_flush();
+
+				// Force garbage collection to free memory
+				if ( function_exists( 'gc_collect_cycles' ) ) {
+					gc_collect_cycles();
+				}
+
+				if ( $post_count < $batch_size ) {
+					break;
+				}
+			}
+
+			$default_palette = array(
+				'id'     => 'preset-5',
+				'name'   => 'Preset 5',
+				'colors' => array(
+					'colormag-color-1' => '#FFFFFF',
+					'colormag-color-2' => '#FAFAFA',
+					'colormag-color-4' => '#d4d4d8',
+					'colormag-color-5' => '#E4E4E7',
+					'colormag-color-3' => '#3F3F46',
+					'colormag-color-6' => '#27272a',
+					'colormag-color-7' => '#333333',
+					'colormag-color-8' => '#444444',
+					'colormag-color-9' => '#207daf',
+				),
+			);
+
+			$color_palette = get_theme_mod(
+				'colormag_color_palette',
+				$default_palette
+			);
+
+			// Check if color_palette has colors and is properly structured
+			if ( ! empty( $color_palette ) && is_array( $color_palette ) && isset( $color_palette['colors'] ) && is_array( $color_palette['colors'] ) && ! empty( $color_palette['colors'] ) ) {
+				$colors = $color_palette['colors'];
+			} else {
+				$colors = $default_palette['colors'];
+			}
+
+			$color_id = array(
+				array( 'colormag_primary_color', '#207daf' ),
+				array( 'colormag_base_color', '#444444' ),
+				array( 'colormag_box_shadow_color', '#E4E4E7' ),
+				array( 'colormag_headings_color', '#333333' ),
+				array( 'colormag_h1_color', '' ),
+				array( 'colormag_h2_color', '#333333' ),
+				array( 'colormag_h3_color', '#333333' ),
+				array( 'colormag_link_color', '' ),
+				array( 'colormag_link_hover_color', '' ),
+				array( 'colormag_button_color', '#ffffff' ),
+				array( 'colormag_button_hover_color', '' ),
+				array( 'colormag_button_background_color', '' ),
+				array( 'colormag_button_background_hover_color', '' ),
+				array( 'colormag_header_site_identity_color', '' ),
+				array( 'colormag_header_site_identity_hover_color', '' ),
+				array( 'colormag_header_site_tagline_color', '' ),
+				array( 'colormag_header_primary_menu_text_color', '' ),
+				array( 'colormag_header_primary_menu_selected_hovered_text_color', '' ),
+				array( 'colormag_header_primary_menu_active_text_color', '' ),
+				array( 'colormag_header_primary_menu_hover_background', '' ),
+				array( 'colormag_header_primary_menu_active_background', '' ),
+				array( 'colormag_header_secondary_menu_text_color', '' ),
+				array( 'colormag_header_secondary_menu_selected_hovered_text_color', '' ),
+				array( 'colormag_header_secondary_menu_hover_background', '' ),
+				array( 'colormag_header_button_color', '#ffffff' ),
+				array( 'colormag_header_button_hover_color', '#ffffff' ),
+				array( 'colormag_header_button_background_color', '#207daf' ),
+				array( 'colormag_header_button_background_hover_color', '#ffffff' ),
+				array( 'colormag_header_search_text_color', '' ),
+				array( 'colormag_header_search_placeholder_color', '' ),
+				array( 'colormag_header_search_background', '' ),
+				array( 'colormag_header_search_border_color', '' ),
+				array( 'colormag_header_search_icon_color', '' ),
+				array( 'colormag_header_search_button_background', '' ),
+				array( 'colormag_header_search_button_hover_background', '' ),
+				array( 'colormag_header_html_1_text_color', '' ),
+				array( 'colormag_header_html_1_link_color', '' ),
+				array( 'colormag_header_html_1_link_hover_color', '' ),
+				array( 'colormag_widget_1_title_color', '' ),
+				array( 'colormag_widget_1_link_color', '' ),
+				array( 'colormag_widget_1_content_color', '' ),
+				array( 'colormag_widget_2_title_color', '' ),
+				array( 'colormag_widget_2_link_color', '' ),
+				array( 'colormag_widget_2_content_color', '' ),
+				array( 'colormag_header_socials_color', '' ),
+				array( 'colormag_date_color', '' ),
+				array( 'colormag_news_ticker_color', '' ),
+				array( 'colormag_news_ticker_link_color', '' ),
+				array( 'colormag_header_random_icon_color', '' ),
+				array( 'colormag_header_random_icon_hover_color', '' ),
+				array( 'colormag_header_home_icon_color', '' ),
+				array( 'colormag_footer_html_1_text_color', '' ),
+				array( 'colormag_footer_html_1_link_color', '' ),
+				array( 'colormag_footer_html_1_link_hover_color', '' ),
+				array( 'colormag_footer_widget_1_title_color', '' ),
+				array( 'colormag_footer_widget_1_link_color', '' ),
+				array( 'colormag_footer_widget_1_link_hover_color', '' ),
+				array( 'colormag_footer_widget_1_content_color', '' ),
+				array( 'colormag_footer_widget_2_title_color', '' ),
+				array( 'colormag_footer_widget_2_link_color', '' ),
+				array( 'colormag_footer_widget_2_link_hover_color', '' ),
+				array( 'colormag_footer_widget_2_content_color', '' ),
+				array( 'colormag_footer_widget_3_title_color', '' ),
+				array( 'colormag_footer_widget_3_link_color', '' ),
+				array( 'colormag_footer_widget_3_link_hover_color', '' ),
+				array( 'colormag_footer_widget_3_content_color', '' ),
+				array( 'colormag_footer_widget_4_title_color', '' ),
+				array( 'colormag_footer_widget_4_link_color', '' ),
+				array( 'colormag_footer_widget_4_link_hover_color', '' ),
+				array( 'colormag_footer_widget_4_content_color', '' ),
+				array( 'colormag_footer_widget_5_title_color', '' ),
+				array( 'colormag_footer_widget_5_link_color', '' ),
+				array( 'colormag_footer_widget_5_link_hover_color', '' ),
+				array( 'colormag_footer_widget_5_content_color', '' ),
+				array( 'colormag_footer_widget_6_title_color', '' ),
+				array( 'colormag_footer_widget_6_link_color', '' ),
+				array( 'colormag_footer_widget_6_link_hover_color', '' ),
+				array( 'colormag_footer_widget_6_content_color', '' ),
+				array( 'colormag_footer_widget_7_title_color', '' ),
+				array( 'colormag_footer_widget_7_link_color', '' ),
+				array( 'colormag_footer_widget_7_link_hover_color', '' ),
+				array( 'colormag_footer_widget_7_content_color', '' ),
+				array( 'colormag_footer_menu_color', '' ),
+				array( 'colormag_footer_menu_hover_color', '' ),
+				array( 'colormag_footer_copyright_text_color', '' ),
+				array( 'colormag_footer_copyright_link_color', '' ),
+				array( 'colormag_footer_copyright_link_hover_color', '' ),
+				array( 'colormag_footer_bottom_area_color', '#fafafa' ),
+				array( 'colormag_footer_bottom_area_border_color', '#3F3F46' ),
+				array( 'colormag_footer_main_area_color', '' ),
+				array( 'colormag_footer_main_area_link_color', '' ),
+				array( 'colormag_footer_main_area_link_hover_color', '' ),
+				array( 'colormag_footer_main_area_border_color', '' ),
+				array( 'colormag_footer_widgets_title_color', '' ),
+				array( 'colormag_footer_widgets_item_border_bottom_color', '' ),
+				array( 'colormag_footer_top_area_color', '' ),
+				array( 'colormag_footer_top_area_border_color', '' ),
+				array( 'colormag_header_bottom_area_color', '' ),
+				array( 'colormag_header_bottom_area_border_color', '' ),
+				array( 'colormag_header_main_area_color', '' ),
+				array( 'colormag_header_main_area_border_color', '' ),
+				array( 'colormag_header_top_area_color', '' ),
+				array( 'colormag_header_top_area_border_color', '' ),
+			);
+
+			// Set colors from the palette.
+			if ( ! empty( $colors ) ) {
+				foreach ( $color_id as $color_setting ) {
+					$color_value = get_theme_mod( $color_setting[0], $color_setting[1] );
+
+					if ( ! empty( $color_value ) ) {
+
+						if ( strpos( $color_value, 'var(--colormag-color' ) === 0 ) {
+							$key = str_replace( 'var(--', '', $color_value );
+							$key = str_replace( ')', '', $key );
+							if ( isset( $colors[ $key ] ) ) {
+								set_theme_mod( $color_setting[0], $colors[ $key ] );
+							}
+						} else {
+							// If the value is not a CSS variable, ensure it's saved as is.
+								set_theme_mod( $color_setting[0], $color_value );
+						}
+					}
+				}
+			}
+
+			// Set background colors from the palette.
+			if ( ! empty( $colors ) ) {
+				$bg_id = array(
+					array( 'colormag_header_primary_sub_menu_background', '#232323' ),
+					array( 'colormag_header_top_area_background', '#f4f4f5' ),
+					array( 'colormag_header_main_area_background', '#FAFAFA' ),
+					array( 'colormag_header_bottom_area_background', '' ),
+					array( 'colormag_footer_top_area_background', '' ),
+					array( 'colormag_footer_main_area_background', '' ),
+					array( 'colormag_footer_bottom_area_background', '' ),
+					array( 'colormag_header_secondary_sub_menu_background', '#232323' ),
+					array( 'colormag_inside_container_background', '#ffffff' ),
+					array( 'colormag_outside_container_background', '' ),
+				);
+				foreach ( $bg_id as $color_setting ) {
+					$value = get_theme_mod(
+						$color_setting[0],
+						array(
+							'background-color'      => $color_setting[1],
+							'background-image'      => '',
+							'background-repeat'     => 'repeat',
+							'background-position'   => 'center center',
+							'background-size'       => 'contain',
+							'background-attachment' => 'scroll',
+						)
+					);
+					if ( is_array( $value ) && isset( $value['background-color'] ) ) {
+						$color_value = $value['background-color'];
+						if ( strpos( $color_value, 'var(--colormag-color' ) === 0 ) {
+							$key = str_replace( 'var(--', '', $color_value );
+							$key = str_replace( ')', '', $key );
+							if ( isset( $colors[ $key ] ) ) {
+								$value['background-color'] = $colors[ $key ];
+								set_theme_mod( $color_setting[0], $value );
+							}
+						} elseif ( ! empty( $color_value ) ) {
+							// If the value is not a CSS variable, ensure it's saved as is.
+							$value['background-color'] = $color_value;
+							set_theme_mod( $color_setting[0], $value );
+						} elseif ( ! empty( $color_setting[1] ) ) {
+							$value['background-color'] = $color_setting[1];
+							set_theme_mod( $color_setting[0], $value );
+						}
+					}
+				}
+			}
+
+			// Reset color palette if it contains old colors.
+			$_colors_palette = get_theme_mod(
+				'colormag_color_palette'
+			);
+
+			if ( isset( $_colors_palette['colors'] ) && array_key_exists( 'colormag-color-3', $_colors_palette['colors'] ) ) {
+				set_theme_mod( 'colormag_color_palette', array() );
+			}
+
+			// Set dark skin to preset-6 if skin is dark.
+			$skin_setting = get_theme_mod( 'colormag_color_skin_setting', 'white' );
+			if ( 'dark' === $skin_setting ) {
+				set_theme_mod( 'colormag_dark_skin', 'preset-6' );
+			}
+
+			update_option( 'colormag_container_sidebar_migration', true );
+		}
+
+		public function colormag_color_preset() {
+
+			$color_preset = get_theme_mod(
+				'colormag_color_palette',
+				array(
+					'id'     => 'preset-5',
+					'name'   => 'Preset 5',
+					'colors' => array(
+						'cm-color-3' => '#FFFFFF',
+						'cm-color-4' => '#FAFAFA',
+						'cm-color-9' => '#d4d4d8',
+						'cm-color-8' => '#E4E4E7',
+						'cm-color-2' => '#3F3F46',
+						'cm-color-5' => '#27272a',
+						'cm-color-7' => '#333333',
+						'cm-color-6' => '#444444',
+						'cm-color-1' => '#207daf',
+					),
+				)
+			);
+			if ( ! empty( $color_preset ) ) {
+				$color_preset = json_decode( wp_json_encode( $color_preset ), true );
+				if ( isset( $color_preset['id'] ) && 'preset-5' === $color_preset['id'] ) {
+					set_theme_mod( 'colormag_color_palette', array() );
+				}
+			}
+		}
+
+		/**
+		 * Migrates Zakra sidebar layout options to "contained" if not already migrated.
+		 *
+		 * Sets the page and archive sidebar layouts to "contained" and marks the migration as complete.
+		 *
+		 * @since ColorMag 3.0.0
+		 */
+		public function colormag_sidebar_full_width() {
+
+			if ( get_option( 'colormag_sidebar_layout_migration' ) ) {
+				return;
+			}
+
+			set_theme_mod( 'colormag_default_sidebar_layout', 'no_sidebar_full_width' );
+			set_theme_mod( 'colormag_page_sidebar_layout', 'no_sidebar_full_width' );
+			update_option( 'colormag_sidebar_layout_migration', true );
+		}
 
 		public function colormag_logo_height_migration() {
 			$logo_height = get_theme_mod( 'colormag_header_site_logo_height' );

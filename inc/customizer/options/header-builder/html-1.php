@@ -9,7 +9,7 @@ $options = array(
 			'colormag_header_html_1_sub_controls',
 			array(
 				'colormag_header_html_1'                  => array(
-					'default'  => '',
+					'default'  => 'Insert Text Here',
 					'type'     => 'customind-editor',
 					'title'    => esc_html__( 'Text/HTML for HTML 1', 'colormag' ),
 					'section'  => 'colormag_header_builder_html_1',

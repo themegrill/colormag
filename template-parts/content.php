@@ -33,32 +33,6 @@ $archive_search_layout = 'layout-1';
 	?>
 
 	<?php
-	if ( ! has_post_format( array( 'gallery' ) ) ) :
-
-		if ( has_post_thumbnail() ) :
-			?>
-			<div class="cm-featured-image">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<?php the_post_thumbnail( $featured_image_size ); ?>
-
-				<?php
-				if ( has_post_format( 'video' ) ) {
-					?>
-						<span class="play-button-wrapper">
-								<i class="fa fa-play" aria-hidden="true"></i>
-						</span>
-					<?php
-				}
-				?>
-				</a>
-			</div>
-				<?php
-		endif;
-
-	endif;
-	?>
-
-	<?php
 	$content_orders = get_theme_mod(
 		'colormag_blog_post_elements',
 		array(
@@ -71,12 +45,28 @@ $archive_search_layout = 'layout-1';
 	);
 	?>
 
-
 	<div class="cm-post-content">
 		<?php
 		foreach ( $content_orders as $key => $content_order ) {
 
 			if ( 'post_format' === $content_order ) {
+
+				if ( ! has_post_format( array( 'gallery' ) ) ) :
+					if ( has_post_thumbnail() ) :
+						?>
+						<div class="cm-featured-image">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+								<?php the_post_thumbnail( $featured_image_size ); ?>
+								<?php if ( has_post_format( 'video' ) ) : ?>
+									<span class="play-button-wrapper">
+										<i class="fa fa-play" aria-hidden="true"></i>
+									</span>
+								<?php endif; ?>
+							</a>
+						</div>
+						<?php
+					endif;
+				endif;
 
 				if ( get_post_format() ) :
 					if ( ! has_post_format( 'video' ) ) :
@@ -93,7 +83,7 @@ $archive_search_layout = 'layout-1';
 								<?php
 								$embed_code = wp_oembed_get( $video_post_url );
 
-								echo wp_kses_post( $embed_code );
+								echo do_shortcode( $embed_code );
 								?>
 							</div>
 							<?php

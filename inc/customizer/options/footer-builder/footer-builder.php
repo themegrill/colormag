@@ -76,7 +76,6 @@ function customind_get_footer_components() {
 $options = array(
 	'colormag_footer_builder_components' => array(
 		'type'    => 'customind-builder-components',
-		'title'   => esc_html__( 'Footer Builder', 'colormag' ),
 		'choices' => customind_get_footer_components(),
 		'context' => 'footer',
 		'group'   => 'colormag_footer_builder',

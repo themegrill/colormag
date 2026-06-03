@@ -24,18 +24,19 @@ $header_display_type = get_theme_mod( 'colormag_header_logo_placement', 'header_
 					</div><!-- #cm-site-branding -->
 	<?php
 
-	if ( false === get_theme_mod( 'colormag_enable_site_identity', 'true' ) || false === get_theme_mod( 'colormag_enable_site_tagline', true ) ) {
+	if ( false === get_theme_mod( 'colormag_enable_site_identity', true ) || false === get_theme_mod( 'colormag_enable_site_tagline', true ) ) {
 		$screen_reader = 'screen-reader-text';
 	}
 	?>
 
 <?php
 
-if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) || true == get_theme_mod( 'colormag_enable_site_tagline', true ) ) {
+
+if ( true == get_theme_mod( 'colormag_enable_site_identity', true ) || true == get_theme_mod( 'colormag_enable_site_tagline', true ) ) {
 	?>
 	<div id="cm-site-info" class="<?php echo esc_attr( $screen_reader ); ?>">
 		<?php
-		if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) ) {
+		if ( true == get_theme_mod( 'colormag_enable_site_identity', true ) ) {
 			if ( is_front_page() || is_home() ) :
 				?>
 						<h1 class="cm-site-title">
@@ -51,7 +52,7 @@ if ( true == get_theme_mod( 'colormag_enable_site_identity', 'true' ) || true ==
 		?>
 
 					<?php
-					if ( true == get_theme_mod( 'colormag_enable_site_tagline', 'true' ) ) {
+					if ( true == get_theme_mod( 'colormag_enable_site_tagline', true ) ) {
 						if ( $description || is_customize_preview() ) :
 							?>
 						<p class="cm-site-description">

@@ -21,7 +21,7 @@ class Control extends \WP_Customize_Control {
 
 	const DEFAULT_TYPE = 'text';
 
-	const VALID_TYPES = [
+	const VALID_TYPES = array(
 		'customind-text',
 		'customind-background',
 		'customind-border',
@@ -33,8 +33,11 @@ class Control extends \WP_Customize_Control {
 		'customind-slider',
 		'customind-textarea',
 		'customind-typography',
+		'customind-typography-preset',
+		'customind-typocolor',
 		'customind-date',
 		'customind-sortable',
+		'customind-sortable-v2',
 		'customind-image',
 		'customind-editor',
 		'customind-select',
@@ -56,14 +59,16 @@ class Control extends \WP_Customize_Control {
 		'customind-socials',
 		'customind-preset',
 		'customind-builder-migration',
-	];
+		'customind-heading',
+	);
 
-	const GROUP_TYPES = [
+	const GROUP_TYPES = array(
 		'customind-color-group',
 		'customind-accordion',
-	];
+		'customind-tab-group',
+	);
 
-	public $sub_controls = [];
+	public $sub_controls = array();
 
 	/**
 	 * Is sub control.
@@ -136,7 +141,7 @@ class Control extends \WP_Customize_Control {
 	 * @param array                $args    Args.
 	 * @param boolean               $is_sub_control Sub controls.
 	 */
-	public function __construct( $manager, $id, $args = [], $is_sub_control = false ) {
+	public function __construct( $manager, $id, $args = array(), $is_sub_control = false ) {
 		$args                 = $this->prepare_control_args( $id, $args );
 		$this->is_sub_control = $is_sub_control;
 
@@ -153,32 +158,6 @@ class Control extends \WP_Customize_Control {
 	}
 
 	/**
-	 * Register sub controls.
-	 *
-	 * @param array $args
-	 * @return void
-	 */
-	protected function register_sub_controls( $manager, $args ) {
-		if ( empty( $args['sub_controls'] ) || ! in_array( $args['type'], self::GROUP_TYPES, true ) ) {
-			return;
-		}
-		foreach ( $args['sub_controls'] as $sub_control_id => $sub_control_args ) {
-			$manager->add_setting(
-				$sub_control_id,
-				[
-					'default'           => $sub_control_args['default'] ?? '',
-					'transport'         => $sub_control_args['transport'] ?? 'refresh',
-					'type'              => 'theme_mod',
-					'sanitize_callback' => ( new Sanitization() )->get_sanitization_callback( $sub_control_args['type'] ),
-				]
-			);
-			$sub_control = new self( $manager, $sub_control_id, $sub_control_args, true );
-			$manager->add_control( $sub_control );
-			$this->sub_controls[] = $sub_control->json();
-		}
-	}
-
-	/**
 	 * Prepare control args.
 	 *
 	 * @param string $id
@@ -191,53 +170,59 @@ class Control extends \WP_Customize_Control {
 		}
 
 		if ( 'customind-builder' === $args['type'] ) {
-			$this->rows              = $args['rows'] ?? [];
-			$this->components        = $args['components'] ?? [];
+			$this->rows              = $args['rows'] ?? array();
+			$this->components        = $args['components'] ?? array();
 			$this->panel             = $args['panel'] ?? null;
-			$this->mobile_components = $args['mobile_components'] ?? [];
-			$this->areas             = $args['areas'] ?? [];
+			$this->mobile_components = $args['mobile_components'] ?? array();
+			$this->areas             = $args['areas'] ?? array();
 			$this->mobile_section    = $args['mobile_section'] ?? null;
 		}
 
-		$control_args = [
+		$control_args = array(
 			'label'       => $args['title'] ?? '',
 			'title'       => $args['title'] ?? '',
 			'description' => $args['description'] ?? '',
 			'section'     => $args['section'] ?? '',
 			'settings'    => $id,
 			'type'        => $args['type'],
-			'choices'     => $args['choices'] ?? [],
+			'choices'     => $args['choices'] ?? array(),
 			'priority'    => $args['priority'] ?? 10,
-			'input_attrs' => $args['input_attrs'] ?? [],
+			'input_attrs' => $args['input_attrs'] ?? array(),
 			'capability'  => 'edit_theme_options',
-		];
+			'tab'         => $args['tab'] ?? '',
+		);
 
 		if ( in_array( $args['type'], self::GROUP_TYPES, true ) ) {
-			$control_args['sub_controls'] = $args['sub_controls'] ?? [];
+			$control_args['sub_controls'] = $args['sub_controls'] ?? array();
 		}
 
 		return $this->apply_filters( "{$this->type}:control:args", $control_args, $this );
 	}
 
 	/**
-	 * Add selective refresh support for the control.
+	 * Register sub controls.
 	 *
-	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
-	 * @param string               $id      Control ID.
-	 * @param array                $args    Args.
+	 * @param array $args
+	 * @return void
 	 */
-	protected function add_selective_refresh( $manager, $id, $args ) {
-		if ( ! isset( $args['partial'] ) || ! isset( $manager->selective_refresh ) ) {
+	protected function register_sub_controls( $manager, $args ) {
+		if ( empty( $args['sub_controls'] ) || ! in_array( $args['type'], self::GROUP_TYPES, true ) ) {
 			return;
 		}
-		$manager->selective_refresh->add_partial(
-			$id,
-			[
-				'selector'            => $args['partial']['selector'] ?? '',
-				'render_callback'     => $args['partial']['render_callback'] ?? null,
-				'container_inclusive' => $args['partial']['container_inclusive'] ?? false,
-			]
-		);
+		foreach ( $args['sub_controls'] as $sub_control_id => $sub_control_args ) {
+			$manager->add_setting(
+				$sub_control_id,
+				array(
+					'default'           => $sub_control_args['default'] ?? '',
+					'transport'         => $sub_control_args['transport'] ?? 'refresh',
+					'type'              => 'theme_mod',
+					'sanitize_callback' => ( new Sanitization() )->get_sanitization_callback( $sub_control_args['type'] ),
+				)
+			);
+			$sub_control = new self( $manager, $sub_control_id, $sub_control_args, true );
+			$manager->add_control( $sub_control );
+			$this->sub_controls[] = $sub_control->json();
+		}
 	}
 
 	/**
@@ -249,6 +234,7 @@ class Control extends \WP_Customize_Control {
 			array(
 				'type',
 				'priority',
+				'tab',
 				'section',
 				'label',
 				'type',
@@ -283,6 +269,27 @@ class Control extends \WP_Customize_Control {
 		$json['link']       = $this->get_link();
 
 		return $json;
+	}
+
+	/**
+	 * Add selective refresh support for the control.
+	 *
+	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
+	 * @param string               $id      Control ID.
+	 * @param array                $args    Args.
+	 */
+	protected function add_selective_refresh( $manager, $id, $args ) {
+		if ( ! isset( $args['partial'] ) || ! isset( $manager->selective_refresh ) ) {
+			return;
+		}
+		$manager->selective_refresh->add_partial(
+			$id,
+			array(
+				'selector'            => $args['partial']['selector'] ?? '',
+				'render_callback'     => $args['partial']['render_callback'] ?? null,
+				'container_inclusive' => $args['partial']['container_inclusive'] ?? false,
+			)
+		);
 	}
 
 	/**

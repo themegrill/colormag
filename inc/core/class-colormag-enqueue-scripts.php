@@ -55,7 +55,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'colormag_scripts_styles_method' ) );
 
-			add_action( 'enqueue_block_editor_assets', array( $this, 'colormag_block_editor_styles' ), 1 );
+			add_action( 'enqueue_block_assets', array( $this, 'colormag_block_editor_styles' ), 1 );
 
 			add_action( 'customize_controls_enqueue_scripts', array( $this, 'colormag_inline_customizer_css' ) );
 
@@ -68,7 +68,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		}
 
 		public function colormag_default_typography( $value ) {
-			if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) ) {
+			if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) || ( 'inherit' === strtolower( $value['font-family'] ) ) ) {
 				$value['font-family'] = 'Open Sans';
 			}
 			return $value;
@@ -90,7 +90,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			$inline_style_handle = ( 'white' === $skin_color ) ? 'colormag_style' : 'colormag_dark_style';
 
 			// Loads our main css.
-			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), time() );
+			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag_style', 'rtl', 'replace' );
 
 			// Load dark css.
@@ -103,7 +103,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			$fontawesome_path = $customind->get_asset_url( 'all.min.css', 'assets/fontawesome/v6/css', false );
 
-			wp_enqueue_style( 'font-awesome-all', $fontawesome_path, array(), '6.2.4' );
+			wp_enqueue_style( 'font-awesome-all', $fontawesome_path, array(), '6.5.2' );
 
 			// Local Google fonts locally.
 			$host_fonts_locally = get_theme_mod( 'colormag_load_google_fonts_locally', false );
@@ -185,7 +185,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Theme custom JS.
 			wp_enqueue_script( 'colormag-custom', COLORMAG_JS_URL . '/colormag-custom' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
-
 			// BxSlider JS.
 			wp_enqueue_script( 'colormag-bxslider', COLORMAG_JS_URL . '/jquery.bxslider' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
 
@@ -237,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( $style['handle'] );
 			}
 
-			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.2.4' );
+			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.5.2' );
 
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
@@ -247,10 +246,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// jQuery Video JS.
 			wp_register_script( 'jquery-video', COLORMAG_JS_URL . '/jquery.video' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-			// HTML5Shiv for Lower IE versions.
-			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
-			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
@@ -274,7 +269,13 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		 */
 		public function colormag_block_editor_styles() {
 
-			wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+			if ( ! is_admin() ) {
+				return;
+			}
+
+			if ( ! get_theme_mod( 'colormag_load_google_fonts_locally', false ) ) {
+				wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+			}
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
 			wp_enqueue_style( 'colormag-block-editor-dark-styles', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag-block-editor-styles', 'rtl', 'replace' );
@@ -284,6 +285,92 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_add_inline_style(
 				'customize-controls',
 				'
+				#customize-control-colormag_base_typography .customind-typography-label, #customize-control-colormag_headings_typography .customind-typography-label {
+					font-weight: 600;
+				}
+
+				#customize-control-site_icon {
+			    padding: 0px 12px;
+			    width: 92%;
+				}
+
+				#customize-control-site_icon .customize-control-title, #customize-control-site_icon .customize-control-description{
+					display:none;
+				}
+
+				#sub-accordion-section-colormag_category_colors_section {
+				margin-bottom: 10px;
+				}
+
+				.control-section-customind-section.open .section-meta {
+				margin-bottom: 10px !important;
+				}
+
+				#customize-control-site_icon .button-add-media{
+				border-radius: 4px;
+				}
+
+				#customize-control-colormag_header_builder_components {
+				margin-top:24px;
+				padding-right:16px;
+				}
+
+				#customize-control-colormag_footer_builder_components {
+			    padding-right:16px;
+				}
+
+			#accordion-section-colormag_transparent_header_section .accordion-section-title button::after {
+				    top: calc(50% - 7px);
+			}
+
+			#accordion-section-colormag_transparent_header_section .accordion-section-title button{
+			 font-weight: 400;
+			    font-size:12px;
+
+			}
+
+				#customize-control-blogname {
+			    padding: 0px 12px;
+				    width: 92%;
+				    padding-top: 10px;
+				    margin-top: 0;
+				    background: #FFF;
+				}
+
+				#customize-control-blogdescription {
+			    padding: 0px 12px;
+			    width: 90%;
+				}
+
+				#sub-accordion-panel-colormag_header_builder.current-panel {
+			    height: 995px !important;
+                 position: relative;
+                     background: #F0F0F1;
+				}
+
+				#sub-accordion-section-colormag_footer_builder_section {
+				background: #F0F0F1 !important;
+				margin-top: 20px !important;
+				}
+
+				#customize-control-colormag_header_builder_components {
+				    background: #F0F0F1 !important;
+				}
+
+
+			.accordion-section-title button.accordion-trigger:focus{
+				    box-shadow: 0 0 0 0px #2271b1;
+			}
+
+				.wp-full-overlay[data-customind-builder-panel="colormag_footer_builder"].in-sub-panel:not(.section-open) #customize-theme-controls ul[id="sub-accordion-section-colormag_footer_builder_section"]{
+			    top: 53px;
+			    height: 748px;
+				}
+
+				#customize-control-colormag_footer_builder_components .customind-footer-types {
+				display:none;
+				}
+
 		        #customize-control-colormag_site_identity_general_heading .customind-control .font-normal{
 		        font-weight: 600;
 		        }
@@ -359,10 +446,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				display: block;
 				}
 
-				#accordion-panel-nav_menus {
-				margin-top:10px;
-				}
-
 				#accordion-section-colormag_customize_fb_section {
 				display: flex;
 				    justify-content: center;
@@ -405,8 +488,88 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		       box-shadow: 0 0 0 0 #2271b1;
             outline: 0 solid transparent;
 		}
+
+		#sub-accordion-section-colormag_header_builder_section {
+				margin-top: 100px;
+				    background: #F0F0F1;
+				}
+
+
+			#accordion-section-colormag_transparent_header_section {
+			    display: block !important;
+			    font-size:12px;
+			}
+
+			#accordion-section-title_tagline {
+			    margin-top: 40px;
+			    border-top: 1px solid #dcdcde !important;
+			}
+
+			#customize-controls .customize-info.section-meta,.customize-section-description,#customize-control-header_video,#customize-control-external_header_video,#customize-control-header_image,#customize-control-show_on_front {
+			padding: 0 10px !important;
+			width: 95%;
+			}
+
+			#customize-controls .customize-info {
+			     margin-bottom: 0;
+			}
+
+			#customize-control-colormag_header_builder_components {
+			    margin-top: 24px;
+			}
+
+			#customize-control-colormag_header_footer_components {
+			    margin-top: 24px;
+			}
+
+			#customize-control-colormag_color_palette .customind-preset-1,#customize-control-colormag_color_palette .customind-preset-2,#customize-control-colormag_color_palette .customind-preset-3,#customize-control-colormag_color_palette .customind-preset-4 {
+			display:none;
+			}
+
+			#accordion-section-colormag_sticky_header_section .accordion-section-title button::after {
+				    top: calc(50% - 7px);
+			}
 		    '
 			);
+
+			if ( colormag_maybe_enable_builder() ) {
+				wp_add_inline_style(
+					'customize-controls',
+					'
+#accordion-section-colormag_sticky_header_section .accordion-section-title{
+			border-top: 1px solid #dcdcde !important;
+			border-left: 1px solid #dcdcde !important;
+			border-right: 1px solid #dcdcde !important;
+			}
+
+			#accordion-section-colormag_sticky_header_section {
+			    display: block !important;
+			}
+
+				#accordion-section-colormag_sticky_header_section {
+					    position: absolute;
+					    bottom: 160px;
+					    width: 100%;
+				}
+
+				#accordion-section-colormag_sticky_header_section .accordion-section-title{
+			    margin: 0 10px;
+                border-radius: 4px;
+			}
+
+			#accordion-section-colormag_sticky_header_section .accordion-section-title button{
+			 font-weight: 400;
+			  font-size:12px;
+			}
+
+			#accordion-section-colormag_customize_header_navigation_section {
+					    position: absolute;
+					    bottom: 0px;
+				}
+					'
+				);
+
+			}
 		}
 	}
 
@@ -520,7 +683,6 @@ function colormag_image_uploader() {
 
 	wp_enqueue_media();
 	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
-
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
@@ -529,7 +691,7 @@ add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
 function colormag_get_category_colors() {
 	$category_colors = array();
 	foreach ( get_categories() as $cat ) {
-		$color = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
+		$color                            = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
 		$category_colors[ $cat->term_id ] = $color;
 	}
 	return $category_colors;
@@ -554,7 +716,7 @@ function colormag_enqueue_editor_assets() {
 	wp_localize_script(
 		'colormag-editor-script',
 		'colormag_category_color_override',
-		get_theme_mod( 'colormag_enable_override_category_color', false )
+		array( 'enabled' => get_theme_mod( 'colormag_enable_override_category_color', false ) )
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'colormag_enqueue_editor_assets' );
@@ -617,7 +779,7 @@ if ( ! function_exists( 'colormag_parse_css' ) ) :
 	function colormag_parse_css( $default_value, $output_value, $css_output = array(), $min_media = '', $max_media = '' ) {
 
 		// Return if default value matches.
-		if ( $default_value === $output_value ) {
+		if ( strpos( $output_value, 'var' ) === false && $default_value === $output_value ) {
 			return;
 		}
 
@@ -698,7 +860,7 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 	 */
 	function colormag_parse_background_css( $default_value, $output_value, $selector ) {
 
-		if ( $default_value == $output_value ) {
+		if ( strpos( $output_value['background-color'], 'var' ) === false && $default_value === $output_value ) {
 			return;
 		}
 
@@ -706,7 +868,7 @@ if ( ! function_exists( 'colormag_parse_background_css' ) ) :
 		$parse_css .= $selector . '{';
 
 		// For background color.
-		if ( isset( $output_value['background-color'] ) && ( $output_value['background-color'] != $default_value['background-color'] ) ) {
+		if ( isset( $output_value['background-color'] ) ) {
 			$parse_css .= 'background-color:' . $output_value['background-color'] . ';';
 		}
 
@@ -863,6 +1025,10 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 	 */
 	function colormag_parse_typography_css( $default_value, $output_value, $selector, $devices = array() ) {
 
+		if ( isset( $default_value['font-family'] ) && isset( $output_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
+			$output_value['font-family'] = 'inherit';
+		}
+
 		if ( $default_value === $output_value ) {
 			return;
 		}
@@ -891,6 +1057,191 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 		$default_value_text_decoration = isset( $default_value['text-decoration'] ) ? $default_value['text-decoration'] : '';
 		if ( isset( $output_value['text-decoration'] ) && ! empty( $output_value['text-decoration'] ) && ( $output_value['text-decoration'] !== $default_value_text_decoration ) ) {
 			$parse_css .= 'text-decoration:' . $output_value['text-decoration'] . ';';
+		}
+
+		// For font weight.
+		$default_value_font_weight = isset( $default_value['font-weight'] ) ? $default_value['font-weight'] : '';
+		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value_font_weight ) ) {
+			$font_weight_value = $output_value['font-weight'];
+
+			if ( 'italic' === $font_weight_value || 'regular' === $font_weight_value ) {
+				$parse_css .= 'font-weight:' . 400 . ';';
+			} else {
+				$parse_css .= 'font-weight:' . str_replace( 'italic', '', $font_weight_value ) . ';';
+			}
+		}
+
+		// For font size on desktop.
+		$font_size_unit            = isset( $output_value['font-size']['desktop']['unit'] ) ? $output_value['font-size']['desktop']['unit'] : 'px';
+		$default_desktop_font_size = isset( $default_value['font-size']['desktop']['size'] ) ? $default_value['font-size']['desktop']['size'] : '';
+		if ( isset( $output_value['font-size']['desktop']['size'] ) && ! empty( $output_value['font-size']['desktop']['size'] ) && ( $output_value['font-size']['desktop']['size'] !== $default_desktop_font_size ) ) {
+			$parse_css .= 'font-size:' . $output_value['font-size']['desktop']['size'] . $font_size_unit . ';';
+		}
+
+		// For line height on desktop.
+		$line_height_unit_value      = isset( $output_value['line-height']['desktop']['unit'] ) ? $output_value['line-height']['desktop']['unit'] : 'px';
+		$line_height_unit            = ( '-' !== $line_height_unit_value ) ? $line_height_unit_value : '';
+		$default_desktop_line_height = isset( $default_value['line-height']['desktop']['size'] ) ? $default_value['line-height']['desktop']['size'] : '';
+
+		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !== $default_desktop_line_height ) ) {
+			$parse_css .= 'line-height:' . $output_value['line-height']['desktop']['size'] . $line_height_unit . ';';
+		}
+
+		// For letter spacing on desktop.
+		$letter_spacing_unit            = isset( $output_value['letter-spacing']['desktop']['unit'] ) ? $output_value['letter-spacing']['desktop']['unit'] : 'px';
+		$default_desktop_letter_spacing = isset( $default_value['letter-spacing']['desktop']['size'] ) ? $default_value['letter-spacing']['desktop']['size'] : '';
+
+		if ( isset( $output_value['letter-spacing']['desktop']['size'] ) && ! empty( $output_value['letter-spacing']['desktop']['size'] ) && ( $output_value['letter-spacing']['desktop']['size'] !== $default_desktop_letter_spacing ) ) {
+			$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['desktop']['size'] . $letter_spacing_unit . ';';
+		}
+
+		$parse_css .= '}';
+
+		// For responsive devices.
+		if ( is_array( $devices ) ) {
+
+			foreach ( $devices as $device => $size ) {
+
+				// For tablet devices.
+				if ( 'tablet' === $device && $size ) {
+					$default_tablet_font_size_spacing = isset( $default_value['font-size']['tablet']['size'] ) ? $default_value['font-size']['tablet']['size'] : '';
+					if ( isset( $output_value['font-size']['tablet']['size'] ) && ! empty( $output_value['font-size']['tablet']['size'] ) && $output_value['font-size']['tablet']['size'] !== $default_tablet_font_size_spacing ) {
+
+						$font_size_tablet_unit = $output_value['font-size']['tablet']['unit'] ? $output_value['font-size']['tablet']['unit'] : 'px';
+
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
+						$parse_css .= 'font-size:' . $output_value['font-size']['tablet']['size'] . $font_size_tablet_unit . ';';
+						$parse_css .= '}';
+						$parse_css .= '}';
+					}
+
+					$default_tablet_line_height_spacing = isset( $default_value['line-height']['tablet']['size'] ) ? $default_value['line-height']['tablet']['size'] : '';
+					if ( isset( $output_value['line-height']['tablet']['size'] ) && ! empty( $output_value['line-height']['tablet']['size'] ) && $output_value['line-height']['tablet']['size'] !== $default_tablet_line_height_spacing ) {
+
+						$line_height_tablet_unit_value = $output_value['line-height']['tablet']['unit'] ? $output_value['line-height']['tablet']['unit'] : '';
+						$line_height_tablet_unit       = ( '-' !== $line_height_tablet_unit_value ) ? $line_height_tablet_unit_value : '';
+
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
+						$parse_css .= 'line-height:' . $output_value['line-height']['tablet']['size'] . $line_height_tablet_unit . ';';
+						$parse_css .= '}';
+						$parse_css .= '}';
+					}
+
+					$default_tablet_letter_spacing_spacing = isset( $default_value['letter-spacing']['tablet']['size'] ) ? $default_value['letter-spacing']['tablet']['size'] : '';
+					if ( isset( $output_value['letter-spacing']['tablet']['size'] ) && ! empty( $output_value['letter-spacing']['tablet']['size'] ) && $output_value['letter-spacing']['tablet']['size'] !== $default_tablet_letter_spacing_spacing ) {
+
+						$letter_spacing_tablet_unit = $output_value['letter-spacing']['tablet']['unit'] ? $output_value['letter-spacing']['tablet']['unit'] : 'px';
+
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
+						$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['tablet']['size'] . $letter_spacing_tablet_unit . ';';
+						$parse_css .= '}';
+						$parse_css .= '}';
+					}
+				}
+
+				// For mobile devices.
+				if ( 'mobile' === $device && $size ) {
+					$default_mobile_font_size_spacing = isset( $default_value['font-size']['mobile']['size'] ) ? $default_value['font-size']['mobile']['size'] : '';
+					if ( isset( $output_value['font-size']['mobile']['size'] ) && ! empty( $output_value['font-size']['mobile']['size'] ) && $output_value['font-size']['mobile']['size'] !== $default_mobile_font_size_spacing ) {
+
+						$font_size_mobile_unit = $output_value['font-size']['mobile']['unit'] ? $output_value['font-size']['mobile']['unit'] : 'px';
+
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
+						$parse_css .= 'font-size:' . $output_value['font-size']['mobile']['size'] . $font_size_mobile_unit . ';';
+						$parse_css .= '}';
+						$parse_css .= '}';
+					}
+
+					$default_mobile_line_height_spacing = isset( $default_value['line-height']['mobile']['size'] ) ? $default_value['line-height']['mobile']['size'] : '';
+					if ( isset( $output_value['line-height']['mobile']['size'] ) && ! empty( $output_value['line-height']['mobile']['size'] ) && $output_value['line-height']['mobile']['size'] !== $default_mobile_line_height_spacing ) {
+
+						$line_height_mobile_unit_value = $output_value['line-height']['mobile']['unit'] ? $output_value['line-height']['mobile']['unit'] : '';
+						$line_height_mobile_unit       = ( '-' !== $line_height_mobile_unit_value ) ? $line_height_mobile_unit_value : '';
+
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
+						$parse_css .= 'line-height:' . $output_value['line-height']['mobile']['size'] . $line_height_mobile_unit . ';';
+						$parse_css .= '}';
+						$parse_css .= '}';
+					}
+
+					$default_mobile_letter_spacing_spacing = isset( $default_value['letter-spacing']['mobile']['size'] ) ? $default_value['letter-spacing']['mobile']['size'] : '';
+					if ( isset( $output_value['letter-spacing']['mobile']['size'] ) && ! empty( $output_value['letter-spacing']['mobile']['size'] ) && $output_value['letter-spacing']['mobile']['size'] !== $default_mobile_letter_spacing_spacing ) {
+
+						$letter_spacing_mobile_unit = $output_value['letter-spacing']['mobile']['unit'] ? $output_value['letter-spacing']['mobile']['unit'] : 'px';
+
+						$parse_css .= '@media(max-width:' . $size . 'px){';
+						$parse_css .= $selector . '{';
+						$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['mobile']['size'] . $letter_spacing_mobile_unit . ';';
+						$parse_css .= '}';
+						$parse_css .= '}';
+					}
+				}
+			}
+		}
+
+		return $parse_css;
+	}
+
+endif;
+
+
+if ( ! function_exists( 'colormag_parse_typography_color_css' ) ) :
+
+	/**
+	 * Returns the background CSS property for dynamic CSS generation.
+	 *
+	 * @param string|array $default_value Default value.
+	 * @param string|array $output_value  Updated value.
+	 * @param string       $selector      CSS selector.
+	 * @param array        $devices       Devices for breakpoints.
+	 *
+	 * @return string|void Generated CSS for typography CSS.
+	 */
+	function colormag_parse_typography_color_css( $default_value, $output_value, $selector, $devices = array() ) {
+
+		if ( is_array( $default_value ) && is_array( $output_value ) && isset( $default_value['font-family'] ) && isset( $output_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
+			$output_value['font-family'] = 'inherit';
+		}
+
+		if ( $default_value === $output_value ) {
+			return;
+		}
+
+		$parse_css = $selector . '{';
+
+		// For font family.
+		$default_value_font_family = isset( $default_value['font-family'] ) ? $default_value['font-family'] : '';
+		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) ) {
+			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
+		}
+
+		// For font style.
+		$default_value_font_style = isset( $default_value['font-style'] ) ? $default_value['font-style'] : '';
+		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value_font_style ) ) {
+			$parse_css .= 'font-style:' . $output_value['font-style'] . ';';
+		}
+
+		// For text transform.
+		$default_value_text_transform = isset( $default_value['text-transform'] ) ? $default_value['text-transform'] : '';
+		if ( isset( $output_value['text-transform'] ) && ! empty( $output_value['text-transform'] ) && ( $output_value['text-transform'] !== $default_value_text_transform ) ) {
+			$parse_css .= 'text-transform:' . $output_value['text-transform'] . ';';
+		}
+
+		// For text decoration.
+		$default_value_text_decoration = isset( $default_value['text-decoration'] ) ? $default_value['text-decoration'] : '';
+		if ( isset( $output_value['text-decoration'] ) && ! empty( $output_value['text-decoration'] ) && ( $output_value['text-decoration'] !== $default_value_text_decoration ) ) {
+			$parse_css .= 'text-decoration:' . $output_value['text-decoration'] . ';';
+		}
+
+		// For Color.
+		$default_value_color = isset( $default_value['color'] ) ? $default_value['color'] : '';
+		if ( isset( $output_value['color'] ) && ! empty( $output_value['color'] ) && ( $output_value['color'] !== $default_value_color ) ) {
+			$parse_css .= 'color:' . $output_value['color'] . ';';
 		}
 
 		// For font weight.

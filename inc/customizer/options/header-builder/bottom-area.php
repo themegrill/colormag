@@ -55,7 +55,7 @@ $options = array(
 				),
 				'colormag_header_bottom_area_background'   => array(
 					'default' => array(
-						'background-color'      => '#27272A',
+						'background-color'      => 'var(--cm-color-5)',
 						'background-image'      => '',
 						'background-repeat'     => 'repeat',
 						'background-position'   => 'center center',

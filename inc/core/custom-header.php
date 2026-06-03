@@ -38,6 +38,21 @@ function colormag_custom_header_setup() {
 
 add_action( 'after_setup_theme', 'colormag_custom_header_setup' );
 
+function colormag_redirect_header_menu() {
+	global $submenu;
+	if ( ! isset( $submenu['themes.php'] ) ) {
+		return;
+	}
+	$target_url = 'customize.php?autofocus%5Bsection%5D=colormag_header_builder_section&return=%2Fwp-admin%2F';
+	foreach ( $submenu['themes.php'] as &$item ) {
+		if ( isset( $item[2] ) && strpos( $item[2], 'autofocus%5Bcontrol%5D=header_image' ) !== false ) {
+			$item[2] = $target_url;
+			break;
+		}
+	}
+}
+add_action( 'admin_menu', 'colormag_redirect_header_menu', 999 );
+
 if ( ! function_exists( 'colormag_admin_header_image' ) ) :
 
 	/**

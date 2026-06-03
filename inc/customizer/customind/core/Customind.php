@@ -90,6 +90,8 @@ class Customind {
 
 	private $typography_controls_ids = [];
 
+	private $tabs = [];
+
 	/**
 	 * Constructor.
 	 */
@@ -108,10 +110,44 @@ class Customind {
 		add_action( 'customize_preview_init', [ $this, 'enqueue_preview_scripts' ], 999 );
 		add_action( 'customize_save_after', [ $this, 'on_save' ] );
 		add_action( 'wp_head', [ $this, 'enqueue_custom_fonts' ] );
+		add_action( 'after_setup_theme', [ $this, 'init_google_fonts_url' ] );
 
 		$this->add_action( 'register:control', [ $this, 'process_settings' ], 10, 3 );
 		$this->add_action( 'register:control', [ $this, 'process_builder_panels' ], 10, 3 );
 		$this->add_action( 'customize:save', [ $this, 'update_google_fonts_url' ] );
+
+		$this->add_filter( 'controls', [ $this, 'process_tabs' ] );
+	}
+
+	public function process_tabs( $controls ) {
+		$section_tabs_map = [];
+		$control_tabs_map = [];
+
+		foreach ( $controls as $id => $args ) {
+			if ( isset( $args['type'] ) && 'customind-tabs' === $args['type'] && isset( $args['section'] ) ) {
+				$section = $args['section'];
+				if ( isset( $section_tabs_map[ $section ] ) ) {
+						throw new \Exception(
+							sprintf(
+								'Only one tabs control is allowed per section. Section "%s" has multiple tabs controls.',
+								esc_html( $section )
+							)
+						);
+				}
+				$section_tabs_map[ $section ] = $id;
+			} elseif ( isset( $args['tab_group'], $args['tab'] ) ) {
+				$tab_group                        = $args['tab_group'];
+				$tab                              = $args['tab'];
+				$control_tabs_map[ $tab_group ][] = [
+					'id'  => $id,
+					'tab' => $tab,
+				];
+			}
+		}
+
+		$this->tabs = $control_tabs_map;
+
+		return $controls;
 	}
 
 	/**
@@ -119,15 +155,63 @@ class Customind {
 	 *
 	 * This function retrieves custom fonts CSS, registers a new style for local fonts,
 	 * enqueues the style, and adds the CSS inline if it is not empty.
+	 * Also enqueues Google Fonts used by typography controls.
 	 *
 	 * @return void
 	 */
 	public function enqueue_custom_fonts() {
+		// Enqueue custom fonts from Magazine Blocks Pro
 		$css = get_custom_fonts_css();
 		if ( ! empty( $css ) ) {
 			wp_register_style( 'customind-local-fonts', false );
 			wp_enqueue_style( 'customind-local-fonts' );
 			wp_add_inline_style( 'customind-local-fonts', $css );
+		}
+	}
+
+	/**
+	 * Initialize Google Fonts URL if not exists.
+	 *
+	 * @return void
+	 */
+	public function init_google_fonts_url() {
+		$cached_fonts_url = get_option( '_customind_google_fonts_url', '' );
+		if ( empty( $cached_fonts_url ) && ! empty( $this->typography_controls_ids ) ) {
+			// Generate initial Google Fonts URL based on current typography control values
+			$fonts = [];
+			foreach ( $this->typography_controls_ids as $id ) {
+				$value = get_theme_mod( $id );
+				if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) ) {
+					continue;
+				}
+				$family           = $value['font-family'];
+				$weight           = $value['font-weight'] ?? 400;
+				$weight           = (int) $weight;
+				$fonts[ $family ] = isset( $fonts[ $family ] )
+					? ( in_array( $weight, $fonts[ $family ], true )
+					? $fonts[ $family ]
+					: array_merge( $fonts[ $family ], [ $weight ] ) )
+					: [ $weight ];
+			}
+
+			if ( ! empty( $fonts ) ) {
+				$families  = array_keys( $fonts );
+				$fonts_url = add_query_arg(
+					[
+						'family' => implode(
+							'|',
+							array_map(
+								function ( $f ) use ( $fonts ) {
+									return str_replace( ' ', '+', $f ) . ':' . implode( ',', array_unique( $fonts[ $f ] ) );
+								},
+								$families
+							)
+						),
+					],
+					'https://fonts.googleapis.com/css'
+				);
+				update_option( '_customind_google_fonts_url', $fonts_url );
+			}
 		}
 	}
 
@@ -250,6 +334,30 @@ class Customind {
 	}
 
 	/**
+	 * Process typography controls.
+	 *
+	 * @param array $control_args
+	 * @return void
+	 */
+	protected function process_typography_controls( $control_args = [] ) {
+		$control_args = empty( $control_args ) ? $this->controls : $control_args;
+		foreach ( $control_args as $key => $args ) {
+			if ( empty( $args['type'] ) ) {
+				continue;
+			}
+			if ( ( 'customind-typography' === $args['type'] || 'customind-typocolor' === $args['type'] ) && ! in_array( $key, $this->typography_controls_ids, true ) ) {
+				$allowed_props = $args['input_attrs']['allowedProperties'] ?? [];
+				if ( empty( $allowed_props ) || in_array( 'font-family', $allowed_props, true ) ) {
+					$this->typography_controls_ids[] = $key;
+				}
+			}
+			if ( isset( $args['sub_controls'] ) ) {
+				$this->process_typography_controls( $args['sub_controls'] );
+			}
+		}
+	}
+
+	/**
 	 * Register builder sections.
 	 *
 	 * @param string $id
@@ -284,28 +392,6 @@ class Customind {
 	}
 
 	/**
-	 * Process conditions.
-	 *
-	 * @param string $id
-	 * @param array $args
-	 * @return void
-	 */
-	protected function process_conditions( $id, $args ) {
-		if ( isset( $args['condition'] ) ) {
-			$this->condition[ $id ] = $args['condition'];
-		}
-		if ( isset( $args['conditions'] ) ) {
-			$this->conditions[ $id ] = $args['conditions'];
-		}
-
-		if ( isset( $args['sub_controls'] ) ) {
-			foreach ( $args['sub_controls'] as $i => $a ) {
-				$this->process_conditions( $i, $a );
-			}
-		}
-	}
-
-	/**
 	 * Process customize setting.
 	 *
 	 * @param string $id
@@ -328,6 +414,38 @@ class Customind {
 	}
 
 	/**
+	 * Process conditions.
+	 *
+	 * @param string $id
+	 * @param array $args
+	 * @return void
+	 */
+	protected function process_conditions( $id, $args ) {
+		if ( isset( $args['condition'] ) ) {
+			$this->condition[ $id ] = $args['condition'];
+		}
+		if ( isset( $args['conditions'] ) ) {
+			$this->conditions[ $id ] = $args['conditions'];
+		}
+
+		if ( isset( $args['sub_controls'] ) ) {
+			foreach ( $args['sub_controls'] as $i => $a ) {
+				$this->process_conditions( $i, $a );
+			}
+		}
+	}
+
+	/**
+	 * Add controls.
+	 *
+	 * @param array $args
+	 * @return void
+	 */
+	public function add_controls( $args ) {
+		$this->add_items( $args, 'controls' );
+	}
+
+	/**
 	 * Add items.
 	 *
 	 * @param array $args
@@ -342,16 +460,6 @@ class Customind {
 			}
 			$this->$type[ $key ] = $arg;
 		}
-	}
-
-	/**
-	 * Add controls.
-	 *
-	 * @param array $args
-	 * @return void
-	 */
-	public function add_controls( $args ) {
-		$this->add_items( $args, 'controls' );
 	}
 
 	/**
@@ -414,9 +522,150 @@ class Customind {
 					'builderPanels'         => $this->get_builder_panels(),
 					'cssVarPrefix'          => $this->get_css_var_prefix(),
 					'colorPaletteControlId' => $this->get_color_palette_control_id(),
+					'tabs'                  => $this->tabs,
 				]
 			)
 		);
+	}
+
+	/**
+	 * Get asset.
+	 *
+	 * @param string $prefix
+	 * @return array
+	 */
+	public function get_asset( $prefix ) {
+		$asset_file = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'build' . DIRECTORY_SEPARATOR . $prefix . '.asset.php';
+		if ( file_exists( $asset_file ) ) {
+			return require $asset_file;
+		}
+		return [
+			'dependencies' => [],
+			'version'      => CUSTOMIND_VERSION,
+		];
+	}
+
+	/**
+	 * Get asset url.
+	 *
+	 * @param string $filename
+	 * @param string $directory
+	 * @param boolean $dev
+	 * @return string
+	 */
+	public function get_asset_url( $filename, $directory = 'build', $dev = true ) {
+		if ( defined( 'CUSTOMIND_IS_DEVELOPMENT' ) && CUSTOMIND_IS_DEVELOPMENT && $dev ) {
+			return 'http://localhost:8887/' . $filename;
+		}
+		$filepath      = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . $directory . DIRECTORY_SEPARATOR . $filename;
+		$filepath      = str_replace( '\\', '/', $filepath );
+		$relative_path = substr( $filepath, strpos( $filepath, 'wp-content' ) );
+		return site_url( $relative_path );
+	}
+
+	/**
+	 * Get fontawesome version.
+	 *
+	 * @return string
+	 */
+	public function get_fontawesome_version() {
+		return $this->fontawesome_version;
+	}
+
+	/**
+	 * Set fontawesome version.
+	 *
+	 * @param string $version
+	 * @return void
+	 */
+	public function set_fontawesome_version( $version ) {
+		if ( ! in_array( $version, [ 'v6', 'v4' ], true ) ) {
+			$this->fontawesome_version = 'v6';
+			return;
+		}
+		$this->fontawesome_version = $version;
+	}
+
+	/**
+	 * Get google fonts.
+	 *
+	 * @return array
+	 */
+	public function get_google_fonts() {
+		$google_fonts = require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'google-fonts.php';
+		return $this->apply_filters( 'google-fonts', $google_fonts );
+	}
+
+	/**
+	 * Get fontawesome.
+	 *
+	 * @return array
+	 */
+	public function get_fontawesome() {
+		$fontawesome = require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . "fontawesome-{$this->fontawesome_version}.php";
+		return $this->apply_filters( 'fontawesome', $fontawesome );
+	}
+
+	/**
+	 * Get condition.
+	 *
+	 * @return array
+	 */
+	public function get_condition() {
+		return $this->apply_filters( 'condition', $this->condition );
+	}
+
+	/**
+	 * Get conditions.
+	 *
+	 * @return array
+	 */
+	public function get_conditions() {
+		return $this->apply_filters( 'conditions', $this->conditions );
+	}
+
+	/**
+	 * Get builder panels.
+	 *
+	 * @return array
+	 */
+	public function get_builder_panels() {
+		return $this->apply_filters( 'builder-panels', $this->builder_panels );
+	}
+
+	public function get_css_var_prefix() {
+		return $this->apply_filters( 'css-var-prefix', $this->css_var_prefix );
+	}
+
+	/**
+	 * $Set css var prefix.
+	 *
+	 * @param string $prefix
+	 * @return void
+	 */
+	public function set_css_var_prefix( $prefix ) {
+		if ( empty( $prefix ) ) {
+			return;
+		}
+		$this->css_var_prefix = $prefix;
+	}
+
+	/**
+	 * Get color palette control id.
+	 *
+	 * @return string|null
+	 */
+	private function get_color_palette_control_id( $controls = [] ) {
+		$controls = empty( $controls ) ? $this->controls : $controls;
+		foreach ( $controls as $key => $args ) {
+			if ( 'customind-color-palette' === $args['type'] ) {
+				return $key;
+			}
+			if ( isset( $args['sub_controls'] ) ) {
+				return $this->get_color_palette_control_id( $args['sub_controls'] );
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -455,152 +704,22 @@ class Customind {
 	}
 
 	/**
-	 * Get color palette control id.
-	 *
-	 * @return string|null
-	 */
-	private function get_color_palette_control_id( $controls = [] ) {
-		$controls = empty( $controls ) ? $this->controls : $controls;
-		foreach ( $controls as $key => $args ) {
-			if ( 'customind-color-palette' === $args['type'] ) {
-				return $key;
-			}
-			if ( isset( $args['sub_controls'] ) ) {
-				return $this->get_color_palette_control_id( $args['sub_controls'] );
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Get condition.
-	 *
-	 * @return array
-	 */
-	public function get_condition() {
-		return $this->apply_filters( 'condition', $this->condition );
-	}
-
-	/**
-	 * Get conditions.
-	 *
-	 * @return array
-	 */
-	public function get_conditions() {
-		return $this->apply_filters( 'conditions', $this->conditions );
-	}
-
-	/**
-	 * Get fontawesome version.
-	 *
-	 * @return string
-	 */
-	public function get_fontawesome_version() {
-		return $this->fontawesome_version;
-	}
-
-	/**
-	 * Set fontawesome version.
-	 *
-	 * @param string $version
-	 * @return void
-	 */
-	public function set_fontawesome_version( $version ) {
-		if ( ! in_array( $version, [ 'v6', 'v4' ], true ) ) {
-			$this->fontawesome_version = 'v6';
-			return;
-		}
-		$this->fontawesome_version = $version;
-	}
-
-	/**
-	 * Get fontawesome.
-	 *
-	 * @return array
-	 */
-	public function get_fontawesome() {
-		$fontawesome = require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . "fontawesome-{$this->fontawesome_version}.php";
-		return $this->apply_filters( 'fontawesome', $fontawesome );
-	}
-
-	/**
-	 * Get google fonts.
-	 *
-	 * @return array
-	 */
-	public function get_google_fonts() {
-		$google_fonts = require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'google-fonts.php';
-		return $this->apply_filters( 'google-fonts', $google_fonts );
-	}
-
-	/**
-	 * Get asset.
-	 *
-	 * @param string $prefix
-	 * @return array
-	 */
-	public function get_asset( $prefix ) {
-		$asset_file = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'build' . DIRECTORY_SEPARATOR . $prefix . '.asset.php';
-		if ( file_exists( $asset_file ) ) {
-			return require $asset_file;
-		}
-		return [
-			'dependencies' => [],
-			'version'      => CUSTOMIND_VERSION,
-		];
-	}
-
-	/**
-	 * Get builder panels.
-	 *
-	 * @return array
-	 */
-	public function get_builder_panels() {
-		return $this->apply_filters( 'builder-panels', $this->builder_panels );
-	}
-
-	public function get_css_var_prefix() {
-		return $this->apply_filters( 'css-var-prefix', $this->css_var_prefix );
-	}
-
-	/**
-	 * $Set css var prefix.
-	 *
-	 * @param string $prefix
-	 * @return void
-	 */
-	public function set_css_var_prefix( $prefix ) {
-		if ( empty( $prefix ) ) {
-			return;
-		}
-		$this->css_var_prefix = $prefix;
-	}
-
-	/**
-	 * Get asset url.
-	 *
-	 * @param string $filename
-	 * @param string $directory
-	 * @param boolean $dev
-	 * @return string
-	 */
-	public function get_asset_url( $filename, $directory = 'build', $dev = true ) {
-		if ( defined( 'CUSTOMIND_IS_DEVELOPMENT' ) && CUSTOMIND_IS_DEVELOPMENT && $dev ) {
-			return 'http://localhost:8887/' . $filename;
-		}
-		$filepath      = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . $directory . DIRECTORY_SEPARATOR . $filename;
-		$filepath      = str_replace( '\\', '/', $filepath );
-		$relative_path = substr( $filepath, strpos( $filepath, 'wp-content' ) );
-		return site_url( $relative_path );
-	}
-
-	/**
 	 * Get i18n data.
 	 *
 	 * @return array
 	 */
 	public function get_i18n_data() {
 		return $this->apply_filters( 'text-domain', $this->i18n_data );
+	}
+
+	/**
+	 * Set i18n domain.
+	 *
+	 * @param array $domain
+	 * @return void
+	 */
+	public function set_i18n_data( $i18n_data ) {
+		$this->i18n_data = $i18n_data;
 	}
 
 	/**
@@ -618,41 +737,7 @@ class Customind {
 	 * @param array $domain
 	 * @return void
 	 */
-	public function set_i18n_data( $i18n_data ) {
-		$this->i18n_data = $i18n_data;
-	}
-
-	/**
-	 * Set i18n domain.
-	 *
-	 * @param array $domain
-	 * @return void
-	 */
 	public function set_section_i18n( $i18n_data ) {
 		$this->i18n_data = $i18n_data;
-	}
-
-	/**
-	 * Process typography controls.
-	 *
-	 * @param array $control_args
-	 * @return void
-	 */
-	protected function process_typography_controls( $control_args = [] ) {
-		$control_args = empty( $control_args ) ? $this->controls : $control_args;
-		foreach ( $control_args as $key => $args ) {
-			if ( empty( $args['type'] ) ) {
-				continue;
-			}
-			if ( 'customind-typography' === $args['type'] && ! in_array( $key, $this->typography_controls_ids, true ) ) {
-				$allowed_props = $args['input_attrs']['allowedProperties'] ?? [];
-				if ( empty( $allowed_props ) || in_array( 'font-family', $allowed_props, true ) ) {
-					$this->typography_controls_ids[] = $key;
-				}
-			}
-			if ( isset( $args['sub_controls'] ) ) {
-				$this->process_typography_controls( $args['sub_controls'] );
-			}
-		}
 	}
 }

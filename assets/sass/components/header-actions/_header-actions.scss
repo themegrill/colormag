@@ -10,7 +10,7 @@
 }
 
 .cm-top-search {
-	position: initial;
+	position: relative;
 
 	&:has(.show) {
 
@@ -26,6 +26,7 @@
 
 .cm-search-icon-in-input-right {
 	position: relative;
+
 	.search-icon-input-right {
 		position: absolute;
 		right: 10px;
@@ -50,7 +51,7 @@
 		}
 
 		input {
-				box-shadow: 0 0 0 0 rgba($color__primary, 0.2);
+			box-shadow: 0 0 0 0 rgba($color__primary, 0.2);
 		}
 	}
 }
@@ -59,7 +60,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: length( 'l-4' );
+	padding: length('l-4');
 	width: 48px;
 	height: 48px;
 	color: $color__white;
@@ -78,7 +79,7 @@
 	border-radius: 4px;
 
 	button {
-		padding: length( 'l-7' );
+		padding: length('l-7');
 		color: $color__white;
 		background-color: $color__primary;
 		@include font-size("font-size-xs");
@@ -93,7 +94,7 @@
 	z-index: 9999;
 	border: 1px solid $color__gray-100;
 	display: none;
-	padding: length( 'l-12' );
+	padding: length('l-12');
 	border-radius: 0 0 4px 4px;
 	background-color: $color__white;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -111,7 +112,8 @@
 			border-left: 12px solid transparent;
 			border-right: 12px solid transparent;
 			top: -10px;
-			right: 54px;
+			right: 10px;
+			left: var(--arrow-left, auto);
 		}
 	}
 
@@ -121,9 +123,9 @@
 
 	input.s {
 		width: 100%;
-		padding: length( 'l-6' );
+		padding: length('l-6');
 		@include font-size("font-size-xs");
-		border: 1px solid $color__gray-200;
+		border: 1px solid var(--cm-color-8, #E4E4E7);
 		border-radius: 4px 0 0 4px;
 	}
 
@@ -135,7 +137,7 @@
 /* Random Posts Icon.
 --------------------------------------------- */
 .cm-random-post {
-	order :1;
+	order: 1;
 
 	.fa-random {
 		color: $color__white;
@@ -152,7 +154,7 @@
 			display: flex;
 			align-items: center;
 			height: 48px;
-			padding: length( 'l-4' );
+			padding: length('l-4');
 			border-bottom: medium none;
 
 			&:hover {
@@ -169,19 +171,13 @@
 	}
 }
 
-.search-form-top {
-	&.show {
-		width: unset;
-	}
-}
-
 @include breakpoint("mdm") {
 
 	.cm-header-actions {
 		flex-basis: unset;
 	}
 
-	.search-form-top{
+	.search-form-top {
 
 		&.show {
 			width: 570px;
@@ -196,4 +192,31 @@
 		position: relative;
 	}
 
+}
+
+@media (max-width: 600px) {
+	.search-form-top.show {
+		width: 70vw;
+		max-width: 70vw;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+	.search-form-top.show {
+		width: 60vw;
+		max-width: 60vw;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.search-form-top.show {
+		width: 40vw;
+		max-width: 40vw;
+	}
+}
+
+@media (min-width: 1025px) {
+	.search-form-top.show {
+		width: 400px;
+	}
 }

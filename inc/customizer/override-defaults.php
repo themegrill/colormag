@@ -29,8 +29,8 @@ if ( get_theme_mod( 'colormag_enable_builder', false ) || colormag_maybe_enable_
 	$wp_customize->get_control( 'blogname' )->priority        = 4;
 	$wp_customize->get_control( 'blogdescription' )->section  = 'colormag_header_builder_logo';
 	$wp_customize->get_control( 'blogdescription' )->priority = 5;
-	$wp_customize->get_control( 'site_icon' )->section        = 'colormag_header_builder_logo';
-	$wp_customize->get_control( 'site_icon' )->priority       = 6;
+	//  $wp_customize->get_control( 'site_icon' )->section        = 'colormag_header_builder_logo';
+	$wp_customize->get_control( 'site_icon' )->priority = 6;
 } else {
 		$wp_customize->get_control( 'site_icon' )->priority       = 5;
 		$wp_customize->get_control( 'blogname' )->priority        = 6;

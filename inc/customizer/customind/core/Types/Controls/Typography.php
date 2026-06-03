@@ -32,6 +32,7 @@ class Typography extends AbstractControl {
 	) {
 		parent::__construct( $id, $manager, $args );
 		$this->allowed_properties = $args['allowed_properties'] ?? null;
+		$this->display_mode       = $args['display_mode'] ?? '';
 	}
 
 	/**
@@ -42,6 +43,7 @@ class Typography extends AbstractControl {
 			parent::json_allowed_props(),
 			[
 				'allowed_properties',
+				'display_mode',
 			]
 		);
 	}

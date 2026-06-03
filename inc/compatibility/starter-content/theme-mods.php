@@ -78,7 +78,6 @@ return array(
 	'colormag_header_button_text'                    => esc_html__( 'Subscribe', 'colormag' ),
 	'colormag_header_button_link'                    => '#',
 	'colormag_header_button_background_color'        => '#c57eef',
-	'colormag_header_site_identity_color'            => '#FFFFFF',
 	'colormag_header_button_border_width'            => array(
 		'top'    => '0',
 		'right'  => '0',
@@ -155,6 +154,7 @@ return array(
 	'colormag_header_socials_color'                  => '#FFFFFF',
 	'colormag_header_site_identity_color'            => '#F5F5F5',
 	'colormag_header_socials_style'                  => 'style-1',
+	'colormag_single_page_sidebar_layout'            => 'no_sidebar',
 	'colormag_enable_page_header'                    => false,
 	'colormag_enable_site_identity'                  => true,
 	'colormag_enable_site_tagline'                   => false,

@@ -2,18 +2,22 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.20
-Tested up to: 6.8
+Version: 4.1.2
+Tested up to: 6.9
 Requires PHP: 7.4
-Requires at least: 4.7
-Stable tag: 4.0.20
+Requires at least: 5.0
+Stable tag: 4.1.2
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats, footer-widgets, blog, e-commerce, news, rtl-language-support
 
 == Description ==
-ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
+ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org.
+
+Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included.
+
+Download ColorMag free and get your news or magazine site live in minutes. Premium upgrades and support available at https://themegrill.com/themes/colormag-upgrade/
 
 For more information about ColorMag please go to https://themegrill.com/themes/colormag/
 
@@ -120,6 +124,43 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.1.2 - 2025-12-18 =
+* Added - New combined typography color option in the Typography section, allowing unified color control for text styles.
+* Moved  - Relocated Headings color settings (H1–H3) from their previous location into the Typography section for better organization and easier access.
+* Update - Introduced a new sortable control for Blog, Single Post, and Search layouts, enabling users to reorder elements more flexibly.
+* Moved  - Transferred Elements options inside the Sortable element, grouping related controls together and improving the overall settings structure.
+* Fix    - Starter template issue.
+* Fix    - Undefined function colormag_fresh_install issue.
+
+= Version 4.1.1 - 2025-09-26 =
+* Fix         - Undefined array key "font-family".
+
+= Version 4.1.0 - 2025-09-22 =
+* Added - 6 new Typography Presets for font selection.
+* Added - Option to add/delete custom color palettes.
+* Added - "Header Media" as a top item in the customizer navigation.
+* Added - "Site Identity" to the main customizer navigation list.
+* Renamed - "Header Builder" to "Header".
+* Renamed - "Content" to "Post Content".
+* Renamed - "Footer Builder" to "Footer".
+* Renamed - "Container" to "Layouts".
+* Moved - "Page Element" options to respective menus.
+* Moved - "Breadcrumb" to "Additional".
+* Moved - "Sticky Header" to "Header".
+* Improved - Updated color palette design.
+* Improved - Enhanced Color Palette presets.
+* Improved - Set default colors for different sections to global colors.
+* Improved - Global color handling in preset, color picker, and added tooltips for color name.
+* Improved - Separated sidebar layout options into container and sidebar layout.
+* Improved - Merged default layout from "Sidebar" and "Container" into "Layouts".
+* Improved - Page-specific sidebar and container layout options to respective page in "Post Content"
+* Improved - Page setting sidebar and container layout options to respective page
+* Improved - Redesigned Post Content blog section with tabbed design and layout options.
+* Improved - Enhanced design of presets and tabs in "Page Header".
+* Improved - Removed "Sidebar" in Global after moving its contents to respective places.
+* Improved - Removed "Page Element" after moving its items to respective places.
+* Improved - Removed "Header & Navigation" after moving its items to respective places.
+
 = Version 4.0.20 - 2025-08-12 =
 * Update    - Dashboard notice.
 * Update    - General security measure.

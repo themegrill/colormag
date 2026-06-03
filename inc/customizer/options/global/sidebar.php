@@ -25,30 +25,7 @@ $sidebar_layout_choices = apply_filters(
 $options = apply_filters(
 	'colormag_sidebar_options',
 	array(
-		'colormag_sidebar_width_heading' => array(
-			'type'         => 'customind-accordion',
-			'title'        => esc_html__( 'Sidebar', 'colormag' ),
-			'section'      => 'colormag_global_sidebar_section',
-			'sub_controls' => apply_filters(
-				'colormag_sidebar_sub_controls',
-				array(
-					'colormag_sidebar_width' => array(
-						'title'       => esc_html__( 'Width', 'colormag' ),
-						'default'     => array(
-							'size' => 30,
-							'unit' => '%',
-						),
-						'type'        => 'customind-slider',
-						'section'     => 'colormag_global_sidebar_section',
-						'priority'    => 10,
-						'units'       => array( '%', 'em', 'rem' ),
-						'defaultUnit' => '%',
-					),
-				)
-			),
-			'collapsible'  => apply_filters( 'colormag_sidebar_accordion_collapsible', false ),
-		),
-		'colormag_sidebar_layout_title'  => array(
+		'colormag_sidebar_layout_title' => array(
 			'type'         => 'customind-accordion',
 			'title'        => esc_html__( 'Layout', 'colormag' ),
 			'section'      => 'colormag_global_sidebar_section',
@@ -86,7 +63,7 @@ $options = apply_filters(
 			),
 			'collapsible'  => apply_filters( 'colormag_global_sidebar_heading_accordion_collapsible', false ),
 		),
-		'colormag_sidebar_upgrade'       => array(
+		'colormag_sidebar_upgrade'      => array(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),

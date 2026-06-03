@@ -12,6 +12,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * PHP 8.0/8.1 polyfills — must load before any code that calls str_contains() etc.
+ */
+require get_template_directory() . '/inc/compat/php-polyfills.php';
 
 /**
  * Define constants.
@@ -33,7 +37,10 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-theme-review-notice.php';
 }
 
-require get_template_directory() . '/inc/admin/class-colormag-changelog-parser.php';
+require get_template_directory() . '/inc/admin/class-colormag-changelog-controller.php';
+add_action( 'rest_api_init', function() {
+	( new Colormag_Changelog_Controller() )->register_routes();
+} );
 
 
 ///** ColorMag setup file, hooked for `after_setup_theme`. */
@@ -47,6 +54,7 @@ require COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-filter.php';
 
 // Generate dynamic CSS from styling options.
 require_once COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-css.php';
+require_once COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-builder-css.php';
 
 // Adds classes to appropriate places.
 require_once COLORMAG_INCLUDES_DIR . '/base/class-colormag-dynamic-classes.php';
@@ -74,6 +82,8 @@ require_once COLORMAG_CUSTOMIZER_DIR . '/class-colormag-customizer.php';
 // Load customind.
 require_once COLORMAG_CUSTOMIZER_DIR . '/customind/init.php';
 
+//require __DIR__ . '/../customind/init.php';
+
 /**
  * @var \Customind\Core\Customind
  */
@@ -96,6 +106,41 @@ add_action(
 		);
 	}
 );
+
+function colormag_maybe_enable_builder() {
+	static $result = null;
+
+	if ( null !== $result ) {
+		return $result;
+	}
+
+	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
+		$result = true;
+		return $result;
+	}
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		$result = false;
+		return $result;
+	}
+
+	// Only write to the database in the admin context to avoid writes on every public frontend request.
+	if ( is_admin() ) {
+		update_option( 'colormag_maybe_enable_builder', true );
+	}
+
+	$result = true;
+	return $result;
+}
+
+function colormag_fresh_install() {
+
+	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+		return false;
+	}
+
+	return true;
+}
 
 /**
  * Deprecated.
@@ -351,19 +396,6 @@ add_action( 'template_redirect', 'colormag_content_width' );
  */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-function colormag_maybe_enable_builder() {
-
-	if ( get_option( 'colormag_builder_migration' ) ) {
-		return true;
-	}
-
-	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
-	}
-
-	return true;
-}
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
@@ -507,3 +539,148 @@ add_action(
 		);
 	}
 );
+
+function colormag_typography_should_migrate() {
+	// Default values for comparison
+	$default_typography_presets   = '';
+	$default_base_typography_body = array(
+		'font-family'    => 'inherit',
+		'font-weight'    => 'regular',
+		'subsets'        => array( 'latin' ),
+		'font-size'      => array(
+			'desktop' => array(
+				'size' => '15',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+		),
+		'line-height'    => array(
+			'desktop' => array(
+				'size' => '1.6',
+				'unit' => '-',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '-',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '-',
+			),
+		),
+		'letter-spacing' => array(
+			'desktop' => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+		),
+	);
+
+	$default_base_heading_typography = array(
+		'font-family'    => 'inherit',
+		'font-weight'    => 'regular',
+		'subsets'        => array( 'latin' ),
+		'line-height'    => array(
+			'desktop' => array(
+				'size' => '1.2',
+				'unit' => '-',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => '',
+			),
+		),
+		'letter-spacing' => array(
+			'desktop' => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'tablet'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+			'mobile'  => array(
+				'size' => '',
+				'unit' => 'px',
+			),
+		),
+		'font-style'     => 'normal',
+		'text-transform' => 'none',
+	);
+
+	// Get current values
+	$current_typography_presets      = get_theme_mod( 'colormag_typography_presets', $default_typography_presets );
+	$current_base_typography_body    = get_theme_mod( 'colormag_base_typography', $default_base_typography_body );
+	$current_base_heading_typography = get_theme_mod( 'colormag_headings_typography', $default_base_heading_typography );
+
+	// Check if current values are different from default values
+	$should_migrate = false;
+
+	// Check typography presets
+	if ( $current_typography_presets !== $default_typography_presets ) {
+		$should_migrate = true;
+	}
+
+	// Check base typography body
+	if ( $current_base_typography_body !== $default_base_typography_body ) {
+		$should_migrate = true;
+	}
+
+	// Check base heading typography
+	if ( $current_base_heading_typography !== $default_base_heading_typography ) {
+		$should_migrate = true;
+	}
+
+	return $should_migrate;
+}
+
+/**
+ * One-time migration to update saved social icon FA classes to FA 6.5 names.
+ */
+function colormag_migrate_social_icon_classes() {
+	if ( get_option( 'colormag_social_icons_migrated_v1' ) ) {
+		return;
+	}
+	$icon_map = array(
+		'fa-brands fa-twitter'   => 'fa-brands fa-x-twitter',
+		'fa-brands fa-instagram' => 'fa-brands fa-square-instagram',
+	);
+	foreach ( array( 'colormag_header_socials', 'colormag_footer_socials' ) as $setting ) {
+		$socials = get_theme_mod( $setting );
+		if ( ! is_array( $socials ) ) {
+			continue;
+		}
+		$updated = false;
+		foreach ( $socials as &$social ) {
+			if ( isset( $social['icon'] ) && isset( $icon_map[ $social['icon'] ] ) ) {
+				$social['icon'] = $icon_map[ $social['icon'] ];
+				$updated        = true;
+			}
+		}
+		unset( $social );
+		if ( $updated ) {
+			set_theme_mod( $setting, $socials );
+		}
+	}
+	update_option( 'colormag_social_icons_migrated_v1', true );
+}
+add_action( 'after_setup_theme', 'colormag_migrate_social_icon_classes' );

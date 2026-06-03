@@ -2,15 +2,19 @@
  * Body.
  */
 body {
-	background-color: $color__gray-200;
-	padding-top: length( 'l-5' );
-	padding-bottom: length( 'l-5' );
+	background-color: var(--cm-color-3, #E4E4E7);
+	padding-top: length('l-5');
+	padding-bottom: length('l-5');
 	background-size: cover;
+
+	&.boxed {
+		background-color: #E4E4E7;
+	}
 
 	#page {
 		display: flex;
 		flex-direction: column;
-		min-height: calc( 100vh - var(--wp-admin--admin-bar--height, 0px) );
+		min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
 	}
 
 	.cm-content {

@@ -151,7 +151,6 @@ function customind_get_header_components() {
 $options = array(
 	'colormag_header_builder_components' => array(
 		'type'    => 'customind-builder-components',
-		'title'   => esc_html__( 'Header Builder', 'colormag' ),
 		'choices' => customind_get_header_components(),
 		'context' => 'header',
 		'group'   => 'colormag_header_builder',

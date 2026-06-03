@@ -6,5 +6,5 @@
  */
 echo '<div class="cm-copyright copyright">';
 
-echo do_shortcode( wp_kses_post( colormag_footer_builder_copyright() ) );
+echo wp_kses_post( do_shortcode( colormag_footer_builder_copyright() ) );
 echo '</div>';

@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.appearance_page_colormag {
+	#wpbody {
+		background: #FAFAFC;
+	}
+}
+
+.cm-quick-settings-item-icon {
+	svg {
+		fill: #2563EB;
+	}
+}
+
+.cm-feature-icon {
+	svg {
+		fill: #7A7A7A;
+	}
+}
+
+.cm-starter-templates-active a {
+	position: relative;
+}
+
+.cm-starter-templates-active a:after {
+	content: "";
+	position: absolute;
+	bottom: -12px;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background: #3858e9;
+}
+
+//.admin-bar #wpcontent,
+//.admin-bar #adminmenu,
+//.admin-bar #wpbody-content {
+//	padding-top: var(--wp-admin--admin-bar--height);
+//}
+//
+///* Specific pages that need admin bar padding */
+//.appearance_page_colormag #wpcontent,
+//.colormag_page_colormag-starter-templates #wpcontent,
+//.appearance_page_colormag #adminmenu {
+//	padding-top: var(--wp-admin--admin-bar--height);
+//}
+
+.appearance_page_colormag #wpbody-content input {
+	border: 1px solid #D3D3D3;
+	border-radius: 3px;
+	padding: 9px 16px;
+	font-size: 14px;
+	line-height: 21px;
+	min-height: unset;
+}
+
+.appearance_page_colormag #wpbody-content .components-form-toggle__input {
+	height: 100%;
+}
+
+.cm-account-details {
+	tr{
+		&:nth-child(odd) {
+			background: #F9F9F9;
+		}
+
+		> td:first-child {
+			width: 100px;
+			color: #383838;
+			font-weight: 600;
+			font-size: 14px;
+		}
+
+		> td:nth-child(2) {
+			color: #2563eb;
+		}
+	}
+}
+
+.cm-learn-more {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 2px;
+		right: -6px;
+		width: 1px;
+		height: 100%;
+		background: #000;
+		opacity: 0.1;
+	}
+}
+
+.cm-setting-tab {
+	display: flex;
+	gap: 24px;
+	background: #fff;
+
+	form {
+		margin: 0;
+	}
+
+	label {
+		font-size: 14px !important;
+		font-weight: 600 !important;
+		text-transform: capitalize !important;
+	}
+
+	> .components-tab-panel__tabs {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 30%;
+		background: #FAFAFC;
+		border-right: 1px solid #E1E1E1;
+
+		button {
+			border-bottom: 1px solid #E1E1E1;
+
+			&.is-active {
+				border-right: 0;
+				background: #FFFFFF;
+
+				&:after {
+					height: 100%;
+					width: 2px;
+				}
+
+				&:before {
+					height: 100%;
+					width: 1px;
+					right: -1px;
+					background: #FFFFFF;
+					top: 0;
+					left: unset;
+				}
+			}
+
+		}
+	}
+
+	> .components-tab-panel__tab-content {
+		width: 100%;
+	}
+
+	.cm-white-label-setting {
+		box-sizing: border-box;
+
+		.cm-setting-label {
+			margin: 22px 0;
+		}
+
+		> .components-tab-panel__tabs {
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 46px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: #E1E1E1;
+			}
+
+
+			button	{
+				width: 100px;
+				justify-content: center;
+
+				&[aria-selected="false"]{
+					&::after{
+						height: calc(var(--wp-admin-border-width-focus)* 1);
+						outline: 1px solid #E1E1E1;
+						outline-offset: -1px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.cm-setting-learn-more {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 2px;
+		right: -6px;
+		width: 1px;
+		height: 100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.1;
+	}
+}
+
+.cm-country {
+	.components-base-control {
+		width: 100%;
+	}
+
+	.components-select-control__input {
+		height: 40px !important;
+	}
+}
+
+#render_dashboard_page {
+	a {
+		outline: 0;
+		box-shadow: none;
+	}
+}
+
+.cm-setting-label {
+	margin-bottom: 16px;
+
+	label {
+		font-size: 18px;
+		font-weight: 600;
+	}
+}
+
+.header__menu {
+	li{
+		&.active {
+			a {
+				position: relative;
+				color: #3858e9;
+
+
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: -1px;
+					right: 0;
+					width: 100%;
+					height: 2px;
+					background: #3858e9;
+				}
+			}
+		}
+
+		a {
+			padding: 25px 8px;
+
+			&:hover {
+				color: #3858e9;
+			}
+		}
+	}
+}
+
+.drawer {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 386px;
+	height: 100%;
+	background: white;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+	transition: right 0.3s ease-in-out;
+	z-index: 1000;
+}
+
+.drawer.open {
+	right: 0;
+}
+
+.drawer-close {
+	position: absolute;
+	top: 35px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.drawer-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 9; /* Ensure it is below the drawer but above other content */
+}
+
+.skeleton {
+	background-color: #e0e0e0;
+	border-radius: 4px;
+}
+
+.appearance_page_colormag #wpcontent, .colormag_page_colormag-starter-templates #wpcontent {
+	padding-left: 0;
+}
+
+//.colormag_page_colormag-starter-templates #adminmenu {
+//	padding-top: var(--wp-admin--admin-bar--height);
+//}
+
+.themegrill-demo-importer-BlankState {
+	position: relative;
+	padding-top: 200px;
+	padding-bottom: 400px;
+	text-align: center;
+	background: url("images/starter-templates-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.themegrill-demo-importer-BlankState-icon {
+		fill: #ddd;
+		width: 128px;
+		height: 128px;
+		margin: 0 0 .875em;
+	}
+
+	.themegrill-demo-importer-BlankState-info {
+		position: relative;
+		margin: 20px 10px;
+		background: #fff;
+		max-width: 100%;
+		border-radius: 9px;
+		z-index: 99;
+	}
+
+	.starter-template-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(240, 240, 241, 0.20);
+		backdrop-filter: blur(3px);
+	}
+
+	h2.themegrill-demo-importer-BlankState-message {
+		color: #383838;
+		text-align: center;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.6;
+	}
+
+	span {
+		color: #fff;
+		display: flex;
+		padding: 10px;
+		font-size: 16px;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		align-self: stretch;
+		border-radius: 4px;
+		background: #2563EB;
+	}
+}
+
+/* Dashboard Settings */
+	#tab-panel-0-white-label-view {
+		.cm-dashboard-input {
+		.components-input-control__input {
+			border: 1px solid #E1E1E1;
+		}
+
+			.components-input-control__backdrop {
+				border: 1px solid #E1E1E1;
+			}
+
+			.components-textarea-control__input {
+				border: 1px solid #E1E1E1;
+			}
+	}
+
+		.media-upload {
+			.components-button {
+				height: 40px;
+			}
+		}
+}
