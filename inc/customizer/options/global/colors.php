@@ -185,7 +185,7 @@ $options = apply_filters(
 			'transport' => 'postMessage',
 		),
 		'colormag_box_shadow_color'             => array(
-			'title'     => esc_html__( 'Box Border Color', 'colormag' ),
+			'title'     => esc_html__( 'Content Box Border Color', 'colormag' ),
 			'default'   => '#E4E4E7',
 			'transport' => 'postMessage',
 			'type'      => 'customind-color',
