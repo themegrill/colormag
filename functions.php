@@ -12,10 +12,15 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * PHP 8.0/8.1 polyfills — must load before any code that calls str_contains() etc.
+ */
+
 if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
 	require_once get_template_directory() . '/vendor/autoload.php';
 }
 
+require get_template_directory() . '/inc/compat/php-polyfills.php';
 /**
  * Define constants.
  */
@@ -110,18 +115,29 @@ add_action(
 );
 
 function colormag_maybe_enable_builder() {
+	static $result = null;
+
+	if ( null !== $result ) {
+		return $result;
+	}
 
 	if ( get_option( 'colormag_builder_migration' ) || get_option( 'colormag_maybe_enable_builder' ) ) {
-		return true;
+		$result = true;
+		return $result;
 	}
 
 	if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
-		return false;
+		$result = false;
+		return $result;
 	}
 
-	update_option( 'colormag_maybe_enable_builder', true );
+	// Only write to the database in the admin context to avoid writes on every public frontend request.
+	if ( is_admin() ) {
+		update_option( 'colormag_maybe_enable_builder', true );
+	}
 
-	return true;
+	$result = true;
+	return $result;
 }
 
 function colormag_fresh_install() {
@@ -643,3 +659,35 @@ function colormag_typography_should_migrate() {
 
 	return $should_migrate;
 }
+
+/**
+ * One-time migration to update saved social icon FA classes to FA 6.5 names.
+ */
+function colormag_migrate_social_icon_classes() {
+	if ( get_option( 'colormag_social_icons_migrated_v1' ) ) {
+		return;
+	}
+	$icon_map = array(
+		'fa-brands fa-twitter'   => 'fa-brands fa-x-twitter',
+		'fa-brands fa-instagram' => 'fa-brands fa-square-instagram',
+	);
+	foreach ( array( 'colormag_header_socials', 'colormag_footer_socials' ) as $setting ) {
+		$socials = get_theme_mod( $setting );
+		if ( ! is_array( $socials ) ) {
+			continue;
+		}
+		$updated = false;
+		foreach ( $socials as &$social ) {
+			if ( isset( $social['icon'] ) && isset( $icon_map[ $social['icon'] ] ) ) {
+				$social['icon'] = $icon_map[ $social['icon'] ];
+				$updated        = true;
+			}
+		}
+		unset( $social );
+		if ( $updated ) {
+			set_theme_mod( $setting, $socials );
+		}
+	}
+	update_option( 'colormag_social_icons_migrated_v1', true );
+}
+add_action( 'after_setup_theme', 'colormag_migrate_social_icon_classes' );

@@ -118,7 +118,7 @@ class ColorMag_Customizer_Partials {
 		);
 		$colormag_footer_copyright = $default_footer_value;
 
-		echo do_shortcode( $colormag_footer_copyright );
+		echo wp_kses_post( do_shortcode( $colormag_footer_copyright ) );
 	}
 
 	/**

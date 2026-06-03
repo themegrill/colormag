@@ -73,7 +73,9 @@ class ColorMag_Meta_Boxes {
 				'single'        => true,
 				'default'       => 'default_layout',
 				'type'          => 'string',
-				'auth_callback' => '__return_true',
+				'auth_callback' => function( $allowed, $meta_key, $post_id ) {
+					return current_user_can( 'edit_post', $post_id );
+				},
 			]
 		);
 		register_post_meta(
@@ -84,7 +86,9 @@ class ColorMag_Meta_Boxes {
 				'single'        => true,
 				'default'       => 'default_layout',
 				'type'          => 'string',
-				'auth_callback' => '__return_true',
+				'auth_callback' => function( $allowed, $meta_key, $post_id ) {
+					return current_user_can( 'edit_post', $post_id );
+				},
 			]
 		);
 	}

@@ -90,7 +90,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			$inline_style_handle = ( 'white' === $skin_color ) ? 'colormag_style' : 'colormag_dark_style';
 
 			// Loads our main css.
-			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), time() );
+			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag_style', 'rtl', 'replace' );
 
 			// Load dark css.
@@ -103,7 +103,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			$fontawesome_path = $customind->get_asset_url( 'all.min.css', 'assets/fontawesome/v6/css', false );
 
-			wp_enqueue_style( 'font-awesome-all', $fontawesome_path, array(), '6.2.4' );
+			wp_enqueue_style( 'font-awesome-all', $fontawesome_path, array(), '6.5.2' );
 
 			// Local Google fonts locally.
 			$host_fonts_locally = get_theme_mod( 'colormag_load_google_fonts_locally', false );
@@ -236,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( $style['handle'] );
 			}
 
-			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.2.4' );
+			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.5.2' );
 
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
@@ -246,10 +246,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// jQuery Video JS.
 			wp_register_script( 'jquery-video', COLORMAG_JS_URL . '/jquery.video' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
-
-			// HTML5Shiv for Lower IE versions.
-			wp_enqueue_script( 'html5', COLORMAG_JS_URL . '/html5shiv' . $suffix . '.js', array(), COLORMAG_THEME_VERSION );
-			wp_script_add_data( 'html5', 'conditional', 'lte IE 8' );
 
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
@@ -277,7 +273,9 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				return;
 			}
 
-			wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+			if ( ! get_theme_mod( 'colormag_load_google_fonts_locally', false ) ) {
+				wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+			}
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
 			wp_enqueue_style( 'colormag-block-editor-dark-styles', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag-block-editor-styles', 'rtl', 'replace' );
@@ -718,7 +716,7 @@ function colormag_enqueue_editor_assets() {
 	wp_localize_script(
 		'colormag-editor-script',
 		'colormag_category_color_override',
-		get_theme_mod( 'colormag_enable_override_category_color', false )
+		array( 'enabled' => get_theme_mod( 'colormag_enable_override_category_color', false ) )
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'colormag_enqueue_editor_assets' );

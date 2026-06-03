@@ -84,7 +84,7 @@ class ColorMag_Elementor_Widgets_Block_4 extends Colormag_Elementor_Widget_Base 
 		$display_type                = $this->get_settings( 'display_type' );
 		$offset_posts_number         = $this->get_settings( 'offset_posts_number' );
 		$categories_selected         = $this->get_settings( 'categories_selected' );
-		$post_element_select_style_2 = $this->get_settings( 'post_element_select_style_2' );
+		$post_element_select_style_2 = $this->get_settings( 'post_element_select_style_2' ) ?? array();
 		$show_style_2_image          = $this->get_settings( 'show_style_2_image' );
 
 		// Create the posts query.

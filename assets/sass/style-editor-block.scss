@@ -1110,3 +1110,8 @@
 		}
 	}
 }
+
+// Fix: WP components Flex ItemsColumn height:100% causes panel height stretch.
+.components-panel__body [data-wp-component="Flex"] {
+	height: auto !important;
+}

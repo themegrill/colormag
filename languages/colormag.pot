@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-29T06:15:10+00:00\n"
+"POT-Creation-Date: 2026-06-03T03:19:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: colormag\n"
@@ -95,15 +95,15 @@ msgid "Comments are closed."
 msgstr ""
 
 #. Translators: 1: Panel Title.
-#: functions.php:105
+#: functions.php:99
 msgid "Customizing ▶ %s"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:100
 msgid "Customizing"
 msgstr ""
 
-#: functions.php:423
+#: functions.php:428
 msgid "Upgrade to ColorMag Pro for more features and customization options."
 msgstr ""
 
@@ -127,42 +127,6 @@ msgstr ""
 
 #: inc/admin/class-colormag-changelog-controller.php:148
 msgid "Failed to read changelog."
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:68
-msgid "Why are you switching away from ColorMag?"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:77
-msgid "I found a better theme"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:78
-msgid "What's the theme's name?"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:81
-msgid "I couldn't get the theme to look like the demo"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:82
-msgid "What problem did you experience?"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:85
-msgid "I no longer need it"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:86
-msgid "If you could improve one thing, what would it be?"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:89
-msgid "It has a compatibility issue with a plugin"
-msgstr ""
-
-#: inc/admin/class-colormag-contribution.php:90
-msgid "What plugin caused the issue?"
 msgstr ""
 
 #: inc/admin/class-colormag-theme-review-notice.php:81
@@ -2085,7 +2049,7 @@ msgid "Header & Navigation"
 msgstr ""
 
 #: inc/customizer/panels-sections/panels-sections.php:17
-msgid "Post Content"
+msgid "Post Types"
 msgstr ""
 
 #: inc/customizer/panels-sections/panels-sections.php:26
@@ -2226,11 +2190,11 @@ msgstr ""
 msgid "Select Layout"
 msgstr ""
 
-#: inc/meta-boxes/class-colormag-meta-boxes.php:103
+#: inc/meta-boxes/class-colormag-meta-boxes.php:107
 msgid "Page Settings"
 msgstr ""
 
-#: inc/meta-boxes/class-colormag-meta-boxes.php:112
+#: inc/meta-boxes/class-colormag-meta-boxes.php:116
 msgid "Video URL"
 msgstr ""
 
@@ -3035,22 +2999,6 @@ msgstr ""
 
 #: assets/build/dashboard.js:1
 msgid "Install"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Contributing"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Become a contributor by opting in to our anonymous data tracking. We guarantee no sensitive data is collected."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "What do we track?"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Allow Anonymous Tracking"
 msgstr ""
 
 #: assets/build/dashboard.js:1
