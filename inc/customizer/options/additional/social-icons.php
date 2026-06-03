@@ -113,7 +113,7 @@ foreach ( $colormag_social_links as $colormag_social_link ) {
 
 	// Social links open in new tab enable/disable option.
 	$options[ $colormag_social_link['id'] . '_checkbox' ] = array(
-		'title'     => esc_html__( 'Check to open in new tab', 'colormag' ),
+		'title'     => esc_html__( 'Open the link in a new tab.', 'colormag' ),
 		'default'   => false,
 		'type'      => 'customind-checkbox',
 		'section'   => 'colormag_social_icons_section',

@@ -85,7 +85,7 @@ $options = apply_filters(
 								'colormag_primary_menu_selected_hovered_text_color' => array(
 									'default'   => '',
 									'type'      => 'customind-color',
-									'title'     => esc_html__( 'Hover/Selected', 'colormag' ),
+									'title'     => esc_html__( 'Hover / Active', 'colormag' ),
 									'transport' => 'postMessage',
 									'section'   => 'colormag_primary_menu_section',
 								),
@@ -212,7 +212,7 @@ $options = apply_filters(
 								'colormag_mobile_menu_selected_hovered_text_color' => array(
 									'default'   => '',
 									'type'      => 'customind-color',
-									'title'     => esc_html__( 'Hover/Selected', 'colormag' ),
+									'title'     => esc_html__( 'Hover / Active', 'colormag' ),
 									'transport' => 'postMessage',
 									'section'   => 'colormag_primary_menu_section',
 								),

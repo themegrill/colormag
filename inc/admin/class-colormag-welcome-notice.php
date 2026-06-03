@@ -102,7 +102,7 @@ class Colormag_Welcome_Notice {
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( __( 'Cheatin&#8217; huh?', 'colormag' ) ); // WPCS: xss ok.
+				wp_die( __( 'You are not allowed to do that.', 'colormag' ) ); // WPCS: xss ok.
 			}
 
 			$hide_notice = sanitize_text_field( wp_unslash( $_GET['colormag-hide-notice'] ) );

@@ -23,7 +23,7 @@ $options = array(
 					),
 				),
 				'colormag_enable_header_image_link_home' => array(
-					'title'   => esc_html__( 'Check to make header image link back to home page', 'colormag' ),
+					'title'   => esc_html__( 'Link the header image back to the home page.', 'colormag' ),
 					'default' => 0,
 					'type'    => 'customind-checkbox',
 					'section' => 'header_image',

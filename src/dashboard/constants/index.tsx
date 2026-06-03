@@ -364,10 +364,10 @@ export const PLUGINS = [
 		logo: masteriyo,
 	},
 	{
-		label: 'User Registration',
+		label: 'User Registration & Membership',
 		slug: 'user-registration/user-registration.php',
 		description: __(
-			'Ultimate WordPress user registration plugin to streamline the user signup process. Create registration & login forms, manage users, and more.',
+			'Ultimate WordPress user registration & membership plugin to streamline the user signup process. Create memberships, registration & login forms, manage users, and more.',
 			'colormag',
 		),
 		type: 'plugin',
