@@ -79,6 +79,7 @@ if ( ! function_exists( 'colormag_render_header_cols' ) ) {
 	/**
 	 * @param $cols - array of elements
 	 * @param $cols_area - left, center, right
+	 * @since 4.0.0
 	 *
 	 * @return void
 	 */
