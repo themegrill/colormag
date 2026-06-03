@@ -115,7 +115,7 @@ function colormag_colored_category_title( $title ) {
 	if ( ! empty( $color_value ) ) {
 		$output = '<h1 class="cm-page-title" style="border-bottom-color: ' . esc_attr( $color_border_value ) . '"><span style="background-color: ' . esc_attr( $color_value ) . '">' . esc_html( $title ) . '</span></h1>';
 	} else {
-		$output = '<h1 class="cm-page-title"><span>' . $title . '</span></h1>';
+		$output = '<h1 class="cm-page-title"><span>' . esc_html( $title ) . '</span></h1>';
 	}
 
 	return $output;

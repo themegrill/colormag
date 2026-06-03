@@ -1224,7 +1224,7 @@
 
 				case 'colormag_header_search_icon_color':
 					css = colormagGenerateCommonCSS(
-						'.cm-header-builder .cm-top-search .search-top::before',
+						'.cm-header-builder .cm-top-search .search-top::before, .cm-header-builder .search-wrap .search-icon::before',
 						'color',
 						value,
 					);
@@ -1300,7 +1300,7 @@
 						value,
 					);
 					css += colormagGenerateCommonCSS(
-						"'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover'",
+						'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover',
 						'border-color',
 						value,
 					);

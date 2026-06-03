@@ -90,7 +90,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			$inline_style_handle = ( 'white' === $skin_color ) ? 'colormag_style' : 'colormag_dark_style';
 
 			// Loads our main css.
-			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), time() );
+			wp_enqueue_style( 'colormag_style', get_stylesheet_uri(), array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag_style', 'rtl', 'replace' );
 
 			// Load dark css.
@@ -273,7 +273,9 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				return;
 			}
 
-			wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+			if ( ! get_theme_mod( 'colormag_load_google_fonts_locally', false ) ) {
+				wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
+			}
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
 			wp_enqueue_style( 'colormag-block-editor-dark-styles', get_template_directory_uri() . '/dark.css', array(), COLORMAG_THEME_VERSION );
 			wp_style_add_data( 'colormag-block-editor-styles', 'rtl', 'replace' );

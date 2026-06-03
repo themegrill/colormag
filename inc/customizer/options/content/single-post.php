@@ -237,7 +237,7 @@ $options                = apply_filters(
 					'controls' => array(),
 				),
 				'tags'        => array(
-					'label'    => 'content',
+					'label'    => 'tags',
 					'controls' => array(),
 				),
 				'read-time'   => array(
@@ -250,7 +250,6 @@ $options                = apply_filters(
 				),
 			),
 			'default'   => array(
-				'categories',
 				'date',
 				'author',
 			),
@@ -291,7 +290,7 @@ $options                = apply_filters(
 				'text-transform' => 'none',
 			),
 			'type'      => 'customind-typography',
-			'title'     => esc_html__( 'Font', 'colormag' ),
+			'title'     => esc_html__( 'Post Title Typography', 'colormag' ),
 			'transport' => 'postMessage',
 			'tab'       => 'style',
 			'section'   => 'colormag_single_post_section',

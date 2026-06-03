@@ -1,6 +1,10 @@
 <?php
 /**
- * Main customind file.
+ * Customind — WordPress Customizer Framework
+ *
+ * @package   Customind
+ * @copyright Copyright (c) ThemeGrill
+ * @license   GPL-2.0-or-later
  */
 
 use Customind\Autoloader;

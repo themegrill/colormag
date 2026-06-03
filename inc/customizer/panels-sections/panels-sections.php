@@ -14,7 +14,7 @@ $panel_options_id = array(
 		'title' => esc_html__( 'Header', 'colormag' ),
 	),
 	'colormag_content_panel'    => array(
-		'title' => esc_html__( 'Post Content', 'colormag' ),
+		'title' => esc_html__( 'Post Types', 'colormag' ),
 	),
 	'colormag_footer_panel'     => array(
 		'title' => esc_html__( 'Footer', 'colormag' ),
