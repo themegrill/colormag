@@ -2,7 +2,8 @@
 /**
  * Header builder markup for this theme
  *
- * @package colormag testaa
+ * @package colormag
+ * @since 4.0.0
  */
 if ( ! function_exists( 'colormag_header_default_builder' ) ) {
 	/**
