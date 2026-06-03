@@ -4,6 +4,8 @@
  *
  * @package colormag
  * @since 4.0.0
+ *
+ * This file contains the markup and functions related to the header builder feature of the ColorMag theme.
  */
 if ( ! function_exists( 'colormag_header_default_builder' ) ) {
 	/**
