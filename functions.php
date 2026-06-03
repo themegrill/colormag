@@ -12,6 +12,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * PHP 8.0/8.1 polyfills — must load before any code that calls str_contains() etc.
+ */
+require get_template_directory() . '/inc/compat/php-polyfills.php';
 
 /**
  * Define constants.
