@@ -274,3 +274,7 @@
 	flex-wrap: wrap;
 	gap: 8px;
 }
+
+/* Pro-only footer builder styles.
+--------------------------------------------- */
+@import "../../../pro/sass/base/elements/footer-builder-pro";

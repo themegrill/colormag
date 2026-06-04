@@ -6,8 +6,8 @@ $color__gray-600: #52525b;
 $color__gray-500: #71717a;
 $color__gray-400: #a1a1aa;
 $color__gray-300: #d4d4d8;
-$color__gray-200: #e4e4e7;
-$color__gray-100: #f4f4f5;
+$color__gray-200: #E4E4E7;
+$color__gray-100: var(--cm-color-7, #F4F4F5);
 $color__gray-50: #fafafa;
 
 // White.
@@ -22,7 +22,6 @@ $color__blue-800: #124560;
 $color__blue-700: #17597c;
 $color__blue-600: #1d729f;
 $color__blue-500: var(--cm-color-1, #207daf);
-;
 $color__blue-400: #4d97bf;
 $color__blue-300: #6aa8c9;
 $color__blue-200: #98c3da;
@@ -56,7 +55,7 @@ $color__background-footer-socket: #252730;
 $color__light-content: darken($color__white, 35%);
 
 // Dark mode.
-$color__background-dark: #151515;
+$color__background-dark: var(--cm-color-3, #151515);
 $color__background-light: #19190d;
 $color__background-dark-page: #0d0d0d;
 $color__background-dark-footer-socket: #121212;

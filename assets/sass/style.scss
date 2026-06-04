@@ -87,4 +87,9 @@ and Blueprint http://www.blueprintcss.org/
 
 @import "compatibility/site-origin/featured-post-style-1";
 
+/*--------------------------------------------------------------
+# Pro-only styles.
+--------------------------------------------------------------*/
+@import "../pro/sass/style-pro";
+
 @import "starter-content/starter-content";
