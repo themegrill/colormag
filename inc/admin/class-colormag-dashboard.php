@@ -35,6 +35,7 @@ class ColorMag_Dashboard {
 			array( $this, 'markup' )
 		);
 
+		do_action( 'colormag_after_create_menu_page' );
 	}
 
 	public function hide_admin_notices() {

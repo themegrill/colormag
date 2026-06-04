@@ -11,7 +11,8 @@ class Colormag_Welcome_Notice {
 	}
 
 	public function welcome_notice() {
-		if ( ! get_option( 'colormag_admin_noticewelcome' ) ) {
+		$notice_option = apply_filters( 'colormag_welcome_notice_option', 'colormag_admin_noticewelcome' );
+		if ( ! get_option( $notice_option ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice_markup' ) ); // Show notice.
 		}
 	}
@@ -37,11 +38,14 @@ class Colormag_Welcome_Notice {
 			return;
 		}
 
+		$hide_param  = apply_filters( 'colormag_hide_notice_param', 'colormag-hide-notice' );
 		$dismiss_url = wp_nonce_url(
-			remove_query_arg( array( 'activated' ), add_query_arg( 'colormag-hide-notice', 'welcome' ) ),
+			remove_query_arg( array( 'activated' ), add_query_arg( $hide_param, 'welcome' ) ),
 			'colormag_hide_notices_nonce',
 			'_colormag_notice_nonce'
 		);
+
+		$theme_name = apply_filters( 'colormag_theme_display_name', 'ColorMag' );
 
 		// Get the current user object
 		$current_user = wp_get_current_user();
@@ -63,8 +67,10 @@ class Colormag_Welcome_Notice {
 					<div class="colormag-message__head">
 						<h2 class="colormag-message__heading">
 							<?php
+							// translators: %s: Theme name.
 							printf(
-								esc_html__( 'Thank You for Choosing ColorMag!', 'colormag' )
+								esc_html__( 'Thank You for Choosing %s!', 'colormag' ),
+								esc_html( $theme_name )
 							);
 							?>
 						</h2>
@@ -96,7 +102,10 @@ class Colormag_Welcome_Notice {
 	 * Hide a notice if the GET variable is set.
 	 */
 	public function hide_notices() {
-		if ( isset( $_GET['colormag-hide-notice'] ) && isset( $_GET['_colormag_notice_nonce'] ) ) { // WPCS: input var ok.
+		$hide_param    = apply_filters( 'colormag_hide_notice_param', 'colormag-hide-notice' );
+		$notice_prefix = apply_filters( 'colormag_notice_option_prefix', 'colormag_admin_notice' );
+
+		if ( isset( $_GET[ $hide_param ] ) && isset( $_GET['_colormag_notice_nonce'] ) ) { // WPCS: input var ok.
 			if ( ! wp_verify_nonce( wp_unslash( $_GET['_colormag_notice_nonce'] ), 'colormag_hide_notices_nonce' ) ) { // phpcs:ignore WordPress.VIP.ValidatedSanitizedInput.InputNotSanitized
 				wp_die( __( 'Action failed. Please refresh the page and retry.', 'colormag' ) ); // WPCS: xss ok.
 			}
@@ -105,13 +114,13 @@ class Colormag_Welcome_Notice {
 				wp_die( __( 'You are not allowed to do that.', 'colormag' ) ); // WPCS: xss ok.
 			}
 
-			$hide_notice = sanitize_text_field( wp_unslash( $_GET['colormag-hide-notice'] ) );
+			$hide_notice = sanitize_text_field( wp_unslash( $_GET[ $hide_param ] ) );
 
 			// Hide.
-			if ( 'welcome' === $_GET['colormag-hide-notice'] ) {
-				update_option( 'colormag_admin_notice' . $hide_notice, 1 );
+			if ( 'welcome' === $_GET[ $hide_param ] ) {
+				update_option( $notice_prefix . $hide_notice, 1 );
 			} else { // Show.
-				delete_option( 'colormag_admin_notice' . $hide_notice );
+				delete_option( $notice_prefix . $hide_notice );
 			}
 		}
 	}
