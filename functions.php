@@ -345,6 +345,75 @@ function colormag_is_plugin_installed( $plugin_path ) {
 	return isset( $plugins[ $plugin_path ] );
 }
 
+/**
+ * Custom REST endpoint for plugin activation.
+ *
+ * The dashboard React app routes activation here instead of directly to
+ * /wp/v2/plugins, so we can guard active_plugins before calling
+ * activate_plugin() (PHP 8.x throws TypeError when active_plugins is not
+ * an array — WP initialises it as '' on fresh installs).
+ */
+function colormag_register_activate_plugin_endpoint() {
+	register_rest_route(
+		'colormag/v1',
+		'/activate-plugin',
+		array(
+			'methods'             => 'POST',
+			'callback'            => 'colormag_rest_activate_plugin',
+			'permission_callback' => function () {
+				return current_user_can( 'activate_plugins' );
+			},
+			'args'                => array(
+				'plugin' => array(
+					'required'          => true,
+					'sanitize_callback' => 'sanitize_text_field',
+				),
+			),
+		)
+	);
+}
+add_action( 'rest_api_init', 'colormag_register_activate_plugin_endpoint' );
+
+/**
+ * Callback for POST /colormag/v1/activate-plugin.
+ *
+ * @param WP_REST_Request $request Request object.
+ * @return WP_REST_Response|WP_Error
+ */
+function colormag_rest_activate_plugin( WP_REST_Request $request ) {
+	if ( ! function_exists( 'activate_plugin' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+
+	// active_plugins is initialised as '' on a fresh WordPress install.
+	// PHP 8.x throws a TypeError when in_array() receives a string as
+	// the haystack inside activate_plugin(). Fix it here — in our own code.
+	$active_plugins = get_option( 'active_plugins' );
+	if ( false !== $active_plugins && ! is_array( $active_plugins ) ) {
+		update_option( 'active_plugins', array() );
+	}
+
+	$plugin = $request->get_param( 'plugin' );
+	$result = activate_plugin( $plugin );
+
+	if ( is_wp_error( $result ) ) {
+		return new WP_Error(
+			'activation_failed',
+			$result->get_error_message(),
+			array( 'status' => 500 )
+		);
+	}
+
+	return new WP_REST_Response(
+		array(
+			'success' => true,
+			'plugin'  => $plugin,
+			'status'  => 'active',
+		),
+		200
+	);
+}
+
 add_action( 'after_setup_theme', 'colormag_set_content_width', 0 );
 
 /**
