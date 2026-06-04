@@ -249,6 +249,8 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
+
+			do_action( 'colormag_enqueue_pro_scripts' );
 		}
 
 		public function customize_js() {
