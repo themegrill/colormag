@@ -215,8 +215,9 @@ class ColorMag_Utils {
 	 */
 	public static function colormag_get_sidebar( $sidebar, $disable_suffix = true, $sidebar_prefix = '' ) {
 
-		// Bail out if `no_sidebar_full_width` or `no_sidebar_content_centered` is chosen.
-		if ( 'no_sidebar_full_width' === $sidebar || 'no_sidebar_content_centered' === $sidebar ) {
+		// Bail out if a no-sidebar layout is chosen.
+		$no_sidebar_layouts = apply_filters( 'colormag_no_sidebar_layouts', array( 'no_sidebar_full_width', 'no_sidebar_content_centered' ) );
+		if ( in_array( $sidebar, $no_sidebar_layouts, true ) ) {
 			return;
 		}
 
