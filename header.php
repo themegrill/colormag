@@ -31,7 +31,7 @@ do_action( 'colormag_action_doctype' );
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?><?php do_action( 'colormag_body_attrs' ); ?>>
 
 <?php
 

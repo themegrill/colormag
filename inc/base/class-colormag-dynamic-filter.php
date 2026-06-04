@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage ColorMag
- * @since      TBD
+ * @since      ColorMag 4.0
  */
 
 // Exit if accessed directly.

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="cm-secondary" class="cm-secondary">
+<div id="cm-secondary" class="cm-secondary"<?php do_action( 'colormag_sidebar_attrs' ); ?>>
 	<?php do_action( 'colormag_before_sidebar' ); ?>
 
 	<?php
