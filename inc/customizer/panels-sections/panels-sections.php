@@ -1,37 +1,37 @@
 <?php
 
 $panel_options_id = array(
-	'colormag_global_panel'     => array(
-		'title' => esc_html__( 'Global', 'colormag' ),
-	),
-	'colormag_front_page_panel' => array(
-		'title' => esc_html__( 'Front Page', 'colormag' ),
-	),
-	'colormag_header_panel'     => array(
-		'title' => esc_html__( 'Header & Navigation', 'colormag' ),
-	),
-	'colormag_header_builder'   => array(
-		'title' => esc_html__( 'Header', 'colormag' ),
-	),
-	'colormag_content_panel'    => array(
-		'title' => esc_html__( 'Post Types', 'colormag' ),
-	),
-	'colormag_footer_panel'     => array(
-		'title' => esc_html__( 'Footer', 'colormag' ),
-	),
-	'colormag_footer_builder'   => array(
-		'title' => esc_html__( 'Footer', 'colormag' ),
-	),
-	'colormag_additional_panel' => array(
-		'title' => esc_html__( 'Additional', 'colormag' ),
-	),
-	'title_tagline'             => array(
-		'title' => esc_html__( 'Site Identity', 'colormag' ),
-	),
-	'header_image'              => array(
-		'title'    => esc_html__( 'Header Media', 'colormag' ),
-		'priority' => 40,
-	),
+    'colormag_global_panel'     => array(
+        'title' => esc_html__('Global', 'colormag'),
+    ),
+    'colormag_front_page_panel' => array(
+        'title' => esc_html__('Front Page', 'colormag'),
+    ),
+    'colormag_header_panel'     => array(
+        'title' => esc_html__('Header & Navigation', 'colormag'),
+    ),
+    'colormag_header_builder'   => array(
+        'title' => esc_html__('Header', 'colormag'),
+    ),
+    'colormag_content_panel'    => array(
+        'title' => esc_html__('Post Types', 'colormag'),
+    ),
+    'colormag_footer_panel'     => array(
+        'title' => esc_html__('Footer', 'colormag'),
+    ),
+    'colormag_footer_builder'   => array(
+        'title' => esc_html__('Footer', 'colormag'),
+    ),
+    'colormag_additional_panel' => array(
+        'title' => esc_html__('Additional', 'colormag'),
+    ),
+    'title_tagline'             => array(
+        'title' => esc_html__('Site Identity', 'colormag'),
+    ),
+    'header_image'              => array(
+        'title'    => esc_html__('Header Media', 'colormag'),
+        'priority' => 40,
+    ),
 
 );
 
@@ -418,11 +418,11 @@ $section_option_id = array(
 	),
 );
 
-if ( class_exists( 'WooCommerce' ) ) {
-	$panel_options_id['woocommerce'] = array(
-		'title' => esc_html__( 'WooCommerce', 'colormag' ),
-	);
+if (class_exists('WooCommerce') ) {
+    $panel_options_id['woocommerce'] = array(
+    'title' => esc_html__('WooCommerce', 'colormag'),
+    );
 }
 
-colormag_customind()->add_panels( $panel_options_id );
-colormag_customind()->add_sections( $section_option_id );
+colormag_customind()->add_panels($panel_options_id);
+colormag_customind()->add_sections($section_option_id);

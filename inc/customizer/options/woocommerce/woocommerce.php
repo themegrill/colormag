@@ -30,7 +30,7 @@ $options = array(
 			'colormag_woocommerce_sidebar_register_setting_controls',
 			array(
 				'colormag_woocommerce_sidebar_register_setting'          => array(
-					'title'   => esc_html__( 'Check to register different sidebar areas to be used for WooCommerce pages.', 'colormag' ),
+					'title'   => esc_html__( 'Use separate sidebars for WooCommerce pages.', 'colormag' ),
 					'default' => 0,
 					'type'    => 'customind-checkbox',
 					'section' => 'colormag_woocommerce_sidebar_section',
