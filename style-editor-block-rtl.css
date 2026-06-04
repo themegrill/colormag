@@ -989,3 +989,7 @@
 	outline: none;
 	border: none;
 }
+
+.components-panel__body [data-wp-component="Flex"] {
+	height: auto !important;
+}

@@ -307,8 +307,7 @@ sub {
 }
 
 html {
-	overflow-y: scroll;
-	/* Keeps page centred in all browsers regardless of content height */
+	overflow-y: auto;
 	-webkit-text-size-adjust: 100%;
 	/* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%;
@@ -5550,45 +5549,45 @@ ul.wp-block-gallery img {
 	}
 }
 
-.cm-normal-container {
+body:not(.woocommerce-page).cm-normal-container {
 	overflow: hidden;
 }
 
-.cm-normal-container .cm-primary .cm-entry-summary > .alignfull {
+body:not(.woocommerce-page).cm-normal-container .cm-primary .cm-entry-summary > .alignfull {
 	margin-right: calc(50% - 50vw);
 	margin-left: calc(50% - 50vw);
 	max-width: unset;
 }
 
-.cm-normal-container .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, .cm-normal-container .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
+body:not(.woocommerce-page).cm-normal-container .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, body:not(.woocommerce-page).cm-normal-container .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
 	width: unset;
 }
 
-.cm-normal-container .cm-primary .cm-entry-summary > .alignwide {
+body:not(.woocommerce-page).cm-normal-container .cm-primary .cm-entry-summary > .alignwide {
 	margin-right: -100px;
 	margin-left: -100px;
 	max-width: unset;
 }
 
-.cm-normal-container .cm-primary .cm-entry-summary > .alignwide.wp-block-woocommerce-checkout {
+body:not(.woocommerce-page).cm-normal-container .cm-primary .cm-entry-summary > .alignwide.wp-block-woocommerce-checkout {
 	margin-right: unset;
 	margin-left: unset;
 }
 
-.cm-normal-container.box-layout .cm-content {
+body:not(.woocommerce-page).cm-normal-container.box-layout .cm-content {
 	overflow: hidden;
 }
 
-.cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull {
+body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull {
 	margin-right: -30px;
 	margin-left: -30px;
 }
 
-.cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, .cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
+body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover, body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignfull.wp-block-cover-image {
 	width: unset;
 }
 
-.cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignwide {
+body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry-summary > .alignwide {
 	margin-right: -30px;
 	margin-left: -30px;
 	max-width: unset;
