@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Theme Header Section for ColorMag theme.
  *

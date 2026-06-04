@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Site branding template file.
  *

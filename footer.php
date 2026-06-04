@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Theme Footer Section for our theme.
  *
