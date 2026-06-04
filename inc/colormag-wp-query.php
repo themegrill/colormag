@@ -20,17 +20,14 @@ if ( ! function_exists( 'colormag_breaking_news' ) ) :
 	 */
 	function colormag_breaking_news() {
 
-		$post_status = 'publish';
-		if ( 1 == get_option( 'fresh_site' ) ) {
-			$post_status = array( 'auto-draft', 'publish' );
-		}
-
 		// Arguments for post query.
 		$query_args = array(
-			'posts_per_page'      => 5,
-			'post_type'           => 'post',
-			'ignore_sticky_posts' => true,
-			'post_status'         => $post_status,
+			'posts_per_page'         => 5,
+			'post_type'              => 'post',
+			'ignore_sticky_posts'    => true,
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
 		);
 
 		/**
@@ -46,7 +43,9 @@ if ( ! function_exists( 'colormag_breaking_news' ) ) :
 		?>
 
 		<div class="breaking-news">
-			<strong class="breaking-news-latest"><?php esc_html_e( 'Latest:', 'colormag' ); ?></strong>
+			<strong class="breaking-news-latest">
+				<?php echo esc_html( apply_filters( 'colormag_news_ticker_label_text', get_theme_mod( 'colormag_news_ticker_label', __( 'Latest:', 'colormag' ) ) ) ); ?>
+			</strong>
 
 			<ul class="newsticker">
 				<?php
@@ -55,7 +54,7 @@ if ( ! function_exists( 'colormag_breaking_news' ) ) :
 					?>
 					<li>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-							<?php echo esc_html( get_the_title() ); ?>
+							<?php the_title(); ?>
 						</a>
 					</li>
 				<?php endwhile; ?>

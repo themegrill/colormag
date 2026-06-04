@@ -2,9 +2,9 @@
 /**
  * ColorMag enqueue CSS and JS files.
  *
- * @package    ColorMag
+ * @package ColorMag
  *
- * @since      ColorMag 3.0.0
+ * @since   ColorMag 3.0.0
  */
 
 // Exit if accessed directly.

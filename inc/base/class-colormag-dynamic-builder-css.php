@@ -20,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class ColorMag_Dynamic_Builder_CSS
  */
 class ColorMag_Dynamic_Builder_CSS {
-
 	/**
 	 * Return dynamic CSS output.
 	 *
@@ -44,7 +43,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		$parse_builder_css .= colormag_parse_css( '', $date_color, $date_color_css );
 
 		$date_typography_default = array(
-			'font-family'    => 'default',
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(

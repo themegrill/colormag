@@ -50,6 +50,17 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 			),
 		);
 
+		/**
+		 * Filter the advertisement widget settings/controls.
+		 *
+		 * Allows pro to inject extra controls (e.g. the dofollow `rel_value`
+		 * checkbox) into the widget form.
+		 *
+		 * @param array  $settings       The widget setting definitions.
+		 * @param string $widget_cssclass The widget CSS class (identifier).
+		 */
+		$this->settings = apply_filters( 'colormag_ad_widget_settings', $this->settings, $this->widget_cssclass );
+
 		parent::__construct();
 	}
 
@@ -66,6 +77,24 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 		$title      = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 		$image_link = isset( $instance['300x250_image_link'] ) ? $instance['300x250_image_link'] : '';
 		$image_url  = isset( $instance['300x250_image_url'] ) ? $instance['300x250_image_url'] : '';
+
+		/**
+		 * Register translatable advertisement strings (e.g. WPML).
+		 *
+		 * @param array     $instance The widget instance settings.
+		 * @param WP_Widget $widget   The widget object.
+		 */
+		do_action( 'colormag_ad_widget_register_strings', $instance, $this );
+
+		/**
+		 * Filter the advertisement image link/url (e.g. WPML translation).
+		 *
+		 * @param string    $value    The image link/url value.
+		 * @param array     $instance The widget instance settings.
+		 * @param WP_Widget $widget   The widget object.
+		 */
+		$image_link = apply_filters( 'colormag_ad_widget_image_link', $image_link, $instance, $this );
+		$image_url  = apply_filters( 'colormag_ad_widget_image_url', $image_url, $instance, $this );
 
 		$this->widget_start( $args );
 		?>
@@ -87,7 +116,9 @@ class colormag_300x250_advertisement_widget extends ColorMag_Widget {
 				$output .= '<div class="cm-advertisement-content">';
 				if ( ! empty( $image_link ) ) {
 
-					$output .= '<a href="' . $image_link . '" class="single_ad_300x250" target="_blank" rel="nofollow">';
+					$rel_attr = apply_filters( 'colormag_ad_widget_rel_value', 'rel="nofollow"', $instance );
+
+					$output .= '<a href="' . $image_link . '" class="single_ad_300x250" target="_blank" ' . $rel_attr . '>';
 					$output .= '<img src="' . $image_url . '" width="300" height="250" alt="' . $image_alt . '">';
 					$output .= '</a>';
 				} else {

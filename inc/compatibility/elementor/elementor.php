@@ -90,7 +90,16 @@ if ( ! function_exists( 'colormag_widgets_classes' ) ) :
 			'colormag_125x125_advertisement_widget'   => 'widget_125x125_advertisement',
 		);
 
-		return $sidebar_class;
+		/**
+		 * Filter the widget classes array.
+		 *
+		 * Allows pro or third-party code to add additional widget class entries.
+		 *
+		 * @since ColorMag 1.2.3
+		 *
+		 * @param array $sidebar_class The array of widget IDs and their CSS class names.
+		 */
+		return apply_filters( 'colormag_elementor_widget_classes', $sidebar_class );
 
 	}
 
@@ -214,3 +223,23 @@ if ( ! function_exists( 'colormag_elementor_enqueue_style' ) ) :
 endif;
 
 add_action( 'elementor/frontend/after_enqueue_styles', 'colormag_elementor_enqueue_style' );
+
+if ( ! function_exists( 'colormag_elementor_enqueue_scripts' ) ) :
+
+	/**
+	 * Enqueue the scripts for use within Elementor only.
+	 *
+	 * @since ColorMag 1.2.3
+	 */
+	function colormag_elementor_enqueue_scripts() {
+
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+		// Enqueue the main JS file for Elementor plugin.
+		wp_enqueue_script( 'colormag-elementor', COLORMAG_ELEMENTOR_URL . '/assets/js/colormag-elementor' . $suffix . '.js', array( 'jquery' ), COLORMAG_THEME_VERSION, true );
+
+	}
+
+endif;
+
+add_action( 'elementor/frontend/before_enqueue_scripts', 'colormag_elementor_enqueue_scripts' );

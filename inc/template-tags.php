@@ -19,6 +19,7 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 	 *
 	 * @param bool $full_post_meta       Whether to display full post meta or not.
 	 * @param bool $reading_time_display Whether to display reading time post meta or not, used for Ajax call.
+	 * @param bool $type type.
 	 */
 	function colormag_entry_meta( $full_post_meta = true, $reading_time_display = false, $type = 'blog' ) {
 		$human_diff_time = '';

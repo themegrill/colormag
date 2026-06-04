@@ -50,6 +50,17 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 			),
 		);
 
+		/**
+		 * Filter the advertisement widget settings/controls.
+		 *
+		 * Allows pro to inject extra controls (e.g. the dofollow `rel_value`
+		 * checkbox) into the widget form.
+		 *
+		 * @param array  $settings       The widget setting definitions.
+		 * @param string $widget_cssclass The widget CSS class (identifier).
+		 */
+		$this->settings = apply_filters( 'colormag_ad_widget_settings', $this->settings, $this->widget_cssclass );
+
 		parent::__construct();
 	}
 
@@ -67,17 +78,23 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 		$image_link = isset( $instance['728x90_image_link'] ) ? $instance['728x90_image_link'] : '';
 		$image_url  = isset( $instance['728x90_image_url'] ) ? $instance['728x90_image_url'] : '';
 
-		// For WPML plugin compatibility, register string.
-		if ( function_exists( 'icl_register_string' ) ) {
-			icl_register_string( 'ColorMag Pro', 'TG: 728x90 Image Link' . $this->id, $image_link );
-			icl_register_string( 'ColorMag Pro', 'TG: 728x90 Image URL' . $this->id, $image_url );
-		}
+		/**
+		 * Register translatable advertisement strings (e.g. WPML).
+		 *
+		 * @param array     $instance The widget instance settings.
+		 * @param WP_Widget $widget   The widget object.
+		 */
+		do_action( 'colormag_ad_widget_register_strings', $instance, $this );
 
-		// For WPML plugin compatibility, assign variable to converted string.
-		if ( function_exists( 'icl_t' ) ) {
-			$image_link = icl_t( 'ColorMag Pro', 'TG: 728x90 Image Link' . $this->id, $image_link );
-			$image_url  = icl_t( 'ColorMag Pro', 'TG: 728x90 Image URL' . $this->id, $image_url );
-		}
+		/**
+		 * Filter the advertisement image link/url (e.g. WPML translation).
+		 *
+		 * @param string    $value    The image link/url value.
+		 * @param array     $instance The widget instance settings.
+		 * @param WP_Widget $widget   The widget object.
+		 */
+		$image_link = apply_filters( 'colormag_ad_widget_image_link', $image_link, $instance, $this );
+		$image_url  = apply_filters( 'colormag_ad_widget_image_url', $image_url, $instance, $this );
 
 		$this->widget_start( $args );
 		?>
@@ -99,7 +116,9 @@ class colormag_728x90_advertisement_widget extends ColorMag_Widget {
 				$output .= '<div class="cm-advertisement-content">';
 				if ( ! empty( $image_link ) ) {
 
-					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" rel="nofollow">';
+					$rel_attr = apply_filters( 'colormag_ad_widget_rel_value', 'rel="nofollow"', $instance );
+
+					$output .= '<a href="' . $image_link . '" class="single_ad_728x90" target="_blank" ' . $rel_attr . '>';
 					$output .= '<img src="' . $image_url . '" width="728" height="90" alt="' . $image_alt . '">';
 					$output .= '</a>';
 				} else {

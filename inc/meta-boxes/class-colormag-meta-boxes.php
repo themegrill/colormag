@@ -35,14 +35,14 @@ class ColorMag_Meta_Boxes {
 
 		if ( $this->is_classic_editor_active() ) {
 			// Adding required meta boxes.
-			add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+			add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
 
 			// Enqueue required meta boxes styles and scripts.
-			add_action( 'admin_print_styles-post-new.php', array( $this, 'enqueue' ) );
-			add_action( 'admin_print_styles-post.php', array( $this, 'enqueue' ) );
+			add_action( 'admin_print_styles-post-new.php', [ $this, 'enqueue' ] );
+			add_action( 'admin_print_styles-post.php', [ $this, 'enqueue' ] );
 
 			// Save the meta boxes contents.
-			add_action( 'save_post', array( $this, 'save_meta_boxes' ), 1, 2 );
+			add_action( 'save_post', [ $this, 'save_meta_boxes' ], 1, 2 );
 		}
 
 		// Save page settings meta boxes.
