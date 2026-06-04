@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $post_status = 'publish';
 if ( 1 == get_option( 'fresh_site' ) ) {
 	$post_status = array( 'auto-draft', 'publish' );
