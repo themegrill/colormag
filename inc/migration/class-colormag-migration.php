@@ -41,6 +41,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ] );
 			}
 			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_container_sidebar_migration' ], 25 );
+
+			/**
+			 * Allow extensions (e.g. ColorMag Pro) to register their own migration hooks.
+			 */
+			do_action( 'colormag_migration_init' );
 		}
 
 		public function colormag_typography_migration() {
@@ -505,6 +510,14 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				array( 'colormag_header_top_area_color', '' ),
 				array( 'colormag_header_top_area_border_color', '' ),
 			);
+
+			/**
+			 * Allow extensions (e.g. ColorMag Pro) to register additional color settings
+			 * to migrate from the active color palette.
+			 *
+			 * @param array $color_id Array of color setting definitions.
+			 */
+			$color_id = apply_filters( 'colormag_migration_color_settings', $color_id );
 
 			// Set colors from the palette.
 			if ( ! empty( $colors ) ) {
