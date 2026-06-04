@@ -249,6 +249,17 @@ abstract class ColorMag_Widget extends WP_Widget {
 			}
 
 			/**
+			 * Allow extensions (e.g. ColorMag Pro) to handle additional setting
+			 * types (such as `typography`) when saving a widget instance.
+			 *
+			 * @param array  $instance     The instance being saved.
+			 * @param array  $new_instance The new (submitted) instance values.
+			 * @param string $key          The setting key being processed.
+			 * @param array  $setting      The setting definition.
+			 */
+			$instance = apply_filters( 'colormag_widget_update', $instance, $new_instance, $key, $setting );
+
+			/**
 			 * Sanitize the value of a setting.
 			 */
 			$instance[ $key ] = apply_filters( 'colormag_widget_settings_sanitize_option', $instance[ $key ], $new_instance, $key, $setting );
@@ -730,14 +741,28 @@ abstract class ColorMag_Widget extends WP_Widget {
 			$title_color  = 'style="background-color:' . $category_color . ';"';
 		}
 
-		//      // Assign the view all link to be displayed in the widget title.
-		//      $category_link = '';
-		//      if ( ( ! empty( $category ) && 'latest' != $type ) ) {
-		//          $category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
-		//      }
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to inject additional widget title
+		 * markup such as a "View All" button.
+		 *
+		 * @param array  $args     Arguments for the widget title rendering.
+		 * @param string $type     The display posts type from the widget setting.
+		 * @param int    $category The category id of the widget setting.
+		 */
+		$args = apply_filters(
+			'colormag_widget_title_args',
+			array(
+				'view_all_button' => false,
+				'term_link'       => '',
+			),
+			$type,
+			$category
+		);
+
+		$term_link = isset( $args['term_link'] ) ? $args['term_link'] : '';
 
 		// Display the title.
-		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo '<' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . ' class="cm-widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . $term_link . '</' . apply_filters( 'colormag_widget_title_markup', 'h3' ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -794,6 +819,20 @@ abstract class ColorMag_Widget extends WP_Widget {
 			$args['category__in'] = $category;
 		}
 
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to modify the widget posts query
+		 * arguments, e.g. to add random ordering, child category support or video
+		 * post-format filtering.
+		 *
+		 * @param array  $args     The WP_Query arguments.
+		 * @param int    $number   The number of posts to display.
+		 * @param string $type     The display posts type from the widget setting.
+		 * @param int    $category The category id of the widget setting.
+		 * @param int    $tag      The tag id of the widget setting.
+		 * @param int    $author   The author id of the widget setting.
+		 */
+		$args = apply_filters( 'colormag_widget_query_args', $args, $number, $type, $category, $tag, $author );
+
 		$get_featured_posts = new WP_Query( $args );
 
 		return $get_featured_posts;
@@ -803,8 +842,16 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * Displays the post title within the widgets.
 	 */
 	public function the_title() {
+
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to add inline typography styles to
+		 * the widget post title.
+		 *
+		 * @param string $title_styles Inline CSS style string for the title element.
+		 */
+		$title_styles = apply_filters( 'colormag_widget_title_styles', '' );
 		?>
-		<h3 class="cm-entry-title">
+		<h3 class="cm-entry-title"<?php echo $title_styles ? ' style="' . esc_attr( $title_styles ) . '"' : ''; ?>>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<?php the_title(); ?>
 			</a>
@@ -828,8 +875,22 @@ abstract class ColorMag_Widget extends WP_Widget {
 		$title_attribute = get_the_title( $post_id );
 		$image_alt_text  = empty( $image_alt_text ) ? $title_attribute : $image_alt_text;
 
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to enable lightbox support for the
+		 * widget featured image.
+		 *
+		 * @param bool $lightbox_enabled Whether the lightbox is enabled.
+		 */
+		$lightbox_enabled = apply_filters( 'colormag_widget_lightbox_enabled', false );
+
 		if ( $link_enable ) {
-			$image .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
+			if ( $lightbox_enabled ) {
+				$image_popup_id  = get_post_thumbnail_id();
+				$image_popup_url = wp_get_attachment_url( $image_popup_id );
+				$image          .= '<a href="' . esc_url( $image_popup_url ) . '" class="image-popup">';
+			} else {
+				$image .= '<a href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
+			}
 		}
 
 		$image .= get_the_post_thumbnail(
@@ -861,20 +922,36 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 */
 	public function entry_meta() {
 
-		$meta_orders =
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to control the order and items of
+		 * the widget entry meta, e.g. reading it from a theme mod.
+		 *
+		 * @param array $meta_order The ordered list of meta items to render.
+		 */
+		$meta_orders = apply_filters(
+			'colormag_widget_meta_order',
 			array(
 				'categories',
 				'date',
 				'author',
 				'tags',
-			);
+			)
+		);
 
 		$human_diff_time = '';
 		if ( 'style-2' == get_theme_mod( 'colormag_post_meta_date_style', 'style-1' ) ) {
 			$human_diff_time = 'human-diff-time';
 		}
 
-		echo '<div class="cm-below-entry-meta ' . esc_attr( $human_diff_time ) . '">';
+		/**
+		 * Allow extensions to add extra classes (e.g. separator classes) to the
+		 * widget entry meta wrapper.
+		 *
+		 * @param string $extra_class Additional classes for the meta wrapper.
+		 */
+		$extra_class = apply_filters( 'colormag_widget_meta_wrapper_class', '' );
+
+		echo '<div class="cm-below-entry-meta ' . esc_attr( trim( $extra_class . ' ' . $human_diff_time ) ) . '">';
 
 		foreach ( $meta_orders as $key => $meta_order ) {
 
@@ -885,6 +962,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 			if ( 'author' === $meta_order ) {
 				colormag_author_meta_markup();
 			}
+
+			/**
+			 * Allow extensions to render additional meta items (e.g. comments,
+			 * read-time) for each meta order entry.
+			 *
+			 * @param string $meta_order The current meta item key.
+			 */
+			do_action( 'colormag_widget_meta_item', $meta_order );
 		}
 
 		echo '</div>';
