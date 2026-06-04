@@ -12,6 +12,16 @@ $args = array(
 	'post_status'         => $post_status,
 );
 
+/**
+ * Filters the news ticker query arguments.
+ *
+ * Pro uses this to add category filtering (e.g. `category__in`) based on the
+ * news ticker query theme mods.
+ *
+ * @param array $args The WP_Query arguments for the news ticker.
+ */
+$args = apply_filters( 'colormag_news_ticker_args', $args );
+
 $news_ticker_label = get_theme_mod( 'colormag_news_ticker_label', 'Latest:' );
 
 $get_featured_posts = new WP_Query( $args );
