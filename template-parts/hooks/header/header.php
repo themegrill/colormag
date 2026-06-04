@@ -178,7 +178,7 @@ if ( ! function_exists( 'colormag_header_start' ) ) :
 	 */
 	function colormag_header_start() {
 		?>
-	<header id="cm-masthead" class="<?php colormag_css_class( 'colormag_header_class' ); ?>">
+	<header id="cm-masthead" class="<?php colormag_css_class( 'colormag_header_class' ); ?>"<?php do_action( 'colormag_header_schema_attrs' ); ?>>
 		<?php
 	}
 
@@ -186,6 +186,28 @@ endif;
 if ( ! colormag_maybe_enable_builder() ){
 add_action( 'colormag_action_before_header', 'colormag_header_start', 10 );
 }
+
+if ( ! function_exists( 'colormag_transparent_header_classes' ) ) :
+
+	/**
+	 * Transparent header wrapper.
+	 *
+	 * Provides an extension point (e.g. ColorMag Pro transparent header) before
+	 * the header markup. No output in the free theme.
+	 */
+	function colormag_transparent_header_classes() {
+
+		/**
+		 * Hook: colormag_transparent_header_classes.
+		 *
+		 * No output by default.
+		 */
+		do_action( 'colormag_transparent_header_classes' );
+	}
+
+endif;
+
+add_action( 'colormag_action_before_header', 'colormag_transparent_header_classes', 11 );
 
 if ( ! function_exists( 'colormag_header_main' ) ) :
 
@@ -254,6 +276,20 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 		$search_icon      = get_theme_mod( 'colormag_enable_search', 0 );
 
 		if ( function_exists( 'max_mega_menu_is_enabled' ) && max_mega_menu_is_enabled( 'primary' ) ) :
+
+			/**
+			 * Hook: colormag_header_mega_menu_support.
+			 *
+			 * Allows extensions (e.g. ColorMag Pro) to render an enhanced mega
+			 * menu wrapper (with schema markup). When a callback handles the
+			 * output it should return true via the filter below to short-circuit
+			 * the default markup.
+			 *
+			 * @param bool $handled Whether the mega menu output was handled.
+			 */
+			if ( apply_filters( 'colormag_header_mega_menu_support', false ) ) {
+				return;
+			}
 			?>
 
 	<div class="mega-menu-integrate">
@@ -271,7 +307,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 		<?php else : ?>
 
 <div id="cm-header-2" class="cm-header-2">
-	<nav id="cm-primary-nav" class="cm-primary-nav">
+	<nav id="cm-primary-nav" class="cm-primary-nav"<?php echo apply_filters( 'colormag_header_nav_attrs', '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<div class="cm-container">
 			<div class="cm-row">
 				<?php
@@ -384,7 +420,7 @@ if ( ! function_exists( 'colormag_main_section_start' ) ) :
 	 */
 	function colormag_main_section_start() {
 		?>
-	<div id="cm-content" class="cm-content">
+	<div id="cm-content" class="cm-content"<?php do_action( 'colormag_content_schema_attrs' ); ?>>
 		<?php
 	}
 
@@ -524,6 +560,23 @@ if ( ! function_exists( 'colormag_breadcrumb' ) ) :
 
 		// Bail out if breadcrumb is not selected.
 		if ( 1 == get_theme_mod( 'colormag_breadcrumb_enable', 0 ) ) {
+
+			/**
+			 * Filter the breadcrumb output.
+			 *
+			 * Allows extensions (e.g. ColorMag Pro) to provide a fully custom
+			 * breadcrumb implementation with multi-plugin support (Yoast,
+			 * BreadCrumb NavXT, custom). When a non-empty string is returned it
+			 * is printed instead of the default markup below.
+			 *
+			 * @param string $breadcrumb_output The breadcrumb HTML output.
+			 */
+			$breadcrumb_output = apply_filters( 'colormag_breadcrumb_output', '' );
+
+			if ( ! empty( $breadcrumb_output ) ) {
+				echo $breadcrumb_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				return;
+			}
 			?>
 		<!-- Breadcrumb display -->
 		<div id="breadcrumb-wrap" class="breadcrumb-wrap" typeof="BreadcrumbList">
