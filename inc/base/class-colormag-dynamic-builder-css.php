@@ -3130,6 +3130,8 @@ class ColorMag_Dynamic_Builder_CSS {
 
 		}
 
+		$parse_builder_css = apply_filters( 'colormag_builder_css_pro', $parse_builder_css );
+
 		return $parse_builder_css;
 	}
 
@@ -3232,6 +3234,8 @@ class ColorMag_Dynamic_Builder_CSS {
 				),
 			),
 		);
+
+		$predefined_presets = apply_filters( 'colormag_color_palette_presets', $predefined_presets );
 
 		// 2. Get current color palette data from database
 		$color_palette = get_theme_mod( 'colormag_color_palette', array() );

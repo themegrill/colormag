@@ -65,6 +65,8 @@ if ( ! class_exists( 'ColorMag_Css_Classes' ) ) :
 				}
 			}
 
+			$classes = apply_filters( 'colormag_header_css_classes', $classes );
+
 			return $classes;
 		}
 	}

@@ -28,6 +28,7 @@ if ( ! function_exists( 'colormag_footer_layout_class' ) ) :
 			$class_name = 'colormag-footer--classic';
 		}
 
+		$class_name = apply_filters( 'colormag_footer_layout_class', $class_name, $colormag_footer_layout_class );
 		return $class_name;
 
 	}
