@@ -16,27 +16,52 @@ get_header();
 ?>
 <div class="cm-row">
 	<?php
+	/**
+	 * Filter: colormag_frontpage_blog_layout_args.
+	 *
+	 * Layout configuration for the blog posts area. Pro reads the dynamic blog
+	 * layout from the customizer.
+	 */
+	$blog_layout_args = apply_filters(
+		'colormag_frontpage_blog_layout_args',
+		array(
+			'layout' => 'layout-2',
+			'style'  => 'cm-layout-2-style-1',
+			'col'    => 'col-2',
+		)
+	);
 
-	$grid_layout = 'layout-2';
-
-	$style = 'cm-layout-2-style-1';
-
-	$col = 'col-2';
+	$grid_layout = $blog_layout_args['layout'];
+	$style       = $blog_layout_args['style'];
+	$col         = $blog_layout_args['col'];
 
 	/**
 	 * Hook: colormag_before_body_content.
 	 */
 	do_action( 'colormag_before_body_content' );
+
+	/**
+	 * Hook: colormag_before_content_area.
+	 *
+	 * @hooked colormag_pro_before_content_area (two sidebar select) - 10
+	 */
+	do_action( 'colormag_before_content_area' );
 	?>
 
 		<div id="cm-primary" class="cm-primary">
 
 			<?php
 			$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
-			$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
+
+			/**
+			 * Filter: colormag_posts_container_class.
+			 *
+			 * Allows pro to add the infinite scroll container class.
+			 */
+			$pagination_class = apply_filters( 'colormag_posts_container_class', '' );
 			?>
 
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style  . ' ' . $col ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( trim( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col . ' ' . $pagination_class ) ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
@@ -72,11 +97,17 @@ get_header();
 			</div><!-- .cm-posts -->
 
 			<?php
-			if ( 1 == $pagination_enable ) :
+			if ( 1 == $pagination_enable ) {
 				colormag_pagination();
-			endif;
-			?>
+			}
 
+			/**
+			 * Hook: colormag_after_posts_loop.
+			 *
+			 * @hooked colormag_pro_after_posts_loop (infinite scroll) - 10
+			 */
+			do_action( 'colormag_after_posts_loop' );
+			?>
 		</div><!-- #cm-primary -->
 
 	<?php

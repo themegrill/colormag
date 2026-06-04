@@ -34,17 +34,36 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 
 <div class="cm-row">
 	<?php
+	/**
+	 * Filter: colormag_frontpage_blog_layout_args.
+	 *
+	 * Layout configuration for the front page blog posts area. Pro reads the
+	 * dynamic blog layout from the customizer.
+	 */
+	$blog_layout_args = apply_filters(
+		'colormag_frontpage_blog_layout_args',
+		array(
+			'layout' => 'layout-2',
+			'style'  => 'cm-layout-2-style-1',
+			'col'    => 'col-2',
+		)
+	);
 
-	$grid_layout = 'layout-2';
-
-	$style = 'cm-layout-2-style-1';
-
-	$col = 'col-2';
+	$grid_layout = $blog_layout_args['layout'];
+	$style       = $blog_layout_args['style'];
+	$col         = $blog_layout_args['col'];
 
 	/**
 	 * Hook: colormag_before_body_content.
 	 */
 	do_action( 'colormag_before_body_content' );
+
+	/**
+	 * Hook: colormag_before_content_area.
+	 *
+	 * @hooked colormag_pro_before_content_area (two sidebar select) - 10
+	 */
+	do_action( 'colormag_before_content_area' );
 	?>
 
 	<div id="cm-primary" class="cm-primary">
@@ -59,20 +78,19 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 
 			if ( is_active_sidebar( 'colormag_front_page_content_middle_left_section' ) || is_active_sidebar( 'colormag_front_page_content_middle_right_section' ) ) {
 				?>
-			<div class="cm-column-half">
-				<div class="cm-one-half">
-					<?php
-					dynamic_sidebar( 'colormag_front_page_content_middle_left_section' );
-					?>
-				</div>
+				<div class="cm-column-half">
+					<div class="cm-one-half">
+						<?php
+						dynamic_sidebar( 'colormag_front_page_content_middle_left_section' );
+						?>
+					</div>
 
-				<div class="cm-one-half cm-one-half-last">
-					<?php
-					dynamic_sidebar( 'colormag_front_page_content_middle_right_section' );
-					?>
+					<div class="cm-one-half cm-one-half-last">
+						<?php
+						dynamic_sidebar( 'colormag_front_page_content_middle_right_section' );
+						?>
+					</div>
 				</div>
-			</div>
-
 				<?php
 			}
 
@@ -87,10 +105,16 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 		if ( ! $hide_blog_front ) :
 
 			$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
-			$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
+
+			/**
+			 * Filter: colormag_posts_container_class.
+			 *
+			 * Allows pro to add the infinite scroll container class.
+			 */
+			$pagination_class = apply_filters( 'colormag_posts_container_class', '' );
 			?>
 
-			<div class="cm-posts <?php echo esc_attr( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col ); ?>" >
+			<div class="cm-posts <?php echo esc_attr( trim( 'cm-' . $grid_layout . ' ' . $style . ' ' . $col . ' ' . $pagination_class ) ); ?>" >
 				<?php
 				if ( have_posts() ) :
 
@@ -127,6 +151,13 @@ if ( is_front_page() && ! is_page_template( 'page-templates/page-builder.php' ) 
 			if ( 1 == $pagination_enable ) {
 				colormag_pagination();
 			}
+
+			/**
+			 * Hook: colormag_after_posts_loop.
+			 *
+			 * @hooked colormag_pro_after_posts_loop (infinite scroll) - 10
+			 */
+			do_action( 'colormag_after_posts_loop' );
 			?>
 
 		<?php endif; ?>
