@@ -416,6 +416,23 @@
 	.cm-home-icon {
 		padding: 8px;
 	}
+
+	&.cm-layout-2 {
+		&.cm-layout-2-style-1 {
+			.cm-header-bottom-row {
+				border-top: 4px solid var(--cm-color-1, #207daf);
+			}
+
+			#cm-primary-nav {
+				border-top: 0 solid var(--cm-color-1, #207daf);
+			}
+		}
+	}
+
+	#cm-primary-nav {
+		border-top: 0 solid var(--cm-color-1, #207daf);
+		background-color: transparent;
+	}
 }
 
 .cm-secondary-nav {

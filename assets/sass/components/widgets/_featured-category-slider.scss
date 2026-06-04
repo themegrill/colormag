@@ -1,6 +1,7 @@
 /* Featured Category Slider Widget.
 --------------------------------------------- */
-.cm-featured-category-slider {
+.cm-featured-category-slider,
+.cm-slider-area-rotate {
 	position: relative;
 
     .cm-single-slide {
@@ -58,7 +59,8 @@
 
 	.cm-post-date,
 	.cm-author,
-	.cm-comments-link {
+	.cm-comments-link,
+	.cm-reading-time{
 
 		svg {
 			fill: $color__white;
@@ -69,7 +71,7 @@
 	.cm-author a,
 	.cm-reading-time,
 	.cm-reading-time::before,
-	.human-diff-time-display {
+	.human-diff-time .human-diff-time-display {
 		color: $color__white;
 	}
 
@@ -79,6 +81,14 @@
 		span {
 			color: $color__white;
 		}
+	}
+}
+
+.cm-featured-category-slider-single-post {
+
+	.cm-slider-area-rotate {
+		visibility: visible;
+		height: unset;
 	}
 }
 
@@ -100,3 +110,4 @@
 		}
 	}
 }
+
