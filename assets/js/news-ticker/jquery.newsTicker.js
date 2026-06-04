@@ -49,6 +49,7 @@
         var pluginName = 'newsTicker',
                 defaults = {
                         row_height: 20,
+                        row_width: 400,
                         max_rows: 3,
                         speed: 400,
                         duration: 2500,
@@ -61,6 +62,8 @@
                         stopButton: null,
                         hasMoved: function() {},
                         movingUp: function() {},
+                        movingLeft: function() {},
+                        movingRight: function() {},
                         movingDown: function() {},
                         start: function() {},
                         stop: function() {},
@@ -155,6 +158,10 @@
                                 this.moveDown();
                         else if (this.options.direction === 'up')
                                 this.moveUp();
+						else if (this.options.direction === 'right')
+								this.moveRight();
+						else if (this.options.direction === 'left')
+							this.moveLeft();
                 },
 
                 movePrev: function() {
@@ -162,6 +169,10 @@
                                 this.moveUp();
                         else if (this.options.direction === 'up')
                                 this.moveDown();
+						else if (this.options.direction === 'right')
+							this.moveLeft();
+						else if (this.options.direction === 'left')
+							this.moveRight();
                 },
 
                 pause: function() {
@@ -199,6 +210,32 @@
                                         }.bind(this));
                         }
                 },
+
+			moveRight: function() {
+				if (!this.moving) {
+					this.moving = 1;
+					this.options.movingRight();
+					this.$el.children('li:last').detach().prependTo(this.$el).css('marginLeft', '-' + this.options.row_width + 'px')
+						.animate({marginLeft: '0px'}, this.options.speed, function(){
+							this.moving = 0;
+							this.options.hasMoved();
+						}.bind(this));
+				}
+			},
+
+			moveLeft: function() {
+				if (!this.moving) {
+					this.moving = 1;
+					this.options.movingLeft();
+					var element = this.$el.children('li:first');
+					element.animate({marginLeft: '-' + this.options.row_width + 'px'}, this.options.speed,
+						function(){
+							element.detach().css('marginLeft', '0').appendTo(this.$el);
+							this.moving = 0;
+							this.options.hasMoved();
+						}.bind(this));
+				}
+			},
 
                 updateOption: function(option, value) {
                         if (typeof(this.options[option]) !== 'undefined'){
