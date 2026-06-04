@@ -21,9 +21,12 @@ $options = apply_filters(
 						'title'     => esc_html__( 'Layout', 'colormag' ),
 						'section'   => 'colormag_footer_column_section',
 						'transport' => 'postMessage',
-						'choices'   => array(
-							'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
-							'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
+						'choices'   => apply_filters(
+							'colormag_footer_layout_choices',
+							array(
+								'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
+								'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
+							)
 						),
 					),
 					'colormag_footer_column_layout'    => array(
@@ -198,3 +201,5 @@ $options = apply_filters(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_footer_column_pro_options', $wp_customize );

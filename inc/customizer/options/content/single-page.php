@@ -123,3 +123,5 @@ $options                = apply_filters(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_single_page_pro_options', $wp_customize );

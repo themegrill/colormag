@@ -146,3 +146,5 @@ $options['colormag_social_icons_upgrade'] = array(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_social_icons_pro_options', $wp_customize );

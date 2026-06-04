@@ -67,7 +67,7 @@ $options = array(
 					'type'    => 'customind-radio-image',
 					'title'   => esc_html__( 'WooCommerce Single Product Page Layout', 'colormag' ),
 					'section' => 'colormag_woocommerce_sidebar_section',
-					$sidebar_layout_choices,
+					'choices' => $sidebar_layout_choices,
 					'columns' => 2,
 				),
 			),
