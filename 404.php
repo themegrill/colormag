@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The template for displaying 404 pages (Page Not Found).
  *
@@ -29,7 +29,7 @@ get_header();
 
 					<?php if ( ! is_active_sidebar( 'colormag_error_404_page_sidebar' ) ) : ?>
 						<header class="cm-page-header">
-							<p><?php esc_html_e( 'oops ! Page Not Found', 'colormag' ); ?></p>
+							<p><?php esc_html_e( 'Oops ! Page Not Found', 'colormag' ); ?></p>
 
 							<h1 class="cm-page-title"><?php esc_html_e( '404', 'colormag' ); ?></h1>
 						</header>

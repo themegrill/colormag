@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The Sidebar containing the main widget areas.
  *
@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'title'  => esc_html__( 'Example Widget', 'colormag' ),
 				'text'   => sprintf(
 					/* Translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section */
-					esc_html__( 'This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets.', 'colormag' ),
+					esc_html__( 'This is an example widget to show how the %1$s Sidebar looks by default. You can add custom widgets from the %2$swidgets screen%3$s in the admin. If custom widgets is added than this will be replaced by those widgets.', 'colormag' ),
 					$sidebar_display,
 					current_user_can( 'edit_theme_options' ) ? '<a href="' . admin_url( 'widgets.php' ) . '">' : '',
 					current_user_can( 'edit_theme_options' ) ? '</a>' : ''

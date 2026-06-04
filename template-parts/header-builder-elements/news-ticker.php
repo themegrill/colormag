@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $post_status = 'publish';
 if ( 1 == get_option( 'fresh_site' ) ) {
 	$post_status = array( 'auto-draft', 'publish' );
@@ -22,26 +22,28 @@ $args = array(
  */
 $args = apply_filters( 'colormag_news_ticker_args', $args );
 
-$news_ticker_label = get_theme_mod( 'colormag_news_ticker_label', 'Latest:' );
-
+$news_ticker_label  = get_theme_mod( 'colormag_news_ticker_label', 'Latest:' );
 $get_featured_posts = new WP_Query( $args );
 ?>
 
-	<div class="breaking-news">
-		<strong class="breaking-news-latest"><?php echo esc_html( $news_ticker_label ); ?></strong>
-
-		<ul class="newsticker">
-			<?php
-			while ( $get_featured_posts->have_posts() ) :
-				$get_featured_posts->the_post();
-				?>
-				<li>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_title(); ?>
-					</a>
-				</li>
-			<?php endwhile; ?>
-		</ul>
+	<div class="breaking-news-ticker breaking-news" id="cm-breaking-news-ticker">
+		<strong class="bn-label breaking-news-latest">
+			<?php printf( esc_html__( '%s', 'colormag' ), $news_ticker_label ); ?>
+		</strong>
+		<div class="bn-news">
+			<ul class="cm-newsticker">
+				<?php
+				while ( $get_featured_posts->have_posts() ) :
+					$get_featured_posts->the_post();
+					?>
+					<li>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<?php the_title(); ?>
+						</a>
+					</li>
+				<?php endwhile; ?>
+			</ul>
+		</div>
 	</div>
 
 <?php

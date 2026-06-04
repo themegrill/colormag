@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Magazine Template
  *
@@ -41,6 +41,13 @@ get_header();
 		 * Hook: colormag_before_body_content.
 		 */
 		do_action( 'colormag_before_body_content' );
+
+		/**
+		 * Hook: colormag_before_content_area.
+		 *
+		 * @hooked colormag_pro_before_content_area (two sidebar select) - 10
+		 */
+		do_action( 'colormag_before_content_area' );
 		?>
 
 		<div id="cm-primary" class="cm-primary">

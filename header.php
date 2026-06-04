@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Theme Header Section for ColorMag theme.
  *
@@ -84,6 +84,7 @@ do_action( 'colormag_before_main' );
  * Functions hooked into colormag_action_before_content action.
  *
  * @hooked colormag_main_section_start - 10
+ * @hooked colormag_before_content_breaking_news - 15
  * @hooked colormag_front_page_full_width_sidebar - 20
  */
 do_action( 'colormag_action_before_content' );
@@ -94,5 +95,6 @@ do_action( 'colormag_action_before_content' );
  * Functions hooked into colormag_action_before_inner_content action.
  *
  * @hooked colormag_main_section_inner_start - 10
+ * @hooked colormag_breadcrumb - 15
  */
 do_action( 'colormag_action_before_inner_content' );
