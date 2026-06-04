@@ -26,14 +26,23 @@ if ( ! function_exists( 'colormag_breaking_news' ) ) :
 		}
 
 		// Arguments for post query.
-		$args = array(
+		$query_args = array(
 			'posts_per_page'      => 5,
 			'post_type'           => 'post',
 			'ignore_sticky_posts' => true,
 			'post_status'         => $post_status,
 		);
 
-		$get_featured_posts = new WP_Query( $args );
+		/**
+		 * Filter the breaking news query arguments.
+		 *
+		 * TODO: @since.
+		 *
+		 * @param array $query_args Breaking news WP_Query arguments.
+		 */
+		$query_args = apply_filters( 'colormag_breaking_news_query_args', $query_args );
+
+		$get_featured_posts = new WP_Query( $query_args );
 		?>
 
 		<div class="breaking-news">
@@ -126,7 +135,7 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) :
 			'ignore_sticky_posts'    => 1,
 			'orderby'                => 'rand',
 			'post__not_in'           => array( $post->ID ),
-			'posts_per_page'         => 3,
+			'posts_per_page'         => apply_filters( 'colormag_related_posts_count', get_theme_mod( 'colormag_related_post_count', 3 ) ),
 		);
 
 		// Related by categories.

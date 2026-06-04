@@ -137,7 +137,7 @@ if ( ! class_exists( 'ColorMag_SVG_Icons' ) ) {
 			 *
 			 * TODO: @since.
 			 */
-			return apply_filters( 'coloramg_svg_icons', self::$icons );
+			return apply_filters( 'colormag_svg_icons', self::$icons );
 		}
 	}
 }

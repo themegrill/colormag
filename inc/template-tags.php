@@ -57,14 +57,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 			}
 		}
 
-		$post_meta_separator_type = get_theme_mod( 'colormag_blog_post_meta_separator_type', 'default' );
+			$post_meta_separator_type = get_theme_mod( 'colormag_blog_post_meta_separator_type', 'default' );
 		if ( 'default' !== $post_meta_separator_type ) {
 			$post_meta_separator_class = 'cm-separator';
 		} else {
 			$post_meta_separator_class = '';
 		}
 
-		echo '<div class="cm-below-entry-meta ' . 'cm-separator-' . $post_meta_separator_type . ' ' . $post_meta_separator_class . esc_attr( $human_diff_time ) . '">';
+			echo '<div class="cm-below-entry-meta ' . 'cm-separator-' . $post_meta_separator_type . ' ' . $post_meta_separator_class . esc_attr( $human_diff_time ) . '">';
 
 		if ( 'post' === get_post_type() ) :
 
@@ -106,9 +106,9 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 				}
 			}
 
-		endif;
+			endif;
 
-		echo '</div>';
+			echo '</div>';
 	}
 
 endif;
