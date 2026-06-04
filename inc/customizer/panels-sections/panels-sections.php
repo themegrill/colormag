@@ -14,7 +14,7 @@ $panel_options_id = array(
         'title' => esc_html__('Header', 'colormag'),
     ),
     'colormag_content_panel'    => array(
-        'title' => esc_html__('Post Types', 'colormag'),
+        'title' => esc_html__('Post Content', 'colormag'),
     ),
     'colormag_footer_panel'     => array(
         'title' => esc_html__('Footer', 'colormag'),
@@ -426,3 +426,11 @@ if (class_exists('WooCommerce') ) {
 
 colormag_customind()->add_panels($panel_options_id);
 colormag_customind()->add_sections($section_option_id);
+
+/**
+ * Fires after the base customizer panels and sections are registered.
+ *
+ * Allows the pro version (or third parties) to register additional
+ * customizer panels and sections.
+ */
+do_action( 'colormag_customizer_pro_panels_sections' );
