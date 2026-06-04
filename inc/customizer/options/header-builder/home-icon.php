@@ -22,3 +22,5 @@ $options = array(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_header_builder_home_icon_pro_options', $wp_customize );

@@ -132,3 +132,5 @@ $options = array(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_header_builder_news_ticker_pro_options', $wp_customize );
