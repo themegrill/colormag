@@ -4,6 +4,7 @@
 	margin-top: length( 'l-5' );
 	padding-left: length( 'l-4' );
 	padding-right: length( 'l-4' );
+	background-color: $color__gray-50;
 	font-size: 14px;
 	line-height: 20px;
 	word-wrap: break-word;
@@ -28,7 +29,7 @@
 }
 
 .newsticker {
-	max-width: 400px;
+	max-width: 240px;
 	overflow: hidden;
 	margin-left: length( 'l-2' );
     height: 20px;

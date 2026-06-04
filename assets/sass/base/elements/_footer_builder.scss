@@ -75,7 +75,7 @@
 			height: fit-content;
 			border-radius: 4px;
 			padding: 12px;
-			background-color: #27272a;
+			background-color: #27272A;
 
 			.cm-entry-title {
 				a {
@@ -167,10 +167,6 @@
 			text-decoration: none;
 		}
 
-		li {
-			list-style: none;
-		}
-
 		.wp-block-heading,
 		.widget-title {
 			border-bottom: none;
@@ -257,7 +253,7 @@
 				padding-top: 8px;
 
 				.cm-bottom-row {
-					gap: 4px;
+					gap: 6px;
 					grid-template-columns: 1fr;
 
 					.cm-footer-bottom-2-col {

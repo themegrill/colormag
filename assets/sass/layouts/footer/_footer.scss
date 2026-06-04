@@ -11,6 +11,7 @@
 				padding: length( 'l-4', px ) 0;
 				font-weight: 600;
 				border-bottom: 1px solid $color__gray-600;
+				list-style: none;
 
 				&:last-child {
 					border-bottom: none;
@@ -166,8 +167,8 @@
 	width: 100%;
 }
 
-.cm-lower-footer-col,
-.cm-lower-footer-cols {
+.cm-lower-footer-cols,
+.cm-lower-footer-col {
 	display: flex;
 	flex-direction: column;
 }
