@@ -14,7 +14,7 @@
   },
   "scripts": {
     "makepot": [
-      "wp i18n make-pot . ./languages/colormag.pot --include=\"assets/build,inc,*.php,template-parts,page-templates\" --exclude=\".github,.wordpress-org,bin,node_modules,vendor,src,dist/org,scripts\""
+      "wp i18n make-pot . ./languages/colormag.pot --skip-js --include=\"inc,*.php,template-parts,page-templates\" --exclude=\".github,.wordpress-org,bin,node_modules,vendor,src,dist/org,scripts\""
     ],
     "phpcs": [
       "phpcs -s -p"
