@@ -65,6 +65,14 @@ if ( ! function_exists( 'colormag_entry_meta' ) ) :
 			$post_meta_separator_class = '';
 		}
 
+			/**
+			 * Filters the post meta order/structure before it is rendered.
+			 *
+			 * @param array  $meta_orders Ordered list of meta items to display.
+			 * @param string $type        The meta context: blog, single_post or search.
+			 */
+			$meta_orders = apply_filters( 'colormag_entry_meta_order', $meta_orders, $type );
+
 			echo '<div class="cm-below-entry-meta ' . 'cm-separator-' . $post_meta_separator_type . ' ' . $post_meta_separator_class . esc_attr( $human_diff_time ) . '">';
 
 		if ( 'post' === get_post_type() ) :
@@ -361,12 +369,22 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 			return;
 		}
 
-		$colormag_social_links = array(
-			'colormag_social_facebook'  => 'Facebook',
-			'colormag_social_twitter'   => 'Twitter',
-			'colormag_social_instagram' => 'Instagram',
-			'colormag_social_pinterest' => 'Pinterest',
-			'colormag_social_youtube'   => 'YouTube',
+		/**
+		 * Filters the list of social networks displayed by the theme.
+		 *
+		 * Pro can add additional networks (Vimeo, LinkedIn, Discord, etc.) via this filter.
+		 *
+		 * @param array $colormag_social_links Map of theme mod key => social network label.
+		 */
+		$colormag_social_links = apply_filters(
+			'colormag_social_networks',
+			array(
+				'colormag_social_facebook'  => 'Facebook',
+				'colormag_social_twitter'   => 'Twitter',
+				'colormag_social_instagram' => 'Instagram',
+				'colormag_social_pinterest' => 'Pinterest',
+				'colormag_social_youtube'   => 'YouTube',
+			)
 		);
 		?>
 
@@ -390,10 +408,22 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 						}
 
 						if ( 'Twitter' == $value ) {
-							$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa-brands fa-x-twitter"></i></a></li>';
+							$markup = '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa-brands fa-x-twitter"></i></a></li>';
 						} else {
-							$colormag_links_output .= '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
+							$markup = '<li><a href="' . esc_url( $link ) . '" ' . $new_tab . '><i class="fa fa-' . strtolower( $value ) . '"></i></a></li>';
 						}
+
+						/**
+						 * Filters the markup of an individual social link.
+						 *
+						 * Pro uses this to render brand-specific icons (e.g. Discord).
+						 *
+						 * @param string $markup  The generated list item markup.
+						 * @param string $value   The social network label.
+						 * @param string $link    The social profile URL.
+						 * @param string $new_tab The target attribute string.
+						 */
+						$colormag_links_output .= apply_filters( 'colormag_social_link_markup', $markup, $value, $link, $new_tab );
 					}
 
 					++$i;
@@ -401,6 +431,13 @@ if ( ! function_exists( 'colormag_social_links' ) ) :
 
 				// Displays the social links which is set static via theme customize option.
 				echo wp_kses_post( $colormag_links_output );
+
+				/**
+				 * Fires after the static social links have been output.
+				 *
+				 * Pro uses this to render additional, dynamically configured social links.
+				 */
+				do_action( 'colormag_social_links_after' );
 				?>
 			</ul>
 		</div><!-- .social-links -->
@@ -562,8 +599,21 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 			default:
 				// Proceed with normal comments.
 				global $post;
+
+				/**
+				 * Filters schema markup attributes injected into the comment markup.
+				 *
+				 * Pro uses this to inject microdata attributes at the matching context.
+				 *
+				 * @param string $attributes The schema attributes string. Default empty.
+				 * @param string $context    The injection context.
+				 */
+				$comment_schema         = apply_filters( 'colormag_comment_schema_attr', '', 'comment' );
+				$comment_time_schema    = apply_filters( 'colormag_comment_schema_attr', '', 'comment_time' );
+				$comment_link_schema    = apply_filters( 'colormag_comment_schema_attr', '', 'comment_link' );
+				$comment_content_schema = apply_filters( 'colormag_comment_schema_attr', '', 'comment_content' );
 				?>
-				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"<?php echo $comment_schema; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					<article id="comment-<?php comment_ID(); ?>" class="comment">
 						<footer class="comment-meta">
 							<div class="comment-author vcard">
@@ -584,7 +634,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 								<div class="comment-metadata">
 									<?php
 										printf(
-											'<div class="comment-date-time"' . '> ' . colormag_get_icon( 'calendar-fill', false ) . '%1$s</div>',
+											'<div class="comment-date-time"' . $comment_time_schema . '> ' . colormag_get_icon( 'calendar-fill', false ) . '%1$s</div>',
 											sprintf(
 												/* Translators: 1. Comment date, 2. Comment time */
 												esc_html__( '%1$s at %2$s', 'colormag' ),
@@ -594,7 +644,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 										); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 										printf(
-											'<a class="comment-permalink" href="%1$s">' . colormag_get_icon( 'permalink', false ) . esc_html__( 'Permalink', 'colormag' ) . '</a>',
+											'<a class="comment-permalink" href="%1$s"' . $comment_link_schema . '>' . colormag_get_icon( 'permalink', false ) . esc_html__( 'Permalink', 'colormag' ) . '</a>',
 											esc_url( get_comment_link( $comment->comment_ID ) )
 										); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
@@ -609,7 +659,7 @@ if ( ! function_exists( 'colormag_comment' ) ) :
 							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'colormag' ); ?></p>
 						<?php endif; ?>
 
-						<section class="comment-content comment">
+						<section class="comment-content comment"<?php echo $comment_content_schema; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<?php
 							comment_text();
 
@@ -761,6 +811,15 @@ if ( ! function_exists( 'colormag_author_social_link' ) ) :
 				</li>
 			<?php } // End check for facebook. ?>
 
+			<?php
+			/**
+			 * Fires after the Facebook author social link.
+			 *
+			 * Pro uses this to render additional author social links (e.g. Google Plus).
+			 */
+			do_action( 'colormag_author_social_link_after_facebook' );
+			?>
+
 			<?php if ( get_the_author_meta( 'colormag_flickr' ) ) { ?>
 				<li class="flickr-link">
 					<a href="https://flickr.com/<?php the_author_meta( 'colormag_flickr' ); ?>">
@@ -848,9 +907,24 @@ endif;
 function colormag_get_image_src_by_url( $image_url, $image_size ) {
 	if ( ! isset( $image_url ) || '' === $image_url ) {
 		return array( 0 => null );
-	} else {
-		return wp_get_attachment_image_src( attachment_url_to_postid( $image_url ), $image_size );
 	}
+
+	/**
+	 * Allows pro to fully override how the attachment src is resolved from a URL.
+	 *
+	 * Returning a non-null value short-circuits the default resolution (e.g. to
+	 * support numeric attachment IDs).
+	 *
+	 * @param mixed  $src        The override src. Default null.
+	 * @param string $image_url  The image URL or attachment ID.
+	 * @param string $image_size The requested image size.
+	 */
+	$pro_src = apply_filters( 'colormag_image_src_by_url', null, $image_url, $image_size );
+	if ( null !== $pro_src ) {
+		return $pro_src;
+	}
+
+	return wp_get_attachment_image_src( attachment_url_to_postid( $image_url ), $image_size );
 }
 
 if ( ! function_exists( 'colormag_date_meta_markup' ) ) :
@@ -861,6 +935,19 @@ if ( ! function_exists( 'colormag_date_meta_markup' ) ) :
 	 * @return void
 	 */
 	function colormag_date_meta_markup() {
+
+		/**
+		 * Allows pro to fully override the date meta markup output.
+		 *
+		 * Returning a non-null value short-circuits the default markup.
+		 *
+		 * @param string|null $output The override markup. Default null.
+		 */
+		$pro_output = apply_filters( 'colormag_date_meta_markup', null );
+		if ( null !== $pro_output ) {
+			echo $pro_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			return;
+		}
 
 		// Displays the same published and updated date if the post is never updated.
 		$time_string = '<time class="entry-date published updated" datetime="%1$s"' . '>%2$s</time>';
@@ -896,7 +983,21 @@ if ( ! function_exists( 'colormag_author_meta_markup' ) ) :
 	 *
 	 * @return void
 	 */
-	function colormag_author_meta_markup() {
+	function colormag_author_meta_markup( $type = '' ) {
+
+		/**
+		 * Allows pro to fully override the author meta markup output.
+		 *
+		 * Returning a non-null value short-circuits the default markup.
+		 *
+		 * @param string|null $output The override markup. Default null.
+		 * @param string      $type   The meta context: blog, single_post or search.
+		 */
+		$pro_output = apply_filters( 'colormag_author_meta_markup', null, $type );
+		if ( null !== $pro_output ) {
+			echo $pro_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			return;
+		}
 		?>
 
 		<span class="cm-author cm-vcard">
@@ -958,7 +1059,24 @@ if ( ! function_exists( 'colormag_tags_meta_markup' ) ) :
 	 * @return void
 	 */
 	function colormag_tags_meta_markup() {
-		$tags_list = get_the_tag_list( '<span class="cm-tag-links"' . '>' . colormag_get_icon( 'tag', false ) . ' ', __( ', ', 'colormag' ), '</span>' );
+
+		/**
+		 * Filters the attributes added to the tags wrapper span.
+		 *
+		 * Pro uses this to inject schema markup attributes.
+		 *
+		 * @param string $attributes The wrapper span attributes. Default empty.
+		 */
+		$tags_wrapper_attr = apply_filters( 'colormag_tags_meta_wrapper_attr', '' );
+
+		/**
+		 * Filters the separator between tags.
+		 *
+		 * @param string $separator The tag separator. Default ', '.
+		 */
+		$tags_separator = apply_filters( 'colormag_tags_meta_separator', __( ', ', 'colormag' ) );
+
+		$tags_list = get_the_tag_list( '<span class="cm-tag-links"' . $tags_wrapper_attr . '>' . colormag_get_icon( 'tag', false ) . ' ', $tags_separator, '</span>' );
 
 		if ( $tags_list ) {
 			echo wp_kses(
@@ -990,6 +1108,19 @@ if ( ! function_exists( 'colormag_read_time_meta_markup' ) ) :
 	function colormag_read_time_meta_markup( $full_post_meta, $reading_time_display ) {
 
 		if ( $full_post_meta || ( ! $full_post_meta && $reading_time_display ) ) {
+
+			/**
+			 * Allows pro to fully override the reading time meta markup output.
+			 *
+			 * Returning a non-null value short-circuits the default markup.
+			 *
+			 * @param string|null $output The override markup. Default null.
+			 */
+			$pro_output = apply_filters( 'colormag_read_time_meta_markup', null );
+			if ( null !== $pro_output ) {
+				echo $pro_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				return;
+			}
 			?>
 
 			<span class="reading-time cm-reading-time">
