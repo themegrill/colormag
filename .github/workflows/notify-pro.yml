@@ -3,7 +3,7 @@ name: Notify Pro on Push
 on:
   push:
     branches:
-      - free-pro-sync
+      - seperating-pro-and-free-code-to-sync-with-free
 
 jobs:
   notify:
