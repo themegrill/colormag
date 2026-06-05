@@ -437,7 +437,7 @@ add_action(
 			function ( $data ) {
 				$data['upgrade_notice']      = true;
 				$data['upgrade_notice_text'] = __( 'Upgrade to ColorMag Pro for more features and customization options.', 'colormag' );
-				$data['upgrade_notice_link'] = 'https://themegrill.com/pricing/?utm_medium=customizer-upsell&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro';
+				$data['upgrade_notice_link'] = 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-25';
 
 				return $data;
 			}

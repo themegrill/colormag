@@ -1,37 +1,37 @@
 <?php
 
 $panel_options_id = array(
-	'colormag_global_panel'     => array(
-		'title' => esc_html__( 'Global', 'colormag' ),
-	),
-	'colormag_front_page_panel' => array(
-		'title' => esc_html__( 'Front Page', 'colormag' ),
-	),
-	'colormag_header_panel'     => array(
-		'title' => esc_html__( 'Header & Navigation', 'colormag' ),
-	),
-	'colormag_header_builder'   => array(
-		'title' => esc_html__( 'Header', 'colormag' ),
-	),
-	'colormag_content_panel'    => array(
-		'title' => esc_html__( 'Post Types', 'colormag' ),
-	),
-	'colormag_footer_panel'     => array(
-		'title' => esc_html__( 'Footer', 'colormag' ),
-	),
-	'colormag_footer_builder'   => array(
-		'title' => esc_html__( 'Footer', 'colormag' ),
-	),
-	'colormag_additional_panel' => array(
-		'title' => esc_html__( 'Additional', 'colormag' ),
-	),
-	'title_tagline'             => array(
-		'title' => esc_html__( 'Site Identity', 'colormag' ),
-	),
-	'header_image'              => array(
-		'title'    => esc_html__( 'Header Media', 'colormag' ),
-		'priority' => 40,
-	),
+    'colormag_global_panel'     => array(
+        'title' => esc_html__('Global', 'colormag'),
+    ),
+    'colormag_front_page_panel' => array(
+        'title' => esc_html__('Front Page', 'colormag'),
+    ),
+    'colormag_header_panel'     => array(
+        'title' => esc_html__('Header & Navigation', 'colormag'),
+    ),
+    'colormag_header_builder'   => array(
+        'title' => esc_html__('Header', 'colormag'),
+    ),
+    'colormag_content_panel'    => array(
+        'title' => esc_html__('Post Types', 'colormag'),
+    ),
+    'colormag_footer_panel'     => array(
+        'title' => esc_html__('Footer', 'colormag'),
+    ),
+    'colormag_footer_builder'   => array(
+        'title' => esc_html__('Footer', 'colormag'),
+    ),
+    'colormag_additional_panel' => array(
+        'title' => esc_html__('Additional', 'colormag'),
+    ),
+    'title_tagline'             => array(
+        'title' => esc_html__('Site Identity', 'colormag'),
+    ),
+    'header_image'              => array(
+        'title'    => esc_html__('Header Media', 'colormag'),
+        'priority' => 40,
+    ),
 
 );
 
@@ -344,7 +344,7 @@ $section_option_id = array(
 	'colormag_customize_upsell_section'            => array(
 		'type'             => 'upsell-section',
 		'title'            => esc_html__( 'More Features in Pro', 'colormag' ),
-		'url'              => 'https://themegrill.com/pricing/?utm_medium=customizer-upsell&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro',
+		'url'              => 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-20',
 		'section_callback' => \Customind\Core\Types\UpsellSection::class,
 		'priority'         => 1,
 	),
@@ -359,7 +359,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-21' ),
 		'points'           => array(
 			esc_html__( 'Form element options', 'colormag' ),
 			esc_html__( 'Accessibility options', 'colormag' ),
@@ -374,7 +374,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-22' ),
 		'points'           => array(
 			esc_html__( 'Unique post system', 'colormag' ),
 			esc_html__( 'Front Page: Top Full Width Container', 'colormag' ),
@@ -389,7 +389,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-23' ),
 		'points'           => array(
 			esc_html__( 'Transparent Header', 'colormag' ),
 		),
@@ -401,7 +401,7 @@ $section_option_id = array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+		'url'              => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-24' ),
 		'points'           => array(
 			esc_html__( 'Search Page Layout', 'colormag' ),
 			esc_html__( 'Layout and Pagination Options', 'colormag' ),
@@ -418,11 +418,11 @@ $section_option_id = array(
 	),
 );
 
-if ( class_exists( 'WooCommerce' ) ) {
-	$panel_options_id['woocommerce'] = array(
-		'title' => esc_html__( 'WooCommerce', 'colormag' ),
-	);
+if (class_exists('WooCommerce') ) {
+    $panel_options_id['woocommerce'] = array(
+    'title' => esc_html__('WooCommerce', 'colormag'),
+    );
 }
 
-colormag_customind()->add_panels( $panel_options_id );
-colormag_customind()->add_sections( $section_option_id );
+colormag_customind()->add_panels($panel_options_id);
+colormag_customind()->add_sections($section_option_id);

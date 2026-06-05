@@ -185,7 +185,7 @@ $options = apply_filters(
 			'transport' => 'postMessage',
 		),
 		'colormag_box_shadow_color'             => array(
-			'title'     => esc_html__( 'Box Border Color', 'colormag' ),
+			'title'     => esc_html__( 'Content Box Border Color', 'colormag' ),
 			'default'   => '#E4E4E7',
 			'transport' => 'postMessage',
 			'type'      => 'customind-color',
@@ -252,7 +252,7 @@ $options = apply_filters(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
-			'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+			'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-10' ),
 			'points'      => array(
 				esc_html__( 'Headings Color Customization Option', 'colormag' ),
 				esc_html__( 'Separate Color for H1, H2 and H3', 'colormag' ),
