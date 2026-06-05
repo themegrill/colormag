@@ -278,6 +278,7 @@
 		}
 	}
 
+	// Base styles for the social icons container
 	.social-icons {
 		display: flex;
 		align-items: center;
@@ -627,4 +628,3 @@
 /* Pro-only header builder styles.
 --------------------------------------------- */
 @import "../../../pro/sass/base/elements/header-builder-pro";
-
