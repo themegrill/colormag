@@ -1242,6 +1242,7 @@
 .bg-\[\#eaf3fb\] {
 		--tw-bg-opacity: 1;
 		background-color: rgb(234 243 251 / var(--tw-bg-opacity));
+		align-items: center;
 }
 .bg-\[\#eee\] {
 		--tw-bg-opacity: 1;
