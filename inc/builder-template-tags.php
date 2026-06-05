@@ -3,6 +3,9 @@
  * Header builder markup for this theme
  *
  * @package colormag
+ * @since 4.0.0
+ *
+ * This file contains the markup and functions related to the header builder feature of the ColorMag theme.
  */
 if ( ! function_exists( 'colormag_header_default_builder' ) ) {
 	/**
@@ -76,6 +79,7 @@ if ( ! function_exists( 'colormag_render_header_cols' ) ) {
 	/**
 	 * @param $cols - array of elements
 	 * @param $cols_area - left, center, right
+	 * @since 4.0.0
 	 *
 	 * @return void
 	 */
