@@ -7,11 +7,10 @@ import rtlcss from 'gulp-rtlcss';
 import gulpSass from 'gulp-sass';
 import _uglify from 'gulp-uglify-es';
 import uglifycss from 'gulp-uglifycss';
-import * as dartSass from 'sass';
-import gulpSass from 'gulp-sass';
 import wpPot from 'gulp-wp-pot';
-const sass = gulpSass(dartSass);
 import zip from 'gulp-zip';
+import * as dartSass from 'sass';
+const sass = gulpSass(dartSass);
 const uglify = _uglify.default;
 
 // Project information.
@@ -135,6 +134,7 @@ const paths = {
 			'!assets/sass/**',
 			'!.*',
 			'!*.md',
+			'!vendor/**',
 			'!*.zip',
 			'!.*/**',
 			'!dist/**',
