@@ -7,10 +7,11 @@ import rtlcss from 'gulp-rtlcss';
 import gulpSass from 'gulp-sass';
 import _uglify from 'gulp-uglify-es';
 import uglifycss from 'gulp-uglifycss';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 import wpPot from 'gulp-wp-pot';
+const sass = gulpSass(dartSass);
 import zip from 'gulp-zip';
-import nodeSass from 'node-sass';
-const sass = gulpSass(nodeSass);
 const uglify = _uglify.default;
 
 // Project information.

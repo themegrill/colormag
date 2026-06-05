@@ -2,44 +2,43 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: ColorMag 4.1.2\n"
+"Project-Id-Version: ColorMag 4.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/colormag\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-01T05:05:07+00:00\n"
+"POT-Creation-Date: 2026-06-04T05:05:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: colormag\n"
 
 #. Theme Name of the theme
-#: C:/laragon/www/one/wp-content/themes/colormag/style.css
+#: style.css:3
 #: inc/admin/views/header.php:22
 #: inc/helper/utils.php:27
 #: template-parts/hooks/footer/footer.php:269
-#: assets/build/dashboard.js:1
 msgid "ColorMag"
 msgstr ""
 
 #. Theme URI of the theme
-#: C:/laragon/www/one/wp-content/themes/colormag/style.css
+#: style.css:4
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the theme
-#: C:/laragon/www/one/wp-content/themes/colormag/style.css
+#: style.css:7
 msgid "ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the theme
-#: C:/laragon/www/one/wp-content/themes/colormag/style.css
+#: style.css:5
 msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the theme
-#: C:/laragon/www/one/wp-content/themes/colormag/style.css
+#: style.css:6
 msgid "https://themegrill.com"
 msgstr ""
 
@@ -62,12 +61,14 @@ msgstr ""
 #. Translators: %1$s: Post title
 #: comments.php:39
 #: inc/ajax.php:53
+#, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. Translators: %1$s: Comment count, %2$s: Post title
 #: comments.php:45
 #: inc/ajax.php:60
+#, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
@@ -95,20 +96,20 @@ msgid "Comments are closed."
 msgstr ""
 
 #. Translators: 1: Panel Title.
-#: functions.php:99
+#: functions.php:103
+#, php-format
 msgid "Customizing ▶ %s"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:104
 msgid "Customizing"
 msgstr ""
 
-#: functions.php:428
+#: functions.php:432
 msgid "Upgrade to ColorMag Pro for more features and customization options."
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:38
-#: assets/build/dashboard.js:1
 msgid "Processing..."
 msgstr ""
 
@@ -118,11 +119,11 @@ msgid "Changelog not found."
 msgstr ""
 
 #: inc/admin/class-colormag-changelog-controller.php:92
-msgid "You are not allowed to access this resource."
+msgid "You do not have permission to view this."
 msgstr ""
 
 #: inc/admin/class-colormag-changelog-controller.php:138
-msgid "Could not access filesystem."
+msgid "Could not access the website files."
 msgstr ""
 
 #: inc/admin/class-colormag-changelog-controller.php:148
@@ -138,6 +139,7 @@ msgstr ""
 
 #. translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag
 #: inc/admin/class-colormag-theme-review-notice.php:89
+#, php-format
 msgid "If you're enjoying the theme, would you mind taking 2 minutes to leave a review? %1$sYour input helps other users find quality themes & motivates us to keep improving.%2$s"
 msgstr ""
 
@@ -179,7 +181,7 @@ msgid "I prefer to build from scratch"
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:105
-msgid "Cheatin&#8217; huh?"
+msgid "You are not allowed to do that."
 msgstr ""
 
 #: inc/admin/class-colormag-welcome-notice.php:130
@@ -187,12 +189,10 @@ msgid "You do not have permission to perform this action."
 msgstr ""
 
 #: inc/admin/views/header.php:29
-#: assets/build/dashboard.js:1
 msgid "Dashboard"
 msgstr ""
 
 #: inc/admin/views/header.php:35
-#: assets/build/dashboard.js:1
 msgid "Starter Templates"
 msgstr ""
 
@@ -201,12 +201,10 @@ msgid "Settings"
 msgstr ""
 
 #: inc/admin/views/header.php:47
-#: assets/build/dashboard.js:1
 msgid "Products"
 msgstr ""
 
 #: inc/admin/views/header.php:53
-#: assets/build/dashboard.js:1
 msgid "Help"
 msgstr ""
 
@@ -254,26 +252,31 @@ msgstr ""
 
 #. Translators: %s is the search query.
 #: inc/class-breadcrumb-trail.php:274
+#, php-format
 msgid "Search results for: %s"
 msgstr ""
 
 #. Translators: %s is the page number.
 #: inc/class-breadcrumb-trail.php:276
+#, php-format
 msgid "Page %s"
 msgstr ""
 
 #. Translators: %s is the page number.
 #: inc/class-breadcrumb-trail.php:278
+#, php-format
 msgid "Comment Page %s"
 msgstr ""
 
 #. Translators: Minute archive title. %s is the minute time format.
 #: inc/class-breadcrumb-trail.php:280
+#, php-format
 msgid "Minute %s"
 msgstr ""
 
 #. Translators: Weekly archive title. %s is the week date format.
 #: inc/class-breadcrumb-trail.php:282
+#, php-format
 msgid "Week %s"
 msgstr ""
 
@@ -459,7 +462,7 @@ msgid "Latest Posts"
 msgstr ""
 
 #: inc/compatibility/elementor/widgets/class-colormag-elementor-widget-base.php:348
-#: inc/customizer/options/content/single-post.php:326
+#: inc/customizer/options/content/single-post.php:325
 msgid "Categories"
 msgstr ""
 
@@ -537,7 +540,6 @@ msgstr ""
 #: inc/customizer/options/header-builder/primary-menu.php:11
 #: inc/customizer/panels-sections/panels-sections.php:95
 #: inc/customizer/panels-sections/panels-sections.php:170
-#: assets/build/dashboard.js:1
 msgid "Primary Menu"
 msgstr ""
 
@@ -570,7 +572,7 @@ msgstr ""
 #: inc/customizer/options/content/single-page.php:88
 #: inc/customizer/options/content/single-page.php:103
 #: inc/customizer/options/content/single-post.php:162
-#: inc/customizer/options/content/single-post.php:308
+#: inc/customizer/options/content/single-post.php:307
 #: inc/customizer/options/global/builder.php:13
 #: inc/customizer/options/header-and-navigation/header-action.php:52
 #: inc/customizer/options/header-and-navigation/header-action.php:69
@@ -612,7 +614,6 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:173
 #: inc/customizer/options/header-and-navigation/sticky-header.php:31
 #: inc/customizer/options/header-and-navigation/top-bar.php:156
-#: assets/build/dashboard.js:1
 msgid "Learn more"
 msgstr ""
 
@@ -676,12 +677,11 @@ msgid "YouTube"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:116
-msgid "Check to open in new tab"
+msgid "Open the link in a new tab."
 msgstr ""
 
 #: inc/customizer/options/content/blog.php:47
 #: inc/customizer/panels-sections/panels-sections.php:110
-#: assets/build/dashboard.js:1
 msgid "Blog"
 msgstr ""
 
@@ -759,7 +759,8 @@ msgid "Both Date"
 msgstr ""
 
 #: inc/customizer/options/content/blog.php:302
-msgid "Post Title"
+#: inc/customizer/options/content/single-post.php:293
+msgid "Post Title Typography"
 msgstr ""
 
 #: inc/customizer/options/content/blog.php:307
@@ -777,7 +778,7 @@ msgstr ""
 
 #: inc/customizer/options/content/blog.php:338
 #: inc/customizer/options/content/single-page.php:113
-#: inc/customizer/options/content/single-post.php:335
+#: inc/customizer/options/content/single-post.php:334
 #: inc/customizer/options/global/button.php:91
 #: inc/customizer/options/global/colors.php:253
 #: inc/customizer/options/global/layout.php:119
@@ -791,7 +792,7 @@ msgstr ""
 
 #: inc/customizer/options/content/blog.php:339
 #: inc/customizer/options/content/single-page.php:114
-#: inc/customizer/options/content/single-post.php:336
+#: inc/customizer/options/content/single-post.php:335
 #: inc/customizer/options/global/button.php:92
 #: inc/customizer/options/global/colors.php:254
 #: inc/customizer/options/global/layout.php:120
@@ -847,7 +848,6 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:8
 #: inc/customizer/options/header-builder/logo.php:6
 #: inc/customizer/panels-sections/panels-sections.php:29
-#: assets/build/dashboard.js:1
 msgid "Site Identity"
 msgstr ""
 
@@ -880,59 +880,55 @@ msgstr ""
 msgid "LightBox"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:294
-msgid "Font"
-msgstr ""
-
-#: inc/customizer/options/content/single-post.php:302
+#: inc/customizer/options/content/single-post.php:301
 msgid "Related Posts"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:322
+#: inc/customizer/options/content/single-post.php:321
 msgid "Query"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:327
+#: inc/customizer/options/content/single-post.php:326
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:339
+#: inc/customizer/options/content/single-post.php:338
 msgid "Author Bio options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:340
+#: inc/customizer/options/content/single-post.php:339
 msgid "Related posts options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:341
+#: inc/customizer/options/content/single-post.php:340
 msgid "Single post image size"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:342
+#: inc/customizer/options/content/single-post.php:341
 msgid "Autoload posts options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:343
+#: inc/customizer/options/content/single-post.php:342
 msgid "Post Navigation options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:344
+#: inc/customizer/options/content/single-post.php:343
 msgid "Social share button options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:345
+#: inc/customizer/options/content/single-post.php:344
 msgid "Flyout Related Posts options"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:346
+#: inc/customizer/options/content/single-post.php:345
 msgid "Single post tile color option"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:347
+#: inc/customizer/options/content/single-post.php:346
 msgid "Comment title typography option"
 msgstr ""
 
-#: inc/customizer/options/content/single-post.php:348
+#: inc/customizer/options/content/single-post.php:347
 msgid "Reading Progress Indicator options"
 msgstr ""
 
@@ -1101,6 +1097,7 @@ msgstr ""
 #. translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link.
 #: inc/customizer/options/footer-builder/copyright.php:13
 #: inc/helper/utils.php:16
+#, php-format
 msgid "Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s."
 msgstr ""
 
@@ -1144,7 +1141,6 @@ msgstr ""
 #: inc/customizer/options/header-builder/search.php:128
 #: inc/customizer/options/header-builder/secondary-menu.php:32
 #: inc/customizer/options/header-builder/socials.php:19
-#: assets/build/meta.js:1
 msgid "Normal"
 msgstr ""
 
@@ -1423,7 +1419,6 @@ msgstr ""
 
 #: inc/customizer/options/footer/footer-column.php:8
 #: inc/customizer/panels-sections/panels-sections.php:130
-#: assets/build/dashboard.js:1
 msgid "Footer Column"
 msgstr ""
 
@@ -1432,7 +1427,6 @@ msgstr ""
 #: inc/customizer/options/global/layout.php:80
 #: inc/customizer/options/global/sidebar.php:30
 #: inc/customizer/options/header-and-navigation/main-header.php:22
-#: assets/build/meta.js:1
 msgid "Layout"
 msgstr ""
 
@@ -1510,7 +1504,7 @@ msgid "Base"
 msgstr ""
 
 #: inc/customizer/options/global/colors.php:188
-msgid "Box Border Color"
+msgid "Content Box Border Color"
 msgstr ""
 
 #: inc/customizer/options/global/colors.php:228
@@ -1543,8 +1537,6 @@ msgstr ""
 
 #: inc/customizer/options/global/layout.php:74
 #: inc/customizer/panels-sections/panels-sections.php:65
-#: assets/build/dashboard.js:1
-#: assets/build/meta.js:1
 msgid "Sidebar"
 msgstr ""
 
@@ -1575,11 +1567,11 @@ msgid "Default Layout"
 msgstr ""
 
 #: inc/customizer/options/global/sidebar.php:47
-msgid "Default layout for pages only"
+msgid "Default Layout for Pages"
 msgstr ""
 
 #: inc/customizer/options/global/sidebar.php:56
-msgid "Default layout for single posts only"
+msgid "Default Layout for Single Posts"
 msgstr ""
 
 #: inc/customizer/options/global/sidebar.php:72
@@ -1610,27 +1602,31 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:673
+#: inc/customizer/options/global/typography.php:636
+msgid "Looking for post type typography? Find it under Post Types → Blog, Single Post, Page."
+msgstr ""
+
+#: inc/customizer/options/global/typography.php:678
 msgid "H1"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:715
+#: inc/customizer/options/global/typography.php:720
 msgid "H2"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:756
+#: inc/customizer/options/global/typography.php:761
 msgid "H3"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:796
+#: inc/customizer/options/global/typography.php:801
 msgid "H4"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:836
+#: inc/customizer/options/global/typography.php:841
 msgid "H5"
 msgstr ""
 
-#: inc/customizer/options/global/typography.php:876
+#: inc/customizer/options/global/typography.php:881
 msgid "H6"
 msgstr ""
 
@@ -1668,12 +1664,11 @@ msgid "Below Header"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/header-media.php:26
-msgid "Check to make header image link back to home page"
+msgid "Link the header image back to the home page."
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/main-header.php:8
 #: inc/customizer/panels-sections/panels-sections.php:90
-#: assets/build/dashboard.js:1
 msgid "Main Header"
 msgstr ""
 
@@ -1713,7 +1708,7 @@ msgstr ""
 
 #: inc/customizer/options/header-and-navigation/primary-menu.php:88
 #: inc/customizer/options/header-and-navigation/primary-menu.php:215
-msgid "Hover/Selected"
+msgid "Hover / Active"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/primary-menu.php:125
@@ -1784,13 +1779,11 @@ msgstr ""
 
 #: inc/customizer/options/header-and-navigation/sticky-header.php:8
 #: inc/customizer/panels-sections/panels-sections.php:105
-#: assets/build/dashboard.js:1
 msgid "Sticky Header"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/top-bar.php:11
 #: inc/customizer/panels-sections/panels-sections.php:80
-#: assets/build/dashboard.js:1
 msgid "Top Bar"
 msgstr ""
 
@@ -2021,7 +2014,7 @@ msgid "WooCommerce Sidebar"
 msgstr ""
 
 #: inc/customizer/options/woocommerce/woocommerce.php:33
-msgid "Check to register different sidebar areas to be used for WooCommerce pages."
+msgid "Use separate sidebars for WooCommerce pages."
 msgstr ""
 
 #: inc/customizer/options/woocommerce/woocommerce.php:52
@@ -2207,7 +2200,6 @@ msgid "Fix Migration Issues"
 msgstr ""
 
 #: inc/migration/demo-import-migration.php:46
-#: assets/build/dashboard.js:1
 msgid "Contact Support"
 msgstr ""
 
@@ -2390,6 +2382,7 @@ msgstr ""
 
 #. Translators: 1. Comment date, 2. Comment time
 #: inc/template-tags.php:589
+#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -2411,11 +2404,13 @@ msgstr ""
 
 #. Translators: %s Post view count
 #: inc/template-tags.php:660
+#, php-format
 msgid "%s Views"
 msgstr ""
 
 #. Translators: 1. Post link, 2. Post time, 3. Post date
 #: inc/template-tags.php:882
+#, php-format
 msgid "<span class=\"cm-post-date\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s %4$s</a></span>"
 msgstr ""
 
@@ -2448,7 +2443,6 @@ msgid "Select an Image"
 msgstr ""
 
 #: inc/widgets/class-colormag-widgets.php:26
-#: assets/build/meta.js:1
 msgid "Right Sidebar"
 msgstr ""
 
@@ -2457,7 +2451,6 @@ msgid "Shows widgets at Right side."
 msgstr ""
 
 #: inc/widgets/class-colormag-widgets.php:40
-#: assets/build/meta.js:1
 msgid "Left Sidebar"
 msgstr ""
 
@@ -2735,7 +2728,7 @@ msgstr ""
 
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:34
 #: inc/widgets/colormag-featured-posts-widget.php:34
-msgid "Layout will be as below:"
+msgid "Layout preview:"
 msgstr ""
 
 #: inc/widgets/colormag-featured-posts-vertical-widget.php:45
@@ -2761,6 +2754,7 @@ msgstr ""
 
 #. Translators: %1$s: Link to WP admin new post page.
 #: no-results.php:36
+#, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
@@ -2773,19 +2767,23 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #. Template Name of the theme
+#: page-templates/contact.php:3
 msgid "Contact Page Template"
 msgstr ""
 
 #. Template Name of the theme
+#: page-templates/magazine.php:3
 msgid "Magazine Template"
 msgstr ""
 
 #. Template Name of the theme
+#: page-templates/page-builder.php:3
 msgid "Gutenberg Block / Page Builder (ColorMag)"
 msgstr ""
 
 #. Translators: %s: Search query.
 #: search.php:38
+#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -2810,20 +2808,24 @@ msgstr ""
 #. Translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
 #: sidebar-left.php:41
 #: sidebar.php:41
+#, php-format
 msgid "This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #: sidebar-two.php:20
+#, php-format
 msgid "This is an example widget to show how the Secondary sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets are added then this will be replaced by those widgets"
 msgstr ""
 
 #. Translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
 #: sidebar-woocommerce-left.php:28
+#, php-format
 msgid "This is an example widget to show how the WooCommerce Left Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #. Translators: 1. Opening of the link for widgets.php WordPress section, 2. Closing of the link for widgets.php WordPress section
 #: sidebar-woocommerce-right.php:28
+#, php-format
 msgid "This is an example widget to show how the WooCommerce Right Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
@@ -2852,21 +2854,25 @@ msgstr ""
 
 #. Translators: %s: Author name
 #: template-parts/hooks/content/content.php:47
+#, php-format
 msgid "Author: %s"
 msgstr ""
 
 #. Translators: %s: Day archive
 #: template-parts/hooks/content/content.php:61
+#, php-format
 msgid "Day: %s"
 msgstr ""
 
 #. Translators: %s: Month archive
 #: template-parts/hooks/content/content.php:68
+#, php-format
 msgid "Month: %s"
 msgstr ""
 
 #. Translators: %s: Year archive
 #: template-parts/hooks/content/content.php:75
+#, php-format
 msgid "Year: %s"
 msgstr ""
 
@@ -2888,16 +2894,19 @@ msgstr ""
 
 #. Translators: %1$s: Current year, %2$s: Site link
 #: template-parts/hooks/footer/footer.php:271
+#, php-format
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
 #. Translators: %1$s: Theme name, %2$s: ThemeGrill site link
 #: template-parts/hooks/footer/footer.php:271
+#, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #. Translators: %s: WordPress link
 #: template-parts/hooks/footer/footer.php:271
+#, php-format
 msgid "Powered by %s."
 msgstr ""
 
@@ -2911,244 +2920,4 @@ msgstr ""
 
 #: template-parts/hooks/header/header.php:538
 msgid "You are here: "
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Free Vs Pro"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Global Colors"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Meta"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Global Heading Color"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Global Typography"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Zakra"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Modern and professional WordPress magazine and news portal-styled theme perfect for creating websites for your user-engaging magazines, news channels, etc."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Streamline the learning process with an easy-to-use and highly advanced LMS plugin loaded with powerful features to create and sell courses online through your website."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Quiz Builder Plugin"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Ultimate WordPress user registration plugin to streamline the user signup process. Create registration & login forms, manage users, and more."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Custom Registration Form"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Feature-rich and highly customizable WordPress form builder plugin to create different types of professional forms for your website."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Form Builder Plugin"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Powerful WordPress Gutenberg block plugin with the perfect blocks and editing options to create magazine-themed websites."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Page Builder Plugin"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Free"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Latest Updates"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "View Demo"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Loading..."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Activated"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Activate"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Install"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Activate ThemeGrill Demo Importer Plugin"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "View Starter Template"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Quick Settings"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Go to Customizer"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Features"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Simply choose the demo that fits your requirements, import it, and give it some of your personal touch!"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "View Documentation"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Documentation"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Leave us a Review"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Based on 1430+ Reviews"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Submit a Review"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Feature Request"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Please take a moment to suggest any features that could enhance our product."
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Request a Feature"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Support"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Create a Ticket"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Useful Plugins"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "ThemeGrill Community"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Join our Facebook Group"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Need Some Help?"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "View Now"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Join Our Community"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Facebook Community"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Join us on Facebook"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "X Community"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Follow us on Twitter and stay in the loop for the latest news and updates on our products!"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Join us on Twitter"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Youtube Community"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Visit our YouTube channel for videos about tutorials, updates, and news on our products!"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Visit us on YouTube"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Theme"
-msgstr ""
-
-#: assets/build/dashboard.js:1
-msgid "Plugins"
-msgstr ""
-
-#: assets/build/meta.js:1
-msgid "Customizer"
-msgstr ""
-
-#: assets/build/meta.js:1
-msgid "Narrow"
-msgstr ""
-
-#: assets/build/meta.js:1
-msgid "No Sidebar"
-msgstr ""
-
-#: assets/build/meta.js:1
-msgid "ColorMag Meta Settings"
 msgstr ""
