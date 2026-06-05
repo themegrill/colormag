@@ -1,4 +1,6 @@
 themegrill/colormag-pro@free-pro-sync:
+
+  # ── Root PHP templates ────────────────────────────────────────
   - 404.php
   - archive.php
   - breadcrumb.css
@@ -27,7 +29,6 @@ themegrill/colormag-pro@free-pro-sync:
   - sidebar-woocommerce-left.php
   - sidebar-woocommerce-right.php
   - single.php
-  - style.css
   - style-editor-block.css
   - style-editor-block-rtl.css
   - style-rtl.css
@@ -42,13 +43,33 @@ themegrill/colormag-pro@free-pro-sync:
   - .eslintrc.js
   - .gitignore
   - .prettierrc
+
+  # ── Assets ────────────────────────────────────────────────────
+  # assets/pro/        NOT listed — fully protected (pro-only)
+  # assets/sass/style.scss NOT listed — different theme header + pro @imports
   - assets/build
   - assets/css
   - assets/fonts
   - assets/img
   - assets/js
   - assets/library
-  - assets/sass
+  - assets/sass/abstracts
+  - assets/sass/base
+  - assets/sass/blocks
+  - assets/sass/components
+  - assets/sass/compat
+  - assets/sass/dark.scss
+  - assets/sass/fonts
+  - assets/sass/generic
+  - assets/sass/layouts
+  - assets/sass/plugins
+  - assets/sass/responsive
+  - assets/sass/style-editor-block.scss
+  - assets/sass/utilities
+  - assets/sass/woocommerce.scss
+
+  # ── inc/ ─────────────────────────────────────────────────────
+  # inc/pro/  NOT listed — fully protected (pro-only)
   - inc/admin
   - inc/ajax.php
   - inc/base
@@ -70,7 +91,12 @@ themegrill/colormag-pro@free-pro-sync:
   - inc/template-functions.php
   - inc/template-tags.php
   - inc/widgets
+
+  # ── Templates ────────────────────────────────────────────────
+  # template-parts/pro/  NOT listed — fully protected (pro-only)
   - page-templates
+  - template-parts
+
+  # ── Source ───────────────────────────────────────────────────
   - src/dashboard
   - src/meta
-  - template-parts
