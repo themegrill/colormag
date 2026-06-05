@@ -37,6 +37,50 @@ export type colormagLocalized = {
 	};
 	nonce: string;
 	ajaxUrl: string;
+	userRoles?: Record<string, string>;
+	popupEditUrl?: string;
+	fs?: {
+		activated?: boolean;
+		is_whitelabeled?: boolean;
+		module_id?: string;
+		ajax_url?: string;
+		activation?: {
+			action?: string;
+			security?: string;
+		};
+		account?: {
+			set_beta_mode?: { action?: string; security?: string };
+			update_email_address?: { action?: string; security?: string };
+			update_license?: { action?: string; security?: string };
+			deactivate_license?: string;
+			sync?: string;
+			user_name?: string;
+			email?: string;
+			data?: {
+				beta_program?: boolean;
+				user_name?: string;
+				email?: string;
+				user_id?: string;
+				product_id?: string;
+				site_id?: string;
+				site_public_key?: string;
+				site_secret_key?: string;
+				version?: string;
+				plan?: string;
+				bundle_plan?: string;
+				license_key?: string;
+				update?: {
+					update_url?: string;
+					update_version?: string;
+				};
+			};
+		};
+		billing?: {
+			action?: string;
+			security?: string;
+			details?: Record<string, string>;
+		};
+	};
 };
 
 export type ChangelogsMap = Array<{
