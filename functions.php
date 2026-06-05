@@ -15,8 +15,12 @@ defined( 'ABSPATH' ) || exit;
 /**
  * PHP 8.0/8.1 polyfills — must load before any code that calls str_contains() etc.
  */
-require get_template_directory() . '/inc/compat/php-polyfills.php';
 
+if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
+	require_once get_template_directory() . '/vendor/autoload.php';
+}
+
+require get_template_directory() . '/inc/compat/php-polyfills.php';
 /**
  * Define constants.
  */
@@ -30,6 +34,9 @@ require get_template_directory() . '/inc/helper/utils.php';
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
  */
+require get_template_directory() . '/inc/admin/class-colormag-contribution.php';
+ColorMag_Contribution::instance();
+
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
 	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';

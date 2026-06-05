@@ -37,6 +37,8 @@ export type colormagLocalized = {
 	};
 	nonce: string;
 	ajaxUrl: string;
+	trackingEnabled?: boolean;
+	trackingNonce?: string;
 };
 
 export type ChangelogsMap = Array<{

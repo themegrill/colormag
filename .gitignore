@@ -30,3 +30,6 @@ colormag-pro.zip
 
 # Dependencies
 /vendor/
+
+# Claude AI
+.claude/
