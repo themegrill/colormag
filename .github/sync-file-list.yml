@@ -82,6 +82,7 @@ themegrill/colormag-pro@seperating-pro-and-free-code-to-sync-with-free:
   - inc/colormag-wp-query.php
   - inc/compat
   - inc/compatibility/elementor
+  - inc/compatibility/starter-content
   - inc/compatibility/jetpack
   - inc/compatibility/woocommerce
   - inc/core
