@@ -109,9 +109,10 @@ if ( ! function_exists( 'colormag_setup' ) ) :
 		// Responsive embeds support.
 		add_theme_support( 'responsive-embeds' );
 
-		$starter_content = apply_filters( 'colormag_starter_content', ColorMag_Starter_Content::get() );
-
-		add_theme_support( 'starter-content', $starter_content );
+		if ( class_exists( 'ColorMag_Starter_Content' ) ) {
+			$starter_content = apply_filters( 'colormag_starter_content', ColorMag_Starter_Content::get() );
+			add_theme_support( 'starter-content', $starter_content );
+		}
 	}
 
 endif;
