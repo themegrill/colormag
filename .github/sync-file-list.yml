@@ -72,6 +72,7 @@ themegrill/colormag-pro@seperating-pro-and-free-code-to-sync-with-free:
   # inc/pro/  NOT listed — fully protected (pro-only)
   - inc/admin
   - inc/ajax.php
+  - inc/class-colormag-starter-content.php
   - inc/colormag-setup.php
   - inc/base
   - inc/builder-template-tags.php
