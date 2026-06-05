@@ -257,8 +257,10 @@ endif;
  * @return int The filtered excerpt length.
  * @uses filter excerpt_length
  */
-function colormag_excerpt_length( $length ) {
-	return 20;
+if ( ! function_exists( 'colormag_excerpt_length' ) ) {
+	function colormag_excerpt_length( $length ) {
+		return 20;
+	}
 }
 
 add_filter( 'excerpt_length', 'colormag_excerpt_length' );
@@ -266,8 +268,10 @@ add_filter( 'excerpt_length', 'colormag_excerpt_length' );
 /**
  * Returns a "Continue Reading" link for excerpts.
  */
-function colormag_continue_reading() {
-	return '';
+if ( ! function_exists( 'colormag_continue_reading' ) ) {
+	function colormag_continue_reading() {
+		return '';
+	}
 }
 
 add_filter( 'excerpt_more', 'colormag_continue_reading' );

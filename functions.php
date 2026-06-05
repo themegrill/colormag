@@ -179,6 +179,15 @@ require_once COLORMAG_INCLUDES_DIR . '/migration/class-colormag-migration.php';
 require_once COLORMAG_WIDGETS_DIR . '/class-colormag-widgets.php';
 
 /**
+ * Pro extensions — loaded here so the pro hooks register before widgets_init,
+ * customize_register, and after_setup_theme fire.  The file_exists guard makes
+ * this line safe to sync into the free theme (which has no inc/pro/init.php).
+ */
+if ( file_exists( COLORMAG_INCLUDES_DIR . '/pro/init.php' ) ) {
+	require_once COLORMAG_INCLUDES_DIR . '/pro/init.php';
+}
+
+/**
  * Templates.
  */
 // Template functions files.

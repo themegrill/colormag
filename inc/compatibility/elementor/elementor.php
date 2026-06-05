@@ -34,7 +34,7 @@ if ( ! function_exists( 'colormag_elementor_widget_render_filter' ) ) :
 		$sidebar_args = array(
 			'before_widget' => '<section class="widget ' . colormag_widget_class_names( $args['widget_id'] ) . ' clearfix">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title"><span>',
+			'before_title'  => '<h3 class="cm-widget-title"><span>',
 			'after_title'   => '</span></h3>',
 		);
 
@@ -63,7 +63,7 @@ if ( ! function_exists( 'colormag_widget_class_names' ) ) :
 
 		$classes = colormag_widgets_classes();
 
-		return isset( $classes[ $widgets_id ] ) ? $classes[ $widgets_id ] : 'widget_featured_posts';
+		return isset( $classes[ $widgets_id ] ) ? $classes[ $widgets_id ] : 'cm-featured-posts';
 
 	}
 
