@@ -665,7 +665,11 @@
 					break;
 
 				case 'colormag_blog_post_title_typography':
-					css = colormagGenerateTypographyCSS(id, '.cm-entry-title', value);
+					css = colormagGenerateTypographyCSS(
+						id,
+						'.cm-entry-title, .post .cm-entry-header .cm-entry-title, .cm-posts .post .cm-post-content .cm-entry-title a, .cm-posts .post .single-title-above .cm-entry-title a',
+						value,
+					);
 					break;
 
 				case 'colormag_single_post_title_typography':
