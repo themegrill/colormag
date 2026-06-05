@@ -724,9 +724,11 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 *
 	 * @param string $title           The widget title.
 	 * @param string $type            The display posts from the widget setting.
+	 * @param int    $tag             The tag id of the widget setting.
 	 * @param int    $category        The category id of the widget setting.
+	 * @param string $view_all_button View all button data of the widget.
 	 */
-	public function widget_title( $title, $type, $category ) {
+	public function widget_title( $title, $type, $tag = '', $category = '', $view_all_button = false ) {
 
 		// Return if $title is empty.
 		if ( ! $title ) {
@@ -752,7 +754,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 		$args = apply_filters(
 			'colormag_widget_title_args',
 			array(
-				'view_all_button' => false,
+				'view_all_button' => $view_all_button,
+				'tag'             => $tag,
 				'term_link'       => '',
 			),
 			$type,
@@ -848,22 +851,34 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 	/**
 	 * Displays the post title within the widgets.
+	 *
+	 * @param array $typography Optional typography settings used by extensions
+	 *                          (e.g. ColorMag Pro) to build inline title styles.
 	 */
-	public function the_title() {
+	public function the_title( $typography = array() ) {
 
 		/**
 		 * Allow extensions (e.g. ColorMag Pro) to add inline typography styles to
 		 * the widget post title.
 		 *
 		 * @param string $title_styles Inline CSS style string for the title element.
+		 * @param array  $typography   Typography settings passed from the widget.
 		 */
-		$title_styles = apply_filters( 'colormag_widget_title_styles', '' );
+		$title_styles = apply_filters( 'colormag_widget_title_styles', '', $typography );
+
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to change the widget post title
+		 * HTML tag.
+		 *
+		 * @param string $markup The HTML tag used for the title. Default 'h3'.
+		 */
+		$title_markup = apply_filters( 'colormag_front_page_widget_post_title_markup', 'h3' );
 		?>
-		<h3 class="cm-entry-title"<?php echo $title_styles ? ' style="' . esc_attr( $title_styles ) . '"' : ''; ?>>
+		<<?php echo esc_html( $title_markup ); ?> class="cm-entry-title"<?php echo $title_styles ? ' style="' . esc_attr( $title_styles ) . '"' : ''; ?>>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<?php the_title(); ?>
 			</a>
-		</h3>
+		</<?php echo esc_html( $title_markup ); ?>>
 		<?php
 	}
 
