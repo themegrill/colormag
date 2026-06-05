@@ -1022,3 +1022,12 @@ if ( ! function_exists( 'colormag_get_the_title' ) ) :
 		return $title;
 	}
 endif;
+
+/**
+ * Fires after the shared template tag functions have been defined.
+ *
+ * Extensions (e.g. ColorMag Pro) can hook here to load their additional,
+ * pro-only template tag functions while keeping this shared file identical
+ * between the free and pro themes.
+ */
+do_action( 'colormag_template_tags_pro_loaded' );

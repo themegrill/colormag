@@ -76,6 +76,14 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to inject additional, pro-only
+		 * settings into this widget instance before it is rendered.
+		 *
+		 * @param array $instance The current widget instance settings.
+		 */
+		$instance = apply_filters( 'colormag_' . $this->id_base . '_pro_settings', $instance );
+
 		global $post;
 		$number   = empty( $instance['number'] ) ? 4 : $instance['number'];
 		$type     = isset( $instance['type'] ) ? $instance['type'] : 'latest';

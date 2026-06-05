@@ -786,10 +786,15 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * @param int    $number                 The number of posts to display.
 	 * @param string $type                   The display posts from the widget setting.
 	 * @param int    $category               The category id of the widget setting.
+	 * @param int    $tag                    The tag id of the widget setting.
+	 * @param int    $author                 The author id of the widget setting.
+	 * @param string $random_posts           Random posts enable data of the widget.
+	 * @param string $child_category         Child category enable for query of the widget.
+	 * @param bool   $video_post_format_args Video post format option for query of the widget.
 	 *
 	 * @return \WP_Query
 	 */
-	public function query_posts( $number, $type, $category, $tag ='', $author='' ) {
+	public function query_posts( $number, $type, $category, $tag = '', $author = '', $random_posts = 'false', $child_category = 'false', $video_post_format_args = false ) {
 
 		$post_status = 'publish';
 		if ( 1 == get_option( 'fresh_site' ) ) {
@@ -828,10 +833,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 		 * @param int    $number   The number of posts to display.
 		 * @param string $type     The display posts type from the widget setting.
 		 * @param int    $category The category id of the widget setting.
-		 * @param int    $tag      The tag id of the widget setting.
-		 * @param int    $author   The author id of the widget setting.
+		 * @param int    $tag                    The tag id of the widget setting.
+		 * @param int    $author                 The author id of the widget setting.
+		 * @param string $random_posts           Random posts enable data of the widget.
+		 * @param string $child_category         Child category enable for query of the widget.
+		 * @param bool   $video_post_format_args Video post format option for query of the widget.
 		 */
-		$args = apply_filters( 'colormag_widget_query_args', $args, $number, $type, $category, $tag, $author );
+		$args = apply_filters( 'colormag_widget_query_args', $args, $number, $type, $category, $tag, $author, $random_posts, $child_category, $video_post_format_args );
 
 		$get_featured_posts = new WP_Query( $args );
 
