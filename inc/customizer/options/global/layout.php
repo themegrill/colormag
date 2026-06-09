@@ -74,19 +74,25 @@ $options = array(
 		'priority'    => 40,
 	),
 	'colormag_sidebar_heading'         => array(
-		'type'     => 'customind-heading',
-		'title'    => esc_html__( 'Sidebar', 'colormag' ),
-		'section'  => 'colormag_global_layout_section',
-		'priority' => 50,
+		'type'      => 'customind-heading',
+		'title'     => esc_html__( 'Sidebar', 'colormag' ),
+		'section'   => 'colormag_global_layout_section',
+		'condition' => array(
+			'colormag_global_container_layout' => 'no_sidebar_full_width',
+		),
+		'priority'  => 50,
 	),
 	'colormag_global_sidebar_layout'   => array(
-		'default'  => 'no_sidebar',
-		'type'     => 'customind-radio-image',
-		'title'    => esc_html__( 'Layout', 'colormag' ),
-		'section'  => 'colormag_global_layout_section',
-		'choices'  => $sidebar_layout_choices,
-		'columns'  => 2,
-		'priority' => 60,
+		'default'   => 'no_sidebar',
+		'type'      => 'customind-radio-image',
+		'title'     => esc_html__( 'Layout', 'colormag' ),
+		'section'   => 'colormag_global_layout_section',
+		'choices'   => $sidebar_layout_choices,
+		'columns'   => 2,
+		'condition' => array(
+			'colormag_global_container_layout' => 'no_sidebar_full_width',
+		),
+		'priority'  => 60,
 	),
 	'colormag_sidebar_width'           => array(
 		'title'       => esc_html__( 'Width', 'colormag' ),
@@ -98,6 +104,11 @@ $options = array(
 		'section'     => 'colormag_global_layout_section',
 		'units'       => array( '%', 'em', 'rem' ),
 		'defaultUnit' => '%',
+		'input_attrs' => array(
+			'min'  => 15,
+			'max'  => 80,
+			'step' => 1,
+		),
 		'condition'   => array(
 			'colormag_global_sidebar_layout!' => 'no_sidebar',
 		),
@@ -133,6 +144,6 @@ $options = array(
 	),
 );
 
-colormag_customind()->add_controls( $options );
+colormag_customind()->add_controls( apply_filters( 'colormag_layout_options', $options ) );
 
 do_action( 'colormag_customizer_layout_pro_options', $wp_customize );
