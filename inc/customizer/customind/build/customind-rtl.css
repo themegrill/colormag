@@ -452,6 +452,9 @@
 .mt-\[1px\] {
 		margin-top: 1px;
 }
+.box-border {
+		box-sizing: border-box;
+}
 .block {
 		display: block;
 }
@@ -555,6 +558,9 @@
 }
 .h-\[32px\] {
 		height: 32px;
+}
+.h-\[36px\] {
+		height: 36px;
 }
 .h-\[38px\] {
 		height: 38px;
@@ -667,6 +673,9 @@
 }
 .w-\[50px\] {
 		width: 50px;
+}
+.w-\[52px\] {
+		width: 52px;
 }
 .w-\[93\%\] {
 		width: 93%;
@@ -962,6 +971,9 @@
 .\!rounded-lg {
 		border-radius: 0.5rem !important;
 }
+.\!rounded-none {
+		border-radius: 0px !important;
+}
 .rounded {
 		border-radius: 0.25rem;
 }
@@ -1076,6 +1088,9 @@
 }
 .border-dotted {
 		border-style: dotted;
+}
+.\!border-none {
+		border-style: none !important;
 }
 .border-none {
 		border-style: none;
@@ -1199,6 +1214,9 @@
 .\!bg-\[\#FFFFFF\] {
 		--tw-bg-opacity: 1 !important;
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+.\!bg-inherit {
+		background-color: inherit !important;
 }
 .\!bg-transparent {
 		background-color: transparent !important;
@@ -1509,6 +1527,9 @@
 .pr-\[6px\] {
 		padding-left: 6px;
 }
+.pr-\[8px\] {
+		padding-left: 8px;
+}
 .pt-0 {
 		padding-top: 0;
 }
@@ -1713,10 +1734,6 @@
 }
 .text-current {
 		color: currentColor;
-}
-.text-gray-400 {
-		--tw-text-opacity: 1;
-		color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 .text-gray-500 {
 		--tw-text-opacity: 1;
@@ -2489,11 +2506,6 @@ li.customize-control-customind-tabs {
 		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-gray-100:hover {
-		--tw-bg-opacity: 1;
-		background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-gray-50:hover {
 		--tw-bg-opacity: 1;
 		background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -2516,11 +2528,6 @@ li.customize-control-customind-tabs {
 .hover\:text-\[\#207DAF\]:hover {
 		--tw-text-opacity: 1;
 		color: rgb(32 125 175 / var(--tw-text-opacity));
-}
-
-.hover\:text-gray-700:hover {
-		--tw-text-opacity: 1;
-		color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-500:hover {
@@ -3018,16 +3025,8 @@ li.customize-control-customind-tabs {
 		height: 32px;
 }
 
-.\[\&_\.customind-number-input-input\]\:h-\[36px\] .customind-number-input-input {
-		height: 36px;
-}
-
 .\[\&_\.customind-number-input-input\]\:w-7 .customind-number-input-input {
 		width: 28px;
-}
-
-.\[\&_\.customind-number-input-input\]\:w-\[52px\] .customind-number-input-input {
-		width: 52px;
 }
 
 .\[\&_\.customind-number-input-input\]\:rounded-none .customind-number-input-input {
