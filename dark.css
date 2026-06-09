@@ -8,18 +8,20 @@ body {
 Dark CSS
 --------------------------------------------------------------*/
 body.dark-skin {
-	background-color: #151515;
-	color: #cccccc;
+	background-color: var(--cm-color-3, #151515);
+	color: var(--cm-color-7, #d1d1d1);
 }
 
-/* Top Bar.
---------------------------------------------- */
 .dark-skin {
+	/* Top Bar.
+	--------------------------------------------- */
 	/*--------------------------------------------------------------
 	Header Clean layout CSS
 	--------------------------------------------------------------*/
 	/* Support Dark Skin.
 	--------------------------------------------- */
+	/* Support Magazine Blocks.
+--------------------------------------------- */
 }
 
 .dark-skin .breaking-news {
@@ -31,7 +33,13 @@ body.dark-skin {
 }
 
 .dark-skin .date-in-header {
-	color: #cccccc;
+	color: var(--cm-color-7, #d1d1d1);
+}
+
+.dark-skin .cm-breaking-news i.fa-arrow-up::before,
+.dark-skin .cm-breaking-news i.fa-arrow-down::before {
+	background-color: #161616;
+	border: 1px solid #161616;
 }
 
 .dark-skin h1,
@@ -47,7 +55,7 @@ body.dark-skin {
 .dark-skin .cm-main-header,
 .dark-skin .cm-content,
 .dark-skin .cm-secondary .widget {
-	background-color: #0d0d0d;
+	background-color: var(--cm-color-3, #0d0d0d);
 }
 
 .dark-skin .cm-top-bar {
@@ -63,11 +71,11 @@ body.dark-skin {
 }
 
 .dark-skin .cm-no-results .cm-page-title {
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-no-results .cm-page-content p {
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .search-form-top {
@@ -98,7 +106,7 @@ body.dark-skin {
 }
 
 .dark-skin .cm-featured-posts .cm-post-content .cm-entry-title a {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-featured-posts .cm-post-content .cm-below-entry-meta .cm-post-date svg,
@@ -130,7 +138,7 @@ body.dark-skin {
 .dark-skin .cm-highlighted-posts .cm-post-date a,
 .dark-skin .cm-highlighted-posts .cm-author a,
 .dark-skin .cm-highlighted-posts .cm-comments-link a {
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .comment-respond form label {
@@ -169,7 +177,7 @@ body.dark-skin {
 }
 
 .dark-skin .cm-posts .post .cm-post-content .cm-entry-title a {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-posts .post .cm-post-content .cm-below-entry-meta .cm-author svg,
@@ -190,7 +198,7 @@ body.dark-skin {
 }
 
 .dark-skin .single-related-posts .cm-post-content .cm-entry-title a {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .single-related-posts .cm-post-content .cm-below-entry-meta .cm-post-date .fa,
@@ -200,7 +208,7 @@ body.dark-skin {
 
 .dark-skin .post .cm-entry-title a,
 .dark-skin .search .cm-entry-title a {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-random-posts {
@@ -209,21 +217,21 @@ body.dark-skin {
 
 .dark-skin .previous svg,
 .dark-skin .next svg {
-	fill: #f4f4f5;
+	fill: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg,
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-home-icon svg,
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-menu-toggle svg {
-	fill: #f4f4f5;
+	fill: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-random-post a svg {
-	fill: #f4f4f5;
+	fill: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .single-related-posts {
-	box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.24);
+	box-shadow: 0 0 2px rgba(255, 255, 255, 0.24);
 	border-radius: 4px;
 }
 
@@ -248,7 +256,7 @@ body.dark-skin {
 .dark-skin textarea,
 .dark-skin .comment-content {
 	background-color: #0d0d0d;
-	color: #cccccc;
+	color: var(--cm-color-7, #d1d1d1);
 	border-color: #777777;
 }
 
@@ -257,7 +265,7 @@ body.dark-skin {
 }
 
 .dark-skin .cm-layout-2 .cm-primary-nav ul > li > a {
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-layout-2 .cm-primary-nav .cm-home-icon svg,
@@ -268,7 +276,7 @@ body.dark-skin {
 .dark-skin .cm-layout-2 .cm-primary-nav .cm-menu-toggle .cm-icon,
 .dark-skin .cm-layout-2 .cm-primary-nav .cm-random-post svg,
 .dark-skin .cm-layout-2 .cm-primary-nav .cm-random-post .cm-icon {
-	fill: #f4f4f5;
+	fill: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-layout-2 .cm-primary-nav ul ul.sub-menu li a {
@@ -280,19 +288,19 @@ body.dark-skin {
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav .cm-submenu-toggle svg {
-	fill: #f4f4f5;
+	fill: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-layout-2 #cm-primary-nav .fa {
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav li {
-	border-color: var(--cm-color-2, #3F3F46);
+	border-color: var(--cm-color-9, #3F3F46);
 }
 
 .dark-skin .cm-layout-2 .cm-mobile-nav li a {
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin.colormag-header-clean .cm-primary-nav .sub-menu,
@@ -308,7 +316,7 @@ body.dark-skin {
 .dark-skin.colormag-header-clean .social-links i.fa, .dark-skin.colormag-header-classic .breaking-news .newsticker a,
 .dark-skin.colormag-header-classic .social-links i.fa, .dark-skin.colormag-header-clean--full-width .breaking-news .newsticker a,
 .dark-skin.colormag-header-clean--full-width .social-links i.fa {
-	color: #cccccc;
+	color: var(--cm-color-7, #d1d1d1);
 }
 
 .dark-skin.colormag-header-classic .is-sticky #cm-primary-nav {
@@ -320,11 +328,11 @@ body.dark-skin {
 }
 
 .dark-skin.colormag-header-classic #cm-primary-nav .cm-menu-toggle {
-	border-color: #cccccc;
+	border-color: var(--cm-color-7, #d1d1d1);
 }
 
 .dark-skin.colormag-header-classic #cm-primary-nav .cm-menu-toggle::before {
-	color: #cccccc;
+	color: var(--cm-color-7, #d1d1d1);
 }
 
 .dark-skin.colormag-header-classic #cm-primary-nav.cm-primary-nav ul ul.sub-menu,
@@ -362,7 +370,7 @@ body.dark-skin {
 }
 
 .dark-skin .elementor .tg-module-wrapper {
-	color: #cccccc;
+	color: var(--cm-color-7, #d1d1d1);
 }
 
 .dark-skin .elementor .tg-module-wrapper .tg-module-title {
@@ -384,31 +392,25 @@ body.dark-skin {
 }
 
 .dark-skin .cm-entry-summary p {
-	color: #E3E2E2;
+	color: var(--cm-color-6, #E3E2E2);
 }
 
 .dark-skin .previous a,
 .dark-skin .next a {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .previous a:hover,
 .dark-skin .next a:hover {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-entry-title a {
-	color: #F4F4F5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin .cm-entry-title a:hover {
-	color: #F4F4F5;
-}
-
-.dark-skin .cm-breaking-news i.fa-arrow-up::before,
-.dark-skin .cm-breaking-news i.fa-arrow-down::before {
-	background-color: #161616;
-	border: 1px solid #161616;
+	color: var(--cm-color-7, #F4F4F5);
 }
 
 .dark-skin body {
@@ -439,34 +441,32 @@ body.dark-skin {
 	background-color: var(--color--primary);
 }
 
-/* Support Magazine Blocks.
---------------------------------------------- */
-.mzb-post-list .mzb-post-date a,
-.mzb-post-list .mzb-post-author a,
-.mzb-tab-post .mzb-post-date a,
-.mzb-tab-post .mzb-post-author a,
-.mzb-banner-posts .mzb-post-date a,
-.mzb-banner-posts .mzb-post-author a,
-.mzb-featured-posts .mzb-post-date a,
-.mzb-featured-posts .mzb-post-author a,
-.mzb-featured-categories .mzb-post-date a,
-.mzb-featured-categories .mzb-post-author a,
-.mzb-grid-module .mzb-post-date a,
-.mzb-grid-module .mzb-post-author a {
+.dark-skin .mzb-post-list .mzb-post-date a,
+.dark-skin .mzb-post-list .mzb-post-author a,
+.dark-skin .mzb-tab-post .mzb-post-date a,
+.dark-skin .mzb-tab-post .mzb-post-author a,
+.dark-skin .mzb-banner-posts .mzb-post-date a,
+.dark-skin .mzb-banner-posts .mzb-post-author a,
+.dark-skin .mzb-featured-posts .mzb-post-date a,
+.dark-skin .mzb-featured-posts .mzb-post-author a,
+.dark-skin .mzb-featured-categories .mzb-post-date a,
+.dark-skin .mzb-featured-categories .mzb-post-author a,
+.dark-skin .mzb-grid-module .mzb-post-date a,
+.dark-skin .mzb-grid-module .mzb-post-author a {
 	color: var(--color--gray);
 }
 
-.mzb-post-list .mzb-post-date svg,
-.mzb-post-list .mzb-post-author svg,
-.mzb-tab-post .mzb-post-date svg,
-.mzb-tab-post .mzb-post-author svg,
-.mzb-banner-posts .mzb-post-date svg,
-.mzb-banner-posts .mzb-post-author svg,
-.mzb-featured-posts .mzb-post-date svg,
-.mzb-featured-posts .mzb-post-author svg,
-.mzb-featured-categories .mzb-post-date svg,
-.mzb-featured-categories .mzb-post-author svg,
-.mzb-grid-module .mzb-post-date svg,
-.mzb-grid-module .mzb-post-author svg {
+.dark-skin .mzb-post-list .mzb-post-date svg,
+.dark-skin .mzb-post-list .mzb-post-author svg,
+.dark-skin .mzb-tab-post .mzb-post-date svg,
+.dark-skin .mzb-tab-post .mzb-post-author svg,
+.dark-skin .mzb-banner-posts .mzb-post-date svg,
+.dark-skin .mzb-banner-posts .mzb-post-author svg,
+.dark-skin .mzb-featured-posts .mzb-post-date svg,
+.dark-skin .mzb-featured-posts .mzb-post-author svg,
+.dark-skin .mzb-featured-categories .mzb-post-date svg,
+.dark-skin .mzb-featured-categories .mzb-post-author svg,
+.dark-skin .mzb-grid-module .mzb-post-date svg,
+.dark-skin .mzb-grid-module .mzb-post-author svg {
 	fill: var(--color--gray);
 }

@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-2xl font-semibold text-[#383838] relative w-fit">
 							{__('Welcome to ' + localized.themeName + '', 'colormag')}
 							<span className="absolute right-[-30px] top-[-10px] text-[10px] px-[6px] py-[4px] rounded-bl-sm bg-[#27AE6014] text-[#27AE60] leading-3">
-								{__('Free', 'colormag')}
+								{localized?.fs !== undefined ? __('Pro', 'colormag') : __('Free', 'colormag')}
 							</span>
 						</h2>
 						<p className="text-[#383838] text-sm font-normal mb-5">

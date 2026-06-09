@@ -62,7 +62,7 @@ const Header: React.FC = () => {
 					</div>
 					<div className="flex gap-4 items-center">
 						<span className="border border-solid border-[#27AE60] py-[2px] px-[10px] font-semibold text-[#27AE60] bg-[#F8FAFF] rounded-[12px]">
-							{localized.version} {__('Free', 'colormag')}
+							{localized.version} {localized?.fs !== undefined ? __('Pro', 'colormag') : __('Free', 'colormag')}
 						</span>
 						<button
 							type="button"

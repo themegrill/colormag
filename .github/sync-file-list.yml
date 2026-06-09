@@ -5,6 +5,7 @@ themegrill/colormag-pro@seperating-pro-and-free-code-to-sync-with-free:
   - archive.php
   - breadcrumb.css
   - changelog.txt
+  # changelog-pro.txt NOT listed — pro-only changelog, never overwritten by sync
   - comments.php
   - dark.css
   - dark-rtl.css
@@ -12,7 +13,6 @@ themegrill/colormag-pro@seperating-pro-and-free-code-to-sync-with-free:
   - footer.php
   - front-page.php
   - functions.php
-  - gulpfile.mjs
   - header.php
   - index.php
   - navigation.php
