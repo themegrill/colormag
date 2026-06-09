@@ -42,11 +42,11 @@ class ColorMag_Customizer {
 	}
 
 	public function on_customizer_register( $wp_customize ) {
-		$this->includes();
+		$this->includes( $wp_customize );
 		do_action( 'colormag_customize_register', $wp_customize );
 	}
 
-	protected function includes() {
+	protected function includes( $wp_customize ) {
 		require_once __DIR__ . '/panels-sections/panels-sections.php';
 		require_once __DIR__ . '/options/options.php';
 	}
