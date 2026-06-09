@@ -47,7 +47,7 @@ $options = apply_filters(
 					),
 					'colormag_top_bar_background_color' => array(
 						'title'     => esc_html__( 'Background', 'colormag' ),
-						'default'   => '',
+						'default'   => '#fff',
 						'type'      => 'customind-color',
 						'transport' => 'postMessage',
 						'section'   => 'colormag_top_bar_section',

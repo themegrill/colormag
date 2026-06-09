@@ -199,14 +199,14 @@ $options = apply_filters(
 				'colormag_link_color_sub_controls',
 				array(
 					'colormag_link_color'       => array(
-						'default'   => '',
+						'default'   => 'var(--cm-color-1)',
 						'type'      => 'customind-color',
 						'title'     => esc_html__( 'Normal', 'colormag' ),
 						'transport' => 'postMessage',
 						'section'   => 'colormag_global_colors_section',
 					),
 					'colormag_link_hover_color' => array(
-						'default'   => '',
+						'default'   => 'var(--cm-color-1)',
 						'type'      => 'customind-color',
 						'title'     => esc_html__( 'Hover', 'colormag' ),
 						'transport' => 'postMessage',

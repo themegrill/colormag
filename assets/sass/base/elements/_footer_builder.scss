@@ -118,7 +118,7 @@
 	.cm-top-row {
 		display: grid;
 		gap: 32px;
-		grid-template-columns: repeat(var(--top-grid-columns, 4), 1fr);
+		grid-template-columns: repeat(var(--top-grid-columns, 3), 1fr);
 		border: 0 solid;
 	}
 

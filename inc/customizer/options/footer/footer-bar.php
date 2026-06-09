@@ -81,14 +81,14 @@ $options = apply_filters(
 						'section'      => 'colormag_footer_bar_section',
 						'sub_controls' => array(
 							'colormag_footer_copyright_text_color' => array(
-								'default'   => '#f4f4f5',
+								'default'   => '#b1b6b6',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Normal', 'colormag' ),
 								'transport' => 'postMessage',
 								'section'   => 'colormag_footer_bar_section',
 							),
 							'colormag_footer_copyright_link_text_color' => array(
-								'default'   => '#207dafc',
+								'default'   => '#289dcc',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Hover', 'colormag' ),
 								'transport' => 'postMessage',

@@ -127,7 +127,7 @@ $options = apply_filters(
 					),
 					'colormag_site_tagline_color'      => array(
 						'title'     => esc_html__( 'Color', 'colormag' ),
-						'default'   => '',
+						'default'   => '#52525B',
 						'type'      => 'customind-color',
 						'section'   => 'title_tagline',
 						'transport' => 'postMessage',
