@@ -36,11 +36,19 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$theme_installed_time = get_option( 'colormag_theme_installed_time' ); // timestamp
 			$today                = strtotime( '2025-09-22' );
 
-			if ( ! colormag_fresh_install() || ( ! empty( $theme_installed_time ) && $theme_installed_time < $today ) ) {
+			if ( ! $this->colormag_fresh_install() || ( ! empty( $theme_installed_time ) && $theme_installed_time < $today ) ) {
 				add_action( 'after_setup_theme', [ $this, 'colormag_container_sidebar_migration' ] );
 				add_action( 'after_setup_theme', [ $this, 'colormag_typography_migration' ] );
 			}
 			add_action( 'themegrill_ajax_demo_imported', [ $this, 'colormag_container_sidebar_migration' ], 25 );
+		}
+
+		public function colormag_fresh_install() {
+			if ( get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_option( 'colormag_top_bar_options_migrate' ) || get_option( 'colormag_breadcrumb_options_migrate' ) || get_option( 'colormag_social_icons_control_migrate' ) ) {
+				return false;
+			}
+
+			return true;
 		}
 
 		public function colormag_typography_migration() {
