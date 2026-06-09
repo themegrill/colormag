@@ -329,7 +329,7 @@
 					css = colormagGenerateCommonCSS(
 						'.cm-posts .post',
 						'box-shadow',
-						value,
+						'0px 0px 2px 0px ' + value,
 					);
 					break;
 

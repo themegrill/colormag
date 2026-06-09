@@ -252,7 +252,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css     .= colormag_parse_css( '', $text_color, $text_color_css );
 
 		// Box shadow color
-		$box_shadow_color     = get_theme_mod( 'colormag_box_shadow_color', '' );
+		$box_shadow_color     = get_theme_mod( 'colormag_box_shadow_color', 'rgba(0, 0, 0, 0.24)' );
 		$box_shadow_color_css = array(
 			'.cm-posts .post' => array(
 				'box-shadow' => '0px 0px 2px 0px ' . esc_html( $box_shadow_color ),
