@@ -9,13 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-09T03:50:14+00:00\n"
+"POT-Creation-Date: 2026-06-09T11:45:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: colormag\n"
 
 #. Theme Name of the theme
-#: style.css:5
+#: style.css:3
 #: inc/admin/views/header.php:22
 #: inc/helper/utils.php:27
 #: template-parts/hooks/footer/footer.php:269
@@ -23,22 +23,22 @@ msgid "ColorMag"
 msgstr ""
 
 #. Theme URI of the theme
-#: style.css:7
+#: style.css:4
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the theme
-#: style.css:13
+#: style.css:7
 msgid "ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/"
 msgstr ""
 
 #. Author of the theme
-#: style.css:9
+#: style.css:5
 msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the theme
-#: style.css:11
+#: style.css:6
 msgid "https://themegrill.com"
 msgstr ""
 
