@@ -186,7 +186,7 @@ $options = apply_filters(
 		),
 		'colormag_box_shadow_color'             => array(
 			'title'     => esc_html__( 'Content Box Border Color', 'colormag' ),
-			'default'   => '#E4E4E7',
+			'default'   => 'rgba(0, 0, 0, 0.24)',
 			'transport' => 'postMessage',
 			'type'      => 'customind-color',
 			'section'   => 'colormag_global_colors_section',
@@ -226,9 +226,9 @@ $options = apply_filters(
 			),
 			'type'      => 'customind-background',
 			'title'     => esc_html__( 'Container Inside Background', 'colormag' ),
-			'section'   => 'colormag_global_container_section',
+			'section'   => 'colormag_global_colors_section',
 			'transport' => 'postMessage',
-			'priority'  => 20,
+			'priority'  => 10,
 		),
 		'colormag_outside_container_background' => array(
 			'default'   => array(
@@ -241,9 +241,9 @@ $options = apply_filters(
 			),
 			'type'      => 'customind-background',
 			'title'     => esc_html__( 'Container Outside Background', 'colormag' ),
-			'section'   => 'colormag_global_container_section',
+			'section'   => 'colormag_global_colors_section',
 			'transport' => 'postMessage',
-			'priority'  => 20,
+			'priority'  => 10,
 			'condition' => array(
 				'colormag_container_layout' => 'boxed',
 			),

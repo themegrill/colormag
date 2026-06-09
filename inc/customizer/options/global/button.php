@@ -64,17 +64,11 @@ $options = array(
 	'colormag_button_border_radius_divider'  => array(
 		'type'     => 'customind-divider',
 		'variant'  => 'dashed',
-		'priority' => 40,
-		'section'  => 'colormag_button_section',
-	),
-	'colormag_button_border_radius_heading'  => array(
-		'type'     => 'customind-title',
-		'title'    => esc_html__( 'Border', 'colormag' ),
-		'priority' => 40,
+		'priority' => 34,
 		'section'  => 'colormag_button_section',
 	),
 	'colormag_button_border_radius'          => array(
-		'title'       => esc_html__( 'Radius', 'colormag' ),
+		'title'       => esc_html__( 'Border Radius', 'colormag' ),
 		'default'     => array(
 			'size' => '3',
 			'unit' => 'px',

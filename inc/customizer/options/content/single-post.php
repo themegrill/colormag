@@ -293,6 +293,7 @@ $options                = apply_filters(
 			'title'     => esc_html__( 'Post Title Typography', 'colormag' ),
 			'transport' => 'postMessage',
 			'tab'       => 'style',
+			'priority'  => 6,
 			'section'   => 'colormag_single_post_section',
 			'tab_group' => 'colormag_single_post_container_tab_group',
 		),
