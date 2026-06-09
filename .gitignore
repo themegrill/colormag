@@ -16,6 +16,9 @@ project.properties
 # Dist folder
 /dist/
 
+# Build output
+/assets/build/
+
 #Bower
 /bower_components/
 

@@ -101,5 +101,25 @@ themegrill/colormag-pro@seperating-pro-and-free-code-to-sync-with-free:
   - template-parts
 
   # ── Source ───────────────────────────────────────────────────
-  - src/dashboard
+  # src/dashboard listed granularly — pro keeps its own versions of:
+  #   router/Router.tsx          (has /license route)
+  #   constants/index.tsx        (has License entry in ROUTES)
+  #   screens/index.ts           (exports License)
+  #   screens/license/           (pro-only screen)
+  #   types/index.ts             (has hide_license_tab type)
+  - src/dashboard/App.tsx
+  - src/dashboard/components
+  - src/dashboard/dashboard.scss
+  - src/dashboard/hook
+  - src/dashboard/icons
+  - src/dashboard/images
+  - src/dashboard/index.tsx
+  - src/dashboard/store
+  - src/dashboard/utils
+  - src/dashboard/screens/dashboard
+  - src/dashboard/screens/free-vs-pro
+  - src/dashboard/screens/help
+  - src/dashboard/screens/products
+  - src/dashboard/screens/starter-template
+  - src/dashboard/types/global.d.ts
   - src/meta
