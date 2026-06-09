@@ -408,7 +408,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$color_id = array(
 				array( 'colormag_primary_color', '#207daf' ),
 				array( 'colormag_base_color', '#444444' ),
-				array( 'colormag_box_shadow_color', 'gba(0, 0, 0, 0.24)' ),
+				array( 'colormag_box_shadow_color', 'rgba(0, 0, 0, 0.24)' ),
 				array( 'colormag_headings_color', '#333333' ),
 				array( 'colormag_h1_color', '' ),
 				array( 'colormag_h2_color', '#333333' ),
