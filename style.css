@@ -3037,7 +3037,7 @@ Styles for separating single posts loaded from ajax call.
 	margin-top: 12px;
 }
 .cm-entry-summary p {
-	margin-bottom: 1.5 em;
+	margin-bottom: 1.5em;
 	font-size: 1.4rem;
 }
 .cm-entry-summary p:last-child {
@@ -4304,7 +4304,7 @@ Styles for separating single posts loaded from ajax call.
 	}
 	.cm-primary {
 		width: 70%;
-		padding-right: 1.875 em;
+		padding-right: 1.875em;
 	}
 	.cm-secondary {
 		width: 30%;
@@ -5144,8 +5144,8 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 /* Footer Bar.
 --------------------------------------------- */
 .cm-footer-bar {
-	padding-top: 1.5 em;
-	padding-bottom: 1.5 em;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 	background-color: #27272a;
 	color: #f4f4f5;
 }

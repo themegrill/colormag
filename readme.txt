@@ -124,7 +124,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.0 - 2026-06-08 =
+= Version 4.2.0 - 2026-06-09 =
 * Added    - Redesigned theme dashboard.
 * Dev      - Added PHP 8.5 and WordPress 6.8+ compatibility.
 * Tweak    - Updated header redirection and upgrade link.
