@@ -31,7 +31,7 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 			'widget_layout' => array(
 				'type'      => 'custom',
 				'default'   => '',
-				'label'     => esc_html__( 'Layout will be as below:', 'colormag' ),
+				'label'     => esc_html__( 'Layout preview:', 'colormag' ),
 				'image_url' => get_template_directory_uri() . '/assets/img/style-1.jpg',
 			),
 			'title'         => array(

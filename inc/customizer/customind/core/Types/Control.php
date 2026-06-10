@@ -66,6 +66,7 @@ class Control extends \WP_Customize_Control {
 		'customind-color-group',
 		'customind-accordion',
 		'customind-tab-group',
+		'customind-tabs',
 	);
 
 	public $sub_controls = array();

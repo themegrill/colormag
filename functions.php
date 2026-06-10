@@ -12,7 +12,15 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * PHP 8.0/8.1 polyfills — must load before any code that calls str_contains() etc.
+ */
 
+if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
+	require_once get_template_directory() . '/vendor/autoload.php';
+}
+
+require get_template_directory() . '/inc/compat/php-polyfills.php';
 /**
  * Define constants.
  */
@@ -26,6 +34,9 @@ require get_template_directory() . '/inc/helper/utils.php';
 /**
  * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
  */
+require get_template_directory() . '/inc/admin/class-colormag-contribution.php';
+ColorMag_Contribution::instance();
+
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
 	require get_template_directory() . '/inc/admin/class-colormag-dashboard.php';
@@ -341,6 +352,75 @@ function colormag_is_plugin_installed( $plugin_path ) {
 	return isset( $plugins[ $plugin_path ] );
 }
 
+/**
+ * Custom REST endpoint for plugin activation.
+ *
+ * The dashboard React app routes activation here instead of directly to
+ * /wp/v2/plugins, so we can guard active_plugins before calling
+ * activate_plugin() (PHP 8.x throws TypeError when active_plugins is not
+ * an array — WP initialises it as '' on fresh installs).
+ */
+function colormag_register_activate_plugin_endpoint() {
+	register_rest_route(
+		'colormag/v1',
+		'/activate-plugin',
+		array(
+			'methods'             => 'POST',
+			'callback'            => 'colormag_rest_activate_plugin',
+			'permission_callback' => function () {
+				return current_user_can( 'activate_plugins' );
+			},
+			'args'                => array(
+				'plugin' => array(
+					'required'          => true,
+					'sanitize_callback' => 'sanitize_text_field',
+				),
+			),
+		)
+	);
+}
+add_action( 'rest_api_init', 'colormag_register_activate_plugin_endpoint' );
+
+/**
+ * Callback for POST /colormag/v1/activate-plugin.
+ *
+ * @param WP_REST_Request $request Request object.
+ * @return WP_REST_Response|WP_Error
+ */
+function colormag_rest_activate_plugin( WP_REST_Request $request ) {
+	if ( ! function_exists( 'activate_plugin' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+
+	// active_plugins is initialised as '' on a fresh WordPress install.
+	// PHP 8.x throws a TypeError when in_array() receives a string as
+	// the haystack inside activate_plugin(). Fix it here — in our own code.
+	$active_plugins = get_option( 'active_plugins' );
+	if ( false !== $active_plugins && ! is_array( $active_plugins ) ) {
+		update_option( 'active_plugins', array() );
+	}
+
+	$plugin = $request->get_param( 'plugin' );
+	$result = activate_plugin( $plugin );
+
+	if ( is_wp_error( $result ) ) {
+		return new WP_Error(
+			'activation_failed',
+			$result->get_error_message(),
+			array( 'status' => 500 )
+		);
+	}
+
+	return new WP_REST_Response(
+		array(
+			'success' => true,
+			'plugin'  => $plugin,
+			'status'  => 'active',
+		),
+		200
+	);
+}
+
 add_action( 'after_setup_theme', 'colormag_set_content_width', 0 );
 
 /**
@@ -426,7 +506,7 @@ add_action(
 			function ( $data ) {
 				$data['upgrade_notice']      = true;
 				$data['upgrade_notice_text'] = __( 'Upgrade to ColorMag Pro for more features and customization options.', 'colormag' );
-				$data['upgrade_notice_link'] = 'https://themegrill.com/pricing/?utm_medium=customizer-upsell&utm_source=colormag-theme&utm_campaign=upsell-button&utm_content=more-feature-in-pro';
+				$data['upgrade_notice_link'] = 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-25';
 
 				return $data;
 			}

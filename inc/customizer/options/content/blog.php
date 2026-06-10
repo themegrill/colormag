@@ -242,7 +242,7 @@ $options = apply_filters(
 					'controls' => array(),
 				),
 				'tags'        => array(
-					'label'    => 'content',
+					'label'    => 'tags',
 					'controls' => array(),
 				),
 				'read-time'   => array(
@@ -299,7 +299,7 @@ $options = apply_filters(
 
 			'tab'       => 'style',
 			'tab_group' => 'colormag_blog_container_tab_group',
-			'title'     => esc_html__( 'Post Title', 'colormag' ),
+			'title'     => esc_html__( 'Post Title Typography', 'colormag' ),
 			'section'   => 'colormag_blog_archive_section',
 		),
 		'colormag_pagination_heading'               => array(
@@ -337,7 +337,7 @@ $options = apply_filters(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
-			'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+			'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-3' ),
 			'points'      => array(
 				esc_html__( 'Grid layout', 'colormag' ),
 				esc_html__( 'Blog page layout', 'colormag' ),

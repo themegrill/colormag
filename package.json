@@ -58,7 +58,6 @@
     "gulp-watch": "^5.0.1",
     "gulp-wp-pot": "^2.5.0",
     "gulp-zip": "^6.0.0",
-    "node-sass": "^9.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.3.2",
     "prettier-plugin-organize-imports": "^3.2.4",

@@ -2,18 +2,22 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.1.2
+Version: 4.2.0
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.1.2
+Stable tag: 4.2.0
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: one-column, two-columns, right-sidebar, left-sidebar, flexible-header, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats, footer-widgets, blog, e-commerce, news, rtl-language-support
 
 == Description ==
-ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
+ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org.
+
+Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included.
+
+Download ColorMag free and get your news or magazine site live in minutes. Premium upgrades and support available at https://themegrill.com/themes/colormag-upgrade/
 
 For more information about ColorMag please go to https://themegrill.com/themes/colormag/
 
@@ -35,7 +39,7 @@ Resources packed within the theme.
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
 * Images used in the screenshot are licensed under Creative Commons Zero (CC0):
-  
+
   https://pxhere.com/en/photo/1368697
   https://pxhere.com/en/photo/99223
   https://pxhere.com/en/photo/1364216
@@ -86,7 +90,7 @@ Resources packed within the theme.
   https://stocksnap.io/photo/lake-blue-0MRSBYLPNM
   https://stocksnap.io/photo/lake-blue-FJIZ474BGQ
   https://stocksnap.io/photo/lake-blue-TDAU1ERCD4
- 
+
   https://pxhere.com/en/photo/613031
   https://pxhere.com/en/photo/1558211
   https://pxhere.com/en/photo/1333828
@@ -120,6 +124,32 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.0 - 2026-06-09 =
+* Added    - Redesigned theme dashboard.
+* Dev      - Added PHP 8.5 and WordPress 6.8+ compatibility.
+* Tweak    - Updated header redirection and upgrade link.
+* Tweak    - Added step increments to range slider controls in the Customizer.
+* Tweak    - Used theme version instead of timestamp for stylesheet cache-busting.
+* Tweak    - Clearer, less technical Customizer labels and refined info-text design.
+* Tweak    - Limited builder option database writes to the admin area for better performance.
+* Tweak    - Declared GPL-2.0-or-later license for the bundled Customind framework and updated its build.
+* Fix      - ColorMag dashboard page issues.
+* Fix      - Blog title font size not changing.
+* Fix      - WooCommerce checkout layout issue.
+* Fix      - Escaped category titles to prevent XSS.
+* Fix      - Category title height and scroll gap issues.
+* Fix      - H3 and H4 sharing the same default font size (24px).
+* Fix      - Escaped news ticker post titles to prevent stored XSS.
+* Fix      - PHP warning (foreach() argument) in Elementor widgets.
+* Fix      - UI breaking in the color palette dropdown (HEX, RGB, HSL).
+* Fix      - Search button color not reflected in the search box dropdown.
+* Fix      - Post Elements / Post Meta sorting not working on Single Post.
+* Fix      - Image position could not be changed on Single Post and Blog pages.
+* Fix      - Block editor not respecting the "Load Google Fonts locally" setting.
+* Fix      - Sanitized footer copyright shortcode output to prevent admin-stored XSS.
+* Fix      - Social icons (X, Instagram) not displayed with their official brand icons.
+* Fix      - Restricted REST API meta auth_callback to the edit_post capability (privilege escalation).
+
 = Version 4.1.2 - 2025-12-18 =
 * Added - New combined typography color option in the Typography section, allowing unified color control for text styles.
 * Moved  - Relocated Headings color settings (H1–H3) from their previous location into the Typography section for better organization and easier access.
@@ -329,7 +359,7 @@ and we will include it within the theme from next version update.
 * Option - To change sidebar width.
 * Fix    - Primary menu background on contained main header.
 * Fix    - Post meta categories issue.
- 
+
 = Version - 3.1.5 - 2024-02-20 =
 * Option - To change global base color.
 * Option - To change global box border color.

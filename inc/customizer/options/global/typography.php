@@ -631,6 +631,11 @@ $options                   = apply_filters(
 			'variant' => 'solid',
 			'section' => 'colormag_global_typography_section',
 		),
+		'colormag_typography_post_types_info'   => array(
+			'type'      => 'customind-heading',
+			'info_text' => esc_html__( 'Looking for post type typography? Find it under Post Types → Blog, Single Post, Page.', 'colormag' ),
+			'section'   => 'colormag_global_typography_section',
+		),
 		'colormag_h1_typography'                => array(
 			'default'   => array(
 				'font-family'    => 'inherit',
@@ -764,7 +769,7 @@ $options                   = apply_filters(
 				'subsets'     => array( 'latin' ),
 				'font-size'   => array(
 					'desktop' => array(
-						'size' => '24',
+						'size' => '20',
 						'unit' => 'px',
 					),
 					'tablet'  => array(
@@ -804,7 +809,7 @@ $options                   = apply_filters(
 				'subsets'     => array( 'latin' ),
 				'font-size'   => array(
 					'desktop' => array(
-						'size' => '22',
+						'size' => '18',
 						'unit' => 'px',
 					),
 					'tablet'  => array(
@@ -844,7 +849,7 @@ $options                   = apply_filters(
 				'subsets'     => array( 'latin' ),
 				'font-size'   => array(
 					'desktop' => array(
-						'size' => '18',
+						'size' => '16',
 						'unit' => 'px',
 					),
 					'tablet'  => array(

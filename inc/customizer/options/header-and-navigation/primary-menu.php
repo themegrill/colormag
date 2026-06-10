@@ -85,7 +85,7 @@ $options = apply_filters(
 								'colormag_primary_menu_selected_hovered_text_color' => array(
 									'default'   => '',
 									'type'      => 'customind-color',
-									'title'     => esc_html__( 'Hover/Selected', 'colormag' ),
+									'title'     => esc_html__( 'Hover / Active', 'colormag' ),
 									'transport' => 'postMessage',
 									'section'   => 'colormag_primary_menu_section',
 								),
@@ -212,7 +212,7 @@ $options = apply_filters(
 								'colormag_mobile_menu_selected_hovered_text_color' => array(
 									'default'   => '',
 									'type'      => 'customind-color',
-									'title'     => esc_html__( 'Hover/Selected', 'colormag' ),
+									'title'     => esc_html__( 'Hover / Active', 'colormag' ),
 									'transport' => 'postMessage',
 									'section'   => 'colormag_primary_menu_section',
 								),
@@ -321,7 +321,7 @@ $options = apply_filters(
 			'type'        => 'customind-upsell',
 			'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
 			'title'       => esc_html__( 'Learn more', 'colormag' ),
-			'url'         => esc_url( 'https://themegrill.com/pricing/?utm_medium=customizer-upgrade&utm_source=colormag-theme&utm_campaign=customizer-upgrade-button&utm_content=learn-more' ),
+			'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-16' ),
 			'section'     => 'colormag_primary_menu_section',
 			'priority'    => 100,
 		),

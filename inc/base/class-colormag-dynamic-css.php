@@ -382,7 +382,7 @@ class ColorMag_Dynamic_CSS {
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(
 				'desktop' => array(
-					'size' => '36',
+					'size' => '40',
 					'unit' => 'px',
 				),
 				'tablet'  => array(
@@ -529,7 +529,7 @@ class ColorMag_Dynamic_CSS {
 		$heading_h4_typography_default            = array(
 			'font-size'   => array(
 				'desktop' => array(
-					'size' => '24',
+					'size' => '20',
 					'unit' => 'px',
 				),
 				'tablet'  => array(
@@ -560,7 +560,7 @@ class ColorMag_Dynamic_CSS {
 		$heading_h5_typography_default            = array(
 			'font-size'   => array(
 				'desktop' => array(
-					'size' => '22',
+					'size' => '18',
 					'unit' => 'px',
 				),
 				'tablet'  => array(
@@ -591,7 +591,7 @@ class ColorMag_Dynamic_CSS {
 		$heading_h6_typography_default            = array(
 			'font-size'   => array(
 				'desktop' => array(
-					'size' => '18',
+					'size' => '16',
 					'unit' => 'px',
 				),
 				'tablet'  => array(
