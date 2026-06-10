@@ -30,6 +30,15 @@ class ColorMag_Dynamic_CSS {
 	 */
 	public static function render_output( $dynamic_css, $dynamic_css_filtered = '' ) {
 
+		// Serve from transient cache unless inside the Customizer live preview.
+		if ( ! is_customize_preview() ) {
+			$fingerprint = md5( serialize( get_theme_mods() ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.serialize_serialize
+			$cached      = get_transient( 'colormag_dynamic_css_cache' );
+			if ( false !== $cached && isset( $cached['hash'], $cached['css'] ) && $cached['hash'] === $fingerprint ) {
+				return $cached['css'];
+			}
+		}
+
 		// Generate dynamic CSS.
 		$parse_css = '';
 
@@ -1602,7 +1611,29 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= self::colormag_editor_block_css();
 		$parse_css .= self::generate_color_palette_css_variables();
 
-		return apply_filters( 'colormag_theme_dynamic_css', $parse_css );
+		$output = apply_filters( 'colormag_theme_dynamic_css', $parse_css );
+
+		if ( ! is_customize_preview() ) {
+			set_transient(
+				'colormag_dynamic_css_cache',
+				array(
+					'hash' => $fingerprint,
+					'css'  => $output,
+				),
+				DAY_IN_SECONDS
+			);
+		}
+
+		return $output;
+	}
+
+	/**
+	 * Returns cached dynamic CSS. Drops in as a replacement for the missing get_css() call.
+	 *
+	 * @return string
+	 */
+	public static function get_css() {
+		return self::render_output( '' );
 	}
 
 	/**
@@ -1754,3 +1785,8 @@ class ColorMag_Dynamic_CSS {
 		return $parse_wc_css;
 	}
 }
+
+// Bust the CSS cache whenever the Customizer settings are saved.
+add_action( 'customize_save_after', function () {
+	delete_transient( 'colormag_dynamic_css_cache' );
+} );
