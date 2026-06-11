@@ -26,6 +26,13 @@ class ColorMag_Contribution {
 	}
 
 	private function setup_hooks() {
+		// AJAX handler works without SDK — register unconditionally.
+		add_action( 'wp_ajax_colormag_save_tracking', array( $this, 'ajax_save_tracking' ) );
+
+		if ( ! file_exists( get_template_directory() . '/vendor/themegrill/themegrill-sdk/load.php' ) ) {
+			return;
+		}
+
 		add_filter( 'themegrill_sdk_products', array( $this, 'register_product' ) );
 		add_action( 'init', array( $this, 'customize_deactivation_labels' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'declare_internal_page' ) );
@@ -36,25 +43,10 @@ class ColorMag_Contribution {
 		// Suppress the SDK notification banner — we use our own dashboard toggle instead.
 		add_filter( 'colormag_logger_flag_should_show', '__return_false' );
 
-		// AJAX handler for the dashboard toggle.
-		add_action( 'wp_ajax_colormag_save_tracking', array( $this, 'ajax_save_tracking' ) );
-
 		// Weekly cron bridges to SDK's log action so send_log() fires.
 		add_action( 'colormag_log_activity_weekly', function() {
 			do_action( 'colormag_log_activity' );
 		} );
-
-		// Fix: ensure environment.plugins is a JSON array not object.
-		add_filter( 'http_request_args', function( $args, $url ) {
-			if ( false !== strpos( $url, 'api.themegrill.com/tracking/log' ) && ! empty( $args['body'] ) ) {
-				$body = json_decode( $args['body'], true );
-				if ( isset( $body['environment']['plugins'] ) ) {
-					$body['environment']['plugins'] = array_values( (array) $body['environment']['plugins'] );
-					$args['body']                   = wp_json_encode( $body );
-				}
-			}
-			return $args;
-		}, 10, 2 );
 	}
 
 	/**
