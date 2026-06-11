@@ -26,10 +26,14 @@ class ColorMag_Contribution {
 	}
 
 	private function setup_hooks() {
-		// AJAX handler works without SDK — register unconditionally.
+		// AJAX handler and debug hooks work without SDK — register unconditionally.
 		add_action( 'wp_ajax_colormag_save_tracking', array( $this, 'ajax_save_tracking' ) );
+		add_action( 'colormag_log_activity', array( $this, 'debug_log_cron_fired' ), 1 );
+		add_filter( 'pre_http_request', array( $this, 'debug_log_payload' ), 10, 3 );
 
 		if ( ! file_exists( get_template_directory() . '/vendor/themegrill/themegrill-sdk/load.php' ) ) {
+			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+			error_log( 'ColorMag SDK vendor not found at: ' . get_template_directory() . '/vendor/themegrill/themegrill-sdk/load.php' );
 			return;
 		}
 
@@ -44,9 +48,7 @@ class ColorMag_Contribution {
 		add_filter( 'colormag_logger_flag_should_show', '__return_false' );
 
 		// Weekly cron bridges to SDK's log action so send_log() fires.
-		add_action( 'colormag_log_activity_weekly', function() {
-			do_action( 'colormag_log_activity' );
-		} );
+		add_action( 'colormag_log_activity_weekly', array( $this, 'fire_sdk_log' ) );
 	}
 
 	/**
@@ -197,18 +199,93 @@ class ColorMag_Contribution {
 		update_option( 'colormag_pro_logger_flag', $flag );
 
 		if ( $enabled ) {
-			wp_clear_scheduled_hook( 'colormag_log_activity' );
-			wp_schedule_single_event( time() - 1, 'colormag_log_activity' );
 			if ( ! wp_next_scheduled( 'colormag_log_activity_weekly' ) ) {
 				wp_schedule_event( time() + WEEK_IN_SECONDS, 'weekly', 'colormag_log_activity_weekly' );
 			}
-			spawn_cron();
+			$this->fire_tracking_immediately();
 		} else {
-			wp_clear_scheduled_hook( 'colormag_log_activity' );
 			wp_clear_scheduled_hook( 'colormag_log_activity_weekly' );
+			wp_clear_scheduled_hook( 'colormag_log_activity' );
+			wp_clear_scheduled_hook( 'colormag_pro_log_activity' );
 		}
 
 		wp_send_json_success( array( 'enabled' => $enabled ) );
+	}
+
+	/**
+	 * Re-run Logger::setup_actions() with flag now 'yes', then fire immediately.
+	 * Needed because setup_actions() ran at wp_loaded before consent was given.
+	 */
+	private function fire_tracking_immediately() {
+		global $wp_filter;
+		if ( ! isset( $wp_filter['wp_loaded'] ) || ! class_exists( 'ThemeGrillSDK\Modules\Logger' ) ) {
+			return;
+		}
+		foreach ( $wp_filter['wp_loaded']->callbacks as $callbacks ) {
+			foreach ( $callbacks as $cb ) {
+				if ( is_array( $cb['function'] )
+					&& $cb['function'][0] instanceof \ThemeGrillSDK\Modules\Logger
+					&& 'setup_actions' === $cb['function'][1] ) {
+					$cb['function'][0]->setup_actions();
+				}
+			}
+		}
+		do_action( 'colormag_log_activity' );
+		do_action( 'colormag_pro_log_activity' );
+	}
+
+	/**
+	 * Cron callback: bridge weekly cron to SDK log action so send_log() fires.
+	 */
+	public function fire_sdk_log() {
+		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+		error_log( 'ColorMag cron fired: colormag_log_activity_weekly → firing colormag_log_activity' );
+		do_action( 'colormag_log_activity' );
+	}
+
+	/**
+	 * Log when colormag_log_activity fires (immediate single event or bridged from weekly).
+	 */
+	public function debug_log_cron_fired() {
+		global $wp_filter;
+
+		$source = wp_doing_cron() ? 'wp-cron' : 'manual/ajax';
+		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+		error_log( 'ColorMag cron fired: colormag_log_activity (source: ' . $source . ', logger_flag: ' . get_option( 'colormag_logger_flag', 'not set' ) . ', sdk_loaded: ' . ( class_exists( 'ThemeGrillSDK\Loader' ) ? 'yes' : 'no' ) . ')' );
+
+		if ( isset( $wp_filter['colormag_log_activity'] ) ) {
+			foreach ( $wp_filter['colormag_log_activity']->callbacks as $priority => $callbacks ) {
+				foreach ( $callbacks as $cb ) {
+					if ( is_array( $cb['function'] ) ) {
+						$name = get_class( $cb['function'][0] ) . '->' . $cb['function'][1];
+					} elseif ( $cb['function'] instanceof Closure ) {
+						$name = 'Closure';
+					} else {
+						$name = (string) $cb['function'];
+					}
+					// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+					error_log( '  colormag_log_activity priority ' . $priority . ': ' . $name );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Log SDK tracking payload to debug.log when WP_DEBUG is on.
+	 *
+	 * @param bool|array $pre  Whether to preempt the request.
+	 * @param array      $args Request arguments.
+	 * @param string     $url  Request URL.
+	 * @return bool|array
+	 */
+	public function debug_log_payload( $pre, $args, $url ) {
+		if ( false !== strpos( $url, 'api.themegrill.com/tracking/log' ) ) {
+			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+			error_log( 'ColorMag SDK payload sent to: ' . $url );
+			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+			error_log( 'ColorMag SDK body: ' . print_r( json_decode( $args['body'], true ), true ) );
+		}
+		return $pre;
 	}
 
 	/**
