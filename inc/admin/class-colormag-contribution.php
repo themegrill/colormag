@@ -30,6 +30,7 @@ class ColorMag_Contribution {
 		add_action( 'wp_ajax_colormag_save_tracking', array( $this, 'ajax_save_tracking' ) );
 		add_action( 'colormag_log_activity', array( $this, 'debug_log_cron_fired' ), 1 );
 		add_filter( 'pre_http_request', array( $this, 'debug_log_payload' ), 10, 3 );
+		add_action( 'colormag_log_activity_weekly', array( $this, 'fire_sdk_log' ) );
 
 		if ( ! file_exists( get_template_directory() . '/vendor/themegrill/themegrill-sdk/load.php' ) ) {
 			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
@@ -46,9 +47,6 @@ class ColorMag_Contribution {
 
 		// Suppress the SDK notification banner — we use our own dashboard toggle instead.
 		add_filter( 'colormag_logger_flag_should_show', '__return_false' );
-
-		// Weekly cron bridges to SDK's log action so send_log() fires.
-		add_action( 'colormag_log_activity_weekly', array( $this, 'fire_sdk_log' ) );
 	}
 
 	/**
@@ -161,7 +159,7 @@ class ColorMag_Contribution {
 		$data['php_version']     = PHP_VERSION;
 		$data['mysql_version']   = $wpdb->db_version();
 		$data['server_software'] = isset( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
-		$data['theme_mods']      = get_theme_mods();
+		$data['theme_mods']      = wp_json_encode( get_theme_mods() );
 
 		return $data;
 	}
