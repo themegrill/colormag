@@ -20,7 +20,7 @@
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@babel/runtime": "7.0.0-beta.55",
+    "@babel/runtime": "^7.27.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/wordpress__edit-post": "^8.4.2",
