@@ -17,7 +17,7 @@ const uglify = _uglify.default;
 const info = {
 	name: 'colormag',
 	slug: 'colormag',
-	url: 'https://themegrill.com/plugins/zakra-pro/',
+	url: 'https://themegrill.com/themes/colormag/',
 	author: 'ThemeGrill',
 	authorUrl: 'https://themegrill.com/',
 	authorEmail: 'themegrill@gmail.com',
