@@ -99,12 +99,11 @@ function colormagInit() {
 	jQuery('a#scroll-up')
 		.off('click.colormag')
 		.on('click.colormag', function () {
-			jQuery('body,html').animate(
-				{
-					scrollTop: 0,
-				},
-				800,
-			);
+			if ('scrollBehavior' in document.documentElement.style) {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			} else {
+				jQuery('body,html').animate({ scrollTop: 0 }, 800);
+			}
 			return false;
 		});
 
