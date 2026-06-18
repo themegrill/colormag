@@ -17,9 +17,7 @@ ColorMag is a fast, flexible WordPress theme built for news portals, online maga
 
 Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included.
 
-Download ColorMag free and get your news or magazine site live in minutes. Premium upgrades and support available at https://themegrill.com/themes/colormag-upgrade/
-
-For more information about ColorMag please go to https://themegrill.com/themes/colormag/
+Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag
 
 == Installation ==
 
