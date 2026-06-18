@@ -22,10 +22,9 @@ function colormagInit() {
 			jQuery(this).next('#cm-masthead .search-form-top').toggleClass('show');
 
 			jQuery('#cm-content').toggleClass('backdrop');
-			// Focus after some time to fix conflict with toggleClass.
-			setTimeout(function () {
+			requestAnimationFrame(function () {
 				jQuery('#cm-masthead .search-form-top input').focus();
-			}, 200);
+			});
 
 			// Function to adjust search form position to prevent horizontal overflow
 			function adjustSearchFormPosition() {
