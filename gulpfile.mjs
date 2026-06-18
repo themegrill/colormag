@@ -17,7 +17,7 @@ const uglify = _uglify.default;
 const info = {
 	name: 'colormag',
 	slug: 'colormag',
-	url: 'https://themegrill.com/plugins/zakra-pro/',
+	url: 'https://themegrill.com/themes/colormag/',
 	author: 'ThemeGrill',
 	authorUrl: 'https://themegrill.com/',
 	authorEmail: 'themegrill@gmail.com',
@@ -158,7 +158,6 @@ function sassCompile() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}),
 		)
 		.pipe(autoprefixer())
@@ -175,7 +174,6 @@ function adminSassCompile() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}).on('error', sass.logError),
 		)
 		.pipe(lec({ verbose: true, eolc: 'LF', encoding: 'utf8' }))
@@ -190,7 +188,6 @@ function elementorStylesCompile() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}).on('error', sass.logError),
 		)
 		.pipe(autoprefixer())
@@ -239,7 +236,6 @@ function compileMetaBoxSass() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}).on('error', sass.logError),
 		)
 		.pipe(autoprefixer())
