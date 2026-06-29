@@ -50,7 +50,7 @@ foreach ( $device_types as $device ) {
 ?>
 
 
-	<div id="cm-site-branding" class="cm-site-branding">
+	<div class="cm-site-branding">
 		<?php
 		if ( function_exists( 'the_custom_logo' ) ) {
 			the_custom_logo();
@@ -62,7 +62,7 @@ foreach ( $device_types as $device ) {
 
 if ( $site_identity_enable || $site_tagline_enable ) {
 	?>
-	<div id="cm-site-info" class="">
+	<div class="cm-site-info">
 		<?php
 		if ( $site_identity_enable ) {
 			if ( is_front_page() || is_home() ) :
