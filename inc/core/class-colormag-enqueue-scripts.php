@@ -236,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( $style['handle'] );
 			}
 
-			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.5.2' );
+			// FA v6 already enqueued above as 'font-awesome-all' — no second load needed.
 
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
@@ -676,8 +676,14 @@ add_filter( 'colormag_font_subset', 'colormag_font_subset' );
 
 /**
  * Enqueue image upload script for use within widgets.
+ * Only loaded on the widgets screen — not on every admin page.
  */
 function colormag_image_uploader() {
+
+	$screen = get_current_screen();
+	if ( ! $screen || 'widgets' !== $screen->id ) {
+		return;
+	}
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
