@@ -1187,10 +1187,32 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
-			$top_bar_enable     = get_theme_mod( 'colormag_enable_top_bar', 0 );
-			$date_enable        = get_theme_mod( 'colormag_date_display', false );
-			$news_ticker_enable = get_theme_mod( 'colormag_enable_news_ticker', 0 );
-			$social_enable      = get_theme_mod( 'colormag_enable_social_icons', 0 );
+			/**
+			 * Extension point for pro main header builder migration (advanced
+			 * styles / layout-3, which are pro-only features).
+			 *
+			 * @param array  $header_builder_config Header builder config (by reference).
+			 * @param string $main_header_layout    Main header layout.
+			 * @param string $home_icon             Home icon display mode.
+			 * @param bool   $search_enable         Search icon enabled.
+			 * @param bool   $random_enable         Random post icon enabled.
+			 */
+			do_action_ref_array(
+				'colormag_pro_builder_migration_header',
+				array(
+					&$header_builder_config,
+					$main_header_layout,
+					$home_icon,
+					$search_enable,
+					$random_enable,
+				)
+			);
+
+			$top_bar_enable       = get_theme_mod( 'colormag_enable_top_bar', 0 );
+			$date_enable          = get_theme_mod( 'colormag_date_display', false );
+			$news_ticker_enable   = get_theme_mod( 'colormag_enable_news_ticker', 0 );
+			$social_enable        = get_theme_mod( 'colormag_enable_social_icons', 0 );
+			$social_header_enable = get_theme_mod( 'colormag_enable_social_icons_header', 1 );
 			if ( $top_bar_enable ) {
 				if ( $date_enable ) {
 					$header_builder_config['desktop']['top']['left'][] = 'date';
@@ -1200,10 +1222,29 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 					$header_builder_config['desktop']['top']['left'][] = 'news-ticker';
 				}
 
-				if ( $social_enable ) {
+				if ( $social_enable && $social_header_enable ) {
 					$header_builder_config['desktop']['top']['right'][] = 'socials';
 				}
 			}
+
+			/**
+			 * Extension point for pro header social icon placement (the
+			 * "Header Location" choice between top bar and menu is pro-only).
+			 *
+			 * @param array $header_builder_config Header builder config (by reference).
+			 * @param bool  $social_enable         Social icons enabled.
+			 * @param bool  $social_header_enable  Header social icons enabled.
+			 * @param bool  $top_bar_enable        Top bar enabled.
+			 */
+			do_action_ref_array(
+				'colormag_pro_builder_migration_header_social',
+				array(
+					&$header_builder_config,
+					$social_enable,
+					$social_header_enable,
+					$top_bar_enable,
+				)
+			);
 
 			$header_builder_config['mobile']['main']['center'][] = 'logo';
 			if ( count( $header_builder_config['mobile']['main']['center'] ) > 1 ) {
