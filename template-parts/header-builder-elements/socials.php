@@ -33,11 +33,11 @@ $social = get_theme_mod(
 );
 
 $social_icon      = get_theme_mod( 'colormag_header_socials_style', 'default' );
-$social_separator = get_theme_mod( 'colormag_header_socials_separator', 'pipe' );
+$social_separator = 'default' !== $social_icon ? get_theme_mod( 'colormag_header_socials_separator', 'pipe' ) : '';
 ?>
 
 <?php if ( ! empty( $social ) ) : ?>
-	<div class="social-icons header-social-icons social-separator-<?php echo esc_attr( $social_separator ); ?> social-<?php echo esc_attr( $social_icon ); ?>">
+	<div class="social-icons header-social-icons<?php echo $social_separator ? ' social-separator-' . esc_attr( $social_separator ) : ''; ?> social-<?php echo esc_attr( $social_icon ); ?>">
 		<?php foreach ( $social as $key => $value ) : ?>
 			<?php if ( ! empty( $value ) ) : ?>
 				<?php

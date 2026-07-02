@@ -1305,7 +1305,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 						$footer_builder_config['desktop']['bottom']['bottom-2'] = [ 'socials' ];
 					}
 				}
-			} elseif ( 'right' === $footer_column_layout ) {
+			} elseif ( 'right' === $footer_bar_alignment ) {
 				if ( $social_icons_enable ) {
 					if ( $social_icons_footer_enable ) {
 						$footer_builder_config['desktop']['bottom']['bottom-1'] = [ 'socials' ];
@@ -1313,7 +1313,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 				$footer_builder_config['desktop']['bottom']['bottom-2'] = [ 'copyright' ];
 
-			} elseif ( 'center' === $footer_column_layout ) {
+			} elseif ( 'center' === $footer_bar_alignment ) {
 				set_theme_mod( 'colormag_footer_bottom_area_cols', 1 );
 				$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'copyright';
 				if ( $social_icons_enable ) {
@@ -1323,35 +1323,29 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
+			/**
+			 * Extension point for pro footer builder migration.
+			 *
+			 * @param array  $footer_builder_config      Footer builder config (by reference).
+			 * @param string $footer_column_layout       Footer column layout.
+			 * @param string $footer_bar_alignment       Footer bar alignment.
+			 * @param bool   $social_icons_enable        Social icons enabled.
+			 * @param bool   $social_icons_footer_enable Social icons in footer enabled.
+			 */
+			do_action_ref_array(
+				'colormag_pro_builder_migration_footer',
+				array(
+					&$footer_builder_config,
+					$footer_column_layout,
+					$footer_bar_alignment,
+					$social_icons_enable,
+					$social_icons_footer_enable,
+				)
+			);
+
 			// Social links lists.
 			$social_links_count    = 70;
-			$colormag_social_links = array(
-				'colormag_social_facebook'  => array(
-					'id'      => 'colormag_social_facebook',
-					'title'   => esc_html__( 'Facebook', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_twitter'   => array(
-					'id'      => 'colormag_social_twitter',
-					'title'   => esc_html__( 'Twitter', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_instagram' => array(
-					'id'      => 'colormag_social_instagram',
-					'title'   => esc_html__( 'Instagram', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_pinterest' => array(
-					'id'      => 'colormag_social_pinterest',
-					'title'   => esc_html__( 'Pinterest', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_youtube'   => array(
-					'id'      => 'colormag_social_youtube',
-					'title'   => esc_html__( 'YouTube', 'colormag' ),
-					'default' => '',
-				),
-			);
+			$colormag_social_links = apply_filters( 'colormag_social_links_migration_map', self::get_base_social_links_migration_map() );
 
 			$all_social_links = [];
 			foreach ( $colormag_social_links as $colormag_social_link ) {
@@ -1381,7 +1375,10 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
+			$all_social_links = apply_filters( 'colormag_builder_migration_social_links', $all_social_links );
+
 			set_theme_mod( 'colormag_footer_socials', $all_social_links );
+			do_action( 'colormag_pro_builder_migration_socials', $all_social_links );
 
 			set_theme_mod( 'colormag_footer_builder', $footer_builder_config );
 
@@ -1648,33 +1645,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 
 			// Social links lists.
 			$social_links_count    = 70;
-			$colormag_social_links = array(
-				'colormag_social_facebook'  => array(
-					'id'      => 'colormag_social_facebook',
-					'title'   => esc_html__( 'Facebook', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_twitter'   => array(
-					'id'      => 'colormag_social_twitter',
-					'title'   => esc_html__( 'Twitter', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_instagram' => array(
-					'id'      => 'colormag_social_instagram',
-					'title'   => esc_html__( 'Instagram', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_pinterest' => array(
-					'id'      => 'colormag_social_pinterest',
-					'title'   => esc_html__( 'Pinterest', 'colormag' ),
-					'default' => '',
-				),
-				'colormag_social_youtube'   => array(
-					'id'      => 'colormag_social_youtube',
-					'title'   => esc_html__( 'YouTube', 'colormag' ),
-					'default' => '',
-				),
-			);
+			$colormag_social_links = apply_filters( 'colormag_social_links_migration_map', self::get_base_social_links_migration_map() );
 
 			$all_social_links = [];
 			foreach ( $colormag_social_links as $colormag_social_link ) {
@@ -1704,8 +1675,11 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 				}
 			}
 
+			$all_social_links = apply_filters( 'colormag_builder_migration_social_links', $all_social_links );
+
 			set_theme_mod( 'colormag_header_socials', $all_social_links );
 			set_theme_mod( 'colormag_footer_socials', $all_social_links );
+			do_action( 'colormag_pro_builder_migration_socials', $all_social_links );
 
 			update_option( 'colormag_builder_migration', true );
 		}
@@ -1785,6 +1759,41 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 		 *
 		 * @since 4.0.0
 		 */
+		/**
+		 * Base social network theme mods used during builder migration.
+		 *
+		 * @return array
+		 */
+		public static function get_base_social_links_migration_map() {
+			return array(
+				'colormag_social_facebook'  => array(
+					'id'      => 'colormag_social_facebook',
+					'title'   => esc_html__( 'Facebook', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_twitter'   => array(
+					'id'      => 'colormag_social_twitter',
+					'title'   => esc_html__( 'Twitter', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_instagram' => array(
+					'id'      => 'colormag_social_instagram',
+					'title'   => esc_html__( 'Instagram', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_pinterest' => array(
+					'id'      => 'colormag_social_pinterest',
+					'title'   => esc_html__( 'Pinterest', 'colormag' ),
+					'default' => '',
+				),
+				'colormag_social_youtube'   => array(
+					'id'      => 'colormag_social_youtube',
+					'title'   => esc_html__( 'YouTube', 'colormag' ),
+					'default' => '',
+				),
+			);
+		}
+
 		public static function remove_component( $component_to_remove, &$_array ) {
 			foreach ( $_array as $key => &$value ) {
 				if ( is_array( $value ) ) {
@@ -1842,7 +1851,21 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			 * If migration is already run then return false.
 			 *
 			 */
-			$migrated = get_option( 'colormag_free_major_update_customizer_migration_v1' ) || get_theme_mod( 'colormag_enable_builder' );
+			$migrated_options = apply_filters(
+				'colormag_migration_completed_options',
+				array(
+					'colormag_free_major_update_customizer_migration_v1',
+				)
+			);
+
+			$migrated = get_theme_mod( 'colormag_enable_builder' );
+
+			foreach ( $migrated_options as $migration_option ) {
+				if ( get_option( $migration_option ) ) {
+					$migrated = true;
+					break;
+				}
+			}
 
 			if ( $migrated || wp_doing_ajax() ) {
 

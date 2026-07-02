@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function colormag_demo_import_migration_notice() {
 	$demo_imported  = get_option( 'themegrill_demo_importer_activated_id' );
 	$notice_dismiss = get_option( 'colormag_demo_import_migration_notice_dismiss' );
-	$migration_flag = get_option( 'colormag_free_major_update_customizer_migration_v1' );
+	$migration_flag = colormag_has_completed_migration();
 
 	if ( ! $notice_dismiss && $migration_flag && $demo_imported ) :
 		?>
