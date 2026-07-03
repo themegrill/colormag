@@ -1013,6 +1013,48 @@ if ( ! function_exists( 'colormag_parse_border_css' ) ) {
 	}
 }
 
+if ( ! function_exists( 'colormag_typography_is_inherit_value' ) ) :
+
+	/**
+	 * Whether a typography setting should inherit and skip CSS output.
+	 *
+	 * @param mixed $value Typography setting value.
+	 * @return bool
+	 */
+	function colormag_typography_is_inherit_value( $value ) {
+		if ( ! is_string( $value ) || '' === $value ) {
+			return false;
+		}
+
+		return 'inherit' === strtolower( $value );
+	}
+
+endif;
+
+if ( ! function_exists( 'colormag_typography_strip_inherit_props' ) ) :
+
+	/**
+	 * Remove inherit typography properties before generating CSS.
+	 *
+	 * @param array|string $typography Typography settings.
+	 * @return array|string
+	 */
+	function colormag_typography_strip_inherit_props( $typography ) {
+		if ( ! is_array( $typography ) ) {
+			return $typography;
+		}
+
+		foreach ( array( 'font-family', 'font-weight', 'font-style' ) as $property ) {
+			if ( isset( $typography[ $property ] ) && colormag_typography_is_inherit_value( $typography[ $property ] ) ) {
+				unset( $typography[ $property ] );
+			}
+		}
+
+		return $typography;
+	}
+
+endif;
+
 if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 	/**
@@ -1027,9 +1069,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 	 */
 	function colormag_parse_typography_css( $default_value, $output_value, $selector, $devices = array() ) {
 
-		if ( isset( $default_value['font-family'] ) && isset( $output_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
-			$output_value['font-family'] = 'inherit';
-		}
+		$output_value = colormag_typography_strip_inherit_props( $output_value );
 
 		if ( $default_value === $output_value ) {
 			return;
@@ -1039,13 +1079,13 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 		// For font family.
 		$default_value_font_family = isset( $default_value['font-family'] ) ? $default_value['font-family'] : '';
-		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) ) {
+		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) && ! colormag_typography_is_inherit_value( $output_value['font-family'] ) ) {
 			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
 		}
 
 		// For font style.
 		$default_value_font_style = isset( $default_value['font-style'] ) ? $default_value['font-style'] : '';
-		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value_font_style ) ) {
+		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value_font_style ) && ! colormag_typography_is_inherit_value( $output_value['font-style'] ) ) {
 			$parse_css .= 'font-style:' . $output_value['font-style'] . ';';
 		}
 
@@ -1063,7 +1103,7 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 
 		// For font weight.
 		$default_value_font_weight = isset( $default_value['font-weight'] ) ? $default_value['font-weight'] : '';
-		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value_font_weight ) ) {
+		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value_font_weight ) && ! colormag_typography_is_inherit_value( $output_value['font-weight'] ) ) {
 			$font_weight_value = $output_value['font-weight'];
 
 			if ( 'italic' === $font_weight_value || 'regular' === $font_weight_value ) {
@@ -1097,7 +1137,11 @@ if ( ! function_exists( 'colormag_parse_typography_css' ) ) :
 			$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['desktop']['size'] . $letter_spacing_unit . ';';
 		}
 
-		$parse_css .= '}';
+		if ( $parse_css === $selector . '{' ) {
+			$parse_css = '';
+		} else {
+			$parse_css .= '}';
+		}
 
 		// For responsive devices.
 		if ( is_array( $devices ) ) {
@@ -1206,9 +1250,7 @@ if ( ! function_exists( 'colormag_parse_typography_color_css' ) ) :
 	 */
 	function colormag_parse_typography_color_css( $default_value, $output_value, $selector, $devices = array() ) {
 
-		if ( is_array( $default_value ) && is_array( $output_value ) && isset( $default_value['font-family'] ) && isset( $output_value['font-family'] ) && 'Inherit' === $output_value['font-family'] ) {
-			$output_value['font-family'] = 'inherit';
-		}
+		$output_value = colormag_typography_strip_inherit_props( $output_value );
 
 		if ( $default_value === $output_value ) {
 			return;
@@ -1218,13 +1260,13 @@ if ( ! function_exists( 'colormag_parse_typography_color_css' ) ) :
 
 		// For font family.
 		$default_value_font_family = isset( $default_value['font-family'] ) ? $default_value['font-family'] : '';
-		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) ) {
+		if ( isset( $output_value['font-family'] ) && ! empty( $output_value['font-family'] ) && ( $output_value['font-family'] !== $default_value_font_family ) && ( 'default' !== strtolower( $output_value['font-family'] ) ) && ! colormag_typography_is_inherit_value( $output_value['font-family'] ) ) {
 			$parse_css .= 'font-family:' . $output_value['font-family'] . ';';
 		}
 
 		// For font style.
 		$default_value_font_style = isset( $default_value['font-style'] ) ? $default_value['font-style'] : '';
-		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value_font_style ) ) {
+		if ( isset( $output_value['font-style'] ) && ! empty( $output_value['font-style'] ) && ( $output_value['font-style'] !== $default_value_font_style ) && ! colormag_typography_is_inherit_value( $output_value['font-style'] ) ) {
 			$parse_css .= 'font-style:' . $output_value['font-style'] . ';';
 		}
 
@@ -1248,7 +1290,7 @@ if ( ! function_exists( 'colormag_parse_typography_color_css' ) ) :
 
 		// For font weight.
 		$default_value_font_weight = isset( $default_value['font-weight'] ) ? $default_value['font-weight'] : '';
-		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value_font_weight ) ) {
+		if ( isset( $output_value['font-weight'] ) && ! empty( $output_value['font-weight'] ) && ( $output_value['font-weight'] !== $default_value_font_weight ) && ! colormag_typography_is_inherit_value( $output_value['font-weight'] ) ) {
 			$font_weight_value = $output_value['font-weight'];
 
 			if ( 'italic' === $font_weight_value || 'regular' === $font_weight_value ) {
@@ -1282,7 +1324,11 @@ if ( ! function_exists( 'colormag_parse_typography_color_css' ) ) :
 			$parse_css .= 'letter-spacing:' . $output_value['letter-spacing']['desktop']['size'] . $letter_spacing_unit . ';';
 		}
 
-		$parse_css .= '}';
+		if ( $parse_css === $selector . '{' ) {
+			$parse_css = '';
+		} else {
+			$parse_css .= '}';
+		}
 
 		// For responsive devices.
 		if ( is_array( $devices ) ) {

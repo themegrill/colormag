@@ -89,6 +89,14 @@
 		return null !== matches;
 	}
 
+	function colormagTypographyValueIsInherit(value) {
+		if (undefined === value || null === value || '' === value) {
+			return false;
+		}
+
+		return 'inherit' === String(value).toLowerCase();
+	}
+
 	function colormagGenerateTypographyCSS(controlId, selector, typography) {
 		let css = '';
 		var link = '',
@@ -219,7 +227,8 @@
 
 			if (
 				undefined !== typography['font-family'] &&
-				'' !== typography['font-family']
+				'' !== typography['font-family'] &&
+				!colormagTypographyValueIsInherit(typography['font-family'])
 			) {
 				fontFamily = typography['font-family'].split(',')[0];
 				fontFamily = fontFamily.replace(/'/g, '');
@@ -241,7 +250,8 @@
 
 			if (
 				undefined !== typography['font-weight'] &&
-				'' !== typography['font-weight']
+				'' !== typography['font-weight'] &&
+				!colormagTypographyValueIsInherit(typography['font-weight'])
 			) {
 				if (colormagIsNumeric(typography['font-weight'])) {
 					fontWeight = parseInt(typography['font-weight']);
@@ -255,7 +265,8 @@
 
 			if (
 				undefined !== typography['font-style'] &&
-				'' !== typography['font-style']
+				'' !== typography['font-style'] &&
+				!colormagTypographyValueIsInherit(typography['font-style'])
 			) {
 				fontStyle = typography['font-style'];
 			}
@@ -269,33 +280,67 @@
 
 			jQuery('link#' + controlId).remove();
 
-			css = `${selector} {
-						font-family: ${fontFamily};
-						font-weight: ${fontWeight};
-						font-style: ${fontStyle};
-						text-transform: ${fontTransform};
-						font-size: ${desktopFontSize};
-						line-height: ${desktopLineHeight};
-						letter-spacing: ${desktopLetterSpacing};
-					}`;
+			const desktopRules = [];
 
-			css += `@media (max-width: 768px) {
-						${selector} {
-							font-size: ${tabletFontSize};
-							line-height: ${tabletLineHeight};
-							letter-spacing: ${tabletLetterSpacing};
-						}
-					}`;
+			if (fontFamily) {
+				desktopRules.push(`font-family: ${fontFamily}`);
+			}
+			if (fontWeight) {
+				desktopRules.push(`font-weight: ${fontWeight}`);
+			}
+			if (fontStyle) {
+				desktopRules.push(`font-style: ${fontStyle}`);
+			}
+			if (fontTransform) {
+				desktopRules.push(`text-transform: ${fontTransform}`);
+			}
+			if (desktopFontSize) {
+				desktopRules.push(`font-size: ${desktopFontSize}`);
+			}
+			if (desktopLineHeight) {
+				desktopRules.push(`line-height: ${desktopLineHeight}`);
+			}
+			if (desktopLetterSpacing) {
+				desktopRules.push(`letter-spacing: ${desktopLetterSpacing}`);
+			}
 
-			css += `@media (max-width: 600px) {
-						${selector}{
-							font-size: ${mobileFontSize};
-							line-height:${mobileLineHeight};
-							letter-spacing: ${mobileLetterSpacing};
-						}
-					}`;
+			if (desktopRules.length) {
+				css = `${selector} { ${desktopRules.join('; ')}; }`;
+			}
 
-			jQuery('head').append(link);
+			const tabletRules = [];
+			if (tabletFontSize) {
+				tabletRules.push(`font-size: ${tabletFontSize}`);
+			}
+			if (tabletLineHeight) {
+				tabletRules.push(`line-height: ${tabletLineHeight}`);
+			}
+			if (tabletLetterSpacing) {
+				tabletRules.push(`letter-spacing: ${tabletLetterSpacing}`);
+			}
+
+			if (tabletRules.length) {
+				css += `@media (max-width: 768px) { ${selector} { ${tabletRules.join('; ')}; } }`;
+			}
+
+			const mobileRules = [];
+			if (mobileFontSize) {
+				mobileRules.push(`font-size: ${mobileFontSize}`);
+			}
+			if (mobileLineHeight) {
+				mobileRules.push(`line-height: ${mobileLineHeight}`);
+			}
+			if (mobileLetterSpacing) {
+				mobileRules.push(`letter-spacing: ${mobileLetterSpacing}`);
+			}
+
+			if (mobileRules.length) {
+				css += `@media (max-width: 600px) { ${selector} { ${mobileRules.join('; ')}; } }`;
+			}
+
+			if (link) {
+				jQuery('head').append(link);
+			}
 
 			return css;
 		}
@@ -620,7 +665,11 @@
 					break;
 
 				case 'colormag_blog_post_title_typography':
-					css = colormagGenerateTypographyCSS(id, '.cm-entry-title', value);
+					css = colormagGenerateTypographyCSS(
+						id,
+						'.cm-entry-title, .post .cm-entry-header .cm-entry-title, .cm-posts .post .cm-post-content .cm-entry-title a, .cm-posts .post .single-title-above .cm-entry-title a',
+						value,
+					);
 					break;
 
 				case 'colormag_single_post_title_typography':

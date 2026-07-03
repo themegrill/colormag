@@ -11,6 +11,67 @@ import { COLORMAG_DASHBOARD_STORE } from '../../store';
 import { localized } from '../../utils/global';
 import { localized as colormagLocalized } from '../../utils/utils';
 
+const ContributingSection: React.FC = () => {
+	const [enabled, setEnabled] = useState<boolean>(localized.trackingEnabled ?? false);
+	const [saving, setSaving] = useState(false);
+
+	const handleChange = async (checked: boolean) => {
+		if (saving) return;
+		setSaving(true);
+		setEnabled(checked);
+		const fd = new FormData();
+		fd.append('action', 'colormag_save_tracking');
+		fd.append('nonce', localized.trackingNonce ?? '');
+		fd.append('enabled', checked ? '1' : '0');
+		await fetch(localized.ajaxUrl, { method: 'POST', body: fd });
+		setSaving(false);
+	};
+
+	return (
+		<div className="p-4 bg-white rounded-lg shadow-sm border border-solid border-[#F4F4F4] mb-5">
+			<h3 className="text-base font-semibold text-[#383838] m-0 mb-3">
+				{__('Contributing', 'colormag')}
+			</h3>
+			<p className="text-[#6B6B6B] text-sm mb-2">
+				{__(
+					'Become a contributor by opting in to our anonymous data tracking. We guarantee no sensitive data is collected.',
+					'colormag',
+				)}
+			</p>
+			<a
+				href="https://themegrill.com/privacy-policy/"
+				target="_blank"
+				className="text-[#2563EB] hover:text-[#2563EB] text-[13px] no-underline mb-3 inline-block"
+			>
+				{__('What do we track?', 'colormag')} ↗
+			</a>
+			<div className="flex items-center gap-2 mt-2">
+				<button
+					role="switch"
+					aria-checked={enabled}
+					disabled={saving}
+					onClick={() => handleChange(!enabled)}
+					className={`relative inline-flex items-center w-[30px] h-[17px] rounded-full border-none cursor-pointer transition-colors duration-200 p-0 ${enabled ? 'bg-[#2563EB]' : 'bg-[#ccc]'}`}
+					style={{ flexShrink: 0 }}
+				>
+					<span
+						className="absolute bg-white rounded-full transition-transform duration-200"
+						style={{
+							width: 11,
+							height: 11,
+							left: 3,
+							transform: enabled ? 'translateX(13px)' : 'translateX(0)',
+						}}
+					/>
+				</button>
+				<span className="text-[13px] font-medium text-[#383838]">
+					{__('Allow Anonymous Tracking', 'colormag')}
+				</span>
+			</div>
+		</div>
+	);
+};
+
 const Dashboard: React.FC = () => {
 	const pluginsStatus = useSelect((select) => {
 		return (
@@ -185,6 +246,7 @@ const Dashboard: React.FC = () => {
 					</div>
 				</div>
 				<div className="lg:basis-3/12 basis-full">
+					<ContributingSection />
 					{!colormagLocalized.hide_starter_template_section && (
 						<>
 							<div className="p-4 bg-white rounded-lg shadow-sm border border-solid roundenss border-[#2563EB] mb-5 ">

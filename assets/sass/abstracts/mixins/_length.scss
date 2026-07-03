@@ -39,10 +39,10 @@ $length-values: (
 	$pixel-value: map-get($length-values, $size);
 
 	@if $unit == 'px' {
-		$output-value: $pixel-value + px;
+		@return $pixel-value * 1px;
+	} @else if $unit == 'rem' {
+		@return ($pixel-value / 16) * 1rem;
 	} @else {
-		$output-value: $pixel-value / 16 * 1#{if($unit == 'rem', 'rem', 'em')};
+		@return ($pixel-value / 16) * 1em;
 	}
-
-	@return $output-value;
 }

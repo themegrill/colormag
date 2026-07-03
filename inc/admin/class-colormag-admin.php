@@ -95,7 +95,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				$current_theme          = get_stylesheet();
 
 				// Settings screen excluded from free — output true empty JS object.
-				wp_add_inline_script( 'colormag-dashboard', 'window.__COLORMAG_SETTINGS__ = {"hide_feature_section":true};', 'before' );
+				wp_add_inline_script( 'colormag-dashboard', 'window.__COLORMAG_SETTINGS__ = {};', 'before' );
 
 				$dashboard_data = apply_filters(
 					'colormag_admin_dashboard_data',
@@ -131,6 +131,8 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 						),
 						'nonce'            => wp_create_nonce( 'colormag_dashboard_nonce' ),
 						'ajaxUrl'          => admin_url( 'admin-ajax.php' ),
+						'trackingEnabled'  => 'yes' === get_option( 'colormag_logger_flag', 'no' ),
+						'trackingNonce'    => wp_create_nonce( 'colormag_tracking_nonce' ),
 					)
 				);
 

@@ -35,6 +35,20 @@
     height: 20px;
 }
 
+/* Below-header header-builder ticker: constrain to one row before JS inits
+   (prevents the flash/jerk of the full list) and drop default list bullets. */
+.cm-newsticker {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 20px;
+
+	li {
+		list-style: none;
+	}
+}
+
 /* Below Navigation */
 .breaking-news-main {
 	margin-bottom: 1%;

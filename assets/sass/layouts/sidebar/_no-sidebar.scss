@@ -90,7 +90,7 @@
 	}
 }
 
-.cm-normal-container {
+body:not(.woocommerce-page).cm-normal-container {
 	overflow: hidden;
 
 	.cm-primary {
@@ -107,7 +107,7 @@
 			}
 
 			> .alignwide {
-				margin-left: -100px;
+				margin-left: -100px; 
 				margin-right: -100px;
 				max-width: unset;
 

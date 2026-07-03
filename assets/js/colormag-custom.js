@@ -219,7 +219,7 @@ function colormagInit() {
 		!window.colormagProHandlesWidgets &&
 		typeof jQuery.fn.newsTicker !== 'undefined'
 	) {
-		jQuery('.newsticker').newsTicker({
+		jQuery('.newsticker, .cm-newsticker').newsTicker({
 			row_height: 20,
 			max_rows: 1,
 			speed: 1000,
@@ -228,7 +228,7 @@ function colormagInit() {
 			autostart: 1,
 			pauseOnHover: 1,
 			start: function () {
-				jQuery('.newsticker').css('visibility', 'visible');
+				jQuery('.newsticker, .cm-newsticker').css('visibility', 'visible');
 			},
 		});
 	}

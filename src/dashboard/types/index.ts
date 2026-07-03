@@ -39,6 +39,15 @@ export type colormagLocalized = {
 	ajaxUrl: string;
 	userRoles?: Record<string, string>;
 	popupEditUrl?: string;
+	trackingEnabled?: boolean;
+	trackingNonce?: string;
+	hide_documentation?: boolean;
+	hide_review_section?: boolean;
+	hide_feature_section?: boolean;
+	hide_support_section?: boolean;
+	hide_community_section?: boolean;
+	hide_user_ful_section?: boolean;
+	hide_starter_template_section?: boolean;
 	fs?: {
 		activated?: boolean;
 		is_whitelabeled?: boolean;
