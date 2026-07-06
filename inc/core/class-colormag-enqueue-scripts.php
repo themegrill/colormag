@@ -687,40 +687,6 @@ function colormag_image_uploader() {
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
 
-// Returns an array of category colors.
-function colormag_get_category_colors() {
-	$category_colors = array();
-	foreach ( get_categories() as $cat ) {
-		$color                            = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
-		$category_colors[ $cat->term_id ] = $color;
-	}
-	return $category_colors;
-}
-
-// Enqueue and localize editor script with category colors.
-function colormag_enqueue_editor_assets() {
-	wp_enqueue_script(
-		'colormag-editor-script',
-		get_template_directory_uri() . '/assets/js/editor.js',
-		array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-		COLORMAG_THEME_VERSION,
-		true
-	);
-
-	wp_localize_script(
-		'colormag-editor-script',
-		'colormag_category_colors',
-		colormag_get_category_colors()
-	);
-
-	wp_localize_script(
-		'colormag-editor-script',
-		'colormag_category_color_override',
-		array( 'enabled' => get_theme_mod( 'colormag_enable_override_category_color', false ) )
-	);
-}
-add_action( 'enqueue_block_editor_assets', 'colormag_enqueue_editor_assets' );
-
 if ( ! function_exists( 'colormag_darkcolor' ) ) :
 
 	/**
