@@ -248,59 +248,14 @@ $options = apply_filters(
 				'colormag_container_layout' => 'boxed',
 			),
 		),
-		'colormag_colors_upgrade'               => array(
-			'type'        => 'customind-upgrade',
-			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
-			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
-			'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-10' ),
-			'points'      => array(
-				esc_html__( 'Headings Color Customization Option', 'colormag' ),
-				esc_html__( 'Separate Color for H1, H2 and H3', 'colormag' ),
-			),
-			'section'     => 'colormag_global_colors_section',
-			'priority'    => 100,
-		),
 	)
 );
-//$options['colormag_dark_skin'] = array(
-//  'default'   => 'preset-5',
-//  'type'      => 'customind-select',
-//  'title'     => esc_html__( 'Skin Color', 'colormag' ),
-//  'section'   => 'colormag_global_colors_section',
-//  'transport' => 'postMessage',
-//  'priority'  => 90,
-//  'choices'   => call_user_func(
-//      function () use ( $options ) {
-//          // Get predefined presets
-//          $presets = $options['colormag_color_palette']['presets'];
-//
-//          // Get custom presets from theme mod
-//          $color_palette = get_theme_mod( 'colormag_color_palette', array() );
-//          $custom_presets = isset( $color_palette['custom'] ) ? $color_palette['custom'] : array();
-//
-//          // Combine all presets
-//          $all_presets = array_merge( $presets, $custom_presets );
-//
-//          // Create choices array with name as key and id as value
-//          $choices = array();
-//          foreach ( $all_presets as $preset ) {
-//              $name = isset( $preset['name'] ) ? $preset['name'] : ( isset( $preset['id'] ) ? 'Custom ' . $preset['id'] : 'Unknown' );
-//              $id = isset( $preset['id'] ) ? $preset['id'] : 'unknown';
-//              $choices[ $id ] = $name;
-//          }
-//
-//          return $choices;
-//      }
-//  ),
-//  'js_vars'   => array(
-//      array(
-//          'function' => 'colormag_update_skin_choices',
-//          'args'     => array(
-//              'colormag_color_palette',
-//          ),
-//      ),
-//  ),
-//);
 
-
+$options['colormag_dark_skin_heading'] = array(
+	'type'    => 'customind-heading',
+	'title'   => esc_html__( 'Dark Skin', 'colormag' ),
+	'section' => 'colormag_global_colors_section',
+	'pro'     => true,
+	'pro_url' => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-10' ),
+);
 colormag_customind()->add_controls( $options );
