@@ -126,6 +126,14 @@ $section_option_id = array(
 		'panel'    => 'colormag_content_panel',
 		'priority' => 40,
 	),
+	'colormag_search_page_section'                  => array(
+		'type'     => 'customind-locked-section',
+		'title'    => esc_html__( 'Search Page', 'colormag' ),
+		'panel'    => 'colormag_content_panel',
+		'priority' => 50,
+		'url'      => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-26' ),
+		'badge'    => esc_html__( 'PRO', 'colormag' ),
+	),
 	'colormag_footer_column_section'               => array(
 		'title'    => esc_html__( 'Footer Column', 'colormag' ),
 		'panel'    => 'colormag_footer_panel',
