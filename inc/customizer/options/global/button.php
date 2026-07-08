@@ -90,7 +90,7 @@ $options = array(
 		'type'        => 'customind-upgrade',
 		'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 		'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-8' ),
+		'url'         => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-8' ),
 		'points'      => array(
 			esc_html__( 'Global button typography', 'colormag' ),
 			esc_html__( 'Button border style, width and colors', 'colormag' ),

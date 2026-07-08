@@ -256,6 +256,6 @@ $options['colormag_dark_skin_heading'] = array(
 	'title'   => esc_html__( 'Dark Skin', 'colormag' ),
 	'section' => 'colormag_global_colors_section',
 	'pro'     => true,
-	'pro_url' => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-10' ),
+	'pro_url' => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-10' ),
 );
 colormag_customind()->add_controls( $options );
