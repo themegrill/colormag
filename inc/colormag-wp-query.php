@@ -84,15 +84,14 @@ if ( ! function_exists( 'colormag_random_post' ) ) :
 			2 * MINUTE_IN_SECONDS
 		);
 
-		if ( empty( $ids ) ) {
-			return;
-		}
 		?>
 
 		<div class="cm-random-post">
-			<a href="<?php echo esc_url( get_permalink( $ids[0] ) ); ?>" title="<?php esc_attr_e( 'View a random post', 'colormag' ); ?>">
-				<?php colormag_get_icon( 'random-fill' ); ?>
-			</a>
+			<?php if ( ! empty( $ids ) ) : ?>
+				<a href="<?php echo esc_url( get_permalink( $ids[0] ) ); ?>" title="<?php esc_attr_e( 'View a random post', 'colormag' ); ?>">
+					<?php colormag_get_icon( 'random-fill' ); ?>
+				</a>
+			<?php endif; ?>
 		</div>
 
 		<?php

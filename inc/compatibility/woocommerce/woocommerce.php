@@ -189,25 +189,29 @@ endif;
 add_action( 'colormag_action_before_inner_content', 'colormag_woocommerce_main_section_inner_start', 11 );
 
 /**
- * Remove only the WooCommerce stylesheets that conflict with ColorMag's own WC CSS.
- * Keeping woocommerce-smallscreen and others intact ensures extension plugins
- * (Subscriptions, Bookings, Product Bundles) that depend on those handles still work.
+ * Remove the default WooCommerce stylesheets that conflict with ColorMag's own WC CSS
+ * (colormag-woocommerce-style already provides full styling, including small-screen rules).
+ * Stub handles are registered below so extension plugins (Subscriptions, Bookings,
+ * Product Bundles) that declare these as a dependency still resolve instead of erroring.
  */
 function colormag_filter_woocommerce_styles( $styles ) {
 	unset( $styles['woocommerce-general'] );
 	unset( $styles['woocommerce-layout'] );
+	unset( $styles['woocommerce-smallscreen'] );
 	return $styles;
 }
 add_filter( 'woocommerce_enqueue_styles', 'colormag_filter_woocommerce_styles' );
 
 /**
- * Register stub handles for the two styles we removed so WC extension plugins
- * that declare woocommerce-general or woocommerce-layout as a dependency resolve
- * to colormag-woocommerce-style as their cascade base instead of nothing.
+ * Register stub handles for the styles we removed so WC extension plugins
+ * that declare woocommerce-general, woocommerce-layout, or woocommerce-smallscreen
+ * as a dependency resolve to colormag-woocommerce-style as their cascade base
+ * instead of a missing handle.
  */
 function colormag_register_wc_compat_handles() {
 	wp_register_style( 'woocommerce-general', false, array( 'colormag-woocommerce-style' ), COLORMAG_THEME_VERSION );
 	wp_register_style( 'woocommerce-layout', false, array( 'colormag-woocommerce-style' ), COLORMAG_THEME_VERSION );
+	wp_register_style( 'woocommerce-smallscreen', false, array( 'woocommerce-layout' ), COLORMAG_THEME_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'colormag_register_wc_compat_handles', 20 );
 

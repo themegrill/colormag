@@ -60,9 +60,12 @@ const paths = {
 	},
 
 	elementorStyles: {
+		scss: './inc/compatibility/elementor/assets/SCSS/elementor.scss',
 		src: [
 			'./inc/compatibility/elementor/assets/css/elementor.css',
-			'./inc/compatibility/elementor/assets/css/elementor.min.css',
+			'!./inc/compatibility/elementor/assets/css/elementor.min.css',
+			'!./inc/compatibility/elementor/assets/css/elementor-rtl.css',
+			'!./inc/compatibility/elementor/assets/css/elementor.min-rtl.css',
 		],
 		dest: './inc/compatibility/elementor/assets/css',
 	},
@@ -182,7 +185,7 @@ function adminSassCompile() {
 
 function elementorStylesCompile() {
 	return gulp
-		.src(paths.elementorStyles.src)
+		.src(paths.elementorStyles.scss)
 		.pipe(
 			sass({
 				indentType: 'tab',
@@ -355,7 +358,7 @@ async function minifyJs() {
 function watch() {
 	gulp.watch(paths.styles.src, sassCompile);
 	gulp.watch(paths.styles.src, adminSassCompile);
-	gulp.watch(paths.elementorStyles.src, elementorStylesCompile);
+	gulp.watch('./inc/compatibility/elementor/assets/SCSS/**/*.scss', elementorStylesCompile);
 	gulp.watch(paths.elementorStyles.src, minifyelementorStyles);
 	gulp.watch(paths.elementorJS.jsmin.src, minifyelementorJs);
 	gulp.watch(paths.js.src, minifyJs);
