@@ -122,6 +122,24 @@ class ColorMag_Contribution {
 		}
 
 		do_action( 'themegrill_internal_page', 'colormag', $page );
+
+		$this->fix_survey_attribute_race_condition();
+	}
+
+	/**
+	 * Replace init() entirely: load the Formbricks CDN directly and call setup() with
+	 * userId + attributes included from the start, so audience filters (e.g. `product`)
+	 * evaluate correctly on the very first setup() call — no timing race with setAttributes().
+	 * The shared SDK's generic init() calls setup() first and setAttributes()/setUserId()
+	 * afterwards, so attribute-based audience targeting never matches on initial load —
+	 * that's why the environment shared with Zakra needs this override too.
+	 */
+	private function fix_survey_attribute_race_condition() {
+		wp_add_inline_script(
+			'themegrill_sdk_survey_script',
+			'window.addEventListener("themegrill:survey:loaded",function(){var d=window.tgsdk_survey_data;if(!d||!d.environmentId)return;window.tgsdk_formbricks.init=async function(){if(!window._tgFbLoaded){var b=(d.appUrl||"https://app.formbricks.com").replace(/\/$/,"")+"/";await new Promise(function(r,e){var s=document.createElement("script");s.src=b+"js/formbricks.umd.cjs";s.async=true;s.onload=function(){window._tgFbLoaded=true;r();};s.onerror=e;document.head.appendChild(s);});}if(window.formbricks&&window.formbricks.setup){await window.formbricks.setup({environmentId:d.environmentId,appUrl:d.appUrl,userId:d.userId,attributes:d.attributes});}};},{once:true});',
+			'after'
+		);
 	}
 
 	/**
@@ -146,7 +164,11 @@ class ColorMag_Contribution {
 			'attributes'    => array(
 				'install_days_number' => (int) $this->get_install_days(),
 				'is_premium'          => false,
+				'plan'                => 'free',
 				'theme_version'       => defined( 'COLORMAG_THEME_VERSION' ) ? COLORMAG_THEME_VERSION : '',
+				// Environment is shared with Zakra/ColorMag Pro surveys — audience targeting
+				// must filter on this attribute to avoid showing the wrong product's survey.
+				'product'             => 'colormag',
 			),
 		);
 	}
