@@ -433,18 +433,18 @@ $section_option_id = array(
 		'panel'            => 'colormag_front_page_panel',
 		'priority'         => 100,
 	),
-	'colormag_customize_header_navigation_section' => array(
-		'type'             => 'customind-upgrade-section',
-		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
-		'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
-		'url'              => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-23' ),
-		'points'           => array(
-			esc_html__( 'Transparent Header', 'colormag' ),
-		),
-		'section_callback' => \Customind\Core\Types\UpgradeSection::class,
-		'panel'            => colormag_maybe_enable_builder() ? 'colormag_header_builder' : 'colormag_header_panel',
-		'priority'         => 100,
-	),
+	// 'colormag_customize_header_navigation_section' => array(
+	// 	'type'             => 'customind-upgrade-section',
+	// 	'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
+	// 	'label'            => esc_html__( 'Upgrade to Pro', 'colormag' ),
+	// 	'url'              => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-23' ),
+	// 	'points'           => array(
+	// 		esc_html__( 'Transparent Header', 'colormag' ),
+	// 	),
+	// 	'section_callback' => \Customind\Core\Types\UpgradeSection::class,
+	// 	'panel'            => colormag_maybe_enable_builder() ? 'colormag_header_builder' : 'colormag_header_panel',
+	// 	'priority'         => 100,
+	// ),
 	'colormag_customize_content_section'           => array(
 		'type'             => 'customind-upgrade-section',
 		'description'      => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
