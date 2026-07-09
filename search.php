@@ -22,9 +22,14 @@ get_header();
 	 */
 	do_action( 'colormag_before_body_content' );
 
-	$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
-	$pagination_type   = get_theme_mod( 'colormag_pagination_type', 'default' );
+	/**
+	 * Hook: colormag_before_content_area.
+	 *
+	 * @hooked colormag_pro_before_content_area (two sidebar select) - 10
+	 */
+	do_action( 'colormag_before_content_area' );
 
+	$pagination_enable = get_theme_mod( 'colormag_enable_pagination', 1 );
 	?>
 		<div id="cm-primary" class="cm-primary">
 			<div class="cm-posts">
@@ -48,9 +53,16 @@ get_header();
 					 * Hook: colormag_before_search_results_page_loop.
 					 */
 					do_action( 'colormag_before_search_results_page_loop' );
+
+					/**
+					 * Filter: colormag_search_article_container_class.
+					 *
+					 * Allows pro to add the search style and infinite scroll container class.
+					 */
+					$article_container_class = apply_filters( 'colormag_search_article_container_class', 'article-container' );
 					?>
 
-					<div class="article-container">
+					<div class="<?php echo esc_attr( $article_container_class ); ?>">
 
 						<?php
 						while ( have_posts() ) :
@@ -61,7 +73,7 @@ get_header();
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 							 */
-							get_template_part( '/template-parts/content', 'archive' );
+							get_template_part( '/template-parts/content', apply_filters( 'colormag_search_template_slug', 'archive' ) );
 						endwhile;
 						?>
 
@@ -85,6 +97,13 @@ get_header();
 			if ( 1 == $pagination_enable ) :
 				colormag_pagination();
 			endif;
+
+			/**
+			 * Hook: colormag_after_posts_loop.
+			 *
+			 * @hooked colormag_pro_after_posts_loop (infinite scroll) - 10
+			 */
+			do_action( 'colormag_after_posts_loop' );
 			?>
 
 		</div><!-- #cm-primary -->

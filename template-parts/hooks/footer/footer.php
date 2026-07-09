@@ -69,7 +69,7 @@ if ( ! function_exists( 'colormag_footer_start' ) ) :
 	 */
 	function colormag_footer_start() {
 		?>
-		<footer id="cm-footer" class="cm-footer <?php echo esc_attr( colormag_footer_layout_class() ); ?>">
+		<footer id="cm-footer" class="cm-footer <?php echo esc_attr( colormag_footer_layout_class() ); ?>"<?php do_action( 'colormag_footer_schema_attrs' ); ?>>
 		<?php
 	}
 
@@ -231,6 +231,18 @@ if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
 	 * Scroll to top button.
 	 */
 	function colormag_scroll_top_button() {
+
+		/**
+		 * Filter whether the scroll to top button is enabled.
+		 *
+		 * Free theme always shows the button. Extensions (e.g. ColorMag Pro)
+		 * can gate it behind a customizer setting.
+		 *
+		 * @param bool $enabled Whether to render the scroll to top button.
+		 */
+		if ( ! apply_filters( 'colormag_scroll_to_top_enabled', true ) ) {
+			return;
+		}
 		?>
 			<a href="#cm-masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 		<?php
@@ -239,6 +251,28 @@ if ( ! function_exists( 'colormag_scroll_top_button' ) ) :
 endif;
 
 add_action( 'colormag_action_after_footer', 'colormag_scroll_top_button', 15 );
+
+if ( ! function_exists( 'colormag_after_footer_content' ) ) :
+
+	/**
+	 * Fires after the footer.
+	 *
+	 * Provides an extension point (e.g. ColorMag Pro reading progress bar and
+	 * flyout related posts) without adding any output in the free theme.
+	 */
+	function colormag_after_footer_content() {
+
+		/**
+		 * Hook: colormag_after_footer_content.
+		 *
+		 * No output by default.
+		 */
+		do_action( 'colormag_after_footer_content' );
+	}
+
+endif;
+
+add_action( 'colormag_action_after_footer', 'colormag_after_footer_content', 20 );
 
 if ( ! function_exists( 'colormag_page_end' ) ) :
 
@@ -271,6 +305,16 @@ if ( ! function_exists( 'colormag_footer_copyright' ) ) :
 		$default_footer_value = sprintf( /* Translators: %1$s: Current year, %2$s: Site link */ esc_html__( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ) . '<br>' . sprintf( /* Translators: %1$s: Theme name, %2$s: ThemeGrill site link */ esc_html__( 'Theme: %1$s by %2$s.', 'colormag' ), $tg_link, 'ThemeGrill' ) . ' ' . sprintf( /* Translators: %s: WordPress link */ esc_html__( 'Powered by %s.', 'colormag' ), $wp_link );
 
 		$colormag_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
+
+		/**
+		 * Filter the footer copyright output.
+		 *
+		 * Allows extensions (e.g. ColorMag Pro) to provide a customizer-driven
+		 * copyright string. The default is the free theme's hard-coded markup.
+		 *
+		 * @param string $colormag_footer_copyright The copyright HTML output.
+		 */
+		$colormag_footer_copyright = apply_filters( 'colormag_copyright_output', $colormag_footer_copyright );
 
 		echo wp_kses_post( $colormag_footer_copyright );
 	}

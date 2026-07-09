@@ -1,17 +1,1 @@
-<svg width="120" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="100" rx="4" fill="#E4E4E7"/>
-  <rect x=".5" y="7.5" width="119" height="85" rx="6.5" fill="#FAFAFA"/>
-  <rect x="12" y="15" width="45" height="18" rx="2" fill="#71717A"/>
-  <rect x="12" y="37" width="45" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="12" y="44" width="13" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="63" y="15" width="45" height="18" rx="2" fill="#71717A"/>
-  <rect x="63" y="37" width="45" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="63" y="44" width="13" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="12" y="53" width="45" height="18" rx="2" fill="#71717A"/>
-  <rect x="12" y="75" width="45" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="12" y="82" width="13" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="63" y="53" width="45" height="18" rx="2" fill="#71717A"/>
-  <rect x="63" y="75" width="45" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x="63" y="82" width="13" height="3" rx="1.5" fill="#D4D4D8"/>
-  <rect x=".5" y="7.5" width="119" height="85" rx="6.5" stroke="#71717A"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 122 82"><rect width="120.5" height="81" x=".5" y=".5" fill="#F9FAFB" rx="4.5"/><rect width="120.5" height="81" x=".5" y=".5" stroke="#E2E8F0" rx="4.5"/><g clip-path="url(#a)"><rect width="37.5" height="18" x="20.75" y="10.5" fill="#C5D0DD" rx="1"/><rect width="37.5" height="2" x="20.75" y="31.5" fill="#CED8E3" rx="1"/><rect width="12.053" height="2" x="20.75" y="36.5" fill="#CED8E3" rx="1"/><rect width="37.5" height="18" x="63.25" y="10.5" fill="#C5D0DD" rx="1"/><rect width="37.5" height="2" x="63.25" y="31.5" fill="#CED8E3" rx="1"/><rect width="12.053" height="2" x="63.251" y="36.5" fill="#CED8E3" rx="1"/></g><g clip-path="url(#b)"><rect width="37.5" height="18" x="20.75" y="43.5" fill="#C5D0DD" rx="1"/><rect width="22.421" height="2" x="20.75" y="64.5" fill="#CED8E3" rx="1"/><rect width="13.374" height="2" x="44.876" y="64.5" fill="#CED8E3" rx="1"/><rect width="12.053" height="2" x="20.75" y="69.5" fill="#CED8E3" rx="1"/><rect width="37.5" height="18" x="63.25" y="43.5" fill="#C5D0DD" rx="1"/><rect width="37.5" height="2" x="63.25" y="64.5" fill="#CED8E3" rx="1"/><rect width="12.053" height="2" x="63.251" y="69.5" fill="#CED8E3" rx="1"/></g><defs><clipPath id="a"><path fill="#fff" d="M20.75 10.5h80v28h-80z"/></clipPath><clipPath id="b"><path fill="#fff" d="M20.75 43.5h80v28h-80z"/></clipPath></defs></svg>

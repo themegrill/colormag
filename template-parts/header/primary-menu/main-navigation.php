@@ -19,6 +19,7 @@ if ( has_nav_menu( 'primary' ) ) {
 		)
 	);
 } else {
+
 	require get_template_directory() . '/inc/class-colormag-walker-page.php';
 	wp_page_menu(
 		array(

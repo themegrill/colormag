@@ -58,9 +58,28 @@ if ( ! function_exists( 'colormag_elementor_widgets_meta' ) ) :
 	/**
 	 * Display the posts meta for use within Elementor widgets
 	 *
+	 * @param array $meta Optional. Array of meta keys to display. Empty array displays all meta.
+	 *
 	 * @since ColorMag 1.2.3
 	 */
-	function colormag_elementor_widgets_meta() {
+	function colormag_elementor_widgets_meta( $meta = array() ) {
+
+		/**
+		 * Allow pro or third-party code to override the meta output entirely.
+		 * Return a non-empty string to short-circuit the default output.
+		 *
+		 * @since ColorMag 1.2.3
+		 *
+		 * @param string $override  Empty string by default. Return markup to override.
+		 * @param int    $post_id   The current post ID.
+		 * @param array  $meta      The meta keys requested.
+		 */
+		$override = apply_filters( 'colormag_elementor_widgets_meta_override', '', get_the_ID(), $meta );
+
+		if ( '' !== $override ) {
+			echo $override; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			return;
+		}
 		?>
 
 		<div class="tg-module-meta">

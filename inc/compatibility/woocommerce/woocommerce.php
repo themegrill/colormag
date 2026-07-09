@@ -148,7 +148,6 @@ function colormag_wrapper_end() {
 
 add_action( 'woocommerce_after_main_content', 'colormag_wrapper_end', 10 );
 
-
 function colormag_is_wc_shop() {
 
 	return ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() );

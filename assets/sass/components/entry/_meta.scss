@@ -4,10 +4,10 @@
 }
 
 .cm-below-entry-meta {
-    display: flex;
+	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-    gap: 8px;
+	gap: 8px;
 	margin-bottom: 12px;
 
 	.cm-post-date,
@@ -17,6 +17,7 @@
 			display: flex;
 			align-items: center;
 			gap: 4px;
+			flex-wrap: wrap;
 		}
 	}
 }
@@ -34,7 +35,6 @@
 
 .cm-author,
 .cm-post-views,
-.cm-tag-links,
 .cm-edit-link,
 .cm-comments-link,
 .cm-post-date,
@@ -43,6 +43,43 @@
 	align-items: center;
 	gap: 4px;
 	@include font-size('font-size-xxs');
+}
+
+
+/* ------------ Post Meta ----------------- */
+
+.cm-posts {
+	.cm-below-entry-meta {
+		.cm-author {
+			.cm-style-2-avatar {
+				height: 24px;
+				width: 24px;
+				border-radius: 100px;
+			}
+		}
+	}
+}
+
+.cm-post {
+	.cm-below-entry-meta {
+		.cm-author {
+			.cm-style-2-avatar {
+				height: 24px;
+				width: 24px;
+				border-radius: 100px;
+			}
+		}
+	}
+}
+
+.cm-tag-links {
+	display: flex;
+	align-items: center;
+	@include font-size('font-size-xxs');
+}
+
+.cm-icon--tag {
+	margin-right: 4px;
 }
 
 .cm-post-date,
@@ -65,3 +102,7 @@
 	color: $color__gray-500;
 	@include font-size('font-size-xxs');
 }
+
+/* Pro-only separator styles.
+--------------------------------------------- */
+@import "../../../pro/sass/components/entry/meta-pro";

@@ -46,10 +46,11 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 
 			wp_localize_script( 'colormag-plugin-install-helper', 'colormagRedirectDemoPage', $welcome_data );
 
-			$screen = get_current_screen();
+			$screen          = get_current_screen();
+			$allowed_screens = apply_filters( 'colormag_admin_allowed_screens', array( 'appearance_page_colormag' ) );
 			if ( ! in_array(
 				$screen->id,
-				array( 'appearance_page_colormag' ),
+				$allowed_screens,
 				true
 			) ) {
 				return;
@@ -96,9 +97,8 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 				// Settings screen excluded from free — output true empty JS object.
 				wp_add_inline_script( 'colormag-dashboard', 'window.__COLORMAG_SETTINGS__ = {};', 'before' );
 
-				wp_localize_script(
-					'colormag-dashboard',
-					'_COLORMAG_DASHBOARD_',
+				$dashboard_data = apply_filters(
+					'colormag_admin_dashboard_data',
 					array(
 						'version'          => COLORMAG_THEME_VERSION,
 						'plugins'          => array_reduce(
@@ -134,6 +134,12 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 						'trackingEnabled'  => 'yes' === get_option( 'colormag_logger_flag', 'no' ),
 						'trackingNonce'    => wp_create_nonce( 'colormag_tracking_nonce' ),
 					)
+				);
+
+				wp_localize_script(
+					'colormag-dashboard',
+					'_COLORMAG_DASHBOARD_',
+					$dashboard_data
 				);
 			}
 		}

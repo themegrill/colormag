@@ -6,11 +6,9 @@ Dark CSS
 
 body.dark-skin {
 	background-color: $color__background-dark;
-	color: $color__gray-seven;
+	color: var(--cm-color-7, #d1d1d1);
 }
 
-/* Top Bar.
---------------------------------------------- */
 .dark-skin {
 	.breaking-news {
 		background-color: $color__gray-one;
@@ -21,9 +19,17 @@ body.dark-skin {
 	}
 
 	.date-in-header {
-		color: $color__gray-seven;
+		color: var(--cm-color-7, #d1d1d1);
 	}
 
+	.cm-breaking-news i.fa-arrow-up::before,
+	.cm-breaking-news i.fa-arrow-down::before {
+		background-color: #161616;
+		border: 1px solid #161616;
+	}
+
+	/* Top Bar.
+	--------------------------------------------- */
 	h1,
 	h2,
 	h3,
@@ -37,7 +43,7 @@ body.dark-skin {
 	.cm-main-header,
 	.cm-content,
 	.cm-secondary .widget {
-		background-color: $color__background-dark-page;
+		background-color: var(--cm-color-3, #0d0d0d);
 	}
 
 	.cm-top-bar {
@@ -102,7 +108,7 @@ body.dark-skin {
 
 			.cm-entry-title {
 				a {
-					color: #F4F4F5;
+					color: var(--cm-color-7, #F4F4F5);
 				}
 			}
 
@@ -205,7 +211,7 @@ body.dark-skin {
 			.cm-post-content {
 
 				.cm-entry-title a {
-					color: #F4F4F5;
+					color: var(--cm-color-7, #F4F4F5);
 				}
 
 				.cm-below-entry-meta {
@@ -246,7 +252,7 @@ body.dark-skin {
 
 			.cm-entry-title {
 				a {
-					color: #F4F4F5;
+					color: var(--cm-color-7, #F4F4F5);
 				}
 			}
 
@@ -269,7 +275,7 @@ body.dark-skin {
 		.cm-entry-title {
 
 			a {
-				color: #F4F4F5;
+				color: var(--cm-color-7, #F4F4F5);
 			}
 		}
 
@@ -291,6 +297,7 @@ body.dark-skin {
 	.cm-layout-2 {
 
 		.cm-mobile-nav {
+
 			.cm-submenu-toggle,
 			.cm-home-icon,
 			.cm-menu-toggle {
@@ -311,8 +318,9 @@ body.dark-skin {
 		}
 	}
 
+
 	.single-related-posts {
-		box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.24);
+		box-shadow: 0 0 2px rgba(255, 255, 255, 0.24);
 		border-radius: 4px;
 	}
 
@@ -337,7 +345,7 @@ body.dark-skin {
 	textarea,
 	.comment-content {
 		background-color: $color__background-dark-page;
-		color: $color__gray-seven;
+		color: var(--cm-color-7, #d1d1d1);
 		border-color: $color__gray-five;
 	}
 
@@ -361,6 +369,7 @@ body.dark-skin {
 			.cm-submenu-toggle,
 			.cm-menu-toggle,
 			.cm-random-post {
+
 				svg,
 				.cm-icon {
 					fill: $color__gray-100;
@@ -395,7 +404,7 @@ body.dark-skin {
 		}
 
 		.cm-mobile-nav li {
-			border-color: var(--cm-color-2, #3F3F46);
+			border-color: var(--cm-color-9, #3F3F46);
 
 			a {
 				color: $color__gray-100;
@@ -406,6 +415,7 @@ body.dark-skin {
 	&.colormag-header-clean {
 
 		.cm-primary-nav {
+
 			.sub-menu,
 			.children {
 				background-color: $color__background-news;
@@ -426,7 +436,7 @@ body.dark-skin {
 
 		.breaking-news .newsticker a,
 		.social-links i.fa {
-			color: $color__gray-seven;
+			color: var(--cm-color-7, #d1d1d1);
 		}
 	}
 
@@ -446,10 +456,10 @@ body.dark-skin {
 		#cm-primary-nav {
 
 			.cm-menu-toggle {
-				border-color: $color__gray-seven;
+				border-color: var(--cm-color-7, #d1d1d1);
 
 				&::before {
-					color: $color__gray-seven;
+					color: var(--cm-color-7, #d1d1d1);
 				}
 			}
 
@@ -503,7 +513,7 @@ body.dark-skin {
 	.elementor {
 
 		.tg-module-wrapper {
-			color: $color__gray-seven;
+			color: var(--cm-color-7, #d1d1d1);
 
 			.tg-module-title {
 				color: $color__white;
@@ -530,39 +540,31 @@ body.dark-skin {
 	}
 
 	.cm-entry-summary p {
-		color: #E3E2E2;
+		color: var(--cm-color-6, #E3E2E2);
 	}
 
 	.previous a,
 	.next a {
-		color: #F4F4F5;
+		color: var(--cm-color-7, #F4F4F5);
 
 		&:hover {
-			color: #F4F4F5;
+			color: var(--cm-color-7, #F4F4F5);
 		}
 	}
 
 	.cm-entry-title {
 
 		a {
-			color: #F4F4F5;
+			color: var(--cm-color-7, #F4F4F5);
 
 			&:hover {
-				color: #F4F4F5;
+				color: var(--cm-color-7, #F4F4F5);
 			}
 		}
 	}
 
-
-	.cm-breaking-news i.fa-arrow-up::before,
-	.cm-breaking-news i.fa-arrow-down::before {
-		background-color: #161616;
-		border: 1px solid #161616;
-	}
-
 	/* Support Dark Skin.
 	--------------------------------------------- */
-
 	body {
 		color: #cccccc;
 	}
@@ -595,25 +597,26 @@ body.dark-skin {
 			}
 		}
 	}
-}
 
-/* Support Magazine Blocks.
+	/* Support Magazine Blocks.
 --------------------------------------------- */
-.mzb-post-list,
-.mzb-tab-post,
-.mzb-banner-posts,
-.mzb-featured-posts,
-.mzb-featured-categories,
-.mzb-grid-module {
+	.mzb-post-list,
+	.mzb-tab-post,
+	.mzb-banner-posts,
+	.mzb-featured-posts,
+	.mzb-featured-categories,
+	.mzb-grid-module {
 
-	.mzb-post-date,
-	.mzb-post-author {
-		a {
-			color: var(--color--gray);
-		}
+		.mzb-post-date,
+		.mzb-post-author {
+			a {
+				color: var(--color--gray);
+			}
 
-		svg {
-			fill: var(--color--gray);
+			svg {
+				fill: var(--color--gray);
+			}
 		}
 	}
 }
+

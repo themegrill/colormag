@@ -152,7 +152,7 @@
 	}
 }
 
-@media screen and (min-width: 769px) {
+@include breakpoint("mdm") {
 
 	.cm-menu-toggle {
 		display: none;

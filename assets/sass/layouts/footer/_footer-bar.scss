@@ -47,9 +47,9 @@
 
 .cm-footer-bar-style-2 {
 
-	.cm-footer-bar-area {
-		flex-direction: row-reverse;
-	}
+    .cm-footer-bar-area {
+        flex-direction: column-reverse;
+    }
 
 	.cm-footer-bar__1 {
 		display: flex;
@@ -101,12 +101,30 @@
         text-align: left;
     }
 
+	.cm-footer-bar-style-2 {
+
+        .cm-footer-bar-area {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+	}
+
 	.cm-footer-bar-style-1 {
 
 		.social-links  {
 
 			ul {
 				justify-content: flex-end;
+			}
+		}
+	}
+
+	.cm-footer-bar-style-2 {
+
+		.social-links  {
+
+			ul {
+				justify-content: flex-start;
 			}
 		}
 	}

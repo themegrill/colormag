@@ -25,6 +25,7 @@
 		.woocommerce-product-gallery {
 			position: relative;
 			float: left;
+			max-width: 100%;
 
 			a {
 				display: flex;
@@ -168,6 +169,7 @@
 
 		.wc-tabs-wrapper {
 			flex-basis: 100%;
+			max-width: 100%;
 		}
 
 		.product_meta {

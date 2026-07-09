@@ -154,11 +154,29 @@ function colormag_header_image_markup( $html, $header, $attr ) {
 			$output .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">';
 		}
 
+		/**
+		 * Filter the opening anchor markup for the header image.
+		 *
+		 * Allows pro to wrap the header image with a custom link.
+		 *
+		 * @param string $open_anchor Opening anchor markup. Default empty.
+		 */
+		$output .= apply_filters( 'colormag_header_image_open_anchor', '' );
+
 		$output .= '<img src="' . esc_url( $header_image ) . '" class="header-image" width="' . absint( get_custom_header()->width ) . '" height="' . absint( get_custom_header()->height ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
 
 		if ( 1 == get_theme_mod( 'colormag_enable_header_image_link_home', 0 ) ) {
 			$output .= '</a>';
 		}
+
+		/**
+		 * Filter the closing anchor markup for the header image.
+		 *
+		 * Allows pro to close a custom link wrapping the header image.
+		 *
+		 * @param string $close_anchor Closing anchor markup. Default empty.
+		 */
+		$output .= apply_filters( 'colormag_header_image_close_anchor', '' );
 
 		$output .= '</div>';
 	}
@@ -424,6 +442,13 @@ function colormag_body_class( $classes ) {
 	if ( $background_image_url_link ) {
 		$classes[] = 'clickable-background-image';
 	}
+
+	/**
+	 * Filter the body classes to allow pro to extend the shared behavior.
+	 *
+	 * @param array $classes CSS classes applied to the body tag.
+	 */
+	$classes = apply_filters( 'colormag_body_classes_pro', $classes );
 
 	return $classes;
 }

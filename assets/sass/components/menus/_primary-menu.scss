@@ -159,6 +159,7 @@ nav li {
 			}
 
 			ul li {
+
 				&:hover {
 					color: $color__white;
 					background-color: $color__primary;
@@ -268,6 +269,22 @@ li.default-menu {
 .top-menu-toggle {
 	display: none;
 	cursor: pointer;
+}
+
+.cm-header-builder {
+	.cm-menu-toggle[aria-expanded="true"] {
+
+		.cm-icon--bars {
+			display: none;
+		}
+	}
+
+	.cm-menu-toggle[aria-expanded="false"] {
+
+		.cm-icon--x-mark {
+			display: none;
+		}
+	}
 }
 
 .cm-header {
@@ -469,6 +486,8 @@ li.default-menu {
 		cursor: pointer;
 
 		svg {
+			height: 14px;
+			width: 14px;
 			fill: $color__white;
 		}
 	}
@@ -632,6 +651,10 @@ Styles for separating single posts loaded from ajax call.
 		margin-top: 15px;
 		padding-top: 60px;
 		border-top: 1px solid #f8f8f8;
+	}
+
+	.comments-area {
+		margin-bottom: 16px;
 	}
 }
 

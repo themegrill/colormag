@@ -82,6 +82,51 @@ class colormag_featured_posts_vertical_widget extends ColorMag_Widget {
 	}
 
 	/**
+	 * Outputs the settings update form.
+	 *
+	 * @param array $instance Instance.
+	 *
+	 * @see ColorMag_Widget->form
+	 */
+	public function form( $instance ) {
+
+		parent::form( $instance );
+
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to render additional, pro-only
+		 * form fields for this widget.
+		 *
+		 * @param array $instance The current widget instance settings.
+		 */
+		do_action( 'colormag_' . $this->id_base . '_pro_form', $instance );
+	}
+
+	/**
+	 * Updates a particular instance of a widget.
+	 *
+	 * @param array $new_instance New instance.
+	 * @param array $old_instance Old instance.
+	 *
+	 * @return array
+	 * @see ColorMag_Widget->update
+	 */
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = parent::update( $new_instance, $old_instance );
+
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to sanitise and store additional,
+		 * pro-only settings for this widget.
+		 *
+		 * @param array $instance     The instance being saved.
+		 * @param array $new_instance The new (submitted) instance values.
+		 */
+		$instance = apply_filters( 'colormag_' . $this->id_base . '_pro_update', $instance, $new_instance );
+
+		return $instance;
+	}
+
+	/**
 	 * Output widget.
 	 *
 	 * @param array $args     Arguments.
@@ -90,6 +135,14 @@ class colormag_featured_posts_vertical_widget extends ColorMag_Widget {
 	 * @see WP_Widget
 	 */
 	public function widget( $args, $instance ) {
+
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to inject additional, pro-only
+		 * settings into this widget instance before it is rendered.
+		 *
+		 * @param array $instance The current widget instance settings.
+		 */
+		$instance = apply_filters( 'colormag_' . $this->id_base . '_pro_widget_instance', $instance );
 
 		global $post;
 		$title    = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
@@ -108,7 +161,7 @@ class colormag_featured_posts_vertical_widget extends ColorMag_Widget {
 
 		<?php
 		// Displays the widget title.
-		$this->widget_title( $title, $type, $category );
+		$this->widget_title( $title, $type, '', $category );
 
 		// Display the description.
 		$this->widget_description( $text );

@@ -33,15 +33,17 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function __construct() {
 
-		// Adding required meta boxes.
-		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+		if ( $this->is_classic_editor_active() ) {
+			// Adding required meta boxes.
+			add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
 
-		// Enqueue required meta boxes styles and scripts.
-		add_action( 'admin_print_styles-post-new.php', array( $this, 'enqueue' ) );
-		add_action( 'admin_print_styles-post.php', array( $this, 'enqueue' ) );
+			// Enqueue required meta boxes styles and scripts.
+			add_action( 'admin_print_styles-post-new.php', [ $this, 'enqueue' ] );
+			add_action( 'admin_print_styles-post.php', [ $this, 'enqueue' ] );
 
-		// Save the meta boxes contents.
-		add_action( 'save_post', array( $this, 'save_meta_boxes' ), 1, 2 );
+			// Save the meta boxes contents.
+			add_action( 'save_post', [ $this, 'save_meta_boxes' ], 1, 2 );
+		}
 
 		// Save page settings meta boxes.
 		add_action( 'colormag_process_page_settings_meta', 'ColorMag_Meta_Box_Page_Settings::save', 10, 2 );
@@ -61,10 +63,10 @@ class ColorMag_Meta_Boxes {
 			}
 		);
 
-		$this->register_meta_fields();
+		add_action( 'init', array( $this, 'register_meta_fields' ) );
 	}
 
-	private function register_meta_fields() {
+	public function register_meta_fields() {
 		register_post_meta(
 			'',
 			'colormag_page_container_layout',
@@ -98,9 +100,6 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function add_meta_boxes() {
 
-		if ( ! $this->is_classic_editor_active() ) {
-			return;
-		}
 		// Global options for page and posts.
 		add_meta_box(
 			'colormag-page-setting',
@@ -135,10 +134,6 @@ class ColorMag_Meta_Boxes {
 	 */
 	public function enqueue() {
 
-		if ( ! $this->is_classic_editor_active() ) {
-			return;
-		}
-
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 		// Enqueue meta boxes CSS file.
@@ -158,10 +153,6 @@ class ColorMag_Meta_Boxes {
 	 * @return void|mixed
 	 */
 	public function save_meta_boxes( $post_id, $post ) {
-
-		if ( ! $this->is_classic_editor_active() ) {
-			return;
-		}
 
 		$post_id = absint( $post_id );
 

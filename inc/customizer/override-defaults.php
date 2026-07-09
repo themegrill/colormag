@@ -12,29 +12,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Override Sections.
- */
+///**
+// * Override Sections.
+// */
+//// Header media section.
+//$wp_customize->get_section( 'header_image' )->panel    = 'colormag_header_panel';
+//$wp_customize->get_section( 'header_image' )->priority = 40;
+
 /**
  * Override controls.
  */
-
-// Site Identity.
+// Outside container > background control.
 // Settings.
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 if ( get_theme_mod( 'colormag_enable_builder', false ) || colormag_maybe_enable_builder() ) {
-	$wp_customize->get_control( 'blogname' )->section         = 'colormag_header_builder_logo';
-	$wp_customize->get_control( 'blogname' )->priority        = 4;
-	$wp_customize->get_control( 'blogdescription' )->section  = 'colormag_header_builder_logo';
-	$wp_customize->get_control( 'blogdescription' )->priority = 5;
+		$wp_customize->get_control( 'blogname' )->section        = 'colormag_header_builder_logo';
+	$wp_customize->get_control( 'blogname' )->priority           = 4;
+		$wp_customize->get_control( 'blogdescription' )->section = 'colormag_header_builder_logo';
+	$wp_customize->get_control( 'blogdescription' )->priority    = 5;
 	//  $wp_customize->get_control( 'site_icon' )->section        = 'colormag_header_builder_logo';
 	$wp_customize->get_control( 'site_icon' )->priority = 6;
 } else {
-		$wp_customize->get_control( 'site_icon' )->priority       = 5;
-		$wp_customize->get_control( 'blogname' )->priority        = 6;
-		$wp_customize->get_control( 'blogdescription' )->priority = 7;
+	$wp_customize->get_control( 'site_icon' )->priority       = 5;
+	$wp_customize->get_control( 'blogname' )->priority        = 6;
+	$wp_customize->get_control( 'blogdescription' )->priority = 7;
 }
 
 
@@ -48,7 +51,6 @@ $wp_customize->remove_control( 'background_position' );
 $wp_customize->remove_control( 'background_preset' );
 $wp_customize->remove_control( 'background_image' );
 $wp_customize->remove_control( 'background_color' );
-
 if ( isset( $wp_customize->selective_refresh ) ) {
 	$wp_customize->selective_refresh->add_partial(
 		'blogname',

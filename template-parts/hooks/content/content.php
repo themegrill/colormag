@@ -148,6 +148,20 @@ if ( ! function_exists( 'colormag_author_bio' ) ) :
 	 */
 	function colormag_author_bio() {
 
+		/**
+		 * Allow extensions (e.g. ColorMag Pro) to take over the author bio rendering.
+		 *
+		 * When a non-empty array is returned, the bio output is considered handled
+		 * by the extension and the default markup below is skipped.
+		 *
+		 * @param array $args Author bio rendering arguments. Empty by default.
+		 */
+		$args = apply_filters( 'colormag_author_bio_args', array() );
+
+		if ( ! empty( $args ) ) {
+			return;
+		}
+
 		if ( get_the_author_meta( 'description' ) ) :
 
 			$avatar_image_size = apply_filters( 'colormag_author_bio_avatar_size_filter', 100 );
@@ -167,6 +181,29 @@ if ( ! function_exists( 'colormag_author_bio' ) ) :
 endif;
 
 add_action( 'colormag_action_after_single_post_content', 'colormag_author_bio', 10 );
+
+if ( ! function_exists( 'colormag_after_single_post_content' ) ) :
+
+	/**
+	 * Fires after the single post author bio.
+	 *
+	 * Provides an extension point (e.g. ColorMag Pro social share) without
+	 * adding any output in the free theme.
+	 */
+	function colormag_after_single_post_content() {
+
+		/**
+		 * Hook: colormag_after_single_post_content.
+		 *
+		 * Extensions can hook in additional single post content such as social
+		 * sharing. No output by default.
+		 */
+		do_action( 'colormag_after_single_post_content' );
+	}
+
+endif;
+
+add_action( 'colormag_action_after_single_post_content', 'colormag_after_single_post_content', 15 );
 
 if ( ! function_exists( 'colormag_related_posts' ) ) :
 

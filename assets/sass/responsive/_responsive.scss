@@ -277,16 +277,21 @@
 /* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
 
 .mega-menu {
+	.cm-slider-area-rotate,
 	.cm-image-ticker-news,
 	.cm-breaking-news-slider-widget {
 		visibility: hidden !important;
 	}
 
 	.mega-toggle-on {
-		.cm-slider-area-rotate
+		.cm-slider-area-rotate,
 		.cm-image-ticker-news,
 		.cm-breaking-news-slider-widget {
 			visibility: visible !important;
 		}
 	}
 }
+
+/* Pro-only responsive styles.
+--------------------------------------------- */
+@import "../../pro/sass/responsive-pro";

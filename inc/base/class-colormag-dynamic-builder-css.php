@@ -20,7 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class ColorMag_Dynamic_Builder_CSS
  */
 class ColorMag_Dynamic_Builder_CSS {
-
 	/**
 	 * Return dynamic CSS output.
 	 *
@@ -44,7 +43,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		$parse_builder_css .= colormag_parse_css( '', $date_color, $date_color_css );
 
 		$date_typography_default = array(
-			'font-family'    => 'default',
+			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
 			'subsets'        => array( 'latin' ),
 			'font-size'      => array(
@@ -3026,7 +3025,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		$parse_builder_css                      .= colormag_parse_css( '', $header_mobile_menu_background_color, $header_mobile_menu_background_color_css );
 
 		// Footer builder area cols.
-		$footer_builder_top_col = get_theme_mod( 'colormag_footer_top_area_cols', 4 );
+		$footer_builder_top_col = get_theme_mod( 'colormag_footer_top_area_cols', 3 );
 
 		$footer_builder_main_col = get_theme_mod( 'colormag_footer_main_area_cols', 4 );
 
@@ -3130,6 +3129,8 @@ class ColorMag_Dynamic_Builder_CSS {
 
 		}
 
+		$parse_builder_css = apply_filters( 'colormag_builder_css_pro', $parse_builder_css );
+
 		return $parse_builder_css;
 	}
 
@@ -3232,6 +3233,8 @@ class ColorMag_Dynamic_Builder_CSS {
 				),
 			),
 		);
+
+		$predefined_presets = apply_filters( 'colormag_color_palette_presets', $predefined_presets );
 
 		// 2. Get current color palette data from database
 		$color_palette = get_theme_mod( 'colormag_color_palette', array() );

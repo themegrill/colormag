@@ -46,7 +46,8 @@
 
 	.cm-post-date,
 	.cm-author,
-	.cm-comments-link {
+	.cm-comments-link,
+	.cm-reading-time{
 		svg {
 			fill: $color__white;
 		}
@@ -56,7 +57,7 @@
 	.cm-author a,
 	.cm-reading-time,
 	.cm-reading-time::before,
-	.human-diff-time-display {
+	.human-diff-time .human-diff-time-display {
 		color: $color__white;
 	}
 

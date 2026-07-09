@@ -1,0 +1,125 @@
+themegrill/colormag-pro@seperating-pro-and-free-code-to-sync-with-free:
+
+  # ── Root PHP templates ────────────────────────────────────────
+  - 404.php
+  - archive.php
+  - breadcrumb.css
+  - changelog.txt
+  # changelog-pro.txt NOT listed — pro-only changelog, never overwritten by sync
+  - comments.php
+  - dark.css
+  - dark-rtl.css
+  - embed-content.php
+  - footer.php
+  - front-page.php
+  - functions.php
+  - header.php
+  - index.php
+  - navigation.php
+  - no-results.php
+  - page.php
+  - postcss.config.js
+  - readme.txt
+  - search.php
+  - searchform.php
+  - sidebar.php
+  - sidebar-footer.php
+  - sidebar-left.php
+  - sidebar-two.php
+  - sidebar-woocommerce-left.php
+  - sidebar-woocommerce-right.php
+  - single.php
+  - style-editor-block.css
+  - style-editor-block-rtl.css
+  - style-rtl.css
+  - tailwind.config.js
+  - theme.json
+  - tsconfig.json
+  - webpack.config.js
+  - woocommerce.css
+  - .babelrc
+  - .editorconfig
+  - .eslintignore
+  - .eslintrc.js
+  - .gitignore
+  - .prettierrc
+
+  # ── Assets ────────────────────────────────────────────────────
+  # assets/pro/        NOT listed — fully protected (pro-only)
+  # assets/sass/style.scss NOT listed — different theme header + pro @imports
+  - assets/build
+  - assets/css
+  - assets/fonts
+  - assets/img
+  - assets/js
+  - assets/library
+  - assets/sass/abstracts
+  - assets/sass/base
+  - assets/sass/blocks
+  - assets/sass/components
+  - assets/sass/compat
+  - assets/sass/dark.scss
+  - assets/sass/fonts
+  - assets/sass/generic
+  - assets/sass/layouts
+  - assets/sass/plugins
+  - assets/sass/responsive
+  - assets/sass/style-editor-block.scss
+  - assets/sass/utilities
+  - assets/sass/woocommerce.scss
+
+  # ── inc/ ─────────────────────────────────────────────────────
+  # inc/pro/  NOT listed — fully protected (pro-only)
+  - inc/admin
+  - inc/ajax.php
+  - inc/class-colormag-starter-content.php
+  - inc/colormag-setup.php
+  - inc/base
+  - inc/builder-template-tags.php
+  - inc/class-breadcrumb-trail.php
+  - inc/class-colormag-svg-icons.php
+  - inc/class-colormag-walker-page.php
+  - inc/colormag-wp-query.php
+  - inc/compat
+  - inc/compatibility/elementor
+  - inc/compatibility/starter-content
+  - inc/compatibility/jetpack
+  - inc/compatibility/woocommerce
+  - inc/core
+  - inc/customizer
+  - inc/deprecated
+  - inc/helper
+  - inc/meta-boxes
+  - inc/migration
+  - inc/template-functions.php
+  - inc/template-tags.php
+  - inc/widgets
+
+  # ── Templates ────────────────────────────────────────────────
+  # template-parts/pro/  NOT listed — fully protected (pro-only)
+  - page-templates
+  - template-parts
+
+  # ── Source ───────────────────────────────────────────────────
+  # src/dashboard listed granularly — pro keeps its own versions of:
+  #   router/Router.tsx          (has /license route)
+  #   constants/index.tsx        (has License entry in ROUTES)
+  #   screens/index.ts           (exports License)
+  #   screens/license/           (pro-only screen)
+  #   types/index.ts             (has hide_license_tab type)
+  - src/dashboard/App.tsx
+  - src/dashboard/components
+  - src/dashboard/dashboard.scss
+  - src/dashboard/hook
+  - src/dashboard/icons
+  - src/dashboard/images
+  - src/dashboard/index.tsx
+  - src/dashboard/store
+  - src/dashboard/utils
+  - src/dashboard/screens/dashboard
+  - src/dashboard/screens/free-vs-pro
+  - src/dashboard/screens/help
+  - src/dashboard/screens/products
+  - src/dashboard/screens/starter-template
+  - src/dashboard/types/global.d.ts
+  - src/meta

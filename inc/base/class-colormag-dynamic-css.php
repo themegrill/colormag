@@ -252,7 +252,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css     .= colormag_parse_css( '', $text_color, $text_color_css );
 
 		// Box shadow color
-		$box_shadow_color     = get_theme_mod( 'colormag_box_shadow_color', '' );
+		$box_shadow_color     = get_theme_mod( 'colormag_box_shadow_color', 'rgba(0, 0, 0, 0.24)' );
 		$box_shadow_color_css = array(
 			'.cm-posts .post' => array(
 				'box-shadow' => '0px 0px 2px 0px ' . esc_html( $box_shadow_color ),
@@ -1593,6 +1593,9 @@ class ColorMag_Dynamic_CSS {
 
 		}
 
+		// Pro-only dynamic CSS additions.
+		$parse_css = apply_filters( 'colormag_dynamic_css_pro', $parse_css );
+
 		// Add the custom CSS rendered dynamically, which is static.
 		$parse_css .= self::render_custom_output();
 		$parse_css .= ColorMag_Dynamic_Builder_CSS::render_builder_output( $parse_css );
@@ -1614,6 +1617,9 @@ class ColorMag_Dynamic_CSS {
 
 		// Generate dynamic CSS.
 		$colormag_custom_css = '';
+
+		// Pro-only custom CSS additions (post meta removal, category colors, etc.).
+		$colormag_custom_css = apply_filters( 'colormag_dynamic_css_custom_pro', $colormag_custom_css );
 
 		return $colormag_custom_css;
 	}
@@ -1646,6 +1652,9 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
+
+		// Pro-only editor block CSS additions (post meta color, etc.).
+		$parse_css = apply_filters( 'colormag_editor_block_css_pro', $parse_css );
 
 		return $parse_css;
 	}

@@ -186,7 +186,7 @@ $options = apply_filters(
 		),
 		'colormag_box_shadow_color'             => array(
 			'title'     => esc_html__( 'Content Box Border Color', 'colormag' ),
-			'default'   => '#E4E4E7',
+			'default'   => 'rgba(0, 0, 0, 0.24)',
 			'transport' => 'postMessage',
 			'type'      => 'customind-color',
 			'section'   => 'colormag_global_colors_section',
@@ -199,14 +199,14 @@ $options = apply_filters(
 				'colormag_link_color_sub_controls',
 				array(
 					'colormag_link_color'       => array(
-						'default'   => '',
+						'default'   => 'var(--cm-color-1)',
 						'type'      => 'customind-color',
 						'title'     => esc_html__( 'Normal', 'colormag' ),
 						'transport' => 'postMessage',
 						'section'   => 'colormag_global_colors_section',
 					),
 					'colormag_link_hover_color' => array(
-						'default'   => '',
+						'default'   => 'var(--cm-color-1)',
 						'type'      => 'customind-color',
 						'title'     => esc_html__( 'Hover', 'colormag' ),
 						'transport' => 'postMessage',
@@ -226,9 +226,9 @@ $options = apply_filters(
 			),
 			'type'      => 'customind-background',
 			'title'     => esc_html__( 'Container Inside Background', 'colormag' ),
-			'section'   => 'colormag_global_container_section',
+			'section'   => 'colormag_global_colors_section',
 			'transport' => 'postMessage',
-			'priority'  => 20,
+			'priority'  => 10,
 		),
 		'colormag_outside_container_background' => array(
 			'default'   => array(
@@ -241,9 +241,9 @@ $options = apply_filters(
 			),
 			'type'      => 'customind-background',
 			'title'     => esc_html__( 'Container Outside Background', 'colormag' ),
-			'section'   => 'colormag_global_container_section',
+			'section'   => 'colormag_global_colors_section',
 			'transport' => 'postMessage',
-			'priority'  => 20,
+			'priority'  => 10,
 			'condition' => array(
 				'colormag_container_layout' => 'boxed',
 			),
@@ -262,45 +262,7 @@ $options = apply_filters(
 		),
 	)
 );
-//$options['colormag_dark_skin'] = array(
-//  'default'   => 'preset-5',
-//  'type'      => 'customind-select',
-//  'title'     => esc_html__( 'Skin Color', 'colormag' ),
-//  'section'   => 'colormag_global_colors_section',
-//  'transport' => 'postMessage',
-//  'priority'  => 90,
-//  'choices'   => call_user_func(
-//      function () use ( $options ) {
-//          // Get predefined presets
-//          $presets = $options['colormag_color_palette']['presets'];
-//
-//          // Get custom presets from theme mod
-//          $color_palette = get_theme_mod( 'colormag_color_palette', array() );
-//          $custom_presets = isset( $color_palette['custom'] ) ? $color_palette['custom'] : array();
-//
-//          // Combine all presets
-//          $all_presets = array_merge( $presets, $custom_presets );
-//
-//          // Create choices array with name as key and id as value
-//          $choices = array();
-//          foreach ( $all_presets as $preset ) {
-//              $name = isset( $preset['name'] ) ? $preset['name'] : ( isset( $preset['id'] ) ? 'Custom ' . $preset['id'] : 'Unknown' );
-//              $id = isset( $preset['id'] ) ? $preset['id'] : 'unknown';
-//              $choices[ $id ] = $name;
-//          }
-//
-//          return $choices;
-//      }
-//  ),
-//  'js_vars'   => array(
-//      array(
-//          'function' => 'colormag_update_skin_choices',
-//          'args'     => array(
-//              'colormag_color_palette',
-//          ),
-//      ),
-//  ),
-//);
-
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_colors_pro_options', $wp_customize );

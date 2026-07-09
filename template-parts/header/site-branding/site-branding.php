@@ -39,11 +39,11 @@ if ( true == get_theme_mod( 'colormag_enable_site_identity', true ) || true == g
 		if ( true == get_theme_mod( 'colormag_enable_site_identity', true ) ) {
 			if ( is_front_page() || is_home() ) :
 				?>
-						<h1 class="cm-site-title">
+						<h1 class="cm-site-title"<?php do_action( 'colormag_site_title_attrs' ); ?>>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 						</h1>
 					<?php else : ?>
-						<h3 class="cm-site-title">
+						<h3 class="cm-site-title"<?php do_action( 'colormag_site_title_attrs' ); ?>>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 						</h3>
 						<?php
@@ -55,7 +55,7 @@ if ( true == get_theme_mod( 'colormag_enable_site_identity', true ) || true == g
 					if ( true == get_theme_mod( 'colormag_enable_site_tagline', true ) ) {
 						if ( $description || is_customize_preview() ) :
 							?>
-						<p class="cm-site-description">
+						<p class="cm-site-description"<?php do_action( 'colormag_site_description_attrs' ); ?>>
 							<?php echo esc_html( $description ); ?>
 						</p><!-- .cm-site-description -->
 							<?php

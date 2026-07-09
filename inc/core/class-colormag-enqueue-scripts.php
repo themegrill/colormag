@@ -2,9 +2,9 @@
 /**
  * ColorMag enqueue CSS and JS files.
  *
- * @package    ColorMag
+ * @package ColorMag
  *
- * @since      ColorMag 3.0.0
+ * @since   ColorMag 3.0.0
  */
 
 // Exit if accessed directly.
@@ -249,6 +249,8 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 			// Skip link focus fix JS enqueue.
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
+
+			do_action( 'colormag_enqueue_pro_scripts' );
 		}
 
 		public function customize_js() {
@@ -533,9 +535,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			);
 
 			if ( colormag_maybe_enable_builder() ) {
-				wp_add_inline_style(
-					'customize-controls',
-					'
+				$colormag_customize_inline_css = '
 #accordion-section-colormag_sticky_header_section .accordion-section-title{
 			border-top: 1px solid #dcdcde !important;
 			border-left: 1px solid #dcdcde !important;
@@ -566,9 +566,11 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 					    position: absolute;
 					    bottom: 0px;
 				}
-					'
-				);
+					';
 
+				$colormag_customize_inline_css = apply_filters( 'colormag_inline_customizer_css_pro', $colormag_customize_inline_css );
+
+				wp_add_inline_style( 'customize-controls', $colormag_customize_inline_css );
 			}
 		}
 	}

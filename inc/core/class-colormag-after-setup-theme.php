@@ -312,12 +312,14 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 			add_theme_support( 'post-thumbnails' );
 
 			// Registering navigation menu.
-			register_nav_menus(
+			$menus = apply_filters(
+				'colormag_register_nav_menus',
 				array(
 					'primary'        => esc_html__( 'Primary Menu', 'colormag' ),
 					'menu-secondary' => esc_html__( 'Secondary Menu', 'colormag' ),
 				)
 			);
+			register_nav_menus( $menus );
 
 			// Cropping the images to different sizes to be used in the theme.
 			add_image_size( 'colormag-highlighted-post', 392, 272, true );
@@ -402,6 +404,8 @@ if ( ! class_exists( 'ColorMag_After_Setup_Theme' ) ) {
 
 			// Responsive embeds support.
 			add_theme_support( 'responsive-embeds' );
+
+			do_action( 'colormag_after_theme_setup' );
 		}
 	}
 }

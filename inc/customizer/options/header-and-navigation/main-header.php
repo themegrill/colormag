@@ -22,9 +22,12 @@ $options = apply_filters(
 						'title'     => esc_html__( 'Layout', 'colormag' ),
 						'transport' => 'postMessage',
 						'section'   => 'colormag_primary_header_section',
-						'choices'   => array(
-							'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
-							'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
+						'choices'   => apply_filters(
+							'colormag_main_header_layout_choices',
+							array(
+								'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
+								'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
+							)
 						),
 					),
 					'colormag_main_header_layout_1_style' => array(
@@ -57,7 +60,7 @@ $options = apply_filters(
 						'section'   => 'colormag_primary_header_section',
 						'priority'  => 10,
 						'choices'   => apply_filters(
-							'colormag_main_header_layout_1_style_choices',
+							'colormag_main_header_layout_2_style_choices',
 							array(
 								'style-1' => array(
 									'label' => '',
@@ -155,3 +158,5 @@ $options = apply_filters(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_main_header_pro_options', $wp_customize );

@@ -21,12 +21,26 @@ get_header();
 	 * Hook: colormag_before_body_content.
 	 */
 	do_action( 'colormag_before_body_content' );
+
+	/**
+	 * Hook: colormag_before_content_area.
+	 *
+	 * @hooked colormag_pro_before_content_area (two sidebar select) - 10
+	 */
+	do_action( 'colormag_before_content_area' );
 	?>
 
 	<div id="cm-primary" class="cm-primary">
-		<div class="cm-posts clearfix">
+		<div class="cm-posts clearfix<?php echo esc_attr( apply_filters( 'colormag_single_posts_class', '' ) ); ?>">
 
 			<?php
+			/**
+			 * Hook: colormag_before_single_loop.
+			 *
+			 * @hooked colormag_pro_before_single_loop (autoload posts wrapper open) - 10
+			 */
+			do_action( 'colormag_before_single_loop' );
+
 			/**
 			 * Hook: colormag_before_single_post_page_loop.
 			 */
@@ -47,7 +61,9 @@ get_header();
 		<?php
 
 		if ( true === apply_filters( 'colormag_single_post_page_navigation_filter', true ) ) :
+			if ( true === apply_filters( 'colormag_enable_post_navigation', true ) ) :
 				get_template_part( 'navigation', 'single' );
+			endif;
 		endif;
 
 		if ( ! class_exists( 'Auto_Load_Next_Post' ) ) :
@@ -78,6 +94,13 @@ get_header();
 		 * Hook: colormag_after_comments_template.
 		 */
 		do_action( 'colormag_after_comments_template' );
+
+		/**
+		 * Hook: colormag_after_single_loop.
+		 *
+		 * @hooked colormag_pro_after_single_loop (autoload posts wrapper close + next post load) - 10
+		 */
+		do_action( 'colormag_after_single_loop' );
 		?>
 	</div><!-- #cm-primary -->
 

@@ -4,7 +4,7 @@ Theme Name: ColorMag
 Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
-Description: ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
+Description:  ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org. Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included. Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag
 Version: 4.2.0
 Tested up to: 7.0
 Requires at least: 5.0
@@ -293,7 +293,7 @@ sub {
 }
 
 html {
-	overflow-y: auto;
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
@@ -409,12 +409,12 @@ address {
 }
 
 ins {
-	background: #f4f4f5;
+	background: var(--cm-color-7, #F4F4F5);
 }
 
 hr,
 .wp-block-separator {
-	background-color: #e4e4e7;
+	background-color: #E4E4E7;
 	border: 0;
 	height: 1px;
 	margin: 30px 0;
@@ -455,7 +455,7 @@ h2 {
 }
 
 h3 {
-	font-size: 3.2rem;
+	font-size: 2.4rem;
 }
 
 h4 {
@@ -480,9 +480,6 @@ body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background-size: cover;
-}
-body.boxed {
-	background-color: #E4E4E7;
 }
 body #page {
 	display: flex;
@@ -535,6 +532,51 @@ input[type=submit]:hover,
 .cm-button:hover {
 	color: var(--cm-color-1, #207daf);
 	background-color: transparent;
+}
+
+.cm-header-button .cm-button-style-1 {
+	background-color: transparent;
+	color: #207daf;
+}
+.cm-header-button .cm-button-style-2 {
+	background-color: transparent;
+	color: #207daf;
+	border: none;
+	text-decoration: underline;
+}
+.cm-header-button .cm-button-style-3 {
+	background-color: transparent;
+	color: #207daf;
+	border: none;
+	text-decoration: none;
+}
+.cm-header-button .cm-button-style-4 {
+	background-color: transparent;
+	color: #207daf;
+	border: none;
+	text-decoration: none;
+}
+.cm-header-button .cm-button-style-6 {
+	background-color: transparent;
+	color: #207daf;
+}
+.cm-header-button .cm-button-style-7 {
+	background-color: transparent;
+	color: #207daf;
+	border: none;
+	text-decoration: none;
+}
+.cm-header-button .cm-button-style-8 {
+	background-color: transparent;
+	color: #207daf;
+	border: none;
+	text-decoration: underline;
+}
+.cm-header-button .cm-button-style-9 {
+	background-color: transparent;
+	color: #207daf;
+	border: none;
+	text-decoration: underline;
 }
 
 /**
@@ -982,6 +1024,22 @@ table td {
 	fill: #71717a;
 }
 
+.cm-icon--calendar-fill {
+	width: 12px;
+	height: 12px;
+}
+
+.cm-icon--updated {
+	width: 14px;
+	height: 14px;
+}
+
+.cm-modified-date, .entry-date.published {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
 .cm-header-builder {
 	border-style: solid;
 	border-color: #E4E4E7;
@@ -1263,6 +1321,16 @@ table td {
 .cm-header-builder .cm-home-icon {
 	padding: 8px;
 }
+.cm-header-builder.cm-layout-2.cm-layout-2-style-1 .cm-header-bottom-row {
+	border-top: 4px solid var(--cm-color-1, #207daf);
+}
+.cm-header-builder.cm-layout-2.cm-layout-2-style-1 #cm-primary-nav {
+	border-top: 0 solid var(--cm-color-1, #207daf);
+}
+.cm-header-builder #cm-primary-nav {
+	border-top: 0 solid var(--cm-color-1, #207daf);
+	background-color: transparent;
+}
 
 .cm-secondary-nav {
 	position: relative;
@@ -1396,6 +1464,8 @@ table td {
 		flex-direction: column;
 	}
 }
+/* Pro-only header builder styles.
+--------------------------------------------- */
 .cm-footer-builder a {
 	color: #fff;
 }
@@ -1462,7 +1532,7 @@ table td {
 	height: fit-content;
 	border-radius: 4px;
 	padding: 12px;
-	background-color: #27272a;
+	background-color: #27272A;
 }
 .cm-footer-builder .cm-footer-top-row .widget .cm-entry-title a {
 	color: #fff;
@@ -1494,7 +1564,7 @@ table td {
 .cm-footer-builder .cm-top-row {
 	display: grid;
 	gap: 32px;
-	grid-template-columns: repeat(var(--top-grid-columns, 4), 1fr);
+	grid-template-columns: repeat(var(--top-grid-columns, 3), 1fr);
 	border: 0 solid;
 }
 .cm-footer-builder .cm-bottom-row {
@@ -1526,9 +1596,6 @@ table td {
 }
 .cm-footer-builder .widget a {
 	text-decoration: none;
-}
-.cm-footer-builder .widget li {
-	list-style: none;
 }
 .cm-footer-builder .widget .wp-block-heading,
 .cm-footer-builder .widget .widget-title {
@@ -1595,7 +1662,7 @@ table td {
 		padding-top: 8px;
 	}
 	.cm-footer.cm-footer-builder .cm-footer-bottom-row .cm-bottom-row {
-		gap: 4px;
+		gap: 6px;
 		grid-template-columns: 1fr;
 	}
 	.cm-footer.cm-footer-builder .cm-footer-bottom-row .cm-bottom-row .cm-footer-bottom-2-col {
@@ -1608,6 +1675,8 @@ table td {
 	gap: 8px;
 }
 
+/* Pro-only footer builder styles.
+--------------------------------------------- */
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -1624,6 +1693,7 @@ table td {
 	margin-top: 10px;
 	padding-right: 8px;
 	padding-left: 8px;
+	background-color: #fafafa;
 	font-size: 14px;
 	line-height: 20px;
 	word-wrap: break-word;
@@ -1645,10 +1715,23 @@ table td {
 }
 
 .newsticker {
-	max-width: 400px;
+	max-width: 240px;
 	overflow: hidden;
 	margin-right: 4px;
 	height: 20px;
+}
+
+/* Below-header header-builder ticker: constrain to one row before JS inits
+   (prevents the flash/jerk of the full list) and drop default list bullets. */
+.cm-newsticker {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 20px;
+}
+.cm-newsticker li {
+	list-style: none;
 }
 
 /* Below Navigation */
@@ -1855,7 +1938,7 @@ table td {
 	left: 10px;
 	top: 58%;
 	transform: translateY(-50%);
-	color: #e4e4e7;
+	color: #E4E4E7;
 	font-size: 16px;
 	pointer-events: none;
 }
@@ -1876,8 +1959,8 @@ table td {
 	align-items: center;
 	justify-content: center;
 	padding: 8px;
-	width: 48px;
 	height: 48px;
+	width: 48px;
 	color: #fff;
 	font-size: 2.4rem;
 	cursor: pointer;
@@ -1905,7 +1988,7 @@ table td {
 	position: absolute;
 	left: 0;
 	z-index: 9999;
-	border: 1px solid #f4f4f5;
+	border: 1px solid var(--cm-color-7, #F4F4F5);
 	display: none;
 	padding: 24px;
 	border-radius: 0 0 4px 4px;
@@ -2095,13 +2178,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	list-style-type: none;
 	flex-wrap: wrap;
 }
+.breadcrumb-trail ul .trail-separator {
+	margin: 0 3px;
+}
 .breadcrumb-trail ul li a, .breadcrumb-trail ul li:last-child {
 	margin: 0 2px;
-}
-.breadcrumb-trail ul li::after {
-	content: " > ";
-	white-space: pre;
-	font-family: FontAwesome;
 }
 .breadcrumb-trail ul li:last-child::after {
 	content: none;
@@ -2155,7 +2236,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	width: 14px;
 	height: 14px;
 	border-radius: 4px;
-	border: 1px solid #f4f4f5;
+	border: 1px solid var(--cm-color-7, #F4F4F5);
 	background-color: #fff;
 	color: #3f3f46;
 	font-size: 14px;
@@ -2176,6 +2257,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	cursor: pointer;
 	font-size: 1.6rem;
 	font-weight: 600;
+	word-break: break-all;
 }
 .previous a:hover,
 .next a:hover {
@@ -2229,7 +2311,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	font-size: 1.4rem;
 	font-weight: 400;
 	border-radius: 4px;
-	border: 1px solid #f4f4f5;
+	border: 1px solid var(--cm-color-7, #F4F4F5);
 }
 .link-pagination .post-page-numbers.current {
 	background-color: var(--cm-color-1, #207daf);
@@ -2278,19 +2360,8 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	margin-top: 32px;
 }
 
-@media screen and (max-width: 767px) {
-	.thumbnail-pagination li {
-		width: 100%;
-		display: block;
-		min-height: 70px;
-	}
-	.thumbnail-pagination li.previous {
-		margin-bottom: 20px;
-	}
-	.thumbnail-pagination a {
-		font-size: 15px;
-	}
-}
+/* Pro-only pagination styles.
+--------------------------------------------- */
 @media screen and (min-width: 48em) {
 	.default-wp-page {
 		flex-direction: row;
@@ -2495,6 +2566,13 @@ li.default-menu {
 	cursor: pointer;
 }
 
+.cm-header-builder .cm-menu-toggle[aria-expanded=true] .cm-icon--bars {
+	display: none;
+}
+.cm-header-builder .cm-menu-toggle[aria-expanded=false] .cm-icon--x-mark {
+	display: none;
+}
+
 .cm-header .cm-menu-toggle[aria-expanded=true] .cm-icon--bars {
 	display: none;
 }
@@ -2629,6 +2707,8 @@ li.default-menu {
 	cursor: pointer;
 }
 .cm-mobile-nav .cm-submenu-toggle svg {
+	height: 14px;
+	width: 14px;
 	fill: #fff;
 }
 .cm-mobile-nav ul ul a {
@@ -2726,7 +2806,7 @@ li.default-menu {
 	width: 32px;
 	height: 32px;
 	border-radius: 4px;
-	border: 1px solid #f4f4f5;
+	border: 1px solid var(--cm-color-7, #F4F4F5);
 	background-color: #fff;
 	color: #3f3f46;
 	font-size: 14px;
@@ -2751,6 +2831,9 @@ Styles for separating single posts loaded from ajax call.
 	margin-top: 15px;
 	padding-top: 60px;
 	border-top: 1px solid #f8f8f8;
+}
+.tg-autoload-posts .comments-area {
+	margin-bottom: 16px;
 }
 
 .tg-autoload-posts #comments.comments-area {
@@ -2858,6 +2941,20 @@ Styles for separating single posts loaded from ajax call.
 .comment a:hover {
 	text-decoration: underline;
 }
+.comment .comment-author-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+.comment .comment-author-link .post-author {
+	background-color: var(--cm-color-1, #207daf);
+	color: #fff;
+	padding: 6px;
+	border-radius: 4px;
+	font-size: 14px;
+}
 
 .comment-list {
 	margin-bottom: 24px;
@@ -2872,11 +2969,6 @@ Styles for separating single posts loaded from ajax call.
 
 .comment-edit-link {
 	font-size: 1.2rem;
-}
-
-.comment-awaiting-moderation {
-	margin-top: 16px;
-	margin-right: 60px;
 }
 
 /* Comments Form.
@@ -2944,6 +3036,8 @@ Styles for separating single posts loaded from ajax call.
 --------------------------------------------- */
 .cm-entry-button {
 	display: inline-block;
+	background-color: var(--cm-color-1, #207daf);
+	border-radius: 2px;
 }
 .cm-entry-button span {
 	display: inline-block;
@@ -2953,8 +3047,6 @@ Styles for separating single posts loaded from ajax call.
 	font-weight: 600;
 	cursor: pointer;
 	line-height: 1.8;
-	background-color: var(--cm-color-1, #207daf);
-	border-radius: 2px;
 }
 .cm-entry-button span:hover {
 	background-color: rgba(0, 0, 0, 0.1);
@@ -2995,6 +3087,7 @@ Styles for separating single posts loaded from ajax call.
 	display: flex;
 	align-items: center;
 	gap: 4px;
+	flex-wrap: wrap;
 }
 
 .cm-below-entry-meta a:hover,
@@ -3004,7 +3097,6 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-author,
 .cm-post-views,
-.cm-tag-links,
 .cm-edit-link,
 .cm-comments-link,
 .cm-post-date,
@@ -3013,6 +3105,29 @@ Styles for separating single posts loaded from ajax call.
 	align-items: center;
 	gap: 4px;
 	font-size: 1.2rem;
+}
+
+/* ------------ Post Meta ----------------- */
+.cm-posts .cm-below-entry-meta .cm-author .cm-style-2-avatar {
+	height: 24px;
+	width: 24px;
+	border-radius: 100px;
+}
+
+.cm-post .cm-below-entry-meta .cm-author .cm-style-2-avatar {
+	height: 24px;
+	width: 24px;
+	border-radius: 100px;
+}
+
+.cm-tag-links {
+	display: flex;
+	align-items: center;
+	font-size: 1.2rem;
+}
+
+.cm-icon--tag {
+	margin-left: 4px;
 }
 
 .cm-post-date a,
@@ -3033,6 +3148,8 @@ Styles for separating single posts loaded from ajax call.
 	font-size: 1.2rem;
 }
 
+/* Pro-only separator styles.
+--------------------------------------------- */
 .cm-entry-summary {
 	margin-top: 12px;
 }
@@ -3224,6 +3341,8 @@ Styles for separating single posts loaded from ajax call.
 .cm-category-slide-prev .cm-icon,
 .cm-category-slide-next .cm-icon {
 	fill: #fff;
+	height: 16px;
+	width: 16px;
 }
 
 .cm-category-slide-prev {
@@ -3248,25 +3367,31 @@ Styles for separating single posts loaded from ajax call.
 
 /* Featured Category Slider Widget.
 --------------------------------------------- */
-.cm-featured-category-slider {
+.cm-featured-category-slider,
+.cm-slider-area-rotate {
 	position: relative;
 }
-.cm-featured-category-slider .cm-single-slide {
+.cm-featured-category-slider .cm-single-slide,
+.cm-slider-area-rotate .cm-single-slide {
 	position: relative;
 	border-radius: 4px;
 	overflow: hidden;
 }
-.cm-featured-category-slider img {
+.cm-featured-category-slider img,
+.cm-slider-area-rotate img {
 	width: 100%;
 	margin-bottom: 0;
 }
-.cm-featured-category-slider .cm-below-entry-meta {
+.cm-featured-category-slider .cm-below-entry-meta,
+.cm-slider-area-rotate .cm-below-entry-meta {
 	margin-bottom: 0;
 }
-.cm-featured-category-slider .single-post .bx-controls-direction {
+.cm-featured-category-slider .single-post .bx-controls-direction,
+.cm-slider-area-rotate .single-post .bx-controls-direction {
 	display: none;
 }
-.cm-featured-category-slider .cm-slide-content {
+.cm-featured-category-slider .cm-slide-content,
+.cm-slider-area-rotate .cm-slide-content {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -3278,35 +3403,56 @@ Styles for separating single posts loaded from ajax call.
 	padding: 16px;
 	background: linear-gradient(-180deg, rgba(35, 35, 35, 0) 0%, #232323 100%);
 }
-.cm-featured-category-slider .cm-slide-content .cm-entry-header-meta .cm-post-categories a {
+.cm-featured-category-slider .cm-slide-content .cm-entry-header-meta .cm-post-categories a,
+.cm-slider-area-rotate .cm-slide-content .cm-entry-header-meta .cm-post-categories a {
 	background-color: var(--cm-color-1, #207daf);
 }
-.cm-featured-category-slider .cm-entry-title {
+.cm-featured-category-slider .cm-entry-title,
+.cm-slider-area-rotate .cm-entry-title {
 	color: #fff;
 	font-size: 1.6rem;
 }
-.cm-featured-category-slider .cm-entry-title a {
+.cm-featured-category-slider .cm-entry-title a,
+.cm-slider-area-rotate .cm-entry-title a {
 	color: inherit;
 }
-.cm-featured-category-slider .cm-entry-title a:hover {
+.cm-featured-category-slider .cm-entry-title a:hover,
+.cm-slider-area-rotate .cm-entry-title a:hover {
 	color: #fff;
 	opacity: 0.8;
 }
 .cm-featured-category-slider .cm-post-date svg,
 .cm-featured-category-slider .cm-author svg,
-.cm-featured-category-slider .cm-comments-link svg {
+.cm-featured-category-slider .cm-comments-link svg,
+.cm-featured-category-slider .cm-reading-time svg,
+.cm-slider-area-rotate .cm-post-date svg,
+.cm-slider-area-rotate .cm-author svg,
+.cm-slider-area-rotate .cm-comments-link svg,
+.cm-slider-area-rotate .cm-reading-time svg {
 	fill: #fff;
 }
 .cm-featured-category-slider .cm-post-date a,
 .cm-featured-category-slider .cm-author a,
 .cm-featured-category-slider .cm-reading-time,
 .cm-featured-category-slider .cm-reading-time::before,
-.cm-featured-category-slider .human-diff-time-display {
+.cm-featured-category-slider .human-diff-time .human-diff-time-display,
+.cm-slider-area-rotate .cm-post-date a,
+.cm-slider-area-rotate .cm-author a,
+.cm-slider-area-rotate .cm-reading-time,
+.cm-slider-area-rotate .cm-reading-time::before,
+.cm-slider-area-rotate .human-diff-time .human-diff-time-display {
 	color: #fff;
 }
 .cm-featured-category-slider .cm-comments-link a,
-.cm-featured-category-slider .cm-comments-link span {
+.cm-featured-category-slider .cm-comments-link span,
+.cm-slider-area-rotate .cm-comments-link a,
+.cm-slider-area-rotate .cm-comments-link span {
 	color: #fff;
+}
+
+.cm-featured-category-slider-single-post .cm-slider-area-rotate {
+	visibility: visible;
+	height: unset;
 }
 
 .cm-slider-area-rotate {
@@ -3380,6 +3526,13 @@ Styles for separating single posts loaded from ajax call.
 	max-width: 100%;
 }
 
+.cm-featured-posts--style-1 .cm-posts .cm-post a {
+	max-width: 130px;
+}
+.cm-featured-posts--style-1 .cm-posts .cm-post-content a {
+	max-width: 100%;
+}
+
 /* Style 2 widget.
 --------------------------------------------- */
 .cm-featured-posts--style-2.cm-featured-posts .cm-first-post,
@@ -3406,6 +3559,13 @@ Styles for separating single posts loaded from ajax call.
 	max-width: 130px;
 }
 .cm-footer .cm-featured-posts--style-2 .cm-posts .cm-post-content a {
+	max-width: 100%;
+}
+
+.cm-featured-posts--style-2 .cm-posts .cm-post a {
+	max-width: 130px;
+}
+.cm-featured-posts--style-2 .cm-posts .cm-post-content a {
 	max-width: 100%;
 }
 
@@ -3448,14 +3608,15 @@ Styles for separating single posts loaded from ajax call.
 }
 .cm-highlighted-posts .cm-post-date svg,
 .cm-highlighted-posts .cm-author svg,
-.cm-highlighted-posts .cm-comments-link svg {
+.cm-highlighted-posts .cm-comments-link svg,
+.cm-highlighted-posts .cm-reading-time svg {
 	fill: #fff;
 }
 .cm-highlighted-posts .cm-post-date a,
 .cm-highlighted-posts .cm-author a,
 .cm-highlighted-posts .cm-reading-time,
 .cm-highlighted-posts .cm-reading-time::before,
-.cm-highlighted-posts .human-diff-time-display {
+.cm-highlighted-posts .human-diff-time .human-diff-time-display {
 	color: #fff;
 }
 .cm-highlighted-posts .cm-entry-title {
@@ -3482,6 +3643,9 @@ Styles for separating single posts loaded from ajax call.
 .cm-random-post-widget .cm-post {
 	display: flex;
 	box-shadow: none;
+}
+.cm-random-post-widget .cm-post .cm-entry-title a {
+	color: #0a0a0a;
 }
 .cm-random-post-widget .cm-post a {
 	position: relative;
@@ -3515,6 +3679,27 @@ Styles for separating single posts loaded from ajax call.
 }
 .cm-random-posts img {
 	border-radius: 4px;
+}
+
+.cm-secondary .cm-random-post-widget .cm-random-posts .cm-post a {
+	max-width: 130px;
+}
+.cm-secondary .cm-random-post-widget .cm-random-posts .cm-post-content a {
+	max-width: 100%;
+}
+
+.cm-footer .cm-random-post-widget .cm-random-posts .cm-post a {
+	max-width: 130px;
+}
+.cm-footer .cm-random-post-widget .cm-random-posts .cm-post-content a {
+	max-width: 100%;
+}
+
+.cm-random-post-widget .cm-random-posts .cm-post a {
+	max-width: 130px;
+}
+.cm-random-post-widget .cm-random-posts .cm-post-content a {
+	max-width: 100%;
 }
 
 /* Widget Search.
@@ -3865,6 +4050,8 @@ Styles for separating single posts loaded from ajax call.
 		width: 43.85964912%;
 	}
 }
+/* Pro-only components.
+--------------------------------------------- */
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
@@ -3877,7 +4064,7 @@ Styles for separating single posts loaded from ajax call.
 }
 
 .cm-top-bar {
-	background-color: #f4f4f5;
+	background-color: #F4F4F5;
 	padding: 10px 0;
 	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
 	font-size: 14px;
@@ -4037,7 +4224,7 @@ Styles for separating single posts loaded from ajax call.
 	border-top: 4px solid #289dcc;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 48em) {
 	.cm-menu-toggle {
 		display: none;
 	}
@@ -4130,8 +4317,8 @@ Styles for separating single posts loaded from ajax call.
 	text-align: right;
 }
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu li {
-	border-bottom: 1px solid #F4F4F5;
 	display: flex;
+	border-bottom: 1px solid #F4F4F5;
 }
 .cm-layout-2 .cm-primary-nav ul ul.sub-menu li a {
 	width: auto;
@@ -4503,7 +4690,7 @@ ul.wp-block-gallery img {
 --------------------------------------------- */
 .author-box {
 	padding: 2%;
-	width: 100%;
+	width: 96%;
 	display: inline-block;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	margin-bottom: 30px;
@@ -4515,6 +4702,7 @@ ul.wp-block-gallery img {
 }
 
 .author-img img {
+	width: 94px;
 	margin-left: 15px;
 }
 
@@ -4545,9 +4733,15 @@ ul.wp-block-gallery img {
 .share .fa-pinterest {
 	color: #cc2127;
 }
+.share .fa-envelope {
+	color: #000;
+}
 
 .author-box {
 	margin-top: 30px;
+}
+.author-box .author-social-sites {
+	list-style-type: none;
 }
 .author-box.author-bio-style-2 .author-name {
 	float: right;
@@ -4567,10 +4761,6 @@ ul.wp-block-gallery img {
 
 /* Related Posts.
 --------------------------------------------- */
-.related-posts-wrapper h3 {
-	font-size: 2rem;
-}
-
 .related-posts-main-title {
 	margin-bottom: 30px;
 }
@@ -4580,6 +4770,17 @@ ul.wp-block-gallery img {
 .related-posts-main-title span {
 	font-size: 26px;
 	padding-right: 10px;
+}
+
+.cm-single-post-content {
+	padding: 0;
+}
+.cm-single-post-content .cm-entry-header-meta, .cm-single-post-content .cm-entry-header, .cm-single-post-content .cm-below-entry-meta, .cm-single-post-content .cm-entry-summary {
+	padding: 0 20px;
+	margin: 12px 0;
+}
+.cm-single-post-content .cm-entry-title {
+	margin: 0;
 }
 
 .single-related-posts {
@@ -4754,10 +4955,18 @@ ul.wp-block-gallery img {
 	margin-left: 10px;
 }
 
-#twitter, #facebook, #googleplus, #pinterest {
+#twitter,
+#facebook,
+#googleplus,
+#pinterest,
+#email {
 	float: right;
 }
-#twitter.share, #facebook.share, #googleplus.share, #pinterest.share {
+#twitter.share,
+#facebook.share,
+#googleplus.share,
+#pinterest.share,
+#email.share {
 	margin-left: 0;
 	padding: 0 10px;
 	cursor: pointer;
@@ -4768,7 +4977,14 @@ ul.wp-block-gallery img {
 .author-social-sites li {
 	float: right;
 }
-.author-social-sites .fa-twitter, .author-social-sites .fa-facebook, .author-social-sites .fa-google-plus, .author-social-sites .fa-flickr, .author-social-sites .fa-linkedin, .author-social-sites .fa-instagram, .author-social-sites .fa-youtube, .author-social-sites .fa-tumblr {
+.author-social-sites .fa-twitter,
+.author-social-sites .fa-facebook,
+.author-social-sites .fa-google-plus,
+.author-social-sites .fa-flickr,
+.author-social-sites .fa-linkedin,
+.author-social-sites .fa-instagram,
+.author-social-sites .fa-youtube,
+.author-social-sites .fa-tumblr {
 	font-size: 25px;
 	padding: 5px;
 }
@@ -5093,7 +5309,7 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 .cm-no-results input.s {
 	width: 100%;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-8, #E4E4E7);
+	border: 1px solid var(--cm-color-9, #E4E4E7);
 	border-radius: 0 4px 4px 0;
 }
 
@@ -5101,6 +5317,8 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 	display: block;
 }
 
+/* Pro-only sidebar styles.
+--------------------------------------------- */
 @media screen and (min-width: 48em) {
 	.cm-no-results .cm-page-content p {
 		width: 430px;
@@ -5111,25 +5329,6 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 }
 /* Search.
 --------------------------------------------- */
-.search .status-publish {
-	margin-bottom: 30px;
-	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-	width: 48.7013%;
-}
-.search .status-publish .cm-post-content {
-	padding: 16px;
-}
-.search .status-publish:nth-child(2n) {
-	float: right;
-	clear: both;
-}
-.search .status-publish:nth-child(2n+1) {
-	float: left;
-}
-.search .status-publish:first-child {
-	float: none;
-	width: 100%;
-}
 .search .cm-grid-style-2.status-publish {
 	width: 100%;
 }
@@ -5139,6 +5338,8 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 	margin-left: 20px;
 }
 
+/* Pro-only search style variants.
+--------------------------------------------- */
 /* Footer.
 --------------------------------------------- */
 /* Footer Bar.
@@ -5147,7 +5348,7 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 	background-color: #27272a;
-	color: #f4f4f5;
+	color: var(--cm-color-7, #F4F4F5);
 }
 .cm-footer-bar .cm-row {
 	font-size: 1.4rem;
@@ -5180,7 +5381,7 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 }
 
 .cm-footer-bar-style-2 .cm-footer-bar-area {
-	flex-direction: row-reverse;
+	flex-direction: column-reverse;
 }
 .cm-footer-bar-style-2 .cm-footer-bar__1 {
 	display: flex;
@@ -5212,8 +5413,15 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 		flex-direction: row-reverse;
 		text-align: right;
 	}
+	.cm-footer-bar-style-2 .cm-footer-bar-area {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
 	.cm-footer-bar-style-1 .social-links ul {
 		justify-content: flex-end;
+	}
+	.cm-footer-bar-style-2 .social-links ul {
+		justify-content: flex-start;
 	}
 }
 /* General Styles.
@@ -5225,6 +5433,7 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 	padding: 8px 0;
 	font-weight: 600;
 	border-bottom: 1px solid #52525b;
+	list-style: none;
 }
 .cm-footer .widget ul li:last-child {
 	border-bottom: none;
@@ -5271,7 +5480,7 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 	gap: 40px;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	color: #e4e4e7;
+	color: #E4E4E7;
 }
 .cm-footer-cols .cm-widget-title {
 	border-bottom: 2px solid var(--cm-color-1, #207daf);
@@ -5327,8 +5536,8 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 	width: 100%;
 }
 
-.cm-lower-footer-col,
-.cm-lower-footer-cols {
+.cm-lower-footer-cols,
+.cm-lower-footer-col {
 	display: flex;
 	flex-direction: column;
 }
@@ -5509,6 +5718,7 @@ a#scroll-up {
 	opacity: 0.5;
 	z-index: 999;
 	filter: alpha(opacity=50);
+	border-radius: 3px;
 	/* For IE8 and earlier */
 }
 a#scroll-up i {
@@ -5530,6 +5740,8 @@ a#scroll-up:hover {
 	/* For IE8 and earlier */
 }
 
+/* Pro-only layouts.
+--------------------------------------------- */
 /*--------------------------------------------------------------
 # Gutenberg blocks.
 --------------------------------------------------------------*/
@@ -6154,19 +6366,26 @@ blockquote.wp-block-quote.has-text-align-right {
 }
 
 /* Max Mega Menu plugin integration for slider widgets bundled within theme. This fixes visibility issue fix for those widgets, which utilizes BxSlider script */
+.mega-menu .cm-slider-area-rotate,
 .mega-menu .cm-image-ticker-news,
 .mega-menu .cm-breaking-news-slider-widget {
 	visibility: hidden !important;
 }
-.mega-menu .mega-toggle-on .cm-slider-area-rotate .cm-image-ticker-news,
+.mega-menu .mega-toggle-on .cm-slider-area-rotate,
+.mega-menu .mega-toggle-on .cm-image-ticker-news,
 .mega-menu .mega-toggle-on .cm-breaking-news-slider-widget {
 	visibility: visible !important;
 }
 
+/* Pro-only responsive styles.
+--------------------------------------------- */
 .siteorigin-panels .cm-featured-posts {
 	flex-wrap: nowrap;
 }
 
+/*--------------------------------------------------------------
+# Pro-only styles.
+--------------------------------------------------------------*/
 .cm-footer-border-line {
 	position: relative;
 }

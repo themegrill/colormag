@@ -2,7 +2,7 @@
 
 function customind_get_header_components() {
 
-	return array(
+	$components = array(
 		'desktop' => array_filter(
 			array(
 				array(
@@ -146,6 +146,8 @@ function customind_get_header_components() {
 			)
 		),
 	);
+
+	return apply_filters( 'colormag_header_builder_components', $components );
 }
 
 $options = array(
@@ -291,3 +293,5 @@ $options = array(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_header_builder_pro_options', $wp_customize );

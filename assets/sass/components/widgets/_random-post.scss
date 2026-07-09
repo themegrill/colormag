@@ -6,6 +6,12 @@
 		display: flex;
 		box-shadow: none;
 
+		.cm-entry-title {
+			a {
+				color: #0a0a0a;
+			}
+		}
+
 		a {
 			position: relative;
 		}
@@ -45,5 +51,57 @@
 
 	img {
 		border-radius: 4px;
+	}
+}
+
+.cm-secondary {
+	.cm-random-post-widget {
+		.cm-random-posts {
+			.cm-post {
+				a {
+					max-width: 130px;
+				}
+			}
+
+			.cm-post-content {
+				a {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.cm-footer  {
+	.cm-random-post-widget {
+		.cm-random-posts {
+			.cm-post {
+				a {
+					max-width: 130px;
+				}
+			}
+
+			.cm-post-content {
+				a {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.cm-random-post-widget {
+	.cm-random-posts {
+		.cm-post {
+			a {
+				max-width: 130px;
+			}
+		}
+
+		.cm-post-content {
+			a {
+				max-width: 100%;
+			}
+		}
 	}
 }

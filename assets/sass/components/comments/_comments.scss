@@ -105,6 +105,22 @@
 			text-decoration: underline;
 		}
 	}
+
+	.comment-author-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		margin-bottom: length( 'l-6' );
+
+		.post-author {
+			background-color: $color__primary;
+			color: $color__white;
+			padding: 6px;
+			border-radius: 4px;
+			font-size: 14px;
+		}
+	}
 }
 
 .comment-list {
@@ -122,11 +138,6 @@
 
 .comment-edit-link {
 	@include font-size("font-size-xxs");
-}
-
-.comment-awaiting-moderation {
-	margin-top:length( 'l-8' );
-	margin-left: length( 'l-30' );
 }
 
 /* Comments Form.

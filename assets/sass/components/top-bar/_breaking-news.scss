@@ -4,6 +4,7 @@
 	margin-top: length( 'l-5' );
 	padding-left: length( 'l-4' );
 	padding-right: length( 'l-4' );
+	background-color: $color__gray-50;
 	font-size: 14px;
 	line-height: 20px;
 	word-wrap: break-word;
@@ -28,10 +29,24 @@
 }
 
 .newsticker {
-	max-width: 400px;
+	max-width: 240px;
 	overflow: hidden;
 	margin-left: length( 'l-2' );
     height: 20px;
+}
+
+/* Below-header header-builder ticker: constrain to one row before JS inits
+   (prevents the flash/jerk of the full list) and drop default list bullets. */
+.cm-newsticker {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 20px;
+
+	li {
+		list-style: none;
+	}
 }
 
 /* Below Navigation */

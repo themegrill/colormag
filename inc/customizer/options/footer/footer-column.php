@@ -21,9 +21,12 @@ $options = apply_filters(
 						'title'     => esc_html__( 'Layout', 'colormag' ),
 						'section'   => 'colormag_footer_column_section',
 						'transport' => 'postMessage',
-						'choices'   => array(
-							'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
-							'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
+						'choices'   => apply_filters(
+							'colormag_footer_layout_choices',
+							array(
+								'layout-1' => esc_html__( 'Layout 1', 'colormag' ),
+								'layout-2' => esc_html__( 'Layout 2', 'colormag' ),
+							)
 						),
 					),
 					'colormag_footer_column_layout'    => array(
@@ -117,7 +120,7 @@ $options = apply_filters(
 						'section'      => 'colormag_footer_column_section',
 						'sub_controls' => array(
 							'colormag_footer_widget_title_color'       => array(
-								'default'   => '',
+								'default'   => '#ffffff',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Normal', 'colormag' ),
 								'transport' => 'postMessage',
@@ -142,7 +145,7 @@ $options = apply_filters(
 						'section'      => 'colormag_footer_column_section',
 						'sub_controls' => array(
 							'colormag_footer_widget_content_color'       => array(
-								'default'   => '',
+								'default'   => '#ffffff',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Normal', 'colormag' ),
 								'transport' => 'postMessage',
@@ -167,14 +170,14 @@ $options = apply_filters(
 						'section'      => 'colormag_footer_column_section',
 						'sub_controls' => array(
 							'colormag_footer_widget_content_link_text_color'       => array(
-								'default'   => '',
+								'default'   => '#ffffff',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Normal', 'colormag' ),
 								'transport' => 'postMessage',
 								'section'   => 'colormag_footer_column_section',
 							),
 							'colormag_footer_widget_content_link_text_hover_color'       => array(
-								'default'   => '',
+								'default'   => 'var(--cm-color-1)',
 								'type'      => 'customind-color',
 								'title'     => esc_html__( 'Hover', 'colormag' ),
 								'transport' => 'postMessage',
@@ -198,3 +201,5 @@ $options = apply_filters(
 );
 
 colormag_customind()->add_controls( $options );
+
+do_action( 'colormag_customizer_footer_column_pro_options', $wp_customize );

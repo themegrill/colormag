@@ -3,6 +3,9 @@
  * Header builder markup for this theme
  *
  * @package colormag
+ * @since 4.0.0
+ *
+ * This file contains the markup and functions related to the header builder feature of the ColorMag theme.
  */
 if ( ! function_exists( 'colormag_header_default_builder' ) ) {
 	/**
@@ -76,6 +79,7 @@ if ( ! function_exists( 'colormag_render_header_cols' ) ) {
 	/**
 	 * @param $cols - array of elements
 	 * @param $cols_area - left, center, right
+	 * @since 4.0.0
 	 *
 	 * @return void
 	 */
@@ -83,7 +87,18 @@ if ( ! function_exists( 'colormag_render_header_cols' ) ) {
 		echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $cols_area ) ) . '-col">';
 		foreach ( $cols as $element ) {
 			do_action( 'colormag_header_template_parts', $element );
-			get_template_part( "template-parts/header-builder-elements/$element", '' );
+
+			/**
+			 * Filter the template part slug used to render a header builder element.
+			 *
+			 * Allows pro to route pro-only elements to their own template parts.
+			 *
+			 * @param string $slug    Default template part slug.
+			 * @param string $element The header builder element being rendered.
+			 */
+			$slug = apply_filters( 'colormag_header_builder_element_slug', "template-parts/header-builder-elements/$element", $element );
+
+			get_template_part( $slug, '' );
 		}
 		echo '</div>';
 	}
@@ -386,10 +401,19 @@ if ( ! function_exists( 'colormag_footer_builder_markup' ) ) {
 		$footer_builder = get_theme_mod( 'colormag_footer_builder', colormag_footer_builder_default() );
 		$footer_builder = apply_filters( 'colormag_footer_builder_options', $footer_builder );
 
+		/**
+		 * Filter whether the sticky footer is enabled.
+		 *
+		 * Pro hooks in to enable the sticky footer based on its own theme mod.
+		 *
+		 * @param bool $enabled Whether the sticky footer is enabled. Default false.
+		 */
+		$sticky_footer = apply_filters( 'colormag_sticky_footer_enabled', false );
+
 		if ( empty( $footer_builder ) ) {
 			return;
 		}
-		echo '<footer id="cm-footer" class="cm-footer cm-footer-builder">';
+		echo '<footer id="cm-footer" class="cm-footer cm-footer-builder ' . esc_attr( $sticky_footer ? 'cm-sticky-footer' : '' ) . '">';
 		echo '<div class="cm-row cm-footer-desktop-row">';
 		foreach ( $footer_builder['desktop'] as $area => $row ) {
 			$non_empty_row = array_filter(

@@ -214,9 +214,12 @@ function colormagInit() {
 		jQuery('.fitvids-video').fitVids();
 	}
 
-	// Settings of the ticker.
-	if (typeof jQuery.fn.newsTicker !== 'undefined') {
-		jQuery('.newsticker').newsTicker({
+	// Settings of the ticker (pro script handles enhanced tickers when loaded).
+	if (
+		!window.colormagProHandlesWidgets &&
+		typeof jQuery.fn.newsTicker !== 'undefined'
+	) {
+		jQuery('.newsticker, .cm-newsticker').newsTicker({
 			row_height: 20,
 			max_rows: 1,
 			speed: 1000,
@@ -225,7 +228,7 @@ function colormagInit() {
 			autostart: 1,
 			pauseOnHover: 1,
 			start: function () {
-				jQuery('.newsticker').css('visibility', 'visible');
+				jQuery('.newsticker, .cm-newsticker').css('visibility', 'visible');
 			},
 		});
 	}
@@ -235,12 +238,12 @@ function colormagInit() {
 		var wpAdminBar = jQuery('#wpadminbar');
 
 		if (wpAdminBar.length) {
-			jQuery(stickyElement).sticky({
+			jQuery(stickyElement).filter(':visible').sticky({
 				topSpacing: wpAdminBar.height(),
 				zIndex: 999,
 			});
 		} else {
-			jQuery(stickyElement).sticky({
+			jQuery(stickyElement).filter(':visible').sticky({
 				topSpacing: 0,
 				zIndex: 999,
 			});
@@ -264,50 +267,51 @@ function colormagInit() {
 			offset: offset_value,
 			tolerance: 0,
 			onPin: function () {
-				if (wpAdminBar.length) {
-					jQuery(stickyElement).css({
-						top: wpAdminBar.height(),
+				var topVal = wpAdminBar.length ? wpAdminBar.height() : 0;
+				jQuery(stickyElement)
+					.css({
+						top: topVal,
 						position: 'fixed',
-						width: menuwidth,
-					});
-				} else {
-					jQuery(stickyElement).css({
-						top: 0,
-						position: 'fixed',
+						width: '100%',
 						'z-index': 999,
-						width: menuwidth,
-					});
-				}
+					})
+					.addClass('is-sticky');
 			},
 			onTop: function () {
-				jQuery(stickyElement).css({
-					top: 0,
-					position: 'relative',
-				});
+				jQuery(stickyElement)
+					.css({
+						top: '',
+						position: '',
+						width: '',
+						'z-index': '',
+					})
+					.removeClass('is-sticky');
 			},
 		});
 	}
 
 	// BxSlider JS Settings.
 	if (typeof jQuery.fn.bxSlider !== 'undefined') {
-		// Category slider widget slider setting.
-		jQuery('.cm-slider-area-rotate').bxSlider({
-			mode: 'horizontal',
-			speed: 1500,
-			auto: true,
-			pause: 5000,
-			adaptiveHeight: true,
-			nextText: '',
-			prevText: '',
-			nextSelector: '.slide-next',
-			prevSelector: '.slide-prev',
-			pager: false,
-			tickerHover: true,
-			onSliderLoad: function () {
-				jQuery('.cm-slider-area-rotate').css('visibility', 'visible');
-				jQuery('.cm-slider-area-rotate').css('height', 'auto');
-			},
-		});
+		// Category slider widget slider setting (pro script handles multi-instance sliders).
+		if (!window.colormagProHandlesWidgets) {
+			jQuery('.cm-slider-area-rotate').bxSlider({
+				mode: 'horizontal',
+				speed: 1500,
+				auto: true,
+				pause: 5000,
+				adaptiveHeight: true,
+				nextText: '',
+				prevText: '',
+				nextSelector: '.slide-next',
+				prevSelector: '.slide-prev',
+				pager: false,
+				tickerHover: true,
+				onSliderLoad: function () {
+					jQuery('.cm-slider-area-rotate').css('visibility', 'visible');
+					jQuery('.cm-slider-area-rotate').css('height', 'auto');
+				},
+			});
+		}
 
 		// Post format gallery slider setting.
 		jQuery(
@@ -345,7 +349,7 @@ function colormagInit() {
 		}
 
 		// Apply sticky sidebar/content area JS setting.
-		jQuery('#cm-primary, #cm-secondary, #tertiary').theiaStickySidebar({
+		jQuery('#cm-primary, #cm-secondary, #cm-tertiary').theiaStickySidebar({
 			additionalMarginTop: 40 + height,
 		});
 	}

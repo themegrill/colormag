@@ -163,6 +163,7 @@ class Breadcrumb_Trail {
 		$breadcrumb    = '';
 		$item_count    = count( $this->items );
 		$item_position = 0;
+		$separator_icon = get_theme_mod( 'colormag_breadcrumb_separator_icon', 'fa fa-angle-right' );
 
 		// Connect the breadcrumb trail if there are items in the trail.
 		if ( 0 < $item_count ) {
@@ -179,16 +180,12 @@ class Breadcrumb_Trail {
 
 			// Open the unordered list.
 			$breadcrumb .= sprintf(
-				'<%s class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">',
+				'<%s class="trail-items" itemscope itemtype="https://schema.org/BreadcrumbList">',
 				tag_escape( $this->args['list_tag'] )
 			);
 
-			// Add the number of items and item list order schema.
-			$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d" />', absint( $item_count ) );
-			$breadcrumb .= '<meta name="itemListOrder" content="Ascending" />';
-
 			// Loop through the items and add them to the list.
-			foreach ( $this->items as $item ) {
+			foreach ( $this->items as $index => $item ) {
 
 				// Iterate the item position.
 				++$item_position;
@@ -196,37 +193,62 @@ class Breadcrumb_Trail {
 				// Check if the item is linked.
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
 
-				// Wrap the item text with appropriate itemprop.
-				$item = ! empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span>%s</span>', $item );
-
 				// Add list item classes.
 				$item_class = 'trail-item';
 
-				// Create list item attributes.
-				$attributes = 'itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="' . $item_class . '"';
-				$span_item = '<span itemprop="item">%s</span>';
-				$meta = sprintf( '<meta itemprop="position" content="%s" />', absint( $item_position ) );
-
 				if ( 1 === $item_position && 1 < $item_count ) {
 					$item_class .= ' trail-begin';
-					// Build the meta position HTML.
 				} elseif ( $item_count === $item_position ) {
 					$item_class .= ' trail-end';
+				}
 
+				// Create list item attributes.
+				$attributes = 'itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="' . $item_class . '"';
+
+				// Build the meta position HTML.
+				$meta = sprintf( '<meta itemprop="position" content="%s" />', absint( $item_position ) );
+
+				// Build the list item.
+				if ( ! empty( $matches ) ) {
+					// For linked items
+					$item = sprintf(
+						'<%1$s %2$s><a itemprop="item" href="%3$s"><span itemprop="name">%4$s</span></a>%5$s</%1$s>',
+						tag_escape( $this->args['item_tag'] ),
+						$attributes,
+						esc_url( preg_match( '/href=(["\'])(.*?)\1/i', $matches[1], $url ) ? $url[2] : '#' ),
+						$matches[2],
+						$meta
+					);
+				} else {
+					// For non-linked items (like current page)
 					if ( is_404() || false === $this->args['link_current_item'] ) {
-						$attributes = 'class="' . $item_class . '"';
-						$span_item = '%s';
-						$meta = '';
+						$item = sprintf(
+							'<%1$s %2$s><span itemprop="item"><span itemprop="name">%3$s</span></span>%4$s</%1$s>',
+							tag_escape( $this->args['item_tag'] ),
+							$attributes,
+							strip_tags( $item ),
+							$meta
+						);
+					} else {
+						$item = sprintf(
+							'<%1$s %2$s><span itemprop="item"><span itemprop="name">%3$s</span></span>%4$s</%1$s>',
+							tag_escape( $this->args['item_tag'] ),
+							$attributes,
+							$item,
+							$meta
+						);
 					}
 				}
 
-				// Wrap the item with its itemprop.
-				$item = ! empty( $matches )
-					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item$2>', $item )
-					: sprintf( $span_item, $item );
+				$breadcrumb .= $item;
 
-				// Build the list item.
-				$breadcrumb .= sprintf( '<%1$s %2$s>%3$s%4$s</%1$s>', tag_escape( $this->args['item_tag'] ), $attributes, $item, $meta );
+				// Add separator if not the last item.
+				if ( $index < $item_count - 1 ) {
+					$breadcrumb .= sprintf(
+						'<span class="trail-separator">%s</span>',
+						'<i class="' . esc_attr( $separator_icon ) . '"></i>'
+					);
+				}
 			}
 
 			// Close the unordered list.
@@ -234,7 +256,7 @@ class Breadcrumb_Trail {
 
 			// Wrap the breadcrumb trail.
 			$breadcrumb = sprintf(
-				'<%1$s role="navigation" aria-label="%2$s" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">%3$s%4$s%5$s%6$s</%1$s>',
+				'<%1$s role="navigation" aria-label="%2$s" class="breadcrumb-trail breadcrumbs">%3$s%4$s%5$s%6$s</%1$s>',
 				tag_escape( $this->args['container'] ),
 				esc_attr( $this->labels['aria_label'] ),
 				$this->args['before'],
@@ -251,7 +273,7 @@ class Breadcrumb_Trail {
 			return $breadcrumb;
 		}
 
-		echo $breadcrumb; // WPCS xss ok.
+		echo wp_kses_post( $breadcrumb );
 	}
 
 	/* ====== Protected Methods ====== */

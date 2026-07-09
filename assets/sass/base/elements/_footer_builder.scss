@@ -75,7 +75,7 @@
 			height: fit-content;
 			border-radius: 4px;
 			padding: 12px;
-			background-color: #27272a;
+			background-color: #27272A;
 
 			.cm-entry-title {
 				a {
@@ -118,7 +118,7 @@
 	.cm-top-row {
 		display: grid;
 		gap: 32px;
-		grid-template-columns: repeat(var(--top-grid-columns, 4), 1fr);
+		grid-template-columns: repeat(var(--top-grid-columns, 3), 1fr);
 		border: 0 solid;
 	}
 
@@ -165,10 +165,6 @@
 	.widget {
 		a {
 			text-decoration: none;
-		}
-
-		li {
-			list-style: none;
 		}
 
 		.wp-block-heading,
@@ -222,6 +218,7 @@
 			}
 		}
 	}
+
 }
 
 @media (max-width: 768px) {
@@ -257,7 +254,7 @@
 				padding-top: 8px;
 
 				.cm-bottom-row {
-					gap: 4px;
+					gap: 6px;
 					grid-template-columns: 1fr;
 
 					.cm-footer-bottom-2-col {
@@ -274,3 +271,7 @@
 	flex-wrap: wrap;
 	gap: 8px;
 }
+
+/* Pro-only footer builder styles.
+--------------------------------------------- */
+@import "../../../pro/sass/base/elements/footer-builder-pro";

@@ -89,7 +89,7 @@ class Colormag_Changelog_Controller extends \WP_REST_Controller {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return new \WP_Error(
 				'rest_forbidden',
-				esc_html__( 'You do not have permission to view this.', 'colormag' ),
+				esc_html__( 'You are not allowed to access this resource.', 'colormag' ),
 				array( 'status' => rest_authorization_required_code() )
 			);
 		}

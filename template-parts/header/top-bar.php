@@ -18,11 +18,40 @@ defined( 'ABSPATH' ) || exit;
 		$social_links_enable            = get_theme_mod( 'colormag_enable_social_icons', 0 );
 		$social_links_header_visibility = get_theme_mod( 'colormag_enable_social_icons_header', 1 );
 
+		/**
+		 * Position at which the breaking news ticker should display.
+		 *
+		 * Free theme always renders the ticker within the top bar. Extensions
+		 * (e.g. ColorMag Pro) can move it (e.g. 'below-header').
+		 *
+		 * @param string $breaking_news_position The ticker position.
+		 */
+		$breaking_news_position = apply_filters( 'colormag_breaking_news_position', 'top-bar' );
+
+		/**
+		 * Whether the top bar menu section is enabled.
+		 *
+		 * Disabled in the free theme. Extensions (e.g. ColorMag Pro) can enable
+		 * it through a customizer setting.
+		 *
+		 * @param bool $top_bar_menu_enabled Whether the top bar menu is enabled.
+		 */
+		$top_bar_menu_enable = apply_filters( 'colormag_top_bar_menu_enabled', false );
+
+/**
+ * Hook: colormag_top_bar_layout_3.
+ *
+ * Allows extensions (e.g. ColorMag Pro) to render the header layout-3 block
+ * (home icon, logo, header actions, navigation). No output in the free theme.
+ */
+do_action( 'colormag_top_bar_layout_3' );
+
 if (
 			( 1 == $top_bar_enable ) && (
 				( 1 == $date_display_enable ) ||
-				( 1 == $breaking_news_enable ) ||
-				( 1 == $social_links_enable && 1 == $social_links_header_visibility ) )
+				( 1 == $breaking_news_enable && 'top-bar' === $breaking_news_position ) ||
+				( 1 == $social_links_enable && 1 == $social_links_header_visibility ) ||
+				$top_bar_menu_enable )
 		) :
 	if ( 1 == $top_bar_enable ) {
 		?>
@@ -37,8 +66,8 @@ if (
 					colormag_date_display();
 				}
 
-				// Date.
-				if ( 1 == $breaking_news_enable ) {
+				// Breaking news.
+				if ( 1 == $breaking_news_enable && 'top-bar' === $breaking_news_position ) {
 					colormag_breaking_news();
 				}
 				?>
@@ -46,6 +75,23 @@ if (
 
 							<div class="cm-top-bar__2">
 				<?php
+				// Menu.
+				if ( $top_bar_menu_enable ) {
+					?>
+								<nav class="top-bar-menu">
+						<?php
+						if ( has_nav_menu( 'top-bar' ) ) {
+							wp_nav_menu(
+								array(
+									'theme_location' => 'top-bar',
+									'depth'          => - 1,
+								)
+							);
+						}
+						?>
+								</nav>
+					<?php
+				}
 
 				// Social icons.
 				if ( 1 == $social_links_header_visibility ) {

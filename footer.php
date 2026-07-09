@@ -85,6 +85,8 @@ if ( $enable_builder || colormag_maybe_enable_builder() ) {
  *
  * @hooked colormag_footer_end - 10
  * @hooked colormag_scroll_top_button - 15
+ * @hooked colormag_reading_progress_bar - 20
+ * @hooked colormag_flyout_related_post - 25
  */
 do_action( 'colormag_action_after_footer' );
 

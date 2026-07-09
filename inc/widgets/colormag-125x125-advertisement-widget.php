@@ -100,6 +100,17 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 			),
 		);
 
+		/**
+		 * Filter the advertisement widget settings/controls.
+		 *
+		 * Allows pro to inject extra controls (e.g. the dofollow `rel_value`
+		 * checkbox) into the widget form.
+		 *
+		 * @param array  $settings       The widget setting definitions.
+		 * @param string $widget_cssclass The widget CSS class (identifier).
+		 */
+		$this->settings = apply_filters( 'colormag_ad_widget_settings', $this->settings, $this->widget_cssclass );
+
 		parent::__construct();
 	}
 
@@ -125,6 +136,24 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 			array_push( $image_array, $image_url );
 		}
 
+		/**
+		 * Register translatable advertisement strings (e.g. WPML).
+		 *
+		 * @param array     $instance The widget instance settings.
+		 * @param WP_Widget $widget   The widget object.
+		 */
+		do_action( 'colormag_ad_widget_register_strings', $instance, $this );
+
+		/**
+		 * Filter the advertisement image/link arrays (e.g. WPML translation).
+		 *
+		 * @param array     $values   The image url/link values, keyed 0-5.
+		 * @param array     $instance The widget instance settings.
+		 * @param WP_Widget $widget   The widget object.
+		 */
+		$image_array = apply_filters( 'colormag_ad_widget_image_array', $image_array, $instance, $this );
+		$link_array  = apply_filters( 'colormag_ad_widget_link_array', $link_array, $instance, $this );
+
 		$this->widget_start( $args );
 		?>
 
@@ -148,15 +177,11 @@ class colormag_125x125_advertisement_widget extends ColorMag_Widget {
 						$image_id  = attachment_url_to_postid( $image_array[ $j ] );
 						$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
-						// For WPML plugin compatibility, assign variable to converted string.
-						if ( function_exists( 'icl_t' ) ) {
-							$image_array[ $j ] = icl_t( 'ColorMag Pro', 'TG: 125x125 Image Link' . $this->id . $j, $image_array[ $j ] );
-							$link_array[ $j ]  = icl_t( 'ColorMag Pro', 'TG: 125x125 Image URL' . $this->id . $j, $link_array[ $j ] );
-						}
-
 						if ( ! empty( $link_array[ $j ] ) ) {
 
-							$output .= '<a href="' . $link_array[ $j ] . '" class="cm-single_ad_125x125" target="_blank" rel="nofollow">';
+							$rel_attr = apply_filters( 'colormag_ad_widget_rel_value', 'rel="nofollow"', $instance );
+
+							$output .= '<a href="' . $link_array[ $j ] . '" class="cm-single_ad_125x125" target="_blank" ' . $rel_attr . '>';
 							$output .= '<img src="' . $image_array[ $j ] . '" width="125" height="125" alt="' . $image_alt . '">';
 							$output .= '</a>';
 						} else {

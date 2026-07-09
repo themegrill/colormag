@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="tertiary">
+<div id="cm-tertiary" class="cm-tertiary">
 	<?php do_action( 'colormag_before_sidebar' );
 
 	if ( ! is_active_sidebar( 'colormag_left_sidebar' ) ) :
@@ -23,8 +23,8 @@
 			array(
 				'before_widget' => '<section class="widget widget_text">',
 				'after_widget'  => '</section>',
-				'before_title'  => '<h3 class="cm-widget-title">',
-				'after_title'   => '</h3>',
+				'before_title'  => '<h3 class="cm-widget-title"><span>',
+				'after_title'   => '</span></h3>',
 			)
 		);
 	else :

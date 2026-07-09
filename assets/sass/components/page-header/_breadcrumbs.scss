@@ -21,17 +21,21 @@
 		list-style-type: none;
 		flex-wrap: wrap;
 
+		.trail-separator {
+			margin: 0 3px;
+		}
+
 		li {
 
 			a, &:last-child {
 				margin: 0 2px;
 			}
 
-			&::after {
-				content: " > ";
-				white-space: pre;
-				font-family: FontAwesome;
-			}
+			//&::after {
+			//	content: " > ";
+			//	white-space: pre;
+			//	font-family: FontAwesome;
+			//}
 
 			&:last-child {
 

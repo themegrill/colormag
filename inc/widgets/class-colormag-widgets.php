@@ -267,6 +267,12 @@ function colormag_widgets_init() {
 		)
 	);
 
+	/**
+	 * Allow extensions (e.g. ColorMag Pro) to register additional widget areas
+	 * (sidebars), such as the off-canvas, full-width and WooCommerce sidebars.
+	 */
+	do_action( 'colormag_register_pro_sidebars' );
+
 	register_widget( 'colormag_featured_posts_slider_widget' );
 	register_widget( 'colormag_highlighted_posts_widget' );
 	register_widget( 'colormag_featured_posts_widget' );
@@ -274,6 +280,11 @@ function colormag_widgets_init() {
 	register_widget( 'colormag_728x90_advertisement_widget' );
 	register_widget( 'colormag_300x250_advertisement_widget' );
 	register_widget( 'colormag_125x125_advertisement_widget' );
+
+	/**
+	 * Allow extensions (e.g. ColorMag Pro) to register additional widgets.
+	 */
+	do_action( 'colormag_register_pro_widgets' );
 }
 
 add_action( 'widgets_init', 'colormag_widgets_init' );

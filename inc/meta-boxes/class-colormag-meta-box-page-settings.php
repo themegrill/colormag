@@ -95,18 +95,19 @@ class ColorMag_Meta_Box_Page_Settings {
 				<div id="page-settings-general">
 					<?php
 					// For site layout.
+					$layout_choices = apply_filters( 'colormag_meta_box_layout_choices', array(
+						'default_layout'              => COLORMAG_PARENT_URL . '/assets/img/sidebar/inherit.svg',
+						'right_sidebar'               => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
+						'left_sidebar'                => COLORMAG_PARENT_URL . '/assets/img/sidebar/left-sidebar.svg',
+						'no_sidebar_full_width'       => COLORMAG_PARENT_URL . '/assets/img/sidebar/normal.svg',
+						'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/sidebar/narrow.svg',
+					) );
 					self::render_radio_image(
 						array(
 							'value'   => $colormag_page_layout,
 							'id'      => 'colormag_page_layout',
 							'label'   => esc_html__( 'Select Layout', 'colormag' ),
-							'choices' => array(
-								'default_layout'        => COLORMAG_PARENT_URL . '/assets/img/sidebar/inherit.svg',
-								'right_sidebar'         => COLORMAG_PARENT_URL . '/assets/img/sidebar/right-sidebar.svg',
-								'left_sidebar'          => COLORMAG_PARENT_URL . '/assets/img/sidebar/left-sidebar.svg',
-								'no_sidebar_full_width' => COLORMAG_PARENT_URL . '/assets/img/sidebar/normal.svg',
-								'no_sidebar_content_centered' => COLORMAG_PARENT_URL . '/assets/img/sidebar/narrow.svg',
-							),
+							'choices' => $layout_choices,
 						)
 					);
 					?>
@@ -174,18 +175,14 @@ class ColorMag_Meta_Box_Page_Settings {
 		$colormag_video_url   = isset( $_POST['video_url'] ) ? esc_url_raw( $_POST['video_url'] ) : '';
 
 		// Site layout.
-		if (
-			in_array(
-				$colormag_page_layout,
-				array(
-					'right_sidebar',
-					'left_sidebar',
-					'no_sidebar_full_width',
-					'no_sidebar_content_centered',
-				),
-				true
-			)
-		) {
+		$valid_layouts = apply_filters( 'colormag_meta_box_valid_layouts', array(
+			'right_sidebar',
+			'left_sidebar',
+			'no_sidebar_full_width',
+			'no_sidebar_content_centered',
+			'default_layout',
+		) );
+		if ( in_array( $colormag_page_layout, $valid_layouts, true ) ) {
 			update_post_meta( $post_id, 'colormag_page_layout', $colormag_page_layout );
 		} else {
 			delete_post_meta( $post_id, 'colormag_page_layout' );

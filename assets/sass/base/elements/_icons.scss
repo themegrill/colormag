@@ -6,3 +6,19 @@
 	transition: all 0.3s;
     fill: $color__gray-500;
 }
+
+.cm-icon--calendar-fill {
+	width: 12px;
+	height: 12px;
+}
+
+.cm-icon--updated {
+	width: 14px;
+	height: 14px;
+}
+
+.cm-modified-date, .entry-date.published {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}

@@ -27,7 +27,7 @@
 --------------------------------------------- */
 .author-box {
 	padding: 2%;
-	width: 100%;
+	width: 96%;
 	display: inline-block;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	margin-bottom: 30px;
@@ -38,8 +38,12 @@
 	width: 85%;
 }
 
-.author-img img {
-	margin-right: 15px;
+.author-img {
+
+	img {
+		width: 94px;
+		margin-right: 15px;
+	}
 }
 
 .author-name {
@@ -74,10 +78,18 @@
 	.fa-pinterest {
 		color: #cc2127;
 	}
+
+	.fa-envelope {
+		color: #000;
+	}
 }
 
 .author-box {
 	margin-top: 30px;
+
+	.author-social-sites {
+		list-style-type: none;
+	}
 
 	&.author-bio-style-2 {
 		.author-name {
@@ -108,12 +120,6 @@
 
 /* Related Posts.
 --------------------------------------------- */
-.related-posts-wrapper {
-	h3 {
-		font-size: 2rem;
-	}
-}
-
 .related-posts-main-title {
 	margin-bottom: length('l-15');
 
@@ -124,6 +130,20 @@
 	span {
 		font-size: 26px;
 		padding-left: 10px;
+	}
+}
+
+.cm-single-post-content {
+	padding: 0;
+
+
+	.cm-entry-header-meta, .cm-entry-header, .cm-below-entry-meta, .cm-entry-summary {
+		padding: 0 20px;
+		margin: 12px 0;
+	}
+
+	.cm-entry-title {
+		margin: 0;
 	}
 }
 
@@ -346,7 +366,11 @@
 	margin-right: 10px;
 }
 
-#twitter, #facebook, #googleplus, #pinterest {
+#twitter,
+#facebook,
+#googleplus,
+#pinterest,
+#email {
 	float: left;
 
 	&.share {
@@ -364,7 +388,14 @@
 		float: left;
 	}
 
-	.fa-twitter, .fa-facebook, .fa-google-plus, .fa-flickr, .fa-linkedin, .fa-instagram, .fa-youtube, .fa-tumblr {
+	.fa-twitter,
+	.fa-facebook,
+	.fa-google-plus,
+	.fa-flickr,
+	.fa-linkedin,
+	.fa-instagram,
+	.fa-youtube,
+	.fa-tumblr {
 		font-size: 25px;
 		padding: 5px;
 	}
