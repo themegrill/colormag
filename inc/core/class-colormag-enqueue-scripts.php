@@ -314,10 +314,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				margin-top:24px;
 				}
 
-				#customize-control-colormag_footer_builder_components {
-			    padding-right:16px;
-				}
-
 			#accordion-section-colormag_transparent_header_section .accordion-section-title button::after {
 				    top: calc(50% - 7px);
 			}
@@ -348,8 +344,8 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				}
 
 				#sub-accordion-section-colormag_footer_builder_section {
-				background: #F0F0F1 !important;
 				margin-top: 20px !important;
+				padding-top:24px !important;
 				}
 
 				#customize-control-colormag_header_builder_components {
@@ -514,7 +510,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			}
 
 			#customize-control-colormag_header_builder_components {
-			    margin-top: 10px;
+			    margin-top: 4px;
 			}
 
 			#customize-control-colormag_header_footer_components {

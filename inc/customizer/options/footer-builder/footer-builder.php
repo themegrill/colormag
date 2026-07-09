@@ -75,11 +75,35 @@ function customind_get_footer_components() {
 
 $options = array(
 	'colormag_footer_builder_components' => array(
-		'type'    => 'customind-builder-components',
-		'choices' => customind_get_footer_components(),
-		'context' => 'footer',
-		'group'   => 'colormag_footer_builder',
-		'section' => 'colormag_footer_builder_section',
+		'type'       => 'customind-builder-components',
+		'choices'    => customind_get_footer_components(),
+		'context'    => 'footer',
+		'group'      => 'colormag_footer_builder',
+		'section'    => 'colormag_footer_builder_section',
+		'type_items' => array(
+			array(
+				'label' => __( 'Sticky footer', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-footer-builder-3' ),
+			),
+			array(
+				'label' => __( 'Footer column', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-footer-builder-4' ),
+			),
+		),
+		'pro_items'  => array(
+			array(
+				'label' => __( 'Logo', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-footer-builder-1' ),
+			),
+			array(
+				'label' => __( 'Button 1', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-footer-builder-2' ),
+			),
+		),
 	),
 	'colormag_footer_builder'            => array(
 		'section'             => 'colormag_footer_builder_section',
