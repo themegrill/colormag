@@ -53,7 +53,7 @@ class UpsellSection extends \WP_Customize_Section {
 	 */
 	public function json() {
 		$json        = parent::json();
-		$json['url'] = esc_url( $this->url );
+		$json['url'] = esc_url_raw( $this->url );
 		$json['id']  = $this->id;
 		return $json;
 	}

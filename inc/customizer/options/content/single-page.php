@@ -112,7 +112,7 @@ $options                = apply_filters(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
 			'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
-			'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-4' ),
+			'url'         => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-4' ),
 			'points'      => array(
 				esc_html__( 'Page header settings', 'colormag' ),
 			),

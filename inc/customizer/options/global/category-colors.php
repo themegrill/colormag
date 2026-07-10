@@ -25,7 +25,7 @@ $options['colormag_category_color_upgrade'] = array(
 	'type'        => 'customind-upsell',
 	'description' => esc_html__( 'Unlock more features available in Pro version.', 'colormag' ),
 	'title'       => esc_html__( 'Learn more', 'colormag' ),
-	'url'         => esc_url( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-9' ),
+	'url'         => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-9' ),
 	'section'     => 'colormag_category_colors_section',
 	'priority'    => 1000,
 );

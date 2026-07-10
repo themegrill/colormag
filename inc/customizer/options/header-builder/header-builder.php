@@ -150,12 +150,39 @@ function customind_get_header_components() {
 
 $options = array(
 	'colormag_header_builder_components' => array(
-		'type'    => 'customind-builder-components',
-		'choices' => customind_get_header_components(),
-		'context' => 'header',
-		'group'   => 'colormag_header_builder',
-		'section' => 'colormag_header_builder_section',
-
+		'type'       => 'customind-builder-components',
+		'choices'    => customind_get_header_components(),
+		'context'    => 'header',
+		'group'      => 'colormag_header_builder',
+		'section'    => 'colormag_header_builder_section',
+		'type_items' => array(
+			array(
+				'label'   => __( 'Sticky header', 'colormag' ),
+				'section' => 'colormag_sticky_header_section',
+			),
+			array(
+				'label' => __( 'Transparent header', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-23' ),
+			),
+		),
+		'pro_items'  => array(
+			array(
+				'label' => __( 'Divider 1', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-header-builder-1' ),
+			),
+			array(
+				'label' => __( 'Off Canvas', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-header-builder-2' ),
+			),
+			array(
+				'label' => __( 'Color Switcher', 'colormag' ),
+				'pro'   => true,
+				'url'   => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-header-builder-3' ),
+			),
+		),
 	),
 	'colormag_header_builder'            => array(
 		'section'     => 'colormag_header_builder_section',
