@@ -37,6 +37,13 @@ class Slider extends AbstractControl {
 	public $default_unit;
 
 	/**
+	 * Step increment for the slider.
+	 *
+	 * @var float|int
+	 */
+	public $step;
+
+	/**
 	 * {@inheritDoc}
 	 */
 	public function __construct(
@@ -44,10 +51,14 @@ class Slider extends AbstractControl {
 		$manager,
 		$args = []
 	) {
+		if ( isset( $args['step'] ) && ! isset( $args['input_attrs']['step'] ) ) {
+			$args['input_attrs']['step'] = $args['step'];
+		}
 		parent::__construct( $id, $manager, $args );
 		$this->responsive   = $args['responsive'] ?? false;
 		$this->units        = $args['units'] ?? [];
 		$this->default_unit = $args['default_unit'] ?? 'px';
+		$this->step         = $args['step'] ?? 1;
 	}
 
 	/**
@@ -60,6 +71,7 @@ class Slider extends AbstractControl {
 				'responsive',
 				'units',
 				'default_unit',
+				'step',
 			]
 		);
 	}

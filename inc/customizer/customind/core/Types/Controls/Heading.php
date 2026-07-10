@@ -23,6 +23,20 @@ class Heading extends AbstractControl {
 	public $info_text;
 
 	/**
+	 * Whether to show a "Pro" badge with an upsell tooltip next to the label.
+	 *
+	 * @var bool
+	 */
+	public $pro;
+
+	/**
+	 * Upgrade URL used by the Pro badge tooltip's CTA button.
+	 *
+	 * @var string
+	 */
+	public $pro_url;
+
+	/**
 	 * {@inheritDoc}
 	 *
 	 * @param \WP_Customize_Manager $manager Customizer bootstrap instance.
@@ -32,6 +46,8 @@ class Heading extends AbstractControl {
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		$this->info_text = $args['info_text'] ?? '';
+		$this->pro       = ! empty( $args['pro'] );
+		$this->pro_url   = $args['pro_url'] ?? '';
 	}
 
 	/**
@@ -40,7 +56,7 @@ class Heading extends AbstractControl {
 	protected function json_allowed_props() {
 		return array_merge(
 			parent::json_allowed_props(),
-			array( 'info_text' )
+			array( 'info_text', 'pro', 'pro_url' )
 		);
 	}
 }

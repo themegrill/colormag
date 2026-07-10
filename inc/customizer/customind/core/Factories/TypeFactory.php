@@ -42,6 +42,7 @@ use Customind\Core\Types\Controls\ToggleButton;
 use Customind\Core\Types\Controls\HeaderBuilder;
 use Customind\Core\Types\Controls\Heading;
 use Customind\Core\Types\Controls\Tabs;
+use Customind\Core\Types\LockedSection;
 use Customind\Core\Types\UpgradeSection;
 use Customind\Core\Types\UpsellSection;
 
@@ -90,6 +91,7 @@ class TypeFactory {
 		'customind-preset'             => Preset::class,
 		'customind-builder-migration'  => BuilderMigration::class,
 		'customind-heading'            => Heading::class,
+		'customind-locked-section'     => LockedSection::class,
 	);
 
 	/**
