@@ -34,7 +34,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			);
 
 			$welcome_data = array(
-				'uri'       => esc_url( admin_url( '/themes.php?page=colormag&tab=starter-templates' ) ),
+				'uri'       => esc_url( admin_url( '/themes.php?page=tg-starter-templates' ) ),
 				'btn_text'  => esc_html__( 'Processing...', 'colormag' ),
 				'admin_url' => esc_url( admin_url() ),
 			);

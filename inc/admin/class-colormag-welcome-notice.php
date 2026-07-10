@@ -142,9 +142,9 @@ class Colormag_Welcome_Notice {
 		}
 
 		if ( 'activated' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=colormag&tab=starter-templates' );
+			$response['redirect'] = admin_url( '/themes.php?page=tg-starter-templates' );
 		} elseif ( 'installed' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=colormag&tab=starter-templates' );
+			$response['redirect'] = admin_url( '/themes.php?page=tg-starter-templates' );
 			if ( current_user_can( 'activate_plugin' ) ) {
 				$result = activate_plugin( 'themegrill-demo-importer/themegrill-demo-importer.php' );
 
@@ -157,7 +157,7 @@ class Colormag_Welcome_Notice {
 			wp_enqueue_style( 'plugin-install' );
 			wp_enqueue_script( 'plugin-install' );
 
-			$response['redirect'] = admin_url( '/themes.php?page=colormag&tab=starter-templates' );
+			$response['redirect'] = admin_url( '/themes.php?page=tg-starter-templates' );
 
 			/**
 			 * Install Plugin.
