@@ -2,7 +2,14 @@
 /*--------------------------------------------------------------
 # Grid	
 --------------------------------------------------------------*/
-* {
+.elementor-row,
+.elementor-row *,
+.tg-container,
+.tg-container *,
+.tg-row,
+.tg-row *,
+.elementor .tg-module-wrapper,
+.elementor .tg-module-wrapper * {
 	box-sizing: border-box;
 }
 
