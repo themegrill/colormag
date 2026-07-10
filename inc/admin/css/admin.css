@@ -2675,6 +2675,7 @@ body.demo-import-message-popup {
 	border-bottom-width: 0;
 	border-top-width: 0;
 	border-radius: 0 8px 8px 0;
+	background-color: #fff;
 }
 .colormag-notice .links {
 	margin: 1.2em 0;
