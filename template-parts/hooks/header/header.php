@@ -317,7 +317,7 @@ if ( ! function_exists( 'colormag_header_two' ) ) :
 				</div>
 				<?php } ?>
 
-					<p class="cm-menu-toggle" aria-expanded="false">
+					<p class="cm-menu-toggle" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'colormag' ); ?>">
 						<?php colormag_get_icon( 'bars' ); ?>
 						<?php colormag_get_icon( 'x-mark' ); ?>
 					</p>
