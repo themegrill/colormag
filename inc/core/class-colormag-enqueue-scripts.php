@@ -676,12 +676,13 @@ add_filter( 'colormag_font_subset', 'colormag_font_subset' );
 
 /**
  * Enqueue image upload script for use within widgets.
- * Only loaded on the widgets screen — not on every admin page.
+ * Loaded on the widgets screen and the Customizer (widgets can also be
+ * managed from Appearance > Customize > Widgets) — not on every admin page.
  */
 function colormag_image_uploader() {
 
 	$screen = get_current_screen();
-	if ( ! $screen || 'widgets' !== $screen->id ) {
+	if ( ! $screen || ! in_array( $screen->id, array( 'widgets', 'customize' ), true ) ) {
 		return;
 	}
 

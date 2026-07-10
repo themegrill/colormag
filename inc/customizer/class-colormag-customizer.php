@@ -177,14 +177,6 @@ class ColorMag_Customizer {
 	public function editor_dynamic_css() {
 		wp_add_inline_style( 'colormag-block-editor-styles', ColorMag_Dynamic_CSS::colormag_editor_block_css() );
 	}
-
-	/**
-	 * Undocumented function.
-	 *
-	 * @return void
-	 */
-	public function get_css() {
-	}
 }
 
 return new ColorMag_Customizer();
