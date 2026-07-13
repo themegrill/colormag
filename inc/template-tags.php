@@ -12,6 +12,69 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! function_exists( 'colormag_get_offset_random_post_ids' ) ) :
+	/**
+	 * Returns random post IDs using offset-based selection instead of ORDER BY RAND().
+	 * Avoids full-table scans on large post tables. Caches the result in a transient.
+	 *
+	 * @param array  $base_args WP_Query args defining the post pool (no orderby/offset).
+	 * @param string $cache_key Unique transient key for this query shape.
+	 * @param int    $ttl       Cache lifetime in seconds. Default 2 minutes.
+	 * @return int[] Array of post IDs.
+	 */
+	function colormag_get_offset_random_post_ids( array $base_args, $cache_key, $ttl = 120 ) {
+		$ids = get_transient( $cache_key );
+		if ( false !== $ids ) {
+			return (array) $ids;
+		}
+
+		$per_page = isset( $base_args['posts_per_page'] ) ? (int) $base_args['posts_per_page'] : 1;
+
+		// Count total matching posts with a lightweight query.
+		$count_query = new WP_Query(
+			array_merge(
+				$base_args,
+				array(
+					'posts_per_page'         => 1,
+					'no_found_rows'          => false,
+					'fields'                 => 'ids',
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+				)
+			)
+		);
+
+		$total = (int) $count_query->found_posts;
+
+		if ( ! $total ) {
+			set_transient( $cache_key, array(), $ttl );
+			return array();
+		}
+
+		$offset = mt_rand( 0, max( 0, $total - $per_page ) );
+
+		$ids = get_posts(
+			array_merge(
+				$base_args,
+				array(
+					'posts_per_page'         => $per_page,
+					'offset'                 => $offset,
+					'orderby'                => 'date',
+					'order'                  => 'DESC',
+					'fields'                 => 'ids',
+					'no_found_rows'          => true,
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+				)
+			)
+		);
+
+		$ids = array_map( 'intval', $ids );
+		set_transient( $cache_key, $ids, $ttl );
+		return $ids;
+	}
+endif;
+
 if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 	/**

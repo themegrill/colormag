@@ -13,7 +13,7 @@ $builder                = get_theme_mod( 'colormag_header_builder', colormag_hea
 ?>
 
 <div class="cm-mobile-nav-container">
-	<button type="button" class="cm-menu-toggle" aria-expanded="false">
+	<button type="button" class="cm-menu-toggle" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'colormag' ); ?>">
 		<?php colormag_get_icon( 'bars' ); ?>
 		<?php colormag_get_icon( 'x-mark' ); ?>
 	</button>

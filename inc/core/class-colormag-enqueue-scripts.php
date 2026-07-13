@@ -236,7 +236,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				wp_enqueue_style( $style['handle'] );
 			}
 
-			wp_enqueue_style( 'colormag-font-awesome-6', get_template_directory_uri() . '/inc/customizer/customind/assets/fontawesome/v6/css/all.min.css', array(), '6.5.2' );
+			// FA v6 already enqueued above as 'font-awesome-all' — no second load needed.
 
 			// Weather Icons.
 			wp_register_style( 'owfont', get_template_directory_uri() . '/assets/css/owfont-regular' . $suffix . '.css', array(), COLORMAG_THEME_VERSION );
@@ -312,11 +312,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 
 				#customize-control-colormag_header_builder_components {
 				margin-top:24px;
-				padding-right:16px;
-				}
-
-				#customize-control-colormag_footer_builder_components {
-			    padding-right:16px;
 				}
 
 			#accordion-section-colormag_transparent_header_section .accordion-section-title button::after {
@@ -349,8 +344,8 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				}
 
 				#sub-accordion-section-colormag_footer_builder_section {
-				background: #F0F0F1 !important;
 				margin-top: 20px !important;
+				padding-top:24px !important;
 				}
 
 				#customize-control-colormag_header_builder_components {
@@ -515,7 +510,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			}
 
 			#customize-control-colormag_header_builder_components {
-			    margin-top: 24px;
+			    margin-top: 4px;
 			}
 
 			#customize-control-colormag_header_footer_components {
@@ -529,47 +524,12 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			#accordion-section-colormag_sticky_header_section .accordion-section-title button::after {
 				    top: calc(50% - 7px);
 			}
+
+			#sub-accordion-section-colormag_button_section > li:empty, #sub-accordion-section-colormag_global_sidebar_section > li:empty {
+				display: none;
+			}
 		    '
 			);
-
-			if ( colormag_maybe_enable_builder() ) {
-				wp_add_inline_style(
-					'customize-controls',
-					'
-#accordion-section-colormag_sticky_header_section .accordion-section-title{
-			border-top: 1px solid #dcdcde !important;
-			border-left: 1px solid #dcdcde !important;
-			border-right: 1px solid #dcdcde !important;
-			}
-
-			#accordion-section-colormag_sticky_header_section {
-			    display: block !important;
-			}
-
-				#accordion-section-colormag_sticky_header_section {
-					    position: absolute;
-					    bottom: 160px;
-					    width: 100%;
-				}
-
-				#accordion-section-colormag_sticky_header_section .accordion-section-title{
-			    margin: 0 10px;
-                border-radius: 4px;
-			}
-
-			#accordion-section-colormag_sticky_header_section .accordion-section-title button{
-			 font-weight: 400;
-			  font-size:12px;
-			}
-
-			#accordion-section-colormag_customize_header_navigation_section {
-					    position: absolute;
-					    bottom: 0px;
-				}
-					'
-				);
-
-			}
 		}
 	}
 
@@ -676,8 +636,15 @@ add_filter( 'colormag_font_subset', 'colormag_font_subset' );
 
 /**
  * Enqueue image upload script for use within widgets.
+ * Loaded on the widgets screen and the Customizer (widgets can also be
+ * managed from Appearance > Customize > Widgets) — not on every admin page.
  */
 function colormag_image_uploader() {
+
+	$screen = get_current_screen();
+	if ( ! $screen || ! in_array( $screen->id, array( 'widgets', 'customize' ), true ) ) {
+		return;
+	}
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
@@ -686,40 +653,6 @@ function colormag_image_uploader() {
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
-
-// Returns an array of category colors.
-function colormag_get_category_colors() {
-	$category_colors = array();
-	foreach ( get_categories() as $cat ) {
-		$color                            = get_theme_mod( 'colormag_category_color_' . $cat->term_id );
-		$category_colors[ $cat->term_id ] = $color;
-	}
-	return $category_colors;
-}
-
-// Enqueue and localize editor script with category colors.
-function colormag_enqueue_editor_assets() {
-	wp_enqueue_script(
-		'colormag-editor-script',
-		get_template_directory_uri() . '/assets/js/editor.js',
-		array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-		COLORMAG_THEME_VERSION,
-		true
-	);
-
-	wp_localize_script(
-		'colormag-editor-script',
-		'colormag_category_colors',
-		colormag_get_category_colors()
-	);
-
-	wp_localize_script(
-		'colormag-editor-script',
-		'colormag_category_color_override',
-		array( 'enabled' => get_theme_mod( 'colormag_enable_override_category_color', false ) )
-	);
-}
-add_action( 'enqueue_block_editor_assets', 'colormag_enqueue_editor_assets' );
 
 if ( ! function_exists( 'colormag_darkcolor' ) ) :
 

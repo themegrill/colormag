@@ -17,7 +17,7 @@ const uglify = _uglify.default;
 const info = {
 	name: 'colormag',
 	slug: 'colormag',
-	url: 'https://themegrill.com/plugins/zakra-pro/',
+	url: 'https://themegrill.com/themes/colormag/',
 	author: 'ThemeGrill',
 	authorUrl: 'https://themegrill.com/',
 	authorEmail: 'themegrill@gmail.com',
@@ -60,9 +60,12 @@ const paths = {
 	},
 
 	elementorStyles: {
+		scss: './inc/compatibility/elementor/assets/SCSS/elementor.scss',
 		src: [
 			'./inc/compatibility/elementor/assets/css/elementor.css',
-			'./inc/compatibility/elementor/assets/css/elementor.min.css',
+			'!./inc/compatibility/elementor/assets/css/elementor.min.css',
+			'!./inc/compatibility/elementor/assets/css/elementor-rtl.css',
+			'!./inc/compatibility/elementor/assets/css/elementor.min-rtl.css',
 		],
 		dest: './inc/compatibility/elementor/assets/css',
 	},
@@ -158,7 +161,6 @@ function sassCompile() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}),
 		)
 		.pipe(autoprefixer())
@@ -175,7 +177,6 @@ function adminSassCompile() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}).on('error', sass.logError),
 		)
 		.pipe(lec({ verbose: true, eolc: 'LF', encoding: 'utf8' }))
@@ -184,13 +185,12 @@ function adminSassCompile() {
 
 function elementorStylesCompile() {
 	return gulp
-		.src(paths.elementorStyles.src)
+		.src(paths.elementorStyles.scss)
 		.pipe(
 			sass({
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}).on('error', sass.logError),
 		)
 		.pipe(autoprefixer())
@@ -239,7 +239,6 @@ function compileMetaBoxSass() {
 				indentType: 'tab',
 				indentWidth: 1,
 				outputStyle: 'expanded',
-				linefeed: 'crlf',
 			}).on('error', sass.logError),
 		)
 		.pipe(autoprefixer())
@@ -359,7 +358,7 @@ async function minifyJs() {
 function watch() {
 	gulp.watch(paths.styles.src, sassCompile);
 	gulp.watch(paths.styles.src, adminSassCompile);
-	gulp.watch(paths.elementorStyles.src, elementorStylesCompile);
+	gulp.watch('./inc/compatibility/elementor/assets/SCSS/**/*.scss', elementorStylesCompile);
 	gulp.watch(paths.elementorStyles.src, minifyelementorStyles);
 	gulp.watch(paths.elementorJS.jsmin.src, minifyelementorJs);
 	gulp.watch(paths.js.src, minifyJs);

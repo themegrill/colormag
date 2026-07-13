@@ -15,42 +15,35 @@ $description             = get_bloginfo( 'description', 'display' );
 $header_display_type     = get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' );
 $site_identity_enable    = get_theme_mod( 'colormag_enable_site_identity', true );
 $site_tagline_enable     = get_theme_mod( 'colormag_enable_site_tagline', true );
-$site_title_visibility   = get_theme_mod(
-	'colormag_header_site_title_visibility',
-	array(
-		'desktop',
-		'tablet',
-		'mobile',
-	)
-);
-$site_tagline_visibility = get_theme_mod(
-	'colormag_header_site_tagline_visibility',
-	array(
-		'desktop',
-		'tablet',
-		'mobile',
-	)
-);
-
 $device_types = array( 'desktop', 'tablet', 'mobile' );
+
+// Legacy visibility arrays (devices where the element was shown). Used as the
+// backward-compatible default for the new per-device "Show on …" toggles, so
+// existing sites that configured the old control keep rendering identically.
+$legacy_title_visibility   = get_theme_mod( 'colormag_header_site_title_visibility', $device_types );
+$legacy_tagline_visibility = get_theme_mod( 'colormag_header_site_tagline_visibility', $device_types );
 
 $device_classes = array();
 foreach ( $device_types as $device ) {
-	if ( in_array( $device, $site_title_visibility, true ) ) {
+	$legacy_shown = in_array( $device, (array) $legacy_title_visibility, true );
+	$is_shown     = get_theme_mod( "colormag_header_site_title_show_$device", $legacy_shown );
+	if ( $is_shown ) {
 		$device_classes[] = "cm-title-show-$device";
 	}
 }
 
 $tagline_device_classes = array();
 foreach ( $device_types as $device ) {
-	if ( in_array( $device, $site_tagline_visibility, true ) ) {
+	$legacy_shown = in_array( $device, (array) $legacy_tagline_visibility, true );
+	$is_shown     = get_theme_mod( "colormag_header_site_tagline_show_$device", $legacy_shown );
+	if ( $is_shown ) {
 		$tagline_device_classes[] = "cm-tagline-show-$device";
 	}
 }
 ?>
 
 
-	<div id="cm-site-branding" class="cm-site-branding">
+	<div class="cm-site-branding">
 		<?php
 		if ( function_exists( 'the_custom_logo' ) ) {
 			the_custom_logo();
@@ -62,7 +55,7 @@ foreach ( $device_types as $device ) {
 
 if ( $site_identity_enable || $site_tagline_enable ) {
 	?>
-	<div id="cm-site-info" class="">
+	<div class="cm-site-info">
 		<?php
 		if ( $site_identity_enable ) {
 			if ( is_front_page() || is_home() ) :

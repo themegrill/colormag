@@ -22,10 +22,9 @@ function colormagInit() {
 			jQuery(this).next('#cm-masthead .search-form-top').toggleClass('show');
 
 			jQuery('#cm-content').toggleClass('backdrop');
-			// Focus after some time to fix conflict with toggleClass.
-			setTimeout(function () {
+			requestAnimationFrame(function () {
 				jQuery('#cm-masthead .search-form-top input').focus();
-			}, 200);
+			});
 
 			// Function to adjust search form position to prevent horizontal overflow
 			function adjustSearchFormPosition() {
@@ -100,12 +99,11 @@ function colormagInit() {
 	jQuery('a#scroll-up')
 		.off('click.colormag')
 		.on('click.colormag', function () {
-			jQuery('body,html').animate(
-				{
-					scrollTop: 0,
-				},
-				800,
-			);
+			if ('scrollBehavior' in document.documentElement.style) {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			} else {
+				jQuery('body,html').animate({ scrollTop: 0 }, 800);
+			}
 			return false;
 		});
 
@@ -214,19 +212,21 @@ function colormagInit() {
 		jQuery('.fitvids-video').fitVids();
 	}
 
-	// Settings of the ticker.
+	// Settings of the ticker — guard with data-cm-init so re-calling colormagInit() skips already-running tickers.
 	if (typeof jQuery.fn.newsTicker !== 'undefined') {
-		jQuery('.newsticker').newsTicker({
-			row_height: 20,
-			max_rows: 1,
-			speed: 1000,
-			direction: 'down',
-			duration: 4000,
-			autostart: 1,
-			pauseOnHover: 1,
-			start: function () {
-				jQuery('.newsticker').css('visibility', 'visible');
-			},
+		jQuery('.newsticker').not('[data-cm-init]').each(function () {
+			jQuery(this).attr('data-cm-init', '1').newsTicker({
+				row_height: 20,
+				max_rows: 1,
+				speed: 1000,
+				direction: 'down',
+				duration: 4000,
+				autostart: 1,
+				pauseOnHover: 1,
+				start: function () {
+					jQuery('.newsticker').css('visibility', 'visible');
+				},
+			});
 		});
 	}
 
@@ -288,31 +288,34 @@ function colormagInit() {
 		});
 	}
 
-	// BxSlider JS Settings.
+	// BxSlider JS Settings — guard with data-cm-init so re-calling colormagInit() skips already-running sliders.
 	if (typeof jQuery.fn.bxSlider !== 'undefined') {
 		// Category slider widget slider setting.
-		jQuery('.cm-slider-area-rotate').bxSlider({
-			mode: 'horizontal',
-			speed: 1500,
-			auto: true,
-			pause: 5000,
-			adaptiveHeight: true,
-			nextText: '',
-			prevText: '',
-			nextSelector: '.slide-next',
-			prevSelector: '.slide-prev',
-			pager: false,
-			tickerHover: true,
-			onSliderLoad: function () {
-				jQuery('.cm-slider-area-rotate').css('visibility', 'visible');
-				jQuery('.cm-slider-area-rotate').css('height', 'auto');
-			},
+		jQuery('.cm-slider-area-rotate').not('[data-cm-init]').each(function () {
+			jQuery(this).attr('data-cm-init', '1').bxSlider({
+				mode: 'horizontal',
+				speed: 1500,
+				auto: true,
+				pause: 5000,
+				adaptiveHeight: true,
+				nextText: '',
+				prevText: '',
+				nextSelector: '.slide-next',
+				prevSelector: '.slide-prev',
+				pager: false,
+				tickerHover: true,
+				onSliderLoad: function () {
+					jQuery('.cm-slider-area-rotate').css('visibility', 'visible');
+					jQuery('.cm-slider-area-rotate').css('height', 'auto');
+				},
+			});
 		});
 
 		// Post format gallery slider setting.
 		jQuery(
 			'.blog .gallery-images, .archive .gallery-images, .search .gallery-images, .single-post .gallery-images',
-		).bxSlider({
+		).not('[data-cm-init]').each(function () {
+			jQuery(this).attr('data-cm-init', '1').bxSlider({
 			mode: 'fade',
 			speed: 1500,
 			auto: true,
@@ -323,6 +326,7 @@ function colormagInit() {
 			nextSelector: '.slide-next',
 			prevSelector: '.slide-prev',
 			pager: false,
+			});
 		});
 	}
 
@@ -622,9 +626,14 @@ if (typeof MutationObserver !== 'undefined') {
 		});
 
 		if (shouldReinit) {
-			// Small delay to ensure all changes are complete
+			// Disconnect while running to prevent colormagInit DOM changes from cascading back.
+			observer.disconnect();
 			setTimeout(function () {
 				colormagInit();
+				var hb = document.querySelector('.cm-header-builder');
+				if (hb) {
+					observer.observe(hb, { childList: true, subtree: true });
+				}
 			}, 50);
 		}
 	});

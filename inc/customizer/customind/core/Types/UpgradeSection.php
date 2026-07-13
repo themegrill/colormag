@@ -34,7 +34,7 @@ class UpgradeSection extends \WP_Customize_Section {
 
 	public function json() {
 		$json                = parent::json();
-		$json['url']         = isset( $this->url ) ? esc_url( $this->url ) : '';
+		$json['url']         = isset( $this->url ) ? esc_url_raw( $this->url ) : '';
 		$json['id']          = $this->id ?? '';
 		$json['description'] = $this->description ?? '';
 		$json['label']       = $this->label ?? '';
@@ -54,7 +54,7 @@ class UpgradeSection extends \WP_Customize_Section {
 				<ul class="mt-4 pl-0 list-none">
 					<# _.each( data.points, function( point, index ) { #>
 						<li class="flex items-center text-[#4E4E4E] mb-[14px] text-[13px]">
-							<span class="text-[#207DAF] text-[15px] font-semibold mr-3">&#10003;</span>
+							<span class="text-[#fdb833] text-[15px] font-semibold mr-3">&#10003;</span>
 							{{ point }}
 						</li>
 					<# } ) #>
@@ -64,7 +64,7 @@ class UpgradeSection extends \WP_Customize_Section {
 				<a
 					href="{{{ data.url }}}"
 					target="_blank"
-					class="inline-flex justify-center py-[12px] font-semibold text-[13px] rounded-sm mt-5 no-underline hover:underline border border-solid border-[#207DAF] text-[#207DAF] bg-[#F5F5F5] px-2 w-[93%] hover:text-[#207DAF] hover:bg-[#F5F5F5] active:text-[#207DAF] focus:text-[#207DAF] focus:bg-[#F5F5F5] focus:shadow-none focus:outline-none focus:ring-0 focus:ring-[#207DAF] focus:ring-offset-0"
+					class="inline-flex justify-center py-[12px] font-semibold text-[13px] rounded-sm mt-5 no-underline border border-solid border-[#fdb833] text-[#24292f] bg-[#fdb833] px-2 w-[93%] hover:text-[#24292f] hover:bg-[#ffc857] active:text-[#24292f] focus:text-[#24292f] focus:bg-[#fdb833] focus:shadow-none focus:outline-none focus:ring-0 focus:ring-[#fdb833] focus:ring-offset-0"
 				>
 					{{ data.label }}
 				</a>
