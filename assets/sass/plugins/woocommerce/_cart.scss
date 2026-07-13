@@ -95,6 +95,28 @@
 			margin: 0;
 		}
 	}
+
+	.wp-block-woocommerce-product-new{
+		.wc-block-grid__product{
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			.wc-block-grid__product-link{
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+			}
+
+			.wc-block-grid__product-price,.wc-block-grid__product-add-to-cart{
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.add_to_cart_button{
+				flex: 1;
+			}
+		}
+	}
 }
 
 .woocommerce-cart-form {

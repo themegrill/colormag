@@ -741,6 +741,23 @@ p.stars.selected a:not(.active)::before {
 .woocommerce-cart .coupon .input-text {
 	margin: 0;
 }
+.woocommerce-cart .wp-block-woocommerce-product-new .wc-block-grid__product {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.woocommerce-cart .wp-block-woocommerce-product-new .wc-block-grid__product .wc-block-grid__product-link {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+.woocommerce-cart .wp-block-woocommerce-product-new .wc-block-grid__product .wc-block-grid__product-price, .woocommerce-cart .wp-block-woocommerce-product-new .wc-block-grid__product .wc-block-grid__product-add-to-cart {
+	margin-left: 0;
+	margin-right: 0;
+}
+.woocommerce-cart .wp-block-woocommerce-product-new .wc-block-grid__product .add_to_cart_button {
+	flex: 1;
+}
 
 .woocommerce-cart-form {
 	border: 1px solid var(--cm-color-9, #d4d4d8);
