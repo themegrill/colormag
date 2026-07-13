@@ -1,5 +1,8 @@
 .cm-entry-button {
 	display: inline-block;
+	// Explicit size so the Read More button box does not scale with the
+	// Global > Body font size (it would otherwise inherit it).
+	@include font-size('font-size-xs');
 
 	span {
 		display: inline-block;

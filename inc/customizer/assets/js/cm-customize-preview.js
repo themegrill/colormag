@@ -405,7 +405,7 @@
 				case 'colormag_base_typography':
 					css = colormagGenerateTypographyCSS(
 						id,
-						`body, button, input, select, textarea, blockquote p, .entry-meta, .cm-entry-button, dl, .previous a, .next a, .nav-previous a, .nav-next a, #respond h3#reply-title #cancel-comment-reply-link, #respond form input[type="text"], #respond form textarea, .cm-secondary .widget, .cm-error-404 .widget, .cm-entry-summary p`,
+						`body, input, select, textarea, blockquote p, .entry-meta, dl, .previous a, .next a, .nav-previous a, .nav-next a, #respond h3#reply-title #cancel-comment-reply-link, #respond form input[type="text"], #respond form textarea, .cm-secondary .widget, .cm-error-404 .widget, .cm-entry-summary p`,
 						value,
 					);
 					break;

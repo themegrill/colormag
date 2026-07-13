@@ -787,7 +787,6 @@ class ColorMag_Dynamic_CSS {
 			textarea,
 			blockquote p,
 			.entry-meta,
-			.cm-entry-button,
 			dl,
 			.previous a,
 			.next a,

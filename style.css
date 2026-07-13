@@ -2945,6 +2945,7 @@ Styles for separating single posts loaded from ajax call.
 --------------------------------------------- */
 .cm-entry-button {
 	display: inline-block;
+	font-size: 1.4rem;
 }
 .cm-entry-button span {
 	display: inline-block;
