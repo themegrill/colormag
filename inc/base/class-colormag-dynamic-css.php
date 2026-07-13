@@ -782,7 +782,6 @@ class ColorMag_Dynamic_CSS {
 			$base_typography_default,
 			$base_typography,
 			'body,
-			button,
 			input,
 			select,
 			textarea,
