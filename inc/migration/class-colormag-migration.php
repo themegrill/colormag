@@ -1844,7 +1844,16 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			$result     = false;
 			$theme_mods = get_theme_mods();
 
+			$excluded_keys = array(
+				'colormag_default_sidebar_layout',
+				'colormag_page_sidebar_layout',
+			);
+
 			foreach ( $theme_mods as $key => $_ ) {
+
+				if ( in_array( $key, $excluded_keys, true ) ) {
+					continue;
+				}
 
 				if ( strpos( $key, 'colormag_' ) !== false ) {
 
