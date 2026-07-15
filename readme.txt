@@ -132,8 +132,10 @@ and we will include it within the theme from next version update.
 * Enhance    - General code and build cleanup for easier maintenance and a smaller footprint.
 * Enhance    - Pages now load faster by reusing saved styles instead of rebuilding them on every visit.
 * Fix      - Welcome notice background color issue.
+* Fix      - Changing the Body font size also resized buttons.
 * Fix      - Accessible name added to the mobile menu toggle button.
 * Fix      - Starter templates redirect now points to the new page slug.
+* Fix      - Cart/checkout button misalignment in the in-store section.
 * Fix      - Duplicate HTML IDs rendered in both desktop and mobile headers.
 * Fix      - Formbricks survey not loading due to conflicting environment IDs.
 * Fix      - Monthly cron interval not registered, so font cache cleanup never ran.
@@ -142,6 +144,7 @@ and we will include it within the theme from next version update.
 * Fix      - MutationObserver cascading re-init causing thousands of slider/ticker re-inits.
 * Fix      - Removed dead editor.js enqueue causing a 404 in the Customizer and block editor.
 * Fix      - Elementor layout overflow from a global box-sizing reset (now scoped to ColorMag elements).
+* Fix      - Search bar on the search results page did not inherit the configured search bar background and text color.
 * Fix      - WooCommerce extension styles broke when all WC stylesheets were dequeued (now only conflicting handles removed).
 
 = Version 4.2.0 - 2026-06-09 =
