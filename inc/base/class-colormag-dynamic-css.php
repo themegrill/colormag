@@ -291,91 +291,8 @@ class ColorMag_Dynamic_CSS {
 		/**
 		 * Typography options.
 		 */
-		$base_typography_default                  = array(
-			'font-family'    => 'inherit',
-			'font-weight'    => 'regular',
-			'subsets'        => array( 'latin' ),
-			'font-size'      => array(
-				'desktop' => array(
-					'size' => '15',
-					'unit' => 'px',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'line-height'    => array(
-				'desktop' => array(
-					'size' => '1.6',
-					'unit' => '-',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'letter-spacing' => array(
-				'desktop' => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'font-style'     => 'normal',
-			'text-transform' => 'none',
-		);
-		$headings_typography_default              = array(
-			'font-family'    => 'inherit',
-			'font-weight'    => 'regular',
-			'subsets'        => array( 'latin' ),
-			'line-height'    => array(
-				'desktop' => array(
-					'size' => '1.2',
-					'unit' => '-',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'letter-spacing' => array(
-				'desktop' => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'tablet'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-				'mobile'  => array(
-					'size' => '',
-					'unit' => '',
-				),
-			),
-			'font-style'     => 'normal',
-			'text-transform' => 'none',
-			'color'          => 'var(--cm-color-6)',
-		);
+		$base_typography_default                  = self::get_base_typography_default();
+		$headings_typography_default              = self::get_headings_typography_default();
 		$heading_h1_typography_default            = array(
 			'font-family'    => 'inherit',
 			'font-weight'    => 'regular',
@@ -1679,10 +1596,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
 		// Base typography.
-		$base_typography_default = array(
-			'font-family' => 'inherit',
-			'font-weight' => 'regular',
-		);
+		$base_typography_default = self::get_base_typography_default();
 		$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
 
 		$parse_css .= colormag_parse_typography_css(
@@ -1692,10 +1606,7 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Headings typography.
-		$headings_typography_default = array(
-			'font-family' => 'inherit',
-			'font-weight' => 'regular',
-		);
+		$headings_typography_default = self::get_headings_typography_default();
 		$headings_typography         = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
 
 		$parse_css .= colormag_parse_typography_css(
@@ -1705,6 +1616,107 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		return $parse_css;
+	}
+
+	/**
+	 * Default value for the `colormag_base_typography` theme mod.
+	 *
+	 * @return array
+	 */
+	private static function get_base_typography_default() {
+		return array(
+			'font-family'    => 'inherit',
+			'font-weight'    => 'regular',
+			'subsets'        => array( 'latin' ),
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '15',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.6',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'letter-spacing' => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+	}
+
+	/**
+	 * Default value for the `colormag_headings_typography` theme mod.
+	 *
+	 * @return array
+	 */
+	private static function get_headings_typography_default() {
+		return array(
+			'font-family'    => 'inherit',
+			'font-weight'    => 'regular',
+			'subsets'        => array( 'latin' ),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '1.2',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'letter-spacing' => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+			'color'          => 'var(--cm-color-6)',
+		);
 	}
 
 	/**
