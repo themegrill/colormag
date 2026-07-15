@@ -1678,6 +1678,32 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
+		// Base typography.
+		$base_typography_default = array(
+			'font-family' => 'inherit',
+			'font-weight' => 'regular',
+		);
+		$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
+
+		$parse_css .= colormag_parse_typography_css(
+			$base_typography_default,
+			$base_typography,
+			'.editor-styles-wrapper'
+		);
+
+		// Headings typography.
+		$headings_typography_default = array(
+			'font-family' => 'inherit',
+			'font-weight' => 'regular',
+		);
+		$headings_typography         = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
+
+		$parse_css .= colormag_parse_typography_css(
+			$headings_typography_default,
+			$headings_typography,
+			'.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6'
+		);
+
 		return $parse_css;
 	}
 

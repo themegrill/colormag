@@ -273,7 +273,19 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				return;
 			}
 
-			if ( ! get_theme_mod( 'colormag_load_google_fonts_locally', false ) ) {
+			// Load the configured Heading/Body Google Fonts instead of the static "Open Sans" fallback.
+			$host_fonts_locally      = get_theme_mod( 'colormag_load_google_fonts_locally', false );
+			$editor_google_fonts_url = \Customind\Core\get_google_fonts_url_by_ids(
+				array(
+					'colormag_headings_typography',
+					'colormag_base_typography',
+				),
+				$host_fonts_locally
+			);
+
+			if ( $editor_google_fonts_url ) {
+				wp_enqueue_style( 'colormag-editor-googlefonts', $editor_google_fonts_url, array(), COLORMAG_THEME_VERSION );
+			} elseif ( ! $host_fonts_locally ) {
 				wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
 			}
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
