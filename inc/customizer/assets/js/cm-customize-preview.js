@@ -186,7 +186,7 @@
 			if (undefined !== typography['letter-spacing']) {
 				if (
 					'undefined' !==
-						typeof typography?.['letter-spacing']?.desktop?.size &&
+					typeof typography?.['letter-spacing']?.desktop?.size &&
 					'' !== typography['letter-spacing']['desktop']['size']
 				) {
 					const desktopLetterSpacingUnit =
@@ -444,7 +444,7 @@
 
 				case 'colormag_button_color':
 					css = colormagGenerateCommonCSS(
-						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .wp-block-button .wp-block-button__link`,
+						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .woocommerce a.add_to_cart_button, .wp-block-button .wp-block-button__link`,
 						'color',
 						value,
 					);
@@ -452,7 +452,7 @@
 
 				case 'colormag_button_hover_color':
 					css = colormagGenerateCommonCSS(
-						`.colormag-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover, .cm-entry-button span:hover, .wp-block-button .wp-block-button__link:hover`,
+						`.colormag-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover, .cm-entry-button span:hover, .woocommerce a.add_to_cart_button:hover, .wp-block-button .wp-block-button__link:hover`,
 						'color',
 						value,
 					);
@@ -460,7 +460,7 @@
 
 				case 'colormag_button_background_color':
 					css = colormagGenerateCommonCSS(
-						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .wp-block-button .wp-block-button__link`,
+						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .woocommerce a.add_to_cart_button, .wp-block-button .wp-block-button__link`,
 						'background-color',
 						value,
 					);
@@ -468,7 +468,7 @@
 
 				case 'colormag_button_background_hover_color':
 					css = colormagGenerateCommonCSS(
-						`.colormag-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover, .cm-entry-button span:hover, .wp-block-button .wp-block-button__link:hover`,
+						`.colormag-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover, .cm-entry-button span:hover, .woocommerce a.add_to_cart_button:hover, .wp-block-button .wp-block-button__link:hover`,
 						'background-color',
 						value,
 					);
@@ -476,7 +476,7 @@
 
 				case 'colormag_button_dimension_padding':
 					css = colormagGenerateDimensionCSS(
-						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .wp-block-button .wp-block-button__link`,
+						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .woocommerce li.product a.add_to_cart_button,.wp-block-button .wp-block-button__link`,
 						'padding',
 						value,
 					);
@@ -484,7 +484,7 @@
 
 				case 'colormag_button_border_radius':
 					css = colormagGenerateSliderCSS(
-						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .wp-block-button .wp-block-button__link`,
+						`.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .cm-entry-button span, .woocommerce li.product a.add_to_cart_button, .wp-block-button .wp-block-button__link`,
 						'border-radius',
 						value,
 					);

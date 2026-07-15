@@ -514,6 +514,7 @@ input[type=reset],
 input[type=submit],
 .wp-block-button .wp-block-button__link,
 .wp-element-button,
+.woocommerce a.add_to_cart_button,
 .cm-button {
 	display: inline-block;
 	padding: 6px 10px;
@@ -533,6 +534,7 @@ input[type=reset]:hover,
 input[type=submit]:hover,
 .wp-block-button .wp-block-button__link:hover,
 .wp-element-button:hover,
+.woocommerce a.add_to_cart_button:hover,
 .cm-button:hover {
 	color: var(--cm-color-1, #207daf);
 	background-color: transparent;
