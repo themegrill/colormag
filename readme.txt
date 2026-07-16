@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.1 - 2026-07-15 =
+= Version 4.2.1 - 2026-07-16 =
 * Enhance    - Smoother "scroll to top" animation.
 * Enhance    - Faster loading on pages that display random posts.
 * Enhance    - The site title show/hide option is now a simple on/off toggle.

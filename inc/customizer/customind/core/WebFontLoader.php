@@ -105,28 +105,9 @@ class WebFontLoader {
 	public function __construct( $url = '' ) {
 		$this->remote_url = $url;
 
-		// Register the 'monthly' cron interval — WP core only ships hourly/twicedaily/daily/weekly.
-		add_filter( 'cron_schedules', array( $this, 'register_monthly_schedule' ) );
-
 		// Add a cleanup routine.
 		$this->schedule_cleanup();
 		add_action( 'customind:font-loader:cleanup', array( $this, 'delete_fonts_folder' ) );
-	}
-
-	/**
-	 * Register a monthly cron schedule that WP core does not provide.
-	 *
-	 * @param array $schedules Existing cron schedules.
-	 * @return array
-	 */
-	public function register_monthly_schedule( $schedules ) {
-		if ( ! isset( $schedules['monthly'] ) ) {
-			$schedules['monthly'] = array(
-				'interval' => 30 * DAY_IN_SECONDS,
-				'display'  => __( 'Once Monthly', 'colormag' ),
-			);
-		}
-		return $schedules;
 	}
 
 	/**
