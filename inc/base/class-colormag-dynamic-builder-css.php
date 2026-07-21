@@ -1000,7 +1000,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		// Header search text color.
 		$header_search_text_color     = get_theme_mod( 'colormag_header_search_text_color', '' );
 		$header_search_text_color_css = array(
-			'.cm-header-builder .cm-top-search .search-form-top input' => array(
+			'.cm-header-builder .cm-top-search .search-form-top input, .search-wrap input' => array(
 				'color' => esc_html( $header_search_text_color ),
 			),
 		);
@@ -1034,7 +1034,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		// Header search background color.
 		$header_search_background     = get_theme_mod( 'colormag_header_search_background', '' );
 		$header_search_background_css = array(
-			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top, .cm-search-icon-in-input-right .search-wrap input' => array(
+			'.cm-header-builder .cm-top-search .search-form-top input, .cm-header-builder .cm-top-search .search-form-top, .search-wrap input, .cm-search-icon-in-input-right .search-wrap input' => array(
 				'background-color' => esc_html( $header_search_background ),
 			),
 			'.cm-header-builder .search-form-top.show::before' => array(

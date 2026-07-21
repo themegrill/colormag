@@ -4,8 +4,8 @@ Theme Name: ColorMag
 Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
-Description: ColorMag is always the best choice when it comes to magazine, news, and blog WordPress themes. You can create elegant and modern websites for news portals, online magazines, and publishing sites. With ColorMag’s 8 and counting free starter demos for health, food, entertainment, sports, and fashion industries, building a magazine style website is super easy. Best of all, the ColorMag WordPress theme offers multiple ad spaces in its layout. So, you can monetize your website by displaying ads in these slots without any fuss. And if you plan to sell products and services online, you can rely on the theme’s compatibility with WooCommerce. Some of its key features are:  >> SEO Optimized >> Translation & RTL Ready >> Cross-browser Compatible >> Custom Widgets >> Responsive Design >> Sticky Menu. So, download the free ColorMag theme and create professional magazine websites quickly. You can get free support for ColorMag at https://themegrill.com/contact/ and check our demos at https://themegrilldemos.com/colormag/
-Version: 4.2.0
+Description:  ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org. Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included. Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag
+Version: 4.2.1
 Tested up to: 7.0
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -514,11 +514,13 @@ input[type=reset],
 input[type=submit],
 .wp-block-button .wp-block-button__link,
 .wp-element-button,
+.woocommerce a.add_to_cart_button,
 .cm-button {
 	display: inline-block;
 	padding: 6px 10px;
 	background-color: var(--cm-color-1, #207daf);
 	color: #fff;
+	font-family: inherit;
 	font-size: 16px;
 	font-weight: 600;
 	border: 1px solid var(--cm-color-1, #207daf);
@@ -532,6 +534,7 @@ input[type=reset]:hover,
 input[type=submit]:hover,
 .wp-block-button .wp-block-button__link:hover,
 .wp-element-button:hover,
+.woocommerce a.add_to_cart_button:hover,
 .cm-button:hover {
 	color: var(--cm-color-1, #207daf);
 	background-color: transparent;
@@ -991,17 +994,17 @@ table td {
 .cm-header-builder .cm-site-title, .cm-header-builder .cm-site-description {
 	display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 	.cm-header-builder .cm-title-show-desktop, .cm-header-builder .cm-tagline-show-desktop {
 		display: block;
 	}
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
 	.cm-header-builder .cm-title-show-tablet, .cm-header-builder .cm-tagline-show-tablet {
 		display: block;
 	}
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 	.cm-header-builder .cm-title-show-mobile, .cm-header-builder .cm-tagline-show-mobile {
 		display: block;
 	}
@@ -1935,7 +1938,7 @@ table td {
 	width: 100%;
 	padding: 12px;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-8, #E4E4E7);
+	border: 1px solid var(--cm-color-9, #E4E4E7);
 	border-radius: 0 4px 4px 0;
 }
 .search-form-top .search-wrap {
@@ -2944,6 +2947,7 @@ Styles for separating single posts loaded from ajax call.
 --------------------------------------------- */
 .cm-entry-button {
 	display: inline-block;
+	font-size: 1.4rem;
 }
 .cm-entry-button span {
 	display: inline-block;
@@ -5093,7 +5097,7 @@ body:not(.woocommerce-page).cm-normal-container.box-layout .cm-primary .cm-entry
 .cm-no-results input.s {
 	width: 100%;
 	font-size: 1.4rem;
-	border: 1px solid var(--cm-color-8, #E4E4E7);
+	border: 1px solid var(--cm-color-9, #E4E4E7);
 	border-radius: 0 4px 4px 0;
 }
 

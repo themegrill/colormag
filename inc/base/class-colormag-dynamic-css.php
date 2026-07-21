@@ -782,13 +782,11 @@ class ColorMag_Dynamic_CSS {
 			$base_typography_default,
 			$base_typography,
 			'body,
-			button,
 			input,
 			select,
 			textarea,
 			blockquote p,
 			.entry-meta,
-			.cm-entry-button,
 			dl,
 			.previous a,
 			.next a,
@@ -1071,6 +1069,7 @@ class ColorMag_Dynamic_CSS {
 			input[type="submit"],
 			button,
 			.cm-entry-button span,
+			.woocommerce a.add_to_cart_button,
 			.wp-block-button .wp-block-button__link' => array(
 		'color' => esc_html( $button_text_color ),
 		),
@@ -1088,6 +1087,7 @@ class ColorMag_Dynamic_CSS {
 			input[type="submit"]:hover,
 			button:hover,
 			.cm-entry-button span:hover,
+			.woocommerce a.add_to_cart_button:hover,
 			.wp-block-button .wp-block-button__link:hover' => array(
 		'color' => esc_html( $button_hover_text_color ),
 		),
@@ -1105,6 +1105,7 @@ class ColorMag_Dynamic_CSS {
 			input[type="submit"],
 			button,
 			.cm-entry-button span,
+			.woocommerce a.add_to_cart_button,
 			.wp-block-button .wp-block-button__link' => array(
 		'background-color' => esc_html( $button_background_color ),
 		),
@@ -1122,6 +1123,7 @@ class ColorMag_Dynamic_CSS {
 			input[type="submit"]:hover,
 			button:hover,
 			.cm-entry-button span:hover,
+			.woocommerce a.add_to_cart_button:hover,
 			.wp-block-button .wp-block-button__link:hover' => array(
 		'background-color' => esc_html( $button_background_hover_color ),
 		),
@@ -1213,6 +1215,7 @@ class ColorMag_Dynamic_CSS {
 			input[type="submit"],
 			button,
 			.cm-entry-button span,
+			.woocommerce li.product a.add_to_cart_button,
 			.wp-block-button .wp-block-button__link',
 			'padding'
 		);
@@ -1245,7 +1248,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_slider_css(
 			$button_border_radius_default,
 			$button_border_radius,
-			'.cm-entry-button span,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link, .wp-block-button .wp-block-button__link',
+			'.cm-entry-button span,.colormag-button, input[type="reset"], input[type="button"], input[type="submit"], button, .more-link, .woocommerce li.product a.add_to_cart_button,.wp-block-button .wp-block-button__link',
 			'border-radius'
 		);
 
