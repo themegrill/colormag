@@ -40,9 +40,14 @@ class Sanitization {
 	 * Sanitize color.
 	 *
 	 * @param string $value Value from customizer.
+	 * @param int    $depth Internal recursion guard for var() fallbacks. Do not pass.
 	 * @return string
 	 */
-	public static function sanitize_color( $value ) {
+	public static function sanitize_color( $value, $depth = 0 ) {
+		if ( $depth > 5 ) {
+			return '';
+		}
+
 		switch ( true ) {
 			case 0 === strpos( $value, '#' ):
 				return self::sanitize_hex( $value );
@@ -54,9 +59,53 @@ class Sanitization {
 				return self::sanitize_hsl( $value );
 			case 0 === strpos( $value, 'hsla(' ):
 				return self::sanitize_hsla( $value );
+			case 0 === strpos( $value, 'var(' ):
+				return self::sanitize_css_var( $value, $depth + 1 );
+			case 'transparent' === $value:
+			case 'currentColor' === $value:
+			case 'currentcolor' === $value:
+				return $value;
 			default:
 				return '';
 		}
+	}
+
+	/**
+	 * Sanitize a CSS custom-property reference, e.g. the value stored when a
+	 * user links a color field to a Global Palette swatch (var(--colormag-color-1))
+	 * with an optional fallback (var(--colormag-color-1, #027abb)).
+	 *
+	 * Only the var(--name, fallback) shape is parsed here; the fallback itself
+	 * is re-validated through sanitize_color() rather than a bespoke character
+	 * class, so it can only ever resolve to an already-vetted format (hex, rgb,
+	 * rgba, hsl, hsla, another var(), transparent, currentColor).
+	 *
+	 * @param string $color
+	 * @param int    $depth Internal recursion guard. Do not pass.
+	 * @return string
+	 */
+	private static function sanitize_css_var( $color, $depth = 0 ) {
+		if ( $depth > 5 ) {
+			return '';
+		}
+
+		if ( ! preg_match( '/^var\(\s*(--[\w-]+)\s*(?:,\s*(.+))?\)$/s', $color, $matches ) ) {
+			return '';
+		}
+
+		$property = $matches[1];
+
+		if ( ! isset( $matches[2] ) || '' === trim( $matches[2] ) ) {
+			return "var({$property})";
+		}
+
+		$fallback = self::sanitize_color( trim( $matches[2] ), $depth + 1 );
+
+		if ( '' === $fallback ) {
+			return '';
+		}
+
+		return "var({$property}, {$fallback})";
 	}
 
 	/**
