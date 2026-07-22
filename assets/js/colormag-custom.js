@@ -83,7 +83,9 @@ function colormagInit() {
 	 * Scroll to top JS setting.
 	 */
 	// Hides the scroll up button initially.
-	jQuery('#scroll-up').hide();
+	if (jQuery(window).scrollTop() <= 1000) {
+		jQuery('#scroll-up').hide();
+	}
 
 	// Scroll up settings.
 	jQuery(window)
@@ -316,16 +318,16 @@ function colormagInit() {
 			'.blog .gallery-images, .archive .gallery-images, .search .gallery-images, .single-post .gallery-images',
 		).not('[data-cm-init]').each(function () {
 			jQuery(this).attr('data-cm-init', '1').bxSlider({
-			mode: 'fade',
-			speed: 1500,
-			auto: true,
-			pause: 3000,
-			adaptiveHeight: true,
-			nextText: '',
-			prevText: '',
-			nextSelector: '.slide-next',
-			prevSelector: '.slide-prev',
-			pager: false,
+				mode: 'fade',
+				speed: 1500,
+				auto: true,
+				pause: 3000,
+				adaptiveHeight: true,
+				nextText: '',
+				prevText: '',
+				nextSelector: '.slide-next',
+				prevSelector: '.slide-prev',
+				pager: false,
 			});
 		});
 	}
@@ -390,10 +392,10 @@ function colormagInit() {
 						.find('.video-frame')
 						.append(
 							'<iframe id="' +
-								iframe_id +
-								'" class="player-frame" src="' +
-								src +
-								'" frameborder="0" width="100%" height="434" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+							iframe_id +
+							'" class="player-frame" src="' +
+							src +
+							'" frameborder="0" width="100%" height="434" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 						);
 					current_video_id = jQuery('#' + iframe_id);
 					current_video_id.video();
@@ -492,9 +494,9 @@ function colormagInit() {
 					e.preventDefault();
 					facebookWindow = window.open(
 						'https://www.facebook.com/sharer/sharer.php?u=' +
-							document.URL +
-							'&p[title]=' +
-							document.title,
+						document.URL +
+						'&p[title]=' +
+						document.title,
 						'facebook-popup',
 						'height=350,width=600',
 					);
@@ -514,9 +516,9 @@ function colormagInit() {
 					e.preventDefault();
 					twitterWindow = window.open(
 						'https://twitter.com/share?text=' +
-							document.title +
-							'&url=' +
-							document.URL,
+						document.title +
+						'&url=' +
+						document.URL,
 						'twitter-popup',
 						'height=350,width=600',
 					);
@@ -542,11 +544,11 @@ function colormagInit() {
 
 					pinterestWindow = window.open(
 						'https://pinterest.com/pin/create/button/?url=' +
-							document.URL +
-							'&media=' +
-							featuredImage +
-							'&description=' +
-							document.title,
+						document.URL +
+						'&media=' +
+						featuredImage +
+						'&description=' +
+						document.title,
 						'pinterest-popup',
 						'height=350,width=600',
 					);
