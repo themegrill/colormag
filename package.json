@@ -52,7 +52,6 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-uglifycss": "^1.1.0",
     "gulp-watch": "^5.0.1",
-    "gulp-wp-pot": "^2.5.0",
     "gulp-zip": "^6.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.3.2",
