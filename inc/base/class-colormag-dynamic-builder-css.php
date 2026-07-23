@@ -763,7 +763,7 @@ class ColorMag_Dynamic_Builder_CSS {
 
 		$header_primary_menu_active_text_color     = get_theme_mod( 'colormag_header_primary_menu_active_text_color', '' );
 		$header_primary_menu_active_text_color_css = array(
-			'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a' => array(
+			'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a, .cm-header-builder .cm-primary-nav ul li.current-menu-ancestor > a ' => array(
 				'color' => esc_html( $header_primary_menu_active_text_color ),
 			),
 			'.cm-header-builder .cm-primary-nav li.current-menu-item > .cm-submenu-toggle .cm-icon' => array(
@@ -3026,7 +3026,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		$parse_builder_css                      .= colormag_parse_css( '', $header_mobile_menu_background_color, $header_mobile_menu_background_color_css );
 
 		// Footer builder area cols.
-		$footer_builder_top_col = get_theme_mod( 'colormag_footer_top_area_cols', 4 );
+		$footer_builder_top_col = get_theme_mod( 'colormag_footer_top_area_cols', 3 );
 
 		$footer_builder_main_col = get_theme_mod( 'colormag_footer_main_area_cols', 4 );
 
