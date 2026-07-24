@@ -7,7 +7,6 @@ import rtlcss from 'gulp-rtlcss';
 import gulpSass from 'gulp-sass';
 import _uglify from 'gulp-uglify-es';
 import uglifycss from 'gulp-uglifycss';
-import wpPot from 'gulp-wp-pot';
 import zip from 'gulp-zip';
 import * as dartSass from 'sass';
 const sass = gulpSass(dartSass);
@@ -340,21 +339,6 @@ function compressZip() {
 		.pipe(gulp.dest(paths.zip.dest));
 }
 
-// Generate POT files.
-function makePot() {
-	return gulp
-		.src('**/*.php')
-		.pipe(
-			wpPot({
-				domain: 'colormag',
-				package: 'ColorMag',
-				bugReport: 'themegrill@gmail.com',
-				team: 'LANGUAGE <EMAIL@ADDRESS>',
-			}),
-		)
-		.pipe(gulp.dest('languages/colormag.pot'));
-}
-
 // Minify all .js files.
 async function minifyJs() {
 	return gulp
@@ -399,7 +383,6 @@ const build = gulp.series(
 	adminSassCompile,
 	elementorStylesCompile,
 	compileMetaBoxSass,
-	// makePot,
 	compressZip,
 );
 
@@ -429,7 +412,6 @@ export {
 	build,
 	compile,
 	compileMetaBoxSass,
-	// makePot,
 	compressZip,
 	elementorStyles,
 	elementorStylesCompile,
