@@ -468,7 +468,7 @@ $section_option_id = array(
 
 if (class_exists('WooCommerce') ) {
     $panel_options_id['woocommerce'] = array(
-    'title' => esc_html__('WooCommerce', 'colormag'),
+    'title' => 'WooCommerce',
     );
 }
 

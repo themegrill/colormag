@@ -99,14 +99,14 @@ $options = array(
 	),
 	'colormag_demo_migrated_heading'   => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Demo Migrated', 'colormag' ),
+		'title'        => 'Demo Migrated',
 		'section'      => 'colormag_global_container_section',
 		'sub_controls' => apply_filters(
 			'colormag_demo_migrated_sub_controls',
 			array(
 				'demo_migrated_to_builder' => array(
 					'default' => 0,
-					'title'   => esc_html__( 'Demo Migrated To Builder', 'colormag' ),
+					'title'   => 'Demo Migrated To Builder',
 					'type'    => 'customind-toggle',
 					'section' => 'colormag_global_container_section',
 				),

@@ -24,13 +24,13 @@ if ( ! function_exists( 'colormag_footer_builder_copyright' ) ) {
 		$theme_author = apply_filters(
 			'colormag_theme_author',
 			array(
-				'theme_name'       => __( 'ColorMag', 'colormag' ),
+				'theme_name'       => 'ColorMag',
 				'theme_author_url' => 'https://themegrill.com/themes/colormag/',
 			)
 		);
 		$site_link    = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a>';
 		$theme_link   = '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '" target="_blank" title="' . esc_attr( $theme_author['theme_name'] ) . '" rel="nofollow">' . $theme_author['theme_name'] . '</a>';
-		$wp_link      = '<a href="' . esc_url( 'https://wordpress.org/' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'colormag' ) . '" rel="nofollow">' . __( 'WordPress', 'colormag' ) . '</a>';
+		$wp_link      = '<a href="' . esc_url( 'https://wordpress.org/' ) . '" target="_blank" title="WordPress" rel="nofollow">WordPress</a>';
 
 		if ( $content || is_customize_preview() ) {
 			$content = str_replace( '{the-year}', date_i18n( 'Y' ), $content );
