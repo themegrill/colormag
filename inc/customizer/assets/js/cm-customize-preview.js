@@ -1011,6 +1011,14 @@
 					);
 					break;
 
+				case 'colormag_header_button_typography':
+					css = colormagGenerateTypographyCSS(
+						id,
+						'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+						value,
+					);
+					break;
+
 				case 'colormag_header_button_padding':
 					css = colormagGenerateDimensionCSS(
 						'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
@@ -1277,6 +1285,28 @@
 						'color',
 						value,
 					);
+					break;
+
+				case 'colormag_header_search_icon_size':
+					css = colormagGenerateSliderCSS(
+						'.cm-header-builder .cm-top-search .search-top::before, .cm-header-builder .search-wrap .search-icon::before',
+						'font-size',
+						value,
+					);
+					css += colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-icon-input-right svg',
+						'width',
+						value,
+					);
+					css += colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-icon-input-right svg',
+						'height',
+						value,
+					);
+					// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
+					if (value.size) {
+						css += '.cm-header-builder .fa.search-top{width:auto;height:auto;}';
+					}
 					break;
 
 				case 'colormag_header_search_icon_hover_color':

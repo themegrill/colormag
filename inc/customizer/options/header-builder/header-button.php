@@ -71,6 +71,47 @@ $options = array(
 						),
 					),
 				),
+				'colormag_header_button_typography'    => array(
+					'default'   => array(
+						'font-family'    => 'default',
+						'font-weight'    => 'regular',
+						'subsets'        => array( 'latin' ),
+						'font-size'      => array(
+							'desktop' => array(
+								'size' => '',
+								'unit' => 'px',
+							),
+							'tablet'  => array(
+								'size' => '',
+								'unit' => 'px',
+							),
+							'mobile'  => array(
+								'size' => '',
+								'unit' => 'px',
+							),
+						),
+						'line-height'    => array(
+							'desktop' => array(
+								'size' => '',
+								'unit' => '-',
+							),
+							'tablet'  => array(
+								'size' => '',
+								'unit' => '-',
+							),
+							'mobile'  => array(
+								'size' => '',
+								'unit' => '-',
+							),
+						),
+						'font-style'     => 'normal',
+						'text-transform' => 'none',
+					),
+					'type'      => 'customind-typography',
+					'transport' => 'postMessage',
+					'title'     => esc_html__( 'Typography', 'colormag' ),
+					'section'   => 'colormag_header_builder_button_1',
+				),
 				'colormag_header_button_padding'       => array(
 					'default'     => array(
 						'top'    => '5',
