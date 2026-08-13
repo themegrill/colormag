@@ -108,56 +108,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			// Local Google fonts locally.
 			$host_fonts_locally = get_theme_mod( 'colormag_load_google_fonts_locally', false );
 
-			$typography_ids = apply_filters(
-				'colormag_enqueue_scripts_typography_ids',
-				array(
-					'colormag_blog_post_title_typography',
-					'colormag_single_post_title_typography',
-					'colormag_mobile_menu_typography',
-					'colormag_primary_menu_typography',
-					'colormag_site_tagline_typography',
-					'colormag_site_title_typography',
-					'colormag_h6_typography',
-					'colormag_h5_typography',
-					'colormag_h4_typography',
-					'colormag_h3_typography',
-					'colormag_h2_typography',
-					'colormag_h1_typography',
-					'colormag_headings_typography',
-					'colormag_base_typography',
-					'colormag_footer_copyright_typography',
-					'colormag_footer_menu_typography',
-					'colormag_footer_widget_1_title_typography',
-					'colormag_footer_widget_1_content_typography',
-					'colormag_footer_widget_2_title_typography',
-					'colormag_footer_widget_2_content_typography',
-					'colormag_footer_widget_3_title_typography',
-					'colormag_footer_widget_3_content_typography',
-					'colormag_footer_widget_4_title_typography',
-					'colormag_footer_widget_4_content_typography',
-					'colormag_footer_widget_5_title_typography',
-					'colormag_footer_widget_5_content_typography',
-					'colormag_footer_widget_6_title_typography',
-					'colormag_footer_widget_6_content_typography',
-					'colormag_footer_widget_7_title_typography',
-					'colormag_footer_widget_7_content_typography',
-					'colormag_primary_sub_menu_typography',
-					'colormag_mobile_sub_menu_typography',
-					'colormag_date_typography',
-					'colormag_header_site_title_typography',
-					'colormag_header_site_tagline_typography',
-					'colormag_header_mobile_menu_typography',
-					'colormag_news_ticker_typography',
-					'colormag_header_primary_menu_typography',
-					'colormag_header_primary_sub_menu_typography',
-					'colormag_header_secondary_menu_typography',
-					'colormag_header_secondary_sub_menu_typography',
-					'colormag_widget_1_title_typography',
-					'colormag_widget_1_content_typography',
-					'colormag_widget_2_title_typography',
-					'colormag_widget_2_content_typography',
-				)
-			);
+			$typography_ids = $this->get_typography_ids();
 
 			$google_fonts_url = \Customind\Core\get_google_fonts_url_by_ids( $typography_ids, $host_fonts_locally );
 
@@ -251,6 +202,67 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 			wp_enqueue_script( 'colormag-skip-link-focus-fix', COLORMAG_JS_URL . '/skip-link-focus-fix' . $suffix . '.js', array(), COLORMAG_THEME_VERSION, true );
 		}
 
+		/**
+		 * Theme mod IDs whose typography values should be loaded as Google Fonts.
+		 *
+		 * Shared between the front-end and the block editor, so both always load
+		 * the exact same set of configured fonts.
+		 *
+		 * @return array
+		 */
+		private function get_typography_ids() {
+			return apply_filters(
+				'colormag_enqueue_scripts_typography_ids',
+				array(
+					'colormag_blog_post_title_typography',
+					'colormag_single_post_title_typography',
+					'colormag_mobile_menu_typography',
+					'colormag_primary_menu_typography',
+					'colormag_site_tagline_typography',
+					'colormag_site_title_typography',
+					'colormag_h6_typography',
+					'colormag_h5_typography',
+					'colormag_h4_typography',
+					'colormag_h3_typography',
+					'colormag_h2_typography',
+					'colormag_h1_typography',
+					'colormag_headings_typography',
+					'colormag_base_typography',
+					'colormag_footer_copyright_typography',
+					'colormag_footer_menu_typography',
+					'colormag_footer_widget_1_title_typography',
+					'colormag_footer_widget_1_content_typography',
+					'colormag_footer_widget_2_title_typography',
+					'colormag_footer_widget_2_content_typography',
+					'colormag_footer_widget_3_title_typography',
+					'colormag_footer_widget_3_content_typography',
+					'colormag_footer_widget_4_title_typography',
+					'colormag_footer_widget_4_content_typography',
+					'colormag_footer_widget_5_title_typography',
+					'colormag_footer_widget_5_content_typography',
+					'colormag_footer_widget_6_title_typography',
+					'colormag_footer_widget_6_content_typography',
+					'colormag_footer_widget_7_title_typography',
+					'colormag_footer_widget_7_content_typography',
+					'colormag_primary_sub_menu_typography',
+					'colormag_mobile_sub_menu_typography',
+					'colormag_date_typography',
+					'colormag_header_site_title_typography',
+					'colormag_header_site_tagline_typography',
+					'colormag_header_mobile_menu_typography',
+					'colormag_news_ticker_typography',
+					'colormag_header_primary_menu_typography',
+					'colormag_header_primary_sub_menu_typography',
+					'colormag_header_secondary_menu_typography',
+					'colormag_header_secondary_sub_menu_typography',
+					'colormag_widget_1_title_typography',
+					'colormag_widget_1_content_typography',
+					'colormag_widget_2_title_typography',
+					'colormag_widget_2_content_typography',
+				)
+			);
+		}
+
 		public function customize_js() {
 
 			wp_enqueue_script(
@@ -273,7 +285,16 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				return;
 			}
 
-			if ( ! get_theme_mod( 'colormag_load_google_fonts_locally', false ) ) {
+			// Load the same configured Google Fonts as the front-end instead of the static "Open Sans" fallback.
+			$host_fonts_locally      = get_theme_mod( 'colormag_load_google_fonts_locally', false );
+			$editor_google_fonts_url = \Customind\Core\get_google_fonts_url_by_ids(
+				$this->get_typography_ids(),
+				$host_fonts_locally
+			);
+
+			if ( $editor_google_fonts_url ) {
+				wp_enqueue_style( 'colormag-editor-googlefonts', $editor_google_fonts_url, array(), COLORMAG_THEME_VERSION );
+			} elseif ( ! $host_fonts_locally ) {
 				wp_enqueue_style( 'colormag-editor-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600', array(), COLORMAG_THEME_VERSION );
 			}
 			wp_enqueue_style( 'colormag-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), COLORMAG_THEME_VERSION );
