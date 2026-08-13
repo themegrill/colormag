@@ -1,11 +1,13 @@
 .cm-posts {
 
-    &.cm-layout-1-style-1 {
+    &.cm-layout-1-style-1,
+    &.cm-layout-1-style-2 {
 		--grid-column: 1;
 	}
 }
 
-.cm-layout-1-style-1 {
+.cm-layout-1-style-1,
+.cm-layout-1-style-2 {
 
 	.post {
 		display: flex;
@@ -37,6 +39,13 @@
 
 		.post {
 			flex-direction: row;
+		}
+	}
+
+	.cm-layout-1-style-2 {
+
+		.post {
+			flex-direction: row-reverse;
 		}
 	}
 }

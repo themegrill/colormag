@@ -115,6 +115,23 @@ $options = array(
 					'transport' => 'postMessage',
 					'section'   => 'colormag_header_builder_search',
 				),
+				'colormag_header_search_icon_size'  => array(
+					'default'     => array(
+						'size'  => '',
+						'units' => 'px',
+					),
+					'type'        => 'customind-slider',
+					'title'       => esc_html__( 'Icon Size', 'colormag' ),
+					'transport'   => 'postMessage',
+					'section'     => 'colormag_header_builder_search',
+					'units'       => array( 'px' ),
+					'defaultUnit' => 'px',
+					'input_attrs' => array(
+						'min'  => 10,
+						'max'  => 60,
+						'step' => 1,
+					),
+				),
 				'colormag_header_search_button_background_group' => array(
 					'type'         => 'customind-color-group',
 					'title'        => esc_html__( 'Background', 'colormag' ),

@@ -294,6 +294,53 @@ class ColorMag_Dynamic_Builder_CSS {
 		);
 		$parse_builder_css                       .= colormag_parse_css( '#ffffff', $header_button_background_hover_color, $header_button_background_hover_color_css );
 
+		// Header button typography.
+		$header_button_typography_default = array(
+			'font-family'    => 'default',
+			'font-weight'    => 'regular',
+			'subsets'        => array( 'latin' ),
+			'font-size'      => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => 'px',
+				),
+			),
+			'line-height'    => array(
+				'desktop' => array(
+					'size' => '',
+					'unit' => '-',
+				),
+				'tablet'  => array(
+					'size' => '',
+					'unit' => '-',
+				),
+				'mobile'  => array(
+					'size' => '',
+					'unit' => '-',
+				),
+			),
+			'font-style'     => 'normal',
+			'text-transform' => 'none',
+		);
+		$header_button_typography         = get_theme_mod( 'colormag_header_button_typography', $header_button_typography_default );
+		$parse_builder_css               .= colormag_parse_typography_css(
+			$header_button_typography_default,
+			$header_button_typography,
+			'.cm-header-builder .cm-header-buttons .cm-header-button .cm-button',
+			array(
+				'tablet' => 768,
+				'mobile' => 600,
+			)
+		);
+
 		// Header button padding.
 		$header_button_padding_default = array(
 			'top'    => '5',
@@ -659,14 +706,7 @@ class ColorMag_Dynamic_Builder_CSS {
 			'background-attachment' => 'scroll',
 		);
 		$header_bottom_area_background         = get_theme_mod( 'colormag_header_bottom_area_background', $header_bottom_area_background_default );
-		if (
-			is_array( $header_bottom_area_background ) &&
-			isset( $header_bottom_area_background['background-color'] ) &&
-			strpos( $header_bottom_area_background['background-color'], 'var(--cm-color' ) === 0
-		) {
-			$header_bottom_area_background['background-color'] = 'var(--cm-color, #27272A)';
-		}
-		$parse_builder_css .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, $bottom_header_background_selector );
+		$parse_builder_css                    .= colormag_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, $bottom_header_background_selector );
 
 		// Header bottom area padding.
 		$header_bottom_area_padding_default = array(
@@ -763,7 +803,7 @@ class ColorMag_Dynamic_Builder_CSS {
 
 		$header_primary_menu_active_text_color     = get_theme_mod( 'colormag_header_primary_menu_active_text_color', '' );
 		$header_primary_menu_active_text_color_css = array(
-			'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a' => array(
+			'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a, .cm-header-builder .cm-primary-nav ul li.current-menu-ancestor > a ' => array(
 				'color' => esc_html( $header_primary_menu_active_text_color ),
 			),
 			'.cm-header-builder .cm-primary-nav li.current-menu-item > .cm-submenu-toggle .cm-icon' => array(
@@ -967,6 +1007,36 @@ class ColorMag_Dynamic_Builder_CSS {
 			),
 		);
 		$parse_builder_css           .= colormag_parse_css( '', $header_search_icon_color, $header_search_icon_color_css );
+
+		// Header search icon size.
+		$header_search_icon_size_default = array(
+			'size' => '',
+			'unit' => 'px',
+		);
+		$header_search_icon_size         = get_theme_mod( 'colormag_header_search_icon_size', $header_search_icon_size_default );
+		$parse_builder_css               .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-header-builder .cm-top-search .search-top::before, .cm-header-builder .search-wrap .search-icon::before',
+			'font-size'
+		);
+		$parse_builder_css               .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-search-icon-in-input-right .search-icon-input-right svg',
+			'width'
+		);
+		$parse_builder_css               .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-search-icon-in-input-right .search-icon-input-right svg',
+			'height'
+		);
+
+		// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
+		if ( ! empty( $header_search_icon_size['size'] ) ) {
+			$parse_builder_css .= '.cm-header-builder .fa.search-top{width:auto;height:auto;}';
+		}
 
 		// Header search button background color.
 		$header_search_button_bg     = get_theme_mod( 'colormag_header_search_button_background', '' );
@@ -3026,7 +3096,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		$parse_builder_css                      .= colormag_parse_css( '', $header_mobile_menu_background_color, $header_mobile_menu_background_color_css );
 
 		// Footer builder area cols.
-		$footer_builder_top_col = get_theme_mod( 'colormag_footer_top_area_cols', 4 );
+		$footer_builder_top_col = get_theme_mod( 'colormag_footer_top_area_cols', 3 );
 
 		$footer_builder_main_col = get_theme_mod( 'colormag_footer_main_area_cols', 4 );
 

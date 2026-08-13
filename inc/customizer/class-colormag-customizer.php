@@ -32,7 +32,8 @@ class ColorMag_Customizer {
 		// Include the required files for Customize option.
 		add_action( 'customize_register', array( $this, 'customize_options_file_include' ), 1 );
 
-		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_dynamic_css' ) );
+		// Priority 20 so the style handle is already registered by colormag_block_editor_styles().
+		add_action( 'enqueue_block_assets', array( $this, 'editor_dynamic_css' ), 20 );
 
 		if ( get_theme_mod( 'colormag_enable_builder', false ) || colormag_maybe_enable_builder() ) {
 			add_filter( 'customizer_widgets_section_args', [ $this, 'modify_widgets_panel' ], 10, 3 );
@@ -175,6 +176,10 @@ class ColorMag_Customizer {
 	}
 
 	public function editor_dynamic_css() {
+		if ( ! is_admin() ) {
+			return;
+		}
+
 		wp_add_inline_style( 'colormag-block-editor-styles', ColorMag_Dynamic_CSS::colormag_editor_block_css() );
 	}
 }
