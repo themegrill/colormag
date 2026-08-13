@@ -31,7 +31,7 @@ get_header();
 						<header class="cm-page-header">
 							<p><?php esc_html_e( 'oops ! Page Not Found', 'colormag' ); ?></p>
 
-							<h1 class="cm-page-title"><?php esc_html_e( '404', 'colormag' ); ?></h1>
+							<h1 class="cm-page-title">404</h1>
 						</header>
 
 						<div class="cm-page-content">

@@ -488,7 +488,7 @@ function colormag_extra_user_field( $user ) {
 
 	<table class="form-table">
 		<tr>
-			<th><label for="colormag_twitter"><?php esc_html_e( 'Twitter', 'colormag' ); ?></label></th>
+			<th><label for="colormag_twitter">Twitter</label></th>
 			<td>
 				<input type="text" name="colormag_twitter" id="colormag_twitter"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_twitter', $user->ID ) ); ?>"
@@ -498,7 +498,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_facebook"><?php esc_html_e( 'Facebook', 'colormag' ); ?></label></th>
+			<th><label for="colormag_facebook">Facebook</label></th>
 			<td>
 				<input type="text" name="colormag_facebook" id="colormag_facebook"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_facebook', $user->ID ) ); ?>"
@@ -508,7 +508,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_google_plus"><?php esc_html_e( 'Google Plus', 'colormag' ); ?></label></th>
+			<th><label for="colormag_google_plus">Google Plus</label></th>
 			<td>
 				<input type="text" name="colormag_google_plus" id="colormag_google_plus"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_google_plus', $user->ID ) ); ?>"
@@ -518,7 +518,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_flickr"><?php esc_html_e( 'Flickr', 'colormag' ); ?></label></th>
+			<th><label for="colormag_flickr">Flickr</label></th>
 			<td>
 				<input type="text" name="colormag_flickr" id="colormag_flickr"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_flickr', $user->ID ) ); ?>"
@@ -528,7 +528,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_linkedin"><?php esc_html_e( 'LinkedIn', 'colormag' ); ?></label></th>
+			<th><label for="colormag_linkedin">LinkedIn</label></th>
 			<td>
 				<input type="text" name="colormag_linkedin" id="colormag_linkedin"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_linkedin', $user->ID ) ); ?>"
@@ -538,7 +538,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_instagram"><?php esc_html_e( 'Instagram', 'colormag' ); ?></label></th>
+			<th><label for="colormag_instagram">Instagram</label></th>
 			<td>
 				<input type="text" name="colormag_instagram" id="colormag_instagram"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_instagram', $user->ID ) ); ?>"
@@ -548,7 +548,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_tumblr"><?php esc_html_e( 'Tumblr', 'colormag' ); ?></label></th>
+			<th><label for="colormag_tumblr">Tumblr</label></th>
 			<td>
 				<input type="text" name="colormag_tumblr" id="colormag_tumblr"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_tumblr', $user->ID ) ); ?>"
@@ -558,7 +558,7 @@ function colormag_extra_user_field( $user ) {
 		</tr>
 
 		<tr>
-			<th><label for="colormag_youtube"><?php esc_html_e( 'Youtube', 'colormag' ); ?></label></th>
+			<th><label for="colormag_youtube">Youtube</label></th>
 			<td>
 				<input type="text" name="colormag_youtube" id="colormag_youtube"
 						value="<?php echo esc_attr( get_the_author_meta( 'colormag_youtube', $user->ID ) ); ?>"

@@ -78,7 +78,7 @@ class ColorMag_Theme_Review_Notice {
 			<div class="cm-review-notice-content">
 		<div class="colormag-review-message__content">
 			<div class="colormag-message__image">
-				<img class="colormag-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/colormag-logo-square.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
+				<img class="colormag-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/colormag-logo-square.png' ); ?>" alt="Colormag" />
 			</div>
 			<div class="colormag-message-review__text">
 			<h3><?php echo esc_html( 'Loving ColorMag? Help Others Discover It!' ); ?></h3>
@@ -93,7 +93,7 @@ class ColorMag_Theme_Review_Notice {
 						?>
 					</p>
 				<div class="colormag-five-start-review">
-					<img class="" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/cm-five-start.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
+					<img class="" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/cm-five-start.png' ); ?>" alt="Colormag" />
 					<p><?php esc_html_e( 'Rated 4.9/5 by 1,400+ users', 'colormag' ); ?></p>
 				</div>
 
@@ -110,7 +110,7 @@ class ColorMag_Theme_Review_Notice {
 			</div>
 		</div>
 				<div class="colormag-global_review_image">
-					<img class="colormag-review-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/global-review.png' ); ?>" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" />
+					<img class="colormag-review-logo--png" src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/global-review.png' ); ?>" alt="Colormag" />
 				</div>
 			</div>
 

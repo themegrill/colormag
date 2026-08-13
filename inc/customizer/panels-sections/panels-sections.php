@@ -132,7 +132,7 @@ $section_option_id = array(
 		'panel'    => 'colormag_content_panel',
 		'priority' => 50,
 		'url'      => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-26' ),
-		'badge'    => esc_html__( 'PRO', 'colormag' ),
+		'badge'    => 'PRO',
 	),
 	'colormag_footer_column_section'               => array(
 		'title'    => esc_html__( 'Footer Column', 'colormag' ),
@@ -160,7 +160,7 @@ $section_option_id = array(
 		'panel'    => 'colormag_additional_panel',
 		'priority' => 80,
 		'url'      => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-additional-1' ),
-		'badge'    => esc_html__( 'PRO', 'colormag' ),
+		'badge'    => 'PRO',
 	),
 	'colormag_api_integrations_section'            => array(
 		'type'     => 'customind-locked-section',
@@ -168,7 +168,7 @@ $section_option_id = array(
 		'panel'    => 'colormag_additional_panel',
 		'priority' => 90,
 		'url'      => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-additional-2' ),
-		'badge'    => esc_html__( 'PRO', 'colormag' ),
+		'badge'    => 'PRO',
 	),
 	'colormag_scroll_to_top_section'               => array(
 		'type'     => 'customind-locked-section',
@@ -176,7 +176,7 @@ $section_option_id = array(
 		'panel'    => 'colormag_additional_panel',
 		'priority' => 100,
 		'url'      => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-additional-3' ),
-		'badge'    => esc_html__( 'PRO', 'colormag' ),
+		'badge'    => 'PRO',
 	),
 	'colormag_accessibility_section'               => array(
 		'type'     => 'customind-locked-section',
@@ -184,7 +184,7 @@ $section_option_id = array(
 		'panel'    => 'colormag_additional_panel',
 		'priority' => 110,
 		'url'      => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-additional-4' ),
-		'badge'    => esc_html__( 'PRO', 'colormag' ),
+		'badge'    => 'PRO',
 	),
 	'colormag_widget_section'                      => array(
 		'type'     => 'customind-locked-section',
@@ -192,7 +192,7 @@ $section_option_id = array(
 		'panel'    => 'colormag_additional_panel',
 		'priority' => 120,
 		'url'      => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-additional-5' ),
-		'badge'    => esc_html__( 'PRO', 'colormag' ),
+		'badge'    => 'PRO',
 	),
 	'colormag_woocommerce_sidebar_section'         => array(
 		'title'    => esc_html__( 'WooCommerce Sidebar', 'colormag' ),

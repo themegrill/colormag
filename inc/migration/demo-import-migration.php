@@ -25,7 +25,7 @@ function colormag_demo_import_migration_notice() {
 			<div class="notice notice-success colormag-notice demo-import-migrate-notice" style="position:relative;">
 				<div class="colormag-message__content">
 					<div class="colormag-message__image">
-						<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/colormag-logo-square.jpg" alt="<?php esc_attr_e( 'Colormag', 'colormag' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
+						<img class="colormag-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/colormag-logo-square.jpg" alt="Colormag" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
 					</div>
 					<div class="colormag-message__text">
 				<p>

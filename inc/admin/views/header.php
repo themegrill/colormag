@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 					target="_blank">
 					<img class="cm-icon cm-logo"
 						src="<?php echo esc_url( get_template_directory_uri() . '/inc/admin/images/colormag-logo-square.jpg' ); ?>"
-						alt="<?php esc_attr_e( 'ColorMag', 'colormag' ); ?>">
+						alt="ColorMag">
 				</a>
 				<div class="cm-dashboard-menu-container">
 					<ul id="cm-dashboard-menu-primary" class="cm-dashboard-menu-primary">

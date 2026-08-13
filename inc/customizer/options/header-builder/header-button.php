@@ -20,7 +20,7 @@ $options = array(
 					'type'        => 'customind-text',
 					'section'     => 'colormag_header_builder_button_1',
 					'input_attrs' => array(
-						'placeholder' => esc_attr__( 'https://example.com', 'colormag' ),
+						'placeholder' => 'https://example.com',
 					),
 				),
 				'colormag_header_button_target'        => array(

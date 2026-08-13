@@ -159,7 +159,7 @@ export const THEME_PRODUCTS = [
 		),
 	},
 	{
-		title: __('ColorMag', 'colormag'),
+		title: 'ColorMag',
 		icon: colormag_img,
 		learn_more: 'https://themegrill.com/themes/colormag/',
 		live_demo: 'https://themegrilldemos.com/colormag-demos/',
