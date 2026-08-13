@@ -9,36 +9,37 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-16T04:01:59+00:00\n"
+"POT-Creation-Date: 2026-07-23T05:39:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: colormag\n"
 
 #. Theme Name of the theme
-#: style.css
+#: style.css:3
 #: inc/admin/views/header.php:22
 #: inc/helper/utils.php:27
 #: template-parts/hooks/footer/footer.php:269
+#: assets/build/dashboard.js:1
 msgid "ColorMag"
 msgstr ""
 
 #. Theme URI of the theme
-#: style.css
+#: style.css:4
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the theme
-#: style.css
+#: style.css:7
 msgid "ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org. Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included. Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag"
 msgstr ""
 
 #. Author of the theme
-#: style.css
+#: style.css:5
 msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the theme
-#: style.css
+#: style.css:6
 msgid "https://themegrill.com"
 msgstr ""
 
@@ -110,6 +111,7 @@ msgid "Upgrade to ColorMag Pro for more features and customization options."
 msgstr ""
 
 #: inc/admin/class-colormag-admin.php:38
+#: assets/build/dashboard.js:1
 msgid "Processing..."
 msgstr ""
 
@@ -225,10 +227,12 @@ msgid "You do not have permission to perform this action."
 msgstr ""
 
 #: inc/admin/views/header.php:29
+#: assets/build/dashboard.js:1
 msgid "Dashboard"
 msgstr ""
 
 #: inc/admin/views/header.php:35
+#: assets/build/dashboard.js:1
 msgid "Starter Templates"
 msgstr ""
 
@@ -237,10 +241,12 @@ msgid "Settings"
 msgstr ""
 
 #: inc/admin/views/header.php:47
+#: assets/build/dashboard.js:1
 msgid "Products"
 msgstr ""
 
 #: inc/admin/views/header.php:53
+#: assets/build/dashboard.js:1
 msgid "Help"
 msgstr ""
 
@@ -576,6 +582,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/primary-menu.php:11
 #: inc/customizer/panels-sections/panels-sections.php:95
 #: inc/customizer/panels-sections/panels-sections.php:218
+#: assets/build/dashboard.js:1
 msgid "Primary Menu"
 msgstr ""
 
@@ -650,6 +657,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:173
 #: inc/customizer/options/header-and-navigation/sticky-header.php:31
 #: inc/customizer/options/header-and-navigation/top-bar.php:156
+#: assets/build/dashboard.js:1
 msgid "Learn more"
 msgstr ""
 
@@ -718,6 +726,7 @@ msgstr ""
 
 #: inc/customizer/options/content/blog.php:47
 #: inc/customizer/panels-sections/panels-sections.php:110
+#: assets/build/dashboard.js:1
 msgid "Blog"
 msgstr ""
 
@@ -880,6 +889,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:8
 #: inc/customizer/options/header-builder/logo.php:12
 #: inc/customizer/panels-sections/panels-sections.php:29
+#: assets/build/dashboard.js:1
 msgid "Site Identity"
 msgstr ""
 
@@ -1173,6 +1183,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/search.php:128
 #: inc/customizer/options/header-builder/secondary-menu.php:32
 #: inc/customizer/options/header-builder/socials.php:19
+#: assets/build/meta.js:1
 msgid "Normal"
 msgstr ""
 
@@ -1472,6 +1483,7 @@ msgstr ""
 
 #: inc/customizer/options/footer/footer-column.php:8
 #: inc/customizer/panels-sections/panels-sections.php:138
+#: assets/build/dashboard.js:1
 msgid "Footer Column"
 msgstr ""
 
@@ -1480,6 +1492,7 @@ msgstr ""
 #: inc/customizer/options/global/layout.php:80
 #: inc/customizer/options/global/sidebar.php:30
 #: inc/customizer/options/header-and-navigation/main-header.php:22
+#: assets/build/meta.js:1
 msgid "Layout"
 msgstr ""
 
@@ -1586,6 +1599,8 @@ msgstr ""
 
 #: inc/customizer/options/global/layout.php:74
 #: inc/customizer/panels-sections/panels-sections.php:65
+#: assets/build/dashboard.js:1
+#: assets/build/meta.js:1
 msgid "Sidebar"
 msgstr ""
 
@@ -1718,6 +1733,7 @@ msgstr ""
 
 #: inc/customizer/options/header-and-navigation/main-header.php:8
 #: inc/customizer/panels-sections/panels-sections.php:90
+#: assets/build/dashboard.js:1
 msgid "Main Header"
 msgstr ""
 
@@ -1822,11 +1838,13 @@ msgstr ""
 
 #: inc/customizer/options/header-and-navigation/sticky-header.php:8
 #: inc/customizer/panels-sections/panels-sections.php:105
+#: assets/build/dashboard.js:1
 msgid "Sticky Header"
 msgstr ""
 
 #: inc/customizer/options/header-and-navigation/top-bar.php:11
 #: inc/customizer/panels-sections/panels-sections.php:80
+#: assets/build/dashboard.js:1
 msgid "Top Bar"
 msgstr ""
 
@@ -2302,6 +2320,7 @@ msgid "Fix Migration Issues"
 msgstr ""
 
 #: inc/migration/demo-import-migration.php:46
+#: assets/build/dashboard.js:1
 msgid "Contact Support"
 msgstr ""
 
@@ -2545,6 +2564,7 @@ msgid "Select an Image"
 msgstr ""
 
 #: inc/widgets/class-colormag-widgets.php:26
+#: assets/build/meta.js:1
 msgid "Right Sidebar"
 msgstr ""
 
@@ -2553,6 +2573,7 @@ msgid "Shows widgets at Right side."
 msgstr ""
 
 #: inc/widgets/class-colormag-widgets.php:40
+#: assets/build/meta.js:1
 msgid "Left Sidebar"
 msgstr ""
 
@@ -2869,14 +2890,17 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #. Template Name of the theme
+#: page-templates/contact.php:3
 msgid "Contact Page Template"
 msgstr ""
 
 #. Template Name of the theme
+#: page-templates/magazine.php:3
 msgid "Magazine Template"
 msgstr ""
 
 #. Template Name of the theme
+#: page-templates/page-builder.php:3
 msgid "Gutenberg Block / Page Builder (ColorMag)"
 msgstr ""
 
@@ -3024,4 +3048,260 @@ msgstr ""
 
 #: template-parts/hooks/header/header.php:538
 msgid "You are here: "
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Free Vs Pro"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Global Colors"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Meta"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Global Heading Color"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Global Typography"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Zakra"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Modern and professional WordPress magazine and news portal-styled theme perfect for creating websites for your user-engaging magazines, news channels, etc."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Streamline the learning process with an easy-to-use and highly advanced LMS plugin loaded with powerful features to create and sell courses online through your website."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Quiz Builder Plugin"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Ultimate WordPress user registration & membership plugin to streamline the user signup process. Create memberships, registration & login forms, manage users, and more."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Custom Registration Form"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Feature-rich and highly customizable WordPress form builder plugin to create different types of professional forms for your website."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Form Builder Plugin"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Powerful WordPress Gutenberg block plugin with the perfect blocks and editing options to create magazine-themed websites."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Page Builder Plugin"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Free"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Latest Updates"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "View Demo"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Loading..."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Activated"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Activate"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Install"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Contributing"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Become a contributor by opting in to our anonymous data tracking. We guarantee no sensitive data is collected."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "What do we track?"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Allow Anonymous Tracking"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Activate ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "View Starter Template"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Quick Settings"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Go to Customizer"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Features"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Simply choose the demo that fits your requirements, import it, and give it some of your personal touch!"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "View Documentation"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Documentation"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Leave us a Review"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Based on 1430+ Reviews"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Submit a Review"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Feature Request"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Please take a moment to suggest any features that could enhance our product."
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Request a Feature"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Support"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Create a Ticket"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Useful Plugins"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "ThemeGrill Community"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Join our Facebook Group"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Need Some Help?"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "View Now"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Join Our Community"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Facebook Community"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Join us on Facebook"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "X Community"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Follow us on Twitter and stay in the loop for the latest news and updates on our products!"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Join us on Twitter"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Youtube Community"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Visit our YouTube channel for videos about tutorials, updates, and news on our products!"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Visit us on YouTube"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Theme"
+msgstr ""
+
+#: assets/build/dashboard.js:1
+msgid "Plugins"
+msgstr ""
+
+#: assets/build/meta.js:1
+msgid "Customizer"
+msgstr ""
+
+#: assets/build/meta.js:1
+msgid "Narrow"
+msgstr ""
+
+#: assets/build/meta.js:1
+msgid "No Sidebar"
+msgstr ""
+
+#: assets/build/meta.js:1
+msgid "ColorMag Meta Settings"
 msgstr ""
