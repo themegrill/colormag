@@ -843,7 +843,7 @@
 
 				case 'colormag_header_primary_menu_active_text_color':
 					css = colormagGenerateCommonCSS(
-						'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a',
+						'.cm-header-builder .cm-primary-nav ul li.current-menu-item > a, .cm-header-builder .cm-primary-nav ul li.current-menu-ancestor > a',
 						'color',
 						value,
 					);
