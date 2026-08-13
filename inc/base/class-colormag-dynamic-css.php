@@ -1375,7 +1375,7 @@ class ColorMag_Dynamic_CSS {
 		$headings_typography_default = self::get_headings_typography_default();
 		$headings_typography         = get_theme_mod( 'colormag_headings_typography', $headings_typography_default );
 
-		$parse_css .= colormag_parse_typography_css(
+		$parse_css .= colormag_parse_typography_color_css(
 			$headings_typography_default,
 			$headings_typography,
 			'.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6'
