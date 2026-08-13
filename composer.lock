@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "themegrill/themegrill-sdk",
-            "version": "1.0.1",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/themegrill/themegrill-sdk.git",
-                "reference": "bdcd3b56256ce3126054d0dabb22fe8563b0becc"
+                "reference": "2787bc7bcd0c5d6bf470c986682fd74b390d34c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/themegrill/themegrill-sdk/zipball/bdcd3b56256ce3126054d0dabb22fe8563b0becc",
-                "reference": "bdcd3b56256ce3126054d0dabb22fe8563b0becc",
+                "url": "https://api.github.com/repos/themegrill/themegrill-sdk/zipball/2787bc7bcd0c5d6bf470c986682fd74b390d34c3",
+                "reference": "2787bc7bcd0c5d6bf470c986682fd74b390d34c3",
                 "shasum": ""
             },
             "require": {
@@ -38,12 +38,12 @@
                     "homepage": "https://themegrill.com"
                 }
             ],
-            "description": "ThemeGrill SDK",
+            "description": "A lightweight SDK that provides common functionality and shared features for ThemeGrill themes and plugins.",
             "support": {
                 "issues": "https://github.com/themegrill/themegrill-sdk/issues",
-                "source": "https://github.com/themegrill/themegrill-sdk/tree/v1.0.1"
+                "source": "https://github.com/themegrill/themegrill-sdk/tree/v1.0.4"
             },
-            "time": "2025-11-12T11:45:29+00:00"
+            "time": "2026-06-12T10:51:17+00:00"
         }
     ],
     "packages-dev": [
@@ -359,16 +359,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.17.6",
+            "version": "v1.17.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "b8b4184b1e6912669f9af155caef9050509d9f18"
+                "reference": "89ee39f81e82cb7ed36cc5abaf2edd43cef71770"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/b8b4184b1e6912669f9af155caef9050509d9f18",
-                "reference": "b8b4184b1e6912669f9af155caef9050509d9f18",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/89ee39f81e82cb7ed36cc5abaf2edd43cef71770",
+                "reference": "89ee39f81e82cb7ed36cc5abaf2edd43cef71770",
                 "shasum": ""
             },
             "require": {
@@ -381,7 +381,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.17.6-dev"
+                    "dev-master": "1.17.7-dev"
                 }
             },
             "autoload": {
@@ -402,9 +402,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.17.6"
+                "source": "https://github.com/mck89/peast/tree/v1.17.7"
             },
-            "time": "2026-04-24T08:04:05+00:00"
+            "time": "2026-07-21T11:56:06+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -875,16 +875,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v7.4.8",
+            "version": "v7.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "e0be088d22278583a82da281886e8c3592fbf149"
+                "reference": "13b38720174286f55d1761152b575a8d1436fc25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/e0be088d22278583a82da281886e8c3592fbf149",
-                "reference": "e0be088d22278583a82da281886e8c3592fbf149",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/13b38720174286f55d1761152b575a8d1436fc25",
+                "reference": "13b38720174286f55d1761152b575a8d1436fc25",
                 "shasum": ""
             },
             "require": {
@@ -919,7 +919,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v7.4.8"
+                "source": "https://github.com/symfony/finder/tree/v7.4.14"
             },
             "funding": [
                 {
@@ -939,7 +939,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-24T13:12:05+00:00"
+            "time": "2026-06-27T08:31:18+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
@@ -1364,5 +1364,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }

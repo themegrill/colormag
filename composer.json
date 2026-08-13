@@ -14,7 +14,7 @@
   },
   "scripts": {
     "makepot": [
-      "wp i18n make-pot . ./languages/colormag.pot --include=\"inc,*.php,template-parts,page-templates,assets/build\" --exclude=\".github,.wordpress-org,bin,node_modules,vendor,src,dist/org,scripts\""
+      "wp --require=bin/raise-makepot-memory-limit.php i18n make-pot . ./languages/colormag.pot --include=\"inc,*.php,template-parts,page-templates,assets/build\" --exclude=\".github,.wordpress-org,bin,node_modules,vendor,src,dist/org,scripts\""
     ],
     "phpcs": [
       "phpcs -s -p"

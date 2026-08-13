@@ -1,4 +1,18 @@
 == Changelog ==
+= Version 4.2.2 - 2026-08-14 =
+* Added    - Typography control for the header builder Button element.
+* Added    - Icon size control for the header builder Search element.
+* Tweak    - Minor visual refinements to the Customizer's UI framework (Customind).
+* Fix      - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
+* Fix      - Search icon clipped when a custom icon size was set.
+* Fix      - Current menu ancestor items in the primary navigation didn't inherit the active text color.
+* Fix      - Imported demo footer widget text color was forced white, overriding the widget's own styling.
+* Fix      - Header logo placement migration ran even on fresh installs that never had the legacy setting.
+* Fix      - Footer bottom bar alignment (right/center) migration never applied due to a variable mismatch.
+* Fix      - Header bottom area background color wasn't applying the selected global palette color.
+* Fix      - Advanced blog post layout style 2 wasn't rendering the featured image on the right.
+* Fix      - Scroll-to-top button auto-hid itself even when the page loaded already scrolled down.
+
 = Version 4.2.1 - 2026-07-16 =
 * Enhance    - Smoother "scroll to top" animation.
 * Enhance    - Faster loading on pages that display random posts.

@@ -9,13 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-23T05:39:18+00:00\n"
+"POT-Creation-Date: 2026-08-13T07:35:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: colormag\n"
 
 #. Theme Name of the theme
-#: style.css:3
+#: style.css:5
 #: inc/admin/views/header.php:22
 #: inc/helper/utils.php:27
 #: template-parts/hooks/footer/footer.php:269
@@ -24,22 +24,22 @@ msgid "ColorMag"
 msgstr ""
 
 #. Theme URI of the theme
-#: style.css:4
+#: style.css:7
 msgid "https://themegrill.com/themes/colormag/"
 msgstr ""
 
 #. Description of the theme
-#: style.css:7
+#: style.css:13
 msgid "ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org. Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included. Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag"
 msgstr ""
 
 #. Author of the theme
-#: style.css:5
+#: style.css:9
 msgid "ThemeGrill"
 msgstr ""
 
 #. Author URI of the theme
-#: style.css:6
+#: style.css:11
 msgid "https://themegrill.com"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 #: inc/admin/class-colormag-theme-review-notice.php:131
 #: inc/admin/class-colormag-theme-review-notice.php:149
 #: inc/admin/class-colormag-welcome-notice.php:101
-#: inc/migration/class-colormag-migration.php:1798
+#: inc/migration/class-colormag-migration.php:1804
 #: inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
@@ -688,35 +688,35 @@ msgid "Footer"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:74
-#: inc/migration/class-colormag-migration.php:1318
-#: inc/migration/class-colormag-migration.php:1641
+#: inc/migration/class-colormag-migration.php:1322
+#: inc/migration/class-colormag-migration.php:1647
 #: inc/template-functions.php:501
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:79
-#: inc/migration/class-colormag-migration.php:1323
-#: inc/migration/class-colormag-migration.php:1646
+#: inc/migration/class-colormag-migration.php:1327
+#: inc/migration/class-colormag-migration.php:1652
 #: inc/template-functions.php:491
 msgid "Twitter"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:84
-#: inc/migration/class-colormag-migration.php:1328
-#: inc/migration/class-colormag-migration.php:1651
+#: inc/migration/class-colormag-migration.php:1332
+#: inc/migration/class-colormag-migration.php:1657
 #: inc/template-functions.php:541
 msgid "Instagram"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:89
-#: inc/migration/class-colormag-migration.php:1333
-#: inc/migration/class-colormag-migration.php:1656
+#: inc/migration/class-colormag-migration.php:1337
+#: inc/migration/class-colormag-migration.php:1662
 msgid "Pinterest"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:94
-#: inc/migration/class-colormag-migration.php:1338
-#: inc/migration/class-colormag-migration.php:1661
+#: inc/migration/class-colormag-migration.php:1342
+#: inc/migration/class-colormag-migration.php:1667
 msgid "YouTube"
 msgstr ""
 
@@ -1055,7 +1055,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/primary-menu.php:55
 #: inc/customizer/options/header-builder/primary-menu.php:137
 #: inc/customizer/options/header-builder/search.php:39
-#: inc/customizer/options/header-builder/search.php:120
+#: inc/customizer/options/header-builder/search.php:137
 #: inc/customizer/options/header-builder/secondary-menu.php:47
 #: inc/customizer/options/header-builder/secondary-menu.php:105
 #: inc/customizer/options/header-builder/top-area.php:58
@@ -1067,7 +1067,7 @@ msgstr ""
 #: inc/customizer/options/footer-builder/top-area.php:94
 #: inc/customizer/options/global/button.php:58
 #: inc/customizer/options/header-builder/bottom-area.php:79
-#: inc/customizer/options/header-builder/header-button.php:83
+#: inc/customizer/options/header-builder/header-button.php:124
 #: inc/customizer/options/header-builder/main-area.php:70
 #: inc/customizer/options/header-builder/top-area.php:71
 msgid "Padding"
@@ -1087,7 +1087,7 @@ msgstr ""
 #: inc/customizer/options/footer-builder/main-area.php:137
 #: inc/customizer/options/footer-builder/top-area.php:126
 #: inc/customizer/options/header-builder/bottom-area.php:109
-#: inc/customizer/options/header-builder/header-button.php:98
+#: inc/customizer/options/header-builder/header-button.php:139
 #: inc/customizer/options/header-builder/main-area.php:102
 #: inc/customizer/options/header-builder/search.php:66
 #: inc/customizer/options/header-builder/top-area.php:86
@@ -1098,7 +1098,7 @@ msgstr ""
 #: inc/customizer/options/footer-builder/main-area.php:145
 #: inc/customizer/options/footer-builder/top-area.php:134
 #: inc/customizer/options/header-builder/bottom-area.php:116
-#: inc/customizer/options/header-builder/header-button.php:107
+#: inc/customizer/options/header-builder/header-button.php:148
 #: inc/customizer/options/header-builder/main-area.php:110
 #: inc/customizer/options/header-builder/search.php:78
 #: inc/customizer/options/header-builder/top-area.php:94
@@ -1180,7 +1180,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/mobile-menu.php:27
 #: inc/customizer/options/header-builder/primary-menu.php:32
 #: inc/customizer/options/header-builder/random.php:21
-#: inc/customizer/options/header-builder/search.php:128
+#: inc/customizer/options/header-builder/search.php:145
 #: inc/customizer/options/header-builder/secondary-menu.php:32
 #: inc/customizer/options/header-builder/socials.php:19
 #: assets/build/meta.js:1
@@ -1213,7 +1213,7 @@ msgstr ""
 #: inc/customizer/options/header-builder/primary-menu.php:39
 #: inc/customizer/options/header-builder/primary-menu.php:61
 #: inc/customizer/options/header-builder/random.php:28
-#: inc/customizer/options/header-builder/search.php:135
+#: inc/customizer/options/header-builder/search.php:152
 #: inc/customizer/options/header-builder/secondary-menu.php:39
 #: inc/customizer/options/header-builder/secondary-menu.php:53
 msgid "Hover"
@@ -1228,6 +1228,7 @@ msgstr ""
 #: inc/customizer/options/header-and-navigation/site-identity.php:101
 #: inc/customizer/options/header-and-navigation/site-identity.php:158
 #: inc/customizer/options/header-builder/date.php:75
+#: inc/customizer/options/header-builder/header-button.php:112
 #: inc/customizer/options/header-builder/logo.php:146
 #: inc/customizer/options/header-builder/logo.php:260
 #: inc/customizer/options/header-builder/mobile-menu.php:92
@@ -1977,7 +1978,7 @@ msgstr ""
 msgid "Open link in a new tab"
 msgstr ""
 
-#: inc/customizer/options/header-builder/header-button.php:117
+#: inc/customizer/options/header-builder/header-button.php:158
 #: inc/customizer/options/header-builder/search.php:91
 msgid "Border Radius"
 msgstr ""
@@ -2032,6 +2033,7 @@ msgid "Active"
 msgstr ""
 
 #: inc/customizer/options/header-builder/random.php:41
+#: inc/customizer/options/header-builder/search.php:124
 msgid "Icon Size"
 msgstr ""
 
