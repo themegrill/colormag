@@ -583,6 +583,22 @@
 .editor-styles-wrapper input[type=submit]:active {
 	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.editor-styles-wrapper .wp-block-button .wp-block-button__link {
+	display: inline-block;
+	padding: 6px 10px;
+	background-color: #207DAF;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 600;
+	border: 1px solid #207DAF;
+	transition: background-color 0.3s linear 0s;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
+	color: #207DAF;
+	background-color: transparent;
+}
 .editor-styles-wrapper a {
 	color: #207DAF;
 	text-decoration: none;

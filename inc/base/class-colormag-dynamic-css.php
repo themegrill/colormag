@@ -1361,6 +1361,135 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
+		// Blockquote background uses the primary color, same as the front-end.
+		$parse_css .= colormag_parse_css(
+			'#207daf',
+			$primary_color,
+			array(
+				'.editor-styles-wrapper .wp-block-quote' => array(
+					'background-color' => esc_html( $primary_color ),
+				),
+			)
+		);
+
+		// Base text color.
+		$base_color = get_theme_mod( 'colormag_base_color', '' );
+		$parse_css .= colormag_parse_css(
+			'',
+			$base_color,
+			array(
+				'.editor-styles-wrapper' => array(
+					'color' => esc_html( $base_color ),
+				),
+			)
+		);
+
+		// Link colors.
+		$link_color = get_theme_mod( 'colormag_link_color', '' );
+		$parse_css .= colormag_parse_css(
+			'',
+			$link_color,
+			array(
+				'.editor-styles-wrapper a' => array(
+					'color' => esc_html( $link_color ),
+				),
+			)
+		);
+
+		$link_hover_color = get_theme_mod( 'colormag_link_hover_color', '' );
+		$parse_css       .= colormag_parse_css(
+			'',
+			$link_hover_color,
+			array(
+				'.editor-styles-wrapper a:hover' => array(
+					'color' => esc_html( $link_hover_color ),
+				),
+			)
+		);
+
+		/**
+		 * Button.
+		 *
+		 * The block editor's Buttons block (.wp-block-button__link) otherwise
+		 * only ever shows Gutenberg's own default styling, since none of the
+		 * Customizer's button options were previously mirrored here.
+		 */
+		$button_selector       = '.editor-styles-wrapper .wp-block-button .wp-block-button__link';
+		$button_hover_selector = '.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover';
+
+		$button_text_color = get_theme_mod( 'colormag_button_color', '' );
+		$parse_css        .= colormag_parse_css(
+			'',
+			$button_text_color,
+			array(
+				$button_selector => array(
+					'color' => esc_html( $button_text_color ),
+				),
+			)
+		);
+
+		$button_hover_text_color = get_theme_mod( 'colormag_button_hover_color', '' );
+		$parse_css              .= colormag_parse_css(
+			'',
+			$button_hover_text_color,
+			array(
+				$button_hover_selector => array(
+					'color' => esc_html( $button_hover_text_color ),
+				),
+			)
+		);
+
+		$button_background_color = get_theme_mod( 'colormag_button_background_color', '' );
+		$parse_css               .= colormag_parse_css(
+			'#207daf',
+			$button_background_color,
+			array(
+				$button_selector => array(
+					'background-color' => esc_html( $button_background_color ),
+				),
+			)
+		);
+
+		$button_background_hover_color = get_theme_mod( 'colormag_button_background_hover_color', '' );
+		$parse_css                     .= colormag_parse_css(
+			'',
+			$button_background_hover_color,
+			array(
+				$button_hover_selector => array(
+					'background-color' => esc_html( $button_background_hover_color ),
+				),
+			)
+		);
+
+		$button_padding_default = array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+			'unit'   => 'px',
+		);
+		$button_padding         = get_theme_mod( 'colormag_button_dimension_padding', $button_padding_default );
+
+		$parse_css .= colormag_parse_dimension_css(
+			$button_padding_default,
+			$button_padding,
+			$button_selector,
+			'padding'
+		);
+
+		$button_border_radius_default = array(
+			'size' => 3,
+			'unit' => 'px',
+		);
+		$button_border_radius         = get_theme_mod( 'colormag_button_border_radius', '' );
+
+		$parse_css .= colormag_parse_slider_css(
+			$button_border_radius_default,
+			$button_border_radius,
+			$button_selector,
+			'border-radius'
+		);
+
 		// Base typography.
 		$base_typography_default = self::get_base_typography_default();
 		$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
