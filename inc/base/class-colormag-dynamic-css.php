@@ -1388,11 +1388,23 @@ class ColorMag_Dynamic_CSS {
 		 */
 		$parse_css .= self::generate_color_palette_css_variables();
 
-		// The front-end's plain `--cm-color-N` variables (as opposed to the
-		// `--wp--preset--color--cm-color-N` ones above) are only ever generated
-		// for Elementor-active sites (see render_output()); mirrored here as-is
-		// rather than introduced as new, broader behavior.
-		if ( defined( 'ELEMENTOR_VERSION' ) ) {
+		// The plain `--cm-color-N` variables (as opposed to the
+		// `--wp--preset--color--cm-color-N` ones above): on the front end these
+		// are only ever generated for Elementor-active sites (see
+		// render_output()), but several Customizer color mods — e.g.
+		// `colormag_button_background_color`, `colormag_primary_color` — store a
+		// bare `var(--cm-color-N)` reference (no fallback) as their value. If
+		// `--cm-color-N` is never defined, that reference is invalid at computed
+		// -value time and the whole declaration is dropped, even with
+		// `!important`.
+		//
+		// This block is NOT scoped to a selector like the rest of this function
+		// (it's a bare `:root{}`), so — unlike everything else here — it isn't
+		// naturally inert when this function's output also gets folded into the
+		// front end's CSS via render_output(). Guarded with is_admin() so it only
+		// ever applies in the editor, leaving the Elementor-only front-end gate
+		// (a separate, pre-existing front-end issue) untouched.
+		if ( is_admin() ) {
 			$color_palette_default = array(
 				'id'     => 'preset-5',
 				'name'   => 'Preset 5',
