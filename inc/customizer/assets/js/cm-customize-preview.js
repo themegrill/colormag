@@ -1303,6 +1303,18 @@
 						'height',
 						value,
 					);
+					// Explicit height opts the "Search Box" button out of the `.search-wrap` flex stretch that clips larger icons.
+					css += colormagGenerateSliderCSS(
+						'.cm-header-builder .search-wrap .search-icon',
+						'height',
+						value,
+					);
+					// Grow the "Icon Inside Search" input so a larger centered icon no longer spills above/below it.
+					css += colormagGenerateSliderCSS(
+						'.cm-search-icon-in-input-right .search-wrap input',
+						'min-height',
+						value,
+					);
 					// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
 					if (value.size) {
 						css += '.cm-header-builder .fa.search-top{width:auto;height:auto;}';

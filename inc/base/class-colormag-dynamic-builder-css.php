@@ -1033,6 +1033,22 @@ class ColorMag_Dynamic_Builder_CSS {
 			'height'
 		);
 
+		// Explicit height opts the "Search Box" button out of the `.search-wrap` flex stretch that clips larger icons.
+		$parse_builder_css               .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-header-builder .search-wrap .search-icon',
+			'height'
+		);
+
+		// Grow the "Icon Inside Search" input so a larger centered icon no longer spills above/below it.
+		$parse_builder_css               .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-search-icon-in-input-right .search-wrap input',
+			'min-height'
+		);
+
 		// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
 		if ( ! empty( $header_search_icon_size['size'] ) ) {
 			$parse_builder_css .= '.cm-header-builder .fa.search-top{width:auto;height:auto;}';
