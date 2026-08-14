@@ -1865,7 +1865,7 @@ table td {
 .cm-search-icon-in-input-right .search-icon-input-right svg {
 	width: 18px;
 	height: 18px;
-	fill: #FFFFFF;
+	fill: currentColor;
 }
 .cm-search-icon-in-input-right .search-wrap:focus-within .search-icon-input-right {
 	display: none;

@@ -1338,14 +1338,10 @@
 					break;
 
 				case 'colormag_header_search_placeholder_color':
+					// The icon's `fill: currentColor` picks up this same color, so a single `color` rule on its wrapper covers both the placeholder text and icon.
 					css = colormagGenerateCommonCSS(
-						'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-wrap i',
+						'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-icon-input-right',
 						'color',
-						value,
-					);
-					css += colormagGenerateCommonCSS(
-						'.cm-search-icon-in-input-right .search-wrap i',
-						'fill',
 						value,
 					);
 					break;

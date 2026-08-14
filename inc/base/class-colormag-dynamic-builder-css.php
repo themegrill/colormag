@@ -1092,18 +1092,11 @@ class ColorMag_Dynamic_Builder_CSS {
 		);
 		$parse_builder_css           .= colormag_parse_css( '', $header_search_text_color, $header_search_text_color_css );
 
-		// Header search placeholder color.
+		// Header search placeholder color; the icon's `fill: currentColor` inherits this same rule.
 		$header_search_placeholder_color     = get_theme_mod( 'colormag_header_search_placeholder_color', '' );
 		$header_search_placeholder_color_css = array(
-			'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-wrap i' => array(
+			'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-icon-input-right' => array(
 				'color' => esc_html( $header_search_placeholder_color ),
-			),
-		);
-		$parse_builder_css                  .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
-
-		$header_search_placeholder_color_css = array(
-			'.cm-search-icon-in-input-right .search-wrap i' => array(
-				'fill' => esc_html( $header_search_placeholder_color ),
 			),
 		);
 		$parse_builder_css                  .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
