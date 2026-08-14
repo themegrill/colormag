@@ -259,6 +259,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 					'colormag_widget_1_content_typography',
 					'colormag_widget_2_title_typography',
 					'colormag_widget_2_content_typography',
+					'colormag_header_button_typography',
 				)
 			);
 		}
