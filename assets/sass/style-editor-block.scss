@@ -711,17 +711,17 @@
 		.wp-block-button__link {
 			display: inline-block;
 			padding: 6px 10px;
-			background-color: #207DAF;
+			background-color: var(--cm-color-1, #207DAF);
 			color: #ffffff;
 			font-size: 16px;
 			font-weight: 600;
-			border: 1px solid #207DAF;
+			border: 1px solid var(--cm-color-1, #207DAF);
 			transition: background-color 0.3s linear 0s;
 			border-radius: 2px;
 			cursor: pointer;
 
 			&:hover {
-				color: #207DAF;
+				color: var(--cm-color-1, #207DAF);
 				background-color: transparent;
 			}
 		}
