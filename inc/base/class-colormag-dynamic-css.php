@@ -1344,6 +1344,70 @@ class ColorMag_Dynamic_CSS {
 	public static function colormag_editor_block_css() {
 		$parse_css = '';
 
+		/**
+		 * Color palette CSS variables.
+		 *
+		 * `colormag_primary_color`, `colormag_button_background_color`, etc. all
+		 * default to a `var(--cm-color-N)` reference into the Customizer's color
+		 * palette (see inc/customizer/options/global/colors.php), and the theme's
+		 * base button/element styles reference `--cm-color-N` directly. Without
+		 * defining these custom properties here too, any site using a non-default
+		 * palette (or a custom palette) falls back to the theme's hardcoded
+		 * defaults in the editor instead of its actual configured colors.
+		 */
+		$parse_css .= self::generate_color_palette_css_variables();
+
+		// The front-end's plain `--cm-color-N` variables (as opposed to the
+		// `--wp--preset--color--cm-color-N` ones above) are only ever generated
+		// for Elementor-active sites (see render_output()); mirrored here as-is
+		// rather than introduced as new, broader behavior.
+		if ( defined( 'ELEMENTOR_VERSION' ) ) {
+			$color_palette_default = array(
+				'id'     => 'preset-5',
+				'name'   => 'Preset 5',
+				'colors' => array(
+					'cm-color-1' => '#257BC1',
+					'cm-color-2' => '#2270B0',
+					'cm-color-3' => '#FFFFFF',
+					'cm-color-4' => '#F9FEFD',
+					'cm-color-5' => '#27272A',
+					'cm-color-6' => '#16181A',
+					'cm-color-7' => '#8F8F8F',
+					'cm-color-8' => '#FFFFFF',
+					'cm-color-9' => '#C7C7C7',
+				),
+			);
+
+			$color_palette = get_theme_mod( 'colormag_color_palette', $color_palette_default );
+
+			if ( empty( $color_palette ) ) {
+				$parse_css .= ' :root{
+				--cm-color-1: inherit;
+				--cm-color-2: inherit;
+				--cm-color-3: inherit;
+				--cm-color-4: inherit;
+				--cm-color-5: inherit;
+				--cm-color-6: inherit;
+				--cm-color-7: inherit;
+				--cm-color-8: inherit;
+				--cm-color-9: inherit;
+			}';
+			} else {
+				$parse_css .= sprintf(
+					' :root{%s}',
+					array_reduce(
+						array_keys( $color_palette['colors'] ?? [] ),
+						function ( $acc, $curr ) use ( $color_palette ) {
+							$acc .= "--{$curr}: {$color_palette['colors'][$curr]};";
+
+							return $acc;
+						},
+						''
+					)
+				);
+			}
+		}
+
 		// Primary color.
 		$primary_color     = get_theme_mod( 'colormag_primary_color', '#207daf' );
 		$primary_color_css = array(
