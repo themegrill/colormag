@@ -1361,14 +1361,24 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
+		// Base color; not part of `colormag_base_typography`, so it needs its own rule same as the front-end.
+		$text_color     = get_theme_mod( 'colormag_base_color', '' );
+		$text_color_css = array(
+			'.editor-styles-wrapper' => array(
+				'color' => esc_html( $text_color ),
+			),
+		);
+		$parse_css     .= colormag_parse_css( '', $text_color, $text_color_css );
+
 		// Base typography.
 		$base_typography_default = self::get_base_typography_default();
 		$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
 
+		// Also target `p`/`li` directly: they tie the static editor stylesheet's font-size on specificity, so a plain `.editor-styles-wrapper` rule alone loses to it regardless of source order.
 		$parse_css .= colormag_parse_typography_css(
 			$base_typography_default,
 			$base_typography,
-			'.editor-styles-wrapper'
+			'.editor-styles-wrapper, .editor-styles-wrapper p, .editor-styles-wrapper li'
 		);
 
 		// Headings typography.
