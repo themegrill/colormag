@@ -1318,6 +1318,8 @@
 					// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
 					if (value.size) {
 						css += '.cm-header-builder .fa.search-top{width:auto;height:auto;}';
+						// Match the other search types' padding now that the box grows with it, instead of the default 1px.
+						css += '.cm-header-builder .fa.search-top{padding:14px;}';
 					}
 					break;
 
