@@ -1318,8 +1318,6 @@
 					// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
 					if (value.size) {
 						css += '.cm-header-builder .fa.search-top{width:auto;height:auto;}';
-						// The button's fixed 14px padding inflated the content-box height above past Icon Size; zero it and flex-center the glyph instead.
-						css += '.cm-header-builder .search-wrap .search-icon{padding:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;}';
 					}
 					break;
 
