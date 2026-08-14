@@ -1285,6 +1285,12 @@
 						'color',
 						value,
 					);
+					// Search Button Color wins over Placeholder Color for the Icon Inside Search icon when set; falls back to Placeholder Color otherwise.
+					css += colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-icon-input-right',
+						'color',
+						value || wp.customize('colormag_header_search_placeholder_color').get(),
+					);
 					break;
 
 				case 'colormag_header_search_icon_size':
@@ -1340,11 +1346,16 @@
 					break;
 
 				case 'colormag_header_search_placeholder_color':
-					// The icon's `fill: currentColor` picks up this same color, so a single `color` rule on its wrapper covers both the placeholder text and icon.
 					css = colormagGenerateCommonCSS(
-						'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-icon-input-right',
+						'.search-wrap input::placeholder',
 						'color',
 						value,
+					);
+					// The icon's `fill: currentColor` picks up this same wrapper color, but Search Button Color wins over it when set.
+					css += colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-icon-input-right',
+						'color',
+						wp.customize('colormag_header_search_icon_color').get() || value,
 					);
 					break;
 
@@ -1380,6 +1391,15 @@
 						'border-color',
 						value,
 					);
+					css += colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-icon-input-right',
+						'background-color',
+						value,
+					);
+					// Give the icon breathing room inside its new badge background instead of sitting flush against the edges.
+					if (value) {
+						css += '.cm-search-icon-in-input-right .search-icon-input-right{padding:6px;display:flex;align-items:center;justify-content:center;}';
+					}
 					break;
 
 				case 'colormag_header_search_button_hover_background':
@@ -1391,6 +1411,11 @@
 					css += colormagGenerateCommonCSS(
 						'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover',
 						'border-color',
+						value,
+					);
+					css += colormagGenerateCommonCSS(
+						'.cm-search-icon-in-input-right .search-wrap:hover .search-icon-input-right',
+						'background-color',
 						value,
 					);
 					break;

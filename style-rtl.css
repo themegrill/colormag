@@ -1856,13 +1856,14 @@ table td {
 .cm-search-icon-in-input-right .search-icon-input-right {
 	position: absolute;
 	left: 10px;
-	top: 58%;
+	top: 50%;
 	transform: translateY(-50%);
 	color: #e4e4e7;
 	font-size: 16px;
 	pointer-events: none;
 }
 .cm-search-icon-in-input-right .search-icon-input-right svg {
+	display: block;
 	width: 18px;
 	height: 18px;
 	fill: currentColor;
