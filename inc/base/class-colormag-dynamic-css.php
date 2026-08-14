@@ -1468,6 +1468,18 @@ class ColorMag_Dynamic_CSS {
 
 		$parse_css .= colormag_parse_css( '#207daf', $primary_color, $primary_color_css );
 
+		// Button border color also uses the primary color on the front end
+		// (a separate rule from the button background/text color mods below).
+		$parse_css .= colormag_parse_css(
+			'#207daf',
+			$primary_color,
+			array(
+				'.editor-styles-wrapper .wp-block-button .wp-block-button__link' => array(
+					'border-color' => self::important_value( $primary_color ),
+				),
+			)
+		);
+
 		// Blockquote background uses the primary color, same as the front-end.
 		//
 		// Note: these editor-only overrides use `!important`. They compete with
