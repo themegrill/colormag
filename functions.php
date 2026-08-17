@@ -582,6 +582,36 @@ add_filter(
 			],
 		];
 
+		// Also surface whatever font families are currently configured in the
+		// Customizer, so the Global Styles font list always matches what the
+		// user actually picked there instead of only offering the curated
+		// defaults above.
+		if ( class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
+			$configured_slugs = wp_list_pluck( $google_fonts, 'slug' );
+
+			foreach ( ColorMag_Enqueue_Scripts::get_instance()->get_typography_ids() as $typography_id ) {
+				$value = get_theme_mod( $typography_id );
+
+				if ( empty( $value['font-family'] ) || 'default' === strtolower( $value['font-family'] ) ) {
+					continue;
+				}
+
+				$family = $value['font-family'];
+				$slug   = sanitize_title( $family );
+
+				if ( in_array( $slug, $configured_slugs, true ) ) {
+					continue;
+				}
+
+				$configured_slugs[] = $slug;
+				$google_fonts[]     = [
+					'name'       => $family,
+					'slug'       => $slug,
+					'fontFamily' => $family . ', sans-serif',
+				];
+			}
+		}
+
 		$existing = $json->get_data()['settings']['typography']['fontFamilies']['theme'] ?? [];
 		$json->update_with(
 			[
@@ -601,18 +631,10 @@ add_filter(
 	10
 );
 
-// Enqueue Google Fonts in the block editor (all weights and variable fonts)
-add_action(
-	'enqueue_block_editor_assets',
-	function () {
-		wp_enqueue_style(
-			'colormag-google-fonts',
-			'https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&family=Public+Sans:wght@100..900&family=Roboto:wght@100..900&display=swap',
-			[],
-			null
-		);
-	}
-);
+// The actual Google Fonts stylesheet for the block editor is enqueued by
+// ColorMag_Enqueue_Scripts::colormag_block_editor_styles() (hooked to
+// `enqueue_block_assets`), which builds the font URL from the Customizer's
+// configured typography — see inc/core/class-colormag-enqueue-scripts.php.
 
 function colormag_typography_should_migrate() {
 	// Default values for comparison

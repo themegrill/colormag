@@ -210,7 +210,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 		 *
 		 * @return array
 		 */
-		private function get_typography_ids() {
+		public function get_typography_ids() {
 			return apply_filters(
 				'colormag_enqueue_scripts_typography_ids',
 				array(

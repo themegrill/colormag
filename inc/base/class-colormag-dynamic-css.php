@@ -1365,10 +1365,14 @@ class ColorMag_Dynamic_CSS {
 		$base_typography_default = self::get_base_typography_default();
 		$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
 
+		// `.editor-styles-wrapper > *` also needs to be targeted directly (not just
+		// relied on via inheritance): style-editor-block.css hardcodes a font-family
+		// on every direct child to normalize block defaults, which otherwise wins
+		// over an inherited value from `.editor-styles-wrapper` alone.
 		$parse_css .= colormag_parse_typography_css(
 			$base_typography_default,
 			$base_typography,
-			'.editor-styles-wrapper'
+			'.editor-styles-wrapper, .editor-styles-wrapper > *'
 		);
 
 		// Headings typography.
