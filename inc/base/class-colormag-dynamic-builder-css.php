@@ -999,7 +999,7 @@ class ColorMag_Dynamic_Builder_CSS {
 			)
 		);
 
-		// Header search icon color.
+		// Header search icon color; Icon Inside Search is handled separately below via an override.
 		$header_search_icon_color     = get_theme_mod( 'colormag_header_search_icon_color', '' );
 		$header_search_icon_color_css = array(
 			'.cm-header-builder .cm-top-search .search-top::before, .cm-header-builder .search-wrap .search-icon::before' => array(
@@ -1033,27 +1033,56 @@ class ColorMag_Dynamic_Builder_CSS {
 			'height'
 		);
 
+		// Explicit height opts the "Search Box" button out of the `.search-wrap` flex stretch that clips larger icons.
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-header-builder .search-wrap .search-icon',
+			'height'
+		);
+
+		// Grow the "Icon Inside Search" input so a larger centered icon no longer spills above/below it.
+		$parse_builder_css .= colormag_parse_slider_css(
+			$header_search_icon_size_default,
+			$header_search_icon_size,
+			'.cm-search-icon-in-input-right .search-wrap input',
+			'min-height'
+		);
+
 		// Let the fixed 48px `.fa.search-top` box grow with a custom icon size instead of clipping it.
 		if ( ! empty( $header_search_icon_size['size'] ) ) {
 			$parse_builder_css .= '.cm-header-builder .fa.search-top{width:auto;height:auto;}';
+			// Match the other search types' padding now that the box grows with it, instead of the default 1px.
+			$parse_builder_css .= '.cm-header-builder .fa.search-top{padding:14px;}';
 		}
 
-		// Header search button background color.
+		// Header search button background color; also gives the Icon Inside Search icon its own badge-style background.
 		$header_search_button_bg     = get_theme_mod( 'colormag_header_search_button_background', '' );
 		$header_search_button_bg_css = array(
 			'.cm-header-builder .fa.search-top, .cm-header-builder .search-wrap button' => array(
 				'background-color' => esc_html( $header_search_button_bg ),
 				'border-color'     => esc_html( $header_search_button_bg ),
 			),
+			'.cm-search-icon-in-input-right .search-icon-input-right'                   => array(
+				'background-color' => esc_html( $header_search_button_bg ),
+			),
 		);
 		$parse_builder_css          .= colormag_parse_css( '', $header_search_button_bg, $header_search_button_bg_css );
 
-		// Header search button hover background color.
+		// Give the icon breathing room inside its new badge background instead of sitting flush against the edges.
+		if ( ! empty( $header_search_button_bg ) ) {
+			$parse_builder_css .= '.cm-search-icon-in-input-right .search-icon-input-right{padding:6px;display:flex;align-items:center;justify-content:center;}';
+		}
+
+		// Header search button hover background color; bound to the input's hover since the icon itself has `pointer-events:none`.
 		$header_search_button_hover_bg     = get_theme_mod( 'colormag_header_search_button_hover_background', '' );
 		$header_search_button_hover_bg_css = array(
-			'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover' => array(
+			'.cm-header-builder .fa.search-top:hover, .cm-header-builder .search-wrap button:hover'    => array(
 				'background-color' => esc_html( $header_search_button_hover_bg ),
 				'border-color'     => esc_html( $header_search_button_hover_bg ),
+			),
+			'.cm-search-icon-in-input-right .search-wrap:hover .search-icon-input-right' => array(
+				'background-color' => esc_html( $header_search_button_hover_bg ),
 			),
 		);
 		$parse_builder_css                .= colormag_parse_css( '', $header_search_button_hover_bg, $header_search_button_hover_bg_css );
@@ -1076,21 +1105,22 @@ class ColorMag_Dynamic_Builder_CSS {
 		);
 		$parse_builder_css           .= colormag_parse_css( '', $header_search_text_color, $header_search_text_color_css );
 
-		// Header search placeholder color.
+		// Header search placeholder color; the icon's `fill: currentColor` inherits this as a fallback (see the override below).
 		$header_search_placeholder_color     = get_theme_mod( 'colormag_header_search_placeholder_color', '' );
 		$header_search_placeholder_color_css = array(
-			'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-wrap i' => array(
+			'.search-wrap input::placeholder, .cm-search-icon-in-input-right .search-icon-input-right' => array(
 				'color' => esc_html( $header_search_placeholder_color ),
 			),
 		);
 		$parse_builder_css                  .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
 
-		$header_search_placeholder_color_css = array(
-			'.cm-search-icon-in-input-right .search-wrap i' => array(
-				'fill' => esc_html( $header_search_placeholder_color ),
+		// Search Button Color wins over Placeholder Color for this icon when set; emitted after it so equal specificity resolves in its favor.
+		$header_search_icon_color_override_css = array(
+			'.cm-search-icon-in-input-right .search-icon-input-right' => array(
+				'color' => esc_html( $header_search_icon_color ),
 			),
 		);
-		$parse_builder_css                  .= colormag_parse_css( '', $header_search_placeholder_color, $header_search_placeholder_color_css );
+		$parse_builder_css                    .= colormag_parse_css( '', $header_search_icon_color, $header_search_icon_color_override_css );
 
 		// Social icon color.
 		$social_icon_color     = get_theme_mod( 'colormag_header_socials_color', '' );

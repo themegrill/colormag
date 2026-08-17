@@ -1856,16 +1856,17 @@ table td {
 .cm-search-icon-in-input-right .search-icon-input-right {
 	position: absolute;
 	left: 10px;
-	top: 58%;
+	top: 50%;
 	transform: translateY(-50%);
 	color: #e4e4e7;
 	font-size: 16px;
 	pointer-events: none;
 }
 .cm-search-icon-in-input-right .search-icon-input-right svg {
+	display: block;
 	width: 18px;
 	height: 18px;
-	fill: #FFFFFF;
+	fill: currentColor;
 }
 .cm-search-icon-in-input-right .search-wrap:focus-within .search-icon-input-right {
 	display: none;
@@ -1902,6 +1903,9 @@ table td {
 	font-size: 1.4rem;
 	border-radius: 4px 0 0 4px;
 	line-height: 0.8;
+}
+.search-wrap button:hover {
+	background-color: var(--cm-color-1, #207daf);
 }
 
 .search-form-top {

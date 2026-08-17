@@ -30,16 +30,17 @@
 	.search-icon-input-right {
 		position: absolute;
 		right: 10px;
-		top: 58%;
+		top: 50%;
 		transform: translateY(-50%);
 		color: $color__gray-200;
 		font-size: 16px;
 		pointer-events: none;
 
 		svg {
+			display: block;
 			width: 18px;
 			height: 18px;
-			fill: #FFFFFF;
+			fill: currentColor;
 		}
 	}
 
@@ -85,6 +86,11 @@
 		@include font-size("font-size-xs");
 		border-radius: 0 4px 4px 0;
 		line-height: 0.8;
+
+		// Without this, the theme-wide `button:hover{background:transparent}` reset wins and the button goes blank.
+		&:hover {
+			background-color: $color__primary;
+		}
 	}
 }
 
