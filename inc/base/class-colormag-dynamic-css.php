@@ -1461,12 +1461,20 @@ class ColorMag_Dynamic_CSS {
 		);
 
 		// Base text color.
+		//
+		// `.editor-styles-wrapper > *` also needs to be targeted directly (not
+		// just relied on via inheritance): style-editor-block.css hardcodes a
+		// `color` on every direct child, which otherwise wins over an inherited
+		// value from `.editor-styles-wrapper` alone. Same cascade issue as the
+		// base typography `font-family` fix in fix/customizer-fonts-not-loading
+		// -in-block-editor — confirmed live that without this, the Base Color
+		// setting has no effect on paragraph/block text in the editor.
 		$base_color = get_theme_mod( 'colormag_base_color', '' );
 		$parse_css .= colormag_parse_css(
 			'',
 			$base_color,
 			array(
-				'.editor-styles-wrapper' => array(
+				'.editor-styles-wrapper, .editor-styles-wrapper > *' => array(
 					'color' => esc_html( $base_color ),
 				),
 			)
