@@ -1037,7 +1037,7 @@
 
 				case 'colormag_header_search_border_radius':
 					css = colormagGenerateSliderCSS(
-						'.cm-search-icon-in-input-right .search-wrap input',
+						'.cm-search-icon-in-input-right .search-wrap input, .cm-search-icon-in-input-right .search-wrap, .cm-search-icon-in-input-right .search-icon-input-right',
 						'border-radius',
 						value,
 					);
