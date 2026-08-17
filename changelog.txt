@@ -4,6 +4,10 @@
 * Added    - Icon size control for the header builder Search element.
 * Tweak    - Minor visual refinements to the Customizer's UI framework (Customind).
 * Fix      - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
+* Fix      - Block editor paragraph and list text ignored a customized Base Typography font size.
+* Fix      - H3 heading rendered at the same size as H2 in the block editor and front end.
+* Fix      - Block editor heading, blockquote, link, and button colors didn't match the front end's palette color.
+* Fix      - Header Builder Button's typography font wasn't loading in the block editor.
 * Fix      - Search icon clipped when a custom icon size was set.
 * Fix      - Current menu ancestor items in the primary navigation didn't inherit the active text color.
 * Fix      - Imported demo footer widget text color was forced white, overriding the widget's own styling.
