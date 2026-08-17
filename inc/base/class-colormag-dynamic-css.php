@@ -1403,6 +1403,23 @@ class ColorMag_Dynamic_CSS {
 		);
 		$parse_css                        .= colormag_parse_css( '', $button_background_hover_color, $button_background_hover_color_css );
 
+		// Link color/hover; `.cm-entry-summary` is the front-end's actual content wrapper (not excerpt-only), so this needs to win over the Primary Color default in the editor too.
+		$link_color_normal     = get_theme_mod( 'colormag_link_color', '' );
+		$link_color_normal_css = array(
+			'.editor-styles-wrapper a' => array(
+				'color' => esc_html( $link_color_normal ),
+			),
+		);
+		$parse_css            .= colormag_parse_css( '', $link_color_normal, $link_color_normal_css );
+
+		$link_color_hover     = get_theme_mod( 'colormag_link_hover_color', '' );
+		$link_color_hover_css = array(
+			'.editor-styles-wrapper a:hover' => array(
+				'color' => esc_html( $link_color_hover ),
+			),
+		);
+		$parse_css           .= colormag_parse_css( '', $link_color_hover, $link_color_hover_css );
+
 		// Base typography.
 		$base_typography_default = self::get_base_typography_default();
 		$base_typography         = get_theme_mod( 'colormag_base_typography', $base_typography_default );
