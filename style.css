@@ -3962,7 +3962,6 @@ Styles for separating single posts loaded from ajax call.
 
 .header-image {
 	margin-bottom: 0;
-	border-bottom: 1px solid var(--cm-color-8, #E4E4E7);
 	width: 100%;
 }
 
