@@ -20,7 +20,7 @@ $options = array(
 					),
 				),
 				'colormag_header_search_text_color'        => array(
-					'default' => '',
+					'default' => 'var(--cm-color-6)',
 					'type'    => 'customind-color',
 					'title'   => esc_html__( 'Text Color', 'colormag' ),
 					'section' => 'colormag_header_builder_search',
@@ -33,7 +33,7 @@ $options = array(
 					'section'   => 'colormag_header_builder_search',
 				),
 				'colormag_header_search_background'        => array(
-					'default'   => '',
+					'default'   => '#ffffff',
 					'type'      => 'customind-color',
 					'transport' => 'postMessage',
 					'title'     => esc_html__( 'Background', 'colormag' ),
@@ -73,7 +73,7 @@ $options = array(
 					),
 				),
 				'colormag_header_search_border_color'      => array(
-					'default'   => '',
+					'default'   => 'var(--cm-color-9)',
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Border Color', 'colormag' ),
 					'transport' => 'postMessage',

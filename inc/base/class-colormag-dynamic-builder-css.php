@@ -421,7 +421,7 @@ class ColorMag_Dynamic_Builder_CSS {
 		$parse_builder_css .= colormag_parse_slider_css(
 			$full_search_border_radius_default,
 			$header_button_border_radius,
-			'.cm-search-icon-in-input-right .search-wrap input',
+			'.cm-search-icon-in-input-right .search-wrap input, .cm-search-icon-in-input-right .search-wrap, .cm-search-icon-in-input-right .search-icon-input-right',
 			'border-radius'
 		);
 
