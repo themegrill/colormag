@@ -7,9 +7,12 @@
 	line-height: 1.6;
 	word-wrap: break-word;
 	/* Theme specific CSS */
-	/* Headings */
+	/* Headings; unwrapped from `.wp-block` since Gutenberg puts that class on the heading element itself, not an ancestor, so the old nesting never matched and these sizes fell back to core defaults instead of matching the front-end. */
+	/* Matches $color__gray-800 from _headings.scss, the front-end's fixed default heading color when no per-heading color override is set. */
 	/* Horizontal Lines */
 	/* Tables */
+	/* Background reads the theme's palette color, same source the front-end blockquote background uses. */
+	/* Reads the theme's palette color, same source the front-end's blanket link color rule uses. */
 }
 .editor-styles-wrapper > * {
 	font-family: "Open Sans", serif;
