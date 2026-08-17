@@ -109,7 +109,7 @@ $options = array(
 			'colormag_search_sub_controls',
 			array(
 				'colormag_header_search_icon_color' => array(
-					'default'   => '',
+					'default'   => '#ffffff',
 					'type'      => 'customind-color',
 					'title'     => esc_html__( 'Color', 'colormag' ),
 					'transport' => 'postMessage',
@@ -117,14 +117,14 @@ $options = array(
 				),
 				'colormag_header_search_icon_size'  => array(
 					'default'     => array(
-						'size'  => '',
+						'size'  => '24',
 						'units' => 'px',
 					),
 					'type'        => 'customind-slider',
 					'title'       => esc_html__( 'Icon Size', 'colormag' ),
 					'transport'   => 'postMessage',
 					'section'     => 'colormag_header_builder_search',
-					'units'       => array( 'px' ),
+					'units'       => array( 'px', 'em', 'rem' ),
 					'defaultUnit' => 'px',
 					'input_attrs' => array(
 						'min'  => 10,
