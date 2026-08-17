@@ -25,35 +25,35 @@
 .editor-styles-wrapper .wp-block[data-align=wide] {
 	max-width: 1200px;
 }
-.editor-styles-wrapper .wp-block h1 {
+.editor-styles-wrapper h1 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 42px;
+	font-size: 40px;
 }
-.editor-styles-wrapper .wp-block h2 {
+.editor-styles-wrapper h2 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 38px;
+	font-size: 32px;
 }
-.editor-styles-wrapper .wp-block h3 {
+.editor-styles-wrapper h3 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 34px;
+	font-size: 24px;
 }
-.editor-styles-wrapper .wp-block h4 {
+.editor-styles-wrapper h4 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 30px;
+	font-size: 20px;
 }
-.editor-styles-wrapper .wp-block h5 {
+.editor-styles-wrapper h5 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 26px;
+	font-size: 18px;
 }
-.editor-styles-wrapper .wp-block h6 {
+.editor-styles-wrapper h6 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 22px;
+	font-size: 16px;
 }
 .editor-styles-wrapper .wp-block blockquote.has-text-align-right {
 	border-right: 0;
@@ -177,37 +177,37 @@
 }
 .editor-styles-wrapper h1 {
 	padding-bottom: 18px;
-	color: #333333;
+	color: #27272a;
 	font-weight: normal;
 	line-height: 1.2;
 }
 .editor-styles-wrapper h2 {
 	padding-bottom: 18px;
-	color: #333333;
+	color: #27272a;
 	font-weight: normal;
 	line-height: 1.2;
 }
 .editor-styles-wrapper h3 {
 	padding-bottom: 18px;
-	color: #333333;
+	color: #27272a;
 	font-weight: normal;
 	line-height: 1.2;
 }
 .editor-styles-wrapper h4 {
 	padding-bottom: 18px;
-	color: #333333;
+	color: #27272a;
 	font-weight: normal;
 	line-height: 1.2;
 }
 .editor-styles-wrapper h5 {
 	padding-bottom: 18px;
-	color: #333333;
+	color: #27272a;
 	font-weight: normal;
 	line-height: 1.2;
 }
 .editor-styles-wrapper h6 {
 	padding-bottom: 18px;
-	color: #333333;
+	color: #27272a;
 	font-weight: normal;
 	line-height: 1.2;
 }
@@ -352,7 +352,7 @@
 .editor-styles-wrapper blockquote {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
-	background-color: #207DAF;
+	background-color: var(--cm-color-1, #207daf);
 	color: #ffffff;
 	border-radius: 5px;
 	border-left: 0;
@@ -398,7 +398,7 @@
 .editor-styles-wrapper blockquote.is-style-large {
 	padding: 30px 30px 20px 45px;
 	margin-bottom: 20px;
-	background-color: #207DAF;
+	background-color: var(--cm-color-1, #207daf);
 	color: #ffffff;
 	border-radius: 5px;
 	border-left: 0;
@@ -600,7 +600,7 @@
 	background-color: transparent;
 }
 .editor-styles-wrapper a {
-	color: #207DAF;
+	color: var(--cm-color-1, #207daf);
 	text-decoration: none;
 }
 .editor-styles-wrapper a:hover {

@@ -1449,6 +1449,20 @@ class ColorMag_Dynamic_CSS {
 			)
 		);
 
+		// Button background also falls back to the primary color on the front end
+		// (the front-end's own Primary Color rule covers this selector directly;
+		// the dedicated Button Background override below still wins over this
+		// when it's explicitly set, since it's emitted later in the cascade).
+		$parse_css .= colormag_parse_css(
+			'#207daf',
+			$primary_color,
+			array(
+				'.editor-styles-wrapper .wp-block-button .wp-block-button__link' => array(
+					'background-color' => esc_html( $primary_color ),
+				),
+			)
+		);
+
 		// Blockquote background uses the primary color, same as the front-end.
 		$parse_css .= colormag_parse_css(
 			'#207daf',
@@ -1594,10 +1608,19 @@ class ColorMag_Dynamic_CSS {
 		// relied on via inheritance): style-editor-block.css hardcodes a font-family
 		// on every direct child to normalize block defaults, which otherwise wins
 		// over an inherited value from `.editor-styles-wrapper` alone.
+		//
+		// `.editor-styles-wrapper p, .editor-styles-wrapper li` also need to be
+		// targeted directly for the same reason: style-editor-block.css separately
+		// hardcodes font-size (and, for `li`, line-height) at a *higher*
+		// specificity than `.editor-styles-wrapper > *` (a tag-qualified selector
+		// beats a bare universal one), so those two properties specifically kept
+		// losing even after the fix above — confirmed live that a custom Base
+		// Typography font size had no effect on actual paragraph/list text in the
+		// editor without this.
 		$parse_css .= colormag_parse_typography_css(
 			$base_typography_default,
 			$base_typography,
-			'.editor-styles-wrapper, .editor-styles-wrapper > *'
+			'.editor-styles-wrapper, .editor-styles-wrapper > *, .editor-styles-wrapper p, .editor-styles-wrapper li'
 		);
 
 		// Headings typography.

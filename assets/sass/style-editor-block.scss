@@ -28,44 +28,44 @@
 	}
 
 	/* Theme specific CSS */
-	/* Headings */
+	/* Headings; unwrapped from `.wp-block` since Gutenberg puts that class on the heading element itself, not an ancestor, so the old nesting never matched and these sizes fell back to core defaults instead of matching the front-end. */
+	h1 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 40px;
+	}
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 32px;
+	}
+
+	h3 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 24px;
+	}
+
+	h4 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 20px;
+	}
+
+	h5 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 18px;
+	}
+
+	h6 {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 16px;
+	}
+
 	.wp-block {
-
-		h1 {
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 42px;
-		}
-
-		h2 {
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 38px;
-		}
-
-		h3 {
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 34px;
-		}
-
-		h4 {
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 30px;
-		}
-
-		h5 {
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 26px;
-		}
-
-		h6 {
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 22px;
-		}
 
 		blockquote.has-text-align-right {
 			border-right: 0;
@@ -240,44 +240,45 @@
 		margin-bottom: 0;
 	}
 
+	/* Matches $color__gray-800 from _headings.scss, the front-end's fixed default heading color when no per-heading color override is set. */
 	h1 {
 		padding-bottom: 18px;
-		color: #333333;
+		color: #27272a;
 		font-weight: normal;
 		line-height: 1.2;
 	}
 
 	h2 {
 		padding-bottom: 18px;
-		color: #333333;
+		color: #27272a;
 		font-weight: normal;
 		line-height: 1.2;
 	}
 
 	h3 {
 		padding-bottom: 18px;
-		color: #333333;
+		color: #27272a;
 		font-weight: normal;
 		line-height: 1.2;
 	}
 
 	h4 {
 		padding-bottom: 18px;
-		color: #333333;
+		color: #27272a;
 		font-weight: normal;
 		line-height: 1.2;
 	}
 
 	h5 {
 		padding-bottom: 18px;
-		color: #333333;
+		color: #27272a;
 		font-weight: normal;
 		line-height: 1.2;
 	}
 
 	h6 {
 		padding-bottom: 18px;
-		color: #333333;
+		color: #27272a;
 		font-weight: normal;
 		line-height: 1.2;
 	}
@@ -453,10 +454,11 @@
 		white-space: pre-wrap;
 	}
 
+	/* Background reads the theme's palette color, same source the front-end blockquote background uses. */
 	blockquote {
 		padding: 30px 30px 20px 45px;
 		margin-bottom: 20px;
-		background-color: #207DAF;
+		background-color: var(--cm-color-1, #207daf);
 		color: #ffffff;
 		border-radius: 5px;
 		border-left: 0;
@@ -509,7 +511,7 @@
 	blockquote.is-style-large {
 		padding: 30px 30px 20px 45px;
 		margin-bottom: 20px;
-		background-color: #207DAF;
+		background-color: var(--cm-color-1, #207daf);
 		color: #ffffff;
 		border-radius: 5px;
 		border-left: 0;
@@ -727,8 +729,9 @@
 		}
 	}
 
+	/* Reads the theme's palette color, same source the front-end's blanket link color rule uses. */
 	a {
-		color: #207DAF;
+		color: var(--cm-color-1, #207daf);
 		text-decoration: none;
 
 		&:hover {
