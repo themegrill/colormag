@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-17T10:01:18+00:00\n"
+"POT-Creation-Date: 2026-08-18T03:32:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: colormag\n"
@@ -196,7 +196,7 @@ msgstr ""
 #: inc/admin/class-colormag-theme-review-notice.php:131
 #: inc/admin/class-colormag-theme-review-notice.php:149
 #: inc/admin/class-colormag-welcome-notice.php:101
-#: inc/migration/class-colormag-migration.php:1817
+#: inc/migration/class-colormag-migration.php:1804
 #: inc/migration/demo-import-migration.php:66
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
@@ -688,35 +688,35 @@ msgid "Footer"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:74
-#: inc/migration/class-colormag-migration.php:1332
-#: inc/migration/class-colormag-migration.php:1657
+#: inc/migration/class-colormag-migration.php:1322
+#: inc/migration/class-colormag-migration.php:1647
 #: inc/template-functions.php:501
 msgid "Facebook"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:79
-#: inc/migration/class-colormag-migration.php:1337
-#: inc/migration/class-colormag-migration.php:1662
+#: inc/migration/class-colormag-migration.php:1327
+#: inc/migration/class-colormag-migration.php:1652
 #: inc/template-functions.php:491
 msgid "Twitter"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:84
-#: inc/migration/class-colormag-migration.php:1342
-#: inc/migration/class-colormag-migration.php:1667
+#: inc/migration/class-colormag-migration.php:1332
+#: inc/migration/class-colormag-migration.php:1657
 #: inc/template-functions.php:541
 msgid "Instagram"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:89
-#: inc/migration/class-colormag-migration.php:1347
-#: inc/migration/class-colormag-migration.php:1672
+#: inc/migration/class-colormag-migration.php:1337
+#: inc/migration/class-colormag-migration.php:1662
 msgid "Pinterest"
 msgstr ""
 
 #: inc/customizer/options/additional/social-icons.php:94
-#: inc/migration/class-colormag-migration.php:1352
-#: inc/migration/class-colormag-migration.php:1677
+#: inc/migration/class-colormag-migration.php:1342
+#: inc/migration/class-colormag-migration.php:1667
 msgid "YouTube"
 msgstr ""
 

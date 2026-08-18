@@ -150,6 +150,7 @@ const paths = {
 			// Dev-only sources & tooling — not needed by the shipped theme.
 			'!src/**',
 			'!docs/**',
+			'!bin/**',
 			'!pnpm-lock.yaml',
 			'!composer.json',
 			'!composer.lock',

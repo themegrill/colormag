@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.2 - 2026-08-14 =
+= Version 4.2.2 - 2026-08-18 =
 * Added    - Typography control for the header builder Button element.
 * Added    - Icon size control for the header builder Search element.
 * Tweak    - Minor visual refinements to the Customizer's UI framework (Customind).
