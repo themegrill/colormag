@@ -4316,29 +4316,24 @@ Styles for separating single posts loaded from ajax call.
 }
 /* Blog.
 --------------------------------------------- */
-.cm-posts.cm-layout-1-style-1, .cm-posts.cm-layout-1-style-2 {
+.cm-posts.cm-layout-1-style-1 {
 	--grid-column: 1;
 }
 
-.cm-layout-1-style-1 .post,
-.cm-layout-1-style-2 .post {
+.cm-layout-1-style-1 .post {
 	display: flex;
 	flex-direction: column;
 }
-.cm-layout-1-style-1 .post:first-child,
-.cm-layout-1-style-2 .post:first-child {
+.cm-layout-1-style-1 .post:first-child {
 	padding: 0;
 }
-.cm-layout-1-style-1 .cm-featured-image,
-.cm-layout-1-style-2 .cm-featured-image {
+.cm-layout-1-style-1 .cm-featured-image {
 	flex-basis: 50%;
 }
-.cm-layout-1-style-1 .cm-featured-image img,
-.cm-layout-1-style-2 .cm-featured-image img {
+.cm-layout-1-style-1 .cm-featured-image img {
 	width: 100%;
 }
-.cm-layout-1-style-1 .cm-post-content,
-.cm-layout-1-style-2 .cm-post-content {
+.cm-layout-1-style-1 .cm-post-content {
 	flex: 1;
 	align-items: center;
 	padding: 20px;
@@ -4347,9 +4342,6 @@ Styles for separating single posts loaded from ajax call.
 @media screen and (min-width: 48em) {
 	.cm-layout-1-style-1 .post {
 		flex-direction: row;
-	}
-	.cm-layout-1-style-2 .post {
-		flex-direction: row-reverse;
 	}
 }
 .cm-posts.cm-layout-2-style-1 .post:first-child,
