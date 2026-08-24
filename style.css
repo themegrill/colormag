@@ -2528,7 +2528,8 @@ li.default-menu {
 .cm-header .cm-menu-toggle svg:hover {
 	color: #fff;
 }
-.cm-header .cm-mobile-nav ul.menu-scrollbar {
+.cm-header .cm-mobile-nav ul.menu-scrollbar,
+.cm-header-builder .cm-mobile-nav ul.menu-scrollbar {
 	overflow-y: scroll;
 	width: 100%;
 }

@@ -143,10 +143,19 @@ function initMobileNavigation() {
 			container.classList.add('cm-toggle-open');
 			menu.classList.add('cm-mobile-menu--open');
 			mobileArea.classList.add('cm-mobile-menu--open');
+
+			if (window.matchMedia('(max-width: 768px)').matches) {
+				var availableHeight =
+					window.innerHeight - menu.getBoundingClientRect().top;
+				menu.style.maxHeight = availableHeight + 'px';
+				menu.classList.add('menu-scrollbar');
+			}
 		} else {
 			container.classList.remove('cm-toggle-open');
 			menu.classList.remove('cm-mobile-menu--open');
 			mobileArea.classList.remove('cm-mobile-menu--open');
+			menu.style.maxHeight = '';
+			menu.classList.remove('menu-scrollbar');
 		}
 	}
 
