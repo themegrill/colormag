@@ -324,7 +324,7 @@ if ( ! function_exists( 'colormag_front_page_widget_post_title_markup' ) ) :
 	 * Widget Title Markup.
 	 */
 	function colormag_front_page_widget_post_title_markup( $markup ) {
-		return get_theme_mod( 'colormag_front_page_widget_post_title_markup', 'h3' );
+		return get_theme_mod( 'colormag_front_page_widget_post_title_markup', 'h4' );
 	}
 endif;
 

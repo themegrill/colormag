@@ -803,13 +803,14 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * Displays the post title within the widgets.
 	 */
 	public function the_title() {
+		$tag = apply_filters( 'colormag_front_page_widget_post_title_markup', 'h4' );
+		echo '<' . esc_attr( $tag ) . ' class="cm-entry-title">';
 		?>
-		<h3 class="cm-entry-title">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				<?php the_title(); ?>
-			</a>
-		</h3>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_title(); ?>
+		</a>
 		<?php
+		echo '</' . esc_attr( $tag ) . '>';
 	}
 
 	/**
