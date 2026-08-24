@@ -34,3 +34,15 @@ colormag-pro.zip
 # Claude AI
 .claude/
 /bin/
+
+# themegrill-qa — local scratch only
+.themegrill-qa/.docs-cache/
+
+# Playwright run output (once specs exist)
+test-results/
+playwright-report/
+blob-report/
+.last-run.json
+
+# local WordPress env
+.wp-env.override.json
