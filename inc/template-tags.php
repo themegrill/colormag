@@ -75,6 +75,42 @@ if ( ! function_exists( 'colormag_get_offset_random_post_ids' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'colormag_get_recent_post_ids' ) ) :
+	/**
+	 * Returns the most recent matching post IDs — no randomization. Caches the
+	 * result in a transient, same as colormag_get_offset_random_post_ids().
+	 *
+	 * @param array  $base_args WP_Query args defining the post pool (no orderby/offset).
+	 * @param string $cache_key Unique transient key for this query shape.
+	 * @param int    $ttl       Cache lifetime in seconds. Default 2 minutes.
+	 * @return int[] Array of post IDs.
+	 */
+	function colormag_get_recent_post_ids( array $base_args, $cache_key, $ttl = 120 ) {
+		$ids = get_transient( $cache_key );
+		if ( false !== $ids ) {
+			return (array) $ids;
+		}
+
+		$ids = get_posts(
+			array_merge(
+				$base_args,
+				array(
+					'orderby'                => 'date',
+					'order'                  => 'DESC',
+					'fields'                 => 'ids',
+					'no_found_rows'          => true,
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+				)
+			)
+		);
+
+		$ids = array_map( 'intval', $ids );
+		set_transient( $cache_key, $ids, $ttl );
+		return $ids;
+	}
+endif;
+
 if ( ! function_exists( 'colormag_entry_meta' ) ) :
 
 	/**
