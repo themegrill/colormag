@@ -31,18 +31,26 @@ import { test, expect } from '../../fixtures/customizer';
  *
  * A first attempt just added `.last()` (the fix front-page/
  * hide-blog-static-page-toggle.spec.ts already uses) but that's a *live*
- * locator re-resolved on every use, and this spec calls it twice
- * (once for the element under test, once inside resolveCssVar) —
- * if the swap from one iframe to the next happens between those two
- * calls, they can each correctly resolve to "the last iframe at that
- * instant" and still land on two *different* iframes, one of them
- * mid-navigation with no stylesheet loaded yet (that's what produced a
- * resolved `rgba(0, 0, 0, 0)` for `var(--cm-color-2)` — the CSS custom
- * property didn't exist yet in that particular document). Fixed by
- * waiting for the swap to finish — back down to exactly one
- * `#customize-preview iframe` — before resolving anything, so both calls
- * definitely target the same, fully-loaded document. This changes only
- * how the spec finds the preview iframe, not what it asserts.
+ * locator re-resolved on every use, and this spec called it twice — once
+ * for the element under test, once inside a `resolveCssVar` helper — so a
+ * swap between those two calls could land them on two *different* iframes,
+ * one mid-navigation with no stylesheet loaded yet. That produced a
+ * resolved `rgba(0, 0, 0, 0)` for `var(--cm-color-2)`: the custom property
+ * did not exist yet in that particular document.
+ *
+ * A second attempt waited for the iframe count to drop back to exactly one
+ * before resolving anything. That was still not enough, and it failed under
+ * `run-suite.mjs` with default parallel workers while passing serially: the
+ * probe resolved the palette variable to transparent in a document whose
+ * stylesheet had not finished loading, while the element itself was already
+ * correctly painted `rgb(34, 112, 176)`. The spec reported ColorMag broken
+ * on the strength of its own unresolved probe.
+ *
+ * Fixed properly by resolving the variable and reading the element's colour
+ * inside ONE `evaluate` — so they cannot come from different documents — and
+ * polling that pair, treating an unresolved variable as "not ready yet"
+ * rather than as a verdict. This changes only how the spec finds and
+ * compares the values, not what it asserts.
  */
 test('Header Builder Bottom Area background follows the chosen palette color @fresh @header', async ({
   page,
@@ -60,40 +68,46 @@ test('Header Builder Bottom Area background follows the chosen palette color @fr
     'background-attachment': 'scroll',
   });
 
-  // Let any in-flight autosave-triggered iframe swap finish before reading
-  // anything out of the preview — see the docblock above.
-  await page.waitForFunction(
-    () => document.querySelectorAll('#customize-preview iframe').length === 1,
-    null,
-    { timeout: 20_000 },
-  );
-
-  const previewFrame = page.frameLocator('#customize-preview iframe');
+  const previewFrame = page.frameLocator('#customize-preview iframe').last();
 
   const bottomRow = previewFrame
     .locator('.cm-header-builder .cm-desktop-row.cm-main-header .cm-header-bottom-row')
     .first();
+  await bottomRow.waitFor({ timeout: 20_000 });
 
-  await expect(bottomRow).toHaveCSS('background-color', await resolveCssVar(previewFrame, paletteColor));
+  // Resolve the palette variable and read the element's colour in the SAME
+  // evaluate, then poll the pair.
+  //
+  // The previous version resolved `var(--cm-color-2)` once, up front, through a
+  // throwaway probe div, and passed the result into toHaveCSS. Under parallel
+  // workers that raced: the probe ran in a preview document whose stylesheet
+  // had not loaded yet, so the variable resolved to `rgba(0, 0, 0, 0)`, while
+  // the element itself was already correctly painted `rgb(34, 112, 176)`. The
+  // spec then reported ColorMag broken on the strength of its own unresolved
+  // probe — a false positive, and exactly the failure mode its docblock warned
+  // about, just one level further in.
+  //
+  // Requiring `expected` to be non-transparent is what makes this poll rather
+  // than assert against a half-loaded document: an unresolved variable is a
+  // "not ready yet", never a verdict.
+  await expect
+    .poll(
+      async () =>
+        bottomRow.evaluate((el, expr) => {
+          const probe = document.createElement('div');
+          probe.style.backgroundColor = expr;
+          document.body.appendChild(probe);
+          const expected = getComputedStyle(probe).backgroundColor;
+          probe.remove();
+          const actual = getComputedStyle(el).backgroundColor;
+          return expected === 'rgba(0, 0, 0, 0)' ? `palette not resolved yet (element is ${actual})` : `${actual} vs ${expected}`;
+        }, paletteColor),
+      {
+        timeout: 20_000,
+        message:
+          'Header Builder Bottom Area background should resolve to the chosen palette colour ' +
+          `(${paletteColor}) in the live preview`,
+      },
+    )
+    .toMatch(/^(rgba?\([^)]*\)) vs \1$/);
 });
-
-/**
- * `toHaveCSS` compares against the browser's *resolved* color (an
- * `rgb(...)` string), not the raw `var(--cm-color-2)` expression — so we
- * resolve it the same way the real element would, by applying it to a
- * throwaway probe element in the same document and reading its computed
- * style back out.
- */
-async function resolveCssVar(
-  frame: import('@playwright/test').FrameLocator,
-  cssVarExpression: string,
-): Promise<string> {
-  return frame.locator('body').evaluate((body, expr) => {
-    const probe = document.createElement('div');
-    probe.style.backgroundColor = expr;
-    body.appendChild(probe);
-    const resolved = getComputedStyle(probe).backgroundColor;
-    probe.remove();
-    return resolved;
-  }, cssVarExpression);
-}

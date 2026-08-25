@@ -22,10 +22,29 @@ import { baseUrl, STORAGE_STATE, targetEnv } from './env';
 export default defineConfig({
   testDir: './specs',
   outputDir: './test-results',
-  fullyParallel: true,
+  // Serial, deliberately, and not because this machine is slow.
+  //
+  // Customizer specs mutate `theme_mods_<stylesheet>` — one row, shared by the
+  // whole site — and the `customizer` fixture restores it from a snapshot after
+  // every test that touches it. Two workers doing that concurrently clobber
+  // each other by construction: worker A's post-test restore reverts the value
+  // worker B published a moment earlier, and B then fails asserting against a
+  // front end that no longer carries its change. Measured across three parallel
+  // runs of the @fresh tier: 2 failed, 2 failed, 0 failed, with a DIFFERENT
+  // pair failing each time (global-colors + padding, then global-colors +
+  // typography, then none) — the signature of a race, not of three flaky specs.
+  // The same specs pass 15/15 serially.
+  //
+  // This is a property of WordPress's global theme-mod state, not of this
+  // machine, so it applies on a Playground runner too. The suite is 23 tests in
+  // ~43s serially; determinism is worth those seconds. If it grows enough for
+  // that to hurt, the fix is to isolate customizer state per worker (separate
+  // sites, or a per-worker changeset), NOT to raise the worker count and accept
+  // an occasionally-wrong required check.
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 2 : undefined,
+  workers: 1,
   reporter: [['list'], ['html', { outputFolder: './playwright-report', open: 'never' }]],
   globalSetup: require.resolve('./global-setup'),
   globalTeardown: require.resolve('./global-teardown'),
