@@ -1,0 +1,129 @@
+name: Draft Release
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  draft-release:
+    if: contains(github.event.head_commit.message, 'version bump to release of') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version from style.css
+        id: version
+        run: |
+          VERSION=$(grep -m1 -E '^[[:space:]]*Version:' style.css \
+            | sed -E 's/^[[:space:]]*Version:[[:space:]]*//' \
+            | tr -d '\r' | xargs)
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not parse a Version from style.css"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check whether this version was already released
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/git/ref/tags/${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Tag ${{ steps.version.outputs.tag }} already exists — skipping."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract changelog block for this version
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          awk '/^= Version /{ if (found) exit; found=1 } found' changelog.txt \
+            > "$RUNNER_TEMP/release-notes.txt"
+          if [ ! -s "$RUNNER_TEMP/release-notes.txt" ]; then
+            echo "::error::No changelog block found in changelog.txt for the current version"
+            exit 1
+          fi
+
+      - name: Set up pnpm
+        if: steps.check.outputs.exists == 'false'
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Set up Node.js
+        if: steps.check.outputs.exists == 'false'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install JS dependencies
+        if: steps.check.outputs.exists == 'false'
+        run: pnpm install --frozen-lockfile
+
+      - name: Set up PHP
+        if: steps.check.outputs.exists == 'false'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+          extensions: mbstring, xml, zip
+
+      - name: Install Composer dependencies
+        if: steps.check.outputs.exists == 'false'
+        run: composer install --no-progress --prefer-dist
+
+      - name: Ensure makepot memory-limit helper exists
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          mkdir -p bin
+          if [ ! -f bin/raise-makepot-memory-limit.php ]; then
+            printf '%s\n' "<?php" "ini_set( 'memory_limit', '512M' );" > bin/raise-makepot-memory-limit.php
+          fi
+
+      - name: Generate .pot file
+        if: steps.check.outputs.exists == 'false'
+        run: composer makepot
+
+      - name: Build assets and zip
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          pnpm build
+          pnpm exec gulp build
+
+      - name: Verify zip and .pot were produced
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          test -f dist/colormag.zip
+          test -f languages/colormag.pot
+          unzip -l dist/colormag.zip | grep -q 'languages/colormag.pot'
+
+      - name: Create and push git tag
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.version.outputs.tag }}" -m "Release ${{ steps.version.outputs.tag }}"
+          git push origin "${{ steps.version.outputs.tag }}"
+
+      - name: Create draft GitHub Release
+        if: steps.check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          body_path: ${{ runner.temp }}/release-notes.txt
+          draft: true
+          files: dist/colormag.zip
