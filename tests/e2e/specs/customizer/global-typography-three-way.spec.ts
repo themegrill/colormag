@@ -3,6 +3,14 @@ import { test, expect } from '../../fixtures/customizer';
 const CONTROL_ID = 'colormag_base_typography';
 
 /**
+ * @area    global
+ * @tier    fresh
+ * @source  human 2026-08-25
+ * @why     Same round trip as global-colors, for a customind-typocolor object
+ *          rather than a scalar — set() replaces the whole object, which is
+ *          its own class of regression (an earlier draft used a flat
+ *          font-size key and silently asserted nothing).
+ *
  * Same round-trip check as global-colors-three-way.spec.ts, for Global >
  * Typography > Body font size — the ground rules call out colour AND
  * typography explicitly, and this control is a `customind-typocolor`
@@ -32,7 +40,7 @@ const CONTROL_ID = 'colormag_base_typography';
  * global-colors-three-way.spec.ts — `customizer.publish()`'s old DOM-based
  * wait, now fixed at the fixture level. See that spec's docblock.
  */
-test('Global > Typography > Body font size persists through publish and reopen @pr', async ({
+test('Global > Typography > Body font size persists through publish and reopen @fresh @global', async ({
   page,
   customizer,
 }) => {

@@ -1,6 +1,13 @@
 import { test, expect } from '../../fixtures/wp-admin';
 
 /**
+ * @area    content
+ * @tier    fresh
+ * @source  human 2026-08-25
+ * @why     A doubled gap above post content is a pure-CSS regression that no
+ *          functional test would catch and that ships looking merely
+ *          "a bit loose". Guards the fix, not the exact spacing value.
+ *
  * Guards the fix/remove-entry-summary-fixed-top-margin branch (fixed):
  * `.cm-entry-summary` used to carry its own top margin that stacked with
  * the *immediately preceding element*'s bottom margin, doubling the
@@ -37,7 +44,7 @@ import { test, expect } from '../../fixtures/wp-admin';
  * flag a change to *what* is measured, not just how it's found. The
  * assertion itself (single ~12px gap, not doubled) is unchanged.
  */
-test('single post title-to-content gap is a single gap, not doubled @nightly', async ({ page }) => {
+test('single post title-to-content gap is a single gap, not doubled @fresh @content', async ({ page }) => {
   const res = await page.request.get('/wp-json/wp/v2/posts?per_page=1&status=publish');
   const posts = (await res.json()) as Array<{ link: string }>;
   test.skip(posts.length === 0, 'No published posts on this site to check spacing against.');

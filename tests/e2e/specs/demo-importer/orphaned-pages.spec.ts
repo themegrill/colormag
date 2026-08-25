@@ -1,6 +1,16 @@
 import { test, expect } from '../../fixtures/demo-import';
 
 /**
+ * @area    content
+ * @tier    demo
+ * @guards  CMAG-681
+ * @source  human 2026-08-25
+ * @why     Irreducibly @demo: duplicate Home/Blog/Contact pages are a
+ *          side-effect OF importing, so there is nothing to assert on a site
+ *          that has not imported. Filed resolved in Jira but re-confirmed
+ *          reproducing, so expect test.fail() to be needed once runImport()
+ *          exists.
+ *
  * Guards CMAG-681 — filed as resolved in Jira, but a later QA session
  * re-confirmed it still reproducing: a starter-template import leaves
  * orphaned duplicate pages behind (Home/Blog/Contact ×3 observed), with
@@ -14,7 +24,7 @@ import { test, expect } from '../../fixtures/demo-import';
  * so expect it to need a test.fail() annotation too until it's genuinely
  * fixed.
  */
-test.fixme('demo import does not leave orphaned duplicate pages @nightly', async ({ page, demoImport }) => {
+test.fixme('demo import does not leave orphaned duplicate pages @demo @content', async ({ page, demoImport }) => {
   const before = await demoImport.snapshotPublishedPages();
 
   await demoImport.gotoStarterTemplates();

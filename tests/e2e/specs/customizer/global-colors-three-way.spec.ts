@@ -3,6 +3,15 @@ import { test, expect } from '../../fixtures/customizer';
 const CONTROL_ID = 'colormag_base_color';
 
 /**
+ * @area    global
+ * @tier    fresh
+ * @source  human 2026-08-25
+ * @why     A setting can fail publish-reaches-the-front-end or
+ *          still-set-on-reopen while looking fine in the other legs.
+ *          class-colormag-dynamic-css.php is the most fix-churned file in the
+ *          theme after the migration routines, so the round trip through it
+ *          is worth guarding permanently.
+ *
  * The customizer round-trip check (ground rule, and CONVENTIONS.md's
  * rationale for this whole suite existing): a setting can fail any one of
  * preview-updates, publish-reaches-the-front-end, or
@@ -41,7 +50,7 @@ const CONTROL_ID = 'colormag_base_color';
  * now waits for the actual customize_save network response, then
  * confirms from `wp.customize.state('saved')` rather than the DOM.
  */
-test('Global > Colors > Base persists through publish and reopen @pr', async ({ page, customizer }) => {
+test('Global > Colors > Base persists through publish and reopen @fresh @global', async ({ page, customizer }) => {
   test.setTimeout(90_000);
   await customizer.open({ control: CONTROL_ID });
 

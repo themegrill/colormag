@@ -1,6 +1,16 @@
 import { test, expect } from '../../fixtures/demo-import';
 
 /**
+ * @area    content
+ * @tier    demo
+ * @guards  CMAG-677
+ * @source  human 2026-08-25
+ * @why     Irreducibly @demo: the defect is wp_unslash() stripping the escape
+ *          backslash during wp_update_post() ON IMPORT. Seeding the same
+ *          content directly would skip the exact code path under test and
+ *          pass regardless. Still fixme: needs runImport() plus a demo whose
+ *          content contains an Everest Forms block using a var(--…) colour.
+ *
  * Guards CMAG-677 (fixed): unslashed `post_content` passed to
  * `wp_update_post()` during import let WordPress's `wp_unslash()` strip
  * the escape backslash `serialize_blocks()` uses for literal `--`,
@@ -13,7 +23,7 @@ import { test, expect } from '../../fixtures/demo-import';
  * color — confirm one exists in the target demo before enabling this.
  */
 test.fixme(
-  'demo content with a var(--...) custom property survives import intact @nightly',
+  'demo content with a var(--...) custom property survives import intact @demo @content',
   async ({ page, demoImport }) => {
     const before = await demoImport.snapshotPublishedPages();
 

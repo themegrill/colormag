@@ -1,6 +1,17 @@
 import { test, expect } from '../../fixtures/demo-import';
 
 /**
+ * @area    content
+ * @tier    demo
+ * @guards  CMAG-338
+ * @source  human 2026-08-25
+ * @why     Irreducibly @demo: the assertion IS the import's batch-remapping
+ *          behaviour — colormag_category_color_{term_id} mods being rewritten
+ *          to the new term IDs across a >10-post batch boundary. There is no
+ *          seedable stand-in for "an import happened", so this cannot be
+ *          reduced to @fresh without testing something else entirely.
+ *          Still fixme: demoImport.runImport() is unimplemented.
+ *
  * Guards CMAG-338 (fixed): `colormag_category_color_{term_id}` theme mods
  * weren't remapped to the new category IDs created during import, and
  * deferred remapping (menu items, post_parent, post_author, attachment
@@ -13,7 +24,7 @@ import { test, expect } from '../../fixtures/demo-import';
  * is drawn from used ColorMag's "Health Blog" demo).
  */
 test.fixme(
-  'category colors survive a demo import spanning multiple batches (>10 posts) @nightly',
+  'category colors survive a demo import spanning multiple batches (>10 posts) @demo @content',
   async ({ page, demoImport }) => {
     const before = await demoImport.snapshotPublishedPages();
 

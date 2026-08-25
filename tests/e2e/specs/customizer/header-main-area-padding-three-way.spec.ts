@@ -3,6 +3,14 @@ import { test, expect } from '../../fixtures/customizer';
 const CONTROL_ID = 'colormag_header_main_area_padding';
 
 /**
+ * @area    header
+ * @tier    fresh
+ * @source  human 2026-08-25
+ * @why     Header layout is one of the two mandatory round-trip checks. Padding
+ *          is used because its effect (row height) is unambiguous to assert,
+ *          and only `top` is changed so the other sides are not clobbered on
+ *          whatever site this runs against.
+ *
  * Round-trip check for a Header Builder layout control (ground rules call
  * out "header layout" by name as one of the two mandatory checks,
  * alongside a global colour). The Header Builder's Main Area row — the
@@ -35,7 +43,7 @@ const CONTROL_ID = 'colormag_header_main_area_padding';
  * global-colors-three-way.spec.ts — `customizer.publish()`'s old DOM-based
  * wait, now fixed at the fixture level. See that spec's docblock.
  */
-test('Header Builder > Main Area padding persists through publish and reopen @pr', async ({
+test('Header Builder > Main Area padding persists through publish and reopen @fresh @header', async ({
   page,
   customizer,
 }) => {

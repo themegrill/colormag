@@ -1,17 +1,20 @@
 import { test, expect } from '../../fixtures/wp-admin';
+import { baseUrl } from '../../env';
 
 /**
- * Guards an invariant from the knowledge file's roles table (CONVENTIONS.md
- * rule 7): a Subscriber must never reach the Customizer. A regression here
- * is a security issue, not a UX one, which is why it gets a named test
- * rather than living in a checklist.
+ * @area    additional
+ * @tier    fresh
+ * @source  human 2026-08-25
+ * @why     A Subscriber reaching the Customizer is a privilege-escalation
+ *          bug, not a UX one — it would let any registered user rewrite the
+ *          site's appearance. Declared as an invariant in the knowledge
+ *          file's roles table, so CONVENTIONS.md rule 7 asks for a named test
+ *          enforcing it rather than a checklist line.
  *
- * WP-CLI is not available in this environment (see .themegrill-qa/knowledge.md,
- * Environment notes — the global `wp` install here is broken), so the test
- * user is created and torn down through the REST API instead of the
- * `createUser`/wp-cli pattern CONVENTIONS.md describes for other products
- * in this catalogue. The nonce is read from `wpApiSettings`, which the
- * block editor always localizes, rather than assuming any particular admin
+ * Creates and tears down its own Subscriber through the REST API, so it needs
+ * no pre-existing test user and leaves none behind — which is what makes it
+ * `@fresh` on a disposable site. The nonce is read from `wpApiSettings`, which
+ * the block editor always localizes, rather than assuming any particular admin
  * screen exposes it.
  *
  * Verified live on this site (2026-08-25): a real Subscriber account
@@ -19,7 +22,7 @@ import { test, expect } from '../../fixtures/wp-admin';
  * got a 403 from /wp-admin/customize.php. No bug found — documenting the
  * correct behavior so a regression here fails loudly.
  */
-test('subscriber cannot reach the customizer @pr', async ({ page, request }) => {
+test('subscriber cannot reach the customizer @fresh @additional', async ({ page, request }) => {
   test.setTimeout(60_000);
   await page.goto('/wp-admin/post-new.php?post_type=post');
   const nonce = await page.evaluate(() => (window as any).wpApiSettings?.nonce);
@@ -43,14 +46,34 @@ test('subscriber cannot reach the customizer @pr', async ({ page, request }) => 
   try {
     // Log in as the subscriber in a fresh, unauthenticated context so the
     // admin storageState session isn't disturbed for the rest of the run.
-    const subscriberContext = await page.context().browser()!.newContext();
+    // baseURL must be passed explicitly: a context created straight off the
+    // browser does NOT inherit the config's `use.baseURL`, so every relative
+    // goto below would throw "Invalid URL". This spec had never actually run
+    // — the bug was latent behind a global-setup that failed earlier.
+    const subscriberContext = await page.context().browser()!.newContext({ baseURL: baseUrl() });
     const subscriberPage = await subscriberContext.newPage();
     try {
       await subscriberPage.goto('/wp-login.php');
       await subscriberPage.locator('#user_login').fill(username);
       await subscriberPage.locator('#user_pass').fill(password);
       await subscriberPage.locator('#wp-submit').click();
-      await subscriberPage.locator('#wpadminbar').waitFor({ state: 'visible', timeout: 30_000 });
+      await subscriberPage.waitForURL((u) => !u.pathname.endsWith('/wp-login.php'), { timeout: 30_000 });
+
+      // Confirm the session from the auth cookie WordPress sets, rather than
+      // by waiting for #wpadminbar. The admin bar is NOT a reliable logged-in
+      // signal for a low-privilege role: WooCommerce hides it from customers
+      // and redirects them to the front-end My Account page, so the original
+      // wait timed out on a login that had in fact succeeded — a false failure
+      // that says nothing about the capability under test.
+      //
+      // A REST probe is no good here either: cookie auth alone is not enough
+      // for the REST API, which answers 401 without an X-WP-Nonce header, so
+      // that check would fail for a perfectly valid session too.
+      const cookies = await subscriberContext.cookies();
+      expect(
+        cookies.some((c) => c.name.startsWith('wordpress_logged_in_')),
+        `Subscriber "${username}" did not end up logged in — no wordpress_logged_in_ cookie was set.`,
+      ).toBeTruthy();
 
       const response = await subscriberPage.goto('/wp-admin/customize.php');
       expect(response?.status(), 'Subscriber should be denied the Customizer').toBe(403);

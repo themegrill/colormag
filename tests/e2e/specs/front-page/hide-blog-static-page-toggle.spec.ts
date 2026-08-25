@@ -3,6 +3,15 @@ import { test, expect } from '../../fixtures/customizer';
 const CONTROL_ID = 'colormag_hide_blog_static_page_post';
 
 /**
+ * @area    front-page
+ * @tier    fresh
+ * @source  human 2026-08-25
+ * @why     Guards the outcome ColorMag's own docs promise for this toggle.
+ *          One of the few controls with no postMessage transport, so it
+ *          exercises WP core's full-iframe-reload preview path — which is
+ *          also why this spec can assert the preview directly where the
+ *          Customind-rendered controls cannot.
+ *
  * Guards the stated outcome in ColorMag's own docs, "Hide Blog Posts /
  * Static Page":
  * https://docs.themegrill.com/colormag/docs/enable-or-disable-latest-blog-posts-or-static-page-content-on-the-front-page/
@@ -41,7 +50,7 @@ const CONTROL_ID = 'colormag_hide_blog_static_page_post';
  * Verified live on this site (2026-08-25): toggling this control hid
  * `.cm-posts` in the live preview; toggling it back restored it.
  */
-test('Hide blog posts/static page toggle hides and restores front-page content in the live preview @pr', async ({
+test('Hide blog posts/static page toggle hides and restores front-page content in the live preview @fresh @front-page', async ({
   page,
   customizer,
 }) => {

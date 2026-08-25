@@ -1,6 +1,14 @@
 import { test, expect } from '../../fixtures/customizer';
 
 /**
+ * @area    header
+ * @tier    fresh
+ * @guards  CMAG-684
+ * @source  human 2026-08-25
+ * @why     The original bug collapsed any var(--cm-color…) choice down to a
+ *          hardcoded fallback, so every palette swatch rendered identically.
+ *          Forward-looking guard against that special-casing returning.
+ *
  * Guards CMAG-684 (fixed, commit dc6d5611): Header Builder > Bottom Area's
  * background used to special-case any `var(--cm-color...)` value down to a
  * literal, undefined `var(--cm-color, #27272A)`, so it always rendered the
@@ -36,7 +44,7 @@ import { test, expect } from '../../fixtures/customizer';
  * definitely target the same, fully-loaded document. This changes only
  * how the spec finds the preview iframe, not what it asserts.
  */
-test('Header Builder Bottom Area background follows the chosen palette color @pr', async ({
+test('Header Builder Bottom Area background follows the chosen palette color @fresh @header', async ({
   page,
   customizer,
 }) => {

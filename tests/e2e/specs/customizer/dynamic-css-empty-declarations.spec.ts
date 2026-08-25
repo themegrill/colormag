@@ -1,6 +1,15 @@
 import { test, expect } from '../../fixtures/wp-admin';
 
 /**
+ * @area    global
+ * @tier    fresh
+ * @guards  CMAG-738
+ * @source  human 2026-08-25
+ * @why     An empty declaration invalidates the rule it sits in, so one unset
+ *          background sub-field could silently drop a whole block of styling
+ *          on the live front end. Written as a general guard, not a
+ *          reproduction of one control.
+ *
  * Guards CMAG-738 (source: Zakra ZAK-214/215/222): dynamic/inline CSS used
  * to ship invalid empty declarations (`background-position:;` etc.) for
  * background sub-fields left at their default, unset state — shipped on
@@ -13,7 +22,7 @@ import { test, expect } from '../../fixtures/wp-admin';
  * as a general regression guard against ANY inline stylesheet shipping an
  * empty-value declaration, not a reproduction tied to one specific control.
  */
-test('front-end inline stylesheets never ship an empty-value CSS declaration @pr', async ({ page }) => {
+test('front-end inline stylesheets never ship an empty-value CSS declaration @fresh @global', async ({ page }) => {
   await page.goto('/');
 
   const styleContents = await page.locator('style').allTextContents();
