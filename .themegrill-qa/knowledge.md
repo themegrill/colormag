@@ -40,14 +40,14 @@ news blocks and demo import first), so blast radius here is ranked by
 where the theme has actually, repeatedly cost the most to get wrong, not
 by which surface a user notices first.
 
-1. **Upgrade / migration** — `inc/migration/class-colormag-migration.php`,
+1. **upgrade** — Upgrade / migration: `inc/migration/class-colormag-migration.php`,
    45 fix commits, the single most-patched file in the theme. Worst
    customer impact when it fails: a bad migration silently reshapes or
    drops a customer's existing settings on update, which is the class of
    bug this file exists specifically to prevent (see "Upgrade paths that
    matter" below — still the least-covered section of this document,
    which is itself a gap worth closing before anything else here).
-2. **Customizer round-trip, including block-editor parity** —
+2. **global** — Customizer round-trip, including block-editor parity:
    `inc/base/class-colormag-dynamic-css.php` (43) +
    `inc/core/class-colormag-enqueue-scripts.php` (41) + Customind's own
    live-preview sync (`customind.js` + `cm-customize-preview.js`, 59
@@ -60,34 +60,34 @@ by which surface a user notices first.
    both turned out to be less reliable in this environment than manual
    verification, which passed cleanly on all three legs for all three
    controls.
-3. **Header/Footer Builder vs. legacy panel** — one theme mod
+3. **header** — Header/Footer Builder vs. legacy panel: one theme mod
    (`colormag_enable_builder`) switching the entire header/footer
    settings surface between two independent code paths, and existing
    sites get migrated onto it. **Verified live: this site has the builder
    enabled** (confirmed both in the theme_mods snapshot and by using the
    Customizer UI). New installs default to the builder
    (`colormag_maybe_enable_builder()`).
-4. **Fresh activation and template rendering** — **verified**: every
+4. **activation** — Fresh activation and template rendering. **Verified**: every
    template type (front page, category archive, single post, plain page,
    search, 404) rendered cleanly on this site with no PHP notices and no
    raw shortcode text.
-5. **Header layout and mobile menu** — **verified**: Header Builder's Main
+5. **header** — Header layout and mobile menu. **Verified**: Header Builder's Main
    Area row (logo + primary menu) has Container/Height/Color/Background/
    Padding/Margin controls; changing Padding correctly changed row height
    on publish. At 375px, the hamburger opens an off-canvas panel with
    search + the primary menu; a top-level item's own chevron button
    (distinct from the item's link) expands an indented child list without
    navigating away; child links carry correct URLs.
-6. **RTL** — `style-rtl.css` churned 98 times in fix commits, nearly as
+6. **rtl** — `style-rtl.css` churned 98 times in fix commits, nearly as
    much as `style.css` itself, yet has **zero coverage** from this
    session or the pre-existing spec suite. The single largest gap between
    evidenced fragility and actual test coverage in this whole document —
    next QA pass should start here, not at the bottom of a list.
-7. **Demo import** (ThemeGrill Demo Importer, a separate plugin, Jira
+7. **demo-import** — ThemeGrill Demo Importer, a separate plugin, Jira
    project `DITG`) — not exercised this session (the Main demo was
    already imported). `inc/migration/demo-import-migration.php` exists
    specifically to reconcile customizer state after an import.
-8. **WooCommerce** — theme ships a compatibility layer
+8. **woocommerce** — theme ships a compatibility layer
    (`inc/compatibility/woocommerce/`); not exercised this session (no
    WooCommerce admin menu observed on this site, so it does not appear to
    be active here).
@@ -313,11 +313,79 @@ the last 400) plus this session's own findings:
 | **CONFIRMED, reproducing today**: Customind React console errors | Opening `/wp-admin/customize.php` reliably logs 5 React "Invalid DOM property" console errors (`stroke-linecap`, `stroke-linejoin`, `stroke-width`, `fill-rule`, `clip-rule` — SVG icon components using raw HTML attribute names instead of React's camelCase equivalents). Reproduced on repeated fresh loads. Purely console noise, no visible rendering defect found. This suite's `customind-console-warnings.spec.ts` already guards it as CMAG-733. |
 | **This session's own tooling gap**: driving Customind controls via `wp.customize(id).set()` | Does NOT reliably trigger Customind's own React re-render of the live preview's dynamic CSS. A real user changing a control **does** update the preview live (confirmed by hand, with screenshots) — this is a gap in how an automated suite drives these specific React controls, not a theme bug. |
 | ~~Automating the Publish click itself~~ | **Fixed** — see "The `#save`-state wait..." above this table. Superseded, kept struck through rather than deleted so the history of what was tried is legible. |
-| **Cross-test contamination via `theme_mods_colormag`** (found and fixed this session) | A customizer spec that publishes a test value and then fails *before* its own revert step left the live site mutated for whatever spec ran next — concretely, `blog-layout/entry-summary-spacing.spec.ts` (an unrelated layout measurement) once measured a gap more than 3x its expected size purely because of this. Fixed at the fixture level: `tests/e2e/global-setup.ts` snapshots `theme_mods_colormag` once before the suite runs, and the shared `customizer` fixture (`tests/e2e/fixtures/customizer.ts`) restores it after every test that uses it, regardless of pass/fail. |
+| **Cross-test contamination via `theme_mods_colormag`** (found and fixed this session) | A customizer spec that publishes a test value and then fails *before* its own revert step left the live site mutated for whatever spec ran next — concretely, `blog-layout/entry-summary-spacing.spec.ts` (an unrelated layout measurement) once measured a gap more than 3x its expected size purely because of this. Fixed at the fixture level: `tests/e2e/global-setup.ts` snapshots the active theme's mods once before the suite runs, and the shared `customizer` fixture (`tests/e2e/fixtures/customizer.ts`) restores them after every test that uses it, regardless of pass/fail, with `tests/e2e/global-teardown.ts` restoring once more at the end of the run. **Correction (2026-08-25):** the option name was hardcoded as `theme_mods_colormag`, which is only right while ColorMag free is the active theme. WordPress stores mods per stylesheet, so on a site running ColorMag Pro (a standalone theme, not a child) the Customizer wrote `theme_mods_colormag-pro` while the restore rewrote `theme_mods_colormag` — a no-op that reported success on every teardown. `theme-mods-snapshot.ts` now resolves `theme_mods_<stylesheet>` at run time. |
 | **This dev machine degrades over a long session, independent of parallel vs. serial** | Two default-parallel full-suite runs and two serial (`--workers=1`) full-suite runs, all four run back-to-back with no manual reset, did NOT produce an identical failing set — the intersection stable across all four was only 4 specs (`mobile-menu-submenu-expand`, `block-editor-heading-color`, `dynamic-css-empty-declarations`, `header-footer-css-conflict`); serial was consistently better than parallel, but even serial-vs-serial got worse the later it ran (4 failed vs. 9 failed). Basic, always-reliable specs (plain template renders) failed only under heavy parallel contention. Treat any single run's totals on this specific machine with caution — prefer the intersection across a couple of runs, and expect a fresh session/machine to look better than this one's later runs. |
 | RTL layout | style-rtl.css churned 98 times in fix commits — nearly as much as style.css itself, and has **zero test coverage**. The single biggest evidenced-fragility-vs-coverage gap in this document. |
 | Menu dropdowns at the tablet breakpoint | Not tested this session (375px and 1440px only) |
-| `blog-layout/entry-summary-spacing.spec.ts` fails on this site, unrelated to the contamination above | Measures a consistent ~45.6px gap against whatever post `/wp-json/wp/v2/posts?per_page=1` returns on this site, reproducing identically across repeated clean runs — not flaky, but the spec's own docblock caveats it assumes "page header enabled, on a post that has one," which may not hold for whichever post that query picks here. Needs a human to confirm expected gap for this site's actual post state, or seed a specific fixture post instead of using whatever's most recent. |
+| ~~`blog-layout/entry-summary-spacing.spec.ts` measures ~45.6px~~ | **Fixed (test bug, not the theme).** The spec hardcoded `.cm-entry-title` as the element above `.cm-entry-summary` and measured title-bottom to summary-top. `.cm-below-entry-meta` (the byline/date row) sits between them — a real ~22px content block, not spacing — so the measurement was "margin + a whole meta row + margin", reproducing identically every run because it was not flaky, just measuring the wrong two elements. Now measures from `.cm-entry-summary`'s actual DOM `previousElementSibling`, whatever that is. This **changed what the spec measures** (a hardcoded element pair → "the summary and whatever precedes it"); the assertion (a single ~12px gap, not doubled) is unchanged. |
+
+## Test environments
+
+The suite in `tests/e2e/` runs in three places, and which specs are
+meaningful differs between them. Tier is declared as a tag in each test's
+title, because that is what Playwright's `--grep` matches.
+
+| Caller | Environment | Tier | What it costs |
+|---|---|---|---|
+| A developer, by hand | `test-colormag.local` | all | nothing |
+| CI, on every PR | fresh Playground site | `@fresh` | runner minutes |
+| `themegrill-qa` skills | Playground or Local | `@fresh` | tokens |
+
+**What `@fresh` guarantees.** A `@fresh` spec must pass against a site with
+nothing on it but WordPress, this theme activated, and whatever
+`themegrill-qa`'s `blueprints/theme-test.json` seeds: ~12 posts across 3
+categories, 4 pages, a nav menu with one dropdown assigned to every
+registered location, a Search widget in the first sidebar, and postname
+permalinks. **No demo import, no static front page, no configured Header or
+Footer Builder layout beyond the theme's own defaults.** Anything else a
+spec needs it must seed itself through `tests/e2e/fixtures/content.ts`,
+which reuses what the blueprint already provides and creates only what is
+missing — so the same spec also runs on a bare Local site.
+
+**What the demo import adds, and why some specs need it.** The ThemeGrill
+demos bring populated Header and Footer Builder rows, footer widget areas
+with real widgets in them, per-category colour theme mods, and content
+built with third-party page builders. Four specs are `@demo` for reasons
+that are properties of the assertion, not of the effort:
+`category-color-remap`, `css-custom-property-corruption` and
+`orphaned-pages` assert side-effects **of the import routine itself**, so
+seeding equivalent content would skip the code path under test entirely.
+`header-footer-css-conflict` needs a footer widget that sets its own link
+colour, and a clean site renders only the copyright bar — reproducing that
+would mean inventing a Footer Builder layout rather than testing a real one.
+
+**What differs on Playground.** It is PHP-WASM on SQLite. There is no
+MySQL, no `mysql` client binary, no real cron and no outbound mail. The two
+DB-level helpers — stale-changeset cleanup and the theme-mod
+snapshot/restore — are therefore skipped there by `hasMysql()` in
+`tests/e2e/env.ts`, which is safe because a Playground site is rebuilt from
+the blueprint per run and has nothing to protect. A spec that genuinely
+needs cron, mail or MySQL behaviour belongs in `@demo`, or must skip with a
+stated reason via `playgroundSkipReason()`. Read `TGQA_ENV`
+(`playground` | `wp-env` | `local`) to branch; never weaken an assertion to
+make it pass in both places.
+
+## Invariants asserted by a named spec
+
+CONVENTIONS.md rule 7: an invariant declared in prose here should be
+traceable to the test that enforces it. `suite-index.mjs` emits this
+mapping from each spec's `@guards` docblock field.
+
+| Key | Asserted by | Status |
+|---|---|---|
+| CMAG-338 | `demo-importer/category-color-remap.spec.ts` | fixed; spec still `fixme` pending `runImport()` |
+| CMAG-650 | `demo-importer/header-footer-css-conflict.spec.ts` | fixed; spec `@demo`, premise flagged UNRESOLVED |
+| CMAG-677 | `demo-importer/css-custom-property-corruption.spec.ts` | fixed; spec still `fixme` pending `runImport()` |
+| CMAG-681 | `demo-importer/orphaned-pages.spec.ts` | filed resolved, re-confirmed reproducing; spec `fixme` |
+| CMAG-684 | `customizer/header-bottom-area-palette-color.spec.ts` | fixed (dc6d5611); forward-looking guard |
+| CMAG-733 | `customizer/customind-console-warnings.spec.ts` | **open**; spec pins the count at exactly 5 |
+| CMAG-734 | `accessibility/mobile-menu-escape-key.spec.ts` | **open**; spec is `test.fail()` |
+| MZB-742 | `customizer/block-editor-heading-color.spec.ts` | fixed |
+
+Invariants with no ticket and no spec yet — the honest gaps: RTL layout
+(`style-rtl.css`, 98 fix commits, zero coverage), upgrade/migration
+(45 fix commits, the most-patched file in the theme), WooCommerce
+compatibility, and the tablet breakpoint for menu dropdowns.
 
 ## Known non-issues
 
@@ -331,25 +399,39 @@ the last 400) plus this session's own findings:
 
 ## Environment notes
 
-- **This machine's `wp` CLI is broken**: the global Composer install at
-  `~/AppData/Roaming/Composer/vendor/wp-cli/wp-cli` is missing
-  `php/boot-fs.php` and fails immediately on any command. Local by
-  Flywheel does not bundle a working `wp-cli.phar` for this site either.
-  Verified/restored DB state instead via the site's Local MySQL instance
-  directly (host `127.0.0.1`, port from `AppData/Roaming/Local/sites.json`
-  → this site's `mysql.ports.MYSQL`, credentials `root`/`root`, database
-  `local`) using the bundled `lightning-services/mysql-*/bin/win64/bin/mysql.exe`
-  / PHP `mysqli`. A human should fix the wp-cli install before the next QA
-  pass — the harness's own `global-setup.ts` and demo-import fixture both
-  note they'd prefer WP-CLI-based seeding where available.
-- The site under test already has the ThemeGrill "Main" demo imported —
-  **this is not default theme behaviour**, it's the environment given to
-  this session, chosen because it's the most common demo real users
-  import. Any behaviour above observed only on this imported-demo state
-  is flagged as such.
-- A pre-existing, uncommitted Playwright E2E suite (`tests/e2e/`,
-  TypeScript, pnpm-based) already existed on this branch before this
-  session, referencing a QA ledger of prior findings (the audit reports in
-  the Local site root). This session extended it rather than starting a
-  parallel suite — see the suite's own README and this QA session's
-  report for what was added and why.
+**Rewritten 2026-08-25 — the previous contents of this section described a
+Windows machine and a demo-imported site, and both had stopped being true.
+Two of this suite's specs were still built on those assumptions.**
+
+- **The reference site is a clean slate.** `test-colormag.local` runs
+  **ColorMag free, activated, with no demo content**: Hello World, Sample
+  Page, four WooCommerce pages, one category, and **zero nav menus**. It is
+  deliberately close to what CI gets, so a local pass means something.
+  Anything a spec needs beyond that, it seeds itself — see
+  `tests/e2e/fixtures/content.ts`.
+- **ColorMag Pro is installed but inactive, and is a standalone theme, not
+  a child** (`Theme Name: ColorMag Pro`, no `Template:` header). It keeps a
+  separate `theme_mods_colormag-pro` option. Switching the active theme
+  therefore changes which `theme_mods_*` option is live — which silently
+  broke the snapshot/restore safety net while it hardcoded one name. Check
+  the active stylesheet before trusting any theme-mod assertion.
+- **WP-CLI works on this machine** (Homebrew, 2.12.0), contrary to what
+  this section said before. Two caveats: `wp-config.php` hardcodes
+  `DB_HOST=localhost`, which misses Local's socket, so pass a `--require`
+  file that `define()`s `DB_HOST` as `localhost:<socket path>` first; and
+  its `--format=table|csv|json` output errors with "Invalid format", so
+  prefer direct SQL for anything list-shaped.
+- **Local by Flywheel's MySQL refuses TCP from `127.0.0.1`** ("Host is not
+  allowed to connect to this MySQL server") while accepting the same
+  credentials over its unix socket at
+  `~/Library/Application Support/Local/run/<site-id>/mysql/mysqld.sock`.
+  The suite reads `WP_DB_SOCKET` for this; it is not wp-config's
+  `localhost:/path` form, which the `mysql` CLI does not understand.
+- **Credentials live only in a gitignored `.env.local` at the theme root**,
+  read as `CM_ADMIN_USER` / `CM_ADMIN_PASS`. A previous commit tracked that
+  file with a real password in it; it has been untracked and the secret
+  should be treated as compromised. Never reintroduce one to a tracked file.
+- Active plugins on the reference site: `theme-check`,
+  `themegrill-demo-importer`, `woocommerce`. The demo importer being
+  present is what makes a `@demo`-tier run possible here at all, once
+  `demoImport.runImport()` is implemented.

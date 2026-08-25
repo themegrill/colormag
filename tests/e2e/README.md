@@ -1,81 +1,99 @@
 # ColorMag E2E suite
 
-Playwright specs guarding confirmed bugs/regressions found across prior QA
-sessions on this theme. This is the first test suite in this repo — there
-were no existing conventions to inherit, so the choices below (fixtures,
-tagging, tiering) are a starting point, open to revision.
+Playwright specs for ColorMag, written so three different callers can run
+them: you on your own machine, CI on every pull request, and the
+`themegrill-qa` agent skills. They are the same specs in all three cases —
+what changes is which **tier** runs, because not every spec is meaningful on
+every kind of site.
 
-Scoped to **ColorMag (free) only** for now. ColorMag Pro-only findings from
-the QA ledger (Header Builder Logo Height, Active Text Color ancestor
-highlighting, Scroll-to-Top, the preset-5 palette-reset regression) are
-intentionally not covered here.
+## The two tiers
 
-## Setup
+Every test carries its tier as a tag in its **title**, because a title is what
+Playwright's `--grep` actually matches. There are exactly two.
 
-```bash
-pnpm install
-npx playwright install chromium
-cp tests/e2e/.env.example tests/e2e/.env   # fill in WP_ADMIN_USER / WP_ADMIN_PASSWORD / WP_DB_*
+**`@fresh`** — runs against a site with nothing on it but WordPress, ColorMag
+activated, and whatever `themegrill-qa`'s `blueprints/theme-test.json` seeds
+(~12 posts, 3 categories, 4 pages, a nav menu with one dropdown, postname
+permalinks). Anything else a `@fresh` spec needs, it seeds for itself through
+`fixtures/content.ts`, which reuses what is already there and creates only
+what is missing — so the same spec runs unchanged on a bare Local site. This
+is the tier CI runs, and it is 19 of the 23 tests.
+
+**`@demo`** — needs a site with a ThemeGrill demo imported. Four tests, and
+each is `@demo` because of what it asserts rather than how much work it would
+be: three assert side-effects **of the import routine itself** (seeding
+equivalent content would skip the code path under test), and
+`header-footer-css-conflict` needs a footer widget that sets its own link
+colour, which a clean site has no way to produce without inventing a Footer
+Builder layout. An **untagged** test is treated as `@demo` by the platform, so
+it would silently lose its CI coverage — do not leave one untagged.
+
+## The environment variables
+
+Three values, each resolved through the same precedence chain in `env.ts`:
+`TGQA_*` (exported by the platform's `run-suite.mjs`, so you never set these)
+→ `CM_*` (yours) → `WP_*` (legacy, still honoured) → a default.
+
+| Value | Yours | Notes |
+|---|---|---|
+| Site URL | `CM_BASE_URL` | Defaults to `http://test-colormag.local`, so a local run needs no setup at all |
+| Admin user | `CM_ADMIN_USER` | **No default.** Missing credentials fail loudly rather than timing out on a login screen |
+| Admin password | `CM_ADMIN_PASS` | Same |
+
+`TGQA_ENV` (`playground` \| `wp-env` \| `local`) tells specs what kind of site
+they are on. It is what makes the DB-level helpers skip themselves on
+Playground, which is PHP-WASM on SQLite with no MySQL, no real cron and no
+outbound mail. Read it to branch; never weaken an assertion to make one spec
+pass in both places — tag it `@demo`, or skip it with a stated reason.
+
+## Where `.env.local` goes
+
+**In the theme root, next to `package.json`** — not in this directory. Copy
+`tests/e2e/.env.example` to `.env.local` and fill it in. It is gitignored and
+must stay that way: a credential never belongs in a tracked file, and if you
+find one in a spec, a config or a workflow, that is a bug to fix rather than a
+pattern to copy. A run against a real (non-disposable) site also needs the
+`WP_DB_*` block, which two helpers use to trash stale Customizer changesets
+before the run and to snapshot and restore the active theme's mods around it.
+Both are skipped automatically on Playground.
+
+## Running it
+
+Against your Local site, nothing to configure beyond `.env.local`:
+
+```
+pnpm test:e2e          # everything
+pnpm test:e2e:fresh    # the CI tier — what a PR gates on
+pnpm test:e2e:demo     # needs a demo-imported site
+pnpm test:e2e:ui       # interactive
+pnpm test:e2e:report   # open the last HTML report
 ```
 
-`WP_DB_*` (host/port/user/password/name, optionally table prefix and a
-`mysql` binary path) is a **hard precondition**, not optional — global
-setup uses it to trash stale Customizer auto-draft changesets before the
-run starts. Without it, opening the Customizer can silently restore a
-leftover unpublished draft from an earlier run instead of starting clean,
-which makes two consecutive runs of the same suite legitimately diverge
-for reasons that have nothing to do with the specs themselves. See
-`clearStaleChangesets()` in `global-setup.ts`.
+Against a disposable Playground site, let the platform boot one and point the
+suite at it — this is exactly what CI does, so it is the way to reproduce a CI
+failure locally:
 
-## Running
-
-```bash
-pnpm test:e2e            # everything
-pnpm test:e2e:pr         # fast, deterministic — every PR
-pnpm test:e2e:nightly    # slower/state-heavy — scheduled runs only
-pnpm test:e2e:ui         # interactive UI mode, for authoring/debugging
+```
+node "$THEMEGRILL_QA_HOME/scripts/run-suite.mjs" --tier fresh --boot playground --install
 ```
 
-Tests are tagged `@pr` or `@nightly` in their titles and selected via
-`--grep`, rather than separate spec directories per tier — a spec's
-directory reflects the *feature* it covers (matching the QA ledger's
-grouping), not how often it runs.
+Or point the suite at any site yourself:
 
-## Layout
+```
+CM_BASE_URL=https://example.test TGQA_ENV=local pnpm test:e2e:fresh
+```
 
-- `fixtures/wp-admin.ts` — base fixture; auth itself happens once in
-  `global-setup.ts` via `storageState`, not per test.
-- `fixtures/customizer.ts` — opens the Customizer, sets a control's value
-  via `wp.customize(id).set()` against the live preview (no Publish, no
-  revert needed for most specs), plus a `publish()` step for the few specs
-  that must assert against a real page load instead of the preview iframe.
-- `fixtures/demo-import.ts` — REST-based before/after page diffing for
-  cleanup after an import, instead of a full WP-CLI DB snapshot/restore
-  (not assumed available in every environment this suite might run in).
-- `fixtures/geometry.ts` — bounding-box helpers for layout assertions, so
-  specs describe what's visually true (image above vs. beside content)
-  instead of reading CSS class names or `flex-direction`.
+## Two things that will bite you
 
-## Known gaps — read before extending this suite
+The suite logs in once per run (`auth.setup.ts`, a setup project) and caches
+the session in `.auth/`. That cache is validated before it is trusted, so a
+stale one re-logs in rather than failing the run — you should never need to
+delete it by hand.
 
-- **`demoImport.runImport()` is a documented stub, not implemented.** The
-  "pick a demo, start the import, wait for completion" interaction lives
-  in the `themegrill-demo-importer` plugin's own admin UI (a separate
-  plugin, not this theme) and wasn't verified against a live DOM for this
-  pass. The three specs in `specs/demo-importer/` that need it are marked
-  `test.fixme()` until it's filled in.
-- **Block-editor selectors are best-effort.** `block-editor-heading-color.spec.ts`
-  uses current Gutenberg conventions (`iframe[name="editor-canvas"]`, the
-  slash inserter) but hasn't been confirmed against a live run.
-- **Two specs assert the *correct* behavior for bugs confirmed still
-  open** and are marked `test.fail()` so they document intent without
-  failing CI: `mobile-menu-escape-key.spec.ts` (CMAG-734) and
-  `orphaned-pages.spec.ts` (CMAG-681, once its `runImport()` TODO is
-  filled in). Remove the annotation once the underlying bug is actually
-  fixed — an unexpected pass is the signal to do so.
-- Everything else asserts behavior confirmed fixed, verified directly
-  against current theme source before being written (see each spec's
-  top comment for what was checked and where).
-
-See the QA ledger this suite is based on for the full findings inventory,
-including what was deliberately left out of automated coverage and why.
+Driving a Customind control with `wp.customize(id).set(value)` updates the
+underlying setting reliably, but does **not** reliably trigger Customind's own
+React re-render of the live preview. A real user's click does. So a
+`.set()`-driven test that sees no preview change has found a gap in this
+suite's tooling, not a theme bug — never report "live preview broken" from
+one. The three round-trip specs assert the publish and reopen legs only, and
+say so in their docblocks.
