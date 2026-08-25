@@ -10,12 +10,19 @@
     "prettier": "prettier --ignore-path .gitignore --check \"**/*.+(ts|tsx)\"",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx)\"",
     "prettier:fix": "prettier --write \"**/*.+(ts|tsx)\"",
-    "release": "pnpm build && composer makepot && gulp build "
+    "release": "pnpm build && composer makepot && gulp build ",
+    "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
+    "test:e2e:pr": "playwright test --config=tests/e2e/playwright.config.ts --grep @pr",
+    "test:e2e:nightly": "playwright test --config=tests/e2e/playwright.config.ts --grep @nightly",
+    "test:e2e:ui": "playwright test --config=tests/e2e/playwright.config.ts --ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^20.14.0",
+    "dotenv": "^16.4.5",
     "@babel/plugin-transform-runtime": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
