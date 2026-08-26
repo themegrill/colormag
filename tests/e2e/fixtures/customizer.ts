@@ -80,6 +80,26 @@ export const test = base.extend<{ customizer: CustomizerHelper }>({
         // the actual save network request to complete, then confirm from
         // the Customizer's own JS state (`wp.customize.state('saved')`)
         // rather than inferring it from the DOM at all.
+
+        // Nothing to save is a normal state, not a failure, and it must be
+        // detected BEFORE clicking. WordPress disables #save and relabels it
+        // "Published" when the changeset is clean, so the click below would
+        // wait on a permanently-disabled button and the customize_save
+        // response would never arrive — the test just burns its whole
+        // timeout. Observed for real: an interrupted earlier run left the
+        // control's test value published, the next run snapshotted THAT as
+        // its baseline, so setControl() to the same value was a no-op and
+        // publish() hung for the full 150s.
+        //
+        // This is the same failure shape as the old #save wait, reached from
+        // the opposite direction, so it is deliberately answered from
+        // wp.customize state rather than from the button's disabled
+        // attribute.
+        const alreadySaved = await page.evaluate(
+          () => (window as any).wp?.customize?.state?.('saved')?.get() === true,
+        );
+        if (alreadySaved) return;
+
         const saved = page.waitForResponse(
           (r) =>
             r.url().includes('admin-ajax.php') &&

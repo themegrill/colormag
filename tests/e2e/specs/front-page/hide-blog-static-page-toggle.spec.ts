@@ -62,21 +62,51 @@ test('Hide blog posts/static page toggle hides and restores front-page content i
   // This control has no `transport: 'postMessage'`, so WP core's default
   // 'refresh' behavior replaces the whole preview iframe with a new one
   // rather than patching the existing one — briefly leaving two
-  // `#customize-preview iframe` elements in the DOM (the old one being
-  // torn down, the new one loading). `.last()` is the one WP is actually
-  // navigating to next.
-  const currentPreviewFrame = () => page.frameLocator('#customize-preview iframe').last();
+  // `#customize-preview iframe` elements in the DOM (the old one being torn
+  // down, the new one loading).
+  //
+  // Test-bug fix (this spec, not the theme): this used `.last()`, which is a
+  // LIVE locator re-resolved on every use. Waiting for `body` on it and then
+  // counting `.cm-posts` are two separate resolutions, and a swap landing
+  // between them destroys the first one's execution context — the run fails
+  // with "Execution context was destroyed, most likely because of a
+  // navigation" rather than any assertion. Confirmed intermittently: this
+  // spec passed on one full run and failed on the next with no code change.
+  //
+  // Fixed the same way header-bottom-area-palette-color.spec.ts already
+  // handles it: wait for the swap to FINISH — back down to exactly one
+  // preview iframe — before reading anything, so every read targets the same
+  // fully-loaded document. Changes only how the spec finds the preview, not
+  // what it asserts.
+  const settledPreviewFrame = async () => {
+    await page.waitForFunction(
+      () => document.querySelectorAll('#customize-preview iframe').length === 1,
+      null,
+      { timeout: 20_000 },
+    );
+    const frame = page.frameLocator('#customize-preview iframe');
+    await frame.locator('body').waitFor();
+    return frame;
+  };
 
   try {
     await customizer.setControl(CONTROL_ID, true);
-    await currentPreviewFrame().locator('body').waitFor();
-    const postsWhenHidden = await currentPreviewFrame().locator('.cm-posts').count();
-    expect(postsWhenHidden, '.cm-posts should not render in the preview when the toggle is on').toBe(0);
+    await expect
+      .poll(
+        async () => (await (await settledPreviewFrame()).locator('.cm-posts').count()),
+        {
+          message: '.cm-posts should not render in the preview when the toggle is on',
+          timeout: 20_000,
+        },
+      )
+      .toBe(0);
 
     await customizer.setControl(CONTROL_ID, false);
-    await currentPreviewFrame().locator('body').waitFor();
-    const postsWhenShown = currentPreviewFrame().locator('.cm-posts').first();
-    await expect(postsWhenShown, '.cm-posts should render again in the preview once the toggle is off').toBeVisible();
+    const shown = await settledPreviewFrame();
+    await expect(
+      shown.locator('.cm-posts').first(),
+      '.cm-posts should render again in the preview once the toggle is off',
+    ).toBeVisible({ timeout: 20_000 });
   } finally {
     // No publish() at all in this test (main body or cleanup) — every
     // change made is only ever previewed, never saved, so there is
