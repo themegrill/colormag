@@ -1,0 +1,249 @@
+{
+  "source": "https://docs.themegrill.com/colormag",
+  "mode": "rest",
+  "sections": [
+    {
+      "section": "content",
+      "label": "Content",
+      "parent": null,
+      "file": "docs/content.md",
+      "articles": 20,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 13,
+      "titles": [
+        "Manage Featured Images of a Page",
+        "Manage Page Title **Pro**",
+        "Customize the Post Meta",
+        "Manage Comment Title **Pro**",
+        "Manage Single Page Post Title **Pro**",
+        "Manage Reading Process Indicator **Pro**",
+        "Flyout Related Post in Single Posts **Pro**",
+        "Related Post in Single Post",
+        "Post Navigation in Single Post **Pro**",
+        "Add Caption in Featured Image **Pro**",
+        "Manage Social Share Button **Pro**",
+        "Manage Featured Image in a Single Post",
+        "Customize Author Bio in the Single Post",
+        "Customize Pagination",
+        "Infinite Scroll in Blog Page **Pro**",
+        "Customize Read More Tag **Pro**",
+        "Length of Post Title **Pro**",
+        "Manage Excerpt Text and Length",
+        "Manage Blog Page Layout",
+        "Customize AutoLoad Posts"
+      ]
+    },
+    {
+      "section": "widgets",
+      "label": "Widgets",
+      "parent": null,
+      "file": "docs/widgets.md",
+      "articles": 18,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 2,
+      "titles": [
+        "TG: Highligted Posts",
+        "TG: Featured Posts (Style 1)",
+        "TG: Featured Posts (Style 2)",
+        "TG: Featured Posts (Style 3) **Pro**",
+        "TG: Featured Posts (Style 4) **Pro**",
+        "TG: Featured Posts (Style 5) **Pro**",
+        "TG: Featured Posts (Style 6) **Pro**",
+        "TG: Featured Posts (Style 7) **Pro**",
+        "TG: Breaking News Widget **Pro**",
+        "TG: Videos **Pro**",
+        "TG: Tabbed Widget **Pro**",
+        "TG: Random Posts Widget **Pro**",
+        "TG: Weather **Pro**",
+        "TG: Currency Exchange **Pro**",
+        "TG: Featured Category Slider",
+        "TG: 125×125 Advertisement",
+        "TG: 300×250 Advertisement",
+        "TG: 728×90 Advertisement"
+      ]
+    },
+    {
+      "section": "header",
+      "label": "Header",
+      "parent": null,
+      "file": "docs/header.md",
+      "articles": 13,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 11,
+      "titles": [
+        "How to Use the Colormag Header Builder",
+        "Manage BreadCrumb",
+        "Customize Sticky Header",
+        "Customize Header Action",
+        "Add Home Icon/ Logo in the Primary Menu",
+        "Customize the Primary Menu of the Site",
+        "Manage Main Header Layout and Styles",
+        "Customize the Menu in Top Bar **Pro**",
+        "Customize Social Icons in Top Bar",
+        "Customize the Date in Top Bar",
+        "Customize the Site Logo, Site Icon, Site Title, and Tagline",
+        "Customize News Ticker in Top Bar",
+        "Customize Top Bar"
+      ]
+    },
+    {
+      "section": "faq",
+      "label": "Frequently Asked Questions",
+      "parent": null,
+      "file": "docs/faq.md",
+      "articles": 10,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 20,
+      "titles": [
+        "Can’t Log In to My ThemeGrill Account",
+        "How to find the invoice of the purchased theme?",
+        "How to Activate ColorMag Pro License? **Pro**",
+        "How to Import ColorMag Demos?",
+        "Troubleshooting common issues after ColorMag v3.0 & Pro v4.0 updates",
+        "How to Remove Example Widget?",
+        "How to Edit Imported Demo Site?",
+        "Edit a Page with Page Builder Plugin",
+        "Recommended Image Sizes",
+        "All About ColorMag Major Update (ColorMag v3.0 & Pro v4.0)"
+      ]
+    },
+    {
+      "section": "global",
+      "label": "Global",
+      "parent": null,
+      "file": "docs/global.md",
+      "articles": 8,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 8,
+      "titles": [
+        "Global Colors",
+        "Global Typography",
+        "Change Widget Title HTML Markup",
+        "Customize the Button",
+        "Manage Sidebar Area Layout",
+        "Customize Sidebar Area",
+        "Manage Container Area Layout and Width",
+        "Manage Category Colors"
+      ]
+    },
+    {
+      "section": "footer",
+      "label": "Footer",
+      "parent": null,
+      "file": "docs/footer.md",
+      "articles": 8,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 3,
+      "titles": [
+        "Footer Builder",
+        "Customize Scroll To Top Icon **Pro**",
+        "Manage Footer Social Icons",
+        "Customize Footer Menu **Pro**",
+        "Change Footer Copyright Text **Pro**",
+        "Customize Footer Column",
+        "Customize Footer Bar Layout & Styles",
+        "Customize the Design and Typography of Footer Widgets Columns"
+      ]
+    },
+    {
+      "section": "additional",
+      "label": "Additional",
+      "parent": "Customization",
+      "file": "docs/additional.md",
+      "articles": 4,
+      "failed": 0,
+      "thin": [
+        {
+          "url": "https://docs.themegrill.com/colormag/docs/schema-markup-in-colormag/",
+          "chars": 143
+        }
+      ],
+      "outcomes": 5,
+      "titles": [
+        "Smooth Image Loading **Pro**",
+        "Integrate External APIs **Pro**",
+        "Manage Schema Markup **Pro**",
+        "Manage Social Icons"
+      ]
+    },
+    {
+      "section": "get-started",
+      "label": "Get Started",
+      "parent": null,
+      "file": "docs/get-started.md",
+      "articles": 4,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 5,
+      "titles": [
+        "Starter templates in ColorMag theme",
+        "How to Install ColorMag Theme?",
+        "Upgrading from ColorMag Free to ColorMag Pro",
+        "How to Install ColorMag Pro Theme? **Pro**"
+      ]
+    },
+    {
+      "section": "front-page",
+      "label": "Front Page",
+      "parent": "Customization",
+      "file": "docs/front-page.md",
+      "articles": 4,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 1,
+      "titles": [
+        "Customize the HTML Tag of the Post Title **Pro**",
+        "How to Change View All Text in TG Widget Bundle **Pro**",
+        "Unique Post System **Pro**",
+        "Hide Blog Posts / Static Page"
+      ]
+    },
+    {
+      "section": "how-to",
+      "label": "How To?",
+      "parent": null,
+      "file": "docs/how-to.md",
+      "articles": 3,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 0,
+      "titles": [
+        "How to display the Modified Date instead of the Post Date?",
+        "GDPR Compliance and Google Fonts",
+        "How to Display Full Width Slider in Top Section?"
+      ]
+    },
+    {
+      "section": "customization",
+      "label": "Customization",
+      "parent": null,
+      "file": "docs/customization.md",
+      "articles": 1,
+      "failed": 0,
+      "thin": [],
+      "outcomes": 0,
+      "titles": [
+        "Header Builder"
+      ]
+    }
+  ],
+  "suggested_areas": [
+    "content",
+    "widgets",
+    "header",
+    "faq",
+    "global",
+    "footer",
+    "additional",
+    "get-started",
+    "front-page",
+    "how-to",
+    "customization"
+  ]
+}

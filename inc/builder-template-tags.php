@@ -80,7 +80,8 @@ if ( ! function_exists( 'colormag_render_header_cols' ) ) {
 	 * @return void
 	 */
 	function colormag_render_header_cols( $cols, $cols_area ) {
-		echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $cols_area ) ) . '-col">';
+		$multiple_class = count( $cols ) > 1 ? ' cm-header-col--has-multiple' : '';
+		echo '<div class="cm-header-' . esc_attr( colormag_get_area_class( $cols_area ) ) . '-col' . esc_attr( $multiple_class ) . '">';
 		foreach ( $cols as $element ) {
 			do_action( 'colormag_header_template_parts', $element );
 			get_template_part( "template-parts/header-builder-elements/$element", '' );
