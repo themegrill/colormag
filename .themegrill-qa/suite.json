@@ -1,0 +1,16 @@
+{
+  "runner": "playwright",
+  "package_manager": "pnpm",
+  "install": "pnpm install --frozen-lockfile",
+  "command": "pnpm exec playwright test --config=tests/e2e/playwright.config.ts",
+  "config": "tests/e2e/playwright.config.ts",
+  "spec_dir": "tests/e2e/specs",
+  "spec_extension": ".spec.ts",
+  "json_report": "test-results/results.json",
+  "env": {
+    "base_url": "CM_BASE_URL",
+    "admin_user": "CM_ADMIN_USER",
+    "admin_pass": "CM_ADMIN_PASS"
+  },
+  "tiers": { "fresh": "@fresh", "demo": "@demo" }
+}
