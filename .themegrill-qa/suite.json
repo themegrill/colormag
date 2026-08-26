@@ -12,5 +12,61 @@
     "admin_user": "CM_ADMIN_USER",
     "admin_pass": "CM_ADMIN_PASS"
   },
-  "tiers": { "fresh": "@fresh", "demo": "@demo" }
+  "tiers": { "fresh": "@fresh", "demo": "@demo" },
+  "area_paths": {
+    "header": [
+      "inc/customizer/options/header-and-navigation/**",
+      "inc/customizer/options/header-builder/**",
+      "template-parts/header/**",
+      "template-parts/header-builder-elements/**",
+      "inc/builder-template-tags.php",
+      "assets/**/_header*.scss",
+      "assets/**/_navigation*.scss"
+    ],
+    "footer": [
+      "inc/customizer/options/footer/**",
+      "inc/customizer/options/footer-builder/**",
+      "template-parts/footer-builder-elements/**",
+      "assets/**/_footer*.scss"
+    ],
+    "content": [
+      "inc/customizer/options/content/**",
+      "template-parts/content/**",
+      "template-parts/content*.php",
+      "template-parts/entry/**",
+      "inc/colormag-wp-query.php",
+      "inc/template-tags.php",
+      "assets/**/_post*.scss",
+      "assets/**/_entry*.scss"
+    ],
+    "global": [
+      "inc/customizer/options/global/**",
+      "inc/customizer/customind/**",
+      "inc/dynamic-css*.php",
+      "assets/**/_root*.scss",
+      "assets/**/_typography*.scss"
+    ],
+    "front-page": [
+      "inc/customizer/options/front-page/**",
+      "template-parts/front-page/**"
+    ],
+    "additional": ["inc/customizer/options/additional/**"],
+    "woocommerce": [
+      "inc/customizer/options/woocommerce/**",
+      "inc/compat/woocommerce*",
+      "woocommerce/**"
+    ],
+    "widgets": ["inc/widgets/**", "inc/widget*.php"],
+    "demo-import": ["inc/demo-import*", "inc/compat/themegrill-demo-importer*"],
+    "upgrade": ["inc/upgrade*.php", "inc/migration*.php"],
+    "rtl": ["style-rtl.css", "assets/**/rtl*"],
+    "activation": [
+      "functions.php",
+      "style.css",
+      "index.php",
+      "inc/setup.php",
+      "inc/init.php",
+      "inc/customizer/options/options.php"
+    ]
+  }
 }
