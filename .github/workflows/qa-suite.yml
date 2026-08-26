@@ -25,3 +25,5 @@ jobs:
     with:
       product_slug: colormag
       product_type: theme
+    secrets:
+      QA_REPO_TOKEN: ${{ secrets.QA_REPO_TOKEN }}
