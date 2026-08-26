@@ -1,0 +1,31 @@
+# The agent review: probabilistic, costs tokens, stays ADVISORY.
+#
+# qa-suite.yml is the required check. This one adds judgement the deterministic
+# suite cannot — but a required check that is sometimes wrong for
+# unexplainable reasons is a check people learn to bypass, so do not promote
+# this to required.
+#
+# paths-ignore keeps the budget on changes that can actually alter behaviour.
+# Translations, docs and workflow edits cannot regress the rendered site, and
+# paying an agent to confirm that is pure cost.
+
+name: QA review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore:
+      - '**.md'
+      - 'languages/**'
+      - '.github/**'
+      - 'readme.txt'
+      - 'changelog.txt'
+
+jobs:
+  review:
+    uses: ThemeGrill/themegrill-qa/.github/workflows/pr-qa.yml@main
+    with:
+      product_slug: colormag
+      product_type: theme
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

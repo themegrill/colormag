@@ -1,0 +1,31 @@
+# Re-run QA on an existing PR by commenting `@themegrill-qa`.
+#
+# ⚠️  READ THIS BEFORE DEBUGGING WHY NOTHING HAPPENS:
+#
+#     `issue_comment` workflows are read from the DEFAULT BRANCH, not from the
+#     pull request's branch. This file therefore does nothing at all until it
+#     is merged to `main`. Commenting on the PR that ADDS this file will not
+#     trigger it. This trips up everyone exactly once.
+#
+# The same rule is a feature, not just a gotcha: a PR cannot rewrite the
+# workflow that reviews it.
+
+name: QA command
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  command:
+    uses: ThemeGrill/themegrill-qa/.github/workflows/pr-command.yml@main
+    with:
+      product_slug: colormag
+      product_type: theme
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
