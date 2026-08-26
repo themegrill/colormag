@@ -21,21 +21,6 @@ on:
 
 jobs:
   suite:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8  # Adjust version as needed
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'  # Or your preferred version
-          cache: 'pnpm'
-
     uses: ThemeGrill/themegrill-qa/.github/workflows/suite.yml@main
     with:
       product_slug: colormag
