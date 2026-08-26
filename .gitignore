@@ -34,3 +34,24 @@ colormag-pro.zip
 # Claude AI
 .claude/
 /bin/
+
+# themegrill-qa — local scratch only
+.themegrill-qa/.docs-cache/
+
+# Credentials. Never tracked, in any form. tests/e2e/.env.example is the
+# template; the filled-in copy lives here and stays out of git.
+.env.local
+.env
+
+# Playwright run output
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.last-run.json
+
+# Stored admin session + theme-mod baseline, written per run
+tests/e2e/.auth/
+
+# local WordPress env
+.wp-env.override.json
