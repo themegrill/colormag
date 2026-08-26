@@ -46,6 +46,7 @@ type Created = { kind: 'post' | 'page' | 'category' | 'menu' | 'menu-item' | 'wi
 export type SeededPost = { id: number; link: string; title: string; slug: string };
 export type SeededCategory = { id: number; link: string; name: string; slug: string };
 export type SeededMenu = { id: number; parentLabel: string; childLabel: string; childHref: string };
+export type SeededTallMenu = { id: number; itemCount: number; lastItemLabel: string };
 
 export type ContentHelper = {
   /** A published post that definitely exists, with a link to it. */
@@ -61,6 +62,15 @@ export type ContentHelper = {
    * with at least one child — what the mobile submenu specs need.
    */
   aMenuWithDropdown: () => Promise<SeededMenu>;
+  /**
+   * A nav menu with enough top-level items that the rendered mobile
+   * off-canvas panel is taller than a typical mobile viewport — what the
+   * CMAG-742 overflow/scroll spec needs. Always created fresh: unlike the
+   * other helpers, "reuse whatever menu already exists" cannot guarantee a
+   * specific item count, and the whole point here is a deterministic
+   * overflow rather than whatever happens to be lying around.
+   */
+  aMenuTooTallForMobile: () => Promise<SeededTallMenu>;
 };
 
 /**
@@ -127,6 +137,7 @@ export const test = base.extend<{ content: ContentHelper }>({
     let cachedCategory: SeededCategory | null = null;
     let cachedPage: SeededPost | null = null;
     let cachedMenu: SeededMenu | null = null;
+    let cachedTallMenu: SeededTallMenu | null = null;
 
     const helper: ContentHelper = {
       aPost: async () => {
@@ -288,6 +299,38 @@ export const test = base.extend<{ content: ContentHelper }>({
 
         cachedMenu = { id: menu.id, parentLabel, childLabel, childHref };
         return cachedMenu;
+      },
+
+      aMenuTooTallForMobile: async () => {
+        if (cachedTallMenu) return cachedTallMenu;
+
+        // 20 top-level items comfortably exceeds any mobile viewport this
+        // suite uses (measured ~46px per rendered item against ColorMag's
+        // off-canvas panel, so 20 items is ~920px of content against an
+        // 812px-tall mobile project) without relying on a specific banner
+        // height that could drift with theme changes.
+        const ITEM_COUNT = 20;
+
+        const menu = await post<{ id: number }>('/wp-json/wp/v2/menus', {
+          name: `${tag}-tall-menu`,
+          locations: await themeMenuLocations(get),
+        });
+        created.push({ kind: 'menu', id: menu.id });
+
+        let lastItemLabel = '';
+        for (let i = 1; i <= ITEM_COUNT; i++) {
+          lastItemLabel = `E2E Tall Menu Item ${i}`;
+          const item = await post<{ id: number }>('/wp-json/wp/v2/menu-items', {
+            title: lastItemLabel,
+            url: '/',
+            menus: menu.id,
+            status: 'publish',
+          });
+          created.push({ kind: 'menu-item', id: item.id });
+        }
+
+        cachedTallMenu = { id: menu.id, itemCount: ITEM_COUNT, lastItemLabel };
+        return cachedTallMenu;
       },
     };
 
