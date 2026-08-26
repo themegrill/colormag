@@ -1,0 +1,27 @@
+# The free tier: no ANTHROPIC_API_KEY, no agent, runner minutes only.
+#
+# Because it costs nothing but time it runs on EVERY pull request, drafts
+# included. This is the one to make a required status check once it has been
+# green twice in a row.
+#
+# The agent review (qa-review.yml) stays advisory on purpose. A required check
+# that is occasionally wrong for unexplainable reasons is a check people learn
+# to bypass.
+#
+# Only the `fresh` tier ever runs here, and the reusable workflow enforces that
+# itself — it takes no `tier` input. A `@demo` spec needs ColorMag's demo
+# content imported, which a disposable runner site does not have, so running
+# one would fail for reasons that have nothing to do with the pull request.
+
+name: QA suite
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  suite:
+    uses: ThemeGrill/themegrill-qa/.github/workflows/suite.yml@main
+    with:
+      product_slug: colormag
+      product_type: theme

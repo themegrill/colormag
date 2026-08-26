@@ -1,0 +1,87 @@
+# Files and folders that must NOT ship in a ColorMag release.
+#
+# Read by `wp dist-archive` (WP-CLI). Note that the repo's own `pnpm release`
+# path is `gulp build`, which reads its exclusion list from the `zip.src`
+# array in gulpfile.mjs and does NOT read this file — keep the two in step if
+# you change either.
+#
+# What DOES ship, so nobody prunes it by mistake: every root .php, style.css /
+# style-rtl.css / dark.css / woocommerce.css / breadcrumb.css /
+# style-editor-block*.css, theme.json, readme.txt, changelog.txt,
+# screenshot.jpg, assets/ (minus sass), inc/, template-parts/,
+# page-templates/, languages/, and build/ — build/meta.js, build/meta.css and
+# build/meta.asset.php are enqueued at runtime by
+# inc/meta-boxes/class-colormag-meta-boxes.php, so excluding build/ would ship
+# a theme with broken meta boxes.
+
+# Version control and forge config
+.git
+.gitignore
+.gitattributes
+.github
+
+# Editor and tooling config
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.prettierrc
+.vscode
+.idea
+tsconfig.json
+webpack.config.js
+tailwind.config.js
+postcss.config.js
+gulpfile.mjs
+gulpfile.js
+Gruntfile.js
+
+# Dependency manifests and installed trees
+node_modules
+vendor
+bower_components
+bower.json
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+composer.json
+composer.lock
+
+# Uncompiled sources. src/ is the TypeScript/React source that wp-scripts
+# compiles into build/; assets/sass compiles into the root stylesheets. The
+# compiled output ships, the source does not.
+src
+assets/sass
+
+# QA harness. The e2e suite, its fixtures and everything a run produces —
+# none of it is theme code and some of it (.auth/) holds a live admin session.
+tests
+test-results
+playwright-report
+blob-report
+playwright/.cache
+.last-run.json
+.themegrill-qa
+
+# Local environment and secrets. .env.local holds real admin credentials and
+# must never reach a distributed archive.
+.env
+.env.local
+.wp-env.override.json
+
+# Agent/session scratch
+.claude
+
+# Build output directory — holds the generated release zip itself
+dist
+*.zip
+
+# Developer docs (readme.txt and changelog.txt are the shipped ones)
+docs
+bin
+*.md
+
+# OS junk
+.DS_Store
+Thumbs.db
