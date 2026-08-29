@@ -79,6 +79,15 @@ abstract class ColorMag_Widget extends WP_Widget {
 			'classname'                   => $this->widget_cssclass,
 			'description'                 => $this->widget_description,
 			'customize_selective_refresh' => $this->customize_selective_refresh,
+
+			/*
+			 * Hand the block widget editor the instance as JSON. Without this the
+			 * editor can only round-trip the widget through rendered HTML, re-running
+			 * form() and update() over the REST encode endpoint on every keystroke --
+			 * the fragile path where a single stray byte of PHP output breaks the
+			 * editor. Every widget shipped by WordPress core opted in when 5.8 landed.
+			 */
+			'show_instance_in_rest'       => true,
 		);
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_options, $this->control_options );
