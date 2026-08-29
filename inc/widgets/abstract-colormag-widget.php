@@ -421,15 +421,24 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'image':
+					/*
+					 * The wrapper, the input and the button used to share one id. Keep it
+					 * on the input so the label still points at the control, and give the
+					 * other two their own, so several image controls can sit in one
+					 * sidebar without colliding.
+					 */
+					$field_id   = $this->get_field_id( $key );
+					$wrapper_id = $field_id . '-wrapper';
+					$button_id  = $field_id . '-button';
 					?>
 					<div class="media-uploader">
 						<p>
-							<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<label for="<?php echo esc_attr( $field_id ); ?>">
 								<?php echo esc_html( $setting['label'] ); ?>
 							</label>
 						</p>
 
-						<div class="media-uploader" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<div class="media-uploader" id="<?php echo esc_attr( $wrapper_id ); ?>">
 							<div class="custom_media_preview">
 								<?php if ( $value != '' ) : ?>
 									<img class="custom_media_preview_default"
@@ -441,14 +450,24 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 							<input type="text"
 									class="widefat custom_media_input"
-									id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+									id="<?php echo esc_attr( $field_id ); ?>"
 									name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
 									value="<?php echo esc_attr( $value ); ?>"
 									style="margin-top:5px;"
 							/>
 
-							<button class="custom_media_upload button button-secondary button-large"
-									id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							<?php
+							/*
+							 * type="button" is required. Without it the button defaults to
+							 * type="submit", and the block widget editor renders this form
+							 * inside a real <form> element: clicking "Select an Image" then
+							 * submits the widget instead of opening the media library
+							 * whenever image-uploader.js has not run.
+							 */
+							?>
+							<button type="button"
+									class="custom_media_upload button button-secondary button-large"
+									id="<?php echo esc_attr( $button_id ); ?>"
 									data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>"
 									data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>"
 									style="width:100%;margin-top:6px;margin-right:30px;"
