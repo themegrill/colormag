@@ -6,6 +6,29 @@ jQuery( document ).ready(
 	function ( $ ) {
 		var file_frame;
 
+		/**
+		 * Render the stored image above its input.
+		 *
+		 * @param {jQuery} [$context] Container to search within. Defaults to the whole document.
+		 */
+		function initPreviews( $context ) {
+			$context = ( $context && $context.length ) ? $context : $( document );
+
+			$context.find( 'input.custom_media_input' ).each(
+				function () {
+					var preview_image  = $( this ).val(),
+					    preview_target = $( this ).siblings( '.custom_media_preview' );
+
+					// Initialize image previews.
+					if ( preview_image !== '' ) {
+						// Replace rather than append, so a re-render cannot stack images.
+						preview_target.empty();
+						preview_target.css( { display : 'block' } ).append( '<img src="' + preview_image + '" style="max-width:100%">' );
+					}
+				}
+			);
+		}
+
 		$( document.body ).on(
 			'click',
 			'.custom_media_upload',
@@ -55,16 +78,17 @@ jQuery( document ).ready(
 		);
 
 		// Media Uploader Preview.
-		$( 'input.custom_media_input' ).each(
-			function () {
-				var preview_image  = $( this ).val(),
-				    preview_target = $( this ).siblings( '.custom_media_preview' );
+		initPreviews();
 
-				// Initialize image previews.
-				if ( preview_image !== '' ) {
-					preview_target.find( 'img.custom_media_preview_default' ).remove();
-					preview_target.css( { display : 'block' } ).append( '<img src="' + preview_image + '" style="max-width:100%">' );
-				}
+		/*
+		 * The block widget editor and the Customizer render widget forms into the
+		 * DOM long after document ready, so the pass above never reaches them.
+		 * WordPress fires these events with the newly rendered widget container.
+		 */
+		$( document ).on(
+			'widget-added widget-updated',
+			function ( event, widget ) {
+				initPreviews( widget );
 			}
 		);
 	}
