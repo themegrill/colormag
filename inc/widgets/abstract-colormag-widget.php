@@ -107,15 +107,31 @@ abstract class ColorMag_Widget extends WP_Widget {
 				continue;
 			}
 
+			/*
+			 * A submitted form does not necessarily carry every setting. The REST
+			 * `widget-types/<id_base>/encode` endpoint used by the block widget editor
+			 * and the Customizer's partial refresh both call update() with a partial
+			 * (sometimes empty) $new_instance, and control types such as `custom` never
+			 * render an input at all.
+			 *
+			 * That endpoint calls update() *outside* its output buffer, so a PHP
+			 * "Undefined array key" warning raised here is printed straight into the
+			 * REST response body and breaks the JSON the editor expects. Never index
+			 * $new_instance directly below.
+			 */
+			$has_value = isset( $new_instance[ $key ] );
+			$raw_value = $has_value ? $new_instance[ $key ] : null;
+			$default   = isset( $setting['default'] ) ? $setting['default'] : '';
+
 			// Format the value based on settings type.
 			switch ( $setting['type'] ) {
 
 				case 'url':
-					$instance[ $key ] = isset( $new_instance[ $key ] ) ? esc_url_raw( $new_instance[ $key ] ) : $setting['default'];
+					$instance[ $key ] = $has_value ? esc_url_raw( $raw_value ) : $default;
 					break;
 
 				case 'textarea':
-					$instance[ $key ] = wp_kses( trim( wp_unslash( $new_instance[ $key ] ) ), wp_kses_allowed_html( 'post' ) );
+					$instance[ $key ] = $has_value ? wp_kses( trim( wp_unslash( $raw_value ) ), wp_kses_allowed_html( 'post' ) ) : $default;
 					break;
 
 				case 'image':
@@ -135,20 +151,20 @@ abstract class ColorMag_Widget extends WP_Widget {
 					);
 
 					// Return an array with file extension and mime_type.
-					$file = wp_check_filetype( $new_instance[ $key ], $mimes );
+					$file = $has_value ? wp_check_filetype( $raw_value, $mimes ) : array( 'ext' => false );
 
-					// If $new_instance[ $key ] has a valid mime_type, assign it to $instance[ $key ], otherwise, assign empty value to $instance[ $key ].
-					$instance[ $key ] = $file['ext'] ? $new_instance[ $key ] : $setting['default'];
+					// If $raw_value has a valid mime_type, assign it to $instance[ $key ], otherwise, assign empty value to $instance[ $key ].
+					$instance[ $key ] = $file['ext'] ? $raw_value : $default;
 					break;
 
 				case 'checkbox':
 					$instance[ $key ] = (
-						'1' == $new_instance[ $key ] || 'on' == $new_instance[ $key ]
+						$has_value && ( '1' == $raw_value || 'on' == $raw_value )
 						) ? '1' : '0';
 					break;
 
 				case 'number':
-					$instance[ $key ] = is_numeric( $new_instance[ $key ] ) ? intval( $new_instance[ $key ] ) : $setting['default'];
+					$instance[ $key ] = ( $has_value && is_numeric( $raw_value ) ) ? intval( $raw_value ) : $default;
 
 					if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] ) {
 						$instance[ $key ] = max( $instance[ $key ], $setting['input_attrs']['min'] );
@@ -161,26 +177,26 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 				case 'radio':
 				case 'select':
-					$new_instance[ $key ] = sanitize_key( $new_instance[ $key ] );
-					$available_choices    = $setting['choices'];
+					$new_instance[ $key ] = $has_value ? sanitize_key( $raw_value ) : '';
+					$available_choices    = isset( $setting['choices'] ) ? $setting['choices'] : array();
 
-					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_choices ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_choices ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'dropdown_categories':
-					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
 
-					$instance[ $key ] = term_exists( $new_instance[ $key ], 'category' ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = term_exists( $new_instance[ $key ], 'category' ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'dropdown_tags':
-					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
 
-					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'dropdown_users':
-					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
 					$available_users      = array();
 					$all_author_users     = get_users(
 						array(
@@ -192,12 +208,17 @@ abstract class ColorMag_Widget extends WP_Widget {
 						$available_users[ $author_user->ID ] = $author_user->display_name;
 					}
 
-					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_users ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_users ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'checkboxes':
+					if ( ! $has_value || ! is_array( $raw_value ) ) {
+						$instance[ $key ] = $default;
+						break;
+					}
+
 					$saved_data       = array();
-					$instance[ $key ] = $new_instance[ $key ];
+					$instance[ $key ] = $raw_value;
 
 					foreach ( $instance[ $key ] as $item => $value ) {
 						$saved_data[ $item ] = isset( $item ) ? 1 : 0;
@@ -207,11 +228,16 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'numbers':
+					if ( ! $has_value || ! is_array( $raw_value ) ) {
+						$instance[ $key ] = $default;
+						break;
+					}
+
 					$saved_data       = array();
-					$instance[ $key ] = $new_instance[ $key ];
+					$instance[ $key ] = $raw_value;
 
 					foreach ( $instance[ $key ] as $item => $value ) {
-						$temp_data = is_numeric( $value ) ? intval( $value ) : $setting['default'][ $item ];
+						$temp_data = is_numeric( $value ) ? intval( $value ) : ( isset( $default[ $item ] ) ? $default[ $item ] : 0 );
 
 						if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] && ( $value < $setting['input_attrs']['min'] && ! $temp_data ) ) {
 							$temp_data = max( $value, $setting['input_attrs']['min'] );
@@ -229,8 +255,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 				case 'multiselect':
 					$selected_choices     = array();
-					$available_choices    = $setting['choices'];
-					$new_instance[ $key ] = isset( $new_instance[ $key ] ) ? $new_instance[ $key ] : array();
+					$available_choices    = isset( $setting['choices'] ) ? $setting['choices'] : array();
+					$new_instance[ $key ] = ( $has_value && is_array( $raw_value ) ) ? $raw_value : array();
 
 					foreach ( $new_instance[ $key ] as $selected_key => $selected_value ) {
 
@@ -243,7 +269,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				default:
-					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
+					$instance[ $key ] = $has_value ? sanitize_text_field( $raw_value ) : $default;
 					break;
 
 			}
