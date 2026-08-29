@@ -135,26 +135,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'image':
-					/**
-					 * Array of valid image file types.
-					 *
-					 * The array includes image mime types that are included in wp_get_mime_types()
-					 */
-					$mimes = array(
-						'jpg|jpeg|jpe' => 'image/jpeg',
-						'gif'          => 'image/gif',
-						'png'          => 'image/png',
-						'bmp'          => 'image/bmp',
-						'tiff|tif'     => 'image/tiff',
-						'ico'          => 'image/x-icon',
-						'webp'         => 'image/webp',
-					);
-
-					// Return an array with file extension and mime_type.
-					$file = $has_value ? wp_check_filetype( $raw_value, $mimes ) : array( 'ext' => false );
-
-					// If $raw_value has a valid mime_type, assign it to $instance[ $key ], otherwise, assign empty value to $instance[ $key ].
-					$instance[ $key ] = $file['ext'] ? $raw_value : $default;
+					$instance[ $key ] = $has_value ? $this->sanitize_image_value( $raw_value, $default ) : $default;
 					break;
 
 				case 'checkbox':
@@ -281,6 +262,90 @@ abstract class ColorMag_Widget extends WP_Widget {
 		}
 
 		return $instance;
+	}
+
+	/**
+	 * Image mime types accepted by the `image` control.
+	 *
+	 * Derived from the site's own allowed upload types rather than a hard-coded
+	 * list, so formats enabled by WordPress core (AVIF since 6.5, WebP, HEIC) or
+	 * by a plugin (SVG) are accepted instead of being silently discarded.
+	 *
+	 * @return array Map of extension patterns to mime types, as wp_check_filetype() expects.
+	 */
+	protected function get_allowed_image_mime_types() {
+
+		$mimes = array();
+
+		foreach ( get_allowed_mime_types() as $ext_pattern => $mime_type ) {
+			if ( 0 === strpos( $mime_type, 'image/' ) ) {
+				$mimes[ $ext_pattern ] = $mime_type;
+			}
+		}
+
+		/**
+		 * Filters the image mime types a ColorMag widget `image` control accepts.
+		 *
+		 * @since ColorMag 4.2.3
+		 *
+		 * @param array $mimes Map of extension patterns to mime types.
+		 */
+		return apply_filters( 'colormag_widget_image_mime_types', $mimes );
+	}
+
+	/**
+	 * Sanitize the value of an `image` control.
+	 *
+	 * The control stores an image URL. The previous implementation matched that
+	 * URL against a hard-coded extension list using a pattern anchored to the end
+	 * of the string, and reset the setting to its default on any miss — with no
+	 * error shown. That silently discarded valid images whenever the URL was an
+	 * AVIF or SVG file (neither was in the list), or carried a query string or
+	 * fragment, which is routine for CDNs, image optimizers and cache busters.
+	 *
+	 * An URL that resolves to an attachment in the media library is now accepted
+	 * as-is; anything else falls back to an extension check that ignores the
+	 * query string and honours the site's allowed upload types.
+	 *
+	 * @param mixed  $value          Raw value submitted for the control.
+	 * @param string $default_value  Value to fall back to when $value is not a usable image.
+	 *
+	 * @return string
+	 */
+	protected function sanitize_image_value( $value, $default_value = '' ) {
+
+		if ( ! is_scalar( $value ) ) {
+			return $default_value;
+		}
+
+		$value = trim( (string) $value );
+
+		// An empty control is a deliberate "no image", not a rejected value.
+		if ( '' === $value ) {
+			return '';
+		}
+
+		$url = esc_url_raw( $value );
+
+		if ( '' === $url ) {
+			return $default_value;
+		}
+
+		// Anything in the media library is valid whatever its extension or query string.
+		if ( attachment_url_to_postid( $url ) ) {
+			return $url;
+		}
+
+		// Otherwise check the extension only, ignoring any query string or fragment.
+		$path = wp_parse_url( $url, PHP_URL_PATH );
+
+		if ( empty( $path ) ) {
+			return $default_value;
+		}
+
+		$file = wp_check_filetype( $path, $this->get_allowed_image_mime_types() );
+
+		return $file['ext'] ? $url : $default_value;
 	}
 
 	/**
