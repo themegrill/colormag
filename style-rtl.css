@@ -1077,9 +1077,6 @@ table td {
 	align-items: center;
 	height: 100%;
 }
-.cm-header-builder .cm-main-row .cm-header-left-col.cm-header-col--has-multiple {
-	flex-basis: 30%;
-}
 .cm-header-builder .cm-main-row .cm-header-center-col {
 	display: flex;
 	gap: 16px;

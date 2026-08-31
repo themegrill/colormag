@@ -129,15 +129,12 @@
 			align-items: center;
 			height: 100%;
 
-			// Only constrain the column's width when it holds more than one
-			// component (e.g. logo + header widget from an imported demo).
-			// A single component - most commonly just the logo - must stay
-			// free to size itself, otherwise a large configured logo gets
-			// squeezed down to fit a fixed 30% slice of the row (CMAG-650
-			// regression).
-			&.cm-header-col--has-multiple {
-				flex-basis: 30%;
-			}
+			// No flex-basis here on purpose. A fixed 30% slice was introduced in #277
+			// and shrank whatever the column held down to fit it, so a configured logo
+			// ended up a fraction of its size as soon as anything else shared the
+			// column (CMAG-650, and #305 for the multi-component case). The column
+			// now sizes to its content and only shrinks when the row genuinely runs
+			// out of room.
 		}
 
 		.cm-header-center-col {
