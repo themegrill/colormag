@@ -709,22 +709,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Sanitizes a heading tag coming from a filter or theme mod.
-	 *
-	 * The tag is printed straight into the markup, so anything outside the
-	 * heading elements is discarded in favour of the default.
-	 *
-	 * @param string $tag     The filtered tag name.
-	 * @param string $default The tag to fall back to.
-	 *
-	 * @return string
-	 */
-	protected function sanitize_heading_tag( $tag, $default ) {
-
-		return in_array( $tag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ), true ) ? $tag : $default;
-	}
-
-	/**
 	 * Displays the widget title within the widgets.
 	 *
 	 * The entry titles rendered by `the_title()` sit one level below this
@@ -766,7 +750,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 		//          $category_link = '<a href="' . esc_url( get_category_link( $category ) ) . '" class="cm-view-all-link">' . esc_html( get_theme_mod( 'colormag_view_all_text', __( 'View All', 'colormag' ) ) ) . '</a>';
 		//      }
 
-		$tag = $this->sanitize_heading_tag( apply_filters( 'colormag_widget_title_markup', 'h3' ), 'h3' );
+		$tag = colormag_widget_title_tag();
 
 		// Display the title.
 		echo '<' . esc_attr( $tag ) . ' class="' . esc_attr( $classes ) . '" ' . $border_color . '><span ' . $title_color . '>' . esc_html( $title ) . '</span>' . '</' . esc_attr( $tag ) . '>'; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
@@ -837,7 +821,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * Rendered one level below the widget's own heading, see `widget_title()`.
 	 */
 	public function the_title() {
-		$tag = $this->sanitize_heading_tag( apply_filters( 'colormag_front_page_widget_post_title_markup', 'h4' ), 'h4' );
+		$tag = colormag_widget_entry_title_tag();
 		echo '<' . esc_attr( $tag ) . ' class="cm-entry-title">';
 		?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
