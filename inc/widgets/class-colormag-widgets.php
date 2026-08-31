@@ -307,12 +307,12 @@ if ( ! function_exists( 'widget_title_markup' ) ) :
 
 	/**
 	 * Widget Title Markup.
+	 *
+	 * @param string $markup The markup passed by the filter, used as the default.
 	 */
 	function widget_title_markup( $markup ) {
 
-		$markup = get_theme_mod( 'colormag_widget_markup', 'h3' );
-
-		return $markup;
+		return get_theme_mod( 'colormag_widget_markup', $markup );
 	}
 endif;
 
@@ -321,10 +321,13 @@ add_filter( 'colormag_widget_title_markup', 'widget_title_markup' );
 if ( ! function_exists( 'colormag_front_page_widget_post_title_markup' ) ) :
 
 	/**
-	 * Widget Title Markup.
+	 * Widget Post Title Markup.
+	 *
+	 * @param string $markup The markup passed by the filter, used as the default.
 	 */
 	function colormag_front_page_widget_post_title_markup( $markup ) {
-		return get_theme_mod( 'colormag_front_page_widget_post_title_markup', 'h4' );
+
+		return get_theme_mod( 'colormag_front_page_widget_post_title_markup', $markup );
 	}
 endif;
 
