@@ -1077,9 +1077,6 @@ table td {
 	align-items: center;
 	height: 100%;
 }
-.cm-header-builder .cm-main-row .cm-header-left-col.cm-header-col--has-multiple {
-	flex-basis: 30%;
-}
 .cm-header-builder .cm-main-row .cm-header-center-col {
 	display: flex;
 	gap: 16px;
@@ -2530,16 +2527,18 @@ li.default-menu {
 .cm-header .cm-menu-toggle svg:hover {
 	color: #fff;
 }
-.cm-header .cm-mobile-nav ul.menu-scrollbar {
-	overflow-y: scroll;
-	width: 100%;
-}
 .cm-header .cm-mobile-nav li:hover, .cm-header .cm-mobile-nav li.current-page-ancestor, .cm-header .cm-mobile-nav li.current-menu-ancestor, .cm-header .cm-mobile-nav li.current-page-item, .cm-header .cm-mobile-nav li.current-menu-item {
 	color: #fff;
 	background-color: var(--cm-color-1, #207daf);
 }
 .cm-header .cm-mobile-nav li:hover > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-item > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-item > .cm-sub-toggle i {
 	color: #fff;
+}
+
+.cm-header .cm-mobile-nav ul.menu-scrollbar,
+.cm-header-builder .cm-mobile-nav ul.menu-scrollbar {
+	overflow-y: scroll;
+	width: 100%;
 }
 
 .cm-mobile-nav .menu-logo a {
@@ -3055,6 +3054,14 @@ Styles for separating single posts loaded from ajax call.
 .cm-featured-image a {
 	display: block;
 	position: relative;
+}
+
+.single-post .cm-post-content > .cm-featured-image img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 800/445;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 /* Widgets.

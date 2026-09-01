@@ -151,6 +151,7 @@ const paths = {
 			'!src/**',
 			'!docs/**',
 			'!bin/**',
+			'!tests/**',
 			'!pnpm-lock.yaml',
 			'!composer.json',
 			'!composer.lock',
