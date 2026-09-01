@@ -1,0 +1,156 @@
+name: Draft Release
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  draft-release:
+    # The branch guard applies to manual runs too: workflow_dispatch can be
+    # launched from any ref, and without this it would tag a non-master commit.
+    if: >
+      github.ref == 'refs/heads/master' &&
+      (contains(github.event.head_commit.message, 'version bump to release of')
+      || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version from style.css
+        id: version
+        run: |
+          VERSION=$(grep -m1 -E '^[[:space:]]*Version:' style.css \
+            | sed -E 's/^[[:space:]]*Version:[[:space:]]*//' \
+            | tr -d '\r' | xargs)
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not parse a Version from style.css"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      # Keyed on the RELEASE, not the tag. A tag left behind by a run that
+      # pushed it and then failed must not stop a retry from producing the
+      # release. Listed rather than fetched by tag because a draft release has
+      # no tag ref yet, so the by-tag endpoint does not find it.
+      - name: Check whether this version was already released
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if gh api --paginate "repos/${{ github.repository }}/releases" \
+               --jq '.[].tag_name' | grep -qxF "$TAG"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release $TAG already exists — skipping."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Matches the heading for THIS version rather than taking the first block,
+      # so a changelog that was not updated fails the release instead of
+      # shipping the previous version's notes under the new tag.
+      - name: Extract changelog block for this version
+        if: steps.check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          awk -v v="$VERSION" '
+            index($0, "= Version " v " ") == 1 { found = 1; print; next }
+            found && index($0, "= Version ") == 1 { exit }
+            found { print }
+          ' changelog.txt > "$RUNNER_TEMP/release-notes.txt"
+          if [ ! -s "$RUNNER_TEMP/release-notes.txt" ]; then
+            echo "::error::changelog.txt has no '= Version $VERSION ' block. Add the entry before releasing."
+            exit 1
+          fi
+
+      - name: Set up pnpm
+        if: steps.check.outputs.exists == 'false'
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 9
+
+      - name: Set up Node.js
+        if: steps.check.outputs.exists == 'false'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install JS dependencies
+        if: steps.check.outputs.exists == 'false'
+        run: pnpm install --frozen-lockfile
+
+      - name: Set up PHP
+        if: steps.check.outputs.exists == 'false'
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
+        with:
+          php-version: '8.1'
+          tools: composer
+          extensions: mbstring, xml, zip
+
+      - name: Install Composer dependencies
+        if: steps.check.outputs.exists == 'false'
+        run: composer install --no-progress --prefer-dist
+
+      - name: Ensure makepot memory-limit helper exists
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          mkdir -p bin
+          if [ ! -f bin/raise-makepot-memory-limit.php ]; then
+            printf '%s\n' "<?php" "ini_set( 'memory_limit', '512M' );" > bin/raise-makepot-memory-limit.php
+          fi
+
+      - name: Generate .pot file
+        if: steps.check.outputs.exists == 'false'
+        run: composer makepot
+
+      - name: Build assets and zip
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          pnpm build
+          pnpm exec gulp build
+
+      - name: Verify zip and .pot were produced
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          test -f dist/colormag.zip
+          test -f languages/colormag.pot
+          unzip -l dist/colormag.zip | grep -q 'languages/colormag.pot'
+
+      # Idempotent: a retry after a failed release must skip the push rather
+      # than die on "tag already exists" before reaching the release step.
+      - name: Create and push git tag
+        if: steps.check.outputs.exists == 'false'
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists — leaving it in place."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" -m "Release $TAG"
+          git push origin "$TAG"
+
+      - name: Create draft GitHub Release
+        if: steps.check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          body_path: ${{ runner.temp }}/release-notes.txt
+          draft: true
+          files: dist/colormag.zip
