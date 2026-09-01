@@ -260,9 +260,15 @@ export const test = base.extend<{ content: ContentHelper }>({
       aMenuWithDropdown: async () => {
         if (cachedMenu) return cachedMenu;
 
-        const menus = await get<Array<{ id: number; name: string }>>('/wp-json/wp/v2/menus?per_page=100');
+        const menus = await get<Array<{ id: number; name: string; locations?: string[] }>>(
+          '/wp-json/wp/v2/menus?per_page=100',
+        );
 
         for (const menu of menus) {
+          // An unassigned menu is never rendered, so reusing it would hand the
+          // mobile specs labels that do not appear in the header.
+          if (!menu.locations || 0 === menu.locations.length) continue;
+
           const items = await get<
             Array<{ id: number; parent: number; title: { rendered: string }; url: string }>
           >(`/wp-json/wp/v2/menu-items?menus=${menu.id}&per_page=100`);
