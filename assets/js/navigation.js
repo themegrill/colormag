@@ -118,6 +118,10 @@
 	})(container);
 })();
 
+// Matches the SCSS breakpoint where the mobile header row takes over.
+const CM_MOBILE_BREAKPOINT = '(max-width: 768px)';
+let cmViewportHandler = null;
+
 function initMobileNavigation() {
 	const container = document.querySelector('.cm-mobile-nav-container');
 	if (!container) return;
@@ -128,6 +132,24 @@ function initMobileNavigation() {
 
 	// Check if required elements exist
 	if (!button || !menu || !mobileArea) return;
+
+	function applyMenuHeight() {
+		if (!menu.classList.contains('cm-mobile-menu--open')) return;
+
+		if (!window.matchMedia(CM_MOBILE_BREAKPOINT).matches) {
+			clearMenuHeight();
+			return;
+		}
+
+		const availableHeight = window.innerHeight - menu.getBoundingClientRect().top;
+		menu.style.maxHeight = availableHeight + 'px';
+		menu.classList.add('menu-scrollbar');
+	}
+
+	function clearMenuHeight() {
+		menu.style.maxHeight = '';
+		menu.classList.remove('menu-scrollbar');
+	}
 
 	// Define handler function outside addEventListener to maintain reference
 	function toggleMobileMenu(e) {
@@ -144,20 +166,29 @@ function initMobileNavigation() {
 			menu.classList.add('cm-mobile-menu--open');
 			mobileArea.classList.add('cm-mobile-menu--open');
 
-			if (window.matchMedia('(max-width: 768px)').matches) {
-				var availableHeight =
-					window.innerHeight - menu.getBoundingClientRect().top;
-				menu.style.maxHeight = availableHeight + 'px';
-				menu.classList.add('menu-scrollbar');
-			}
+			applyMenuHeight();
 		} else {
 			container.classList.remove('cm-toggle-open');
 			menu.classList.remove('cm-mobile-menu--open');
 			mobileArea.classList.remove('cm-mobile-menu--open');
-			menu.style.maxHeight = '';
-			menu.classList.remove('menu-scrollbar');
+			clearMenuHeight();
 		}
 	}
+
+	// Rotating changes innerHeight, so an open menu needs its cap recomputed.
+	if (cmViewportHandler) {
+		window.removeEventListener('resize', cmViewportHandler);
+		window.removeEventListener('orientationchange', cmViewportHandler);
+	}
+
+	let resizeFrame = null;
+	cmViewportHandler = function () {
+		if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
+		resizeFrame = window.requestAnimationFrame(applyMenuHeight);
+	};
+
+	window.addEventListener('resize', cmViewportHandler);
+	window.addEventListener('orientationchange', cmViewportHandler);
 
 	// Remove any existing handler by cloning the element
 	const newButton = button.cloneNode(true);

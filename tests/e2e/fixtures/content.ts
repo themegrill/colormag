@@ -139,6 +139,18 @@ export const test = base.extend<{ content: ContentHelper }>({
     let cachedMenu: SeededMenu | null = null;
     let cachedTallMenu: SeededTallMenu | null = null;
 
+    // Assigning a seeded menu to every location displaces whatever the site had
+    // there, and deleting that menu in teardown does not put it back — the
+    // location just ends up empty, which a later serial spec then sees. Captured
+    // on first claim so teardown can restore the original assignments.
+    let menuLocationsBefore: Record<string, number> | null = null;
+
+    const claimMenuLocations = async (): Promise<string[]> => {
+      const assigned = await themeMenuLocations(get);
+      menuLocationsBefore ??= assigned;
+      return Object.keys(assigned);
+    };
+
     const helper: ContentHelper = {
       aPost: async () => {
         if (cachedPost) return cachedPost;
@@ -273,7 +285,7 @@ export const test = base.extend<{ content: ContentHelper }>({
           name: `${tag}-menu`,
           // Assign to every location the theme registers, so whichever one the
           // header actually renders picks this up.
-          locations: await themeMenuLocations(get),
+          locations: await claimMenuLocations(),
         });
         created.push({ kind: 'menu', id: menu.id });
 
@@ -313,7 +325,7 @@ export const test = base.extend<{ content: ContentHelper }>({
 
         const menu = await post<{ id: number }>('/wp-json/wp/v2/menus', {
           name: `${tag}-tall-menu`,
-          locations: await themeMenuLocations(get),
+          locations: await claimMenuLocations(),
         });
         created.push({ kind: 'menu', id: menu.id });
 
@@ -361,20 +373,49 @@ export const test = base.extend<{ content: ContentHelper }>({
         }
       }
     }
+
+    // Put the site's own menus back in the locations a seeded menu displaced.
+    // Runs after the deletions above so the seeded menu is already gone and
+    // cannot win the assignment back.
+    if (menuLocationsBefore) {
+      const before: Record<string, number> = menuLocationsBefore;
+      const byMenu = new Map<number, string[]>();
+      for (const [slug, menuId] of Object.entries(before)) {
+        if (!menuId) continue;
+        byMenu.set(menuId, [...(byMenu.get(menuId) ?? []), slug]);
+      }
+
+      for (const [menuId, slugs] of byMenu) {
+        try {
+          await post(`/wp-json/wp/v2/menus/${menuId}`, { locations: slugs });
+        } catch (err) {
+          console.warn(
+            `content fixture: could not restore menu ${menuId} to ${slugs.join(', ')}: ${(err as Error).message}`,
+          );
+        }
+      }
+    }
   },
 });
 
-/** Every nav-menu location the active theme registers, as a REST `locations` array. */
+/**
+ * Every nav-menu location the active theme registers, mapped to the menu id
+ * currently assigned to it (0 when the location is empty).
+ */
 async function themeMenuLocations(
   get: <T>(path: string) => Promise<T>,
-): Promise<string[]> {
+): Promise<Record<string, number>> {
   try {
-    const locations = await get<Record<string, { name: string }>>('/wp-json/wp/v2/menu-locations');
-    return Object.keys(locations);
+    const locations = await get<Record<string, { name: string; menu?: number }>>(
+      '/wp-json/wp/v2/menu-locations',
+    );
+    return Object.fromEntries(
+      Object.entries(locations).map(([slug, loc]) => [slug, typeof loc?.menu === 'number' ? loc.menu : 0]),
+    );
   } catch {
     // Not fatal: an unassigned menu still renders wherever a spec asks for it
     // by name, and guessing a location name would be worse than none.
-    return [];
+    return {};
   }
 }
 

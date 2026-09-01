@@ -2530,17 +2530,18 @@ li.default-menu {
 .cm-header .cm-menu-toggle svg:hover {
 	color: #fff;
 }
-.cm-header .cm-mobile-nav ul.menu-scrollbar,
-.cm-header-builder .cm-mobile-nav ul.menu-scrollbar {
-	overflow-y: scroll;
-	width: 100%;
-}
 .cm-header .cm-mobile-nav li:hover, .cm-header .cm-mobile-nav li.current-page-ancestor, .cm-header .cm-mobile-nav li.current-menu-ancestor, .cm-header .cm-mobile-nav li.current-page-item, .cm-header .cm-mobile-nav li.current-menu-item {
 	color: #fff;
 	background-color: var(--cm-color-1, #207daf);
 }
 .cm-header .cm-mobile-nav li:hover > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-item > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-item > .cm-sub-toggle i {
 	color: #fff;
+}
+
+.cm-header .cm-mobile-nav ul.menu-scrollbar,
+.cm-header-builder .cm-mobile-nav ul.menu-scrollbar {
+	overflow-y: scroll;
+	width: 100%;
 }
 
 .cm-mobile-nav .menu-logo a {
