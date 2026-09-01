@@ -129,12 +129,6 @@
 			align-items: center;
 			height: 100%;
 
-			// No flex-basis here on purpose. A fixed 30% slice was introduced in #277
-			// and shrank whatever the column held down to fit it, so a configured logo
-			// ended up a fraction of its size as soon as anything else shared the
-			// column (CMAG-650, and #305 for the multi-component case). The column
-			// now sizes to its content and only shrinks when the row genuinely runs
-			// out of room.
 		}
 
 		.cm-header-center-col {
