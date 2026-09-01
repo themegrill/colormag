@@ -3055,6 +3055,14 @@ Styles for separating single posts loaded from ajax call.
 	position: relative;
 }
 
+.single-post .cm-post-content > .cm-featured-image img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 800/445;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
 /* Widgets.
 --------------------------------------------- */
 /* Advertisement Widget.
