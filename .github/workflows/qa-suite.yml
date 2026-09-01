@@ -31,9 +31,12 @@ on:
 jobs:
   # The only check. Scoped, fast, runs on every PR including drafts.
   pr:
-    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@main
+    # Pinned to a reviewed commit: @main would let upstream change what runs
+    # here after this was reviewed. Bump both together.
+    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@dce724224a500a09c1b836aa194be9b1c976c605
     with:
       product_slug: colormag
       product_type: theme
       scope: changed
+      qa_ref: dce724224a500a09c1b836aa194be9b1c976c605
 
