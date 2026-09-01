@@ -46,6 +46,7 @@ type Created = { kind: 'post' | 'page' | 'category' | 'menu' | 'menu-item' | 'wi
 export type SeededPost = { id: number; link: string; title: string; slug: string };
 export type SeededCategory = { id: number; link: string; name: string; slug: string };
 export type SeededMenu = { id: number; parentLabel: string; childLabel: string; childHref: string };
+export type SeededTallMenu = { id: number; itemCount: number; lastItemLabel: string };
 
 export type ContentHelper = {
   /** A published post that definitely exists, with a link to it. */
@@ -61,6 +62,15 @@ export type ContentHelper = {
    * with at least one child — what the mobile submenu specs need.
    */
   aMenuWithDropdown: () => Promise<SeededMenu>;
+  /**
+   * A nav menu with enough top-level items that the rendered mobile
+   * off-canvas panel is taller than a typical mobile viewport — what the
+   * CMAG-742 overflow/scroll spec needs. Always created fresh: unlike the
+   * other helpers, "reuse whatever menu already exists" cannot guarantee a
+   * specific item count, and the whole point here is a deterministic
+   * overflow rather than whatever happens to be lying around.
+   */
+  aMenuTooTallForMobile: () => Promise<SeededTallMenu>;
 };
 
 /**
@@ -127,6 +137,19 @@ export const test = base.extend<{ content: ContentHelper }>({
     let cachedCategory: SeededCategory | null = null;
     let cachedPage: SeededPost | null = null;
     let cachedMenu: SeededMenu | null = null;
+    let cachedTallMenu: SeededTallMenu | null = null;
+
+    // Assigning a seeded menu to every location displaces whatever the site had
+    // there, and deleting that menu in teardown does not put it back — the
+    // location just ends up empty, which a later serial spec then sees. Captured
+    // on first claim so teardown can restore the original assignments.
+    let menuLocationsBefore: Record<string, number> | null = null;
+
+    const claimMenuLocations = async (): Promise<string[]> => {
+      const assigned = await themeMenuLocations(get);
+      menuLocationsBefore ??= assigned;
+      return Object.keys(assigned);
+    };
 
     const helper: ContentHelper = {
       aPost: async () => {
@@ -262,7 +285,7 @@ export const test = base.extend<{ content: ContentHelper }>({
           name: `${tag}-menu`,
           // Assign to every location the theme registers, so whichever one the
           // header actually renders picks this up.
-          locations: await themeMenuLocations(get),
+          locations: await claimMenuLocations(),
         });
         created.push({ kind: 'menu', id: menu.id });
 
@@ -288,6 +311,38 @@ export const test = base.extend<{ content: ContentHelper }>({
 
         cachedMenu = { id: menu.id, parentLabel, childLabel, childHref };
         return cachedMenu;
+      },
+
+      aMenuTooTallForMobile: async () => {
+        if (cachedTallMenu) return cachedTallMenu;
+
+        // 20 top-level items comfortably exceeds any mobile viewport this
+        // suite uses (measured ~46px per rendered item against ColorMag's
+        // off-canvas panel, so 20 items is ~920px of content against an
+        // 812px-tall mobile project) without relying on a specific banner
+        // height that could drift with theme changes.
+        const ITEM_COUNT = 20;
+
+        const menu = await post<{ id: number }>('/wp-json/wp/v2/menus', {
+          name: `${tag}-tall-menu`,
+          locations: await claimMenuLocations(),
+        });
+        created.push({ kind: 'menu', id: menu.id });
+
+        let lastItemLabel = '';
+        for (let i = 1; i <= ITEM_COUNT; i++) {
+          lastItemLabel = `E2E Tall Menu Item ${i}`;
+          const item = await post<{ id: number }>('/wp-json/wp/v2/menu-items', {
+            title: lastItemLabel,
+            url: '/',
+            menus: menu.id,
+            status: 'publish',
+          });
+          created.push({ kind: 'menu-item', id: item.id });
+        }
+
+        cachedTallMenu = { id: menu.id, itemCount: ITEM_COUNT, lastItemLabel };
+        return cachedTallMenu;
       },
     };
 
@@ -318,20 +373,49 @@ export const test = base.extend<{ content: ContentHelper }>({
         }
       }
     }
+
+    // Put the site's own menus back in the locations a seeded menu displaced.
+    // Runs after the deletions above so the seeded menu is already gone and
+    // cannot win the assignment back.
+    if (menuLocationsBefore) {
+      const before: Record<string, number> = menuLocationsBefore;
+      const byMenu = new Map<number, string[]>();
+      for (const [slug, menuId] of Object.entries(before)) {
+        if (!menuId) continue;
+        byMenu.set(menuId, [...(byMenu.get(menuId) ?? []), slug]);
+      }
+
+      for (const [menuId, slugs] of byMenu) {
+        try {
+          await post(`/wp-json/wp/v2/menus/${menuId}`, { locations: slugs });
+        } catch (err) {
+          console.warn(
+            `content fixture: could not restore menu ${menuId} to ${slugs.join(', ')}: ${(err as Error).message}`,
+          );
+        }
+      }
+    }
   },
 });
 
-/** Every nav-menu location the active theme registers, as a REST `locations` array. */
+/**
+ * Every nav-menu location the active theme registers, mapped to the menu id
+ * currently assigned to it (0 when the location is empty).
+ */
 async function themeMenuLocations(
   get: <T>(path: string) => Promise<T>,
-): Promise<string[]> {
+): Promise<Record<string, number>> {
   try {
-    const locations = await get<Record<string, { name: string }>>('/wp-json/wp/v2/menu-locations');
-    return Object.keys(locations);
+    const locations = await get<Record<string, { name: string; menu?: number }>>(
+      '/wp-json/wp/v2/menu-locations',
+    );
+    return Object.fromEntries(
+      Object.entries(locations).map(([slug, loc]) => [slug, typeof loc?.menu === 'number' ? loc.menu : 0]),
+    );
   } catch {
     // Not fatal: an unassigned menu still renders wherever a spec asks for it
     // by name, and guessing a location name would be worse than none.
-    return [];
+    return {};
   }
 }
 

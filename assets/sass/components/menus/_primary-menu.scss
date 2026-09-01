@@ -314,14 +314,6 @@ li.default-menu {
 
 	.cm-mobile-nav {
 
-		ul {
-
-			&.menu-scrollbar {
-				overflow-y: scroll;
-				width: 100%;
-			}
-		}
-
 		li {
 			&:hover,
 			&.current-page-ancestor,
@@ -339,6 +331,13 @@ li.default-menu {
 			}
 		}
 	}
+}
+
+// Both header systems need this rule (CMAG-742).
+.cm-header .cm-mobile-nav ul.menu-scrollbar,
+.cm-header-builder .cm-mobile-nav ul.menu-scrollbar {
+	overflow-y: scroll;
+	width: 100%;
 }
 
 .cm-mobile-nav {
