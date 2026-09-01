@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.2
+Version: 4.2.3
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.2
+Stable tag: 4.2.3
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
