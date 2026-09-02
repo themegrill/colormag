@@ -154,3 +154,24 @@ jobs:
           body_path: ${{ runner.temp }}/release-notes.txt
           draft: true
           files: dist/colormag.zip
+
+      - name: Generate app token for cross-repo dispatch
+        if: steps.check.outputs.exists == 'false'
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
+          repositories: demo-importer-automation
+
+      - name: Notify automation repo for product testing
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh api repos/themegrill/demo-importer-automation/dispatches \
+            -f event_type=theme-release-draft \
+            -f "client_payload[theme]=colormag" \
+            -f "client_payload[version]=${{ steps.version.outputs.version }}" \
+            -f "client_payload[tag]=${{ steps.version.outputs.tag }}" \
+            -f "client_payload[source_repo]=${{ github.repository }}"
