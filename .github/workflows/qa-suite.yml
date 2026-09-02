@@ -33,10 +33,10 @@ jobs:
   pr:
     # Pinned to a reviewed commit: @main would let upstream change what runs
     # here after this was reviewed. Bump both together.
-    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@dce724224a500a09c1b836aa194be9b1c976c605
+    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@6ba1187e82be1c71f8e3a26c5d954e301419b8c1
     with:
       product_slug: colormag
       product_type: theme
       scope: changed
-      qa_ref: dce724224a500a09c1b836aa194be9b1c976c605
+      qa_ref: 6ba1187e82be1c71f8e3a26c5d954e301419b8c1
 
