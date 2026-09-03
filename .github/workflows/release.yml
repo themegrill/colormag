@@ -73,6 +73,13 @@ jobs:
             echo "::error::changelog.txt has no '= Version $VERSION ' block. Add the entry before releasing."
             exit 1
           fi
+          # The block existing is not enough: the heading carries a placeholder
+          # date while a version is in development, and it would be published
+          # verbatim as the release notes.
+          if grep -q 'xxxx-xx-xx' "$RUNNER_TEMP/release-notes.txt"; then
+            echo "::error::changelog.txt still has the xxxx-xx-xx placeholder date for $VERSION. Set the release date before releasing."
+            exit 1
+          fi
 
       - name: Set up pnpm
         if: steps.check.outputs.exists == 'false'
