@@ -87,6 +87,13 @@ class colormag_featured_posts_slider_widget extends ColorMag_Widget {
 		$get_featured_posts = $this->query_posts( $number, $type, $category, $tag, $author );
 
 		$this->widget_start( $args );
+
+		/*
+		 * This widget exposes no title setting, so the entry titles within it would
+		 * otherwise skip a heading level. Render a screen reader only heading for
+		 * them to nest under.
+		 */
+		$this->widget_title( '', $type, $category, esc_html__( 'Featured posts slider', 'colormag' ) );
 		?>
 
 		<div class="cm-featured-category-slider">

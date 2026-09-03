@@ -5,7 +5,7 @@ Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description:  ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org. Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included. Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag
-Version: 4.2.2
+Version: 4.2.3
 Tested up to: 7.0
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -1077,9 +1077,6 @@ table td {
 	align-items: center;
 	height: 100%;
 }
-.cm-header-builder .cm-main-row .cm-header-left-col.cm-header-col--has-multiple {
-	flex-basis: 30%;
-}
 .cm-header-builder .cm-main-row .cm-header-center-col {
 	display: flex;
 	gap: 16px;
@@ -1402,6 +1399,36 @@ table td {
 		flex-direction: column;
 	}
 }
+/*
+ * Keep the header inside the viewport on small screens.
+ *
+ * The row columns are flex items, and their default `min-width: auto` refuses to
+ * shrink below the intrinsic width of their content. A single wide element — a
+ * logo, the search field, the news ticker — then pushes the whole header off
+ * screen. Let the columns shrink, and cap the elements that carry a width of
+ * their own.
+ */
+.cm-header-builder .cm-row,
+.cm-header-builder .cm-main-row,
+.cm-header-builder .cm-header-left-col,
+.cm-header-builder .cm-header-center-col,
+.cm-header-builder .cm-header-right-col {
+	min-width: 0;
+}
+.cm-header-builder .cm-search-box,
+.cm-header-builder .search-form,
+.cm-header-builder .search-wrap {
+	max-width: 100%;
+}
+.cm-header-builder input.s {
+	width: 100%;
+	min-width: 0;
+}
+.cm-header-builder .breaking-news-ticker {
+	width: 100%;
+	max-width: 100%;
+}
+
 .cm-footer-builder a {
 	color: #fff;
 }
@@ -2530,16 +2557,18 @@ li.default-menu {
 .cm-header .cm-menu-toggle svg:hover {
 	color: #fff;
 }
-.cm-header .cm-mobile-nav ul.menu-scrollbar {
-	overflow-y: scroll;
-	width: 100%;
-}
 .cm-header .cm-mobile-nav li:hover, .cm-header .cm-mobile-nav li.current-page-ancestor, .cm-header .cm-mobile-nav li.current-menu-ancestor, .cm-header .cm-mobile-nav li.current-page-item, .cm-header .cm-mobile-nav li.current-menu-item {
 	color: #fff;
 	background-color: var(--cm-color-1, #207daf);
 }
 .cm-header .cm-mobile-nav li:hover > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-ancestor > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-page-item > .cm-sub-toggle i, .cm-header .cm-mobile-nav li.current-menu-item > .cm-sub-toggle i {
 	color: #fff;
+}
+
+.cm-header .cm-mobile-nav ul.menu-scrollbar,
+.cm-header-builder .cm-mobile-nav ul.menu-scrollbar {
+	overflow-y: scroll;
+	width: 100%;
 }
 
 .cm-mobile-nav .menu-logo a {
@@ -3055,6 +3084,14 @@ Styles for separating single posts loaded from ajax call.
 .cm-featured-image a {
 	display: block;
 	position: relative;
+}
+
+.single-post .cm-post-content > .cm-featured-image img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 800/445;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 /* Widgets.
@@ -4316,29 +4353,24 @@ Styles for separating single posts loaded from ajax call.
 }
 /* Blog.
 --------------------------------------------- */
-.cm-posts.cm-layout-1-style-1, .cm-posts.cm-layout-1-style-2 {
+.cm-posts.cm-layout-1-style-1 {
 	--grid-column: 1;
 }
 
-.cm-layout-1-style-1 .post,
-.cm-layout-1-style-2 .post {
+.cm-layout-1-style-1 .post {
 	display: flex;
 	flex-direction: column;
 }
-.cm-layout-1-style-1 .post:first-child,
-.cm-layout-1-style-2 .post:first-child {
+.cm-layout-1-style-1 .post:first-child {
 	padding: 0;
 }
-.cm-layout-1-style-1 .cm-featured-image,
-.cm-layout-1-style-2 .cm-featured-image {
+.cm-layout-1-style-1 .cm-featured-image {
 	flex-basis: 50%;
 }
-.cm-layout-1-style-1 .cm-featured-image img,
-.cm-layout-1-style-2 .cm-featured-image img {
+.cm-layout-1-style-1 .cm-featured-image img {
 	width: 100%;
 }
-.cm-layout-1-style-1 .cm-post-content,
-.cm-layout-1-style-2 .cm-post-content {
+.cm-layout-1-style-1 .cm-post-content {
 	flex: 1;
 	align-items: center;
 	padding: 20px;
@@ -4347,9 +4379,6 @@ Styles for separating single posts loaded from ajax call.
 @media screen and (min-width: 48em) {
 	.cm-layout-1-style-1 .post {
 		flex-direction: row;
-	}
-	.cm-layout-1-style-2 .post {
-		flex-direction: row-reverse;
 	}
 }
 .cm-posts.cm-layout-2-style-1 .post:first-child,

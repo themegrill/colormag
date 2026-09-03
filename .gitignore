@@ -33,7 +33,11 @@ colormag-pro.zip
 
 # Claude AI
 .claude/
-/bin/
+
+# Local scratch, except the makepot helper: `composer makepot` requires it, so a
+# fresh clone cannot build a release without it being committed.
+/bin/*
+!/bin/raise-makepot-memory-limit.php
 
 # themegrill-qa — local scratch only
 .themegrill-qa/.docs-cache/

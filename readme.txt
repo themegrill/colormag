@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.2
+Version: 4.2.3
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.2
+Stable tag: 4.2.3
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,15 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.3 - xxxx-xx-xx =
+* Added    - Order By option for Related Posts, with Recent selected by default.
+* Fix      - Related Posts could show very old posts instead of the latest ones.
+* Fix      - Logo and other header items were squeezed into a narrow column.
+* Fix      - Mobile menu could be cut off with no way to scroll it.
+* Fix      - Featured image on single posts looked blurry on high-resolution screens.
+* Fix      - Homepage headings skipped a level, affecting accessibility and SEO.
+* Fix      - Advanced blog layout style 2 now shows the image above the content.
+
 = Version 4.2.2 - 2026-08-18 =
 * Added    - Typography control for the header builder Button element.
 * Added    - Icon size control for the header builder Search element.
