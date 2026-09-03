@@ -12,25 +12,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'colormag_get_offset_random_post_ids' ) ) :
+if ( ! function_exists( 'colormag_get_post_query_cache_key' ) ) :
 	/**
-	 * Returns random post IDs using offset-based selection instead of ORDER BY RAND().
-	 * Avoids full-table scans on large post tables. Caches the result in a transient.
+	 * Build a transient key that stops matching as soon as the posts change.
 	 *
-	 * @param array  $base_args WP_Query args defining the post pool (no orderby/offset).
-	 * @param string $cache_key Unique transient key for this query shape.
-	 * @param int    $ttl       Cache lifetime in seconds. Default 2 minutes.
-	 * @return int[] Array of post IDs.
+	 * get_lastpostmodified() is cached by core and moves whenever a post is published
+	 * or edited, so a cached list can never outlive the content it was built from.
+	 *
+	 * @param string $cache_key Caller's key for this query shape.
+	 * @param string $variant   Anything else the cached value depends on.
+	 * @return string
 	 */
-	function colormag_get_offset_random_post_ids( array $base_args, $cache_key, $ttl = 120 ) {
-		$ids = get_transient( $cache_key );
-		if ( false !== $ids ) {
-			return (array) $ids;
-		}
+	function colormag_get_post_query_cache_key( $cache_key, $variant = '' ) {
+		return $cache_key . '_' . md5( $variant . '|' . (string) get_lastpostmodified( 'gmt' ) );
+	}
+endif;
 
-		$per_page = isset( $base_args['posts_per_page'] ) ? (int) $base_args['posts_per_page'] : 1;
-
-		// Count total matching posts with a lightweight query.
+if ( ! function_exists( 'colormag_get_random_post_window' ) ) :
+	/**
+	 * Read a window of post IDs starting at a random offset.
+	 *
+	 * The window is deliberately wider than the caller needs, so there is something
+	 * left to shuffle. Offset selection keeps any post in the table reachable without
+	 * the full-table scan that ORDER BY RAND() costs.
+	 *
+	 * @param array $base_args WP_Query args defining the post pool.
+	 * @param int   $per_page  Number of posts the caller will display.
+	 * @return int[] Candidate post IDs.
+	 */
+	function colormag_get_random_post_window( array $base_args, $per_page ) {
 		$count_query = new WP_Query(
 			array_merge(
 				$base_args,
@@ -47,17 +57,17 @@ if ( ! function_exists( 'colormag_get_offset_random_post_ids' ) ) :
 		$total = (int) $count_query->found_posts;
 
 		if ( ! $total ) {
-			set_transient( $cache_key, array(), $ttl );
 			return array();
 		}
 
-		$offset = mt_rand( 0, max( 0, $total - $per_page ) );
+		$window = min( max( 10 * $per_page, 30 ), $total );
+		$offset = wp_rand( 0, max( 0, $total - $window ) );
 
 		$ids = get_posts(
 			array_merge(
 				$base_args,
 				array(
-					'posts_per_page'         => $per_page,
+					'posts_per_page'         => $window,
 					'offset'                 => $offset,
 					'orderby'                => 'date',
 					'order'                  => 'DESC',
@@ -69,16 +79,49 @@ if ( ! function_exists( 'colormag_get_offset_random_post_ids' ) ) :
 			)
 		);
 
-		$ids = array_map( 'intval', $ids );
-		set_transient( $cache_key, $ids, $ttl );
-		return $ids;
+		return array_map( 'intval', $ids );
+	}
+endif;
+
+if ( ! function_exists( 'colormag_get_offset_random_post_ids' ) ) :
+	/**
+	 * Returns random post IDs without ORDER BY RAND() and its full-table scan.
+	 *
+	 * Only the candidate window is cached. The selection is shuffled on every request,
+	 * so reloading a page gives a different set and a different order.
+	 *
+	 * @param array  $base_args WP_Query args defining the post pool (no orderby/offset).
+	 * @param string $cache_key Unique transient key for this query shape.
+	 * @param int    $ttl       Cache lifetime in seconds. Default 2 minutes.
+	 * @return int[] Array of post IDs.
+	 */
+	function colormag_get_offset_random_post_ids( array $base_args, $cache_key, $ttl = 120 ) {
+		$per_page  = isset( $base_args['posts_per_page'] ) ? (int) $base_args['posts_per_page'] : 1;
+		$per_page  = max( 1, $per_page );
+		$cache_key = colormag_get_post_query_cache_key( $cache_key, 'window-' . $per_page );
+
+		$pool = get_transient( $cache_key );
+
+		if ( false === $pool ) {
+			$pool = colormag_get_random_post_window( $base_args, $per_page );
+			set_transient( $cache_key, $pool, $ttl );
+		}
+
+		$pool = (array) $pool;
+
+		if ( empty( $pool ) ) {
+			return array();
+		}
+
+		shuffle( $pool );
+
+		return array_slice( $pool, 0, $per_page );
 	}
 endif;
 
 if ( ! function_exists( 'colormag_get_recent_post_ids' ) ) :
 	/**
-	 * Returns the most recent matching post IDs — no randomization. Caches the
-	 * result in a transient, same as colormag_get_offset_random_post_ids().
+	 * Returns the most recent matching post IDs — no randomization.
 	 *
 	 * @param array  $base_args WP_Query args defining the post pool (no orderby/offset).
 	 * @param string $cache_key Unique transient key for this query shape.
@@ -86,7 +129,11 @@ if ( ! function_exists( 'colormag_get_recent_post_ids' ) ) :
 	 * @return int[] Array of post IDs.
 	 */
 	function colormag_get_recent_post_ids( array $base_args, $cache_key, $ttl = 120 ) {
+		$per_page  = isset( $base_args['posts_per_page'] ) ? (int) $base_args['posts_per_page'] : 1;
+		$cache_key = colormag_get_post_query_cache_key( $cache_key, 'recent-' . (int) $per_page );
+
 		$ids = get_transient( $cache_key );
+
 		if ( false !== $ids ) {
 			return (array) $ids;
 		}
@@ -107,6 +154,7 @@ if ( ! function_exists( 'colormag_get_recent_post_ids' ) ) :
 
 		$ids = array_map( 'intval', $ids );
 		set_transient( $cache_key, $ids, $ttl );
+
 		return $ids;
 	}
 endif;

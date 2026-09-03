@@ -2,6 +2,7 @@
 = Version 4.2.3 - xxxx-xx-xx =
 * Added    - Order By option for Related Posts, with Recent selected by default.
 * Fix      - Related Posts could show very old posts instead of the latest ones.
+* Fix      - Related Posts order by Random repeated the same posts in the same order.
 * Fix      - Logo and other header items were squeezed into a narrow column.
 * Fix      - Mobile menu could be cut off with no way to scroll it.
 * Fix      - Featured image on single posts looked blurry on high-resolution screens.
