@@ -1399,6 +1399,36 @@ table td {
 		flex-direction: column;
 	}
 }
+/*
+ * Keep the header inside the viewport on small screens.
+ *
+ * The row columns are flex items, and their default `min-width: auto` refuses to
+ * shrink below the intrinsic width of their content. A single wide element — a
+ * logo, the search field, the news ticker — then pushes the whole header off
+ * screen. Let the columns shrink, and cap the elements that carry a width of
+ * their own.
+ */
+.cm-header-builder .cm-row,
+.cm-header-builder .cm-main-row,
+.cm-header-builder .cm-header-left-col,
+.cm-header-builder .cm-header-center-col,
+.cm-header-builder .cm-header-right-col {
+	min-width: 0;
+}
+.cm-header-builder .cm-search-box,
+.cm-header-builder .search-form,
+.cm-header-builder .search-wrap {
+	max-width: 100%;
+}
+.cm-header-builder input.s {
+	width: 100%;
+	min-width: 0;
+}
+.cm-header-builder .breaking-news-ticker {
+	width: 100%;
+	max-width: 100%;
+}
+
 .cm-footer-builder a {
 	color: #fff;
 }

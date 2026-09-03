@@ -611,3 +611,39 @@
 		}
 	}
 }
+
+/*
+ * Keep the header inside the viewport on small screens.
+ *
+ * The row columns are flex items, and their default `min-width: auto` refuses to
+ * shrink below the intrinsic width of their content. A single wide element — a
+ * logo, the search field, the news ticker — then pushes the whole header off
+ * screen. Let the columns shrink, and cap the elements that carry a width of
+ * their own.
+ */
+.cm-header-builder {
+
+	.cm-row,
+	.cm-main-row,
+	.cm-header-left-col,
+	.cm-header-center-col,
+	.cm-header-right-col {
+		min-width: 0;
+	}
+
+	.cm-search-box,
+	.search-form,
+	.search-wrap {
+		max-width: 100%;
+	}
+
+	input.s {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.breaking-news-ticker {
+		width: 100%;
+		max-width: 100%;
+	}
+}
