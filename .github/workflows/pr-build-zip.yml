@@ -15,8 +15,8 @@ jobs:
       package-manager: pnpm
       pnpm-version: '9'
       composer-install: true
-      build-command: pnpm run release
-      zip-glob: 'release/*.zip'
+      build-command: pnpm run release && mkdir -p colormag && rsync -rc --exclude-from=.distignore ./ ./colormag --delete --delete-excluded && zip -r colormag.zip colormag
+      zip-glob: 'colormag.zip'
       artifacts-bucket: themegrill-pr-artifacts
       public-base-url: https://themegrill-pr-artifacts.s3.amazonaws.com
       s3-region: us-east-1
