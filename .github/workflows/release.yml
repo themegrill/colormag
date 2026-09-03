@@ -106,7 +106,7 @@ jobs:
 
       - name: Install Composer dependencies
         if: steps.check.outputs.exists == 'false'
-        run: composer install --no-progress --prefer-dist
+        run: composer install --no-progress --prefer-dist --ignore-platform-reqs
 
       - name: Ensure makepot memory-limit helper exists
         if: steps.check.outputs.exists == 'false'
