@@ -111,3 +111,4 @@ match the released version or .org will serve the wrong build.
   the prefix match.
 - **Tag exists but no release** — re-run the workflow; the tag push is skipped
   and the release is created on top of it.
+<!-- tg-autopilot final migration test: Thu Sep  3 12:56:53 UTC 2026 -->
