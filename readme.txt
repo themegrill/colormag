@@ -128,7 +128,7 @@ and we will include it within the theme from next version update.
 * Fix      - Logo and other header items were squeezed into a narrow column.
 * Fix      - Mobile menu could be cut off with no way to scroll it.
 * Fix      - Featured image on single posts looked blurry on high-resolution screens.
-* Fix      - Homepage headings skipped a level, affecting accessibility and SEO.
+* Fix      - Homepage headings skipped a level, affecting accessibility.
 * Fix      - Advanced blog layout style 2 now shows the image above the content.
 
 = Version 4.2.2 - 2026-08-18 =
