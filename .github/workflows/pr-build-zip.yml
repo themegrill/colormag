@@ -13,7 +13,6 @@ jobs:
       node-version: '20.x'
       php-version: '7.4'
       package-manager: pnpm
-      pnpm-version: '9'
       composer-install: true
       build-command: pnpm run release && mkdir -p colormag && rsync -rc --exclude-from=.distignore ./ ./colormag --delete --delete-excluded && zip -r colormag.zip colormag
       zip-glob: 'colormag.zip'
