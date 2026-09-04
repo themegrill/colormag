@@ -107,6 +107,13 @@ jobs:
             exit 1
           fi
 
+      # Not preinstalled on the current ubuntu-latest image.
+      - name: Install Subversion
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq subversion
+
       # Shallow checkout: only trunk needs full content, tags/ is just where
       # we'll add this one version, and the theme ships its own screenshot.jpg
       # so there's no separate assets/ directory to sync (unlike a plugin).
