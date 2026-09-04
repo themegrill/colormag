@@ -114,75 +114,45 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq subversion
 
-      # Shallow checkout: only trunk needs full content, tags/ is just where
-      # we'll add this one version, and the theme ships its own screenshot.jpg
-      # so there's no separate assets/ directory to sync (unlike a plugin).
-      # Anonymous checkout of a public WP.org SVN repo needs no credentials,
-      # so this step (and everything through the diff preview below) runs
-      # the same whether or not this is a dry run.
-      - name: Check out SVN working copy
-        run: |
-          set -euo pipefail
-          svn checkout --depth=empty https://themes.svn.wordpress.org/colormag "$RUNNER_TEMP/svn-repo"
-          cd "$RUNNER_TEMP/svn-repo"
-          svn update --set-depth empty tags
-          svn update --set-depth infinity trunk
+      # Unlike a plugin, a WordPress.org THEME SVN repo has no trunk/tags/
+      # assets — https://themes.svn.wordpress.org/colormag/ is a flat list of
+      # version directories (4.2.0/, 4.2.1/, 4.2.2/, ...), each one an
+      # immutable, independent snapshot. Releasing means adding a new sibling
+      # directory; there is nothing to sync-and-delete against and no way for
+      # this to touch a previously published version. depth=empty gives a
+      # working copy of the root that already knows every child's name (from
+      # the directory listing), without fetching any of their content.
+      # Anonymous checkout needs no credentials, so this runs the same
+      # whether or not this is a dry run.
+      - name: Check out SVN repo root
+        run: svn checkout --depth=empty https://themes.svn.wordpress.org/colormag "$RUNNER_TEMP/svn-repo"
 
-      # Keyed on the SVN tag, not the GitHub release, so re-running this
-      # workflow (e.g. after an auth failure, or a dry run) skips a version
-      # already pushed instead of failing on "tag already exists".
+      # Keyed on the SVN directory, not the GitHub release, so re-running
+      # this workflow (e.g. after an auth failure, or a dry run) skips a
+      # version already pushed instead of failing on "already exists".
       - name: Check whether this version is already in SVN
         id: check
         env:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          if svn ls "https://themes.svn.wordpress.org/colormag/tags/$VERSION" >/dev/null 2>&1; then
+          if svn ls "https://themes.svn.wordpress.org/colormag/$VERSION" >/dev/null 2>&1; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
-            echo "SVN tag $VERSION already exists — skipping."
+            echo "SVN directory $VERSION already exists — skipping."
           else
             echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
 
-      # Previews the sync before touching the working copy. If this build
-      # would delete an unexpectedly large slice of trunk (bad zip, wrong
-      # BUILD_DIR, a .distignore/zip.src drifted out of sync) this fails loud
-      # instead of quietly wiping out live theme files.
-      - name: Preview the change SVN would receive
-        if: steps.check.outputs.exists == 'false'
-        run: |
-          set -euo pipefail
-          cd "$RUNNER_TEMP"
-          TRUNK_COUNT=$(find svn-repo/trunk -type f -not -path '*/.svn/*' | wc -l)
-          rsync -rc --delete --exclude='.svn' --dry-run -i build/colormag/ svn-repo/trunk/ > rsync-preview.txt || true
-          cat rsync-preview.txt
-          DELETED=$(grep -c '^\*deleting' rsync-preview.txt || true)
-          echo "Current trunk has $TRUNK_COUNT files; this sync would delete $DELETED of them"
-          if [ "$TRUNK_COUNT" -gt 0 ]; then
-            PCT=$(( DELETED * 100 / TRUNK_COUNT ))
-            if [ "$PCT" -gt 30 ]; then
-              echo "::error::This sync would delete ${PCT}% of trunk's files ($DELETED/$TRUNK_COUNT). Refusing — this looks like a bad build, not a real release. If the deletion is genuinely intended, investigate and push it manually."
-              exit 1
-            fi
-          fi
-
-      - name: Sync build into trunk
-        if: steps.check.outputs.exists == 'false'
-        run: |
-          set -euo pipefail
-          rsync -rc --delete --exclude='.svn' "$RUNNER_TEMP/build/colormag/" "$RUNNER_TEMP/svn-repo/trunk/"
-          cd "$RUNNER_TEMP/svn-repo"
-          svn add --force --parents --depth infinity -q trunk
-          svn status trunk | awk '/^!/ {print $2}' | xargs -r svn delete
-
-      - name: Copy trunk to a new SVN tag
+      - name: Stage the new version directory
         if: steps.check.outputs.exists == 'false'
         env:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
           cd "$RUNNER_TEMP/svn-repo"
-          svn cp trunk "tags/$VERSION"
+          cp -r "$RUNNER_TEMP/build/colormag" "$VERSION"
+          svn add --quiet "$VERSION"
+          echo "Files staged for $VERSION:"
           svn status
 
       - name: Commit to WordPress.org SVN
@@ -208,10 +178,10 @@ jobs:
           {
             echo "### SVN deploy — ColorMag $VERSION"
             if [ "$EXISTS" = "true" ]; then
-              echo "Already present in SVN tags/$VERSION — nothing was done."
+              echo "Already present in SVN at $VERSION/ — nothing was done."
             elif [ "$DRY_RUN" = "true" ]; then
-              echo "Dry run: checked out SVN, sanity-checked the build, and previewed the diff. No commit was made."
+              echo "Dry run: checked out SVN and staged $VERSION/ locally. No commit was made."
             else
-              echo "Committed tags/$VERSION and updated trunk on https://themes.svn.wordpress.org/colormag."
+              echo "Committed $VERSION/ to https://themes.svn.wordpress.org/colormag."
             fi
           } >> "$GITHUB_STEP_SUMMARY"

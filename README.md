@@ -105,11 +105,14 @@ version, since that's what .org uses to decide which build to serve.
 
 It downloads the *exact* zip attached to the release (never rebuilds), checks
 the zip's `style.css` version against the release tag, sanity-checks the
-build (required files present, file count not suspiciously low), checks out
-`trunk`/`tags` from `themes.svn.wordpress.org/colormag`, previews the sync and
-refuses to proceed if it would delete more than 30% of trunk's files, then
-copies `trunk` → `tags/x.y.z` and commits. A version already present in SVN
-tags is skipped, so re-running after a failure is safe.
+build (required files present, file count not suspiciously low), then commits
+it to `themes.svn.wordpress.org/colormag`. Unlike a plugin, a theme SVN repo
+has no `trunk`/`tags`/`assets` — it's a flat list of version directories
+(`4.2.1/`, `4.2.2/`, ...), each an immutable snapshot. Releasing just adds a
+new sibling directory named after the version; there's nothing to sync or
+delete, and no way for this to touch a previously published version. A
+version that already exists in SVN is skipped, so re-running after a failure
+is safe.
 
 **One-time setup, before this can run for real:**
 
@@ -124,8 +127,9 @@ tags is skipped, so re-running after a failure is safe.
 **Testing without touching the live repo:** run the workflow manually
 (Actions → Deploy to WordPress.org → Run workflow) with a real tag and
 `dry_run` left at its default `true`. Everything runs — download, SVN
-checkout, sanity checks, diff preview — except the final `svn commit`, so you
-can verify the whole pipeline against a real release with zero risk.
+checkout, sanity checks, staging the new version directory locally — except
+the final `svn commit`, so you can verify the whole pipeline against a real
+release with zero risk.
 
 ### If it fails
 
@@ -139,6 +143,7 @@ can verify the whole pipeline against a real release with zero risk.
 - **"Release tag says X but the zipped style.css says Y"** (svn-deploy) — the
   release was built from a commit whose `style.css` didn't match its own tag.
   Re-cut the release rather than forcing this through.
-- **"This sync would delete N% of trunk's files"** (svn-deploy) — the build
-  looks incomplete or wrong. Check the release's attached zip before
-  re-running; don't just retry hoping it passes.
+- **"Build only has N files"** (svn-deploy) — the zip looks incomplete or
+  wrong. Check the release's attached zip before re-running.
+- **`svn: command not found`** — shouldn't happen; the workflow installs it.
+  If it recurs, the runner image changed again — check `Install Subversion`.
