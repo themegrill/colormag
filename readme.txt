@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.3 - xxxx-xx-xx =
+= Version 4.2.3 - 2026-09-04 =
 * Added    - Order By option for Related Posts, with Recent selected by default.
 * Fix      - Related Posts could show very old posts instead of the latest ones.
 * Fix      - Logo and other header items were squeezed into a narrow column.

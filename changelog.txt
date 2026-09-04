@@ -1,5 +1,5 @@
 == Changelog ==
-= Version 4.2.3 - 2026-09-03 =
+= Version 4.2.3 - 2026-09-04 =
 * Added    - Order By option for Related Posts, with Recent selected by default.
 * Fix      - Related Posts could show very old posts instead of the latest ones.
 * Fix      - Related Posts order by Random repeated the same posts in the same order.

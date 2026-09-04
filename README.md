@@ -98,9 +98,34 @@ Review the draft release — notes and attached zip — then publish it.
 
 ### 7. WordPress.org
 
-There is **no automated .org deployment** for the free theme. After publishing,
-upload to the theme directory / SVN manually. `Stable tag:` in `readme.txt` must
-match the released version or .org will serve the wrong build.
+Publishing the release (step 6) triggers **Deploy to WordPress.org**
+(`.github/workflows/svn-deploy.yml`) automatically — there is no separate
+manual upload step. `Stable tag:` in `readme.txt` must match the released
+version, since that's what .org uses to decide which build to serve.
+
+It downloads the *exact* zip attached to the release (never rebuilds), checks
+the zip's `style.css` version against the release tag, sanity-checks the
+build (required files present, file count not suspiciously low), checks out
+`trunk`/`tags` from `themes.svn.wordpress.org/colormag`, previews the sync and
+refuses to proceed if it would delete more than 30% of trunk's files, then
+copies `trunk` → `tags/x.y.z` and commits. A version already present in SVN
+tags is skipped, so re-running after a failure is safe.
+
+**One-time setup, before this can run for real:**
+
+1. Repo secrets `SVN_USERNAME` and `SVN_KEY` (the .org account's SVN password)
+   — already configured.
+2. Settings → Environments → create `wordpress-org-svn` and add a required
+   reviewer. The job is pointed at this environment, so nothing runs — not
+   even a dry run — until someone approves it in the Actions tab. Without a
+   reviewer configured, the environment has no protection and the job runs
+   immediately.
+
+**Testing without touching the live repo:** run the workflow manually
+(Actions → Deploy to WordPress.org → Run workflow) with a real tag and
+`dry_run` left at its default `true`. Everything runs — download, SVN
+checkout, sanity checks, diff preview — except the final `svn commit`, so you
+can verify the whole pipeline against a real release with zero risk.
 
 ### If it fails
 
@@ -111,3 +136,9 @@ match the released version or .org will serve the wrong build.
   the prefix match.
 - **Tag exists but no release** — re-run the workflow; the tag push is skipped
   and the release is created on top of it.
+- **"Release tag says X but the zipped style.css says Y"** (svn-deploy) — the
+  release was built from a commit whose `style.css` didn't match its own tag.
+  Re-cut the release rather than forcing this through.
+- **"This sync would delete N% of trunk's files"** (svn-deploy) — the build
+  looks incomplete or wrong. Check the release's attached zip before
+  re-running; don't just retry hoping it passes.
