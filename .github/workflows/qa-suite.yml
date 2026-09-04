@@ -1,29 +1,42 @@
-# The free tier: no ANTHROPIC_API_KEY, no agent, runner minutes only.
+# Written by `/claudegrill:setup`. Safe to edit — it is a plain caller.
 #
-# Because it costs nothing but time it runs on EVERY pull request, drafts
-# included. This is the one to make a required status check once it has been
-# green twice in a row.
+# THIS IS THE ONLY PR CHECK MOST PRODUCTS NEED. No ANTHROPIC_API_KEY, no agent,
+# runner minutes only.
 #
-# The agent review (qa-review.yml) stays advisory on purpose. A required check
-# that is occasionally wrong for unexplainable reasons is a check people learn
-# to bypass.
+# It works without AI because the developer already wrote the spec: they ran
+# /claudegrill:verify-fix locally, write-spec added a @fresh spec to their
+# branch, and they committed it with the fix. By the time CI sees the PR the
+# regression is already a deterministic assertion.
 #
-# Only the `fresh` tier ever runs here, and the reusable workflow enforces that
-# itself — it takes no `tier` input. A `@demo` spec needs ColorMag's demo
-# content imported, which a disposable runner site does not have, so running
-# one would fail for reasons that have nothing to do with the pull request.
+# ONE job, on pull requests only. Nothing runs on a schedule: the team's model is
+# a local /claudegrill:verify-fix while the fix is being written, and the e2e
+# suite on the PR. No cron, no nightly, no WordPress-core watcher.
+#
+# `scope: changed` narrows a run to the areas the diff maps to. That is safe by
+# construction — a changed file matching no `area_paths` pattern in
+# .themegrill-qa/suite.json falls back to the full tier, so an unmapped change
+# costs runner time, never coverage.
+#
+# Worth knowing, since nothing else runs the suite now: a spec whose area is
+# never touched by any PR will not execute. Set `scope: full` below if you would
+# rather every PR run the whole @fresh tier.
 
 name: QA suite
 
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
 
 jobs:
-  suite:
-    uses: ThemeGrill/themegrill-qa/.github/workflows/suite.yml@main
+  # The only check. Scoped, fast, runs on every PR including drafts.
+  pr:
+    # Pinned to a reviewed commit: @main would let upstream change what runs
+    # here after this was reviewed. Bump both together.
+    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@dce724224a500a09c1b836aa194be9b1c976c605
     with:
       product_slug: colormag
       product_type: theme
-    secrets:
-      QA_REPO_TOKEN: ${{ secrets.QA_REPO_TOKEN }}
+      scope: changed
+      qa_ref: dce724224a500a09c1b836aa194be9b1c976c605
+

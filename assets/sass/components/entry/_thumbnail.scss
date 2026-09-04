@@ -6,3 +6,13 @@
 		position: relative;
 	}
 }
+
+.single-post .cm-post-content > .cm-featured-image {
+
+	img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 800 / 445;
+		object-fit: cover;
+	}
+}

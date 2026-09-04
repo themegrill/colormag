@@ -329,6 +329,20 @@ $options                = apply_filters(
 				'colormag_enable_related_posts' => true,
 			),
 		),
+		'colormag_related_posts_order'                => array(
+			'default'   => 'recent',
+			'type'      => 'customind-select',
+			'title'     => esc_html__( 'Order By', 'colormag' ),
+			'section'   => 'colormag_single_post_section',
+			'tab'       => 'general',
+			'choices'   => array(
+				'recent' => esc_html__( 'Recent', 'colormag' ),
+				'random' => esc_html__( 'Random', 'colormag' ),
+			),
+			'condition' => array(
+				'colormag_enable_related_posts' => true,
+			),
+		),
 		'colormag_single_post_upgrade'                => array(
 			'type'        => 'customind-upgrade',
 			'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),

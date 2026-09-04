@@ -107,7 +107,7 @@ class colormag_featured_posts_widget extends ColorMag_Widget {
 
 		<?php
 		// Displays the widget title.
-		$this->widget_title( $title, $type, $category );
+		$this->widget_title( $title, $type, $category, esc_html__( 'Featured posts', 'colormag' ) );
 
 		// Display the description.
 		$this->widget_description( $text );

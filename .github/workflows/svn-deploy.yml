@@ -1,0 +1,187 @@
+name: Deploy to WordPress.org
+
+# Automatic trigger fires when the draft release created by "Draft Release"
+# (release.yml) is manually published — the human review step already gates
+# what reaches wordpress.org. workflow_dispatch exists purely so the whole
+# pipeline (download, checkout, sanity checks, diff preview) can be exercised
+# against a real tag without ever committing, via dry_run.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to deploy (e.g. v4.2.3)'
+        required: true
+      dry_run:
+        description: 'Run every step except the final SVN commit'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: svn-deploy-${{ github.event.release.tag_name || inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  svn-deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.release.prerelease == false
+    runs-on: ubuntu-latest
+    # Requires a reviewer to approve in the Actions tab before the job runs at
+    # all — configure required reviewers under Settings > Environments >
+    # wordpress-org-svn. Until that's set up this environment has no
+    # protection rules and the job runs immediately, same as without it.
+    environment: wordpress-org-svn
+    steps:
+      - name: Resolve inputs
+        id: version
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          DISPATCH_TAG: ${{ inputs.tag }}
+          DISPATCH_DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            TAG="$DISPATCH_TAG"
+            DRY_RUN="$DISPATCH_DRY_RUN"
+          else
+            TAG="$RELEASE_TAG"
+            DRY_RUN="false"
+          fi
+          if [ -z "$TAG" ]; then
+            echo "::error::No tag resolved from event"
+            exit 1
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+          echo "dry_run=$DRY_RUN" >> "$GITHUB_OUTPUT"
+          echo "Deploying $TAG (dry_run=$DRY_RUN)"
+
+      # Deploys the exact asset that was reviewed and published, rather than
+      # rebuilding from source — what ships to SVN must match what the
+      # GitHub release said it was.
+      - name: Download the released zip
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          gh release download "$TAG" \
+            --repo "${{ github.repository }}" \
+            --pattern colormag.zip \
+            --dir "$RUNNER_TEMP/release"
+
+      - name: Unzip and verify version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/build"
+          unzip -q "$RUNNER_TEMP/release/colormag.zip" -d "$RUNNER_TEMP/build"
+          test -f "$RUNNER_TEMP/build/colormag/style.css"
+          ZIP_VERSION=$(grep -m1 -E '^[[:space:]]*Version:' "$RUNNER_TEMP/build/colormag/style.css" \
+            | sed -E 's/^[[:space:]]*Version:[[:space:]]*//' | tr -d '\r' | xargs)
+          if [ "$ZIP_VERSION" != "$VERSION" ]; then
+            echo "::error::Release tag says $VERSION but the zipped style.css says $ZIP_VERSION"
+            exit 1
+          fi
+
+      # Catches "the zip was empty/truncated/wrong" before it gets anywhere
+      # near SVN. The exact number doesn't matter — a real ColorMag build has
+      # hundreds of files; anything in double digits means something upstream
+      # broke.
+      - name: Sanity-check the build
+        run: |
+          set -euo pipefail
+          BUILD_DIR="$RUNNER_TEMP/build/colormag"
+          for f in style.css functions.php readme.txt changelog.txt screenshot.jpg; do
+            test -f "$BUILD_DIR/$f" || { echo "::error::Required file $f missing from the build — refusing to sync"; exit 1; }
+          done
+          COUNT=$(find "$BUILD_DIR" -type f | wc -l)
+          echo "Build contains $COUNT files"
+          if [ "$COUNT" -lt 50 ]; then
+            echo "::error::Build only has $COUNT files — looks incomplete, refusing to sync"
+            exit 1
+          fi
+
+      # Not preinstalled on the current ubuntu-latest image.
+      - name: Install Subversion
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq subversion
+
+      # Unlike a plugin, a WordPress.org THEME SVN repo has no trunk/tags/
+      # assets — https://themes.svn.wordpress.org/colormag/ is a flat list of
+      # version directories (4.2.0/, 4.2.1/, 4.2.2/, ...), each one an
+      # immutable, independent snapshot. Releasing means adding a new sibling
+      # directory; there is nothing to sync-and-delete against and no way for
+      # this to touch a previously published version. depth=empty gives a
+      # working copy of the root that already knows every child's name (from
+      # the directory listing), without fetching any of their content.
+      # Anonymous checkout needs no credentials, so this runs the same
+      # whether or not this is a dry run.
+      - name: Check out SVN repo root
+        run: svn checkout --depth=empty https://themes.svn.wordpress.org/colormag "$RUNNER_TEMP/svn-repo"
+
+      # Keyed on the SVN directory, not the GitHub release, so re-running
+      # this workflow (e.g. after an auth failure, or a dry run) skips a
+      # version already pushed instead of failing on "already exists".
+      - name: Check whether this version is already in SVN
+        id: check
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          if svn ls "https://themes.svn.wordpress.org/colormag/$VERSION" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "SVN directory $VERSION already exists — skipping."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Stage the new version directory
+        if: steps.check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/svn-repo"
+          cp -r "$RUNNER_TEMP/build/colormag" "$VERSION"
+          svn add --quiet "$VERSION"
+          echo "Files staged for $VERSION:"
+          svn status
+
+      - name: Commit to WordPress.org SVN
+        if: steps.check.outputs.exists == 'false' && steps.version.outputs.dry_run == 'false'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_KEY }}
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/svn-repo"
+          svn commit -m "Release $VERSION" \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD" \
+            --non-interactive --no-auth-cache
+
+      - name: Summary
+        if: always()
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          DRY_RUN: ${{ steps.version.outputs.dry_run }}
+          EXISTS: ${{ steps.check.outputs.exists }}
+        run: |
+          {
+            echo "### SVN deploy — ColorMag $VERSION"
+            if [ "$EXISTS" = "true" ]; then
+              echo "Already present in SVN at $VERSION/ — nothing was done."
+            elif [ "$DRY_RUN" = "true" ]; then
+              echo "Dry run: checked out SVN and staged $VERSION/ locally. No commit was made."
+            else
+              echo "Committed $VERSION/ to https://themes.svn.wordpress.org/colormag."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
