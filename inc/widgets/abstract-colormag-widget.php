@@ -312,7 +312,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 	 * AVIF or SVG file (neither was in the list), or carried a query string or
 	 * fragment, which is routine for CDNs, image optimizers and cache busters.
 	 *
-	 * An URL that resolves to an attachment in the media library is now accepted
+	 * A URL that resolves to an image attachment in the media library is accepted
 	 * as-is; anything else falls back to an extension check that ignores the
 	 * query string and honours the site's allowed upload types.
 	 *
@@ -340,8 +340,15 @@ abstract class ColorMag_Widget extends WP_Widget {
 			return $default_value;
 		}
 
-		// Anything in the media library is valid whatever its extension or query string.
-		if ( attachment_url_to_postid( $url ) ) {
+		/*
+		 * An image in the media library is valid whatever its extension or query
+		 * string. The attachment's stored mime type still has to be checked: this
+		 * is an image control, so a PDF or an archive that happens to be an
+		 * attachment must not pass just because the URL resolves.
+		 */
+		$attachment_id = attachment_url_to_postid( $url );
+
+		if ( $attachment_id && 0 === strpos( (string) get_post_mime_type( $attachment_id ), 'image/' ) ) {
 			return $url;
 		}
 
