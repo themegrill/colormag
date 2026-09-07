@@ -1,4 +1,7 @@
 == Changelog ==
+= Version 4.2.4 - 2026-09-07 =
+* Fix      - Corrected incorrect capitalization of "WordPress" in customizer data files.
+
 = Version 4.2.3 - 2026-09-04 =
 * Added    - Order By option for Related Posts, with Recent selected by default.
 * Fix      - Related Posts could show very old posts instead of the latest ones.

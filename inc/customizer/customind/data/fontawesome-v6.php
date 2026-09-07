@@ -7412,7 +7412,7 @@
 		'class' => 'fa-brands fa-wordpress',
 	],
 	[
-		'name'  => 'Wordpress Simple',
+		'name'  => 'WordPress Simple',
 		'class' => 'fa-brands fa-wordpress-simple',
 	],
 	[

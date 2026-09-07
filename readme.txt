@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.3
+Version: 4.2.4
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.3
+Stable tag: 4.2.4
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.4 - 2026-09-07 =
+* Fix      - Corrected incorrect capitalization of "WordPress" in customizer data files.
+
 = Version 4.2.3 - 2026-09-04 =
 * Added    - Order By option for Related Posts, with Recent selected by default.
 * Fix      - Related Posts could show very old posts instead of the latest ones.

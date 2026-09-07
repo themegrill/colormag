@@ -266,8 +266,8 @@
 				'label' => 'WhatsApp',
 				'color' => '#25D366',
 			],
-			'wordpress'      => [
-				'value' => 'wordpress',
+			'WordPress'      => [
+				'value' => 'WordPress',
 				'label' => 'WordPress',
 				'color' => '#21759b',
 			],
