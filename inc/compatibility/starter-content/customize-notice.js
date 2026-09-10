@@ -125,27 +125,23 @@
 		// immediately on success, before our own fresh_site dismiss call
 		// would get a chance to run.
 		$card.on( 'click', '.colormag-sc-clean', function () {
+			// Bail rather than queue: if a native Publish is already
+			// saving, waiting for it to finish would just let Home/Blog
+			// publish first — trashing afterwards cannot undo that. If a
+			// native Discard is already trashing, proceeding would fire a
+			// redundant trash request and core may navigate away before
+			// our own fresh_site dismiss call gets to run. Either way the
+			// safe thing is to do nothing and leave the notice as is; the
+			// user can click Clean again once the native action settles.
+			if ( api.state( 'saving' ).get() || api.state( 'trashing' ).get() ) {
+				return;
+			}
+
 			$buttons.prop( 'disabled', true );
 			beginCleanSlate();
 		} );
 
-		// Split out so it can safely re-invoke itself once a concurrent
-		// native save (e.g. the user had already clicked the Customizer's
-		// own Publish button) finishes, instead of starting the trash
-		// request while one is still in flight.
 		function beginCleanSlate() {
-			if ( api.state( 'saving' ).get() ) {
-				var onceSavingDone = function ( isSaving ) {
-					if ( isSaving ) {
-						return;
-					}
-					api.state( 'saving' ).unbind( onceSavingDone );
-					beginCleanSlate();
-				};
-				api.state( 'saving' ).bind( onceSavingDone );
-				return;
-			}
-
 			var trashNonce = ( api.settings.nonce || {} ).trash;
 			var blockedNativeControls = false;
 
@@ -190,7 +186,12 @@
 			}
 
 			if ( ! trashNonce ) {
-				dismissAndReload();
+				// No nonce means the trash request can't even be attempted
+				// — treat that as a failure rather than dismissing anyway,
+				// since skipping the trash would leave the staged
+				// changeset (and Home/Blog) intact for a later session to
+				// publish despite "clean slate" having been chosen.
+				endBusy();
 				return;
 			}
 
