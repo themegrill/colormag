@@ -177,6 +177,13 @@
 				window.location.replace( urlParser.href );
 			}
 
+			// Only called once the changeset is confirmed gone (trashed, or
+			// already was). Always reloads, even if this dismiss call
+			// itself fails: re-enabling native Publish/Discard here
+			// instead would let the user try to publish or re-trash a
+			// changeset that no longer exists. A failed dismiss just means
+			// fresh_site is still set, so the notice reappears after
+			// reload and a retry finds nothing left to trash.
 			function dismissAndReload() {
 				$.post(
 					window.ajaxurl,
@@ -184,14 +191,8 @@
 						action: 'colormag_dismiss_starter_content',
 						nonce: data.nonce,
 					}
-				).done( function ( response ) {
-					if ( response && response.success ) {
-						reloadWithoutChangeset();
-					} else {
-						endBusy();
-					}
-				} ).fail( function () {
-					endBusy();
+				).always( function () {
+					reloadWithoutChangeset();
 				} );
 			}
 
