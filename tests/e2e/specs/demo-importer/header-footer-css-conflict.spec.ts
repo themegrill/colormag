@@ -54,10 +54,12 @@ import { test, expect } from '../../fixtures/wp-admin';
  * bug through a more specific rule needs a human call, not a selector change.
  * Left as-is rather than narrowed further, which would risk asserting past
  * what is actually known.
+ *
+ * Held as `fixme`: comparing the final colour cannot tell CMAG-650's
+ * unconditional override apart from a configured white, so it reports a
+ * false failure. Re-enable once it asserts the winning rule rather than the
+ * resulting colour.
  */
-// Held as fixme: comparing the final colour cannot tell CMAG-650's unconditional
-// override apart from a configured white, so it reports a false failure. Re-enable
-// once it asserts the winning rule rather than the resulting colour.
 test.fixme('footer widget links are not forced white @demo @footer', async ({ page }) => {
   await page.goto('/');
 

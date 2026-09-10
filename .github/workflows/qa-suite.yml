@@ -25,7 +25,9 @@ name: QA suite
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, reopened, ready_for_review]
+  issue_comment:
+    types: [created]
   workflow_dispatch:
 
 jobs:
@@ -33,10 +35,9 @@ jobs:
   pr:
     # Pinned to a reviewed commit: @main would let upstream change what runs
     # here after this was reviewed. Bump both together.
-    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@dce724224a500a09c1b836aa194be9b1c976c605
+    if: github.event_name != 'issue_comment' || startsWith(github.event.comment.body, '@claudegrill suite')
+    uses: ThemeGrill/claudegrill/.github/workflows/suite.yml@main
     with:
       product_slug: colormag
       product_type: theme
       scope: changed
-      qa_ref: dce724224a500a09c1b836aa194be9b1c976c605
-

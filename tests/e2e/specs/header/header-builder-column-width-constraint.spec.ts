@@ -1,6 +1,12 @@
 import { test, expect } from '../../fixtures/wp-admin';
 
 /**
+ * Header Builder — the width a main-row column gets depends on how many
+ * elements it actually carries: a column holding several elements is
+ * constrained to a fixed share of the row (30% for the left column), while a
+ * column holding only one is left to size itself, e.g. so a lone logo is
+ * never squeezed to fit space meant for a logo-plus-extras layout.
+ *
  * @area    header
  * @tier    fresh
  * @source  human 2026-08-25
@@ -9,7 +15,12 @@ import { test, expect } from '../../fixtures/wp-admin';
  *          condition the regression violated — the 30% constraint applying to
  *          a column that was never meant to carry it.
  *
- * Guards the unticketed 4.2.2 header-logo-squeeze regression (fixed).
+ * Regression reference: unticketed 4.2.2 header-logo-squeeze bug (fixed),
+ * introduced as a side effect of CMAG-650's demo-import CSS-conflict fix
+ * (guarded separately by `demo-importer/header-footer-css-conflict.spec.ts`)
+ * — moved here from `demo-importer/` because what it actually exercises is
+ * the Header Builder's column layout, not the import routine; it runs
+ * @fresh and touches no import fixture.
  *
  * CMAG-650's demo-import CSS-conflict fix applied `flex-basis: 30%`
  * unconditionally to `.cm-header-left-col`, so any site with just a lone logo
