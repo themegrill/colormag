@@ -2,12 +2,15 @@
 /**
  * Home starter content.
  *
- * Every wp:heading/wp:paragraph block OUTSIDE a wp:cover (i.e. not overlaid
- * on a photo, where a fixed light color is needed for contrast) has had its
- * hardcoded color/font-size/font-weight/line-height/letter-spacing/
- * font-family removed, so plain content correctly inherits the theme's own
- * Customizer-driven heading/body typography instead of overriding it. See
- * GitHub issue #324.
+ * Every wp:heading/wp:paragraph block has had its hardcoded font-size/
+ * font-weight/line-height/letter-spacing/font-family removed, so plain
+ * content correctly inherits the theme's own Customizer-driven heading/body
+ * typography instead of overriding it. The one thing deliberately kept is
+ * text COLOR, and only where a hardcoded dark or photo background would
+ * otherwise make the text unreadable: inside a wp:cover, or inside a
+ * non-cover group whose own background is a fixed dark color or a
+ * background image (e.g. the "Watch Videos", "Top Stories", "Subscribe",
+ * and footer sections below). See GitHub issue #324.
  *
  * @package ColorMag\Compatibility\Starter_Content
  */

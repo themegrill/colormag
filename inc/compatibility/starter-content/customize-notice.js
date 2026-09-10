@@ -11,12 +11,14 @@
  *  - Keep the starter pages    : publish the changeset as-is, same as
  *                                  clicking the Customizer's own Publish
  *                                  button.
- *  - Start with a clean slate  : flip the 'fresh_site' option off and
- *                                  reload. WordPress core's own starter-
- *                                  content importer only ever runs while
- *                                  that option is set, so the next
- *                                  Customizer load never stages anything
- *                                  again — nothing to manually undo.
+ *  - Start with a clean slate  : trash the current changeset (core's own
+ *                                  "Discard changes" action — otherwise
+ *                                  the same auto-draft changeset would
+ *                                  just get reused, and Home/Blog could
+ *                                  still end up published later), then
+ *                                  flip 'fresh_site' off so core's
+ *                                  starter-content importer never stages
+ *                                  anything again, then reload.
  *
  * @package ColorMag
  */
@@ -58,42 +60,85 @@
 		toggleCardVisibility();
 
 		// Same thing clicking the Customizer's own Publish button does — a
-		// single click instead of "choose, then go find Publish too".
+		// single click instead of "choose, then go find Publish too". Only
+		// remove the card once the publish is confirmed; on failure
+		// (expired nonce, lost connection, a client-side validation error)
+		// leave it in place and re-enable the button so nothing looks
+		// silently lost.
 		$card.on( 'click', '.colormag-sc-keep', function () {
-			$( this ).prop( 'disabled', true );
+			var $button = $( this );
+			$button.prop( 'disabled', true );
 
 			var status = api.state( 'selectedChangesetStatus' );
 			if ( status ) {
 				status.set( 'publish' );
 			}
-			if ( api.previewer ) {
-				api.previewer.save();
+
+			if ( ! api.previewer ) {
+				$card.slideUp( 150, function () {
+					$card.remove();
+				} );
+				return;
 			}
 
-			$card.slideUp( 150, function () {
-				$card.remove();
+			api.previewer.save().done( function () {
+				$card.slideUp( 150, function () {
+					$card.remove();
+				} );
+			} ).fail( function () {
+				$button.prop( 'disabled', false );
 			} );
 		} );
 
-		// Clean slate: nothing to unstage client-side — flipping 'fresh_site'
-		// server-side and reloading is enough, since core never stages the
-		// starter content again once that option is off. Only reload once
-		// that flip is confirmed; on failure (expired nonce, lost
-		// connection, no permission) leave the notice in place and
+		// Clean slate: trash the current changeset first — via core's own
+		// customize_trash action, the same one behind the Customizer's own
+		// "Discard changes" button — so the staged Home/Blog pages can't be
+		// resurrected by a later Customizer session reusing the same
+		// auto-draft changeset (WordPress reuses it by default when
+		// changeset branching is off). "Nothing to trash yet" is treated
+		// as success too: it just means nothing was staged yet, which is
+		// already the clean-slate outcome. Only then flip 'fresh_site' and
+		// reload; on any other failure, leave the notice in place and
 		// re-enable the button so the user can retry.
 		$card.on( 'click', '.colormag-sc-clean', function () {
 			var $button = $( this );
 			$button.prop( 'disabled', true );
 
+			var trashNonce = ( api.settings.nonce || {} ).trash;
+
+			function dismissAndReload() {
+				$.post(
+					window.ajaxurl,
+					{
+						action: 'colormag_dismiss_starter_content',
+						nonce: data.nonce,
+					}
+				).done( function ( response ) {
+					if ( response && response.success ) {
+						window.location.reload();
+					} else {
+						$button.prop( 'disabled', false );
+					}
+				} ).fail( function () {
+					$button.prop( 'disabled', false );
+				} );
+			}
+
+			if ( ! trashNonce ) {
+				dismissAndReload();
+				return;
+			}
+
 			$.post(
 				window.ajaxurl,
 				{
-					action: 'colormag_dismiss_starter_content',
-					nonce: data.nonce,
+					action: 'customize_trash',
+					nonce: trashNonce,
 				}
 			).done( function ( response ) {
-				if ( response && response.success ) {
-					window.location.reload();
+				var nothingToTrash = response && response.data && 'non_existent_changeset' === response.data.code;
+				if ( ( response && response.success ) || nothingToTrash ) {
+					dismissAndReload();
 				} else {
 					$button.prop( 'disabled', false );
 				}

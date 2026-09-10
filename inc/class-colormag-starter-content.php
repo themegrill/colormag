@@ -263,10 +263,15 @@ class ColorMag_Starter_Content {
 	 *
 	 * WordPress core's own starter-content importer only ever runs while
 	 * the 'fresh_site' option is set — flipping it off here means the next
-	 * Customizer load (customize-notice.js reloads immediately after this
-	 * succeeds) never stages the starter pages again. Nothing staged so far
-	 * was ever published, so there is nothing else to clean up — same
-	 * mechanism Neve (Codeinwp/neve) uses for the same purpose.
+	 * Customizer load never stages the starter pages again. This alone
+	 * does NOT discard the already-persisted starter-content changeset:
+	 * with changeset branching off (WordPress's default), the next
+	 * Customizer session would just reuse that same auto-draft changeset,
+	 * so Home/Blog could still end up published later even after "clean
+	 * slate" was chosen. customize-notice.js therefore trashes the current
+	 * changeset first, via WordPress core's own `customize_trash` AJAX
+	 * action (the same one the Customizer's own "Discard changes" button
+	 * uses), before calling this action.
 	 *
 	 * @return void
 	 */
@@ -279,6 +284,10 @@ class ColorMag_Starter_Content {
 		}
 
 		update_option( 'fresh_site', '0' );
+
+		if ( get_option( 'fresh_site' ) ) {
+			wp_send_json_error();
+		}
 
 		wp_send_json_success();
 	}
