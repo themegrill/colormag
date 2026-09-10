@@ -145,7 +145,7 @@ return array(
 	'colormag_footer_copyright_text_color'           => '#BDBDBD',
 	'colormag_footer_bottom_area_color'              => '#BDBDBD',
 	'colormag_footer_menu_color'                     => '#BDBDBD',
-	'colormag_footer_menu'                           => '#BDBDBD',
+	'colormag_footer_menu'                           => 'none',
 	'colormag_header_builder_toggle_button_color'    => '#FFFFFF',
 	'colormag_news_ticker_color'                     => '#FFFFFF',
 	'colormag_news_ticker_link_color'                => '#d3d3d3',

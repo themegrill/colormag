@@ -77,9 +77,13 @@
 
 		// Clean slate: nothing to unstage client-side — flipping 'fresh_site'
 		// server-side and reloading is enough, since core never stages the
-		// starter content again once that option is off.
+		// starter content again once that option is off. Only reload once
+		// that flip is confirmed; on failure (expired nonce, lost
+		// connection, no permission) leave the notice in place and
+		// re-enable the button so the user can retry.
 		$card.on( 'click', '.colormag-sc-clean', function () {
-			$( this ).prop( 'disabled', true );
+			var $button = $( this );
+			$button.prop( 'disabled', true );
 
 			$.post(
 				window.ajaxurl,
@@ -87,8 +91,14 @@
 					action: 'colormag_dismiss_starter_content',
 					nonce: data.nonce,
 				}
-			).always( function () {
-				window.location.reload();
+			).done( function ( response ) {
+				if ( response && response.success ) {
+					window.location.reload();
+				} else {
+					$button.prop( 'disabled', false );
+				}
+			} ).fail( function () {
+				$button.prop( 'disabled', false );
 			} );
 		} );
 	} );

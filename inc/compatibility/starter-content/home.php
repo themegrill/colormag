@@ -537,12 +537,12 @@ return [
 <!-- wp:group {"metadata":{"name":"Watch Videos Section"},"align":"full","className":"cm-block-alignfull cm-video-section","style":{"color":{"background":"#161616"},"spacing":{"padding":{"top":"60px","bottom":"60px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull cm-block-alignfull cm-video-section has-background" style="background-color:#161616;padding-top:60px;padding-bottom:60px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"watch","style":{"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":[],"right":[],"bottom":[]}}} -->
-<h6 class="wp-block-heading watch" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px">Watch Videos</h6>
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"watch","style":{"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":[],"right":[],"bottom":[]}},"textColor":"white"} -->
+<h6 class="wp-block-heading watch has-white-color has-text-color" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px">Watch Videos</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p>More Posts</p>
+<!-- wp:paragraph {"textColor":"white"} -->
+<p class="has-white-color has-text-color">More Posts</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -594,8 +594,8 @@ return [
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"constrained","justifyContent":"center"}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"0"}}}} -->
-<h6 class="wp-block-heading" style="margin-bottom:0">Find the best PC games optimized For console ..</h6>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"bottom":"0"}}},"textColor":"white"} -->
+<h6 class="wp-block-heading has-white-color has-text-color" style="margin-bottom:0">Find the best PC games optimized For console ..</h6>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"#b4b0b0"}}},"color":{"text":"#b4b0b0"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
@@ -622,8 +622,8 @@ return [
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h6 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Dive into the world of cloud gaming platforms</h6>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h6 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Dive into the world of cloud gaming platforms</h6>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"#b4b0b0"}}},"color":{"text":"#b4b0b0"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
@@ -650,8 +650,8 @@ return [
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h6 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Explore the latest tech innovations in games</h6>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h6 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Explore the latest tech innovations in games</h6>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"#b4b0b0"}}},"color":{"text":"#b4b0b0"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
@@ -678,8 +678,8 @@ return [
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h6 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Unbox next-generation consoles and Lineups</h6>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h6 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Unbox next-generation consoles and Lineups</h6>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"#b4b0b0"}}},"color":{"text":"#b4b0b0"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
@@ -706,8 +706,8 @@ return [
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"6px"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h6 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Dive into the world of cloud gaming platforms</h6>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"level":6,"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h6 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Dive into the world of cloud gaming platforms</h6>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20","margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"#b4b0b0"}}},"color":{"text":"#b4b0b0"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
@@ -1058,12 +1058,12 @@ return [
 <!-- wp:group {"metadata":{"name":"Top Stories"},"align":"full","className":"cm-block-alignfull","style":{"color":{"background":"#161616"},"spacing":{"padding":{"top":"60px","bottom":"60px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull cm-block-alignfull has-background" style="background-color:#161616;padding-top:60px;padding-bottom:60px"><!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"top-stories","style":{"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":[],"right":[],"bottom":[]}}} -->
-<h6 class="wp-block-heading top-stories" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px">Top Stories</h6>
+<div class="wp-block-group alignwide"><!-- wp:heading {"level":6,"className":"top-stories","style":{"spacing":{"padding":{"right":"11px","left":"11px","top":"0","bottom":"0"},"margin":{"top":"6px","bottom":"6px"}},"border":{"left":{"style":"none","width":"0px"},"top":[],"right":[],"bottom":[]}},"textColor":"white"} -->
+<h6 class="wp-block-heading top-stories has-white-color has-text-color" style="border-left-style:none;border-left-width:0px;margin-top:6px;margin-bottom:6px;padding-top:0;padding-right:11px;padding-bottom:0;padding-left:11px">Top Stories</h6>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p>View All</p>
+<!-- wp:paragraph {"textColor":"white"} -->
+<p class="has-white-color has-text-color">View All</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -1530,12 +1530,12 @@ return [
 <!-- wp:group {"metadata":{"name":"Subscribe"},"align":"full","className":"cm-block-alignfull","style":{"color":{"background":"#0D0F11"},"spacing":{"padding":{"top":"48px","bottom":"48px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull cm-block-alignfull has-background" style="background-color:#0D0F11;padding-top:48px;padding-bottom:48px"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"40px"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"16px"}}} -->
-<div class="wp-block-column"><!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">Subscribe For Latest Updates !</h4>
+<div class="wp-block-column"><!-- wp:heading {"level":4,"textColor":"white"} -->
+<h4 class="wp-block-heading has-white-color has-text-color">Subscribe For Latest Updates !</h4>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p>Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis molestie, dictum esta mattis tellus sed dignissim, metus.</p>
+<!-- wp:paragraph {"textColor":"white"} -->
+<p class="has-white-color has-text-color">Torem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis molestie, dictum esta mattis tellus sed dignissim, metus.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -1558,8 +1558,8 @@ return [
 margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:html -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}}}} -->
-<p style="margin-top:8px;margin-bottom:0">I have read and agree to the terms and conditions.</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"8px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:8px;margin-bottom:0">I have read and agree to the terms and conditions.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -1579,8 +1579,8 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"align":"left","style":{"spacing":{"padding":{"right":"32px"}}}} -->
-<p class="has-text-align-left" style="padding-right:32px">We love WordPress and are here to provide you with professional WordPress magazine themes to help take your website to the next level.</p>
+<div class="wp-block-group"><!-- wp:paragraph {"align":"left","style":{"spacing":{"padding":{"right":"32px"}}},"textColor":"white"} -->
+<p class="has-text-align-left has-white-color has-text-color" style="padding-right:32px">We love WordPress and are here to provide you with professional WordPress magazine themes to help take your website to the next level.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -1597,29 +1597,29 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"40%","style":{"spacing":{"blockGap":"0","padding":{"right":"14px"}}}} -->
-<div class="wp-block-column" style="padding-right:14px;flex-basis:40%"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"0.5px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"bottom":"12px"}}}} -->
-<h5 class="wp-block-heading cm-footer-border-line" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:0.5px;padding-bottom:12px">Categories</h5>
+<div class="wp-block-column" style="padding-right:14px;flex-basis:40%"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"0.5px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"bottom":"12px"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading cm-footer-border-line has-white-color has-text-color" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:0.5px;padding-bottom:12px">Categories</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"8px","bottom":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}}} -->
-<p style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Technology</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"8px","bottom":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}},"textColor":"white"} -->
+<p class="has-white-color has-text-color" style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Technology</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}}} -->
-<p style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Politics</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}},"textColor":"white"} -->
+<p class="has-white-color has-text-color" style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Politics</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}}} -->
-<p style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Entertainment</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}},"textColor":"white"} -->
+<p class="has-white-color has-text-color" style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Entertainment</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}}} -->
-<p style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Lifestyle</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}},"textColor":"white"} -->
+<p class="has-white-color has-text-color" style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Lifestyle</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}}} -->
-<p style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Sports</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"bottom":"8px","top":"8px"}},"border":{"bottom":{"color":"#222222","width":"1px","style":"solid"}}},"textColor":"white"} -->
+<p class="has-white-color has-text-color" style="border-bottom-color:#222222;border-bottom-style:solid;border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:8px">Sports</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -1629,8 +1629,8 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- wp:column {"width":"60%"} -->
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:columns {"verticalAlignment":null} -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top"} -->
-<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"bottom":"12px"}}}} -->
-<h5 class="wp-block-heading cm-footer-border-line" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-bottom:12px">Editor’s Pick</h5>
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"bottom":"12px"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading cm-footer-border-line has-white-color has-text-color" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-bottom:12px">Editor’s Pick</h5>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"verticalAlignment":"center","className":"cm-footer-col"} -->
@@ -1641,12 +1641,12 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"0"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Navigate Effortlessly Through Our Content</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Navigate Effortlessly Through Our Content</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-<p style="margin-top:4px;margin-bottom:0">May 28, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:4px;margin-bottom:0">May 28, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1659,12 +1659,12 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"0"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Unlock the Full Potential of Our Blog</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Unlock the Full Potential of Our Blog</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-<p style="margin-top:4px;margin-bottom:0">May 05, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:4px;margin-bottom:0">May 05, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1677,20 +1677,20 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"0"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Crafting Tomorrow’s Software: Coding with</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Crafting Tomorrow’s Software: Coding with</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-<p style="margin-top:4px;margin-bottom:0">May 05, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:4px;margin-bottom:0">May 05, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"12px"}}}} -->
-<h5 class="wp-block-heading cm-footer-border-line" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-top:0;padding-bottom:12px">Latest Posts</h5>
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"12px"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading cm-footer-border-line has-white-color has-text-color" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-top:0;padding-bottom:12px">Latest Posts</h5>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"verticalAlignment":"center","className":"cm-footer-col"} -->
@@ -1701,12 +1701,12 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"0"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Unleash Your Creativity with Fun Activity</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Unleash Your Creativity with Fun Activity</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-<p style="margin-top:4px;margin-bottom:0">May 05, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:4px;margin-bottom:0">May 05, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1719,12 +1719,12 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"0"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Achieve Fitness Goals with Expert Guides...</h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Achieve Fitness Goals with Expert Guides...</h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-<p style="margin-top:4px;margin-bottom:0">May 05, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:4px;margin-bottom:0">May 05, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -1737,12 +1737,12 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"blockGap":"0"}}} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-<h2 class="wp-block-heading" style="margin-top:0;margin-bottom:0">Transform Your Space with Stylish power of </h2>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color" style="margin-top:0;margin-bottom:0">Transform Your Space with Stylish power of </h2>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}}}} -->
-<p style="margin-top:4px;margin-bottom:0">May 05, 2025</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"4px","bottom":"0"}},"color":{"text":"#d3d3d3"}}} -->
+<p class="has-text-color" style="color:#d3d3d3;margin-top:4px;margin-bottom:0">May 05, 2025</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
