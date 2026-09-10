@@ -115,10 +115,28 @@
 		// already the clean-slate outcome. Only then flip 'fresh_site' and
 		// reload; on any other failure, re-enable both buttons so the user
 		// can retry.
+		//
+		// core's own trashing state is set for the full two-request
+		// operation (not just while our own buttons are disabled): the
+		// native Publish button's own canSave check includes
+		// `&& ! trashing()`, so this also blocks it from racing this
+		// action — the same protection core's own previewer.trash() would
+		// give, which isn't used directly here because it navigates away
+		// immediately on success, before our own fresh_site dismiss call
+		// would get a chance to run.
 		$card.on( 'click', '.colormag-sc-clean', function () {
 			$buttons.prop( 'disabled', true );
 
 			var trashNonce = ( api.settings.nonce || {} ).trash;
+			var blockedNativeControls = false;
+
+			function endBusy() {
+				if ( blockedNativeControls ) {
+					api.state( 'processing' ).set( api.state( 'processing' ).get() - 1 );
+					api.state( 'trashing' ).set( false );
+				}
+				$buttons.prop( 'disabled', false );
+			}
 
 			function dismissAndReload() {
 				$.post(
@@ -131,10 +149,10 @@
 					if ( response && response.success ) {
 						window.location.reload();
 					} else {
-						$buttons.prop( 'disabled', false );
+						endBusy();
 					}
 				} ).fail( function () {
-					$buttons.prop( 'disabled', false );
+					endBusy();
 				} );
 			}
 
@@ -142,6 +160,10 @@
 				dismissAndReload();
 				return;
 			}
+
+			blockedNativeControls = true;
+			api.state( 'trashing' ).set( true );
+			api.state( 'processing' ).set( api.state( 'processing' ).get() + 1 );
 
 			$.post(
 				window.ajaxurl,
@@ -155,10 +177,10 @@
 				if ( ( response && response.success ) || nothingToTrash ) {
 					dismissAndReload();
 				} else {
-					$buttons.prop( 'disabled', false );
+					endBusy();
 				}
 			} ).fail( function () {
-				$buttons.prop( 'disabled', false );
+				endBusy();
 			} );
 		} );
 	} );
