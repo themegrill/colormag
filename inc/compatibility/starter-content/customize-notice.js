@@ -1,14 +1,14 @@
 /**
  * ColorMag starter-content "fresh site" notice.
  *
- * On a fresh site, WordPress core itself stages the starter homepage and
- * its Header/Footer Builder chrome (see class-colormag-starter-content.php)
- * the moment the Customizer loads, through the plain declarative
- * add_theme_support('starter-content', ...) array — no extra staging call
- * needed here. This notice just lets the user choose what happens to
- * what's already staged:
+ * On a fresh site, WordPress core itself stages the starter pages (Home
+ * and Blog) and their Header/Footer Builder chrome (see
+ * class-colormag-starter-content.php) the moment the Customizer loads,
+ * through the plain declarative add_theme_support('starter-content', ...)
+ * array — no extra staging call needed here. This notice just lets the
+ * user choose what happens to what's already staged:
  *
- *  - Keep the starter homepage : publish the changeset as-is, same as
+ *  - Keep the starter pages    : publish the changeset as-is, same as
  *                                  clicking the Customizer's own Publish
  *                                  button.
  *  - Start with a clean slate  : flip the 'fresh_site' option off and

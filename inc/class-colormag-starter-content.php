@@ -3,6 +3,7 @@
 
 class ColorMag_Starter_Content {
 	const HOME_SLUG = 'home';
+	const BLOG_SLUG = 'blog';
 
 	public function __construct() {
 		add_filter( 'colormag_header_builder_default_options', array( $this, 'header_builder_options' ) );
@@ -117,9 +118,11 @@ class ColorMag_Starter_Content {
 	/**
 	 * Return starter content definition.
 	 *
-	 * Stages a single real page — Home — as the site's front page, with its
-	 * own logo attachment and theme_mods. Only one page is ever created; the
-	 * primary menu links to that page alone. See GitHub issue #324.
+	 * Stages the same two pages this theme has always staged as starter
+	 * content — Home (front page) and Blog (posts page) — just with real
+	 * nav links instead of the dead '#' entries every menu item previously
+	 * used, even for these two pages. No additional pages are created. See
+	 * GitHub issue #324.
 	 *
 	 * @return mixed|void
 	 */
@@ -130,6 +133,11 @@ class ColorMag_Starter_Content {
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::HOME_SLUG . '}}',
+			),
+			self::BLOG_SLUG => array(
+				'type'      => 'post_type',
+				'object'    => 'page',
+				'object_id' => '{{' . self::BLOG_SLUG . '}}',
 			),
 		);
 
@@ -163,8 +171,9 @@ class ColorMag_Starter_Content {
 					],
 				],
 			'options'     => [
-				'page_on_front' => '{{' . self::HOME_SLUG . '}}',
-				'show_on_front' => 'page',
+				'page_on_front'  => '{{' . self::HOME_SLUG . '}}',
+				'page_for_posts' => '{{' . self::BLOG_SLUG . '}}',
+				'show_on_front'  => 'page',
 			],
 			'theme_mods'  => require __DIR__ . '/compatibility/starter-content/theme-mods.php',
 			'attachments' => array(
@@ -177,6 +186,11 @@ class ColorMag_Starter_Content {
 			),
 			'posts'       => [
 				self::HOME_SLUG => require __DIR__ . '/compatibility/starter-content/home.php',
+				self::BLOG_SLUG => [
+					'post_name'  => self::BLOG_SLUG,
+					'post_type'  => 'page',
+					'post_title' => _x( 'Blog', 'Theme starter content', 'colormag' ),
+				],
 			],
 		];
 
@@ -214,8 +228,8 @@ class ColorMag_Starter_Content {
 			'colormagStarterContent',
 			array(
 				'title'   => __( 'Welcome to your new site!', 'colormag' ),
-				'message' => __( 'We\'ve added a starter homepage to help you get going quickly. It\'s only published if you keep it.', 'colormag' ),
-				'keep'    => __( 'Keep the starter homepage', 'colormag' ),
+				'message' => __( 'We\'ve added starter pages to help you get going quickly. They\'re only published if you keep them.', 'colormag' ),
+				'keep'    => __( 'Keep the starter pages', 'colormag' ),
 				'clean'   => __( 'Start with a clean slate', 'colormag' ),
 				'note'    => __( 'Don\'t worry — you can always change this later.', 'colormag' ),
 				'nonce'   => wp_create_nonce( 'colormag-dismiss-starter-content' ),
@@ -231,7 +245,7 @@ class ColorMag_Starter_Content {
 	 * WordPress core's own starter-content importer only ever runs while
 	 * the 'fresh_site' option is set — flipping it off here means the next
 	 * Customizer load (customize-notice.js reloads immediately after this
-	 * succeeds) never stages the starter page again. Nothing staged so far
+	 * succeeds) never stages the starter pages again. Nothing staged so far
 	 * was ever published, so there is nothing else to clean up — same
 	 * mechanism Neve (Codeinwp/neve) uses for the same purpose.
 	 *
