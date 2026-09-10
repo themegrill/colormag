@@ -29,13 +29,13 @@ return [
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"25px","fontStyle":"normal","fontWeight":"700","lineHeight":"1.6","textTransform":"capitalize"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:25px;font-style:normal;font-weight:700;line-height:1.6;text-transform:capitalize">New Artist Takes the Music Scene by Storm with Unforgettable Memory</h2>
+<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">New Artist Takes the Music Scene by Storm with Unforgettable Memory</h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">May 05, 2025</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<p style="margin-top:0px;margin-bottom:0px">May 05, 2025</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -43,8 +43,8 @@ return [
 <figure class="wp-block-image size-thumbnail is-resized has-custom-border"><img src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/moana-doe.png" alt="" class="wp-image-16" style="border-radius:100px;object-fit:cover;width:24px;height:24px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px","textDecoration":"underline"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="font-size:12px;text-decoration:underline">Moana Doe</p>
+<!-- wp:paragraph {"style":{"typography":{"textDecoration":"underline"}}} -->
+<p style="text-decoration:underline">Moana Doe</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -62,8 +62,8 @@ return [
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","lineHeight":"1.7"},"spacing":{"margin":{"top":"8px","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:8px;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:1.7">New Smartphone Feature Could Change Way We Use Devices</h5>
+<!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"8px","bottom":"0"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:8px;margin-bottom:0">New Smartphone Feature Could Change Way We Use Devices</h5>
 <!-- /wp:heading --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:group -->
@@ -76,8 +76,8 @@ return [
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","lineHeight":"1.7","textTransform":"capitalize"},"spacing":{"margin":{"top":"8px","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:8px;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:1.7;text-transform:capitalize">Underdog Team Triumphs in a Thrilling Final Match</h5>
+<!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"8px","bottom":"0"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:8px;margin-bottom:0">Underdog Team Triumphs in a Thrilling Final Match</h5>
 <!-- /wp:heading --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:group --></div>
@@ -443,8 +443,8 @@ return [
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:heading {"textAlign":"center","level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","lineHeight":"1.7"},"spacing":{"margin":{"bottom":"0px","top":"-16px"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-text-align-center has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:-16px;margin-bottom:0px;font-size:17px;font-style:normal;font-weight:600;line-height:1.7">Organizing Your Home: Tips for Creating Sancity</h5>
+<!-- wp:heading {"textAlign":"center","level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"bottom":"0px","top":"-16px"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-text-align-center has-white-color has-text-color has-link-color" style="margin-top:-16px;margin-bottom:0px">Organizing Your Home: Tips for Creating Sancity</h5>
 <!-- /wp:heading --></div></div>
 <!-- /wp:cover --></div>
 <!-- /wp:group -->
@@ -566,21 +566,21 @@ return [
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"24px","fontStyle":"normal","fontWeight":"600","lineHeight":"1.6","textTransform":"capitalize"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h2 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:24px;font-style:normal;font-weight:600;line-height:1.6;text-transform:capitalize">Breaking Down This Year’s Bold Fashion Trends From Techno Worlds</h2>
+<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h2 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">Breaking Down This Year’s Bold Fashion Trends From Techno Worlds</h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap","orientation":"horizontal"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">May 05, 2025</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<p style="margin-top:0px;margin-bottom:0px">May 05, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
-<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0;font-size:10px;line-height:19px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#909090"}}} -->
+<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0">|</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0;margin-bottom:0;font-size:12px">Demo Team</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+<p style="margin-top:0;margin-bottom:0">Demo Team</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -1081,22 +1081,22 @@ return [
 <div class="wp-block-columns alignwide cm-top-stories"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:cover {"url":"' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay.jpg","id":63,"dimRatio":0,"customOverlayColor":"#7d7873","isUserOverlayColor":false,"minHeight":337,"contentPosition":"bottom left","sizeSlug":"full","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-63 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#7d7873"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","textTransform":"capitalize","lineHeight":"1.6"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:1.6;text-transform:capitalize">How to Create Budget That Works for Your Lifestyle</h5>
+<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-63 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#7d7873"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">How to Create Budget That Works for Your Lifestyle</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"8px","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:8px;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">May 05, 2025</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<p style="margin-top:0px;margin-bottom:0px">May 05, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
-<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0;font-size:10px;line-height:19px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#909090"}}} -->
+<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0">|</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="font-size:12px">2 Comments</p>
+<!-- wp:paragraph -->
+<p>2 Comments</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>
@@ -1107,22 +1107,22 @@ return [
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:cover {"url":"' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-2.jpg","id":64,"dimRatio":0,"customOverlayColor":"#737980","isUserOverlayColor":false,"minHeight":337,"contentPosition":"bottom left","sizeSlug":"full","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-64 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-2.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#737980"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","textTransform":"capitalize","lineHeight":"1.6"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:1.6;text-transform:capitalize">Find the best PC games optimized For console</h5>
+<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-64 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-2.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#737980"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">Find the best PC games optimized For console</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"8px","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">May 05, 2025</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<p style="margin-top:0px;margin-bottom:0px">May 05, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
-<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0;font-size:10px;line-height:19px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#909090"}}} -->
+<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0">|</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="font-size:12px">2 Comments</p>
+<!-- wp:paragraph -->
+<p>2 Comments</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>
@@ -1133,22 +1133,22 @@ return [
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:cover {"url":"' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-3.jpg","id":65,"dimRatio":0,"customOverlayColor":"#78706b","isUserOverlayColor":false,"minHeight":337,"contentPosition":"bottom left","sizeSlug":"full","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-65 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-3.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#78706b"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","textTransform":"capitalize","lineHeight":"1.6"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:1.6;text-transform:capitalize">Organizing Your Home: Tips for Creating San city</h5>
+<div class="wp-block-cover has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-65 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-3.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#78706b"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">Organizing Your Home: Tips for Creating San city</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"8px","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">May 05, 2025</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<p style="margin-top:0px;margin-bottom:0px">May 05, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
-<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0;font-size:10px;line-height:19px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#909090"}}} -->
+<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0">|</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="font-size:12px">2 Comments</p>
+<!-- wp:paragraph -->
+<p>2 Comments</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>
@@ -1159,22 +1159,22 @@ return [
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:cover {"url":"' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-4.jpg","id":66,"dimRatio":0,"customOverlayColor":"#939590","isUserOverlayColor":false,"minHeight":337,"contentPosition":"bottom left","isDark":false,"sizeSlug":"full","style":{"spacing":{"blockGap":"0"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-66 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-4.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#939590"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"17px","fontStyle":"normal","fontWeight":"600","textTransform":"capitalize","lineHeight":"1.6"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white","fontFamily":"ibm-plex-serif"} -->
-<h5 class="wp-block-heading has-white-color has-text-color has-link-color has-ibm-plex-serif-font-family" style="margin-top:0;margin-bottom:0;font-size:17px;font-style:normal;font-weight:600;line-height:1.6;text-transform:capitalize">Dive into the world of gaming platforms</h5>
+<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-left" style="border-radius:4px;min-height:337px"><img class="wp-block-cover__image-background wp-image-66 size-full" alt="" src="' . trailingslashit( get_template_directory_uri() ) . 'assets/img/starter/slider-img-with-overlay-4.jpg" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#939590"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"white"} -->
+<h5 class="wp-block-heading has-white-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">Dive into the world of gaming platforms</h5>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"16px","padding":{"top":"0","bottom":"0"},"margin":{"top":"8px","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","layout":{"type":"flex","flexWrap":"nowrap","orientation":"horizontal"}} -->
 <div class="wp-block-group has-white-color has-text-color has-link-color" style="margin-top:8px;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"8px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="margin-top:0px;margin-bottom:0px;font-size:12px">May 05, 2025</p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<p style="margin-top:0px;margin-bottom:0px">May 05, 2025</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"typography":{"fontSize":"10px","lineHeight":"19px"},"color":{"text":"#909090"}}} -->
-<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0;font-size:10px;line-height:19px">|</p>
+<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"#909090"}}} -->
+<p class="has-text-color" style="color:#909090;margin-top:0;margin-bottom:0">|</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"12px"}},"fontFamily":"inter"} -->
-<p class="has-inter-font-family" style="font-size:12px">2 Comments</p>
+<!-- wp:paragraph -->
+<p>2 Comments</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>

@@ -20,6 +20,9 @@
  *                                  starter-content importer never stages
  *                                  anything again, then reload.
  *
+ * Both actions disable BOTH buttons while in flight (not just the one
+ * clicked) so a publish and a discard can never race each other.
+ *
  * @package ColorMag
  */
 ( function ( api, $ ) {
@@ -59,15 +62,32 @@
 		api.state( 'expandedSection' ).bind( toggleCardVisibility );
 		toggleCardVisibility();
 
+		var $buttons = $card.find( '.colormag-sc-keep, .colormag-sc-clean' );
+
+		function hideCard() {
+			$card.slideUp( 150, function () {
+				$card.remove();
+			} );
+		}
+
+		// Whatever publishes the changeset — our own Keep button below, OR
+		// the Customizer's own native Publish button — this fires. Covers
+		// both, so the card never sticks around offering "clean slate" for
+		// content that's already been published another way.
+		api.bind( 'saved', function ( response ) {
+			if ( response && 'publish' === response.changeset_status ) {
+				hideCard();
+			}
+		} );
+
 		// Same thing clicking the Customizer's own Publish button does — a
-		// single click instead of "choose, then go find Publish too". Only
-		// remove the card once the publish is confirmed; on failure
-		// (expired nonce, lost connection, a client-side validation error)
-		// leave it in place and re-enable the button so nothing looks
-		// silently lost.
+		// single click instead of "choose, then go find Publish too". The
+		// card itself is removed by the 'saved' handler above once the
+		// publish is actually confirmed; on failure (expired nonce, lost
+		// connection, a client-side validation error) both buttons are
+		// re-enabled so nothing looks silently lost.
 		$card.on( 'click', '.colormag-sc-keep', function () {
-			var $button = $( this );
-			$button.prop( 'disabled', true );
+			$buttons.prop( 'disabled', true );
 
 			var status = api.state( 'selectedChangesetStatus' );
 			if ( status ) {
@@ -75,34 +95,28 @@
 			}
 
 			if ( ! api.previewer ) {
-				$card.slideUp( 150, function () {
-					$card.remove();
-				} );
+				hideCard();
 				return;
 			}
 
-			api.previewer.save().done( function () {
-				$card.slideUp( 150, function () {
-					$card.remove();
-				} );
-			} ).fail( function () {
-				$button.prop( 'disabled', false );
+			api.previewer.save().fail( function () {
+				$buttons.prop( 'disabled', false );
 			} );
 		} );
 
 		// Clean slate: trash the current changeset first — via core's own
-		// customize_trash action, the same one behind the Customizer's own
-		// "Discard changes" button — so the staged Home/Blog pages can't be
-		// resurrected by a later Customizer session reusing the same
-		// auto-draft changeset (WordPress reuses it by default when
+		// customize_trash action (same request shape core's own "Discard
+		// changes" button sends, including the changeset UUID so the
+		// right changeset is targeted), so the staged Home/Blog pages
+		// can't be resurrected by a later Customizer session reusing the
+		// same auto-draft changeset (WordPress reuses it by default when
 		// changeset branching is off). "Nothing to trash yet" is treated
 		// as success too: it just means nothing was staged yet, which is
 		// already the clean-slate outcome. Only then flip 'fresh_site' and
-		// reload; on any other failure, leave the notice in place and
-		// re-enable the button so the user can retry.
+		// reload; on any other failure, re-enable both buttons so the user
+		// can retry.
 		$card.on( 'click', '.colormag-sc-clean', function () {
-			var $button = $( this );
-			$button.prop( 'disabled', true );
+			$buttons.prop( 'disabled', true );
 
 			var trashNonce = ( api.settings.nonce || {} ).trash;
 
@@ -117,10 +131,10 @@
 					if ( response && response.success ) {
 						window.location.reload();
 					} else {
-						$button.prop( 'disabled', false );
+						$buttons.prop( 'disabled', false );
 					}
 				} ).fail( function () {
-					$button.prop( 'disabled', false );
+					$buttons.prop( 'disabled', false );
 				} );
 			}
 
@@ -133,6 +147,7 @@
 				window.ajaxurl,
 				{
 					action: 'customize_trash',
+					customize_changeset_uuid: api.settings.changeset.uuid,
 					nonce: trashNonce,
 				}
 			).done( function ( response ) {
@@ -140,10 +155,10 @@
 				if ( ( response && response.success ) || nothingToTrash ) {
 					dismissAndReload();
 				} else {
-					$button.prop( 'disabled', false );
+					$buttons.prop( 'disabled', false );
 				}
 			} ).fail( function () {
-				$button.prop( 'disabled', false );
+				$buttons.prop( 'disabled', false );
 			} );
 		} );
 	} );
