@@ -3080,6 +3080,8 @@ Styles for separating single posts loaded from ajax call.
 
 .cm-featured-image {
 	text-align: center;
+}
+.cm-featured-image:not(:last-child) {
 	margin-bottom: 16px;
 }
 .cm-featured-image a {
