@@ -119,25 +119,44 @@ class ColorMag_Starter_Content {
 	 * Return starter content definition.
 	 *
 	 * Stages the same two pages this theme has always staged as starter
-	 * content — Home (front page) and Blog (posts page) — just with real
-	 * nav links instead of the dead '#' entries every menu item previously
-	 * used, even for these two pages. No additional pages are created. See
-	 * GitHub issue #324.
+	 * content — Home (front page) and Blog (posts page) — no additional
+	 * pages are created. The primary menu keeps its original six labels
+	 * (Home, Politics, Sports, Technology, Blog, World); Politics/Sports/
+	 * Technology/World stay as dead '#' placeholders exactly as before,
+	 * since no pages back them, while Home and Blog now link to the real
+	 * pages that were already being created instead of also being dead
+	 * '#' links. See GitHub issue #324.
 	 *
 	 * @return mixed|void
 	 */
 	public static function get() {
 
 		$nav_items = array(
-			self::HOME_SLUG => array(
+			self::HOME_SLUG        => array(
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::HOME_SLUG . '}}',
 			),
-			self::BLOG_SLUG => array(
+			'page_politics'        => array(
+				'title' => 'Politics',
+				'url'   => '#',
+			),
+			'page_sports'          => array(
+				'title' => 'Sports',
+				'url'   => '#',
+			),
+			'page_project_details' => array(
+				'title' => 'Technology',
+				'url'   => '#',
+			),
+			self::BLOG_SLUG        => array(
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::BLOG_SLUG . '}}',
+			),
+			'page_worlds'          => array(
+				'title' => 'World',
+				'url'   => '#',
 			),
 		);
 
