@@ -126,6 +126,25 @@
 		// would get a chance to run.
 		$card.on( 'click', '.colormag-sc-clean', function () {
 			$buttons.prop( 'disabled', true );
+			beginCleanSlate();
+		} );
+
+		// Split out so it can safely re-invoke itself once a concurrent
+		// native save (e.g. the user had already clicked the Customizer's
+		// own Publish button) finishes, instead of starting the trash
+		// request while one is still in flight.
+		function beginCleanSlate() {
+			if ( api.state( 'saving' ).get() ) {
+				var onceSavingDone = function ( isSaving ) {
+					if ( isSaving ) {
+						return;
+					}
+					api.state( 'saving' ).unbind( onceSavingDone );
+					beginCleanSlate();
+				};
+				api.state( 'saving' ).bind( onceSavingDone );
+				return;
+			}
 
 			var trashNonce = ( api.settings.nonce || {} ).trash;
 			var blockedNativeControls = false;
@@ -138,6 +157,20 @@
 				$buttons.prop( 'disabled', false );
 			}
 
+			// Drop 'changeset_uuid' before reloading — otherwise, with
+			// changeset branching on (or if that param was in the URL to
+			// begin with), the reload would reopen the very changeset that
+			// was just trashed instead of starting a clean session. Mirrors
+			// what core's own trash-success handler does to its URL.
+			function reloadWithoutChangeset() {
+				var urlParser = document.createElement( 'a' );
+				urlParser.href = window.location.href;
+				var params = api.utils.parseQueryString( urlParser.search.substr( 1 ) );
+				delete params.changeset_uuid;
+				urlParser.search = $.param( params );
+				window.location.replace( urlParser.href );
+			}
+
 			function dismissAndReload() {
 				$.post(
 					window.ajaxurl,
@@ -147,7 +180,7 @@
 					}
 				).done( function ( response ) {
 					if ( response && response.success ) {
-						window.location.reload();
+						reloadWithoutChangeset();
 					} else {
 						endBusy();
 					}
@@ -173,8 +206,13 @@
 					nonce: trashNonce,
 				}
 			).done( function ( response ) {
-				var nothingToTrash = response && response.data && 'non_existent_changeset' === response.data.code;
-				if ( ( response && response.success ) || nothingToTrash ) {
+				// Both are acceptable preconditions for "already clean",
+				// not failures: nothing was ever staged, or a retry finds
+				// an earlier attempt already trashed it server-side. Core's
+				// own trash client treats both the same way.
+				var code = response && response.data && response.data.code;
+				var alreadyClean = 'non_existent_changeset' === code || 'changeset_already_trashed' === code;
+				if ( ( response && response.success ) || alreadyClean ) {
 					dismissAndReload();
 				} else {
 					endBusy();
@@ -182,6 +220,6 @@
 			} ).fail( function () {
 				endBusy();
 			} );
-		} );
+		}
 	} );
 } )( wp.customize, jQuery );
