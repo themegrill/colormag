@@ -2,12 +2,7 @@
 
 
 class ColorMag_Starter_Content {
-	const HOME_SLUG       = 'home';
-	const BLOG_SLUG       = 'blog';
-	const WORLD_SLUG      = 'world';
-	const TECHNOLOGY_SLUG = 'technology';
-	const SPORTS_SLUG     = 'sports';
-	const POLITICS_SLUG   = 'politics';
+	const HOME_SLUG = 'home';
 
 	public function __construct() {
 		add_filter( 'colormag_header_builder_default_options', array( $this, 'header_builder_options' ) );
@@ -122,47 +117,19 @@ class ColorMag_Starter_Content {
 	/**
 	 * Return starter content definition.
 	 *
-	 * Every item the primary menu links to (Home, World, Technology, Sports,
-	 * Politics, Blog) is a real staged page — object_id/{{slug}} placeholders
-	 * resolved by WordPress core, not a dead '#' link. Confirmed via GitHub
-	 * issue #324: previously only Home was ever staged; World/Technology/
-	 * Sports/Politics existed as unused files and every nav item but Home
-	 * pointed nowhere.
+	 * Stages a single real page — Home — as the site's front page, with its
+	 * own logo attachment and theme_mods. Only one page is ever created; the
+	 * primary menu links to that page alone. See GitHub issue #324.
 	 *
 	 * @return mixed|void
 	 */
 	public static function get() {
 
 		$nav_items = array(
-			self::HOME_SLUG       => array(
+			self::HOME_SLUG => array(
 				'type'      => 'post_type',
 				'object'    => 'page',
 				'object_id' => '{{' . self::HOME_SLUG . '}}',
-			),
-			self::WORLD_SLUG      => array(
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::WORLD_SLUG . '}}',
-			),
-			self::POLITICS_SLUG   => array(
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::POLITICS_SLUG . '}}',
-			),
-			self::SPORTS_SLUG     => array(
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::SPORTS_SLUG . '}}',
-			),
-			self::TECHNOLOGY_SLUG => array(
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::TECHNOLOGY_SLUG . '}}',
-			),
-			self::BLOG_SLUG       => array(
-				'type'      => 'post_type',
-				'object'    => 'page',
-				'object_id' => '{{' . self::BLOG_SLUG . '}}',
 			),
 		);
 
@@ -196,9 +163,8 @@ class ColorMag_Starter_Content {
 					],
 				],
 			'options'     => [
-				'page_on_front'  => '{{' . self::HOME_SLUG . '}}',
-				'page_for_posts' => '{{' . self::BLOG_SLUG . '}}',
-				'show_on_front'  => 'page',
+				'page_on_front' => '{{' . self::HOME_SLUG . '}}',
+				'show_on_front' => 'page',
 			],
 			'theme_mods'  => require __DIR__ . '/compatibility/starter-content/theme-mods.php',
 			'attachments' => array(
@@ -210,16 +176,7 @@ class ColorMag_Starter_Content {
 				),
 			),
 			'posts'       => [
-				self::HOME_SLUG       => require __DIR__ . '/compatibility/starter-content/home.php',
-				self::WORLD_SLUG      => require __DIR__ . '/compatibility/starter-content/world.php',
-				self::TECHNOLOGY_SLUG => require __DIR__ . '/compatibility/starter-content/technology.php',
-				self::SPORTS_SLUG     => require __DIR__ . '/compatibility/starter-content/sports.php',
-				self::POLITICS_SLUG   => require __DIR__ . '/compatibility/starter-content/politics.php',
-				self::BLOG_SLUG       => [
-					'post_name'  => self::BLOG_SLUG,
-					'post_type'  => 'page',
-					'post_title' => _x( 'Blog', 'Theme starter content', 'colormag' ),
-				],
+				self::HOME_SLUG => require __DIR__ . '/compatibility/starter-content/home.php',
 			],
 		];
 
@@ -257,8 +214,8 @@ class ColorMag_Starter_Content {
 			'colormagStarterContent',
 			array(
 				'title'   => __( 'Welcome to your new site!', 'colormag' ),
-				'message' => __( 'We\'ve added starter pages to help you get going quickly. They\'re only published if you keep them.', 'colormag' ),
-				'keep'    => __( 'Keep the starter pages', 'colormag' ),
+				'message' => __( 'We\'ve added a starter homepage to help you get going quickly. It\'s only published if you keep it.', 'colormag' ),
+				'keep'    => __( 'Keep the starter homepage', 'colormag' ),
 				'clean'   => __( 'Start with a clean slate', 'colormag' ),
 				'note'    => __( 'Don\'t worry — you can always change this later.', 'colormag' ),
 				'nonce'   => wp_create_nonce( 'colormag-dismiss-starter-content' ),
@@ -274,7 +231,7 @@ class ColorMag_Starter_Content {
 	 * WordPress core's own starter-content importer only ever runs while
 	 * the 'fresh_site' option is set — flipping it off here means the next
 	 * Customizer load (customize-notice.js reloads immediately after this
-	 * succeeds) never stages the starter pages again. Nothing staged so far
+	 * succeeds) never stages the starter page again. Nothing staged so far
 	 * was ever published, so there is nothing else to clean up — same
 	 * mechanism Neve (Codeinwp/neve) uses for the same purpose.
 	 *
