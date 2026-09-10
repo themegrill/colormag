@@ -8,7 +8,7 @@ on:
 
 jobs:
   zip:
-    uses: themegrill/.github/.github/workflows/pr-build-zip.yml@master
+    uses: themegrill/.github/.github/workflows/pr-build-zip.yml@tg-autopilot/gate-zip-build-on-commit-marker
     with:
       node-version: '20.x'
       php-version: '7.4'
