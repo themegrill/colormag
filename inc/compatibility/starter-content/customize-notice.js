@@ -86,7 +86,17 @@
 		// publish is actually confirmed; on failure (expired nonce, lost
 		// connection, a client-side validation error) both buttons are
 		// re-enabled so nothing looks silently lost.
+		//
+		// Bails the same way Clean does if core is already saving or
+		// trashing: save() itself only guards against a second save
+		// (rejecting with 'already_saving'), not against a native Discard
+		// that's currently trashing — calling it anyway would race
+		// publishing the starter content against trashing it.
 		$card.on( 'click', '.colormag-sc-keep', function () {
+			if ( api.state( 'saving' ).get() || api.state( 'trashing' ).get() ) {
+				return;
+			}
+
 			$buttons.prop( 'disabled', true );
 
 			var status = api.state( 'selectedChangesetStatus' );
