@@ -21,6 +21,22 @@ class ColorMag_Dashboard {
 		add_action( 'in_admin_header', array( $this, 'hide_admin_notices' ) );
 		add_action( 'admin_menu', array( $this, 'create_menu_page' ), 11 );
 		add_action( 'admin_init', array( $this, 'redirect_old_dashboard_url' ) );
+		add_filter( 'admin_body_class', array( $this, 'add_legacy_body_class' ) );
+	}
+
+	/**
+	 * Keep emitting the pre-top-level-menu body class so existing CSS
+	 * (admin.css, dashboard.scss) targeting .appearance_page_colormag
+	 * keeps matching now that the screen id is toplevel_page_colormag.
+	 */
+	public function add_legacy_body_class( $classes ) {
+		$screen = get_current_screen();
+
+		if ( $screen && 'toplevel_page_colormag' === $screen->id ) {
+			$classes .= ' appearance_page_colormag';
+		}
+
+		return $classes;
 	}
 
 	public function create_menu_page() {
