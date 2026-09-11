@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Dashboard, Help, Products } from '../screens';
 import FreeVsPro from '../screens/free-vs-pro/FreeVsPro';
 import { StarterTemplates } from '../screens/starter-template/StarterTemplate';
@@ -20,12 +20,13 @@ const Router: React.FC = () => {
 
 	return (
 		<Routes>
-			<Route path="/" element={<Dashboard />} />
+			<Route path="/" element={<Navigate to="/dashboard" replace />} />
+			<Route path="/dashboard" element={<Dashboard />} />
 			<Route path="/demo-importer" element={<StarterTemplates />} />
 			<Route path="/products" element={<Products />} />
 			<Route path="/free-vs-pro" element={<FreeVsPro />} />
 			<Route path="/help" element={<Help />} />
-			<Route path="*" element={<Dashboard />} />
+			<Route path="*" element={<Navigate to="/dashboard" replace />} />
 		</Routes>
 	);
 };
