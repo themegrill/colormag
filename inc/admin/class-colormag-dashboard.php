@@ -20,7 +20,7 @@ class ColorMag_Dashboard {
 	private function setup_hooks() {
 		add_action( 'in_admin_header', array( $this, 'hide_admin_notices' ) );
 		add_action( 'admin_menu', array( $this, 'create_menu_page' ), 11 );
-		add_action( 'load-themes.php', array( $this, 'redirect_old_dashboard_url' ) );
+		add_action( 'admin_init', array( $this, 'redirect_old_dashboard_url' ) );
 	}
 
 	public function create_menu_page() {
@@ -44,7 +44,9 @@ class ColorMag_Dashboard {
 	 * preserving any extra query args (e.g. Starter Templates' tab/browse/search).
 	 */
 	public function redirect_old_dashboard_url() {
-		if ( isset( $_GET['page'] ) && 'colormag' === $_GET['page'] ) {
+		global $pagenow;
+
+		if ( 'themes.php' === $pagenow && isset( $_GET['page'] ) && 'colormag' === $_GET['page'] ) {
 			$query_string = wp_unslash( $_SERVER['QUERY_STRING'] ?? '' );
 			wp_safe_redirect( admin_url( 'admin.php' ) . ( $query_string ? '?' . $query_string : '' ) );
 			exit;
