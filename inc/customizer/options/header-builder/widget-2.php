@@ -3,7 +3,7 @@
 $options = array(
 	'colormag_header_builder_widget_2_heading' => array(
 		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Widget 2', 'colormag' ),
+		'title'        => colormag_get_registered_sidebar_name( 'header-sidebar-2', esc_html__( 'Widget 2', 'colormag' ) ),
 		'section'      => 'colormag_header_builder_widget_2',
 		'sub_controls' => apply_filters(
 			'colormag_header_builder_widget_2_sub_controls',
