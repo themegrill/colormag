@@ -105,7 +105,7 @@ $options = array(
 		'points'      => array(
 			esc_html__( 'Container width adjustment', 'colormag' ),
 		),
-		'section'     => 'colormag_global_container_section',
+		'section'     => 'colormag_global_colors_section',
 		'priority'    => 100,
 	),
 );
