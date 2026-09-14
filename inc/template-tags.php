@@ -438,9 +438,9 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 		}
 
 		$colormag_global_sidebar_layout = get_theme_mod( 'colormag_global_sidebar_layout', 'no_sidebar' );
-		$colormag_blog_sidebar_layout   = get_theme_mod( 'colormag_blog_sidebar_layout', 'no_sidebar' );
-		$colormag_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'no_sidebar' );
-		$colormag_default_post_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'no_sidebar' );
+		$colormag_blog_sidebar_layout   = get_theme_mod( 'colormag_blog_sidebar_layout', 'default' );
+		$colormag_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'default' );
+		$colormag_default_post_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'default' );
 
 		if ( 'default_layout' === $layout_meta ) {
 
