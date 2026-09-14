@@ -226,7 +226,7 @@ $options = apply_filters(
 			),
 			'type'      => 'customind-background',
 			'title'     => esc_html__( 'Container Inside Background', 'colormag' ),
-			'section'   => 'colormag_global_container_section',
+			'section'   => 'colormag_global_colors_section',
 			'transport' => 'postMessage',
 			'priority'  => 20,
 		),
@@ -241,7 +241,7 @@ $options = apply_filters(
 			),
 			'type'      => 'customind-background',
 			'title'     => esc_html__( 'Container Outside Background', 'colormag' ),
-			'section'   => 'colormag_global_container_section',
+			'section'   => 'colormag_global_colors_section',
 			'transport' => 'postMessage',
 			'priority'  => 20,
 			'condition' => array(

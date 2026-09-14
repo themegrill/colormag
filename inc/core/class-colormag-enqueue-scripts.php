@@ -454,10 +454,6 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				    margin: 0;
 				}
 
-				#customize-control-colormag_demo_migrated_heading {
-				display: none;
-				}
-
 				#accordion-section-colormag_customize_upsell_section .accordion-section-title a {
 				padding: 10px 30px 11px 14px;
 				display: block;
