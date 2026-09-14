@@ -1495,9 +1495,15 @@ table td {
 	border-radius: 4px;
 	padding: 12px;
 }
+.cm-footer-builder .cm-footer-top-row .cm-footer-nav ul li a {
+	color: inherit;
+}
 .cm-footer-builder .cm-footer-main-row {
 	padding-bottom: 60px;
 	padding-top: 60px;
+}
+.cm-footer-builder .cm-footer-main-row .cm-footer-nav ul li a {
+	color: inherit;
 }
 .cm-footer-builder .cm-footer-bottom-row {
 	padding-bottom: 24px;

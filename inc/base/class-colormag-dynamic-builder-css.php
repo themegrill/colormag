@@ -2588,7 +2588,10 @@ class ColorMag_Dynamic_Builder_CSS {
 		// Footer top area color.
 		$footer_top_area_color     = get_theme_mod( 'colormag_footer_top_area_color', '' );
 		$footer_top_area_color_css = array(
-			'.cm-footer-builder .cm-footer-top-row' => array(
+			'.cm-footer-builder .cm-footer-top-row'    => array(
+				'color' => esc_html( $footer_top_area_color ),
+			),
+			'.cm-footer-builder .cm-footer-top-row h2' => array(
 				'color' => esc_html( $footer_top_area_color ),
 			),
 		);
@@ -2715,7 +2718,10 @@ class ColorMag_Dynamic_Builder_CSS {
 		// Footer builder main area color.
 		$footer_main_area_color     = get_theme_mod( 'colormag_footer_main_area_color', '' );
 		$footer_main_area_color_css = array(
-			'.cm-footer-builder .cm-footer-main-row' => array(
+			'.cm-footer-builder .cm-footer-main-row'    => array(
+				'color' => esc_html( $footer_main_area_color ),
+			),
+			'.cm-footer-builder .cm-footer-main-row h2' => array(
 				'color' => esc_html( $footer_main_area_color ),
 			),
 		);

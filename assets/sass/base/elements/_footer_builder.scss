@@ -82,11 +82,24 @@
 			border-radius: 4px;
 			padding: 12px;
 		}
+
+		// Overrides .cm-footer-builder .cm-footer-nav ul li a, whose color is
+		// driven by colormag_footer_menu_color - a control whose starter-content
+		// default (#BDBDBD, in inc/compatibility/starter-content/theme-mods.php)
+		// was chosen back when every row was dark. Placing the Menu component in
+		// this now-transparent row leaves it low-contrast unless overridden here.
+		.cm-footer-nav ul li a {
+			color: inherit;
+		}
 	}
 
 	.cm-footer-main-row {
 		padding-bottom: 60px;
 		padding-top: 60px;
+
+		.cm-footer-nav ul li a {
+			color: inherit;
+		}
 	}
 
 	.cm-footer-bottom-row {
