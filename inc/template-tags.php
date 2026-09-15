@@ -337,11 +337,20 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 	/**
 	 * Category Color for widgets and other
 	 *
-	 * @param bool $echo Boolean value to echo or just return.
+	 * @param bool $echo                   Boolean value to echo or just return.
+	 * @param bool $respect_meta_structure Whether to additionally gate output on the
+	 *                                     'colormag_post_meta_structure' theme mod
+	 *                                     (the blog/archive meta-fields setting).
+	 *                                     Callers that already gate their own call on
+	 *                                     a dedicated "post elements" toggle -
+	 *                                     single.php and the blog loop both do -
+	 *                                     should pass false, since that unrelated
+	 *                                     archive setting has no business deciding
+	 *                                     whether their own toggle is honoured.
 	 *
 	 * @return mixed
 	 */
-	function colormag_colored_category( $echo = true ) {
+	function colormag_colored_category( $echo = true, $respect_meta_structure = true ) {
 
 		global $post;
 
@@ -361,7 +370,7 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 		$categories = get_the_category();
 		$output     = '';
 
-		if ( in_array( 'categories', $meta_structure, true ) && $categories ) {
+		if ( ( ! $respect_meta_structure || in_array( 'categories', $meta_structure, true ) ) && $categories ) {
 			$output .= '<div class="cm-entry-header-meta"><div class="cm-post-categories">';
 
 			foreach ( $categories as $category ) {

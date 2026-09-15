@@ -101,7 +101,10 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 
 			} elseif ( 'category' === $single_order ) {
 
-				colormag_colored_category();
+				// This element's presence is already gated by colormag_single_post_elements
+				// above; the unrelated blog/archive meta-fields setting shouldn't also
+				// have a say here (see GitHub issue #310).
+				colormag_colored_category( true, false );
 			} elseif ( 'meta' === $single_order ) {
 
 				colormag_entry_meta();
