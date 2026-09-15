@@ -671,7 +671,16 @@ function colormag_image_uploader() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_enqueue_media();
-	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
+
+	// The script is a jQuery plugin driving wp.media, so both have to be declared:
+	// without them its position in the queue is only correct by accident.
+	wp_enqueue_script(
+		'colormag-widget-image-upload',
+		COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js',
+		array( 'jquery', 'media-editor' ),
+		COLORMAG_THEME_VERSION,
+		true
+	);
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
