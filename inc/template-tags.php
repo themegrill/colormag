@@ -341,12 +341,18 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 	 * @param bool $respect_meta_structure Whether to additionally gate output on the
 	 *                                     'colormag_post_meta_structure' theme mod
 	 *                                     (the blog/archive meta-fields setting).
-	 *                                     Callers that already gate their own call on
-	 *                                     a dedicated "post elements" toggle -
-	 *                                     single.php and the blog loop both do -
-	 *                                     should pass false, since that unrelated
-	 *                                     archive setting has no business deciding
-	 *                                     whether their own toggle is honoured.
+	 *                                     Only the single-post caller passes false
+	 *                                     here - it already gates its own call on
+	 *                                     colormag_single_post_elements, so this
+	 *                                     unrelated archive setting has no business
+	 *                                     also deciding whether that toggle is
+	 *                                     honoured. The blog loop has an equally
+	 *                                     valid gate of its own (colormag_blog_post_elements)
+	 *                                     but intentionally keeps the default here,
+	 *                                     since changing archive-page behavior isn't
+	 *                                     part of what this fix was for. Widgets have
+	 *                                     no gate of their own and must keep the
+	 *                                     default too, or they'd always show categories.
 	 *
 	 * @return mixed
 	 */
