@@ -97,23 +97,6 @@ $options = array(
 			'colormag_global_sidebar_layout!' => 'no_sidebar',
 		),
 	),
-	'colormag_demo_migrated_heading'   => array(
-		'type'         => 'customind-accordion',
-		'title'        => esc_html__( 'Demo Migrated', 'colormag' ),
-		'section'      => 'colormag_global_container_section',
-		'sub_controls' => apply_filters(
-			'colormag_demo_migrated_sub_controls',
-			array(
-				'demo_migrated_to_builder' => array(
-					'default' => 0,
-					'title'   => esc_html__( 'Demo Migrated To Builder', 'colormag' ),
-					'type'    => 'customind-toggle',
-					'section' => 'colormag_global_container_section',
-				),
-			),
-		),
-		'collapsible'  => apply_filters( 'colormag_demo_migrated_accordion_collapsible', false ),
-	),
 	'colormag_base_colors_upgrade'     => array(
 		'type'        => 'customind-upgrade',
 		'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
@@ -122,7 +105,7 @@ $options = array(
 		'points'      => array(
 			esc_html__( 'Container width adjustment', 'colormag' ),
 		),
-		'section'     => 'colormag_global_container_section',
+		'section'     => 'colormag_global_colors_section',
 		'priority'    => 100,
 	),
 );
