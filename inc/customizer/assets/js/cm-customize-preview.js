@@ -2257,7 +2257,7 @@
 
 				case 'colormag_footer_top_area_color':
 					css = colormagGenerateCommonCSS(
-						'.cm-footer-builder .cm-footer-top-row',
+						'.cm-footer-builder .cm-footer-top-row, .cm-footer-builder .cm-footer-top-row h2',
 						'color',
 						value,
 					);
@@ -2265,7 +2265,7 @@
 
 				case 'colormag_footer_main_area_color':
 					css = colormagGenerateCommonCSS(
-						'.cm-footer-builder .cm-footer-main-row',
+						'.cm-footer-builder .cm-footer-main-row, .cm-footer-builder .cm-footer-main-row h2',
 						'color',
 						value,
 					);

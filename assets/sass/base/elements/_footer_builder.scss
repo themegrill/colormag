@@ -1,9 +1,5 @@
 .cm-footer-builder {
 
-	a {
-		color: #fff;
-	}
-
 	.cm-row {
 		display: block;
 	}
@@ -29,7 +25,6 @@
 	.cm-widget-title {
 		border-bottom: 2px solid var(--cm-color-1, #207daf);
 		font-size: 1.4rem;
-		color: #e4e4e7;
 
 		span {
 			display: inline-block;
@@ -46,7 +41,6 @@
 		border: 0 solid;
 
 		h2 {
-			color: #FAFAFA;
 			margin-bottom: 16px;
 		}
 
@@ -57,11 +51,23 @@
 		}
 	}
 
+	// The bottom row keeps its own dark background (Color Palette driven,
+	// see .cm-footer-bottom-row below), so its widget titles/text/links still
+	// need a light color for contrast - unlike top/main, which no longer
+	// force a dark background and must not force light text either.
+	.cm-footer-bottom-row {
+		.cm-widget-title {
+			color: #e4e4e7;
+		}
+
+		h2 {
+			color: #FAFAFA;
+		}
+	}
+
 	.cm-footer-top-row {
 		padding-top: 40px;
 		padding-bottom: 40px;
-		background-color: #3f3f46;
-		color: #e4e4e7;
 
 		.cm-footer-top-1-col:has(aside),
 		.cm-footer-top-2-col:has(aside),
@@ -75,20 +81,25 @@
 			height: fit-content;
 			border-radius: 4px;
 			padding: 12px;
-			background-color: #27272a;
+		}
 
-			.cm-entry-title {
-				a {
-					color: #fff;
-				}
-			}
+		// Overrides .cm-footer-builder .cm-footer-nav ul li a, whose color is
+		// driven by colormag_footer_menu_color - a control whose starter-content
+		// default (#BDBDBD, in inc/compatibility/starter-content/theme-mods.php)
+		// was chosen back when every row was dark. Placing the Menu component in
+		// this now-transparent row leaves it low-contrast unless overridden here.
+		.cm-footer-nav ul li a {
+			color: inherit;
 		}
 	}
 
 	.cm-footer-main-row {
 		padding-bottom: 60px;
 		padding-top: 60px;
-		background-color: #3f3f46;
+
+		.cm-footer-nav ul li a {
+			color: inherit;
+		}
 	}
 
 	.cm-footer-bottom-row {
@@ -96,6 +107,10 @@
 		padding-top: 24px;
 		background-color: var(--cm-color-5, #27272A);
 		color: #f4f4f5;
+
+		a {
+			color: #fff;
+		}
 
 		.cm-copyright {
 			font-size: 14px;
@@ -107,8 +122,6 @@
 		gap: 32px;
 		grid-template-columns: repeat(var(--main-grid-columns, 4), 1fr);
 		border: 0 solid transparent;
-
-		color: #e4e4e7;
 	}
 
 	.cm-top-row {
