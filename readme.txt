@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.4
+Version: 4.2.5
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.4
+Stable tag: 4.2.5
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,19 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.5 - xxxx-xx-xx =
+* Added    - A notice on a fresh site to either keep the staged starter pages or start with a clean slate.
+* Fix      - Starter content's navigation links pointed nowhere (dead "#" links).
+* Fix      - Home starter content ignored the Customizer's Typography and Color settings.
+* Fix      - Container Inside/Outside Background options did not appear in the Customizer.
+* Fix      - Footer builder Top/Main rows had a black background that could not be customized.
+* Fix      - Footer/Header Builder component picker showed generic "Widget 1", "Widget 2" labels instead of the sidebar's real name.
+* Fix      - Footer Menu 1 dropdown could show a menu as selected without the selection actually being saved.
+* Fix      - Global Sidebar Layout was ignored on single posts, pages, and the blog when left at Inherit.
+* Fix      - Missing spacing between the featured image and title on blog cards and single posts.
+* Fix      - Categories could be hidden on single posts by an unrelated blog/archive setting.
+* Fix      - Category badges could show unreadable white text when set to a light color.
+
 = Version 4.2.4 - 2026-09-07 =
 * Fix      - Corrected incorrect capitalization of "WordPress" in customizer data files.
 
