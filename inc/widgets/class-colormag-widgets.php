@@ -13,6 +13,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Looks up a sidebar's own registered name, so builder UI labels can't
+ * drift out of sync with what Appearance > Widgets calls the same sidebar.
+ *
+ * Safe to call from any `customize_register` callback: `register_sidebar()`
+ * runs on `widgets_init`, which WordPress always fires before `customize_register`.
+ *
+ * @param string $sidebar_id Sidebar ID passed to register_sidebar().
+ * @param string $fallback   Returned if the sidebar isn't registered.
+ * @return string
+ */
+function colormag_get_registered_sidebar_name( $sidebar_id, $fallback ) {
+	return isset( $GLOBALS['wp_registered_sidebars'][ $sidebar_id ]['name'] )
+		? $GLOBALS['wp_registered_sidebars'][ $sidebar_id ]['name']
+		: $fallback;
+}
+
+/**
  * Function to register the widget areas(sidebar) and widgets.
  */
 function colormag_widgets_init() {
