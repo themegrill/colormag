@@ -332,6 +332,65 @@ if ( ! function_exists( 'colormag_category_color' ) ) :
 
 endif;
 
+if ( ! function_exists( 'colormag_category_badge_text_color' ) ) :
+
+	/**
+	 * Resolves a stored category color (a raw hex string, or a `var(--cm-color-N)`
+	 * reference into the Customizer's Global Color Palette) to a readable badge
+	 * text color, falling back to the component's default white text.
+	 *
+	 * The category badge's text color is hardcoded to white in CSS on the
+	 * assumption that its background is always a saturated accent color. Some
+	 * palette presets (and custom per-category colors) can legitimately resolve
+	 * a slot to white/near-white, which makes that default text invisible.
+	 *
+	 * @param string $color_code Value returned by colormag_category_color().
+	 *
+	 * @return string A hex color to use as the badge text, or '' to keep the
+	 *                 stylesheet's default white text.
+	 */
+	function colormag_category_badge_text_color( $color_code ) {
+
+		$hex = trim( (string) $color_code );
+
+		if ( preg_match( '/^var\(--cm-color-(\d)\)$/', $hex, $matches ) ) {
+			$color_palette_default = array(
+				'colors' => array(
+					'cm-color-1' => '#257BC1',
+					'cm-color-2' => '#2270B0',
+					'cm-color-3' => '#FFFFFF',
+					'cm-color-4' => '#F9FEFD',
+					'cm-color-5' => '#27272A',
+					'cm-color-6' => '#16181A',
+					'cm-color-7' => '#8F8F8F',
+					'cm-color-8' => '#FFFFFF',
+					'cm-color-9' => '#C7C7C7',
+				),
+			);
+
+			$color_palette = get_theme_mod( 'colormag_color_palette', $color_palette_default );
+			$hex           = $color_palette['colors'][ 'cm-color-' . $matches[1] ] ?? '';
+		}
+
+		$hex = ltrim( $hex, '#' );
+
+		if ( 3 === strlen( $hex ) ) {
+			$hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+		}
+
+		if ( 6 !== strlen( $hex ) || ! ctype_xdigit( $hex ) ) {
+			return '';
+		}
+
+		// Perceived brightness (0-255); above the midpoint is a light background
+		// where the badge's default white text fails to read against it.
+		$brightness = ( hexdec( substr( $hex, 0, 2 ) ) * 299 + hexdec( substr( $hex, 2, 2 ) ) * 587 + hexdec( substr( $hex, 4, 2 ) ) * 114 ) / 1000;
+
+		return $brightness > 180 ? '#18181b' : '';
+	}
+
+endif;
+
 if ( ! function_exists( 'colormag_colored_category' ) ) :
 
 	/**
@@ -382,7 +441,9 @@ if ( ! function_exists( 'colormag_colored_category' ) ) :
 			foreach ( $categories as $category ) {
 				$color_code = colormag_category_color( get_cat_id( $category->cat_name ) );
 				if ( ! empty( $color_code ) ) {
-					$output .= '<a href="' . get_category_link( $category->term_id ) . '" style="background:' . colormag_category_color( get_cat_id( $category->cat_name ) ) . '" rel="category tag">' . $category->cat_name . '</a>';
+					$text_color = colormag_category_badge_text_color( $color_code );
+					$style      = 'background:' . $color_code . ( $text_color ? ';color:' . $text_color : '' );
+					$output    .= '<a href="' . get_category_link( $category->term_id ) . '" style="' . $style . '" rel="category tag">' . $category->cat_name . '</a>';
 				} else {
 					$output .= '<a href="' . get_category_link( $category->term_id ) . '"  rel="category tag">' . $category->cat_name . '</a>';
 				}
