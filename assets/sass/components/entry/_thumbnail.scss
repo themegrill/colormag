@@ -1,6 +1,10 @@
 .cm-featured-image {
 	text-align: center;
 
+	&:not(:last-child) {
+		margin-bottom: length( 'l-8' );
+	}
+
 	a {
 		display: block;
 		position: relative;
