@@ -1,6 +1,8 @@
 <?php
 $menus        = wp_get_nav_menus();
-$menu_choices = array();
+$menu_choices = array(
+	'none' => esc_html__( 'None', 'colormag' ),
+);
 
 foreach ( $menus as $menu ) {
 	$menu_choices[ $menu->term_id ] = $menu->name;
