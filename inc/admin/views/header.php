@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 					<ul id="cm-dashboard-menu-primary" class="cm-dashboard-menu-primary">
 						<li>
 							<a
-								href="<?php echo admin_url() . 'themes.php?page=colormag#/dashboard'; ?>">
+								href="<?php echo admin_url() . 'admin.php?page=colormag#/dashboard'; ?>">
 								<?php echo esc_html__( 'Dashboard','colormag' ); ?>
 							</a>
 						</li>
@@ -37,19 +37,19 @@ defined( 'ABSPATH' ) || exit;
 						</li>
 						<li>
 							<a
-								href="<?php echo admin_url() . 'themes.php?page=colormag#/settings'; ?>">
+								href="<?php echo admin_url() . 'admin.php?page=colormag#/settings'; ?>">
 								<?php echo esc_html__( 'Settings', 'colormag' ); ?>
 							</a>
 						</li>
 						<li>
 							<a
-								href="<?php echo admin_url() . 'themes.php?page=colormag#/products'; ?>">
+								href="<?php echo admin_url() . 'admin.php?page=colormag#/products'; ?>">
 								<?php echo esc_html__( 'Products', 'colormag' ); ?>
 							</a>
 						</li>
 						<li>
 							<a
-								href="<?php echo admin_url() . 'themes.php?page=colormag#/help'; ?>">
+								href="<?php echo admin_url() . 'admin.php?page=colormag#/help'; ?>">
 								<?php echo esc_html__( 'Help', 'colormag' ); ?>
 							</a>
 						</li>

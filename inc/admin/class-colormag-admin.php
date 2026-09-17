@@ -49,7 +49,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 			$screen = get_current_screen();
 			if ( ! in_array(
 				$screen->id,
-				array( 'appearance_page_colormag' ),
+				array( 'toplevel_page_colormag' ),
 				true
 			) ) {
 				return;

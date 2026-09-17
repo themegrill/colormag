@@ -79,7 +79,7 @@ jQuery(document).ready(function ($) {
 	// Access the admin URL from the localized script vars
 	var adminUrl = colormagRedirectDemoPage.admin_url;
 
-	var targetUrl = adminUrl + 'themes.php?page=colormag';
+	var targetUrl = adminUrl + 'admin.php?page=colormag';
 
 	// Get the current page URL
 	var currentPage = window.location.href;

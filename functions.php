@@ -270,10 +270,10 @@ function colormag_demo_importer_routes( $routes ) {
 	unset( $routes['themes.php?page=demo-importer'] );
 
 	// Add the new routes
-	$routes['themes.php?page=colormag&tab=starter-templates&demo=:slug']    = 'preview';
-	$routes['themes.php?page=colormag&tab=starter-templates&browse=:sort']  = 'sort';
-	$routes['themes.php?page=colormag&tab=starter-templates&search=:query'] = 'search';
-	$routes['themes.php?page=colormag&tab=starter-templates']               = 'sort';
+	$routes['admin.php?page=colormag&tab=starter-templates&demo=:slug']    = 'preview';
+	$routes['admin.php?page=colormag&tab=starter-templates&browse=:sort']  = 'sort';
+	$routes['admin.php?page=colormag&tab=starter-templates&search=:query'] = 'search';
+	$routes['admin.php?page=colormag&tab=starter-templates']               = 'sort';
 
 	return $routes;
 }
@@ -282,7 +282,7 @@ add_filter( 'themegrill_demo_importer_baseURL', 'colormag_demo_importer_baseURL'
 
 function colormag_demo_importer_baseURL( $base_url ) {
 	// Update the base URL in the demo importer.
-	$base_url = 'themes.php?page=colormag&tab=starter-templates';
+	$base_url = 'admin.php?page=colormag&tab=starter-templates';
 
 	return $base_url;
 }
@@ -291,7 +291,7 @@ add_filter( 'themegrill_demo_importer_redirect_link', 'colormag_demo_importer_re
 
 function colormag_demo_importer_redirect_url( $redirect_url ) {
 	// Update the base URL in the demo importer.
-	$redirect_url = admin_url( 'themes.php?page=colormag&tab=starter-templates&browse=all' );
+	$redirect_url = admin_url( 'admin.php?page=colormag&tab=starter-templates&browse=all' );
 
 	return $redirect_url;
 }
