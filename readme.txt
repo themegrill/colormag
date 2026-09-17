@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.5 - xxxx-xx-xx =
+= Version 4.2.5 - 2026-09-17 =
 * Added    - A notice on a fresh site to either keep the staged starter pages or start with a clean slate.
 * Fix      - Starter content's navigation links pointed nowhere (dead "#" links).
 * Fix      - Home starter content ignored the Customizer's Typography and Color settings.
