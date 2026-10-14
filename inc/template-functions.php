@@ -197,7 +197,7 @@ function colormag_body_class( $classes ) {
 		$layout_meta = 'default_layout';
 	}
 
-	// Per-type container fallbacks stay Normal: Global Container never applied to them, so inheriting it would reshape existing sites.
+	// Unsaved per-type container settings fall back to Normal (pre-4.2.5 behaviour) so Global Container cannot reshape existing sites; a saved Inherit still follows Global.
 	$woocommerce_widgets_enabled           = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
 	$colormag_default_sidebar_layout       = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
 	$colormag_global_container_layout      = get_theme_mod( 'colormag_global_container_layout', 'no_sidebar_full_width' );
