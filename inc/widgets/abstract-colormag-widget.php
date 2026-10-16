@@ -79,14 +79,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 			'classname'                   => $this->widget_cssclass,
 			'description'                 => $this->widget_description,
 			'customize_selective_refresh' => $this->customize_selective_refresh,
-
-			/*
-			 * Hand the block widget editor the instance as JSON. Without this the
-			 * editor can only round-trip the widget through rendered HTML, re-running
-			 * form() and update() over the REST encode endpoint on every keystroke --
-			 * the fragile path where a single stray byte of PHP output breaks the
-			 * editor. Every widget shipped by WordPress core opted in when 5.8 landed.
-			 */
 			'show_instance_in_rest'       => true,
 		);
 
@@ -116,18 +108,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 				continue;
 			}
 
-			/*
-			 * A submitted form does not necessarily carry every setting. The REST
-			 * `widget-types/<id_base>/encode` endpoint used by the block widget editor
-			 * and the Customizer's partial refresh both call update() with a partial
-			 * (sometimes empty) $new_instance, and control types such as `custom` never
-			 * render an input at all.
-			 *
-			 * That endpoint calls update() *outside* its output buffer, so a PHP
-			 * "Undefined array key" warning raised here is printed straight into the
-			 * REST response body and breaks the JSON the editor expects. Never index
-			 * $new_instance directly below.
-			 */
+			// $new_instance can be partial (REST encode, Customizer), and a notice here would break the REST JSON.
 			$has_value = isset( $new_instance[ $key ] );
 			$raw_value = $has_value ? $new_instance[ $key ] : null;
 			$default   = isset( $setting['default'] ) ? $setting['default'] : '';
@@ -202,8 +183,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'checkboxes':
+					// Browsers send nothing when every box is unchecked, so a missing value means none selected.
 					if ( ! $has_value || ! is_array( $raw_value ) ) {
-						$instance[ $key ] = $default;
+						$instance[ $key ] = array();
 						break;
 					}
 
@@ -274,11 +256,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Image mime types accepted by the `image` control.
+	 * Image mime types accepted by the `image` control, taken from the site's allowed upload types.
 	 *
-	 * Derived from the site's own allowed upload types rather than a hard-coded
-	 * list, so formats enabled by WordPress core (AVIF since 6.5, WebP, HEIC) or
-	 * by a plugin (SVG) are accepted instead of being silently discarded.
+	 * @since ColorMag 4.2.6
 	 *
 	 * @return array Map of extension patterns to mime types, as wp_check_filetype() expects.
 	 */
@@ -295,7 +275,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 		/**
 		 * Filters the image mime types a ColorMag widget `image` control accepts.
 		 *
-		 * @since ColorMag 4.2.3
+		 * @since ColorMag 4.2.6
 		 *
 		 * @param array $mimes Map of extension patterns to mime types.
 		 */
@@ -305,16 +285,9 @@ abstract class ColorMag_Widget extends WP_Widget {
 	/**
 	 * Sanitize the value of an `image` control.
 	 *
-	 * The control stores an image URL. The previous implementation matched that
-	 * URL against a hard-coded extension list using a pattern anchored to the end
-	 * of the string, and reset the setting to its default on any miss — with no
-	 * error shown. That silently discarded valid images whenever the URL was an
-	 * AVIF or SVG file (neither was in the list), or carried a query string or
-	 * fragment, which is routine for CDNs, image optimizers and cache busters.
+	 * Accepts an image attachment URL, or any URL whose path has an allowed image extension.
 	 *
-	 * A URL that resolves to an image attachment in the media library is accepted
-	 * as-is; anything else falls back to an extension check that ignores the
-	 * query string and honours the site's allowed upload types.
+	 * @since ColorMag 4.2.6
 	 *
 	 * @param mixed  $value          Raw value submitted for the control.
 	 * @param string $default_value  Value to fall back to when $value is not a usable image.
@@ -340,12 +313,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 			return $default_value;
 		}
 
-		/*
-		 * An image in the media library is valid whatever its extension or query
-		 * string. The attachment's stored mime type still has to be checked: this
-		 * is an image control, so a PDF or an archive that happens to be an
-		 * attachment must not pass just because the URL resolves.
-		 */
+		// Media library images pass whatever their URL looks like, but only if the attachment is an image.
 		$attachment_id = attachment_url_to_postid( $url );
 
 		if ( $attachment_id && 0 === strpos( (string) get_post_mime_type( $attachment_id ), 'image/' ) ) {
@@ -437,12 +405,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'image':
-					/*
-					 * The wrapper, the input and the button used to share one id. Keep it
-					 * on the input so the label still points at the control, and give the
-					 * other two their own, so several image controls can sit in one
-					 * sidebar without colliding.
-					 */
+					// The label points at the input, so only the input keeps the field id.
 					$field_id   = $this->get_field_id( $key );
 					$wrapper_id = $field_id . '-wrapper';
 					$button_id  = $field_id . '-button';
@@ -472,15 +435,6 @@ abstract class ColorMag_Widget extends WP_Widget {
 									style="margin-top:5px;"
 							/>
 
-							<?php
-							/*
-							 * type="button" is required. Without it the button defaults to
-							 * type="submit", and the block widget editor renders this form
-							 * inside a real <form> element: clicking "Select an Image" then
-							 * submits the widget instead of opening the media library
-							 * whenever image-uploader.js has not run.
-							 */
-							?>
 							<button type="button"
 									class="custom_media_upload button button-secondary button-large"
 									id="<?php echo esc_attr( $button_id ); ?>"

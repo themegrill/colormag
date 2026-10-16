@@ -672,8 +672,6 @@ function colormag_image_uploader() {
 
 	wp_enqueue_media();
 
-	// The script is a jQuery plugin driving wp.media, so both have to be declared:
-	// without them its position in the queue is only correct by accident.
 	wp_enqueue_script(
 		'colormag-widget-image-upload',
 		COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js',

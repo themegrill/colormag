@@ -23,7 +23,7 @@ jQuery( document ).ready(
 					if ( preview_image !== '' ) {
 						// Replace rather than append, so a re-render cannot stack images.
 						preview_target.empty();
-						preview_target.css( { display : 'block' } ).append( '<img src="' + preview_image + '" style="max-width:100%">' );
+						preview_target.css( { display : 'block' } ).append( $( '<img>', { src : preview_image, style : 'max-width:100%' } ) );
 					}
 				}
 			);
@@ -68,7 +68,7 @@ jQuery( document ).ready(
 						// Initialize input and preview change.
 						file_target_input.val( attachment.url ).change();
 						file_target_preview.css( { display : 'none' } ).find( 'img' ).remove();
-						file_target_preview.css( { display : 'block' } ).append( '<img src="' + attachment.url + '" style="max-width:100%">' );
+						file_target_preview.css( { display : 'block' } ).append( $( '<img>', { src : attachment.url, style : 'max-width:100%' } ) );
 					}
 				);
 
@@ -80,11 +80,7 @@ jQuery( document ).ready(
 		// Media Uploader Preview.
 		initPreviews();
 
-		/*
-		 * The block widget editor and the Customizer render widget forms into the
-		 * DOM long after document ready, so the pass above never reaches them.
-		 * WordPress fires these events with the newly rendered widget container.
-		 */
+		// Block widget editor and Customizer forms are rendered after document ready.
 		$( document ).on(
 			'widget-added widget-updated',
 			function ( event, widget ) {
