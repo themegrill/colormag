@@ -85,8 +85,8 @@ if ( ! function_exists( 'colormag_widgets_classes' ) ) :
 			'colormag_highlighted_posts_widget'       => 'widget_highlighted_posts widget_featured_meta',
 			'colormag_featured_posts_widget'          => 'widget_featured_posts widget_featured_meta',
 			'colormag_featured_posts_vertical_widget' => 'widget_featured_posts widget_featured_posts_vertical widget_featured_meta',
-			'colormag_728x90_advertisement_widget'    => 'widget_300x250_advertisement',
-			'colormag_300x250_advertisement_widget'   => 'widget_728x90_advertisement',
+			'colormag_728x90_advertisement_widget'    => 'widget_728x90_advertisement',
+			'colormag_300x250_advertisement_widget'   => 'widget_300x250_advertisement',
 			'colormag_125x125_advertisement_widget'   => 'widget_125x125_advertisement',
 		);
 
