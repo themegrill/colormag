@@ -667,7 +667,14 @@ function colormag_image_uploader() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_enqueue_media();
-	wp_enqueue_script( 'colormag-widget-image-upload', COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js', false, COLORMAG_THEME_VERSION, true );
+
+	wp_enqueue_script(
+		'colormag-widget-image-upload',
+		COLORMAG_JS_URL . '/image-uploader' . $suffix . '.js',
+		array( 'jquery', 'media-editor' ),
+		COLORMAG_THEME_VERSION,
+		true
+	);
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
