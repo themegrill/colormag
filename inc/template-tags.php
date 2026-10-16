@@ -517,6 +517,7 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 		$colormag_blog_sidebar_layout   = get_theme_mod( 'colormag_blog_sidebar_layout', 'default' );
 		$colormag_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'default' );
 		$colormag_default_post_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'default' );
+		$colormag_search_page_layout    = get_theme_mod( 'colormag_search_sidebar_layout', 'default' );
 
 		if ( 'default_layout' === $layout_meta ) {
 
@@ -541,6 +542,20 @@ if ( ! function_exists( 'colormag_sidebar_select' ) ) :
 				} elseif ( 'left_sidebar' === $colormag_default_post_layout ) {
 					ColorMag_Utils::colormag_get_sidebar( 'left' );
 				} elseif ( 'default' === $colormag_default_post_layout ) {
+
+					if ( 'right_sidebar' === $colormag_global_sidebar_layout || 'two_sidebars' === $colormag_global_sidebar_layout ) {
+						ColorMag_Utils::colormag_get_sidebar( 'two_sidebars' === $colormag_global_sidebar_layout ? 'one_sidebars' : $colormag_global_sidebar_layout );
+					} elseif ( 'left_sidebar' === $colormag_global_sidebar_layout ) {
+						ColorMag_Utils::colormag_get_sidebar( 'left' );
+					}
+				}
+			} elseif ( is_search() ) {
+
+				if ( 'right_sidebar' === $colormag_search_page_layout || 'two_sidebars' === $colormag_search_page_layout ) {
+					ColorMag_Utils::colormag_get_sidebar( $colormag_search_page_layout );
+				} elseif ( 'left_sidebar' === $colormag_search_page_layout ) {
+					ColorMag_Utils::colormag_get_sidebar( 'left' );
+				} elseif ( 'default' === $colormag_search_page_layout ) {
 
 					if ( 'right_sidebar' === $colormag_global_sidebar_layout || 'two_sidebars' === $colormag_global_sidebar_layout ) {
 						ColorMag_Utils::colormag_get_sidebar( 'two_sidebars' === $colormag_global_sidebar_layout ? 'one_sidebars' : $colormag_global_sidebar_layout );
