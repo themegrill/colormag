@@ -431,8 +431,9 @@ function colormag_content_width() {
 	// Same layout resolution as the body classes, so it always matches what renders.
 	$classes = colormag_body_class( array() );
 
+	// 1140px container minus the 20px side padding on .cm-entry-summary.
 	if ( in_array( 'cm-normal-container', $classes, true ) && in_array( 'cm-no-sidebar', $classes, true ) ) {
-		$content_width = 1140; /* pixels */
+		$content_width = 1100; /* pixels */
 	}
 }
 
