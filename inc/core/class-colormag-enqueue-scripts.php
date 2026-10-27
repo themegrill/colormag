@@ -543,7 +543,7 @@ if ( ! class_exists( 'ColorMag_Enqueue_Scripts' ) ) {
 				    top: calc(50% - 7px);
 			}
 
-			#sub-accordion-section-colormag_button_section > li:empty, #sub-accordion-section-colormag_global_sidebar_section > li:empty {
+			#sub-accordion-section-colormag_button_section > li:empty {
 				display: none;
 			}
 		    '

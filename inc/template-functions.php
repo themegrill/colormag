@@ -199,7 +199,6 @@ function colormag_body_class( $classes ) {
 
 	// Unsaved per-type container settings fall back to Normal (pre-4.2.5 behaviour) so Global Container cannot reshape existing sites; a saved Inherit still follows Global.
 	$woocommerce_widgets_enabled           = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
-	$colormag_default_sidebar_layout       = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
 	$colormag_global_container_layout      = get_theme_mod( 'colormag_global_container_layout', 'no_sidebar_full_width' );
 	$colormag_blog_container_layout        = get_theme_mod( 'colormag_blog_container_layout', 'no_sidebar_full_width' );
 	$colormag_global_sidebar_layout        = get_theme_mod( 'colormag_global_sidebar_layout', 'no_sidebar' );
@@ -207,8 +206,6 @@ function colormag_body_class( $classes ) {
 	$colormag_blog_sidebar_layout          = get_theme_mod( 'colormag_blog_sidebar_layout', 'default' );
 	$colormag_single_post_sidebar_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'default' );
 	$colormag_single_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'default' );
-	$colormag_page_sidebar_layout          = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
-	$colormag_default_post_layout          = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
 	$colormag_single_post_container_layout = get_theme_mod( 'colormag_single_post_container_layout', 'no_sidebar_full_width' );
 	$colormag_single_page_container_layout = get_theme_mod( 'colormag_single_page_container_layout', 'no_sidebar_full_width' );
 	$colormag_search_page_container_layout = get_theme_mod( 'colormag_search_container_layout', 'no_sidebar_full_width' );

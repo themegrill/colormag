@@ -98,7 +98,7 @@ export const QUICK_SETTINGS = [
 	},
 	{
 		title: __('Sidebar', 'colormag'),
-		id: 'colormag_global_sidebar_section',
+		id: 'colormag_global_layout_section',
 		icon: Sidebar,
 	},
 	{
