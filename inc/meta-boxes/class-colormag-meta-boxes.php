@@ -42,6 +42,7 @@ class ColorMag_Meta_Boxes {
 
 		// Save the meta boxes contents.
 		add_action( 'save_post', array( $this, 'save_meta_boxes' ), 1, 2 );
+		add_action( 'save_post', array( $this, 'save_video_url' ), 10, 2 );
 
 		// Save page settings meta boxes.
 		add_action( 'colormag_process_page_settings_meta', 'ColorMag_Meta_Box_Page_Settings::save', 10, 2 );
@@ -91,6 +92,50 @@ class ColorMag_Meta_Boxes {
 				},
 			]
 		);
+		register_post_meta(
+			'post',
+			'video_url',
+			[
+				'show_in_rest'      => true,
+				'single'            => true,
+				'type'              => 'string',
+				'sanitize_callback' => 'esc_url_raw',
+				'auth_callback'     => function( $allowed, $meta_key, $post_id ) {
+					return current_user_can( 'edit_post', $post_id );
+				},
+			]
+		);
+	}
+
+	/**
+	 * Save the Video URL meta box from the block editor.
+	 *
+	 * @since 4.2.6
+	 *
+	 * @param int     $post_id Post ID.
+	 * @param WP_Post $post    Post object.
+	 */
+	public function save_video_url( $post_id, $post ) {
+
+		if ( defined( 'DOING_AUTOSAVE' ) || is_int( wp_is_post_revision( $post ) ) || is_int( wp_is_post_autosave( $post ) ) ) {
+			return;
+		}
+
+		if ( ! isset( $_POST['video_url'], $_POST['colormag_video_url_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['colormag_video_url_nonce'] ) ), 'colormag_save_video_url' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+
+		$video_url = esc_url_raw( wp_unslash( $_POST['video_url'] ) );
+
+		if ( $video_url ) {
+			update_post_meta( $post_id, 'video_url', $video_url );
+		} else {
+			delete_post_meta( $post_id, 'video_url' );
+		}
 	}
 
 	/**
@@ -99,6 +144,9 @@ class ColorMag_Meta_Boxes {
 	public function add_meta_boxes() {
 
 		if ( ! $this->is_classic_editor_active() ) {
+			// The block editor sidebar panel has no Video URL field.
+			add_meta_box( 'post-video-url', esc_html__( 'Video URL', 'colormag' ), 'ColorMag_Meta_Box_Page_Settings::render_block_editor_video_url', 'post', 'side', 'high' );
+
 			return;
 		}
 		// Global options for page and posts.
