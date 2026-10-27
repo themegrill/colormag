@@ -161,7 +161,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'dropdown_tags':
-					$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
+					if ( ! empty( $new_instance[ $key . '_by_name' ] ) ) {
+						$tag_name             = $has_value ? sanitize_text_field( $raw_value ) : '';
+						$tag                  = '' !== $tag_name ? get_term_by( 'name', $tag_name, 'post_tag' ) : false;
+						$new_instance[ $key ] = $tag ? $tag->term_id : 0;
+					} else {
+						$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
+					}
 
 					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $default;
 					break;
@@ -253,6 +259,30 @@ abstract class ColorMag_Widget extends WP_Widget {
 		}
 
 		return $instance;
+	}
+
+	/**
+	 * Whether the tag setting should be a text field instead of a dropdown.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @return bool True when there are too many tags for a dropdown.
+	 */
+	protected static function use_tag_text_field() {
+
+		static $use_text_field = null;
+
+		if ( null === $use_text_field ) {
+			$tag_count      = wp_count_terms(
+				array(
+					'taxonomy'   => 'post_tag',
+					'hide_empty' => true,
+				)
+			);
+			$use_text_field = ! is_wp_error( $tag_count ) && (int) $tag_count > 100;
+		}
+
+		return $use_text_field;
 	}
 
 	/**
@@ -595,15 +625,23 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<?php
-						wp_dropdown_categories(
-							array(
-								'show_option_none' => ' ',
-								'name'             => $this->get_field_name( $key ),
-								'selected'         => $value,
-								'taxonomy'         => 'post_tag',
-								'class'            => 'widefat postform',
-							)
-						);
+						if ( self::use_tag_text_field() ) {
+							$tag = $value ? get_term( (int) $value, 'post_tag' ) : null;
+							?>
+							<input class="widefat colormag-tag-suggest" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="text" value="<?php echo esc_attr( $tag && ! is_wp_error( $tag ) ? $tag->name : '' ); ?>" placeholder="<?php esc_attr_e( 'Start typing a tag name', 'colormag' ); ?>" />
+							<input name="<?php echo esc_attr( $this->get_field_name( $key . '_by_name' ) ); ?>" type="hidden" value="1" />
+							<?php
+						} else {
+							wp_dropdown_categories(
+								array(
+									'show_option_none' => ' ',
+									'name'             => $this->get_field_name( $key ),
+									'selected'         => $value,
+									'taxonomy'         => 'post_tag',
+									'class'            => 'widefat postform',
+								)
+							);
+						}
 						?>
 					</p>
 					<?php
