@@ -426,10 +426,42 @@ function colormag_body_class( $classes ) {
 		$classes[] = 'clickable-background-image';
 	}
 
+	// Narrow (formerly "Content Centered") never narrowed the front page slider area.
+	if ( in_array( 'cm-narrow-container', $classes, true ) && colormag_has_front_page_top_section() ) {
+		$classes[] = 'cm-narrow-front-page';
+	}
+
 	return $classes;
 }
 
 add_filter( 'body_class', 'colormag_body_class' );
+
+if ( ! function_exists( 'colormag_has_front_page_top_section' ) ) {
+
+	/**
+	 * Whether the current page renders the front page slider area.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @return bool
+	 */
+	function colormag_has_front_page_top_section() {
+
+		global $template;
+
+		$template_file = $template ? basename( $template ) : '';
+
+		if ( 'magazine.php' === $template_file && is_page_template( 'page-templates/magazine.php' ) ) {
+			return true;
+		}
+
+		return 'front-page.php' === $template_file
+			&& is_front_page()
+			&& ! is_page_template( 'page-templates/page-builder.php' )
+			&& is_active_sidebar( 'colormag_front_page_area_beside_slider' )
+			&& is_active_sidebar( 'colormag_front_page_slider_area' );
+	}
+}
 
 /**
  * List of allowed social protocols in HTML attributes.
