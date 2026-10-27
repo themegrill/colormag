@@ -61,11 +61,6 @@ $section_option_id = array(
 		'panel'    => 'colormag_global_panel',
 		'priority' => 30,
 	),
-	'colormag_global_sidebar_section'              => array(
-		'title'    => esc_html__( 'Sidebar', 'colormag' ),
-		'panel'    => 'colormag_global_panel',
-		'priority' => 40,
-	),
 	'colormag_button_section'                      => array(
 		'title'    => esc_html__( 'Button', 'colormag' ),
 		'panel'    => 'colormag_global_panel',
