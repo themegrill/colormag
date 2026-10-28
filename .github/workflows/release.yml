@@ -124,6 +124,8 @@ jobs:
         if: steps.check.outputs.exists == 'false'
         run: |
           pnpm build
+          # Drop dev tooling (wp-cli, sniffs) so vendor/ ships only the ThemeGrill SDK.
+          composer install --no-dev --optimize-autoloader --no-progress --prefer-dist --ignore-platform-reqs
           pnpm exec gulp build
 
       - name: Verify zip and .pot were produced
@@ -132,6 +134,12 @@ jobs:
           test -f dist/colormag.zip
           test -f languages/colormag.pot
           unzip -l dist/colormag.zip | grep -q 'languages/colormag.pot'
+          unzip -l dist/colormag.zip | grep -q 'vendor/autoload.php'
+          unzip -l dist/colormag.zip | grep -q 'vendor/themegrill/themegrill-sdk/load.php'
+          if unzip -l dist/colormag.zip | grep -qE 'vendor/(bin|wp-cli|squizlabs|wp-coding-standards|wpeverest)/'; then
+            echo "::error::Dev dependencies leaked into the release zip"
+            exit 1
+          fi
 
       # Idempotent: a retry after a failed release must skip the push rather
       # than die on "tag already exists" before reaching the release step.
