@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.5
+Version: 4.2.6
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.5
+Stable tag: 4.2.6
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,22 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.6 - 2026-10-28 =
+* Tweak    - Removed the unused Global > Sidebar section from the Customizer.
+* Tweak    - ColorMag widgets load and save more reliably in the block widget editor.
+* Fix      - Front page slider area shrank to the narrow width on the Narrow container layout.
+* Fix      - Content narrowed after updating when the Global Container Layout was set to Narrow.
+* Fix      - Widgets screen could freeze on sites with many tags; the tag setting now uses a search field.
+* Fix      - Video URL field was missing in the block editor.
+* Fix      - Embeds were capped at 800px on no-sidebar layouts.
+* Fix      - Sidebar did not show on search results pages.
+* Fix      - Saving a widget could fail with "The response is not a valid JSON response" on PHP 8.
+* Fix      - Advertisement widget images were discarded for AVIF/SVG files or URLs with a query string.
+* Fix      - "Select an Image" submitted the widget form instead of opening the media library.
+* Fix      - Image preview did not show in the block widget editor.
+* Fix      - Image fields accepted non-image media library files.
+* Fix      - Advertisement widgets got each other's CSS class in Elementor.
+
 = Version 4.2.5 - 2026-09-17 =
 * Added    - A notice on a fresh site to either keep the staged starter pages or start with a clean slate.
 * Fix      - Starter content's navigation links pointed nowhere (dead "#" links).
