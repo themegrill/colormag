@@ -675,6 +675,47 @@ function colormag_image_uploader() {
 		COLORMAG_THEME_VERSION,
 		true
 	);
+
+	// Tag autocomplete for widgets on sites with too many tags for a dropdown.
+	wp_enqueue_script( 'jquery-ui-autocomplete' );
+	wp_add_inline_script(
+		'jquery-ui-autocomplete',
+		'var colormagTagSuggestUrl = ' . wp_json_encode( admin_url( 'admin-ajax.php' ) ) . ";\n" . <<<'JS'
+jQuery( function ( $ ) {
+	function colormagTagSuggest( scope ) {
+		$( scope ).find( 'input.colormag-tag-suggest' ).each( function () {
+			var $input = $( this );
+			if ( $input.autocomplete( 'instance' ) ) {
+				return;
+			}
+			$input.autocomplete( {
+				minLength: 2,
+				source: function ( request, response ) {
+					$.get( colormagTagSuggestUrl, { action: 'ajax-tag-search', tax: 'post_tag', q: request.term } )
+						.done( function ( data ) { response( data ? $.map( data.split( '\n' ).slice( 0, 10 ), function ( name ) {
+							// Tag names come back HTML-encoded, e.g. "Rock &amp; Roll".
+							return $( '<textarea>' ).html( name ).text();
+						} ) : [] ); } )
+						.fail( function () { response( [] ); } );
+				},
+				open: function () {
+					// Keep the list above the Customizer controls panel.
+					$input.autocomplete( 'widget' ).css( 'z-index', 500001 );
+				},
+				select: function ( event, ui ) {
+					$input.val( ui.item.value ).trigger( 'change' );
+					return false;
+				}
+			} );
+		} );
+	}
+	colormagTagSuggest( document );
+	$( document ).on( 'widget-added widget-updated', function ( event, $widget ) {
+		colormagTagSuggest( $widget );
+	} );
+} );
+JS
+	);
 }
 
 add_action( 'admin_enqueue_scripts', 'colormag_image_uploader' );
