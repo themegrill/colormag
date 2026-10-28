@@ -197,20 +197,18 @@ function colormag_body_class( $classes ) {
 		$layout_meta = 'default_layout';
 	}
 
+	// Unsaved per-type container settings fall back to Normal (pre-4.2.5 behaviour) so Global Container cannot reshape existing sites; a saved Inherit still follows Global.
 	$woocommerce_widgets_enabled           = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
-	$colormag_default_sidebar_layout       = get_theme_mod( 'colormag_default_sidebar_layout', 'right_sidebar' );
 	$colormag_global_container_layout      = get_theme_mod( 'colormag_global_container_layout', 'no_sidebar_full_width' );
-	$colormag_blog_container_layout        = get_theme_mod( 'colormag_blog_container_layout', 'default' );
+	$colormag_blog_container_layout        = get_theme_mod( 'colormag_blog_container_layout', 'no_sidebar_full_width' );
 	$colormag_global_sidebar_layout        = get_theme_mod( 'colormag_global_sidebar_layout', 'no_sidebar' );
 	$colormag_search_sidebar_layout        = get_theme_mod( 'colormag_search_sidebar_layout', 'default' );
 	$colormag_blog_sidebar_layout          = get_theme_mod( 'colormag_blog_sidebar_layout', 'default' );
 	$colormag_single_post_sidebar_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'default' );
 	$colormag_single_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'default' );
-	$colormag_page_sidebar_layout          = get_theme_mod( 'colormag_page_sidebar_layout', 'right_sidebar' );
-	$colormag_default_post_layout          = get_theme_mod( 'colormag_post_sidebar_layout', 'right_sidebar' );
-	$colormag_single_post_container_layout = get_theme_mod( 'colormag_single_post_container_layout', 'default' );
-	$colormag_single_page_container_layout = get_theme_mod( 'colormag_single_page_container_layout', 'default' );
-	$colormag_search_page_container_layout = get_theme_mod( 'colormag_search_container_layout', 'default' );
+	$colormag_single_post_container_layout = get_theme_mod( 'colormag_single_post_container_layout', 'no_sidebar_full_width' );
+	$colormag_single_page_container_layout = get_theme_mod( 'colormag_single_page_container_layout', 'no_sidebar_full_width' );
+	$colormag_search_page_container_layout = get_theme_mod( 'colormag_search_container_layout', 'no_sidebar_full_width' );
 
 	/**
 	 * Header styles.
@@ -425,10 +423,42 @@ function colormag_body_class( $classes ) {
 		$classes[] = 'clickable-background-image';
 	}
 
+	// Narrow (formerly "Content Centered") never narrowed the front page slider area.
+	if ( in_array( 'cm-narrow-container', $classes, true ) && colormag_has_front_page_top_section() ) {
+		$classes[] = 'cm-narrow-front-page';
+	}
+
 	return $classes;
 }
 
 add_filter( 'body_class', 'colormag_body_class' );
+
+if ( ! function_exists( 'colormag_has_front_page_top_section' ) ) {
+
+	/**
+	 * Whether the current page renders the front page slider area.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @return bool
+	 */
+	function colormag_has_front_page_top_section() {
+
+		global $template;
+
+		$template_file = $template ? basename( $template ) : '';
+
+		if ( 'magazine.php' === $template_file && is_page_template( 'page-templates/magazine.php' ) ) {
+			return true;
+		}
+
+		return 'front-page.php' === $template_file
+			&& is_front_page()
+			&& ! is_page_template( 'page-templates/page-builder.php' )
+			&& is_active_sidebar( 'colormag_front_page_area_beside_slider' )
+			&& is_active_sidebar( 'colormag_front_page_slider_area' );
+	}
+}
 
 /**
  * List of allowed social protocols in HTML attributes.

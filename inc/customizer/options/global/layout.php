@@ -108,6 +108,19 @@ $options = array(
 		'section'     => 'colormag_global_colors_section',
 		'priority'    => 100,
 	),
+	'colormag_sidebar_upgrade'         => array(
+		'type'        => 'customind-upgrade',
+		'description' => esc_html__( 'Upgrade to Pro for more features!', 'colormag' ),
+		'label'       => esc_html__( 'Upgrade to Pro', 'colormag' ),
+		'url'         => esc_url_raw( 'https://themegrill.com/themes/colormag-upgrade/?utm_source=cmag-free&utm_medium=upgrade-link&utm_campaign=ui-element-12' ),
+		'points'      => array(
+			esc_html__( 'Sticky sidebar', 'colormag' ),
+			esc_html__( 'Sidebar widget title color and typography', 'colormag' ),
+			esc_html__( 'Two sidebar layout', 'colormag' ),
+		),
+		'section'     => 'colormag_global_layout_section',
+		'priority'    => 100,
+	),
 );
 
 colormag_customind()->add_controls( $options );

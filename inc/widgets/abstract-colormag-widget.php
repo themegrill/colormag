@@ -79,6 +79,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 			'classname'                   => $this->widget_cssclass,
 			'description'                 => $this->widget_description,
 			'customize_selective_refresh' => $this->customize_selective_refresh,
+			'show_instance_in_rest'       => true,
 		);
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_options, $this->control_options );
@@ -107,48 +108,34 @@ abstract class ColorMag_Widget extends WP_Widget {
 				continue;
 			}
 
+			// $new_instance can be partial (REST encode, Customizer), and a notice here would break the REST JSON.
+			$has_value = isset( $new_instance[ $key ] );
+			$raw_value = $has_value ? $new_instance[ $key ] : null;
+			$default   = isset( $setting['default'] ) ? $setting['default'] : '';
+
 			// Format the value based on settings type.
 			switch ( $setting['type'] ) {
 
 				case 'url':
-					$instance[ $key ] = isset( $new_instance[ $key ] ) ? esc_url_raw( $new_instance[ $key ] ) : $setting['default'];
+					$instance[ $key ] = $has_value ? esc_url_raw( $raw_value ) : $default;
 					break;
 
 				case 'textarea':
-					$instance[ $key ] = wp_kses( trim( wp_unslash( $new_instance[ $key ] ) ), wp_kses_allowed_html( 'post' ) );
+					$instance[ $key ] = $has_value ? wp_kses( trim( wp_unslash( $raw_value ) ), wp_kses_allowed_html( 'post' ) ) : $default;
 					break;
 
 				case 'image':
-					/**
-					 * Array of valid image file types.
-					 *
-					 * The array includes image mime types that are included in wp_get_mime_types()
-					 */
-					$mimes = array(
-						'jpg|jpeg|jpe' => 'image/jpeg',
-						'gif'          => 'image/gif',
-						'png'          => 'image/png',
-						'bmp'          => 'image/bmp',
-						'tiff|tif'     => 'image/tiff',
-						'ico'          => 'image/x-icon',
-						'webp'         => 'image/webp',
-					);
-
-					// Return an array with file extension and mime_type.
-					$file = wp_check_filetype( $new_instance[ $key ], $mimes );
-
-					// If $new_instance[ $key ] has a valid mime_type, assign it to $instance[ $key ], otherwise, assign empty value to $instance[ $key ].
-					$instance[ $key ] = $file['ext'] ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = $has_value ? $this->sanitize_image_value( $raw_value, $default ) : $default;
 					break;
 
 				case 'checkbox':
 					$instance[ $key ] = (
-						'1' == $new_instance[ $key ] || 'on' == $new_instance[ $key ]
+						$has_value && ( '1' == $raw_value || 'on' == $raw_value )
 						) ? '1' : '0';
 					break;
 
 				case 'number':
-					$instance[ $key ] = is_numeric( $new_instance[ $key ] ) ? intval( $new_instance[ $key ] ) : $setting['default'];
+					$instance[ $key ] = ( $has_value && is_numeric( $raw_value ) ) ? intval( $raw_value ) : $default;
 
 					if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] ) {
 						$instance[ $key ] = max( $instance[ $key ], $setting['input_attrs']['min'] );
@@ -161,26 +148,38 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 				case 'radio':
 				case 'select':
-					$new_instance[ $key ] = sanitize_key( $new_instance[ $key ] );
-					$available_choices    = $setting['choices'];
+					$new_instance[ $key ] = $has_value ? sanitize_key( $raw_value ) : '';
+					$available_choices    = isset( $setting['choices'] ) ? $setting['choices'] : array();
 
-					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_choices ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_choices ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'dropdown_categories':
-					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
 
-					$instance[ $key ] = term_exists( $new_instance[ $key ], 'category' ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = term_exists( $new_instance[ $key ], 'category' ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'dropdown_tags':
-					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
+					if ( ! empty( $new_instance[ $key . '_by_name' ] ) ) {
+						$tag_name             = $has_value ? sanitize_text_field( $raw_value ) : '';
+						$tag                  = '' !== $tag_name ? get_term_by( 'name', $tag_name, 'post_tag' ) : false;
+						if ( $tag ) {
+							$new_instance[ $key ] = $tag->term_id;
+						} elseif ( '' !== $tag_name && isset( $old_instance[ $key ] ) ) {
+							$new_instance[ $key ] = absint( $old_instance[ $key ] );
+						} else {
+							$new_instance[ $key ] = 0;
+						}
+					} else {
+						$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
+					}
 
-					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = term_exists( $new_instance[ $key ], 'post_tag' ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'dropdown_users':
-					$new_instance[ $key ] = ( '-1' == $new_instance[ $key ] ) ? '0' : absint( $new_instance[ $key ] );
+					$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
 					$available_users      = array();
 					$all_author_users     = get_users(
 						array(
@@ -192,12 +191,18 @@ abstract class ColorMag_Widget extends WP_Widget {
 						$available_users[ $author_user->ID ] = $author_user->display_name;
 					}
 
-					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_users ) ? $new_instance[ $key ] : $setting['default'];
+					$instance[ $key ] = array_key_exists( $new_instance[ $key ], $available_users ) ? $new_instance[ $key ] : $default;
 					break;
 
 				case 'checkboxes':
+					// Browsers send nothing when every box is unchecked, so a missing value means none selected.
+					if ( ! $has_value || ! is_array( $raw_value ) ) {
+						$instance[ $key ] = array();
+						break;
+					}
+
 					$saved_data       = array();
-					$instance[ $key ] = $new_instance[ $key ];
+					$instance[ $key ] = $raw_value;
 
 					foreach ( $instance[ $key ] as $item => $value ) {
 						$saved_data[ $item ] = isset( $item ) ? 1 : 0;
@@ -207,11 +212,16 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'numbers':
+					if ( ! $has_value || ! is_array( $raw_value ) ) {
+						$instance[ $key ] = $default;
+						break;
+					}
+
 					$saved_data       = array();
-					$instance[ $key ] = $new_instance[ $key ];
+					$instance[ $key ] = $raw_value;
 
 					foreach ( $instance[ $key ] as $item => $value ) {
-						$temp_data = is_numeric( $value ) ? intval( $value ) : $setting['default'][ $item ];
+						$temp_data = is_numeric( $value ) ? intval( $value ) : ( isset( $default[ $item ] ) ? $default[ $item ] : 0 );
 
 						if ( isset( $setting['input_attrs']['min'] ) && '' !== $setting['input_attrs']['min'] && ( $value < $setting['input_attrs']['min'] && ! $temp_data ) ) {
 							$temp_data = max( $value, $setting['input_attrs']['min'] );
@@ -229,8 +239,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 				case 'multiselect':
 					$selected_choices     = array();
-					$available_choices    = $setting['choices'];
-					$new_instance[ $key ] = isset( $new_instance[ $key ] ) ? $new_instance[ $key ] : array();
+					$available_choices    = isset( $setting['choices'] ) ? $setting['choices'] : array();
+					$new_instance[ $key ] = ( $has_value && is_array( $raw_value ) ) ? $raw_value : array();
 
 					foreach ( $new_instance[ $key ] as $selected_key => $selected_value ) {
 
@@ -243,7 +253,7 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				default:
-					$instance[ $key ] = isset( $new_instance[ $key ] ) ? sanitize_text_field( $new_instance[ $key ] ) : $setting['default'];
+					$instance[ $key ] = $has_value ? sanitize_text_field( $raw_value ) : $default;
 					break;
 
 			}
@@ -255,6 +265,105 @@ abstract class ColorMag_Widget extends WP_Widget {
 		}
 
 		return $instance;
+	}
+
+	/**
+	 * Whether the tag setting should be a text field instead of a dropdown.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @return bool True when there are too many tags for a dropdown.
+	 */
+	protected static function use_tag_text_field() {
+
+		static $use_text_field = null;
+
+		if ( null === $use_text_field ) {
+			$tag_count      = wp_count_terms(
+				'post_tag',
+				array( 'hide_empty' => true )
+			);
+			$use_text_field = ! is_wp_error( $tag_count ) && (int) $tag_count > 100;
+		}
+
+		return $use_text_field;
+	}
+
+	/**
+	 * Image mime types accepted by the `image` control, taken from the site's allowed upload types.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @return array Map of extension patterns to mime types, as wp_check_filetype() expects.
+	 */
+	protected function get_allowed_image_mime_types() {
+
+		$mimes = array();
+
+		foreach ( get_allowed_mime_types() as $ext_pattern => $mime_type ) {
+			if ( 0 === strpos( $mime_type, 'image/' ) ) {
+				$mimes[ $ext_pattern ] = $mime_type;
+			}
+		}
+
+		/**
+		 * Filters the image mime types a ColorMag widget `image` control accepts.
+		 *
+		 * @since ColorMag 4.2.6
+		 *
+		 * @param array $mimes Map of extension patterns to mime types.
+		 */
+		return apply_filters( 'colormag_widget_image_mime_types', $mimes );
+	}
+
+	/**
+	 * Sanitize the value of an `image` control.
+	 *
+	 * Accepts an image attachment URL, or any URL whose path has an allowed image extension.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @param mixed  $value          Raw value submitted for the control.
+	 * @param string $default_value  Value to fall back to when $value is not a usable image.
+	 *
+	 * @return string
+	 */
+	protected function sanitize_image_value( $value, $default_value = '' ) {
+
+		if ( ! is_scalar( $value ) ) {
+			return $default_value;
+		}
+
+		$value = trim( (string) $value );
+
+		// An empty control is a deliberate "no image", not a rejected value.
+		if ( '' === $value ) {
+			return '';
+		}
+
+		$url = esc_url_raw( $value );
+
+		if ( '' === $url ) {
+			return $default_value;
+		}
+
+		// Media library images pass whatever their URL looks like, but only if the attachment is an image.
+		$attachment_id = attachment_url_to_postid( $url );
+
+		if ( $attachment_id && 0 === strpos( (string) get_post_mime_type( $attachment_id ), 'image/' ) ) {
+			return $url;
+		}
+
+		// Otherwise check the extension only, ignoring any query string or fragment.
+		$path = wp_parse_url( $url, PHP_URL_PATH );
+
+		if ( empty( $path ) ) {
+			return $default_value;
+		}
+
+		$file = wp_check_filetype( $path, $this->get_allowed_image_mime_types() );
+
+		return $file['ext'] ? $url : $default_value;
 	}
 
 	/**
@@ -330,15 +439,19 @@ abstract class ColorMag_Widget extends WP_Widget {
 					break;
 
 				case 'image':
+					// The label points at the input, so only the input keeps the field id.
+					$field_id   = $this->get_field_id( $key );
+					$wrapper_id = $field_id . '-wrapper';
+					$button_id  = $field_id . '-button';
 					?>
 					<div class="media-uploader">
 						<p>
-							<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+							<label for="<?php echo esc_attr( $field_id ); ?>">
 								<?php echo esc_html( $setting['label'] ); ?>
 							</label>
 						</p>
 
-						<div class="media-uploader" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>">
+						<div class="media-uploader" id="<?php echo esc_attr( $wrapper_id ); ?>">
 							<div class="custom_media_preview">
 								<?php if ( $value != '' ) : ?>
 									<img class="custom_media_preview_default"
@@ -350,14 +463,15 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 							<input type="text"
 									class="widefat custom_media_input"
-									id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+									id="<?php echo esc_attr( $field_id ); ?>"
 									name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>"
 									value="<?php echo esc_attr( $value ); ?>"
 									style="margin-top:5px;"
 							/>
 
-							<button class="custom_media_upload button button-secondary button-large"
-									id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
+							<button type="button"
+									class="custom_media_upload button button-secondary button-large"
+									id="<?php echo esc_attr( $button_id ); ?>"
 									data-choose="<?php esc_attr_e( 'Choose an image', 'colormag' ); ?>"
 									data-update="<?php esc_attr_e( 'Use image', 'colormag' ); ?>"
 									style="width:100%;margin-top:6px;margin-right:30px;"
@@ -515,15 +629,23 @@ abstract class ColorMag_Widget extends WP_Widget {
 						</label>
 
 						<?php
-						wp_dropdown_categories(
-							array(
-								'show_option_none' => ' ',
-								'name'             => $this->get_field_name( $key ),
-								'selected'         => $value,
-								'taxonomy'         => 'post_tag',
-								'class'            => 'widefat postform',
-							)
-						);
+						if ( self::use_tag_text_field() ) {
+							$tag = $value ? get_term( (int) $value, 'post_tag' ) : null;
+							?>
+							<input class="widefat colormag-tag-suggest" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="text" value="<?php echo esc_attr( $tag && ! is_wp_error( $tag ) ? $tag->name : '' ); ?>" placeholder="<?php esc_attr_e( 'Start typing a tag name', 'colormag' ); ?>" />
+							<input name="<?php echo esc_attr( $this->get_field_name( $key . '_by_name' ) ); ?>" type="hidden" value="1" />
+							<?php
+						} else {
+							wp_dropdown_categories(
+								array(
+									'show_option_none' => ' ',
+									'name'             => $this->get_field_name( $key ),
+									'selected'         => $value,
+									'taxonomy'         => 'post_tag',
+									'class'            => 'widefat postform',
+								)
+							);
+						}
 						?>
 					</p>
 					<?php

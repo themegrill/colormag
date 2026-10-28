@@ -4904,6 +4904,16 @@ ul.wp-block-gallery img {
 	max-width: 768px;
 }
 
+.cm-narrow-container.cm-narrow-front-page .cm-content > .cm-container {
+	max-width: 1140px;
+}
+
+.cm-narrow-container.cm-narrow-front-page .cm-content > .cm-container > .cm-row {
+	max-width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .cm-right-sidebar .cm-content .cm-primary {
 	padding-right: 1.875em;
 }

@@ -29,9 +29,32 @@ class ColorMag_Meta_Box_Page_Settings {
 		// Add nonce for security and authentication.
 		wp_nonce_field( 'colormag_save_data', 'colormag_meta_nonce' );
 
-		global $post;
+		self::video_url_field( $post );
+	}
 
-		// Video URL.
+	/**
+	 * Video URL meta box render callback for the block editor.
+	 *
+	 * @since 4.2.6
+	 *
+	 * @param WP_Post $post Current post object.
+	 */
+	public static function render_block_editor_video_url( $post ) {
+
+		wp_nonce_field( 'colormag_save_video_url', 'colormag_video_url_nonce' );
+
+		self::video_url_field( $post );
+	}
+
+	/**
+	 * Output the Video URL field.
+	 *
+	 * @since 4.2.6
+	 *
+	 * @param WP_Post $post Current post object.
+	 */
+	private static function video_url_field( $post ) {
+
 		$colormag_video_url = get_post_meta( $post->ID, 'video_url', true );
 		?>
 
@@ -40,6 +63,7 @@ class ColorMag_Meta_Box_Page_Settings {
 					value="<?php echo esc_url( $colormag_video_url ); ?>"
 			/>
 		</p>
+		<p class="description"><?php esc_html_e( 'Used by Video format posts. On archives, the video only shows when the post has no featured image.', 'colormag' ); ?></p>
 
 		<?php
 	}
