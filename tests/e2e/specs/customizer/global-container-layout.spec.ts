@@ -8,31 +8,33 @@ const test = mergeTests(customizerTest, contentTest);
  * Global > Layouts > Container, and the per-content-type "Inherit" fallback.
  *
  * Every content type (Post, Page, Blog, Search) has its own Container Layout,
- * registered with an "Inherit" default. Until 4.2.5 an UNSAVED per-type setting
- * resolved to Normal at runtime, so Global Container never reached these pages
- * and many sites carry Global = Narrow without ever having seen it applied.
- * 4.2.5 made the unsaved value inherit Global, and those sites shrank to the
- * narrow width with their sidebar hidden on update.
+ * registered with an "Inherit" default, and the Customizer previews an unsaved
+ * one as inheriting Global. The front end resolved it to Normal instead, so a
+ * published Global Container change never went live (themegrill/colormag-pro#410).
+ * Unsaved values now inherit Global; sites that already carried a non-Normal
+ * Global get their unsaved per-type layouts saved as Normal by a one-time
+ * migration, so they do not shrink on update. That migration is not asserted
+ * here: it needs its option flag cleared, which no fixture can do.
  *
  * Only the two Global controls are published; the per-type Container Layouts
  * are never touched, which is the "never saved" state on a fresh site. The
  * `customizer` fixture restores every theme mod from its snapshot afterwards.
  *
- * Verified live before being written (2026-10-14): 4.2.5 rendered
- * `cm-narrow-container` on post, page, blog, search and category with Global =
- * Narrow; 4.2.4 and the fix render `cm-normal-container`.
+ * Verified live before being written (2026-10-28): after publishing these two
+ * controls, the preview and the published post, page, blog and search all
+ * render `cm-narrow-container`, and single posts keep the Global Right Sidebar.
  *
  * @area    global
  * @tier    fresh
- * @guards  themegrill/colormag-pro#381
- * @source  write-spec 2026-10-14
- * @why     A Global Container value must not reshape posts, pages, the blog or
- *          search whose own Container Layout was never saved. Also asserts the
- *          Global Sidebar still applies, so the fix cannot be "completed" by
- *          reverting the sidebar inheritance from #338 as well. Does not assert
- *          widths, or what a SAVED Inherit or an explicit per-type layout does.
+ * @guards  themegrill/colormag-pro#410
+ * @source  write-spec 2026-10-28
+ * @why     A published Global Container must reach posts, pages, the blog and
+ *          search whose own Container Layout was never saved, as the preview
+ *          shows. Also asserts the Global Sidebar still applies, so the fix
+ *          cannot be "completed" by reverting the sidebar inheritance from #338.
+ *          Does not assert widths, or what a SAVED per-type layout does.
  */
-test('unsaved per-type Container Layout stays Normal when Global Container is Narrow @fresh @global', async ({
+test('unsaved per-type Container Layout follows a published Global Container @fresh @global', async ({
   page,
   customizer,
   content,
@@ -62,9 +64,9 @@ test('unsaved per-type Container Layout stays Normal when Global Container is Na
 
     expect(
       classes,
-      `${label}: Global Container = Narrow must not narrow a template whose own Container Layout was never saved.`,
-    ).toContain('cm-normal-container');
-    expect(classes, `${label}: rendered the narrow container.`).not.toContain('cm-narrow-container');
+      `${label}: a never-saved Container Layout shows as Inherit in the Customizer, so it must follow Global Container = Narrow.`,
+    ).toContain('cm-narrow-container');
+    expect(classes, `${label}: rendered the normal container.`).not.toContain('cm-normal-container');
   }
 
   await page.goto(bust(post.link));

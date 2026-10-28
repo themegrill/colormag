@@ -127,6 +127,7 @@ and we will include it within the theme from next version update.
 * Tweak    - ColorMag widgets load and save more reliably in the block widget editor.
 * Fix      - Front page slider area shrank to the narrow width on the Narrow container layout.
 * Fix      - Content narrowed after updating when the Global Container Layout was set to Narrow.
+* Fix      - A Global Container Layout change showed in the Customizer preview but not on the live site.
 * Fix      - Widgets screen could freeze on sites with many tags; the tag setting now uses a search field.
 * Fix      - Video URL field was missing in the block editor.
 * Fix      - Embeds were capped at 800px on no-sidebar layouts.
