@@ -164,7 +164,13 @@ abstract class ColorMag_Widget extends WP_Widget {
 					if ( ! empty( $new_instance[ $key . '_by_name' ] ) ) {
 						$tag_name             = $has_value ? sanitize_text_field( $raw_value ) : '';
 						$tag                  = '' !== $tag_name ? get_term_by( 'name', $tag_name, 'post_tag' ) : false;
-						$new_instance[ $key ] = $tag ? $tag->term_id : 0;
+						if ( $tag ) {
+							$new_instance[ $key ] = $tag->term_id;
+						} elseif ( '' !== $tag_name && isset( $old_instance[ $key ] ) ) {
+							$new_instance[ $key ] = absint( $old_instance[ $key ] );
+						} else {
+							$new_instance[ $key ] = 0;
+						}
 					} else {
 						$new_instance[ $key ] = ( ! $has_value || '-1' == $raw_value ) ? '0' : absint( $raw_value );
 					}
@@ -274,10 +280,8 @@ abstract class ColorMag_Widget extends WP_Widget {
 
 		if ( null === $use_text_field ) {
 			$tag_count      = wp_count_terms(
-				array(
-					'taxonomy'   => 'post_tag',
-					'hide_empty' => true,
-				)
+				'post_tag',
+				array( 'hide_empty' => true )
 			);
 			$use_text_field = ! is_wp_error( $tag_count ) && (int) $tag_count > 100;
 		}

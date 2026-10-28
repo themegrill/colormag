@@ -692,7 +692,10 @@ jQuery( function ( $ ) {
 				minLength: 2,
 				source: function ( request, response ) {
 					$.get( colormagTagSuggestUrl, { action: 'ajax-tag-search', tax: 'post_tag', q: request.term } )
-						.done( function ( data ) { response( data ? data.split( '\n' ).slice( 0, 10 ) : [] ); } )
+						.done( function ( data ) { response( data ? $.map( data.split( '\n' ).slice( 0, 10 ), function ( name ) {
+							// Tag names come back HTML-encoded, e.g. "Rock &amp; Roll".
+							return $( '<textarea>' ).html( name ).text();
+						} ) : [] ); } )
 						.fail( function () { response( [] ); } );
 				},
 				open: function () {
