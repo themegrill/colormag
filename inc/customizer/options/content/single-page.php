@@ -42,7 +42,7 @@ $options                = apply_filters(
 	'colormag_page_options',
 	array(
 		'colormag_single_page_container_layout'       => array(
-			'default'   => 'default',
+			'default'   => colormag_unsaved_container_layout(),
 			'type'      => 'customind-radio-image',
 			'title'     => esc_html__( 'Container Layout', 'colormag' ),
 			'section'   => 'colormag_page_section',

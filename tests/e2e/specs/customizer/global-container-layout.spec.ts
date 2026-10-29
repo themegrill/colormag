@@ -11,10 +11,11 @@ const test = mergeTests(customizerTest, contentTest);
  * registered with an "Inherit" default, and the Customizer previews an unsaved
  * one as inheriting Global. The front end resolved it to Normal instead, so a
  * published Global Container change never went live (themegrill/colormag-pro#410).
- * Unsaved values now inherit Global; sites that already carried a non-Normal
- * Global get their unsaved per-type layouts saved as Normal by a one-time
- * migration, so they do not shrink on update. That migration is not asserted
- * here: it needs its option flag cleared, which no fixture can do.
+ * Unsaved values now inherit Global. Sites that already carried a non-Normal
+ * Global when updating keep Normal for unsaved layouts, in the Customizer and
+ * on the front end alike, through an option recorded once on update (#381).
+ * That path is not asserted here: it needs the option cleared, which no
+ * fixture can do.
  *
  * Only the two Global controls are published; the per-type Container Layouts
  * are never touched, which is the "never saved" state on a fresh site. The
