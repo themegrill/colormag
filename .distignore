@@ -13,6 +13,10 @@
 # build/meta.asset.php are enqueued at runtime by
 # inc/meta-boxes/class-colormag-meta-boxes.php, so excluding build/ would ship
 # a theme with broken meta boxes.
+#
+# vendor/ ships too: functions.php loads vendor/autoload.php, which boots the
+# ThemeGrill SDK (usage tracking, deactivation and Formbricks surveys). Build
+# with `composer install --no-dev` first so only the SDK lands in vendor/.
 
 # Version control and forge config
 .git
@@ -38,7 +42,7 @@ Gruntfile.js
 
 # Dependency manifests and installed trees
 node_modules
-vendor
+vendor/bin
 bower_components
 bower.json
 package.json
