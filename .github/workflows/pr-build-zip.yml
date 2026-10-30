@@ -14,7 +14,7 @@ jobs:
       php-version: '7.4'
       package-manager: pnpm
       composer-install: true
-      build-command: pnpm run release && mkdir -p colormag && rsync -rc --exclude-from=.distignore ./ ./colormag --delete --delete-excluded && zip -r colormag.zip colormag
+      build-command: pnpm run release && composer install --no-dev --optimize-autoloader --no-progress --ignore-platform-reqs && mkdir -p colormag && rsync -rc --exclude-from=.distignore ./ ./colormag --delete --delete-excluded && zip -r colormag.zip colormag
       zip-glob: 'colormag.zip'
       artifacts-bucket: themegrill-pr-artifacts
       public-base-url: https://themegrill-pr-artifacts.s3.amazonaws.com

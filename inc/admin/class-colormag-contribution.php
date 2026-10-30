@@ -32,6 +32,7 @@ class ColorMag_Contribution {
 		add_filter( 'themegrill-sdk/survey/colormag', array( $this, 'configure_formbricks' ), 10, 2 );
 		add_filter( 'colormag_logger_data', array( $this, 'logger_data' ) );
 		add_action( 'admin_init', array( $this, 'bridge_notification_hooks' ), 20 );
+		add_filter( 'themegrill_sdk_blackfriday_data', array( $this, 'hide_black_friday_notice' ), PHP_INT_MAX );
 
 		// Suppress the SDK notification banner — we use our own dashboard toggle instead.
 		add_filter( 'colormag_logger_flag_should_show', '__return_false' );
@@ -66,6 +67,20 @@ class ColorMag_Contribution {
 	public function register_product( $products ) {
 		$products[] = get_template_directory() . '/style.css';
 		return $products;
+	}
+
+	/**
+	 * Keep the SDK's Black Friday notice off when ColorMag is the only ThemeGrill product on the site.
+	 *
+	 * @param array $configs Notice configs, keyed by product.
+	 * @return array
+	 */
+	public function hide_black_friday_notice( $configs ) {
+		if ( class_exists( 'ThemeGrillSDK\Loader' ) && count( \ThemeGrillSDK\Loader::get_products() ) <= 1 ) {
+			return array();
+		}
+
+		return $configs;
 	}
 
 	/**

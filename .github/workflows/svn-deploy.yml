@@ -97,7 +97,7 @@ jobs:
         run: |
           set -euo pipefail
           BUILD_DIR="$RUNNER_TEMP/build/colormag"
-          for f in style.css functions.php readme.txt changelog.txt screenshot.jpg; do
+          for f in style.css functions.php readme.txt changelog.txt screenshot.jpg vendor/autoload.php vendor/themegrill/themegrill-sdk/load.php; do
             test -f "$BUILD_DIR/$f" || { echo "::error::Required file $f missing from the build — refusing to sync"; exit 1; }
           done
           COUNT=$(find "$BUILD_DIR" -type f | wc -l)

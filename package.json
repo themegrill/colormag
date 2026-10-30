@@ -11,7 +11,7 @@
     "prettier": "prettier --ignore-path .gitignore --check \"**/*.+(ts|tsx)\"",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx)\"",
     "prettier:fix": "prettier --write \"**/*.+(ts|tsx)\"",
-    "release": "pnpm build && composer makepot && gulp build ",
+    "release": "pnpm build && composer makepot && composer dump-autoload --no-dev && gulp build && composer dump-autoload",
     "test:e2e": "playwright test --config=tests/e2e/playwright.config.ts",
     "test:e2e:fresh": "playwright test --config=tests/e2e/playwright.config.ts --grep @fresh",
     "test:e2e:demo": "playwright test --config=tests/e2e/playwright.config.ts --grep @demo",
