@@ -136,8 +136,9 @@ const paths = {
 			'!assets/sass/**',
 			'!.*',
 			'!*.md',
-			// vendor/ ships for the ThemeGrill SDK; build after `composer install --no-dev`.
-			'!vendor/bin/**',
+			// Only the SDK and a --no-dev autoloader ship from vendor/.
+			'!vendor/!(autoload.php|composer|themegrill)',
+			'!vendor/!(autoload.php|composer|themegrill)/**',
 			'!*.zip',
 			'!.*/**',
 			'!dist/**',

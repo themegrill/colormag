@@ -136,7 +136,7 @@ jobs:
           unzip -l dist/colormag.zip | grep -q 'languages/colormag.pot'
           unzip -l dist/colormag.zip | grep -q 'vendor/autoload.php'
           unzip -l dist/colormag.zip | grep -q 'vendor/themegrill/themegrill-sdk/load.php'
-          if unzip -l dist/colormag.zip | grep -qE 'vendor/(bin|wp-cli|squizlabs|wp-coding-standards|wpeverest)/'; then
+          if unzip -Z1 dist/colormag.zip | grep -E '(^|/)vendor/.' | grep -qvE '(^|/)vendor/(autoload.php|composer/|themegrill/)'; then
             echo "::error::Dev dependencies leaked into the release zip"
             exit 1
           fi
