@@ -930,7 +930,6 @@ and we will include it within the theme from next version update.
 
 = Version 1.0.4 =
 * Fixed reset query for breaking news and random post
-* Fix      - Feedback survey and opt-in usage tracking did not load on most sites.
 * Default layout set as Right Sidebar for the front page
 * Updated Stickyjs to v1.0.2
 * Few styling and other adjustments
