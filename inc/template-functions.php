@@ -197,18 +197,18 @@ function colormag_body_class( $classes ) {
 		$layout_meta = 'default_layout';
 	}
 
-	// Unsaved per-type container settings fall back to Normal (pre-4.2.5 behaviour) so Global Container cannot reshape existing sites; a saved Inherit still follows Global.
+	// Unsaved per-type container settings resolve through colormag_unsaved_container_layout(), as the Customizer does.
 	$woocommerce_widgets_enabled           = get_theme_mod( 'colormag_woocommerce_sidebar_register_setting', 0 );
 	$colormag_global_container_layout      = get_theme_mod( 'colormag_global_container_layout', 'no_sidebar_full_width' );
-	$colormag_blog_container_layout        = get_theme_mod( 'colormag_blog_container_layout', 'no_sidebar_full_width' );
+	$colormag_blog_container_layout        = get_theme_mod( 'colormag_blog_container_layout', colormag_unsaved_container_layout() );
 	$colormag_global_sidebar_layout        = get_theme_mod( 'colormag_global_sidebar_layout', 'no_sidebar' );
 	$colormag_search_sidebar_layout        = get_theme_mod( 'colormag_search_sidebar_layout', 'default' );
 	$colormag_blog_sidebar_layout          = get_theme_mod( 'colormag_blog_sidebar_layout', 'default' );
 	$colormag_single_post_sidebar_layout   = get_theme_mod( 'colormag_single_post_sidebar_layout', 'default' );
 	$colormag_single_page_sidebar_layout   = get_theme_mod( 'colormag_single_page_sidebar_layout', 'default' );
-	$colormag_single_post_container_layout = get_theme_mod( 'colormag_single_post_container_layout', 'no_sidebar_full_width' );
-	$colormag_single_page_container_layout = get_theme_mod( 'colormag_single_page_container_layout', 'no_sidebar_full_width' );
-	$colormag_search_page_container_layout = get_theme_mod( 'colormag_search_container_layout', 'no_sidebar_full_width' );
+	$colormag_single_post_container_layout = get_theme_mod( 'colormag_single_post_container_layout', colormag_unsaved_container_layout() );
+	$colormag_single_page_container_layout = get_theme_mod( 'colormag_single_page_container_layout', colormag_unsaved_container_layout() );
+	$colormag_search_page_container_layout = get_theme_mod( 'colormag_search_container_layout', colormag_unsaved_container_layout() );
 
 	/**
 	 * Header styles.
@@ -432,6 +432,23 @@ function colormag_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'colormag_body_class' );
+
+if ( ! function_exists( 'colormag_unsaved_container_layout' ) ) {
+
+	/**
+	 * Container layout of a Post, Page, Blog or Search setting that was never saved.
+	 *
+	 * Normal on sites that were updated while Global Container was not Normal, which is what they
+	 * rendered before; Inherit everywhere else.
+	 *
+	 * @since ColorMag 4.2.6
+	 *
+	 * @return string
+	 */
+	function colormag_unsaved_container_layout() {
+		return 'yes' === get_option( 'colormag_legacy_container_fallback_' . get_stylesheet() ) ? 'no_sidebar_full_width' : 'default';
+	}
+}
 
 if ( ! function_exists( 'colormag_has_front_page_top_section' ) ) {
 
