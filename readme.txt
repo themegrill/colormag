@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.6
+Version: 4.2.7
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.6
+Stable tag: 4.2.7
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.6 - 2026-11-02 =
+= Version 4.2.7 - 2026-11-02 =
 * Tweak    - Removed the unused Global > Sidebar section from the Customizer.
 * Tweak    - ColorMag widgets load and save more reliably in the block widget editor.
 * Fix      - Front page slider area shrank to the narrow width on the Narrow container layout.
