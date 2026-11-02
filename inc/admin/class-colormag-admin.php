@@ -88,6 +88,7 @@ if ( ! class_exists( 'ColorMag_Admin' ) ) :
 					'user-registration/user-registration.php',
 					'learning-management-system/lms.php',
 					'magazine-blocks/magazine-blocks.php',
+					'easy-mcp-ai/easy-mcp-ai.php',
 					'themegrill-demo-importer/themegrill-demo-importer.php',
 				);
 				$installed_theme_slugs  = array_keys( wp_get_themes() );

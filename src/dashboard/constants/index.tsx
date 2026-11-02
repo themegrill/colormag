@@ -3,6 +3,7 @@ import {
 	Blog,
 	Colors,
 	crossMark,
+	easyMcpAi,
 	everestForm,
 	footerColumn,
 	magazineBlocks,
@@ -14,6 +15,7 @@ import {
 	userRegistration,
 } from '../icons/icons';
 import colormag_img from '../images/colormag.webp';
+import easy_mcp_ai_img from '../images/easy-mcp-ai.webp';
 import evf_img from '../images/evf.webp';
 import magazine_blocks_img from '../images/magazine-blocks.webp';
 import masteriyo_img from '../images/masteriyo.webp';
@@ -407,6 +409,21 @@ export const PLUGINS = [
 		website: 'https://wpblockart.com/magazine-blocks/',
 		shortDescription: __('Page Builder Plugin', 'colormag'),
 		logo: magazineBlocks,
+	},
+	{
+		label: 'Easy MCP AI',
+		slug: 'easy-mcp-ai/easy-mcp-ai.php',
+		description: __(
+			'Connect Claude, ChatGPT, and other AI assistants to your WordPress site. Manage content, settings, and more just by chatting with AI.',
+			'colormag',
+		),
+		type: 'plugin',
+		image: easy_mcp_ai_img,
+		learn_more: 'https://easymcpai.com/',
+		live_demo: '',
+		website: 'https://easymcpai.com/',
+		shortDescription: __('AI Assistant Plugin', 'colormag'),
+		logo: easyMcpAi,
 	},
 ];
 

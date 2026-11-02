@@ -1,4 +1,5 @@
 import { Path, Rect, SVG } from '@wordpress/components';
+import easyMcpAiIcon from '../images/easy-mcp-ai-icon.webp';
 
 export const siteIdentity = (
 	<SVG
@@ -256,4 +257,8 @@ export const magazineBlocks = (
 			d="M30.077 30.576h-21V9.5h21v21.076Zm-20.05-.95h19.115V10.45H10.027v19.176Z"
 		/>
 	</SVG>
+);
+
+export const easyMcpAi = (
+	<img src={easyMcpAiIcon} width="40" height="40" alt="Easy MCP AI" />
 );
