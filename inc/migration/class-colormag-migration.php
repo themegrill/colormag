@@ -31,6 +31,7 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			add_action( 'colormag_theme_review_notice_set_time', [ $this, 'colormag_sidebar_full_width' ] );
 			add_action( 'after_setup_theme', [ $this, 'colormag_outside_background_migration' ], 25 );
 			add_action( 'after_setup_theme', [ $this, 'colormag_logo_height_migration' ], 25 );
+			add_action( 'after_setup_theme', [ $this, 'colormag_legacy_container_fallback_migration' ], 30 );
 			add_action( 'themegrill_ajax_demo_imported', array( $this, 'colormag_color_preset' ), 25 );
 
 			$theme_installed_time = get_option( 'colormag_theme_installed_time' ); // timestamp
@@ -636,6 +637,26 @@ if ( ! class_exists( 'ColorMag_Migration' ) ) {
 			set_theme_mod( 'colormag_default_sidebar_layout', 'no_sidebar_full_width' );
 			set_theme_mod( 'colormag_page_sidebar_layout', 'no_sidebar_full_width' );
 			update_option( 'colormag_sidebar_layout_migration', true, 'no' );
+		}
+
+		/**
+		 * Records once whether unsaved per-type container layouts stay Normal on this site.
+		 *
+		 * A single option write, so concurrent requests right after the update cannot lose part of it.
+		 *
+		 * @since ColorMag 4.2.6
+		 */
+		public function colormag_legacy_container_fallback_migration() {
+
+			$option = 'colormag_legacy_container_fallback_' . get_stylesheet();
+
+			if ( false !== get_option( $option ) ) {
+				return;
+			}
+
+			$legacy = 'no_sidebar_full_width' !== get_theme_mod( 'colormag_global_container_layout', 'no_sidebar_full_width' );
+
+			add_option( $option, $legacy ? 'yes' : 'no' );
 		}
 
 		public function colormag_logo_height_migration() {

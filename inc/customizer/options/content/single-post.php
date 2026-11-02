@@ -53,7 +53,7 @@ $options                = apply_filters(
 			'default'   => 'general',
 		),
 		'colormag_single_post_container_layout'       => array(
-			'default'   => 'default',
+			'default'   => colormag_unsaved_container_layout(),
 			'type'      => 'customind-radio-image',
 			'title'     => esc_html__( 'Container Layout', 'colormag' ),
 			'section'   => 'colormag_single_post_section',
