@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.6 - 2026-10-28 =
+= Version 4.2.6 - 2026-11-02 =
 * Tweak    - Removed the unused Global > Sidebar section from the Customizer.
 * Tweak    - ColorMag widgets load and save more reliably in the block widget editor.
 * Fix      - Front page slider area shrank to the narrow width on the Narrow container layout.
