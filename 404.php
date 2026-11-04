@@ -66,3 +66,5 @@ get_header();
 
 <?php
 get_footer();
+
+// Lint pilot test.
