@@ -40,7 +40,6 @@
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="colormag"/>
-				<element value="cm"/>
 			</property>
 		</properties>
 	</rule>
