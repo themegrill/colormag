@@ -1,0 +1,23 @@
+# Lints only the files a PR changes, using this repo's own phpcs.xml.dist / ESLint config.
+# Logic lives in themegrill/workflows (lint.yml); see that repo for inputs.
+name: Lint
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '**.php'
+      - '**.js'
+      - '**.jsx'
+      - '**.ts'
+      - '**.tsx'
+      - '.github/workflows/lint.yml'
+
+jobs:
+  lint:
+    uses: themegrill/workflows/.github/workflows/lint.yml@master
+    with:
+      php-version: '7.4'
+      # Starts annotate-only: this repo has not been linted before, so existing
+      # violations would otherwise fail every PR. Set to true once it is clean.
+      fail-on-violations: false
