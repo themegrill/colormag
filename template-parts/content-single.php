@@ -50,13 +50,15 @@ $image_popup_url = wp_get_attachment_url( $image_popup_id );
 
 				if ( ! has_post_format( array( 'gallery', 'video' ) ) ) :
 					if ( true == get_theme_mod( 'colormag_enable_featured_image', true ) && has_post_thumbnail() ) :
+						// Stay sharp when Settings → Media "Large" is narrower than the content column.
+						$featured_image_attr = array( 'sizes' => '(max-width: 800px) 100vw, 800px' );
 						?>
 						<div class="cm-featured-image">
 							<?php if ( 1 == get_theme_mod( 'colormag_enable_lightbox', 0 ) ) : ?>
-								<a href="<?php echo esc_url( $image_popup_url ); ?>" class="image-popup"><?php the_post_thumbnail( 'large' ); ?></a>
+								<a href="<?php echo esc_url( $image_popup_url ); ?>" class="image-popup"><?php the_post_thumbnail( 'large', $featured_image_attr ); ?></a>
 								<?php
 							else :
-								the_post_thumbnail( 'large' );
+								the_post_thumbnail( 'large', $featured_image_attr );
 							endif;
 							?>
 						</div>
