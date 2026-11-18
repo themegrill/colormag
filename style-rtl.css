@@ -3906,7 +3906,7 @@ Styles for separating single posts loaded from ajax call.
 		margin-bottom: 50px;
 	}
 	.cm-slider-area,
-	.widget_slider_area {
+	.widget_slider_area:not(:only-child) {
 		width: 55.26315789%;
 	}
 	.cm-beside-slider-widget {
