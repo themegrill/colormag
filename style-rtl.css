@@ -4391,7 +4391,7 @@ Styles for separating single posts loaded from ajax call.
 	grid-column: 1/-1;
 }
 .cm-posts.cm-layout-2-style-2, .cm-posts.cm-layout-2-style-1 {
-	grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+	grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 }
 .cm-posts.cm-layout-2-style-2.col-2, .cm-posts.cm-layout-2-style-1.col-2 {
 	--grid-column: 1;
@@ -4405,7 +4405,7 @@ Styles for separating single posts loaded from ajax call.
 
 @media screen and (min-width: 48em) {
 	.cm-posts.cm-layout-2-style-2, .cm-posts.cm-layout-2-style-1 {
-		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+		grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 	}
 	.cm-posts.cm-layout-2-style-2.col-2, .cm-posts.cm-layout-2-style-1.col-2 {
 		--grid-column: 2;
@@ -4420,7 +4420,7 @@ Styles for separating single posts loaded from ajax call.
 .cm-posts {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: 1fr;
+	grid-template-columns: minmax(0, 1fr);
 	position: relative;
 }
 .cm-posts .post {
@@ -4528,7 +4528,7 @@ ul.wp-block-gallery img {
 
 @media screen and (min-width: 48em) {
 	.cm-posts {
-		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+		grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 	}
 }
 .single .cm-posts .tags a {

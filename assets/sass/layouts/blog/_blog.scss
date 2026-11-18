@@ -1,7 +1,7 @@
 .cm-posts {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: 1fr;
+	grid-template-columns: minmax(0, 1fr);
 	position: relative;
 
 	.post {
@@ -144,6 +144,6 @@ ul.wp-block-gallery {
 @include breakpoint("mdm") {
 
 	.cm-posts {
-		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+		grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 	}
 }
