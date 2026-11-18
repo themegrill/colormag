@@ -4322,6 +4322,34 @@ Styles for separating single posts loaded from ajax call.
 	flex-direction: column;
 	row-gap: 60px;
 }
+
+@media screen and (min-width: 48em) {
+	.left-sidebar .cm-content .cm-row:has(> .google-auto-placed),
+	.cm-two-sidebars .cm-content .cm-row:has(> .google-auto-placed) {
+		flex-wrap: wrap;
+	}
+	.left-sidebar .cm-content .cm-row:has(> .google-auto-placed) > :not(.google-auto-placed),
+	.cm-two-sidebars .cm-content .cm-row:has(> .google-auto-placed) > :not(.google-auto-placed) {
+		box-sizing: border-box;
+	}
+	.left-sidebar .cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed,
+	.cm-two-sidebars .cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed {
+		flex: 0 0 100%;
+		order: -1;
+	}
+}
+@media screen and (min-width: 62em) {
+	.cm-content .cm-row:has(> .google-auto-placed) {
+		flex-wrap: wrap;
+	}
+	.cm-content .cm-row:has(> .google-auto-placed) > :not(.google-auto-placed) {
+		box-sizing: border-box;
+	}
+	.cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed {
+		flex: 0 0 100%;
+		order: -1;
+	}
+}
 .cm-content .cm-row .cm-one-half {
 	width: 100%;
 	padding-bottom: 0;

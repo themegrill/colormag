@@ -75,3 +75,40 @@
 		width: 30%;
 	}
 }
+
+// Google Auto ads can inject a wrapper straight into the content row; keep it on its own line above the content and sidebars.
+@include breakpoint("mdm") {
+
+	.left-sidebar,
+	.cm-two-sidebars {
+
+		.cm-content .cm-row:has(> .google-auto-placed) {
+			flex-wrap: wrap;
+
+			> :not(.google-auto-placed) {
+				box-sizing: border-box;
+			}
+		}
+
+		.cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed {
+			flex: 0 0 100%;
+			order: -1;
+		}
+	}
+}
+
+@include breakpoint("lrg") {
+
+	.cm-content .cm-row:has(> .google-auto-placed) {
+		flex-wrap: wrap;
+
+		> :not(.google-auto-placed) {
+			box-sizing: border-box;
+		}
+	}
+
+	.cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed {
+		flex: 0 0 100%;
+		order: -1;
+	}
+}
