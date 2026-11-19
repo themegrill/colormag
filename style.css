@@ -6252,6 +6252,12 @@ blockquote.wp-block-quote.has-text-align-right {
 	flex-wrap: nowrap;
 }
 
+.wp-block-columns.cm-footer-col .wp-block-heading {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1.66;
+}
+
 .cm-footer-border-line {
 	position: relative;
 }
