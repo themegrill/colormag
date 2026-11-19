@@ -105,7 +105,7 @@ $options = array(
 							),
 						),
 						'font-style'     => 'normal',
-						'text-transform' => 'none',
+						'text-transform' => 'uppercase',
 					),
 					'type'      => 'customind-typography',
 					'title'     => esc_html__( 'Typography', 'colormag' ),

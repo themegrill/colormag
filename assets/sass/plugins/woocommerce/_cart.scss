@@ -1,5 +1,10 @@
 .woocommerce-cart {
 
+	// Keep the checkout button text readable when a Link Color is set.
+	.wp-block-woocommerce-proceed-to-checkout-block .wp-element-button:not(:hover):not(:focus) {
+		color: #ffffff;
+	}
+
 	.woocommerce {
 		display: flex;
 		flex-wrap: wrap;

@@ -1,4 +1,11 @@
 
+// Post titles in the starter footer's list columns, which would otherwise take the full H2 size.
+.wp-block-columns.cm-footer-col .wp-block-heading {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1.66;
+}
+
 .cm-footer-border-line {
 	position: relative;
 	&:before {

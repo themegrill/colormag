@@ -6,6 +6,7 @@ export type colormagLocalized = {
 	version: string;
 	plugins: {
 		'everest-forms/everest-forms.php': 'active' | 'inactive' | 'not-installed';
+		'easy-mcp-ai/easy-mcp-ai.php': 'active' | 'inactive' | 'not-installed';
 		'user-registration/user-registration.php':
 			| 'active'
 			| 'inactive'

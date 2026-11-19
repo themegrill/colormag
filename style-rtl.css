@@ -5,7 +5,7 @@ Theme URI: https://themegrill.com/themes/colormag/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description:  ColorMag is a fast, flexible WordPress theme built for news portals, online magazines, personal blogs, and publishing sites. Trusted by 50,000+ publishers worldwide, it's the #1 news & magazine theme on WordPress.org. Whether you're launching a breaking news site, a lifestyle magazine, or a niche blog, ColorMag gives you everything you need out of the box — no coding required. It comes with 30+ one-click starter demos for news, health, sports, entertainment, and fashion niches. It integrates deeply with the Magazine Blocks plugin (21+ custom Gutenberg blocks for post layouts), includes built-in ad widget areas for easy monetization, and is optimized for Core Web Vitals and fast load times. Full Gutenberg support, WooCommerce compatibility, RTL and translation ready in 35+ languages, and clean SEO-friendly markup are all included. Download ColorMag free and get your news or magazine site live in minutes. Checkout our import ready starter sites at: https://themegrilldemos.com/#/themes/colormag
-Version: 4.2.7
+Version: 4.2.8
 Tested up to: 7.0
 Requires at least: 5.0
 Requires PHP: 7.4
@@ -3905,7 +3905,8 @@ Styles for separating single posts loaded from ajax call.
 		flex-direction: row;
 		margin-bottom: 50px;
 	}
-	.cm-slider-area {
+	.cm-slider-area,
+	.widget_slider_area:not(:only-child) {
 		width: 55.26315789%;
 	}
 	.cm-beside-slider-widget {
@@ -4322,6 +4323,34 @@ Styles for separating single posts loaded from ajax call.
 	flex-direction: column;
 	row-gap: 60px;
 }
+
+@media screen and (min-width: 48em) {
+	.left-sidebar .cm-content .cm-row:has(> .google-auto-placed),
+	.cm-two-sidebars .cm-content .cm-row:has(> .google-auto-placed) {
+		flex-wrap: wrap;
+	}
+	.left-sidebar .cm-content .cm-row:has(> .google-auto-placed) > :not(.google-auto-placed),
+	.cm-two-sidebars .cm-content .cm-row:has(> .google-auto-placed) > :not(.google-auto-placed) {
+		box-sizing: border-box;
+	}
+	.left-sidebar .cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed,
+	.cm-two-sidebars .cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed {
+		flex: 0 0 100%;
+		order: -1;
+	}
+}
+@media screen and (min-width: 62em) {
+	.cm-content .cm-row:has(> .google-auto-placed) {
+		flex-wrap: wrap;
+	}
+	.cm-content .cm-row:has(> .google-auto-placed) > :not(.google-auto-placed) {
+		box-sizing: border-box;
+	}
+	.cm-content .cm-row:has(> .google-auto-placed) > .google-auto-placed {
+		flex: 0 0 100%;
+		order: -1;
+	}
+}
 .cm-content .cm-row .cm-one-half {
 	width: 100%;
 	padding-bottom: 0;
@@ -4391,7 +4420,7 @@ Styles for separating single posts loaded from ajax call.
 	grid-column: 1/-1;
 }
 .cm-posts.cm-layout-2-style-2, .cm-posts.cm-layout-2-style-1 {
-	grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+	grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 }
 .cm-posts.cm-layout-2-style-2.col-2, .cm-posts.cm-layout-2-style-1.col-2 {
 	--grid-column: 1;
@@ -4405,7 +4434,7 @@ Styles for separating single posts loaded from ajax call.
 
 @media screen and (min-width: 48em) {
 	.cm-posts.cm-layout-2-style-2, .cm-posts.cm-layout-2-style-1 {
-		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+		grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 	}
 	.cm-posts.cm-layout-2-style-2.col-2, .cm-posts.cm-layout-2-style-1.col-2 {
 		--grid-column: 2;
@@ -4420,7 +4449,7 @@ Styles for separating single posts loaded from ajax call.
 .cm-posts {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: 1fr;
+	grid-template-columns: minmax(0, 1fr);
 	position: relative;
 }
 .cm-posts .post {
@@ -4528,7 +4557,7 @@ ul.wp-block-gallery img {
 
 @media screen and (min-width: 48em) {
 	.cm-posts {
-		grid-template-columns: repeat(var(--grid-column, 1), 1fr);
+		grid-template-columns: repeat(var(--grid-column, 1), minmax(0, 1fr));
 	}
 }
 .single .cm-posts .tags a {
@@ -6221,6 +6250,12 @@ blockquote.wp-block-quote.has-text-align-right {
 
 .siteorigin-panels .cm-featured-posts {
 	flex-wrap: nowrap;
+}
+
+.wp-block-columns.cm-footer-col .wp-block-heading {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1.66;
 }
 
 .cm-footer-border-line {

@@ -51,13 +51,15 @@ export const Plugin: React.FC<{
 							>
 								{__('Learn more', 'colormag')}
 							</a>
-							<a
-								className="text-[#7A7A7A] text-xs focus:outline-0 focus:shadow-none"
-								href={plugin.live_demo}
-								target="_blank"
-							>
-								{__('View Demo', 'colormag')}
-							</a>
+							{plugin.live_demo && (
+								<a
+									className="text-[#7A7A7A] text-xs focus:outline-0 focus:shadow-none"
+									href={plugin.live_demo}
+									target="_blank"
+								>
+									{__('View Demo', 'colormag')}
+								</a>
+							)}
 						</div>
 						<button
 							className="bg-[#2563EB] border-none text-[#FFFFFF] disabled:bg-[#ACACAC] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer py-2 px-4 rounded"
