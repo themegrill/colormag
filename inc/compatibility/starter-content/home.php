@@ -1691,8 +1691,8 @@ margin-top: 10px; background-color: transparent; border: 1px solid #333;">
 <!-- /wp:columns --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"12px"}}},"textColor":"white"} -->
+<!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":5,"className":"cm-footer-border-line","style":{"border":{"bottom":{"color":"#dfdfdf","style":"solid","width":"1px"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"12px"}}},"textColor":"white"} -->
 <h5 class="wp-block-heading cm-footer-border-line has-white-color has-text-color" style="border-bottom-color:#dfdfdf;border-bottom-style:solid;border-bottom-width:1px;padding-top:0;padding-bottom:12px">Latest Posts</h5>
 <!-- /wp:heading -->
 
