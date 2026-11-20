@@ -3912,6 +3912,12 @@ Styles for separating single posts loaded from ajax call.
 	.cm-beside-slider-widget {
 		width: 43.85964912%;
 	}
+	.cm-beside-slider-widget:not(:has(> *)) {
+		display: none;
+	}
+	.widget_slider_area:not(:has(+ .cm-beside-slider-widget > *)) {
+		width: 100%;
+	}
 }
 /*--------------------------------------------------------------
 # Layouts

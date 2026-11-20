@@ -375,4 +375,13 @@
 	.cm-beside-slider-widget {
 		width: 43.85964912%;
 	}
+
+	// Child-theme copies of the old Magazine template print this wrapper even when its area is empty.
+	.cm-beside-slider-widget:not(:has(> *)) {
+		display: none;
+	}
+
+	.widget_slider_area:not(:has(+ .cm-beside-slider-widget > *)) {
+		width: 100%;
+	}
 }
