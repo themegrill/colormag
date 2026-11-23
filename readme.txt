@@ -122,7 +122,7 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
-= Version 4.2.8 - 2026-11-19 =
+= Version 4.2.8 - 2026-11-23 =
 * Added    - Easy MCP AI in the recommended plugins on the dashboard.
 * Fix      - Magazine template slider squeezed the widget area beside it on desktop.
 * Fix      - Single post featured image was blurry when the Large image size was set smaller than the content.
