@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.8
+Version: 4.2.9
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.8
+Stable tag: 4.2.9
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.9 - 2026-11-26 =
+* Fix      - Removed a development file from the theme package.
+
 = Version 4.2.8 - 2026-11-23 =
 * Added    - Easy MCP AI in the recommended plugins on the dashboard.
 * Fix      - Magazine template slider squeezed the widget area beside it on desktop.

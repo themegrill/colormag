@@ -1,4 +1,7 @@
 == Changelog ==
+= Version 4.2.9 - 2026-11-26 =
+* Fix      - Removed a development file from the theme package.
+
 = Version 4.2.8 - 2026-11-23 =
 * Added    - Easy MCP AI in the recommended plugins on the dashboard.
 * Fix      - Magazine template slider squeezed the widget area beside it on desktop.
