@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.7
+Version: 4.2.10
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.7
+Stable tag: 4.2.10
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,22 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.10 - 2026-11-27 =
+* Tweak    - Updated the ThemeGrill SDK to 1.0.6.
+
+= Version 4.2.9 - 2026-11-26 =
+* Fix      - Removed a development file from the theme package.
+
+= Version 4.2.8 - 2026-11-23 =
+* Added    - Easy MCP AI in the recommended plugins on the dashboard.
+* Fix      - Magazine template slider squeezed the widget area beside it on desktop.
+* Fix      - Single post featured image was blurry when the Large image size was set smaller than the content.
+* Fix      - Primary menu letter case in the Customizer preview didn't match the live site.
+* Fix      - Cart "Proceed to Checkout" button text took the Link Color.
+* Fix      - Homepage content overflowed on mobile when a static page contained a wide element.
+* Fix      - Google Auto ads squeezed the post and sidebar into an extra column.
+* Fix      - Starter content footer post titles showed at full heading size.
+
 = Version 4.2.7 - 2026-11-02 =
 * Tweak    - Removed the unused Global > Sidebar section from the Customizer.
 * Tweak    - ColorMag widgets load and save more reliably in the block widget editor.
