@@ -1,4 +1,7 @@
 == Changelog ==
+= Version 4.2.11 - 2026-11-27 =
+* Fix      - Black Friday sale notice not showing when ColorMag is the only ThemeGrill product.
+
 = Version 4.2.10 - 2026-11-27 =
 * Tweak    - Updated the ThemeGrill SDK to 1.0.6.
 

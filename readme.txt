@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.2.10
+Version: 4.2.11
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 5.0
-Stable tag: 4.2.10
+Stable tag: 4.2.11
 
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -122,6 +122,9 @@ If you've translated this theme into your language, feel free to send the transl
 and we will include it within the theme from next version update.
 
 == Changelog ==
+= Version 4.2.11 - 2026-11-27 =
+* Fix      - Black Friday sale notice not showing when ColorMag is the only ThemeGrill product.
+
 = Version 4.2.10 - 2026-11-27 =
 * Tweak    - Updated the ThemeGrill SDK to 1.0.6.
 
