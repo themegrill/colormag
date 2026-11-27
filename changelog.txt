@@ -1,4 +1,7 @@
 == Changelog ==
+= Version 4.2.10 - 2026-11-27 =
+* Tweak    - Updated the ThemeGrill SDK to 1.0.6.
+
 = Version 4.2.9 - 2026-11-26 =
 * Fix      - Removed a development file from the theme package.
 
